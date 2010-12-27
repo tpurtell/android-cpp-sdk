@@ -2,6 +2,7 @@ package com.j2cpp;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.widget.TextView;
 
 
 public class Test extends Activity {
@@ -56,7 +57,10 @@ public class Test extends Activity {
         	}
         }
         
-        setContentView(R.layout.main);
+        TextView console=new TextView(this);
+        setContentView(console);
+        testView(console);
+        
     }
     
     public native double math_cos(double angle);
@@ -68,5 +72,7 @@ public class Test extends Activity {
     public native java.util.BitSet testBitSetCreate();
     public native int testGetValueOf_GL_TRUE();
     public native android.app.ActivityManager.RecentTaskInfo testField();
+    public native void testView(TextView tv);
+    
     
 }

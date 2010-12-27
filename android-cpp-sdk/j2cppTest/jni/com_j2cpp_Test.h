@@ -115,6 +115,14 @@ JNIEXPORT jint JNICALL Java_com_j2cpp_Test_testGetValueOf_1GL_1TRUE
 JNIEXPORT jobject JNICALL Java_com_j2cpp_Test_testField
   (JNIEnv *, jobject);
 
+/*
+ * Class:     com_j2cpp_Test
+ * Method:    testView
+ * Signature: (Landroid/widget/TextView;)V
+ */
+JNIEXPORT void JNICALL Java_com_j2cpp_Test_testView
+  (JNIEnv *, jobject, jobject);
+
 #ifdef __cplusplus
 }
 #endif

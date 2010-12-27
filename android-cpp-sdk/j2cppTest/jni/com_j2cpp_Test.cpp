@@ -6,12 +6,14 @@
 #include <java/lang/String.hpp>
 #include <android/opengl/GLES10.hpp>
 #include <android/app/ActivityManager.hpp>
+#include <android/widget/TextView.hpp>
 #define J2CPP_INCLUDE_IMPLEMENTATION
 #include <java/lang/Math.hpp>
 #include <java/util/BitSet.hpp>
 #include <java/lang/String.hpp>
 #include <android/opengl/GLES10.hpp>
 #include <android/app/ActivityManager.hpp>
+#include <android/widget/TextView.hpp>
 
 
 jdouble Java_com_j2cpp_Test_math_1cos(JNIEnv *env, jobject theTest, jdouble angle)
@@ -71,4 +73,19 @@ jobject Java_com_j2cpp_Test_testField(JNIEnv *env, jobject theTest)
 	);
 	retValue->id=100;
 	return retValue.get_jtype();
+}
+
+void Java_com_j2cpp_Test_testView(JNIEnv *env,  jobject theTest, jobject textView)
+{
+	using namespace j2cpp;
+	android::widget::TextView theTextView(textView);
+	char stringChars[] = "Android C++ SDK Example";
+	local_ref< cpp_byte_array<1> > theStringChars(
+		create<1>(sizeof(stringChars))
+	);
+	theStringChars->set(0,sizeof(stringChars),reinterpret_cast<jbyte*>(stringChars));
+	//j2cpp::
+	local_ref<java::lang::String> theString(create<java::lang::String>(theStringChars));
+	theTextView.append(local_ref<java::lang::CharSequence>(theString.get_jtype()));
+
 }
