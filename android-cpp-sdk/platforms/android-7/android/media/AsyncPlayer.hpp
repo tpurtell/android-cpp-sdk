@@ -10,6 +10,7 @@
 #define J2CPP_ANDROID_MEDIA_ASYNCPLAYER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace android { namespace net { class Uri; } } }
 namespace j2cpp { namespace android { namespace content { class Context; } } }
@@ -17,6 +18,7 @@ namespace j2cpp { namespace android { namespace content { class Context; } } }
 
 #include <android/content/Context.hpp>
 #include <android/net/Uri.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -36,18 +38,21 @@ namespace android { namespace media {
 		J2CPP_DECLARE_METHOD(1)
 		J2CPP_DECLARE_METHOD(2)
 
-		AsyncPlayer(jobject jobj)
+		explicit AsyncPlayer(jobject jobj)
 		: cpp_object<AsyncPlayer>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		AsyncPlayer(local_ref< java::lang::String > const&);
 		void play(local_ref< android::content::Context > const&, local_ref< android::net::Uri > const&, cpp_boolean const&, cpp_int const&);
 		void stop();
 	}; //class AsyncPlayer
 
 } //namespace media
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -61,17 +66,24 @@ namespace android { namespace media {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::media::AsyncPlayer > create< android::media::AsyncPlayer>(local_ref< java::lang::String > const &a0)
+
+android::media::AsyncPlayer::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::media::AsyncPlayer >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::media::AsyncPlayer::J2CPP_CLASS_NAME>(),
-			get_method_id<android::media::AsyncPlayer::J2CPP_CLASS_NAME, android::media::AsyncPlayer::J2CPP_METHOD_NAME(0), android::media::AsyncPlayer::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::media::AsyncPlayer::AsyncPlayer(local_ref< java::lang::String > const &a0)
+: cpp_object<android::media::AsyncPlayer>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::media::AsyncPlayer::J2CPP_CLASS_NAME>(),
+		get_method_id<android::media::AsyncPlayer::J2CPP_CLASS_NAME, android::media::AsyncPlayer::J2CPP_METHOD_NAME(0), android::media::AsyncPlayer::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 void android::media::AsyncPlayer::play(local_ref< android::content::Context > const &a0, local_ref< android::net::Uri > const &a1, cpp_boolean const &a2, cpp_int const &a3)
 {

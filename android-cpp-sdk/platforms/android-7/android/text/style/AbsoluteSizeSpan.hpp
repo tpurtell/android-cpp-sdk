@@ -11,11 +11,15 @@
 
 
 namespace j2cpp { namespace android { namespace text { class TextPaint; } } }
+namespace j2cpp { namespace android { namespace text { namespace style { class MetricAffectingSpan; } } } }
+namespace j2cpp { namespace android { namespace text { class ParcelableSpan; } } }
 namespace j2cpp { namespace android { namespace os { class Parcel; } } }
 
 
 #include <android/os/Parcel.hpp>
+#include <android/text/ParcelableSpan.hpp>
 #include <android/text/TextPaint.hpp>
+#include <android/text/style/MetricAffectingSpan.hpp>
 
 
 namespace j2cpp {
@@ -41,11 +45,18 @@ namespace android { namespace text { namespace style {
 		J2CPP_DECLARE_METHOD(8)
 		J2CPP_DECLARE_METHOD(9)
 
-		AbsoluteSizeSpan(jobject jobj)
+		explicit AbsoluteSizeSpan(jobject jobj)
 		: cpp_object<AbsoluteSizeSpan>(jobj)
 		{
 		}
 
+		operator local_ref<android::text::style::MetricAffectingSpan>() const;
+		operator local_ref<android::text::ParcelableSpan>() const;
+
+
+		AbsoluteSizeSpan(cpp_int const&);
+		AbsoluteSizeSpan(cpp_int const&, cpp_boolean const&);
+		AbsoluteSizeSpan(local_ref< android::os::Parcel > const&);
 		cpp_int getSpanTypeId();
 		cpp_int describeContents();
 		void writeToParcel(local_ref< android::os::Parcel > const&, cpp_int const&);
@@ -59,7 +70,6 @@ namespace android { namespace text { namespace style {
 } //namespace text
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_TEXT_STYLE_ABSOLUTESIZESPAN_HPP_DECL
@@ -72,41 +82,55 @@ namespace android { namespace text { namespace style {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::text::style::AbsoluteSizeSpan > create< android::text::style::AbsoluteSizeSpan>(cpp_int const &a0)
+
+android::text::style::AbsoluteSizeSpan::operator local_ref<android::text::style::MetricAffectingSpan>() const
 {
-	return local_ref< android::text::style::AbsoluteSizeSpan >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::text::style::AbsoluteSizeSpan::J2CPP_CLASS_NAME>(),
-			get_method_id<android::text::style::AbsoluteSizeSpan::J2CPP_CLASS_NAME, android::text::style::AbsoluteSizeSpan::J2CPP_METHOD_NAME(0), android::text::style::AbsoluteSizeSpan::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<android::text::style::MetricAffectingSpan>(get_jtype());
 }
 
-template <>
-local_ref< android::text::style::AbsoluteSizeSpan > create< android::text::style::AbsoluteSizeSpan>(cpp_int const &a0, cpp_boolean const &a1)
+android::text::style::AbsoluteSizeSpan::operator local_ref<android::text::ParcelableSpan>() const
 {
-	return local_ref< android::text::style::AbsoluteSizeSpan >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::text::style::AbsoluteSizeSpan::J2CPP_CLASS_NAME>(),
-			get_method_id<android::text::style::AbsoluteSizeSpan::J2CPP_CLASS_NAME, android::text::style::AbsoluteSizeSpan::J2CPP_METHOD_NAME(1), android::text::style::AbsoluteSizeSpan::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<android::text::ParcelableSpan>(get_jtype());
 }
 
-template <>
-local_ref< android::text::style::AbsoluteSizeSpan > create< android::text::style::AbsoluteSizeSpan>(local_ref< android::os::Parcel > const &a0)
+
+android::text::style::AbsoluteSizeSpan::AbsoluteSizeSpan(cpp_int const &a0)
+: cpp_object<android::text::style::AbsoluteSizeSpan>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::text::style::AbsoluteSizeSpan::J2CPP_CLASS_NAME>(),
+		get_method_id<android::text::style::AbsoluteSizeSpan::J2CPP_CLASS_NAME, android::text::style::AbsoluteSizeSpan::J2CPP_METHOD_NAME(0), android::text::style::AbsoluteSizeSpan::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< android::text::style::AbsoluteSizeSpan >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::text::style::AbsoluteSizeSpan::J2CPP_CLASS_NAME>(),
-			get_method_id<android::text::style::AbsoluteSizeSpan::J2CPP_CLASS_NAME, android::text::style::AbsoluteSizeSpan::J2CPP_METHOD_NAME(2), android::text::style::AbsoluteSizeSpan::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype()
-		)
-	);
 }
+
+
+
+android::text::style::AbsoluteSizeSpan::AbsoluteSizeSpan(cpp_int const &a0, cpp_boolean const &a1)
+: cpp_object<android::text::style::AbsoluteSizeSpan>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::text::style::AbsoluteSizeSpan::J2CPP_CLASS_NAME>(),
+		get_method_id<android::text::style::AbsoluteSizeSpan::J2CPP_CLASS_NAME, android::text::style::AbsoluteSizeSpan::J2CPP_METHOD_NAME(1), android::text::style::AbsoluteSizeSpan::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
+
+
+android::text::style::AbsoluteSizeSpan::AbsoluteSizeSpan(local_ref< android::os::Parcel > const &a0)
+: cpp_object<android::text::style::AbsoluteSizeSpan>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::text::style::AbsoluteSizeSpan::J2CPP_CLASS_NAME>(),
+		get_method_id<android::text::style::AbsoluteSizeSpan::J2CPP_CLASS_NAME, android::text::style::AbsoluteSizeSpan::J2CPP_METHOD_NAME(2), android::text::style::AbsoluteSizeSpan::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 cpp_int android::text::style::AbsoluteSizeSpan::getSpanTypeId()
 {

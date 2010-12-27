@@ -10,9 +10,11 @@
 #define J2CPP_ORG_APACHE_HTTP_CLIENT_PROTOCOL_CLIENTCONTEXT_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -39,10 +41,13 @@ namespace org { namespace apache { namespace http { namespace client { namespace
 		J2CPP_DECLARE_FIELD(8)
 		J2CPP_DECLARE_FIELD(9)
 
-		ClientContext(jobject jobj)
+		explicit ClientContext(jobject jobj)
 		: cpp_object<ClientContext>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(0), J2CPP_FIELD_SIGNATURE(0), local_ref< java::lang::String > > COOKIESPEC_REGISTRY;
 		static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(1), J2CPP_FIELD_SIGNATURE(1), local_ref< java::lang::String > > AUTHSCHEME_REGISTRY;
@@ -62,7 +67,6 @@ namespace org { namespace apache { namespace http { namespace client { namespace
 } //namespace apache
 } //namespace org
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ORG_APACHE_HTTP_CLIENT_PROTOCOL_CLIENTCONTEXT_HPP_DECL
@@ -74,6 +78,12 @@ namespace org { namespace apache { namespace http { namespace client { namespace
 
 namespace j2cpp {
 
+
+
+org::apache::http::client::protocol::ClientContext::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 static_field<
 	org::apache::http::client::protocol::ClientContext::J2CPP_CLASS_NAME,

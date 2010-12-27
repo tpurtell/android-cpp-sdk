@@ -10,9 +10,11 @@
 #define J2CPP_ANDROID_UTIL_DISPLAYMETRICS_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -44,18 +46,22 @@ namespace android { namespace util {
 		J2CPP_DECLARE_FIELD(9)
 		J2CPP_DECLARE_FIELD(10)
 
-		DisplayMetrics(jobject jobj)
+		explicit DisplayMetrics(jobject jobj)
 		: cpp_object<DisplayMetrics>(jobj)
-		, widthPixels(jobj)
-		, heightPixels(jobj)
-		, density(jobj)
-		, densityDpi(jobj)
-		, scaledDensity(jobj)
-		, xdpi(jobj)
-		, ydpi(jobj)
+, widthPixels(jobj)
+, heightPixels(jobj)
+, density(jobj)
+, densityDpi(jobj)
+, scaledDensity(jobj)
+, xdpi(jobj)
+, ydpi(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		DisplayMetrics();
 		void setTo(local_ref< android::util::DisplayMetrics > const&);
 		void setToDefaults();
 		local_ref< java::lang::String > toString();
@@ -76,7 +82,6 @@ namespace android { namespace util {
 } //namespace util
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_UTIL_DISPLAYMETRICS_HPP_DECL
@@ -89,16 +94,30 @@ namespace android { namespace util {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::util::DisplayMetrics > create< android::util::DisplayMetrics>()
+
+android::util::DisplayMetrics::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::util::DisplayMetrics >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::util::DisplayMetrics::J2CPP_CLASS_NAME>(),
-			get_method_id<android::util::DisplayMetrics::J2CPP_CLASS_NAME, android::util::DisplayMetrics::J2CPP_METHOD_NAME(0), android::util::DisplayMetrics::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::util::DisplayMetrics::DisplayMetrics()
+: cpp_object<android::util::DisplayMetrics>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::util::DisplayMetrics::J2CPP_CLASS_NAME>(),
+		get_method_id<android::util::DisplayMetrics::J2CPP_CLASS_NAME, android::util::DisplayMetrics::J2CPP_METHOD_NAME(0), android::util::DisplayMetrics::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+, widthPixels(get_jtype())
+, heightPixels(get_jtype())
+, density(get_jtype())
+, densityDpi(get_jtype())
+, scaledDensity(get_jtype())
+, xdpi(get_jtype())
+, ydpi(get_jtype())
+{
+}
+
 
 void android::util::DisplayMetrics::setTo(local_ref< android::util::DisplayMetrics > const &a0)
 {

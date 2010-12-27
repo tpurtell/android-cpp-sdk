@@ -15,6 +15,7 @@ namespace j2cpp { namespace org { namespace xmlpull { namespace v1 { class XmlPu
 namespace j2cpp { namespace android { namespace graphics { class Canvas; } } }
 namespace j2cpp { namespace android { namespace graphics { namespace drawable { class Drawable; } } } }
 namespace j2cpp { namespace android { namespace graphics { namespace drawable { namespace Drawable_ { class ConstantState; } } } } }
+namespace j2cpp { namespace android { namespace graphics { namespace drawable { namespace Drawable_ { class Callback; } } } } }
 namespace j2cpp { namespace android { namespace graphics { class Rect; } } }
 namespace j2cpp { namespace android { namespace graphics { class ColorFilter; } } }
 namespace j2cpp { namespace android { namespace content { namespace res { class Resources; } } } }
@@ -65,11 +66,16 @@ namespace android { namespace graphics { namespace drawable {
 		J2CPP_DECLARE_METHOD(19)
 		J2CPP_DECLARE_METHOD(20)
 
-		ScaleDrawable(jobject jobj)
+		explicit ScaleDrawable(jobject jobj)
 		: cpp_object<ScaleDrawable>(jobj)
 		{
 		}
 
+		operator local_ref<android::graphics::drawable::Drawable>() const;
+		operator local_ref<android::graphics::drawable::Drawable_::Callback>() const;
+
+
+		ScaleDrawable(local_ref< android::graphics::drawable::Drawable > const&, cpp_int const&, cpp_float const&, cpp_float const&);
 		local_ref< android::graphics::drawable::Drawable > getDrawable();
 		void inflate(local_ref< android::content::res::Resources > const&, local_ref< org::xmlpull::v1::XmlPullParser > const&, local_ref< android::util::AttributeSet > const&);
 		void invalidateDrawable(local_ref< android::graphics::drawable::Drawable > const&);
@@ -93,7 +99,6 @@ namespace android { namespace graphics { namespace drawable {
 } //namespace graphics
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_GRAPHICS_DRAWABLE_SCALEDRAWABLE_HPP_DECL
@@ -106,17 +111,29 @@ namespace android { namespace graphics { namespace drawable {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::graphics::drawable::ScaleDrawable > create< android::graphics::drawable::ScaleDrawable>(local_ref< android::graphics::drawable::Drawable > const &a0, cpp_int const &a1, cpp_float const &a2, cpp_float const &a3)
+
+android::graphics::drawable::ScaleDrawable::operator local_ref<android::graphics::drawable::Drawable>() const
 {
-	return local_ref< android::graphics::drawable::ScaleDrawable >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::graphics::drawable::ScaleDrawable::J2CPP_CLASS_NAME>(),
-			get_method_id<android::graphics::drawable::ScaleDrawable::J2CPP_CLASS_NAME, android::graphics::drawable::ScaleDrawable::J2CPP_METHOD_NAME(0), android::graphics::drawable::ScaleDrawable::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype()
-		)
-	);
+	return local_ref<android::graphics::drawable::Drawable>(get_jtype());
 }
+
+android::graphics::drawable::ScaleDrawable::operator local_ref<android::graphics::drawable::Drawable_::Callback>() const
+{
+	return local_ref<android::graphics::drawable::Drawable_::Callback>(get_jtype());
+}
+
+
+android::graphics::drawable::ScaleDrawable::ScaleDrawable(local_ref< android::graphics::drawable::Drawable > const &a0, cpp_int const &a1, cpp_float const &a2, cpp_float const &a3)
+: cpp_object<android::graphics::drawable::ScaleDrawable>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::graphics::drawable::ScaleDrawable::J2CPP_CLASS_NAME>(),
+		get_method_id<android::graphics::drawable::ScaleDrawable::J2CPP_CLASS_NAME, android::graphics::drawable::ScaleDrawable::J2CPP_METHOD_NAME(0), android::graphics::drawable::ScaleDrawable::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype()
+	)
+)
+{
+}
+
 
 local_ref< android::graphics::drawable::Drawable > android::graphics::drawable::ScaleDrawable::getDrawable()
 {

@@ -10,11 +10,13 @@
 #define J2CPP_JAVA_SECURITY_DIGESTINPUTSTREAM_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class FilterInputStream; } } }
 namespace j2cpp { namespace java { namespace io { class InputStream; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace security { class MessageDigest; } } }
 
 
+#include <java/io/FilterInputStream.hpp>
 #include <java/io/InputStream.hpp>
 #include <java/lang/String.hpp>
 #include <java/security/MessageDigest.hpp>
@@ -41,11 +43,15 @@ namespace java { namespace security {
 		J2CPP_DECLARE_METHOD(6)
 		J2CPP_DECLARE_FIELD(0)
 
-		DigestInputStream(jobject jobj)
+		explicit DigestInputStream(jobject jobj)
 		: cpp_object<DigestInputStream>(jobj)
 		{
 		}
 
+		operator local_ref<java::io::FilterInputStream>() const;
+
+
+		DigestInputStream(local_ref< java::io::InputStream > const&, local_ref< java::security::MessageDigest > const&);
 		local_ref< java::security::MessageDigest > getMessageDigest();
 		void setMessageDigest(local_ref< java::security::MessageDigest > const&);
 		cpp_int read();
@@ -57,7 +63,6 @@ namespace java { namespace security {
 
 } //namespace security
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -71,17 +76,24 @@ namespace java { namespace security {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::security::DigestInputStream > create< java::security::DigestInputStream>(local_ref< java::io::InputStream > const &a0, local_ref< java::security::MessageDigest > const &a1)
+
+java::security::DigestInputStream::operator local_ref<java::io::FilterInputStream>() const
 {
-	return local_ref< java::security::DigestInputStream >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::security::DigestInputStream::J2CPP_CLASS_NAME>(),
-			get_method_id<java::security::DigestInputStream::J2CPP_CLASS_NAME, java::security::DigestInputStream::J2CPP_METHOD_NAME(0), java::security::DigestInputStream::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<java::io::FilterInputStream>(get_jtype());
 }
+
+
+java::security::DigestInputStream::DigestInputStream(local_ref< java::io::InputStream > const &a0, local_ref< java::security::MessageDigest > const &a1)
+: cpp_object<java::security::DigestInputStream>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::security::DigestInputStream::J2CPP_CLASS_NAME>(),
+		get_method_id<java::security::DigestInputStream::J2CPP_CLASS_NAME, java::security::DigestInputStream::J2CPP_METHOD_NAME(0), java::security::DigestInputStream::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
 
 local_ref< java::security::MessageDigest > java::security::DigestInputStream::getMessageDigest()
 {

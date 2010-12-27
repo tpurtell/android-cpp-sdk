@@ -10,8 +10,10 @@
 #define J2CPP_ANDROID_OPENGL_MATRIX_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -44,11 +46,15 @@ namespace android { namespace opengl {
 		J2CPP_DECLARE_METHOD(15)
 		J2CPP_DECLARE_METHOD(16)
 
-		Matrix(jobject jobj)
+		explicit Matrix(jobject jobj)
 		: cpp_object<Matrix>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		Matrix();
 		static void multiplyMM(local_ref< cpp_float_array<1> > const&, cpp_int const&, local_ref< cpp_float_array<1> > const&, cpp_int const&, local_ref< cpp_float_array<1> > const&, cpp_int const&);
 		static void multiplyMV(local_ref< cpp_float_array<1> > const&, cpp_int const&, local_ref< cpp_float_array<1> > const&, cpp_int const&, local_ref< cpp_float_array<1> > const&, cpp_int const&);
 		static void transposeM(local_ref< cpp_float_array<1> > const&, cpp_int const&, local_ref< cpp_float_array<1> > const&, cpp_int const&);
@@ -70,7 +76,6 @@ namespace android { namespace opengl {
 } //namespace opengl
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_OPENGL_MATRIX_HPP_DECL
@@ -83,16 +88,23 @@ namespace android { namespace opengl {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::opengl::Matrix > create< android::opengl::Matrix>()
+
+android::opengl::Matrix::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::opengl::Matrix >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::opengl::Matrix::J2CPP_CLASS_NAME>(),
-			get_method_id<android::opengl::Matrix::J2CPP_CLASS_NAME, android::opengl::Matrix::J2CPP_METHOD_NAME(0), android::opengl::Matrix::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::opengl::Matrix::Matrix()
+: cpp_object<android::opengl::Matrix>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::opengl::Matrix::J2CPP_CLASS_NAME>(),
+		get_method_id<android::opengl::Matrix::J2CPP_CLASS_NAME, android::opengl::Matrix::J2CPP_METHOD_NAME(0), android::opengl::Matrix::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 void android::opengl::Matrix::multiplyMM(local_ref< cpp_float_array<1> > const &a0, cpp_int const &a1, local_ref< cpp_float_array<1> > const &a2, cpp_int const &a3, local_ref< cpp_float_array<1> > const &a4, cpp_int const &a5)
 {

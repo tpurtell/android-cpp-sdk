@@ -11,6 +11,8 @@
 
 
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace lang { class Iterable; } } }
+namespace j2cpp { namespace java { namespace lang { class Enum; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace util { class Iterator; } } }
 namespace j2cpp { namespace android { namespace database { class Cursor; } } }
@@ -19,6 +21,8 @@ namespace j2cpp { namespace android { namespace database { namespace CursorJoine
 
 #include <android/database/Cursor.hpp>
 #include <android/database/CursorJoiner.hpp>
+#include <java/lang/Enum.hpp>
+#include <java/lang/Iterable.hpp>
 #include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/util/Iterator.hpp>
@@ -48,10 +52,13 @@ namespace android { namespace database {
 			J2CPP_DECLARE_FIELD(2)
 			J2CPP_DECLARE_FIELD(3)
 
-			Result(jobject jobj)
+			explicit Result(jobject jobj)
 			: cpp_object<Result>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Enum>() const;
+
 
 			static local_ref< cpp_object_array<android::database::CursorJoiner_::Result, 1> > values();
 			static local_ref< android::database::CursorJoiner_::Result > valueOf(local_ref< java::lang::String > const&);
@@ -79,11 +86,17 @@ namespace android { namespace database {
 
 		typedef CursorJoiner_::Result Result;
 
-		CursorJoiner(jobject jobj)
+		explicit CursorJoiner(jobject jobj)
 		: cpp_object<CursorJoiner>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::util::Iterator>() const;
+		operator local_ref<java::lang::Iterable>() const;
+
+
+		CursorJoiner(local_ref< android::database::Cursor > const&, local_ref< cpp_object_array<java::lang::String, 1> > const&, local_ref< android::database::Cursor > const&, local_ref< cpp_object_array<java::lang::String, 1> > const&);
 		local_ref< java::util::Iterator > iterator();
 		cpp_boolean hasNext();
 		local_ref< android::database::CursorJoiner_::Result > next();
@@ -93,7 +106,6 @@ namespace android { namespace database {
 
 } //namespace database
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -107,6 +119,12 @@ namespace android { namespace database {
 namespace j2cpp {
 
 
+
+
+android::database::CursorJoiner_::Result::operator local_ref<java::lang::Enum>() const
+{
+	return local_ref<java::lang::Enum>(get_jtype());
+}
 
 local_ref< cpp_object_array<android::database::CursorJoiner_::Result, 1> > android::database::CursorJoiner_::Result::values()
 {
@@ -129,17 +147,7 @@ local_ref< android::database::CursorJoiner_::Result > android::database::CursorJ
 	);
 }
 
-template <>
-local_ref< android::database::CursorJoiner_::Result > create< android::database::CursorJoiner_::Result>(local_ref< java::lang::String > const &a0, cpp_int const &a1)
-{
-	return local_ref< android::database::CursorJoiner_::Result >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::database::CursorJoiner_::Result::J2CPP_CLASS_NAME>(),
-			get_method_id<android::database::CursorJoiner_::Result::J2CPP_CLASS_NAME, android::database::CursorJoiner_::Result::J2CPP_METHOD_NAME(2), android::database::CursorJoiner_::Result::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
-}
+
 
 
 static_field<
@@ -175,17 +183,34 @@ J2CPP_DEFINE_FIELD(android::database::CursorJoiner_::Result,2,"RIGHT","Landroid/
 J2CPP_DEFINE_FIELD(android::database::CursorJoiner_::Result,3,"$VALUES","[android.database.CursorJoiner.Result")
 
 
-template <>
-local_ref< android::database::CursorJoiner > create< android::database::CursorJoiner>(local_ref< android::database::Cursor > const &a0, local_ref< cpp_object_array<java::lang::String, 1> > const &a1, local_ref< android::database::Cursor > const &a2, local_ref< cpp_object_array<java::lang::String, 1> > const &a3)
+
+android::database::CursorJoiner::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::database::CursorJoiner >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::database::CursorJoiner::J2CPP_CLASS_NAME>(),
-			get_method_id<android::database::CursorJoiner::J2CPP_CLASS_NAME, android::database::CursorJoiner::J2CPP_METHOD_NAME(0), android::database::CursorJoiner::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+android::database::CursorJoiner::operator local_ref<java::util::Iterator>() const
+{
+	return local_ref<java::util::Iterator>(get_jtype());
+}
+
+android::database::CursorJoiner::operator local_ref<java::lang::Iterable>() const
+{
+	return local_ref<java::lang::Iterable>(get_jtype());
+}
+
+
+android::database::CursorJoiner::CursorJoiner(local_ref< android::database::Cursor > const &a0, local_ref< cpp_object_array<java::lang::String, 1> > const &a1, local_ref< android::database::Cursor > const &a2, local_ref< cpp_object_array<java::lang::String, 1> > const &a3)
+: cpp_object<android::database::CursorJoiner>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::database::CursorJoiner::J2CPP_CLASS_NAME>(),
+		get_method_id<android::database::CursorJoiner::J2CPP_CLASS_NAME, android::database::CursorJoiner::J2CPP_METHOD_NAME(0), android::database::CursorJoiner::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype()
+	)
+)
+{
+}
+
 
 local_ref< java::util::Iterator > android::database::CursorJoiner::iterator()
 {

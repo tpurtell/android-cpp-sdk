@@ -10,8 +10,10 @@
 #define J2CPP_JAVA_NET_INET4ADDRESS_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace net { class InetAddress; } } }
 
 
+#include <java/net/InetAddress.hpp>
 
 
 namespace j2cpp {
@@ -38,10 +40,13 @@ namespace java { namespace net {
 		J2CPP_DECLARE_METHOD(9)
 		J2CPP_DECLARE_METHOD(10)
 
-		Inet4Address(jobject jobj)
+		explicit Inet4Address(jobject jobj)
 		: cpp_object<Inet4Address>(jobj)
 		{
 		}
+
+		operator local_ref<java::net::InetAddress>() const;
+
 
 		cpp_boolean isMulticastAddress();
 		cpp_boolean isAnyLocalAddress();
@@ -58,7 +63,6 @@ namespace java { namespace net {
 } //namespace net
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_NET_INET4ADDRESS_HPP_DECL
@@ -71,16 +75,12 @@ namespace java { namespace net {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::net::Inet4Address > create< java::net::Inet4Address>()
+
+java::net::Inet4Address::operator local_ref<java::net::InetAddress>() const
 {
-	return local_ref< java::net::Inet4Address >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::net::Inet4Address::J2CPP_CLASS_NAME>(),
-			get_method_id<java::net::Inet4Address::J2CPP_CLASS_NAME, java::net::Inet4Address::J2CPP_METHOD_NAME(0), java::net::Inet4Address::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::net::InetAddress>(get_jtype());
 }
+
 
 cpp_boolean java::net::Inet4Address::isMulticastAddress()
 {

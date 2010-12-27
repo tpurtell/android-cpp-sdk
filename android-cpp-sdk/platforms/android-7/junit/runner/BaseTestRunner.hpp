@@ -11,16 +11,20 @@
 
 
 namespace j2cpp { namespace junit { namespace runner { class TestSuiteLoader; } } }
-namespace j2cpp { namespace junit { namespace framework { class Test; } } }
+namespace j2cpp { namespace junit { namespace framework { class TestListener; } } }
 namespace j2cpp { namespace junit { namespace framework { class AssertionFailedError; } } }
+namespace j2cpp { namespace junit { namespace framework { class Test; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace lang { class Throwable; } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/lang/Throwable.hpp>
 #include <junit/framework/AssertionFailedError.hpp>
 #include <junit/framework/Test.hpp>
+#include <junit/framework/TestListener.hpp>
 #include <junit/runner/TestSuiteLoader.hpp>
 
 
@@ -67,11 +71,16 @@ namespace junit { namespace runner {
 		J2CPP_DECLARE_METHOD(28)
 		J2CPP_DECLARE_FIELD(0)
 
-		BaseTestRunner(jobject jobj)
+		explicit BaseTestRunner(jobject jobj)
 		: cpp_object<BaseTestRunner>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<junit::framework::TestListener>() const;
+
+
+		BaseTestRunner();
 		void startTest(local_ref< junit::framework::Test > const&);
 		static void savePreferences();
 		void setPreference(local_ref< java::lang::String > const&, local_ref< java::lang::String > const&);
@@ -99,7 +108,6 @@ namespace junit { namespace runner {
 } //namespace runner
 } //namespace junit
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JUNIT_RUNNER_BASETESTRUNNER_HPP_DECL
@@ -112,16 +120,28 @@ namespace junit { namespace runner {
 namespace j2cpp {
 
 
-template <>
-local_ref< junit::runner::BaseTestRunner > create< junit::runner::BaseTestRunner>()
+
+junit::runner::BaseTestRunner::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< junit::runner::BaseTestRunner >(
-		environment::get().get_jenv()->NewObject(
-			get_class<junit::runner::BaseTestRunner::J2CPP_CLASS_NAME>(),
-			get_method_id<junit::runner::BaseTestRunner::J2CPP_CLASS_NAME, junit::runner::BaseTestRunner::J2CPP_METHOD_NAME(0), junit::runner::BaseTestRunner::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+junit::runner::BaseTestRunner::operator local_ref<junit::framework::TestListener>() const
+{
+	return local_ref<junit::framework::TestListener>(get_jtype());
+}
+
+
+junit::runner::BaseTestRunner::BaseTestRunner()
+: cpp_object<junit::runner::BaseTestRunner>(
+	environment::get().get_jenv()->NewObject(
+		get_class<junit::runner::BaseTestRunner::J2CPP_CLASS_NAME>(),
+		get_method_id<junit::runner::BaseTestRunner::J2CPP_CLASS_NAME, junit::runner::BaseTestRunner::J2CPP_METHOD_NAME(0), junit::runner::BaseTestRunner::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 void junit::runner::BaseTestRunner::startTest(local_ref< junit::framework::Test > const &a0)
 {

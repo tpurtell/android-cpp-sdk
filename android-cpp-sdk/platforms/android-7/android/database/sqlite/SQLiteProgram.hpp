@@ -11,8 +11,10 @@
 
 
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace android { namespace database { namespace sqlite { class SQLiteClosable; } } } }
 
 
+#include <android/database/sqlite/SQLiteClosable.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -52,10 +54,13 @@ namespace android { namespace database { namespace sqlite {
 		J2CPP_DECLARE_FIELD(1)
 		J2CPP_DECLARE_FIELD(2)
 
-		SQLiteProgram(jobject jobj)
+		explicit SQLiteProgram(jobject jobj)
 		: cpp_object<SQLiteProgram>(jobj)
 		{
 		}
+
+		operator local_ref<android::database::sqlite::SQLiteClosable>() const;
+
 
 		cpp_int getUniqueId();
 		void bindNull(cpp_int const&);
@@ -72,7 +77,6 @@ namespace android { namespace database { namespace sqlite {
 } //namespace database
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_DATABASE_SQLITE_SQLITEPROGRAM_HPP_DECL
@@ -85,16 +89,12 @@ namespace android { namespace database { namespace sqlite {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::database::sqlite::SQLiteProgram > create< android::database::sqlite::SQLiteProgram>()
+
+android::database::sqlite::SQLiteProgram::operator local_ref<android::database::sqlite::SQLiteClosable>() const
 {
-	return local_ref< android::database::sqlite::SQLiteProgram >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::database::sqlite::SQLiteProgram::J2CPP_CLASS_NAME>(),
-			get_method_id<android::database::sqlite::SQLiteProgram::J2CPP_CLASS_NAME, android::database::sqlite::SQLiteProgram::J2CPP_METHOD_NAME(0), android::database::sqlite::SQLiteProgram::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<android::database::sqlite::SQLiteClosable>(get_jtype());
 }
+
 
 
 

@@ -11,9 +11,11 @@
 
 
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace util { namespace zip { class ZipException; } } } }
 
 
 #include <java/lang/String.hpp>
+#include <java/util/zip/ZipException.hpp>
 
 
 namespace j2cpp {
@@ -31,17 +33,21 @@ namespace java { namespace util { namespace jar {
 		J2CPP_DECLARE_METHOD(0)
 		J2CPP_DECLARE_METHOD(1)
 
-		JarException(jobject jobj)
+		explicit JarException(jobject jobj)
 		: cpp_object<JarException>(jobj)
 		{
 		}
 
+		operator local_ref<java::util::zip::ZipException>() const;
+
+
+		JarException();
+		JarException(local_ref< java::lang::String > const&);
 	}; //class JarException
 
 } //namespace jar
 } //namespace util
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -55,28 +61,36 @@ namespace java { namespace util { namespace jar {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::util::jar::JarException > create< java::util::jar::JarException>()
+
+java::util::jar::JarException::operator local_ref<java::util::zip::ZipException>() const
 {
-	return local_ref< java::util::jar::JarException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::jar::JarException::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::jar::JarException::J2CPP_CLASS_NAME, java::util::jar::JarException::J2CPP_METHOD_NAME(0), java::util::jar::JarException::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::util::zip::ZipException>(get_jtype());
 }
 
-template <>
-local_ref< java::util::jar::JarException > create< java::util::jar::JarException>(local_ref< java::lang::String > const &a0)
+
+java::util::jar::JarException::JarException()
+: cpp_object<java::util::jar::JarException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::util::jar::JarException::J2CPP_CLASS_NAME>(),
+		get_method_id<java::util::jar::JarException::J2CPP_CLASS_NAME, java::util::jar::JarException::J2CPP_METHOD_NAME(0), java::util::jar::JarException::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
 {
-	return local_ref< java::util::jar::JarException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::jar::JarException::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::jar::JarException::J2CPP_CLASS_NAME, java::util::jar::JarException::J2CPP_METHOD_NAME(1), java::util::jar::JarException::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
 }
+
+
+
+java::util::jar::JarException::JarException(local_ref< java::lang::String > const &a0)
+: cpp_object<java::util::jar::JarException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::util::jar::JarException::J2CPP_CLASS_NAME>(),
+		get_method_id<java::util::jar::JarException::J2CPP_CLASS_NAME, java::util::jar::JarException::J2CPP_METHOD_NAME(1), java::util::jar::JarException::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 
 J2CPP_DEFINE_CLASS(java::util::jar::JarException,"java/util/jar/JarException")

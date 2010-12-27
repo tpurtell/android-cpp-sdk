@@ -10,6 +10,7 @@
 #define J2CPP_ANDROID_CONTENT_PM_PACKAGEINFO_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace android { namespace content { namespace pm { class ActivityInfo; } } } }
 namespace j2cpp { namespace android { namespace content { namespace pm { class PermissionInfo; } } } }
@@ -21,6 +22,7 @@ namespace j2cpp { namespace android { namespace content { namespace pm { class S
 namespace j2cpp { namespace android { namespace content { namespace pm { class Signature; } } } }
 namespace j2cpp { namespace android { namespace content { namespace pm { class InstrumentationInfo; } } } }
 namespace j2cpp { namespace android { namespace os { class Parcel; } } }
+namespace j2cpp { namespace android { namespace os { class Parcelable; } } }
 namespace j2cpp { namespace android { namespace os { namespace Parcelable_ { class Creator; } } } }
 
 
@@ -35,6 +37,7 @@ namespace j2cpp { namespace android { namespace os { namespace Parcelable_ { cla
 #include <android/content/pm/Signature.hpp>
 #include <android/os/Parcel.hpp>
 #include <android/os/Parcelable.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -74,28 +77,33 @@ namespace android { namespace content { namespace pm {
 		J2CPP_DECLARE_FIELD(16)
 		J2CPP_DECLARE_FIELD(17)
 
-		PackageInfo(jobject jobj)
+		explicit PackageInfo(jobject jobj)
 		: cpp_object<PackageInfo>(jobj)
-		, packageName(jobj)
-		, versionCode(jobj)
-		, versionName(jobj)
-		, sharedUserId(jobj)
-		, sharedUserLabel(jobj)
-		, applicationInfo(jobj)
-		, gids(jobj)
-		, activities(jobj)
-		, receivers(jobj)
-		, services(jobj)
-		, providers(jobj)
-		, instrumentation(jobj)
-		, permissions(jobj)
-		, requestedPermissions(jobj)
-		, signatures(jobj)
-		, configPreferences(jobj)
-		, reqFeatures(jobj)
+, packageName(jobj)
+, versionCode(jobj)
+, versionName(jobj)
+, sharedUserId(jobj)
+, sharedUserLabel(jobj)
+, applicationInfo(jobj)
+, gids(jobj)
+, activities(jobj)
+, receivers(jobj)
+, services(jobj)
+, providers(jobj)
+, instrumentation(jobj)
+, permissions(jobj)
+, requestedPermissions(jobj)
+, signatures(jobj)
+, configPreferences(jobj)
+, reqFeatures(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<android::os::Parcelable>() const;
+
+
+		PackageInfo();
 		local_ref< java::lang::String > toString();
 		cpp_int describeContents();
 		void writeToParcel(local_ref< android::os::Parcel > const&, cpp_int const&);
@@ -124,7 +132,6 @@ namespace android { namespace content { namespace pm {
 } //namespace content
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_CONTENT_PM_PACKAGEINFO_HPP_DECL
@@ -137,16 +144,45 @@ namespace android { namespace content { namespace pm {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::content::pm::PackageInfo > create< android::content::pm::PackageInfo>()
+
+android::content::pm::PackageInfo::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::content::pm::PackageInfo >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::content::pm::PackageInfo::J2CPP_CLASS_NAME>(),
-			get_method_id<android::content::pm::PackageInfo::J2CPP_CLASS_NAME, android::content::pm::PackageInfo::J2CPP_METHOD_NAME(0), android::content::pm::PackageInfo::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+android::content::pm::PackageInfo::operator local_ref<android::os::Parcelable>() const
+{
+	return local_ref<android::os::Parcelable>(get_jtype());
+}
+
+
+android::content::pm::PackageInfo::PackageInfo()
+: cpp_object<android::content::pm::PackageInfo>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::content::pm::PackageInfo::J2CPP_CLASS_NAME>(),
+		get_method_id<android::content::pm::PackageInfo::J2CPP_CLASS_NAME, android::content::pm::PackageInfo::J2CPP_METHOD_NAME(0), android::content::pm::PackageInfo::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+, packageName(get_jtype())
+, versionCode(get_jtype())
+, versionName(get_jtype())
+, sharedUserId(get_jtype())
+, sharedUserLabel(get_jtype())
+, applicationInfo(get_jtype())
+, gids(get_jtype())
+, activities(get_jtype())
+, receivers(get_jtype())
+, services(get_jtype())
+, providers(get_jtype())
+, instrumentation(get_jtype())
+, permissions(get_jtype())
+, requestedPermissions(get_jtype())
+, signatures(get_jtype())
+, configPreferences(get_jtype())
+, reqFeatures(get_jtype())
+{
+}
+
 
 local_ref< java::lang::String > android::content::pm::PackageInfo::toString()
 {
@@ -178,6 +214,7 @@ void android::content::pm::PackageInfo::writeToParcel(local_ref< android::os::Pa
 		)
 	);
 }
+
 
 
 static_field<

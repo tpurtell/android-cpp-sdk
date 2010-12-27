@@ -10,8 +10,8 @@
 #define J2CPP_JAVAX_NET_SSL_SSLSESSION_HPP_DECL
 
 
-namespace j2cpp { namespace javax { namespace security { namespace cert { class X509Certificate; } } } }
 namespace j2cpp { namespace javax { namespace net { namespace ssl { class SSLSessionContext; } } } }
+namespace j2cpp { namespace javax { namespace security { namespace cert { class X509Certificate; } } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace security { class Principal; } } }
@@ -60,10 +60,13 @@ namespace javax { namespace net { namespace ssl {
 		J2CPP_DECLARE_METHOD(19)
 		J2CPP_DECLARE_METHOD(20)
 
-		SSLSession(jobject jobj)
+		explicit SSLSession(jobject jobj)
 		: cpp_object<SSLSession>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		cpp_int getApplicationBufferSize();
 		local_ref< java::lang::String > getCipherSuite();
@@ -92,7 +95,6 @@ namespace javax { namespace net { namespace ssl {
 } //namespace net
 } //namespace javax
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVAX_NET_SSL_SSLSESSION_HPP_DECL
@@ -104,6 +106,12 @@ namespace javax { namespace net { namespace ssl {
 
 namespace j2cpp {
 
+
+
+javax::net::ssl::SSLSession::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 cpp_int javax::net::ssl::SSLSession::getApplicationBufferSize()
 {

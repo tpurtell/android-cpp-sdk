@@ -15,7 +15,6 @@ namespace j2cpp {
 		cpp_object(jobject jobj): m_jobject(jobj) { }
 		~cpp_object(){ }
 
-		operator jobject() const { return m_jobject; }
 		jobject get_jtype() const { return m_jobject; }
 
 	protected:

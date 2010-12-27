@@ -11,9 +11,11 @@
 
 
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace util { class IllegalFormatException; } } }
 
 
 #include <java/lang/String.hpp>
+#include <java/util/IllegalFormatException.hpp>
 
 
 namespace j2cpp {
@@ -32,18 +34,21 @@ namespace java { namespace util {
 		J2CPP_DECLARE_METHOD(1)
 		J2CPP_DECLARE_METHOD(2)
 
-		UnknownFormatConversionException(jobject jobj)
+		explicit UnknownFormatConversionException(jobject jobj)
 		: cpp_object<UnknownFormatConversionException>(jobj)
 		{
 		}
 
+		operator local_ref<java::util::IllegalFormatException>() const;
+
+
+		UnknownFormatConversionException(local_ref< java::lang::String > const&);
 		local_ref< java::lang::String > getConversion();
 		local_ref< java::lang::String > getMessage();
 	}; //class UnknownFormatConversionException
 
 } //namespace util
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -57,17 +62,24 @@ namespace java { namespace util {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::util::UnknownFormatConversionException > create< java::util::UnknownFormatConversionException>(local_ref< java::lang::String > const &a0)
+
+java::util::UnknownFormatConversionException::operator local_ref<java::util::IllegalFormatException>() const
 {
-	return local_ref< java::util::UnknownFormatConversionException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::UnknownFormatConversionException::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::UnknownFormatConversionException::J2CPP_CLASS_NAME, java::util::UnknownFormatConversionException::J2CPP_METHOD_NAME(0), java::util::UnknownFormatConversionException::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::util::IllegalFormatException>(get_jtype());
 }
+
+
+java::util::UnknownFormatConversionException::UnknownFormatConversionException(local_ref< java::lang::String > const &a0)
+: cpp_object<java::util::UnknownFormatConversionException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::util::UnknownFormatConversionException::J2CPP_CLASS_NAME>(),
+		get_method_id<java::util::UnknownFormatConversionException::J2CPP_CLASS_NAME, java::util::UnknownFormatConversionException::J2CPP_METHOD_NAME(0), java::util::UnknownFormatConversionException::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 local_ref< java::lang::String > java::util::UnknownFormatConversionException::getConversion()
 {

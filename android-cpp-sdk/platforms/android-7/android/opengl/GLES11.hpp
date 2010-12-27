@@ -13,8 +13,10 @@
 namespace j2cpp { namespace java { namespace nio { class FloatBuffer; } } }
 namespace j2cpp { namespace java { namespace nio { class IntBuffer; } } }
 namespace j2cpp { namespace java { namespace nio { class Buffer; } } }
+namespace j2cpp { namespace android { namespace opengl { class GLES10; } } }
 
 
+#include <android/opengl/GLES10.hpp>
 #include <java/nio/Buffer.hpp>
 #include <java/nio/FloatBuffer.hpp>
 #include <java/nio/IntBuffer.hpp>
@@ -225,11 +227,15 @@ namespace android { namespace opengl {
 		J2CPP_DECLARE_FIELD(120)
 		J2CPP_DECLARE_FIELD(121)
 
-		GLES11(jobject jobj)
+		explicit GLES11(jobject jobj)
 		: cpp_object<GLES11>(jobj)
 		{
 		}
 
+		operator local_ref<android::opengl::GLES10>() const;
+
+
+		GLES11();
 		static void glBindBuffer(cpp_int const&, cpp_int const&);
 		static void glBufferData(cpp_int const&, cpp_int const&, local_ref< java::nio::Buffer > const&, cpp_int const&);
 		static void glBufferSubData(cpp_int const&, cpp_int const&, cpp_int const&, local_ref< java::nio::Buffer > const&);
@@ -427,7 +433,6 @@ namespace android { namespace opengl {
 } //namespace opengl
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_OPENGL_GLES11_HPP_DECL
@@ -440,16 +445,23 @@ namespace android { namespace opengl {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::opengl::GLES11 > create< android::opengl::GLES11>()
+
+android::opengl::GLES11::operator local_ref<android::opengl::GLES10>() const
 {
-	return local_ref< android::opengl::GLES11 >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::opengl::GLES11::J2CPP_CLASS_NAME>(),
-			get_method_id<android::opengl::GLES11::J2CPP_CLASS_NAME, android::opengl::GLES11::J2CPP_METHOD_NAME(0), android::opengl::GLES11::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<android::opengl::GLES10>(get_jtype());
 }
+
+
+android::opengl::GLES11::GLES11()
+: cpp_object<android::opengl::GLES11>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::opengl::GLES11::J2CPP_CLASS_NAME>(),
+		get_method_id<android::opengl::GLES11::J2CPP_CLASS_NAME, android::opengl::GLES11::J2CPP_METHOD_NAME(0), android::opengl::GLES11::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 void android::opengl::GLES11::glBindBuffer(cpp_int const &a0, cpp_int const &a1)
 {

@@ -11,6 +11,7 @@
 
 
 namespace j2cpp { namespace org { namespace xmlpull { namespace v1 { class XmlPullParser; } } } }
+namespace j2cpp { namespace android { namespace graphics { namespace drawable { class DrawableContainer; } } } }
 namespace j2cpp { namespace android { namespace graphics { namespace drawable { class Drawable; } } } }
 namespace j2cpp { namespace android { namespace content { namespace res { class Resources; } } } }
 namespace j2cpp { namespace android { namespace util { class AttributeSet; } } }
@@ -18,6 +19,7 @@ namespace j2cpp { namespace android { namespace util { class AttributeSet; } } }
 
 #include <android/content/res/Resources.hpp>
 #include <android/graphics/drawable/Drawable.hpp>
+#include <android/graphics/drawable/DrawableContainer.hpp>
 #include <android/util/AttributeSet.hpp>
 #include <org/xmlpull/v1/XmlPullParser.hpp>
 
@@ -40,11 +42,15 @@ namespace android { namespace graphics { namespace drawable {
 		J2CPP_DECLARE_METHOD(3)
 		J2CPP_DECLARE_METHOD(4)
 
-		LevelListDrawable(jobject jobj)
+		explicit LevelListDrawable(jobject jobj)
 		: cpp_object<LevelListDrawable>(jobj)
 		{
 		}
 
+		operator local_ref<android::graphics::drawable::DrawableContainer>() const;
+
+
+		LevelListDrawable();
 		void addLevel(cpp_int const&, cpp_int const&, local_ref< android::graphics::drawable::Drawable > const&);
 		void inflate(local_ref< android::content::res::Resources > const&, local_ref< org::xmlpull::v1::XmlPullParser > const&, local_ref< android::util::AttributeSet > const&);
 		local_ref< android::graphics::drawable::Drawable > mutate();
@@ -53,7 +59,6 @@ namespace android { namespace graphics { namespace drawable {
 } //namespace drawable
 } //namespace graphics
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -67,16 +72,23 @@ namespace android { namespace graphics { namespace drawable {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::graphics::drawable::LevelListDrawable > create< android::graphics::drawable::LevelListDrawable>()
+
+android::graphics::drawable::LevelListDrawable::operator local_ref<android::graphics::drawable::DrawableContainer>() const
 {
-	return local_ref< android::graphics::drawable::LevelListDrawable >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::graphics::drawable::LevelListDrawable::J2CPP_CLASS_NAME>(),
-			get_method_id<android::graphics::drawable::LevelListDrawable::J2CPP_CLASS_NAME, android::graphics::drawable::LevelListDrawable::J2CPP_METHOD_NAME(0), android::graphics::drawable::LevelListDrawable::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<android::graphics::drawable::DrawableContainer>(get_jtype());
 }
+
+
+android::graphics::drawable::LevelListDrawable::LevelListDrawable()
+: cpp_object<android::graphics::drawable::LevelListDrawable>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::graphics::drawable::LevelListDrawable::J2CPP_CLASS_NAME>(),
+		get_method_id<android::graphics::drawable::LevelListDrawable::J2CPP_CLASS_NAME, android::graphics::drawable::LevelListDrawable::J2CPP_METHOD_NAME(0), android::graphics::drawable::LevelListDrawable::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 void android::graphics::drawable::LevelListDrawable::addLevel(cpp_int const &a0, cpp_int const &a1, local_ref< android::graphics::drawable::Drawable > const &a2)
 {

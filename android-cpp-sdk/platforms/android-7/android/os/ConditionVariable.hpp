@@ -10,8 +10,10 @@
 #define J2CPP_ANDROID_OS_CONDITIONVARIABLE_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -33,11 +35,16 @@ namespace android { namespace os {
 		J2CPP_DECLARE_METHOD(4)
 		J2CPP_DECLARE_METHOD(5)
 
-		ConditionVariable(jobject jobj)
+		explicit ConditionVariable(jobject jobj)
 		: cpp_object<ConditionVariable>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		ConditionVariable();
+		ConditionVariable(cpp_boolean const&);
 		void open();
 		void close();
 		void block();
@@ -46,7 +53,6 @@ namespace android { namespace os {
 
 } //namespace os
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -60,28 +66,36 @@ namespace android { namespace os {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::os::ConditionVariable > create< android::os::ConditionVariable>()
+
+android::os::ConditionVariable::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::os::ConditionVariable >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::os::ConditionVariable::J2CPP_CLASS_NAME>(),
-			get_method_id<android::os::ConditionVariable::J2CPP_CLASS_NAME, android::os::ConditionVariable::J2CPP_METHOD_NAME(0), android::os::ConditionVariable::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
 
-template <>
-local_ref< android::os::ConditionVariable > create< android::os::ConditionVariable>(cpp_boolean const &a0)
+
+android::os::ConditionVariable::ConditionVariable()
+: cpp_object<android::os::ConditionVariable>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::os::ConditionVariable::J2CPP_CLASS_NAME>(),
+		get_method_id<android::os::ConditionVariable::J2CPP_CLASS_NAME, android::os::ConditionVariable::J2CPP_METHOD_NAME(0), android::os::ConditionVariable::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
 {
-	return local_ref< android::os::ConditionVariable >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::os::ConditionVariable::J2CPP_CLASS_NAME>(),
-			get_method_id<android::os::ConditionVariable::J2CPP_CLASS_NAME, android::os::ConditionVariable::J2CPP_METHOD_NAME(1), android::os::ConditionVariable::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
 }
+
+
+
+android::os::ConditionVariable::ConditionVariable(cpp_boolean const &a0)
+: cpp_object<android::os::ConditionVariable>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::os::ConditionVariable::J2CPP_CLASS_NAME>(),
+		get_method_id<android::os::ConditionVariable::J2CPP_CLASS_NAME, android::os::ConditionVariable::J2CPP_METHOD_NAME(1), android::os::ConditionVariable::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 void android::os::ConditionVariable::open()
 {

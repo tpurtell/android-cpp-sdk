@@ -43,11 +43,15 @@ namespace android { namespace graphics { namespace drawable { namespace shapes {
 		J2CPP_DECLARE_METHOD(4)
 		J2CPP_DECLARE_METHOD(5)
 
-		PathShape(jobject jobj)
+		explicit PathShape(jobject jobj)
 		: cpp_object<PathShape>(jobj)
 		{
 		}
 
+		operator local_ref<android::graphics::drawable::shapes::Shape>() const;
+
+
+		PathShape(local_ref< android::graphics::Path > const&, cpp_float const&, cpp_float const&);
 		void draw(local_ref< android::graphics::Canvas > const&, local_ref< android::graphics::Paint > const&);
 		local_ref< android::graphics::drawable::shapes::PathShape > clone();
 		local_ref< android::graphics::drawable::shapes::Shape > clone_1();
@@ -58,7 +62,6 @@ namespace android { namespace graphics { namespace drawable { namespace shapes {
 } //namespace drawable
 } //namespace graphics
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -72,17 +75,24 @@ namespace android { namespace graphics { namespace drawable { namespace shapes {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::graphics::drawable::shapes::PathShape > create< android::graphics::drawable::shapes::PathShape>(local_ref< android::graphics::Path > const &a0, cpp_float const &a1, cpp_float const &a2)
+
+android::graphics::drawable::shapes::PathShape::operator local_ref<android::graphics::drawable::shapes::Shape>() const
 {
-	return local_ref< android::graphics::drawable::shapes::PathShape >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::graphics::drawable::shapes::PathShape::J2CPP_CLASS_NAME>(),
-			get_method_id<android::graphics::drawable::shapes::PathShape::J2CPP_CLASS_NAME, android::graphics::drawable::shapes::PathShape::J2CPP_METHOD_NAME(0), android::graphics::drawable::shapes::PathShape::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
-		)
-	);
+	return local_ref<android::graphics::drawable::shapes::Shape>(get_jtype());
 }
+
+
+android::graphics::drawable::shapes::PathShape::PathShape(local_ref< android::graphics::Path > const &a0, cpp_float const &a1, cpp_float const &a2)
+: cpp_object<android::graphics::drawable::shapes::PathShape>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::graphics::drawable::shapes::PathShape::J2CPP_CLASS_NAME>(),
+		get_method_id<android::graphics::drawable::shapes::PathShape::J2CPP_CLASS_NAME, android::graphics::drawable::shapes::PathShape::J2CPP_METHOD_NAME(0), android::graphics::drawable::shapes::PathShape::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
+	)
+)
+{
+}
+
 
 void android::graphics::drawable::shapes::PathShape::draw(local_ref< android::graphics::Canvas > const &a0, local_ref< android::graphics::Paint > const &a1)
 {

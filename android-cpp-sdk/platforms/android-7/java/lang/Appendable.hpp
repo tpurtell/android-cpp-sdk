@@ -10,10 +10,12 @@
 #define J2CPP_JAVA_LANG_APPENDABLE_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class CharSequence; } } }
 
 
 #include <java/lang/CharSequence.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -32,10 +34,13 @@ namespace java { namespace lang {
 		J2CPP_DECLARE_METHOD(1)
 		J2CPP_DECLARE_METHOD(2)
 
-		Appendable(jobject jobj)
+		explicit Appendable(jobject jobj)
 		: cpp_object<Appendable>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		local_ref< java::lang::Appendable > append(cpp_char const&);
 		local_ref< java::lang::Appendable > append(local_ref< java::lang::CharSequence > const&);
@@ -44,7 +49,6 @@ namespace java { namespace lang {
 
 } //namespace lang
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -57,6 +61,12 @@ namespace java { namespace lang {
 
 namespace j2cpp {
 
+
+
+java::lang::Appendable::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 local_ref< java::lang::Appendable > java::lang::Appendable::append(cpp_char const &a0)
 {

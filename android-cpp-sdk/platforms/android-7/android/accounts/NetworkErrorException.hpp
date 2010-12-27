@@ -12,8 +12,10 @@
 
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace lang { class Throwable; } } }
+namespace j2cpp { namespace android { namespace accounts { class AccountsException; } } }
 
 
+#include <android/accounts/AccountsException.hpp>
 #include <java/lang/String.hpp>
 #include <java/lang/Throwable.hpp>
 
@@ -35,16 +37,22 @@ namespace android { namespace accounts {
 		J2CPP_DECLARE_METHOD(2)
 		J2CPP_DECLARE_METHOD(3)
 
-		NetworkErrorException(jobject jobj)
+		explicit NetworkErrorException(jobject jobj)
 		: cpp_object<NetworkErrorException>(jobj)
 		{
 		}
 
+		operator local_ref<android::accounts::AccountsException>() const;
+
+
+		NetworkErrorException();
+		NetworkErrorException(local_ref< java::lang::String > const&);
+		NetworkErrorException(local_ref< java::lang::String > const&, local_ref< java::lang::Throwable > const&);
+		NetworkErrorException(local_ref< java::lang::Throwable > const&);
 	}; //class NetworkErrorException
 
 } //namespace accounts
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -58,52 +66,62 @@ namespace android { namespace accounts {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::accounts::NetworkErrorException > create< android::accounts::NetworkErrorException>()
+
+android::accounts::NetworkErrorException::operator local_ref<android::accounts::AccountsException>() const
 {
-	return local_ref< android::accounts::NetworkErrorException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::accounts::NetworkErrorException::J2CPP_CLASS_NAME>(),
-			get_method_id<android::accounts::NetworkErrorException::J2CPP_CLASS_NAME, android::accounts::NetworkErrorException::J2CPP_METHOD_NAME(0), android::accounts::NetworkErrorException::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<android::accounts::AccountsException>(get_jtype());
 }
 
-template <>
-local_ref< android::accounts::NetworkErrorException > create< android::accounts::NetworkErrorException>(local_ref< java::lang::String > const &a0)
+
+android::accounts::NetworkErrorException::NetworkErrorException()
+: cpp_object<android::accounts::NetworkErrorException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::accounts::NetworkErrorException::J2CPP_CLASS_NAME>(),
+		get_method_id<android::accounts::NetworkErrorException::J2CPP_CLASS_NAME, android::accounts::NetworkErrorException::J2CPP_METHOD_NAME(0), android::accounts::NetworkErrorException::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
 {
-	return local_ref< android::accounts::NetworkErrorException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::accounts::NetworkErrorException::J2CPP_CLASS_NAME>(),
-			get_method_id<android::accounts::NetworkErrorException::J2CPP_CLASS_NAME, android::accounts::NetworkErrorException::J2CPP_METHOD_NAME(1), android::accounts::NetworkErrorException::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< android::accounts::NetworkErrorException > create< android::accounts::NetworkErrorException>(local_ref< java::lang::String > const &a0, local_ref< java::lang::Throwable > const &a1)
+
+
+android::accounts::NetworkErrorException::NetworkErrorException(local_ref< java::lang::String > const &a0)
+: cpp_object<android::accounts::NetworkErrorException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::accounts::NetworkErrorException::J2CPP_CLASS_NAME>(),
+		get_method_id<android::accounts::NetworkErrorException::J2CPP_CLASS_NAME, android::accounts::NetworkErrorException::J2CPP_METHOD_NAME(1), android::accounts::NetworkErrorException::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< android::accounts::NetworkErrorException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::accounts::NetworkErrorException::J2CPP_CLASS_NAME>(),
-			get_method_id<android::accounts::NetworkErrorException::J2CPP_CLASS_NAME, android::accounts::NetworkErrorException::J2CPP_METHOD_NAME(2), android::accounts::NetworkErrorException::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< android::accounts::NetworkErrorException > create< android::accounts::NetworkErrorException>(local_ref< java::lang::Throwable > const &a0)
+
+
+android::accounts::NetworkErrorException::NetworkErrorException(local_ref< java::lang::String > const &a0, local_ref< java::lang::Throwable > const &a1)
+: cpp_object<android::accounts::NetworkErrorException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::accounts::NetworkErrorException::J2CPP_CLASS_NAME>(),
+		get_method_id<android::accounts::NetworkErrorException::J2CPP_CLASS_NAME, android::accounts::NetworkErrorException::J2CPP_METHOD_NAME(2), android::accounts::NetworkErrorException::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
 {
-	return local_ref< android::accounts::NetworkErrorException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::accounts::NetworkErrorException::J2CPP_CLASS_NAME>(),
-			get_method_id<android::accounts::NetworkErrorException::J2CPP_CLASS_NAME, android::accounts::NetworkErrorException::J2CPP_METHOD_NAME(3), android::accounts::NetworkErrorException::J2CPP_METHOD_SIGNATURE(3), false>(),
-			a0.get_jtype()
-		)
-	);
 }
+
+
+
+android::accounts::NetworkErrorException::NetworkErrorException(local_ref< java::lang::Throwable > const &a0)
+: cpp_object<android::accounts::NetworkErrorException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::accounts::NetworkErrorException::J2CPP_CLASS_NAME>(),
+		get_method_id<android::accounts::NetworkErrorException::J2CPP_CLASS_NAME, android::accounts::NetworkErrorException::J2CPP_METHOD_NAME(3), android::accounts::NetworkErrorException::J2CPP_METHOD_SIGNATURE(3), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 
 J2CPP_DEFINE_CLASS(android::accounts::NetworkErrorException,"android/accounts/NetworkErrorException")

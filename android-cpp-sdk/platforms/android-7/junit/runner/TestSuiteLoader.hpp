@@ -10,11 +10,13 @@
 #define J2CPP_JUNIT_RUNNER_TESTSUITELOADER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class Class; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 
 
 #include <java/lang/Class.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -33,10 +35,13 @@ namespace junit { namespace runner {
 		J2CPP_DECLARE_METHOD(0)
 		J2CPP_DECLARE_METHOD(1)
 
-		TestSuiteLoader(jobject jobj)
+		explicit TestSuiteLoader(jobject jobj)
 		: cpp_object<TestSuiteLoader>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		local_ref< java::lang::Class > load(local_ref< java::lang::String > const&);
 		local_ref< java::lang::Class > reload(local_ref< java::lang::Class > const&);
@@ -44,7 +49,6 @@ namespace junit { namespace runner {
 
 } //namespace runner
 } //namespace junit
-
 
 } //namespace j2cpp
 
@@ -57,6 +61,12 @@ namespace junit { namespace runner {
 
 namespace j2cpp {
 
+
+
+junit::runner::TestSuiteLoader::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 local_ref< java::lang::Class > junit::runner::TestSuiteLoader::load(local_ref< java::lang::String > const &a0)
 {

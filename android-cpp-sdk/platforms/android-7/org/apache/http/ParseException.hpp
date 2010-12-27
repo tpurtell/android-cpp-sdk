@@ -10,9 +10,11 @@
 #define J2CPP_ORG_APACHE_HTTP_PARSEEXCEPTION_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class RuntimeException; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 
 
+#include <java/lang/RuntimeException.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -31,17 +33,21 @@ namespace org { namespace apache { namespace http {
 		J2CPP_DECLARE_METHOD(0)
 		J2CPP_DECLARE_METHOD(1)
 
-		ParseException(jobject jobj)
+		explicit ParseException(jobject jobj)
 		: cpp_object<ParseException>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::RuntimeException>() const;
+
+
+		ParseException();
+		ParseException(local_ref< java::lang::String > const&);
 	}; //class ParseException
 
 } //namespace http
 } //namespace apache
 } //namespace org
-
 
 } //namespace j2cpp
 
@@ -55,28 +61,36 @@ namespace org { namespace apache { namespace http {
 namespace j2cpp {
 
 
-template <>
-local_ref< org::apache::http::ParseException > create< org::apache::http::ParseException>()
+
+org::apache::http::ParseException::operator local_ref<java::lang::RuntimeException>() const
 {
-	return local_ref< org::apache::http::ParseException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::apache::http::ParseException::J2CPP_CLASS_NAME>(),
-			get_method_id<org::apache::http::ParseException::J2CPP_CLASS_NAME, org::apache::http::ParseException::J2CPP_METHOD_NAME(0), org::apache::http::ParseException::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::RuntimeException>(get_jtype());
 }
 
-template <>
-local_ref< org::apache::http::ParseException > create< org::apache::http::ParseException>(local_ref< java::lang::String > const &a0)
+
+org::apache::http::ParseException::ParseException()
+: cpp_object<org::apache::http::ParseException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::apache::http::ParseException::J2CPP_CLASS_NAME>(),
+		get_method_id<org::apache::http::ParseException::J2CPP_CLASS_NAME, org::apache::http::ParseException::J2CPP_METHOD_NAME(0), org::apache::http::ParseException::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
 {
-	return local_ref< org::apache::http::ParseException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::apache::http::ParseException::J2CPP_CLASS_NAME>(),
-			get_method_id<org::apache::http::ParseException::J2CPP_CLASS_NAME, org::apache::http::ParseException::J2CPP_METHOD_NAME(1), org::apache::http::ParseException::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
 }
+
+
+
+org::apache::http::ParseException::ParseException(local_ref< java::lang::String > const &a0)
+: cpp_object<org::apache::http::ParseException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::apache::http::ParseException::J2CPP_CLASS_NAME>(),
+		get_method_id<org::apache::http::ParseException::J2CPP_CLASS_NAME, org::apache::http::ParseException::J2CPP_METHOD_NAME(1), org::apache::http::ParseException::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 
 J2CPP_DEFINE_CLASS(org::apache::http::ParseException,"org/apache/http/ParseException")

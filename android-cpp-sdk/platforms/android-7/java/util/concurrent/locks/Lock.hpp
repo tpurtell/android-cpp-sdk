@@ -10,10 +10,12 @@
 #define J2CPP_JAVA_UTIL_CONCURRENT_LOCKS_LOCK_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace util { namespace concurrent { namespace locks { class Condition; } } } } }
 namespace j2cpp { namespace java { namespace util { namespace concurrent { class TimeUnit; } } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/util/concurrent/TimeUnit.hpp>
 #include <java/util/concurrent/locks/Condition.hpp>
 
@@ -37,10 +39,13 @@ namespace java { namespace util { namespace concurrent { namespace locks {
 		J2CPP_DECLARE_METHOD(4)
 		J2CPP_DECLARE_METHOD(5)
 
-		Lock(jobject jobj)
+		explicit Lock(jobject jobj)
 		: cpp_object<Lock>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		void lock();
 		void lockInterruptibly();
@@ -55,7 +60,6 @@ namespace java { namespace util { namespace concurrent { namespace locks {
 } //namespace util
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_UTIL_CONCURRENT_LOCKS_LOCK_HPP_DECL
@@ -67,6 +71,12 @@ namespace java { namespace util { namespace concurrent { namespace locks {
 
 namespace j2cpp {
 
+
+
+java::util::concurrent::locks::Lock::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 void java::util::concurrent::locks::Lock::lock()
 {

@@ -11,12 +11,14 @@
 
 
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace util { class AbstractList; } } }
 namespace j2cpp { namespace java { namespace util { class Iterator; } } }
 namespace j2cpp { namespace java { namespace util { class ListIterator; } } }
 namespace j2cpp { namespace java { namespace util { class Collection; } } }
 
 
 #include <java/lang/Object.hpp>
+#include <java/util/AbstractList.hpp>
 #include <java/util/Collection.hpp>
 #include <java/util/Iterator.hpp>
 #include <java/util/ListIterator.hpp>
@@ -43,10 +45,13 @@ namespace java { namespace util {
 		J2CPP_DECLARE_METHOD(6)
 		J2CPP_DECLARE_METHOD(7)
 
-		AbstractSequentialList(jobject jobj)
+		explicit AbstractSequentialList(jobject jobj)
 		: cpp_object<AbstractSequentialList>(jobj)
 		{
 		}
+
+		operator local_ref<java::util::AbstractList>() const;
+
 
 		void add(cpp_int const&, local_ref< java::lang::Object > const&);
 		cpp_boolean addAll(cpp_int const&, local_ref< java::util::Collection > const&);
@@ -60,7 +65,6 @@ namespace java { namespace util {
 } //namespace util
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_UTIL_ABSTRACTSEQUENTIALLIST_HPP_DECL
@@ -73,16 +77,12 @@ namespace java { namespace util {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::util::AbstractSequentialList > create< java::util::AbstractSequentialList>()
+
+java::util::AbstractSequentialList::operator local_ref<java::util::AbstractList>() const
 {
-	return local_ref< java::util::AbstractSequentialList >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::AbstractSequentialList::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::AbstractSequentialList::J2CPP_CLASS_NAME, java::util::AbstractSequentialList::J2CPP_METHOD_NAME(0), java::util::AbstractSequentialList::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::util::AbstractList>(get_jtype());
 }
+
 
 void java::util::AbstractSequentialList::add(cpp_int const &a0, local_ref< java::lang::Object > const &a1)
 {

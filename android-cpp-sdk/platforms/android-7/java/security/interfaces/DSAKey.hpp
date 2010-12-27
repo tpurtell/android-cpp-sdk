@@ -10,9 +10,11 @@
 #define J2CPP_JAVA_SECURITY_INTERFACES_DSAKEY_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace security { namespace interfaces { class DSAParams; } } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/security/interfaces/DSAParams.hpp>
 
 
@@ -30,10 +32,13 @@ namespace java { namespace security { namespace interfaces {
 
 		J2CPP_DECLARE_METHOD(0)
 
-		DSAKey(jobject jobj)
+		explicit DSAKey(jobject jobj)
 		: cpp_object<DSAKey>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		local_ref< java::security::interfaces::DSAParams > getParams();
 	}; //class DSAKey
@@ -41,7 +46,6 @@ namespace java { namespace security { namespace interfaces {
 } //namespace interfaces
 } //namespace security
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -54,6 +58,12 @@ namespace java { namespace security { namespace interfaces {
 
 namespace j2cpp {
 
+
+
+java::security::interfaces::DSAKey::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 local_ref< java::security::interfaces::DSAParams > java::security::interfaces::DSAKey::getParams()
 {

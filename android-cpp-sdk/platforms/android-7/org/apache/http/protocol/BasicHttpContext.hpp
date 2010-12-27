@@ -38,11 +38,17 @@ namespace org { namespace apache { namespace http { namespace protocol {
 		J2CPP_DECLARE_METHOD(3)
 		J2CPP_DECLARE_METHOD(4)
 
-		BasicHttpContext(jobject jobj)
+		explicit BasicHttpContext(jobject jobj)
 		: cpp_object<BasicHttpContext>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<org::apache::http::protocol::HttpContext>() const;
+
+
+		BasicHttpContext();
+		BasicHttpContext(local_ref< org::apache::http::protocol::HttpContext > const&);
 		local_ref< java::lang::Object > getAttribute(local_ref< java::lang::String > const&);
 		void setAttribute(local_ref< java::lang::String > const&, local_ref< java::lang::Object > const&);
 		local_ref< java::lang::Object > removeAttribute(local_ref< java::lang::String > const&);
@@ -52,7 +58,6 @@ namespace org { namespace apache { namespace http { namespace protocol {
 } //namespace http
 } //namespace apache
 } //namespace org
-
 
 } //namespace j2cpp
 
@@ -66,28 +71,41 @@ namespace org { namespace apache { namespace http { namespace protocol {
 namespace j2cpp {
 
 
-template <>
-local_ref< org::apache::http::protocol::BasicHttpContext > create< org::apache::http::protocol::BasicHttpContext>()
+
+org::apache::http::protocol::BasicHttpContext::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< org::apache::http::protocol::BasicHttpContext >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::apache::http::protocol::BasicHttpContext::J2CPP_CLASS_NAME>(),
-			get_method_id<org::apache::http::protocol::BasicHttpContext::J2CPP_CLASS_NAME, org::apache::http::protocol::BasicHttpContext::J2CPP_METHOD_NAME(0), org::apache::http::protocol::BasicHttpContext::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
 
-template <>
-local_ref< org::apache::http::protocol::BasicHttpContext > create< org::apache::http::protocol::BasicHttpContext>(local_ref< org::apache::http::protocol::HttpContext > const &a0)
+org::apache::http::protocol::BasicHttpContext::operator local_ref<org::apache::http::protocol::HttpContext>() const
 {
-	return local_ref< org::apache::http::protocol::BasicHttpContext >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::apache::http::protocol::BasicHttpContext::J2CPP_CLASS_NAME>(),
-			get_method_id<org::apache::http::protocol::BasicHttpContext::J2CPP_CLASS_NAME, org::apache::http::protocol::BasicHttpContext::J2CPP_METHOD_NAME(1), org::apache::http::protocol::BasicHttpContext::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<org::apache::http::protocol::HttpContext>(get_jtype());
 }
+
+
+org::apache::http::protocol::BasicHttpContext::BasicHttpContext()
+: cpp_object<org::apache::http::protocol::BasicHttpContext>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::apache::http::protocol::BasicHttpContext::J2CPP_CLASS_NAME>(),
+		get_method_id<org::apache::http::protocol::BasicHttpContext::J2CPP_CLASS_NAME, org::apache::http::protocol::BasicHttpContext::J2CPP_METHOD_NAME(0), org::apache::http::protocol::BasicHttpContext::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
+
+
+org::apache::http::protocol::BasicHttpContext::BasicHttpContext(local_ref< org::apache::http::protocol::HttpContext > const &a0)
+: cpp_object<org::apache::http::protocol::BasicHttpContext>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::apache::http::protocol::BasicHttpContext::J2CPP_CLASS_NAME>(),
+		get_method_id<org::apache::http::protocol::BasicHttpContext::J2CPP_CLASS_NAME, org::apache::http::protocol::BasicHttpContext::J2CPP_METHOD_NAME(1), org::apache::http::protocol::BasicHttpContext::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 local_ref< java::lang::Object > org::apache::http::protocol::BasicHttpContext::getAttribute(local_ref< java::lang::String > const &a0)
 {

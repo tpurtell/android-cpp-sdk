@@ -10,14 +10,19 @@
 #define J2CPP_JAVA_TEXT_FORMAT_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace lang { class Cloneable; } } }
 namespace j2cpp { namespace java { namespace lang { class StringBuffer; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace text { class AttributedCharacterIterator; } } }
+namespace j2cpp { namespace java { namespace text { namespace AttributedCharacterIterator_ { class Attribute; } } } }
 namespace j2cpp { namespace java { namespace text { class ParsePosition; } } }
 namespace j2cpp { namespace java { namespace text { class FieldPosition; } } }
 
 
+#include <java/io/Serializable.hpp>
+#include <java/lang/Cloneable.hpp>
 #include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/lang/StringBuffer.hpp>
@@ -43,10 +48,13 @@ namespace java { namespace text {
 
 			J2CPP_DECLARE_METHOD(0)
 
-			Field(jobject jobj)
+			explicit Field(jobject jobj)
 			: cpp_object<Field>(jobj)
 			{
 			}
+
+			operator local_ref<java::text::AttributedCharacterIterator_::Attribute>() const;
+
 
 		}; //class Field
 
@@ -69,11 +77,17 @@ namespace java { namespace text {
 
 		typedef Format_::Field Field;
 
-		Format(jobject jobj)
+		explicit Format(jobject jobj)
 		: cpp_object<Format>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::io::Serializable>() const;
+		operator local_ref<java::lang::Cloneable>() const;
+
+
+		Format();
 		local_ref< java::lang::Object > clone();
 		local_ref< java::lang::String > format(local_ref< java::lang::Object > const&);
 		local_ref< java::lang::StringBuffer > format(local_ref< java::lang::Object > const&, local_ref< java::lang::StringBuffer > const&, local_ref< java::text::FieldPosition > const&);
@@ -84,7 +98,6 @@ namespace java { namespace text {
 
 } //namespace text
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -99,33 +112,45 @@ namespace j2cpp {
 
 
 
-template <>
-local_ref< java::text::Format_::Field > create< java::text::Format_::Field>(local_ref< java::lang::String > const &a0)
+
+java::text::Format_::Field::operator local_ref<java::text::AttributedCharacterIterator_::Attribute>() const
 {
-	return local_ref< java::text::Format_::Field >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::text::Format_::Field::J2CPP_CLASS_NAME>(),
-			get_method_id<java::text::Format_::Field::J2CPP_CLASS_NAME, java::text::Format_::Field::J2CPP_METHOD_NAME(0), java::text::Format_::Field::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::text::AttributedCharacterIterator_::Attribute>(get_jtype());
 }
+
 
 
 J2CPP_DEFINE_CLASS(java::text::Format_::Field,"java/text/Format$Field")
 J2CPP_DEFINE_METHOD(java::text::Format_::Field,0,"<init>","(Ljava/lang/String;)V")
 
 
-template <>
-local_ref< java::text::Format > create< java::text::Format>()
+
+java::text::Format::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::text::Format >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::text::Format::J2CPP_CLASS_NAME>(),
-			get_method_id<java::text::Format::J2CPP_CLASS_NAME, java::text::Format::J2CPP_METHOD_NAME(0), java::text::Format::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+java::text::Format::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jtype());
+}
+
+java::text::Format::operator local_ref<java::lang::Cloneable>() const
+{
+	return local_ref<java::lang::Cloneable>(get_jtype());
+}
+
+
+java::text::Format::Format()
+: cpp_object<java::text::Format>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::text::Format::J2CPP_CLASS_NAME>(),
+		get_method_id<java::text::Format::J2CPP_CLASS_NAME, java::text::Format::J2CPP_METHOD_NAME(0), java::text::Format::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 local_ref< java::lang::Object > java::text::Format::clone()
 {

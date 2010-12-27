@@ -10,6 +10,7 @@
 #define J2CPP_ANDROID_ACCOUNTS_ABSTRACTACCOUNTAUTHENTICATOR_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace android { namespace accounts { class AccountAuthenticatorResponse; } } }
 namespace j2cpp { namespace android { namespace accounts { class Account; } } }
@@ -23,6 +24,7 @@ namespace j2cpp { namespace android { namespace os { class Bundle; } } }
 #include <android/content/Context.hpp>
 #include <android/os/Bundle.hpp>
 #include <android/os/IBinder.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -49,11 +51,15 @@ namespace android { namespace accounts {
 		J2CPP_DECLARE_METHOD(8)
 		J2CPP_DECLARE_METHOD(9)
 
-		AbstractAccountAuthenticator(jobject jobj)
+		explicit AbstractAccountAuthenticator(jobject jobj)
 		: cpp_object<AbstractAccountAuthenticator>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		AbstractAccountAuthenticator(local_ref< android::content::Context > const&);
 		local_ref< android::os::IBinder > getIBinder();
 		local_ref< android::os::Bundle > editProperties(local_ref< android::accounts::AccountAuthenticatorResponse > const&, local_ref< java::lang::String > const&);
 		local_ref< android::os::Bundle > addAccount(local_ref< android::accounts::AccountAuthenticatorResponse > const&, local_ref< java::lang::String > const&, local_ref< java::lang::String > const&, local_ref< cpp_object_array<java::lang::String, 1> > const&, local_ref< android::os::Bundle > const&);
@@ -68,7 +74,6 @@ namespace android { namespace accounts {
 } //namespace accounts
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_ACCOUNTS_ABSTRACTACCOUNTAUTHENTICATOR_HPP_DECL
@@ -81,17 +86,24 @@ namespace android { namespace accounts {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::accounts::AbstractAccountAuthenticator > create< android::accounts::AbstractAccountAuthenticator>(local_ref< android::content::Context > const &a0)
+
+android::accounts::AbstractAccountAuthenticator::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::accounts::AbstractAccountAuthenticator >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::accounts::AbstractAccountAuthenticator::J2CPP_CLASS_NAME>(),
-			get_method_id<android::accounts::AbstractAccountAuthenticator::J2CPP_CLASS_NAME, android::accounts::AbstractAccountAuthenticator::J2CPP_METHOD_NAME(0), android::accounts::AbstractAccountAuthenticator::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::accounts::AbstractAccountAuthenticator::AbstractAccountAuthenticator(local_ref< android::content::Context > const &a0)
+: cpp_object<android::accounts::AbstractAccountAuthenticator>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::accounts::AbstractAccountAuthenticator::J2CPP_CLASS_NAME>(),
+		get_method_id<android::accounts::AbstractAccountAuthenticator::J2CPP_CLASS_NAME, android::accounts::AbstractAccountAuthenticator::J2CPP_METHOD_NAME(0), android::accounts::AbstractAccountAuthenticator::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 local_ref< android::os::IBinder > android::accounts::AbstractAccountAuthenticator::getIBinder()
 {

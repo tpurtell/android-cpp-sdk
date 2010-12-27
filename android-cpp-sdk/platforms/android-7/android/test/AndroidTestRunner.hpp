@@ -10,6 +10,7 @@
 #define J2CPP_ANDROID_TEST_ANDROIDTESTRUNNER_HPP_DECL
 
 
+namespace j2cpp { namespace junit { namespace runner { class BaseTestRunner; } } }
 namespace j2cpp { namespace junit { namespace framework { class TestListener; } } }
 namespace j2cpp { namespace junit { namespace framework { class TestResult; } } }
 namespace j2cpp { namespace junit { namespace framework { class Test; } } }
@@ -28,6 +29,7 @@ namespace j2cpp { namespace android { namespace content { class Context; } } }
 #include <junit/framework/Test.hpp>
 #include <junit/framework/TestListener.hpp>
 #include <junit/framework/TestResult.hpp>
+#include <junit/runner/BaseTestRunner.hpp>
 
 
 namespace j2cpp {
@@ -62,11 +64,15 @@ namespace android { namespace test {
 		J2CPP_DECLARE_METHOD(17)
 		J2CPP_DECLARE_METHOD(18)
 
-		AndroidTestRunner(jobject jobj)
+		explicit AndroidTestRunner(jobject jobj)
 		: cpp_object<AndroidTestRunner>(jobj)
 		{
 		}
 
+		operator local_ref<junit::runner::BaseTestRunner>() const;
+
+
+		AndroidTestRunner();
 		void setTestClassName(local_ref< java::lang::String > const&, local_ref< java::lang::String > const&);
 		void setTest(local_ref< junit::framework::Test > const&);
 		void clearTestListeners();
@@ -87,7 +93,6 @@ namespace android { namespace test {
 } //namespace test
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_TEST_ANDROIDTESTRUNNER_HPP_DECL
@@ -100,16 +105,23 @@ namespace android { namespace test {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::test::AndroidTestRunner > create< android::test::AndroidTestRunner>()
+
+android::test::AndroidTestRunner::operator local_ref<junit::runner::BaseTestRunner>() const
 {
-	return local_ref< android::test::AndroidTestRunner >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::test::AndroidTestRunner::J2CPP_CLASS_NAME>(),
-			get_method_id<android::test::AndroidTestRunner::J2CPP_CLASS_NAME, android::test::AndroidTestRunner::J2CPP_METHOD_NAME(0), android::test::AndroidTestRunner::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<junit::runner::BaseTestRunner>(get_jtype());
 }
+
+
+android::test::AndroidTestRunner::AndroidTestRunner()
+: cpp_object<android::test::AndroidTestRunner>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::test::AndroidTestRunner::J2CPP_CLASS_NAME>(),
+		get_method_id<android::test::AndroidTestRunner::J2CPP_CLASS_NAME, android::test::AndroidTestRunner::J2CPP_METHOD_NAME(0), android::test::AndroidTestRunner::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 void android::test::AndroidTestRunner::setTestClassName(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
 {

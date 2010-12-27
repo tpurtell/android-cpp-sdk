@@ -10,6 +10,7 @@
 #define J2CPP_ANDROID_CONTENT_CONTENTPROVIDERCLIENT_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace util { class ArrayList; } } }
 namespace j2cpp { namespace android { namespace net { class Uri; } } }
@@ -28,6 +29,7 @@ namespace j2cpp { namespace android { namespace os { class ParcelFileDescriptor;
 #include <android/database/Cursor.hpp>
 #include <android/net/Uri.hpp>
 #include <android/os/ParcelFileDescriptor.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/util/ArrayList.hpp>
 
@@ -57,10 +59,13 @@ namespace android { namespace content {
 		J2CPP_DECLARE_METHOD(10)
 		J2CPP_DECLARE_METHOD(11)
 
-		ContentProviderClient(jobject jobj)
+		explicit ContentProviderClient(jobject jobj)
 		: cpp_object<ContentProviderClient>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		local_ref< android::database::Cursor > query(local_ref< android::net::Uri > const&, local_ref< cpp_object_array<java::lang::String, 1> > const&, local_ref< java::lang::String > const&, local_ref< cpp_object_array<java::lang::String, 1> > const&, local_ref< java::lang::String > const&);
 		local_ref< java::lang::String > getType(local_ref< android::net::Uri > const&);
@@ -78,7 +83,6 @@ namespace android { namespace content {
 } //namespace content
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_CONTENT_CONTENTPROVIDERCLIENT_HPP_DECL
@@ -91,16 +95,12 @@ namespace android { namespace content {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::content::ContentProviderClient > create< android::content::ContentProviderClient>()
+
+android::content::ContentProviderClient::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::content::ContentProviderClient >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::content::ContentProviderClient::J2CPP_CLASS_NAME>(),
-			get_method_id<android::content::ContentProviderClient::J2CPP_CLASS_NAME, android::content::ContentProviderClient::J2CPP_METHOD_NAME(0), android::content::ContentProviderClient::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
 
 local_ref< android::database::Cursor > android::content::ContentProviderClient::query(local_ref< android::net::Uri > const &a0, local_ref< cpp_object_array<java::lang::String, 1> > const &a1, local_ref< java::lang::String > const &a2, local_ref< cpp_object_array<java::lang::String, 1> > const &a3, local_ref< java::lang::String > const &a4)
 {

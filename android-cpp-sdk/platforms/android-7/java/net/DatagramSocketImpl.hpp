@@ -10,10 +10,12 @@
 #define J2CPP_JAVA_NET_DATAGRAMSOCKETIMPL_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace net { class SocketOptions; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
 #include <java/lang/Object.hpp>
+#include <java/net/SocketOptions.hpp>
 
 
 namespace j2cpp {
@@ -53,11 +55,16 @@ namespace java { namespace net {
 		J2CPP_DECLARE_FIELD(0)
 		J2CPP_DECLARE_FIELD(1)
 
-		DatagramSocketImpl(jobject jobj)
+		explicit DatagramSocketImpl(jobject jobj)
 		: cpp_object<DatagramSocketImpl>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::net::SocketOptions>() const;
+
+
+		DatagramSocketImpl();
 		local_ref< java::lang::Object > getOption(cpp_int const&);
 		void setOption(cpp_int const&, local_ref< java::lang::Object > const&);
 
@@ -65,7 +72,6 @@ namespace java { namespace net {
 
 } //namespace net
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -79,16 +85,28 @@ namespace java { namespace net {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::net::DatagramSocketImpl > create< java::net::DatagramSocketImpl>()
+
+java::net::DatagramSocketImpl::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::net::DatagramSocketImpl >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::net::DatagramSocketImpl::J2CPP_CLASS_NAME>(),
-			get_method_id<java::net::DatagramSocketImpl::J2CPP_CLASS_NAME, java::net::DatagramSocketImpl::J2CPP_METHOD_NAME(0), java::net::DatagramSocketImpl::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+java::net::DatagramSocketImpl::operator local_ref<java::net::SocketOptions>() const
+{
+	return local_ref<java::net::SocketOptions>(get_jtype());
+}
+
+
+java::net::DatagramSocketImpl::DatagramSocketImpl()
+: cpp_object<java::net::DatagramSocketImpl>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::net::DatagramSocketImpl::J2CPP_CLASS_NAME>(),
+		get_method_id<java::net::DatagramSocketImpl::J2CPP_CLASS_NAME, java::net::DatagramSocketImpl::J2CPP_METHOD_NAME(0), java::net::DatagramSocketImpl::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 
 

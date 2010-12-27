@@ -86,10 +86,13 @@ namespace java { namespace util { namespace prefs {
 		J2CPP_DECLARE_FIELD(0)
 		J2CPP_DECLARE_FIELD(1)
 
-		AbstractPreferences(jobject jobj)
+		explicit AbstractPreferences(jobject jobj)
 		: cpp_object<AbstractPreferences>(jobj)
 		{
 		}
+
+		operator local_ref<java::util::prefs::Preferences>() const;
+
 
 		local_ref< java::lang::String > absolutePath();
 		local_ref< cpp_object_array<java::lang::String, 1> > childrenNames();
@@ -132,7 +135,6 @@ namespace java { namespace util { namespace prefs {
 } //namespace util
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_UTIL_PREFS_ABSTRACTPREFERENCES_HPP_DECL
@@ -145,17 +147,12 @@ namespace java { namespace util { namespace prefs {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::util::prefs::AbstractPreferences > create< java::util::prefs::AbstractPreferences>(local_ref< java::util::prefs::AbstractPreferences > const &a0, local_ref< java::lang::String > const &a1)
+
+java::util::prefs::AbstractPreferences::operator local_ref<java::util::prefs::Preferences>() const
 {
-	return local_ref< java::util::prefs::AbstractPreferences >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::prefs::AbstractPreferences::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::prefs::AbstractPreferences::J2CPP_CLASS_NAME, java::util::prefs::AbstractPreferences::J2CPP_METHOD_NAME(0), java::util::prefs::AbstractPreferences::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<java::util::prefs::Preferences>(get_jtype());
 }
+
 
 
 

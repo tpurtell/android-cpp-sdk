@@ -10,6 +10,7 @@
 #define J2CPP_ANDROID_TEXT_METHOD_TOUCH_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace android { namespace view { class MotionEvent; } } }
 namespace j2cpp { namespace android { namespace text { class Spannable; } } }
 namespace j2cpp { namespace android { namespace text { class Layout; } } }
@@ -20,6 +21,7 @@ namespace j2cpp { namespace android { namespace widget { class TextView; } } }
 #include <android/text/Spannable.hpp>
 #include <android/view/MotionEvent.hpp>
 #include <android/widget/TextView.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -40,10 +42,13 @@ namespace android { namespace text { namespace method {
 		J2CPP_DECLARE_METHOD(3)
 		J2CPP_DECLARE_METHOD(4)
 
-		Touch(jobject jobj)
+		explicit Touch(jobject jobj)
 		: cpp_object<Touch>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		static void scrollTo(local_ref< android::widget::TextView > const&, local_ref< android::text::Layout > const&, cpp_int const&, cpp_int const&);
 		static cpp_boolean onTouchEvent(local_ref< android::widget::TextView > const&, local_ref< android::text::Spannable > const&, local_ref< android::view::MotionEvent > const&);
@@ -54,7 +59,6 @@ namespace android { namespace text { namespace method {
 } //namespace method
 } //namespace text
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -68,16 +72,12 @@ namespace android { namespace text { namespace method {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::text::method::Touch > create< android::text::method::Touch>()
+
+android::text::method::Touch::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::text::method::Touch >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::text::method::Touch::J2CPP_CLASS_NAME>(),
-			get_method_id<android::text::method::Touch::J2CPP_CLASS_NAME, android::text::method::Touch::J2CPP_METHOD_NAME(0), android::text::method::Touch::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
 
 void android::text::method::Touch::scrollTo(local_ref< android::widget::TextView > const &a0, local_ref< android::text::Layout > const &a1, cpp_int const &a2, cpp_int const &a3)
 {

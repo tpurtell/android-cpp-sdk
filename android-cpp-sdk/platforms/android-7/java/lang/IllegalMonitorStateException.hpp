@@ -10,9 +10,11 @@
 #define J2CPP_JAVA_LANG_ILLEGALMONITORSTATEEXCEPTION_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class RuntimeException; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 
 
+#include <java/lang/RuntimeException.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -31,16 +33,20 @@ namespace java { namespace lang {
 		J2CPP_DECLARE_METHOD(0)
 		J2CPP_DECLARE_METHOD(1)
 
-		IllegalMonitorStateException(jobject jobj)
+		explicit IllegalMonitorStateException(jobject jobj)
 		: cpp_object<IllegalMonitorStateException>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::RuntimeException>() const;
+
+
+		IllegalMonitorStateException();
+		IllegalMonitorStateException(local_ref< java::lang::String > const&);
 	}; //class IllegalMonitorStateException
 
 } //namespace lang
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -54,28 +60,36 @@ namespace java { namespace lang {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::lang::IllegalMonitorStateException > create< java::lang::IllegalMonitorStateException>()
+
+java::lang::IllegalMonitorStateException::operator local_ref<java::lang::RuntimeException>() const
 {
-	return local_ref< java::lang::IllegalMonitorStateException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::lang::IllegalMonitorStateException::J2CPP_CLASS_NAME>(),
-			get_method_id<java::lang::IllegalMonitorStateException::J2CPP_CLASS_NAME, java::lang::IllegalMonitorStateException::J2CPP_METHOD_NAME(0), java::lang::IllegalMonitorStateException::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::RuntimeException>(get_jtype());
 }
 
-template <>
-local_ref< java::lang::IllegalMonitorStateException > create< java::lang::IllegalMonitorStateException>(local_ref< java::lang::String > const &a0)
+
+java::lang::IllegalMonitorStateException::IllegalMonitorStateException()
+: cpp_object<java::lang::IllegalMonitorStateException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::lang::IllegalMonitorStateException::J2CPP_CLASS_NAME>(),
+		get_method_id<java::lang::IllegalMonitorStateException::J2CPP_CLASS_NAME, java::lang::IllegalMonitorStateException::J2CPP_METHOD_NAME(0), java::lang::IllegalMonitorStateException::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
 {
-	return local_ref< java::lang::IllegalMonitorStateException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::lang::IllegalMonitorStateException::J2CPP_CLASS_NAME>(),
-			get_method_id<java::lang::IllegalMonitorStateException::J2CPP_CLASS_NAME, java::lang::IllegalMonitorStateException::J2CPP_METHOD_NAME(1), java::lang::IllegalMonitorStateException::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
 }
+
+
+
+java::lang::IllegalMonitorStateException::IllegalMonitorStateException(local_ref< java::lang::String > const &a0)
+: cpp_object<java::lang::IllegalMonitorStateException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::lang::IllegalMonitorStateException::J2CPP_CLASS_NAME>(),
+		get_method_id<java::lang::IllegalMonitorStateException::J2CPP_CLASS_NAME, java::lang::IllegalMonitorStateException::J2CPP_METHOD_NAME(1), java::lang::IllegalMonitorStateException::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 
 J2CPP_DEFINE_CLASS(java::lang::IllegalMonitorStateException,"java/lang/IllegalMonitorStateException")

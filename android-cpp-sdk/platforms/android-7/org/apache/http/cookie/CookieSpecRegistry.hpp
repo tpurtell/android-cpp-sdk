@@ -10,6 +10,7 @@
 #define J2CPP_ORG_APACHE_HTTP_COOKIE_COOKIESPECREGISTRY_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace util { class Map; } } }
 namespace j2cpp { namespace java { namespace util { class List; } } }
@@ -18,6 +19,7 @@ namespace j2cpp { namespace org { namespace apache { namespace http { namespace 
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace params { class HttpParams; } } } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/util/List.hpp>
 #include <java/util/Map.hpp>
@@ -46,12 +48,16 @@ namespace org { namespace apache { namespace http { namespace cookie {
 		J2CPP_DECLARE_METHOD(5)
 		J2CPP_DECLARE_METHOD(6)
 
-		CookieSpecRegistry(jobject jobj)
+		explicit CookieSpecRegistry(jobject jobj)
 		: cpp_object<CookieSpecRegistry>(jobj)
 		{
 		}
 
-		void register(local_ref< java::lang::String > const&, local_ref< org::apache::http::cookie::CookieSpecFactory > const&);
+		operator local_ref<java::lang::Object>() const;
+
+
+		CookieSpecRegistry();
+		void Register(local_ref< java::lang::String > const&, local_ref< org::apache::http::cookie::CookieSpecFactory > const&);
 		void unregister(local_ref< java::lang::String > const&);
 		local_ref< org::apache::http::cookie::CookieSpec > getCookieSpec(local_ref< java::lang::String > const&, local_ref< org::apache::http::params::HttpParams > const&);
 		local_ref< org::apache::http::cookie::CookieSpec > getCookieSpec(local_ref< java::lang::String > const&);
@@ -63,7 +69,6 @@ namespace org { namespace apache { namespace http { namespace cookie {
 } //namespace http
 } //namespace apache
 } //namespace org
-
 
 } //namespace j2cpp
 
@@ -77,18 +82,25 @@ namespace org { namespace apache { namespace http { namespace cookie {
 namespace j2cpp {
 
 
-template <>
-local_ref< org::apache::http::cookie::CookieSpecRegistry > create< org::apache::http::cookie::CookieSpecRegistry>()
+
+org::apache::http::cookie::CookieSpecRegistry::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< org::apache::http::cookie::CookieSpecRegistry >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::apache::http::cookie::CookieSpecRegistry::J2CPP_CLASS_NAME>(),
-			get_method_id<org::apache::http::cookie::CookieSpecRegistry::J2CPP_CLASS_NAME, org::apache::http::cookie::CookieSpecRegistry::J2CPP_METHOD_NAME(0), org::apache::http::cookie::CookieSpecRegistry::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
 
-void org::apache::http::cookie::CookieSpecRegistry::register(local_ref< java::lang::String > const &a0, local_ref< org::apache::http::cookie::CookieSpecFactory > const &a1)
+
+org::apache::http::cookie::CookieSpecRegistry::CookieSpecRegistry()
+: cpp_object<org::apache::http::cookie::CookieSpecRegistry>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::apache::http::cookie::CookieSpecRegistry::J2CPP_CLASS_NAME>(),
+		get_method_id<org::apache::http::cookie::CookieSpecRegistry::J2CPP_CLASS_NAME, org::apache::http::cookie::CookieSpecRegistry::J2CPP_METHOD_NAME(0), org::apache::http::cookie::CookieSpecRegistry::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
+
+void org::apache::http::cookie::CookieSpecRegistry::Register(local_ref< java::lang::String > const &a0, local_ref< org::apache::http::cookie::CookieSpecFactory > const &a1)
 {
 	return void(
 		environment::get().get_jenv()->CallVoidMethod(

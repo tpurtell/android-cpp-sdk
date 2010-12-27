@@ -10,13 +10,17 @@
 #define J2CPP_JAVA_SECURITY_PERMISSION_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace security { class PermissionCollection; } } }
+namespace j2cpp { namespace java { namespace security { class Guard; } } }
 
 
+#include <java/io/Serializable.hpp>
 #include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
+#include <java/security/Guard.hpp>
 #include <java/security/PermissionCollection.hpp>
 
 
@@ -42,11 +46,17 @@ namespace java { namespace security {
 		J2CPP_DECLARE_METHOD(7)
 		J2CPP_DECLARE_METHOD(8)
 
-		Permission(jobject jobj)
+		explicit Permission(jobject jobj)
 		: cpp_object<Permission>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::security::Guard>() const;
+		operator local_ref<java::io::Serializable>() const;
+
+
+		Permission(local_ref< java::lang::String > const&);
 		cpp_boolean equals(local_ref< java::lang::Object > const&);
 		cpp_int hashCode();
 		local_ref< java::lang::String > getActions();
@@ -60,7 +70,6 @@ namespace java { namespace security {
 } //namespace security
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_SECURITY_PERMISSION_HPP_DECL
@@ -73,17 +82,34 @@ namespace java { namespace security {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::security::Permission > create< java::security::Permission>(local_ref< java::lang::String > const &a0)
+
+java::security::Permission::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::security::Permission >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::security::Permission::J2CPP_CLASS_NAME>(),
-			get_method_id<java::security::Permission::J2CPP_CLASS_NAME, java::security::Permission::J2CPP_METHOD_NAME(0), java::security::Permission::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+java::security::Permission::operator local_ref<java::security::Guard>() const
+{
+	return local_ref<java::security::Guard>(get_jtype());
+}
+
+java::security::Permission::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jtype());
+}
+
+
+java::security::Permission::Permission(local_ref< java::lang::String > const &a0)
+: cpp_object<java::security::Permission>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::security::Permission::J2CPP_CLASS_NAME>(),
+		get_method_id<java::security::Permission::J2CPP_CLASS_NAME, java::security::Permission::J2CPP_METHOD_NAME(0), java::security::Permission::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 cpp_boolean java::security::Permission::equals(local_ref< java::lang::Object > const &a0)
 {

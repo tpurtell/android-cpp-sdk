@@ -10,6 +10,7 @@
 #define J2CPP_ANDROID_PREFERENCE_PREFERENCEMANAGER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class CharSequence; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace android { namespace content { class Intent; } } }
@@ -25,6 +26,7 @@ namespace j2cpp { namespace android { namespace preference { class PreferenceScr
 #include <android/preference/Preference.hpp>
 #include <android/preference/PreferenceScreen.hpp>
 #include <java/lang/CharSequence.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -45,10 +47,13 @@ namespace android { namespace preference {
 
 			J2CPP_DECLARE_METHOD(0)
 
-			OnActivityResultListener(jobject jobj)
+			explicit OnActivityResultListener(jobject jobj)
 			: cpp_object<OnActivityResultListener>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+
 
 			cpp_boolean onActivityResult(cpp_int const&, cpp_int const&, local_ref< android::content::Intent > const&);
 		}; //class OnActivityResultListener
@@ -63,10 +68,13 @@ namespace android { namespace preference {
 
 			J2CPP_DECLARE_METHOD(0)
 
-			OnActivityStopListener(jobject jobj)
+			explicit OnActivityStopListener(jobject jobj)
 			: cpp_object<OnActivityStopListener>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+
 
 			void onActivityStop();
 		}; //class OnActivityStopListener
@@ -81,10 +89,13 @@ namespace android { namespace preference {
 
 			J2CPP_DECLARE_METHOD(0)
 
-			OnActivityDestroyListener(jobject jobj)
+			explicit OnActivityDestroyListener(jobject jobj)
 			: cpp_object<OnActivityDestroyListener>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+
 
 			void onActivityDestroy();
 		}; //class OnActivityDestroyListener
@@ -116,10 +127,13 @@ namespace android { namespace preference {
 		typedef PreferenceManager_::OnActivityStopListener OnActivityStopListener;
 		typedef PreferenceManager_::OnActivityDestroyListener OnActivityDestroyListener;
 
-		PreferenceManager(jobject jobj)
+		explicit PreferenceManager(jobject jobj)
 		: cpp_object<PreferenceManager>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		local_ref< android::preference::PreferenceScreen > createPreferenceScreen(local_ref< android::content::Context > const&);
 		local_ref< java::lang::String > getSharedPreferencesName();
@@ -139,7 +153,6 @@ namespace android { namespace preference {
 } //namespace preference
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_PREFERENCE_PREFERENCEMANAGER_HPP_DECL
@@ -152,6 +165,12 @@ namespace android { namespace preference {
 namespace j2cpp {
 
 
+
+
+android::preference::PreferenceManager_::OnActivityResultListener::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 cpp_boolean android::preference::PreferenceManager_::OnActivityResultListener::onActivityResult(cpp_int const &a0, cpp_int const &a1, local_ref< android::content::Intent > const &a2)
 {
@@ -168,6 +187,12 @@ cpp_boolean android::preference::PreferenceManager_::OnActivityResultListener::o
 J2CPP_DEFINE_CLASS(android::preference::PreferenceManager_::OnActivityResultListener,"android/preference/PreferenceManager$OnActivityResultListener")
 J2CPP_DEFINE_METHOD(android::preference::PreferenceManager_::OnActivityResultListener,0,"onActivityResult","(IILandroid/content/Intent;)Z")
 
+
+android::preference::PreferenceManager_::OnActivityStopListener::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
+
 void android::preference::PreferenceManager_::OnActivityStopListener::onActivityStop()
 {
 	return void(
@@ -181,6 +206,12 @@ void android::preference::PreferenceManager_::OnActivityStopListener::onActivity
 
 J2CPP_DEFINE_CLASS(android::preference::PreferenceManager_::OnActivityStopListener,"android/preference/PreferenceManager$OnActivityStopListener")
 J2CPP_DEFINE_METHOD(android::preference::PreferenceManager_::OnActivityStopListener,0,"onActivityStop","()V")
+
+
+android::preference::PreferenceManager_::OnActivityDestroyListener::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 void android::preference::PreferenceManager_::OnActivityDestroyListener::onActivityDestroy()
 {
@@ -197,16 +228,12 @@ J2CPP_DEFINE_CLASS(android::preference::PreferenceManager_::OnActivityDestroyLis
 J2CPP_DEFINE_METHOD(android::preference::PreferenceManager_::OnActivityDestroyListener,0,"onActivityDestroy","()V")
 
 
-template <>
-local_ref< android::preference::PreferenceManager > create< android::preference::PreferenceManager>()
+
+android::preference::PreferenceManager::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::preference::PreferenceManager >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::preference::PreferenceManager::J2CPP_CLASS_NAME>(),
-			get_method_id<android::preference::PreferenceManager::J2CPP_CLASS_NAME, android::preference::PreferenceManager::J2CPP_METHOD_NAME(0), android::preference::PreferenceManager::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
 
 local_ref< android::preference::PreferenceScreen > android::preference::PreferenceManager::createPreferenceScreen(local_ref< android::content::Context > const &a0)
 {

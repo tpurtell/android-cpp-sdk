@@ -10,8 +10,14 @@
 #define J2CPP_ANDROID_CONTENT_RES_XMLRESOURCEPARSER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace org { namespace xmlpull { namespace v1 { class XmlPullParser; } } } }
+namespace j2cpp { namespace android { namespace util { class AttributeSet; } } }
 
 
+#include <android/util/AttributeSet.hpp>
+#include <java/lang/Object.hpp>
+#include <org/xmlpull/v1/XmlPullParser.hpp>
 
 
 namespace j2cpp {
@@ -28,10 +34,15 @@ namespace android { namespace content { namespace res {
 
 		J2CPP_DECLARE_METHOD(0)
 
-		XmlResourceParser(jobject jobj)
+		explicit XmlResourceParser(jobject jobj)
 		: cpp_object<XmlResourceParser>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<org::xmlpull::v1::XmlPullParser>() const;
+		operator local_ref<android::util::AttributeSet>() const;
+
 
 		void close();
 	}; //class XmlResourceParser
@@ -39,7 +50,6 @@ namespace android { namespace content { namespace res {
 } //namespace res
 } //namespace content
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -52,6 +62,22 @@ namespace android { namespace content { namespace res {
 
 namespace j2cpp {
 
+
+
+android::content::res::XmlResourceParser::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
+
+android::content::res::XmlResourceParser::operator local_ref<org::xmlpull::v1::XmlPullParser>() const
+{
+	return local_ref<org::xmlpull::v1::XmlPullParser>(get_jtype());
+}
+
+android::content::res::XmlResourceParser::operator local_ref<android::util::AttributeSet>() const
+{
+	return local_ref<android::util::AttributeSet>(get_jtype());
+}
 
 void android::content::res::XmlResourceParser::close()
 {

@@ -57,11 +57,15 @@ namespace org { namespace apache { namespace http { namespace util {
 		J2CPP_DECLARE_METHOD(22)
 		J2CPP_DECLARE_METHOD(23)
 
-		CharArrayBuffer(jobject jobj)
+		explicit CharArrayBuffer(jobject jobj)
 		: cpp_object<CharArrayBuffer>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		CharArrayBuffer(cpp_int const&);
 		void append(local_ref< cpp_char_array<1> > const&, cpp_int const&, cpp_int const&);
 		void append(local_ref< java::lang::String > const&);
 		void append(local_ref< org::apache::http::util::CharArrayBuffer > const&, cpp_int const&, cpp_int const&);
@@ -92,7 +96,6 @@ namespace org { namespace apache { namespace http { namespace util {
 } //namespace apache
 } //namespace org
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ORG_APACHE_HTTP_UTIL_CHARARRAYBUFFER_HPP_DECL
@@ -105,17 +108,24 @@ namespace org { namespace apache { namespace http { namespace util {
 namespace j2cpp {
 
 
-template <>
-local_ref< org::apache::http::util::CharArrayBuffer > create< org::apache::http::util::CharArrayBuffer>(cpp_int const &a0)
+
+org::apache::http::util::CharArrayBuffer::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< org::apache::http::util::CharArrayBuffer >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::apache::http::util::CharArrayBuffer::J2CPP_CLASS_NAME>(),
-			get_method_id<org::apache::http::util::CharArrayBuffer::J2CPP_CLASS_NAME, org::apache::http::util::CharArrayBuffer::J2CPP_METHOD_NAME(0), org::apache::http::util::CharArrayBuffer::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+org::apache::http::util::CharArrayBuffer::CharArrayBuffer(cpp_int const &a0)
+: cpp_object<org::apache::http::util::CharArrayBuffer>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::apache::http::util::CharArrayBuffer::J2CPP_CLASS_NAME>(),
+		get_method_id<org::apache::http::util::CharArrayBuffer::J2CPP_CLASS_NAME, org::apache::http::util::CharArrayBuffer::J2CPP_METHOD_NAME(0), org::apache::http::util::CharArrayBuffer::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 void org::apache::http::util::CharArrayBuffer::append(local_ref< cpp_char_array<1> > const &a0, cpp_int const &a1, cpp_int const &a2)
 {

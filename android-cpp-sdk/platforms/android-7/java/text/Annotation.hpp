@@ -34,18 +34,21 @@ namespace java { namespace text {
 		J2CPP_DECLARE_METHOD(1)
 		J2CPP_DECLARE_METHOD(2)
 
-		Annotation(jobject jobj)
+		explicit Annotation(jobject jobj)
 		: cpp_object<Annotation>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		Annotation(local_ref< java::lang::Object > const&);
 		local_ref< java::lang::Object > getValue();
 		local_ref< java::lang::String > toString();
 	}; //class Annotation
 
 } //namespace text
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -59,17 +62,24 @@ namespace java { namespace text {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::text::Annotation > create< java::text::Annotation>(local_ref< java::lang::Object > const &a0)
+
+java::text::Annotation::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::text::Annotation >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::text::Annotation::J2CPP_CLASS_NAME>(),
-			get_method_id<java::text::Annotation::J2CPP_CLASS_NAME, java::text::Annotation::J2CPP_METHOD_NAME(0), java::text::Annotation::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+java::text::Annotation::Annotation(local_ref< java::lang::Object > const &a0)
+: cpp_object<java::text::Annotation>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::text::Annotation::J2CPP_CLASS_NAME>(),
+		get_method_id<java::text::Annotation::J2CPP_CLASS_NAME, java::text::Annotation::J2CPP_METHOD_NAME(0), java::text::Annotation::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 local_ref< java::lang::Object > java::text::Annotation::getValue()
 {

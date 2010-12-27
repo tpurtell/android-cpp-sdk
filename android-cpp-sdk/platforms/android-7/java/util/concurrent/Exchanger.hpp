@@ -34,11 +34,15 @@ namespace java { namespace util { namespace concurrent {
 		J2CPP_DECLARE_METHOD(1)
 		J2CPP_DECLARE_METHOD(2)
 
-		Exchanger(jobject jobj)
+		explicit Exchanger(jobject jobj)
 		: cpp_object<Exchanger>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		Exchanger();
 		local_ref< java::lang::Object > exchange(local_ref< java::lang::Object > const&);
 		local_ref< java::lang::Object > exchange(local_ref< java::lang::Object > const&, cpp_long const&, local_ref< java::util::concurrent::TimeUnit > const&);
 	}; //class Exchanger
@@ -46,7 +50,6 @@ namespace java { namespace util { namespace concurrent {
 } //namespace concurrent
 } //namespace util
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -60,16 +63,23 @@ namespace java { namespace util { namespace concurrent {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::util::concurrent::Exchanger > create< java::util::concurrent::Exchanger>()
+
+java::util::concurrent::Exchanger::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::util::concurrent::Exchanger >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::concurrent::Exchanger::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::concurrent::Exchanger::J2CPP_CLASS_NAME, java::util::concurrent::Exchanger::J2CPP_METHOD_NAME(0), java::util::concurrent::Exchanger::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+java::util::concurrent::Exchanger::Exchanger()
+: cpp_object<java::util::concurrent::Exchanger>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::util::concurrent::Exchanger::J2CPP_CLASS_NAME>(),
+		get_method_id<java::util::concurrent::Exchanger::J2CPP_CLASS_NAME, java::util::concurrent::Exchanger::J2CPP_METHOD_NAME(0), java::util::concurrent::Exchanger::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 local_ref< java::lang::Object > java::util::concurrent::Exchanger::exchange(local_ref< java::lang::Object > const &a0)
 {

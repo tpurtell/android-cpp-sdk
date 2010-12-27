@@ -10,11 +10,15 @@
 #define J2CPP_ORG_APACHE_HTTP_IMPL_COOKIE_ABSTRACTCOOKIEATTRIBUTEHANDLER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { namespace cookie { class CookieAttributeHandler; } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace cookie { class CookieOrigin; } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace cookie { class Cookie; } } } } }
 
 
+#include <java/lang/Object.hpp>
 #include <org/apache/http/cookie/Cookie.hpp>
+#include <org/apache/http/cookie/CookieAttributeHandler.hpp>
 #include <org/apache/http/cookie/CookieOrigin.hpp>
 
 
@@ -34,11 +38,16 @@ namespace org { namespace apache { namespace http { namespace impl { namespace c
 		J2CPP_DECLARE_METHOD(1)
 		J2CPP_DECLARE_METHOD(2)
 
-		AbstractCookieAttributeHandler(jobject jobj)
+		explicit AbstractCookieAttributeHandler(jobject jobj)
 		: cpp_object<AbstractCookieAttributeHandler>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<org::apache::http::cookie::CookieAttributeHandler>() const;
+
+
+		AbstractCookieAttributeHandler();
 		void validate(local_ref< org::apache::http::cookie::Cookie > const&, local_ref< org::apache::http::cookie::CookieOrigin > const&);
 		cpp_boolean match(local_ref< org::apache::http::cookie::Cookie > const&, local_ref< org::apache::http::cookie::CookieOrigin > const&);
 	}; //class AbstractCookieAttributeHandler
@@ -48,7 +57,6 @@ namespace org { namespace apache { namespace http { namespace impl { namespace c
 } //namespace http
 } //namespace apache
 } //namespace org
-
 
 } //namespace j2cpp
 
@@ -62,16 +70,28 @@ namespace org { namespace apache { namespace http { namespace impl { namespace c
 namespace j2cpp {
 
 
-template <>
-local_ref< org::apache::http::impl::cookie::AbstractCookieAttributeHandler > create< org::apache::http::impl::cookie::AbstractCookieAttributeHandler>()
+
+org::apache::http::impl::cookie::AbstractCookieAttributeHandler::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< org::apache::http::impl::cookie::AbstractCookieAttributeHandler >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::apache::http::impl::cookie::AbstractCookieAttributeHandler::J2CPP_CLASS_NAME>(),
-			get_method_id<org::apache::http::impl::cookie::AbstractCookieAttributeHandler::J2CPP_CLASS_NAME, org::apache::http::impl::cookie::AbstractCookieAttributeHandler::J2CPP_METHOD_NAME(0), org::apache::http::impl::cookie::AbstractCookieAttributeHandler::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+org::apache::http::impl::cookie::AbstractCookieAttributeHandler::operator local_ref<org::apache::http::cookie::CookieAttributeHandler>() const
+{
+	return local_ref<org::apache::http::cookie::CookieAttributeHandler>(get_jtype());
+}
+
+
+org::apache::http::impl::cookie::AbstractCookieAttributeHandler::AbstractCookieAttributeHandler()
+: cpp_object<org::apache::http::impl::cookie::AbstractCookieAttributeHandler>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::apache::http::impl::cookie::AbstractCookieAttributeHandler::J2CPP_CLASS_NAME>(),
+		get_method_id<org::apache::http::impl::cookie::AbstractCookieAttributeHandler::J2CPP_CLASS_NAME, org::apache::http::impl::cookie::AbstractCookieAttributeHandler::J2CPP_METHOD_NAME(0), org::apache::http::impl::cookie::AbstractCookieAttributeHandler::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 void org::apache::http::impl::cookie::AbstractCookieAttributeHandler::validate(local_ref< org::apache::http::cookie::Cookie > const &a0, local_ref< org::apache::http::cookie::CookieOrigin > const &a1)
 {

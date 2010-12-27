@@ -10,22 +10,32 @@
 #define J2CPP_JAVA_NIO_CHANNELS_FILECHANNEL_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace nio { namespace channels { class GatheringByteChannel; } } } }
 namespace j2cpp { namespace java { namespace nio { namespace channels { class FileLock; } } } }
 namespace j2cpp { namespace java { namespace nio { namespace channels { class ReadableByteChannel; } } } }
+namespace j2cpp { namespace java { namespace nio { namespace channels { namespace spi { class AbstractInterruptibleChannel; } } } } }
+namespace j2cpp { namespace java { namespace nio { namespace channels { class ByteChannel; } } } }
 namespace j2cpp { namespace java { namespace nio { namespace channels { class WritableByteChannel; } } } }
 namespace j2cpp { namespace java { namespace nio { namespace channels { namespace FileChannel_ { class MapMode; } } } } }
+namespace j2cpp { namespace java { namespace nio { namespace channels { class ScatteringByteChannel; } } } }
 namespace j2cpp { namespace java { namespace nio { class ByteBuffer; } } }
 namespace j2cpp { namespace java { namespace nio { class MappedByteBuffer; } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/nio/ByteBuffer.hpp>
 #include <java/nio/MappedByteBuffer.hpp>
+#include <java/nio/channels/ByteChannel.hpp>
 #include <java/nio/channels/FileChannel.hpp>
 #include <java/nio/channels/FileLock.hpp>
+#include <java/nio/channels/GatheringByteChannel.hpp>
 #include <java/nio/channels/ReadableByteChannel.hpp>
+#include <java/nio/channels/ScatteringByteChannel.hpp>
 #include <java/nio/channels/WritableByteChannel.hpp>
+#include <java/nio/channels/spi/AbstractInterruptibleChannel.hpp>
 
 
 namespace j2cpp {
@@ -50,10 +60,13 @@ namespace java { namespace nio { namespace channels {
 			J2CPP_DECLARE_FIELD(1)
 			J2CPP_DECLARE_FIELD(2)
 
-			MapMode(jobject jobj)
+			explicit MapMode(jobject jobj)
 			: cpp_object<MapMode>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+
 
 			local_ref< java::lang::String > toString();
 
@@ -95,10 +108,16 @@ namespace java { namespace nio { namespace channels {
 
 		typedef FileChannel_::MapMode MapMode;
 
-		FileChannel(jobject jobj)
+		explicit FileChannel(jobject jobj)
 		: cpp_object<FileChannel>(jobj)
 		{
 		}
+
+		operator local_ref<java::nio::channels::spi::AbstractInterruptibleChannel>() const;
+		operator local_ref<java::nio::channels::GatheringByteChannel>() const;
+		operator local_ref<java::nio::channels::ScatteringByteChannel>() const;
+		operator local_ref<java::nio::channels::ByteChannel>() const;
+
 
 		void force(cpp_boolean const&);
 		local_ref< java::nio::channels::FileLock > lock();
@@ -126,7 +145,6 @@ namespace java { namespace nio { namespace channels {
 } //namespace nio
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_NIO_CHANNELS_FILECHANNEL_HPP_DECL
@@ -140,16 +158,12 @@ namespace j2cpp {
 
 
 
-template <>
-local_ref< java::nio::channels::FileChannel_::MapMode > create< java::nio::channels::FileChannel_::MapMode>()
+
+java::nio::channels::FileChannel_::MapMode::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::nio::channels::FileChannel_::MapMode >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::nio::channels::FileChannel_::MapMode::J2CPP_CLASS_NAME>(),
-			get_method_id<java::nio::channels::FileChannel_::MapMode::J2CPP_CLASS_NAME, java::nio::channels::FileChannel_::MapMode::J2CPP_METHOD_NAME(0), java::nio::channels::FileChannel_::MapMode::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
 
 local_ref< java::lang::String > java::nio::channels::FileChannel_::MapMode::toString()
 {
@@ -160,6 +174,7 @@ local_ref< java::lang::String > java::nio::channels::FileChannel_::MapMode::toSt
 		)
 	);
 }
+
 
 
 static_field<
@@ -193,16 +208,27 @@ J2CPP_DEFINE_FIELD(java::nio::channels::FileChannel_::MapMode,1,"READ_ONLY","Lja
 J2CPP_DEFINE_FIELD(java::nio::channels::FileChannel_::MapMode,2,"READ_WRITE","Ljava/nio/channels/FileChannel$MapMode;")
 
 
-template <>
-local_ref< java::nio::channels::FileChannel > create< java::nio::channels::FileChannel>()
+
+java::nio::channels::FileChannel::operator local_ref<java::nio::channels::spi::AbstractInterruptibleChannel>() const
 {
-	return local_ref< java::nio::channels::FileChannel >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::nio::channels::FileChannel::J2CPP_CLASS_NAME>(),
-			get_method_id<java::nio::channels::FileChannel::J2CPP_CLASS_NAME, java::nio::channels::FileChannel::J2CPP_METHOD_NAME(0), java::nio::channels::FileChannel::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::nio::channels::spi::AbstractInterruptibleChannel>(get_jtype());
 }
+
+java::nio::channels::FileChannel::operator local_ref<java::nio::channels::GatheringByteChannel>() const
+{
+	return local_ref<java::nio::channels::GatheringByteChannel>(get_jtype());
+}
+
+java::nio::channels::FileChannel::operator local_ref<java::nio::channels::ScatteringByteChannel>() const
+{
+	return local_ref<java::nio::channels::ScatteringByteChannel>(get_jtype());
+}
+
+java::nio::channels::FileChannel::operator local_ref<java::nio::channels::ByteChannel>() const
+{
+	return local_ref<java::nio::channels::ByteChannel>(get_jtype());
+}
+
 
 void java::nio::channels::FileChannel::force(cpp_boolean const &a0)
 {

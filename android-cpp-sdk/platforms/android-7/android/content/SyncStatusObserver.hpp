@@ -10,8 +10,10 @@
 #define J2CPP_ANDROID_CONTENT_SYNCSTATUSOBSERVER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -28,17 +30,19 @@ namespace android { namespace content {
 
 		J2CPP_DECLARE_METHOD(0)
 
-		SyncStatusObserver(jobject jobj)
+		explicit SyncStatusObserver(jobject jobj)
 		: cpp_object<SyncStatusObserver>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		void onStatusChanged(cpp_int const&);
 	}; //class SyncStatusObserver
 
 } //namespace content
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -51,6 +55,12 @@ namespace android { namespace content {
 
 namespace j2cpp {
 
+
+
+android::content::SyncStatusObserver::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 void android::content::SyncStatusObserver::onStatusChanged(cpp_int const &a0)
 {

@@ -15,6 +15,7 @@ namespace j2cpp { namespace org { namespace xmlpull { namespace v1 { class XmlPu
 namespace j2cpp { namespace android { namespace graphics { class Canvas; } } }
 namespace j2cpp { namespace android { namespace graphics { namespace drawable { class Drawable; } } } }
 namespace j2cpp { namespace android { namespace graphics { namespace drawable { namespace Drawable_ { class ConstantState; } } } } }
+namespace j2cpp { namespace android { namespace graphics { namespace drawable { namespace Drawable_ { class Callback; } } } } }
 namespace j2cpp { namespace android { namespace graphics { class Rect; } } }
 namespace j2cpp { namespace android { namespace graphics { class ColorFilter; } } }
 namespace j2cpp { namespace android { namespace content { namespace res { class Resources; } } } }
@@ -65,11 +66,16 @@ namespace android { namespace graphics { namespace drawable {
 		J2CPP_DECLARE_METHOD(19)
 		J2CPP_DECLARE_METHOD(20)
 
-		RotateDrawable(jobject jobj)
+		explicit RotateDrawable(jobject jobj)
 		: cpp_object<RotateDrawable>(jobj)
 		{
 		}
 
+		operator local_ref<android::graphics::drawable::Drawable>() const;
+		operator local_ref<android::graphics::drawable::Drawable_::Callback>() const;
+
+
+		RotateDrawable();
 		void draw(local_ref< android::graphics::Canvas > const&);
 		local_ref< android::graphics::drawable::Drawable > getDrawable();
 		cpp_int getChangingConfigurations();
@@ -93,7 +99,6 @@ namespace android { namespace graphics { namespace drawable {
 } //namespace graphics
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_GRAPHICS_DRAWABLE_ROTATEDRAWABLE_HPP_DECL
@@ -106,16 +111,28 @@ namespace android { namespace graphics { namespace drawable {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::graphics::drawable::RotateDrawable > create< android::graphics::drawable::RotateDrawable>()
+
+android::graphics::drawable::RotateDrawable::operator local_ref<android::graphics::drawable::Drawable>() const
 {
-	return local_ref< android::graphics::drawable::RotateDrawable >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::graphics::drawable::RotateDrawable::J2CPP_CLASS_NAME>(),
-			get_method_id<android::graphics::drawable::RotateDrawable::J2CPP_CLASS_NAME, android::graphics::drawable::RotateDrawable::J2CPP_METHOD_NAME(0), android::graphics::drawable::RotateDrawable::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<android::graphics::drawable::Drawable>(get_jtype());
 }
+
+android::graphics::drawable::RotateDrawable::operator local_ref<android::graphics::drawable::Drawable_::Callback>() const
+{
+	return local_ref<android::graphics::drawable::Drawable_::Callback>(get_jtype());
+}
+
+
+android::graphics::drawable::RotateDrawable::RotateDrawable()
+: cpp_object<android::graphics::drawable::RotateDrawable>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::graphics::drawable::RotateDrawable::J2CPP_CLASS_NAME>(),
+		get_method_id<android::graphics::drawable::RotateDrawable::J2CPP_CLASS_NAME, android::graphics::drawable::RotateDrawable::J2CPP_METHOD_NAME(0), android::graphics::drawable::RotateDrawable::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 void android::graphics::drawable::RotateDrawable::draw(local_ref< android::graphics::Canvas > const &a0)
 {

@@ -10,10 +10,12 @@
 #define J2CPP_JAVA_LANG_ANNOTATION_ANNOTATIONTYPEMISMATCHEXCEPTION_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class RuntimeException; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace lang { namespace reflect { class Method; } } } }
 
 
+#include <java/lang/RuntimeException.hpp>
 #include <java/lang/String.hpp>
 #include <java/lang/reflect/Method.hpp>
 
@@ -34,11 +36,15 @@ namespace java { namespace lang { namespace annotation {
 		J2CPP_DECLARE_METHOD(1)
 		J2CPP_DECLARE_METHOD(2)
 
-		AnnotationTypeMismatchException(jobject jobj)
+		explicit AnnotationTypeMismatchException(jobject jobj)
 		: cpp_object<AnnotationTypeMismatchException>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::RuntimeException>() const;
+
+
+		AnnotationTypeMismatchException(local_ref< java::lang::reflect::Method > const&, local_ref< java::lang::String > const&);
 		local_ref< java::lang::reflect::Method > element();
 		local_ref< java::lang::String > foundType();
 	}; //class AnnotationTypeMismatchException
@@ -46,7 +52,6 @@ namespace java { namespace lang { namespace annotation {
 } //namespace annotation
 } //namespace lang
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -60,17 +65,24 @@ namespace java { namespace lang { namespace annotation {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::lang::annotation::AnnotationTypeMismatchException > create< java::lang::annotation::AnnotationTypeMismatchException>(local_ref< java::lang::reflect::Method > const &a0, local_ref< java::lang::String > const &a1)
+
+java::lang::annotation::AnnotationTypeMismatchException::operator local_ref<java::lang::RuntimeException>() const
 {
-	return local_ref< java::lang::annotation::AnnotationTypeMismatchException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::lang::annotation::AnnotationTypeMismatchException::J2CPP_CLASS_NAME>(),
-			get_method_id<java::lang::annotation::AnnotationTypeMismatchException::J2CPP_CLASS_NAME, java::lang::annotation::AnnotationTypeMismatchException::J2CPP_METHOD_NAME(0), java::lang::annotation::AnnotationTypeMismatchException::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<java::lang::RuntimeException>(get_jtype());
 }
+
+
+java::lang::annotation::AnnotationTypeMismatchException::AnnotationTypeMismatchException(local_ref< java::lang::reflect::Method > const &a0, local_ref< java::lang::String > const &a1)
+: cpp_object<java::lang::annotation::AnnotationTypeMismatchException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::lang::annotation::AnnotationTypeMismatchException::J2CPP_CLASS_NAME>(),
+		get_method_id<java::lang::annotation::AnnotationTypeMismatchException::J2CPP_CLASS_NAME, java::lang::annotation::AnnotationTypeMismatchException::J2CPP_METHOD_NAME(0), java::lang::annotation::AnnotationTypeMismatchException::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
 
 local_ref< java::lang::reflect::Method > java::lang::annotation::AnnotationTypeMismatchException::element()
 {

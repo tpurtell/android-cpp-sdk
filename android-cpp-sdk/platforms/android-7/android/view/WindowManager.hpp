@@ -10,13 +10,18 @@
 #define J2CPP_ANDROID_VIEW_WINDOWMANAGER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class CharSequence; } } }
+namespace j2cpp { namespace java { namespace lang { class RuntimeException; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace android { namespace view { class View; } } }
+namespace j2cpp { namespace android { namespace view { class ViewManager; } } }
+namespace j2cpp { namespace android { namespace view { namespace ViewGroup_ { class LayoutParams; } } } }
 namespace j2cpp { namespace android { namespace view { class Display; } } }
 namespace j2cpp { namespace android { namespace view { namespace WindowManager_ { class LayoutParams; } } } }
 namespace j2cpp { namespace android { namespace os { class IBinder; } } }
 namespace j2cpp { namespace android { namespace os { class Parcel; } } }
+namespace j2cpp { namespace android { namespace os { class Parcelable; } } }
 namespace j2cpp { namespace android { namespace os { namespace Parcelable_ { class Creator; } } } }
 
 
@@ -25,8 +30,12 @@ namespace j2cpp { namespace android { namespace os { namespace Parcelable_ { cla
 #include <android/os/Parcelable.hpp>
 #include <android/view/Display.hpp>
 #include <android/view/View.hpp>
+#include <android/view/ViewGroup.hpp>
+#include <android/view/ViewManager.hpp>
 #include <android/view/WindowManager.hpp>
 #include <java/lang/CharSequence.hpp>
+#include <java/lang/Object.hpp>
+#include <java/lang/RuntimeException.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -48,11 +57,16 @@ namespace android { namespace view {
 			J2CPP_DECLARE_METHOD(0)
 			J2CPP_DECLARE_METHOD(1)
 
-			BadTokenException(jobject jobj)
+			explicit BadTokenException(jobject jobj)
 			: cpp_object<BadTokenException>(jobj)
 			{
 			}
 
+			operator local_ref<java::lang::RuntimeException>() const;
+
+
+			BadTokenException();
+			BadTokenException(local_ref< java::lang::String > const&);
 		}; //class BadTokenException
 
 		class LayoutParams;
@@ -178,30 +192,41 @@ namespace android { namespace view {
 			J2CPP_DECLARE_FIELD(96)
 			J2CPP_DECLARE_FIELD(97)
 
-			LayoutParams(jobject jobj)
+			explicit LayoutParams(jobject jobj)
 			: cpp_object<LayoutParams>(jobj)
-			, x(jobj)
-			, y(jobj)
-			, horizontalWeight(jobj)
-			, verticalWeight(jobj)
-			, type(jobj)
-			, memoryType(jobj)
-			, flags(jobj)
-			, softInputMode(jobj)
-			, gravity(jobj)
-			, horizontalMargin(jobj)
-			, verticalMargin(jobj)
-			, format(jobj)
-			, windowAnimations(jobj)
-			, alpha(jobj)
-			, dimAmount(jobj)
-			, screenBrightness(jobj)
-			, token(jobj)
-			, packageName(jobj)
-			, screenOrientation(jobj)
+, x(jobj)
+, y(jobj)
+, horizontalWeight(jobj)
+, verticalWeight(jobj)
+, type(jobj)
+, memoryType(jobj)
+, flags(jobj)
+, softInputMode(jobj)
+, gravity(jobj)
+, horizontalMargin(jobj)
+, verticalMargin(jobj)
+, format(jobj)
+, windowAnimations(jobj)
+, alpha(jobj)
+, dimAmount(jobj)
+, screenBrightness(jobj)
+, token(jobj)
+, packageName(jobj)
+, screenOrientation(jobj)
 			{
 			}
 
+			operator local_ref<android::view::ViewGroup_::LayoutParams>() const;
+			operator local_ref<android::os::Parcelable>() const;
+
+
+			LayoutParams();
+			LayoutParams(cpp_int const&);
+			LayoutParams(cpp_int const&, cpp_int const&);
+			LayoutParams(cpp_int const&, cpp_int const&, cpp_int const&);
+			LayoutParams(cpp_int const&, cpp_int const&, cpp_int const&, cpp_int const&, cpp_int const&);
+			LayoutParams(cpp_int const&, cpp_int const&, cpp_int const&, cpp_int const&, cpp_int const&, cpp_int const&, cpp_int const&);
+			LayoutParams(local_ref< android::os::Parcel > const&);
 			static cpp_boolean mayUseInputMethod(cpp_int const&);
 			void setTitle(local_ref< java::lang::CharSequence > const&);
 			local_ref< java::lang::CharSequence > getTitle();
@@ -326,10 +351,14 @@ namespace android { namespace view {
 		typedef WindowManager_::BadTokenException BadTokenException;
 		typedef WindowManager_::LayoutParams LayoutParams;
 
-		WindowManager(jobject jobj)
+		explicit WindowManager(jobject jobj)
 		: cpp_object<WindowManager>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<android::view::ViewManager>() const;
+
 
 		local_ref< android::view::Display > getDefaultDisplay();
 		void removeViewImmediate(local_ref< android::view::View > const&);
@@ -337,7 +366,6 @@ namespace android { namespace view {
 
 } //namespace view
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -352,116 +380,275 @@ namespace j2cpp {
 
 
 
-template <>
-local_ref< android::view::WindowManager_::BadTokenException > create< android::view::WindowManager_::BadTokenException>()
+
+android::view::WindowManager_::BadTokenException::operator local_ref<java::lang::RuntimeException>() const
 {
-	return local_ref< android::view::WindowManager_::BadTokenException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::view::WindowManager_::BadTokenException::J2CPP_CLASS_NAME>(),
-			get_method_id<android::view::WindowManager_::BadTokenException::J2CPP_CLASS_NAME, android::view::WindowManager_::BadTokenException::J2CPP_METHOD_NAME(0), android::view::WindowManager_::BadTokenException::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::RuntimeException>(get_jtype());
 }
 
-template <>
-local_ref< android::view::WindowManager_::BadTokenException > create< android::view::WindowManager_::BadTokenException>(local_ref< java::lang::String > const &a0)
+
+android::view::WindowManager_::BadTokenException::BadTokenException()
+: cpp_object<android::view::WindowManager_::BadTokenException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::view::WindowManager_::BadTokenException::J2CPP_CLASS_NAME>(),
+		get_method_id<android::view::WindowManager_::BadTokenException::J2CPP_CLASS_NAME, android::view::WindowManager_::BadTokenException::J2CPP_METHOD_NAME(0), android::view::WindowManager_::BadTokenException::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
 {
-	return local_ref< android::view::WindowManager_::BadTokenException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::view::WindowManager_::BadTokenException::J2CPP_CLASS_NAME>(),
-			get_method_id<android::view::WindowManager_::BadTokenException::J2CPP_CLASS_NAME, android::view::WindowManager_::BadTokenException::J2CPP_METHOD_NAME(1), android::view::WindowManager_::BadTokenException::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
 }
+
+
+
+android::view::WindowManager_::BadTokenException::BadTokenException(local_ref< java::lang::String > const &a0)
+: cpp_object<android::view::WindowManager_::BadTokenException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::view::WindowManager_::BadTokenException::J2CPP_CLASS_NAME>(),
+		get_method_id<android::view::WindowManager_::BadTokenException::J2CPP_CLASS_NAME, android::view::WindowManager_::BadTokenException::J2CPP_METHOD_NAME(1), android::view::WindowManager_::BadTokenException::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 
 J2CPP_DEFINE_CLASS(android::view::WindowManager_::BadTokenException,"android/view/WindowManager$BadTokenException")
 J2CPP_DEFINE_METHOD(android::view::WindowManager_::BadTokenException,0,"<init>","()V")
 J2CPP_DEFINE_METHOD(android::view::WindowManager_::BadTokenException,1,"<init>","(Ljava/lang/String;)V")
 
-template <>
-local_ref< android::view::WindowManager_::LayoutParams > create< android::view::WindowManager_::LayoutParams>()
+
+android::view::WindowManager_::LayoutParams::operator local_ref<android::view::ViewGroup_::LayoutParams>() const
 {
-	return local_ref< android::view::WindowManager_::LayoutParams >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::view::WindowManager_::LayoutParams::J2CPP_CLASS_NAME>(),
-			get_method_id<android::view::WindowManager_::LayoutParams::J2CPP_CLASS_NAME, android::view::WindowManager_::LayoutParams::J2CPP_METHOD_NAME(0), android::view::WindowManager_::LayoutParams::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<android::view::ViewGroup_::LayoutParams>(get_jtype());
 }
 
-template <>
-local_ref< android::view::WindowManager_::LayoutParams > create< android::view::WindowManager_::LayoutParams>(cpp_int const &a0)
+android::view::WindowManager_::LayoutParams::operator local_ref<android::os::Parcelable>() const
 {
-	return local_ref< android::view::WindowManager_::LayoutParams >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::view::WindowManager_::LayoutParams::J2CPP_CLASS_NAME>(),
-			get_method_id<android::view::WindowManager_::LayoutParams::J2CPP_CLASS_NAME, android::view::WindowManager_::LayoutParams::J2CPP_METHOD_NAME(1), android::view::WindowManager_::LayoutParams::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<android::os::Parcelable>(get_jtype());
 }
 
-template <>
-local_ref< android::view::WindowManager_::LayoutParams > create< android::view::WindowManager_::LayoutParams>(cpp_int const &a0, cpp_int const &a1)
+
+android::view::WindowManager_::LayoutParams::LayoutParams()
+: cpp_object<android::view::WindowManager_::LayoutParams>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::view::WindowManager_::LayoutParams::J2CPP_CLASS_NAME>(),
+		get_method_id<android::view::WindowManager_::LayoutParams::J2CPP_CLASS_NAME, android::view::WindowManager_::LayoutParams::J2CPP_METHOD_NAME(0), android::view::WindowManager_::LayoutParams::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+, x(get_jtype())
+, y(get_jtype())
+, horizontalWeight(get_jtype())
+, verticalWeight(get_jtype())
+, type(get_jtype())
+, memoryType(get_jtype())
+, flags(get_jtype())
+, softInputMode(get_jtype())
+, gravity(get_jtype())
+, horizontalMargin(get_jtype())
+, verticalMargin(get_jtype())
+, format(get_jtype())
+, windowAnimations(get_jtype())
+, alpha(get_jtype())
+, dimAmount(get_jtype())
+, screenBrightness(get_jtype())
+, token(get_jtype())
+, packageName(get_jtype())
+, screenOrientation(get_jtype())
 {
-	return local_ref< android::view::WindowManager_::LayoutParams >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::view::WindowManager_::LayoutParams::J2CPP_CLASS_NAME>(),
-			get_method_id<android::view::WindowManager_::LayoutParams::J2CPP_CLASS_NAME, android::view::WindowManager_::LayoutParams::J2CPP_METHOD_NAME(2), android::view::WindowManager_::LayoutParams::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< android::view::WindowManager_::LayoutParams > create< android::view::WindowManager_::LayoutParams>(cpp_int const &a0, cpp_int const &a1, cpp_int const &a2)
+
+
+android::view::WindowManager_::LayoutParams::LayoutParams(cpp_int const &a0)
+: cpp_object<android::view::WindowManager_::LayoutParams>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::view::WindowManager_::LayoutParams::J2CPP_CLASS_NAME>(),
+		get_method_id<android::view::WindowManager_::LayoutParams::J2CPP_CLASS_NAME, android::view::WindowManager_::LayoutParams::J2CPP_METHOD_NAME(1), android::view::WindowManager_::LayoutParams::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
+, x(get_jtype())
+, y(get_jtype())
+, horizontalWeight(get_jtype())
+, verticalWeight(get_jtype())
+, type(get_jtype())
+, memoryType(get_jtype())
+, flags(get_jtype())
+, softInputMode(get_jtype())
+, gravity(get_jtype())
+, horizontalMargin(get_jtype())
+, verticalMargin(get_jtype())
+, format(get_jtype())
+, windowAnimations(get_jtype())
+, alpha(get_jtype())
+, dimAmount(get_jtype())
+, screenBrightness(get_jtype())
+, token(get_jtype())
+, packageName(get_jtype())
+, screenOrientation(get_jtype())
 {
-	return local_ref< android::view::WindowManager_::LayoutParams >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::view::WindowManager_::LayoutParams::J2CPP_CLASS_NAME>(),
-			get_method_id<android::view::WindowManager_::LayoutParams::J2CPP_CLASS_NAME, android::view::WindowManager_::LayoutParams::J2CPP_METHOD_NAME(3), android::view::WindowManager_::LayoutParams::J2CPP_METHOD_SIGNATURE(3), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< android::view::WindowManager_::LayoutParams > create< android::view::WindowManager_::LayoutParams>(cpp_int const &a0, cpp_int const &a1, cpp_int const &a2, cpp_int const &a3, cpp_int const &a4)
+
+
+android::view::WindowManager_::LayoutParams::LayoutParams(cpp_int const &a0, cpp_int const &a1)
+: cpp_object<android::view::WindowManager_::LayoutParams>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::view::WindowManager_::LayoutParams::J2CPP_CLASS_NAME>(),
+		get_method_id<android::view::WindowManager_::LayoutParams::J2CPP_CLASS_NAME, android::view::WindowManager_::LayoutParams::J2CPP_METHOD_NAME(2), android::view::WindowManager_::LayoutParams::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+, x(get_jtype())
+, y(get_jtype())
+, horizontalWeight(get_jtype())
+, verticalWeight(get_jtype())
+, type(get_jtype())
+, memoryType(get_jtype())
+, flags(get_jtype())
+, softInputMode(get_jtype())
+, gravity(get_jtype())
+, horizontalMargin(get_jtype())
+, verticalMargin(get_jtype())
+, format(get_jtype())
+, windowAnimations(get_jtype())
+, alpha(get_jtype())
+, dimAmount(get_jtype())
+, screenBrightness(get_jtype())
+, token(get_jtype())
+, packageName(get_jtype())
+, screenOrientation(get_jtype())
 {
-	return local_ref< android::view::WindowManager_::LayoutParams >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::view::WindowManager_::LayoutParams::J2CPP_CLASS_NAME>(),
-			get_method_id<android::view::WindowManager_::LayoutParams::J2CPP_CLASS_NAME, android::view::WindowManager_::LayoutParams::J2CPP_METHOD_NAME(4), android::view::WindowManager_::LayoutParams::J2CPP_METHOD_SIGNATURE(4), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype(), a4.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< android::view::WindowManager_::LayoutParams > create< android::view::WindowManager_::LayoutParams>(cpp_int const &a0, cpp_int const &a1, cpp_int const &a2, cpp_int const &a3, cpp_int const &a4, cpp_int const &a5, cpp_int const &a6)
+
+
+android::view::WindowManager_::LayoutParams::LayoutParams(cpp_int const &a0, cpp_int const &a1, cpp_int const &a2)
+: cpp_object<android::view::WindowManager_::LayoutParams>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::view::WindowManager_::LayoutParams::J2CPP_CLASS_NAME>(),
+		get_method_id<android::view::WindowManager_::LayoutParams::J2CPP_CLASS_NAME, android::view::WindowManager_::LayoutParams::J2CPP_METHOD_NAME(3), android::view::WindowManager_::LayoutParams::J2CPP_METHOD_SIGNATURE(3), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
+	)
+)
+, x(get_jtype())
+, y(get_jtype())
+, horizontalWeight(get_jtype())
+, verticalWeight(get_jtype())
+, type(get_jtype())
+, memoryType(get_jtype())
+, flags(get_jtype())
+, softInputMode(get_jtype())
+, gravity(get_jtype())
+, horizontalMargin(get_jtype())
+, verticalMargin(get_jtype())
+, format(get_jtype())
+, windowAnimations(get_jtype())
+, alpha(get_jtype())
+, dimAmount(get_jtype())
+, screenBrightness(get_jtype())
+, token(get_jtype())
+, packageName(get_jtype())
+, screenOrientation(get_jtype())
 {
-	return local_ref< android::view::WindowManager_::LayoutParams >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::view::WindowManager_::LayoutParams::J2CPP_CLASS_NAME>(),
-			get_method_id<android::view::WindowManager_::LayoutParams::J2CPP_CLASS_NAME, android::view::WindowManager_::LayoutParams::J2CPP_METHOD_NAME(5), android::view::WindowManager_::LayoutParams::J2CPP_METHOD_SIGNATURE(5), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype(), a4.get_jtype(), a5.get_jtype(), a6.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< android::view::WindowManager_::LayoutParams > create< android::view::WindowManager_::LayoutParams>(local_ref< android::os::Parcel > const &a0)
+
+
+android::view::WindowManager_::LayoutParams::LayoutParams(cpp_int const &a0, cpp_int const &a1, cpp_int const &a2, cpp_int const &a3, cpp_int const &a4)
+: cpp_object<android::view::WindowManager_::LayoutParams>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::view::WindowManager_::LayoutParams::J2CPP_CLASS_NAME>(),
+		get_method_id<android::view::WindowManager_::LayoutParams::J2CPP_CLASS_NAME, android::view::WindowManager_::LayoutParams::J2CPP_METHOD_NAME(4), android::view::WindowManager_::LayoutParams::J2CPP_METHOD_SIGNATURE(4), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype(), a4.get_jtype()
+	)
+)
+, x(get_jtype())
+, y(get_jtype())
+, horizontalWeight(get_jtype())
+, verticalWeight(get_jtype())
+, type(get_jtype())
+, memoryType(get_jtype())
+, flags(get_jtype())
+, softInputMode(get_jtype())
+, gravity(get_jtype())
+, horizontalMargin(get_jtype())
+, verticalMargin(get_jtype())
+, format(get_jtype())
+, windowAnimations(get_jtype())
+, alpha(get_jtype())
+, dimAmount(get_jtype())
+, screenBrightness(get_jtype())
+, token(get_jtype())
+, packageName(get_jtype())
+, screenOrientation(get_jtype())
 {
-	return local_ref< android::view::WindowManager_::LayoutParams >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::view::WindowManager_::LayoutParams::J2CPP_CLASS_NAME>(),
-			get_method_id<android::view::WindowManager_::LayoutParams::J2CPP_CLASS_NAME, android::view::WindowManager_::LayoutParams::J2CPP_METHOD_NAME(6), android::view::WindowManager_::LayoutParams::J2CPP_METHOD_SIGNATURE(6), false>(),
-			a0.get_jtype()
-		)
-	);
 }
+
+
+
+android::view::WindowManager_::LayoutParams::LayoutParams(cpp_int const &a0, cpp_int const &a1, cpp_int const &a2, cpp_int const &a3, cpp_int const &a4, cpp_int const &a5, cpp_int const &a6)
+: cpp_object<android::view::WindowManager_::LayoutParams>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::view::WindowManager_::LayoutParams::J2CPP_CLASS_NAME>(),
+		get_method_id<android::view::WindowManager_::LayoutParams::J2CPP_CLASS_NAME, android::view::WindowManager_::LayoutParams::J2CPP_METHOD_NAME(5), android::view::WindowManager_::LayoutParams::J2CPP_METHOD_SIGNATURE(5), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype(), a4.get_jtype(), a5.get_jtype(), a6.get_jtype()
+	)
+)
+, x(get_jtype())
+, y(get_jtype())
+, horizontalWeight(get_jtype())
+, verticalWeight(get_jtype())
+, type(get_jtype())
+, memoryType(get_jtype())
+, flags(get_jtype())
+, softInputMode(get_jtype())
+, gravity(get_jtype())
+, horizontalMargin(get_jtype())
+, verticalMargin(get_jtype())
+, format(get_jtype())
+, windowAnimations(get_jtype())
+, alpha(get_jtype())
+, dimAmount(get_jtype())
+, screenBrightness(get_jtype())
+, token(get_jtype())
+, packageName(get_jtype())
+, screenOrientation(get_jtype())
+{
+}
+
+
+
+android::view::WindowManager_::LayoutParams::LayoutParams(local_ref< android::os::Parcel > const &a0)
+: cpp_object<android::view::WindowManager_::LayoutParams>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::view::WindowManager_::LayoutParams::J2CPP_CLASS_NAME>(),
+		get_method_id<android::view::WindowManager_::LayoutParams::J2CPP_CLASS_NAME, android::view::WindowManager_::LayoutParams::J2CPP_METHOD_NAME(6), android::view::WindowManager_::LayoutParams::J2CPP_METHOD_SIGNATURE(6), false>(),
+		a0.get_jtype()
+	)
+)
+, x(get_jtype())
+, y(get_jtype())
+, horizontalWeight(get_jtype())
+, verticalWeight(get_jtype())
+, type(get_jtype())
+, memoryType(get_jtype())
+, flags(get_jtype())
+, softInputMode(get_jtype())
+, gravity(get_jtype())
+, horizontalMargin(get_jtype())
+, verticalMargin(get_jtype())
+, format(get_jtype())
+, windowAnimations(get_jtype())
+, alpha(get_jtype())
+, dimAmount(get_jtype())
+, screenBrightness(get_jtype())
+, token(get_jtype())
+, packageName(get_jtype())
+, screenOrientation(get_jtype())
+{
+}
+
 
 cpp_boolean android::view::WindowManager_::LayoutParams::mayUseInputMethod(cpp_int const &a0)
 {
@@ -547,6 +734,7 @@ local_ref< java::lang::String > android::view::WindowManager_::LayoutParams::toS
 		)
 	);
 }
+
 
 
 static_field<
@@ -1219,6 +1407,17 @@ J2CPP_DEFINE_FIELD(android::view::WindowManager_::LayoutParams,95,"SOFT_INPUT_MO
 J2CPP_DEFINE_FIELD(android::view::WindowManager_::LayoutParams,96,"SCREEN_ORIENTATION_CHANGED","I")
 J2CPP_DEFINE_FIELD(android::view::WindowManager_::LayoutParams,97,"SCREEN_BRIGHTNESS_CHANGED","I")
 
+
+
+android::view::WindowManager::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
+
+android::view::WindowManager::operator local_ref<android::view::ViewManager>() const
+{
+	return local_ref<android::view::ViewManager>(get_jtype());
+}
 
 local_ref< android::view::Display > android::view::WindowManager::getDefaultDisplay()
 {

@@ -10,9 +10,11 @@
 #define J2CPP_ORG_APACHE_HTTP_CONN_CONNECTTIMEOUTEXCEPTION_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class InterruptedIOException; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 
 
+#include <java/io/InterruptedIOException.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -31,18 +33,22 @@ namespace org { namespace apache { namespace http { namespace conn {
 		J2CPP_DECLARE_METHOD(0)
 		J2CPP_DECLARE_METHOD(1)
 
-		ConnectTimeoutException(jobject jobj)
+		explicit ConnectTimeoutException(jobject jobj)
 		: cpp_object<ConnectTimeoutException>(jobj)
 		{
 		}
 
+		operator local_ref<java::io::InterruptedIOException>() const;
+
+
+		ConnectTimeoutException();
+		ConnectTimeoutException(local_ref< java::lang::String > const&);
 	}; //class ConnectTimeoutException
 
 } //namespace conn
 } //namespace http
 } //namespace apache
 } //namespace org
-
 
 } //namespace j2cpp
 
@@ -56,28 +62,36 @@ namespace org { namespace apache { namespace http { namespace conn {
 namespace j2cpp {
 
 
-template <>
-local_ref< org::apache::http::conn::ConnectTimeoutException > create< org::apache::http::conn::ConnectTimeoutException>()
+
+org::apache::http::conn::ConnectTimeoutException::operator local_ref<java::io::InterruptedIOException>() const
 {
-	return local_ref< org::apache::http::conn::ConnectTimeoutException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::apache::http::conn::ConnectTimeoutException::J2CPP_CLASS_NAME>(),
-			get_method_id<org::apache::http::conn::ConnectTimeoutException::J2CPP_CLASS_NAME, org::apache::http::conn::ConnectTimeoutException::J2CPP_METHOD_NAME(0), org::apache::http::conn::ConnectTimeoutException::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::io::InterruptedIOException>(get_jtype());
 }
 
-template <>
-local_ref< org::apache::http::conn::ConnectTimeoutException > create< org::apache::http::conn::ConnectTimeoutException>(local_ref< java::lang::String > const &a0)
+
+org::apache::http::conn::ConnectTimeoutException::ConnectTimeoutException()
+: cpp_object<org::apache::http::conn::ConnectTimeoutException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::apache::http::conn::ConnectTimeoutException::J2CPP_CLASS_NAME>(),
+		get_method_id<org::apache::http::conn::ConnectTimeoutException::J2CPP_CLASS_NAME, org::apache::http::conn::ConnectTimeoutException::J2CPP_METHOD_NAME(0), org::apache::http::conn::ConnectTimeoutException::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
 {
-	return local_ref< org::apache::http::conn::ConnectTimeoutException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::apache::http::conn::ConnectTimeoutException::J2CPP_CLASS_NAME>(),
-			get_method_id<org::apache::http::conn::ConnectTimeoutException::J2CPP_CLASS_NAME, org::apache::http::conn::ConnectTimeoutException::J2CPP_METHOD_NAME(1), org::apache::http::conn::ConnectTimeoutException::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
 }
+
+
+
+org::apache::http::conn::ConnectTimeoutException::ConnectTimeoutException(local_ref< java::lang::String > const &a0)
+: cpp_object<org::apache::http::conn::ConnectTimeoutException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::apache::http::conn::ConnectTimeoutException::J2CPP_CLASS_NAME>(),
+		get_method_id<org::apache::http::conn::ConnectTimeoutException::J2CPP_CLASS_NAME, org::apache::http::conn::ConnectTimeoutException::J2CPP_METHOD_NAME(1), org::apache::http::conn::ConnectTimeoutException::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 
 J2CPP_DEFINE_CLASS(org::apache::http::conn::ConnectTimeoutException,"org/apache/http/conn/ConnectTimeoutException")

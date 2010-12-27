@@ -10,8 +10,10 @@
 #define J2CPP_ANDROID_UTIL_FLOATMATH_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -33,10 +35,13 @@ namespace android { namespace util {
 		J2CPP_DECLARE_METHOD(4)
 		J2CPP_DECLARE_METHOD(5)
 
-		FloatMath(jobject jobj)
+		explicit FloatMath(jobject jobj)
 		: cpp_object<FloatMath>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		static cpp_float floor(cpp_float const&);
 		static cpp_float ceil(cpp_float const&);
@@ -47,7 +52,6 @@ namespace android { namespace util {
 
 } //namespace util
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -61,16 +65,12 @@ namespace android { namespace util {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::util::FloatMath > create< android::util::FloatMath>()
+
+android::util::FloatMath::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::util::FloatMath >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::util::FloatMath::J2CPP_CLASS_NAME>(),
-			get_method_id<android::util::FloatMath::J2CPP_CLASS_NAME, android::util::FloatMath::J2CPP_METHOD_NAME(0), android::util::FloatMath::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
 
 cpp_float android::util::FloatMath::floor(cpp_float const &a0)
 {

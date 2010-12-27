@@ -13,6 +13,7 @@
 namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 namespace j2cpp { namespace java { namespace lang { class ClassLoader; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace lang { class Cloneable; } } }
 namespace j2cpp { namespace java { namespace lang { class CharSequence; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace lang { class Byte; } } }
@@ -31,6 +32,7 @@ namespace j2cpp { namespace android { namespace os { namespace Parcelable_ { cla
 #include <java/lang/Byte.hpp>
 #include <java/lang/CharSequence.hpp>
 #include <java/lang/ClassLoader.hpp>
+#include <java/lang/Cloneable.hpp>
 #include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/util/ArrayList.hpp>
@@ -134,11 +136,20 @@ namespace android { namespace os {
 		J2CPP_DECLARE_FIELD(0)
 		J2CPP_DECLARE_FIELD(1)
 
-		Bundle(jobject jobj)
+		explicit Bundle(jobject jobj)
 		: cpp_object<Bundle>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<android::os::Parcelable>() const;
+		operator local_ref<java::lang::Cloneable>() const;
+
+
+		Bundle();
+		Bundle(local_ref< java::lang::ClassLoader > const&);
+		Bundle(cpp_int const&);
+		Bundle(local_ref< android::os::Bundle > const&);
 		void setClassLoader(local_ref< java::lang::ClassLoader > const&);
 		local_ref< java::lang::Object > clone();
 		cpp_int size();
@@ -224,7 +235,6 @@ namespace android { namespace os {
 } //namespace os
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_OS_BUNDLE_HPP_DECL
@@ -237,52 +247,72 @@ namespace android { namespace os {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::os::Bundle > create< android::os::Bundle>()
+
+android::os::Bundle::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::os::Bundle >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::os::Bundle::J2CPP_CLASS_NAME>(),
-			get_method_id<android::os::Bundle::J2CPP_CLASS_NAME, android::os::Bundle::J2CPP_METHOD_NAME(0), android::os::Bundle::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
 
-template <>
-local_ref< android::os::Bundle > create< android::os::Bundle>(local_ref< java::lang::ClassLoader > const &a0)
+android::os::Bundle::operator local_ref<android::os::Parcelable>() const
 {
-	return local_ref< android::os::Bundle >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::os::Bundle::J2CPP_CLASS_NAME>(),
-			get_method_id<android::os::Bundle::J2CPP_CLASS_NAME, android::os::Bundle::J2CPP_METHOD_NAME(1), android::os::Bundle::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<android::os::Parcelable>(get_jtype());
 }
 
-template <>
-local_ref< android::os::Bundle > create< android::os::Bundle>(cpp_int const &a0)
+android::os::Bundle::operator local_ref<java::lang::Cloneable>() const
 {
-	return local_ref< android::os::Bundle >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::os::Bundle::J2CPP_CLASS_NAME>(),
-			get_method_id<android::os::Bundle::J2CPP_CLASS_NAME, android::os::Bundle::J2CPP_METHOD_NAME(2), android::os::Bundle::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Cloneable>(get_jtype());
 }
 
-template <>
-local_ref< android::os::Bundle > create< android::os::Bundle>(local_ref< android::os::Bundle > const &a0)
+
+android::os::Bundle::Bundle()
+: cpp_object<android::os::Bundle>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::os::Bundle::J2CPP_CLASS_NAME>(),
+		get_method_id<android::os::Bundle::J2CPP_CLASS_NAME, android::os::Bundle::J2CPP_METHOD_NAME(0), android::os::Bundle::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
 {
-	return local_ref< android::os::Bundle >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::os::Bundle::J2CPP_CLASS_NAME>(),
-			get_method_id<android::os::Bundle::J2CPP_CLASS_NAME, android::os::Bundle::J2CPP_METHOD_NAME(3), android::os::Bundle::J2CPP_METHOD_SIGNATURE(3), false>(),
-			a0.get_jtype()
-		)
-	);
 }
+
+
+
+android::os::Bundle::Bundle(local_ref< java::lang::ClassLoader > const &a0)
+: cpp_object<android::os::Bundle>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::os::Bundle::J2CPP_CLASS_NAME>(),
+		get_method_id<android::os::Bundle::J2CPP_CLASS_NAME, android::os::Bundle::J2CPP_METHOD_NAME(1), android::os::Bundle::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
+
+
+android::os::Bundle::Bundle(cpp_int const &a0)
+: cpp_object<android::os::Bundle>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::os::Bundle::J2CPP_CLASS_NAME>(),
+		get_method_id<android::os::Bundle::J2CPP_CLASS_NAME, android::os::Bundle::J2CPP_METHOD_NAME(2), android::os::Bundle::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
+
+
+android::os::Bundle::Bundle(local_ref< android::os::Bundle > const &a0)
+: cpp_object<android::os::Bundle>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::os::Bundle::J2CPP_CLASS_NAME>(),
+		get_method_id<android::os::Bundle::J2CPP_CLASS_NAME, android::os::Bundle::J2CPP_METHOD_NAME(3), android::os::Bundle::J2CPP_METHOD_SIGNATURE(3), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 void android::os::Bundle::setClassLoader(local_ref< java::lang::ClassLoader > const &a0)
 {
@@ -1122,6 +1152,7 @@ local_ref< java::lang::String > android::os::Bundle::toString()
 		)
 	);
 }
+
 
 
 static_field<

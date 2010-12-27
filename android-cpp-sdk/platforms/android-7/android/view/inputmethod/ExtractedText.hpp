@@ -10,14 +10,17 @@
 #define J2CPP_ANDROID_VIEW_INPUTMETHOD_EXTRACTEDTEXT_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class CharSequence; } } }
 namespace j2cpp { namespace android { namespace os { class Parcel; } } }
+namespace j2cpp { namespace android { namespace os { class Parcelable; } } }
 namespace j2cpp { namespace android { namespace os { namespace Parcelable_ { class Creator; } } } }
 
 
 #include <android/os/Parcel.hpp>
 #include <android/os/Parcelable.hpp>
 #include <java/lang/CharSequence.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -47,18 +50,23 @@ namespace android { namespace view { namespace inputmethod {
 		J2CPP_DECLARE_FIELD(8)
 		J2CPP_DECLARE_FIELD(9)
 
-		ExtractedText(jobject jobj)
+		explicit ExtractedText(jobject jobj)
 		: cpp_object<ExtractedText>(jobj)
-		, text(jobj)
-		, startOffset(jobj)
-		, partialStartOffset(jobj)
-		, partialEndOffset(jobj)
-		, selectionStart(jobj)
-		, selectionEnd(jobj)
-		, flags(jobj)
+, text(jobj)
+, startOffset(jobj)
+, partialStartOffset(jobj)
+, partialEndOffset(jobj)
+, selectionStart(jobj)
+, selectionEnd(jobj)
+, flags(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<android::os::Parcelable>() const;
+
+
+		ExtractedText();
 		void writeToParcel(local_ref< android::os::Parcel > const&, cpp_int const&);
 		cpp_int describeContents();
 
@@ -78,7 +86,6 @@ namespace android { namespace view { namespace inputmethod {
 } //namespace view
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_VIEW_INPUTMETHOD_EXTRACTEDTEXT_HPP_DECL
@@ -91,16 +98,35 @@ namespace android { namespace view { namespace inputmethod {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::view::inputmethod::ExtractedText > create< android::view::inputmethod::ExtractedText>()
+
+android::view::inputmethod::ExtractedText::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::view::inputmethod::ExtractedText >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::view::inputmethod::ExtractedText::J2CPP_CLASS_NAME>(),
-			get_method_id<android::view::inputmethod::ExtractedText::J2CPP_CLASS_NAME, android::view::inputmethod::ExtractedText::J2CPP_METHOD_NAME(0), android::view::inputmethod::ExtractedText::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+android::view::inputmethod::ExtractedText::operator local_ref<android::os::Parcelable>() const
+{
+	return local_ref<android::os::Parcelable>(get_jtype());
+}
+
+
+android::view::inputmethod::ExtractedText::ExtractedText()
+: cpp_object<android::view::inputmethod::ExtractedText>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::view::inputmethod::ExtractedText::J2CPP_CLASS_NAME>(),
+		get_method_id<android::view::inputmethod::ExtractedText::J2CPP_CLASS_NAME, android::view::inputmethod::ExtractedText::J2CPP_METHOD_NAME(0), android::view::inputmethod::ExtractedText::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+, text(get_jtype())
+, startOffset(get_jtype())
+, partialStartOffset(get_jtype())
+, partialEndOffset(get_jtype())
+, selectionStart(get_jtype())
+, selectionEnd(get_jtype())
+, flags(get_jtype())
+{
+}
+
 
 void android::view::inputmethod::ExtractedText::writeToParcel(local_ref< android::os::Parcel > const &a0, cpp_int const &a1)
 {
@@ -122,6 +148,7 @@ cpp_int android::view::inputmethod::ExtractedText::describeContents()
 		)
 	);
 }
+
 
 
 static_field<

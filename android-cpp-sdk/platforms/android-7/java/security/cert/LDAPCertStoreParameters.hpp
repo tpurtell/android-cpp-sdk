@@ -12,10 +12,12 @@
 
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace security { namespace cert { class CertStoreParameters; } } } }
 
 
 #include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
+#include <java/security/cert/CertStoreParameters.hpp>
 
 
 namespace j2cpp {
@@ -38,11 +40,18 @@ namespace java { namespace security { namespace cert {
 		J2CPP_DECLARE_METHOD(5)
 		J2CPP_DECLARE_METHOD(6)
 
-		LDAPCertStoreParameters(jobject jobj)
+		explicit LDAPCertStoreParameters(jobject jobj)
 		: cpp_object<LDAPCertStoreParameters>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::security::cert::CertStoreParameters>() const;
+
+
+		LDAPCertStoreParameters(local_ref< java::lang::String > const&, cpp_int const&);
+		LDAPCertStoreParameters();
+		LDAPCertStoreParameters(local_ref< java::lang::String > const&);
 		local_ref< java::lang::Object > clone();
 		cpp_int getPort();
 		local_ref< java::lang::String > getServerName();
@@ -52,7 +61,6 @@ namespace java { namespace security { namespace cert {
 } //namespace cert
 } //namespace security
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -66,40 +74,54 @@ namespace java { namespace security { namespace cert {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::security::cert::LDAPCertStoreParameters > create< java::security::cert::LDAPCertStoreParameters>(local_ref< java::lang::String > const &a0, cpp_int const &a1)
+
+java::security::cert::LDAPCertStoreParameters::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::security::cert::LDAPCertStoreParameters >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::security::cert::LDAPCertStoreParameters::J2CPP_CLASS_NAME>(),
-			get_method_id<java::security::cert::LDAPCertStoreParameters::J2CPP_CLASS_NAME, java::security::cert::LDAPCertStoreParameters::J2CPP_METHOD_NAME(0), java::security::cert::LDAPCertStoreParameters::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
 
-template <>
-local_ref< java::security::cert::LDAPCertStoreParameters > create< java::security::cert::LDAPCertStoreParameters>()
+java::security::cert::LDAPCertStoreParameters::operator local_ref<java::security::cert::CertStoreParameters>() const
 {
-	return local_ref< java::security::cert::LDAPCertStoreParameters >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::security::cert::LDAPCertStoreParameters::J2CPP_CLASS_NAME>(),
-			get_method_id<java::security::cert::LDAPCertStoreParameters::J2CPP_CLASS_NAME, java::security::cert::LDAPCertStoreParameters::J2CPP_METHOD_NAME(1), java::security::cert::LDAPCertStoreParameters::J2CPP_METHOD_SIGNATURE(1), false>()
-		)
-	);
+	return local_ref<java::security::cert::CertStoreParameters>(get_jtype());
 }
 
-template <>
-local_ref< java::security::cert::LDAPCertStoreParameters > create< java::security::cert::LDAPCertStoreParameters>(local_ref< java::lang::String > const &a0)
+
+java::security::cert::LDAPCertStoreParameters::LDAPCertStoreParameters(local_ref< java::lang::String > const &a0, cpp_int const &a1)
+: cpp_object<java::security::cert::LDAPCertStoreParameters>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::security::cert::LDAPCertStoreParameters::J2CPP_CLASS_NAME>(),
+		get_method_id<java::security::cert::LDAPCertStoreParameters::J2CPP_CLASS_NAME, java::security::cert::LDAPCertStoreParameters::J2CPP_METHOD_NAME(0), java::security::cert::LDAPCertStoreParameters::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
 {
-	return local_ref< java::security::cert::LDAPCertStoreParameters >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::security::cert::LDAPCertStoreParameters::J2CPP_CLASS_NAME>(),
-			get_method_id<java::security::cert::LDAPCertStoreParameters::J2CPP_CLASS_NAME, java::security::cert::LDAPCertStoreParameters::J2CPP_METHOD_NAME(2), java::security::cert::LDAPCertStoreParameters::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype()
-		)
-	);
 }
+
+
+
+java::security::cert::LDAPCertStoreParameters::LDAPCertStoreParameters()
+: cpp_object<java::security::cert::LDAPCertStoreParameters>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::security::cert::LDAPCertStoreParameters::J2CPP_CLASS_NAME>(),
+		get_method_id<java::security::cert::LDAPCertStoreParameters::J2CPP_CLASS_NAME, java::security::cert::LDAPCertStoreParameters::J2CPP_METHOD_NAME(1), java::security::cert::LDAPCertStoreParameters::J2CPP_METHOD_SIGNATURE(1), false>()
+	)
+)
+{
+}
+
+
+
+java::security::cert::LDAPCertStoreParameters::LDAPCertStoreParameters(local_ref< java::lang::String > const &a0)
+: cpp_object<java::security::cert::LDAPCertStoreParameters>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::security::cert::LDAPCertStoreParameters::J2CPP_CLASS_NAME>(),
+		get_method_id<java::security::cert::LDAPCertStoreParameters::J2CPP_CLASS_NAME, java::security::cert::LDAPCertStoreParameters::J2CPP_METHOD_NAME(2), java::security::cert::LDAPCertStoreParameters::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 local_ref< java::lang::Object > java::security::cert::LDAPCertStoreParameters::clone()
 {

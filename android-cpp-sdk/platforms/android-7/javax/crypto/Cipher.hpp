@@ -11,6 +11,7 @@
 
 
 namespace j2cpp { namespace javax { namespace crypto { class ExemptionMechanism; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace security { class AlgorithmParameters; } } }
 namespace j2cpp { namespace java { namespace security { class Provider; } } }
@@ -21,6 +22,7 @@ namespace j2cpp { namespace java { namespace security { namespace cert { class C
 namespace j2cpp { namespace java { namespace nio { class ByteBuffer; } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/nio/ByteBuffer.hpp>
 #include <java/security/AlgorithmParameters.hpp>
@@ -87,10 +89,13 @@ namespace javax { namespace crypto {
 		J2CPP_DECLARE_FIELD(5)
 		J2CPP_DECLARE_FIELD(6)
 
-		Cipher(jobject jobj)
+		explicit Cipher(jobject jobj)
 		: cpp_object<Cipher>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		static local_ref< javax::crypto::Cipher > getInstance(local_ref< java::lang::String > const&);
 		static local_ref< javax::crypto::Cipher > getInstance(local_ref< java::lang::String > const&, local_ref< java::lang::String > const&);
@@ -139,7 +144,6 @@ namespace javax { namespace crypto {
 } //namespace crypto
 } //namespace javax
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVAX_CRYPTO_CIPHER_HPP_DECL
@@ -152,17 +156,12 @@ namespace javax { namespace crypto {
 namespace j2cpp {
 
 
-template <>
-local_ref< javax::crypto::Cipher > create< javax::crypto::Cipher>(local_ref< javax::crypto::CipherSpi > const &a0, local_ref< java::security::Provider > const &a1, local_ref< java::lang::String > const &a2)
+
+javax::crypto::Cipher::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< javax::crypto::Cipher >(
-		environment::get().get_jenv()->NewObject(
-			get_class<javax::crypto::Cipher::J2CPP_CLASS_NAME>(),
-			get_method_id<javax::crypto::Cipher::J2CPP_CLASS_NAME, javax::crypto::Cipher::J2CPP_METHOD_NAME(0), javax::crypto::Cipher::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
 
 local_ref< javax::crypto::Cipher > javax::crypto::Cipher::getInstance(local_ref< java::lang::String > const &a0)
 {

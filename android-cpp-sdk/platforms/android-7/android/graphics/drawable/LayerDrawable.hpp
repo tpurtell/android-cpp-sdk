@@ -15,6 +15,7 @@ namespace j2cpp { namespace org { namespace xmlpull { namespace v1 { class XmlPu
 namespace j2cpp { namespace android { namespace graphics { class Canvas; } } }
 namespace j2cpp { namespace android { namespace graphics { namespace drawable { class Drawable; } } } }
 namespace j2cpp { namespace android { namespace graphics { namespace drawable { namespace Drawable_ { class ConstantState; } } } } }
+namespace j2cpp { namespace android { namespace graphics { namespace drawable { namespace Drawable_ { class Callback; } } } } }
 namespace j2cpp { namespace android { namespace graphics { class Rect; } } }
 namespace j2cpp { namespace android { namespace graphics { class ColorFilter; } } }
 namespace j2cpp { namespace android { namespace content { namespace res { class Resources; } } } }
@@ -72,11 +73,16 @@ namespace android { namespace graphics { namespace drawable {
 		J2CPP_DECLARE_METHOD(26)
 		J2CPP_DECLARE_METHOD(27)
 
-		LayerDrawable(jobject jobj)
+		explicit LayerDrawable(jobject jobj)
 		: cpp_object<LayerDrawable>(jobj)
 		{
 		}
 
+		operator local_ref<android::graphics::drawable::Drawable>() const;
+		operator local_ref<android::graphics::drawable::Drawable_::Callback>() const;
+
+
+		LayerDrawable(local_ref< cpp_object_array<android::graphics::drawable::Drawable, 1> > const&);
 		void inflate(local_ref< android::content::res::Resources > const&, local_ref< org::xmlpull::v1::XmlPullParser > const&, local_ref< android::util::AttributeSet > const&);
 		local_ref< android::graphics::drawable::Drawable > findDrawableByLayerId(cpp_int const&);
 		void setId(cpp_int const&, cpp_int const&);
@@ -107,7 +113,6 @@ namespace android { namespace graphics { namespace drawable {
 } //namespace graphics
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_GRAPHICS_DRAWABLE_LAYERDRAWABLE_HPP_DECL
@@ -120,17 +125,29 @@ namespace android { namespace graphics { namespace drawable {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::graphics::drawable::LayerDrawable > create< android::graphics::drawable::LayerDrawable>(local_ref< cpp_object_array<android::graphics::drawable::Drawable, 1> > const &a0)
+
+android::graphics::drawable::LayerDrawable::operator local_ref<android::graphics::drawable::Drawable>() const
 {
-	return local_ref< android::graphics::drawable::LayerDrawable >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::graphics::drawable::LayerDrawable::J2CPP_CLASS_NAME>(),
-			get_method_id<android::graphics::drawable::LayerDrawable::J2CPP_CLASS_NAME, android::graphics::drawable::LayerDrawable::J2CPP_METHOD_NAME(0), android::graphics::drawable::LayerDrawable::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<android::graphics::drawable::Drawable>(get_jtype());
 }
+
+android::graphics::drawable::LayerDrawable::operator local_ref<android::graphics::drawable::Drawable_::Callback>() const
+{
+	return local_ref<android::graphics::drawable::Drawable_::Callback>(get_jtype());
+}
+
+
+android::graphics::drawable::LayerDrawable::LayerDrawable(local_ref< cpp_object_array<android::graphics::drawable::Drawable, 1> > const &a0)
+: cpp_object<android::graphics::drawable::LayerDrawable>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::graphics::drawable::LayerDrawable::J2CPP_CLASS_NAME>(),
+		get_method_id<android::graphics::drawable::LayerDrawable::J2CPP_CLASS_NAME, android::graphics::drawable::LayerDrawable::J2CPP_METHOD_NAME(0), android::graphics::drawable::LayerDrawable::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 void android::graphics::drawable::LayerDrawable::inflate(local_ref< android::content::res::Resources > const &a0, local_ref< org::xmlpull::v1::XmlPullParser > const &a1, local_ref< android::util::AttributeSet > const &a2)
 {

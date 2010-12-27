@@ -13,6 +13,7 @@
 namespace j2cpp { namespace android { namespace net { class Uri; } } }
 namespace j2cpp { namespace android { namespace graphics { namespace drawable { class Drawable; } } } }
 namespace j2cpp { namespace android { namespace content { class Context; } } }
+namespace j2cpp { namespace android { namespace widget { class ViewSwitcher; } } }
 namespace j2cpp { namespace android { namespace util { class AttributeSet; } } }
 
 
@@ -20,6 +21,7 @@ namespace j2cpp { namespace android { namespace util { class AttributeSet; } } }
 #include <android/graphics/drawable/Drawable.hpp>
 #include <android/net/Uri.hpp>
 #include <android/util/AttributeSet.hpp>
+#include <android/widget/ViewSwitcher.hpp>
 
 
 namespace j2cpp {
@@ -40,11 +42,16 @@ namespace android { namespace widget {
 		J2CPP_DECLARE_METHOD(3)
 		J2CPP_DECLARE_METHOD(4)
 
-		ImageSwitcher(jobject jobj)
+		explicit ImageSwitcher(jobject jobj)
 		: cpp_object<ImageSwitcher>(jobj)
 		{
 		}
 
+		operator local_ref<android::widget::ViewSwitcher>() const;
+
+
+		ImageSwitcher(local_ref< android::content::Context > const&);
+		ImageSwitcher(local_ref< android::content::Context > const&, local_ref< android::util::AttributeSet > const&);
 		void setImageResource(cpp_int const&);
 		void setImageURI(local_ref< android::net::Uri > const&);
 		void setImageDrawable(local_ref< android::graphics::drawable::Drawable > const&);
@@ -52,7 +59,6 @@ namespace android { namespace widget {
 
 } //namespace widget
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -66,29 +72,37 @@ namespace android { namespace widget {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::widget::ImageSwitcher > create< android::widget::ImageSwitcher>(local_ref< android::content::Context > const &a0)
+
+android::widget::ImageSwitcher::operator local_ref<android::widget::ViewSwitcher>() const
 {
-	return local_ref< android::widget::ImageSwitcher >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::widget::ImageSwitcher::J2CPP_CLASS_NAME>(),
-			get_method_id<android::widget::ImageSwitcher::J2CPP_CLASS_NAME, android::widget::ImageSwitcher::J2CPP_METHOD_NAME(0), android::widget::ImageSwitcher::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<android::widget::ViewSwitcher>(get_jtype());
 }
 
-template <>
-local_ref< android::widget::ImageSwitcher > create< android::widget::ImageSwitcher>(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1)
+
+android::widget::ImageSwitcher::ImageSwitcher(local_ref< android::content::Context > const &a0)
+: cpp_object<android::widget::ImageSwitcher>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::widget::ImageSwitcher::J2CPP_CLASS_NAME>(),
+		get_method_id<android::widget::ImageSwitcher::J2CPP_CLASS_NAME, android::widget::ImageSwitcher::J2CPP_METHOD_NAME(0), android::widget::ImageSwitcher::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< android::widget::ImageSwitcher >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::widget::ImageSwitcher::J2CPP_CLASS_NAME>(),
-			get_method_id<android::widget::ImageSwitcher::J2CPP_CLASS_NAME, android::widget::ImageSwitcher::J2CPP_METHOD_NAME(1), android::widget::ImageSwitcher::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
 }
+
+
+
+android::widget::ImageSwitcher::ImageSwitcher(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1)
+: cpp_object<android::widget::ImageSwitcher>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::widget::ImageSwitcher::J2CPP_CLASS_NAME>(),
+		get_method_id<android::widget::ImageSwitcher::J2CPP_CLASS_NAME, android::widget::ImageSwitcher::J2CPP_METHOD_NAME(1), android::widget::ImageSwitcher::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
 
 void android::widget::ImageSwitcher::setImageResource(cpp_int const &a0)
 {

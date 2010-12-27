@@ -11,9 +11,11 @@
 
 
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace security { namespace spec { class AlgorithmParameterSpec; } } } }
 
 
 #include <java/lang/Object.hpp>
+#include <java/security/spec/AlgorithmParameterSpec.hpp>
 
 
 namespace j2cpp {
@@ -36,11 +38,18 @@ namespace javax { namespace crypto { namespace spec {
 		J2CPP_DECLARE_METHOD(5)
 		J2CPP_DECLARE_METHOD(6)
 
-		RC2ParameterSpec(jobject jobj)
+		explicit RC2ParameterSpec(jobject jobj)
 		: cpp_object<RC2ParameterSpec>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::security::spec::AlgorithmParameterSpec>() const;
+
+
+		RC2ParameterSpec(cpp_int const&);
+		RC2ParameterSpec(cpp_int const&, local_ref< cpp_byte_array<1> > const&);
+		RC2ParameterSpec(cpp_int const&, local_ref< cpp_byte_array<1> > const&, cpp_int const&);
 		cpp_int getEffectiveKeyBits();
 		local_ref< cpp_byte_array<1> > getIV();
 		cpp_boolean equals(local_ref< java::lang::Object > const&);
@@ -50,7 +59,6 @@ namespace javax { namespace crypto { namespace spec {
 } //namespace spec
 } //namespace crypto
 } //namespace javax
-
 
 } //namespace j2cpp
 
@@ -64,41 +72,55 @@ namespace javax { namespace crypto { namespace spec {
 namespace j2cpp {
 
 
-template <>
-local_ref< javax::crypto::spec::RC2ParameterSpec > create< javax::crypto::spec::RC2ParameterSpec>(cpp_int const &a0)
+
+javax::crypto::spec::RC2ParameterSpec::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< javax::crypto::spec::RC2ParameterSpec >(
-		environment::get().get_jenv()->NewObject(
-			get_class<javax::crypto::spec::RC2ParameterSpec::J2CPP_CLASS_NAME>(),
-			get_method_id<javax::crypto::spec::RC2ParameterSpec::J2CPP_CLASS_NAME, javax::crypto::spec::RC2ParameterSpec::J2CPP_METHOD_NAME(0), javax::crypto::spec::RC2ParameterSpec::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
 
-template <>
-local_ref< javax::crypto::spec::RC2ParameterSpec > create< javax::crypto::spec::RC2ParameterSpec>(cpp_int const &a0, local_ref< cpp_byte_array<1> > const &a1)
+javax::crypto::spec::RC2ParameterSpec::operator local_ref<java::security::spec::AlgorithmParameterSpec>() const
 {
-	return local_ref< javax::crypto::spec::RC2ParameterSpec >(
-		environment::get().get_jenv()->NewObject(
-			get_class<javax::crypto::spec::RC2ParameterSpec::J2CPP_CLASS_NAME>(),
-			get_method_id<javax::crypto::spec::RC2ParameterSpec::J2CPP_CLASS_NAME, javax::crypto::spec::RC2ParameterSpec::J2CPP_METHOD_NAME(1), javax::crypto::spec::RC2ParameterSpec::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<java::security::spec::AlgorithmParameterSpec>(get_jtype());
 }
 
-template <>
-local_ref< javax::crypto::spec::RC2ParameterSpec > create< javax::crypto::spec::RC2ParameterSpec>(cpp_int const &a0, local_ref< cpp_byte_array<1> > const &a1, cpp_int const &a2)
+
+javax::crypto::spec::RC2ParameterSpec::RC2ParameterSpec(cpp_int const &a0)
+: cpp_object<javax::crypto::spec::RC2ParameterSpec>(
+	environment::get().get_jenv()->NewObject(
+		get_class<javax::crypto::spec::RC2ParameterSpec::J2CPP_CLASS_NAME>(),
+		get_method_id<javax::crypto::spec::RC2ParameterSpec::J2CPP_CLASS_NAME, javax::crypto::spec::RC2ParameterSpec::J2CPP_METHOD_NAME(0), javax::crypto::spec::RC2ParameterSpec::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< javax::crypto::spec::RC2ParameterSpec >(
-		environment::get().get_jenv()->NewObject(
-			get_class<javax::crypto::spec::RC2ParameterSpec::J2CPP_CLASS_NAME>(),
-			get_method_id<javax::crypto::spec::RC2ParameterSpec::J2CPP_CLASS_NAME, javax::crypto::spec::RC2ParameterSpec::J2CPP_METHOD_NAME(2), javax::crypto::spec::RC2ParameterSpec::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
-		)
-	);
 }
+
+
+
+javax::crypto::spec::RC2ParameterSpec::RC2ParameterSpec(cpp_int const &a0, local_ref< cpp_byte_array<1> > const &a1)
+: cpp_object<javax::crypto::spec::RC2ParameterSpec>(
+	environment::get().get_jenv()->NewObject(
+		get_class<javax::crypto::spec::RC2ParameterSpec::J2CPP_CLASS_NAME>(),
+		get_method_id<javax::crypto::spec::RC2ParameterSpec::J2CPP_CLASS_NAME, javax::crypto::spec::RC2ParameterSpec::J2CPP_METHOD_NAME(1), javax::crypto::spec::RC2ParameterSpec::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
+
+
+javax::crypto::spec::RC2ParameterSpec::RC2ParameterSpec(cpp_int const &a0, local_ref< cpp_byte_array<1> > const &a1, cpp_int const &a2)
+: cpp_object<javax::crypto::spec::RC2ParameterSpec>(
+	environment::get().get_jenv()->NewObject(
+		get_class<javax::crypto::spec::RC2ParameterSpec::J2CPP_CLASS_NAME>(),
+		get_method_id<javax::crypto::spec::RC2ParameterSpec::J2CPP_CLASS_NAME, javax::crypto::spec::RC2ParameterSpec::J2CPP_METHOD_NAME(2), javax::crypto::spec::RC2ParameterSpec::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
+	)
+)
+{
+}
+
 
 cpp_int javax::crypto::spec::RC2ParameterSpec::getEffectiveKeyBits()
 {

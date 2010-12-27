@@ -11,8 +11,12 @@
 
 
 namespace j2cpp { namespace javax { namespace net { namespace ssl { class SSLSessionBindingEvent; } } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace util { class EventListener; } } }
 
 
+#include <java/lang/Object.hpp>
+#include <java/util/EventListener.hpp>
 #include <javax/net/ssl/SSLSessionBindingEvent.hpp>
 
 
@@ -31,10 +35,14 @@ namespace javax { namespace net { namespace ssl {
 		J2CPP_DECLARE_METHOD(0)
 		J2CPP_DECLARE_METHOD(1)
 
-		SSLSessionBindingListener(jobject jobj)
+		explicit SSLSessionBindingListener(jobject jobj)
 		: cpp_object<SSLSessionBindingListener>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::util::EventListener>() const;
+
 
 		void valueBound(local_ref< javax::net::ssl::SSLSessionBindingEvent > const&);
 		void valueUnbound(local_ref< javax::net::ssl::SSLSessionBindingEvent > const&);
@@ -43,7 +51,6 @@ namespace javax { namespace net { namespace ssl {
 } //namespace ssl
 } //namespace net
 } //namespace javax
-
 
 } //namespace j2cpp
 
@@ -56,6 +63,17 @@ namespace javax { namespace net { namespace ssl {
 
 namespace j2cpp {
 
+
+
+javax::net::ssl::SSLSessionBindingListener::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
+
+javax::net::ssl::SSLSessionBindingListener::operator local_ref<java::util::EventListener>() const
+{
+	return local_ref<java::util::EventListener>(get_jtype());
+}
 
 void javax::net::ssl::SSLSessionBindingListener::valueBound(local_ref< javax::net::ssl::SSLSessionBindingEvent > const &a0)
 {

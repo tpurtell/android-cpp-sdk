@@ -12,6 +12,7 @@
 
 namespace j2cpp { namespace android { namespace content { class Context; } } }
 namespace j2cpp { namespace android { namespace view { class View; } } }
+namespace j2cpp { namespace android { namespace widget { class AdapterView; } } }
 namespace j2cpp { namespace android { namespace widget { class SpinnerAdapter; } } }
 namespace j2cpp { namespace android { namespace widget { class Adapter; } } }
 namespace j2cpp { namespace android { namespace util { class AttributeSet; } } }
@@ -23,6 +24,7 @@ namespace j2cpp { namespace android { namespace os { class Parcelable; } } }
 #include <android/util/AttributeSet.hpp>
 #include <android/view/View.hpp>
 #include <android/widget/Adapter.hpp>
+#include <android/widget/AdapterView.hpp>
 #include <android/widget/SpinnerAdapter.hpp>
 
 
@@ -56,11 +58,17 @@ namespace android { namespace widget {
 		J2CPP_DECLARE_METHOD(15)
 		J2CPP_DECLARE_METHOD(16)
 
-		AbsSpinner(jobject jobj)
+		explicit AbsSpinner(jobject jobj)
 		: cpp_object<AbsSpinner>(jobj)
 		{
 		}
 
+		operator local_ref<android::widget::AdapterView>() const;
+
+
+		AbsSpinner(local_ref< android::content::Context > const&);
+		AbsSpinner(local_ref< android::content::Context > const&, local_ref< android::util::AttributeSet > const&);
+		AbsSpinner(local_ref< android::content::Context > const&, local_ref< android::util::AttributeSet > const&, cpp_int const&);
 		void setAdapter(local_ref< android::widget::SpinnerAdapter > const&);
 		void setSelection(cpp_int const&, cpp_boolean const&);
 		void setSelection(cpp_int const&);
@@ -78,7 +86,6 @@ namespace android { namespace widget {
 } //namespace widget
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_WIDGET_ABSSPINNER_HPP_DECL
@@ -91,41 +98,50 @@ namespace android { namespace widget {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::widget::AbsSpinner > create< android::widget::AbsSpinner>(local_ref< android::content::Context > const &a0)
+
+android::widget::AbsSpinner::operator local_ref<android::widget::AdapterView>() const
 {
-	return local_ref< android::widget::AbsSpinner >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::widget::AbsSpinner::J2CPP_CLASS_NAME>(),
-			get_method_id<android::widget::AbsSpinner::J2CPP_CLASS_NAME, android::widget::AbsSpinner::J2CPP_METHOD_NAME(0), android::widget::AbsSpinner::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<android::widget::AdapterView>(get_jtype());
 }
 
-template <>
-local_ref< android::widget::AbsSpinner > create< android::widget::AbsSpinner>(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1)
+
+android::widget::AbsSpinner::AbsSpinner(local_ref< android::content::Context > const &a0)
+: cpp_object<android::widget::AbsSpinner>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::widget::AbsSpinner::J2CPP_CLASS_NAME>(),
+		get_method_id<android::widget::AbsSpinner::J2CPP_CLASS_NAME, android::widget::AbsSpinner::J2CPP_METHOD_NAME(0), android::widget::AbsSpinner::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< android::widget::AbsSpinner >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::widget::AbsSpinner::J2CPP_CLASS_NAME>(),
-			get_method_id<android::widget::AbsSpinner::J2CPP_CLASS_NAME, android::widget::AbsSpinner::J2CPP_METHOD_NAME(1), android::widget::AbsSpinner::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< android::widget::AbsSpinner > create< android::widget::AbsSpinner>(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1, cpp_int const &a2)
+
+
+android::widget::AbsSpinner::AbsSpinner(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1)
+: cpp_object<android::widget::AbsSpinner>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::widget::AbsSpinner::J2CPP_CLASS_NAME>(),
+		get_method_id<android::widget::AbsSpinner::J2CPP_CLASS_NAME, android::widget::AbsSpinner::J2CPP_METHOD_NAME(1), android::widget::AbsSpinner::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
 {
-	return local_ref< android::widget::AbsSpinner >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::widget::AbsSpinner::J2CPP_CLASS_NAME>(),
-			get_method_id<android::widget::AbsSpinner::J2CPP_CLASS_NAME, android::widget::AbsSpinner::J2CPP_METHOD_NAME(2), android::widget::AbsSpinner::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
-		)
-	);
 }
+
+
+
+android::widget::AbsSpinner::AbsSpinner(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1, cpp_int const &a2)
+: cpp_object<android::widget::AbsSpinner>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::widget::AbsSpinner::J2CPP_CLASS_NAME>(),
+		get_method_id<android::widget::AbsSpinner::J2CPP_CLASS_NAME, android::widget::AbsSpinner::J2CPP_METHOD_NAME(2), android::widget::AbsSpinner::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
+	)
+)
+{
+}
+
 
 void android::widget::AbsSpinner::setAdapter(local_ref< android::widget::SpinnerAdapter > const &a0)
 {

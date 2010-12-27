@@ -14,6 +14,7 @@ namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class Runnable; } } }
 namespace j2cpp { namespace java { namespace util { namespace concurrent { class Callable; } } } }
 namespace j2cpp { namespace java { namespace util { namespace concurrent { class Future; } } } }
+namespace j2cpp { namespace java { namespace util { namespace concurrent { class ExecutorService; } } } }
 namespace j2cpp { namespace java { namespace util { namespace concurrent { class TimeUnit; } } } }
 namespace j2cpp { namespace java { namespace util { class Collection; } } }
 namespace j2cpp { namespace java { namespace util { class List; } } }
@@ -24,6 +25,7 @@ namespace j2cpp { namespace java { namespace util { class List; } } }
 #include <java/util/Collection.hpp>
 #include <java/util/List.hpp>
 #include <java/util/concurrent/Callable.hpp>
+#include <java/util/concurrent/ExecutorService.hpp>
 #include <java/util/concurrent/Future.hpp>
 #include <java/util/concurrent/TimeUnit.hpp>
 
@@ -49,11 +51,16 @@ namespace java { namespace util { namespace concurrent {
 		J2CPP_DECLARE_METHOD(6)
 		J2CPP_DECLARE_METHOD(7)
 
-		AbstractExecutorService(jobject jobj)
+		explicit AbstractExecutorService(jobject jobj)
 		: cpp_object<AbstractExecutorService>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::util::concurrent::ExecutorService>() const;
+
+
+		AbstractExecutorService();
 		local_ref< java::util::concurrent::Future > submit(local_ref< java::lang::Runnable > const&);
 		local_ref< java::util::concurrent::Future > submit(local_ref< java::lang::Runnable > const&, local_ref< java::lang::Object > const&);
 		local_ref< java::util::concurrent::Future > submit(local_ref< java::util::concurrent::Callable > const&);
@@ -67,7 +74,6 @@ namespace java { namespace util { namespace concurrent {
 } //namespace util
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_UTIL_CONCURRENT_ABSTRACTEXECUTORSERVICE_HPP_DECL
@@ -80,16 +86,28 @@ namespace java { namespace util { namespace concurrent {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::util::concurrent::AbstractExecutorService > create< java::util::concurrent::AbstractExecutorService>()
+
+java::util::concurrent::AbstractExecutorService::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::util::concurrent::AbstractExecutorService >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::concurrent::AbstractExecutorService::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::concurrent::AbstractExecutorService::J2CPP_CLASS_NAME, java::util::concurrent::AbstractExecutorService::J2CPP_METHOD_NAME(0), java::util::concurrent::AbstractExecutorService::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+java::util::concurrent::AbstractExecutorService::operator local_ref<java::util::concurrent::ExecutorService>() const
+{
+	return local_ref<java::util::concurrent::ExecutorService>(get_jtype());
+}
+
+
+java::util::concurrent::AbstractExecutorService::AbstractExecutorService()
+: cpp_object<java::util::concurrent::AbstractExecutorService>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::util::concurrent::AbstractExecutorService::J2CPP_CLASS_NAME>(),
+		get_method_id<java::util::concurrent::AbstractExecutorService::J2CPP_CLASS_NAME, java::util::concurrent::AbstractExecutorService::J2CPP_METHOD_NAME(0), java::util::concurrent::AbstractExecutorService::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 local_ref< java::util::concurrent::Future > java::util::concurrent::AbstractExecutorService::submit(local_ref< java::lang::Runnable > const &a0)
 {

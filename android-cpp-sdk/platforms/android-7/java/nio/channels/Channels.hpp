@@ -14,6 +14,7 @@ namespace j2cpp { namespace java { namespace io { class Reader; } } }
 namespace j2cpp { namespace java { namespace io { class InputStream; } } }
 namespace j2cpp { namespace java { namespace io { class OutputStream; } } }
 namespace j2cpp { namespace java { namespace io { class Writer; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace nio { namespace channels { class ReadableByteChannel; } } } }
 namespace j2cpp { namespace java { namespace nio { namespace channels { class WritableByteChannel; } } } }
@@ -25,6 +26,7 @@ namespace j2cpp { namespace java { namespace nio { namespace charset { class Cha
 #include <java/io/OutputStream.hpp>
 #include <java/io/Reader.hpp>
 #include <java/io/Writer.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/nio/channels/ReadableByteChannel.hpp>
 #include <java/nio/channels/WritableByteChannel.hpp>
@@ -54,10 +56,13 @@ namespace java { namespace nio { namespace channels {
 		J2CPP_DECLARE_METHOD(7)
 		J2CPP_DECLARE_METHOD(8)
 
-		Channels(jobject jobj)
+		explicit Channels(jobject jobj)
 		: cpp_object<Channels>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		static local_ref< java::io::InputStream > newInputStream(local_ref< java::nio::channels::ReadableByteChannel > const&);
 		static local_ref< java::io::OutputStream > newOutputStream(local_ref< java::nio::channels::WritableByteChannel > const&);
@@ -73,7 +78,6 @@ namespace java { namespace nio { namespace channels {
 } //namespace nio
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_NIO_CHANNELS_CHANNELS_HPP_DECL
@@ -86,16 +90,12 @@ namespace java { namespace nio { namespace channels {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::nio::channels::Channels > create< java::nio::channels::Channels>()
+
+java::nio::channels::Channels::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::nio::channels::Channels >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::nio::channels::Channels::J2CPP_CLASS_NAME>(),
-			get_method_id<java::nio::channels::Channels::J2CPP_CLASS_NAME, java::nio::channels::Channels::J2CPP_METHOD_NAME(0), java::nio::channels::Channels::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
 
 local_ref< java::io::InputStream > java::nio::channels::Channels::newInputStream(local_ref< java::nio::channels::ReadableByteChannel > const &a0)
 {

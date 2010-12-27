@@ -14,6 +14,8 @@ namespace j2cpp { namespace javax { namespace security { namespace auth { namesp
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace math { class BigInteger; } } }
 namespace j2cpp { namespace java { namespace security { class Principal; } } }
+namespace j2cpp { namespace java { namespace security { namespace cert { class X509Extension; } } } }
+namespace j2cpp { namespace java { namespace security { namespace cert { class Certificate; } } } }
 namespace j2cpp { namespace java { namespace util { class Date; } } }
 namespace j2cpp { namespace java { namespace util { class Collection; } } }
 namespace j2cpp { namespace java { namespace util { class List; } } }
@@ -22,6 +24,8 @@ namespace j2cpp { namespace java { namespace util { class List; } } }
 #include <java/lang/String.hpp>
 #include <java/math/BigInteger.hpp>
 #include <java/security/Principal.hpp>
+#include <java/security/cert/Certificate.hpp>
+#include <java/security/cert/X509Extension.hpp>
 #include <java/util/Collection.hpp>
 #include <java/util/Date.hpp>
 #include <java/util/List.hpp>
@@ -64,10 +68,14 @@ namespace java { namespace security { namespace cert {
 		J2CPP_DECLARE_METHOD(21)
 		J2CPP_DECLARE_METHOD(22)
 
-		X509Certificate(jobject jobj)
+		explicit X509Certificate(jobject jobj)
 		: cpp_object<X509Certificate>(jobj)
 		{
 		}
+
+		operator local_ref<java::security::cert::Certificate>() const;
+		operator local_ref<java::security::cert::X509Extension>() const;
+
 
 		void checkValidity();
 		void checkValidity(local_ref< java::util::Date > const&);
@@ -97,7 +105,6 @@ namespace java { namespace security { namespace cert {
 } //namespace security
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_SECURITY_CERT_X509CERTIFICATE_HPP_DECL
@@ -110,16 +117,17 @@ namespace java { namespace security { namespace cert {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::security::cert::X509Certificate > create< java::security::cert::X509Certificate>()
+
+java::security::cert::X509Certificate::operator local_ref<java::security::cert::Certificate>() const
 {
-	return local_ref< java::security::cert::X509Certificate >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::security::cert::X509Certificate::J2CPP_CLASS_NAME>(),
-			get_method_id<java::security::cert::X509Certificate::J2CPP_CLASS_NAME, java::security::cert::X509Certificate::J2CPP_METHOD_NAME(0), java::security::cert::X509Certificate::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::security::cert::Certificate>(get_jtype());
 }
+
+java::security::cert::X509Certificate::operator local_ref<java::security::cert::X509Extension>() const
+{
+	return local_ref<java::security::cert::X509Extension>(get_jtype());
+}
+
 
 void java::security::cert::X509Certificate::checkValidity()
 {

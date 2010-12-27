@@ -10,8 +10,12 @@
 #define J2CPP_JAVA_NIO_CHANNELS_INTERRUPTIBLECHANNEL_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace nio { namespace channels { class Channel; } } } }
 
 
+#include <java/lang/Object.hpp>
+#include <java/nio/channels/Channel.hpp>
 
 
 namespace j2cpp {
@@ -28,10 +32,14 @@ namespace java { namespace nio { namespace channels {
 
 		J2CPP_DECLARE_METHOD(0)
 
-		InterruptibleChannel(jobject jobj)
+		explicit InterruptibleChannel(jobject jobj)
 		: cpp_object<InterruptibleChannel>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::nio::channels::Channel>() const;
+
 
 		void close();
 	}; //class InterruptibleChannel
@@ -39,7 +47,6 @@ namespace java { namespace nio { namespace channels {
 } //namespace channels
 } //namespace nio
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -52,6 +59,17 @@ namespace java { namespace nio { namespace channels {
 
 namespace j2cpp {
 
+
+
+java::nio::channels::InterruptibleChannel::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
+
+java::nio::channels::InterruptibleChannel::operator local_ref<java::nio::channels::Channel>() const
+{
+	return local_ref<java::nio::channels::Channel>(get_jtype());
+}
 
 void java::nio::channels::InterruptibleChannel::close()
 {

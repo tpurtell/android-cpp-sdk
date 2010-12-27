@@ -10,12 +10,14 @@
 #define J2CPP_JAVA_SECURITY_CERT_CERTPATHBUILDER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace security { class Provider; } } }
 namespace j2cpp { namespace java { namespace security { namespace cert { class CertPathBuilderResult; } } } }
 namespace j2cpp { namespace java { namespace security { namespace cert { class CertPathParameters; } } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/security/Provider.hpp>
 #include <java/security/cert/CertPathBuilderResult.hpp>
@@ -43,10 +45,13 @@ namespace java { namespace security { namespace cert {
 		J2CPP_DECLARE_METHOD(6)
 		J2CPP_DECLARE_METHOD(7)
 
-		CertPathBuilder(jobject jobj)
+		explicit CertPathBuilder(jobject jobj)
 		: cpp_object<CertPathBuilder>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		local_ref< java::lang::String > getAlgorithm();
 		local_ref< java::security::Provider > getProvider();
@@ -61,7 +66,6 @@ namespace java { namespace security { namespace cert {
 } //namespace security
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_SECURITY_CERT_CERTPATHBUILDER_HPP_DECL
@@ -74,17 +78,12 @@ namespace java { namespace security { namespace cert {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::security::cert::CertPathBuilder > create< java::security::cert::CertPathBuilder>(local_ref< java::security::cert::CertPathBuilderSpi > const &a0, local_ref< java::security::Provider > const &a1, local_ref< java::lang::String > const &a2)
+
+java::security::cert::CertPathBuilder::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::security::cert::CertPathBuilder >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::security::cert::CertPathBuilder::J2CPP_CLASS_NAME>(),
-			get_method_id<java::security::cert::CertPathBuilder::J2CPP_CLASS_NAME, java::security::cert::CertPathBuilder::J2CPP_METHOD_NAME(0), java::security::cert::CertPathBuilder::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
 
 local_ref< java::lang::String > java::security::cert::CertPathBuilder::getAlgorithm()
 {

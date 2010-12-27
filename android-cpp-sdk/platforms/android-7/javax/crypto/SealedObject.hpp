@@ -44,11 +44,16 @@ namespace javax { namespace crypto {
 		J2CPP_DECLARE_METHOD(5)
 		J2CPP_DECLARE_FIELD(0)
 
-		SealedObject(jobject jobj)
+		explicit SealedObject(jobject jobj)
 		: cpp_object<SealedObject>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::io::Serializable>() const;
+
+
+		SealedObject(local_ref< java::io::Serializable > const&, local_ref< javax::crypto::Cipher > const&);
 		local_ref< java::lang::String > getAlgorithm();
 		local_ref< java::lang::Object > getObject(local_ref< java::security::Key > const&);
 		local_ref< java::lang::Object > getObject(local_ref< javax::crypto::Cipher > const&);
@@ -58,7 +63,6 @@ namespace javax { namespace crypto {
 
 } //namespace crypto
 } //namespace javax
-
 
 } //namespace j2cpp
 
@@ -72,29 +76,30 @@ namespace javax { namespace crypto {
 namespace j2cpp {
 
 
-template <>
-local_ref< javax::crypto::SealedObject > create< javax::crypto::SealedObject>(local_ref< java::io::Serializable > const &a0, local_ref< javax::crypto::Cipher > const &a1)
+
+javax::crypto::SealedObject::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< javax::crypto::SealedObject >(
-		environment::get().get_jenv()->NewObject(
-			get_class<javax::crypto::SealedObject::J2CPP_CLASS_NAME>(),
-			get_method_id<javax::crypto::SealedObject::J2CPP_CLASS_NAME, javax::crypto::SealedObject::J2CPP_METHOD_NAME(0), javax::crypto::SealedObject::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
 
-template <>
-local_ref< javax::crypto::SealedObject > create< javax::crypto::SealedObject>(local_ref< javax::crypto::SealedObject > const &a0)
+javax::crypto::SealedObject::operator local_ref<java::io::Serializable>() const
 {
-	return local_ref< javax::crypto::SealedObject >(
-		environment::get().get_jenv()->NewObject(
-			get_class<javax::crypto::SealedObject::J2CPP_CLASS_NAME>(),
-			get_method_id<javax::crypto::SealedObject::J2CPP_CLASS_NAME, javax::crypto::SealedObject::J2CPP_METHOD_NAME(1), javax::crypto::SealedObject::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::io::Serializable>(get_jtype());
 }
+
+
+javax::crypto::SealedObject::SealedObject(local_ref< java::io::Serializable > const &a0, local_ref< javax::crypto::Cipher > const &a1)
+: cpp_object<javax::crypto::SealedObject>(
+	environment::get().get_jenv()->NewObject(
+		get_class<javax::crypto::SealedObject::J2CPP_CLASS_NAME>(),
+		get_method_id<javax::crypto::SealedObject::J2CPP_CLASS_NAME, javax::crypto::SealedObject::J2CPP_METHOD_NAME(0), javax::crypto::SealedObject::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
+
 
 local_ref< java::lang::String > javax::crypto::SealedObject::getAlgorithm()
 {

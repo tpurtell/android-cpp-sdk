@@ -14,6 +14,7 @@ namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace security { class AlgorithmParameters; } } }
 namespace j2cpp { namespace java { namespace security { class Provider; } } }
+namespace j2cpp { namespace java { namespace security { class SignatureSpi; } } }
 namespace j2cpp { namespace java { namespace security { class PublicKey; } } }
 namespace j2cpp { namespace java { namespace security { class PrivateKey; } } }
 namespace j2cpp { namespace java { namespace security { class SecureRandom; } } }
@@ -30,6 +31,7 @@ namespace j2cpp { namespace java { namespace nio { class ByteBuffer; } } }
 #include <java/security/Provider.hpp>
 #include <java/security/PublicKey.hpp>
 #include <java/security/SecureRandom.hpp>
+#include <java/security/SignatureSpi.hpp>
 #include <java/security/cert/Certificate.hpp>
 #include <java/security/spec/AlgorithmParameterSpec.hpp>
 
@@ -75,10 +77,13 @@ namespace java { namespace security {
 		J2CPP_DECLARE_FIELD(2)
 		J2CPP_DECLARE_FIELD(3)
 
-		Signature(jobject jobj)
+		explicit Signature(jobject jobj)
 		: cpp_object<Signature>(jobj)
 		{
 		}
+
+		operator local_ref<java::security::SignatureSpi>() const;
+
 
 		static local_ref< java::security::Signature > getInstance(local_ref< java::lang::String > const&);
 		static local_ref< java::security::Signature > getInstance(local_ref< java::lang::String > const&, local_ref< java::lang::String > const&);
@@ -109,7 +114,6 @@ namespace java { namespace security {
 } //namespace security
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_SECURITY_SIGNATURE_HPP_DECL
@@ -122,17 +126,12 @@ namespace java { namespace security {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::security::Signature > create< java::security::Signature>(local_ref< java::lang::String > const &a0)
+
+java::security::Signature::operator local_ref<java::security::SignatureSpi>() const
 {
-	return local_ref< java::security::Signature >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::security::Signature::J2CPP_CLASS_NAME>(),
-			get_method_id<java::security::Signature::J2CPP_CLASS_NAME, java::security::Signature::J2CPP_METHOD_NAME(0), java::security::Signature::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::security::SignatureSpi>(get_jtype());
 }
+
 
 local_ref< java::security::Signature > java::security::Signature::getInstance(local_ref< java::lang::String > const &a0)
 {

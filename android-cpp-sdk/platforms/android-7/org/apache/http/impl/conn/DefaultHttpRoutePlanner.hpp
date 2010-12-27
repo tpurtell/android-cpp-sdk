@@ -10,16 +10,20 @@
 #define J2CPP_ORG_APACHE_HTTP_IMPL_CONN_DEFAULTHTTPROUTEPLANNER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { class HttpRequest; } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace protocol { class HttpContext; } } } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { namespace conn { namespace routing { class HttpRoutePlanner; } } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace conn { namespace routing { class HttpRoute; } } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace conn { namespace scheme { class SchemeRegistry; } } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { class HttpHost; } } } }
 
 
+#include <java/lang/Object.hpp>
 #include <org/apache/http/HttpHost.hpp>
 #include <org/apache/http/HttpRequest.hpp>
 #include <org/apache/http/conn/routing/HttpRoute.hpp>
+#include <org/apache/http/conn/routing/HttpRoutePlanner.hpp>
 #include <org/apache/http/conn/scheme/SchemeRegistry.hpp>
 #include <org/apache/http/protocol/HttpContext.hpp>
 
@@ -40,11 +44,16 @@ namespace org { namespace apache { namespace http { namespace impl { namespace c
 		J2CPP_DECLARE_METHOD(1)
 		J2CPP_DECLARE_FIELD(0)
 
-		DefaultHttpRoutePlanner(jobject jobj)
+		explicit DefaultHttpRoutePlanner(jobject jobj)
 		: cpp_object<DefaultHttpRoutePlanner>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<org::apache::http::conn::routing::HttpRoutePlanner>() const;
+
+
+		DefaultHttpRoutePlanner(local_ref< org::apache::http::conn::scheme::SchemeRegistry > const&);
 		local_ref< org::apache::http::conn::routing::HttpRoute > determineRoute(local_ref< org::apache::http::HttpHost > const&, local_ref< org::apache::http::HttpRequest > const&, local_ref< org::apache::http::protocol::HttpContext > const&);
 
 	}; //class DefaultHttpRoutePlanner
@@ -54,7 +63,6 @@ namespace org { namespace apache { namespace http { namespace impl { namespace c
 } //namespace http
 } //namespace apache
 } //namespace org
-
 
 } //namespace j2cpp
 
@@ -68,17 +76,29 @@ namespace org { namespace apache { namespace http { namespace impl { namespace c
 namespace j2cpp {
 
 
-template <>
-local_ref< org::apache::http::impl::conn::DefaultHttpRoutePlanner > create< org::apache::http::impl::conn::DefaultHttpRoutePlanner>(local_ref< org::apache::http::conn::scheme::SchemeRegistry > const &a0)
+
+org::apache::http::impl::conn::DefaultHttpRoutePlanner::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< org::apache::http::impl::conn::DefaultHttpRoutePlanner >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::apache::http::impl::conn::DefaultHttpRoutePlanner::J2CPP_CLASS_NAME>(),
-			get_method_id<org::apache::http::impl::conn::DefaultHttpRoutePlanner::J2CPP_CLASS_NAME, org::apache::http::impl::conn::DefaultHttpRoutePlanner::J2CPP_METHOD_NAME(0), org::apache::http::impl::conn::DefaultHttpRoutePlanner::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+org::apache::http::impl::conn::DefaultHttpRoutePlanner::operator local_ref<org::apache::http::conn::routing::HttpRoutePlanner>() const
+{
+	return local_ref<org::apache::http::conn::routing::HttpRoutePlanner>(get_jtype());
+}
+
+
+org::apache::http::impl::conn::DefaultHttpRoutePlanner::DefaultHttpRoutePlanner(local_ref< org::apache::http::conn::scheme::SchemeRegistry > const &a0)
+: cpp_object<org::apache::http::impl::conn::DefaultHttpRoutePlanner>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::apache::http::impl::conn::DefaultHttpRoutePlanner::J2CPP_CLASS_NAME>(),
+		get_method_id<org::apache::http::impl::conn::DefaultHttpRoutePlanner::J2CPP_CLASS_NAME, org::apache::http::impl::conn::DefaultHttpRoutePlanner::J2CPP_METHOD_NAME(0), org::apache::http::impl::conn::DefaultHttpRoutePlanner::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 local_ref< org::apache::http::conn::routing::HttpRoute > org::apache::http::impl::conn::DefaultHttpRoutePlanner::determineRoute(local_ref< org::apache::http::HttpHost > const &a0, local_ref< org::apache::http::HttpRequest > const &a1, local_ref< org::apache::http::protocol::HttpContext > const &a2)
 {

@@ -10,10 +10,12 @@
 #define J2CPP_JAVA_LANG_EXCEPTIONININITIALIZERERROR_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class LinkageError; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace lang { class Throwable; } } }
 
 
+#include <java/lang/LinkageError.hpp>
 #include <java/lang/String.hpp>
 #include <java/lang/Throwable.hpp>
 
@@ -36,18 +38,23 @@ namespace java { namespace lang {
 		J2CPP_DECLARE_METHOD(3)
 		J2CPP_DECLARE_METHOD(4)
 
-		ExceptionInInitializerError(jobject jobj)
+		explicit ExceptionInInitializerError(jobject jobj)
 		: cpp_object<ExceptionInInitializerError>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::LinkageError>() const;
+
+
+		ExceptionInInitializerError();
+		ExceptionInInitializerError(local_ref< java::lang::String > const&);
+		ExceptionInInitializerError(local_ref< java::lang::Throwable > const&);
 		local_ref< java::lang::Throwable > getException();
 		local_ref< java::lang::Throwable > getCause();
 	}; //class ExceptionInInitializerError
 
 } //namespace lang
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -61,40 +68,49 @@ namespace java { namespace lang {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::lang::ExceptionInInitializerError > create< java::lang::ExceptionInInitializerError>()
+
+java::lang::ExceptionInInitializerError::operator local_ref<java::lang::LinkageError>() const
 {
-	return local_ref< java::lang::ExceptionInInitializerError >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::lang::ExceptionInInitializerError::J2CPP_CLASS_NAME>(),
-			get_method_id<java::lang::ExceptionInInitializerError::J2CPP_CLASS_NAME, java::lang::ExceptionInInitializerError::J2CPP_METHOD_NAME(0), java::lang::ExceptionInInitializerError::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::LinkageError>(get_jtype());
 }
 
-template <>
-local_ref< java::lang::ExceptionInInitializerError > create< java::lang::ExceptionInInitializerError>(local_ref< java::lang::String > const &a0)
+
+java::lang::ExceptionInInitializerError::ExceptionInInitializerError()
+: cpp_object<java::lang::ExceptionInInitializerError>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::lang::ExceptionInInitializerError::J2CPP_CLASS_NAME>(),
+		get_method_id<java::lang::ExceptionInInitializerError::J2CPP_CLASS_NAME, java::lang::ExceptionInInitializerError::J2CPP_METHOD_NAME(0), java::lang::ExceptionInInitializerError::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
 {
-	return local_ref< java::lang::ExceptionInInitializerError >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::lang::ExceptionInInitializerError::J2CPP_CLASS_NAME>(),
-			get_method_id<java::lang::ExceptionInInitializerError::J2CPP_CLASS_NAME, java::lang::ExceptionInInitializerError::J2CPP_METHOD_NAME(1), java::lang::ExceptionInInitializerError::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< java::lang::ExceptionInInitializerError > create< java::lang::ExceptionInInitializerError>(local_ref< java::lang::Throwable > const &a0)
+
+
+java::lang::ExceptionInInitializerError::ExceptionInInitializerError(local_ref< java::lang::String > const &a0)
+: cpp_object<java::lang::ExceptionInInitializerError>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::lang::ExceptionInInitializerError::J2CPP_CLASS_NAME>(),
+		get_method_id<java::lang::ExceptionInInitializerError::J2CPP_CLASS_NAME, java::lang::ExceptionInInitializerError::J2CPP_METHOD_NAME(1), java::lang::ExceptionInInitializerError::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< java::lang::ExceptionInInitializerError >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::lang::ExceptionInInitializerError::J2CPP_CLASS_NAME>(),
-			get_method_id<java::lang::ExceptionInInitializerError::J2CPP_CLASS_NAME, java::lang::ExceptionInInitializerError::J2CPP_METHOD_NAME(2), java::lang::ExceptionInInitializerError::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype()
-		)
-	);
 }
+
+
+
+java::lang::ExceptionInInitializerError::ExceptionInInitializerError(local_ref< java::lang::Throwable > const &a0)
+: cpp_object<java::lang::ExceptionInInitializerError>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::lang::ExceptionInInitializerError::J2CPP_CLASS_NAME>(),
+		get_method_id<java::lang::ExceptionInInitializerError::J2CPP_CLASS_NAME, java::lang::ExceptionInInitializerError::J2CPP_METHOD_NAME(2), java::lang::ExceptionInInitializerError::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 local_ref< java::lang::Throwable > java::lang::ExceptionInInitializerError::getException()
 {

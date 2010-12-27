@@ -10,8 +10,12 @@
 #define J2CPP_JAVAX_CRYPTO_SECRETKEY_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace security { class Key; } } }
 
 
+#include <java/lang/Object.hpp>
+#include <java/security/Key.hpp>
 
 
 namespace j2cpp {
@@ -28,17 +32,20 @@ namespace javax { namespace crypto {
 
 		J2CPP_DECLARE_FIELD(0)
 
-		SecretKey(jobject jobj)
+		explicit SecretKey(jobject jobj)
 		: cpp_object<SecretKey>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::security::Key>() const;
+
 
 		static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(0), J2CPP_FIELD_SIGNATURE(0), cpp_long > serialVersionUID;
 	}; //class SecretKey
 
 } //namespace crypto
 } //namespace javax
-
 
 } //namespace j2cpp
 
@@ -51,6 +58,17 @@ namespace javax { namespace crypto {
 
 namespace j2cpp {
 
+
+
+javax::crypto::SecretKey::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
+
+javax::crypto::SecretKey::operator local_ref<java::security::Key>() const
+{
+	return local_ref<java::security::Key>(get_jtype());
+}
 
 static_field<
 	javax::crypto::SecretKey::J2CPP_CLASS_NAME,

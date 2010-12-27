@@ -10,10 +10,12 @@
 #define J2CPP_DALVIK_SYSTEM_POTENTIALDEADLOCKERROR_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class VirtualMachineError; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 
 
 #include <java/lang/String.hpp>
+#include <java/lang/VirtualMachineError.hpp>
 
 
 namespace j2cpp {
@@ -31,16 +33,20 @@ namespace dalvik { namespace system {
 		J2CPP_DECLARE_METHOD(0)
 		J2CPP_DECLARE_METHOD(1)
 
-		PotentialDeadlockError(jobject jobj)
+		explicit PotentialDeadlockError(jobject jobj)
 		: cpp_object<PotentialDeadlockError>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::VirtualMachineError>() const;
+
+
+		PotentialDeadlockError();
+		PotentialDeadlockError(local_ref< java::lang::String > const&);
 	}; //class PotentialDeadlockError
 
 } //namespace system
 } //namespace dalvik
-
 
 } //namespace j2cpp
 
@@ -54,28 +60,36 @@ namespace dalvik { namespace system {
 namespace j2cpp {
 
 
-template <>
-local_ref< dalvik::system::PotentialDeadlockError > create< dalvik::system::PotentialDeadlockError>()
+
+dalvik::system::PotentialDeadlockError::operator local_ref<java::lang::VirtualMachineError>() const
 {
-	return local_ref< dalvik::system::PotentialDeadlockError >(
-		environment::get().get_jenv()->NewObject(
-			get_class<dalvik::system::PotentialDeadlockError::J2CPP_CLASS_NAME>(),
-			get_method_id<dalvik::system::PotentialDeadlockError::J2CPP_CLASS_NAME, dalvik::system::PotentialDeadlockError::J2CPP_METHOD_NAME(0), dalvik::system::PotentialDeadlockError::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::VirtualMachineError>(get_jtype());
 }
 
-template <>
-local_ref< dalvik::system::PotentialDeadlockError > create< dalvik::system::PotentialDeadlockError>(local_ref< java::lang::String > const &a0)
+
+dalvik::system::PotentialDeadlockError::PotentialDeadlockError()
+: cpp_object<dalvik::system::PotentialDeadlockError>(
+	environment::get().get_jenv()->NewObject(
+		get_class<dalvik::system::PotentialDeadlockError::J2CPP_CLASS_NAME>(),
+		get_method_id<dalvik::system::PotentialDeadlockError::J2CPP_CLASS_NAME, dalvik::system::PotentialDeadlockError::J2CPP_METHOD_NAME(0), dalvik::system::PotentialDeadlockError::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
 {
-	return local_ref< dalvik::system::PotentialDeadlockError >(
-		environment::get().get_jenv()->NewObject(
-			get_class<dalvik::system::PotentialDeadlockError::J2CPP_CLASS_NAME>(),
-			get_method_id<dalvik::system::PotentialDeadlockError::J2CPP_CLASS_NAME, dalvik::system::PotentialDeadlockError::J2CPP_METHOD_NAME(1), dalvik::system::PotentialDeadlockError::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
 }
+
+
+
+dalvik::system::PotentialDeadlockError::PotentialDeadlockError(local_ref< java::lang::String > const &a0)
+: cpp_object<dalvik::system::PotentialDeadlockError>(
+	environment::get().get_jenv()->NewObject(
+		get_class<dalvik::system::PotentialDeadlockError::J2CPP_CLASS_NAME>(),
+		get_method_id<dalvik::system::PotentialDeadlockError::J2CPP_CLASS_NAME, dalvik::system::PotentialDeadlockError::J2CPP_METHOD_NAME(1), dalvik::system::PotentialDeadlockError::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 
 J2CPP_DEFINE_CLASS(dalvik::system::PotentialDeadlockError,"dalvik/system/PotentialDeadlockError")

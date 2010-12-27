@@ -99,6 +99,31 @@ namespace model {
 		return m_name;
 	}
 
+	void Class::set_super(shared_ptr<Class> const &s)
+	{
+		m_super=s;
+	}
+
+	shared_ptr<Class> Class::get_super() const
+	{
+		return m_super;	
+	}
+
+	void Class::add_interface(shared_ptr<Class> const &i)
+	{
+		m_interfaces.push_back(i);
+	}
+
+	std::size_t Class::get_interfaces_count() const
+	{
+		return 	m_interfaces.size();
+	}
+	
+	shared_ptr<Class> Class::get_interface(std::size_t i) const
+	{
+		return m_interfaces[i];	
+	}
+
 	bool Class::is_nested() const
 	{
 		return shared_ptr<Class>(get_parent(),detail::dynamic_cast_tag())?true:false;

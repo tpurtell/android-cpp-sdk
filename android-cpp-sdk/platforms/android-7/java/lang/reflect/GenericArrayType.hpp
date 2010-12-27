@@ -10,9 +10,11 @@
 #define J2CPP_JAVA_LANG_REFLECT_GENERICARRAYTYPE_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { namespace reflect { class Type; } } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/reflect/Type.hpp>
 
 
@@ -30,10 +32,14 @@ namespace java { namespace lang { namespace reflect {
 
 		J2CPP_DECLARE_METHOD(0)
 
-		GenericArrayType(jobject jobj)
+		explicit GenericArrayType(jobject jobj)
 		: cpp_object<GenericArrayType>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::lang::reflect::Type>() const;
+
 
 		local_ref< java::lang::reflect::Type > getGenericComponentType();
 	}; //class GenericArrayType
@@ -41,7 +47,6 @@ namespace java { namespace lang { namespace reflect {
 } //namespace reflect
 } //namespace lang
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -54,6 +59,17 @@ namespace java { namespace lang { namespace reflect {
 
 namespace j2cpp {
 
+
+
+java::lang::reflect::GenericArrayType::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
+
+java::lang::reflect::GenericArrayType::operator local_ref<java::lang::reflect::Type>() const
+{
+	return local_ref<java::lang::reflect::Type>(get_jtype());
+}
 
 local_ref< java::lang::reflect::Type > java::lang::reflect::GenericArrayType::getGenericComponentType()
 {

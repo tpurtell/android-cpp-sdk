@@ -10,6 +10,7 @@
 #define J2CPP_ANDROID_WEBKIT_URLINTERCEPTREGISTRY_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace util { class Map; } } }
 namespace j2cpp { namespace android { namespace webkit { class PluginData; } } }
@@ -20,6 +21,7 @@ namespace j2cpp { namespace android { namespace webkit { namespace CacheManager_
 #include <android/webkit/CacheManager.hpp>
 #include <android/webkit/PluginData.hpp>
 #include <android/webkit/UrlInterceptHandler.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/util/Map.hpp>
 
@@ -44,11 +46,15 @@ namespace android { namespace webkit {
 		J2CPP_DECLARE_METHOD(5)
 		J2CPP_DECLARE_METHOD(6)
 
-		UrlInterceptRegistry(jobject jobj)
+		explicit UrlInterceptRegistry(jobject jobj)
 		: cpp_object<UrlInterceptRegistry>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		UrlInterceptRegistry();
 		static void setUrlInterceptDisabled(cpp_boolean const&);
 		static cpp_boolean urlInterceptDisabled();
 		static cpp_boolean registerHandler(local_ref< android::webkit::UrlInterceptHandler > const&);
@@ -59,7 +65,6 @@ namespace android { namespace webkit {
 
 } //namespace webkit
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -73,16 +78,23 @@ namespace android { namespace webkit {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::webkit::UrlInterceptRegistry > create< android::webkit::UrlInterceptRegistry>()
+
+android::webkit::UrlInterceptRegistry::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::webkit::UrlInterceptRegistry >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::webkit::UrlInterceptRegistry::J2CPP_CLASS_NAME>(),
-			get_method_id<android::webkit::UrlInterceptRegistry::J2CPP_CLASS_NAME, android::webkit::UrlInterceptRegistry::J2CPP_METHOD_NAME(0), android::webkit::UrlInterceptRegistry::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::webkit::UrlInterceptRegistry::UrlInterceptRegistry()
+: cpp_object<android::webkit::UrlInterceptRegistry>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::webkit::UrlInterceptRegistry::J2CPP_CLASS_NAME>(),
+		get_method_id<android::webkit::UrlInterceptRegistry::J2CPP_CLASS_NAME, android::webkit::UrlInterceptRegistry::J2CPP_METHOD_NAME(0), android::webkit::UrlInterceptRegistry::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 void android::webkit::UrlInterceptRegistry::setUrlInterceptDisabled(cpp_boolean const &a0)
 {

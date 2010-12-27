@@ -10,10 +10,12 @@
 #define J2CPP_ORG_APACHE_HTTP_CLIENT_METHODS_ABORTABLEHTTPREQUEST_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace conn { class ConnectionReleaseTrigger; } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace conn { class ClientConnectionRequest; } } } } }
 
 
+#include <java/lang/Object.hpp>
 #include <org/apache/http/conn/ClientConnectionRequest.hpp>
 #include <org/apache/http/conn/ConnectionReleaseTrigger.hpp>
 
@@ -34,10 +36,13 @@ namespace org { namespace apache { namespace http { namespace client { namespace
 		J2CPP_DECLARE_METHOD(1)
 		J2CPP_DECLARE_METHOD(2)
 
-		AbortableHttpRequest(jobject jobj)
+		explicit AbortableHttpRequest(jobject jobj)
 		: cpp_object<AbortableHttpRequest>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		void setConnectionRequest(local_ref< org::apache::http::conn::ClientConnectionRequest > const&);
 		void setReleaseTrigger(local_ref< org::apache::http::conn::ConnectionReleaseTrigger > const&);
@@ -50,7 +55,6 @@ namespace org { namespace apache { namespace http { namespace client { namespace
 } //namespace apache
 } //namespace org
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ORG_APACHE_HTTP_CLIENT_METHODS_ABORTABLEHTTPREQUEST_HPP_DECL
@@ -62,6 +66,12 @@ namespace org { namespace apache { namespace http { namespace client { namespace
 
 namespace j2cpp {
 
+
+
+org::apache::http::client::methods::AbortableHttpRequest::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 void org::apache::http::client::methods::AbortableHttpRequest::setConnectionRequest(local_ref< org::apache::http::conn::ClientConnectionRequest > const &a0)
 {

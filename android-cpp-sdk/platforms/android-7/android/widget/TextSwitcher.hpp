@@ -14,6 +14,7 @@ namespace j2cpp { namespace java { namespace lang { class CharSequence; } } }
 namespace j2cpp { namespace android { namespace content { class Context; } } }
 namespace j2cpp { namespace android { namespace view { class View; } } }
 namespace j2cpp { namespace android { namespace view { namespace ViewGroup_ { class LayoutParams; } } } }
+namespace j2cpp { namespace android { namespace widget { class ViewSwitcher; } } }
 namespace j2cpp { namespace android { namespace util { class AttributeSet; } } }
 
 
@@ -21,6 +22,7 @@ namespace j2cpp { namespace android { namespace util { class AttributeSet; } } }
 #include <android/util/AttributeSet.hpp>
 #include <android/view/View.hpp>
 #include <android/view/ViewGroup.hpp>
+#include <android/widget/ViewSwitcher.hpp>
 #include <java/lang/CharSequence.hpp>
 
 
@@ -42,11 +44,16 @@ namespace android { namespace widget {
 		J2CPP_DECLARE_METHOD(3)
 		J2CPP_DECLARE_METHOD(4)
 
-		TextSwitcher(jobject jobj)
+		explicit TextSwitcher(jobject jobj)
 		: cpp_object<TextSwitcher>(jobj)
 		{
 		}
 
+		operator local_ref<android::widget::ViewSwitcher>() const;
+
+
+		TextSwitcher(local_ref< android::content::Context > const&);
+		TextSwitcher(local_ref< android::content::Context > const&, local_ref< android::util::AttributeSet > const&);
 		void addView(local_ref< android::view::View > const&, cpp_int const&, local_ref< android::view::ViewGroup_::LayoutParams > const&);
 		void setText(local_ref< java::lang::CharSequence > const&);
 		void setCurrentText(local_ref< java::lang::CharSequence > const&);
@@ -54,7 +61,6 @@ namespace android { namespace widget {
 
 } //namespace widget
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -68,29 +74,37 @@ namespace android { namespace widget {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::widget::TextSwitcher > create< android::widget::TextSwitcher>(local_ref< android::content::Context > const &a0)
+
+android::widget::TextSwitcher::operator local_ref<android::widget::ViewSwitcher>() const
 {
-	return local_ref< android::widget::TextSwitcher >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::widget::TextSwitcher::J2CPP_CLASS_NAME>(),
-			get_method_id<android::widget::TextSwitcher::J2CPP_CLASS_NAME, android::widget::TextSwitcher::J2CPP_METHOD_NAME(0), android::widget::TextSwitcher::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<android::widget::ViewSwitcher>(get_jtype());
 }
 
-template <>
-local_ref< android::widget::TextSwitcher > create< android::widget::TextSwitcher>(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1)
+
+android::widget::TextSwitcher::TextSwitcher(local_ref< android::content::Context > const &a0)
+: cpp_object<android::widget::TextSwitcher>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::widget::TextSwitcher::J2CPP_CLASS_NAME>(),
+		get_method_id<android::widget::TextSwitcher::J2CPP_CLASS_NAME, android::widget::TextSwitcher::J2CPP_METHOD_NAME(0), android::widget::TextSwitcher::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< android::widget::TextSwitcher >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::widget::TextSwitcher::J2CPP_CLASS_NAME>(),
-			get_method_id<android::widget::TextSwitcher::J2CPP_CLASS_NAME, android::widget::TextSwitcher::J2CPP_METHOD_NAME(1), android::widget::TextSwitcher::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
 }
+
+
+
+android::widget::TextSwitcher::TextSwitcher(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1)
+: cpp_object<android::widget::TextSwitcher>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::widget::TextSwitcher::J2CPP_CLASS_NAME>(),
+		get_method_id<android::widget::TextSwitcher::J2CPP_CLASS_NAME, android::widget::TextSwitcher::J2CPP_METHOD_NAME(1), android::widget::TextSwitcher::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
 
 void android::widget::TextSwitcher::addView(local_ref< android::view::View > const &a0, cpp_int const &a1, local_ref< android::view::ViewGroup_::LayoutParams > const &a2)
 {

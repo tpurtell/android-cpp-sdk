@@ -50,10 +50,14 @@ namespace java { namespace util {
 		J2CPP_DECLARE_METHOD(13)
 		J2CPP_DECLARE_METHOD(14)
 
-		AbstractCollection(jobject jobj)
+		explicit AbstractCollection(jobject jobj)
 		: cpp_object<AbstractCollection>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::util::Collection>() const;
+
 
 		cpp_boolean add(local_ref< java::lang::Object > const&);
 		cpp_boolean addAll(local_ref< java::util::Collection > const&);
@@ -74,7 +78,6 @@ namespace java { namespace util {
 } //namespace util
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_UTIL_ABSTRACTCOLLECTION_HPP_DECL
@@ -87,16 +90,17 @@ namespace java { namespace util {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::util::AbstractCollection > create< java::util::AbstractCollection>()
+
+java::util::AbstractCollection::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::util::AbstractCollection >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::AbstractCollection::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::AbstractCollection::J2CPP_CLASS_NAME, java::util::AbstractCollection::J2CPP_METHOD_NAME(0), java::util::AbstractCollection::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+java::util::AbstractCollection::operator local_ref<java::util::Collection>() const
+{
+	return local_ref<java::util::Collection>(get_jtype());
+}
+
 
 cpp_boolean java::util::AbstractCollection::add(local_ref< java::lang::Object > const &a0)
 {

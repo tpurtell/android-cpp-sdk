@@ -12,11 +12,13 @@
 
 namespace j2cpp { namespace javax { namespace net { namespace ssl { class TrustManager; } } } }
 namespace j2cpp { namespace javax { namespace net { namespace ssl { class ManagerFactoryParameters; } } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace security { class Provider; } } }
 namespace j2cpp { namespace java { namespace security { class KeyStore; } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/security/KeyStore.hpp>
 #include <java/security/Provider.hpp>
@@ -47,10 +49,13 @@ namespace javax { namespace net { namespace ssl {
 		J2CPP_DECLARE_METHOD(8)
 		J2CPP_DECLARE_METHOD(9)
 
-		TrustManagerFactory(jobject jobj)
+		explicit TrustManagerFactory(jobject jobj)
 		: cpp_object<TrustManagerFactory>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		static local_ref< java::lang::String > getDefaultAlgorithm();
 		static local_ref< javax::net::ssl::TrustManagerFactory > getInstance(local_ref< java::lang::String > const&);
@@ -67,7 +72,6 @@ namespace javax { namespace net { namespace ssl {
 } //namespace net
 } //namespace javax
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVAX_NET_SSL_TRUSTMANAGERFACTORY_HPP_DECL
@@ -80,17 +84,12 @@ namespace javax { namespace net { namespace ssl {
 namespace j2cpp {
 
 
-template <>
-local_ref< javax::net::ssl::TrustManagerFactory > create< javax::net::ssl::TrustManagerFactory>(local_ref< javax::net::ssl::TrustManagerFactorySpi > const &a0, local_ref< java::security::Provider > const &a1, local_ref< java::lang::String > const &a2)
+
+javax::net::ssl::TrustManagerFactory::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< javax::net::ssl::TrustManagerFactory >(
-		environment::get().get_jenv()->NewObject(
-			get_class<javax::net::ssl::TrustManagerFactory::J2CPP_CLASS_NAME>(),
-			get_method_id<javax::net::ssl::TrustManagerFactory::J2CPP_CLASS_NAME, javax::net::ssl::TrustManagerFactory::J2CPP_METHOD_NAME(0), javax::net::ssl::TrustManagerFactory::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
 
 local_ref< java::lang::String > javax::net::ssl::TrustManagerFactory::getDefaultAlgorithm()
 {

@@ -31,17 +31,20 @@ namespace android { namespace util {
 		J2CPP_DECLARE_METHOD(0)
 		J2CPP_DECLARE_METHOD(1)
 
-		DebugUtils(jobject jobj)
+		explicit DebugUtils(jobject jobj)
 		: cpp_object<DebugUtils>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		DebugUtils();
 		static cpp_boolean isObjectSelected(local_ref< java::lang::Object > const&);
 	}; //class DebugUtils
 
 } //namespace util
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -55,16 +58,23 @@ namespace android { namespace util {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::util::DebugUtils > create< android::util::DebugUtils>()
+
+android::util::DebugUtils::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::util::DebugUtils >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::util::DebugUtils::J2CPP_CLASS_NAME>(),
-			get_method_id<android::util::DebugUtils::J2CPP_CLASS_NAME, android::util::DebugUtils::J2CPP_METHOD_NAME(0), android::util::DebugUtils::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::util::DebugUtils::DebugUtils()
+: cpp_object<android::util::DebugUtils>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::util::DebugUtils::J2CPP_CLASS_NAME>(),
+		get_method_id<android::util::DebugUtils::J2CPP_CLASS_NAME, android::util::DebugUtils::J2CPP_METHOD_NAME(0), android::util::DebugUtils::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 cpp_boolean android::util::DebugUtils::isObjectSelected(local_ref< java::lang::Object > const &a0)
 {

@@ -16,11 +16,13 @@ namespace j2cpp { namespace javax { namespace net { namespace ssl { class SSLSoc
 namespace j2cpp { namespace javax { namespace net { namespace ssl { class KeyManager; } } } }
 namespace j2cpp { namespace javax { namespace net { namespace ssl { class SSLServerSocketFactory; } } } }
 namespace j2cpp { namespace javax { namespace net { namespace ssl { class SSLEngine; } } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace security { class Provider; } } }
 namespace j2cpp { namespace java { namespace security { class SecureRandom; } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/security/Provider.hpp>
 #include <java/security/SecureRandom.hpp>
@@ -58,10 +60,13 @@ namespace javax { namespace net { namespace ssl {
 		J2CPP_DECLARE_METHOD(11)
 		J2CPP_DECLARE_METHOD(12)
 
-		SSLContext(jobject jobj)
+		explicit SSLContext(jobject jobj)
 		: cpp_object<SSLContext>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		static local_ref< javax::net::ssl::SSLContext > getInstance(local_ref< java::lang::String > const&);
 		static local_ref< javax::net::ssl::SSLContext > getInstance(local_ref< java::lang::String > const&, local_ref< java::lang::String > const&);
@@ -81,7 +86,6 @@ namespace javax { namespace net { namespace ssl {
 } //namespace net
 } //namespace javax
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVAX_NET_SSL_SSLCONTEXT_HPP_DECL
@@ -94,17 +98,12 @@ namespace javax { namespace net { namespace ssl {
 namespace j2cpp {
 
 
-template <>
-local_ref< javax::net::ssl::SSLContext > create< javax::net::ssl::SSLContext>(local_ref< javax::net::ssl::SSLContextSpi > const &a0, local_ref< java::security::Provider > const &a1, local_ref< java::lang::String > const &a2)
+
+javax::net::ssl::SSLContext::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< javax::net::ssl::SSLContext >(
-		environment::get().get_jenv()->NewObject(
-			get_class<javax::net::ssl::SSLContext::J2CPP_CLASS_NAME>(),
-			get_method_id<javax::net::ssl::SSLContext::J2CPP_CLASS_NAME, javax::net::ssl::SSLContext::J2CPP_METHOD_NAME(0), javax::net::ssl::SSLContext::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
 
 local_ref< javax::net::ssl::SSLContext > javax::net::ssl::SSLContext::getInstance(local_ref< java::lang::String > const &a0)
 {

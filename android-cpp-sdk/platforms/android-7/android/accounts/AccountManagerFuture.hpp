@@ -36,10 +36,13 @@ namespace android { namespace accounts {
 		J2CPP_DECLARE_METHOD(3)
 		J2CPP_DECLARE_METHOD(4)
 
-		AccountManagerFuture(jobject jobj)
+		explicit AccountManagerFuture(jobject jobj)
 		: cpp_object<AccountManagerFuture>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		cpp_boolean cancel(cpp_boolean const&);
 		cpp_boolean isCancelled();
@@ -50,7 +53,6 @@ namespace android { namespace accounts {
 
 } //namespace accounts
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -63,6 +65,12 @@ namespace android { namespace accounts {
 
 namespace j2cpp {
 
+
+
+android::accounts::AccountManagerFuture::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 cpp_boolean android::accounts::AccountManagerFuture::cancel(cpp_boolean const &a0)
 {

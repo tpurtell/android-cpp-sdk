@@ -10,12 +10,14 @@
 #define J2CPP_ANDROID_TEST_VIEWASSERTS_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace android { namespace view { class View; } } }
 namespace j2cpp { namespace android { namespace view { class ViewGroup; } } }
 
 
 #include <android/view/View.hpp>
 #include <android/view/ViewGroup.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -50,10 +52,13 @@ namespace android { namespace test {
 		J2CPP_DECLARE_METHOD(17)
 		J2CPP_DECLARE_METHOD(18)
 
-		ViewAsserts(jobject jobj)
+		explicit ViewAsserts(jobject jobj)
 		: cpp_object<ViewAsserts>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		static void assertOnScreen(local_ref< android::view::View > const&, local_ref< android::view::View > const&);
 		static void assertOffScreenBelow(local_ref< android::view::View > const&, local_ref< android::view::View > const&);
@@ -78,7 +83,6 @@ namespace android { namespace test {
 } //namespace test
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_TEST_VIEWASSERTS_HPP_DECL
@@ -91,16 +95,12 @@ namespace android { namespace test {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::test::ViewAsserts > create< android::test::ViewAsserts>()
+
+android::test::ViewAsserts::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::test::ViewAsserts >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::test::ViewAsserts::J2CPP_CLASS_NAME>(),
-			get_method_id<android::test::ViewAsserts::J2CPP_CLASS_NAME, android::test::ViewAsserts::J2CPP_METHOD_NAME(0), android::test::ViewAsserts::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
 
 void android::test::ViewAsserts::assertOnScreen(local_ref< android::view::View > const &a0, local_ref< android::view::View > const &a1)
 {

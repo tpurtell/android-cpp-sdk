@@ -84,13 +84,18 @@ namespace android { namespace content {
 			J2CPP_DECLARE_FIELD(1)
 			J2CPP_DECLARE_FIELD(2)
 
-			ShortcutIconResource(jobject jobj)
+			explicit ShortcutIconResource(jobject jobj)
 			: cpp_object<ShortcutIconResource>(jobj)
-			, packageName(jobj)
-			, resourceName(jobj)
+, packageName(jobj)
+, resourceName(jobj)
 			{
 			}
 
+			operator local_ref<java::lang::Object>() const;
+			operator local_ref<android::os::Parcelable>() const;
+
+
+			ShortcutIconResource();
 			static local_ref< android::content::Intent_::ShortcutIconResource > fromContext(local_ref< android::content::Context > const&, cpp_int const&);
 			cpp_int describeContents();
 			void writeToParcel(local_ref< android::os::Parcel > const&, cpp_int const&);
@@ -114,11 +119,15 @@ namespace android { namespace content {
 			J2CPP_DECLARE_METHOD(2)
 			J2CPP_DECLARE_METHOD(3)
 
-			FilterComparison(jobject jobj)
+			explicit FilterComparison(jobject jobj)
 			: cpp_object<FilterComparison>(jobj)
 			{
 			}
 
+			operator local_ref<java::lang::Object>() const;
+
+
+			FilterComparison(local_ref< android::content::Intent > const&);
 			local_ref< android::content::Intent > getIntent();
 			cpp_boolean equals(local_ref< java::lang::Object > const&);
 			cpp_int hashCode();
@@ -413,11 +422,21 @@ namespace android { namespace content {
 		typedef Intent_::ShortcutIconResource ShortcutIconResource;
 		typedef Intent_::FilterComparison FilterComparison;
 
-		Intent(jobject jobj)
+		explicit Intent(jobject jobj)
 		: cpp_object<Intent>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<android::os::Parcelable>() const;
+
+
+		Intent();
+		Intent(local_ref< android::content::Intent > const&);
+		Intent(local_ref< java::lang::String > const&);
+		Intent(local_ref< java::lang::String > const&, local_ref< android::net::Uri > const&);
+		Intent(local_ref< android::content::Context > const&, local_ref< java::lang::Class > const&);
+		Intent(local_ref< java::lang::String > const&, local_ref< android::net::Uri > const&, local_ref< android::content::Context > const&, local_ref< java::lang::Class > const&);
 		static local_ref< android::content::Intent > createChooser(local_ref< android::content::Intent > const&, local_ref< java::lang::CharSequence > const&);
 		local_ref< java::lang::Object > clone();
 		local_ref< android::content::Intent > cloneFilter();
@@ -693,7 +712,6 @@ namespace android { namespace content {
 } //namespace content
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_CONTENT_INTENT_HPP_DECL
@@ -707,16 +725,30 @@ namespace j2cpp {
 
 
 
-template <>
-local_ref< android::content::Intent_::ShortcutIconResource > create< android::content::Intent_::ShortcutIconResource>()
+
+android::content::Intent_::ShortcutIconResource::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::content::Intent_::ShortcutIconResource >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::content::Intent_::ShortcutIconResource::J2CPP_CLASS_NAME>(),
-			get_method_id<android::content::Intent_::ShortcutIconResource::J2CPP_CLASS_NAME, android::content::Intent_::ShortcutIconResource::J2CPP_METHOD_NAME(0), android::content::Intent_::ShortcutIconResource::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+android::content::Intent_::ShortcutIconResource::operator local_ref<android::os::Parcelable>() const
+{
+	return local_ref<android::os::Parcelable>(get_jtype());
+}
+
+
+android::content::Intent_::ShortcutIconResource::ShortcutIconResource()
+: cpp_object<android::content::Intent_::ShortcutIconResource>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::content::Intent_::ShortcutIconResource::J2CPP_CLASS_NAME>(),
+		get_method_id<android::content::Intent_::ShortcutIconResource::J2CPP_CLASS_NAME, android::content::Intent_::ShortcutIconResource::J2CPP_METHOD_NAME(0), android::content::Intent_::ShortcutIconResource::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+, packageName(get_jtype())
+, resourceName(get_jtype())
+{
+}
+
 
 local_ref< android::content::Intent_::ShortcutIconResource > android::content::Intent_::ShortcutIconResource::fromContext(local_ref< android::content::Context > const &a0, cpp_int const &a1)
 {
@@ -761,6 +793,7 @@ local_ref< java::lang::String > android::content::Intent_::ShortcutIconResource:
 }
 
 
+
 static_field<
 	android::content::Intent_::ShortcutIconResource::J2CPP_CLASS_NAME,
 	android::content::Intent_::ShortcutIconResource::J2CPP_FIELD_NAME(2),
@@ -780,17 +813,24 @@ J2CPP_DEFINE_FIELD(android::content::Intent_::ShortcutIconResource,0,"packageNam
 J2CPP_DEFINE_FIELD(android::content::Intent_::ShortcutIconResource,1,"resourceName","Ljava/lang/String;")
 J2CPP_DEFINE_FIELD(android::content::Intent_::ShortcutIconResource,2,"CREATOR","Landroid/os/Parcelable$Creator;")
 
-template <>
-local_ref< android::content::Intent_::FilterComparison > create< android::content::Intent_::FilterComparison>(local_ref< android::content::Intent > const &a0)
+
+android::content::Intent_::FilterComparison::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::content::Intent_::FilterComparison >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::content::Intent_::FilterComparison::J2CPP_CLASS_NAME>(),
-			get_method_id<android::content::Intent_::FilterComparison::J2CPP_CLASS_NAME, android::content::Intent_::FilterComparison::J2CPP_METHOD_NAME(0), android::content::Intent_::FilterComparison::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::content::Intent_::FilterComparison::FilterComparison(local_ref< android::content::Intent > const &a0)
+: cpp_object<android::content::Intent_::FilterComparison>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::content::Intent_::FilterComparison::J2CPP_CLASS_NAME>(),
+		get_method_id<android::content::Intent_::FilterComparison::J2CPP_CLASS_NAME, android::content::Intent_::FilterComparison::J2CPP_METHOD_NAME(0), android::content::Intent_::FilterComparison::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 local_ref< android::content::Intent > android::content::Intent_::FilterComparison::getIntent()
 {
@@ -831,76 +871,93 @@ J2CPP_DEFINE_METHOD(android::content::Intent_::FilterComparison,2,"equals","(Lja
 J2CPP_DEFINE_METHOD(android::content::Intent_::FilterComparison,3,"hashCode","()I")
 
 
-template <>
-local_ref< android::content::Intent > create< android::content::Intent>()
+
+android::content::Intent::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::content::Intent >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::content::Intent::J2CPP_CLASS_NAME>(),
-			get_method_id<android::content::Intent::J2CPP_CLASS_NAME, android::content::Intent::J2CPP_METHOD_NAME(0), android::content::Intent::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
 
-template <>
-local_ref< android::content::Intent > create< android::content::Intent>(local_ref< android::content::Intent > const &a0)
+android::content::Intent::operator local_ref<android::os::Parcelable>() const
 {
-	return local_ref< android::content::Intent >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::content::Intent::J2CPP_CLASS_NAME>(),
-			get_method_id<android::content::Intent::J2CPP_CLASS_NAME, android::content::Intent::J2CPP_METHOD_NAME(1), android::content::Intent::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<android::os::Parcelable>(get_jtype());
 }
 
-template <>
-local_ref< android::content::Intent > create< android::content::Intent>(local_ref< java::lang::String > const &a0)
+
+android::content::Intent::Intent()
+: cpp_object<android::content::Intent>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::content::Intent::J2CPP_CLASS_NAME>(),
+		get_method_id<android::content::Intent::J2CPP_CLASS_NAME, android::content::Intent::J2CPP_METHOD_NAME(0), android::content::Intent::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
 {
-	return local_ref< android::content::Intent >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::content::Intent::J2CPP_CLASS_NAME>(),
-			get_method_id<android::content::Intent::J2CPP_CLASS_NAME, android::content::Intent::J2CPP_METHOD_NAME(2), android::content::Intent::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< android::content::Intent > create< android::content::Intent>(local_ref< java::lang::String > const &a0, local_ref< android::net::Uri > const &a1)
+
+
+android::content::Intent::Intent(local_ref< android::content::Intent > const &a0)
+: cpp_object<android::content::Intent>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::content::Intent::J2CPP_CLASS_NAME>(),
+		get_method_id<android::content::Intent::J2CPP_CLASS_NAME, android::content::Intent::J2CPP_METHOD_NAME(1), android::content::Intent::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< android::content::Intent >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::content::Intent::J2CPP_CLASS_NAME>(),
-			get_method_id<android::content::Intent::J2CPP_CLASS_NAME, android::content::Intent::J2CPP_METHOD_NAME(3), android::content::Intent::J2CPP_METHOD_SIGNATURE(3), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< android::content::Intent > create< android::content::Intent>(local_ref< android::content::Context > const &a0, local_ref< java::lang::Class > const &a1)
+
+
+android::content::Intent::Intent(local_ref< java::lang::String > const &a0)
+: cpp_object<android::content::Intent>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::content::Intent::J2CPP_CLASS_NAME>(),
+		get_method_id<android::content::Intent::J2CPP_CLASS_NAME, android::content::Intent::J2CPP_METHOD_NAME(2), android::content::Intent::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< android::content::Intent >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::content::Intent::J2CPP_CLASS_NAME>(),
-			get_method_id<android::content::Intent::J2CPP_CLASS_NAME, android::content::Intent::J2CPP_METHOD_NAME(4), android::content::Intent::J2CPP_METHOD_SIGNATURE(4), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< android::content::Intent > create< android::content::Intent>(local_ref< java::lang::String > const &a0, local_ref< android::net::Uri > const &a1, local_ref< android::content::Context > const &a2, local_ref< java::lang::Class > const &a3)
+
+
+android::content::Intent::Intent(local_ref< java::lang::String > const &a0, local_ref< android::net::Uri > const &a1)
+: cpp_object<android::content::Intent>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::content::Intent::J2CPP_CLASS_NAME>(),
+		get_method_id<android::content::Intent::J2CPP_CLASS_NAME, android::content::Intent::J2CPP_METHOD_NAME(3), android::content::Intent::J2CPP_METHOD_SIGNATURE(3), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
 {
-	return local_ref< android::content::Intent >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::content::Intent::J2CPP_CLASS_NAME>(),
-			get_method_id<android::content::Intent::J2CPP_CLASS_NAME, android::content::Intent::J2CPP_METHOD_NAME(5), android::content::Intent::J2CPP_METHOD_SIGNATURE(5), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype()
-		)
-	);
 }
+
+
+
+android::content::Intent::Intent(local_ref< android::content::Context > const &a0, local_ref< java::lang::Class > const &a1)
+: cpp_object<android::content::Intent>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::content::Intent::J2CPP_CLASS_NAME>(),
+		get_method_id<android::content::Intent::J2CPP_CLASS_NAME, android::content::Intent::J2CPP_METHOD_NAME(4), android::content::Intent::J2CPP_METHOD_SIGNATURE(4), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
+
+
+android::content::Intent::Intent(local_ref< java::lang::String > const &a0, local_ref< android::net::Uri > const &a1, local_ref< android::content::Context > const &a2, local_ref< java::lang::Class > const &a3)
+: cpp_object<android::content::Intent>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::content::Intent::J2CPP_CLASS_NAME>(),
+		get_method_id<android::content::Intent::J2CPP_CLASS_NAME, android::content::Intent::J2CPP_METHOD_NAME(5), android::content::Intent::J2CPP_METHOD_SIGNATURE(5), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype()
+	)
+)
+{
+}
+
 
 local_ref< android::content::Intent > android::content::Intent::createChooser(local_ref< android::content::Intent > const &a0, local_ref< java::lang::CharSequence > const &a1)
 {
@@ -2060,6 +2117,7 @@ local_ref< android::content::Intent > android::content::Intent::parseIntent(loca
 		)
 	);
 }
+
 
 
 static_field<

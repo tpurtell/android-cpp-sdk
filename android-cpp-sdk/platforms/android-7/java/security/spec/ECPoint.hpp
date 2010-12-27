@@ -38,11 +38,15 @@ namespace java { namespace security { namespace spec {
 		J2CPP_DECLARE_METHOD(5)
 		J2CPP_DECLARE_FIELD(0)
 
-		ECPoint(jobject jobj)
+		explicit ECPoint(jobject jobj)
 		: cpp_object<ECPoint>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		ECPoint(local_ref< java::math::BigInteger > const&, local_ref< java::math::BigInteger > const&);
 		local_ref< java::math::BigInteger > getAffineX();
 		local_ref< java::math::BigInteger > getAffineY();
 		cpp_boolean equals(local_ref< java::lang::Object > const&);
@@ -54,7 +58,6 @@ namespace java { namespace security { namespace spec {
 } //namespace spec
 } //namespace security
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -68,17 +71,24 @@ namespace java { namespace security { namespace spec {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::security::spec::ECPoint > create< java::security::spec::ECPoint>(local_ref< java::math::BigInteger > const &a0, local_ref< java::math::BigInteger > const &a1)
+
+java::security::spec::ECPoint::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::security::spec::ECPoint >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::security::spec::ECPoint::J2CPP_CLASS_NAME>(),
-			get_method_id<java::security::spec::ECPoint::J2CPP_CLASS_NAME, java::security::spec::ECPoint::J2CPP_METHOD_NAME(0), java::security::spec::ECPoint::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+java::security::spec::ECPoint::ECPoint(local_ref< java::math::BigInteger > const &a0, local_ref< java::math::BigInteger > const &a1)
+: cpp_object<java::security::spec::ECPoint>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::security::spec::ECPoint::J2CPP_CLASS_NAME>(),
+		get_method_id<java::security::spec::ECPoint::J2CPP_CLASS_NAME, java::security::spec::ECPoint::J2CPP_METHOD_NAME(0), java::security::spec::ECPoint::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
 
 local_ref< java::math::BigInteger > java::security::spec::ECPoint::getAffineX()
 {
@@ -120,6 +130,7 @@ cpp_int java::security::spec::ECPoint::hashCode()
 		)
 	);
 }
+
 
 
 static_field<

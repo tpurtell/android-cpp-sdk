@@ -10,9 +10,11 @@
 #define J2CPP_ANDROID_OS_PROCESS_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -60,11 +62,15 @@ namespace android { namespace os {
 		J2CPP_DECLARE_FIELD(16)
 		J2CPP_DECLARE_FIELD(17)
 
-		Process(jobject jobj)
+		explicit Process(jobject jobj)
 		: cpp_object<Process>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		Process();
 		static cpp_long getElapsedCpuTime();
 		static cpp_int myPid();
 		static cpp_int myTid();
@@ -101,7 +107,6 @@ namespace android { namespace os {
 } //namespace os
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_OS_PROCESS_HPP_DECL
@@ -114,16 +119,23 @@ namespace android { namespace os {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::os::Process > create< android::os::Process>()
+
+android::os::Process::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::os::Process >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::os::Process::J2CPP_CLASS_NAME>(),
-			get_method_id<android::os::Process::J2CPP_CLASS_NAME, android::os::Process::J2CPP_METHOD_NAME(0), android::os::Process::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::os::Process::Process()
+: cpp_object<android::os::Process>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::os::Process::J2CPP_CLASS_NAME>(),
+		get_method_id<android::os::Process::J2CPP_CLASS_NAME, android::os::Process::J2CPP_METHOD_NAME(0), android::os::Process::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 cpp_long android::os::Process::getElapsedCpuTime()
 {

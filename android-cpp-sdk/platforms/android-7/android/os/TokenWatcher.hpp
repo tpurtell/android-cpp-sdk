@@ -10,6 +10,7 @@
 #define J2CPP_ANDROID_OS_TOKENWATCHER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace android { namespace os { class IBinder; } } }
 namespace j2cpp { namespace android { namespace os { class Handler; } } }
@@ -17,6 +18,7 @@ namespace j2cpp { namespace android { namespace os { class Handler; } } }
 
 #include <android/os/Handler.hpp>
 #include <android/os/IBinder.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -41,11 +43,15 @@ namespace android { namespace os {
 		J2CPP_DECLARE_METHOD(6)
 		J2CPP_DECLARE_METHOD(7)
 
-		TokenWatcher(jobject jobj)
+		explicit TokenWatcher(jobject jobj)
 		: cpp_object<TokenWatcher>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		TokenWatcher(local_ref< android::os::Handler > const&, local_ref< java::lang::String > const&);
 		void acquired();
 		void released();
 		void acquire(local_ref< android::os::IBinder > const&, local_ref< java::lang::String > const&);
@@ -57,7 +63,6 @@ namespace android { namespace os {
 
 } //namespace os
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -71,17 +76,24 @@ namespace android { namespace os {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::os::TokenWatcher > create< android::os::TokenWatcher>(local_ref< android::os::Handler > const &a0, local_ref< java::lang::String > const &a1)
+
+android::os::TokenWatcher::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::os::TokenWatcher >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::os::TokenWatcher::J2CPP_CLASS_NAME>(),
-			get_method_id<android::os::TokenWatcher::J2CPP_CLASS_NAME, android::os::TokenWatcher::J2CPP_METHOD_NAME(0), android::os::TokenWatcher::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::os::TokenWatcher::TokenWatcher(local_ref< android::os::Handler > const &a0, local_ref< java::lang::String > const &a1)
+: cpp_object<android::os::TokenWatcher>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::os::TokenWatcher::J2CPP_CLASS_NAME>(),
+		get_method_id<android::os::TokenWatcher::J2CPP_CLASS_NAME, android::os::TokenWatcher::J2CPP_METHOD_NAME(0), android::os::TokenWatcher::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
 
 void android::os::TokenWatcher::acquired()
 {

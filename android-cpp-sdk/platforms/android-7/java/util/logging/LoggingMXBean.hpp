@@ -10,10 +10,12 @@
 #define J2CPP_JAVA_UTIL_LOGGING_LOGGINGMXBEAN_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace util { class List; } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/util/List.hpp>
 
@@ -35,10 +37,13 @@ namespace java { namespace util { namespace logging {
 		J2CPP_DECLARE_METHOD(2)
 		J2CPP_DECLARE_METHOD(3)
 
-		LoggingMXBean(jobject jobj)
+		explicit LoggingMXBean(jobject jobj)
 		: cpp_object<LoggingMXBean>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		local_ref< java::lang::String > getLoggerLevel(local_ref< java::lang::String > const&);
 		local_ref< java::util::List > getLoggerNames();
@@ -49,7 +54,6 @@ namespace java { namespace util { namespace logging {
 } //namespace logging
 } //namespace util
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -62,6 +66,12 @@ namespace java { namespace util { namespace logging {
 
 namespace j2cpp {
 
+
+
+java::util::logging::LoggingMXBean::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 local_ref< java::lang::String > java::util::logging::LoggingMXBean::getLoggerLevel(local_ref< java::lang::String > const &a0)
 {

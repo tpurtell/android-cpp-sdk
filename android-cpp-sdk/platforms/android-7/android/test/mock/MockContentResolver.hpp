@@ -13,10 +13,12 @@
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace android { namespace net { class Uri; } } }
 namespace j2cpp { namespace android { namespace database { class ContentObserver; } } }
+namespace j2cpp { namespace android { namespace content { class ContentResolver; } } }
 namespace j2cpp { namespace android { namespace content { class ContentProvider; } } }
 
 
 #include <android/content/ContentProvider.hpp>
+#include <android/content/ContentResolver.hpp>
 #include <android/database/ContentObserver.hpp>
 #include <android/net/Uri.hpp>
 #include <java/lang/String.hpp>
@@ -38,11 +40,15 @@ namespace android { namespace test { namespace mock {
 		J2CPP_DECLARE_METHOD(1)
 		J2CPP_DECLARE_METHOD(2)
 
-		MockContentResolver(jobject jobj)
+		explicit MockContentResolver(jobject jobj)
 		: cpp_object<MockContentResolver>(jobj)
 		{
 		}
 
+		operator local_ref<android::content::ContentResolver>() const;
+
+
+		MockContentResolver();
 		void addProvider(local_ref< java::lang::String > const&, local_ref< android::content::ContentProvider > const&);
 		void notifyChange(local_ref< android::net::Uri > const&, local_ref< android::database::ContentObserver > const&, cpp_boolean const&);
 	}; //class MockContentResolver
@@ -50,7 +56,6 @@ namespace android { namespace test { namespace mock {
 } //namespace mock
 } //namespace test
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -64,16 +69,23 @@ namespace android { namespace test { namespace mock {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::test::mock::MockContentResolver > create< android::test::mock::MockContentResolver>()
+
+android::test::mock::MockContentResolver::operator local_ref<android::content::ContentResolver>() const
 {
-	return local_ref< android::test::mock::MockContentResolver >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::test::mock::MockContentResolver::J2CPP_CLASS_NAME>(),
-			get_method_id<android::test::mock::MockContentResolver::J2CPP_CLASS_NAME, android::test::mock::MockContentResolver::J2CPP_METHOD_NAME(0), android::test::mock::MockContentResolver::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<android::content::ContentResolver>(get_jtype());
 }
+
+
+android::test::mock::MockContentResolver::MockContentResolver()
+: cpp_object<android::test::mock::MockContentResolver>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::test::mock::MockContentResolver::J2CPP_CLASS_NAME>(),
+		get_method_id<android::test::mock::MockContentResolver::J2CPP_CLASS_NAME, android::test::mock::MockContentResolver::J2CPP_METHOD_NAME(0), android::test::mock::MockContentResolver::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 void android::test::mock::MockContentResolver::addProvider(local_ref< java::lang::String > const &a0, local_ref< android::content::ContentProvider > const &a1)
 {

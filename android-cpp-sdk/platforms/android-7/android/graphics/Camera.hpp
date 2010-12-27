@@ -10,12 +10,14 @@
 #define J2CPP_ANDROID_GRAPHICS_CAMERA_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace android { namespace graphics { class Canvas; } } }
 namespace j2cpp { namespace android { namespace graphics { class Matrix; } } }
 
 
 #include <android/graphics/Canvas.hpp>
 #include <android/graphics/Matrix.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -42,11 +44,15 @@ namespace android { namespace graphics {
 		J2CPP_DECLARE_METHOD(9)
 		J2CPP_DECLARE_METHOD(10)
 
-		Camera(jobject jobj)
+		explicit Camera(jobject jobj)
 		: cpp_object<Camera>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		Camera();
 		void save();
 		void restore();
 		void translate(cpp_float const&, cpp_float const&, cpp_float const&);
@@ -61,7 +67,6 @@ namespace android { namespace graphics {
 } //namespace graphics
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_GRAPHICS_CAMERA_HPP_DECL
@@ -74,16 +79,23 @@ namespace android { namespace graphics {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::graphics::Camera > create< android::graphics::Camera>()
+
+android::graphics::Camera::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::graphics::Camera >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::graphics::Camera::J2CPP_CLASS_NAME>(),
-			get_method_id<android::graphics::Camera::J2CPP_CLASS_NAME, android::graphics::Camera::J2CPP_METHOD_NAME(0), android::graphics::Camera::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::graphics::Camera::Camera()
+: cpp_object<android::graphics::Camera>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::graphics::Camera::J2CPP_CLASS_NAME>(),
+		get_method_id<android::graphics::Camera::J2CPP_CLASS_NAME, android::graphics::Camera::J2CPP_METHOD_NAME(0), android::graphics::Camera::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 void android::graphics::Camera::save()
 {

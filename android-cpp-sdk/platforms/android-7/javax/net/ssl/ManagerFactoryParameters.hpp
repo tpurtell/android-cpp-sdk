@@ -10,8 +10,10 @@
 #define J2CPP_JAVAX_NET_SSL_MANAGERFACTORYPARAMETERS_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -27,16 +29,18 @@ namespace javax { namespace net { namespace ssl {
 		J2CPP_DECLARE_CLASS
 
 
-		ManagerFactoryParameters(jobject jobj)
+		explicit ManagerFactoryParameters(jobject jobj)
 		: cpp_object<ManagerFactoryParameters>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 	}; //class ManagerFactoryParameters
 
 } //namespace ssl
 } //namespace net
 } //namespace javax
-
 
 } //namespace j2cpp
 
@@ -49,6 +53,12 @@ namespace javax { namespace net { namespace ssl {
 
 namespace j2cpp {
 
+
+
+javax::net::ssl::ManagerFactoryParameters::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 J2CPP_DEFINE_CLASS(javax::net::ssl::ManagerFactoryParameters,"javax/net/ssl/ManagerFactoryParameters")
 

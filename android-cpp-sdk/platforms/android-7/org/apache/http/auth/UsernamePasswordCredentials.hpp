@@ -13,11 +13,13 @@
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace security { class Principal; } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { namespace auth { class Credentials; } } } } }
 
 
 #include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/security/Principal.hpp>
+#include <org/apache/http/auth/Credentials.hpp>
 
 
 namespace j2cpp {
@@ -41,11 +43,17 @@ namespace org { namespace apache { namespace http { namespace auth {
 		J2CPP_DECLARE_METHOD(6)
 		J2CPP_DECLARE_METHOD(7)
 
-		UsernamePasswordCredentials(jobject jobj)
+		explicit UsernamePasswordCredentials(jobject jobj)
 		: cpp_object<UsernamePasswordCredentials>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<org::apache::http::auth::Credentials>() const;
+
+
+		UsernamePasswordCredentials(local_ref< java::lang::String > const&);
+		UsernamePasswordCredentials(local_ref< java::lang::String > const&, local_ref< java::lang::String > const&);
 		local_ref< java::security::Principal > getUserPrincipal();
 		local_ref< java::lang::String > getUserName();
 		local_ref< java::lang::String > getPassword();
@@ -59,7 +67,6 @@ namespace org { namespace apache { namespace http { namespace auth {
 } //namespace apache
 } //namespace org
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ORG_APACHE_HTTP_AUTH_USERNAMEPASSWORDCREDENTIALS_HPP_DECL
@@ -72,29 +79,42 @@ namespace org { namespace apache { namespace http { namespace auth {
 namespace j2cpp {
 
 
-template <>
-local_ref< org::apache::http::auth::UsernamePasswordCredentials > create< org::apache::http::auth::UsernamePasswordCredentials>(local_ref< java::lang::String > const &a0)
+
+org::apache::http::auth::UsernamePasswordCredentials::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< org::apache::http::auth::UsernamePasswordCredentials >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::apache::http::auth::UsernamePasswordCredentials::J2CPP_CLASS_NAME>(),
-			get_method_id<org::apache::http::auth::UsernamePasswordCredentials::J2CPP_CLASS_NAME, org::apache::http::auth::UsernamePasswordCredentials::J2CPP_METHOD_NAME(0), org::apache::http::auth::UsernamePasswordCredentials::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
 
-template <>
-local_ref< org::apache::http::auth::UsernamePasswordCredentials > create< org::apache::http::auth::UsernamePasswordCredentials>(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
+org::apache::http::auth::UsernamePasswordCredentials::operator local_ref<org::apache::http::auth::Credentials>() const
 {
-	return local_ref< org::apache::http::auth::UsernamePasswordCredentials >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::apache::http::auth::UsernamePasswordCredentials::J2CPP_CLASS_NAME>(),
-			get_method_id<org::apache::http::auth::UsernamePasswordCredentials::J2CPP_CLASS_NAME, org::apache::http::auth::UsernamePasswordCredentials::J2CPP_METHOD_NAME(1), org::apache::http::auth::UsernamePasswordCredentials::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<org::apache::http::auth::Credentials>(get_jtype());
 }
+
+
+org::apache::http::auth::UsernamePasswordCredentials::UsernamePasswordCredentials(local_ref< java::lang::String > const &a0)
+: cpp_object<org::apache::http::auth::UsernamePasswordCredentials>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::apache::http::auth::UsernamePasswordCredentials::J2CPP_CLASS_NAME>(),
+		get_method_id<org::apache::http::auth::UsernamePasswordCredentials::J2CPP_CLASS_NAME, org::apache::http::auth::UsernamePasswordCredentials::J2CPP_METHOD_NAME(0), org::apache::http::auth::UsernamePasswordCredentials::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
+
+
+org::apache::http::auth::UsernamePasswordCredentials::UsernamePasswordCredentials(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
+: cpp_object<org::apache::http::auth::UsernamePasswordCredentials>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::apache::http::auth::UsernamePasswordCredentials::J2CPP_CLASS_NAME>(),
+		get_method_id<org::apache::http::auth::UsernamePasswordCredentials::J2CPP_CLASS_NAME, org::apache::http::auth::UsernamePasswordCredentials::J2CPP_METHOD_NAME(1), org::apache::http::auth::UsernamePasswordCredentials::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
 
 local_ref< java::security::Principal > org::apache::http::auth::UsernamePasswordCredentials::getUserPrincipal()
 {

@@ -16,6 +16,8 @@ namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace math { class BigInteger; } } }
 namespace j2cpp { namespace java { namespace security { class PublicKey; } } }
 namespace j2cpp { namespace java { namespace security { class Principal; } } }
+namespace j2cpp { namespace java { namespace security { namespace cert { class X509Extension; } } } }
+namespace j2cpp { namespace java { namespace security { namespace cert { class CRL; } } } }
 namespace j2cpp { namespace java { namespace security { namespace cert { class X509CRLEntry; } } } }
 namespace j2cpp { namespace java { namespace security { namespace cert { class X509Certificate; } } } }
 namespace j2cpp { namespace java { namespace util { class Set; } } }
@@ -27,8 +29,10 @@ namespace j2cpp { namespace java { namespace util { class Date; } } }
 #include <java/math/BigInteger.hpp>
 #include <java/security/Principal.hpp>
 #include <java/security/PublicKey.hpp>
+#include <java/security/cert/CRL.hpp>
 #include <java/security/cert/X509CRLEntry.hpp>
 #include <java/security/cert/X509Certificate.hpp>
+#include <java/security/cert/X509Extension.hpp>
 #include <java/util/Date.hpp>
 #include <java/util/Set.hpp>
 #include <javax/security/auth/x500/X500Principal.hpp>
@@ -66,10 +70,14 @@ namespace java { namespace security { namespace cert {
 		J2CPP_DECLARE_METHOD(17)
 		J2CPP_DECLARE_METHOD(18)
 
-		X509CRL(jobject jobj)
+		explicit X509CRL(jobject jobj)
 		: cpp_object<X509CRL>(jobj)
 		{
 		}
+
+		operator local_ref<java::security::cert::CRL>() const;
+		operator local_ref<java::security::cert::X509Extension>() const;
+
 
 		cpp_boolean equals(local_ref< java::lang::Object > const&);
 		cpp_int hashCode();
@@ -95,7 +103,6 @@ namespace java { namespace security { namespace cert {
 } //namespace security
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_SECURITY_CERT_X509CRL_HPP_DECL
@@ -108,16 +115,17 @@ namespace java { namespace security { namespace cert {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::security::cert::X509CRL > create< java::security::cert::X509CRL>()
+
+java::security::cert::X509CRL::operator local_ref<java::security::cert::CRL>() const
 {
-	return local_ref< java::security::cert::X509CRL >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::security::cert::X509CRL::J2CPP_CLASS_NAME>(),
-			get_method_id<java::security::cert::X509CRL::J2CPP_CLASS_NAME, java::security::cert::X509CRL::J2CPP_METHOD_NAME(0), java::security::cert::X509CRL::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::security::cert::CRL>(get_jtype());
 }
+
+java::security::cert::X509CRL::operator local_ref<java::security::cert::X509Extension>() const
+{
+	return local_ref<java::security::cert::X509Extension>(get_jtype());
+}
+
 
 cpp_boolean java::security::cert::X509CRL::equals(local_ref< java::lang::Object > const &a0)
 {

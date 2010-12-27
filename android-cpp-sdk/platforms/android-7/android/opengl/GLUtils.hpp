@@ -10,10 +10,12 @@
 #define J2CPP_ANDROID_OPENGL_GLUTILS_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace android { namespace graphics { class Bitmap; } } }
 
 
 #include <android/graphics/Bitmap.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -37,10 +39,13 @@ namespace android { namespace opengl {
 		J2CPP_DECLARE_METHOD(6)
 		J2CPP_DECLARE_METHOD(7)
 
-		GLUtils(jobject jobj)
+		explicit GLUtils(jobject jobj)
 		: cpp_object<GLUtils>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		static cpp_int getInternalFormat(local_ref< android::graphics::Bitmap > const&);
 		static cpp_int getType(local_ref< android::graphics::Bitmap > const&);
@@ -54,7 +59,6 @@ namespace android { namespace opengl {
 } //namespace opengl
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_OPENGL_GLUTILS_HPP_DECL
@@ -67,16 +71,12 @@ namespace android { namespace opengl {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::opengl::GLUtils > create< android::opengl::GLUtils>()
+
+android::opengl::GLUtils::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::opengl::GLUtils >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::opengl::GLUtils::J2CPP_CLASS_NAME>(),
-			get_method_id<android::opengl::GLUtils::J2CPP_CLASS_NAME, android::opengl::GLUtils::J2CPP_METHOD_NAME(0), android::opengl::GLUtils::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
 
 cpp_int android::opengl::GLUtils::getInternalFormat(local_ref< android::graphics::Bitmap > const &a0)
 {

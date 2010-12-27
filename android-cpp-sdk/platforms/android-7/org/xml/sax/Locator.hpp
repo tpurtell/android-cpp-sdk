@@ -10,9 +10,11 @@
 #define J2CPP_ORG_XML_SAX_LOCATOR_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -33,10 +35,13 @@ namespace org { namespace xml { namespace sax {
 		J2CPP_DECLARE_METHOD(2)
 		J2CPP_DECLARE_METHOD(3)
 
-		Locator(jobject jobj)
+		explicit Locator(jobject jobj)
 		: cpp_object<Locator>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		local_ref< java::lang::String > getPublicId();
 		local_ref< java::lang::String > getSystemId();
@@ -47,7 +52,6 @@ namespace org { namespace xml { namespace sax {
 } //namespace sax
 } //namespace xml
 } //namespace org
-
 
 } //namespace j2cpp
 
@@ -60,6 +64,12 @@ namespace org { namespace xml { namespace sax {
 
 namespace j2cpp {
 
+
+
+org::xml::sax::Locator::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 local_ref< java::lang::String > org::xml::sax::Locator::getPublicId()
 {

@@ -11,9 +11,11 @@
 
 
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace nio { namespace charset { class CharacterCodingException; } } } }
 
 
 #include <java/lang/String.hpp>
+#include <java/nio/charset/CharacterCodingException.hpp>
 
 
 namespace j2cpp {
@@ -32,11 +34,15 @@ namespace java { namespace nio { namespace charset {
 		J2CPP_DECLARE_METHOD(1)
 		J2CPP_DECLARE_METHOD(2)
 
-		UnmappableCharacterException(jobject jobj)
+		explicit UnmappableCharacterException(jobject jobj)
 		: cpp_object<UnmappableCharacterException>(jobj)
 		{
 		}
 
+		operator local_ref<java::nio::charset::CharacterCodingException>() const;
+
+
+		UnmappableCharacterException(cpp_int const&);
 		cpp_int getInputLength();
 		local_ref< java::lang::String > getMessage();
 	}; //class UnmappableCharacterException
@@ -44,7 +50,6 @@ namespace java { namespace nio { namespace charset {
 } //namespace charset
 } //namespace nio
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -58,17 +63,24 @@ namespace java { namespace nio { namespace charset {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::nio::charset::UnmappableCharacterException > create< java::nio::charset::UnmappableCharacterException>(cpp_int const &a0)
+
+java::nio::charset::UnmappableCharacterException::operator local_ref<java::nio::charset::CharacterCodingException>() const
 {
-	return local_ref< java::nio::charset::UnmappableCharacterException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::nio::charset::UnmappableCharacterException::J2CPP_CLASS_NAME>(),
-			get_method_id<java::nio::charset::UnmappableCharacterException::J2CPP_CLASS_NAME, java::nio::charset::UnmappableCharacterException::J2CPP_METHOD_NAME(0), java::nio::charset::UnmappableCharacterException::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::nio::charset::CharacterCodingException>(get_jtype());
 }
+
+
+java::nio::charset::UnmappableCharacterException::UnmappableCharacterException(cpp_int const &a0)
+: cpp_object<java::nio::charset::UnmappableCharacterException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::nio::charset::UnmappableCharacterException::J2CPP_CLASS_NAME>(),
+		get_method_id<java::nio::charset::UnmappableCharacterException::J2CPP_CLASS_NAME, java::nio::charset::UnmappableCharacterException::J2CPP_METHOD_NAME(0), java::nio::charset::UnmappableCharacterException::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 cpp_int java::nio::charset::UnmappableCharacterException::getInputLength()
 {

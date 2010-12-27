@@ -11,8 +11,10 @@
 
 
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace android { namespace webkit { class JsResult; } } }
 
 
+#include <android/webkit/JsResult.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -31,17 +33,19 @@ namespace android { namespace webkit {
 		J2CPP_DECLARE_METHOD(0)
 		J2CPP_DECLARE_METHOD(1)
 
-		JsPromptResult(jobject jobj)
+		explicit JsPromptResult(jobject jobj)
 		: cpp_object<JsPromptResult>(jobj)
 		{
 		}
+
+		operator local_ref<android::webkit::JsResult>() const;
+
 
 		void confirm(local_ref< java::lang::String > const&);
 	}; //class JsPromptResult
 
 } //namespace webkit
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -55,16 +59,12 @@ namespace android { namespace webkit {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::webkit::JsPromptResult > create< android::webkit::JsPromptResult>()
+
+android::webkit::JsPromptResult::operator local_ref<android::webkit::JsResult>() const
 {
-	return local_ref< android::webkit::JsPromptResult >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::webkit::JsPromptResult::J2CPP_CLASS_NAME>(),
-			get_method_id<android::webkit::JsPromptResult::J2CPP_CLASS_NAME, android::webkit::JsPromptResult::J2CPP_METHOD_NAME(0), android::webkit::JsPromptResult::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<android::webkit::JsResult>(get_jtype());
 }
+
 
 void android::webkit::JsPromptResult::confirm(local_ref< java::lang::String > const &a0)
 {

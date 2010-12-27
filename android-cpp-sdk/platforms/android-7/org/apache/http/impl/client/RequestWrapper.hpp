@@ -14,6 +14,8 @@ namespace j2cpp { namespace java { namespace net { class URI; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { class RequestLine; } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { class HttpRequest; } } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { namespace message { class AbstractHttpMessage; } } } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { namespace client { namespace methods { class HttpUriRequest; } } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { class ProtocolVersion; } } } }
 
 
@@ -22,6 +24,8 @@ namespace j2cpp { namespace org { namespace apache { namespace http { class Prot
 #include <org/apache/http/HttpRequest.hpp>
 #include <org/apache/http/ProtocolVersion.hpp>
 #include <org/apache/http/RequestLine.hpp>
+#include <org/apache/http/client/methods/HttpUriRequest.hpp>
+#include <org/apache/http/message/AbstractHttpMessage.hpp>
 
 
 namespace j2cpp {
@@ -52,11 +56,16 @@ namespace org { namespace apache { namespace http { namespace impl { namespace c
 		J2CPP_DECLARE_METHOD(13)
 		J2CPP_DECLARE_METHOD(14)
 
-		RequestWrapper(jobject jobj)
+		explicit RequestWrapper(jobject jobj)
 		: cpp_object<RequestWrapper>(jobj)
 		{
 		}
 
+		operator local_ref<org::apache::http::message::AbstractHttpMessage>() const;
+		operator local_ref<org::apache::http::client::methods::HttpUriRequest>() const;
+
+
+		RequestWrapper(local_ref< org::apache::http::HttpRequest > const&);
 		void resetHeaders();
 		local_ref< java::lang::String > getMethod();
 		void setMethod(local_ref< java::lang::String > const&);
@@ -79,7 +88,6 @@ namespace org { namespace apache { namespace http { namespace impl { namespace c
 } //namespace apache
 } //namespace org
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ORG_APACHE_HTTP_IMPL_CLIENT_REQUESTWRAPPER_HPP_DECL
@@ -92,17 +100,29 @@ namespace org { namespace apache { namespace http { namespace impl { namespace c
 namespace j2cpp {
 
 
-template <>
-local_ref< org::apache::http::impl::client::RequestWrapper > create< org::apache::http::impl::client::RequestWrapper>(local_ref< org::apache::http::HttpRequest > const &a0)
+
+org::apache::http::impl::client::RequestWrapper::operator local_ref<org::apache::http::message::AbstractHttpMessage>() const
 {
-	return local_ref< org::apache::http::impl::client::RequestWrapper >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::apache::http::impl::client::RequestWrapper::J2CPP_CLASS_NAME>(),
-			get_method_id<org::apache::http::impl::client::RequestWrapper::J2CPP_CLASS_NAME, org::apache::http::impl::client::RequestWrapper::J2CPP_METHOD_NAME(0), org::apache::http::impl::client::RequestWrapper::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<org::apache::http::message::AbstractHttpMessage>(get_jtype());
 }
+
+org::apache::http::impl::client::RequestWrapper::operator local_ref<org::apache::http::client::methods::HttpUriRequest>() const
+{
+	return local_ref<org::apache::http::client::methods::HttpUriRequest>(get_jtype());
+}
+
+
+org::apache::http::impl::client::RequestWrapper::RequestWrapper(local_ref< org::apache::http::HttpRequest > const &a0)
+: cpp_object<org::apache::http::impl::client::RequestWrapper>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::apache::http::impl::client::RequestWrapper::J2CPP_CLASS_NAME>(),
+		get_method_id<org::apache::http::impl::client::RequestWrapper::J2CPP_CLASS_NAME, org::apache::http::impl::client::RequestWrapper::J2CPP_METHOD_NAME(0), org::apache::http::impl::client::RequestWrapper::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 void org::apache::http::impl::client::RequestWrapper::resetHeaders()
 {

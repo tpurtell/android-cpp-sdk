@@ -11,11 +11,13 @@
 
 
 namespace j2cpp { namespace java { namespace net { class ServerSocket; } } }
+namespace j2cpp { namespace java { namespace nio { namespace channels { namespace spi { class AbstractSelectableChannel; } } } } }
 namespace j2cpp { namespace java { namespace nio { namespace channels { class SocketChannel; } } } }
 
 
 #include <java/net/ServerSocket.hpp>
 #include <java/nio/channels/SocketChannel.hpp>
+#include <java/nio/channels/spi/AbstractSelectableChannel.hpp>
 
 
 namespace j2cpp {
@@ -36,10 +38,13 @@ namespace java { namespace nio { namespace channels {
 		J2CPP_DECLARE_METHOD(3)
 		J2CPP_DECLARE_METHOD(4)
 
-		ServerSocketChannel(jobject jobj)
+		explicit ServerSocketChannel(jobject jobj)
 		: cpp_object<ServerSocketChannel>(jobj)
 		{
 		}
+
+		operator local_ref<java::nio::channels::spi::AbstractSelectableChannel>() const;
+
 
 		static local_ref< java::nio::channels::ServerSocketChannel > open();
 		cpp_int validOps();
@@ -50,7 +55,6 @@ namespace java { namespace nio { namespace channels {
 } //namespace channels
 } //namespace nio
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -64,17 +68,12 @@ namespace java { namespace nio { namespace channels {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::nio::channels::ServerSocketChannel > create< java::nio::channels::ServerSocketChannel>(local_ref< java::nio::channels::spi::SelectorProvider > const &a0)
+
+java::nio::channels::ServerSocketChannel::operator local_ref<java::nio::channels::spi::AbstractSelectableChannel>() const
 {
-	return local_ref< java::nio::channels::ServerSocketChannel >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::nio::channels::ServerSocketChannel::J2CPP_CLASS_NAME>(),
-			get_method_id<java::nio::channels::ServerSocketChannel::J2CPP_CLASS_NAME, java::nio::channels::ServerSocketChannel::J2CPP_METHOD_NAME(0), java::nio::channels::ServerSocketChannel::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::nio::channels::spi::AbstractSelectableChannel>(get_jtype());
 }
+
 
 local_ref< java::nio::channels::ServerSocketChannel > java::nio::channels::ServerSocketChannel::open()
 {

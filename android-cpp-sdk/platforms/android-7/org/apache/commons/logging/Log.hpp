@@ -49,10 +49,13 @@ namespace org { namespace apache { namespace commons { namespace logging {
 		J2CPP_DECLARE_METHOD(16)
 		J2CPP_DECLARE_METHOD(17)
 
-		Log(jobject jobj)
+		explicit Log(jobject jobj)
 		: cpp_object<Log>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		cpp_boolean isDebugEnabled();
 		cpp_boolean isErrorEnabled();
@@ -79,7 +82,6 @@ namespace org { namespace apache { namespace commons { namespace logging {
 } //namespace apache
 } //namespace org
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ORG_APACHE_COMMONS_LOGGING_LOG_HPP_DECL
@@ -91,6 +93,12 @@ namespace org { namespace apache { namespace commons { namespace logging {
 
 namespace j2cpp {
 
+
+
+org::apache::commons::logging::Log::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 cpp_boolean org::apache::commons::logging::Log::isDebugEnabled()
 {

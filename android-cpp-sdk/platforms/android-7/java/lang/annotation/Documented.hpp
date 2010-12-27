@@ -10,8 +10,12 @@
 #define J2CPP_JAVA_LANG_ANNOTATION_DOCUMENTED_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace lang { namespace annotation { class Annotation; } } } }
 
 
+#include <java/lang/Object.hpp>
+#include <java/lang/annotation/Annotation.hpp>
 
 
 namespace j2cpp {
@@ -27,16 +31,19 @@ namespace java { namespace lang { namespace annotation {
 		J2CPP_DECLARE_CLASS
 
 
-		Documented(jobject jobj)
+		explicit Documented(jobject jobj)
 		: cpp_object<Documented>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::lang::annotation::Annotation>() const;
+
 	}; //class Documented
 
 } //namespace annotation
 } //namespace lang
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -49,6 +56,17 @@ namespace java { namespace lang { namespace annotation {
 
 namespace j2cpp {
 
+
+
+java::lang::annotation::Documented::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
+
+java::lang::annotation::Documented::operator local_ref<java::lang::annotation::Annotation>() const
+{
+	return local_ref<java::lang::annotation::Annotation>(get_jtype());
+}
 
 J2CPP_DEFINE_CLASS(java::lang::annotation::Documented,"java/lang/annotation/Documented")
 

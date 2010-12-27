@@ -10,6 +10,7 @@
 #define J2CPP_ANDROID_BLUETOOTH_BLUETOOTHADAPTER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace util { class Set; } } }
 namespace j2cpp { namespace java { namespace util { class UUID; } } }
@@ -19,6 +20,7 @@ namespace j2cpp { namespace android { namespace bluetooth { class BluetoothDevic
 
 #include <android/bluetooth/BluetoothDevice.hpp>
 #include <android/bluetooth/BluetoothServerSocket.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/util/Set.hpp>
 #include <java/util/UUID.hpp>
@@ -75,10 +77,13 @@ namespace android { namespace bluetooth {
 		J2CPP_DECLARE_FIELD(19)
 		J2CPP_DECLARE_FIELD(20)
 
-		BluetoothAdapter(jobject jobj)
+		explicit BluetoothAdapter(jobject jobj)
 		: cpp_object<BluetoothAdapter>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		static local_ref< android::bluetooth::BluetoothAdapter > getDefaultAdapter();
 		local_ref< android::bluetooth::BluetoothDevice > getRemoteDevice(local_ref< java::lang::String > const&);
@@ -123,7 +128,6 @@ namespace android { namespace bluetooth {
 } //namespace bluetooth
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_BLUETOOTH_BLUETOOTHADAPTER_HPP_DECL
@@ -136,16 +140,12 @@ namespace android { namespace bluetooth {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::bluetooth::BluetoothAdapter > create< android::bluetooth::BluetoothAdapter>()
+
+android::bluetooth::BluetoothAdapter::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::bluetooth::BluetoothAdapter >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::bluetooth::BluetoothAdapter::J2CPP_CLASS_NAME>(),
-			get_method_id<android::bluetooth::BluetoothAdapter::J2CPP_CLASS_NAME, android::bluetooth::BluetoothAdapter::J2CPP_METHOD_NAME(0), android::bluetooth::BluetoothAdapter::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
 
 local_ref< android::bluetooth::BluetoothAdapter > android::bluetooth::BluetoothAdapter::getDefaultAdapter()
 {

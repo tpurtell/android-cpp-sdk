@@ -10,6 +10,7 @@
 #define J2CPP_ANDROID_SAX_ELEMENT_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace android { namespace sax { class ElementListener; } } }
 namespace j2cpp { namespace android { namespace sax { class TextElementListener; } } }
@@ -23,6 +24,7 @@ namespace j2cpp { namespace android { namespace sax { class StartElementListener
 #include <android/sax/EndTextElementListener.hpp>
 #include <android/sax/StartElementListener.hpp>
 #include <android/sax/TextElementListener.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -50,10 +52,13 @@ namespace android { namespace sax {
 		J2CPP_DECLARE_METHOD(9)
 		J2CPP_DECLARE_METHOD(10)
 
-		Element(jobject jobj)
+		explicit Element(jobject jobj)
 		: cpp_object<Element>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		local_ref< android::sax::Element > getChild(local_ref< java::lang::String > const&);
 		local_ref< android::sax::Element > getChild(local_ref< java::lang::String > const&, local_ref< java::lang::String > const&);
@@ -70,7 +75,6 @@ namespace android { namespace sax {
 } //namespace sax
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_SAX_ELEMENT_HPP_DECL
@@ -83,16 +87,12 @@ namespace android { namespace sax {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::sax::Element > create< android::sax::Element>()
+
+android::sax::Element::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::sax::Element >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::sax::Element::J2CPP_CLASS_NAME>(),
-			get_method_id<android::sax::Element::J2CPP_CLASS_NAME, android::sax::Element::J2CPP_METHOD_NAME(0), android::sax::Element::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
 
 local_ref< android::sax::Element > android::sax::Element::getChild(local_ref< java::lang::String > const &a0)
 {

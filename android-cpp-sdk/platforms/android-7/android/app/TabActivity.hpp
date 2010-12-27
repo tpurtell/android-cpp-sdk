@@ -11,10 +11,12 @@
 
 
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace android { namespace app { class ActivityGroup; } } }
 namespace j2cpp { namespace android { namespace widget { class TabHost; } } }
 namespace j2cpp { namespace android { namespace widget { class TabWidget; } } }
 
 
+#include <android/app/ActivityGroup.hpp>
 #include <android/widget/TabHost.hpp>
 #include <android/widget/TabWidget.hpp>
 #include <java/lang/String.hpp>
@@ -43,11 +45,15 @@ namespace android { namespace app {
 		J2CPP_DECLARE_METHOD(8)
 		J2CPP_DECLARE_METHOD(9)
 
-		TabActivity(jobject jobj)
+		explicit TabActivity(jobject jobj)
 		: cpp_object<TabActivity>(jobj)
 		{
 		}
 
+		operator local_ref<android::app::ActivityGroup>() const;
+
+
+		TabActivity();
 		void setDefaultTab(local_ref< java::lang::String > const&);
 		void setDefaultTab(cpp_int const&);
 		void onContentChanged();
@@ -57,7 +63,6 @@ namespace android { namespace app {
 
 } //namespace app
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -71,16 +76,23 @@ namespace android { namespace app {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::app::TabActivity > create< android::app::TabActivity>()
+
+android::app::TabActivity::operator local_ref<android::app::ActivityGroup>() const
 {
-	return local_ref< android::app::TabActivity >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::app::TabActivity::J2CPP_CLASS_NAME>(),
-			get_method_id<android::app::TabActivity::J2CPP_CLASS_NAME, android::app::TabActivity::J2CPP_METHOD_NAME(0), android::app::TabActivity::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<android::app::ActivityGroup>(get_jtype());
 }
+
+
+android::app::TabActivity::TabActivity()
+: cpp_object<android::app::TabActivity>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::app::TabActivity::J2CPP_CLASS_NAME>(),
+		get_method_id<android::app::TabActivity::J2CPP_CLASS_NAME, android::app::TabActivity::J2CPP_METHOD_NAME(0), android::app::TabActivity::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 void android::app::TabActivity::setDefaultTab(local_ref< java::lang::String > const &a0)
 {

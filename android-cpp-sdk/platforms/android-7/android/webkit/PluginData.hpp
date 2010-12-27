@@ -11,10 +11,12 @@
 
 
 namespace j2cpp { namespace java { namespace io { class InputStream; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace util { class Map; } } }
 
 
 #include <java/io/InputStream.hpp>
+#include <java/lang/Object.hpp>
 #include <java/util/Map.hpp>
 
 
@@ -36,11 +38,15 @@ namespace android { namespace webkit {
 		J2CPP_DECLARE_METHOD(3)
 		J2CPP_DECLARE_METHOD(4)
 
-		PluginData(jobject jobj)
+		explicit PluginData(jobject jobj)
 		: cpp_object<PluginData>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		PluginData(local_ref< java::io::InputStream > const&, cpp_long const&, local_ref< java::util::Map > const&, cpp_int const&);
 		local_ref< java::io::InputStream > getInputStream();
 		cpp_long getContentLength();
 		local_ref< java::util::Map > getHeaders();
@@ -49,7 +55,6 @@ namespace android { namespace webkit {
 
 } //namespace webkit
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -63,17 +68,24 @@ namespace android { namespace webkit {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::webkit::PluginData > create< android::webkit::PluginData>(local_ref< java::io::InputStream > const &a0, cpp_long const &a1, local_ref< java::util::Map > const &a2, cpp_int const &a3)
+
+android::webkit::PluginData::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::webkit::PluginData >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::webkit::PluginData::J2CPP_CLASS_NAME>(),
-			get_method_id<android::webkit::PluginData::J2CPP_CLASS_NAME, android::webkit::PluginData::J2CPP_METHOD_NAME(0), android::webkit::PluginData::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::webkit::PluginData::PluginData(local_ref< java::io::InputStream > const &a0, cpp_long const &a1, local_ref< java::util::Map > const &a2, cpp_int const &a3)
+: cpp_object<android::webkit::PluginData>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::webkit::PluginData::J2CPP_CLASS_NAME>(),
+		get_method_id<android::webkit::PluginData::J2CPP_CLASS_NAME, android::webkit::PluginData::J2CPP_METHOD_NAME(0), android::webkit::PluginData::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype()
+	)
+)
+{
+}
+
 
 local_ref< java::io::InputStream > android::webkit::PluginData::getInputStream()
 {

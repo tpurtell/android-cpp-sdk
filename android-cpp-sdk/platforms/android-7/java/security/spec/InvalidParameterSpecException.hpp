@@ -11,9 +11,11 @@
 
 
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace security { class GeneralSecurityException; } } }
 
 
 #include <java/lang/String.hpp>
+#include <java/security/GeneralSecurityException.hpp>
 
 
 namespace j2cpp {
@@ -31,17 +33,21 @@ namespace java { namespace security { namespace spec {
 		J2CPP_DECLARE_METHOD(0)
 		J2CPP_DECLARE_METHOD(1)
 
-		InvalidParameterSpecException(jobject jobj)
+		explicit InvalidParameterSpecException(jobject jobj)
 		: cpp_object<InvalidParameterSpecException>(jobj)
 		{
 		}
 
+		operator local_ref<java::security::GeneralSecurityException>() const;
+
+
+		InvalidParameterSpecException(local_ref< java::lang::String > const&);
+		InvalidParameterSpecException();
 	}; //class InvalidParameterSpecException
 
 } //namespace spec
 } //namespace security
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -55,28 +61,36 @@ namespace java { namespace security { namespace spec {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::security::spec::InvalidParameterSpecException > create< java::security::spec::InvalidParameterSpecException>(local_ref< java::lang::String > const &a0)
+
+java::security::spec::InvalidParameterSpecException::operator local_ref<java::security::GeneralSecurityException>() const
 {
-	return local_ref< java::security::spec::InvalidParameterSpecException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::security::spec::InvalidParameterSpecException::J2CPP_CLASS_NAME>(),
-			get_method_id<java::security::spec::InvalidParameterSpecException::J2CPP_CLASS_NAME, java::security::spec::InvalidParameterSpecException::J2CPP_METHOD_NAME(0), java::security::spec::InvalidParameterSpecException::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::security::GeneralSecurityException>(get_jtype());
 }
 
-template <>
-local_ref< java::security::spec::InvalidParameterSpecException > create< java::security::spec::InvalidParameterSpecException>()
+
+java::security::spec::InvalidParameterSpecException::InvalidParameterSpecException(local_ref< java::lang::String > const &a0)
+: cpp_object<java::security::spec::InvalidParameterSpecException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::security::spec::InvalidParameterSpecException::J2CPP_CLASS_NAME>(),
+		get_method_id<java::security::spec::InvalidParameterSpecException::J2CPP_CLASS_NAME, java::security::spec::InvalidParameterSpecException::J2CPP_METHOD_NAME(0), java::security::spec::InvalidParameterSpecException::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< java::security::spec::InvalidParameterSpecException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::security::spec::InvalidParameterSpecException::J2CPP_CLASS_NAME>(),
-			get_method_id<java::security::spec::InvalidParameterSpecException::J2CPP_CLASS_NAME, java::security::spec::InvalidParameterSpecException::J2CPP_METHOD_NAME(1), java::security::spec::InvalidParameterSpecException::J2CPP_METHOD_SIGNATURE(1), false>()
-		)
-	);
 }
+
+
+
+java::security::spec::InvalidParameterSpecException::InvalidParameterSpecException()
+: cpp_object<java::security::spec::InvalidParameterSpecException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::security::spec::InvalidParameterSpecException::J2CPP_CLASS_NAME>(),
+		get_method_id<java::security::spec::InvalidParameterSpecException::J2CPP_CLASS_NAME, java::security::spec::InvalidParameterSpecException::J2CPP_METHOD_NAME(1), java::security::spec::InvalidParameterSpecException::J2CPP_METHOD_SIGNATURE(1), false>()
+	)
+)
+{
+}
+
 
 
 J2CPP_DEFINE_CLASS(java::security::spec::InvalidParameterSpecException,"java/security/spec/InvalidParameterSpecException")

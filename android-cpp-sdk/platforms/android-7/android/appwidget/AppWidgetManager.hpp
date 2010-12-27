@@ -10,6 +10,7 @@
 #define J2CPP_ANDROID_APPWIDGET_APPWIDGETMANAGER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace util { class List; } } }
 namespace j2cpp { namespace android { namespace appwidget { class AppWidgetProviderInfo; } } }
@@ -22,6 +23,7 @@ namespace j2cpp { namespace android { namespace widget { class RemoteViews; } } 
 #include <android/content/ComponentName.hpp>
 #include <android/content/Context.hpp>
 #include <android/widget/RemoteViews.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/util/List.hpp>
 
@@ -60,10 +62,13 @@ namespace android { namespace appwidget {
 		J2CPP_DECLARE_FIELD(10)
 		J2CPP_DECLARE_FIELD(11)
 
-		AppWidgetManager(jobject jobj)
+		explicit AppWidgetManager(jobject jobj)
 		: cpp_object<AppWidgetManager>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		static local_ref< android::appwidget::AppWidgetManager > getInstance(local_ref< android::content::Context > const&);
 		void updateAppWidget(local_ref< cpp_int_array<1> > const&, local_ref< android::widget::RemoteViews > const&);
@@ -91,7 +96,6 @@ namespace android { namespace appwidget {
 } //namespace appwidget
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_APPWIDGET_APPWIDGETMANAGER_HPP_DECL
@@ -104,16 +108,12 @@ namespace android { namespace appwidget {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::appwidget::AppWidgetManager > create< android::appwidget::AppWidgetManager>()
+
+android::appwidget::AppWidgetManager::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::appwidget::AppWidgetManager >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::appwidget::AppWidgetManager::J2CPP_CLASS_NAME>(),
-			get_method_id<android::appwidget::AppWidgetManager::J2CPP_CLASS_NAME, android::appwidget::AppWidgetManager::J2CPP_METHOD_NAME(0), android::appwidget::AppWidgetManager::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
 
 local_ref< android::appwidget::AppWidgetManager > android::appwidget::AppWidgetManager::getInstance(local_ref< android::content::Context > const &a0)
 {

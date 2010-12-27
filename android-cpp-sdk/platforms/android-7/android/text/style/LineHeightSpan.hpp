@@ -10,14 +10,20 @@
 #define J2CPP_ANDROID_TEXT_STYLE_LINEHEIGHTSPAN_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class CharSequence; } } }
 namespace j2cpp { namespace android { namespace graphics { namespace Paint_ { class FontMetricsInt; } } } }
 namespace j2cpp { namespace android { namespace text { class TextPaint; } } }
+namespace j2cpp { namespace android { namespace text { namespace style { class WrapTogetherSpan; } } } }
+namespace j2cpp { namespace android { namespace text { namespace style { class ParagraphStyle; } } } }
 
 
 #include <android/graphics/Paint.hpp>
 #include <android/text/TextPaint.hpp>
+#include <android/text/style/ParagraphStyle.hpp>
+#include <android/text/style/WrapTogetherSpan.hpp>
 #include <java/lang/CharSequence.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -37,10 +43,14 @@ namespace android { namespace text { namespace style {
 
 			J2CPP_DECLARE_METHOD(0)
 
-			WithDensity(jobject jobj)
+			explicit WithDensity(jobject jobj)
 			: cpp_object<WithDensity>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+			operator local_ref<android::text::style::LineHeightSpan>() const;
+
 
 			void chooseHeight(local_ref< java::lang::CharSequence > const&, cpp_int const&, cpp_int const&, cpp_int const&, cpp_int const&, local_ref< android::graphics::Paint_::FontMetricsInt > const&, local_ref< android::text::TextPaint > const&);
 		}; //class WithDensity
@@ -58,10 +68,15 @@ namespace android { namespace text { namespace style {
 
 		typedef LineHeightSpan_::WithDensity WithDensity;
 
-		LineHeightSpan(jobject jobj)
+		explicit LineHeightSpan(jobject jobj)
 		: cpp_object<LineHeightSpan>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<android::text::style::ParagraphStyle>() const;
+		operator local_ref<android::text::style::WrapTogetherSpan>() const;
+
 
 		void chooseHeight(local_ref< java::lang::CharSequence > const&, cpp_int const&, cpp_int const&, cpp_int const&, cpp_int const&, local_ref< android::graphics::Paint_::FontMetricsInt > const&);
 	}; //class LineHeightSpan
@@ -69,7 +84,6 @@ namespace android { namespace text { namespace style {
 } //namespace style
 } //namespace text
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -83,6 +97,17 @@ namespace android { namespace text { namespace style {
 namespace j2cpp {
 
 
+
+
+android::text::style::LineHeightSpan_::WithDensity::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
+
+android::text::style::LineHeightSpan_::WithDensity::operator local_ref<android::text::style::LineHeightSpan>() const
+{
+	return local_ref<android::text::style::LineHeightSpan>(get_jtype());
+}
 
 void android::text::style::LineHeightSpan_::WithDensity::chooseHeight(local_ref< java::lang::CharSequence > const &a0, cpp_int const &a1, cpp_int const &a2, cpp_int const &a3, cpp_int const &a4, local_ref< android::graphics::Paint_::FontMetricsInt > const &a5, local_ref< android::text::TextPaint > const &a6)
 {
@@ -99,6 +124,22 @@ void android::text::style::LineHeightSpan_::WithDensity::chooseHeight(local_ref<
 J2CPP_DEFINE_CLASS(android::text::style::LineHeightSpan_::WithDensity,"android/text/style/LineHeightSpan$WithDensity")
 J2CPP_DEFINE_METHOD(android::text::style::LineHeightSpan_::WithDensity,0,"chooseHeight","(Ljava/lang/CharSequence;IIIILandroid/graphics/Paint$FontMetricsInt;Landroid/text/TextPaint;)V")
 
+
+
+android::text::style::LineHeightSpan::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
+
+android::text::style::LineHeightSpan::operator local_ref<android::text::style::ParagraphStyle>() const
+{
+	return local_ref<android::text::style::ParagraphStyle>(get_jtype());
+}
+
+android::text::style::LineHeightSpan::operator local_ref<android::text::style::WrapTogetherSpan>() const
+{
+	return local_ref<android::text::style::WrapTogetherSpan>(get_jtype());
+}
 
 void android::text::style::LineHeightSpan::chooseHeight(local_ref< java::lang::CharSequence > const &a0, cpp_int const &a1, cpp_int const &a2, cpp_int const &a3, cpp_int const &a4, local_ref< android::graphics::Paint_::FontMetricsInt > const &a5)
 {

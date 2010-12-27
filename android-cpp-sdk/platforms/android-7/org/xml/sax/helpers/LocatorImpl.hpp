@@ -10,10 +10,12 @@
 #define J2CPP_ORG_XML_SAX_HELPERS_LOCATORIMPL_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace org { namespace xml { namespace sax { class Locator; } } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <org/xml/sax/Locator.hpp>
 
@@ -41,11 +43,17 @@ namespace org { namespace xml { namespace sax { namespace helpers {
 		J2CPP_DECLARE_METHOD(8)
 		J2CPP_DECLARE_METHOD(9)
 
-		LocatorImpl(jobject jobj)
+		explicit LocatorImpl(jobject jobj)
 		: cpp_object<LocatorImpl>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<org::xml::sax::Locator>() const;
+
+
+		LocatorImpl();
+		LocatorImpl(local_ref< org::xml::sax::Locator > const&);
 		local_ref< java::lang::String > getPublicId();
 		local_ref< java::lang::String > getSystemId();
 		cpp_int getLineNumber();
@@ -61,7 +69,6 @@ namespace org { namespace xml { namespace sax { namespace helpers {
 } //namespace xml
 } //namespace org
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ORG_XML_SAX_HELPERS_LOCATORIMPL_HPP_DECL
@@ -74,28 +81,41 @@ namespace org { namespace xml { namespace sax { namespace helpers {
 namespace j2cpp {
 
 
-template <>
-local_ref< org::xml::sax::helpers::LocatorImpl > create< org::xml::sax::helpers::LocatorImpl>()
+
+org::xml::sax::helpers::LocatorImpl::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< org::xml::sax::helpers::LocatorImpl >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::xml::sax::helpers::LocatorImpl::J2CPP_CLASS_NAME>(),
-			get_method_id<org::xml::sax::helpers::LocatorImpl::J2CPP_CLASS_NAME, org::xml::sax::helpers::LocatorImpl::J2CPP_METHOD_NAME(0), org::xml::sax::helpers::LocatorImpl::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
 
-template <>
-local_ref< org::xml::sax::helpers::LocatorImpl > create< org::xml::sax::helpers::LocatorImpl>(local_ref< org::xml::sax::Locator > const &a0)
+org::xml::sax::helpers::LocatorImpl::operator local_ref<org::xml::sax::Locator>() const
 {
-	return local_ref< org::xml::sax::helpers::LocatorImpl >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::xml::sax::helpers::LocatorImpl::J2CPP_CLASS_NAME>(),
-			get_method_id<org::xml::sax::helpers::LocatorImpl::J2CPP_CLASS_NAME, org::xml::sax::helpers::LocatorImpl::J2CPP_METHOD_NAME(1), org::xml::sax::helpers::LocatorImpl::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<org::xml::sax::Locator>(get_jtype());
 }
+
+
+org::xml::sax::helpers::LocatorImpl::LocatorImpl()
+: cpp_object<org::xml::sax::helpers::LocatorImpl>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::xml::sax::helpers::LocatorImpl::J2CPP_CLASS_NAME>(),
+		get_method_id<org::xml::sax::helpers::LocatorImpl::J2CPP_CLASS_NAME, org::xml::sax::helpers::LocatorImpl::J2CPP_METHOD_NAME(0), org::xml::sax::helpers::LocatorImpl::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
+
+
+org::xml::sax::helpers::LocatorImpl::LocatorImpl(local_ref< org::xml::sax::Locator > const &a0)
+: cpp_object<org::xml::sax::helpers::LocatorImpl>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::xml::sax::helpers::LocatorImpl::J2CPP_CLASS_NAME>(),
+		get_method_id<org::xml::sax::helpers::LocatorImpl::J2CPP_CLASS_NAME, org::xml::sax::helpers::LocatorImpl::J2CPP_METHOD_NAME(1), org::xml::sax::helpers::LocatorImpl::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 local_ref< java::lang::String > org::xml::sax::helpers::LocatorImpl::getPublicId()
 {

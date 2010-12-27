@@ -12,12 +12,14 @@
 
 namespace j2cpp { namespace android { namespace graphics { class Picture; } } }
 namespace j2cpp { namespace android { namespace graphics { class Canvas; } } }
+namespace j2cpp { namespace android { namespace graphics { namespace drawable { class Drawable; } } } }
 namespace j2cpp { namespace android { namespace graphics { class ColorFilter; } } }
 
 
 #include <android/graphics/Canvas.hpp>
 #include <android/graphics/ColorFilter.hpp>
 #include <android/graphics/Picture.hpp>
+#include <android/graphics/drawable/Drawable.hpp>
 
 
 namespace j2cpp {
@@ -44,11 +46,15 @@ namespace android { namespace graphics { namespace drawable {
 		J2CPP_DECLARE_METHOD(9)
 		J2CPP_DECLARE_METHOD(10)
 
-		PictureDrawable(jobject jobj)
+		explicit PictureDrawable(jobject jobj)
 		: cpp_object<PictureDrawable>(jobj)
 		{
 		}
 
+		operator local_ref<android::graphics::drawable::Drawable>() const;
+
+
+		PictureDrawable(local_ref< android::graphics::Picture > const&);
 		local_ref< android::graphics::Picture > getPicture();
 		void setPicture(local_ref< android::graphics::Picture > const&);
 		void draw(local_ref< android::graphics::Canvas > const&);
@@ -65,7 +71,6 @@ namespace android { namespace graphics { namespace drawable {
 } //namespace graphics
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_GRAPHICS_DRAWABLE_PICTUREDRAWABLE_HPP_DECL
@@ -78,17 +83,24 @@ namespace android { namespace graphics { namespace drawable {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::graphics::drawable::PictureDrawable > create< android::graphics::drawable::PictureDrawable>(local_ref< android::graphics::Picture > const &a0)
+
+android::graphics::drawable::PictureDrawable::operator local_ref<android::graphics::drawable::Drawable>() const
 {
-	return local_ref< android::graphics::drawable::PictureDrawable >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::graphics::drawable::PictureDrawable::J2CPP_CLASS_NAME>(),
-			get_method_id<android::graphics::drawable::PictureDrawable::J2CPP_CLASS_NAME, android::graphics::drawable::PictureDrawable::J2CPP_METHOD_NAME(0), android::graphics::drawable::PictureDrawable::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<android::graphics::drawable::Drawable>(get_jtype());
 }
+
+
+android::graphics::drawable::PictureDrawable::PictureDrawable(local_ref< android::graphics::Picture > const &a0)
+: cpp_object<android::graphics::drawable::PictureDrawable>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::graphics::drawable::PictureDrawable::J2CPP_CLASS_NAME>(),
+		get_method_id<android::graphics::drawable::PictureDrawable::J2CPP_CLASS_NAME, android::graphics::drawable::PictureDrawable::J2CPP_METHOD_NAME(0), android::graphics::drawable::PictureDrawable::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 local_ref< android::graphics::Picture > android::graphics::drawable::PictureDrawable::getPicture()
 {

@@ -10,14 +10,18 @@
 #define J2CPP_ANDROID_TEXT_STYLE_LINEBACKGROUNDSPAN_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class CharSequence; } } }
 namespace j2cpp { namespace android { namespace graphics { class Paint; } } }
 namespace j2cpp { namespace android { namespace graphics { class Canvas; } } }
+namespace j2cpp { namespace android { namespace text { namespace style { class ParagraphStyle; } } } }
 
 
 #include <android/graphics/Canvas.hpp>
 #include <android/graphics/Paint.hpp>
+#include <android/text/style/ParagraphStyle.hpp>
 #include <java/lang/CharSequence.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -34,10 +38,14 @@ namespace android { namespace text { namespace style {
 
 		J2CPP_DECLARE_METHOD(0)
 
-		LineBackgroundSpan(jobject jobj)
+		explicit LineBackgroundSpan(jobject jobj)
 		: cpp_object<LineBackgroundSpan>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<android::text::style::ParagraphStyle>() const;
+
 
 		void drawBackground(local_ref< android::graphics::Canvas > const&, local_ref< android::graphics::Paint > const&, cpp_int const&, cpp_int const&, cpp_int const&, cpp_int const&, cpp_int const&, local_ref< java::lang::CharSequence > const&, cpp_int const&, cpp_int const&, cpp_int const&);
 	}; //class LineBackgroundSpan
@@ -45,7 +53,6 @@ namespace android { namespace text { namespace style {
 } //namespace style
 } //namespace text
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -58,6 +65,17 @@ namespace android { namespace text { namespace style {
 
 namespace j2cpp {
 
+
+
+android::text::style::LineBackgroundSpan::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
+
+android::text::style::LineBackgroundSpan::operator local_ref<android::text::style::ParagraphStyle>() const
+{
+	return local_ref<android::text::style::ParagraphStyle>(get_jtype());
+}
 
 void android::text::style::LineBackgroundSpan::drawBackground(local_ref< android::graphics::Canvas > const &a0, local_ref< android::graphics::Paint > const &a1, cpp_int const &a2, cpp_int const &a3, cpp_int const &a4, cpp_int const &a5, cpp_int const &a6, local_ref< java::lang::CharSequence > const &a7, cpp_int const &a8, cpp_int const &a9, cpp_int const &a10)
 {

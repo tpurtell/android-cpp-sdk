@@ -10,12 +10,16 @@
 #define J2CPP_JAVA_UTIL_REGEX_PATTERN_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class CharSequence; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace util { namespace regex { class Matcher; } } } }
 
 
+#include <java/io/Serializable.hpp>
 #include <java/lang/CharSequence.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/util/regex/Matcher.hpp>
 
@@ -53,10 +57,14 @@ namespace java { namespace util { namespace regex {
 		J2CPP_DECLARE_FIELD(6)
 		J2CPP_DECLARE_FIELD(7)
 
-		Pattern(jobject jobj)
+		explicit Pattern(jobject jobj)
 		: cpp_object<Pattern>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::io::Serializable>() const;
+
 
 		static local_ref< java::util::regex::Pattern > compile(local_ref< java::lang::String > const&);
 		static local_ref< java::util::regex::Pattern > compile(local_ref< java::lang::String > const&, cpp_int const&);
@@ -83,7 +91,6 @@ namespace java { namespace util { namespace regex {
 } //namespace util
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_UTIL_REGEX_PATTERN_HPP_DECL
@@ -96,16 +103,17 @@ namespace java { namespace util { namespace regex {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::util::regex::Pattern > create< java::util::regex::Pattern>()
+
+java::util::regex::Pattern::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::util::regex::Pattern >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::regex::Pattern::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::regex::Pattern::J2CPP_CLASS_NAME, java::util::regex::Pattern::J2CPP_METHOD_NAME(0), java::util::regex::Pattern::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+java::util::regex::Pattern::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jtype());
+}
+
 
 local_ref< java::util::regex::Pattern > java::util::regex::Pattern::compile(local_ref< java::lang::String > const &a0)
 {

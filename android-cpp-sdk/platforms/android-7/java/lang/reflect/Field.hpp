@@ -14,6 +14,8 @@ namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class Class; } } }
 namespace j2cpp { namespace java { namespace lang { namespace annotation { class Annotation; } } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace lang { namespace reflect { class AccessibleObject; } } } }
+namespace j2cpp { namespace java { namespace lang { namespace reflect { class Member; } } } }
 namespace j2cpp { namespace java { namespace lang { namespace reflect { class Type; } } } }
 
 
@@ -21,6 +23,8 @@ namespace j2cpp { namespace java { namespace lang { namespace reflect { class Ty
 #include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/lang/annotation/Annotation.hpp>
+#include <java/lang/reflect/AccessibleObject.hpp>
+#include <java/lang/reflect/Member.hpp>
 #include <java/lang/reflect/Type.hpp>
 
 
@@ -68,10 +72,14 @@ namespace java { namespace lang { namespace reflect {
 		J2CPP_DECLARE_METHOD(29)
 		J2CPP_DECLARE_METHOD(30)
 
-		Field(jobject jobj)
+		explicit Field(jobject jobj)
 		: cpp_object<Field>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::reflect::AccessibleObject>() const;
+		operator local_ref<java::lang::reflect::Member>() const;
+
 
 		cpp_boolean isSynthetic();
 		local_ref< java::lang::String > toGenericString();
@@ -109,7 +117,6 @@ namespace java { namespace lang { namespace reflect {
 } //namespace lang
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_LANG_REFLECT_FIELD_HPP_DECL
@@ -122,16 +129,17 @@ namespace java { namespace lang { namespace reflect {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::lang::reflect::Field > create< java::lang::reflect::Field>()
+
+java::lang::reflect::Field::operator local_ref<java::lang::reflect::AccessibleObject>() const
 {
-	return local_ref< java::lang::reflect::Field >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::lang::reflect::Field::J2CPP_CLASS_NAME>(),
-			get_method_id<java::lang::reflect::Field::J2CPP_CLASS_NAME, java::lang::reflect::Field::J2CPP_METHOD_NAME(0), java::lang::reflect::Field::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::reflect::AccessibleObject>(get_jtype());
 }
+
+java::lang::reflect::Field::operator local_ref<java::lang::reflect::Member>() const
+{
+	return local_ref<java::lang::reflect::Member>(get_jtype());
+}
+
 
 cpp_boolean java::lang::reflect::Field::isSynthetic()
 {

@@ -10,6 +10,7 @@
 #define J2CPP_ANDROID_TEXT_METHOD_SCROLLINGMOVEMENTMETHOD_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace android { namespace view { class KeyEvent; } } }
 namespace j2cpp { namespace android { namespace view { class MotionEvent; } } }
 namespace j2cpp { namespace android { namespace text { class Spannable; } } }
@@ -22,6 +23,7 @@ namespace j2cpp { namespace android { namespace widget { class TextView; } } }
 #include <android/view/KeyEvent.hpp>
 #include <android/view/MotionEvent.hpp>
 #include <android/widget/TextView.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -51,11 +53,16 @@ namespace android { namespace text { namespace method {
 		J2CPP_DECLARE_METHOD(12)
 		J2CPP_DECLARE_METHOD(13)
 
-		ScrollingMovementMethod(jobject jobj)
+		explicit ScrollingMovementMethod(jobject jobj)
 		: cpp_object<ScrollingMovementMethod>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<android::text::method::MovementMethod>() const;
+
+
+		ScrollingMovementMethod();
 		cpp_boolean onKeyDown(local_ref< android::widget::TextView > const&, local_ref< android::text::Spannable > const&, cpp_int const&, local_ref< android::view::KeyEvent > const&);
 		cpp_boolean onKeyUp(local_ref< android::widget::TextView > const&, local_ref< android::text::Spannable > const&, cpp_int const&, local_ref< android::view::KeyEvent > const&);
 		cpp_boolean onKeyOther(local_ref< android::widget::TextView > const&, local_ref< android::text::Spannable > const&, local_ref< android::view::KeyEvent > const&);
@@ -71,7 +78,6 @@ namespace android { namespace text { namespace method {
 } //namespace text
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_TEXT_METHOD_SCROLLINGMOVEMENTMETHOD_HPP_DECL
@@ -84,16 +90,28 @@ namespace android { namespace text { namespace method {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::text::method::ScrollingMovementMethod > create< android::text::method::ScrollingMovementMethod>()
+
+android::text::method::ScrollingMovementMethod::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::text::method::ScrollingMovementMethod >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::text::method::ScrollingMovementMethod::J2CPP_CLASS_NAME>(),
-			get_method_id<android::text::method::ScrollingMovementMethod::J2CPP_CLASS_NAME, android::text::method::ScrollingMovementMethod::J2CPP_METHOD_NAME(0), android::text::method::ScrollingMovementMethod::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+android::text::method::ScrollingMovementMethod::operator local_ref<android::text::method::MovementMethod>() const
+{
+	return local_ref<android::text::method::MovementMethod>(get_jtype());
+}
+
+
+android::text::method::ScrollingMovementMethod::ScrollingMovementMethod()
+: cpp_object<android::text::method::ScrollingMovementMethod>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::text::method::ScrollingMovementMethod::J2CPP_CLASS_NAME>(),
+		get_method_id<android::text::method::ScrollingMovementMethod::J2CPP_CLASS_NAME, android::text::method::ScrollingMovementMethod::J2CPP_METHOD_NAME(0), android::text::method::ScrollingMovementMethod::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 
 

@@ -13,6 +13,7 @@
 namespace j2cpp { namespace java { namespace io { class File; } } }
 namespace j2cpp { namespace java { namespace io { class InputStream; } } }
 namespace j2cpp { namespace java { namespace io { class OutputStream; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace beans { class PropertyChangeListener; } } }
 namespace j2cpp { namespace java { namespace util { class SortedMap; } } }
@@ -27,6 +28,7 @@ namespace j2cpp { namespace java { namespace util { namespace jar { class JarOut
 #include <java/io/File.hpp>
 #include <java/io/InputStream.hpp>
 #include <java/io/OutputStream.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/util/SortedMap.hpp>
 #include <java/util/jar/JarFile.hpp>
@@ -61,10 +63,13 @@ namespace java { namespace util { namespace jar {
 			J2CPP_DECLARE_FIELD(3)
 			J2CPP_DECLARE_FIELD(4)
 
-			Unpacker(jobject jobj)
+			explicit Unpacker(jobject jobj)
 			: cpp_object<Unpacker>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+
 
 			local_ref< java::util::SortedMap > properties();
 			void unpack(local_ref< java::io::InputStream > const&, local_ref< java::util::jar::JarOutputStream > const&);
@@ -112,10 +117,13 @@ namespace java { namespace util { namespace jar {
 			J2CPP_DECLARE_FIELD(17)
 			J2CPP_DECLARE_FIELD(18)
 
-			Packer(jobject jobj)
+			explicit Packer(jobject jobj)
 			: cpp_object<Packer>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+
 
 			local_ref< java::util::SortedMap > properties();
 			void pack(local_ref< java::util::jar::JarFile > const&, local_ref< java::io::OutputStream > const&);
@@ -160,10 +168,13 @@ namespace java { namespace util { namespace jar {
 		typedef Pack200_::Unpacker Unpacker;
 		typedef Pack200_::Packer Packer;
 
-		Pack200(jobject jobj)
+		explicit Pack200(jobject jobj)
 		: cpp_object<Pack200>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		static local_ref< java::util::jar::Pack200_::Packer > newPacker();
 		static local_ref< java::util::jar::Pack200_::Unpacker > newUnpacker();
@@ -172,7 +183,6 @@ namespace java { namespace util { namespace jar {
 } //namespace jar
 } //namespace util
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -186,6 +196,12 @@ namespace java { namespace util { namespace jar {
 namespace j2cpp {
 
 
+
+
+java::util::jar::Pack200_::Unpacker::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 local_ref< java::util::SortedMap > java::util::jar::Pack200_::Unpacker::properties()
 {
@@ -289,6 +305,12 @@ J2CPP_DEFINE_FIELD(java::util::jar::Pack200_::Unpacker,1,"FALSE","Ljava/lang/Str
 J2CPP_DEFINE_FIELD(java::util::jar::Pack200_::Unpacker,2,"KEEP","Ljava/lang/String;")
 J2CPP_DEFINE_FIELD(java::util::jar::Pack200_::Unpacker,3,"PROGRESS","Ljava/lang/String;")
 J2CPP_DEFINE_FIELD(java::util::jar::Pack200_::Unpacker,4,"TRUE","Ljava/lang/String;")
+
+
+java::util::jar::Pack200_::Packer::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 local_ref< java::util::SortedMap > java::util::jar::Pack200_::Packer::properties()
 {
@@ -506,16 +528,12 @@ J2CPP_DEFINE_FIELD(java::util::jar::Pack200_::Packer,17,"TRUE","Ljava/lang/Strin
 J2CPP_DEFINE_FIELD(java::util::jar::Pack200_::Packer,18,"UNKNOWN_ATTRIBUTE","Ljava/lang/String;")
 
 
-template <>
-local_ref< java::util::jar::Pack200 > create< java::util::jar::Pack200>()
+
+java::util::jar::Pack200::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::util::jar::Pack200 >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::jar::Pack200::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::jar::Pack200::J2CPP_CLASS_NAME, java::util::jar::Pack200::J2CPP_METHOD_NAME(0), java::util::jar::Pack200::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
 
 local_ref< java::util::jar::Pack200_::Packer > java::util::jar::Pack200::newPacker()
 {

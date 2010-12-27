@@ -10,6 +10,7 @@
 #define J2CPP_ORG_APACHE_HTTP_AUTH_AUTHSCHEMEREGISTRY_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace util { class Map; } } }
 namespace j2cpp { namespace java { namespace util { class List; } } }
@@ -18,6 +19,7 @@ namespace j2cpp { namespace org { namespace apache { namespace http { namespace 
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace auth { class AuthScheme; } } } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/util/List.hpp>
 #include <java/util/Map.hpp>
@@ -45,12 +47,16 @@ namespace org { namespace apache { namespace http { namespace auth {
 		J2CPP_DECLARE_METHOD(4)
 		J2CPP_DECLARE_METHOD(5)
 
-		AuthSchemeRegistry(jobject jobj)
+		explicit AuthSchemeRegistry(jobject jobj)
 		: cpp_object<AuthSchemeRegistry>(jobj)
 		{
 		}
 
-		void register(local_ref< java::lang::String > const&, local_ref< org::apache::http::auth::AuthSchemeFactory > const&);
+		operator local_ref<java::lang::Object>() const;
+
+
+		AuthSchemeRegistry();
+		void Register(local_ref< java::lang::String > const&, local_ref< org::apache::http::auth::AuthSchemeFactory > const&);
 		void unregister(local_ref< java::lang::String > const&);
 		local_ref< org::apache::http::auth::AuthScheme > getAuthScheme(local_ref< java::lang::String > const&, local_ref< org::apache::http::params::HttpParams > const&);
 		local_ref< java::util::List > getSchemeNames();
@@ -61,7 +67,6 @@ namespace org { namespace apache { namespace http { namespace auth {
 } //namespace http
 } //namespace apache
 } //namespace org
-
 
 } //namespace j2cpp
 
@@ -75,18 +80,25 @@ namespace org { namespace apache { namespace http { namespace auth {
 namespace j2cpp {
 
 
-template <>
-local_ref< org::apache::http::auth::AuthSchemeRegistry > create< org::apache::http::auth::AuthSchemeRegistry>()
+
+org::apache::http::auth::AuthSchemeRegistry::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< org::apache::http::auth::AuthSchemeRegistry >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::apache::http::auth::AuthSchemeRegistry::J2CPP_CLASS_NAME>(),
-			get_method_id<org::apache::http::auth::AuthSchemeRegistry::J2CPP_CLASS_NAME, org::apache::http::auth::AuthSchemeRegistry::J2CPP_METHOD_NAME(0), org::apache::http::auth::AuthSchemeRegistry::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
 
-void org::apache::http::auth::AuthSchemeRegistry::register(local_ref< java::lang::String > const &a0, local_ref< org::apache::http::auth::AuthSchemeFactory > const &a1)
+
+org::apache::http::auth::AuthSchemeRegistry::AuthSchemeRegistry()
+: cpp_object<org::apache::http::auth::AuthSchemeRegistry>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::apache::http::auth::AuthSchemeRegistry::J2CPP_CLASS_NAME>(),
+		get_method_id<org::apache::http::auth::AuthSchemeRegistry::J2CPP_CLASS_NAME, org::apache::http::auth::AuthSchemeRegistry::J2CPP_METHOD_NAME(0), org::apache::http::auth::AuthSchemeRegistry::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
+
+void org::apache::http::auth::AuthSchemeRegistry::Register(local_ref< java::lang::String > const &a0, local_ref< org::apache::http::auth::AuthSchemeFactory > const &a1)
 {
 	return void(
 		environment::get().get_jenv()->CallVoidMethod(

@@ -11,8 +11,10 @@
 
 
 namespace j2cpp { namespace junit { namespace framework { class TestSuite; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
+#include <java/lang/Object.hpp>
 #include <junit/framework/TestSuite.hpp>
 
 
@@ -30,17 +32,19 @@ namespace android { namespace test {
 
 		J2CPP_DECLARE_METHOD(0)
 
-		TestSuiteProvider(jobject jobj)
+		explicit TestSuiteProvider(jobject jobj)
 		: cpp_object<TestSuiteProvider>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		local_ref< junit::framework::TestSuite > getTestSuite();
 	}; //class TestSuiteProvider
 
 } //namespace test
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -53,6 +57,12 @@ namespace android { namespace test {
 
 namespace j2cpp {
 
+
+
+android::test::TestSuiteProvider::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 local_ref< junit::framework::TestSuite > android::test::TestSuiteProvider::getTestSuite()
 {

@@ -153,11 +153,15 @@ namespace android { namespace test { namespace mock {
 		J2CPP_DECLARE_METHOD(68)
 		J2CPP_DECLARE_METHOD(69)
 
-		MockContext(jobject jobj)
+		explicit MockContext(jobject jobj)
 		: cpp_object<MockContext>(jobj)
 		{
 		}
 
+		operator local_ref<android::content::Context>() const;
+
+
+		MockContext();
 		local_ref< android::content::res::AssetManager > getAssets();
 		local_ref< android::content::res::Resources > getResources();
 		local_ref< android::content::pm::PackageManager > getPackageManager();
@@ -233,7 +237,6 @@ namespace android { namespace test { namespace mock {
 } //namespace test
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_TEST_MOCK_MOCKCONTEXT_HPP_DECL
@@ -246,16 +249,23 @@ namespace android { namespace test { namespace mock {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::test::mock::MockContext > create< android::test::mock::MockContext>()
+
+android::test::mock::MockContext::operator local_ref<android::content::Context>() const
 {
-	return local_ref< android::test::mock::MockContext >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::test::mock::MockContext::J2CPP_CLASS_NAME>(),
-			get_method_id<android::test::mock::MockContext::J2CPP_CLASS_NAME, android::test::mock::MockContext::J2CPP_METHOD_NAME(0), android::test::mock::MockContext::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<android::content::Context>(get_jtype());
 }
+
+
+android::test::mock::MockContext::MockContext()
+: cpp_object<android::test::mock::MockContext>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::test::mock::MockContext::J2CPP_CLASS_NAME>(),
+		get_method_id<android::test::mock::MockContext::J2CPP_CLASS_NAME, android::test::mock::MockContext::J2CPP_METHOD_NAME(0), android::test::mock::MockContext::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 local_ref< android::content::res::AssetManager > android::test::mock::MockContext::getAssets()
 {

@@ -10,10 +10,12 @@
 #define J2CPP_JAVA_LANG_UNKNOWNERROR_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class VirtualMachineError; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 
 
 #include <java/lang/String.hpp>
+#include <java/lang/VirtualMachineError.hpp>
 
 
 namespace j2cpp {
@@ -31,16 +33,20 @@ namespace java { namespace lang {
 		J2CPP_DECLARE_METHOD(0)
 		J2CPP_DECLARE_METHOD(1)
 
-		UnknownError(jobject jobj)
+		explicit UnknownError(jobject jobj)
 		: cpp_object<UnknownError>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::VirtualMachineError>() const;
+
+
+		UnknownError();
+		UnknownError(local_ref< java::lang::String > const&);
 	}; //class UnknownError
 
 } //namespace lang
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -54,28 +60,36 @@ namespace java { namespace lang {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::lang::UnknownError > create< java::lang::UnknownError>()
+
+java::lang::UnknownError::operator local_ref<java::lang::VirtualMachineError>() const
 {
-	return local_ref< java::lang::UnknownError >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::lang::UnknownError::J2CPP_CLASS_NAME>(),
-			get_method_id<java::lang::UnknownError::J2CPP_CLASS_NAME, java::lang::UnknownError::J2CPP_METHOD_NAME(0), java::lang::UnknownError::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::VirtualMachineError>(get_jtype());
 }
 
-template <>
-local_ref< java::lang::UnknownError > create< java::lang::UnknownError>(local_ref< java::lang::String > const &a0)
+
+java::lang::UnknownError::UnknownError()
+: cpp_object<java::lang::UnknownError>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::lang::UnknownError::J2CPP_CLASS_NAME>(),
+		get_method_id<java::lang::UnknownError::J2CPP_CLASS_NAME, java::lang::UnknownError::J2CPP_METHOD_NAME(0), java::lang::UnknownError::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
 {
-	return local_ref< java::lang::UnknownError >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::lang::UnknownError::J2CPP_CLASS_NAME>(),
-			get_method_id<java::lang::UnknownError::J2CPP_CLASS_NAME, java::lang::UnknownError::J2CPP_METHOD_NAME(1), java::lang::UnknownError::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
 }
+
+
+
+java::lang::UnknownError::UnknownError(local_ref< java::lang::String > const &a0)
+: cpp_object<java::lang::UnknownError>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::lang::UnknownError::J2CPP_CLASS_NAME>(),
+		get_method_id<java::lang::UnknownError::J2CPP_CLASS_NAME, java::lang::UnknownError::J2CPP_METHOD_NAME(1), java::lang::UnknownError::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 
 J2CPP_DEFINE_CLASS(java::lang::UnknownError,"java/lang/UnknownError")

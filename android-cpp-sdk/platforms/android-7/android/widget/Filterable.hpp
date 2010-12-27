@@ -10,10 +10,12 @@
 #define J2CPP_ANDROID_WIDGET_FILTERABLE_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace android { namespace widget { class Filter; } } }
 
 
 #include <android/widget/Filter.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -30,17 +32,19 @@ namespace android { namespace widget {
 
 		J2CPP_DECLARE_METHOD(0)
 
-		Filterable(jobject jobj)
+		explicit Filterable(jobject jobj)
 		: cpp_object<Filterable>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		local_ref< android::widget::Filter > getFilter();
 	}; //class Filterable
 
 } //namespace widget
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -53,6 +57,12 @@ namespace android { namespace widget {
 
 namespace j2cpp {
 
+
+
+android::widget::Filterable::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 local_ref< android::widget::Filter > android::widget::Filterable::getFilter()
 {

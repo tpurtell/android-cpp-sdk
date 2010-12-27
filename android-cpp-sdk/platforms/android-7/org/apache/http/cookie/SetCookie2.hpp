@@ -10,10 +10,14 @@
 #define J2CPP_ORG_APACHE_HTTP_COOKIE_SETCOOKIE2_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { namespace cookie { class SetCookie; } } } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
+#include <org/apache/http/cookie/SetCookie.hpp>
 
 
 namespace j2cpp {
@@ -32,10 +36,14 @@ namespace org { namespace apache { namespace http { namespace cookie {
 		J2CPP_DECLARE_METHOD(1)
 		J2CPP_DECLARE_METHOD(2)
 
-		SetCookie2(jobject jobj)
+		explicit SetCookie2(jobject jobj)
 		: cpp_object<SetCookie2>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<org::apache::http::cookie::SetCookie>() const;
+
 
 		void setCommentURL(local_ref< java::lang::String > const&);
 		void setPorts(local_ref< cpp_int_array<1> > const&);
@@ -46,7 +54,6 @@ namespace org { namespace apache { namespace http { namespace cookie {
 } //namespace http
 } //namespace apache
 } //namespace org
-
 
 } //namespace j2cpp
 
@@ -59,6 +66,17 @@ namespace org { namespace apache { namespace http { namespace cookie {
 
 namespace j2cpp {
 
+
+
+org::apache::http::cookie::SetCookie2::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
+
+org::apache::http::cookie::SetCookie2::operator local_ref<org::apache::http::cookie::SetCookie>() const
+{
+	return local_ref<org::apache::http::cookie::SetCookie>(get_jtype());
+}
 
 void org::apache::http::cookie::SetCookie2::setCommentURL(local_ref< java::lang::String > const &a0)
 {

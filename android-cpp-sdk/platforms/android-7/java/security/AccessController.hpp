@@ -44,10 +44,13 @@ namespace java { namespace security {
 		J2CPP_DECLARE_METHOD(5)
 		J2CPP_DECLARE_METHOD(6)
 
-		AccessController(jobject jobj)
+		explicit AccessController(jobject jobj)
 		: cpp_object<AccessController>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		static local_ref< java::lang::Object > doPrivileged(local_ref< java::security::PrivilegedAction > const&);
 		static local_ref< java::lang::Object > doPrivileged(local_ref< java::security::PrivilegedAction > const&, local_ref< java::security::AccessControlContext > const&);
@@ -59,7 +62,6 @@ namespace java { namespace security {
 
 } //namespace security
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -73,16 +75,12 @@ namespace java { namespace security {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::security::AccessController > create< java::security::AccessController>()
+
+java::security::AccessController::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::security::AccessController >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::security::AccessController::J2CPP_CLASS_NAME>(),
-			get_method_id<java::security::AccessController::J2CPP_CLASS_NAME, java::security::AccessController::J2CPP_METHOD_NAME(0), java::security::AccessController::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
 
 local_ref< java::lang::Object > java::security::AccessController::doPrivileged(local_ref< java::security::PrivilegedAction > const &a0)
 {

@@ -10,10 +10,12 @@
 #define J2CPP_ANDROID_VIEW_VIEWCONFIGURATION_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace android { namespace content { class Context; } } }
 
 
 #include <android/content/Context.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -58,11 +60,15 @@ namespace android { namespace view {
 		J2CPP_DECLARE_METHOD(27)
 		J2CPP_DECLARE_METHOD(28)
 
-		ViewConfiguration(jobject jobj)
+		explicit ViewConfiguration(jobject jobj)
 		: cpp_object<ViewConfiguration>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		ViewConfiguration();
 		static local_ref< android::view::ViewConfiguration > get(local_ref< android::content::Context > const&);
 		static cpp_int getScrollBarSize();
 		cpp_int getScaledScrollBarSize();
@@ -96,7 +102,6 @@ namespace android { namespace view {
 } //namespace view
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_VIEW_VIEWCONFIGURATION_HPP_DECL
@@ -109,16 +114,23 @@ namespace android { namespace view {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::view::ViewConfiguration > create< android::view::ViewConfiguration>()
+
+android::view::ViewConfiguration::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::view::ViewConfiguration >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::view::ViewConfiguration::J2CPP_CLASS_NAME>(),
-			get_method_id<android::view::ViewConfiguration::J2CPP_CLASS_NAME, android::view::ViewConfiguration::J2CPP_METHOD_NAME(0), android::view::ViewConfiguration::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::view::ViewConfiguration::ViewConfiguration()
+: cpp_object<android::view::ViewConfiguration>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::view::ViewConfiguration::J2CPP_CLASS_NAME>(),
+		get_method_id<android::view::ViewConfiguration::J2CPP_CLASS_NAME, android::view::ViewConfiguration::J2CPP_METHOD_NAME(0), android::view::ViewConfiguration::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 local_ref< android::view::ViewConfiguration > android::view::ViewConfiguration::get(local_ref< android::content::Context > const &a0)
 {

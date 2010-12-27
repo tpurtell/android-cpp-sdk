@@ -10,6 +10,7 @@
 #define J2CPP_JAVA_SQL_CONNECTION_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace sql { class PreparedStatement; } } }
 namespace j2cpp { namespace java { namespace sql { class Statement; } } }
@@ -20,6 +21,7 @@ namespace j2cpp { namespace java { namespace sql { class Savepoint; } } }
 namespace j2cpp { namespace java { namespace util { class Map; } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/sql/CallableStatement.hpp>
 #include <java/sql/DatabaseMetaData.hpp>
@@ -84,10 +86,13 @@ namespace java { namespace sql {
 		J2CPP_DECLARE_FIELD(3)
 		J2CPP_DECLARE_FIELD(4)
 
-		Connection(jobject jobj)
+		explicit Connection(jobject jobj)
 		: cpp_object<Connection>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		void clearWarnings();
 		void close();
@@ -136,7 +141,6 @@ namespace java { namespace sql {
 } //namespace sql
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_SQL_CONNECTION_HPP_DECL
@@ -148,6 +152,12 @@ namespace java { namespace sql {
 
 namespace j2cpp {
 
+
+
+java::sql::Connection::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 void java::sql::Connection::clearWarnings()
 {

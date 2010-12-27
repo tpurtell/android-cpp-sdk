@@ -37,10 +37,13 @@ namespace java { namespace sql {
 		J2CPP_DECLARE_METHOD(2)
 		J2CPP_DECLARE_METHOD(3)
 
-		Ref(jobject jobj)
+		explicit Ref(jobject jobj)
 		: cpp_object<Ref>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		local_ref< java::lang::String > getBaseTypeName();
 		local_ref< java::lang::Object > getObject();
@@ -50,7 +53,6 @@ namespace java { namespace sql {
 
 } //namespace sql
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -63,6 +65,12 @@ namespace java { namespace sql {
 
 namespace j2cpp {
 
+
+
+java::sql::Ref::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 local_ref< java::lang::String > java::sql::Ref::getBaseTypeName()
 {

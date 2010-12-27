@@ -11,10 +11,12 @@
 
 
 namespace j2cpp { namespace java { namespace lang { class ClassLoader; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 
 
 #include <java/lang/ClassLoader.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -46,10 +48,13 @@ namespace org { namespace apache { namespace http { namespace util {
 		J2CPP_DECLARE_FIELD(3)
 		J2CPP_DECLARE_FIELD(4)
 
-		VersionInfo(jobject jobj)
+		explicit VersionInfo(jobject jobj)
 		: cpp_object<VersionInfo>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		local_ref< java::lang::String > getPackage();
 		local_ref< java::lang::String > getModule();
@@ -72,7 +77,6 @@ namespace org { namespace apache { namespace http { namespace util {
 } //namespace apache
 } //namespace org
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ORG_APACHE_HTTP_UTIL_VERSIONINFO_HPP_DECL
@@ -85,17 +89,12 @@ namespace org { namespace apache { namespace http { namespace util {
 namespace j2cpp {
 
 
-template <>
-local_ref< org::apache::http::util::VersionInfo > create< org::apache::http::util::VersionInfo>(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1, local_ref< java::lang::String > const &a2, local_ref< java::lang::String > const &a3, local_ref< java::lang::String > const &a4)
+
+org::apache::http::util::VersionInfo::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< org::apache::http::util::VersionInfo >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::apache::http::util::VersionInfo::J2CPP_CLASS_NAME>(),
-			get_method_id<org::apache::http::util::VersionInfo::J2CPP_CLASS_NAME, org::apache::http::util::VersionInfo::J2CPP_METHOD_NAME(0), org::apache::http::util::VersionInfo::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype(), a4.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
 
 local_ref< java::lang::String > org::apache::http::util::VersionInfo::getPackage()
 {

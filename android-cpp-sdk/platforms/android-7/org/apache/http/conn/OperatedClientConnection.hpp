@@ -11,12 +11,18 @@
 
 
 namespace j2cpp { namespace java { namespace net { class Socket; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { class HttpClientConnection; } } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { class HttpInetConnection; } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace params { class HttpParams; } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { class HttpHost; } } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/net/Socket.hpp>
+#include <org/apache/http/HttpClientConnection.hpp>
 #include <org/apache/http/HttpHost.hpp>
+#include <org/apache/http/HttpInetConnection.hpp>
 #include <org/apache/http/params/HttpParams.hpp>
 
 
@@ -39,10 +45,15 @@ namespace org { namespace apache { namespace http { namespace conn {
 		J2CPP_DECLARE_METHOD(4)
 		J2CPP_DECLARE_METHOD(5)
 
-		OperatedClientConnection(jobject jobj)
+		explicit OperatedClientConnection(jobject jobj)
 		: cpp_object<OperatedClientConnection>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<org::apache::http::HttpClientConnection>() const;
+		operator local_ref<org::apache::http::HttpInetConnection>() const;
+
 
 		local_ref< org::apache::http::HttpHost > getTargetHost();
 		cpp_boolean isSecure();
@@ -57,7 +68,6 @@ namespace org { namespace apache { namespace http { namespace conn {
 } //namespace apache
 } //namespace org
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ORG_APACHE_HTTP_CONN_OPERATEDCLIENTCONNECTION_HPP_DECL
@@ -69,6 +79,22 @@ namespace org { namespace apache { namespace http { namespace conn {
 
 namespace j2cpp {
 
+
+
+org::apache::http::conn::OperatedClientConnection::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
+
+org::apache::http::conn::OperatedClientConnection::operator local_ref<org::apache::http::HttpClientConnection>() const
+{
+	return local_ref<org::apache::http::HttpClientConnection>(get_jtype());
+}
+
+org::apache::http::conn::OperatedClientConnection::operator local_ref<org::apache::http::HttpInetConnection>() const
+{
+	return local_ref<org::apache::http::HttpInetConnection>(get_jtype());
+}
 
 local_ref< org::apache::http::HttpHost > org::apache::http::conn::OperatedClientConnection::getTargetHost()
 {

@@ -10,6 +10,7 @@
 #define J2CPP_ANDROID_TELEPHONY_TELEPHONYMANAGER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace util { class List; } } }
 namespace j2cpp { namespace android { namespace telephony { class PhoneStateListener; } } }
@@ -18,6 +19,7 @@ namespace j2cpp { namespace android { namespace telephony { class CellLocation; 
 
 #include <android/telephony/CellLocation.hpp>
 #include <android/telephony/PhoneStateListener.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/util/List.hpp>
 
@@ -99,10 +101,13 @@ namespace android { namespace telephony {
 		J2CPP_DECLARE_FIELD(36)
 		J2CPP_DECLARE_FIELD(37)
 
-		TelephonyManager(jobject jobj)
+		explicit TelephonyManager(jobject jobj)
 		: cpp_object<TelephonyManager>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		local_ref< java::lang::String > getDeviceSoftwareVersion();
 		local_ref< java::lang::String > getDeviceId();
@@ -172,7 +177,6 @@ namespace android { namespace telephony {
 } //namespace telephony
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_TELEPHONY_TELEPHONYMANAGER_HPP_DECL
@@ -185,16 +189,12 @@ namespace android { namespace telephony {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::telephony::TelephonyManager > create< android::telephony::TelephonyManager>()
+
+android::telephony::TelephonyManager::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::telephony::TelephonyManager >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::telephony::TelephonyManager::J2CPP_CLASS_NAME>(),
-			get_method_id<android::telephony::TelephonyManager::J2CPP_CLASS_NAME, android::telephony::TelephonyManager::J2CPP_METHOD_NAME(0), android::telephony::TelephonyManager::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
 
 local_ref< java::lang::String > android::telephony::TelephonyManager::getDeviceSoftwareVersion()
 {
@@ -436,6 +436,7 @@ void android::telephony::TelephonyManager::listen(local_ref< android::telephony:
 		)
 	);
 }
+
 
 
 static_field<

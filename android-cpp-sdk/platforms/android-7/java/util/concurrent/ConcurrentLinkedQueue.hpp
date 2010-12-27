@@ -10,14 +10,20 @@
 #define J2CPP_JAVA_UTIL_CONCURRENT_CONCURRENTLINKEDQUEUE_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace util { class AbstractQueue; } } }
 namespace j2cpp { namespace java { namespace util { class Iterator; } } }
+namespace j2cpp { namespace java { namespace util { class Queue; } } }
 namespace j2cpp { namespace java { namespace util { class Collection; } } }
 
 
+#include <java/io/Serializable.hpp>
 #include <java/lang/Object.hpp>
+#include <java/util/AbstractQueue.hpp>
 #include <java/util/Collection.hpp>
 #include <java/util/Iterator.hpp>
+#include <java/util/Queue.hpp>
 
 
 namespace j2cpp {
@@ -46,11 +52,18 @@ namespace java { namespace util { namespace concurrent {
 		J2CPP_DECLARE_METHOD(11)
 		J2CPP_DECLARE_METHOD(12)
 
-		ConcurrentLinkedQueue(jobject jobj)
+		explicit ConcurrentLinkedQueue(jobject jobj)
 		: cpp_object<ConcurrentLinkedQueue>(jobj)
 		{
 		}
 
+		operator local_ref<java::util::AbstractQueue>() const;
+		operator local_ref<java::util::Queue>() const;
+		operator local_ref<java::io::Serializable>() const;
+
+
+		ConcurrentLinkedQueue();
+		ConcurrentLinkedQueue(local_ref< java::util::Collection > const&);
 		cpp_boolean add(local_ref< java::lang::Object > const&);
 		cpp_boolean offer(local_ref< java::lang::Object > const&);
 		local_ref< java::lang::Object > poll();
@@ -68,7 +81,6 @@ namespace java { namespace util { namespace concurrent {
 } //namespace util
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_UTIL_CONCURRENT_CONCURRENTLINKEDQUEUE_HPP_DECL
@@ -81,28 +93,46 @@ namespace java { namespace util { namespace concurrent {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::util::concurrent::ConcurrentLinkedQueue > create< java::util::concurrent::ConcurrentLinkedQueue>()
+
+java::util::concurrent::ConcurrentLinkedQueue::operator local_ref<java::util::AbstractQueue>() const
 {
-	return local_ref< java::util::concurrent::ConcurrentLinkedQueue >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::concurrent::ConcurrentLinkedQueue::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::concurrent::ConcurrentLinkedQueue::J2CPP_CLASS_NAME, java::util::concurrent::ConcurrentLinkedQueue::J2CPP_METHOD_NAME(0), java::util::concurrent::ConcurrentLinkedQueue::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::util::AbstractQueue>(get_jtype());
 }
 
-template <>
-local_ref< java::util::concurrent::ConcurrentLinkedQueue > create< java::util::concurrent::ConcurrentLinkedQueue>(local_ref< java::util::Collection > const &a0)
+java::util::concurrent::ConcurrentLinkedQueue::operator local_ref<java::util::Queue>() const
 {
-	return local_ref< java::util::concurrent::ConcurrentLinkedQueue >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::concurrent::ConcurrentLinkedQueue::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::concurrent::ConcurrentLinkedQueue::J2CPP_CLASS_NAME, java::util::concurrent::ConcurrentLinkedQueue::J2CPP_METHOD_NAME(1), java::util::concurrent::ConcurrentLinkedQueue::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::util::Queue>(get_jtype());
 }
+
+java::util::concurrent::ConcurrentLinkedQueue::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jtype());
+}
+
+
+java::util::concurrent::ConcurrentLinkedQueue::ConcurrentLinkedQueue()
+: cpp_object<java::util::concurrent::ConcurrentLinkedQueue>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::util::concurrent::ConcurrentLinkedQueue::J2CPP_CLASS_NAME>(),
+		get_method_id<java::util::concurrent::ConcurrentLinkedQueue::J2CPP_CLASS_NAME, java::util::concurrent::ConcurrentLinkedQueue::J2CPP_METHOD_NAME(0), java::util::concurrent::ConcurrentLinkedQueue::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
+
+
+java::util::concurrent::ConcurrentLinkedQueue::ConcurrentLinkedQueue(local_ref< java::util::Collection > const &a0)
+: cpp_object<java::util::concurrent::ConcurrentLinkedQueue>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::util::concurrent::ConcurrentLinkedQueue::J2CPP_CLASS_NAME>(),
+		get_method_id<java::util::concurrent::ConcurrentLinkedQueue::J2CPP_CLASS_NAME, java::util::concurrent::ConcurrentLinkedQueue::J2CPP_METHOD_NAME(1), java::util::concurrent::ConcurrentLinkedQueue::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 cpp_boolean java::util::concurrent::ConcurrentLinkedQueue::add(local_ref< java::lang::Object > const &a0)
 {

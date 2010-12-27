@@ -10,10 +10,13 @@
 #define J2CPP_ANDROID_WIDGET_EXPANDABLELISTVIEW_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace android { namespace graphics { namespace drawable { class Drawable; } } } }
 namespace j2cpp { namespace android { namespace content { class Context; } } }
 namespace j2cpp { namespace android { namespace view { class View; } } }
+namespace j2cpp { namespace android { namespace view { namespace ContextMenu_ { class ContextMenuInfo; } } } }
 namespace j2cpp { namespace android { namespace widget { class ListAdapter; } } }
+namespace j2cpp { namespace android { namespace widget { class ListView; } } }
 namespace j2cpp { namespace android { namespace widget { namespace ExpandableListView_ { class OnGroupCollapseListener; } } } }
 namespace j2cpp { namespace android { namespace widget { namespace ExpandableListView_ { class OnGroupClickListener; } } } }
 namespace j2cpp { namespace android { namespace widget { namespace ExpandableListView_ { class OnChildClickListener; } } } }
@@ -29,12 +32,15 @@ namespace j2cpp { namespace android { namespace os { class Parcelable; } } }
 #include <android/graphics/drawable/Drawable.hpp>
 #include <android/os/Parcelable.hpp>
 #include <android/util/AttributeSet.hpp>
+#include <android/view/ContextMenu.hpp>
 #include <android/view/View.hpp>
 #include <android/widget/Adapter.hpp>
 #include <android/widget/AdapterView.hpp>
 #include <android/widget/ExpandableListAdapter.hpp>
 #include <android/widget/ExpandableListView.hpp>
 #include <android/widget/ListAdapter.hpp>
+#include <android/widget/ListView.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -57,14 +63,19 @@ namespace android { namespace widget {
 			J2CPP_DECLARE_FIELD(1)
 			J2CPP_DECLARE_FIELD(2)
 
-			ExpandableListContextMenuInfo(jobject jobj)
+			explicit ExpandableListContextMenuInfo(jobject jobj)
 			: cpp_object<ExpandableListContextMenuInfo>(jobj)
-			, targetView(jobj)
-			, packedPosition(jobj)
-			, id(jobj)
+, targetView(jobj)
+, packedPosition(jobj)
+, id(jobj)
 			{
 			}
 
+			operator local_ref<java::lang::Object>() const;
+			operator local_ref<android::view::ContextMenu_::ContextMenuInfo>() const;
+
+
+			ExpandableListContextMenuInfo(local_ref< android::view::View > const&, cpp_long const&, cpp_long const&);
 
 			field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(0), J2CPP_FIELD_SIGNATURE(0), local_ref< android::view::View > > targetView;
 			field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(1), J2CPP_FIELD_SIGNATURE(1), cpp_long > packedPosition;
@@ -81,10 +92,13 @@ namespace android { namespace widget {
 
 			J2CPP_DECLARE_METHOD(0)
 
-			OnGroupCollapseListener(jobject jobj)
+			explicit OnGroupCollapseListener(jobject jobj)
 			: cpp_object<OnGroupCollapseListener>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+
 
 			void onGroupCollapse(cpp_int const&);
 		}; //class OnGroupCollapseListener
@@ -99,10 +113,13 @@ namespace android { namespace widget {
 
 			J2CPP_DECLARE_METHOD(0)
 
-			OnGroupClickListener(jobject jobj)
+			explicit OnGroupClickListener(jobject jobj)
 			: cpp_object<OnGroupClickListener>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+
 
 			cpp_boolean onGroupClick(local_ref< android::widget::ExpandableListView > const&, local_ref< android::view::View > const&, cpp_int const&, cpp_long const&);
 		}; //class OnGroupClickListener
@@ -117,10 +134,13 @@ namespace android { namespace widget {
 
 			J2CPP_DECLARE_METHOD(0)
 
-			OnChildClickListener(jobject jobj)
+			explicit OnChildClickListener(jobject jobj)
 			: cpp_object<OnChildClickListener>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+
 
 			cpp_boolean onChildClick(local_ref< android::widget::ExpandableListView > const&, local_ref< android::view::View > const&, cpp_int const&, cpp_int const&, cpp_long const&);
 		}; //class OnChildClickListener
@@ -135,10 +155,13 @@ namespace android { namespace widget {
 
 			J2CPP_DECLARE_METHOD(0)
 
-			OnGroupExpandListener(jobject jobj)
+			explicit OnGroupExpandListener(jobject jobj)
 			: cpp_object<OnGroupExpandListener>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+
 
 			void onGroupExpand(cpp_int const&);
 		}; //class OnGroupExpandListener
@@ -201,11 +224,17 @@ namespace android { namespace widget {
 		typedef ExpandableListView_::OnChildClickListener OnChildClickListener;
 		typedef ExpandableListView_::OnGroupExpandListener OnGroupExpandListener;
 
-		ExpandableListView(jobject jobj)
+		explicit ExpandableListView(jobject jobj)
 		: cpp_object<ExpandableListView>(jobj)
 		{
 		}
 
+		operator local_ref<android::widget::ListView>() const;
+
+
+		ExpandableListView(local_ref< android::content::Context > const&);
+		ExpandableListView(local_ref< android::content::Context > const&, local_ref< android::util::AttributeSet > const&);
+		ExpandableListView(local_ref< android::content::Context > const&, local_ref< android::util::AttributeSet > const&, cpp_int const&);
 		void setChildDivider(local_ref< android::graphics::drawable::Drawable > const&);
 		void setAdapter(local_ref< android::widget::ListAdapter > const&);
 		local_ref< android::widget::ListAdapter > getAdapter();
@@ -250,7 +279,6 @@ namespace android { namespace widget {
 } //namespace widget
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_WIDGET_EXPANDABLELISTVIEW_HPP_DECL
@@ -264,17 +292,32 @@ namespace j2cpp {
 
 
 
-template <>
-local_ref< android::widget::ExpandableListView_::ExpandableListContextMenuInfo > create< android::widget::ExpandableListView_::ExpandableListContextMenuInfo>(local_ref< android::view::View > const &a0, cpp_long const &a1, cpp_long const &a2)
+
+android::widget::ExpandableListView_::ExpandableListContextMenuInfo::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::widget::ExpandableListView_::ExpandableListContextMenuInfo >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::widget::ExpandableListView_::ExpandableListContextMenuInfo::J2CPP_CLASS_NAME>(),
-			get_method_id<android::widget::ExpandableListView_::ExpandableListContextMenuInfo::J2CPP_CLASS_NAME, android::widget::ExpandableListView_::ExpandableListContextMenuInfo::J2CPP_METHOD_NAME(0), android::widget::ExpandableListView_::ExpandableListContextMenuInfo::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+android::widget::ExpandableListView_::ExpandableListContextMenuInfo::operator local_ref<android::view::ContextMenu_::ContextMenuInfo>() const
+{
+	return local_ref<android::view::ContextMenu_::ContextMenuInfo>(get_jtype());
+}
+
+
+android::widget::ExpandableListView_::ExpandableListContextMenuInfo::ExpandableListContextMenuInfo(local_ref< android::view::View > const &a0, cpp_long const &a1, cpp_long const &a2)
+: cpp_object<android::widget::ExpandableListView_::ExpandableListContextMenuInfo>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::widget::ExpandableListView_::ExpandableListContextMenuInfo::J2CPP_CLASS_NAME>(),
+		get_method_id<android::widget::ExpandableListView_::ExpandableListContextMenuInfo::J2CPP_CLASS_NAME, android::widget::ExpandableListView_::ExpandableListContextMenuInfo::J2CPP_METHOD_NAME(0), android::widget::ExpandableListView_::ExpandableListContextMenuInfo::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
+	)
+)
+, targetView(get_jtype())
+, packedPosition(get_jtype())
+, id(get_jtype())
+{
+}
+
 
 
 
@@ -283,6 +326,12 @@ J2CPP_DEFINE_METHOD(android::widget::ExpandableListView_::ExpandableListContextM
 J2CPP_DEFINE_FIELD(android::widget::ExpandableListView_::ExpandableListContextMenuInfo,0,"targetView","Landroid/view/View;")
 J2CPP_DEFINE_FIELD(android::widget::ExpandableListView_::ExpandableListContextMenuInfo,1,"packedPosition","J")
 J2CPP_DEFINE_FIELD(android::widget::ExpandableListView_::ExpandableListContextMenuInfo,2,"id","J")
+
+
+android::widget::ExpandableListView_::OnGroupCollapseListener::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 void android::widget::ExpandableListView_::OnGroupCollapseListener::onGroupCollapse(cpp_int const &a0)
 {
@@ -299,6 +348,12 @@ void android::widget::ExpandableListView_::OnGroupCollapseListener::onGroupColla
 J2CPP_DEFINE_CLASS(android::widget::ExpandableListView_::OnGroupCollapseListener,"android/widget/ExpandableListView$OnGroupCollapseListener")
 J2CPP_DEFINE_METHOD(android::widget::ExpandableListView_::OnGroupCollapseListener,0,"onGroupCollapse","(I)V")
 
+
+android::widget::ExpandableListView_::OnGroupClickListener::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
+
 cpp_boolean android::widget::ExpandableListView_::OnGroupClickListener::onGroupClick(local_ref< android::widget::ExpandableListView > const &a0, local_ref< android::view::View > const &a1, cpp_int const &a2, cpp_long const &a3)
 {
 	return cpp_boolean(
@@ -314,6 +369,12 @@ cpp_boolean android::widget::ExpandableListView_::OnGroupClickListener::onGroupC
 J2CPP_DEFINE_CLASS(android::widget::ExpandableListView_::OnGroupClickListener,"android/widget/ExpandableListView$OnGroupClickListener")
 J2CPP_DEFINE_METHOD(android::widget::ExpandableListView_::OnGroupClickListener,0,"onGroupClick","(Landroid/widget/ExpandableListView;Landroid/view/View;IJ)Z")
 
+
+android::widget::ExpandableListView_::OnChildClickListener::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
+
 cpp_boolean android::widget::ExpandableListView_::OnChildClickListener::onChildClick(local_ref< android::widget::ExpandableListView > const &a0, local_ref< android::view::View > const &a1, cpp_int const &a2, cpp_int const &a3, cpp_long const &a4)
 {
 	return cpp_boolean(
@@ -328,6 +389,12 @@ cpp_boolean android::widget::ExpandableListView_::OnChildClickListener::onChildC
 
 J2CPP_DEFINE_CLASS(android::widget::ExpandableListView_::OnChildClickListener,"android/widget/ExpandableListView$OnChildClickListener")
 J2CPP_DEFINE_METHOD(android::widget::ExpandableListView_::OnChildClickListener,0,"onChildClick","(Landroid/widget/ExpandableListView;Landroid/view/View;IIJ)Z")
+
+
+android::widget::ExpandableListView_::OnGroupExpandListener::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 void android::widget::ExpandableListView_::OnGroupExpandListener::onGroupExpand(cpp_int const &a0)
 {
@@ -345,41 +412,50 @@ J2CPP_DEFINE_CLASS(android::widget::ExpandableListView_::OnGroupExpandListener,"
 J2CPP_DEFINE_METHOD(android::widget::ExpandableListView_::OnGroupExpandListener,0,"onGroupExpand","(I)V")
 
 
-template <>
-local_ref< android::widget::ExpandableListView > create< android::widget::ExpandableListView>(local_ref< android::content::Context > const &a0)
+
+android::widget::ExpandableListView::operator local_ref<android::widget::ListView>() const
 {
-	return local_ref< android::widget::ExpandableListView >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::widget::ExpandableListView::J2CPP_CLASS_NAME>(),
-			get_method_id<android::widget::ExpandableListView::J2CPP_CLASS_NAME, android::widget::ExpandableListView::J2CPP_METHOD_NAME(0), android::widget::ExpandableListView::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<android::widget::ListView>(get_jtype());
 }
 
-template <>
-local_ref< android::widget::ExpandableListView > create< android::widget::ExpandableListView>(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1)
+
+android::widget::ExpandableListView::ExpandableListView(local_ref< android::content::Context > const &a0)
+: cpp_object<android::widget::ExpandableListView>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::widget::ExpandableListView::J2CPP_CLASS_NAME>(),
+		get_method_id<android::widget::ExpandableListView::J2CPP_CLASS_NAME, android::widget::ExpandableListView::J2CPP_METHOD_NAME(0), android::widget::ExpandableListView::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< android::widget::ExpandableListView >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::widget::ExpandableListView::J2CPP_CLASS_NAME>(),
-			get_method_id<android::widget::ExpandableListView::J2CPP_CLASS_NAME, android::widget::ExpandableListView::J2CPP_METHOD_NAME(1), android::widget::ExpandableListView::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< android::widget::ExpandableListView > create< android::widget::ExpandableListView>(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1, cpp_int const &a2)
+
+
+android::widget::ExpandableListView::ExpandableListView(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1)
+: cpp_object<android::widget::ExpandableListView>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::widget::ExpandableListView::J2CPP_CLASS_NAME>(),
+		get_method_id<android::widget::ExpandableListView::J2CPP_CLASS_NAME, android::widget::ExpandableListView::J2CPP_METHOD_NAME(1), android::widget::ExpandableListView::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
 {
-	return local_ref< android::widget::ExpandableListView >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::widget::ExpandableListView::J2CPP_CLASS_NAME>(),
-			get_method_id<android::widget::ExpandableListView::J2CPP_CLASS_NAME, android::widget::ExpandableListView::J2CPP_METHOD_NAME(2), android::widget::ExpandableListView::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
-		)
-	);
 }
+
+
+
+android::widget::ExpandableListView::ExpandableListView(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1, cpp_int const &a2)
+: cpp_object<android::widget::ExpandableListView>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::widget::ExpandableListView::J2CPP_CLASS_NAME>(),
+		get_method_id<android::widget::ExpandableListView::J2CPP_CLASS_NAME, android::widget::ExpandableListView::J2CPP_METHOD_NAME(2), android::widget::ExpandableListView::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
+	)
+)
+{
+}
+
 
 
 void android::widget::ExpandableListView::setChildDivider(local_ref< android::graphics::drawable::Drawable > const &a0)

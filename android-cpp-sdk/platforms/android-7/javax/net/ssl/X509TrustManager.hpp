@@ -10,12 +10,16 @@
 #define J2CPP_JAVAX_NET_SSL_X509TRUSTMANAGER_HPP_DECL
 
 
+namespace j2cpp { namespace javax { namespace net { namespace ssl { class TrustManager; } } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace security { namespace cert { class X509Certificate; } } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/security/cert/X509Certificate.hpp>
+#include <javax/net/ssl/TrustManager.hpp>
 
 
 namespace j2cpp {
@@ -34,10 +38,14 @@ namespace javax { namespace net { namespace ssl {
 		J2CPP_DECLARE_METHOD(1)
 		J2CPP_DECLARE_METHOD(2)
 
-		X509TrustManager(jobject jobj)
+		explicit X509TrustManager(jobject jobj)
 		: cpp_object<X509TrustManager>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<javax::net::ssl::TrustManager>() const;
+
 
 		void checkClientTrusted(local_ref< cpp_object_array<java::security::cert::X509Certificate, 1> > const&, local_ref< java::lang::String > const&);
 		void checkServerTrusted(local_ref< cpp_object_array<java::security::cert::X509Certificate, 1> > const&, local_ref< java::lang::String > const&);
@@ -47,7 +55,6 @@ namespace javax { namespace net { namespace ssl {
 } //namespace ssl
 } //namespace net
 } //namespace javax
-
 
 } //namespace j2cpp
 
@@ -60,6 +67,17 @@ namespace javax { namespace net { namespace ssl {
 
 namespace j2cpp {
 
+
+
+javax::net::ssl::X509TrustManager::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
+
+javax::net::ssl::X509TrustManager::operator local_ref<javax::net::ssl::TrustManager>() const
+{
+	return local_ref<javax::net::ssl::TrustManager>(get_jtype());
+}
 
 void javax::net::ssl::X509TrustManager::checkClientTrusted(local_ref< cpp_object_array<java::security::cert::X509Certificate, 1> > const &a0, local_ref< java::lang::String > const &a1)
 {

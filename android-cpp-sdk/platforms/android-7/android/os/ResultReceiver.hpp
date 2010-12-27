@@ -10,8 +10,10 @@
 #define J2CPP_ANDROID_OS_RESULTRECEIVER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace android { namespace os { class Parcel; } } }
 namespace j2cpp { namespace android { namespace os { class Bundle; } } }
+namespace j2cpp { namespace android { namespace os { class Parcelable; } } }
 namespace j2cpp { namespace android { namespace os { class Handler; } } }
 namespace j2cpp { namespace android { namespace os { namespace Parcelable_ { class Creator; } } } }
 
@@ -20,6 +22,7 @@ namespace j2cpp { namespace android { namespace os { namespace Parcelable_ { cla
 #include <android/os/Handler.hpp>
 #include <android/os/Parcel.hpp>
 #include <android/os/Parcelable.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -42,11 +45,16 @@ namespace android { namespace os {
 		J2CPP_DECLARE_METHOD(5)
 		J2CPP_DECLARE_FIELD(0)
 
-		ResultReceiver(jobject jobj)
+		explicit ResultReceiver(jobject jobj)
 		: cpp_object<ResultReceiver>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<android::os::Parcelable>() const;
+
+
+		ResultReceiver(local_ref< android::os::Handler > const&);
 		void send(cpp_int const&, local_ref< android::os::Bundle > const&);
 		cpp_int describeContents();
 		void writeToParcel(local_ref< android::os::Parcel > const&, cpp_int const&);
@@ -56,7 +64,6 @@ namespace android { namespace os {
 
 } //namespace os
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -70,17 +77,29 @@ namespace android { namespace os {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::os::ResultReceiver > create< android::os::ResultReceiver>(local_ref< android::os::Handler > const &a0)
+
+android::os::ResultReceiver::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::os::ResultReceiver >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::os::ResultReceiver::J2CPP_CLASS_NAME>(),
-			get_method_id<android::os::ResultReceiver::J2CPP_CLASS_NAME, android::os::ResultReceiver::J2CPP_METHOD_NAME(0), android::os::ResultReceiver::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+android::os::ResultReceiver::operator local_ref<android::os::Parcelable>() const
+{
+	return local_ref<android::os::Parcelable>(get_jtype());
+}
+
+
+android::os::ResultReceiver::ResultReceiver(local_ref< android::os::Handler > const &a0)
+: cpp_object<android::os::ResultReceiver>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::os::ResultReceiver::J2CPP_CLASS_NAME>(),
+		get_method_id<android::os::ResultReceiver::J2CPP_CLASS_NAME, android::os::ResultReceiver::J2CPP_METHOD_NAME(0), android::os::ResultReceiver::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 void android::os::ResultReceiver::send(cpp_int const &a0, local_ref< android::os::Bundle > const &a1)
 {
@@ -114,6 +133,7 @@ void android::os::ResultReceiver::writeToParcel(local_ref< android::os::Parcel >
 		)
 	);
 }
+
 
 
 static_field<

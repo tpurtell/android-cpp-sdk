@@ -11,9 +11,11 @@
 
 
 namespace j2cpp { namespace android { namespace graphics { class Paint; } } }
+namespace j2cpp { namespace android { namespace graphics { class Rasterizer; } } }
 
 
 #include <android/graphics/Paint.hpp>
+#include <android/graphics/Rasterizer.hpp>
 
 
 namespace j2cpp {
@@ -32,18 +34,21 @@ namespace android { namespace graphics {
 		J2CPP_DECLARE_METHOD(1)
 		J2CPP_DECLARE_METHOD(2)
 
-		LayerRasterizer(jobject jobj)
+		explicit LayerRasterizer(jobject jobj)
 		: cpp_object<LayerRasterizer>(jobj)
 		{
 		}
 
+		operator local_ref<android::graphics::Rasterizer>() const;
+
+
+		LayerRasterizer();
 		void addLayer(local_ref< android::graphics::Paint > const&, cpp_float const&, cpp_float const&);
 		void addLayer(local_ref< android::graphics::Paint > const&);
 	}; //class LayerRasterizer
 
 } //namespace graphics
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -57,16 +62,23 @@ namespace android { namespace graphics {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::graphics::LayerRasterizer > create< android::graphics::LayerRasterizer>()
+
+android::graphics::LayerRasterizer::operator local_ref<android::graphics::Rasterizer>() const
 {
-	return local_ref< android::graphics::LayerRasterizer >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::graphics::LayerRasterizer::J2CPP_CLASS_NAME>(),
-			get_method_id<android::graphics::LayerRasterizer::J2CPP_CLASS_NAME, android::graphics::LayerRasterizer::J2CPP_METHOD_NAME(0), android::graphics::LayerRasterizer::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<android::graphics::Rasterizer>(get_jtype());
 }
+
+
+android::graphics::LayerRasterizer::LayerRasterizer()
+: cpp_object<android::graphics::LayerRasterizer>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::graphics::LayerRasterizer::J2CPP_CLASS_NAME>(),
+		get_method_id<android::graphics::LayerRasterizer::J2CPP_CLASS_NAME, android::graphics::LayerRasterizer::J2CPP_METHOD_NAME(0), android::graphics::LayerRasterizer::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 void android::graphics::LayerRasterizer::addLayer(local_ref< android::graphics::Paint > const &a0, cpp_float const &a1, cpp_float const &a2)
 {

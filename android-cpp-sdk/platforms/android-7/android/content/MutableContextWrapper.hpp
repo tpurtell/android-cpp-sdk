@@ -11,9 +11,11 @@
 
 
 namespace j2cpp { namespace android { namespace content { class Context; } } }
+namespace j2cpp { namespace android { namespace content { class ContextWrapper; } } }
 
 
 #include <android/content/Context.hpp>
+#include <android/content/ContextWrapper.hpp>
 
 
 namespace j2cpp {
@@ -31,17 +33,20 @@ namespace android { namespace content {
 		J2CPP_DECLARE_METHOD(0)
 		J2CPP_DECLARE_METHOD(1)
 
-		MutableContextWrapper(jobject jobj)
+		explicit MutableContextWrapper(jobject jobj)
 		: cpp_object<MutableContextWrapper>(jobj)
 		{
 		}
 
+		operator local_ref<android::content::ContextWrapper>() const;
+
+
+		MutableContextWrapper(local_ref< android::content::Context > const&);
 		void setBaseContext(local_ref< android::content::Context > const&);
 	}; //class MutableContextWrapper
 
 } //namespace content
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -55,17 +60,24 @@ namespace android { namespace content {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::content::MutableContextWrapper > create< android::content::MutableContextWrapper>(local_ref< android::content::Context > const &a0)
+
+android::content::MutableContextWrapper::operator local_ref<android::content::ContextWrapper>() const
 {
-	return local_ref< android::content::MutableContextWrapper >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::content::MutableContextWrapper::J2CPP_CLASS_NAME>(),
-			get_method_id<android::content::MutableContextWrapper::J2CPP_CLASS_NAME, android::content::MutableContextWrapper::J2CPP_METHOD_NAME(0), android::content::MutableContextWrapper::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<android::content::ContextWrapper>(get_jtype());
 }
+
+
+android::content::MutableContextWrapper::MutableContextWrapper(local_ref< android::content::Context > const &a0)
+: cpp_object<android::content::MutableContextWrapper>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::content::MutableContextWrapper::J2CPP_CLASS_NAME>(),
+		get_method_id<android::content::MutableContextWrapper::J2CPP_CLASS_NAME, android::content::MutableContextWrapper::J2CPP_METHOD_NAME(0), android::content::MutableContextWrapper::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 void android::content::MutableContextWrapper::setBaseContext(local_ref< android::content::Context > const &a0)
 {

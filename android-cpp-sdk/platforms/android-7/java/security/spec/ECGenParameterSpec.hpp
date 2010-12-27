@@ -10,10 +10,14 @@
 #define J2CPP_JAVA_SECURITY_SPEC_ECGENPARAMETERSPEC_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace security { namespace spec { class AlgorithmParameterSpec; } } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
+#include <java/security/spec/AlgorithmParameterSpec.hpp>
 
 
 namespace j2cpp {
@@ -31,18 +35,22 @@ namespace java { namespace security { namespace spec {
 		J2CPP_DECLARE_METHOD(0)
 		J2CPP_DECLARE_METHOD(1)
 
-		ECGenParameterSpec(jobject jobj)
+		explicit ECGenParameterSpec(jobject jobj)
 		: cpp_object<ECGenParameterSpec>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::security::spec::AlgorithmParameterSpec>() const;
+
+
+		ECGenParameterSpec(local_ref< java::lang::String > const&);
 		local_ref< java::lang::String > getName();
 	}; //class ECGenParameterSpec
 
 } //namespace spec
 } //namespace security
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -56,17 +64,29 @@ namespace java { namespace security { namespace spec {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::security::spec::ECGenParameterSpec > create< java::security::spec::ECGenParameterSpec>(local_ref< java::lang::String > const &a0)
+
+java::security::spec::ECGenParameterSpec::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::security::spec::ECGenParameterSpec >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::security::spec::ECGenParameterSpec::J2CPP_CLASS_NAME>(),
-			get_method_id<java::security::spec::ECGenParameterSpec::J2CPP_CLASS_NAME, java::security::spec::ECGenParameterSpec::J2CPP_METHOD_NAME(0), java::security::spec::ECGenParameterSpec::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+java::security::spec::ECGenParameterSpec::operator local_ref<java::security::spec::AlgorithmParameterSpec>() const
+{
+	return local_ref<java::security::spec::AlgorithmParameterSpec>(get_jtype());
+}
+
+
+java::security::spec::ECGenParameterSpec::ECGenParameterSpec(local_ref< java::lang::String > const &a0)
+: cpp_object<java::security::spec::ECGenParameterSpec>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::security::spec::ECGenParameterSpec::J2CPP_CLASS_NAME>(),
+		get_method_id<java::security::spec::ECGenParameterSpec::J2CPP_CLASS_NAME, java::security::spec::ECGenParameterSpec::J2CPP_METHOD_NAME(0), java::security::spec::ECGenParameterSpec::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 local_ref< java::lang::String > java::security::spec::ECGenParameterSpec::getName()
 {

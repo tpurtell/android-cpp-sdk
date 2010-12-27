@@ -12,8 +12,10 @@
 
 namespace j2cpp { namespace java { namespace net { class ServerSocket; } } }
 namespace j2cpp { namespace java { namespace net { class InetAddress; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/net/InetAddress.hpp>
 #include <java/net/ServerSocket.hpp>
 
@@ -37,10 +39,13 @@ namespace javax { namespace net {
 		J2CPP_DECLARE_METHOD(4)
 		J2CPP_DECLARE_METHOD(5)
 
-		ServerSocketFactory(jobject jobj)
+		explicit ServerSocketFactory(jobject jobj)
 		: cpp_object<ServerSocketFactory>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		static local_ref< javax::net::ServerSocketFactory > getDefault();
 		local_ref< java::net::ServerSocket > createServerSocket();
@@ -51,7 +56,6 @@ namespace javax { namespace net {
 
 } //namespace net
 } //namespace javax
-
 
 } //namespace j2cpp
 
@@ -65,16 +69,12 @@ namespace javax { namespace net {
 namespace j2cpp {
 
 
-template <>
-local_ref< javax::net::ServerSocketFactory > create< javax::net::ServerSocketFactory>()
+
+javax::net::ServerSocketFactory::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< javax::net::ServerSocketFactory >(
-		environment::get().get_jenv()->NewObject(
-			get_class<javax::net::ServerSocketFactory::J2CPP_CLASS_NAME>(),
-			get_method_id<javax::net::ServerSocketFactory::J2CPP_CLASS_NAME, javax::net::ServerSocketFactory::J2CPP_METHOD_NAME(0), javax::net::ServerSocketFactory::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
 
 local_ref< javax::net::ServerSocketFactory > javax::net::ServerSocketFactory::getDefault()
 {

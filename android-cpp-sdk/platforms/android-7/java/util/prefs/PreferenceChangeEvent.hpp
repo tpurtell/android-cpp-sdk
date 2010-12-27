@@ -10,11 +10,15 @@
 #define J2CPP_JAVA_UTIL_PREFS_PREFERENCECHANGEEVENT_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace util { namespace prefs { class Preferences; } } } }
+namespace j2cpp { namespace java { namespace util { class EventObject; } } }
 
 
+#include <java/io/Serializable.hpp>
 #include <java/lang/String.hpp>
+#include <java/util/EventObject.hpp>
 #include <java/util/prefs/Preferences.hpp>
 
 
@@ -35,11 +39,16 @@ namespace java { namespace util { namespace prefs {
 		J2CPP_DECLARE_METHOD(2)
 		J2CPP_DECLARE_METHOD(3)
 
-		PreferenceChangeEvent(jobject jobj)
+		explicit PreferenceChangeEvent(jobject jobj)
 		: cpp_object<PreferenceChangeEvent>(jobj)
 		{
 		}
 
+		operator local_ref<java::util::EventObject>() const;
+		operator local_ref<java::io::Serializable>() const;
+
+
+		PreferenceChangeEvent(local_ref< java::util::prefs::Preferences > const&, local_ref< java::lang::String > const&, local_ref< java::lang::String > const&);
 		local_ref< java::lang::String > getKey();
 		local_ref< java::lang::String > getNewValue();
 		local_ref< java::util::prefs::Preferences > getNode();
@@ -48,7 +57,6 @@ namespace java { namespace util { namespace prefs {
 } //namespace prefs
 } //namespace util
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -62,17 +70,29 @@ namespace java { namespace util { namespace prefs {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::util::prefs::PreferenceChangeEvent > create< java::util::prefs::PreferenceChangeEvent>(local_ref< java::util::prefs::Preferences > const &a0, local_ref< java::lang::String > const &a1, local_ref< java::lang::String > const &a2)
+
+java::util::prefs::PreferenceChangeEvent::operator local_ref<java::util::EventObject>() const
 {
-	return local_ref< java::util::prefs::PreferenceChangeEvent >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::prefs::PreferenceChangeEvent::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::prefs::PreferenceChangeEvent::J2CPP_CLASS_NAME, java::util::prefs::PreferenceChangeEvent::J2CPP_METHOD_NAME(0), java::util::prefs::PreferenceChangeEvent::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
-		)
-	);
+	return local_ref<java::util::EventObject>(get_jtype());
 }
+
+java::util::prefs::PreferenceChangeEvent::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jtype());
+}
+
+
+java::util::prefs::PreferenceChangeEvent::PreferenceChangeEvent(local_ref< java::util::prefs::Preferences > const &a0, local_ref< java::lang::String > const &a1, local_ref< java::lang::String > const &a2)
+: cpp_object<java::util::prefs::PreferenceChangeEvent>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::util::prefs::PreferenceChangeEvent::J2CPP_CLASS_NAME>(),
+		get_method_id<java::util::prefs::PreferenceChangeEvent::J2CPP_CLASS_NAME, java::util::prefs::PreferenceChangeEvent::J2CPP_METHOD_NAME(0), java::util::prefs::PreferenceChangeEvent::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
+	)
+)
+{
+}
+
 
 local_ref< java::lang::String > java::util::prefs::PreferenceChangeEvent::getKey()
 {

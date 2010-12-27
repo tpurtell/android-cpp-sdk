@@ -10,10 +10,12 @@
 #define J2CPP_ORG_APACHE_HTTP_IMPL_CONN_TSCCM_POOLENTRYREQUEST_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace util { namespace concurrent { class TimeUnit; } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace impl { namespace conn { namespace tsccm { class BasicPoolEntry; } } } } } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/util/concurrent/TimeUnit.hpp>
 #include <org/apache/http/impl/conn/tsccm/BasicPoolEntry.hpp>
 
@@ -33,10 +35,13 @@ namespace org { namespace apache { namespace http { namespace impl { namespace c
 		J2CPP_DECLARE_METHOD(0)
 		J2CPP_DECLARE_METHOD(1)
 
-		PoolEntryRequest(jobject jobj)
+		explicit PoolEntryRequest(jobject jobj)
 		: cpp_object<PoolEntryRequest>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		local_ref< org::apache::http::impl::conn::tsccm::BasicPoolEntry > getPoolEntry(cpp_long const&, local_ref< java::util::concurrent::TimeUnit > const&);
 		void abortRequest();
@@ -49,7 +54,6 @@ namespace org { namespace apache { namespace http { namespace impl { namespace c
 } //namespace apache
 } //namespace org
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ORG_APACHE_HTTP_IMPL_CONN_TSCCM_POOLENTRYREQUEST_HPP_DECL
@@ -61,6 +65,12 @@ namespace org { namespace apache { namespace http { namespace impl { namespace c
 
 namespace j2cpp {
 
+
+
+org::apache::http::impl::conn::tsccm::PoolEntryRequest::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 local_ref< org::apache::http::impl::conn::tsccm::BasicPoolEntry > org::apache::http::impl::conn::tsccm::PoolEntryRequest::getPoolEntry(cpp_long const &a0, local_ref< java::util::concurrent::TimeUnit > const &a1)
 {

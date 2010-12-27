@@ -10,13 +10,16 @@
 #define J2CPP_ANDROID_CONTENT_PM_CONFIGURATIONINFO_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace android { namespace os { class Parcel; } } }
+namespace j2cpp { namespace android { namespace os { class Parcelable; } } }
 namespace j2cpp { namespace android { namespace os { namespace Parcelable_ { class Creator; } } } }
 
 
 #include <android/os/Parcel.hpp>
 #include <android/os/Parcelable.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -49,16 +52,22 @@ namespace android { namespace content { namespace pm {
 		J2CPP_DECLARE_FIELD(7)
 		J2CPP_DECLARE_FIELD(8)
 
-		ConfigurationInfo(jobject jobj)
+		explicit ConfigurationInfo(jobject jobj)
 		: cpp_object<ConfigurationInfo>(jobj)
-		, reqTouchScreen(jobj)
-		, reqKeyboardType(jobj)
-		, reqNavigation(jobj)
-		, reqInputFeatures(jobj)
-		, reqGlEsVersion(jobj)
+, reqTouchScreen(jobj)
+, reqKeyboardType(jobj)
+, reqNavigation(jobj)
+, reqInputFeatures(jobj)
+, reqGlEsVersion(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<android::os::Parcelable>() const;
+
+
+		ConfigurationInfo();
+		ConfigurationInfo(local_ref< android::content::pm::ConfigurationInfo > const&);
 		local_ref< java::lang::String > toString();
 		cpp_int describeContents();
 		void writeToParcel(local_ref< android::os::Parcel > const&, cpp_int const&);
@@ -79,7 +88,6 @@ namespace android { namespace content { namespace pm {
 } //namespace content
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_CONTENT_PM_CONFIGURATIONINFO_HPP_DECL
@@ -92,28 +100,51 @@ namespace android { namespace content { namespace pm {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::content::pm::ConfigurationInfo > create< android::content::pm::ConfigurationInfo>()
+
+android::content::pm::ConfigurationInfo::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::content::pm::ConfigurationInfo >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::content::pm::ConfigurationInfo::J2CPP_CLASS_NAME>(),
-			get_method_id<android::content::pm::ConfigurationInfo::J2CPP_CLASS_NAME, android::content::pm::ConfigurationInfo::J2CPP_METHOD_NAME(0), android::content::pm::ConfigurationInfo::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
 
-template <>
-local_ref< android::content::pm::ConfigurationInfo > create< android::content::pm::ConfigurationInfo>(local_ref< android::content::pm::ConfigurationInfo > const &a0)
+android::content::pm::ConfigurationInfo::operator local_ref<android::os::Parcelable>() const
 {
-	return local_ref< android::content::pm::ConfigurationInfo >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::content::pm::ConfigurationInfo::J2CPP_CLASS_NAME>(),
-			get_method_id<android::content::pm::ConfigurationInfo::J2CPP_CLASS_NAME, android::content::pm::ConfigurationInfo::J2CPP_METHOD_NAME(1), android::content::pm::ConfigurationInfo::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<android::os::Parcelable>(get_jtype());
 }
+
+
+android::content::pm::ConfigurationInfo::ConfigurationInfo()
+: cpp_object<android::content::pm::ConfigurationInfo>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::content::pm::ConfigurationInfo::J2CPP_CLASS_NAME>(),
+		get_method_id<android::content::pm::ConfigurationInfo::J2CPP_CLASS_NAME, android::content::pm::ConfigurationInfo::J2CPP_METHOD_NAME(0), android::content::pm::ConfigurationInfo::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+, reqTouchScreen(get_jtype())
+, reqKeyboardType(get_jtype())
+, reqNavigation(get_jtype())
+, reqInputFeatures(get_jtype())
+, reqGlEsVersion(get_jtype())
+{
+}
+
+
+
+android::content::pm::ConfigurationInfo::ConfigurationInfo(local_ref< android::content::pm::ConfigurationInfo > const &a0)
+: cpp_object<android::content::pm::ConfigurationInfo>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::content::pm::ConfigurationInfo::J2CPP_CLASS_NAME>(),
+		get_method_id<android::content::pm::ConfigurationInfo::J2CPP_CLASS_NAME, android::content::pm::ConfigurationInfo::J2CPP_METHOD_NAME(1), android::content::pm::ConfigurationInfo::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
+, reqTouchScreen(get_jtype())
+, reqKeyboardType(get_jtype())
+, reqNavigation(get_jtype())
+, reqInputFeatures(get_jtype())
+, reqGlEsVersion(get_jtype())
+{
+}
+
 
 local_ref< java::lang::String > android::content::pm::ConfigurationInfo::toString()
 {
@@ -155,6 +186,7 @@ local_ref< java::lang::String > android::content::pm::ConfigurationInfo::getGlEs
 		)
 	);
 }
+
 
 
 static_field<

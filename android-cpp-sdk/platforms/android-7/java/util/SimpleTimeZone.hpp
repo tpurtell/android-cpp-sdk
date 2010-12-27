@@ -62,11 +62,18 @@ namespace java { namespace util {
 		J2CPP_DECLARE_FIELD(1)
 		J2CPP_DECLARE_FIELD(2)
 
-		SimpleTimeZone(jobject jobj)
+		explicit SimpleTimeZone(jobject jobj)
 		: cpp_object<SimpleTimeZone>(jobj)
 		{
 		}
 
+		operator local_ref<java::util::TimeZone>() const;
+
+
+		SimpleTimeZone(cpp_int const&, local_ref< java::lang::String > const&);
+		SimpleTimeZone(cpp_int const&, local_ref< java::lang::String > const&, cpp_int const&, cpp_int const&, cpp_int const&, cpp_int const&, cpp_int const&, cpp_int const&, cpp_int const&, cpp_int const&);
+		SimpleTimeZone(cpp_int const&, local_ref< java::lang::String > const&, cpp_int const&, cpp_int const&, cpp_int const&, cpp_int const&, cpp_int const&, cpp_int const&, cpp_int const&, cpp_int const&, cpp_int const&);
+		SimpleTimeZone(cpp_int const&, local_ref< java::lang::String > const&, cpp_int const&, cpp_int const&, cpp_int const&, cpp_int const&, cpp_int const&, cpp_int const&, cpp_int const&, cpp_int const&, cpp_int const&, cpp_int const&, cpp_int const&);
 		local_ref< java::lang::Object > clone();
 		cpp_boolean equals(local_ref< java::lang::Object > const&);
 		cpp_int getDSTSavings();
@@ -96,7 +103,6 @@ namespace java { namespace util {
 } //namespace util
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_UTIL_SIMPLETIMEZONE_HPP_DECL
@@ -109,53 +115,63 @@ namespace java { namespace util {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::util::SimpleTimeZone > create< java::util::SimpleTimeZone>(cpp_int const &a0, local_ref< java::lang::String > const &a1)
+
+java::util::SimpleTimeZone::operator local_ref<java::util::TimeZone>() const
 {
-	return local_ref< java::util::SimpleTimeZone >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::SimpleTimeZone::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::SimpleTimeZone::J2CPP_CLASS_NAME, java::util::SimpleTimeZone::J2CPP_METHOD_NAME(0), java::util::SimpleTimeZone::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<java::util::TimeZone>(get_jtype());
 }
 
-template <>
-local_ref< java::util::SimpleTimeZone > create< java::util::SimpleTimeZone>(cpp_int const &a0, local_ref< java::lang::String > const &a1, cpp_int const &a2, cpp_int const &a3, cpp_int const &a4, cpp_int const &a5, cpp_int const &a6, cpp_int const &a7, cpp_int const &a8, cpp_int const &a9)
+
+java::util::SimpleTimeZone::SimpleTimeZone(cpp_int const &a0, local_ref< java::lang::String > const &a1)
+: cpp_object<java::util::SimpleTimeZone>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::util::SimpleTimeZone::J2CPP_CLASS_NAME>(),
+		get_method_id<java::util::SimpleTimeZone::J2CPP_CLASS_NAME, java::util::SimpleTimeZone::J2CPP_METHOD_NAME(0), java::util::SimpleTimeZone::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
 {
-	return local_ref< java::util::SimpleTimeZone >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::SimpleTimeZone::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::SimpleTimeZone::J2CPP_CLASS_NAME, java::util::SimpleTimeZone::J2CPP_METHOD_NAME(1), java::util::SimpleTimeZone::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype(), a4.get_jtype(), a5.get_jtype(), a6.get_jtype(), a7.get_jtype(), a8.get_jtype(), a9.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< java::util::SimpleTimeZone > create< java::util::SimpleTimeZone>(cpp_int const &a0, local_ref< java::lang::String > const &a1, cpp_int const &a2, cpp_int const &a3, cpp_int const &a4, cpp_int const &a5, cpp_int const &a6, cpp_int const &a7, cpp_int const &a8, cpp_int const &a9, cpp_int const &a10)
+
+
+java::util::SimpleTimeZone::SimpleTimeZone(cpp_int const &a0, local_ref< java::lang::String > const &a1, cpp_int const &a2, cpp_int const &a3, cpp_int const &a4, cpp_int const &a5, cpp_int const &a6, cpp_int const &a7, cpp_int const &a8, cpp_int const &a9)
+: cpp_object<java::util::SimpleTimeZone>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::util::SimpleTimeZone::J2CPP_CLASS_NAME>(),
+		get_method_id<java::util::SimpleTimeZone::J2CPP_CLASS_NAME, java::util::SimpleTimeZone::J2CPP_METHOD_NAME(1), java::util::SimpleTimeZone::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype(), a4.get_jtype(), a5.get_jtype(), a6.get_jtype(), a7.get_jtype(), a8.get_jtype(), a9.get_jtype()
+	)
+)
 {
-	return local_ref< java::util::SimpleTimeZone >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::SimpleTimeZone::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::SimpleTimeZone::J2CPP_CLASS_NAME, java::util::SimpleTimeZone::J2CPP_METHOD_NAME(2), java::util::SimpleTimeZone::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype(), a4.get_jtype(), a5.get_jtype(), a6.get_jtype(), a7.get_jtype(), a8.get_jtype(), a9.get_jtype(), a10.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< java::util::SimpleTimeZone > create< java::util::SimpleTimeZone>(cpp_int const &a0, local_ref< java::lang::String > const &a1, cpp_int const &a2, cpp_int const &a3, cpp_int const &a4, cpp_int const &a5, cpp_int const &a6, cpp_int const &a7, cpp_int const &a8, cpp_int const &a9, cpp_int const &a10, cpp_int const &a11, cpp_int const &a12)
+
+
+java::util::SimpleTimeZone::SimpleTimeZone(cpp_int const &a0, local_ref< java::lang::String > const &a1, cpp_int const &a2, cpp_int const &a3, cpp_int const &a4, cpp_int const &a5, cpp_int const &a6, cpp_int const &a7, cpp_int const &a8, cpp_int const &a9, cpp_int const &a10)
+: cpp_object<java::util::SimpleTimeZone>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::util::SimpleTimeZone::J2CPP_CLASS_NAME>(),
+		get_method_id<java::util::SimpleTimeZone::J2CPP_CLASS_NAME, java::util::SimpleTimeZone::J2CPP_METHOD_NAME(2), java::util::SimpleTimeZone::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype(), a4.get_jtype(), a5.get_jtype(), a6.get_jtype(), a7.get_jtype(), a8.get_jtype(), a9.get_jtype(), a10.get_jtype()
+	)
+)
 {
-	return local_ref< java::util::SimpleTimeZone >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::SimpleTimeZone::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::SimpleTimeZone::J2CPP_CLASS_NAME, java::util::SimpleTimeZone::J2CPP_METHOD_NAME(3), java::util::SimpleTimeZone::J2CPP_METHOD_SIGNATURE(3), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype(), a4.get_jtype(), a5.get_jtype(), a6.get_jtype(), a7.get_jtype(), a8.get_jtype(), a9.get_jtype(), a10.get_jtype(), a11.get_jtype(), a12.get_jtype()
-		)
-	);
 }
+
+
+
+java::util::SimpleTimeZone::SimpleTimeZone(cpp_int const &a0, local_ref< java::lang::String > const &a1, cpp_int const &a2, cpp_int const &a3, cpp_int const &a4, cpp_int const &a5, cpp_int const &a6, cpp_int const &a7, cpp_int const &a8, cpp_int const &a9, cpp_int const &a10, cpp_int const &a11, cpp_int const &a12)
+: cpp_object<java::util::SimpleTimeZone>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::util::SimpleTimeZone::J2CPP_CLASS_NAME>(),
+		get_method_id<java::util::SimpleTimeZone::J2CPP_CLASS_NAME, java::util::SimpleTimeZone::J2CPP_METHOD_NAME(3), java::util::SimpleTimeZone::J2CPP_METHOD_SIGNATURE(3), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype(), a4.get_jtype(), a5.get_jtype(), a6.get_jtype(), a7.get_jtype(), a8.get_jtype(), a9.get_jtype(), a10.get_jtype(), a11.get_jtype(), a12.get_jtype()
+	)
+)
+{
+}
+
 
 local_ref< java::lang::Object > java::util::SimpleTimeZone::clone()
 {

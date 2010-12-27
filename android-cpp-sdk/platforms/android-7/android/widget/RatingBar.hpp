@@ -10,14 +10,18 @@
 #define J2CPP_ANDROID_WIDGET_RATINGBAR_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace android { namespace content { class Context; } } }
+namespace j2cpp { namespace android { namespace widget { class AbsSeekBar; } } }
 namespace j2cpp { namespace android { namespace widget { namespace RatingBar_ { class OnRatingBarChangeListener; } } } }
 namespace j2cpp { namespace android { namespace util { class AttributeSet; } } }
 
 
 #include <android/content/Context.hpp>
 #include <android/util/AttributeSet.hpp>
+#include <android/widget/AbsSeekBar.hpp>
 #include <android/widget/RatingBar.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -37,10 +41,13 @@ namespace android { namespace widget {
 
 			J2CPP_DECLARE_METHOD(0)
 
-			OnRatingBarChangeListener(jobject jobj)
+			explicit OnRatingBarChangeListener(jobject jobj)
 			: cpp_object<OnRatingBarChangeListener>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+
 
 			void onRatingChanged(local_ref< android::widget::RatingBar > const&, cpp_float const&, cpp_boolean const&);
 		}; //class OnRatingBarChangeListener
@@ -72,11 +79,17 @@ namespace android { namespace widget {
 
 		typedef RatingBar_::OnRatingBarChangeListener OnRatingBarChangeListener;
 
-		RatingBar(jobject jobj)
+		explicit RatingBar(jobject jobj)
 		: cpp_object<RatingBar>(jobj)
 		{
 		}
 
+		operator local_ref<android::widget::AbsSeekBar>() const;
+
+
+		RatingBar(local_ref< android::content::Context > const&, local_ref< android::util::AttributeSet > const&, cpp_int const&);
+		RatingBar(local_ref< android::content::Context > const&, local_ref< android::util::AttributeSet > const&);
+		RatingBar(local_ref< android::content::Context > const&);
 		void setOnRatingBarChangeListener(local_ref< android::widget::RatingBar_::OnRatingBarChangeListener > const&);
 		local_ref< android::widget::RatingBar_::OnRatingBarChangeListener > getOnRatingBarChangeListener();
 		void setIsIndicator(cpp_boolean const&);
@@ -93,7 +106,6 @@ namespace android { namespace widget {
 } //namespace widget
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_WIDGET_RATINGBAR_HPP_DECL
@@ -106,6 +118,12 @@ namespace android { namespace widget {
 namespace j2cpp {
 
 
+
+
+android::widget::RatingBar_::OnRatingBarChangeListener::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 void android::widget::RatingBar_::OnRatingBarChangeListener::onRatingChanged(local_ref< android::widget::RatingBar > const &a0, cpp_float const &a1, cpp_boolean const &a2)
 {
@@ -123,41 +141,50 @@ J2CPP_DEFINE_CLASS(android::widget::RatingBar_::OnRatingBarChangeListener,"andro
 J2CPP_DEFINE_METHOD(android::widget::RatingBar_::OnRatingBarChangeListener,0,"onRatingChanged","(Landroid/widget/RatingBar;FZ)V")
 
 
-template <>
-local_ref< android::widget::RatingBar > create< android::widget::RatingBar>(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1, cpp_int const &a2)
+
+android::widget::RatingBar::operator local_ref<android::widget::AbsSeekBar>() const
 {
-	return local_ref< android::widget::RatingBar >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::widget::RatingBar::J2CPP_CLASS_NAME>(),
-			get_method_id<android::widget::RatingBar::J2CPP_CLASS_NAME, android::widget::RatingBar::J2CPP_METHOD_NAME(0), android::widget::RatingBar::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
-		)
-	);
+	return local_ref<android::widget::AbsSeekBar>(get_jtype());
 }
 
-template <>
-local_ref< android::widget::RatingBar > create< android::widget::RatingBar>(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1)
+
+android::widget::RatingBar::RatingBar(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1, cpp_int const &a2)
+: cpp_object<android::widget::RatingBar>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::widget::RatingBar::J2CPP_CLASS_NAME>(),
+		get_method_id<android::widget::RatingBar::J2CPP_CLASS_NAME, android::widget::RatingBar::J2CPP_METHOD_NAME(0), android::widget::RatingBar::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
+	)
+)
 {
-	return local_ref< android::widget::RatingBar >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::widget::RatingBar::J2CPP_CLASS_NAME>(),
-			get_method_id<android::widget::RatingBar::J2CPP_CLASS_NAME, android::widget::RatingBar::J2CPP_METHOD_NAME(1), android::widget::RatingBar::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< android::widget::RatingBar > create< android::widget::RatingBar>(local_ref< android::content::Context > const &a0)
+
+
+android::widget::RatingBar::RatingBar(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1)
+: cpp_object<android::widget::RatingBar>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::widget::RatingBar::J2CPP_CLASS_NAME>(),
+		get_method_id<android::widget::RatingBar::J2CPP_CLASS_NAME, android::widget::RatingBar::J2CPP_METHOD_NAME(1), android::widget::RatingBar::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
 {
-	return local_ref< android::widget::RatingBar >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::widget::RatingBar::J2CPP_CLASS_NAME>(),
-			get_method_id<android::widget::RatingBar::J2CPP_CLASS_NAME, android::widget::RatingBar::J2CPP_METHOD_NAME(2), android::widget::RatingBar::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype()
-		)
-	);
 }
+
+
+
+android::widget::RatingBar::RatingBar(local_ref< android::content::Context > const &a0)
+: cpp_object<android::widget::RatingBar>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::widget::RatingBar::J2CPP_CLASS_NAME>(),
+		get_method_id<android::widget::RatingBar::J2CPP_CLASS_NAME, android::widget::RatingBar::J2CPP_METHOD_NAME(2), android::widget::RatingBar::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 void android::widget::RatingBar::setOnRatingBarChangeListener(local_ref< android::widget::RatingBar_::OnRatingBarChangeListener > const &a0)
 {

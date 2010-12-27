@@ -11,12 +11,14 @@
 
 
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace lang { class Enum; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace util { namespace concurrent { class TimeUnit; } } } }
 namespace j2cpp { namespace android { namespace os { namespace AsyncTask_ { class Status; } } } }
 
 
 #include <android/os/AsyncTask.hpp>
+#include <java/lang/Enum.hpp>
 #include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/util/concurrent/TimeUnit.hpp>
@@ -46,10 +48,13 @@ namespace android { namespace os {
 			J2CPP_DECLARE_FIELD(2)
 			J2CPP_DECLARE_FIELD(3)
 
-			Status(jobject jobj)
+			explicit Status(jobject jobj)
 			: cpp_object<Status>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Enum>() const;
+
 
 			static local_ref< cpp_object_array<android::os::AsyncTask_::Status, 1> > values();
 			static local_ref< android::os::AsyncTask_::Status > valueOf(local_ref< java::lang::String > const&);
@@ -84,11 +89,15 @@ namespace android { namespace os {
 
 		typedef AsyncTask_::Status Status;
 
-		AsyncTask(jobject jobj)
+		explicit AsyncTask(jobject jobj)
 		: cpp_object<AsyncTask>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		AsyncTask();
 		local_ref< android::os::AsyncTask_::Status > getStatus();
 		cpp_boolean isCancelled();
 		cpp_boolean cancel(cpp_boolean const&);
@@ -99,7 +108,6 @@ namespace android { namespace os {
 
 } //namespace os
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -113,6 +121,12 @@ namespace android { namespace os {
 namespace j2cpp {
 
 
+
+
+android::os::AsyncTask_::Status::operator local_ref<java::lang::Enum>() const
+{
+	return local_ref<java::lang::Enum>(get_jtype());
+}
 
 local_ref< cpp_object_array<android::os::AsyncTask_::Status, 1> > android::os::AsyncTask_::Status::values()
 {
@@ -135,17 +149,7 @@ local_ref< android::os::AsyncTask_::Status > android::os::AsyncTask_::Status::va
 	);
 }
 
-template <>
-local_ref< android::os::AsyncTask_::Status > create< android::os::AsyncTask_::Status>(local_ref< java::lang::String > const &a0, cpp_int const &a1)
-{
-	return local_ref< android::os::AsyncTask_::Status >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::os::AsyncTask_::Status::J2CPP_CLASS_NAME>(),
-			get_method_id<android::os::AsyncTask_::Status::J2CPP_CLASS_NAME, android::os::AsyncTask_::Status::J2CPP_METHOD_NAME(2), android::os::AsyncTask_::Status::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
-}
+
 
 
 static_field<
@@ -181,16 +185,23 @@ J2CPP_DEFINE_FIELD(android::os::AsyncTask_::Status,2,"RUNNING","Landroid/os/Asyn
 J2CPP_DEFINE_FIELD(android::os::AsyncTask_::Status,3,"$VALUES","[android.os.AsyncTask.Status")
 
 
-template <>
-local_ref< android::os::AsyncTask > create< android::os::AsyncTask>()
+
+android::os::AsyncTask::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::os::AsyncTask >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::os::AsyncTask::J2CPP_CLASS_NAME>(),
-			get_method_id<android::os::AsyncTask::J2CPP_CLASS_NAME, android::os::AsyncTask::J2CPP_METHOD_NAME(0), android::os::AsyncTask::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::os::AsyncTask::AsyncTask()
+: cpp_object<android::os::AsyncTask>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::os::AsyncTask::J2CPP_CLASS_NAME>(),
+		get_method_id<android::os::AsyncTask::J2CPP_CLASS_NAME, android::os::AsyncTask::J2CPP_METHOD_NAME(0), android::os::AsyncTask::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 local_ref< android::os::AsyncTask_::Status > android::os::AsyncTask::getStatus()
 {

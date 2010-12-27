@@ -10,20 +10,26 @@
 #define J2CPP_JAVA_UTIL_CONCURRENT_LOCKS_REENTRANTREADWRITELOCK_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class Thread; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace util { namespace concurrent { namespace locks { namespace ReentrantReadWriteLock_ { class WriteLock; } } } } } }
 namespace j2cpp { namespace java { namespace util { namespace concurrent { namespace locks { class Lock; } } } } }
 namespace j2cpp { namespace java { namespace util { namespace concurrent { namespace locks { namespace ReentrantReadWriteLock_ { class ReadLock; } } } } } }
+namespace j2cpp { namespace java { namespace util { namespace concurrent { namespace locks { class ReadWriteLock; } } } } }
 namespace j2cpp { namespace java { namespace util { namespace concurrent { namespace locks { class Condition; } } } } }
 namespace j2cpp { namespace java { namespace util { namespace concurrent { class TimeUnit; } } } }
 
 
+#include <java/io/Serializable.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/lang/Thread.hpp>
 #include <java/util/concurrent/TimeUnit.hpp>
 #include <java/util/concurrent/locks/Condition.hpp>
 #include <java/util/concurrent/locks/Lock.hpp>
+#include <java/util/concurrent/locks/ReadWriteLock.hpp>
 #include <java/util/concurrent/locks/ReentrantReadWriteLock.hpp>
 
 
@@ -51,10 +57,15 @@ namespace java { namespace util { namespace concurrent { namespace locks {
 			J2CPP_DECLARE_METHOD(6)
 			J2CPP_DECLARE_METHOD(7)
 
-			WriteLock(jobject jobj)
+			explicit WriteLock(jobject jobj)
 			: cpp_object<WriteLock>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+			operator local_ref<java::util::concurrent::locks::Lock>() const;
+			operator local_ref<java::io::Serializable>() const;
+
 
 			void lock();
 			void lockInterruptibly();
@@ -82,10 +93,15 @@ namespace java { namespace util { namespace concurrent { namespace locks {
 			J2CPP_DECLARE_METHOD(6)
 			J2CPP_DECLARE_METHOD(7)
 
-			ReadLock(jobject jobj)
+			explicit ReadLock(jobject jobj)
 			: cpp_object<ReadLock>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+			operator local_ref<java::util::concurrent::locks::Lock>() const;
+			operator local_ref<java::io::Serializable>() const;
+
 
 			void lock();
 			void lockInterruptibly();
@@ -131,11 +147,18 @@ namespace java { namespace util { namespace concurrent { namespace locks {
 		typedef ReentrantReadWriteLock_::WriteLock WriteLock;
 		typedef ReentrantReadWriteLock_::ReadLock ReadLock;
 
-		ReentrantReadWriteLock(jobject jobj)
+		explicit ReentrantReadWriteLock(jobject jobj)
 		: cpp_object<ReentrantReadWriteLock>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::util::concurrent::locks::ReadWriteLock>() const;
+		operator local_ref<java::io::Serializable>() const;
+
+
+		ReentrantReadWriteLock();
+		ReentrantReadWriteLock(cpp_boolean const&);
 		local_ref< java::util::concurrent::locks::ReentrantReadWriteLock_::WriteLock > writeLock();
 		local_ref< java::util::concurrent::locks::ReentrantReadWriteLock_::ReadLock > readLock();
 		cpp_boolean isFair();
@@ -158,7 +181,6 @@ namespace java { namespace util { namespace concurrent { namespace locks {
 } //namespace util
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_UTIL_CONCURRENT_LOCKS_REENTRANTREADWRITELOCK_HPP_DECL
@@ -172,17 +194,22 @@ namespace j2cpp {
 
 
 
-template <>
-local_ref< java::util::concurrent::locks::ReentrantReadWriteLock_::WriteLock > create< java::util::concurrent::locks::ReentrantReadWriteLock_::WriteLock>(local_ref< java::util::concurrent::locks::ReentrantReadWriteLock > const &a0)
+
+java::util::concurrent::locks::ReentrantReadWriteLock_::WriteLock::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::util::concurrent::locks::ReentrantReadWriteLock_::WriteLock >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::concurrent::locks::ReentrantReadWriteLock_::WriteLock::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::concurrent::locks::ReentrantReadWriteLock_::WriteLock::J2CPP_CLASS_NAME, java::util::concurrent::locks::ReentrantReadWriteLock_::WriteLock::J2CPP_METHOD_NAME(0), java::util::concurrent::locks::ReentrantReadWriteLock_::WriteLock::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+java::util::concurrent::locks::ReentrantReadWriteLock_::WriteLock::operator local_ref<java::util::concurrent::locks::Lock>() const
+{
+	return local_ref<java::util::concurrent::locks::Lock>(get_jtype());
+}
+
+java::util::concurrent::locks::ReentrantReadWriteLock_::WriteLock::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jtype());
+}
+
 
 void java::util::concurrent::locks::ReentrantReadWriteLock_::WriteLock::lock()
 {
@@ -266,17 +293,22 @@ J2CPP_DEFINE_METHOD(java::util::concurrent::locks::ReentrantReadWriteLock_::Writ
 J2CPP_DEFINE_METHOD(java::util::concurrent::locks::ReentrantReadWriteLock_::WriteLock,6,"newCondition","()Ljava/util/concurrent/locks/Condition;")
 J2CPP_DEFINE_METHOD(java::util::concurrent::locks::ReentrantReadWriteLock_::WriteLock,7,"toString","()Ljava/lang/String;")
 
-template <>
-local_ref< java::util::concurrent::locks::ReentrantReadWriteLock_::ReadLock > create< java::util::concurrent::locks::ReentrantReadWriteLock_::ReadLock>(local_ref< java::util::concurrent::locks::ReentrantReadWriteLock > const &a0)
+
+java::util::concurrent::locks::ReentrantReadWriteLock_::ReadLock::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::util::concurrent::locks::ReentrantReadWriteLock_::ReadLock >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::concurrent::locks::ReentrantReadWriteLock_::ReadLock::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::concurrent::locks::ReentrantReadWriteLock_::ReadLock::J2CPP_CLASS_NAME, java::util::concurrent::locks::ReentrantReadWriteLock_::ReadLock::J2CPP_METHOD_NAME(0), java::util::concurrent::locks::ReentrantReadWriteLock_::ReadLock::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+java::util::concurrent::locks::ReentrantReadWriteLock_::ReadLock::operator local_ref<java::util::concurrent::locks::Lock>() const
+{
+	return local_ref<java::util::concurrent::locks::Lock>(get_jtype());
+}
+
+java::util::concurrent::locks::ReentrantReadWriteLock_::ReadLock::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jtype());
+}
+
 
 void java::util::concurrent::locks::ReentrantReadWriteLock_::ReadLock::lock()
 {
@@ -361,28 +393,46 @@ J2CPP_DEFINE_METHOD(java::util::concurrent::locks::ReentrantReadWriteLock_::Read
 J2CPP_DEFINE_METHOD(java::util::concurrent::locks::ReentrantReadWriteLock_::ReadLock,7,"toString","()Ljava/lang/String;")
 
 
-template <>
-local_ref< java::util::concurrent::locks::ReentrantReadWriteLock > create< java::util::concurrent::locks::ReentrantReadWriteLock>()
+
+java::util::concurrent::locks::ReentrantReadWriteLock::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::util::concurrent::locks::ReentrantReadWriteLock >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::concurrent::locks::ReentrantReadWriteLock::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::concurrent::locks::ReentrantReadWriteLock::J2CPP_CLASS_NAME, java::util::concurrent::locks::ReentrantReadWriteLock::J2CPP_METHOD_NAME(0), java::util::concurrent::locks::ReentrantReadWriteLock::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
 
-template <>
-local_ref< java::util::concurrent::locks::ReentrantReadWriteLock > create< java::util::concurrent::locks::ReentrantReadWriteLock>(cpp_boolean const &a0)
+java::util::concurrent::locks::ReentrantReadWriteLock::operator local_ref<java::util::concurrent::locks::ReadWriteLock>() const
 {
-	return local_ref< java::util::concurrent::locks::ReentrantReadWriteLock >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::concurrent::locks::ReentrantReadWriteLock::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::concurrent::locks::ReentrantReadWriteLock::J2CPP_CLASS_NAME, java::util::concurrent::locks::ReentrantReadWriteLock::J2CPP_METHOD_NAME(1), java::util::concurrent::locks::ReentrantReadWriteLock::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::util::concurrent::locks::ReadWriteLock>(get_jtype());
 }
+
+java::util::concurrent::locks::ReentrantReadWriteLock::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jtype());
+}
+
+
+java::util::concurrent::locks::ReentrantReadWriteLock::ReentrantReadWriteLock()
+: cpp_object<java::util::concurrent::locks::ReentrantReadWriteLock>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::util::concurrent::locks::ReentrantReadWriteLock::J2CPP_CLASS_NAME>(),
+		get_method_id<java::util::concurrent::locks::ReentrantReadWriteLock::J2CPP_CLASS_NAME, java::util::concurrent::locks::ReentrantReadWriteLock::J2CPP_METHOD_NAME(0), java::util::concurrent::locks::ReentrantReadWriteLock::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
+
+
+java::util::concurrent::locks::ReentrantReadWriteLock::ReentrantReadWriteLock(cpp_boolean const &a0)
+: cpp_object<java::util::concurrent::locks::ReentrantReadWriteLock>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::util::concurrent::locks::ReentrantReadWriteLock::J2CPP_CLASS_NAME>(),
+		get_method_id<java::util::concurrent::locks::ReentrantReadWriteLock::J2CPP_CLASS_NAME, java::util::concurrent::locks::ReentrantReadWriteLock::J2CPP_METHOD_NAME(1), java::util::concurrent::locks::ReentrantReadWriteLock::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 local_ref< java::util::concurrent::locks::ReentrantReadWriteLock_::WriteLock > java::util::concurrent::locks::ReentrantReadWriteLock::writeLock()
 {

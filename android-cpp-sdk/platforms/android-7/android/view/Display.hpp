@@ -10,10 +10,12 @@
 #define J2CPP_ANDROID_VIEW_DISPLAY_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace android { namespace util { class DisplayMetrics; } } }
 
 
 #include <android/util/DisplayMetrics.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -38,10 +40,13 @@ namespace android { namespace view {
 		J2CPP_DECLARE_METHOD(7)
 		J2CPP_DECLARE_FIELD(0)
 
-		Display(jobject jobj)
+		explicit Display(jobject jobj)
 		: cpp_object<Display>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		cpp_int getDisplayId();
 		cpp_int getWidth();
@@ -57,7 +62,6 @@ namespace android { namespace view {
 } //namespace view
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_VIEW_DISPLAY_HPP_DECL
@@ -70,16 +74,12 @@ namespace android { namespace view {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::view::Display > create< android::view::Display>()
+
+android::view::Display::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::view::Display >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::view::Display::J2CPP_CLASS_NAME>(),
-			get_method_id<android::view::Display::J2CPP_CLASS_NAME, android::view::Display::J2CPP_METHOD_NAME(0), android::view::Display::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
 
 cpp_int android::view::Display::getDisplayId()
 {

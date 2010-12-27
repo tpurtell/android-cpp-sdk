@@ -12,16 +12,20 @@
 
 namespace j2cpp { namespace java { namespace io { class ObjectStreamClass; } } }
 namespace j2cpp { namespace java { namespace io { namespace ObjectInputStream_ { class GetField; } } } }
+namespace j2cpp { namespace java { namespace io { class ObjectInput; } } }
 namespace j2cpp { namespace java { namespace io { class InputStream; } } }
 namespace j2cpp { namespace java { namespace io { class ObjectInputValidation; } } }
+namespace j2cpp { namespace java { namespace io { class ObjectStreamConstants; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 
 
 #include <java/io/InputStream.hpp>
+#include <java/io/ObjectInput.hpp>
 #include <java/io/ObjectInputStream.hpp>
 #include <java/io/ObjectInputValidation.hpp>
 #include <java/io/ObjectStreamClass.hpp>
+#include <java/io/ObjectStreamConstants.hpp>
 #include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
@@ -54,11 +58,15 @@ namespace java { namespace io {
 			J2CPP_DECLARE_METHOD(10)
 			J2CPP_DECLARE_METHOD(11)
 
-			GetField(jobject jobj)
+			explicit GetField(jobject jobj)
 			: cpp_object<GetField>(jobj)
 			{
 			}
 
+			operator local_ref<java::lang::Object>() const;
+
+
+			GetField();
 			local_ref< java::io::ObjectStreamClass > getObjectStreamClass();
 			cpp_boolean defaulted(local_ref< java::lang::String > const&);
 			cpp_boolean get(local_ref< java::lang::String > const&, cpp_boolean const&);
@@ -117,11 +125,17 @@ namespace java { namespace io {
 
 		typedef ObjectInputStream_::GetField GetField;
 
-		ObjectInputStream(jobject jobj)
+		explicit ObjectInputStream(jobject jobj)
 		: cpp_object<ObjectInputStream>(jobj)
 		{
 		}
 
+		operator local_ref<java::io::InputStream>() const;
+		operator local_ref<java::io::ObjectInput>() const;
+		operator local_ref<java::io::ObjectStreamConstants>() const;
+
+
+		ObjectInputStream(local_ref< java::io::InputStream > const&);
 		cpp_int available();
 		void close();
 		void defaultReadObject();
@@ -151,7 +165,6 @@ namespace java { namespace io {
 } //namespace io
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_IO_OBJECTINPUTSTREAM_HPP_DECL
@@ -165,16 +178,23 @@ namespace j2cpp {
 
 
 
-template <>
-local_ref< java::io::ObjectInputStream_::GetField > create< java::io::ObjectInputStream_::GetField>()
+
+java::io::ObjectInputStream_::GetField::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::io::ObjectInputStream_::GetField >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::io::ObjectInputStream_::GetField::J2CPP_CLASS_NAME>(),
-			get_method_id<java::io::ObjectInputStream_::GetField::J2CPP_CLASS_NAME, java::io::ObjectInputStream_::GetField::J2CPP_METHOD_NAME(0), java::io::ObjectInputStream_::GetField::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+java::io::ObjectInputStream_::GetField::GetField()
+: cpp_object<java::io::ObjectInputStream_::GetField>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::io::ObjectInputStream_::GetField::J2CPP_CLASS_NAME>(),
+		get_method_id<java::io::ObjectInputStream_::GetField::J2CPP_CLASS_NAME, java::io::ObjectInputStream_::GetField::J2CPP_METHOD_NAME(0), java::io::ObjectInputStream_::GetField::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 local_ref< java::io::ObjectStreamClass > java::io::ObjectInputStream_::GetField::getObjectStreamClass()
 {
@@ -312,28 +332,35 @@ J2CPP_DEFINE_METHOD(java::io::ObjectInputStream_::GetField,10,"get","(Ljava/lang
 J2CPP_DEFINE_METHOD(java::io::ObjectInputStream_::GetField,11,"get","(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/Object;")
 
 
-template <>
-local_ref< java::io::ObjectInputStream > create< java::io::ObjectInputStream>()
+
+java::io::ObjectInputStream::operator local_ref<java::io::InputStream>() const
 {
-	return local_ref< java::io::ObjectInputStream >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::io::ObjectInputStream::J2CPP_CLASS_NAME>(),
-			get_method_id<java::io::ObjectInputStream::J2CPP_CLASS_NAME, java::io::ObjectInputStream::J2CPP_METHOD_NAME(0), java::io::ObjectInputStream::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::io::InputStream>(get_jtype());
 }
 
-template <>
-local_ref< java::io::ObjectInputStream > create< java::io::ObjectInputStream>(local_ref< java::io::InputStream > const &a0)
+java::io::ObjectInputStream::operator local_ref<java::io::ObjectInput>() const
 {
-	return local_ref< java::io::ObjectInputStream >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::io::ObjectInputStream::J2CPP_CLASS_NAME>(),
-			get_method_id<java::io::ObjectInputStream::J2CPP_CLASS_NAME, java::io::ObjectInputStream::J2CPP_METHOD_NAME(1), java::io::ObjectInputStream::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::io::ObjectInput>(get_jtype());
 }
+
+java::io::ObjectInputStream::operator local_ref<java::io::ObjectStreamConstants>() const
+{
+	return local_ref<java::io::ObjectStreamConstants>(get_jtype());
+}
+
+
+
+java::io::ObjectInputStream::ObjectInputStream(local_ref< java::io::InputStream > const &a0)
+: cpp_object<java::io::ObjectInputStream>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::io::ObjectInputStream::J2CPP_CLASS_NAME>(),
+		get_method_id<java::io::ObjectInputStream::J2CPP_CLASS_NAME, java::io::ObjectInputStream::J2CPP_METHOD_NAME(1), java::io::ObjectInputStream::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 cpp_int java::io::ObjectInputStream::available()
 {

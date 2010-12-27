@@ -10,10 +10,12 @@
 #define J2CPP_ANDROID_CONTENT_DIALOGINTERFACE_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace android { namespace view { class KeyEvent; } } }
 
 
 #include <android/view/KeyEvent.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -33,10 +35,13 @@ namespace android { namespace content {
 
 			J2CPP_DECLARE_METHOD(0)
 
-			OnDismissListener(jobject jobj)
+			explicit OnDismissListener(jobject jobj)
 			: cpp_object<OnDismissListener>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+
 
 			void onDismiss(local_ref< android::content::DialogInterface > const&);
 		}; //class OnDismissListener
@@ -51,10 +56,13 @@ namespace android { namespace content {
 
 			J2CPP_DECLARE_METHOD(0)
 
-			OnMultiChoiceClickListener(jobject jobj)
+			explicit OnMultiChoiceClickListener(jobject jobj)
 			: cpp_object<OnMultiChoiceClickListener>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+
 
 			void onClick(local_ref< android::content::DialogInterface > const&, cpp_int const&, cpp_boolean const&);
 		}; //class OnMultiChoiceClickListener
@@ -69,10 +77,13 @@ namespace android { namespace content {
 
 			J2CPP_DECLARE_METHOD(0)
 
-			OnCancelListener(jobject jobj)
+			explicit OnCancelListener(jobject jobj)
 			: cpp_object<OnCancelListener>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+
 
 			void onCancel(local_ref< android::content::DialogInterface > const&);
 		}; //class OnCancelListener
@@ -87,10 +98,13 @@ namespace android { namespace content {
 
 			J2CPP_DECLARE_METHOD(0)
 
-			OnKeyListener(jobject jobj)
+			explicit OnKeyListener(jobject jobj)
 			: cpp_object<OnKeyListener>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+
 
 			cpp_boolean onKey(local_ref< android::content::DialogInterface > const&, cpp_int const&, local_ref< android::view::KeyEvent > const&);
 		}; //class OnKeyListener
@@ -105,10 +119,13 @@ namespace android { namespace content {
 
 			J2CPP_DECLARE_METHOD(0)
 
-			OnClickListener(jobject jobj)
+			explicit OnClickListener(jobject jobj)
 			: cpp_object<OnClickListener>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+
 
 			void onClick(local_ref< android::content::DialogInterface > const&, cpp_int const&);
 		}; //class OnClickListener
@@ -137,10 +154,13 @@ namespace android { namespace content {
 		typedef DialogInterface_::OnKeyListener OnKeyListener;
 		typedef DialogInterface_::OnClickListener OnClickListener;
 
-		DialogInterface(jobject jobj)
+		explicit DialogInterface(jobject jobj)
 		: cpp_object<DialogInterface>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		void cancel();
 		void dismiss();
@@ -156,7 +176,6 @@ namespace android { namespace content {
 } //namespace content
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_CONTENT_DIALOGINTERFACE_HPP_DECL
@@ -169,6 +188,12 @@ namespace android { namespace content {
 namespace j2cpp {
 
 
+
+
+android::content::DialogInterface_::OnDismissListener::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 void android::content::DialogInterface_::OnDismissListener::onDismiss(local_ref< android::content::DialogInterface > const &a0)
 {
@@ -185,6 +210,12 @@ void android::content::DialogInterface_::OnDismissListener::onDismiss(local_ref<
 J2CPP_DEFINE_CLASS(android::content::DialogInterface_::OnDismissListener,"android/content/DialogInterface$OnDismissListener")
 J2CPP_DEFINE_METHOD(android::content::DialogInterface_::OnDismissListener,0,"onDismiss","(Landroid/content/DialogInterface;)V")
 
+
+android::content::DialogInterface_::OnMultiChoiceClickListener::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
+
 void android::content::DialogInterface_::OnMultiChoiceClickListener::onClick(local_ref< android::content::DialogInterface > const &a0, cpp_int const &a1, cpp_boolean const &a2)
 {
 	return void(
@@ -199,6 +230,12 @@ void android::content::DialogInterface_::OnMultiChoiceClickListener::onClick(loc
 
 J2CPP_DEFINE_CLASS(android::content::DialogInterface_::OnMultiChoiceClickListener,"android/content/DialogInterface$OnMultiChoiceClickListener")
 J2CPP_DEFINE_METHOD(android::content::DialogInterface_::OnMultiChoiceClickListener,0,"onClick","(Landroid/content/DialogInterface;IZ)V")
+
+
+android::content::DialogInterface_::OnCancelListener::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 void android::content::DialogInterface_::OnCancelListener::onCancel(local_ref< android::content::DialogInterface > const &a0)
 {
@@ -215,6 +252,12 @@ void android::content::DialogInterface_::OnCancelListener::onCancel(local_ref< a
 J2CPP_DEFINE_CLASS(android::content::DialogInterface_::OnCancelListener,"android/content/DialogInterface$OnCancelListener")
 J2CPP_DEFINE_METHOD(android::content::DialogInterface_::OnCancelListener,0,"onCancel","(Landroid/content/DialogInterface;)V")
 
+
+android::content::DialogInterface_::OnKeyListener::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
+
 cpp_boolean android::content::DialogInterface_::OnKeyListener::onKey(local_ref< android::content::DialogInterface > const &a0, cpp_int const &a1, local_ref< android::view::KeyEvent > const &a2)
 {
 	return cpp_boolean(
@@ -229,6 +272,12 @@ cpp_boolean android::content::DialogInterface_::OnKeyListener::onKey(local_ref< 
 
 J2CPP_DEFINE_CLASS(android::content::DialogInterface_::OnKeyListener,"android/content/DialogInterface$OnKeyListener")
 J2CPP_DEFINE_METHOD(android::content::DialogInterface_::OnKeyListener,0,"onKey","(Landroid/content/DialogInterface;ILandroid/view/KeyEvent;)Z")
+
+
+android::content::DialogInterface_::OnClickListener::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 void android::content::DialogInterface_::OnClickListener::onClick(local_ref< android::content::DialogInterface > const &a0, cpp_int const &a1)
 {
@@ -245,6 +294,12 @@ void android::content::DialogInterface_::OnClickListener::onClick(local_ref< and
 J2CPP_DEFINE_CLASS(android::content::DialogInterface_::OnClickListener,"android/content/DialogInterface$OnClickListener")
 J2CPP_DEFINE_METHOD(android::content::DialogInterface_::OnClickListener,0,"onClick","(Landroid/content/DialogInterface;I)V")
 
+
+
+android::content::DialogInterface::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 void android::content::DialogInterface::cancel()
 {

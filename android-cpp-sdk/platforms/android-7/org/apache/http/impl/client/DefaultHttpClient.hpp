@@ -11,10 +11,12 @@
 
 
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace conn { class ClientConnectionManager; } } } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { namespace impl { namespace client { class AbstractHttpClient; } } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace params { class HttpParams; } } } } }
 
 
 #include <org/apache/http/conn/ClientConnectionManager.hpp>
+#include <org/apache/http/impl/client/AbstractHttpClient.hpp>
 #include <org/apache/http/params/HttpParams.hpp>
 
 
@@ -51,11 +53,17 @@ namespace org { namespace apache { namespace http { namespace impl { namespace c
 		J2CPP_DECLARE_METHOD(18)
 		J2CPP_DECLARE_METHOD(19)
 
-		DefaultHttpClient(jobject jobj)
+		explicit DefaultHttpClient(jobject jobj)
 		: cpp_object<DefaultHttpClient>(jobj)
 		{
 		}
 
+		operator local_ref<org::apache::http::impl::client::AbstractHttpClient>() const;
+
+
+		DefaultHttpClient(local_ref< org::apache::http::conn::ClientConnectionManager > const&, local_ref< org::apache::http::params::HttpParams > const&);
+		DefaultHttpClient(local_ref< org::apache::http::params::HttpParams > const&);
+		DefaultHttpClient();
 	}; //class DefaultHttpClient
 
 } //namespace client
@@ -63,7 +71,6 @@ namespace org { namespace apache { namespace http { namespace impl { namespace c
 } //namespace http
 } //namespace apache
 } //namespace org
-
 
 } //namespace j2cpp
 
@@ -77,40 +84,49 @@ namespace org { namespace apache { namespace http { namespace impl { namespace c
 namespace j2cpp {
 
 
-template <>
-local_ref< org::apache::http::impl::client::DefaultHttpClient > create< org::apache::http::impl::client::DefaultHttpClient>(local_ref< org::apache::http::conn::ClientConnectionManager > const &a0, local_ref< org::apache::http::params::HttpParams > const &a1)
+
+org::apache::http::impl::client::DefaultHttpClient::operator local_ref<org::apache::http::impl::client::AbstractHttpClient>() const
 {
-	return local_ref< org::apache::http::impl::client::DefaultHttpClient >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::apache::http::impl::client::DefaultHttpClient::J2CPP_CLASS_NAME>(),
-			get_method_id<org::apache::http::impl::client::DefaultHttpClient::J2CPP_CLASS_NAME, org::apache::http::impl::client::DefaultHttpClient::J2CPP_METHOD_NAME(0), org::apache::http::impl::client::DefaultHttpClient::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<org::apache::http::impl::client::AbstractHttpClient>(get_jtype());
 }
 
-template <>
-local_ref< org::apache::http::impl::client::DefaultHttpClient > create< org::apache::http::impl::client::DefaultHttpClient>(local_ref< org::apache::http::params::HttpParams > const &a0)
+
+org::apache::http::impl::client::DefaultHttpClient::DefaultHttpClient(local_ref< org::apache::http::conn::ClientConnectionManager > const &a0, local_ref< org::apache::http::params::HttpParams > const &a1)
+: cpp_object<org::apache::http::impl::client::DefaultHttpClient>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::apache::http::impl::client::DefaultHttpClient::J2CPP_CLASS_NAME>(),
+		get_method_id<org::apache::http::impl::client::DefaultHttpClient::J2CPP_CLASS_NAME, org::apache::http::impl::client::DefaultHttpClient::J2CPP_METHOD_NAME(0), org::apache::http::impl::client::DefaultHttpClient::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
 {
-	return local_ref< org::apache::http::impl::client::DefaultHttpClient >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::apache::http::impl::client::DefaultHttpClient::J2CPP_CLASS_NAME>(),
-			get_method_id<org::apache::http::impl::client::DefaultHttpClient::J2CPP_CLASS_NAME, org::apache::http::impl::client::DefaultHttpClient::J2CPP_METHOD_NAME(1), org::apache::http::impl::client::DefaultHttpClient::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< org::apache::http::impl::client::DefaultHttpClient > create< org::apache::http::impl::client::DefaultHttpClient>()
+
+
+org::apache::http::impl::client::DefaultHttpClient::DefaultHttpClient(local_ref< org::apache::http::params::HttpParams > const &a0)
+: cpp_object<org::apache::http::impl::client::DefaultHttpClient>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::apache::http::impl::client::DefaultHttpClient::J2CPP_CLASS_NAME>(),
+		get_method_id<org::apache::http::impl::client::DefaultHttpClient::J2CPP_CLASS_NAME, org::apache::http::impl::client::DefaultHttpClient::J2CPP_METHOD_NAME(1), org::apache::http::impl::client::DefaultHttpClient::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< org::apache::http::impl::client::DefaultHttpClient >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::apache::http::impl::client::DefaultHttpClient::J2CPP_CLASS_NAME>(),
-			get_method_id<org::apache::http::impl::client::DefaultHttpClient::J2CPP_CLASS_NAME, org::apache::http::impl::client::DefaultHttpClient::J2CPP_METHOD_NAME(2), org::apache::http::impl::client::DefaultHttpClient::J2CPP_METHOD_SIGNATURE(2), false>()
-		)
-	);
 }
+
+
+
+org::apache::http::impl::client::DefaultHttpClient::DefaultHttpClient()
+: cpp_object<org::apache::http::impl::client::DefaultHttpClient>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::apache::http::impl::client::DefaultHttpClient::J2CPP_CLASS_NAME>(),
+		get_method_id<org::apache::http::impl::client::DefaultHttpClient::J2CPP_CLASS_NAME, org::apache::http::impl::client::DefaultHttpClient::J2CPP_METHOD_NAME(2), org::apache::http::impl::client::DefaultHttpClient::J2CPP_METHOD_SIGNATURE(2), false>()
+	)
+)
+{
+}
+
 
 
 

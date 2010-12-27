@@ -35,10 +35,13 @@ namespace java { namespace security {
 		J2CPP_DECLARE_METHOD(2)
 		J2CPP_DECLARE_METHOD(3)
 
-		Principal(jobject jobj)
+		explicit Principal(jobject jobj)
 		: cpp_object<Principal>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		cpp_boolean equals(local_ref< java::lang::Object > const&);
 		local_ref< java::lang::String > getName();
@@ -48,7 +51,6 @@ namespace java { namespace security {
 
 } //namespace security
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -61,6 +63,12 @@ namespace java { namespace security {
 
 namespace j2cpp {
 
+
+
+java::security::Principal::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 cpp_boolean java::security::Principal::equals(local_ref< java::lang::Object > const &a0)
 {

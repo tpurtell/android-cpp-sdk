@@ -10,6 +10,7 @@
 #define J2CPP_JAVA_BEANS_PROPERTYCHANGESUPPORT_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace beans { class PropertyChangeEvent; } } }
@@ -18,6 +19,7 @@ namespace j2cpp { namespace java { namespace beans { class PropertyChangeListene
 
 #include <java/beans/PropertyChangeEvent.hpp>
 #include <java/beans/PropertyChangeListener.hpp>
+#include <java/io/Serializable.hpp>
 #include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
@@ -50,11 +52,16 @@ namespace java { namespace beans {
 		J2CPP_DECLARE_METHOD(13)
 		J2CPP_DECLARE_METHOD(14)
 
-		PropertyChangeSupport(jobject jobj)
+		explicit PropertyChangeSupport(jobject jobj)
 		: cpp_object<PropertyChangeSupport>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::io::Serializable>() const;
+
+
+		PropertyChangeSupport(local_ref< java::lang::Object > const&);
 		void firePropertyChange(local_ref< java::lang::String > const&, local_ref< java::lang::Object > const&, local_ref< java::lang::Object > const&);
 		void fireIndexedPropertyChange(local_ref< java::lang::String > const&, cpp_int const&, local_ref< java::lang::Object > const&, local_ref< java::lang::Object > const&);
 		void removePropertyChangeListener(local_ref< java::lang::String > const&, local_ref< java::beans::PropertyChangeListener > const&);
@@ -74,7 +81,6 @@ namespace java { namespace beans {
 } //namespace beans
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_BEANS_PROPERTYCHANGESUPPORT_HPP_DECL
@@ -87,17 +93,29 @@ namespace java { namespace beans {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::beans::PropertyChangeSupport > create< java::beans::PropertyChangeSupport>(local_ref< java::lang::Object > const &a0)
+
+java::beans::PropertyChangeSupport::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::beans::PropertyChangeSupport >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::beans::PropertyChangeSupport::J2CPP_CLASS_NAME>(),
-			get_method_id<java::beans::PropertyChangeSupport::J2CPP_CLASS_NAME, java::beans::PropertyChangeSupport::J2CPP_METHOD_NAME(0), java::beans::PropertyChangeSupport::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+java::beans::PropertyChangeSupport::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jtype());
+}
+
+
+java::beans::PropertyChangeSupport::PropertyChangeSupport(local_ref< java::lang::Object > const &a0)
+: cpp_object<java::beans::PropertyChangeSupport>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::beans::PropertyChangeSupport::J2CPP_CLASS_NAME>(),
+		get_method_id<java::beans::PropertyChangeSupport::J2CPP_CLASS_NAME, java::beans::PropertyChangeSupport::J2CPP_METHOD_NAME(0), java::beans::PropertyChangeSupport::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 void java::beans::PropertyChangeSupport::firePropertyChange(local_ref< java::lang::String > const &a0, local_ref< java::lang::Object > const &a1, local_ref< java::lang::Object > const &a2)
 {

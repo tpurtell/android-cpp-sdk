@@ -10,9 +10,11 @@
 #define J2CPP_JAVA_UTIL_FORMATTABLE_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace util { class Formatter; } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/util/Formatter.hpp>
 
 
@@ -30,17 +32,19 @@ namespace java { namespace util {
 
 		J2CPP_DECLARE_METHOD(0)
 
-		Formattable(jobject jobj)
+		explicit Formattable(jobject jobj)
 		: cpp_object<Formattable>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		void formatTo(local_ref< java::util::Formatter > const&, cpp_int const&, cpp_int const&, cpp_int const&);
 	}; //class Formattable
 
 } //namespace util
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -53,6 +57,12 @@ namespace java { namespace util {
 
 namespace j2cpp {
 
+
+
+java::util::Formattable::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 void java::util::Formattable::formatTo(local_ref< java::util::Formatter > const &a0, cpp_int const &a1, cpp_int const &a2, cpp_int const &a3)
 {

@@ -53,10 +53,13 @@ namespace android { namespace widget {
 		J2CPP_DECLARE_METHOD(16)
 		J2CPP_DECLARE_METHOD(17)
 
-		ExpandableListAdapter(jobject jobj)
+		explicit ExpandableListAdapter(jobject jobj)
 		: cpp_object<ExpandableListAdapter>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		void registerDataSetObserver(local_ref< android::database::DataSetObserver > const&);
 		void unregisterDataSetObserver(local_ref< android::database::DataSetObserver > const&);
@@ -81,7 +84,6 @@ namespace android { namespace widget {
 } //namespace widget
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_WIDGET_EXPANDABLELISTADAPTER_HPP_DECL
@@ -93,6 +95,12 @@ namespace android { namespace widget {
 
 namespace j2cpp {
 
+
+
+android::widget::ExpandableListAdapter::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 void android::widget::ExpandableListAdapter::registerDataSetObserver(local_ref< android::database::DataSetObserver > const &a0)
 {

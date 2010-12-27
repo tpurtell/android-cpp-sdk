@@ -10,10 +10,12 @@
 #define J2CPP_JAVAX_NET_SSL_SSLSERVERSOCKET_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace net { class ServerSocket; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 
 
 #include <java/lang/String.hpp>
+#include <java/net/ServerSocket.hpp>
 
 
 namespace j2cpp {
@@ -47,10 +49,13 @@ namespace javax { namespace net { namespace ssl {
 		J2CPP_DECLARE_METHOD(16)
 		J2CPP_DECLARE_METHOD(17)
 
-		SSLServerSocket(jobject jobj)
+		explicit SSLServerSocket(jobject jobj)
 		: cpp_object<SSLServerSocket>(jobj)
 		{
 		}
+
+		operator local_ref<java::net::ServerSocket>() const;
+
 
 		local_ref< cpp_object_array<java::lang::String, 1> > getEnabledCipherSuites();
 		void setEnabledCipherSuites(local_ref< cpp_object_array<java::lang::String, 1> > const&);
@@ -72,7 +77,6 @@ namespace javax { namespace net { namespace ssl {
 } //namespace net
 } //namespace javax
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVAX_NET_SSL_SSLSERVERSOCKET_HPP_DECL
@@ -85,52 +89,15 @@ namespace javax { namespace net { namespace ssl {
 namespace j2cpp {
 
 
-template <>
-local_ref< javax::net::ssl::SSLServerSocket > create< javax::net::ssl::SSLServerSocket>()
+
+javax::net::ssl::SSLServerSocket::operator local_ref<java::net::ServerSocket>() const
 {
-	return local_ref< javax::net::ssl::SSLServerSocket >(
-		environment::get().get_jenv()->NewObject(
-			get_class<javax::net::ssl::SSLServerSocket::J2CPP_CLASS_NAME>(),
-			get_method_id<javax::net::ssl::SSLServerSocket::J2CPP_CLASS_NAME, javax::net::ssl::SSLServerSocket::J2CPP_METHOD_NAME(0), javax::net::ssl::SSLServerSocket::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::net::ServerSocket>(get_jtype());
 }
 
-template <>
-local_ref< javax::net::ssl::SSLServerSocket > create< javax::net::ssl::SSLServerSocket>(cpp_int const &a0)
-{
-	return local_ref< javax::net::ssl::SSLServerSocket >(
-		environment::get().get_jenv()->NewObject(
-			get_class<javax::net::ssl::SSLServerSocket::J2CPP_CLASS_NAME>(),
-			get_method_id<javax::net::ssl::SSLServerSocket::J2CPP_CLASS_NAME, javax::net::ssl::SSLServerSocket::J2CPP_METHOD_NAME(1), javax::net::ssl::SSLServerSocket::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
-}
 
-template <>
-local_ref< javax::net::ssl::SSLServerSocket > create< javax::net::ssl::SSLServerSocket>(cpp_int const &a0, cpp_int const &a1)
-{
-	return local_ref< javax::net::ssl::SSLServerSocket >(
-		environment::get().get_jenv()->NewObject(
-			get_class<javax::net::ssl::SSLServerSocket::J2CPP_CLASS_NAME>(),
-			get_method_id<javax::net::ssl::SSLServerSocket::J2CPP_CLASS_NAME, javax::net::ssl::SSLServerSocket::J2CPP_METHOD_NAME(2), javax::net::ssl::SSLServerSocket::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
-}
 
-template <>
-local_ref< javax::net::ssl::SSLServerSocket > create< javax::net::ssl::SSLServerSocket>(cpp_int const &a0, cpp_int const &a1, local_ref< java::net::InetAddress > const &a2)
-{
-	return local_ref< javax::net::ssl::SSLServerSocket >(
-		environment::get().get_jenv()->NewObject(
-			get_class<javax::net::ssl::SSLServerSocket::J2CPP_CLASS_NAME>(),
-			get_method_id<javax::net::ssl::SSLServerSocket::J2CPP_CLASS_NAME, javax::net::ssl::SSLServerSocket::J2CPP_METHOD_NAME(3), javax::net::ssl::SSLServerSocket::J2CPP_METHOD_SIGNATURE(3), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
-		)
-	);
-}
+
 
 local_ref< cpp_object_array<java::lang::String, 1> > javax::net::ssl::SSLServerSocket::getEnabledCipherSuites()
 {

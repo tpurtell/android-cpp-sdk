@@ -10,10 +10,14 @@
 #define J2CPP_JAVA_SQL_SQLWARNING_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace sql { class SQLException; } } }
 
 
+#include <java/io/Serializable.hpp>
 #include <java/lang/String.hpp>
+#include <java/sql/SQLException.hpp>
 
 
 namespace j2cpp {
@@ -35,18 +39,25 @@ namespace java { namespace sql {
 		J2CPP_DECLARE_METHOD(4)
 		J2CPP_DECLARE_METHOD(5)
 
-		SQLWarning(jobject jobj)
+		explicit SQLWarning(jobject jobj)
 		: cpp_object<SQLWarning>(jobj)
 		{
 		}
 
+		operator local_ref<java::sql::SQLException>() const;
+		operator local_ref<java::io::Serializable>() const;
+
+
+		SQLWarning();
+		SQLWarning(local_ref< java::lang::String > const&);
+		SQLWarning(local_ref< java::lang::String > const&, local_ref< java::lang::String > const&);
+		SQLWarning(local_ref< java::lang::String > const&, local_ref< java::lang::String > const&, cpp_int const&);
 		local_ref< java::sql::SQLWarning > getNextWarning();
 		void setNextWarning(local_ref< java::sql::SQLWarning > const&);
 	}; //class SQLWarning
 
 } //namespace sql
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -60,52 +71,67 @@ namespace java { namespace sql {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::sql::SQLWarning > create< java::sql::SQLWarning>()
+
+java::sql::SQLWarning::operator local_ref<java::sql::SQLException>() const
 {
-	return local_ref< java::sql::SQLWarning >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::sql::SQLWarning::J2CPP_CLASS_NAME>(),
-			get_method_id<java::sql::SQLWarning::J2CPP_CLASS_NAME, java::sql::SQLWarning::J2CPP_METHOD_NAME(0), java::sql::SQLWarning::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::sql::SQLException>(get_jtype());
 }
 
-template <>
-local_ref< java::sql::SQLWarning > create< java::sql::SQLWarning>(local_ref< java::lang::String > const &a0)
+java::sql::SQLWarning::operator local_ref<java::io::Serializable>() const
 {
-	return local_ref< java::sql::SQLWarning >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::sql::SQLWarning::J2CPP_CLASS_NAME>(),
-			get_method_id<java::sql::SQLWarning::J2CPP_CLASS_NAME, java::sql::SQLWarning::J2CPP_METHOD_NAME(1), java::sql::SQLWarning::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::io::Serializable>(get_jtype());
 }
 
-template <>
-local_ref< java::sql::SQLWarning > create< java::sql::SQLWarning>(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
+
+java::sql::SQLWarning::SQLWarning()
+: cpp_object<java::sql::SQLWarning>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::sql::SQLWarning::J2CPP_CLASS_NAME>(),
+		get_method_id<java::sql::SQLWarning::J2CPP_CLASS_NAME, java::sql::SQLWarning::J2CPP_METHOD_NAME(0), java::sql::SQLWarning::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
 {
-	return local_ref< java::sql::SQLWarning >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::sql::SQLWarning::J2CPP_CLASS_NAME>(),
-			get_method_id<java::sql::SQLWarning::J2CPP_CLASS_NAME, java::sql::SQLWarning::J2CPP_METHOD_NAME(2), java::sql::SQLWarning::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< java::sql::SQLWarning > create< java::sql::SQLWarning>(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1, cpp_int const &a2)
+
+
+java::sql::SQLWarning::SQLWarning(local_ref< java::lang::String > const &a0)
+: cpp_object<java::sql::SQLWarning>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::sql::SQLWarning::J2CPP_CLASS_NAME>(),
+		get_method_id<java::sql::SQLWarning::J2CPP_CLASS_NAME, java::sql::SQLWarning::J2CPP_METHOD_NAME(1), java::sql::SQLWarning::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< java::sql::SQLWarning >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::sql::SQLWarning::J2CPP_CLASS_NAME>(),
-			get_method_id<java::sql::SQLWarning::J2CPP_CLASS_NAME, java::sql::SQLWarning::J2CPP_METHOD_NAME(3), java::sql::SQLWarning::J2CPP_METHOD_SIGNATURE(3), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
-		)
-	);
 }
+
+
+
+java::sql::SQLWarning::SQLWarning(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
+: cpp_object<java::sql::SQLWarning>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::sql::SQLWarning::J2CPP_CLASS_NAME>(),
+		get_method_id<java::sql::SQLWarning::J2CPP_CLASS_NAME, java::sql::SQLWarning::J2CPP_METHOD_NAME(2), java::sql::SQLWarning::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
+
+
+java::sql::SQLWarning::SQLWarning(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1, cpp_int const &a2)
+: cpp_object<java::sql::SQLWarning>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::sql::SQLWarning::J2CPP_CLASS_NAME>(),
+		get_method_id<java::sql::SQLWarning::J2CPP_CLASS_NAME, java::sql::SQLWarning::J2CPP_METHOD_NAME(3), java::sql::SQLWarning::J2CPP_METHOD_SIGNATURE(3), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
+	)
+)
+{
+}
+
 
 local_ref< java::sql::SQLWarning > java::sql::SQLWarning::getNextWarning()
 {

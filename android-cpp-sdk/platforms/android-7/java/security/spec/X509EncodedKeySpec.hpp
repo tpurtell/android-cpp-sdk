@@ -11,9 +11,11 @@
 
 
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace security { namespace spec { class EncodedKeySpec; } } } }
 
 
 #include <java/lang/String.hpp>
+#include <java/security/spec/EncodedKeySpec.hpp>
 
 
 namespace j2cpp {
@@ -32,11 +34,15 @@ namespace java { namespace security { namespace spec {
 		J2CPP_DECLARE_METHOD(1)
 		J2CPP_DECLARE_METHOD(2)
 
-		X509EncodedKeySpec(jobject jobj)
+		explicit X509EncodedKeySpec(jobject jobj)
 		: cpp_object<X509EncodedKeySpec>(jobj)
 		{
 		}
 
+		operator local_ref<java::security::spec::EncodedKeySpec>() const;
+
+
+		X509EncodedKeySpec(local_ref< cpp_byte_array<1> > const&);
 		local_ref< cpp_byte_array<1> > getEncoded();
 		local_ref< java::lang::String > getFormat();
 	}; //class X509EncodedKeySpec
@@ -44,7 +50,6 @@ namespace java { namespace security { namespace spec {
 } //namespace spec
 } //namespace security
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -58,17 +63,24 @@ namespace java { namespace security { namespace spec {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::security::spec::X509EncodedKeySpec > create< java::security::spec::X509EncodedKeySpec>(local_ref< cpp_byte_array<1> > const &a0)
+
+java::security::spec::X509EncodedKeySpec::operator local_ref<java::security::spec::EncodedKeySpec>() const
 {
-	return local_ref< java::security::spec::X509EncodedKeySpec >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::security::spec::X509EncodedKeySpec::J2CPP_CLASS_NAME>(),
-			get_method_id<java::security::spec::X509EncodedKeySpec::J2CPP_CLASS_NAME, java::security::spec::X509EncodedKeySpec::J2CPP_METHOD_NAME(0), java::security::spec::X509EncodedKeySpec::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::security::spec::EncodedKeySpec>(get_jtype());
 }
+
+
+java::security::spec::X509EncodedKeySpec::X509EncodedKeySpec(local_ref< cpp_byte_array<1> > const &a0)
+: cpp_object<java::security::spec::X509EncodedKeySpec>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::security::spec::X509EncodedKeySpec::J2CPP_CLASS_NAME>(),
+		get_method_id<java::security::spec::X509EncodedKeySpec::J2CPP_CLASS_NAME, java::security::spec::X509EncodedKeySpec::J2CPP_METHOD_NAME(0), java::security::spec::X509EncodedKeySpec::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 local_ref< cpp_byte_array<1> > java::security::spec::X509EncodedKeySpec::getEncoded()
 {

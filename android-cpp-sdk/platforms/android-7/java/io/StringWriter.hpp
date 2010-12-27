@@ -56,11 +56,16 @@ namespace java { namespace io {
 		J2CPP_DECLARE_METHOD(17)
 		J2CPP_DECLARE_METHOD(18)
 
-		StringWriter(jobject jobj)
+		explicit StringWriter(jobject jobj)
 		: cpp_object<StringWriter>(jobj)
 		{
 		}
 
+		operator local_ref<java::io::Writer>() const;
+
+
+		StringWriter();
+		StringWriter(cpp_int const&);
 		void close();
 		void flush();
 		local_ref< java::lang::StringBuffer > getBuffer();
@@ -83,7 +88,6 @@ namespace java { namespace io {
 } //namespace io
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_IO_STRINGWRITER_HPP_DECL
@@ -96,28 +100,36 @@ namespace java { namespace io {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::io::StringWriter > create< java::io::StringWriter>()
+
+java::io::StringWriter::operator local_ref<java::io::Writer>() const
 {
-	return local_ref< java::io::StringWriter >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::io::StringWriter::J2CPP_CLASS_NAME>(),
-			get_method_id<java::io::StringWriter::J2CPP_CLASS_NAME, java::io::StringWriter::J2CPP_METHOD_NAME(0), java::io::StringWriter::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::io::Writer>(get_jtype());
 }
 
-template <>
-local_ref< java::io::StringWriter > create< java::io::StringWriter>(cpp_int const &a0)
+
+java::io::StringWriter::StringWriter()
+: cpp_object<java::io::StringWriter>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::io::StringWriter::J2CPP_CLASS_NAME>(),
+		get_method_id<java::io::StringWriter::J2CPP_CLASS_NAME, java::io::StringWriter::J2CPP_METHOD_NAME(0), java::io::StringWriter::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
 {
-	return local_ref< java::io::StringWriter >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::io::StringWriter::J2CPP_CLASS_NAME>(),
-			get_method_id<java::io::StringWriter::J2CPP_CLASS_NAME, java::io::StringWriter::J2CPP_METHOD_NAME(1), java::io::StringWriter::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
 }
+
+
+
+java::io::StringWriter::StringWriter(cpp_int const &a0)
+: cpp_object<java::io::StringWriter>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::io::StringWriter::J2CPP_CLASS_NAME>(),
+		get_method_id<java::io::StringWriter::J2CPP_CLASS_NAME, java::io::StringWriter::J2CPP_METHOD_NAME(1), java::io::StringWriter::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 void java::io::StringWriter::close()
 {

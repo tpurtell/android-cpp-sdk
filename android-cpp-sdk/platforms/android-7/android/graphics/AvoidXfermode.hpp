@@ -10,11 +10,15 @@
 #define J2CPP_ANDROID_GRAPHICS_AVOIDXFERMODE_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Enum; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace android { namespace graphics { class Xfermode; } } }
 namespace j2cpp { namespace android { namespace graphics { namespace AvoidXfermode_ { class Mode; } } } }
 
 
 #include <android/graphics/AvoidXfermode.hpp>
+#include <android/graphics/Xfermode.hpp>
+#include <java/lang/Enum.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -41,10 +45,13 @@ namespace android { namespace graphics {
 			J2CPP_DECLARE_FIELD(1)
 			J2CPP_DECLARE_FIELD(2)
 
-			Mode(jobject jobj)
+			explicit Mode(jobject jobj)
 			: cpp_object<Mode>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Enum>() const;
+
 
 			static local_ref< cpp_object_array<android::graphics::AvoidXfermode_::Mode, 1> > values();
 			static local_ref< android::graphics::AvoidXfermode_::Mode > valueOf(local_ref< java::lang::String > const&);
@@ -66,16 +73,19 @@ namespace android { namespace graphics {
 
 		typedef AvoidXfermode_::Mode Mode;
 
-		AvoidXfermode(jobject jobj)
+		explicit AvoidXfermode(jobject jobj)
 		: cpp_object<AvoidXfermode>(jobj)
 		{
 		}
 
+		operator local_ref<android::graphics::Xfermode>() const;
+
+
+		AvoidXfermode(cpp_int const&, cpp_int const&, local_ref< android::graphics::AvoidXfermode_::Mode > const&);
 	}; //class AvoidXfermode
 
 } //namespace graphics
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -89,6 +99,12 @@ namespace android { namespace graphics {
 namespace j2cpp {
 
 
+
+
+android::graphics::AvoidXfermode_::Mode::operator local_ref<java::lang::Enum>() const
+{
+	return local_ref<java::lang::Enum>(get_jtype());
+}
 
 local_ref< cpp_object_array<android::graphics::AvoidXfermode_::Mode, 1> > android::graphics::AvoidXfermode_::Mode::values()
 {
@@ -111,17 +127,7 @@ local_ref< android::graphics::AvoidXfermode_::Mode > android::graphics::AvoidXfe
 	);
 }
 
-template <>
-local_ref< android::graphics::AvoidXfermode_::Mode > create< android::graphics::AvoidXfermode_::Mode>(local_ref< java::lang::String > const &a0, cpp_int const &a1)
-{
-	return local_ref< android::graphics::AvoidXfermode_::Mode >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::graphics::AvoidXfermode_::Mode::J2CPP_CLASS_NAME>(),
-			get_method_id<android::graphics::AvoidXfermode_::Mode::J2CPP_CLASS_NAME, android::graphics::AvoidXfermode_::Mode::J2CPP_METHOD_NAME(2), android::graphics::AvoidXfermode_::Mode::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
-}
+
 
 
 static_field<
@@ -149,17 +155,24 @@ J2CPP_DEFINE_FIELD(android::graphics::AvoidXfermode_::Mode,1,"TARGET","Landroid/
 J2CPP_DEFINE_FIELD(android::graphics::AvoidXfermode_::Mode,2,"$VALUES","[android.graphics.AvoidXfermode.Mode")
 
 
-template <>
-local_ref< android::graphics::AvoidXfermode > create< android::graphics::AvoidXfermode>(cpp_int const &a0, cpp_int const &a1, local_ref< android::graphics::AvoidXfermode_::Mode > const &a2)
+
+android::graphics::AvoidXfermode::operator local_ref<android::graphics::Xfermode>() const
 {
-	return local_ref< android::graphics::AvoidXfermode >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::graphics::AvoidXfermode::J2CPP_CLASS_NAME>(),
-			get_method_id<android::graphics::AvoidXfermode::J2CPP_CLASS_NAME, android::graphics::AvoidXfermode::J2CPP_METHOD_NAME(0), android::graphics::AvoidXfermode::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
-		)
-	);
+	return local_ref<android::graphics::Xfermode>(get_jtype());
 }
+
+
+android::graphics::AvoidXfermode::AvoidXfermode(cpp_int const &a0, cpp_int const &a1, local_ref< android::graphics::AvoidXfermode_::Mode > const &a2)
+: cpp_object<android::graphics::AvoidXfermode>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::graphics::AvoidXfermode::J2CPP_CLASS_NAME>(),
+		get_method_id<android::graphics::AvoidXfermode::J2CPP_CLASS_NAME, android::graphics::AvoidXfermode::J2CPP_METHOD_NAME(0), android::graphics::AvoidXfermode::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
+	)
+)
+{
+}
+
 
 
 J2CPP_DEFINE_CLASS(android::graphics::AvoidXfermode,"android/graphics/AvoidXfermode")

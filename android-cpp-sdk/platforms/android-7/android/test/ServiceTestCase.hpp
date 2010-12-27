@@ -14,11 +14,13 @@ namespace j2cpp { namespace java { namespace lang { class Class; } } }
 namespace j2cpp { namespace android { namespace app { class Service; } } }
 namespace j2cpp { namespace android { namespace app { class Application; } } }
 namespace j2cpp { namespace android { namespace content { class Context; } } }
+namespace j2cpp { namespace android { namespace test { class AndroidTestCase; } } }
 
 
 #include <android/app/Application.hpp>
 #include <android/app/Service.hpp>
 #include <android/content/Context.hpp>
+#include <android/test/AndroidTestCase.hpp>
 #include <java/lang/Class.hpp>
 
 
@@ -47,11 +49,15 @@ namespace android { namespace test {
 		J2CPP_DECLARE_METHOD(10)
 		J2CPP_DECLARE_METHOD(11)
 
-		ServiceTestCase(jobject jobj)
+		explicit ServiceTestCase(jobject jobj)
 		: cpp_object<ServiceTestCase>(jobj)
 		{
 		}
 
+		operator local_ref<android::test::AndroidTestCase>() const;
+
+
+		ServiceTestCase(local_ref< java::lang::Class > const&);
 		local_ref< android::app::Service > getService();
 		void setApplication(local_ref< android::app::Application > const&);
 		local_ref< android::app::Application > getApplication();
@@ -61,7 +67,6 @@ namespace android { namespace test {
 
 } //namespace test
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -75,17 +80,24 @@ namespace android { namespace test {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::test::ServiceTestCase > create< android::test::ServiceTestCase>(local_ref< java::lang::Class > const &a0)
+
+android::test::ServiceTestCase::operator local_ref<android::test::AndroidTestCase>() const
 {
-	return local_ref< android::test::ServiceTestCase >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::test::ServiceTestCase::J2CPP_CLASS_NAME>(),
-			get_method_id<android::test::ServiceTestCase::J2CPP_CLASS_NAME, android::test::ServiceTestCase::J2CPP_METHOD_NAME(0), android::test::ServiceTestCase::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<android::test::AndroidTestCase>(get_jtype());
 }
+
+
+android::test::ServiceTestCase::ServiceTestCase(local_ref< java::lang::Class > const &a0)
+: cpp_object<android::test::ServiceTestCase>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::test::ServiceTestCase::J2CPP_CLASS_NAME>(),
+		get_method_id<android::test::ServiceTestCase::J2CPP_CLASS_NAME, android::test::ServiceTestCase::J2CPP_METHOD_NAME(0), android::test::ServiceTestCase::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 local_ref< android::app::Service > android::test::ServiceTestCase::getService()
 {

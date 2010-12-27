@@ -10,8 +10,10 @@
 #define J2CPP_ANDROID_VIEW_SOUNDEFFECTCONSTANTS_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -34,10 +36,13 @@ namespace android { namespace view {
 		J2CPP_DECLARE_FIELD(3)
 		J2CPP_DECLARE_FIELD(4)
 
-		SoundEffectConstants(jobject jobj)
+		explicit SoundEffectConstants(jobject jobj)
 		: cpp_object<SoundEffectConstants>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		static cpp_int getContantForFocusDirection(cpp_int const&);
 
@@ -51,7 +56,6 @@ namespace android { namespace view {
 } //namespace view
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_VIEW_SOUNDEFFECTCONSTANTS_HPP_DECL
@@ -64,16 +68,12 @@ namespace android { namespace view {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::view::SoundEffectConstants > create< android::view::SoundEffectConstants>()
+
+android::view::SoundEffectConstants::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::view::SoundEffectConstants >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::view::SoundEffectConstants::J2CPP_CLASS_NAME>(),
-			get_method_id<android::view::SoundEffectConstants::J2CPP_CLASS_NAME, android::view::SoundEffectConstants::J2CPP_METHOD_NAME(0), android::view::SoundEffectConstants::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
 
 cpp_int android::view::SoundEffectConstants::getContantForFocusDirection(cpp_int const &a0)
 {

@@ -10,10 +10,16 @@
 #define J2CPP_JAVA_SECURITY_INTERFACES_DSAPUBLICKEY_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace math { class BigInteger; } } }
+namespace j2cpp { namespace java { namespace security { class PublicKey; } } }
+namespace j2cpp { namespace java { namespace security { namespace interfaces { class DSAKey; } } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/math/BigInteger.hpp>
+#include <java/security/PublicKey.hpp>
+#include <java/security/interfaces/DSAKey.hpp>
 
 
 namespace j2cpp {
@@ -31,10 +37,15 @@ namespace java { namespace security { namespace interfaces {
 		J2CPP_DECLARE_METHOD(0)
 		J2CPP_DECLARE_FIELD(0)
 
-		DSAPublicKey(jobject jobj)
+		explicit DSAPublicKey(jobject jobj)
 		: cpp_object<DSAPublicKey>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::security::interfaces::DSAKey>() const;
+		operator local_ref<java::security::PublicKey>() const;
+
 
 		local_ref< java::math::BigInteger > getY();
 
@@ -44,7 +55,6 @@ namespace java { namespace security { namespace interfaces {
 } //namespace interfaces
 } //namespace security
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -57,6 +67,22 @@ namespace java { namespace security { namespace interfaces {
 
 namespace j2cpp {
 
+
+
+java::security::interfaces::DSAPublicKey::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
+
+java::security::interfaces::DSAPublicKey::operator local_ref<java::security::interfaces::DSAKey>() const
+{
+	return local_ref<java::security::interfaces::DSAKey>(get_jtype());
+}
+
+java::security::interfaces::DSAPublicKey::operator local_ref<java::security::PublicKey>() const
+{
+	return local_ref<java::security::PublicKey>(get_jtype());
+}
 
 local_ref< java::math::BigInteger > java::security::interfaces::DSAPublicKey::getY()
 {

@@ -10,9 +10,11 @@
 #define J2CPP_ORG_APACHE_HTTP_NOHTTPRESPONSEEXCEPTION_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class IOException; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 
 
+#include <java/io/IOException.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -30,17 +32,20 @@ namespace org { namespace apache { namespace http {
 
 		J2CPP_DECLARE_METHOD(0)
 
-		NoHttpResponseException(jobject jobj)
+		explicit NoHttpResponseException(jobject jobj)
 		: cpp_object<NoHttpResponseException>(jobj)
 		{
 		}
 
+		operator local_ref<java::io::IOException>() const;
+
+
+		NoHttpResponseException(local_ref< java::lang::String > const&);
 	}; //class NoHttpResponseException
 
 } //namespace http
 } //namespace apache
 } //namespace org
-
 
 } //namespace j2cpp
 
@@ -54,17 +59,24 @@ namespace org { namespace apache { namespace http {
 namespace j2cpp {
 
 
-template <>
-local_ref< org::apache::http::NoHttpResponseException > create< org::apache::http::NoHttpResponseException>(local_ref< java::lang::String > const &a0)
+
+org::apache::http::NoHttpResponseException::operator local_ref<java::io::IOException>() const
 {
-	return local_ref< org::apache::http::NoHttpResponseException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::apache::http::NoHttpResponseException::J2CPP_CLASS_NAME>(),
-			get_method_id<org::apache::http::NoHttpResponseException::J2CPP_CLASS_NAME, org::apache::http::NoHttpResponseException::J2CPP_METHOD_NAME(0), org::apache::http::NoHttpResponseException::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::io::IOException>(get_jtype());
 }
+
+
+org::apache::http::NoHttpResponseException::NoHttpResponseException(local_ref< java::lang::String > const &a0)
+: cpp_object<org::apache::http::NoHttpResponseException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::apache::http::NoHttpResponseException::J2CPP_CLASS_NAME>(),
+		get_method_id<org::apache::http::NoHttpResponseException::J2CPP_CLASS_NAME, org::apache::http::NoHttpResponseException::J2CPP_METHOD_NAME(0), org::apache::http::NoHttpResponseException::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 
 J2CPP_DEFINE_CLASS(org::apache::http::NoHttpResponseException,"org/apache/http/NoHttpResponseException")

@@ -10,8 +10,10 @@
 #define J2CPP_ANDROID_HARDWARE_GEOMAGNETICFIELD_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -35,11 +37,15 @@ namespace android { namespace hardware {
 		J2CPP_DECLARE_METHOD(6)
 		J2CPP_DECLARE_METHOD(7)
 
-		GeomagneticField(jobject jobj)
+		explicit GeomagneticField(jobject jobj)
 		: cpp_object<GeomagneticField>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		GeomagneticField(cpp_float const&, cpp_float const&, cpp_float const&, cpp_long const&);
 		cpp_float getX();
 		cpp_float getY();
 		cpp_float getZ();
@@ -51,7 +57,6 @@ namespace android { namespace hardware {
 
 } //namespace hardware
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -65,17 +70,24 @@ namespace android { namespace hardware {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::hardware::GeomagneticField > create< android::hardware::GeomagneticField>(cpp_float const &a0, cpp_float const &a1, cpp_float const &a2, cpp_long const &a3)
+
+android::hardware::GeomagneticField::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::hardware::GeomagneticField >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::hardware::GeomagneticField::J2CPP_CLASS_NAME>(),
-			get_method_id<android::hardware::GeomagneticField::J2CPP_CLASS_NAME, android::hardware::GeomagneticField::J2CPP_METHOD_NAME(0), android::hardware::GeomagneticField::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::hardware::GeomagneticField::GeomagneticField(cpp_float const &a0, cpp_float const &a1, cpp_float const &a2, cpp_long const &a3)
+: cpp_object<android::hardware::GeomagneticField>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::hardware::GeomagneticField::J2CPP_CLASS_NAME>(),
+		get_method_id<android::hardware::GeomagneticField::J2CPP_CLASS_NAME, android::hardware::GeomagneticField::J2CPP_METHOD_NAME(0), android::hardware::GeomagneticField::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype()
+	)
+)
+{
+}
+
 
 cpp_float android::hardware::GeomagneticField::getX()
 {

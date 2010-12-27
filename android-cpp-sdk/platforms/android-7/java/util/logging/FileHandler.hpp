@@ -11,11 +11,13 @@
 
 
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace util { namespace logging { class StreamHandler; } } } }
 namespace j2cpp { namespace java { namespace util { namespace logging { class LogRecord; } } } }
 
 
 #include <java/lang/String.hpp>
 #include <java/util/logging/LogRecord.hpp>
+#include <java/util/logging/StreamHandler.hpp>
 
 
 namespace j2cpp {
@@ -38,11 +40,19 @@ namespace java { namespace util { namespace logging {
 		J2CPP_DECLARE_METHOD(5)
 		J2CPP_DECLARE_METHOD(6)
 
-		FileHandler(jobject jobj)
+		explicit FileHandler(jobject jobj)
 		: cpp_object<FileHandler>(jobj)
 		{
 		}
 
+		operator local_ref<java::util::logging::StreamHandler>() const;
+
+
+		FileHandler();
+		FileHandler(local_ref< java::lang::String > const&);
+		FileHandler(local_ref< java::lang::String > const&, cpp_boolean const&);
+		FileHandler(local_ref< java::lang::String > const&, cpp_int const&, cpp_int const&);
+		FileHandler(local_ref< java::lang::String > const&, cpp_int const&, cpp_int const&, cpp_boolean const&);
 		void close();
 		void publish(local_ref< java::util::logging::LogRecord > const&);
 	}; //class FileHandler
@@ -50,7 +60,6 @@ namespace java { namespace util { namespace logging {
 } //namespace logging
 } //namespace util
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -64,64 +73,75 @@ namespace java { namespace util { namespace logging {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::util::logging::FileHandler > create< java::util::logging::FileHandler>()
+
+java::util::logging::FileHandler::operator local_ref<java::util::logging::StreamHandler>() const
 {
-	return local_ref< java::util::logging::FileHandler >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::logging::FileHandler::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::logging::FileHandler::J2CPP_CLASS_NAME, java::util::logging::FileHandler::J2CPP_METHOD_NAME(0), java::util::logging::FileHandler::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::util::logging::StreamHandler>(get_jtype());
 }
 
-template <>
-local_ref< java::util::logging::FileHandler > create< java::util::logging::FileHandler>(local_ref< java::lang::String > const &a0)
+
+java::util::logging::FileHandler::FileHandler()
+: cpp_object<java::util::logging::FileHandler>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::util::logging::FileHandler::J2CPP_CLASS_NAME>(),
+		get_method_id<java::util::logging::FileHandler::J2CPP_CLASS_NAME, java::util::logging::FileHandler::J2CPP_METHOD_NAME(0), java::util::logging::FileHandler::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
 {
-	return local_ref< java::util::logging::FileHandler >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::logging::FileHandler::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::logging::FileHandler::J2CPP_CLASS_NAME, java::util::logging::FileHandler::J2CPP_METHOD_NAME(1), java::util::logging::FileHandler::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< java::util::logging::FileHandler > create< java::util::logging::FileHandler>(local_ref< java::lang::String > const &a0, cpp_boolean const &a1)
+
+
+java::util::logging::FileHandler::FileHandler(local_ref< java::lang::String > const &a0)
+: cpp_object<java::util::logging::FileHandler>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::util::logging::FileHandler::J2CPP_CLASS_NAME>(),
+		get_method_id<java::util::logging::FileHandler::J2CPP_CLASS_NAME, java::util::logging::FileHandler::J2CPP_METHOD_NAME(1), java::util::logging::FileHandler::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< java::util::logging::FileHandler >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::logging::FileHandler::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::logging::FileHandler::J2CPP_CLASS_NAME, java::util::logging::FileHandler::J2CPP_METHOD_NAME(2), java::util::logging::FileHandler::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< java::util::logging::FileHandler > create< java::util::logging::FileHandler>(local_ref< java::lang::String > const &a0, cpp_int const &a1, cpp_int const &a2)
+
+
+java::util::logging::FileHandler::FileHandler(local_ref< java::lang::String > const &a0, cpp_boolean const &a1)
+: cpp_object<java::util::logging::FileHandler>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::util::logging::FileHandler::J2CPP_CLASS_NAME>(),
+		get_method_id<java::util::logging::FileHandler::J2CPP_CLASS_NAME, java::util::logging::FileHandler::J2CPP_METHOD_NAME(2), java::util::logging::FileHandler::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
 {
-	return local_ref< java::util::logging::FileHandler >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::logging::FileHandler::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::logging::FileHandler::J2CPP_CLASS_NAME, java::util::logging::FileHandler::J2CPP_METHOD_NAME(3), java::util::logging::FileHandler::J2CPP_METHOD_SIGNATURE(3), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< java::util::logging::FileHandler > create< java::util::logging::FileHandler>(local_ref< java::lang::String > const &a0, cpp_int const &a1, cpp_int const &a2, cpp_boolean const &a3)
+
+
+java::util::logging::FileHandler::FileHandler(local_ref< java::lang::String > const &a0, cpp_int const &a1, cpp_int const &a2)
+: cpp_object<java::util::logging::FileHandler>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::util::logging::FileHandler::J2CPP_CLASS_NAME>(),
+		get_method_id<java::util::logging::FileHandler::J2CPP_CLASS_NAME, java::util::logging::FileHandler::J2CPP_METHOD_NAME(3), java::util::logging::FileHandler::J2CPP_METHOD_SIGNATURE(3), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
+	)
+)
 {
-	return local_ref< java::util::logging::FileHandler >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::logging::FileHandler::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::logging::FileHandler::J2CPP_CLASS_NAME, java::util::logging::FileHandler::J2CPP_METHOD_NAME(4), java::util::logging::FileHandler::J2CPP_METHOD_SIGNATURE(4), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype()
-		)
-	);
 }
+
+
+
+java::util::logging::FileHandler::FileHandler(local_ref< java::lang::String > const &a0, cpp_int const &a1, cpp_int const &a2, cpp_boolean const &a3)
+: cpp_object<java::util::logging::FileHandler>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::util::logging::FileHandler::J2CPP_CLASS_NAME>(),
+		get_method_id<java::util::logging::FileHandler::J2CPP_CLASS_NAME, java::util::logging::FileHandler::J2CPP_METHOD_NAME(4), java::util::logging::FileHandler::J2CPP_METHOD_SIGNATURE(4), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype()
+	)
+)
+{
+}
+
 
 void java::util::logging::FileHandler::close()
 {

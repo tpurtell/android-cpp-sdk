@@ -32,10 +32,13 @@ namespace java { namespace lang { namespace reflect {
 
 		J2CPP_DECLARE_METHOD(0)
 
-		InvocationHandler(jobject jobj)
+		explicit InvocationHandler(jobject jobj)
 		: cpp_object<InvocationHandler>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		local_ref< java::lang::Object > invoke(local_ref< java::lang::Object > const&, local_ref< java::lang::reflect::Method > const&, local_ref< cpp_object_array<java::lang::Object, 1> > const&);
 	}; //class InvocationHandler
@@ -43,7 +46,6 @@ namespace java { namespace lang { namespace reflect {
 } //namespace reflect
 } //namespace lang
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -56,6 +58,12 @@ namespace java { namespace lang { namespace reflect {
 
 namespace j2cpp {
 
+
+
+java::lang::reflect::InvocationHandler::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 local_ref< java::lang::Object > java::lang::reflect::InvocationHandler::invoke(local_ref< java::lang::Object > const &a0, local_ref< java::lang::reflect::Method > const &a1, local_ref< cpp_object_array<java::lang::Object, 1> > const &a2)
 {

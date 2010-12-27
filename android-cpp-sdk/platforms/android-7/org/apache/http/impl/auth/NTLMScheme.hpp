@@ -14,6 +14,7 @@ namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { class HttpRequest; } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { class Header; } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace impl { namespace auth { class NTLMEngine; } } } } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { namespace impl { namespace auth { class AuthSchemeBase; } } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace auth { class Credentials; } } } } }
 
 
@@ -21,6 +22,7 @@ namespace j2cpp { namespace org { namespace apache { namespace http { namespace 
 #include <org/apache/http/Header.hpp>
 #include <org/apache/http/HttpRequest.hpp>
 #include <org/apache/http/auth/Credentials.hpp>
+#include <org/apache/http/impl/auth/AuthSchemeBase.hpp>
 #include <org/apache/http/impl/auth/NTLMEngine.hpp>
 
 
@@ -45,11 +47,15 @@ namespace org { namespace apache { namespace http { namespace impl { namespace a
 		J2CPP_DECLARE_METHOD(6)
 		J2CPP_DECLARE_METHOD(7)
 
-		NTLMScheme(jobject jobj)
+		explicit NTLMScheme(jobject jobj)
 		: cpp_object<NTLMScheme>(jobj)
 		{
 		}
 
+		operator local_ref<org::apache::http::impl::auth::AuthSchemeBase>() const;
+
+
+		NTLMScheme(local_ref< org::apache::http::impl::auth::NTLMEngine > const&);
 		local_ref< java::lang::String > getSchemeName();
 		local_ref< java::lang::String > getParameter(local_ref< java::lang::String > const&);
 		local_ref< java::lang::String > getRealm();
@@ -64,7 +70,6 @@ namespace org { namespace apache { namespace http { namespace impl { namespace a
 } //namespace apache
 } //namespace org
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ORG_APACHE_HTTP_IMPL_AUTH_NTLMSCHEME_HPP_DECL
@@ -77,17 +82,24 @@ namespace org { namespace apache { namespace http { namespace impl { namespace a
 namespace j2cpp {
 
 
-template <>
-local_ref< org::apache::http::impl::auth::NTLMScheme > create< org::apache::http::impl::auth::NTLMScheme>(local_ref< org::apache::http::impl::auth::NTLMEngine > const &a0)
+
+org::apache::http::impl::auth::NTLMScheme::operator local_ref<org::apache::http::impl::auth::AuthSchemeBase>() const
 {
-	return local_ref< org::apache::http::impl::auth::NTLMScheme >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::apache::http::impl::auth::NTLMScheme::J2CPP_CLASS_NAME>(),
-			get_method_id<org::apache::http::impl::auth::NTLMScheme::J2CPP_CLASS_NAME, org::apache::http::impl::auth::NTLMScheme::J2CPP_METHOD_NAME(0), org::apache::http::impl::auth::NTLMScheme::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<org::apache::http::impl::auth::AuthSchemeBase>(get_jtype());
 }
+
+
+org::apache::http::impl::auth::NTLMScheme::NTLMScheme(local_ref< org::apache::http::impl::auth::NTLMEngine > const &a0)
+: cpp_object<org::apache::http::impl::auth::NTLMScheme>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::apache::http::impl::auth::NTLMScheme::J2CPP_CLASS_NAME>(),
+		get_method_id<org::apache::http::impl::auth::NTLMScheme::J2CPP_CLASS_NAME, org::apache::http::impl::auth::NTLMScheme::J2CPP_METHOD_NAME(0), org::apache::http::impl::auth::NTLMScheme::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 local_ref< java::lang::String > org::apache::http::impl::auth::NTLMScheme::getSchemeName()
 {

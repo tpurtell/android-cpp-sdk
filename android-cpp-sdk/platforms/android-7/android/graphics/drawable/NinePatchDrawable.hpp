@@ -78,11 +78,18 @@ namespace android { namespace graphics { namespace drawable {
 		J2CPP_DECLARE_METHOD(22)
 		J2CPP_DECLARE_METHOD(23)
 
-		NinePatchDrawable(jobject jobj)
+		explicit NinePatchDrawable(jobject jobj)
 		: cpp_object<NinePatchDrawable>(jobj)
 		{
 		}
 
+		operator local_ref<android::graphics::drawable::Drawable>() const;
+
+
+		NinePatchDrawable(local_ref< android::graphics::Bitmap > const&, local_ref< cpp_byte_array<1> > const&, local_ref< android::graphics::Rect > const&, local_ref< java::lang::String > const&);
+		NinePatchDrawable(local_ref< android::content::res::Resources > const&, local_ref< android::graphics::Bitmap > const&, local_ref< cpp_byte_array<1> > const&, local_ref< android::graphics::Rect > const&, local_ref< java::lang::String > const&);
+		NinePatchDrawable(local_ref< android::graphics::NinePatch > const&);
+		NinePatchDrawable(local_ref< android::content::res::Resources > const&, local_ref< android::graphics::NinePatch > const&);
 		void setTargetDensity(local_ref< android::graphics::Canvas > const&);
 		void setTargetDensity(local_ref< android::util::DisplayMetrics > const&);
 		void setTargetDensity(cpp_int const&);
@@ -109,7 +116,6 @@ namespace android { namespace graphics { namespace drawable {
 } //namespace graphics
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_GRAPHICS_DRAWABLE_NINEPATCHDRAWABLE_HPP_DECL
@@ -122,53 +128,63 @@ namespace android { namespace graphics { namespace drawable {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::graphics::drawable::NinePatchDrawable > create< android::graphics::drawable::NinePatchDrawable>(local_ref< android::graphics::Bitmap > const &a0, local_ref< cpp_byte_array<1> > const &a1, local_ref< android::graphics::Rect > const &a2, local_ref< java::lang::String > const &a3)
+
+android::graphics::drawable::NinePatchDrawable::operator local_ref<android::graphics::drawable::Drawable>() const
 {
-	return local_ref< android::graphics::drawable::NinePatchDrawable >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::graphics::drawable::NinePatchDrawable::J2CPP_CLASS_NAME>(),
-			get_method_id<android::graphics::drawable::NinePatchDrawable::J2CPP_CLASS_NAME, android::graphics::drawable::NinePatchDrawable::J2CPP_METHOD_NAME(0), android::graphics::drawable::NinePatchDrawable::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype()
-		)
-	);
+	return local_ref<android::graphics::drawable::Drawable>(get_jtype());
 }
 
-template <>
-local_ref< android::graphics::drawable::NinePatchDrawable > create< android::graphics::drawable::NinePatchDrawable>(local_ref< android::content::res::Resources > const &a0, local_ref< android::graphics::Bitmap > const &a1, local_ref< cpp_byte_array<1> > const &a2, local_ref< android::graphics::Rect > const &a3, local_ref< java::lang::String > const &a4)
+
+android::graphics::drawable::NinePatchDrawable::NinePatchDrawable(local_ref< android::graphics::Bitmap > const &a0, local_ref< cpp_byte_array<1> > const &a1, local_ref< android::graphics::Rect > const &a2, local_ref< java::lang::String > const &a3)
+: cpp_object<android::graphics::drawable::NinePatchDrawable>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::graphics::drawable::NinePatchDrawable::J2CPP_CLASS_NAME>(),
+		get_method_id<android::graphics::drawable::NinePatchDrawable::J2CPP_CLASS_NAME, android::graphics::drawable::NinePatchDrawable::J2CPP_METHOD_NAME(0), android::graphics::drawable::NinePatchDrawable::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype()
+	)
+)
 {
-	return local_ref< android::graphics::drawable::NinePatchDrawable >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::graphics::drawable::NinePatchDrawable::J2CPP_CLASS_NAME>(),
-			get_method_id<android::graphics::drawable::NinePatchDrawable::J2CPP_CLASS_NAME, android::graphics::drawable::NinePatchDrawable::J2CPP_METHOD_NAME(1), android::graphics::drawable::NinePatchDrawable::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype(), a4.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< android::graphics::drawable::NinePatchDrawable > create< android::graphics::drawable::NinePatchDrawable>(local_ref< android::graphics::NinePatch > const &a0)
+
+
+android::graphics::drawable::NinePatchDrawable::NinePatchDrawable(local_ref< android::content::res::Resources > const &a0, local_ref< android::graphics::Bitmap > const &a1, local_ref< cpp_byte_array<1> > const &a2, local_ref< android::graphics::Rect > const &a3, local_ref< java::lang::String > const &a4)
+: cpp_object<android::graphics::drawable::NinePatchDrawable>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::graphics::drawable::NinePatchDrawable::J2CPP_CLASS_NAME>(),
+		get_method_id<android::graphics::drawable::NinePatchDrawable::J2CPP_CLASS_NAME, android::graphics::drawable::NinePatchDrawable::J2CPP_METHOD_NAME(1), android::graphics::drawable::NinePatchDrawable::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype(), a4.get_jtype()
+	)
+)
 {
-	return local_ref< android::graphics::drawable::NinePatchDrawable >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::graphics::drawable::NinePatchDrawable::J2CPP_CLASS_NAME>(),
-			get_method_id<android::graphics::drawable::NinePatchDrawable::J2CPP_CLASS_NAME, android::graphics::drawable::NinePatchDrawable::J2CPP_METHOD_NAME(2), android::graphics::drawable::NinePatchDrawable::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< android::graphics::drawable::NinePatchDrawable > create< android::graphics::drawable::NinePatchDrawable>(local_ref< android::content::res::Resources > const &a0, local_ref< android::graphics::NinePatch > const &a1)
+
+
+android::graphics::drawable::NinePatchDrawable::NinePatchDrawable(local_ref< android::graphics::NinePatch > const &a0)
+: cpp_object<android::graphics::drawable::NinePatchDrawable>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::graphics::drawable::NinePatchDrawable::J2CPP_CLASS_NAME>(),
+		get_method_id<android::graphics::drawable::NinePatchDrawable::J2CPP_CLASS_NAME, android::graphics::drawable::NinePatchDrawable::J2CPP_METHOD_NAME(2), android::graphics::drawable::NinePatchDrawable::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< android::graphics::drawable::NinePatchDrawable >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::graphics::drawable::NinePatchDrawable::J2CPP_CLASS_NAME>(),
-			get_method_id<android::graphics::drawable::NinePatchDrawable::J2CPP_CLASS_NAME, android::graphics::drawable::NinePatchDrawable::J2CPP_METHOD_NAME(3), android::graphics::drawable::NinePatchDrawable::J2CPP_METHOD_SIGNATURE(3), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
 }
+
+
+
+android::graphics::drawable::NinePatchDrawable::NinePatchDrawable(local_ref< android::content::res::Resources > const &a0, local_ref< android::graphics::NinePatch > const &a1)
+: cpp_object<android::graphics::drawable::NinePatchDrawable>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::graphics::drawable::NinePatchDrawable::J2CPP_CLASS_NAME>(),
+		get_method_id<android::graphics::drawable::NinePatchDrawable::J2CPP_CLASS_NAME, android::graphics::drawable::NinePatchDrawable::J2CPP_METHOD_NAME(3), android::graphics::drawable::NinePatchDrawable::J2CPP_METHOD_SIGNATURE(3), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
 
 void android::graphics::drawable::NinePatchDrawable::setTargetDensity(local_ref< android::graphics::Canvas > const &a0)
 {

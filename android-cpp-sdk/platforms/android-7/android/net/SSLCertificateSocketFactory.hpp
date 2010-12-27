@@ -10,8 +10,9 @@
 #define J2CPP_ANDROID_NET_SSLCERTIFICATESOCKETFACTORY_HPP_DECL
 
 
-namespace j2cpp { namespace java { namespace net { class Socket; } } }
+namespace j2cpp { namespace javax { namespace net { namespace ssl { class SSLSocketFactory; } } } }
 namespace j2cpp { namespace javax { namespace net { class SocketFactory; } } }
+namespace j2cpp { namespace java { namespace net { class Socket; } } }
 namespace j2cpp { namespace java { namespace net { class InetAddress; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 
@@ -20,6 +21,7 @@ namespace j2cpp { namespace java { namespace lang { class String; } } }
 #include <java/net/InetAddress.hpp>
 #include <java/net/Socket.hpp>
 #include <javax/net/SocketFactory.hpp>
+#include <javax/net/ssl/SSLSocketFactory.hpp>
 
 
 namespace j2cpp {
@@ -44,11 +46,15 @@ namespace android { namespace net {
 		J2CPP_DECLARE_METHOD(7)
 		J2CPP_DECLARE_METHOD(8)
 
-		SSLCertificateSocketFactory(jobject jobj)
+		explicit SSLCertificateSocketFactory(jobject jobj)
 		: cpp_object<SSLCertificateSocketFactory>(jobj)
 		{
 		}
 
+		operator local_ref<javax::net::ssl::SSLSocketFactory>() const;
+
+
+		SSLCertificateSocketFactory(cpp_int const&);
 		static local_ref< javax::net::SocketFactory > getDefault(cpp_int const&);
 		local_ref< java::net::Socket > createSocket(local_ref< java::net::Socket > const&, local_ref< java::lang::String > const&, cpp_int const&, cpp_boolean const&);
 		local_ref< java::net::Socket > createSocket(local_ref< java::net::InetAddress > const&, cpp_int const&, local_ref< java::net::InetAddress > const&, cpp_int const&);
@@ -62,7 +68,6 @@ namespace android { namespace net {
 } //namespace net
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_NET_SSLCERTIFICATESOCKETFACTORY_HPP_DECL
@@ -75,17 +80,24 @@ namespace android { namespace net {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::net::SSLCertificateSocketFactory > create< android::net::SSLCertificateSocketFactory>(cpp_int const &a0)
+
+android::net::SSLCertificateSocketFactory::operator local_ref<javax::net::ssl::SSLSocketFactory>() const
 {
-	return local_ref< android::net::SSLCertificateSocketFactory >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::net::SSLCertificateSocketFactory::J2CPP_CLASS_NAME>(),
-			get_method_id<android::net::SSLCertificateSocketFactory::J2CPP_CLASS_NAME, android::net::SSLCertificateSocketFactory::J2CPP_METHOD_NAME(0), android::net::SSLCertificateSocketFactory::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<javax::net::ssl::SSLSocketFactory>(get_jtype());
 }
+
+
+android::net::SSLCertificateSocketFactory::SSLCertificateSocketFactory(cpp_int const &a0)
+: cpp_object<android::net::SSLCertificateSocketFactory>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::net::SSLCertificateSocketFactory::J2CPP_CLASS_NAME>(),
+		get_method_id<android::net::SSLCertificateSocketFactory::J2CPP_CLASS_NAME, android::net::SSLCertificateSocketFactory::J2CPP_METHOD_NAME(0), android::net::SSLCertificateSocketFactory::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 local_ref< javax::net::SocketFactory > android::net::SSLCertificateSocketFactory::getDefault(cpp_int const &a0)
 {

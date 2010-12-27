@@ -10,15 +10,18 @@
 #define J2CPP_ANDROID_OS_DEBUG_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace android { namespace os { class Parcel; } } }
 namespace j2cpp { namespace android { namespace os { namespace Debug_ { class MemoryInfo; } } } }
+namespace j2cpp { namespace android { namespace os { class Parcelable; } } }
 namespace j2cpp { namespace android { namespace os { namespace Parcelable_ { class Creator; } } } }
 
 
 #include <android/os/Debug.hpp>
 #include <android/os/Parcel.hpp>
 #include <android/os/Parcelable.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -43,11 +46,15 @@ namespace android { namespace os {
 			J2CPP_DECLARE_METHOD(3)
 			J2CPP_DECLARE_METHOD(4)
 
-			InstructionCount(jobject jobj)
+			explicit InstructionCount(jobject jobj)
 			: cpp_object<InstructionCount>(jobj)
 			{
 			}
 
+			operator local_ref<java::lang::Object>() const;
+
+
+			InstructionCount();
 			cpp_boolean resetAndStart();
 			cpp_boolean collect();
 			cpp_int globalTotal();
@@ -81,20 +88,25 @@ namespace android { namespace os {
 			J2CPP_DECLARE_FIELD(8)
 			J2CPP_DECLARE_FIELD(9)
 
-			MemoryInfo(jobject jobj)
+			explicit MemoryInfo(jobject jobj)
 			: cpp_object<MemoryInfo>(jobj)
-			, dalvikPss(jobj)
-			, dalvikPrivateDirty(jobj)
-			, dalvikSharedDirty(jobj)
-			, nativePss(jobj)
-			, nativePrivateDirty(jobj)
-			, nativeSharedDirty(jobj)
-			, otherPss(jobj)
-			, otherPrivateDirty(jobj)
-			, otherSharedDirty(jobj)
+, dalvikPss(jobj)
+, dalvikPrivateDirty(jobj)
+, dalvikSharedDirty(jobj)
+, nativePss(jobj)
+, nativePrivateDirty(jobj)
+, nativeSharedDirty(jobj)
+, otherPss(jobj)
+, otherPrivateDirty(jobj)
+, otherSharedDirty(jobj)
 			{
 			}
 
+			operator local_ref<java::lang::Object>() const;
+			operator local_ref<android::os::Parcelable>() const;
+
+
+			MemoryInfo();
 			cpp_int getTotalPss();
 			cpp_int getTotalPrivateDirty();
 			cpp_int getTotalSharedDirty();
@@ -190,10 +202,13 @@ namespace android { namespace os {
 		typedef Debug_::InstructionCount InstructionCount;
 		typedef Debug_::MemoryInfo MemoryInfo;
 
-		Debug(jobject jobj)
+		explicit Debug(jobject jobj)
 		: cpp_object<Debug>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		static void waitForDebugger();
 		static cpp_boolean waitingForDebugger();
@@ -263,7 +278,6 @@ namespace android { namespace os {
 } //namespace os
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_OS_DEBUG_HPP_DECL
@@ -277,16 +291,23 @@ namespace j2cpp {
 
 
 
-template <>
-local_ref< android::os::Debug_::InstructionCount > create< android::os::Debug_::InstructionCount>()
+
+android::os::Debug_::InstructionCount::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::os::Debug_::InstructionCount >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::os::Debug_::InstructionCount::J2CPP_CLASS_NAME>(),
-			get_method_id<android::os::Debug_::InstructionCount::J2CPP_CLASS_NAME, android::os::Debug_::InstructionCount::J2CPP_METHOD_NAME(0), android::os::Debug_::InstructionCount::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::os::Debug_::InstructionCount::InstructionCount()
+: cpp_object<android::os::Debug_::InstructionCount>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::os::Debug_::InstructionCount::J2CPP_CLASS_NAME>(),
+		get_method_id<android::os::Debug_::InstructionCount::J2CPP_CLASS_NAME, android::os::Debug_::InstructionCount::J2CPP_METHOD_NAME(0), android::os::Debug_::InstructionCount::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 cpp_boolean android::os::Debug_::InstructionCount::resetAndStart()
 {
@@ -336,16 +357,37 @@ J2CPP_DEFINE_METHOD(android::os::Debug_::InstructionCount,2,"collect","()Z")
 J2CPP_DEFINE_METHOD(android::os::Debug_::InstructionCount,3,"globalTotal","()I")
 J2CPP_DEFINE_METHOD(android::os::Debug_::InstructionCount,4,"globalMethodInvocations","()I")
 
-template <>
-local_ref< android::os::Debug_::MemoryInfo > create< android::os::Debug_::MemoryInfo>()
+
+android::os::Debug_::MemoryInfo::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::os::Debug_::MemoryInfo >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::os::Debug_::MemoryInfo::J2CPP_CLASS_NAME>(),
-			get_method_id<android::os::Debug_::MemoryInfo::J2CPP_CLASS_NAME, android::os::Debug_::MemoryInfo::J2CPP_METHOD_NAME(0), android::os::Debug_::MemoryInfo::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+android::os::Debug_::MemoryInfo::operator local_ref<android::os::Parcelable>() const
+{
+	return local_ref<android::os::Parcelable>(get_jtype());
+}
+
+
+android::os::Debug_::MemoryInfo::MemoryInfo()
+: cpp_object<android::os::Debug_::MemoryInfo>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::os::Debug_::MemoryInfo::J2CPP_CLASS_NAME>(),
+		get_method_id<android::os::Debug_::MemoryInfo::J2CPP_CLASS_NAME, android::os::Debug_::MemoryInfo::J2CPP_METHOD_NAME(0), android::os::Debug_::MemoryInfo::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+, dalvikPss(get_jtype())
+, dalvikPrivateDirty(get_jtype())
+, dalvikSharedDirty(get_jtype())
+, nativePss(get_jtype())
+, nativePrivateDirty(get_jtype())
+, nativeSharedDirty(get_jtype())
+, otherPss(get_jtype())
+, otherPrivateDirty(get_jtype())
+, otherSharedDirty(get_jtype())
+{
+}
+
 
 cpp_int android::os::Debug_::MemoryInfo::getTotalPss()
 {
@@ -410,6 +452,7 @@ void android::os::Debug_::MemoryInfo::readFromParcel(local_ref< android::os::Par
 }
 
 
+
 static_field<
 	android::os::Debug_::MemoryInfo::J2CPP_CLASS_NAME,
 	android::os::Debug_::MemoryInfo::J2CPP_FIELD_NAME(9),
@@ -439,16 +482,12 @@ J2CPP_DEFINE_FIELD(android::os::Debug_::MemoryInfo,8,"otherSharedDirty","I")
 J2CPP_DEFINE_FIELD(android::os::Debug_::MemoryInfo,9,"CREATOR","Landroid/os/Parcelable$Creator;")
 
 
-template <>
-local_ref< android::os::Debug > create< android::os::Debug>()
+
+android::os::Debug::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::os::Debug >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::os::Debug::J2CPP_CLASS_NAME>(),
-			get_method_id<android::os::Debug::J2CPP_CLASS_NAME, android::os::Debug::J2CPP_METHOD_NAME(0), android::os::Debug::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
 
 void android::os::Debug::waitForDebugger()
 {

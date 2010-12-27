@@ -10,6 +10,7 @@
 #define J2CPP_ANDROID_VIEW_INPUTMETHOD_INPUTMETHOD_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace android { namespace view { namespace inputmethod { class InputMethodSession; } } } }
 namespace j2cpp { namespace android { namespace view { namespace inputmethod { class InputConnection; } } } }
@@ -27,6 +28,7 @@ namespace j2cpp { namespace android { namespace os { class ResultReceiver; } } }
 #include <android/view/inputmethod/InputConnection.hpp>
 #include <android/view/inputmethod/InputMethod.hpp>
 #include <android/view/inputmethod/InputMethodSession.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -47,10 +49,13 @@ namespace android { namespace view { namespace inputmethod {
 
 			J2CPP_DECLARE_METHOD(0)
 
-			SessionCallback(jobject jobj)
+			explicit SessionCallback(jobject jobj)
 			: cpp_object<SessionCallback>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+
 
 			void sessionCreated(local_ref< android::view::inputmethod::InputMethodSession > const&);
 		}; //class SessionCallback
@@ -81,10 +86,13 @@ namespace android { namespace view { namespace inputmethod {
 
 		typedef InputMethod_::SessionCallback SessionCallback;
 
-		InputMethod(jobject jobj)
+		explicit InputMethod(jobject jobj)
 		: cpp_object<InputMethod>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		void attachToken(local_ref< android::os::IBinder > const&);
 		void bindInput(local_ref< android::view::inputmethod::InputBinding > const&);
@@ -107,7 +115,6 @@ namespace android { namespace view { namespace inputmethod {
 } //namespace view
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_VIEW_INPUTMETHOD_INPUTMETHOD_HPP_DECL
@@ -120,6 +127,12 @@ namespace android { namespace view { namespace inputmethod {
 namespace j2cpp {
 
 
+
+
+android::view::inputmethod::InputMethod_::SessionCallback::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 void android::view::inputmethod::InputMethod_::SessionCallback::sessionCreated(local_ref< android::view::inputmethod::InputMethodSession > const &a0)
 {
@@ -136,6 +149,12 @@ void android::view::inputmethod::InputMethod_::SessionCallback::sessionCreated(l
 J2CPP_DEFINE_CLASS(android::view::inputmethod::InputMethod_::SessionCallback,"android/view/inputmethod/InputMethod$SessionCallback")
 J2CPP_DEFINE_METHOD(android::view::inputmethod::InputMethod_::SessionCallback,0,"sessionCreated","(Landroid/view/inputmethod/InputMethodSession;)V")
 
+
+
+android::view::inputmethod::InputMethod::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 void android::view::inputmethod::InputMethod::attachToken(local_ref< android::os::IBinder > const &a0)
 {

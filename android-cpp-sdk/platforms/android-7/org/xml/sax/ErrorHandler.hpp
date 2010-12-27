@@ -10,9 +10,11 @@
 #define J2CPP_ORG_XML_SAX_ERRORHANDLER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace org { namespace xml { namespace sax { class SAXParseException; } } } }
 
 
+#include <java/lang/Object.hpp>
 #include <org/xml/sax/SAXParseException.hpp>
 
 
@@ -32,10 +34,13 @@ namespace org { namespace xml { namespace sax {
 		J2CPP_DECLARE_METHOD(1)
 		J2CPP_DECLARE_METHOD(2)
 
-		ErrorHandler(jobject jobj)
+		explicit ErrorHandler(jobject jobj)
 		: cpp_object<ErrorHandler>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		void warning(local_ref< org::xml::sax::SAXParseException > const&);
 		void error(local_ref< org::xml::sax::SAXParseException > const&);
@@ -45,7 +50,6 @@ namespace org { namespace xml { namespace sax {
 } //namespace sax
 } //namespace xml
 } //namespace org
-
 
 } //namespace j2cpp
 
@@ -58,6 +62,12 @@ namespace org { namespace xml { namespace sax {
 
 namespace j2cpp {
 
+
+
+org::xml::sax::ErrorHandler::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 void org::xml::sax::ErrorHandler::warning(local_ref< org::xml::sax::SAXParseException > const &a0)
 {

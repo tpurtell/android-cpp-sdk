@@ -10,8 +10,10 @@
 #define J2CPP_ANDROID_UTIL_CONFIG_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -34,11 +36,15 @@ namespace android { namespace util {
 		J2CPP_DECLARE_FIELD(3)
 		J2CPP_DECLARE_FIELD(4)
 
-		Config(jobject jobj)
+		explicit Config(jobject jobj)
 		: cpp_object<Config>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		Config();
 
 		static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(0), J2CPP_FIELD_SIGNATURE(0), cpp_boolean > DEBUG;
 		static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(1), J2CPP_FIELD_SIGNATURE(1), cpp_boolean > RELEASE;
@@ -49,7 +55,6 @@ namespace android { namespace util {
 
 } //namespace util
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -63,16 +68,24 @@ namespace android { namespace util {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::util::Config > create< android::util::Config>()
+
+android::util::Config::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::util::Config >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::util::Config::J2CPP_CLASS_NAME>(),
-			get_method_id<android::util::Config::J2CPP_CLASS_NAME, android::util::Config::J2CPP_METHOD_NAME(0), android::util::Config::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::util::Config::Config()
+: cpp_object<android::util::Config>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::util::Config::J2CPP_CLASS_NAME>(),
+		get_method_id<android::util::Config::J2CPP_CLASS_NAME, android::util::Config::J2CPP_METHOD_NAME(0), android::util::Config::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
+
 
 
 static_field<

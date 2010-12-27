@@ -10,10 +10,14 @@
 #define J2CPP_JAVA_UTIL_LOCALE_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace lang { class Cloneable; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 
 
+#include <java/io/Serializable.hpp>
+#include <java/lang/Cloneable.hpp>
 #include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
@@ -78,11 +82,19 @@ namespace java { namespace util {
 		J2CPP_DECLARE_FIELD(19)
 		J2CPP_DECLARE_FIELD(20)
 
-		Locale(jobject jobj)
+		explicit Locale(jobject jobj)
 		: cpp_object<Locale>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::lang::Cloneable>() const;
+		operator local_ref<java::io::Serializable>() const;
+
+
+		Locale(local_ref< java::lang::String > const&);
+		Locale(local_ref< java::lang::String > const&, local_ref< java::lang::String > const&);
+		Locale(local_ref< java::lang::String > const&, local_ref< java::lang::String > const&, local_ref< java::lang::String > const&);
 		local_ref< java::lang::Object > clone();
 		cpp_boolean equals(local_ref< java::lang::Object > const&);
 		static local_ref< cpp_object_array<java::util::Locale, 1> > getAvailableLocales();
@@ -132,7 +144,6 @@ namespace java { namespace util {
 } //namespace util
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_UTIL_LOCALE_HPP_DECL
@@ -145,41 +156,60 @@ namespace java { namespace util {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::util::Locale > create< java::util::Locale>(local_ref< java::lang::String > const &a0)
+
+java::util::Locale::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::util::Locale >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::Locale::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::Locale::J2CPP_CLASS_NAME, java::util::Locale::J2CPP_METHOD_NAME(0), java::util::Locale::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
 
-template <>
-local_ref< java::util::Locale > create< java::util::Locale>(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
+java::util::Locale::operator local_ref<java::lang::Cloneable>() const
 {
-	return local_ref< java::util::Locale >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::Locale::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::Locale::J2CPP_CLASS_NAME, java::util::Locale::J2CPP_METHOD_NAME(1), java::util::Locale::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Cloneable>(get_jtype());
 }
 
-template <>
-local_ref< java::util::Locale > create< java::util::Locale>(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1, local_ref< java::lang::String > const &a2)
+java::util::Locale::operator local_ref<java::io::Serializable>() const
 {
-	return local_ref< java::util::Locale >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::Locale::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::Locale::J2CPP_CLASS_NAME, java::util::Locale::J2CPP_METHOD_NAME(2), java::util::Locale::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
-		)
-	);
+	return local_ref<java::io::Serializable>(get_jtype());
 }
+
+
+java::util::Locale::Locale(local_ref< java::lang::String > const &a0)
+: cpp_object<java::util::Locale>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::util::Locale::J2CPP_CLASS_NAME>(),
+		get_method_id<java::util::Locale::J2CPP_CLASS_NAME, java::util::Locale::J2CPP_METHOD_NAME(0), java::util::Locale::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
+
+
+java::util::Locale::Locale(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
+: cpp_object<java::util::Locale>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::util::Locale::J2CPP_CLASS_NAME>(),
+		get_method_id<java::util::Locale::J2CPP_CLASS_NAME, java::util::Locale::J2CPP_METHOD_NAME(1), java::util::Locale::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
+
+
+java::util::Locale::Locale(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1, local_ref< java::lang::String > const &a2)
+: cpp_object<java::util::Locale>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::util::Locale::J2CPP_CLASS_NAME>(),
+		get_method_id<java::util::Locale::J2CPP_CLASS_NAME, java::util::Locale::J2CPP_METHOD_NAME(2), java::util::Locale::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
+	)
+)
+{
+}
+
 
 local_ref< java::lang::Object > java::util::Locale::clone()
 {
@@ -406,6 +436,7 @@ local_ref< java::lang::String > java::util::Locale::toString()
 		)
 	);
 }
+
 
 
 static_field<

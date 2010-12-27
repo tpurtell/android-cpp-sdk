@@ -10,8 +10,10 @@
 #define J2CPP_JUNIT_FRAMEWORK_PROTECTABLE_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -28,17 +30,19 @@ namespace junit { namespace framework {
 
 		J2CPP_DECLARE_METHOD(0)
 
-		Protectable(jobject jobj)
+		explicit Protectable(jobject jobj)
 		: cpp_object<Protectable>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		void protect();
 	}; //class Protectable
 
 } //namespace framework
 } //namespace junit
-
 
 } //namespace j2cpp
 
@@ -51,6 +55,12 @@ namespace junit { namespace framework {
 
 namespace j2cpp {
 
+
+
+junit::framework::Protectable::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 void junit::framework::Protectable::protect()
 {

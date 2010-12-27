@@ -10,9 +10,11 @@
 #define J2CPP_JAVA_SECURITY_INTERFACES_DSAPARAMS_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace math { class BigInteger; } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/math/BigInteger.hpp>
 
 
@@ -32,10 +34,13 @@ namespace java { namespace security { namespace interfaces {
 		J2CPP_DECLARE_METHOD(1)
 		J2CPP_DECLARE_METHOD(2)
 
-		DSAParams(jobject jobj)
+		explicit DSAParams(jobject jobj)
 		: cpp_object<DSAParams>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		local_ref< java::math::BigInteger > getG();
 		local_ref< java::math::BigInteger > getP();
@@ -45,7 +50,6 @@ namespace java { namespace security { namespace interfaces {
 } //namespace interfaces
 } //namespace security
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -58,6 +62,12 @@ namespace java { namespace security { namespace interfaces {
 
 namespace j2cpp {
 
+
+
+java::security::interfaces::DSAParams::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 local_ref< java::math::BigInteger > java::security::interfaces::DSAParams::getG()
 {

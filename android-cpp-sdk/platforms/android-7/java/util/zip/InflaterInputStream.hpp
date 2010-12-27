@@ -10,10 +10,12 @@
 #define J2CPP_JAVA_UTIL_ZIP_INFLATERINPUTSTREAM_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class FilterInputStream; } } }
 namespace j2cpp { namespace java { namespace io { class InputStream; } } }
 namespace j2cpp { namespace java { namespace util { namespace zip { class Inflater; } } } }
 
 
+#include <java/io/FilterInputStream.hpp>
 #include <java/io/InputStream.hpp>
 #include <java/util/zip/Inflater.hpp>
 
@@ -46,11 +48,17 @@ namespace java { namespace util { namespace zip {
 		J2CPP_DECLARE_FIELD(1)
 		J2CPP_DECLARE_FIELD(2)
 
-		InflaterInputStream(jobject jobj)
+		explicit InflaterInputStream(jobject jobj)
 		: cpp_object<InflaterInputStream>(jobj)
 		{
 		}
 
+		operator local_ref<java::io::FilterInputStream>() const;
+
+
+		InflaterInputStream(local_ref< java::io::InputStream > const&);
+		InflaterInputStream(local_ref< java::io::InputStream > const&, local_ref< java::util::zip::Inflater > const&);
+		InflaterInputStream(local_ref< java::io::InputStream > const&, local_ref< java::util::zip::Inflater > const&, cpp_int const&);
 		cpp_int read();
 		cpp_int read(local_ref< cpp_byte_array<1> > const&, cpp_int const&, cpp_int const&);
 		cpp_long skip(cpp_long const&);
@@ -66,7 +74,6 @@ namespace java { namespace util { namespace zip {
 } //namespace util
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_UTIL_ZIP_INFLATERINPUTSTREAM_HPP_DECL
@@ -79,41 +86,50 @@ namespace java { namespace util { namespace zip {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::util::zip::InflaterInputStream > create< java::util::zip::InflaterInputStream>(local_ref< java::io::InputStream > const &a0)
+
+java::util::zip::InflaterInputStream::operator local_ref<java::io::FilterInputStream>() const
 {
-	return local_ref< java::util::zip::InflaterInputStream >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::zip::InflaterInputStream::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::zip::InflaterInputStream::J2CPP_CLASS_NAME, java::util::zip::InflaterInputStream::J2CPP_METHOD_NAME(0), java::util::zip::InflaterInputStream::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::io::FilterInputStream>(get_jtype());
 }
 
-template <>
-local_ref< java::util::zip::InflaterInputStream > create< java::util::zip::InflaterInputStream>(local_ref< java::io::InputStream > const &a0, local_ref< java::util::zip::Inflater > const &a1)
+
+java::util::zip::InflaterInputStream::InflaterInputStream(local_ref< java::io::InputStream > const &a0)
+: cpp_object<java::util::zip::InflaterInputStream>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::util::zip::InflaterInputStream::J2CPP_CLASS_NAME>(),
+		get_method_id<java::util::zip::InflaterInputStream::J2CPP_CLASS_NAME, java::util::zip::InflaterInputStream::J2CPP_METHOD_NAME(0), java::util::zip::InflaterInputStream::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< java::util::zip::InflaterInputStream >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::zip::InflaterInputStream::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::zip::InflaterInputStream::J2CPP_CLASS_NAME, java::util::zip::InflaterInputStream::J2CPP_METHOD_NAME(1), java::util::zip::InflaterInputStream::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< java::util::zip::InflaterInputStream > create< java::util::zip::InflaterInputStream>(local_ref< java::io::InputStream > const &a0, local_ref< java::util::zip::Inflater > const &a1, cpp_int const &a2)
+
+
+java::util::zip::InflaterInputStream::InflaterInputStream(local_ref< java::io::InputStream > const &a0, local_ref< java::util::zip::Inflater > const &a1)
+: cpp_object<java::util::zip::InflaterInputStream>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::util::zip::InflaterInputStream::J2CPP_CLASS_NAME>(),
+		get_method_id<java::util::zip::InflaterInputStream::J2CPP_CLASS_NAME, java::util::zip::InflaterInputStream::J2CPP_METHOD_NAME(1), java::util::zip::InflaterInputStream::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
 {
-	return local_ref< java::util::zip::InflaterInputStream >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::zip::InflaterInputStream::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::zip::InflaterInputStream::J2CPP_CLASS_NAME, java::util::zip::InflaterInputStream::J2CPP_METHOD_NAME(2), java::util::zip::InflaterInputStream::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
-		)
-	);
 }
+
+
+
+java::util::zip::InflaterInputStream::InflaterInputStream(local_ref< java::io::InputStream > const &a0, local_ref< java::util::zip::Inflater > const &a1, cpp_int const &a2)
+: cpp_object<java::util::zip::InflaterInputStream>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::util::zip::InflaterInputStream::J2CPP_CLASS_NAME>(),
+		get_method_id<java::util::zip::InflaterInputStream::J2CPP_CLASS_NAME, java::util::zip::InflaterInputStream::J2CPP_METHOD_NAME(2), java::util::zip::InflaterInputStream::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
+	)
+)
+{
+}
+
 
 cpp_int java::util::zip::InflaterInputStream::read()
 {

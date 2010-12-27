@@ -10,12 +10,14 @@
 #define J2CPP_ORG_APACHE_HTTP_CLIENT_REQUESTDIRECTOR_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { class HttpRequest; } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace protocol { class HttpContext; } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { class HttpHost; } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { class HttpResponse; } } } }
 
 
+#include <java/lang/Object.hpp>
 #include <org/apache/http/HttpHost.hpp>
 #include <org/apache/http/HttpRequest.hpp>
 #include <org/apache/http/HttpResponse.hpp>
@@ -36,10 +38,13 @@ namespace org { namespace apache { namespace http { namespace client {
 
 		J2CPP_DECLARE_METHOD(0)
 
-		RequestDirector(jobject jobj)
+		explicit RequestDirector(jobject jobj)
 		: cpp_object<RequestDirector>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		local_ref< org::apache::http::HttpResponse > execute(local_ref< org::apache::http::HttpHost > const&, local_ref< org::apache::http::HttpRequest > const&, local_ref< org::apache::http::protocol::HttpContext > const&);
 	}; //class RequestDirector
@@ -48,7 +53,6 @@ namespace org { namespace apache { namespace http { namespace client {
 } //namespace http
 } //namespace apache
 } //namespace org
-
 
 } //namespace j2cpp
 
@@ -61,6 +65,12 @@ namespace org { namespace apache { namespace http { namespace client {
 
 namespace j2cpp {
 
+
+
+org::apache::http::client::RequestDirector::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 local_ref< org::apache::http::HttpResponse > org::apache::http::client::RequestDirector::execute(local_ref< org::apache::http::HttpHost > const &a0, local_ref< org::apache::http::HttpRequest > const &a1, local_ref< org::apache::http::protocol::HttpContext > const &a2)
 {

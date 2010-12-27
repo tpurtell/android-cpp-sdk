@@ -10,15 +10,21 @@
 #define J2CPP_JAVA_UTIL_ENUMSET_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class Class; } } }
 namespace j2cpp { namespace java { namespace lang { class Enum; } } }
+namespace j2cpp { namespace java { namespace lang { class Cloneable; } } }
+namespace j2cpp { namespace java { namespace util { class AbstractSet; } } }
 namespace j2cpp { namespace java { namespace util { class Collection; } } }
 
 
+#include <java/io/Serializable.hpp>
 #include <java/lang/Class.hpp>
+#include <java/lang/Cloneable.hpp>
 #include <java/lang/Enum.hpp>
 #include <java/lang/Object.hpp>
+#include <java/util/AbstractSet.hpp>
 #include <java/util/Collection.hpp>
 
 
@@ -50,10 +56,15 @@ namespace java { namespace util {
 		J2CPP_DECLARE_METHOD(13)
 		J2CPP_DECLARE_METHOD(14)
 
-		EnumSet(jobject jobj)
+		explicit EnumSet(jobject jobj)
 		: cpp_object<EnumSet>(jobj)
 		{
 		}
+
+		operator local_ref<java::util::AbstractSet>() const;
+		operator local_ref<java::lang::Cloneable>() const;
+		operator local_ref<java::io::Serializable>() const;
+
 
 		static local_ref< java::util::EnumSet > noneOf(local_ref< java::lang::Class > const&);
 		static local_ref< java::util::EnumSet > allOf(local_ref< java::lang::Class > const&);
@@ -74,7 +85,6 @@ namespace java { namespace util {
 } //namespace util
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_UTIL_ENUMSET_HPP_DECL
@@ -87,16 +97,22 @@ namespace java { namespace util {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::util::EnumSet > create< java::util::EnumSet>()
+
+java::util::EnumSet::operator local_ref<java::util::AbstractSet>() const
 {
-	return local_ref< java::util::EnumSet >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::EnumSet::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::EnumSet::J2CPP_CLASS_NAME, java::util::EnumSet::J2CPP_METHOD_NAME(0), java::util::EnumSet::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::util::AbstractSet>(get_jtype());
 }
+
+java::util::EnumSet::operator local_ref<java::lang::Cloneable>() const
+{
+	return local_ref<java::lang::Cloneable>(get_jtype());
+}
+
+java::util::EnumSet::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jtype());
+}
+
 
 local_ref< java::util::EnumSet > java::util::EnumSet::noneOf(local_ref< java::lang::Class > const &a0)
 {

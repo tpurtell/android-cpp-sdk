@@ -10,8 +10,12 @@
 #define J2CPP_JAVAX_MICROEDITION_KHRONOS_EGL_EGL11_HPP_DECL
 
 
+namespace j2cpp { namespace javax { namespace microedition { namespace khronos { namespace egl { class EGL10; } } } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
+#include <java/lang/Object.hpp>
+#include <javax/microedition/khronos/egl/EGL10.hpp>
 
 
 namespace j2cpp {
@@ -28,10 +32,14 @@ namespace javax { namespace microedition { namespace khronos { namespace egl {
 
 		J2CPP_DECLARE_FIELD(0)
 
-		EGL11(jobject jobj)
+		explicit EGL11(jobject jobj)
 		: cpp_object<EGL11>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<javax::microedition::khronos::egl::EGL10>() const;
+
 
 		static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(0), J2CPP_FIELD_SIGNATURE(0), cpp_int > EGL_CONTEXT_LOST;
 	}; //class EGL11
@@ -40,7 +48,6 @@ namespace javax { namespace microedition { namespace khronos { namespace egl {
 } //namespace khronos
 } //namespace microedition
 } //namespace javax
-
 
 } //namespace j2cpp
 
@@ -53,6 +60,17 @@ namespace javax { namespace microedition { namespace khronos { namespace egl {
 
 namespace j2cpp {
 
+
+
+javax::microedition::khronos::egl::EGL11::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
+
+javax::microedition::khronos::egl::EGL11::operator local_ref<javax::microedition::khronos::egl::EGL10>() const
+{
+	return local_ref<javax::microedition::khronos::egl::EGL10>(get_jtype());
+}
 
 static_field<
 	javax::microedition::khronos::egl::EGL11::J2CPP_CLASS_NAME,

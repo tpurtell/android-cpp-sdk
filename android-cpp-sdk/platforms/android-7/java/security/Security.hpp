@@ -10,12 +10,14 @@
 #define J2CPP_JAVA_SECURITY_SECURITY_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace security { class Provider; } } }
 namespace j2cpp { namespace java { namespace util { class Set; } } }
 namespace j2cpp { namespace java { namespace util { class Map; } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/security/Provider.hpp>
 #include <java/util/Map.hpp>
@@ -47,10 +49,13 @@ namespace java { namespace security {
 		J2CPP_DECLARE_METHOD(10)
 		J2CPP_DECLARE_METHOD(11)
 
-		Security(jobject jobj)
+		explicit Security(jobject jobj)
 		: cpp_object<Security>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		static local_ref< java::lang::String > getAlgorithmProperty(local_ref< java::lang::String > const&, local_ref< java::lang::String > const&);
 		static cpp_int insertProviderAt(local_ref< java::security::Provider > const&, cpp_int const&);
@@ -68,7 +73,6 @@ namespace java { namespace security {
 } //namespace security
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_SECURITY_SECURITY_HPP_DECL
@@ -81,16 +85,12 @@ namespace java { namespace security {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::security::Security > create< java::security::Security>()
+
+java::security::Security::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::security::Security >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::security::Security::J2CPP_CLASS_NAME>(),
-			get_method_id<java::security::Security::J2CPP_CLASS_NAME, java::security::Security::J2CPP_METHOD_NAME(0), java::security::Security::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
 
 local_ref< java::lang::String > java::security::Security::getAlgorithmProperty(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
 {

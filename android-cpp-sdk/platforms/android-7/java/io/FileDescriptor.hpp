@@ -10,8 +10,10 @@
 #define J2CPP_JAVA_IO_FILEDESCRIPTOR_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -34,11 +36,15 @@ namespace java { namespace io {
 		J2CPP_DECLARE_FIELD(1)
 		J2CPP_DECLARE_FIELD(2)
 
-		FileDescriptor(jobject jobj)
+		explicit FileDescriptor(jobject jobj)
 		: cpp_object<FileDescriptor>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		FileDescriptor();
 		void sync();
 		cpp_boolean valid();
 
@@ -49,7 +55,6 @@ namespace java { namespace io {
 
 } //namespace io
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -63,16 +68,23 @@ namespace java { namespace io {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::io::FileDescriptor > create< java::io::FileDescriptor>()
+
+java::io::FileDescriptor::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::io::FileDescriptor >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::io::FileDescriptor::J2CPP_CLASS_NAME>(),
-			get_method_id<java::io::FileDescriptor::J2CPP_CLASS_NAME, java::io::FileDescriptor::J2CPP_METHOD_NAME(0), java::io::FileDescriptor::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+java::io::FileDescriptor::FileDescriptor()
+: cpp_object<java::io::FileDescriptor>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::io::FileDescriptor::J2CPP_CLASS_NAME>(),
+		get_method_id<java::io::FileDescriptor::J2CPP_CLASS_NAME, java::io::FileDescriptor::J2CPP_METHOD_NAME(0), java::io::FileDescriptor::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 void java::io::FileDescriptor::sync()
 {
@@ -93,6 +105,7 @@ cpp_boolean java::io::FileDescriptor::valid()
 		)
 	);
 }
+
 
 
 static_field<

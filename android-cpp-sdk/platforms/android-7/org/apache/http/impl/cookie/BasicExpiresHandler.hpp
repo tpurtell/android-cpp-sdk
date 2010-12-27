@@ -12,10 +12,12 @@
 
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace cookie { class SetCookie; } } } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { namespace impl { namespace cookie { class AbstractCookieAttributeHandler; } } } } } }
 
 
 #include <java/lang/String.hpp>
 #include <org/apache/http/cookie/SetCookie.hpp>
+#include <org/apache/http/impl/cookie/AbstractCookieAttributeHandler.hpp>
 
 
 namespace j2cpp {
@@ -33,11 +35,15 @@ namespace org { namespace apache { namespace http { namespace impl { namespace c
 		J2CPP_DECLARE_METHOD(0)
 		J2CPP_DECLARE_METHOD(1)
 
-		BasicExpiresHandler(jobject jobj)
+		explicit BasicExpiresHandler(jobject jobj)
 		: cpp_object<BasicExpiresHandler>(jobj)
 		{
 		}
 
+		operator local_ref<org::apache::http::impl::cookie::AbstractCookieAttributeHandler>() const;
+
+
+		BasicExpiresHandler(local_ref< cpp_object_array<java::lang::String, 1> > const&);
 		void parse(local_ref< org::apache::http::cookie::SetCookie > const&, local_ref< java::lang::String > const&);
 	}; //class BasicExpiresHandler
 
@@ -46,7 +52,6 @@ namespace org { namespace apache { namespace http { namespace impl { namespace c
 } //namespace http
 } //namespace apache
 } //namespace org
-
 
 } //namespace j2cpp
 
@@ -60,17 +65,24 @@ namespace org { namespace apache { namespace http { namespace impl { namespace c
 namespace j2cpp {
 
 
-template <>
-local_ref< org::apache::http::impl::cookie::BasicExpiresHandler > create< org::apache::http::impl::cookie::BasicExpiresHandler>(local_ref< cpp_object_array<java::lang::String, 1> > const &a0)
+
+org::apache::http::impl::cookie::BasicExpiresHandler::operator local_ref<org::apache::http::impl::cookie::AbstractCookieAttributeHandler>() const
 {
-	return local_ref< org::apache::http::impl::cookie::BasicExpiresHandler >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::apache::http::impl::cookie::BasicExpiresHandler::J2CPP_CLASS_NAME>(),
-			get_method_id<org::apache::http::impl::cookie::BasicExpiresHandler::J2CPP_CLASS_NAME, org::apache::http::impl::cookie::BasicExpiresHandler::J2CPP_METHOD_NAME(0), org::apache::http::impl::cookie::BasicExpiresHandler::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<org::apache::http::impl::cookie::AbstractCookieAttributeHandler>(get_jtype());
 }
+
+
+org::apache::http::impl::cookie::BasicExpiresHandler::BasicExpiresHandler(local_ref< cpp_object_array<java::lang::String, 1> > const &a0)
+: cpp_object<org::apache::http::impl::cookie::BasicExpiresHandler>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::apache::http::impl::cookie::BasicExpiresHandler::J2CPP_CLASS_NAME>(),
+		get_method_id<org::apache::http::impl::cookie::BasicExpiresHandler::J2CPP_CLASS_NAME, org::apache::http::impl::cookie::BasicExpiresHandler::J2CPP_METHOD_NAME(0), org::apache::http::impl::cookie::BasicExpiresHandler::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 void org::apache::http::impl::cookie::BasicExpiresHandler::parse(local_ref< org::apache::http::cookie::SetCookie > const &a0, local_ref< java::lang::String > const &a1)
 {

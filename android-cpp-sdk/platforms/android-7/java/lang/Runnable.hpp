@@ -10,8 +10,10 @@
 #define J2CPP_JAVA_LANG_RUNNABLE_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -28,17 +30,19 @@ namespace java { namespace lang {
 
 		J2CPP_DECLARE_METHOD(0)
 
-		Runnable(jobject jobj)
+		explicit Runnable(jobject jobj)
 		: cpp_object<Runnable>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		void run();
 	}; //class Runnable
 
 } //namespace lang
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -51,6 +55,12 @@ namespace java { namespace lang {
 
 namespace j2cpp {
 
+
+
+java::lang::Runnable::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 void java::lang::Runnable::run()
 {

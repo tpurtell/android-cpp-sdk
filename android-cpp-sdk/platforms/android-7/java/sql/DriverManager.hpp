@@ -12,6 +12,7 @@
 
 namespace j2cpp { namespace java { namespace io { class PrintStream; } } }
 namespace j2cpp { namespace java { namespace io { class PrintWriter; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace sql { class Driver; } } }
 namespace j2cpp { namespace java { namespace sql { class Connection; } } }
@@ -21,6 +22,7 @@ namespace j2cpp { namespace java { namespace util { class Enumeration; } } }
 
 #include <java/io/PrintStream.hpp>
 #include <java/io/PrintWriter.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/sql/Connection.hpp>
 #include <java/sql/Driver.hpp>
@@ -56,10 +58,13 @@ namespace java { namespace sql {
 		J2CPP_DECLARE_METHOD(13)
 		J2CPP_DECLARE_METHOD(14)
 
-		DriverManager(jobject jobj)
+		explicit DriverManager(jobject jobj)
 		: cpp_object<DriverManager>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		static void deregisterDriver(local_ref< java::sql::Driver > const&);
 		static local_ref< java::sql::Connection > getConnection(local_ref< java::lang::String > const&);
@@ -80,7 +85,6 @@ namespace java { namespace sql {
 } //namespace sql
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_SQL_DRIVERMANAGER_HPP_DECL
@@ -93,16 +97,12 @@ namespace java { namespace sql {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::sql::DriverManager > create< java::sql::DriverManager>()
+
+java::sql::DriverManager::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::sql::DriverManager >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::sql::DriverManager::J2CPP_CLASS_NAME>(),
-			get_method_id<java::sql::DriverManager::J2CPP_CLASS_NAME, java::sql::DriverManager::J2CPP_METHOD_NAME(0), java::sql::DriverManager::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
 
 void java::sql::DriverManager::deregisterDriver(local_ref< java::sql::Driver > const &a0)
 {

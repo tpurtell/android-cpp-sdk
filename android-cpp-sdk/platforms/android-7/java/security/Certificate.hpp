@@ -12,6 +12,7 @@
 
 namespace j2cpp { namespace java { namespace io { class InputStream; } } }
 namespace j2cpp { namespace java { namespace io { class OutputStream; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace security { class PublicKey; } } }
 namespace j2cpp { namespace java { namespace security { class Principal; } } }
@@ -19,6 +20,7 @@ namespace j2cpp { namespace java { namespace security { class Principal; } } }
 
 #include <java/io/InputStream.hpp>
 #include <java/io/OutputStream.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/security/Principal.hpp>
 #include <java/security/PublicKey.hpp>
@@ -44,10 +46,13 @@ namespace java { namespace security {
 		J2CPP_DECLARE_METHOD(5)
 		J2CPP_DECLARE_METHOD(6)
 
-		Certificate(jobject jobj)
+		explicit Certificate(jobject jobj)
 		: cpp_object<Certificate>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		void decode(local_ref< java::io::InputStream > const&);
 		void encode(local_ref< java::io::OutputStream > const&);
@@ -61,7 +66,6 @@ namespace java { namespace security {
 } //namespace security
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_SECURITY_CERTIFICATE_HPP_DECL
@@ -73,6 +77,12 @@ namespace java { namespace security {
 
 namespace j2cpp {
 
+
+
+java::security::Certificate::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 void java::security::Certificate::decode(local_ref< java::io::InputStream > const &a0)
 {

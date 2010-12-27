@@ -12,14 +12,18 @@
 
 namespace j2cpp { namespace android { namespace app { class Dialog; } } }
 namespace j2cpp { namespace android { namespace content { class DialogInterface; } } }
+namespace j2cpp { namespace android { namespace content { namespace DialogInterface_ { class OnDismissListener; } } } }
 namespace j2cpp { namespace android { namespace view { class View; } } }
+namespace j2cpp { namespace android { namespace preference { class PreferenceGroup; } } }
 namespace j2cpp { namespace android { namespace widget { class ListAdapter; } } }
 namespace j2cpp { namespace android { namespace widget { class AdapterView; } } }
 namespace j2cpp { namespace android { namespace widget { class ListView; } } }
+namespace j2cpp { namespace android { namespace widget { namespace AdapterView_ { class OnItemClickListener; } } } }
 
 
 #include <android/app/Dialog.hpp>
 #include <android/content/DialogInterface.hpp>
+#include <android/preference/PreferenceGroup.hpp>
 #include <android/view/View.hpp>
 #include <android/widget/AdapterView.hpp>
 #include <android/widget/ListAdapter.hpp>
@@ -50,10 +54,15 @@ namespace android { namespace preference {
 		J2CPP_DECLARE_METHOD(9)
 		J2CPP_DECLARE_METHOD(10)
 
-		PreferenceScreen(jobject jobj)
+		explicit PreferenceScreen(jobject jobj)
 		: cpp_object<PreferenceScreen>(jobj)
 		{
 		}
+
+		operator local_ref<android::preference::PreferenceGroup>() const;
+		operator local_ref<android::widget::AdapterView_::OnItemClickListener>() const;
+		operator local_ref<android::content::DialogInterface_::OnDismissListener>() const;
+
 
 		local_ref< android::widget::ListAdapter > getRootAdapter();
 		void bind(local_ref< android::widget::ListView > const&);
@@ -64,7 +73,6 @@ namespace android { namespace preference {
 
 } //namespace preference
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -78,16 +86,22 @@ namespace android { namespace preference {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::preference::PreferenceScreen > create< android::preference::PreferenceScreen>()
+
+android::preference::PreferenceScreen::operator local_ref<android::preference::PreferenceGroup>() const
 {
-	return local_ref< android::preference::PreferenceScreen >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::preference::PreferenceScreen::J2CPP_CLASS_NAME>(),
-			get_method_id<android::preference::PreferenceScreen::J2CPP_CLASS_NAME, android::preference::PreferenceScreen::J2CPP_METHOD_NAME(0), android::preference::PreferenceScreen::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<android::preference::PreferenceGroup>(get_jtype());
 }
+
+android::preference::PreferenceScreen::operator local_ref<android::widget::AdapterView_::OnItemClickListener>() const
+{
+	return local_ref<android::widget::AdapterView_::OnItemClickListener>(get_jtype());
+}
+
+android::preference::PreferenceScreen::operator local_ref<android::content::DialogInterface_::OnDismissListener>() const
+{
+	return local_ref<android::content::DialogInterface_::OnDismissListener>(get_jtype());
+}
+
 
 local_ref< android::widget::ListAdapter > android::preference::PreferenceScreen::getRootAdapter()
 {

@@ -11,11 +11,13 @@
 
 
 namespace j2cpp { namespace java { namespace lang { class CharSequence; } } }
+namespace j2cpp { namespace android { namespace app { class AlertDialog; } } }
 namespace j2cpp { namespace android { namespace graphics { namespace drawable { class Drawable; } } } }
 namespace j2cpp { namespace android { namespace content { class Context; } } }
 namespace j2cpp { namespace android { namespace content { namespace DialogInterface_ { class OnCancelListener; } } } }
 
 
+#include <android/app/AlertDialog.hpp>
 #include <android/content/Context.hpp>
 #include <android/content/DialogInterface.hpp>
 #include <android/graphics/drawable/Drawable.hpp>
@@ -60,11 +62,16 @@ namespace android { namespace app {
 		J2CPP_DECLARE_FIELD(0)
 		J2CPP_DECLARE_FIELD(1)
 
-		ProgressDialog(jobject jobj)
+		explicit ProgressDialog(jobject jobj)
 		: cpp_object<ProgressDialog>(jobj)
 		{
 		}
 
+		operator local_ref<android::app::AlertDialog>() const;
+
+
+		ProgressDialog(local_ref< android::content::Context > const&);
+		ProgressDialog(local_ref< android::content::Context > const&, cpp_int const&);
 		static local_ref< android::app::ProgressDialog > show(local_ref< android::content::Context > const&, local_ref< java::lang::CharSequence > const&, local_ref< java::lang::CharSequence > const&);
 		static local_ref< android::app::ProgressDialog > show(local_ref< android::content::Context > const&, local_ref< java::lang::CharSequence > const&, local_ref< java::lang::CharSequence > const&, cpp_boolean const&);
 		static local_ref< android::app::ProgressDialog > show(local_ref< android::content::Context > const&, local_ref< java::lang::CharSequence > const&, local_ref< java::lang::CharSequence > const&, cpp_boolean const&, cpp_boolean const&);
@@ -92,7 +99,6 @@ namespace android { namespace app {
 } //namespace app
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_APP_PROGRESSDIALOG_HPP_DECL
@@ -105,29 +111,37 @@ namespace android { namespace app {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::app::ProgressDialog > create< android::app::ProgressDialog>(local_ref< android::content::Context > const &a0)
+
+android::app::ProgressDialog::operator local_ref<android::app::AlertDialog>() const
 {
-	return local_ref< android::app::ProgressDialog >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::app::ProgressDialog::J2CPP_CLASS_NAME>(),
-			get_method_id<android::app::ProgressDialog::J2CPP_CLASS_NAME, android::app::ProgressDialog::J2CPP_METHOD_NAME(0), android::app::ProgressDialog::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<android::app::AlertDialog>(get_jtype());
 }
 
-template <>
-local_ref< android::app::ProgressDialog > create< android::app::ProgressDialog>(local_ref< android::content::Context > const &a0, cpp_int const &a1)
+
+android::app::ProgressDialog::ProgressDialog(local_ref< android::content::Context > const &a0)
+: cpp_object<android::app::ProgressDialog>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::app::ProgressDialog::J2CPP_CLASS_NAME>(),
+		get_method_id<android::app::ProgressDialog::J2CPP_CLASS_NAME, android::app::ProgressDialog::J2CPP_METHOD_NAME(0), android::app::ProgressDialog::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< android::app::ProgressDialog >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::app::ProgressDialog::J2CPP_CLASS_NAME>(),
-			get_method_id<android::app::ProgressDialog::J2CPP_CLASS_NAME, android::app::ProgressDialog::J2CPP_METHOD_NAME(1), android::app::ProgressDialog::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
 }
+
+
+
+android::app::ProgressDialog::ProgressDialog(local_ref< android::content::Context > const &a0, cpp_int const &a1)
+: cpp_object<android::app::ProgressDialog>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::app::ProgressDialog::J2CPP_CLASS_NAME>(),
+		get_method_id<android::app::ProgressDialog::J2CPP_CLASS_NAME, android::app::ProgressDialog::J2CPP_METHOD_NAME(1), android::app::ProgressDialog::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
 
 local_ref< android::app::ProgressDialog > android::app::ProgressDialog::show(local_ref< android::content::Context > const &a0, local_ref< java::lang::CharSequence > const &a1, local_ref< java::lang::CharSequence > const &a2)
 {

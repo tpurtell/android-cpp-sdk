@@ -11,6 +11,7 @@
 
 
 namespace j2cpp { namespace javax { namespace crypto { class Cipher; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace security { class AlgorithmParameters; } } }
 namespace j2cpp { namespace java { namespace security { class Provider; } } }
@@ -18,6 +19,7 @@ namespace j2cpp { namespace java { namespace security { class Key; } } }
 namespace j2cpp { namespace java { namespace security { namespace spec { class PKCS8EncodedKeySpec; } } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/security/AlgorithmParameters.hpp>
 #include <java/security/Key.hpp>
@@ -50,11 +52,17 @@ namespace javax { namespace crypto {
 		J2CPP_DECLARE_METHOD(9)
 		J2CPP_DECLARE_METHOD(10)
 
-		EncryptedPrivateKeyInfo(jobject jobj)
+		explicit EncryptedPrivateKeyInfo(jobject jobj)
 		: cpp_object<EncryptedPrivateKeyInfo>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		EncryptedPrivateKeyInfo(local_ref< cpp_byte_array<1> > const&);
+		EncryptedPrivateKeyInfo(local_ref< java::lang::String > const&, local_ref< cpp_byte_array<1> > const&);
+		EncryptedPrivateKeyInfo(local_ref< java::security::AlgorithmParameters > const&, local_ref< cpp_byte_array<1> > const&);
 		local_ref< java::lang::String > getAlgName();
 		local_ref< java::security::AlgorithmParameters > getAlgParameters();
 		local_ref< cpp_byte_array<1> > getEncryptedData();
@@ -68,7 +76,6 @@ namespace javax { namespace crypto {
 } //namespace crypto
 } //namespace javax
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVAX_CRYPTO_ENCRYPTEDPRIVATEKEYINFO_HPP_DECL
@@ -81,41 +88,50 @@ namespace javax { namespace crypto {
 namespace j2cpp {
 
 
-template <>
-local_ref< javax::crypto::EncryptedPrivateKeyInfo > create< javax::crypto::EncryptedPrivateKeyInfo>(local_ref< cpp_byte_array<1> > const &a0)
+
+javax::crypto::EncryptedPrivateKeyInfo::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< javax::crypto::EncryptedPrivateKeyInfo >(
-		environment::get().get_jenv()->NewObject(
-			get_class<javax::crypto::EncryptedPrivateKeyInfo::J2CPP_CLASS_NAME>(),
-			get_method_id<javax::crypto::EncryptedPrivateKeyInfo::J2CPP_CLASS_NAME, javax::crypto::EncryptedPrivateKeyInfo::J2CPP_METHOD_NAME(0), javax::crypto::EncryptedPrivateKeyInfo::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
 
-template <>
-local_ref< javax::crypto::EncryptedPrivateKeyInfo > create< javax::crypto::EncryptedPrivateKeyInfo>(local_ref< java::lang::String > const &a0, local_ref< cpp_byte_array<1> > const &a1)
+
+javax::crypto::EncryptedPrivateKeyInfo::EncryptedPrivateKeyInfo(local_ref< cpp_byte_array<1> > const &a0)
+: cpp_object<javax::crypto::EncryptedPrivateKeyInfo>(
+	environment::get().get_jenv()->NewObject(
+		get_class<javax::crypto::EncryptedPrivateKeyInfo::J2CPP_CLASS_NAME>(),
+		get_method_id<javax::crypto::EncryptedPrivateKeyInfo::J2CPP_CLASS_NAME, javax::crypto::EncryptedPrivateKeyInfo::J2CPP_METHOD_NAME(0), javax::crypto::EncryptedPrivateKeyInfo::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< javax::crypto::EncryptedPrivateKeyInfo >(
-		environment::get().get_jenv()->NewObject(
-			get_class<javax::crypto::EncryptedPrivateKeyInfo::J2CPP_CLASS_NAME>(),
-			get_method_id<javax::crypto::EncryptedPrivateKeyInfo::J2CPP_CLASS_NAME, javax::crypto::EncryptedPrivateKeyInfo::J2CPP_METHOD_NAME(1), javax::crypto::EncryptedPrivateKeyInfo::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< javax::crypto::EncryptedPrivateKeyInfo > create< javax::crypto::EncryptedPrivateKeyInfo>(local_ref< java::security::AlgorithmParameters > const &a0, local_ref< cpp_byte_array<1> > const &a1)
+
+
+javax::crypto::EncryptedPrivateKeyInfo::EncryptedPrivateKeyInfo(local_ref< java::lang::String > const &a0, local_ref< cpp_byte_array<1> > const &a1)
+: cpp_object<javax::crypto::EncryptedPrivateKeyInfo>(
+	environment::get().get_jenv()->NewObject(
+		get_class<javax::crypto::EncryptedPrivateKeyInfo::J2CPP_CLASS_NAME>(),
+		get_method_id<javax::crypto::EncryptedPrivateKeyInfo::J2CPP_CLASS_NAME, javax::crypto::EncryptedPrivateKeyInfo::J2CPP_METHOD_NAME(1), javax::crypto::EncryptedPrivateKeyInfo::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
 {
-	return local_ref< javax::crypto::EncryptedPrivateKeyInfo >(
-		environment::get().get_jenv()->NewObject(
-			get_class<javax::crypto::EncryptedPrivateKeyInfo::J2CPP_CLASS_NAME>(),
-			get_method_id<javax::crypto::EncryptedPrivateKeyInfo::J2CPP_CLASS_NAME, javax::crypto::EncryptedPrivateKeyInfo::J2CPP_METHOD_NAME(2), javax::crypto::EncryptedPrivateKeyInfo::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
 }
+
+
+
+javax::crypto::EncryptedPrivateKeyInfo::EncryptedPrivateKeyInfo(local_ref< java::security::AlgorithmParameters > const &a0, local_ref< cpp_byte_array<1> > const &a1)
+: cpp_object<javax::crypto::EncryptedPrivateKeyInfo>(
+	environment::get().get_jenv()->NewObject(
+		get_class<javax::crypto::EncryptedPrivateKeyInfo::J2CPP_CLASS_NAME>(),
+		get_method_id<javax::crypto::EncryptedPrivateKeyInfo::J2CPP_CLASS_NAME, javax::crypto::EncryptedPrivateKeyInfo::J2CPP_METHOD_NAME(2), javax::crypto::EncryptedPrivateKeyInfo::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
 
 local_ref< java::lang::String > javax::crypto::EncryptedPrivateKeyInfo::getAlgName()
 {

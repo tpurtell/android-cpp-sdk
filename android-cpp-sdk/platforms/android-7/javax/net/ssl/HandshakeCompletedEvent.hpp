@@ -10,17 +10,21 @@
 #define J2CPP_JAVAX_NET_SSL_HANDSHAKECOMPLETEDEVENT_HPP_DECL
 
 
-namespace j2cpp { namespace javax { namespace security { namespace cert { class X509Certificate; } } } }
 namespace j2cpp { namespace javax { namespace net { namespace ssl { class SSLSession; } } } }
 namespace j2cpp { namespace javax { namespace net { namespace ssl { class SSLSocket; } } } }
+namespace j2cpp { namespace javax { namespace security { namespace cert { class X509Certificate; } } } }
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace security { class Principal; } } }
 namespace j2cpp { namespace java { namespace security { namespace cert { class Certificate; } } } }
+namespace j2cpp { namespace java { namespace util { class EventObject; } } }
 
 
+#include <java/io/Serializable.hpp>
 #include <java/lang/String.hpp>
 #include <java/security/Principal.hpp>
 #include <java/security/cert/Certificate.hpp>
+#include <java/util/EventObject.hpp>
 #include <javax/net/ssl/SSLSession.hpp>
 #include <javax/net/ssl/SSLSocket.hpp>
 #include <javax/security/cert/X509Certificate.hpp>
@@ -48,11 +52,16 @@ namespace javax { namespace net { namespace ssl {
 		J2CPP_DECLARE_METHOD(7)
 		J2CPP_DECLARE_METHOD(8)
 
-		HandshakeCompletedEvent(jobject jobj)
+		explicit HandshakeCompletedEvent(jobject jobj)
 		: cpp_object<HandshakeCompletedEvent>(jobj)
 		{
 		}
 
+		operator local_ref<java::util::EventObject>() const;
+		operator local_ref<java::io::Serializable>() const;
+
+
+		HandshakeCompletedEvent(local_ref< javax::net::ssl::SSLSocket > const&, local_ref< javax::net::ssl::SSLSession > const&);
 		local_ref< javax::net::ssl::SSLSession > getSession();
 		local_ref< java::lang::String > getCipherSuite();
 		local_ref< cpp_object_array<java::security::cert::Certificate, 1> > getLocalCertificates();
@@ -67,7 +76,6 @@ namespace javax { namespace net { namespace ssl {
 } //namespace net
 } //namespace javax
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVAX_NET_SSL_HANDSHAKECOMPLETEDEVENT_HPP_DECL
@@ -80,17 +88,29 @@ namespace javax { namespace net { namespace ssl {
 namespace j2cpp {
 
 
-template <>
-local_ref< javax::net::ssl::HandshakeCompletedEvent > create< javax::net::ssl::HandshakeCompletedEvent>(local_ref< javax::net::ssl::SSLSocket > const &a0, local_ref< javax::net::ssl::SSLSession > const &a1)
+
+javax::net::ssl::HandshakeCompletedEvent::operator local_ref<java::util::EventObject>() const
 {
-	return local_ref< javax::net::ssl::HandshakeCompletedEvent >(
-		environment::get().get_jenv()->NewObject(
-			get_class<javax::net::ssl::HandshakeCompletedEvent::J2CPP_CLASS_NAME>(),
-			get_method_id<javax::net::ssl::HandshakeCompletedEvent::J2CPP_CLASS_NAME, javax::net::ssl::HandshakeCompletedEvent::J2CPP_METHOD_NAME(0), javax::net::ssl::HandshakeCompletedEvent::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<java::util::EventObject>(get_jtype());
 }
+
+javax::net::ssl::HandshakeCompletedEvent::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jtype());
+}
+
+
+javax::net::ssl::HandshakeCompletedEvent::HandshakeCompletedEvent(local_ref< javax::net::ssl::SSLSocket > const &a0, local_ref< javax::net::ssl::SSLSession > const &a1)
+: cpp_object<javax::net::ssl::HandshakeCompletedEvent>(
+	environment::get().get_jenv()->NewObject(
+		get_class<javax::net::ssl::HandshakeCompletedEvent::J2CPP_CLASS_NAME>(),
+		get_method_id<javax::net::ssl::HandshakeCompletedEvent::J2CPP_CLASS_NAME, javax::net::ssl::HandshakeCompletedEvent::J2CPP_METHOD_NAME(0), javax::net::ssl::HandshakeCompletedEvent::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
 
 local_ref< javax::net::ssl::SSLSession > javax::net::ssl::HandshakeCompletedEvent::getSession()
 {

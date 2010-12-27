@@ -13,6 +13,7 @@
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace protocol { class HttpContext; } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace conn { namespace routing { class HttpRoute; } } } } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { namespace impl { namespace conn { class AbstractClientConnAdapter; } } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace params { class HttpParams; } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { class HttpHost; } } } }
 
@@ -20,6 +21,7 @@ namespace j2cpp { namespace org { namespace apache { namespace http { class Http
 #include <java/lang/Object.hpp>
 #include <org/apache/http/HttpHost.hpp>
 #include <org/apache/http/conn/routing/HttpRoute.hpp>
+#include <org/apache/http/impl/conn/AbstractClientConnAdapter.hpp>
 #include <org/apache/http/params/HttpParams.hpp>
 #include <org/apache/http/protocol/HttpContext.hpp>
 
@@ -50,10 +52,13 @@ namespace org { namespace apache { namespace http { namespace impl { namespace c
 		J2CPP_DECLARE_METHOD(11)
 		J2CPP_DECLARE_FIELD(0)
 
-		AbstractPooledConnAdapter(jobject jobj)
+		explicit AbstractPooledConnAdapter(jobject jobj)
 		: cpp_object<AbstractPooledConnAdapter>(jobj)
 		{
 		}
+
+		operator local_ref<org::apache::http::impl::conn::AbstractClientConnAdapter>() const;
+
 
 		local_ref< org::apache::http::conn::routing::HttpRoute > getRoute();
 		void open(local_ref< org::apache::http::conn::routing::HttpRoute > const&, local_ref< org::apache::http::protocol::HttpContext > const&, local_ref< org::apache::http::params::HttpParams > const&);
@@ -73,7 +78,6 @@ namespace org { namespace apache { namespace http { namespace impl { namespace c
 } //namespace apache
 } //namespace org
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ORG_APACHE_HTTP_IMPL_CONN_ABSTRACTPOOLEDCONNADAPTER_HPP_DECL
@@ -86,17 +90,12 @@ namespace org { namespace apache { namespace http { namespace impl { namespace c
 namespace j2cpp {
 
 
-template <>
-local_ref< org::apache::http::impl::conn::AbstractPooledConnAdapter > create< org::apache::http::impl::conn::AbstractPooledConnAdapter>(local_ref< org::apache::http::conn::ClientConnectionManager > const &a0, local_ref< org::apache::http::impl::conn::AbstractPoolEntry > const &a1)
+
+org::apache::http::impl::conn::AbstractPooledConnAdapter::operator local_ref<org::apache::http::impl::conn::AbstractClientConnAdapter>() const
 {
-	return local_ref< org::apache::http::impl::conn::AbstractPooledConnAdapter >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::apache::http::impl::conn::AbstractPooledConnAdapter::J2CPP_CLASS_NAME>(),
-			get_method_id<org::apache::http::impl::conn::AbstractPooledConnAdapter::J2CPP_CLASS_NAME, org::apache::http::impl::conn::AbstractPooledConnAdapter::J2CPP_METHOD_NAME(0), org::apache::http::impl::conn::AbstractPooledConnAdapter::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<org::apache::http::impl::conn::AbstractClientConnAdapter>(get_jtype());
 }
+
 
 
 

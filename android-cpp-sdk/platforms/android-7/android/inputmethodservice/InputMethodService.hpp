@@ -10,9 +10,11 @@
 #define J2CPP_ANDROID_INPUTMETHODSERVICE_INPUTMETHODSERVICE_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class CharSequence; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace android { namespace app { class Dialog; } } }
+namespace j2cpp { namespace android { namespace inputmethodservice { class AbstractInputMethodService; } } }
 namespace j2cpp { namespace android { namespace inputmethodservice { namespace AbstractInputMethodService_ { class AbstractInputMethodSessionImpl; } } } }
 namespace j2cpp { namespace android { namespace inputmethodservice { namespace InputMethodService_ { class Insets; } } } }
 namespace j2cpp { namespace android { namespace inputmethodservice { namespace AbstractInputMethodService_ { class AbstractInputMethodImpl; } } } }
@@ -52,6 +54,7 @@ namespace j2cpp { namespace android { namespace os { class ResultReceiver; } } }
 #include <android/view/inputmethod/InputBinding.hpp>
 #include <android/view/inputmethod/InputConnection.hpp>
 #include <java/lang/CharSequence.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -78,14 +81,18 @@ namespace android { namespace inputmethodservice {
 			J2CPP_DECLARE_FIELD(4)
 			J2CPP_DECLARE_FIELD(5)
 
-			Insets(jobject jobj)
+			explicit Insets(jobject jobj)
 			: cpp_object<Insets>(jobj)
-			, contentTopInsets(jobj)
-			, visibleTopInsets(jobj)
-			, touchableInsets(jobj)
+, contentTopInsets(jobj)
+, visibleTopInsets(jobj)
+, touchableInsets(jobj)
 			{
 			}
 
+			operator local_ref<java::lang::Object>() const;
+
+
+			Insets();
 
 			field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(0), J2CPP_FIELD_SIGNATURE(0), cpp_int > contentTopInsets;
 			field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(1), J2CPP_FIELD_SIGNATURE(1), cpp_int > visibleTopInsets;
@@ -113,11 +120,15 @@ namespace android { namespace inputmethodservice {
 			J2CPP_DECLARE_METHOD(7)
 			J2CPP_DECLARE_FIELD(0)
 
-			InputMethodSessionImpl(jobject jobj)
+			explicit InputMethodSessionImpl(jobject jobj)
 			: cpp_object<InputMethodSessionImpl>(jobj)
 			{
 			}
 
+			operator local_ref<android::inputmethodservice::AbstractInputMethodService_::AbstractInputMethodSessionImpl>() const;
+
+
+			InputMethodSessionImpl(local_ref< android::inputmethodservice::InputMethodService > const&);
 			void finishInput();
 			void displayCompletions(local_ref< cpp_object_array<android::view::inputmethod::CompletionInfo, 1> > const&);
 			void updateExtractedText(cpp_int const&, local_ref< android::view::inputmethod::ExtractedText > const&);
@@ -146,11 +157,15 @@ namespace android { namespace inputmethodservice {
 			J2CPP_DECLARE_METHOD(7)
 			J2CPP_DECLARE_FIELD(0)
 
-			InputMethodImpl(jobject jobj)
+			explicit InputMethodImpl(jobject jobj)
 			: cpp_object<InputMethodImpl>(jobj)
 			{
 			}
 
+			operator local_ref<android::inputmethodservice::AbstractInputMethodService_::AbstractInputMethodImpl>() const;
+
+
+			InputMethodImpl(local_ref< android::inputmethodservice::InputMethodService > const&);
 			void attachToken(local_ref< android::os::IBinder > const&);
 			void bindInput(local_ref< android::view::inputmethod::InputBinding > const&);
 			void unbindInput();
@@ -248,11 +263,15 @@ namespace android { namespace inputmethodservice {
 		typedef InputMethodService_::InputMethodSessionImpl InputMethodSessionImpl;
 		typedef InputMethodService_::InputMethodImpl InputMethodImpl;
 
-		InputMethodService(jobject jobj)
+		explicit InputMethodService(jobject jobj)
 		: cpp_object<InputMethodService>(jobj)
 		{
 		}
 
+		operator local_ref<android::inputmethodservice::AbstractInputMethodService>() const;
+
+
+		InputMethodService();
 		void setTheme(cpp_int const&);
 		void onCreate();
 		void onInitializeInterface();
@@ -329,7 +348,6 @@ namespace android { namespace inputmethodservice {
 } //namespace inputmethodservice
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_INPUTMETHODSERVICE_INPUTMETHODSERVICE_HPP_DECL
@@ -343,16 +361,26 @@ namespace j2cpp {
 
 
 
-template <>
-local_ref< android::inputmethodservice::InputMethodService_::Insets > create< android::inputmethodservice::InputMethodService_::Insets>()
+
+android::inputmethodservice::InputMethodService_::Insets::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::inputmethodservice::InputMethodService_::Insets >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::inputmethodservice::InputMethodService_::Insets::J2CPP_CLASS_NAME>(),
-			get_method_id<android::inputmethodservice::InputMethodService_::Insets::J2CPP_CLASS_NAME, android::inputmethodservice::InputMethodService_::Insets::J2CPP_METHOD_NAME(0), android::inputmethodservice::InputMethodService_::Insets::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::inputmethodservice::InputMethodService_::Insets::Insets()
+: cpp_object<android::inputmethodservice::InputMethodService_::Insets>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::inputmethodservice::InputMethodService_::Insets::J2CPP_CLASS_NAME>(),
+		get_method_id<android::inputmethodservice::InputMethodService_::Insets::J2CPP_CLASS_NAME, android::inputmethodservice::InputMethodService_::Insets::J2CPP_METHOD_NAME(0), android::inputmethodservice::InputMethodService_::Insets::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+, contentTopInsets(get_jtype())
+, visibleTopInsets(get_jtype())
+, touchableInsets(get_jtype())
+{
+}
+
 
 
 static_field<
@@ -386,17 +414,24 @@ J2CPP_DEFINE_FIELD(android::inputmethodservice::InputMethodService_::Insets,3,"T
 J2CPP_DEFINE_FIELD(android::inputmethodservice::InputMethodService_::Insets,4,"TOUCHABLE_INSETS_VISIBLE","I")
 J2CPP_DEFINE_FIELD(android::inputmethodservice::InputMethodService_::Insets,5,"touchableInsets","I")
 
-template <>
-local_ref< android::inputmethodservice::InputMethodService_::InputMethodSessionImpl > create< android::inputmethodservice::InputMethodService_::InputMethodSessionImpl>(local_ref< android::inputmethodservice::InputMethodService > const &a0)
+
+android::inputmethodservice::InputMethodService_::InputMethodSessionImpl::operator local_ref<android::inputmethodservice::AbstractInputMethodService_::AbstractInputMethodSessionImpl>() const
 {
-	return local_ref< android::inputmethodservice::InputMethodService_::InputMethodSessionImpl >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::inputmethodservice::InputMethodService_::InputMethodSessionImpl::J2CPP_CLASS_NAME>(),
-			get_method_id<android::inputmethodservice::InputMethodService_::InputMethodSessionImpl::J2CPP_CLASS_NAME, android::inputmethodservice::InputMethodService_::InputMethodSessionImpl::J2CPP_METHOD_NAME(0), android::inputmethodservice::InputMethodService_::InputMethodSessionImpl::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<android::inputmethodservice::AbstractInputMethodService_::AbstractInputMethodSessionImpl>(get_jtype());
 }
+
+
+android::inputmethodservice::InputMethodService_::InputMethodSessionImpl::InputMethodSessionImpl(local_ref< android::inputmethodservice::InputMethodService > const &a0)
+: cpp_object<android::inputmethodservice::InputMethodService_::InputMethodSessionImpl>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::inputmethodservice::InputMethodService_::InputMethodSessionImpl::J2CPP_CLASS_NAME>(),
+		get_method_id<android::inputmethodservice::InputMethodService_::InputMethodSessionImpl::J2CPP_CLASS_NAME, android::inputmethodservice::InputMethodService_::InputMethodSessionImpl::J2CPP_METHOD_NAME(0), android::inputmethodservice::InputMethodService_::InputMethodSessionImpl::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 void android::inputmethodservice::InputMethodService_::InputMethodSessionImpl::finishInput()
 {
@@ -487,17 +522,24 @@ J2CPP_DEFINE_METHOD(android::inputmethodservice::InputMethodService_::InputMetho
 J2CPP_DEFINE_METHOD(android::inputmethodservice::InputMethodService_::InputMethodSessionImpl,7,"toggleSoftInput","(II)V")
 J2CPP_DEFINE_FIELD(android::inputmethodservice::InputMethodService_::InputMethodSessionImpl,0,"this$0","Landroid/inputmethodservice/InputMethodService;")
 
-template <>
-local_ref< android::inputmethodservice::InputMethodService_::InputMethodImpl > create< android::inputmethodservice::InputMethodService_::InputMethodImpl>(local_ref< android::inputmethodservice::InputMethodService > const &a0)
+
+android::inputmethodservice::InputMethodService_::InputMethodImpl::operator local_ref<android::inputmethodservice::AbstractInputMethodService_::AbstractInputMethodImpl>() const
 {
-	return local_ref< android::inputmethodservice::InputMethodService_::InputMethodImpl >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::inputmethodservice::InputMethodService_::InputMethodImpl::J2CPP_CLASS_NAME>(),
-			get_method_id<android::inputmethodservice::InputMethodService_::InputMethodImpl::J2CPP_CLASS_NAME, android::inputmethodservice::InputMethodService_::InputMethodImpl::J2CPP_METHOD_NAME(0), android::inputmethodservice::InputMethodService_::InputMethodImpl::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<android::inputmethodservice::AbstractInputMethodService_::AbstractInputMethodImpl>(get_jtype());
 }
+
+
+android::inputmethodservice::InputMethodService_::InputMethodImpl::InputMethodImpl(local_ref< android::inputmethodservice::InputMethodService > const &a0)
+: cpp_object<android::inputmethodservice::InputMethodService_::InputMethodImpl>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::inputmethodservice::InputMethodService_::InputMethodImpl::J2CPP_CLASS_NAME>(),
+		get_method_id<android::inputmethodservice::InputMethodService_::InputMethodImpl::J2CPP_CLASS_NAME, android::inputmethodservice::InputMethodService_::InputMethodImpl::J2CPP_METHOD_NAME(0), android::inputmethodservice::InputMethodService_::InputMethodImpl::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 void android::inputmethodservice::InputMethodService_::InputMethodImpl::attachToken(local_ref< android::os::IBinder > const &a0)
 {
@@ -589,16 +631,23 @@ J2CPP_DEFINE_METHOD(android::inputmethodservice::InputMethodService_::InputMetho
 J2CPP_DEFINE_FIELD(android::inputmethodservice::InputMethodService_::InputMethodImpl,0,"this$0","Landroid/inputmethodservice/InputMethodService;")
 
 
-template <>
-local_ref< android::inputmethodservice::InputMethodService > create< android::inputmethodservice::InputMethodService>()
+
+android::inputmethodservice::InputMethodService::operator local_ref<android::inputmethodservice::AbstractInputMethodService>() const
 {
-	return local_ref< android::inputmethodservice::InputMethodService >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::inputmethodservice::InputMethodService::J2CPP_CLASS_NAME>(),
-			get_method_id<android::inputmethodservice::InputMethodService::J2CPP_CLASS_NAME, android::inputmethodservice::InputMethodService::J2CPP_METHOD_NAME(0), android::inputmethodservice::InputMethodService::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<android::inputmethodservice::AbstractInputMethodService>(get_jtype());
 }
+
+
+android::inputmethodservice::InputMethodService::InputMethodService()
+: cpp_object<android::inputmethodservice::InputMethodService>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::inputmethodservice::InputMethodService::J2CPP_CLASS_NAME>(),
+		get_method_id<android::inputmethodservice::InputMethodService::J2CPP_CLASS_NAME, android::inputmethodservice::InputMethodService::J2CPP_METHOD_NAME(0), android::inputmethodservice::InputMethodService::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 void android::inputmethodservice::InputMethodService::setTheme(cpp_int const &a0)
 {

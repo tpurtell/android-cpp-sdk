@@ -13,9 +13,11 @@
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace android { namespace os { class Parcel; } } }
+namespace j2cpp { namespace android { namespace os { class Parcelable; } } }
 
 
 #include <android/os/Parcel.hpp>
+#include <android/os/Parcelable.hpp>
 #include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
@@ -47,10 +49,14 @@ namespace android { namespace telephony {
 		J2CPP_DECLARE_METHOD(12)
 		J2CPP_DECLARE_METHOD(13)
 
-		SignalStrength(jobject jobj)
+		explicit SignalStrength(jobject jobj)
 		: cpp_object<SignalStrength>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<android::os::Parcelable>() const;
+
 
 		void writeToParcel(local_ref< android::os::Parcel > const&, cpp_int const&);
 		cpp_int describeContents();
@@ -70,7 +76,6 @@ namespace android { namespace telephony {
 } //namespace telephony
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_TELEPHONY_SIGNALSTRENGTH_HPP_DECL
@@ -83,16 +88,17 @@ namespace android { namespace telephony {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::telephony::SignalStrength > create< android::telephony::SignalStrength>()
+
+android::telephony::SignalStrength::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::telephony::SignalStrength >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::telephony::SignalStrength::J2CPP_CLASS_NAME>(),
-			get_method_id<android::telephony::SignalStrength::J2CPP_CLASS_NAME, android::telephony::SignalStrength::J2CPP_METHOD_NAME(0), android::telephony::SignalStrength::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+android::telephony::SignalStrength::operator local_ref<android::os::Parcelable>() const
+{
+	return local_ref<android::os::Parcelable>(get_jtype());
+}
+
 
 void android::telephony::SignalStrength::writeToParcel(local_ref< android::os::Parcel > const &a0, cpp_int const &a1)
 {

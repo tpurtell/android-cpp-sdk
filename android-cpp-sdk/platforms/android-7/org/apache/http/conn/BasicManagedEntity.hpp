@@ -12,14 +12,20 @@
 
 namespace j2cpp { namespace java { namespace io { class InputStream; } } }
 namespace j2cpp { namespace java { namespace io { class OutputStream; } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { namespace conn { class ConnectionReleaseTrigger; } } } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { namespace conn { class EofSensorWatcher; } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace conn { class ManagedClientConnection; } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { class HttpEntity; } } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { namespace entity { class HttpEntityWrapper; } } } } }
 
 
 #include <java/io/InputStream.hpp>
 #include <java/io/OutputStream.hpp>
 #include <org/apache/http/HttpEntity.hpp>
+#include <org/apache/http/conn/ConnectionReleaseTrigger.hpp>
+#include <org/apache/http/conn/EofSensorWatcher.hpp>
 #include <org/apache/http/conn/ManagedClientConnection.hpp>
+#include <org/apache/http/entity/HttpEntityWrapper.hpp>
 
 
 namespace j2cpp {
@@ -48,11 +54,17 @@ namespace org { namespace apache { namespace http { namespace conn {
 		J2CPP_DECLARE_FIELD(0)
 		J2CPP_DECLARE_FIELD(1)
 
-		BasicManagedEntity(jobject jobj)
+		explicit BasicManagedEntity(jobject jobj)
 		: cpp_object<BasicManagedEntity>(jobj)
 		{
 		}
 
+		operator local_ref<org::apache::http::entity::HttpEntityWrapper>() const;
+		operator local_ref<org::apache::http::conn::ConnectionReleaseTrigger>() const;
+		operator local_ref<org::apache::http::conn::EofSensorWatcher>() const;
+
+
+		BasicManagedEntity(local_ref< org::apache::http::HttpEntity > const&, local_ref< org::apache::http::conn::ManagedClientConnection > const&, cpp_boolean const&);
 		cpp_boolean isRepeatable();
 		local_ref< java::io::InputStream > getContent();
 		void consumeContent();
@@ -70,7 +82,6 @@ namespace org { namespace apache { namespace http { namespace conn {
 } //namespace apache
 } //namespace org
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ORG_APACHE_HTTP_CONN_BASICMANAGEDENTITY_HPP_DECL
@@ -83,17 +94,34 @@ namespace org { namespace apache { namespace http { namespace conn {
 namespace j2cpp {
 
 
-template <>
-local_ref< org::apache::http::conn::BasicManagedEntity > create< org::apache::http::conn::BasicManagedEntity>(local_ref< org::apache::http::HttpEntity > const &a0, local_ref< org::apache::http::conn::ManagedClientConnection > const &a1, cpp_boolean const &a2)
+
+org::apache::http::conn::BasicManagedEntity::operator local_ref<org::apache::http::entity::HttpEntityWrapper>() const
 {
-	return local_ref< org::apache::http::conn::BasicManagedEntity >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::apache::http::conn::BasicManagedEntity::J2CPP_CLASS_NAME>(),
-			get_method_id<org::apache::http::conn::BasicManagedEntity::J2CPP_CLASS_NAME, org::apache::http::conn::BasicManagedEntity::J2CPP_METHOD_NAME(0), org::apache::http::conn::BasicManagedEntity::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
-		)
-	);
+	return local_ref<org::apache::http::entity::HttpEntityWrapper>(get_jtype());
 }
+
+org::apache::http::conn::BasicManagedEntity::operator local_ref<org::apache::http::conn::ConnectionReleaseTrigger>() const
+{
+	return local_ref<org::apache::http::conn::ConnectionReleaseTrigger>(get_jtype());
+}
+
+org::apache::http::conn::BasicManagedEntity::operator local_ref<org::apache::http::conn::EofSensorWatcher>() const
+{
+	return local_ref<org::apache::http::conn::EofSensorWatcher>(get_jtype());
+}
+
+
+org::apache::http::conn::BasicManagedEntity::BasicManagedEntity(local_ref< org::apache::http::HttpEntity > const &a0, local_ref< org::apache::http::conn::ManagedClientConnection > const &a1, cpp_boolean const &a2)
+: cpp_object<org::apache::http::conn::BasicManagedEntity>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::apache::http::conn::BasicManagedEntity::J2CPP_CLASS_NAME>(),
+		get_method_id<org::apache::http::conn::BasicManagedEntity::J2CPP_CLASS_NAME, org::apache::http::conn::BasicManagedEntity::J2CPP_METHOD_NAME(0), org::apache::http::conn::BasicManagedEntity::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
+	)
+)
+{
+}
+
 
 cpp_boolean org::apache::http::conn::BasicManagedEntity::isRepeatable()
 {

@@ -10,12 +10,16 @@
 #define J2CPP_ORG_APACHE_HTTP_IMPL_ABSTRACTHTTPCLIENTCONNECTION_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { class HttpConnectionMetrics; } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { class HttpRequest; } } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { class HttpClientConnection; } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { class HttpEntityEnclosingRequest; } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { class HttpResponse; } } } }
 
 
+#include <java/lang/Object.hpp>
+#include <org/apache/http/HttpClientConnection.hpp>
 #include <org/apache/http/HttpConnectionMetrics.hpp>
 #include <org/apache/http/HttpEntityEnclosingRequest.hpp>
 #include <org/apache/http/HttpRequest.hpp>
@@ -52,11 +56,16 @@ namespace org { namespace apache { namespace http { namespace impl {
 		J2CPP_DECLARE_METHOD(15)
 		J2CPP_DECLARE_METHOD(16)
 
-		AbstractHttpClientConnection(jobject jobj)
+		explicit AbstractHttpClientConnection(jobject jobj)
 		: cpp_object<AbstractHttpClientConnection>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<org::apache::http::HttpClientConnection>() const;
+
+
+		AbstractHttpClientConnection();
 		cpp_boolean isResponseAvailable(cpp_int const&);
 		void sendRequestHeader(local_ref< org::apache::http::HttpRequest > const&);
 		void sendRequestEntity(local_ref< org::apache::http::HttpEntityEnclosingRequest > const&);
@@ -72,7 +81,6 @@ namespace org { namespace apache { namespace http { namespace impl {
 } //namespace apache
 } //namespace org
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ORG_APACHE_HTTP_IMPL_ABSTRACTHTTPCLIENTCONNECTION_HPP_DECL
@@ -85,16 +93,28 @@ namespace org { namespace apache { namespace http { namespace impl {
 namespace j2cpp {
 
 
-template <>
-local_ref< org::apache::http::impl::AbstractHttpClientConnection > create< org::apache::http::impl::AbstractHttpClientConnection>()
+
+org::apache::http::impl::AbstractHttpClientConnection::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< org::apache::http::impl::AbstractHttpClientConnection >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::apache::http::impl::AbstractHttpClientConnection::J2CPP_CLASS_NAME>(),
-			get_method_id<org::apache::http::impl::AbstractHttpClientConnection::J2CPP_CLASS_NAME, org::apache::http::impl::AbstractHttpClientConnection::J2CPP_METHOD_NAME(0), org::apache::http::impl::AbstractHttpClientConnection::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+org::apache::http::impl::AbstractHttpClientConnection::operator local_ref<org::apache::http::HttpClientConnection>() const
+{
+	return local_ref<org::apache::http::HttpClientConnection>(get_jtype());
+}
+
+
+org::apache::http::impl::AbstractHttpClientConnection::AbstractHttpClientConnection()
+: cpp_object<org::apache::http::impl::AbstractHttpClientConnection>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::apache::http::impl::AbstractHttpClientConnection::J2CPP_CLASS_NAME>(),
+		get_method_id<org::apache::http::impl::AbstractHttpClientConnection::J2CPP_CLASS_NAME, org::apache::http::impl::AbstractHttpClientConnection::J2CPP_METHOD_NAME(0), org::apache::http::impl::AbstractHttpClientConnection::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 
 

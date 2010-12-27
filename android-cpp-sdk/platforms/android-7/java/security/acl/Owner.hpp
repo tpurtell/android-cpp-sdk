@@ -10,9 +10,11 @@
 #define J2CPP_JAVA_SECURITY_ACL_OWNER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace security { class Principal; } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/security/Principal.hpp>
 
 
@@ -32,10 +34,13 @@ namespace java { namespace security { namespace acl {
 		J2CPP_DECLARE_METHOD(1)
 		J2CPP_DECLARE_METHOD(2)
 
-		Owner(jobject jobj)
+		explicit Owner(jobject jobj)
 		: cpp_object<Owner>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		cpp_boolean addOwner(local_ref< java::security::Principal > const&, local_ref< java::security::Principal > const&);
 		cpp_boolean deleteOwner(local_ref< java::security::Principal > const&, local_ref< java::security::Principal > const&);
@@ -45,7 +50,6 @@ namespace java { namespace security { namespace acl {
 } //namespace acl
 } //namespace security
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -58,6 +62,12 @@ namespace java { namespace security { namespace acl {
 
 namespace j2cpp {
 
+
+
+java::security::acl::Owner::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 cpp_boolean java::security::acl::Owner::addOwner(local_ref< java::security::Principal > const &a0, local_ref< java::security::Principal > const &a1)
 {

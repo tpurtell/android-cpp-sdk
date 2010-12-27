@@ -10,8 +10,10 @@
 #define J2CPP_ANDROID_GRAPHICS_PIXELFORMAT_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -50,13 +52,17 @@ namespace android { namespace graphics {
 		J2CPP_DECLARE_FIELD(18)
 		J2CPP_DECLARE_FIELD(19)
 
-		PixelFormat(jobject jobj)
+		explicit PixelFormat(jobject jobj)
 		: cpp_object<PixelFormat>(jobj)
-		, bytesPerPixel(jobj)
-		, bitsPerPixel(jobj)
+, bytesPerPixel(jobj)
+, bitsPerPixel(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		PixelFormat();
 		static void getPixelFormatInfo(cpp_int const&, local_ref< android::graphics::PixelFormat > const&);
 		static cpp_boolean formatHasAlpha(cpp_int const&);
 
@@ -85,7 +91,6 @@ namespace android { namespace graphics {
 } //namespace graphics
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_GRAPHICS_PIXELFORMAT_HPP_DECL
@@ -98,16 +103,25 @@ namespace android { namespace graphics {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::graphics::PixelFormat > create< android::graphics::PixelFormat>()
+
+android::graphics::PixelFormat::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::graphics::PixelFormat >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::graphics::PixelFormat::J2CPP_CLASS_NAME>(),
-			get_method_id<android::graphics::PixelFormat::J2CPP_CLASS_NAME, android::graphics::PixelFormat::J2CPP_METHOD_NAME(0), android::graphics::PixelFormat::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::graphics::PixelFormat::PixelFormat()
+: cpp_object<android::graphics::PixelFormat>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::graphics::PixelFormat::J2CPP_CLASS_NAME>(),
+		get_method_id<android::graphics::PixelFormat::J2CPP_CLASS_NAME, android::graphics::PixelFormat::J2CPP_METHOD_NAME(0), android::graphics::PixelFormat::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+, bytesPerPixel(get_jtype())
+, bitsPerPixel(get_jtype())
+{
+}
+
 
 void android::graphics::PixelFormat::getPixelFormatInfo(cpp_int const &a0, local_ref< android::graphics::PixelFormat > const &a1)
 {

@@ -11,8 +11,10 @@
 
 
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace android { namespace database { namespace sqlite { class SQLiteException; } } } }
 
 
+#include <android/database/sqlite/SQLiteException.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -31,17 +33,21 @@ namespace android { namespace database { namespace sqlite {
 		J2CPP_DECLARE_METHOD(0)
 		J2CPP_DECLARE_METHOD(1)
 
-		SQLiteDiskIOException(jobject jobj)
+		explicit SQLiteDiskIOException(jobject jobj)
 		: cpp_object<SQLiteDiskIOException>(jobj)
 		{
 		}
 
+		operator local_ref<android::database::sqlite::SQLiteException>() const;
+
+
+		SQLiteDiskIOException();
+		SQLiteDiskIOException(local_ref< java::lang::String > const&);
 	}; //class SQLiteDiskIOException
 
 } //namespace sqlite
 } //namespace database
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -55,28 +61,36 @@ namespace android { namespace database { namespace sqlite {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::database::sqlite::SQLiteDiskIOException > create< android::database::sqlite::SQLiteDiskIOException>()
+
+android::database::sqlite::SQLiteDiskIOException::operator local_ref<android::database::sqlite::SQLiteException>() const
 {
-	return local_ref< android::database::sqlite::SQLiteDiskIOException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::database::sqlite::SQLiteDiskIOException::J2CPP_CLASS_NAME>(),
-			get_method_id<android::database::sqlite::SQLiteDiskIOException::J2CPP_CLASS_NAME, android::database::sqlite::SQLiteDiskIOException::J2CPP_METHOD_NAME(0), android::database::sqlite::SQLiteDiskIOException::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<android::database::sqlite::SQLiteException>(get_jtype());
 }
 
-template <>
-local_ref< android::database::sqlite::SQLiteDiskIOException > create< android::database::sqlite::SQLiteDiskIOException>(local_ref< java::lang::String > const &a0)
+
+android::database::sqlite::SQLiteDiskIOException::SQLiteDiskIOException()
+: cpp_object<android::database::sqlite::SQLiteDiskIOException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::database::sqlite::SQLiteDiskIOException::J2CPP_CLASS_NAME>(),
+		get_method_id<android::database::sqlite::SQLiteDiskIOException::J2CPP_CLASS_NAME, android::database::sqlite::SQLiteDiskIOException::J2CPP_METHOD_NAME(0), android::database::sqlite::SQLiteDiskIOException::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
 {
-	return local_ref< android::database::sqlite::SQLiteDiskIOException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::database::sqlite::SQLiteDiskIOException::J2CPP_CLASS_NAME>(),
-			get_method_id<android::database::sqlite::SQLiteDiskIOException::J2CPP_CLASS_NAME, android::database::sqlite::SQLiteDiskIOException::J2CPP_METHOD_NAME(1), android::database::sqlite::SQLiteDiskIOException::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
 }
+
+
+
+android::database::sqlite::SQLiteDiskIOException::SQLiteDiskIOException(local_ref< java::lang::String > const &a0)
+: cpp_object<android::database::sqlite::SQLiteDiskIOException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::database::sqlite::SQLiteDiskIOException::J2CPP_CLASS_NAME>(),
+		get_method_id<android::database::sqlite::SQLiteDiskIOException::J2CPP_CLASS_NAME, android::database::sqlite::SQLiteDiskIOException::J2CPP_METHOD_NAME(1), android::database::sqlite::SQLiteDiskIOException::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 
 J2CPP_DEFINE_CLASS(android::database::sqlite::SQLiteDiskIOException,"android/database/sqlite/SQLiteDiskIOException")

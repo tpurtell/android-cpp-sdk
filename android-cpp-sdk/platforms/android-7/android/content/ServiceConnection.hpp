@@ -10,12 +10,14 @@
 #define J2CPP_ANDROID_CONTENT_SERVICECONNECTION_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace android { namespace content { class ComponentName; } } }
 namespace j2cpp { namespace android { namespace os { class IBinder; } } }
 
 
 #include <android/content/ComponentName.hpp>
 #include <android/os/IBinder.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -33,10 +35,13 @@ namespace android { namespace content {
 		J2CPP_DECLARE_METHOD(0)
 		J2CPP_DECLARE_METHOD(1)
 
-		ServiceConnection(jobject jobj)
+		explicit ServiceConnection(jobject jobj)
 		: cpp_object<ServiceConnection>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		void onServiceConnected(local_ref< android::content::ComponentName > const&, local_ref< android::os::IBinder > const&);
 		void onServiceDisconnected(local_ref< android::content::ComponentName > const&);
@@ -44,7 +49,6 @@ namespace android { namespace content {
 
 } //namespace content
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -57,6 +61,12 @@ namespace android { namespace content {
 
 namespace j2cpp {
 
+
+
+android::content::ServiceConnection::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 void android::content::ServiceConnection::onServiceConnected(local_ref< android::content::ComponentName > const &a0, local_ref< android::os::IBinder > const &a1)
 {

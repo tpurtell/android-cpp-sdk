@@ -35,16 +35,22 @@ namespace java { namespace lang {
 		J2CPP_DECLARE_METHOD(2)
 		J2CPP_DECLARE_METHOD(3)
 
-		Error(jobject jobj)
+		explicit Error(jobject jobj)
 		: cpp_object<Error>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Throwable>() const;
+
+
+		Error();
+		Error(local_ref< java::lang::String > const&);
+		Error(local_ref< java::lang::String > const&, local_ref< java::lang::Throwable > const&);
+		Error(local_ref< java::lang::Throwable > const&);
 	}; //class Error
 
 } //namespace lang
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -58,52 +64,62 @@ namespace java { namespace lang {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::lang::Error > create< java::lang::Error>()
+
+java::lang::Error::operator local_ref<java::lang::Throwable>() const
 {
-	return local_ref< java::lang::Error >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::lang::Error::J2CPP_CLASS_NAME>(),
-			get_method_id<java::lang::Error::J2CPP_CLASS_NAME, java::lang::Error::J2CPP_METHOD_NAME(0), java::lang::Error::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Throwable>(get_jtype());
 }
 
-template <>
-local_ref< java::lang::Error > create< java::lang::Error>(local_ref< java::lang::String > const &a0)
+
+java::lang::Error::Error()
+: cpp_object<java::lang::Error>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::lang::Error::J2CPP_CLASS_NAME>(),
+		get_method_id<java::lang::Error::J2CPP_CLASS_NAME, java::lang::Error::J2CPP_METHOD_NAME(0), java::lang::Error::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
 {
-	return local_ref< java::lang::Error >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::lang::Error::J2CPP_CLASS_NAME>(),
-			get_method_id<java::lang::Error::J2CPP_CLASS_NAME, java::lang::Error::J2CPP_METHOD_NAME(1), java::lang::Error::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< java::lang::Error > create< java::lang::Error>(local_ref< java::lang::String > const &a0, local_ref< java::lang::Throwable > const &a1)
+
+
+java::lang::Error::Error(local_ref< java::lang::String > const &a0)
+: cpp_object<java::lang::Error>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::lang::Error::J2CPP_CLASS_NAME>(),
+		get_method_id<java::lang::Error::J2CPP_CLASS_NAME, java::lang::Error::J2CPP_METHOD_NAME(1), java::lang::Error::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< java::lang::Error >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::lang::Error::J2CPP_CLASS_NAME>(),
-			get_method_id<java::lang::Error::J2CPP_CLASS_NAME, java::lang::Error::J2CPP_METHOD_NAME(2), java::lang::Error::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< java::lang::Error > create< java::lang::Error>(local_ref< java::lang::Throwable > const &a0)
+
+
+java::lang::Error::Error(local_ref< java::lang::String > const &a0, local_ref< java::lang::Throwable > const &a1)
+: cpp_object<java::lang::Error>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::lang::Error::J2CPP_CLASS_NAME>(),
+		get_method_id<java::lang::Error::J2CPP_CLASS_NAME, java::lang::Error::J2CPP_METHOD_NAME(2), java::lang::Error::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
 {
-	return local_ref< java::lang::Error >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::lang::Error::J2CPP_CLASS_NAME>(),
-			get_method_id<java::lang::Error::J2CPP_CLASS_NAME, java::lang::Error::J2CPP_METHOD_NAME(3), java::lang::Error::J2CPP_METHOD_SIGNATURE(3), false>(),
-			a0.get_jtype()
-		)
-	);
 }
+
+
+
+java::lang::Error::Error(local_ref< java::lang::Throwable > const &a0)
+: cpp_object<java::lang::Error>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::lang::Error::J2CPP_CLASS_NAME>(),
+		get_method_id<java::lang::Error::J2CPP_CLASS_NAME, java::lang::Error::J2CPP_METHOD_NAME(3), java::lang::Error::J2CPP_METHOD_SIGNATURE(3), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 
 J2CPP_DEFINE_CLASS(java::lang::Error,"java/lang/Error")

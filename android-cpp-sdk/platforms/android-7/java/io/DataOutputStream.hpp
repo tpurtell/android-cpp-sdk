@@ -10,10 +10,14 @@
 #define J2CPP_JAVA_IO_DATAOUTPUTSTREAM_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class DataOutput; } } }
+namespace j2cpp { namespace java { namespace io { class FilterOutputStream; } } }
 namespace j2cpp { namespace java { namespace io { class OutputStream; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 
 
+#include <java/io/DataOutput.hpp>
+#include <java/io/FilterOutputStream.hpp>
 #include <java/io/OutputStream.hpp>
 #include <java/lang/String.hpp>
 
@@ -48,11 +52,16 @@ namespace java { namespace io {
 		J2CPP_DECLARE_METHOD(15)
 		J2CPP_DECLARE_FIELD(0)
 
-		DataOutputStream(jobject jobj)
+		explicit DataOutputStream(jobject jobj)
 		: cpp_object<DataOutputStream>(jobj)
 		{
 		}
 
+		operator local_ref<java::io::FilterOutputStream>() const;
+		operator local_ref<java::io::DataOutput>() const;
+
+
+		DataOutputStream(local_ref< java::io::OutputStream > const&);
 		void flush();
 		cpp_int size();
 		void write(local_ref< cpp_byte_array<1> > const&, cpp_int const&, cpp_int const&);
@@ -74,7 +83,6 @@ namespace java { namespace io {
 } //namespace io
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_IO_DATAOUTPUTSTREAM_HPP_DECL
@@ -87,17 +95,29 @@ namespace java { namespace io {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::io::DataOutputStream > create< java::io::DataOutputStream>(local_ref< java::io::OutputStream > const &a0)
+
+java::io::DataOutputStream::operator local_ref<java::io::FilterOutputStream>() const
 {
-	return local_ref< java::io::DataOutputStream >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::io::DataOutputStream::J2CPP_CLASS_NAME>(),
-			get_method_id<java::io::DataOutputStream::J2CPP_CLASS_NAME, java::io::DataOutputStream::J2CPP_METHOD_NAME(0), java::io::DataOutputStream::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::io::FilterOutputStream>(get_jtype());
 }
+
+java::io::DataOutputStream::operator local_ref<java::io::DataOutput>() const
+{
+	return local_ref<java::io::DataOutput>(get_jtype());
+}
+
+
+java::io::DataOutputStream::DataOutputStream(local_ref< java::io::OutputStream > const &a0)
+: cpp_object<java::io::DataOutputStream>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::io::DataOutputStream::J2CPP_CLASS_NAME>(),
+		get_method_id<java::io::DataOutputStream::J2CPP_CLASS_NAME, java::io::DataOutputStream::J2CPP_METHOD_NAME(0), java::io::DataOutputStream::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 void java::io::DataOutputStream::flush()
 {

@@ -37,11 +37,15 @@ namespace java { namespace util { namespace concurrent { namespace atomic {
 		J2CPP_DECLARE_METHOD(6)
 		J2CPP_DECLARE_METHOD(7)
 
-		AtomicMarkableReference(jobject jobj)
+		explicit AtomicMarkableReference(jobject jobj)
 		: cpp_object<AtomicMarkableReference>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		AtomicMarkableReference(local_ref< java::lang::Object > const&, cpp_boolean const&);
 		local_ref< java::lang::Object > getReference();
 		cpp_boolean isMarked();
 		local_ref< java::lang::Object > get(local_ref< cpp_boolean_array<1> > const&);
@@ -56,7 +60,6 @@ namespace java { namespace util { namespace concurrent { namespace atomic {
 } //namespace util
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_UTIL_CONCURRENT_ATOMIC_ATOMICMARKABLEREFERENCE_HPP_DECL
@@ -69,17 +72,24 @@ namespace java { namespace util { namespace concurrent { namespace atomic {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::util::concurrent::atomic::AtomicMarkableReference > create< java::util::concurrent::atomic::AtomicMarkableReference>(local_ref< java::lang::Object > const &a0, cpp_boolean const &a1)
+
+java::util::concurrent::atomic::AtomicMarkableReference::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::util::concurrent::atomic::AtomicMarkableReference >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::concurrent::atomic::AtomicMarkableReference::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::concurrent::atomic::AtomicMarkableReference::J2CPP_CLASS_NAME, java::util::concurrent::atomic::AtomicMarkableReference::J2CPP_METHOD_NAME(0), java::util::concurrent::atomic::AtomicMarkableReference::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+java::util::concurrent::atomic::AtomicMarkableReference::AtomicMarkableReference(local_ref< java::lang::Object > const &a0, cpp_boolean const &a1)
+: cpp_object<java::util::concurrent::atomic::AtomicMarkableReference>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::util::concurrent::atomic::AtomicMarkableReference::J2CPP_CLASS_NAME>(),
+		get_method_id<java::util::concurrent::atomic::AtomicMarkableReference::J2CPP_CLASS_NAME, java::util::concurrent::atomic::AtomicMarkableReference::J2CPP_METHOD_NAME(0), java::util::concurrent::atomic::AtomicMarkableReference::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
 
 local_ref< java::lang::Object > java::util::concurrent::atomic::AtomicMarkableReference::getReference()
 {

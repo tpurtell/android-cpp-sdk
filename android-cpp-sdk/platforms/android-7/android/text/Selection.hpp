@@ -58,10 +58,13 @@ namespace android { namespace text {
 		J2CPP_DECLARE_FIELD(0)
 		J2CPP_DECLARE_FIELD(1)
 
-		Selection(jobject jobj)
+		explicit Selection(jobject jobj)
 		: cpp_object<Selection>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		static cpp_int getSelectionStart(local_ref< java::lang::CharSequence > const&);
 		static cpp_int getSelectionEnd(local_ref< java::lang::CharSequence > const&);
@@ -90,7 +93,6 @@ namespace android { namespace text {
 } //namespace text
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_TEXT_SELECTION_HPP_DECL
@@ -103,16 +105,12 @@ namespace android { namespace text {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::text::Selection > create< android::text::Selection>()
+
+android::text::Selection::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::text::Selection >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::text::Selection::J2CPP_CLASS_NAME>(),
-			get_method_id<android::text::Selection::J2CPP_CLASS_NAME, android::text::Selection::J2CPP_METHOD_NAME(0), android::text::Selection::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
 
 cpp_int android::text::Selection::getSelectionStart(local_ref< java::lang::CharSequence > const &a0)
 {
@@ -322,6 +320,7 @@ cpp_boolean android::text::Selection::moveToRightEdge(local_ref< android::text::
 		)
 	);
 }
+
 
 
 static_field<

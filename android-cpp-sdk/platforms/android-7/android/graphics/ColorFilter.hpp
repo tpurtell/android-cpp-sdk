@@ -10,8 +10,10 @@
 #define J2CPP_ANDROID_GRAPHICS_COLORFILTER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -29,16 +31,19 @@ namespace android { namespace graphics {
 		J2CPP_DECLARE_METHOD(0)
 		J2CPP_DECLARE_METHOD(1)
 
-		ColorFilter(jobject jobj)
+		explicit ColorFilter(jobject jobj)
 		: cpp_object<ColorFilter>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		ColorFilter();
 	}; //class ColorFilter
 
 } //namespace graphics
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -52,16 +57,23 @@ namespace android { namespace graphics {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::graphics::ColorFilter > create< android::graphics::ColorFilter>()
+
+android::graphics::ColorFilter::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::graphics::ColorFilter >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::graphics::ColorFilter::J2CPP_CLASS_NAME>(),
-			get_method_id<android::graphics::ColorFilter::J2CPP_CLASS_NAME, android::graphics::ColorFilter::J2CPP_METHOD_NAME(0), android::graphics::ColorFilter::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::graphics::ColorFilter::ColorFilter()
+: cpp_object<android::graphics::ColorFilter>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::graphics::ColorFilter::J2CPP_CLASS_NAME>(),
+		get_method_id<android::graphics::ColorFilter::J2CPP_CLASS_NAME, android::graphics::ColorFilter::J2CPP_METHOD_NAME(0), android::graphics::ColorFilter::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 
 

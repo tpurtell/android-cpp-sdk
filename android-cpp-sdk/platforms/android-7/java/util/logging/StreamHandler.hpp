@@ -12,6 +12,7 @@
 
 namespace j2cpp { namespace java { namespace io { class OutputStream; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace util { namespace logging { class Handler; } } } }
 namespace j2cpp { namespace java { namespace util { namespace logging { class Formatter; } } } }
 namespace j2cpp { namespace java { namespace util { namespace logging { class LogRecord; } } } }
 
@@ -19,6 +20,7 @@ namespace j2cpp { namespace java { namespace util { namespace logging { class Lo
 #include <java/io/OutputStream.hpp>
 #include <java/lang/String.hpp>
 #include <java/util/logging/Formatter.hpp>
+#include <java/util/logging/Handler.hpp>
 #include <java/util/logging/LogRecord.hpp>
 
 
@@ -43,11 +45,16 @@ namespace java { namespace util { namespace logging {
 		J2CPP_DECLARE_METHOD(6)
 		J2CPP_DECLARE_METHOD(7)
 
-		StreamHandler(jobject jobj)
+		explicit StreamHandler(jobject jobj)
 		: cpp_object<StreamHandler>(jobj)
 		{
 		}
 
+		operator local_ref<java::util::logging::Handler>() const;
+
+
+		StreamHandler();
+		StreamHandler(local_ref< java::io::OutputStream > const&, local_ref< java::util::logging::Formatter > const&);
 		void setEncoding(local_ref< java::lang::String > const&);
 		void close();
 		void flush();
@@ -58,7 +65,6 @@ namespace java { namespace util { namespace logging {
 } //namespace logging
 } //namespace util
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -72,28 +78,36 @@ namespace java { namespace util { namespace logging {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::util::logging::StreamHandler > create< java::util::logging::StreamHandler>()
+
+java::util::logging::StreamHandler::operator local_ref<java::util::logging::Handler>() const
 {
-	return local_ref< java::util::logging::StreamHandler >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::logging::StreamHandler::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::logging::StreamHandler::J2CPP_CLASS_NAME, java::util::logging::StreamHandler::J2CPP_METHOD_NAME(0), java::util::logging::StreamHandler::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::util::logging::Handler>(get_jtype());
 }
 
-template <>
-local_ref< java::util::logging::StreamHandler > create< java::util::logging::StreamHandler>(local_ref< java::io::OutputStream > const &a0, local_ref< java::util::logging::Formatter > const &a1)
+
+java::util::logging::StreamHandler::StreamHandler()
+: cpp_object<java::util::logging::StreamHandler>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::util::logging::StreamHandler::J2CPP_CLASS_NAME>(),
+		get_method_id<java::util::logging::StreamHandler::J2CPP_CLASS_NAME, java::util::logging::StreamHandler::J2CPP_METHOD_NAME(0), java::util::logging::StreamHandler::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
 {
-	return local_ref< java::util::logging::StreamHandler >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::logging::StreamHandler::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::logging::StreamHandler::J2CPP_CLASS_NAME, java::util::logging::StreamHandler::J2CPP_METHOD_NAME(1), java::util::logging::StreamHandler::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
 }
+
+
+
+java::util::logging::StreamHandler::StreamHandler(local_ref< java::io::OutputStream > const &a0, local_ref< java::util::logging::Formatter > const &a1)
+: cpp_object<java::util::logging::StreamHandler>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::util::logging::StreamHandler::J2CPP_CLASS_NAME>(),
+		get_method_id<java::util::logging::StreamHandler::J2CPP_CLASS_NAME, java::util::logging::StreamHandler::J2CPP_METHOD_NAME(1), java::util::logging::StreamHandler::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
 
 
 void java::util::logging::StreamHandler::setEncoding(local_ref< java::lang::String > const &a0)

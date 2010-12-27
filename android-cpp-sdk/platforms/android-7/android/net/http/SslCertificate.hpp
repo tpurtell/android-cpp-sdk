@@ -10,6 +10,7 @@
 #define J2CPP_ANDROID_NET_HTTP_SSLCERTIFICATE_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace security { namespace cert { class X509Certificate; } } } }
 namespace j2cpp { namespace android { namespace net { namespace http { namespace SslCertificate_ { class DName; } } } } }
@@ -18,6 +19,7 @@ namespace j2cpp { namespace android { namespace os { class Bundle; } } }
 
 #include <android/net/http/SslCertificate.hpp>
 #include <android/os/Bundle.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/security/cert/X509Certificate.hpp>
 
@@ -44,11 +46,15 @@ namespace android { namespace net { namespace http {
 			J2CPP_DECLARE_METHOD(4)
 			J2CPP_DECLARE_FIELD(0)
 
-			DName(jobject jobj)
+			explicit DName(jobject jobj)
 			: cpp_object<DName>(jobj)
 			{
 			}
 
+			operator local_ref<java::lang::Object>() const;
+
+
+			DName(local_ref< android::net::http::SslCertificate > const&, local_ref< java::lang::String > const&);
 			local_ref< java::lang::String > getDName();
 			local_ref< java::lang::String > getCName();
 			local_ref< java::lang::String > getOName();
@@ -77,11 +83,16 @@ namespace android { namespace net { namespace http {
 
 		typedef SslCertificate_::DName DName;
 
-		SslCertificate(jobject jobj)
+		explicit SslCertificate(jobject jobj)
 		: cpp_object<SslCertificate>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		SslCertificate(local_ref< java::lang::String > const&, local_ref< java::lang::String > const&, local_ref< java::lang::String > const&, local_ref< java::lang::String > const&);
+		SslCertificate(local_ref< java::security::cert::X509Certificate > const&);
 		static local_ref< android::os::Bundle > saveState(local_ref< android::net::http::SslCertificate > const&);
 		static local_ref< android::net::http::SslCertificate > restoreState(local_ref< android::os::Bundle > const&);
 		local_ref< java::lang::String > getValidNotBefore();
@@ -94,7 +105,6 @@ namespace android { namespace net { namespace http {
 } //namespace http
 } //namespace net
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -109,17 +119,24 @@ namespace j2cpp {
 
 
 
-template <>
-local_ref< android::net::http::SslCertificate_::DName > create< android::net::http::SslCertificate_::DName>(local_ref< android::net::http::SslCertificate > const &a0, local_ref< java::lang::String > const &a1)
+
+android::net::http::SslCertificate_::DName::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::net::http::SslCertificate_::DName >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::net::http::SslCertificate_::DName::J2CPP_CLASS_NAME>(),
-			get_method_id<android::net::http::SslCertificate_::DName::J2CPP_CLASS_NAME, android::net::http::SslCertificate_::DName::J2CPP_METHOD_NAME(0), android::net::http::SslCertificate_::DName::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::net::http::SslCertificate_::DName::DName(local_ref< android::net::http::SslCertificate > const &a0, local_ref< java::lang::String > const &a1)
+: cpp_object<android::net::http::SslCertificate_::DName>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::net::http::SslCertificate_::DName::J2CPP_CLASS_NAME>(),
+		get_method_id<android::net::http::SslCertificate_::DName::J2CPP_CLASS_NAME, android::net::http::SslCertificate_::DName::J2CPP_METHOD_NAME(0), android::net::http::SslCertificate_::DName::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
 
 local_ref< java::lang::String > android::net::http::SslCertificate_::DName::getDName()
 {
@@ -172,29 +189,37 @@ J2CPP_DEFINE_METHOD(android::net::http::SslCertificate_::DName,4,"getUName","()L
 J2CPP_DEFINE_FIELD(android::net::http::SslCertificate_::DName,0,"this$0","Landroid/net/http/SslCertificate;")
 
 
-template <>
-local_ref< android::net::http::SslCertificate > create< android::net::http::SslCertificate>(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1, local_ref< java::lang::String > const &a2, local_ref< java::lang::String > const &a3)
+
+android::net::http::SslCertificate::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::net::http::SslCertificate >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::net::http::SslCertificate::J2CPP_CLASS_NAME>(),
-			get_method_id<android::net::http::SslCertificate::J2CPP_CLASS_NAME, android::net::http::SslCertificate::J2CPP_METHOD_NAME(0), android::net::http::SslCertificate::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
 
-template <>
-local_ref< android::net::http::SslCertificate > create< android::net::http::SslCertificate>(local_ref< java::security::cert::X509Certificate > const &a0)
+
+android::net::http::SslCertificate::SslCertificate(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1, local_ref< java::lang::String > const &a2, local_ref< java::lang::String > const &a3)
+: cpp_object<android::net::http::SslCertificate>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::net::http::SslCertificate::J2CPP_CLASS_NAME>(),
+		get_method_id<android::net::http::SslCertificate::J2CPP_CLASS_NAME, android::net::http::SslCertificate::J2CPP_METHOD_NAME(0), android::net::http::SslCertificate::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype()
+	)
+)
 {
-	return local_ref< android::net::http::SslCertificate >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::net::http::SslCertificate::J2CPP_CLASS_NAME>(),
-			get_method_id<android::net::http::SslCertificate::J2CPP_CLASS_NAME, android::net::http::SslCertificate::J2CPP_METHOD_NAME(1), android::net::http::SslCertificate::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
 }
+
+
+
+android::net::http::SslCertificate::SslCertificate(local_ref< java::security::cert::X509Certificate > const &a0)
+: cpp_object<android::net::http::SslCertificate>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::net::http::SslCertificate::J2CPP_CLASS_NAME>(),
+		get_method_id<android::net::http::SslCertificate::J2CPP_CLASS_NAME, android::net::http::SslCertificate::J2CPP_METHOD_NAME(1), android::net::http::SslCertificate::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 local_ref< android::os::Bundle > android::net::http::SslCertificate::saveState(local_ref< android::net::http::SslCertificate > const &a0)
 {

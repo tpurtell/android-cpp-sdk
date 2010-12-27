@@ -10,13 +10,15 @@
 #define J2CPP_JAVA_NET_DATAGRAMSOCKET_HPP_DECL
 
 
-namespace j2cpp { namespace java { namespace net { class SocketAddress; } } }
 namespace j2cpp { namespace java { namespace net { class DatagramSocketImplFactory; } } }
+namespace j2cpp { namespace java { namespace net { class SocketAddress; } } }
 namespace j2cpp { namespace java { namespace net { class InetAddress; } } }
 namespace j2cpp { namespace java { namespace net { class DatagramPacket; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace nio { namespace channels { class DatagramChannel; } } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/net/DatagramPacket.hpp>
 #include <java/net/DatagramSocketImplFactory.hpp>
 #include <java/net/InetAddress.hpp>
@@ -72,11 +74,18 @@ namespace java { namespace net {
 		J2CPP_DECLARE_METHOD(33)
 		J2CPP_DECLARE_METHOD(34)
 
-		DatagramSocket(jobject jobj)
+		explicit DatagramSocket(jobject jobj)
 		: cpp_object<DatagramSocket>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		DatagramSocket();
+		DatagramSocket(cpp_int const&);
+		DatagramSocket(cpp_int const&, local_ref< java::net::InetAddress > const&);
+		DatagramSocket(local_ref< java::net::SocketAddress > const&);
 		void close();
 		void connect(local_ref< java::net::InetAddress > const&, cpp_int const&);
 		void disconnect();
@@ -112,7 +121,6 @@ namespace java { namespace net {
 } //namespace net
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_NET_DATAGRAMSOCKET_HPP_DECL
@@ -125,64 +133,63 @@ namespace java { namespace net {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::net::DatagramSocket > create< java::net::DatagramSocket>()
+
+java::net::DatagramSocket::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::net::DatagramSocket >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::net::DatagramSocket::J2CPP_CLASS_NAME>(),
-			get_method_id<java::net::DatagramSocket::J2CPP_CLASS_NAME, java::net::DatagramSocket::J2CPP_METHOD_NAME(0), java::net::DatagramSocket::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
 
-template <>
-local_ref< java::net::DatagramSocket > create< java::net::DatagramSocket>(cpp_int const &a0)
+
+java::net::DatagramSocket::DatagramSocket()
+: cpp_object<java::net::DatagramSocket>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::net::DatagramSocket::J2CPP_CLASS_NAME>(),
+		get_method_id<java::net::DatagramSocket::J2CPP_CLASS_NAME, java::net::DatagramSocket::J2CPP_METHOD_NAME(0), java::net::DatagramSocket::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
 {
-	return local_ref< java::net::DatagramSocket >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::net::DatagramSocket::J2CPP_CLASS_NAME>(),
-			get_method_id<java::net::DatagramSocket::J2CPP_CLASS_NAME, java::net::DatagramSocket::J2CPP_METHOD_NAME(1), java::net::DatagramSocket::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< java::net::DatagramSocket > create< java::net::DatagramSocket>(cpp_int const &a0, local_ref< java::net::InetAddress > const &a1)
+
+
+java::net::DatagramSocket::DatagramSocket(cpp_int const &a0)
+: cpp_object<java::net::DatagramSocket>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::net::DatagramSocket::J2CPP_CLASS_NAME>(),
+		get_method_id<java::net::DatagramSocket::J2CPP_CLASS_NAME, java::net::DatagramSocket::J2CPP_METHOD_NAME(1), java::net::DatagramSocket::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< java::net::DatagramSocket >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::net::DatagramSocket::J2CPP_CLASS_NAME>(),
-			get_method_id<java::net::DatagramSocket::J2CPP_CLASS_NAME, java::net::DatagramSocket::J2CPP_METHOD_NAME(2), java::net::DatagramSocket::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< java::net::DatagramSocket > create< java::net::DatagramSocket>(local_ref< java::net::DatagramSocketImpl > const &a0)
+
+
+java::net::DatagramSocket::DatagramSocket(cpp_int const &a0, local_ref< java::net::InetAddress > const &a1)
+: cpp_object<java::net::DatagramSocket>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::net::DatagramSocket::J2CPP_CLASS_NAME>(),
+		get_method_id<java::net::DatagramSocket::J2CPP_CLASS_NAME, java::net::DatagramSocket::J2CPP_METHOD_NAME(2), java::net::DatagramSocket::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
 {
-	return local_ref< java::net::DatagramSocket >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::net::DatagramSocket::J2CPP_CLASS_NAME>(),
-			get_method_id<java::net::DatagramSocket::J2CPP_CLASS_NAME, java::net::DatagramSocket::J2CPP_METHOD_NAME(3), java::net::DatagramSocket::J2CPP_METHOD_SIGNATURE(3), false>(),
-			a0.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< java::net::DatagramSocket > create< java::net::DatagramSocket>(local_ref< java::net::SocketAddress > const &a0)
+
+
+
+java::net::DatagramSocket::DatagramSocket(local_ref< java::net::SocketAddress > const &a0)
+: cpp_object<java::net::DatagramSocket>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::net::DatagramSocket::J2CPP_CLASS_NAME>(),
+		get_method_id<java::net::DatagramSocket::J2CPP_CLASS_NAME, java::net::DatagramSocket::J2CPP_METHOD_NAME(4), java::net::DatagramSocket::J2CPP_METHOD_SIGNATURE(4), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< java::net::DatagramSocket >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::net::DatagramSocket::J2CPP_CLASS_NAME>(),
-			get_method_id<java::net::DatagramSocket::J2CPP_CLASS_NAME, java::net::DatagramSocket::J2CPP_METHOD_NAME(4), java::net::DatagramSocket::J2CPP_METHOD_SIGNATURE(4), false>(),
-			a0.get_jtype()
-		)
-	);
 }
+
 
 void java::net::DatagramSocket::close()
 {

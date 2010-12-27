@@ -13,6 +13,7 @@
 namespace j2cpp { namespace javax { namespace microedition { namespace khronos { namespace egl { class EGLDisplay; } } } } }
 namespace j2cpp { namespace javax { namespace microedition { namespace khronos { namespace egl { class EGLSurface; } } } } }
 namespace j2cpp { namespace javax { namespace microedition { namespace khronos { namespace egl { class EGLConfig; } } } } }
+namespace j2cpp { namespace javax { namespace microedition { namespace khronos { namespace egl { class EGL; } } } } }
 namespace j2cpp { namespace javax { namespace microedition { namespace khronos { namespace egl { class EGLContext; } } } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
@@ -20,6 +21,7 @@ namespace j2cpp { namespace java { namespace lang { class String; } } }
 
 #include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
+#include <javax/microedition/khronos/egl/EGL.hpp>
 #include <javax/microedition/khronos/egl/EGLConfig.hpp>
 #include <javax/microedition/khronos/egl/EGLContext.hpp>
 #include <javax/microedition/khronos/egl/EGLDisplay.hpp>
@@ -135,10 +137,14 @@ namespace javax { namespace microedition { namespace khronos { namespace egl {
 		J2CPP_DECLARE_FIELD(69)
 		J2CPP_DECLARE_FIELD(70)
 
-		EGL10(jobject jobj)
+		explicit EGL10(jobject jobj)
 		: cpp_object<EGL10>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<javax::microedition::khronos::egl::EGL>() const;
+
 
 		cpp_boolean eglChooseConfig(local_ref< javax::microedition::khronos::egl::EGLDisplay > const&, local_ref< cpp_int_array<1> > const&, local_ref< cpp_object_array<javax::microedition::khronos::egl::EGLConfig, 1> > const&, cpp_int const&, local_ref< cpp_int_array<1> > const&);
 		cpp_boolean eglCopyBuffers(local_ref< javax::microedition::khronos::egl::EGLDisplay > const&, local_ref< javax::microedition::khronos::egl::EGLSurface > const&, local_ref< java::lang::Object > const&);
@@ -243,7 +249,6 @@ namespace javax { namespace microedition { namespace khronos { namespace egl {
 } //namespace microedition
 } //namespace javax
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVAX_MICROEDITION_KHRONOS_EGL_EGL10_HPP_DECL
@@ -255,6 +260,17 @@ namespace javax { namespace microedition { namespace khronos { namespace egl {
 
 namespace j2cpp {
 
+
+
+javax::microedition::khronos::egl::EGL10::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
+
+javax::microedition::khronos::egl::EGL10::operator local_ref<javax::microedition::khronos::egl::EGL>() const
+{
+	return local_ref<javax::microedition::khronos::egl::EGL>(get_jtype());
+}
 
 cpp_boolean javax::microedition::khronos::egl::EGL10::eglChooseConfig(local_ref< javax::microedition::khronos::egl::EGLDisplay > const &a0, local_ref< cpp_int_array<1> > const &a1, local_ref< cpp_object_array<javax::microedition::khronos::egl::EGLConfig, 1> > const &a2, cpp_int const &a3, local_ref< cpp_int_array<1> > const &a4)
 {
@@ -515,6 +531,7 @@ cpp_boolean javax::microedition::khronos::egl::EGL10::eglWaitNative(cpp_int cons
 		)
 	);
 }
+
 
 
 static_field<

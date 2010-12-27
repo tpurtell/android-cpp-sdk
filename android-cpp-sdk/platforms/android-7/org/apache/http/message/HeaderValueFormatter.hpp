@@ -10,11 +10,13 @@
 #define J2CPP_ORG_APACHE_HTTP_MESSAGE_HEADERVALUEFORMATTER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { class NameValuePair; } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { class HeaderElement; } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace util { class CharArrayBuffer; } } } } }
 
 
+#include <java/lang/Object.hpp>
 #include <org/apache/http/HeaderElement.hpp>
 #include <org/apache/http/NameValuePair.hpp>
 #include <org/apache/http/util/CharArrayBuffer.hpp>
@@ -37,10 +39,13 @@ namespace org { namespace apache { namespace http { namespace message {
 		J2CPP_DECLARE_METHOD(2)
 		J2CPP_DECLARE_METHOD(3)
 
-		HeaderValueFormatter(jobject jobj)
+		explicit HeaderValueFormatter(jobject jobj)
 		: cpp_object<HeaderValueFormatter>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		local_ref< org::apache::http::util::CharArrayBuffer > formatElements(local_ref< org::apache::http::util::CharArrayBuffer > const&, local_ref< cpp_object_array<org::apache::http::HeaderElement, 1> > const&, cpp_boolean const&);
 		local_ref< org::apache::http::util::CharArrayBuffer > formatHeaderElement(local_ref< org::apache::http::util::CharArrayBuffer > const&, local_ref< org::apache::http::HeaderElement > const&, cpp_boolean const&);
@@ -53,7 +58,6 @@ namespace org { namespace apache { namespace http { namespace message {
 } //namespace apache
 } //namespace org
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ORG_APACHE_HTTP_MESSAGE_HEADERVALUEFORMATTER_HPP_DECL
@@ -65,6 +69,12 @@ namespace org { namespace apache { namespace http { namespace message {
 
 namespace j2cpp {
 
+
+
+org::apache::http::message::HeaderValueFormatter::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 local_ref< org::apache::http::util::CharArrayBuffer > org::apache::http::message::HeaderValueFormatter::formatElements(local_ref< org::apache::http::util::CharArrayBuffer > const &a0, local_ref< cpp_object_array<org::apache::http::HeaderElement, 1> > const &a1, cpp_boolean const &a2)
 {

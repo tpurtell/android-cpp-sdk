@@ -10,6 +10,7 @@
 #define J2CPP_ANDROID_TELEPHONY_PHONESTATELISTENER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace android { namespace telephony { class CellLocation; } } }
 namespace j2cpp { namespace android { namespace telephony { class ServiceState; } } }
@@ -19,6 +20,7 @@ namespace j2cpp { namespace android { namespace telephony { class SignalStrength
 #include <android/telephony/CellLocation.hpp>
 #include <android/telephony/ServiceState.hpp>
 #include <android/telephony/SignalStrength.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -56,11 +58,15 @@ namespace android { namespace telephony {
 		J2CPP_DECLARE_FIELD(8)
 		J2CPP_DECLARE_FIELD(9)
 
-		PhoneStateListener(jobject jobj)
+		explicit PhoneStateListener(jobject jobj)
 		: cpp_object<PhoneStateListener>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		PhoneStateListener();
 		void onServiceStateChanged(local_ref< android::telephony::ServiceState > const&);
 		void onSignalStrengthChanged(cpp_int const&);
 		void onMessageWaitingIndicatorChanged(cpp_boolean const&);
@@ -87,7 +93,6 @@ namespace android { namespace telephony {
 } //namespace telephony
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_TELEPHONY_PHONESTATELISTENER_HPP_DECL
@@ -100,16 +105,23 @@ namespace android { namespace telephony {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::telephony::PhoneStateListener > create< android::telephony::PhoneStateListener>()
+
+android::telephony::PhoneStateListener::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::telephony::PhoneStateListener >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::telephony::PhoneStateListener::J2CPP_CLASS_NAME>(),
-			get_method_id<android::telephony::PhoneStateListener::J2CPP_CLASS_NAME, android::telephony::PhoneStateListener::J2CPP_METHOD_NAME(0), android::telephony::PhoneStateListener::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::telephony::PhoneStateListener::PhoneStateListener()
+: cpp_object<android::telephony::PhoneStateListener>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::telephony::PhoneStateListener::J2CPP_CLASS_NAME>(),
+		get_method_id<android::telephony::PhoneStateListener::J2CPP_CLASS_NAME, android::telephony::PhoneStateListener::J2CPP_METHOD_NAME(0), android::telephony::PhoneStateListener::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 void android::telephony::PhoneStateListener::onServiceStateChanged(local_ref< android::telephony::ServiceState > const &a0)
 {

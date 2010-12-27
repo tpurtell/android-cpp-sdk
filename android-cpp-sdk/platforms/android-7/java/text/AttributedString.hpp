@@ -47,11 +47,19 @@ namespace java { namespace text {
 		J2CPP_DECLARE_METHOD(9)
 		J2CPP_DECLARE_METHOD(10)
 
-		AttributedString(jobject jobj)
+		explicit AttributedString(jobject jobj)
 		: cpp_object<AttributedString>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		AttributedString(local_ref< java::text::AttributedCharacterIterator > const&);
+		AttributedString(local_ref< java::text::AttributedCharacterIterator > const&, cpp_int const&, cpp_int const&);
+		AttributedString(local_ref< java::text::AttributedCharacterIterator > const&, cpp_int const&, cpp_int const&, local_ref< cpp_object_array<java::text::AttributedCharacterIterator_::Attribute, 1> > const&);
+		AttributedString(local_ref< java::lang::String > const&);
+		AttributedString(local_ref< java::lang::String > const&, local_ref< java::util::Map > const&);
 		void addAttribute(local_ref< java::text::AttributedCharacterIterator_::Attribute > const&, local_ref< java::lang::Object > const&);
 		void addAttribute(local_ref< java::text::AttributedCharacterIterator_::Attribute > const&, local_ref< java::lang::Object > const&, cpp_int const&, cpp_int const&);
 		void addAttributes(local_ref< java::util::Map > const&, cpp_int const&, cpp_int const&);
@@ -62,7 +70,6 @@ namespace java { namespace text {
 
 } //namespace text
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -76,65 +83,76 @@ namespace java { namespace text {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::text::AttributedString > create< java::text::AttributedString>(local_ref< java::text::AttributedCharacterIterator > const &a0)
+
+java::text::AttributedString::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::text::AttributedString >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::text::AttributedString::J2CPP_CLASS_NAME>(),
-			get_method_id<java::text::AttributedString::J2CPP_CLASS_NAME, java::text::AttributedString::J2CPP_METHOD_NAME(0), java::text::AttributedString::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
 
-template <>
-local_ref< java::text::AttributedString > create< java::text::AttributedString>(local_ref< java::text::AttributedCharacterIterator > const &a0, cpp_int const &a1, cpp_int const &a2)
+
+java::text::AttributedString::AttributedString(local_ref< java::text::AttributedCharacterIterator > const &a0)
+: cpp_object<java::text::AttributedString>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::text::AttributedString::J2CPP_CLASS_NAME>(),
+		get_method_id<java::text::AttributedString::J2CPP_CLASS_NAME, java::text::AttributedString::J2CPP_METHOD_NAME(0), java::text::AttributedString::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< java::text::AttributedString >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::text::AttributedString::J2CPP_CLASS_NAME>(),
-			get_method_id<java::text::AttributedString::J2CPP_CLASS_NAME, java::text::AttributedString::J2CPP_METHOD_NAME(1), java::text::AttributedString::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< java::text::AttributedString > create< java::text::AttributedString>(local_ref< java::text::AttributedCharacterIterator > const &a0, cpp_int const &a1, cpp_int const &a2, local_ref< cpp_object_array<java::text::AttributedCharacterIterator_::Attribute, 1> > const &a3)
+
+
+java::text::AttributedString::AttributedString(local_ref< java::text::AttributedCharacterIterator > const &a0, cpp_int const &a1, cpp_int const &a2)
+: cpp_object<java::text::AttributedString>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::text::AttributedString::J2CPP_CLASS_NAME>(),
+		get_method_id<java::text::AttributedString::J2CPP_CLASS_NAME, java::text::AttributedString::J2CPP_METHOD_NAME(1), java::text::AttributedString::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
+	)
+)
 {
-	return local_ref< java::text::AttributedString >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::text::AttributedString::J2CPP_CLASS_NAME>(),
-			get_method_id<java::text::AttributedString::J2CPP_CLASS_NAME, java::text::AttributedString::J2CPP_METHOD_NAME(2), java::text::AttributedString::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< java::text::AttributedString > create< java::text::AttributedString>(local_ref< java::lang::String > const &a0)
+
+
+java::text::AttributedString::AttributedString(local_ref< java::text::AttributedCharacterIterator > const &a0, cpp_int const &a1, cpp_int const &a2, local_ref< cpp_object_array<java::text::AttributedCharacterIterator_::Attribute, 1> > const &a3)
+: cpp_object<java::text::AttributedString>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::text::AttributedString::J2CPP_CLASS_NAME>(),
+		get_method_id<java::text::AttributedString::J2CPP_CLASS_NAME, java::text::AttributedString::J2CPP_METHOD_NAME(2), java::text::AttributedString::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype()
+	)
+)
 {
-	return local_ref< java::text::AttributedString >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::text::AttributedString::J2CPP_CLASS_NAME>(),
-			get_method_id<java::text::AttributedString::J2CPP_CLASS_NAME, java::text::AttributedString::J2CPP_METHOD_NAME(3), java::text::AttributedString::J2CPP_METHOD_SIGNATURE(3), false>(),
-			a0.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< java::text::AttributedString > create< java::text::AttributedString>(local_ref< java::lang::String > const &a0, local_ref< java::util::Map > const &a1)
+
+
+java::text::AttributedString::AttributedString(local_ref< java::lang::String > const &a0)
+: cpp_object<java::text::AttributedString>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::text::AttributedString::J2CPP_CLASS_NAME>(),
+		get_method_id<java::text::AttributedString::J2CPP_CLASS_NAME, java::text::AttributedString::J2CPP_METHOD_NAME(3), java::text::AttributedString::J2CPP_METHOD_SIGNATURE(3), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< java::text::AttributedString >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::text::AttributedString::J2CPP_CLASS_NAME>(),
-			get_method_id<java::text::AttributedString::J2CPP_CLASS_NAME, java::text::AttributedString::J2CPP_METHOD_NAME(4), java::text::AttributedString::J2CPP_METHOD_SIGNATURE(4), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
 }
+
+
+
+java::text::AttributedString::AttributedString(local_ref< java::lang::String > const &a0, local_ref< java::util::Map > const &a1)
+: cpp_object<java::text::AttributedString>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::text::AttributedString::J2CPP_CLASS_NAME>(),
+		get_method_id<java::text::AttributedString::J2CPP_CLASS_NAME, java::text::AttributedString::J2CPP_METHOD_NAME(4), java::text::AttributedString::J2CPP_METHOD_SIGNATURE(4), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
 
 void java::text::AttributedString::addAttribute(local_ref< java::text::AttributedCharacterIterator_::Attribute > const &a0, local_ref< java::lang::Object > const &a1)
 {

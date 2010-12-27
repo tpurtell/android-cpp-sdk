@@ -10,8 +10,10 @@
 #define J2CPP_JAVA_SECURITY_SPEC_KEYSPEC_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -27,16 +29,18 @@ namespace java { namespace security { namespace spec {
 		J2CPP_DECLARE_CLASS
 
 
-		KeySpec(jobject jobj)
+		explicit KeySpec(jobject jobj)
 		: cpp_object<KeySpec>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 	}; //class KeySpec
 
 } //namespace spec
 } //namespace security
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -49,6 +53,12 @@ namespace java { namespace security { namespace spec {
 
 namespace j2cpp {
 
+
+
+java::security::spec::KeySpec::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 J2CPP_DEFINE_CLASS(java::security::spec::KeySpec,"java/security/spec/KeySpec")
 

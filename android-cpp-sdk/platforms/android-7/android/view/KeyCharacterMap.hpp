@@ -10,12 +10,14 @@
 #define J2CPP_ANDROID_VIEW_KEYCHARACTERMAP_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace android { namespace view { class KeyEvent; } } }
 namespace j2cpp { namespace android { namespace view { namespace KeyCharacterMap_ { class KeyData; } } } }
 
 
 #include <android/view/KeyCharacterMap.hpp>
 #include <android/view/KeyEvent.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -39,14 +41,18 @@ namespace android { namespace view {
 			J2CPP_DECLARE_FIELD(2)
 			J2CPP_DECLARE_FIELD(3)
 
-			KeyData(jobject jobj)
+			explicit KeyData(jobject jobj)
 			: cpp_object<KeyData>(jobj)
-			, displayLabel(jobj)
-			, number(jobj)
-			, meta(jobj)
+, displayLabel(jobj)
+, number(jobj)
+, meta(jobj)
 			{
 			}
 
+			operator local_ref<java::lang::Object>() const;
+
+
+			KeyData();
 
 			static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(0), J2CPP_FIELD_SIGNATURE(0), cpp_int > META_LENGTH;
 			field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(1), J2CPP_FIELD_SIGNATURE(1), cpp_char > displayLabel;
@@ -89,10 +95,13 @@ namespace android { namespace view {
 
 		typedef KeyCharacterMap_::KeyData KeyData;
 
-		KeyCharacterMap(jobject jobj)
+		explicit KeyCharacterMap(jobject jobj)
 		: cpp_object<KeyCharacterMap>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		static local_ref< android::view::KeyCharacterMap > load(cpp_int const&);
 		cpp_int get(cpp_int const&, cpp_int const&);
@@ -121,7 +130,6 @@ namespace android { namespace view {
 } //namespace view
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_VIEW_KEYCHARACTERMAP_HPP_DECL
@@ -135,16 +143,26 @@ namespace j2cpp {
 
 
 
-template <>
-local_ref< android::view::KeyCharacterMap_::KeyData > create< android::view::KeyCharacterMap_::KeyData>()
+
+android::view::KeyCharacterMap_::KeyData::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::view::KeyCharacterMap_::KeyData >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::view::KeyCharacterMap_::KeyData::J2CPP_CLASS_NAME>(),
-			get_method_id<android::view::KeyCharacterMap_::KeyData::J2CPP_CLASS_NAME, android::view::KeyCharacterMap_::KeyData::J2CPP_METHOD_NAME(0), android::view::KeyCharacterMap_::KeyData::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::view::KeyCharacterMap_::KeyData::KeyData()
+: cpp_object<android::view::KeyCharacterMap_::KeyData>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::view::KeyCharacterMap_::KeyData::J2CPP_CLASS_NAME>(),
+		get_method_id<android::view::KeyCharacterMap_::KeyData::J2CPP_CLASS_NAME, android::view::KeyCharacterMap_::KeyData::J2CPP_METHOD_NAME(0), android::view::KeyCharacterMap_::KeyData::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+, displayLabel(get_jtype())
+, number(get_jtype())
+, meta(get_jtype())
+{
+}
+
 
 
 static_field<
@@ -163,16 +181,12 @@ J2CPP_DEFINE_FIELD(android::view::KeyCharacterMap_::KeyData,2,"number","C")
 J2CPP_DEFINE_FIELD(android::view::KeyCharacterMap_::KeyData,3,"meta","[C")
 
 
-template <>
-local_ref< android::view::KeyCharacterMap > create< android::view::KeyCharacterMap>()
+
+android::view::KeyCharacterMap::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::view::KeyCharacterMap >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::view::KeyCharacterMap::J2CPP_CLASS_NAME>(),
-			get_method_id<android::view::KeyCharacterMap::J2CPP_CLASS_NAME, android::view::KeyCharacterMap::J2CPP_METHOD_NAME(0), android::view::KeyCharacterMap::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
 
 local_ref< android::view::KeyCharacterMap > android::view::KeyCharacterMap::load(cpp_int const &a0)
 {

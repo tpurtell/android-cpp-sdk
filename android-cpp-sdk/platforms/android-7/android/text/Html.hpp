@@ -10,6 +10,7 @@
 #define J2CPP_ANDROID_TEXT_HTML_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace org { namespace xml { namespace sax { class XMLReader; } } } }
 namespace j2cpp { namespace android { namespace graphics { namespace drawable { class Drawable; } } } }
@@ -23,6 +24,7 @@ namespace j2cpp { namespace android { namespace text { class Spanned; } } }
 #include <android/text/Editable.hpp>
 #include <android/text/Html.hpp>
 #include <android/text/Spanned.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <org/xml/sax/XMLReader.hpp>
 
@@ -44,10 +46,13 @@ namespace android { namespace text {
 
 			J2CPP_DECLARE_METHOD(0)
 
-			ImageGetter(jobject jobj)
+			explicit ImageGetter(jobject jobj)
 			: cpp_object<ImageGetter>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+
 
 			local_ref< android::graphics::drawable::Drawable > getDrawable(local_ref< java::lang::String > const&);
 		}; //class ImageGetter
@@ -62,10 +67,13 @@ namespace android { namespace text {
 
 			J2CPP_DECLARE_METHOD(0)
 
-			TagHandler(jobject jobj)
+			explicit TagHandler(jobject jobj)
 			: cpp_object<TagHandler>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+
 
 			void handleTag(cpp_boolean const&, local_ref< java::lang::String > const&, local_ref< android::text::Editable > const&, local_ref< org::xml::sax::XMLReader > const&);
 		}; //class TagHandler
@@ -87,10 +95,13 @@ namespace android { namespace text {
 		typedef Html_::ImageGetter ImageGetter;
 		typedef Html_::TagHandler TagHandler;
 
-		Html(jobject jobj)
+		explicit Html(jobject jobj)
 		: cpp_object<Html>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		static local_ref< android::text::Spanned > fromHtml(local_ref< java::lang::String > const&);
 		static local_ref< android::text::Spanned > fromHtml(local_ref< java::lang::String > const&, local_ref< android::text::Html_::ImageGetter > const&, local_ref< android::text::Html_::TagHandler > const&);
@@ -99,7 +110,6 @@ namespace android { namespace text {
 
 } //namespace text
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -113,6 +123,12 @@ namespace android { namespace text {
 namespace j2cpp {
 
 
+
+
+android::text::Html_::ImageGetter::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 local_ref< android::graphics::drawable::Drawable > android::text::Html_::ImageGetter::getDrawable(local_ref< java::lang::String > const &a0)
 {
@@ -128,6 +144,12 @@ local_ref< android::graphics::drawable::Drawable > android::text::Html_::ImageGe
 
 J2CPP_DEFINE_CLASS(android::text::Html_::ImageGetter,"android/text/Html$ImageGetter")
 J2CPP_DEFINE_METHOD(android::text::Html_::ImageGetter,0,"getDrawable","(Ljava/lang/String;)Landroid/graphics/drawable/Drawable;")
+
+
+android::text::Html_::TagHandler::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 void android::text::Html_::TagHandler::handleTag(cpp_boolean const &a0, local_ref< java::lang::String > const &a1, local_ref< android::text::Editable > const &a2, local_ref< org::xml::sax::XMLReader > const &a3)
 {
@@ -145,16 +167,12 @@ J2CPP_DEFINE_CLASS(android::text::Html_::TagHandler,"android/text/Html$TagHandle
 J2CPP_DEFINE_METHOD(android::text::Html_::TagHandler,0,"handleTag","(ZLjava/lang/String;Landroid/text/Editable;Lorg/xml/sax/XMLReader;)V")
 
 
-template <>
-local_ref< android::text::Html > create< android::text::Html>()
+
+android::text::Html::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::text::Html >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::text::Html::J2CPP_CLASS_NAME>(),
-			get_method_id<android::text::Html::J2CPP_CLASS_NAME, android::text::Html::J2CPP_METHOD_NAME(0), android::text::Html::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
 
 local_ref< android::text::Spanned > android::text::Html::fromHtml(local_ref< java::lang::String > const &a0)
 {

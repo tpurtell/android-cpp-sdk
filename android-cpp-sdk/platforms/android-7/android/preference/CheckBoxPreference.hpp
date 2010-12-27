@@ -12,10 +12,12 @@
 
 namespace j2cpp { namespace java { namespace lang { class CharSequence; } } }
 namespace j2cpp { namespace android { namespace content { class Context; } } }
+namespace j2cpp { namespace android { namespace preference { class Preference; } } }
 namespace j2cpp { namespace android { namespace util { class AttributeSet; } } }
 
 
 #include <android/content/Context.hpp>
+#include <android/preference/Preference.hpp>
 #include <android/util/AttributeSet.hpp>
 #include <java/lang/CharSequence.hpp>
 
@@ -53,11 +55,17 @@ namespace android { namespace preference {
 		J2CPP_DECLARE_METHOD(18)
 		J2CPP_DECLARE_METHOD(19)
 
-		CheckBoxPreference(jobject jobj)
+		explicit CheckBoxPreference(jobject jobj)
 		: cpp_object<CheckBoxPreference>(jobj)
 		{
 		}
 
+		operator local_ref<android::preference::Preference>() const;
+
+
+		CheckBoxPreference(local_ref< android::content::Context > const&, local_ref< android::util::AttributeSet > const&, cpp_int const&);
+		CheckBoxPreference(local_ref< android::content::Context > const&, local_ref< android::util::AttributeSet > const&);
+		CheckBoxPreference(local_ref< android::content::Context > const&);
 		void setChecked(cpp_boolean const&);
 		cpp_boolean isChecked();
 		cpp_boolean shouldDisableDependents();
@@ -74,7 +82,6 @@ namespace android { namespace preference {
 } //namespace preference
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_PREFERENCE_CHECKBOXPREFERENCE_HPP_DECL
@@ -87,41 +94,50 @@ namespace android { namespace preference {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::preference::CheckBoxPreference > create< android::preference::CheckBoxPreference>(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1, cpp_int const &a2)
+
+android::preference::CheckBoxPreference::operator local_ref<android::preference::Preference>() const
 {
-	return local_ref< android::preference::CheckBoxPreference >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::preference::CheckBoxPreference::J2CPP_CLASS_NAME>(),
-			get_method_id<android::preference::CheckBoxPreference::J2CPP_CLASS_NAME, android::preference::CheckBoxPreference::J2CPP_METHOD_NAME(0), android::preference::CheckBoxPreference::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
-		)
-	);
+	return local_ref<android::preference::Preference>(get_jtype());
 }
 
-template <>
-local_ref< android::preference::CheckBoxPreference > create< android::preference::CheckBoxPreference>(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1)
+
+android::preference::CheckBoxPreference::CheckBoxPreference(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1, cpp_int const &a2)
+: cpp_object<android::preference::CheckBoxPreference>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::preference::CheckBoxPreference::J2CPP_CLASS_NAME>(),
+		get_method_id<android::preference::CheckBoxPreference::J2CPP_CLASS_NAME, android::preference::CheckBoxPreference::J2CPP_METHOD_NAME(0), android::preference::CheckBoxPreference::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
+	)
+)
 {
-	return local_ref< android::preference::CheckBoxPreference >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::preference::CheckBoxPreference::J2CPP_CLASS_NAME>(),
-			get_method_id<android::preference::CheckBoxPreference::J2CPP_CLASS_NAME, android::preference::CheckBoxPreference::J2CPP_METHOD_NAME(1), android::preference::CheckBoxPreference::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< android::preference::CheckBoxPreference > create< android::preference::CheckBoxPreference>(local_ref< android::content::Context > const &a0)
+
+
+android::preference::CheckBoxPreference::CheckBoxPreference(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1)
+: cpp_object<android::preference::CheckBoxPreference>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::preference::CheckBoxPreference::J2CPP_CLASS_NAME>(),
+		get_method_id<android::preference::CheckBoxPreference::J2CPP_CLASS_NAME, android::preference::CheckBoxPreference::J2CPP_METHOD_NAME(1), android::preference::CheckBoxPreference::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
 {
-	return local_ref< android::preference::CheckBoxPreference >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::preference::CheckBoxPreference::J2CPP_CLASS_NAME>(),
-			get_method_id<android::preference::CheckBoxPreference::J2CPP_CLASS_NAME, android::preference::CheckBoxPreference::J2CPP_METHOD_NAME(2), android::preference::CheckBoxPreference::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype()
-		)
-	);
 }
+
+
+
+android::preference::CheckBoxPreference::CheckBoxPreference(local_ref< android::content::Context > const &a0)
+: cpp_object<android::preference::CheckBoxPreference>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::preference::CheckBoxPreference::J2CPP_CLASS_NAME>(),
+		get_method_id<android::preference::CheckBoxPreference::J2CPP_CLASS_NAME, android::preference::CheckBoxPreference::J2CPP_METHOD_NAME(2), android::preference::CheckBoxPreference::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 
 

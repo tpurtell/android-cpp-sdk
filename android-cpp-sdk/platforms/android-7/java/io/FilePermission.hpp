@@ -10,12 +10,14 @@
 #define J2CPP_JAVA_IO_FILEPERMISSION_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace security { class Permission; } } }
 namespace j2cpp { namespace java { namespace security { class PermissionCollection; } } }
 
 
+#include <java/io/Serializable.hpp>
 #include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/security/Permission.hpp>
@@ -41,11 +43,16 @@ namespace java { namespace io {
 		J2CPP_DECLARE_METHOD(4)
 		J2CPP_DECLARE_METHOD(5)
 
-		FilePermission(jobject jobj)
+		explicit FilePermission(jobject jobj)
 		: cpp_object<FilePermission>(jobj)
 		{
 		}
 
+		operator local_ref<java::security::Permission>() const;
+		operator local_ref<java::io::Serializable>() const;
+
+
+		FilePermission(local_ref< java::lang::String > const&, local_ref< java::lang::String > const&);
 		local_ref< java::lang::String > getActions();
 		cpp_boolean equals(local_ref< java::lang::Object > const&);
 		cpp_boolean implies(local_ref< java::security::Permission > const&);
@@ -55,7 +62,6 @@ namespace java { namespace io {
 
 } //namespace io
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -69,17 +75,29 @@ namespace java { namespace io {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::io::FilePermission > create< java::io::FilePermission>(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
+
+java::io::FilePermission::operator local_ref<java::security::Permission>() const
 {
-	return local_ref< java::io::FilePermission >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::io::FilePermission::J2CPP_CLASS_NAME>(),
-			get_method_id<java::io::FilePermission::J2CPP_CLASS_NAME, java::io::FilePermission::J2CPP_METHOD_NAME(0), java::io::FilePermission::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<java::security::Permission>(get_jtype());
 }
+
+java::io::FilePermission::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jtype());
+}
+
+
+java::io::FilePermission::FilePermission(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
+: cpp_object<java::io::FilePermission>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::io::FilePermission::J2CPP_CLASS_NAME>(),
+		get_method_id<java::io::FilePermission::J2CPP_CLASS_NAME, java::io::FilePermission::J2CPP_METHOD_NAME(0), java::io::FilePermission::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
 
 local_ref< java::lang::String > java::io::FilePermission::getActions()
 {

@@ -12,12 +12,14 @@
 
 namespace j2cpp { namespace javax { namespace net { namespace ssl { class HostnameVerifier; } } } }
 namespace j2cpp { namespace javax { namespace net { namespace ssl { class SSLSocketFactory; } } } }
+namespace j2cpp { namespace java { namespace net { class HttpURLConnection; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace security { class Principal; } } }
 namespace j2cpp { namespace java { namespace security { namespace cert { class Certificate; } } } }
 
 
 #include <java/lang/String.hpp>
+#include <java/net/HttpURLConnection.hpp>
 #include <java/security/Principal.hpp>
 #include <java/security/cert/Certificate.hpp>
 #include <javax/net/ssl/HostnameVerifier.hpp>
@@ -52,10 +54,13 @@ namespace javax { namespace net { namespace ssl {
 		J2CPP_DECLARE_METHOD(13)
 		J2CPP_DECLARE_FIELD(0)
 
-		HttpsURLConnection(jobject jobj)
+		explicit HttpsURLConnection(jobject jobj)
 		: cpp_object<HttpsURLConnection>(jobj)
 		{
 		}
+
+		operator local_ref<java::net::HttpURLConnection>() const;
+
 
 		static void setDefaultHostnameVerifier(local_ref< javax::net::ssl::HostnameVerifier > const&);
 		static local_ref< javax::net::ssl::HostnameVerifier > getDefaultHostnameVerifier();
@@ -77,7 +82,6 @@ namespace javax { namespace net { namespace ssl {
 } //namespace net
 } //namespace javax
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVAX_NET_SSL_HTTPSURLCONNECTION_HPP_DECL
@@ -90,17 +94,12 @@ namespace javax { namespace net { namespace ssl {
 namespace j2cpp {
 
 
-template <>
-local_ref< javax::net::ssl::HttpsURLConnection > create< javax::net::ssl::HttpsURLConnection>(local_ref< java::net::URL > const &a0)
+
+javax::net::ssl::HttpsURLConnection::operator local_ref<java::net::HttpURLConnection>() const
 {
-	return local_ref< javax::net::ssl::HttpsURLConnection >(
-		environment::get().get_jenv()->NewObject(
-			get_class<javax::net::ssl::HttpsURLConnection::J2CPP_CLASS_NAME>(),
-			get_method_id<javax::net::ssl::HttpsURLConnection::J2CPP_CLASS_NAME, javax::net::ssl::HttpsURLConnection::J2CPP_METHOD_NAME(0), javax::net::ssl::HttpsURLConnection::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::net::HttpURLConnection>(get_jtype());
 }
+
 
 void javax::net::ssl::HttpsURLConnection::setDefaultHostnameVerifier(local_ref< javax::net::ssl::HostnameVerifier > const &a0)
 {

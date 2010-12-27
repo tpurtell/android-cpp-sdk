@@ -11,10 +11,12 @@
 
 
 namespace j2cpp { namespace java { namespace lang { class Class; } } }
+namespace j2cpp { namespace java { namespace lang { class RuntimeException; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 
 
 #include <java/lang/Class.hpp>
+#include <java/lang/RuntimeException.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -34,11 +36,15 @@ namespace java { namespace lang { namespace annotation {
 		J2CPP_DECLARE_METHOD(1)
 		J2CPP_DECLARE_METHOD(2)
 
-		IncompleteAnnotationException(jobject jobj)
+		explicit IncompleteAnnotationException(jobject jobj)
 		: cpp_object<IncompleteAnnotationException>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::RuntimeException>() const;
+
+
+		IncompleteAnnotationException(local_ref< java::lang::Class > const&, local_ref< java::lang::String > const&);
 		local_ref< java::lang::Class > annotationType();
 		local_ref< java::lang::String > elementName();
 	}; //class IncompleteAnnotationException
@@ -46,7 +52,6 @@ namespace java { namespace lang { namespace annotation {
 } //namespace annotation
 } //namespace lang
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -60,17 +65,24 @@ namespace java { namespace lang { namespace annotation {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::lang::annotation::IncompleteAnnotationException > create< java::lang::annotation::IncompleteAnnotationException>(local_ref< java::lang::Class > const &a0, local_ref< java::lang::String > const &a1)
+
+java::lang::annotation::IncompleteAnnotationException::operator local_ref<java::lang::RuntimeException>() const
 {
-	return local_ref< java::lang::annotation::IncompleteAnnotationException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::lang::annotation::IncompleteAnnotationException::J2CPP_CLASS_NAME>(),
-			get_method_id<java::lang::annotation::IncompleteAnnotationException::J2CPP_CLASS_NAME, java::lang::annotation::IncompleteAnnotationException::J2CPP_METHOD_NAME(0), java::lang::annotation::IncompleteAnnotationException::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<java::lang::RuntimeException>(get_jtype());
 }
+
+
+java::lang::annotation::IncompleteAnnotationException::IncompleteAnnotationException(local_ref< java::lang::Class > const &a0, local_ref< java::lang::String > const &a1)
+: cpp_object<java::lang::annotation::IncompleteAnnotationException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::lang::annotation::IncompleteAnnotationException::J2CPP_CLASS_NAME>(),
+		get_method_id<java::lang::annotation::IncompleteAnnotationException::J2CPP_CLASS_NAME, java::lang::annotation::IncompleteAnnotationException::J2CPP_METHOD_NAME(0), java::lang::annotation::IncompleteAnnotationException::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
 
 local_ref< java::lang::Class > java::lang::annotation::IncompleteAnnotationException::annotationType()
 {

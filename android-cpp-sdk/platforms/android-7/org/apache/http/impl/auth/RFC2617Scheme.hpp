@@ -11,9 +11,11 @@
 
 
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { namespace impl { namespace auth { class AuthSchemeBase; } } } } } }
 
 
 #include <java/lang/String.hpp>
+#include <org/apache/http/impl/auth/AuthSchemeBase.hpp>
 
 
 namespace j2cpp {
@@ -34,11 +36,15 @@ namespace org { namespace apache { namespace http { namespace impl { namespace a
 		J2CPP_DECLARE_METHOD(3)
 		J2CPP_DECLARE_METHOD(4)
 
-		RFC2617Scheme(jobject jobj)
+		explicit RFC2617Scheme(jobject jobj)
 		: cpp_object<RFC2617Scheme>(jobj)
 		{
 		}
 
+		operator local_ref<org::apache::http::impl::auth::AuthSchemeBase>() const;
+
+
+		RFC2617Scheme();
 		local_ref< java::lang::String > getParameter(local_ref< java::lang::String > const&);
 		local_ref< java::lang::String > getRealm();
 	}; //class RFC2617Scheme
@@ -48,7 +54,6 @@ namespace org { namespace apache { namespace http { namespace impl { namespace a
 } //namespace http
 } //namespace apache
 } //namespace org
-
 
 } //namespace j2cpp
 
@@ -62,16 +67,23 @@ namespace org { namespace apache { namespace http { namespace impl { namespace a
 namespace j2cpp {
 
 
-template <>
-local_ref< org::apache::http::impl::auth::RFC2617Scheme > create< org::apache::http::impl::auth::RFC2617Scheme>()
+
+org::apache::http::impl::auth::RFC2617Scheme::operator local_ref<org::apache::http::impl::auth::AuthSchemeBase>() const
 {
-	return local_ref< org::apache::http::impl::auth::RFC2617Scheme >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::apache::http::impl::auth::RFC2617Scheme::J2CPP_CLASS_NAME>(),
-			get_method_id<org::apache::http::impl::auth::RFC2617Scheme::J2CPP_CLASS_NAME, org::apache::http::impl::auth::RFC2617Scheme::J2CPP_METHOD_NAME(0), org::apache::http::impl::auth::RFC2617Scheme::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<org::apache::http::impl::auth::AuthSchemeBase>(get_jtype());
 }
+
+
+org::apache::http::impl::auth::RFC2617Scheme::RFC2617Scheme()
+: cpp_object<org::apache::http::impl::auth::RFC2617Scheme>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::apache::http::impl::auth::RFC2617Scheme::J2CPP_CLASS_NAME>(),
+		get_method_id<org::apache::http::impl::auth::RFC2617Scheme::J2CPP_CLASS_NAME, org::apache::http::impl::auth::RFC2617Scheme::J2CPP_METHOD_NAME(0), org::apache::http::impl::auth::RFC2617Scheme::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 
 

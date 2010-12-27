@@ -10,10 +10,12 @@
 #define J2CPP_JAVA_SECURITY_ACL_GROUP_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace security { class Principal; } } }
 namespace j2cpp { namespace java { namespace util { class Enumeration; } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/security/Principal.hpp>
 #include <java/util/Enumeration.hpp>
 
@@ -35,10 +37,14 @@ namespace java { namespace security { namespace acl {
 		J2CPP_DECLARE_METHOD(2)
 		J2CPP_DECLARE_METHOD(3)
 
-		Group(jobject jobj)
+		explicit Group(jobject jobj)
 		: cpp_object<Group>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::security::Principal>() const;
+
 
 		cpp_boolean addMember(local_ref< java::security::Principal > const&);
 		cpp_boolean removeMember(local_ref< java::security::Principal > const&);
@@ -49,7 +55,6 @@ namespace java { namespace security { namespace acl {
 } //namespace acl
 } //namespace security
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -62,6 +67,17 @@ namespace java { namespace security { namespace acl {
 
 namespace j2cpp {
 
+
+
+java::security::acl::Group::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
+
+java::security::acl::Group::operator local_ref<java::security::Principal>() const
+{
+	return local_ref<java::security::Principal>(get_jtype());
+}
 
 cpp_boolean java::security::acl::Group::addMember(local_ref< java::security::Principal > const &a0)
 {

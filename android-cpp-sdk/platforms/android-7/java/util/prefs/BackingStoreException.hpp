@@ -12,8 +12,10 @@
 
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace lang { class Throwable; } } }
+namespace j2cpp { namespace java { namespace lang { class Exception; } } }
 
 
+#include <java/lang/Exception.hpp>
 #include <java/lang/String.hpp>
 #include <java/lang/Throwable.hpp>
 
@@ -33,17 +35,21 @@ namespace java { namespace util { namespace prefs {
 		J2CPP_DECLARE_METHOD(0)
 		J2CPP_DECLARE_METHOD(1)
 
-		BackingStoreException(jobject jobj)
+		explicit BackingStoreException(jobject jobj)
 		: cpp_object<BackingStoreException>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Exception>() const;
+
+
+		BackingStoreException(local_ref< java::lang::String > const&);
+		BackingStoreException(local_ref< java::lang::Throwable > const&);
 	}; //class BackingStoreException
 
 } //namespace prefs
 } //namespace util
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -57,29 +63,37 @@ namespace java { namespace util { namespace prefs {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::util::prefs::BackingStoreException > create< java::util::prefs::BackingStoreException>(local_ref< java::lang::String > const &a0)
+
+java::util::prefs::BackingStoreException::operator local_ref<java::lang::Exception>() const
 {
-	return local_ref< java::util::prefs::BackingStoreException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::prefs::BackingStoreException::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::prefs::BackingStoreException::J2CPP_CLASS_NAME, java::util::prefs::BackingStoreException::J2CPP_METHOD_NAME(0), java::util::prefs::BackingStoreException::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Exception>(get_jtype());
 }
 
-template <>
-local_ref< java::util::prefs::BackingStoreException > create< java::util::prefs::BackingStoreException>(local_ref< java::lang::Throwable > const &a0)
+
+java::util::prefs::BackingStoreException::BackingStoreException(local_ref< java::lang::String > const &a0)
+: cpp_object<java::util::prefs::BackingStoreException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::util::prefs::BackingStoreException::J2CPP_CLASS_NAME>(),
+		get_method_id<java::util::prefs::BackingStoreException::J2CPP_CLASS_NAME, java::util::prefs::BackingStoreException::J2CPP_METHOD_NAME(0), java::util::prefs::BackingStoreException::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< java::util::prefs::BackingStoreException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::prefs::BackingStoreException::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::prefs::BackingStoreException::J2CPP_CLASS_NAME, java::util::prefs::BackingStoreException::J2CPP_METHOD_NAME(1), java::util::prefs::BackingStoreException::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
 }
+
+
+
+java::util::prefs::BackingStoreException::BackingStoreException(local_ref< java::lang::Throwable > const &a0)
+: cpp_object<java::util::prefs::BackingStoreException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::util::prefs::BackingStoreException::J2CPP_CLASS_NAME>(),
+		get_method_id<java::util::prefs::BackingStoreException::J2CPP_CLASS_NAME, java::util::prefs::BackingStoreException::J2CPP_METHOD_NAME(1), java::util::prefs::BackingStoreException::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 
 J2CPP_DEFINE_CLASS(java::util::prefs::BackingStoreException,"java/util/prefs/BackingStoreException")

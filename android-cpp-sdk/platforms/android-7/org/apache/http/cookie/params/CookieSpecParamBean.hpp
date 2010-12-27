@@ -12,9 +12,11 @@
 
 namespace j2cpp { namespace java { namespace util { class Collection; } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace params { class HttpParams; } } } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { namespace params { class HttpAbstractParamBean; } } } } }
 
 
 #include <java/util/Collection.hpp>
+#include <org/apache/http/params/HttpAbstractParamBean.hpp>
 #include <org/apache/http/params/HttpParams.hpp>
 
 
@@ -34,11 +36,15 @@ namespace org { namespace apache { namespace http { namespace cookie { namespace
 		J2CPP_DECLARE_METHOD(1)
 		J2CPP_DECLARE_METHOD(2)
 
-		CookieSpecParamBean(jobject jobj)
+		explicit CookieSpecParamBean(jobject jobj)
 		: cpp_object<CookieSpecParamBean>(jobj)
 		{
 		}
 
+		operator local_ref<org::apache::http::params::HttpAbstractParamBean>() const;
+
+
+		CookieSpecParamBean(local_ref< org::apache::http::params::HttpParams > const&);
 		void setDatePatterns(local_ref< java::util::Collection > const&);
 		void setSingleHeader(cpp_boolean const&);
 	}; //class CookieSpecParamBean
@@ -48,7 +54,6 @@ namespace org { namespace apache { namespace http { namespace cookie { namespace
 } //namespace http
 } //namespace apache
 } //namespace org
-
 
 } //namespace j2cpp
 
@@ -62,17 +67,24 @@ namespace org { namespace apache { namespace http { namespace cookie { namespace
 namespace j2cpp {
 
 
-template <>
-local_ref< org::apache::http::cookie::params::CookieSpecParamBean > create< org::apache::http::cookie::params::CookieSpecParamBean>(local_ref< org::apache::http::params::HttpParams > const &a0)
+
+org::apache::http::cookie::params::CookieSpecParamBean::operator local_ref<org::apache::http::params::HttpAbstractParamBean>() const
 {
-	return local_ref< org::apache::http::cookie::params::CookieSpecParamBean >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::apache::http::cookie::params::CookieSpecParamBean::J2CPP_CLASS_NAME>(),
-			get_method_id<org::apache::http::cookie::params::CookieSpecParamBean::J2CPP_CLASS_NAME, org::apache::http::cookie::params::CookieSpecParamBean::J2CPP_METHOD_NAME(0), org::apache::http::cookie::params::CookieSpecParamBean::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<org::apache::http::params::HttpAbstractParamBean>(get_jtype());
 }
+
+
+org::apache::http::cookie::params::CookieSpecParamBean::CookieSpecParamBean(local_ref< org::apache::http::params::HttpParams > const &a0)
+: cpp_object<org::apache::http::cookie::params::CookieSpecParamBean>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::apache::http::cookie::params::CookieSpecParamBean::J2CPP_CLASS_NAME>(),
+		get_method_id<org::apache::http::cookie::params::CookieSpecParamBean::J2CPP_CLASS_NAME, org::apache::http::cookie::params::CookieSpecParamBean::J2CPP_METHOD_NAME(0), org::apache::http::cookie::params::CookieSpecParamBean::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 void org::apache::http::cookie::params::CookieSpecParamBean::setDatePatterns(local_ref< java::util::Collection > const &a0)
 {

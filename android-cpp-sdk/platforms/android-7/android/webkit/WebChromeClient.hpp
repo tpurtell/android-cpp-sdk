@@ -10,6 +10,7 @@
 #define J2CPP_ANDROID_WEBKIT_WEBCHROMECLIENT_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace android { namespace graphics { class Bitmap; } } }
 namespace j2cpp { namespace android { namespace view { class View; } } }
@@ -33,6 +34,7 @@ namespace j2cpp { namespace android { namespace os { class Message; } } }
 #include <android/webkit/WebChromeClient.hpp>
 #include <android/webkit/WebStorage.hpp>
 #include <android/webkit/WebView.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -53,10 +55,13 @@ namespace android { namespace webkit {
 
 			J2CPP_DECLARE_METHOD(0)
 
-			CustomViewCallback(jobject jobj)
+			explicit CustomViewCallback(jobject jobj)
 			: cpp_object<CustomViewCallback>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+
 
 			void onCustomViewHidden();
 		}; //class CustomViewCallback
@@ -96,11 +101,15 @@ namespace android { namespace webkit {
 
 		typedef WebChromeClient_::CustomViewCallback CustomViewCallback;
 
-		WebChromeClient(jobject jobj)
+		explicit WebChromeClient(jobject jobj)
 		: cpp_object<WebChromeClient>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		WebChromeClient();
 		void onProgressChanged(local_ref< android::webkit::WebView > const&, cpp_int const&);
 		void onReceivedTitle(local_ref< android::webkit::WebView > const&, local_ref< java::lang::String > const&);
 		void onReceivedIcon(local_ref< android::webkit::WebView > const&, local_ref< android::graphics::Bitmap > const&);
@@ -128,7 +137,6 @@ namespace android { namespace webkit {
 } //namespace webkit
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_WEBKIT_WEBCHROMECLIENT_HPP_DECL
@@ -141,6 +149,12 @@ namespace android { namespace webkit {
 namespace j2cpp {
 
 
+
+
+android::webkit::WebChromeClient_::CustomViewCallback::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 void android::webkit::WebChromeClient_::CustomViewCallback::onCustomViewHidden()
 {
@@ -157,16 +171,23 @@ J2CPP_DEFINE_CLASS(android::webkit::WebChromeClient_::CustomViewCallback,"androi
 J2CPP_DEFINE_METHOD(android::webkit::WebChromeClient_::CustomViewCallback,0,"onCustomViewHidden","()V")
 
 
-template <>
-local_ref< android::webkit::WebChromeClient > create< android::webkit::WebChromeClient>()
+
+android::webkit::WebChromeClient::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::webkit::WebChromeClient >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::webkit::WebChromeClient::J2CPP_CLASS_NAME>(),
-			get_method_id<android::webkit::WebChromeClient::J2CPP_CLASS_NAME, android::webkit::WebChromeClient::J2CPP_METHOD_NAME(0), android::webkit::WebChromeClient::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::webkit::WebChromeClient::WebChromeClient()
+: cpp_object<android::webkit::WebChromeClient>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::webkit::WebChromeClient::J2CPP_CLASS_NAME>(),
+		get_method_id<android::webkit::WebChromeClient::J2CPP_CLASS_NAME, android::webkit::WebChromeClient::J2CPP_METHOD_NAME(0), android::webkit::WebChromeClient::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 void android::webkit::WebChromeClient::onProgressChanged(local_ref< android::webkit::WebView > const &a0, cpp_int const &a1)
 {

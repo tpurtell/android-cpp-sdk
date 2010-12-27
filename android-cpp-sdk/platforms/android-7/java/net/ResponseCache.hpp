@@ -14,10 +14,12 @@ namespace j2cpp { namespace java { namespace net { class CacheResponse; } } }
 namespace j2cpp { namespace java { namespace net { class URLConnection; } } }
 namespace j2cpp { namespace java { namespace net { class CacheRequest; } } }
 namespace j2cpp { namespace java { namespace net { class URI; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace util { class Map; } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/net/CacheRequest.hpp>
 #include <java/net/CacheResponse.hpp>
@@ -44,11 +46,15 @@ namespace java { namespace net {
 		J2CPP_DECLARE_METHOD(3)
 		J2CPP_DECLARE_METHOD(4)
 
-		ResponseCache(jobject jobj)
+		explicit ResponseCache(jobject jobj)
 		: cpp_object<ResponseCache>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		ResponseCache();
 		static local_ref< java::net::ResponseCache > getDefault();
 		static void setDefault(local_ref< java::net::ResponseCache > const&);
 		local_ref< java::net::CacheResponse > get(local_ref< java::net::URI > const&, local_ref< java::lang::String > const&, local_ref< java::util::Map > const&);
@@ -57,7 +63,6 @@ namespace java { namespace net {
 
 } //namespace net
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -71,16 +76,23 @@ namespace java { namespace net {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::net::ResponseCache > create< java::net::ResponseCache>()
+
+java::net::ResponseCache::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::net::ResponseCache >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::net::ResponseCache::J2CPP_CLASS_NAME>(),
-			get_method_id<java::net::ResponseCache::J2CPP_CLASS_NAME, java::net::ResponseCache::J2CPP_METHOD_NAME(0), java::net::ResponseCache::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+java::net::ResponseCache::ResponseCache()
+: cpp_object<java::net::ResponseCache>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::net::ResponseCache::J2CPP_CLASS_NAME>(),
+		get_method_id<java::net::ResponseCache::J2CPP_CLASS_NAME, java::net::ResponseCache::J2CPP_METHOD_NAME(0), java::net::ResponseCache::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 local_ref< java::net::ResponseCache > java::net::ResponseCache::getDefault()
 {

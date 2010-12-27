@@ -10,6 +10,7 @@
 #define J2CPP_ANDROID_APP_LOCALACTIVITYMANAGER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace android { namespace app { class Activity; } } }
 namespace j2cpp { namespace android { namespace content { class Intent; } } }
@@ -21,6 +22,7 @@ namespace j2cpp { namespace android { namespace os { class Bundle; } } }
 #include <android/content/Intent.hpp>
 #include <android/os/Bundle.hpp>
 #include <android/view/Window.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -50,11 +52,15 @@ namespace android { namespace app {
 		J2CPP_DECLARE_METHOD(11)
 		J2CPP_DECLARE_METHOD(12)
 
-		LocalActivityManager(jobject jobj)
+		explicit LocalActivityManager(jobject jobj)
 		: cpp_object<LocalActivityManager>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		LocalActivityManager(local_ref< android::app::Activity > const&, cpp_boolean const&);
 		local_ref< android::view::Window > startActivity(local_ref< java::lang::String > const&, local_ref< android::content::Intent > const&);
 		local_ref< android::view::Window > destroyActivity(local_ref< java::lang::String > const&, cpp_boolean const&);
 		local_ref< android::app::Activity > getCurrentActivity();
@@ -72,7 +78,6 @@ namespace android { namespace app {
 } //namespace app
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_APP_LOCALACTIVITYMANAGER_HPP_DECL
@@ -85,17 +90,24 @@ namespace android { namespace app {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::app::LocalActivityManager > create< android::app::LocalActivityManager>(local_ref< android::app::Activity > const &a0, cpp_boolean const &a1)
+
+android::app::LocalActivityManager::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::app::LocalActivityManager >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::app::LocalActivityManager::J2CPP_CLASS_NAME>(),
-			get_method_id<android::app::LocalActivityManager::J2CPP_CLASS_NAME, android::app::LocalActivityManager::J2CPP_METHOD_NAME(0), android::app::LocalActivityManager::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::app::LocalActivityManager::LocalActivityManager(local_ref< android::app::Activity > const &a0, cpp_boolean const &a1)
+: cpp_object<android::app::LocalActivityManager>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::app::LocalActivityManager::J2CPP_CLASS_NAME>(),
+		get_method_id<android::app::LocalActivityManager::J2CPP_CLASS_NAME, android::app::LocalActivityManager::J2CPP_METHOD_NAME(0), android::app::LocalActivityManager::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
 
 local_ref< android::view::Window > android::app::LocalActivityManager::startActivity(local_ref< java::lang::String > const &a0, local_ref< android::content::Intent > const &a1)
 {

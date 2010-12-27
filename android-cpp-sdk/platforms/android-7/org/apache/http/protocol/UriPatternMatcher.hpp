@@ -39,12 +39,16 @@ namespace org { namespace apache { namespace http { namespace protocol {
 		J2CPP_DECLARE_METHOD(4)
 		J2CPP_DECLARE_METHOD(5)
 
-		UriPatternMatcher(jobject jobj)
+		explicit UriPatternMatcher(jobject jobj)
 		: cpp_object<UriPatternMatcher>(jobj)
 		{
 		}
 
-		void register(local_ref< java::lang::String > const&, local_ref< java::lang::Object > const&);
+		operator local_ref<java::lang::Object>() const;
+
+
+		UriPatternMatcher();
+		void Register(local_ref< java::lang::String > const&, local_ref< java::lang::Object > const&);
 		void unregister(local_ref< java::lang::String > const&);
 		void setHandlers(local_ref< java::util::Map > const&);
 		local_ref< java::lang::Object > lookup(local_ref< java::lang::String > const&);
@@ -54,7 +58,6 @@ namespace org { namespace apache { namespace http { namespace protocol {
 } //namespace http
 } //namespace apache
 } //namespace org
-
 
 } //namespace j2cpp
 
@@ -68,18 +71,25 @@ namespace org { namespace apache { namespace http { namespace protocol {
 namespace j2cpp {
 
 
-template <>
-local_ref< org::apache::http::protocol::UriPatternMatcher > create< org::apache::http::protocol::UriPatternMatcher>()
+
+org::apache::http::protocol::UriPatternMatcher::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< org::apache::http::protocol::UriPatternMatcher >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::apache::http::protocol::UriPatternMatcher::J2CPP_CLASS_NAME>(),
-			get_method_id<org::apache::http::protocol::UriPatternMatcher::J2CPP_CLASS_NAME, org::apache::http::protocol::UriPatternMatcher::J2CPP_METHOD_NAME(0), org::apache::http::protocol::UriPatternMatcher::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
 
-void org::apache::http::protocol::UriPatternMatcher::register(local_ref< java::lang::String > const &a0, local_ref< java::lang::Object > const &a1)
+
+org::apache::http::protocol::UriPatternMatcher::UriPatternMatcher()
+: cpp_object<org::apache::http::protocol::UriPatternMatcher>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::apache::http::protocol::UriPatternMatcher::J2CPP_CLASS_NAME>(),
+		get_method_id<org::apache::http::protocol::UriPatternMatcher::J2CPP_CLASS_NAME, org::apache::http::protocol::UriPatternMatcher::J2CPP_METHOD_NAME(0), org::apache::http::protocol::UriPatternMatcher::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
+
+void org::apache::http::protocol::UriPatternMatcher::Register(local_ref< java::lang::String > const &a0, local_ref< java::lang::Object > const &a1)
 {
 	return void(
 		environment::get().get_jenv()->CallVoidMethod(

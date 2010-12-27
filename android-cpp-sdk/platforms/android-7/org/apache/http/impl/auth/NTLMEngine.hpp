@@ -10,9 +10,11 @@
 #define J2CPP_ORG_APACHE_HTTP_IMPL_AUTH_NTLMENGINE_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -31,10 +33,13 @@ namespace org { namespace apache { namespace http { namespace impl { namespace a
 		J2CPP_DECLARE_METHOD(0)
 		J2CPP_DECLARE_METHOD(1)
 
-		NTLMEngine(jobject jobj)
+		explicit NTLMEngine(jobject jobj)
 		: cpp_object<NTLMEngine>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		local_ref< java::lang::String > generateType1Msg(local_ref< java::lang::String > const&, local_ref< java::lang::String > const&);
 		local_ref< java::lang::String > generateType3Msg(local_ref< java::lang::String > const&, local_ref< java::lang::String > const&, local_ref< java::lang::String > const&, local_ref< java::lang::String > const&, local_ref< java::lang::String > const&);
@@ -45,7 +50,6 @@ namespace org { namespace apache { namespace http { namespace impl { namespace a
 } //namespace http
 } //namespace apache
 } //namespace org
-
 
 } //namespace j2cpp
 
@@ -58,6 +62,12 @@ namespace org { namespace apache { namespace http { namespace impl { namespace a
 
 namespace j2cpp {
 
+
+
+org::apache::http::impl::auth::NTLMEngine::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 local_ref< java::lang::String > org::apache::http::impl::auth::NTLMEngine::generateType1Msg(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
 {

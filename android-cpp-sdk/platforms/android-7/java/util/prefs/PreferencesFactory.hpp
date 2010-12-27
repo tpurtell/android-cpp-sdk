@@ -10,9 +10,11 @@
 #define J2CPP_JAVA_UTIL_PREFS_PREFERENCESFACTORY_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace util { namespace prefs { class Preferences; } } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/util/prefs/Preferences.hpp>
 
 
@@ -31,10 +33,13 @@ namespace java { namespace util { namespace prefs {
 		J2CPP_DECLARE_METHOD(0)
 		J2CPP_DECLARE_METHOD(1)
 
-		PreferencesFactory(jobject jobj)
+		explicit PreferencesFactory(jobject jobj)
 		: cpp_object<PreferencesFactory>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		local_ref< java::util::prefs::Preferences > userRoot();
 		local_ref< java::util::prefs::Preferences > systemRoot();
@@ -43,7 +48,6 @@ namespace java { namespace util { namespace prefs {
 } //namespace prefs
 } //namespace util
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -56,6 +60,12 @@ namespace java { namespace util { namespace prefs {
 
 namespace j2cpp {
 
+
+
+java::util::prefs::PreferencesFactory::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 local_ref< java::util::prefs::Preferences > java::util::prefs::PreferencesFactory::userRoot()
 {

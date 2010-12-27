@@ -10,12 +10,16 @@
 #define J2CPP_JAVAX_NET_SSL_KEYSTOREBUILDERPARAMETERS_HPP_DECL
 
 
+namespace j2cpp { namespace javax { namespace net { namespace ssl { class ManagerFactoryParameters; } } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace security { namespace KeyStore_ { class Builder; } } } }
 namespace j2cpp { namespace java { namespace util { class List; } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/security/KeyStore.hpp>
 #include <java/util/List.hpp>
+#include <javax/net/ssl/ManagerFactoryParameters.hpp>
 
 
 namespace j2cpp {
@@ -34,18 +38,23 @@ namespace javax { namespace net { namespace ssl {
 		J2CPP_DECLARE_METHOD(1)
 		J2CPP_DECLARE_METHOD(2)
 
-		KeyStoreBuilderParameters(jobject jobj)
+		explicit KeyStoreBuilderParameters(jobject jobj)
 		: cpp_object<KeyStoreBuilderParameters>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<javax::net::ssl::ManagerFactoryParameters>() const;
+
+
+		KeyStoreBuilderParameters(local_ref< java::security::KeyStore_::Builder > const&);
+		KeyStoreBuilderParameters(local_ref< java::util::List > const&);
 		local_ref< java::util::List > getParameters();
 	}; //class KeyStoreBuilderParameters
 
 } //namespace ssl
 } //namespace net
 } //namespace javax
-
 
 } //namespace j2cpp
 
@@ -59,29 +68,42 @@ namespace javax { namespace net { namespace ssl {
 namespace j2cpp {
 
 
-template <>
-local_ref< javax::net::ssl::KeyStoreBuilderParameters > create< javax::net::ssl::KeyStoreBuilderParameters>(local_ref< java::security::KeyStore_::Builder > const &a0)
+
+javax::net::ssl::KeyStoreBuilderParameters::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< javax::net::ssl::KeyStoreBuilderParameters >(
-		environment::get().get_jenv()->NewObject(
-			get_class<javax::net::ssl::KeyStoreBuilderParameters::J2CPP_CLASS_NAME>(),
-			get_method_id<javax::net::ssl::KeyStoreBuilderParameters::J2CPP_CLASS_NAME, javax::net::ssl::KeyStoreBuilderParameters::J2CPP_METHOD_NAME(0), javax::net::ssl::KeyStoreBuilderParameters::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
 
-template <>
-local_ref< javax::net::ssl::KeyStoreBuilderParameters > create< javax::net::ssl::KeyStoreBuilderParameters>(local_ref< java::util::List > const &a0)
+javax::net::ssl::KeyStoreBuilderParameters::operator local_ref<javax::net::ssl::ManagerFactoryParameters>() const
 {
-	return local_ref< javax::net::ssl::KeyStoreBuilderParameters >(
-		environment::get().get_jenv()->NewObject(
-			get_class<javax::net::ssl::KeyStoreBuilderParameters::J2CPP_CLASS_NAME>(),
-			get_method_id<javax::net::ssl::KeyStoreBuilderParameters::J2CPP_CLASS_NAME, javax::net::ssl::KeyStoreBuilderParameters::J2CPP_METHOD_NAME(1), javax::net::ssl::KeyStoreBuilderParameters::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<javax::net::ssl::ManagerFactoryParameters>(get_jtype());
 }
+
+
+javax::net::ssl::KeyStoreBuilderParameters::KeyStoreBuilderParameters(local_ref< java::security::KeyStore_::Builder > const &a0)
+: cpp_object<javax::net::ssl::KeyStoreBuilderParameters>(
+	environment::get().get_jenv()->NewObject(
+		get_class<javax::net::ssl::KeyStoreBuilderParameters::J2CPP_CLASS_NAME>(),
+		get_method_id<javax::net::ssl::KeyStoreBuilderParameters::J2CPP_CLASS_NAME, javax::net::ssl::KeyStoreBuilderParameters::J2CPP_METHOD_NAME(0), javax::net::ssl::KeyStoreBuilderParameters::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
+
+
+javax::net::ssl::KeyStoreBuilderParameters::KeyStoreBuilderParameters(local_ref< java::util::List > const &a0)
+: cpp_object<javax::net::ssl::KeyStoreBuilderParameters>(
+	environment::get().get_jenv()->NewObject(
+		get_class<javax::net::ssl::KeyStoreBuilderParameters::J2CPP_CLASS_NAME>(),
+		get_method_id<javax::net::ssl::KeyStoreBuilderParameters::J2CPP_CLASS_NAME, javax::net::ssl::KeyStoreBuilderParameters::J2CPP_METHOD_NAME(1), javax::net::ssl::KeyStoreBuilderParameters::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 local_ref< java::util::List > javax::net::ssl::KeyStoreBuilderParameters::getParameters()
 {

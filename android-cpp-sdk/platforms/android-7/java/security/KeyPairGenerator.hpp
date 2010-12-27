@@ -13,12 +13,14 @@
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace security { class Provider; } } }
 namespace j2cpp { namespace java { namespace security { class KeyPair; } } }
+namespace j2cpp { namespace java { namespace security { class KeyPairGeneratorSpi; } } }
 namespace j2cpp { namespace java { namespace security { class SecureRandom; } } }
 namespace j2cpp { namespace java { namespace security { namespace spec { class AlgorithmParameterSpec; } } } }
 
 
 #include <java/lang/String.hpp>
 #include <java/security/KeyPair.hpp>
+#include <java/security/KeyPairGeneratorSpi.hpp>
 #include <java/security/Provider.hpp>
 #include <java/security/SecureRandom.hpp>
 #include <java/security/spec/AlgorithmParameterSpec.hpp>
@@ -49,10 +51,13 @@ namespace java { namespace security {
 		J2CPP_DECLARE_METHOD(10)
 		J2CPP_DECLARE_METHOD(11)
 
-		KeyPairGenerator(jobject jobj)
+		explicit KeyPairGenerator(jobject jobj)
 		: cpp_object<KeyPairGenerator>(jobj)
 		{
 		}
+
+		operator local_ref<java::security::KeyPairGeneratorSpi>() const;
+
 
 		local_ref< java::lang::String > getAlgorithm();
 		static local_ref< java::security::KeyPairGenerator > getInstance(local_ref< java::lang::String > const&);
@@ -70,7 +75,6 @@ namespace java { namespace security {
 } //namespace security
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_SECURITY_KEYPAIRGENERATOR_HPP_DECL
@@ -83,17 +87,12 @@ namespace java { namespace security {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::security::KeyPairGenerator > create< java::security::KeyPairGenerator>(local_ref< java::lang::String > const &a0)
+
+java::security::KeyPairGenerator::operator local_ref<java::security::KeyPairGeneratorSpi>() const
 {
-	return local_ref< java::security::KeyPairGenerator >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::security::KeyPairGenerator::J2CPP_CLASS_NAME>(),
-			get_method_id<java::security::KeyPairGenerator::J2CPP_CLASS_NAME, java::security::KeyPairGenerator::J2CPP_METHOD_NAME(0), java::security::KeyPairGenerator::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::security::KeyPairGeneratorSpi>(get_jtype());
 }
+
 
 local_ref< java::lang::String > java::security::KeyPairGenerator::getAlgorithm()
 {

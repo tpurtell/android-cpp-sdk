@@ -11,10 +11,12 @@
 
 
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { class HttpException; } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { class HttpResponse; } } } }
 
 
 #include <java/lang/String.hpp>
+#include <org/apache/http/HttpException.hpp>
 #include <org/apache/http/HttpResponse.hpp>
 
 
@@ -33,11 +35,15 @@ namespace org { namespace apache { namespace http { namespace impl { namespace c
 		J2CPP_DECLARE_METHOD(0)
 		J2CPP_DECLARE_METHOD(1)
 
-		TunnelRefusedException(jobject jobj)
+		explicit TunnelRefusedException(jobject jobj)
 		: cpp_object<TunnelRefusedException>(jobj)
 		{
 		}
 
+		operator local_ref<org::apache::http::HttpException>() const;
+
+
+		TunnelRefusedException(local_ref< java::lang::String > const&, local_ref< org::apache::http::HttpResponse > const&);
 		local_ref< org::apache::http::HttpResponse > getResponse();
 	}; //class TunnelRefusedException
 
@@ -46,7 +52,6 @@ namespace org { namespace apache { namespace http { namespace impl { namespace c
 } //namespace http
 } //namespace apache
 } //namespace org
-
 
 } //namespace j2cpp
 
@@ -60,17 +65,24 @@ namespace org { namespace apache { namespace http { namespace impl { namespace c
 namespace j2cpp {
 
 
-template <>
-local_ref< org::apache::http::impl::client::TunnelRefusedException > create< org::apache::http::impl::client::TunnelRefusedException>(local_ref< java::lang::String > const &a0, local_ref< org::apache::http::HttpResponse > const &a1)
+
+org::apache::http::impl::client::TunnelRefusedException::operator local_ref<org::apache::http::HttpException>() const
 {
-	return local_ref< org::apache::http::impl::client::TunnelRefusedException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::apache::http::impl::client::TunnelRefusedException::J2CPP_CLASS_NAME>(),
-			get_method_id<org::apache::http::impl::client::TunnelRefusedException::J2CPP_CLASS_NAME, org::apache::http::impl::client::TunnelRefusedException::J2CPP_METHOD_NAME(0), org::apache::http::impl::client::TunnelRefusedException::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<org::apache::http::HttpException>(get_jtype());
 }
+
+
+org::apache::http::impl::client::TunnelRefusedException::TunnelRefusedException(local_ref< java::lang::String > const &a0, local_ref< org::apache::http::HttpResponse > const &a1)
+: cpp_object<org::apache::http::impl::client::TunnelRefusedException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::apache::http::impl::client::TunnelRefusedException::J2CPP_CLASS_NAME>(),
+		get_method_id<org::apache::http::impl::client::TunnelRefusedException::J2CPP_CLASS_NAME, org::apache::http::impl::client::TunnelRefusedException::J2CPP_METHOD_NAME(0), org::apache::http::impl::client::TunnelRefusedException::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
 
 local_ref< org::apache::http::HttpResponse > org::apache::http::impl::client::TunnelRefusedException::getResponse()
 {

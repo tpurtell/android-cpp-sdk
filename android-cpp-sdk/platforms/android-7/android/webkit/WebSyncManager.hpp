@@ -10,8 +10,12 @@
 #define J2CPP_ANDROID_WEBKIT_WEBSYNCMANAGER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace lang { class Runnable; } } }
 
 
+#include <java/lang/Object.hpp>
+#include <java/lang/Runnable.hpp>
 
 
 namespace j2cpp {
@@ -38,10 +42,14 @@ namespace android { namespace webkit {
 		J2CPP_DECLARE_FIELD(1)
 		J2CPP_DECLARE_FIELD(2)
 
-		WebSyncManager(jobject jobj)
+		explicit WebSyncManager(jobject jobj)
 		: cpp_object<WebSyncManager>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::lang::Runnable>() const;
+
 
 		void run();
 		void sync();
@@ -53,7 +61,6 @@ namespace android { namespace webkit {
 
 } //namespace webkit
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -67,17 +74,17 @@ namespace android { namespace webkit {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::webkit::WebSyncManager > create< android::webkit::WebSyncManager>(local_ref< android::content::Context > const &a0, local_ref< java::lang::String > const &a1)
+
+android::webkit::WebSyncManager::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::webkit::WebSyncManager >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::webkit::WebSyncManager::J2CPP_CLASS_NAME>(),
-			get_method_id<android::webkit::WebSyncManager::J2CPP_CLASS_NAME, android::webkit::WebSyncManager::J2CPP_METHOD_NAME(0), android::webkit::WebSyncManager::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+android::webkit::WebSyncManager::operator local_ref<java::lang::Runnable>() const
+{
+	return local_ref<java::lang::Runnable>(get_jtype());
+}
+
 
 
 void android::webkit::WebSyncManager::run()

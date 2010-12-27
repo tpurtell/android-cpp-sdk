@@ -10,12 +10,14 @@
 #define J2CPP_ANDROID_HARDWARE_SENSOREVENTLISTENER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace android { namespace hardware { class Sensor; } } }
 namespace j2cpp { namespace android { namespace hardware { class SensorEvent; } } }
 
 
 #include <android/hardware/Sensor.hpp>
 #include <android/hardware/SensorEvent.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -33,10 +35,13 @@ namespace android { namespace hardware {
 		J2CPP_DECLARE_METHOD(0)
 		J2CPP_DECLARE_METHOD(1)
 
-		SensorEventListener(jobject jobj)
+		explicit SensorEventListener(jobject jobj)
 		: cpp_object<SensorEventListener>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		void onSensorChanged(local_ref< android::hardware::SensorEvent > const&);
 		void onAccuracyChanged(local_ref< android::hardware::Sensor > const&, cpp_int const&);
@@ -44,7 +49,6 @@ namespace android { namespace hardware {
 
 } //namespace hardware
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -57,6 +61,12 @@ namespace android { namespace hardware {
 
 namespace j2cpp {
 
+
+
+android::hardware::SensorEventListener::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 void android::hardware::SensorEventListener::onSensorChanged(local_ref< android::hardware::SensorEvent > const &a0)
 {

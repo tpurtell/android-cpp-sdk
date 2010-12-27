@@ -86,11 +86,15 @@ namespace java { namespace lang {
 		J2CPP_DECLARE_METHOD(41)
 		J2CPP_DECLARE_FIELD(0)
 
-		SecurityManager(jobject jobj)
+		explicit SecurityManager(jobject jobj)
 		: cpp_object<SecurityManager>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		SecurityManager();
 		void checkAccept(local_ref< java::lang::String > const&, cpp_int const&);
 		void checkAccess(local_ref< java::lang::Thread > const&);
 		void checkAccess(local_ref< java::lang::ThreadGroup > const&);
@@ -131,7 +135,6 @@ namespace java { namespace lang {
 } //namespace lang
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_LANG_SECURITYMANAGER_HPP_DECL
@@ -144,16 +147,23 @@ namespace java { namespace lang {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::lang::SecurityManager > create< java::lang::SecurityManager>()
+
+java::lang::SecurityManager::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::lang::SecurityManager >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::lang::SecurityManager::J2CPP_CLASS_NAME>(),
-			get_method_id<java::lang::SecurityManager::J2CPP_CLASS_NAME, java::lang::SecurityManager::J2CPP_METHOD_NAME(0), java::lang::SecurityManager::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+java::lang::SecurityManager::SecurityManager()
+: cpp_object<java::lang::SecurityManager>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::lang::SecurityManager::J2CPP_CLASS_NAME>(),
+		get_method_id<java::lang::SecurityManager::J2CPP_CLASS_NAME, java::lang::SecurityManager::J2CPP_METHOD_NAME(0), java::lang::SecurityManager::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 void java::lang::SecurityManager::checkAccept(local_ref< java::lang::String > const &a0, cpp_int const &a1)
 {

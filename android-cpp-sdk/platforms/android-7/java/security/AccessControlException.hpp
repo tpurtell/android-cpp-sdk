@@ -10,10 +10,12 @@
 #define J2CPP_JAVA_SECURITY_ACCESSCONTROLEXCEPTION_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class SecurityException; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace security { class Permission; } } }
 
 
+#include <java/lang/SecurityException.hpp>
 #include <java/lang/String.hpp>
 #include <java/security/Permission.hpp>
 
@@ -34,17 +36,21 @@ namespace java { namespace security {
 		J2CPP_DECLARE_METHOD(1)
 		J2CPP_DECLARE_METHOD(2)
 
-		AccessControlException(jobject jobj)
+		explicit AccessControlException(jobject jobj)
 		: cpp_object<AccessControlException>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::SecurityException>() const;
+
+
+		AccessControlException(local_ref< java::lang::String > const&);
+		AccessControlException(local_ref< java::lang::String > const&, local_ref< java::security::Permission > const&);
 		local_ref< java::security::Permission > getPermission();
 	}; //class AccessControlException
 
 } //namespace security
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -58,29 +64,37 @@ namespace java { namespace security {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::security::AccessControlException > create< java::security::AccessControlException>(local_ref< java::lang::String > const &a0)
+
+java::security::AccessControlException::operator local_ref<java::lang::SecurityException>() const
 {
-	return local_ref< java::security::AccessControlException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::security::AccessControlException::J2CPP_CLASS_NAME>(),
-			get_method_id<java::security::AccessControlException::J2CPP_CLASS_NAME, java::security::AccessControlException::J2CPP_METHOD_NAME(0), java::security::AccessControlException::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::lang::SecurityException>(get_jtype());
 }
 
-template <>
-local_ref< java::security::AccessControlException > create< java::security::AccessControlException>(local_ref< java::lang::String > const &a0, local_ref< java::security::Permission > const &a1)
+
+java::security::AccessControlException::AccessControlException(local_ref< java::lang::String > const &a0)
+: cpp_object<java::security::AccessControlException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::security::AccessControlException::J2CPP_CLASS_NAME>(),
+		get_method_id<java::security::AccessControlException::J2CPP_CLASS_NAME, java::security::AccessControlException::J2CPP_METHOD_NAME(0), java::security::AccessControlException::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< java::security::AccessControlException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::security::AccessControlException::J2CPP_CLASS_NAME>(),
-			get_method_id<java::security::AccessControlException::J2CPP_CLASS_NAME, java::security::AccessControlException::J2CPP_METHOD_NAME(1), java::security::AccessControlException::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
 }
+
+
+
+java::security::AccessControlException::AccessControlException(local_ref< java::lang::String > const &a0, local_ref< java::security::Permission > const &a1)
+: cpp_object<java::security::AccessControlException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::security::AccessControlException::J2CPP_CLASS_NAME>(),
+		get_method_id<java::security::AccessControlException::J2CPP_CLASS_NAME, java::security::AccessControlException::J2CPP_METHOD_NAME(1), java::security::AccessControlException::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
 
 local_ref< java::security::Permission > java::security::AccessControlException::getPermission()
 {

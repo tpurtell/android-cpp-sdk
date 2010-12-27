@@ -36,10 +36,13 @@ namespace android { namespace os {
 			J2CPP_DECLARE_METHOD(0)
 			J2CPP_DECLARE_METHOD(1)
 
-			Creator(jobject jobj)
+			explicit Creator(jobject jobj)
 			: cpp_object<Creator>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+
 
 			local_ref< java::lang::Object > createFromParcel(local_ref< android::os::Parcel > const&);
 			local_ref< cpp_object_array<java::lang::Object, 1> > newArray(cpp_int const&);
@@ -61,10 +64,13 @@ namespace android { namespace os {
 
 		typedef Parcelable_::Creator Creator;
 
-		Parcelable(jobject jobj)
+		explicit Parcelable(jobject jobj)
 		: cpp_object<Parcelable>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		cpp_int describeContents();
 		void writeToParcel(local_ref< android::os::Parcel > const&, cpp_int const&);
@@ -75,7 +81,6 @@ namespace android { namespace os {
 
 } //namespace os
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -89,6 +94,12 @@ namespace android { namespace os {
 namespace j2cpp {
 
 
+
+
+android::os::Parcelable_::Creator::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 local_ref< java::lang::Object > android::os::Parcelable_::Creator::createFromParcel(local_ref< android::os::Parcel > const &a0)
 {
@@ -117,6 +128,12 @@ J2CPP_DEFINE_CLASS(android::os::Parcelable_::Creator,"android/os/Parcelable$Crea
 J2CPP_DEFINE_METHOD(android::os::Parcelable_::Creator,0,"createFromParcel","(Landroid/os/Parcel;)Ljava/lang/Object;")
 J2CPP_DEFINE_METHOD(android::os::Parcelable_::Creator,1,"newArray","(I)[java.lang.Object")
 
+
+
+android::os::Parcelable::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 cpp_int android::os::Parcelable::describeContents()
 {

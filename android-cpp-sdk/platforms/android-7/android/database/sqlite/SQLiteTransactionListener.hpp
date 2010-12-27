@@ -10,8 +10,10 @@
 #define J2CPP_ANDROID_DATABASE_SQLITE_SQLITETRANSACTIONLISTENER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -30,10 +32,13 @@ namespace android { namespace database { namespace sqlite {
 		J2CPP_DECLARE_METHOD(1)
 		J2CPP_DECLARE_METHOD(2)
 
-		SQLiteTransactionListener(jobject jobj)
+		explicit SQLiteTransactionListener(jobject jobj)
 		: cpp_object<SQLiteTransactionListener>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		void onBegin();
 		void onCommit();
@@ -43,7 +48,6 @@ namespace android { namespace database { namespace sqlite {
 } //namespace sqlite
 } //namespace database
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -56,6 +60,12 @@ namespace android { namespace database { namespace sqlite {
 
 namespace j2cpp {
 
+
+
+android::database::sqlite::SQLiteTransactionListener::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 void android::database::sqlite::SQLiteTransactionListener::onBegin()
 {

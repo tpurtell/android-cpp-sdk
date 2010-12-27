@@ -10,10 +10,14 @@
 #define J2CPP_DALVIK_ANNOTATION_TESTTARGETCLASS_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class Class; } } }
+namespace j2cpp { namespace java { namespace lang { namespace annotation { class Annotation; } } } }
 
 
 #include <java/lang/Class.hpp>
+#include <java/lang/Object.hpp>
+#include <java/lang/annotation/Annotation.hpp>
 
 
 namespace j2cpp {
@@ -30,17 +34,20 @@ namespace dalvik { namespace annotation {
 
 		J2CPP_DECLARE_METHOD(0)
 
-		TestTargetClass(jobject jobj)
+		explicit TestTargetClass(jobject jobj)
 		: cpp_object<TestTargetClass>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::lang::annotation::Annotation>() const;
+
 
 		local_ref< java::lang::Class > value();
 	}; //class TestTargetClass
 
 } //namespace annotation
 } //namespace dalvik
-
 
 } //namespace j2cpp
 
@@ -53,6 +60,17 @@ namespace dalvik { namespace annotation {
 
 namespace j2cpp {
 
+
+
+dalvik::annotation::TestTargetClass::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
+
+dalvik::annotation::TestTargetClass::operator local_ref<java::lang::annotation::Annotation>() const
+{
+	return local_ref<java::lang::annotation::Annotation>(get_jtype());
+}
 
 local_ref< java::lang::Class > dalvik::annotation::TestTargetClass::value()
 {

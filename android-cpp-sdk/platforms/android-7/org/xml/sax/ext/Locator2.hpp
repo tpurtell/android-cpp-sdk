@@ -10,10 +10,14 @@
 #define J2CPP_ORG_XML_SAX_EXT_LOCATOR2_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace org { namespace xml { namespace sax { class Locator; } } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
+#include <org/xml/sax/Locator.hpp>
 
 
 namespace j2cpp {
@@ -31,10 +35,14 @@ namespace org { namespace xml { namespace sax { namespace ext {
 		J2CPP_DECLARE_METHOD(0)
 		J2CPP_DECLARE_METHOD(1)
 
-		Locator2(jobject jobj)
+		explicit Locator2(jobject jobj)
 		: cpp_object<Locator2>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<org::xml::sax::Locator>() const;
+
 
 		local_ref< java::lang::String > getXMLVersion();
 		local_ref< java::lang::String > getEncoding();
@@ -44,7 +52,6 @@ namespace org { namespace xml { namespace sax { namespace ext {
 } //namespace sax
 } //namespace xml
 } //namespace org
-
 
 } //namespace j2cpp
 
@@ -57,6 +64,17 @@ namespace org { namespace xml { namespace sax { namespace ext {
 
 namespace j2cpp {
 
+
+
+org::xml::sax::ext::Locator2::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
+
+org::xml::sax::ext::Locator2::operator local_ref<org::xml::sax::Locator>() const
+{
+	return local_ref<org::xml::sax::Locator>(get_jtype());
+}
 
 local_ref< java::lang::String > org::xml::sax::ext::Locator2::getXMLVersion()
 {

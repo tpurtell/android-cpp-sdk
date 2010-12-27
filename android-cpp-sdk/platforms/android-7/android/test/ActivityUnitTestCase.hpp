@@ -15,12 +15,14 @@ namespace j2cpp { namespace android { namespace app { class Activity; } } }
 namespace j2cpp { namespace android { namespace app { class Application; } } }
 namespace j2cpp { namespace android { namespace content { class Intent; } } }
 namespace j2cpp { namespace android { namespace content { class Context; } } }
+namespace j2cpp { namespace android { namespace test { class ActivityTestCase; } } }
 
 
 #include <android/app/Activity.hpp>
 #include <android/app/Application.hpp>
 #include <android/content/Context.hpp>
 #include <android/content/Intent.hpp>
+#include <android/test/ActivityTestCase.hpp>
 #include <java/lang/Class.hpp>
 
 
@@ -49,11 +51,15 @@ namespace android { namespace test {
 		J2CPP_DECLARE_METHOD(10)
 		J2CPP_DECLARE_METHOD(11)
 
-		ActivityUnitTestCase(jobject jobj)
+		explicit ActivityUnitTestCase(jobject jobj)
 		: cpp_object<ActivityUnitTestCase>(jobj)
 		{
 		}
 
+		operator local_ref<android::test::ActivityTestCase>() const;
+
+
+		ActivityUnitTestCase(local_ref< java::lang::Class > const&);
 		local_ref< android::app::Activity > getActivity();
 		void setApplication(local_ref< android::app::Application > const&);
 		void setActivityContext(local_ref< android::content::Context > const&);
@@ -67,7 +73,6 @@ namespace android { namespace test {
 } //namespace test
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_TEST_ACTIVITYUNITTESTCASE_HPP_DECL
@@ -80,17 +85,24 @@ namespace android { namespace test {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::test::ActivityUnitTestCase > create< android::test::ActivityUnitTestCase>(local_ref< java::lang::Class > const &a0)
+
+android::test::ActivityUnitTestCase::operator local_ref<android::test::ActivityTestCase>() const
 {
-	return local_ref< android::test::ActivityUnitTestCase >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::test::ActivityUnitTestCase::J2CPP_CLASS_NAME>(),
-			get_method_id<android::test::ActivityUnitTestCase::J2CPP_CLASS_NAME, android::test::ActivityUnitTestCase::J2CPP_METHOD_NAME(0), android::test::ActivityUnitTestCase::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<android::test::ActivityTestCase>(get_jtype());
 }
+
+
+android::test::ActivityUnitTestCase::ActivityUnitTestCase(local_ref< java::lang::Class > const &a0)
+: cpp_object<android::test::ActivityUnitTestCase>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::test::ActivityUnitTestCase::J2CPP_CLASS_NAME>(),
+		get_method_id<android::test::ActivityUnitTestCase::J2CPP_CLASS_NAME, android::test::ActivityUnitTestCase::J2CPP_METHOD_NAME(0), android::test::ActivityUnitTestCase::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 local_ref< android::app::Activity > android::test::ActivityUnitTestCase::getActivity()
 {

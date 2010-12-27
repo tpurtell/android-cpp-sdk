@@ -12,12 +12,14 @@
 
 namespace j2cpp { namespace java { namespace io { class InputStream; } } }
 namespace j2cpp { namespace java { namespace io { class OutputStream; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace android { namespace graphics { class Canvas; } } }
 
 
 #include <android/graphics/Canvas.hpp>
 #include <java/io/InputStream.hpp>
 #include <java/io/OutputStream.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -43,11 +45,16 @@ namespace android { namespace graphics {
 		J2CPP_DECLARE_METHOD(8)
 		J2CPP_DECLARE_METHOD(9)
 
-		Picture(jobject jobj)
+		explicit Picture(jobject jobj)
 		: cpp_object<Picture>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		Picture();
+		Picture(local_ref< android::graphics::Picture > const&);
 		local_ref< android::graphics::Canvas > beginRecording(cpp_int const&, cpp_int const&);
 		void endRecording();
 		cpp_int getWidth();
@@ -59,7 +66,6 @@ namespace android { namespace graphics {
 
 } //namespace graphics
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -73,28 +79,36 @@ namespace android { namespace graphics {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::graphics::Picture > create< android::graphics::Picture>()
+
+android::graphics::Picture::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::graphics::Picture >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::graphics::Picture::J2CPP_CLASS_NAME>(),
-			get_method_id<android::graphics::Picture::J2CPP_CLASS_NAME, android::graphics::Picture::J2CPP_METHOD_NAME(0), android::graphics::Picture::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
 
-template <>
-local_ref< android::graphics::Picture > create< android::graphics::Picture>(local_ref< android::graphics::Picture > const &a0)
+
+android::graphics::Picture::Picture()
+: cpp_object<android::graphics::Picture>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::graphics::Picture::J2CPP_CLASS_NAME>(),
+		get_method_id<android::graphics::Picture::J2CPP_CLASS_NAME, android::graphics::Picture::J2CPP_METHOD_NAME(0), android::graphics::Picture::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
 {
-	return local_ref< android::graphics::Picture >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::graphics::Picture::J2CPP_CLASS_NAME>(),
-			get_method_id<android::graphics::Picture::J2CPP_CLASS_NAME, android::graphics::Picture::J2CPP_METHOD_NAME(1), android::graphics::Picture::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
 }
+
+
+
+android::graphics::Picture::Picture(local_ref< android::graphics::Picture > const &a0)
+: cpp_object<android::graphics::Picture>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::graphics::Picture::J2CPP_CLASS_NAME>(),
+		get_method_id<android::graphics::Picture::J2CPP_CLASS_NAME, android::graphics::Picture::J2CPP_METHOD_NAME(1), android::graphics::Picture::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 local_ref< android::graphics::Canvas > android::graphics::Picture::beginRecording(cpp_int const &a0, cpp_int const &a1)
 {

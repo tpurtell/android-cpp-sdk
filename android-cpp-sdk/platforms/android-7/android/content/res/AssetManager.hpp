@@ -11,6 +11,7 @@
 
 
 namespace j2cpp { namespace java { namespace io { class InputStream; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace android { namespace content { namespace res { class AssetFileDescriptor; } } } }
 namespace j2cpp { namespace android { namespace content { namespace res { class XmlResourceParser; } } } }
@@ -19,6 +20,7 @@ namespace j2cpp { namespace android { namespace content { namespace res { class 
 #include <android/content/res/AssetFileDescriptor.hpp>
 #include <android/content/res/XmlResourceParser.hpp>
 #include <java/io/InputStream.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -51,10 +53,13 @@ namespace android { namespace content { namespace res {
 			J2CPP_DECLARE_METHOD(11)
 			J2CPP_DECLARE_FIELD(0)
 
-			AssetInputStream(jobject jobj)
+			explicit AssetInputStream(jobject jobj)
 			: cpp_object<AssetInputStream>(jobj)
 			{
 			}
+
+			operator local_ref<java::io::InputStream>() const;
+
 
 			cpp_int getAssetInt();
 			cpp_int read();
@@ -97,10 +102,13 @@ namespace android { namespace content { namespace res {
 
 		typedef AssetManager_::AssetInputStream AssetInputStream;
 
-		AssetManager(jobject jobj)
+		explicit AssetManager(jobject jobj)
 		: cpp_object<AssetManager>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		void close();
 		local_ref< java::io::InputStream > open(local_ref< java::lang::String > const&);
@@ -123,7 +131,6 @@ namespace android { namespace content { namespace res {
 } //namespace content
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_CONTENT_RES_ASSETMANAGER_HPP_DECL
@@ -137,17 +144,12 @@ namespace j2cpp {
 
 
 
-template <>
-local_ref< android::content::res::AssetManager_::AssetInputStream > create< android::content::res::AssetManager_::AssetInputStream>(local_ref< android::content::res::AssetManager > const &a0)
+
+android::content::res::AssetManager_::AssetInputStream::operator local_ref<java::io::InputStream>() const
 {
-	return local_ref< android::content::res::AssetManager_::AssetInputStream >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::content::res::AssetManager_::AssetInputStream::J2CPP_CLASS_NAME>(),
-			get_method_id<android::content::res::AssetManager_::AssetInputStream::J2CPP_CLASS_NAME, android::content::res::AssetManager_::AssetInputStream::J2CPP_METHOD_NAME(0), android::content::res::AssetManager_::AssetInputStream::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::io::InputStream>(get_jtype());
 }
+
 
 cpp_int android::content::res::AssetManager_::AssetInputStream::getAssetInt()
 {
@@ -272,16 +274,12 @@ J2CPP_DEFINE_METHOD(android::content::res::AssetManager_::AssetInputStream,11,"f
 J2CPP_DEFINE_FIELD(android::content::res::AssetManager_::AssetInputStream,0,"this$0","Landroid/content/res/AssetManager;")
 
 
-template <>
-local_ref< android::content::res::AssetManager > create< android::content::res::AssetManager>()
+
+android::content::res::AssetManager::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::content::res::AssetManager >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::content::res::AssetManager::J2CPP_CLASS_NAME>(),
-			get_method_id<android::content::res::AssetManager::J2CPP_CLASS_NAME, android::content::res::AssetManager::J2CPP_METHOD_NAME(0), android::content::res::AssetManager::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
 
 void android::content::res::AssetManager::close()
 {

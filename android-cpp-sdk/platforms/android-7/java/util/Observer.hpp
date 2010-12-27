@@ -32,17 +32,19 @@ namespace java { namespace util {
 
 		J2CPP_DECLARE_METHOD(0)
 
-		Observer(jobject jobj)
+		explicit Observer(jobject jobj)
 		: cpp_object<Observer>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		void update(local_ref< java::util::Observable > const&, local_ref< java::lang::Object > const&);
 	}; //class Observer
 
 } //namespace util
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -55,6 +57,12 @@ namespace java { namespace util {
 
 namespace j2cpp {
 
+
+
+java::util::Observer::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 void java::util::Observer::update(local_ref< java::util::Observable > const &a0, local_ref< java::lang::Object > const &a1)
 {

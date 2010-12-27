@@ -10,18 +10,22 @@
 #define J2CPP_ANDROID_APP_LAUNCHERACTIVITY_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class CharSequence; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace util { class List; } } }
+namespace j2cpp { namespace android { namespace app { class ListActivity; } } }
 namespace j2cpp { namespace android { namespace graphics { namespace drawable { class Drawable; } } } }
 namespace j2cpp { namespace android { namespace content { namespace pm { class ResolveInfo; } } } }
 namespace j2cpp { namespace android { namespace os { class Bundle; } } }
 
 
+#include <android/app/ListActivity.hpp>
 #include <android/content/pm/ResolveInfo.hpp>
 #include <android/graphics/drawable/Drawable.hpp>
 #include <android/os/Bundle.hpp>
 #include <java/lang/CharSequence.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/util/List.hpp>
 
@@ -45,11 +49,15 @@ namespace android { namespace app {
 			J2CPP_DECLARE_METHOD(1)
 			J2CPP_DECLARE_FIELD(0)
 
-			IconResizer(jobject jobj)
+			explicit IconResizer(jobject jobj)
 			: cpp_object<IconResizer>(jobj)
 			{
 			}
 
+			operator local_ref<java::lang::Object>() const;
+
+
+			IconResizer(local_ref< android::app::LauncherActivity > const&);
 			local_ref< android::graphics::drawable::Drawable > createIconThumbnail(local_ref< android::graphics::drawable::Drawable > const&);
 
 		}; //class IconResizer
@@ -70,17 +78,21 @@ namespace android { namespace app {
 			J2CPP_DECLARE_FIELD(4)
 			J2CPP_DECLARE_FIELD(5)
 
-			ListItem(jobject jobj)
+			explicit ListItem(jobject jobj)
 			: cpp_object<ListItem>(jobj)
-			, resolveInfo(jobj)
-			, label(jobj)
-			, icon(jobj)
-			, packageName(jobj)
-			, className(jobj)
-			, extras(jobj)
+, resolveInfo(jobj)
+, label(jobj)
+, icon(jobj)
+, packageName(jobj)
+, className(jobj)
+, extras(jobj)
 			{
 			}
 
+			operator local_ref<java::lang::Object>() const;
+
+
+			ListItem();
 
 			field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(0), J2CPP_FIELD_SIGNATURE(0), local_ref< android::content::pm::ResolveInfo > > resolveInfo;
 			field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(1), J2CPP_FIELD_SIGNATURE(1), local_ref< java::lang::CharSequence > > label;
@@ -112,17 +124,20 @@ namespace android { namespace app {
 		typedef LauncherActivity_::IconResizer IconResizer;
 		typedef LauncherActivity_::ListItem ListItem;
 
-		LauncherActivity(jobject jobj)
+		explicit LauncherActivity(jobject jobj)
 		: cpp_object<LauncherActivity>(jobj)
 		{
 		}
 
+		operator local_ref<android::app::ListActivity>() const;
+
+
+		LauncherActivity();
 		local_ref< java::util::List > makeListItems();
 	}; //class LauncherActivity
 
 } //namespace app
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -137,17 +152,24 @@ namespace j2cpp {
 
 
 
-template <>
-local_ref< android::app::LauncherActivity_::IconResizer > create< android::app::LauncherActivity_::IconResizer>(local_ref< android::app::LauncherActivity > const &a0)
+
+android::app::LauncherActivity_::IconResizer::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::app::LauncherActivity_::IconResizer >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::app::LauncherActivity_::IconResizer::J2CPP_CLASS_NAME>(),
-			get_method_id<android::app::LauncherActivity_::IconResizer::J2CPP_CLASS_NAME, android::app::LauncherActivity_::IconResizer::J2CPP_METHOD_NAME(0), android::app::LauncherActivity_::IconResizer::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::app::LauncherActivity_::IconResizer::IconResizer(local_ref< android::app::LauncherActivity > const &a0)
+: cpp_object<android::app::LauncherActivity_::IconResizer>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::app::LauncherActivity_::IconResizer::J2CPP_CLASS_NAME>(),
+		get_method_id<android::app::LauncherActivity_::IconResizer::J2CPP_CLASS_NAME, android::app::LauncherActivity_::IconResizer::J2CPP_METHOD_NAME(0), android::app::LauncherActivity_::IconResizer::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 local_ref< android::graphics::drawable::Drawable > android::app::LauncherActivity_::IconResizer::createIconThumbnail(local_ref< android::graphics::drawable::Drawable > const &a0)
 {
@@ -167,16 +189,29 @@ J2CPP_DEFINE_METHOD(android::app::LauncherActivity_::IconResizer,0,"<init>","(La
 J2CPP_DEFINE_METHOD(android::app::LauncherActivity_::IconResizer,1,"createIconThumbnail","(Landroid/graphics/drawable/Drawable;)Landroid/graphics/drawable/Drawable;")
 J2CPP_DEFINE_FIELD(android::app::LauncherActivity_::IconResizer,0,"this$0","Landroid/app/LauncherActivity;")
 
-template <>
-local_ref< android::app::LauncherActivity_::ListItem > create< android::app::LauncherActivity_::ListItem>()
+
+android::app::LauncherActivity_::ListItem::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::app::LauncherActivity_::ListItem >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::app::LauncherActivity_::ListItem::J2CPP_CLASS_NAME>(),
-			get_method_id<android::app::LauncherActivity_::ListItem::J2CPP_CLASS_NAME, android::app::LauncherActivity_::ListItem::J2CPP_METHOD_NAME(0), android::app::LauncherActivity_::ListItem::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::app::LauncherActivity_::ListItem::ListItem()
+: cpp_object<android::app::LauncherActivity_::ListItem>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::app::LauncherActivity_::ListItem::J2CPP_CLASS_NAME>(),
+		get_method_id<android::app::LauncherActivity_::ListItem::J2CPP_CLASS_NAME, android::app::LauncherActivity_::ListItem::J2CPP_METHOD_NAME(0), android::app::LauncherActivity_::ListItem::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+, resolveInfo(get_jtype())
+, label(get_jtype())
+, icon(get_jtype())
+, packageName(get_jtype())
+, className(get_jtype())
+, extras(get_jtype())
+{
+}
+
 
 
 
@@ -190,16 +225,23 @@ J2CPP_DEFINE_FIELD(android::app::LauncherActivity_::ListItem,4,"className","Ljav
 J2CPP_DEFINE_FIELD(android::app::LauncherActivity_::ListItem,5,"extras","Landroid/os/Bundle;")
 
 
-template <>
-local_ref< android::app::LauncherActivity > create< android::app::LauncherActivity>()
+
+android::app::LauncherActivity::operator local_ref<android::app::ListActivity>() const
 {
-	return local_ref< android::app::LauncherActivity >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::app::LauncherActivity::J2CPP_CLASS_NAME>(),
-			get_method_id<android::app::LauncherActivity::J2CPP_CLASS_NAME, android::app::LauncherActivity::J2CPP_METHOD_NAME(0), android::app::LauncherActivity::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<android::app::ListActivity>(get_jtype());
 }
+
+
+android::app::LauncherActivity::LauncherActivity()
+: cpp_object<android::app::LauncherActivity>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::app::LauncherActivity::J2CPP_CLASS_NAME>(),
+		get_method_id<android::app::LauncherActivity::J2CPP_CLASS_NAME, android::app::LauncherActivity::J2CPP_METHOD_NAME(0), android::app::LauncherActivity::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 
 

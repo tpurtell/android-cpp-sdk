@@ -10,9 +10,11 @@
 #define J2CPP_JAVA_IO_FILTERWRITER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class Writer; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 
 
+#include <java/io/Writer.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -36,10 +38,13 @@ namespace java { namespace io {
 		J2CPP_DECLARE_METHOD(5)
 		J2CPP_DECLARE_FIELD(0)
 
-		FilterWriter(jobject jobj)
+		explicit FilterWriter(jobject jobj)
 		: cpp_object<FilterWriter>(jobj)
 		{
 		}
+
+		operator local_ref<java::io::Writer>() const;
+
 
 		void close();
 		void flush();
@@ -51,7 +56,6 @@ namespace java { namespace io {
 
 } //namespace io
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -65,17 +69,12 @@ namespace java { namespace io {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::io::FilterWriter > create< java::io::FilterWriter>(local_ref< java::io::Writer > const &a0)
+
+java::io::FilterWriter::operator local_ref<java::io::Writer>() const
 {
-	return local_ref< java::io::FilterWriter >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::io::FilterWriter::J2CPP_CLASS_NAME>(),
-			get_method_id<java::io::FilterWriter::J2CPP_CLASS_NAME, java::io::FilterWriter::J2CPP_METHOD_NAME(0), java::io::FilterWriter::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::io::Writer>(get_jtype());
 }
+
 
 void java::io::FilterWriter::close()
 {

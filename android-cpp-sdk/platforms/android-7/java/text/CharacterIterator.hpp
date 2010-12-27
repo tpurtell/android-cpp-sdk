@@ -11,8 +11,10 @@
 
 
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace lang { class Cloneable; } } }
 
 
+#include <java/lang/Cloneable.hpp>
 #include <java/lang/Object.hpp>
 
 
@@ -40,10 +42,14 @@ namespace java { namespace text {
 		J2CPP_DECLARE_METHOD(9)
 		J2CPP_DECLARE_FIELD(0)
 
-		CharacterIterator(jobject jobj)
+		explicit CharacterIterator(jobject jobj)
 		: cpp_object<CharacterIterator>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::lang::Cloneable>() const;
+
 
 		local_ref< java::lang::Object > clone();
 		cpp_char current();
@@ -62,7 +68,6 @@ namespace java { namespace text {
 } //namespace text
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_TEXT_CHARACTERITERATOR_HPP_DECL
@@ -74,6 +79,17 @@ namespace java { namespace text {
 
 namespace j2cpp {
 
+
+
+java::text::CharacterIterator::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
+
+java::text::CharacterIterator::operator local_ref<java::lang::Cloneable>() const
+{
+	return local_ref<java::lang::Cloneable>(get_jtype());
+}
 
 local_ref< java::lang::Object > java::text::CharacterIterator::clone()
 {

@@ -11,12 +11,14 @@
 
 
 namespace j2cpp { namespace java { namespace lang { class CharSequence; } } }
+namespace j2cpp { namespace android { namespace app { class ListActivity; } } }
 namespace j2cpp { namespace android { namespace content { class Intent; } } }
 namespace j2cpp { namespace android { namespace preference { class Preference; } } }
 namespace j2cpp { namespace android { namespace preference { class PreferenceManager; } } }
 namespace j2cpp { namespace android { namespace preference { class PreferenceScreen; } } }
 
 
+#include <android/app/ListActivity.hpp>
 #include <android/content/Intent.hpp>
 #include <android/preference/Preference.hpp>
 #include <android/preference/PreferenceManager.hpp>
@@ -53,11 +55,15 @@ namespace android { namespace preference {
 		J2CPP_DECLARE_METHOD(14)
 		J2CPP_DECLARE_METHOD(15)
 
-		PreferenceActivity(jobject jobj)
+		explicit PreferenceActivity(jobject jobj)
 		: cpp_object<PreferenceActivity>(jobj)
 		{
 		}
 
+		operator local_ref<android::app::ListActivity>() const;
+
+
+		PreferenceActivity();
 		void onContentChanged();
 		local_ref< android::preference::PreferenceManager > getPreferenceManager();
 		void setPreferenceScreen(local_ref< android::preference::PreferenceScreen > const&);
@@ -71,7 +77,6 @@ namespace android { namespace preference {
 } //namespace preference
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_PREFERENCE_PREFERENCEACTIVITY_HPP_DECL
@@ -84,16 +89,23 @@ namespace android { namespace preference {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::preference::PreferenceActivity > create< android::preference::PreferenceActivity>()
+
+android::preference::PreferenceActivity::operator local_ref<android::app::ListActivity>() const
 {
-	return local_ref< android::preference::PreferenceActivity >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::preference::PreferenceActivity::J2CPP_CLASS_NAME>(),
-			get_method_id<android::preference::PreferenceActivity::J2CPP_CLASS_NAME, android::preference::PreferenceActivity::J2CPP_METHOD_NAME(0), android::preference::PreferenceActivity::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<android::app::ListActivity>(get_jtype());
 }
+
+
+android::preference::PreferenceActivity::PreferenceActivity()
+: cpp_object<android::preference::PreferenceActivity>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::preference::PreferenceActivity::J2CPP_CLASS_NAME>(),
+		get_method_id<android::preference::PreferenceActivity::J2CPP_CLASS_NAME, android::preference::PreferenceActivity::J2CPP_METHOD_NAME(0), android::preference::PreferenceActivity::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 
 

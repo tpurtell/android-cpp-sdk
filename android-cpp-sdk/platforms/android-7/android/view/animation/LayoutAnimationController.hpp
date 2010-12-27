@@ -10,6 +10,7 @@
 #define J2CPP_ANDROID_VIEW_ANIMATION_LAYOUTANIMATIONCONTROLLER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace android { namespace content { class Context; } } }
 namespace j2cpp { namespace android { namespace view { class View; } } }
 namespace j2cpp { namespace android { namespace view { namespace animation { class Interpolator; } } } }
@@ -22,6 +23,7 @@ namespace j2cpp { namespace android { namespace util { class AttributeSet; } } }
 #include <android/view/View.hpp>
 #include <android/view/animation/Animation.hpp>
 #include <android/view/animation/Interpolator.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -43,13 +45,17 @@ namespace android { namespace view { namespace animation {
 			J2CPP_DECLARE_FIELD(0)
 			J2CPP_DECLARE_FIELD(1)
 
-			AnimationParameters(jobject jobj)
+			explicit AnimationParameters(jobject jobj)
 			: cpp_object<AnimationParameters>(jobj)
-			, count(jobj)
-			, index(jobj)
+, count(jobj)
+, index(jobj)
 			{
 			}
 
+			operator local_ref<java::lang::Object>() const;
+
+
+			AnimationParameters();
 
 			field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(0), J2CPP_FIELD_SIGNATURE(0), cpp_int > count;
 			field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(1), J2CPP_FIELD_SIGNATURE(1), cpp_int > index;
@@ -92,11 +98,17 @@ namespace android { namespace view { namespace animation {
 
 		typedef LayoutAnimationController_::AnimationParameters AnimationParameters;
 
-		LayoutAnimationController(jobject jobj)
+		explicit LayoutAnimationController(jobject jobj)
 		: cpp_object<LayoutAnimationController>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		LayoutAnimationController(local_ref< android::content::Context > const&, local_ref< android::util::AttributeSet > const&);
+		LayoutAnimationController(local_ref< android::view::animation::Animation > const&);
+		LayoutAnimationController(local_ref< android::view::animation::Animation > const&, cpp_float const&);
 		cpp_int getOrder();
 		void setOrder(cpp_int const&);
 		void setAnimation(local_ref< android::content::Context > const&, cpp_int const&);
@@ -121,7 +133,6 @@ namespace android { namespace view { namespace animation {
 } //namespace view
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_VIEW_ANIMATION_LAYOUTANIMATIONCONTROLLER_HPP_DECL
@@ -135,16 +146,25 @@ namespace j2cpp {
 
 
 
-template <>
-local_ref< android::view::animation::LayoutAnimationController_::AnimationParameters > create< android::view::animation::LayoutAnimationController_::AnimationParameters>()
+
+android::view::animation::LayoutAnimationController_::AnimationParameters::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::view::animation::LayoutAnimationController_::AnimationParameters >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::view::animation::LayoutAnimationController_::AnimationParameters::J2CPP_CLASS_NAME>(),
-			get_method_id<android::view::animation::LayoutAnimationController_::AnimationParameters::J2CPP_CLASS_NAME, android::view::animation::LayoutAnimationController_::AnimationParameters::J2CPP_METHOD_NAME(0), android::view::animation::LayoutAnimationController_::AnimationParameters::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::view::animation::LayoutAnimationController_::AnimationParameters::AnimationParameters()
+: cpp_object<android::view::animation::LayoutAnimationController_::AnimationParameters>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::view::animation::LayoutAnimationController_::AnimationParameters::J2CPP_CLASS_NAME>(),
+		get_method_id<android::view::animation::LayoutAnimationController_::AnimationParameters::J2CPP_CLASS_NAME, android::view::animation::LayoutAnimationController_::AnimationParameters::J2CPP_METHOD_NAME(0), android::view::animation::LayoutAnimationController_::AnimationParameters::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+, count(get_jtype())
+, index(get_jtype())
+{
+}
+
 
 
 
@@ -154,41 +174,50 @@ J2CPP_DEFINE_FIELD(android::view::animation::LayoutAnimationController_::Animati
 J2CPP_DEFINE_FIELD(android::view::animation::LayoutAnimationController_::AnimationParameters,1,"index","I")
 
 
-template <>
-local_ref< android::view::animation::LayoutAnimationController > create< android::view::animation::LayoutAnimationController>(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1)
+
+android::view::animation::LayoutAnimationController::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::view::animation::LayoutAnimationController >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::view::animation::LayoutAnimationController::J2CPP_CLASS_NAME>(),
-			get_method_id<android::view::animation::LayoutAnimationController::J2CPP_CLASS_NAME, android::view::animation::LayoutAnimationController::J2CPP_METHOD_NAME(0), android::view::animation::LayoutAnimationController::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
 
-template <>
-local_ref< android::view::animation::LayoutAnimationController > create< android::view::animation::LayoutAnimationController>(local_ref< android::view::animation::Animation > const &a0)
+
+android::view::animation::LayoutAnimationController::LayoutAnimationController(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1)
+: cpp_object<android::view::animation::LayoutAnimationController>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::view::animation::LayoutAnimationController::J2CPP_CLASS_NAME>(),
+		get_method_id<android::view::animation::LayoutAnimationController::J2CPP_CLASS_NAME, android::view::animation::LayoutAnimationController::J2CPP_METHOD_NAME(0), android::view::animation::LayoutAnimationController::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
 {
-	return local_ref< android::view::animation::LayoutAnimationController >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::view::animation::LayoutAnimationController::J2CPP_CLASS_NAME>(),
-			get_method_id<android::view::animation::LayoutAnimationController::J2CPP_CLASS_NAME, android::view::animation::LayoutAnimationController::J2CPP_METHOD_NAME(1), android::view::animation::LayoutAnimationController::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< android::view::animation::LayoutAnimationController > create< android::view::animation::LayoutAnimationController>(local_ref< android::view::animation::Animation > const &a0, cpp_float const &a1)
+
+
+android::view::animation::LayoutAnimationController::LayoutAnimationController(local_ref< android::view::animation::Animation > const &a0)
+: cpp_object<android::view::animation::LayoutAnimationController>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::view::animation::LayoutAnimationController::J2CPP_CLASS_NAME>(),
+		get_method_id<android::view::animation::LayoutAnimationController::J2CPP_CLASS_NAME, android::view::animation::LayoutAnimationController::J2CPP_METHOD_NAME(1), android::view::animation::LayoutAnimationController::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< android::view::animation::LayoutAnimationController >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::view::animation::LayoutAnimationController::J2CPP_CLASS_NAME>(),
-			get_method_id<android::view::animation::LayoutAnimationController::J2CPP_CLASS_NAME, android::view::animation::LayoutAnimationController::J2CPP_METHOD_NAME(2), android::view::animation::LayoutAnimationController::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
 }
+
+
+
+android::view::animation::LayoutAnimationController::LayoutAnimationController(local_ref< android::view::animation::Animation > const &a0, cpp_float const &a1)
+: cpp_object<android::view::animation::LayoutAnimationController>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::view::animation::LayoutAnimationController::J2CPP_CLASS_NAME>(),
+		get_method_id<android::view::animation::LayoutAnimationController::J2CPP_CLASS_NAME, android::view::animation::LayoutAnimationController::J2CPP_METHOD_NAME(2), android::view::animation::LayoutAnimationController::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
 
 cpp_int android::view::animation::LayoutAnimationController::getOrder()
 {

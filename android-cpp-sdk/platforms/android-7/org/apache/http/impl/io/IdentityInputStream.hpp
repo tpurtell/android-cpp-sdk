@@ -10,9 +10,11 @@
 #define J2CPP_ORG_APACHE_HTTP_IMPL_IO_IDENTITYINPUTSTREAM_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class InputStream; } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace io { class SessionInputBuffer; } } } } }
 
 
+#include <java/io/InputStream.hpp>
 #include <org/apache/http/io/SessionInputBuffer.hpp>
 
 
@@ -34,11 +36,15 @@ namespace org { namespace apache { namespace http { namespace impl { namespace i
 		J2CPP_DECLARE_METHOD(3)
 		J2CPP_DECLARE_METHOD(4)
 
-		IdentityInputStream(jobject jobj)
+		explicit IdentityInputStream(jobject jobj)
 		: cpp_object<IdentityInputStream>(jobj)
 		{
 		}
 
+		operator local_ref<java::io::InputStream>() const;
+
+
+		IdentityInputStream(local_ref< org::apache::http::io::SessionInputBuffer > const&);
 		cpp_int available();
 		void close();
 		cpp_int read();
@@ -50,7 +56,6 @@ namespace org { namespace apache { namespace http { namespace impl { namespace i
 } //namespace http
 } //namespace apache
 } //namespace org
-
 
 } //namespace j2cpp
 
@@ -64,17 +69,24 @@ namespace org { namespace apache { namespace http { namespace impl { namespace i
 namespace j2cpp {
 
 
-template <>
-local_ref< org::apache::http::impl::io::IdentityInputStream > create< org::apache::http::impl::io::IdentityInputStream>(local_ref< org::apache::http::io::SessionInputBuffer > const &a0)
+
+org::apache::http::impl::io::IdentityInputStream::operator local_ref<java::io::InputStream>() const
 {
-	return local_ref< org::apache::http::impl::io::IdentityInputStream >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::apache::http::impl::io::IdentityInputStream::J2CPP_CLASS_NAME>(),
-			get_method_id<org::apache::http::impl::io::IdentityInputStream::J2CPP_CLASS_NAME, org::apache::http::impl::io::IdentityInputStream::J2CPP_METHOD_NAME(0), org::apache::http::impl::io::IdentityInputStream::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::io::InputStream>(get_jtype());
 }
+
+
+org::apache::http::impl::io::IdentityInputStream::IdentityInputStream(local_ref< org::apache::http::io::SessionInputBuffer > const &a0)
+: cpp_object<org::apache::http::impl::io::IdentityInputStream>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::apache::http::impl::io::IdentityInputStream::J2CPP_CLASS_NAME>(),
+		get_method_id<org::apache::http::impl::io::IdentityInputStream::J2CPP_CLASS_NAME, org::apache::http::impl::io::IdentityInputStream::J2CPP_METHOD_NAME(0), org::apache::http::impl::io::IdentityInputStream::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 cpp_int org::apache::http::impl::io::IdentityInputStream::available()
 {

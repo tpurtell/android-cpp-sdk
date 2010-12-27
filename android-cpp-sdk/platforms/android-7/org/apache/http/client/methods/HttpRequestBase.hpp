@@ -12,20 +12,28 @@
 
 namespace j2cpp { namespace java { namespace net { class URI; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace lang { class Cloneable; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { class RequestLine; } } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { namespace message { class AbstractHttpMessage; } } } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { namespace client { namespace methods { class AbortableHttpRequest; } } } } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { namespace client { namespace methods { class HttpUriRequest; } } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace conn { class ConnectionReleaseTrigger; } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace conn { class ClientConnectionRequest; } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { class ProtocolVersion; } } } }
 
 
+#include <java/lang/Cloneable.hpp>
 #include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/net/URI.hpp>
 #include <org/apache/http/ProtocolVersion.hpp>
 #include <org/apache/http/RequestLine.hpp>
+#include <org/apache/http/client/methods/AbortableHttpRequest.hpp>
+#include <org/apache/http/client/methods/HttpUriRequest.hpp>
 #include <org/apache/http/conn/ClientConnectionRequest.hpp>
 #include <org/apache/http/conn/ConnectionReleaseTrigger.hpp>
+#include <org/apache/http/message/AbstractHttpMessage.hpp>
 
 
 namespace j2cpp {
@@ -52,11 +60,18 @@ namespace org { namespace apache { namespace http { namespace client { namespace
 		J2CPP_DECLARE_METHOD(9)
 		J2CPP_DECLARE_METHOD(10)
 
-		HttpRequestBase(jobject jobj)
+		explicit HttpRequestBase(jobject jobj)
 		: cpp_object<HttpRequestBase>(jobj)
 		{
 		}
 
+		operator local_ref<org::apache::http::message::AbstractHttpMessage>() const;
+		operator local_ref<org::apache::http::client::methods::HttpUriRequest>() const;
+		operator local_ref<org::apache::http::client::methods::AbortableHttpRequest>() const;
+		operator local_ref<java::lang::Cloneable>() const;
+
+
+		HttpRequestBase();
 		local_ref< java::lang::String > getMethod();
 		local_ref< org::apache::http::ProtocolVersion > getProtocolVersion();
 		local_ref< java::net::URI > getURI();
@@ -75,7 +90,6 @@ namespace org { namespace apache { namespace http { namespace client { namespace
 } //namespace apache
 } //namespace org
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ORG_APACHE_HTTP_CLIENT_METHODS_HTTPREQUESTBASE_HPP_DECL
@@ -88,16 +102,38 @@ namespace org { namespace apache { namespace http { namespace client { namespace
 namespace j2cpp {
 
 
-template <>
-local_ref< org::apache::http::client::methods::HttpRequestBase > create< org::apache::http::client::methods::HttpRequestBase>()
+
+org::apache::http::client::methods::HttpRequestBase::operator local_ref<org::apache::http::message::AbstractHttpMessage>() const
 {
-	return local_ref< org::apache::http::client::methods::HttpRequestBase >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::apache::http::client::methods::HttpRequestBase::J2CPP_CLASS_NAME>(),
-			get_method_id<org::apache::http::client::methods::HttpRequestBase::J2CPP_CLASS_NAME, org::apache::http::client::methods::HttpRequestBase::J2CPP_METHOD_NAME(0), org::apache::http::client::methods::HttpRequestBase::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<org::apache::http::message::AbstractHttpMessage>(get_jtype());
 }
+
+org::apache::http::client::methods::HttpRequestBase::operator local_ref<org::apache::http::client::methods::HttpUriRequest>() const
+{
+	return local_ref<org::apache::http::client::methods::HttpUriRequest>(get_jtype());
+}
+
+org::apache::http::client::methods::HttpRequestBase::operator local_ref<org::apache::http::client::methods::AbortableHttpRequest>() const
+{
+	return local_ref<org::apache::http::client::methods::AbortableHttpRequest>(get_jtype());
+}
+
+org::apache::http::client::methods::HttpRequestBase::operator local_ref<java::lang::Cloneable>() const
+{
+	return local_ref<java::lang::Cloneable>(get_jtype());
+}
+
+
+org::apache::http::client::methods::HttpRequestBase::HttpRequestBase()
+: cpp_object<org::apache::http::client::methods::HttpRequestBase>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::apache::http::client::methods::HttpRequestBase::J2CPP_CLASS_NAME>(),
+		get_method_id<org::apache::http::client::methods::HttpRequestBase::J2CPP_CLASS_NAME, org::apache::http::client::methods::HttpRequestBase::J2CPP_METHOD_NAME(0), org::apache::http::client::methods::HttpRequestBase::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 local_ref< java::lang::String > org::apache::http::client::methods::HttpRequestBase::getMethod()
 {

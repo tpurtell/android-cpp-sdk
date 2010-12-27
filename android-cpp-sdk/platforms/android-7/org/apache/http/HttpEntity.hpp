@@ -12,11 +12,13 @@
 
 namespace j2cpp { namespace java { namespace io { class InputStream; } } }
 namespace j2cpp { namespace java { namespace io { class OutputStream; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { class Header; } } } }
 
 
 #include <java/io/InputStream.hpp>
 #include <java/io/OutputStream.hpp>
+#include <java/lang/Object.hpp>
 #include <org/apache/http/Header.hpp>
 
 
@@ -42,10 +44,13 @@ namespace org { namespace apache { namespace http {
 		J2CPP_DECLARE_METHOD(7)
 		J2CPP_DECLARE_METHOD(8)
 
-		HttpEntity(jobject jobj)
+		explicit HttpEntity(jobject jobj)
 		: cpp_object<HttpEntity>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		cpp_boolean isRepeatable();
 		cpp_boolean isChunked();
@@ -62,7 +67,6 @@ namespace org { namespace apache { namespace http {
 } //namespace apache
 } //namespace org
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ORG_APACHE_HTTP_HTTPENTITY_HPP_DECL
@@ -74,6 +78,12 @@ namespace org { namespace apache { namespace http {
 
 namespace j2cpp {
 
+
+
+org::apache::http::HttpEntity::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 cpp_boolean org::apache::http::HttpEntity::isRepeatable()
 {

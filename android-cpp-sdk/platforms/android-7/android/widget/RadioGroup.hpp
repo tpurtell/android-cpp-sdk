@@ -10,11 +10,13 @@
 #define J2CPP_ANDROID_WIDGET_RADIOGROUP_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace android { namespace content { class Context; } } }
 namespace j2cpp { namespace android { namespace view { class View; } } }
 namespace j2cpp { namespace android { namespace view { namespace ViewGroup_ { class OnHierarchyChangeListener; } } } }
 namespace j2cpp { namespace android { namespace view { namespace ViewGroup_ { class MarginLayoutParams; } } } }
 namespace j2cpp { namespace android { namespace view { namespace ViewGroup_ { class LayoutParams; } } } }
+namespace j2cpp { namespace android { namespace widget { class LinearLayout; } } }
 namespace j2cpp { namespace android { namespace widget { namespace LinearLayout_ { class LayoutParams; } } } }
 namespace j2cpp { namespace android { namespace widget { namespace RadioGroup_ { class OnCheckedChangeListener; } } } }
 namespace j2cpp { namespace android { namespace widget { namespace RadioGroup_ { class LayoutParams; } } } }
@@ -27,6 +29,7 @@ namespace j2cpp { namespace android { namespace util { class AttributeSet; } } }
 #include <android/view/ViewGroup.hpp>
 #include <android/widget/LinearLayout.hpp>
 #include <android/widget/RadioGroup.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -46,10 +49,13 @@ namespace android { namespace widget {
 
 			J2CPP_DECLARE_METHOD(0)
 
-			OnCheckedChangeListener(jobject jobj)
+			explicit OnCheckedChangeListener(jobject jobj)
 			: cpp_object<OnCheckedChangeListener>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+
 
 			void onCheckedChanged(local_ref< android::widget::RadioGroup > const&, cpp_int const&);
 		}; //class OnCheckedChangeListener
@@ -69,11 +75,19 @@ namespace android { namespace widget {
 			J2CPP_DECLARE_METHOD(4)
 			J2CPP_DECLARE_METHOD(5)
 
-			LayoutParams(jobject jobj)
+			explicit LayoutParams(jobject jobj)
 			: cpp_object<LayoutParams>(jobj)
 			{
 			}
 
+			operator local_ref<android::widget::LinearLayout_::LayoutParams>() const;
+
+
+			LayoutParams(local_ref< android::content::Context > const&, local_ref< android::util::AttributeSet > const&);
+			LayoutParams(cpp_int const&, cpp_int const&);
+			LayoutParams(cpp_int const&, cpp_int const&, cpp_float const&);
+			LayoutParams(local_ref< android::view::ViewGroup_::LayoutParams > const&);
+			LayoutParams(local_ref< android::view::ViewGroup_::MarginLayoutParams > const&);
 		}; //class LayoutParams
 
 	} //namespace RadioGroup_
@@ -104,11 +118,16 @@ namespace android { namespace widget {
 		typedef RadioGroup_::OnCheckedChangeListener OnCheckedChangeListener;
 		typedef RadioGroup_::LayoutParams LayoutParams;
 
-		RadioGroup(jobject jobj)
+		explicit RadioGroup(jobject jobj)
 		: cpp_object<RadioGroup>(jobj)
 		{
 		}
 
+		operator local_ref<android::widget::LinearLayout>() const;
+
+
+		RadioGroup(local_ref< android::content::Context > const&);
+		RadioGroup(local_ref< android::content::Context > const&, local_ref< android::util::AttributeSet > const&);
 		void setOnHierarchyChangeListener(local_ref< android::view::ViewGroup_::OnHierarchyChangeListener > const&);
 		void addView(local_ref< android::view::View > const&, cpp_int const&, local_ref< android::view::ViewGroup_::LayoutParams > const&);
 		void check(cpp_int const&);
@@ -123,7 +142,6 @@ namespace android { namespace widget {
 } //namespace widget
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_WIDGET_RADIOGROUP_HPP_DECL
@@ -136,6 +154,12 @@ namespace android { namespace widget {
 namespace j2cpp {
 
 
+
+
+android::widget::RadioGroup_::OnCheckedChangeListener::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 void android::widget::RadioGroup_::OnCheckedChangeListener::onCheckedChanged(local_ref< android::widget::RadioGroup > const &a0, cpp_int const &a1)
 {
@@ -152,65 +176,76 @@ void android::widget::RadioGroup_::OnCheckedChangeListener::onCheckedChanged(loc
 J2CPP_DEFINE_CLASS(android::widget::RadioGroup_::OnCheckedChangeListener,"android/widget/RadioGroup$OnCheckedChangeListener")
 J2CPP_DEFINE_METHOD(android::widget::RadioGroup_::OnCheckedChangeListener,0,"onCheckedChanged","(Landroid/widget/RadioGroup;I)V")
 
-template <>
-local_ref< android::widget::RadioGroup_::LayoutParams > create< android::widget::RadioGroup_::LayoutParams>(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1)
+
+android::widget::RadioGroup_::LayoutParams::operator local_ref<android::widget::LinearLayout_::LayoutParams>() const
 {
-	return local_ref< android::widget::RadioGroup_::LayoutParams >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::widget::RadioGroup_::LayoutParams::J2CPP_CLASS_NAME>(),
-			get_method_id<android::widget::RadioGroup_::LayoutParams::J2CPP_CLASS_NAME, android::widget::RadioGroup_::LayoutParams::J2CPP_METHOD_NAME(0), android::widget::RadioGroup_::LayoutParams::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<android::widget::LinearLayout_::LayoutParams>(get_jtype());
 }
 
-template <>
-local_ref< android::widget::RadioGroup_::LayoutParams > create< android::widget::RadioGroup_::LayoutParams>(cpp_int const &a0, cpp_int const &a1)
+
+android::widget::RadioGroup_::LayoutParams::LayoutParams(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1)
+: cpp_object<android::widget::RadioGroup_::LayoutParams>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::widget::RadioGroup_::LayoutParams::J2CPP_CLASS_NAME>(),
+		get_method_id<android::widget::RadioGroup_::LayoutParams::J2CPP_CLASS_NAME, android::widget::RadioGroup_::LayoutParams::J2CPP_METHOD_NAME(0), android::widget::RadioGroup_::LayoutParams::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
 {
-	return local_ref< android::widget::RadioGroup_::LayoutParams >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::widget::RadioGroup_::LayoutParams::J2CPP_CLASS_NAME>(),
-			get_method_id<android::widget::RadioGroup_::LayoutParams::J2CPP_CLASS_NAME, android::widget::RadioGroup_::LayoutParams::J2CPP_METHOD_NAME(1), android::widget::RadioGroup_::LayoutParams::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< android::widget::RadioGroup_::LayoutParams > create< android::widget::RadioGroup_::LayoutParams>(cpp_int const &a0, cpp_int const &a1, cpp_float const &a2)
+
+
+android::widget::RadioGroup_::LayoutParams::LayoutParams(cpp_int const &a0, cpp_int const &a1)
+: cpp_object<android::widget::RadioGroup_::LayoutParams>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::widget::RadioGroup_::LayoutParams::J2CPP_CLASS_NAME>(),
+		get_method_id<android::widget::RadioGroup_::LayoutParams::J2CPP_CLASS_NAME, android::widget::RadioGroup_::LayoutParams::J2CPP_METHOD_NAME(1), android::widget::RadioGroup_::LayoutParams::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
 {
-	return local_ref< android::widget::RadioGroup_::LayoutParams >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::widget::RadioGroup_::LayoutParams::J2CPP_CLASS_NAME>(),
-			get_method_id<android::widget::RadioGroup_::LayoutParams::J2CPP_CLASS_NAME, android::widget::RadioGroup_::LayoutParams::J2CPP_METHOD_NAME(2), android::widget::RadioGroup_::LayoutParams::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< android::widget::RadioGroup_::LayoutParams > create< android::widget::RadioGroup_::LayoutParams>(local_ref< android::view::ViewGroup_::LayoutParams > const &a0)
+
+
+android::widget::RadioGroup_::LayoutParams::LayoutParams(cpp_int const &a0, cpp_int const &a1, cpp_float const &a2)
+: cpp_object<android::widget::RadioGroup_::LayoutParams>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::widget::RadioGroup_::LayoutParams::J2CPP_CLASS_NAME>(),
+		get_method_id<android::widget::RadioGroup_::LayoutParams::J2CPP_CLASS_NAME, android::widget::RadioGroup_::LayoutParams::J2CPP_METHOD_NAME(2), android::widget::RadioGroup_::LayoutParams::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
+	)
+)
 {
-	return local_ref< android::widget::RadioGroup_::LayoutParams >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::widget::RadioGroup_::LayoutParams::J2CPP_CLASS_NAME>(),
-			get_method_id<android::widget::RadioGroup_::LayoutParams::J2CPP_CLASS_NAME, android::widget::RadioGroup_::LayoutParams::J2CPP_METHOD_NAME(3), android::widget::RadioGroup_::LayoutParams::J2CPP_METHOD_SIGNATURE(3), false>(),
-			a0.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< android::widget::RadioGroup_::LayoutParams > create< android::widget::RadioGroup_::LayoutParams>(local_ref< android::view::ViewGroup_::MarginLayoutParams > const &a0)
+
+
+android::widget::RadioGroup_::LayoutParams::LayoutParams(local_ref< android::view::ViewGroup_::LayoutParams > const &a0)
+: cpp_object<android::widget::RadioGroup_::LayoutParams>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::widget::RadioGroup_::LayoutParams::J2CPP_CLASS_NAME>(),
+		get_method_id<android::widget::RadioGroup_::LayoutParams::J2CPP_CLASS_NAME, android::widget::RadioGroup_::LayoutParams::J2CPP_METHOD_NAME(3), android::widget::RadioGroup_::LayoutParams::J2CPP_METHOD_SIGNATURE(3), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< android::widget::RadioGroup_::LayoutParams >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::widget::RadioGroup_::LayoutParams::J2CPP_CLASS_NAME>(),
-			get_method_id<android::widget::RadioGroup_::LayoutParams::J2CPP_CLASS_NAME, android::widget::RadioGroup_::LayoutParams::J2CPP_METHOD_NAME(4), android::widget::RadioGroup_::LayoutParams::J2CPP_METHOD_SIGNATURE(4), false>(),
-			a0.get_jtype()
-		)
-	);
 }
+
+
+
+android::widget::RadioGroup_::LayoutParams::LayoutParams(local_ref< android::view::ViewGroup_::MarginLayoutParams > const &a0)
+: cpp_object<android::widget::RadioGroup_::LayoutParams>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::widget::RadioGroup_::LayoutParams::J2CPP_CLASS_NAME>(),
+		get_method_id<android::widget::RadioGroup_::LayoutParams::J2CPP_CLASS_NAME, android::widget::RadioGroup_::LayoutParams::J2CPP_METHOD_NAME(4), android::widget::RadioGroup_::LayoutParams::J2CPP_METHOD_SIGNATURE(4), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 
 
@@ -223,29 +258,37 @@ J2CPP_DEFINE_METHOD(android::widget::RadioGroup_::LayoutParams,4,"<init>","(Land
 J2CPP_DEFINE_METHOD(android::widget::RadioGroup_::LayoutParams,5,"setBaseAttributes","(Landroid/content/res/TypedArray;II)V")
 
 
-template <>
-local_ref< android::widget::RadioGroup > create< android::widget::RadioGroup>(local_ref< android::content::Context > const &a0)
+
+android::widget::RadioGroup::operator local_ref<android::widget::LinearLayout>() const
 {
-	return local_ref< android::widget::RadioGroup >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::widget::RadioGroup::J2CPP_CLASS_NAME>(),
-			get_method_id<android::widget::RadioGroup::J2CPP_CLASS_NAME, android::widget::RadioGroup::J2CPP_METHOD_NAME(0), android::widget::RadioGroup::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<android::widget::LinearLayout>(get_jtype());
 }
 
-template <>
-local_ref< android::widget::RadioGroup > create< android::widget::RadioGroup>(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1)
+
+android::widget::RadioGroup::RadioGroup(local_ref< android::content::Context > const &a0)
+: cpp_object<android::widget::RadioGroup>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::widget::RadioGroup::J2CPP_CLASS_NAME>(),
+		get_method_id<android::widget::RadioGroup::J2CPP_CLASS_NAME, android::widget::RadioGroup::J2CPP_METHOD_NAME(0), android::widget::RadioGroup::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< android::widget::RadioGroup >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::widget::RadioGroup::J2CPP_CLASS_NAME>(),
-			get_method_id<android::widget::RadioGroup::J2CPP_CLASS_NAME, android::widget::RadioGroup::J2CPP_METHOD_NAME(1), android::widget::RadioGroup::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
 }
+
+
+
+android::widget::RadioGroup::RadioGroup(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1)
+: cpp_object<android::widget::RadioGroup>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::widget::RadioGroup::J2CPP_CLASS_NAME>(),
+		get_method_id<android::widget::RadioGroup::J2CPP_CLASS_NAME, android::widget::RadioGroup::J2CPP_METHOD_NAME(1), android::widget::RadioGroup::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
 
 void android::widget::RadioGroup::setOnHierarchyChangeListener(local_ref< android::view::ViewGroup_::OnHierarchyChangeListener > const &a0)
 {

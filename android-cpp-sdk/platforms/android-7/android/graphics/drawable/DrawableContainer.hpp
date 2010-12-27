@@ -14,6 +14,7 @@ namespace j2cpp { namespace java { namespace lang { class Runnable; } } }
 namespace j2cpp { namespace android { namespace graphics { class Canvas; } } }
 namespace j2cpp { namespace android { namespace graphics { namespace drawable { class Drawable; } } } }
 namespace j2cpp { namespace android { namespace graphics { namespace drawable { namespace Drawable_ { class ConstantState; } } } } }
+namespace j2cpp { namespace android { namespace graphics { namespace drawable { namespace Drawable_ { class Callback; } } } } }
 namespace j2cpp { namespace android { namespace graphics { class Rect; } } }
 namespace j2cpp { namespace android { namespace graphics { class ColorFilter; } } }
 
@@ -58,10 +59,13 @@ namespace android { namespace graphics { namespace drawable {
 			J2CPP_DECLARE_METHOD(15)
 			J2CPP_DECLARE_METHOD(16)
 
-			DrawableContainerState(jobject jobj)
+			explicit DrawableContainerState(jobject jobj)
 			: cpp_object<DrawableContainerState>(jobj)
 			{
 			}
+
+			operator local_ref<android::graphics::drawable::Drawable_::ConstantState>() const;
+
 
 			cpp_int getChangingConfigurations();
 			cpp_int addChild(local_ref< android::graphics::drawable::Drawable > const&);
@@ -118,11 +122,16 @@ namespace android { namespace graphics { namespace drawable {
 
 		typedef DrawableContainer_::DrawableContainerState DrawableContainerState;
 
-		DrawableContainer(jobject jobj)
+		explicit DrawableContainer(jobject jobj)
 		: cpp_object<DrawableContainer>(jobj)
 		{
 		}
 
+		operator local_ref<android::graphics::drawable::Drawable>() const;
+		operator local_ref<android::graphics::drawable::Drawable_::Callback>() const;
+
+
+		DrawableContainer();
 		void draw(local_ref< android::graphics::Canvas > const&);
 		cpp_int getChangingConfigurations();
 		cpp_boolean getPadding(local_ref< android::graphics::Rect > const&);
@@ -149,7 +158,6 @@ namespace android { namespace graphics { namespace drawable {
 } //namespace graphics
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_GRAPHICS_DRAWABLE_DRAWABLECONTAINER_HPP_DECL
@@ -163,16 +171,12 @@ namespace j2cpp {
 
 
 
-template <>
-local_ref< android::graphics::drawable::DrawableContainer_::DrawableContainerState > create< android::graphics::drawable::DrawableContainer_::DrawableContainerState>()
+
+android::graphics::drawable::DrawableContainer_::DrawableContainerState::operator local_ref<android::graphics::drawable::Drawable_::ConstantState>() const
 {
-	return local_ref< android::graphics::drawable::DrawableContainer_::DrawableContainerState >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::graphics::drawable::DrawableContainer_::DrawableContainerState::J2CPP_CLASS_NAME>(),
-			get_method_id<android::graphics::drawable::DrawableContainer_::DrawableContainerState::J2CPP_CLASS_NAME, android::graphics::drawable::DrawableContainer_::DrawableContainerState::J2CPP_METHOD_NAME(0), android::graphics::drawable::DrawableContainer_::DrawableContainerState::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<android::graphics::drawable::Drawable_::ConstantState>(get_jtype());
 }
+
 
 cpp_int android::graphics::drawable::DrawableContainer_::DrawableContainerState::getChangingConfigurations()
 {
@@ -359,16 +363,28 @@ J2CPP_DEFINE_METHOD(android::graphics::drawable::DrawableContainer_::DrawableCon
 J2CPP_DEFINE_METHOD(android::graphics::drawable::DrawableContainer_::DrawableContainerState,16,"canConstantState","()Z")
 
 
-template <>
-local_ref< android::graphics::drawable::DrawableContainer > create< android::graphics::drawable::DrawableContainer>()
+
+android::graphics::drawable::DrawableContainer::operator local_ref<android::graphics::drawable::Drawable>() const
 {
-	return local_ref< android::graphics::drawable::DrawableContainer >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::graphics::drawable::DrawableContainer::J2CPP_CLASS_NAME>(),
-			get_method_id<android::graphics::drawable::DrawableContainer::J2CPP_CLASS_NAME, android::graphics::drawable::DrawableContainer::J2CPP_METHOD_NAME(0), android::graphics::drawable::DrawableContainer::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<android::graphics::drawable::Drawable>(get_jtype());
 }
+
+android::graphics::drawable::DrawableContainer::operator local_ref<android::graphics::drawable::Drawable_::Callback>() const
+{
+	return local_ref<android::graphics::drawable::Drawable_::Callback>(get_jtype());
+}
+
+
+android::graphics::drawable::DrawableContainer::DrawableContainer()
+: cpp_object<android::graphics::drawable::DrawableContainer>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::graphics::drawable::DrawableContainer::J2CPP_CLASS_NAME>(),
+		get_method_id<android::graphics::drawable::DrawableContainer::J2CPP_CLASS_NAME, android::graphics::drawable::DrawableContainer::J2CPP_METHOD_NAME(0), android::graphics::drawable::DrawableContainer::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 void android::graphics::drawable::DrawableContainer::draw(local_ref< android::graphics::Canvas > const &a0)
 {

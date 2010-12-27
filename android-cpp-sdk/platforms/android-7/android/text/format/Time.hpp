@@ -10,9 +10,11 @@
 #define J2CPP_ANDROID_TEXT_FORMAT_TIME_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -86,23 +88,29 @@ namespace android { namespace text { namespace format {
 		J2CPP_DECLARE_FIELD(28)
 		J2CPP_DECLARE_FIELD(29)
 
-		Time(jobject jobj)
+		explicit Time(jobject jobj)
 		: cpp_object<Time>(jobj)
-		, allDay(jobj)
-		, second(jobj)
-		, minute(jobj)
-		, hour(jobj)
-		, monthDay(jobj)
-		, month(jobj)
-		, year(jobj)
-		, weekDay(jobj)
-		, yearDay(jobj)
-		, isDst(jobj)
-		, gmtoff(jobj)
-		, timezone(jobj)
+, allDay(jobj)
+, second(jobj)
+, minute(jobj)
+, hour(jobj)
+, monthDay(jobj)
+, month(jobj)
+, year(jobj)
+, weekDay(jobj)
+, yearDay(jobj)
+, isDst(jobj)
+, gmtoff(jobj)
+, timezone(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		Time(local_ref< java::lang::String > const&);
+		Time();
+		Time(local_ref< android::text::format::Time > const&);
 		cpp_long normalize(cpp_boolean const&);
 		void switchTimezone(local_ref< java::lang::String > const&);
 		cpp_int getActualMaximum(cpp_int const&);
@@ -164,7 +172,6 @@ namespace android { namespace text { namespace format {
 } //namespace text
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_TEXT_FORMAT_TIME_HPP_DECL
@@ -177,40 +184,85 @@ namespace android { namespace text { namespace format {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::text::format::Time > create< android::text::format::Time>(local_ref< java::lang::String > const &a0)
+
+android::text::format::Time::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::text::format::Time >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::text::format::Time::J2CPP_CLASS_NAME>(),
-			get_method_id<android::text::format::Time::J2CPP_CLASS_NAME, android::text::format::Time::J2CPP_METHOD_NAME(0), android::text::format::Time::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
 
-template <>
-local_ref< android::text::format::Time > create< android::text::format::Time>()
+
+android::text::format::Time::Time(local_ref< java::lang::String > const &a0)
+: cpp_object<android::text::format::Time>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::text::format::Time::J2CPP_CLASS_NAME>(),
+		get_method_id<android::text::format::Time::J2CPP_CLASS_NAME, android::text::format::Time::J2CPP_METHOD_NAME(0), android::text::format::Time::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
+, allDay(get_jtype())
+, second(get_jtype())
+, minute(get_jtype())
+, hour(get_jtype())
+, monthDay(get_jtype())
+, month(get_jtype())
+, year(get_jtype())
+, weekDay(get_jtype())
+, yearDay(get_jtype())
+, isDst(get_jtype())
+, gmtoff(get_jtype())
+, timezone(get_jtype())
 {
-	return local_ref< android::text::format::Time >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::text::format::Time::J2CPP_CLASS_NAME>(),
-			get_method_id<android::text::format::Time::J2CPP_CLASS_NAME, android::text::format::Time::J2CPP_METHOD_NAME(1), android::text::format::Time::J2CPP_METHOD_SIGNATURE(1), false>()
-		)
-	);
 }
 
-template <>
-local_ref< android::text::format::Time > create< android::text::format::Time>(local_ref< android::text::format::Time > const &a0)
+
+
+android::text::format::Time::Time()
+: cpp_object<android::text::format::Time>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::text::format::Time::J2CPP_CLASS_NAME>(),
+		get_method_id<android::text::format::Time::J2CPP_CLASS_NAME, android::text::format::Time::J2CPP_METHOD_NAME(1), android::text::format::Time::J2CPP_METHOD_SIGNATURE(1), false>()
+	)
+)
+, allDay(get_jtype())
+, second(get_jtype())
+, minute(get_jtype())
+, hour(get_jtype())
+, monthDay(get_jtype())
+, month(get_jtype())
+, year(get_jtype())
+, weekDay(get_jtype())
+, yearDay(get_jtype())
+, isDst(get_jtype())
+, gmtoff(get_jtype())
+, timezone(get_jtype())
 {
-	return local_ref< android::text::format::Time >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::text::format::Time::J2CPP_CLASS_NAME>(),
-			get_method_id<android::text::format::Time::J2CPP_CLASS_NAME, android::text::format::Time::J2CPP_METHOD_NAME(2), android::text::format::Time::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype()
-		)
-	);
 }
+
+
+
+android::text::format::Time::Time(local_ref< android::text::format::Time > const &a0)
+: cpp_object<android::text::format::Time>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::text::format::Time::J2CPP_CLASS_NAME>(),
+		get_method_id<android::text::format::Time::J2CPP_CLASS_NAME, android::text::format::Time::J2CPP_METHOD_NAME(2), android::text::format::Time::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype()
+	)
+)
+, allDay(get_jtype())
+, second(get_jtype())
+, minute(get_jtype())
+, hour(get_jtype())
+, monthDay(get_jtype())
+, month(get_jtype())
+, year(get_jtype())
+, weekDay(get_jtype())
+, yearDay(get_jtype())
+, isDst(get_jtype())
+, gmtoff(get_jtype())
+, timezone(get_jtype())
+{
+}
+
 
 cpp_long android::text::format::Time::normalize(cpp_boolean const &a0)
 {

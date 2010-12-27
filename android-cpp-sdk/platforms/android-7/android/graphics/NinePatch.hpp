@@ -10,6 +10,7 @@
 #define J2CPP_ANDROID_GRAPHICS_NINEPATCH_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace android { namespace graphics { class Paint; } } }
 namespace j2cpp { namespace android { namespace graphics { class Canvas; } } }
@@ -25,6 +26,7 @@ namespace j2cpp { namespace android { namespace graphics { class Rect; } } }
 #include <android/graphics/Rect.hpp>
 #include <android/graphics/RectF.hpp>
 #include <android/graphics/Region.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -52,11 +54,15 @@ namespace android { namespace graphics {
 		J2CPP_DECLARE_METHOD(9)
 		J2CPP_DECLARE_METHOD(10)
 
-		NinePatch(jobject jobj)
+		explicit NinePatch(jobject jobj)
 		: cpp_object<NinePatch>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		NinePatch(local_ref< android::graphics::Bitmap > const&, local_ref< cpp_byte_array<1> > const&, local_ref< java::lang::String > const&);
 		void setPaint(local_ref< android::graphics::Paint > const&);
 		void draw(local_ref< android::graphics::Canvas > const&, local_ref< android::graphics::RectF > const&);
 		void draw(local_ref< android::graphics::Canvas > const&, local_ref< android::graphics::Rect > const&);
@@ -72,7 +78,6 @@ namespace android { namespace graphics {
 } //namespace graphics
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_GRAPHICS_NINEPATCH_HPP_DECL
@@ -85,17 +90,24 @@ namespace android { namespace graphics {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::graphics::NinePatch > create< android::graphics::NinePatch>(local_ref< android::graphics::Bitmap > const &a0, local_ref< cpp_byte_array<1> > const &a1, local_ref< java::lang::String > const &a2)
+
+android::graphics::NinePatch::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::graphics::NinePatch >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::graphics::NinePatch::J2CPP_CLASS_NAME>(),
-			get_method_id<android::graphics::NinePatch::J2CPP_CLASS_NAME, android::graphics::NinePatch::J2CPP_METHOD_NAME(0), android::graphics::NinePatch::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::graphics::NinePatch::NinePatch(local_ref< android::graphics::Bitmap > const &a0, local_ref< cpp_byte_array<1> > const &a1, local_ref< java::lang::String > const &a2)
+: cpp_object<android::graphics::NinePatch>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::graphics::NinePatch::J2CPP_CLASS_NAME>(),
+		get_method_id<android::graphics::NinePatch::J2CPP_CLASS_NAME, android::graphics::NinePatch::J2CPP_METHOD_NAME(0), android::graphics::NinePatch::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
+	)
+)
+{
+}
+
 
 void android::graphics::NinePatch::setPaint(local_ref< android::graphics::Paint > const &a0)
 {

@@ -15,6 +15,7 @@ namespace j2cpp { namespace java { namespace lang { class StringBuffer; } } }
 namespace j2cpp { namespace java { namespace lang { class Number; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace text { class DecimalFormatSymbols; } } }
+namespace j2cpp { namespace java { namespace text { class NumberFormat; } } }
 namespace j2cpp { namespace java { namespace text { class AttributedCharacterIterator; } } }
 namespace j2cpp { namespace java { namespace text { class ParsePosition; } } }
 namespace j2cpp { namespace java { namespace text { class FieldPosition; } } }
@@ -28,6 +29,7 @@ namespace j2cpp { namespace java { namespace util { class Currency; } } }
 #include <java/text/AttributedCharacterIterator.hpp>
 #include <java/text/DecimalFormatSymbols.hpp>
 #include <java/text/FieldPosition.hpp>
+#include <java/text/NumberFormat.hpp>
 #include <java/text/ParsePosition.hpp>
 #include <java/util/Currency.hpp>
 
@@ -88,11 +90,17 @@ namespace java { namespace text {
 		J2CPP_DECLARE_METHOD(41)
 		J2CPP_DECLARE_METHOD(42)
 
-		DecimalFormat(jobject jobj)
+		explicit DecimalFormat(jobject jobj)
 		: cpp_object<DecimalFormat>(jobj)
 		{
 		}
 
+		operator local_ref<java::text::NumberFormat>() const;
+
+
+		DecimalFormat();
+		DecimalFormat(local_ref< java::lang::String > const&);
+		DecimalFormat(local_ref< java::lang::String > const&, local_ref< java::text::DecimalFormatSymbols > const&);
 		void applyLocalizedPattern(local_ref< java::lang::String > const&);
 		void applyPattern(local_ref< java::lang::String > const&);
 		local_ref< java::lang::Object > clone();
@@ -138,7 +146,6 @@ namespace java { namespace text {
 } //namespace text
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_TEXT_DECIMALFORMAT_HPP_DECL
@@ -151,40 +158,49 @@ namespace java { namespace text {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::text::DecimalFormat > create< java::text::DecimalFormat>()
+
+java::text::DecimalFormat::operator local_ref<java::text::NumberFormat>() const
 {
-	return local_ref< java::text::DecimalFormat >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::text::DecimalFormat::J2CPP_CLASS_NAME>(),
-			get_method_id<java::text::DecimalFormat::J2CPP_CLASS_NAME, java::text::DecimalFormat::J2CPP_METHOD_NAME(0), java::text::DecimalFormat::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::text::NumberFormat>(get_jtype());
 }
 
-template <>
-local_ref< java::text::DecimalFormat > create< java::text::DecimalFormat>(local_ref< java::lang::String > const &a0)
+
+java::text::DecimalFormat::DecimalFormat()
+: cpp_object<java::text::DecimalFormat>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::text::DecimalFormat::J2CPP_CLASS_NAME>(),
+		get_method_id<java::text::DecimalFormat::J2CPP_CLASS_NAME, java::text::DecimalFormat::J2CPP_METHOD_NAME(0), java::text::DecimalFormat::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
 {
-	return local_ref< java::text::DecimalFormat >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::text::DecimalFormat::J2CPP_CLASS_NAME>(),
-			get_method_id<java::text::DecimalFormat::J2CPP_CLASS_NAME, java::text::DecimalFormat::J2CPP_METHOD_NAME(1), java::text::DecimalFormat::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< java::text::DecimalFormat > create< java::text::DecimalFormat>(local_ref< java::lang::String > const &a0, local_ref< java::text::DecimalFormatSymbols > const &a1)
+
+
+java::text::DecimalFormat::DecimalFormat(local_ref< java::lang::String > const &a0)
+: cpp_object<java::text::DecimalFormat>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::text::DecimalFormat::J2CPP_CLASS_NAME>(),
+		get_method_id<java::text::DecimalFormat::J2CPP_CLASS_NAME, java::text::DecimalFormat::J2CPP_METHOD_NAME(1), java::text::DecimalFormat::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< java::text::DecimalFormat >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::text::DecimalFormat::J2CPP_CLASS_NAME>(),
-			get_method_id<java::text::DecimalFormat::J2CPP_CLASS_NAME, java::text::DecimalFormat::J2CPP_METHOD_NAME(2), java::text::DecimalFormat::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
 }
+
+
+
+java::text::DecimalFormat::DecimalFormat(local_ref< java::lang::String > const &a0, local_ref< java::text::DecimalFormatSymbols > const &a1)
+: cpp_object<java::text::DecimalFormat>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::text::DecimalFormat::J2CPP_CLASS_NAME>(),
+		get_method_id<java::text::DecimalFormat::J2CPP_CLASS_NAME, java::text::DecimalFormat::J2CPP_METHOD_NAME(2), java::text::DecimalFormat::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
 
 void java::text::DecimalFormat::applyLocalizedPattern(local_ref< java::lang::String > const &a0)
 {

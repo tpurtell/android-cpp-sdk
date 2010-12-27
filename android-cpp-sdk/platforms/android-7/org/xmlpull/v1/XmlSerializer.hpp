@@ -62,10 +62,13 @@ namespace org { namespace xmlpull { namespace v1 {
 		J2CPP_DECLARE_METHOD(23)
 		J2CPP_DECLARE_METHOD(24)
 
-		XmlSerializer(jobject jobj)
+		explicit XmlSerializer(jobject jobj)
 		: cpp_object<XmlSerializer>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		void setFeature(local_ref< java::lang::String > const&, cpp_boolean const&);
 		cpp_boolean getFeature(local_ref< java::lang::String > const&);
@@ -98,7 +101,6 @@ namespace org { namespace xmlpull { namespace v1 {
 } //namespace xmlpull
 } //namespace org
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ORG_XMLPULL_V1_XMLSERIALIZER_HPP_DECL
@@ -110,6 +112,12 @@ namespace org { namespace xmlpull { namespace v1 {
 
 namespace j2cpp {
 
+
+
+org::xmlpull::v1::XmlSerializer::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 void org::xmlpull::v1::XmlSerializer::setFeature(local_ref< java::lang::String > const &a0, cpp_boolean const &a1)
 {

@@ -11,6 +11,7 @@
 
 
 namespace j2cpp { namespace java { namespace io { class InputStream; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace android { namespace app { class WallpaperInfo; } } }
 namespace j2cpp { namespace android { namespace graphics { class Bitmap; } } }
@@ -27,6 +28,7 @@ namespace j2cpp { namespace android { namespace os { class Bundle; } } }
 #include <android/os/Bundle.hpp>
 #include <android/os/IBinder.hpp>
 #include <java/io/InputStream.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -64,10 +66,13 @@ namespace android { namespace app {
 		J2CPP_DECLARE_FIELD(1)
 		J2CPP_DECLARE_FIELD(2)
 
-		WallpaperManager(jobject jobj)
+		explicit WallpaperManager(jobject jobj)
 		: cpp_object<WallpaperManager>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		static local_ref< android::app::WallpaperManager > getInstance(local_ref< android::content::Context > const&);
 		local_ref< android::graphics::drawable::Drawable > getDrawable();
@@ -95,7 +100,6 @@ namespace android { namespace app {
 } //namespace app
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_APP_WALLPAPERMANAGER_HPP_DECL
@@ -108,16 +112,12 @@ namespace android { namespace app {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::app::WallpaperManager > create< android::app::WallpaperManager>()
+
+android::app::WallpaperManager::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::app::WallpaperManager >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::app::WallpaperManager::J2CPP_CLASS_NAME>(),
-			get_method_id<android::app::WallpaperManager::J2CPP_CLASS_NAME, android::app::WallpaperManager::J2CPP_METHOD_NAME(0), android::app::WallpaperManager::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
 
 local_ref< android::app::WallpaperManager > android::app::WallpaperManager::getInstance(local_ref< android::content::Context > const &a0)
 {

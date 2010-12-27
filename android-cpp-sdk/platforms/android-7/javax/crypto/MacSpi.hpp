@@ -38,17 +38,20 @@ namespace javax { namespace crypto {
 		J2CPP_DECLARE_METHOD(7)
 		J2CPP_DECLARE_METHOD(8)
 
-		MacSpi(jobject jobj)
+		explicit MacSpi(jobject jobj)
 		: cpp_object<MacSpi>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		MacSpi();
 		local_ref< java::lang::Object > clone();
 	}; //class MacSpi
 
 } //namespace crypto
 } //namespace javax
-
 
 } //namespace j2cpp
 
@@ -62,16 +65,23 @@ namespace javax { namespace crypto {
 namespace j2cpp {
 
 
-template <>
-local_ref< javax::crypto::MacSpi > create< javax::crypto::MacSpi>()
+
+javax::crypto::MacSpi::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< javax::crypto::MacSpi >(
-		environment::get().get_jenv()->NewObject(
-			get_class<javax::crypto::MacSpi::J2CPP_CLASS_NAME>(),
-			get_method_id<javax::crypto::MacSpi::J2CPP_CLASS_NAME, javax::crypto::MacSpi::J2CPP_METHOD_NAME(0), javax::crypto::MacSpi::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+javax::crypto::MacSpi::MacSpi()
+: cpp_object<javax::crypto::MacSpi>(
+	environment::get().get_jenv()->NewObject(
+		get_class<javax::crypto::MacSpi::J2CPP_CLASS_NAME>(),
+		get_method_id<javax::crypto::MacSpi::J2CPP_CLASS_NAME, javax::crypto::MacSpi::J2CPP_METHOD_NAME(0), javax::crypto::MacSpi::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 
 

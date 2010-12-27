@@ -11,9 +11,11 @@
 
 
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace util { class Iterator; } } }
 
 
 #include <java/lang/Object.hpp>
+#include <java/util/Iterator.hpp>
 
 
 namespace j2cpp {
@@ -38,10 +40,14 @@ namespace java { namespace util {
 		J2CPP_DECLARE_METHOD(7)
 		J2CPP_DECLARE_METHOD(8)
 
-		ListIterator(jobject jobj)
+		explicit ListIterator(jobject jobj)
 		: cpp_object<ListIterator>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::util::Iterator>() const;
+
 
 		void add(local_ref< java::lang::Object > const&);
 		cpp_boolean hasNext();
@@ -57,7 +63,6 @@ namespace java { namespace util {
 } //namespace util
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_UTIL_LISTITERATOR_HPP_DECL
@@ -69,6 +74,17 @@ namespace java { namespace util {
 
 namespace j2cpp {
 
+
+
+java::util::ListIterator::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
+
+java::util::ListIterator::operator local_ref<java::util::Iterator>() const
+{
+	return local_ref<java::util::Iterator>(get_jtype());
+}
 
 void java::util::ListIterator::add(local_ref< java::lang::Object > const &a0)
 {

@@ -13,12 +13,16 @@
 namespace j2cpp { namespace java { namespace lang { class CharSequence; } } }
 namespace j2cpp { namespace android { namespace view { class View; } } }
 namespace j2cpp { namespace android { namespace view { class KeyEvent; } } }
+namespace j2cpp { namespace android { namespace text { class InputFilter; } } }
+namespace j2cpp { namespace android { namespace text { namespace method { class BaseKeyListener; } } } }
 namespace j2cpp { namespace android { namespace text { class Editable; } } }
 namespace j2cpp { namespace android { namespace text { class Spanned; } } }
 
 
 #include <android/text/Editable.hpp>
+#include <android/text/InputFilter.hpp>
 #include <android/text/Spanned.hpp>
+#include <android/text/method/BaseKeyListener.hpp>
 #include <android/view/KeyEvent.hpp>
 #include <android/view/View.hpp>
 #include <java/lang/CharSequence.hpp>
@@ -43,11 +47,16 @@ namespace android { namespace text { namespace method {
 		J2CPP_DECLARE_METHOD(4)
 		J2CPP_DECLARE_METHOD(5)
 
-		NumberKeyListener(jobject jobj)
+		explicit NumberKeyListener(jobject jobj)
 		: cpp_object<NumberKeyListener>(jobj)
 		{
 		}
 
+		operator local_ref<android::text::method::BaseKeyListener>() const;
+		operator local_ref<android::text::InputFilter>() const;
+
+
+		NumberKeyListener();
 		local_ref< java::lang::CharSequence > filter(local_ref< java::lang::CharSequence > const&, cpp_int const&, cpp_int const&, local_ref< android::text::Spanned > const&, cpp_int const&, cpp_int const&);
 		cpp_boolean onKeyDown(local_ref< android::view::View > const&, local_ref< android::text::Editable > const&, cpp_int const&, local_ref< android::view::KeyEvent > const&);
 	}; //class NumberKeyListener
@@ -55,7 +64,6 @@ namespace android { namespace text { namespace method {
 } //namespace method
 } //namespace text
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -69,16 +77,28 @@ namespace android { namespace text { namespace method {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::text::method::NumberKeyListener > create< android::text::method::NumberKeyListener>()
+
+android::text::method::NumberKeyListener::operator local_ref<android::text::method::BaseKeyListener>() const
 {
-	return local_ref< android::text::method::NumberKeyListener >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::text::method::NumberKeyListener::J2CPP_CLASS_NAME>(),
-			get_method_id<android::text::method::NumberKeyListener::J2CPP_CLASS_NAME, android::text::method::NumberKeyListener::J2CPP_METHOD_NAME(0), android::text::method::NumberKeyListener::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<android::text::method::BaseKeyListener>(get_jtype());
 }
+
+android::text::method::NumberKeyListener::operator local_ref<android::text::InputFilter>() const
+{
+	return local_ref<android::text::InputFilter>(get_jtype());
+}
+
+
+android::text::method::NumberKeyListener::NumberKeyListener()
+: cpp_object<android::text::method::NumberKeyListener>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::text::method::NumberKeyListener::J2CPP_CLASS_NAME>(),
+		get_method_id<android::text::method::NumberKeyListener::J2CPP_CLASS_NAME, android::text::method::NumberKeyListener::J2CPP_METHOD_NAME(0), android::text::method::NumberKeyListener::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 
 

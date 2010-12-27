@@ -10,6 +10,7 @@
 #define J2CPP_ANDROID_WIDGET_IMAGEVIEW_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Enum; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace android { namespace net { class Uri; } } }
 namespace j2cpp { namespace android { namespace graphics { class Bitmap; } } }
@@ -18,6 +19,7 @@ namespace j2cpp { namespace android { namespace graphics { namespace drawable { 
 namespace j2cpp { namespace android { namespace graphics { class ColorFilter; } } }
 namespace j2cpp { namespace android { namespace graphics { namespace PorterDuff_ { class Mode; } } } }
 namespace j2cpp { namespace android { namespace content { class Context; } } }
+namespace j2cpp { namespace android { namespace view { class View; } } }
 namespace j2cpp { namespace android { namespace widget { namespace ImageView_ { class ScaleType; } } } }
 namespace j2cpp { namespace android { namespace util { class AttributeSet; } } }
 
@@ -30,7 +32,9 @@ namespace j2cpp { namespace android { namespace util { class AttributeSet; } } }
 #include <android/graphics/drawable/Drawable.hpp>
 #include <android/net/Uri.hpp>
 #include <android/util/AttributeSet.hpp>
+#include <android/view/View.hpp>
 #include <android/widget/ImageView.hpp>
+#include <java/lang/Enum.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -63,10 +67,13 @@ namespace android { namespace widget {
 			J2CPP_DECLARE_FIELD(7)
 			J2CPP_DECLARE_FIELD(8)
 
-			ScaleType(jobject jobj)
+			explicit ScaleType(jobject jobj)
 			: cpp_object<ScaleType>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Enum>() const;
+
 
 			static local_ref< cpp_object_array<android::widget::ImageView_::ScaleType, 1> > values();
 			static local_ref< android::widget::ImageView_::ScaleType > valueOf(local_ref< java::lang::String > const&);
@@ -124,11 +131,17 @@ namespace android { namespace widget {
 
 		typedef ImageView_::ScaleType ScaleType;
 
-		ImageView(jobject jobj)
+		explicit ImageView(jobject jobj)
 		: cpp_object<ImageView>(jobj)
 		{
 		}
 
+		operator local_ref<android::view::View>() const;
+
+
+		ImageView(local_ref< android::content::Context > const&);
+		ImageView(local_ref< android::content::Context > const&, local_ref< android::util::AttributeSet > const&);
+		ImageView(local_ref< android::content::Context > const&, local_ref< android::util::AttributeSet > const&, cpp_int const&);
 		void invalidateDrawable(local_ref< android::graphics::drawable::Drawable > const&);
 		void setAdjustViewBounds(cpp_boolean const&);
 		void setMaxWidth(cpp_int const&);
@@ -156,7 +169,6 @@ namespace android { namespace widget {
 } //namespace widget
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_WIDGET_IMAGEVIEW_HPP_DECL
@@ -169,6 +181,12 @@ namespace android { namespace widget {
 namespace j2cpp {
 
 
+
+
+android::widget::ImageView_::ScaleType::operator local_ref<java::lang::Enum>() const
+{
+	return local_ref<java::lang::Enum>(get_jtype());
+}
 
 local_ref< cpp_object_array<android::widget::ImageView_::ScaleType, 1> > android::widget::ImageView_::ScaleType::values()
 {
@@ -191,17 +209,7 @@ local_ref< android::widget::ImageView_::ScaleType > android::widget::ImageView_:
 	);
 }
 
-template <>
-local_ref< android::widget::ImageView_::ScaleType > create< android::widget::ImageView_::ScaleType>(local_ref< java::lang::String > const &a0, cpp_int const &a1)
-{
-	return local_ref< android::widget::ImageView_::ScaleType >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::widget::ImageView_::ScaleType::J2CPP_CLASS_NAME>(),
-			get_method_id<android::widget::ImageView_::ScaleType::J2CPP_CLASS_NAME, android::widget::ImageView_::ScaleType::J2CPP_METHOD_NAME(2), android::widget::ImageView_::ScaleType::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
-}
+
 
 
 static_field<
@@ -277,41 +285,50 @@ J2CPP_DEFINE_FIELD(android::widget::ImageView_::ScaleType,7,"MATRIX","Landroid/w
 J2CPP_DEFINE_FIELD(android::widget::ImageView_::ScaleType,8,"$VALUES","[android.widget.ImageView.ScaleType")
 
 
-template <>
-local_ref< android::widget::ImageView > create< android::widget::ImageView>(local_ref< android::content::Context > const &a0)
+
+android::widget::ImageView::operator local_ref<android::view::View>() const
 {
-	return local_ref< android::widget::ImageView >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::widget::ImageView::J2CPP_CLASS_NAME>(),
-			get_method_id<android::widget::ImageView::J2CPP_CLASS_NAME, android::widget::ImageView::J2CPP_METHOD_NAME(0), android::widget::ImageView::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<android::view::View>(get_jtype());
 }
 
-template <>
-local_ref< android::widget::ImageView > create< android::widget::ImageView>(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1)
+
+android::widget::ImageView::ImageView(local_ref< android::content::Context > const &a0)
+: cpp_object<android::widget::ImageView>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::widget::ImageView::J2CPP_CLASS_NAME>(),
+		get_method_id<android::widget::ImageView::J2CPP_CLASS_NAME, android::widget::ImageView::J2CPP_METHOD_NAME(0), android::widget::ImageView::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< android::widget::ImageView >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::widget::ImageView::J2CPP_CLASS_NAME>(),
-			get_method_id<android::widget::ImageView::J2CPP_CLASS_NAME, android::widget::ImageView::J2CPP_METHOD_NAME(1), android::widget::ImageView::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< android::widget::ImageView > create< android::widget::ImageView>(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1, cpp_int const &a2)
+
+
+android::widget::ImageView::ImageView(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1)
+: cpp_object<android::widget::ImageView>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::widget::ImageView::J2CPP_CLASS_NAME>(),
+		get_method_id<android::widget::ImageView::J2CPP_CLASS_NAME, android::widget::ImageView::J2CPP_METHOD_NAME(1), android::widget::ImageView::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
 {
-	return local_ref< android::widget::ImageView >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::widget::ImageView::J2CPP_CLASS_NAME>(),
-			get_method_id<android::widget::ImageView::J2CPP_CLASS_NAME, android::widget::ImageView::J2CPP_METHOD_NAME(2), android::widget::ImageView::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
-		)
-	);
 }
+
+
+
+android::widget::ImageView::ImageView(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1, cpp_int const &a2)
+: cpp_object<android::widget::ImageView>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::widget::ImageView::J2CPP_CLASS_NAME>(),
+		get_method_id<android::widget::ImageView::J2CPP_CLASS_NAME, android::widget::ImageView::J2CPP_METHOD_NAME(2), android::widget::ImageView::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
+	)
+)
+{
+}
+
 
 
 void android::widget::ImageView::invalidateDrawable(local_ref< android::graphics::drawable::Drawable > const &a0)

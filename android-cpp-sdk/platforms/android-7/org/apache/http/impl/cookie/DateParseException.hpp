@@ -11,8 +11,10 @@
 
 
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace lang { class Exception; } } }
 
 
+#include <java/lang/Exception.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -31,11 +33,16 @@ namespace org { namespace apache { namespace http { namespace impl { namespace c
 		J2CPP_DECLARE_METHOD(0)
 		J2CPP_DECLARE_METHOD(1)
 
-		DateParseException(jobject jobj)
+		explicit DateParseException(jobject jobj)
 		: cpp_object<DateParseException>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Exception>() const;
+
+
+		DateParseException();
+		DateParseException(local_ref< java::lang::String > const&);
 	}; //class DateParseException
 
 } //namespace cookie
@@ -43,7 +50,6 @@ namespace org { namespace apache { namespace http { namespace impl { namespace c
 } //namespace http
 } //namespace apache
 } //namespace org
-
 
 } //namespace j2cpp
 
@@ -57,28 +63,36 @@ namespace org { namespace apache { namespace http { namespace impl { namespace c
 namespace j2cpp {
 
 
-template <>
-local_ref< org::apache::http::impl::cookie::DateParseException > create< org::apache::http::impl::cookie::DateParseException>()
+
+org::apache::http::impl::cookie::DateParseException::operator local_ref<java::lang::Exception>() const
 {
-	return local_ref< org::apache::http::impl::cookie::DateParseException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::apache::http::impl::cookie::DateParseException::J2CPP_CLASS_NAME>(),
-			get_method_id<org::apache::http::impl::cookie::DateParseException::J2CPP_CLASS_NAME, org::apache::http::impl::cookie::DateParseException::J2CPP_METHOD_NAME(0), org::apache::http::impl::cookie::DateParseException::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Exception>(get_jtype());
 }
 
-template <>
-local_ref< org::apache::http::impl::cookie::DateParseException > create< org::apache::http::impl::cookie::DateParseException>(local_ref< java::lang::String > const &a0)
+
+org::apache::http::impl::cookie::DateParseException::DateParseException()
+: cpp_object<org::apache::http::impl::cookie::DateParseException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::apache::http::impl::cookie::DateParseException::J2CPP_CLASS_NAME>(),
+		get_method_id<org::apache::http::impl::cookie::DateParseException::J2CPP_CLASS_NAME, org::apache::http::impl::cookie::DateParseException::J2CPP_METHOD_NAME(0), org::apache::http::impl::cookie::DateParseException::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
 {
-	return local_ref< org::apache::http::impl::cookie::DateParseException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::apache::http::impl::cookie::DateParseException::J2CPP_CLASS_NAME>(),
-			get_method_id<org::apache::http::impl::cookie::DateParseException::J2CPP_CLASS_NAME, org::apache::http::impl::cookie::DateParseException::J2CPP_METHOD_NAME(1), org::apache::http::impl::cookie::DateParseException::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
 }
+
+
+
+org::apache::http::impl::cookie::DateParseException::DateParseException(local_ref< java::lang::String > const &a0)
+: cpp_object<org::apache::http::impl::cookie::DateParseException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::apache::http::impl::cookie::DateParseException::J2CPP_CLASS_NAME>(),
+		get_method_id<org::apache::http::impl::cookie::DateParseException::J2CPP_CLASS_NAME, org::apache::http::impl::cookie::DateParseException::J2CPP_METHOD_NAME(1), org::apache::http::impl::cookie::DateParseException::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 
 J2CPP_DEFINE_CLASS(org::apache::http::impl::cookie::DateParseException,"org/apache/http/impl/cookie/DateParseException")

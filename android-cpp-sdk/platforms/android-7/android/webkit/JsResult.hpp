@@ -10,8 +10,10 @@
 #define J2CPP_ANDROID_WEBKIT_JSRESULT_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -33,10 +35,13 @@ namespace android { namespace webkit {
 		J2CPP_DECLARE_FIELD(0)
 		J2CPP_DECLARE_FIELD(1)
 
-		JsResult(jobject jobj)
+		explicit JsResult(jobject jobj)
 		: cpp_object<JsResult>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		void cancel();
 		void confirm();
@@ -45,7 +50,6 @@ namespace android { namespace webkit {
 
 } //namespace webkit
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -59,16 +63,12 @@ namespace android { namespace webkit {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::webkit::JsResult > create< android::webkit::JsResult>()
+
+android::webkit::JsResult::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::webkit::JsResult >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::webkit::JsResult::J2CPP_CLASS_NAME>(),
-			get_method_id<android::webkit::JsResult::J2CPP_CLASS_NAME, android::webkit::JsResult::J2CPP_METHOD_NAME(0), android::webkit::JsResult::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
 
 void android::webkit::JsResult::cancel()
 {

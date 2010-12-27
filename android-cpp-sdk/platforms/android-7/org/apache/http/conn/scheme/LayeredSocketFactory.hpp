@@ -11,11 +11,15 @@
 
 
 namespace j2cpp { namespace java { namespace net { class Socket; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { namespace conn { namespace scheme { class SocketFactory; } } } } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/net/Socket.hpp>
+#include <org/apache/http/conn/scheme/SocketFactory.hpp>
 
 
 namespace j2cpp {
@@ -32,10 +36,14 @@ namespace org { namespace apache { namespace http { namespace conn { namespace s
 
 		J2CPP_DECLARE_METHOD(0)
 
-		LayeredSocketFactory(jobject jobj)
+		explicit LayeredSocketFactory(jobject jobj)
 		: cpp_object<LayeredSocketFactory>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<org::apache::http::conn::scheme::SocketFactory>() const;
+
 
 		local_ref< java::net::Socket > createSocket(local_ref< java::net::Socket > const&, local_ref< java::lang::String > const&, cpp_int const&, cpp_boolean const&);
 	}; //class LayeredSocketFactory
@@ -45,7 +53,6 @@ namespace org { namespace apache { namespace http { namespace conn { namespace s
 } //namespace http
 } //namespace apache
 } //namespace org
-
 
 } //namespace j2cpp
 
@@ -58,6 +65,17 @@ namespace org { namespace apache { namespace http { namespace conn { namespace s
 
 namespace j2cpp {
 
+
+
+org::apache::http::conn::scheme::LayeredSocketFactory::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
+
+org::apache::http::conn::scheme::LayeredSocketFactory::operator local_ref<org::apache::http::conn::scheme::SocketFactory>() const
+{
+	return local_ref<org::apache::http::conn::scheme::SocketFactory>(get_jtype());
+}
 
 local_ref< java::net::Socket > org::apache::http::conn::scheme::LayeredSocketFactory::createSocket(local_ref< java::net::Socket > const &a0, local_ref< java::lang::String > const &a1, cpp_int const &a2, cpp_boolean const &a3)
 {

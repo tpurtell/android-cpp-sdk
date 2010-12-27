@@ -13,11 +13,13 @@
 namespace j2cpp { namespace java { namespace io { class InputStream; } } }
 namespace j2cpp { namespace java { namespace io { class OutputStream; } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { class HttpEntity; } } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { namespace entity { class HttpEntityWrapper; } } } } }
 
 
 #include <java/io/InputStream.hpp>
 #include <java/io/OutputStream.hpp>
 #include <org/apache/http/HttpEntity.hpp>
+#include <org/apache/http/entity/HttpEntityWrapper.hpp>
 
 
 namespace j2cpp {
@@ -40,11 +42,15 @@ namespace org { namespace apache { namespace http { namespace entity {
 		J2CPP_DECLARE_METHOD(5)
 		J2CPP_DECLARE_METHOD(6)
 
-		BufferedHttpEntity(jobject jobj)
+		explicit BufferedHttpEntity(jobject jobj)
 		: cpp_object<BufferedHttpEntity>(jobj)
 		{
 		}
 
+		operator local_ref<org::apache::http::entity::HttpEntityWrapper>() const;
+
+
+		BufferedHttpEntity(local_ref< org::apache::http::HttpEntity > const&);
 		cpp_long getContentLength();
 		local_ref< java::io::InputStream > getContent();
 		cpp_boolean isChunked();
@@ -58,7 +64,6 @@ namespace org { namespace apache { namespace http { namespace entity {
 } //namespace apache
 } //namespace org
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ORG_APACHE_HTTP_ENTITY_BUFFEREDHTTPENTITY_HPP_DECL
@@ -71,17 +76,24 @@ namespace org { namespace apache { namespace http { namespace entity {
 namespace j2cpp {
 
 
-template <>
-local_ref< org::apache::http::entity::BufferedHttpEntity > create< org::apache::http::entity::BufferedHttpEntity>(local_ref< org::apache::http::HttpEntity > const &a0)
+
+org::apache::http::entity::BufferedHttpEntity::operator local_ref<org::apache::http::entity::HttpEntityWrapper>() const
 {
-	return local_ref< org::apache::http::entity::BufferedHttpEntity >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::apache::http::entity::BufferedHttpEntity::J2CPP_CLASS_NAME>(),
-			get_method_id<org::apache::http::entity::BufferedHttpEntity::J2CPP_CLASS_NAME, org::apache::http::entity::BufferedHttpEntity::J2CPP_METHOD_NAME(0), org::apache::http::entity::BufferedHttpEntity::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<org::apache::http::entity::HttpEntityWrapper>(get_jtype());
 }
+
+
+org::apache::http::entity::BufferedHttpEntity::BufferedHttpEntity(local_ref< org::apache::http::HttpEntity > const &a0)
+: cpp_object<org::apache::http::entity::BufferedHttpEntity>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::apache::http::entity::BufferedHttpEntity::J2CPP_CLASS_NAME>(),
+		get_method_id<org::apache::http::entity::BufferedHttpEntity::J2CPP_CLASS_NAME, org::apache::http::entity::BufferedHttpEntity::J2CPP_METHOD_NAME(0), org::apache::http::entity::BufferedHttpEntity::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 cpp_long org::apache::http::entity::BufferedHttpEntity::getContentLength()
 {

@@ -12,6 +12,7 @@
 
 namespace j2cpp { namespace java { namespace io { class FileDescriptor; } } }
 namespace j2cpp { namespace java { namespace io { class InputStream; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace android { namespace graphics { class Bitmap; } } }
 namespace j2cpp { namespace android { namespace graphics { namespace BitmapFactory_ { class Options; } } } }
@@ -28,6 +29,7 @@ namespace j2cpp { namespace android { namespace util { class TypedValue; } } }
 #include <android/util/TypedValue.hpp>
 #include <java/io/FileDescriptor.hpp>
 #include <java/io/InputStream.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -64,26 +66,30 @@ namespace android { namespace graphics {
 			J2CPP_DECLARE_FIELD(13)
 			J2CPP_DECLARE_FIELD(14)
 
-			Options(jobject jobj)
+			explicit Options(jobject jobj)
 			: cpp_object<Options>(jobj)
-			, inJustDecodeBounds(jobj)
-			, inSampleSize(jobj)
-			, inPreferredConfig(jobj)
-			, inDither(jobj)
-			, inDensity(jobj)
-			, inTargetDensity(jobj)
-			, inScreenDensity(jobj)
-			, inScaled(jobj)
-			, inPurgeable(jobj)
-			, inInputShareable(jobj)
-			, outWidth(jobj)
-			, outHeight(jobj)
-			, outMimeType(jobj)
-			, inTempStorage(jobj)
-			, mCancel(jobj)
+, inJustDecodeBounds(jobj)
+, inSampleSize(jobj)
+, inPreferredConfig(jobj)
+, inDither(jobj)
+, inDensity(jobj)
+, inTargetDensity(jobj)
+, inScreenDensity(jobj)
+, inScaled(jobj)
+, inPurgeable(jobj)
+, inInputShareable(jobj)
+, outWidth(jobj)
+, outHeight(jobj)
+, outMimeType(jobj)
+, inTempStorage(jobj)
+, mCancel(jobj)
 			{
 			}
 
+			operator local_ref<java::lang::Object>() const;
+
+
+			Options();
 			void requestCancelDecode();
 
 			field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(0), J2CPP_FIELD_SIGNATURE(0), cpp_boolean > inJustDecodeBounds;
@@ -127,11 +133,15 @@ namespace android { namespace graphics {
 
 		typedef BitmapFactory_::Options Options;
 
-		BitmapFactory(jobject jobj)
+		explicit BitmapFactory(jobject jobj)
 		: cpp_object<BitmapFactory>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		BitmapFactory();
 		static local_ref< android::graphics::Bitmap > decodeFile(local_ref< java::lang::String > const&, local_ref< android::graphics::BitmapFactory_::Options > const&);
 		static local_ref< android::graphics::Bitmap > decodeFile(local_ref< java::lang::String > const&);
 		static local_ref< android::graphics::Bitmap > decodeResourceStream(local_ref< android::content::res::Resources > const&, local_ref< android::util::TypedValue > const&, local_ref< java::io::InputStream > const&, local_ref< android::graphics::Rect > const&, local_ref< android::graphics::BitmapFactory_::Options > const&);
@@ -148,7 +158,6 @@ namespace android { namespace graphics {
 } //namespace graphics
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_GRAPHICS_BITMAPFACTORY_HPP_DECL
@@ -162,16 +171,38 @@ namespace j2cpp {
 
 
 
-template <>
-local_ref< android::graphics::BitmapFactory_::Options > create< android::graphics::BitmapFactory_::Options>()
+
+android::graphics::BitmapFactory_::Options::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::graphics::BitmapFactory_::Options >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::graphics::BitmapFactory_::Options::J2CPP_CLASS_NAME>(),
-			get_method_id<android::graphics::BitmapFactory_::Options::J2CPP_CLASS_NAME, android::graphics::BitmapFactory_::Options::J2CPP_METHOD_NAME(0), android::graphics::BitmapFactory_::Options::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::graphics::BitmapFactory_::Options::Options()
+: cpp_object<android::graphics::BitmapFactory_::Options>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::graphics::BitmapFactory_::Options::J2CPP_CLASS_NAME>(),
+		get_method_id<android::graphics::BitmapFactory_::Options::J2CPP_CLASS_NAME, android::graphics::BitmapFactory_::Options::J2CPP_METHOD_NAME(0), android::graphics::BitmapFactory_::Options::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+, inJustDecodeBounds(get_jtype())
+, inSampleSize(get_jtype())
+, inPreferredConfig(get_jtype())
+, inDither(get_jtype())
+, inDensity(get_jtype())
+, inTargetDensity(get_jtype())
+, inScreenDensity(get_jtype())
+, inScaled(get_jtype())
+, inPurgeable(get_jtype())
+, inInputShareable(get_jtype())
+, outWidth(get_jtype())
+, outHeight(get_jtype())
+, outMimeType(get_jtype())
+, inTempStorage(get_jtype())
+, mCancel(get_jtype())
+{
+}
+
 
 void android::graphics::BitmapFactory_::Options::requestCancelDecode()
 {
@@ -205,16 +236,23 @@ J2CPP_DEFINE_FIELD(android::graphics::BitmapFactory_::Options,13,"inTempStorage"
 J2CPP_DEFINE_FIELD(android::graphics::BitmapFactory_::Options,14,"mCancel","Z")
 
 
-template <>
-local_ref< android::graphics::BitmapFactory > create< android::graphics::BitmapFactory>()
+
+android::graphics::BitmapFactory::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::graphics::BitmapFactory >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::graphics::BitmapFactory::J2CPP_CLASS_NAME>(),
-			get_method_id<android::graphics::BitmapFactory::J2CPP_CLASS_NAME, android::graphics::BitmapFactory::J2CPP_METHOD_NAME(0), android::graphics::BitmapFactory::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::graphics::BitmapFactory::BitmapFactory()
+: cpp_object<android::graphics::BitmapFactory>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::graphics::BitmapFactory::J2CPP_CLASS_NAME>(),
+		get_method_id<android::graphics::BitmapFactory::J2CPP_CLASS_NAME, android::graphics::BitmapFactory::J2CPP_METHOD_NAME(0), android::graphics::BitmapFactory::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 local_ref< android::graphics::Bitmap > android::graphics::BitmapFactory::decodeFile(local_ref< java::lang::String > const &a0, local_ref< android::graphics::BitmapFactory_::Options > const &a1)
 {

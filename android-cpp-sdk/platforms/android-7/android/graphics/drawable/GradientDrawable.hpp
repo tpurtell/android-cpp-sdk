@@ -10,6 +10,7 @@
 #define J2CPP_ANDROID_GRAPHICS_DRAWABLE_GRADIENTDRAWABLE_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Enum; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace org { namespace xmlpull { namespace v1 { class XmlPullParser; } } } }
 namespace j2cpp { namespace android { namespace graphics { class Canvas; } } }
@@ -29,6 +30,7 @@ namespace j2cpp { namespace android { namespace util { class AttributeSet; } } }
 #include <android/graphics/drawable/Drawable.hpp>
 #include <android/graphics/drawable/GradientDrawable.hpp>
 #include <android/util/AttributeSet.hpp>
+#include <java/lang/Enum.hpp>
 #include <java/lang/String.hpp>
 #include <org/xmlpull/v1/XmlPullParser.hpp>
 
@@ -62,10 +64,13 @@ namespace android { namespace graphics { namespace drawable {
 			J2CPP_DECLARE_FIELD(7)
 			J2CPP_DECLARE_FIELD(8)
 
-			Orientation(jobject jobj)
+			explicit Orientation(jobject jobj)
 			: cpp_object<Orientation>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Enum>() const;
+
 
 			static local_ref< cpp_object_array<android::graphics::drawable::GradientDrawable_::Orientation, 1> > values();
 			static local_ref< android::graphics::drawable::GradientDrawable_::Orientation > valueOf(local_ref< java::lang::String > const&);
@@ -126,11 +131,16 @@ namespace android { namespace graphics { namespace drawable {
 
 		typedef GradientDrawable_::Orientation Orientation;
 
-		GradientDrawable(jobject jobj)
+		explicit GradientDrawable(jobject jobj)
 		: cpp_object<GradientDrawable>(jobj)
 		{
 		}
 
+		operator local_ref<android::graphics::drawable::Drawable>() const;
+
+
+		GradientDrawable();
+		GradientDrawable(local_ref< android::graphics::drawable::GradientDrawable_::Orientation > const&, local_ref< cpp_int_array<1> > const&);
 		cpp_boolean getPadding(local_ref< android::graphics::Rect > const&);
 		void setCornerRadii(local_ref< cpp_float_array<1> > const&);
 		void setCornerRadius(cpp_float const&);
@@ -168,7 +178,6 @@ namespace android { namespace graphics { namespace drawable {
 } //namespace graphics
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_GRAPHICS_DRAWABLE_GRADIENTDRAWABLE_HPP_DECL
@@ -181,6 +190,12 @@ namespace android { namespace graphics { namespace drawable {
 namespace j2cpp {
 
 
+
+
+android::graphics::drawable::GradientDrawable_::Orientation::operator local_ref<java::lang::Enum>() const
+{
+	return local_ref<java::lang::Enum>(get_jtype());
+}
 
 local_ref< cpp_object_array<android::graphics::drawable::GradientDrawable_::Orientation, 1> > android::graphics::drawable::GradientDrawable_::Orientation::values()
 {
@@ -203,17 +218,7 @@ local_ref< android::graphics::drawable::GradientDrawable_::Orientation > android
 	);
 }
 
-template <>
-local_ref< android::graphics::drawable::GradientDrawable_::Orientation > create< android::graphics::drawable::GradientDrawable_::Orientation>(local_ref< java::lang::String > const &a0, cpp_int const &a1)
-{
-	return local_ref< android::graphics::drawable::GradientDrawable_::Orientation >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::graphics::drawable::GradientDrawable_::Orientation::J2CPP_CLASS_NAME>(),
-			get_method_id<android::graphics::drawable::GradientDrawable_::Orientation::J2CPP_CLASS_NAME, android::graphics::drawable::GradientDrawable_::Orientation::J2CPP_METHOD_NAME(2), android::graphics::drawable::GradientDrawable_::Orientation::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
-}
+
 
 
 static_field<
@@ -289,28 +294,36 @@ J2CPP_DEFINE_FIELD(android::graphics::drawable::GradientDrawable_::Orientation,7
 J2CPP_DEFINE_FIELD(android::graphics::drawable::GradientDrawable_::Orientation,8,"$VALUES","[android.graphics.drawable.GradientDrawable.Orientation")
 
 
-template <>
-local_ref< android::graphics::drawable::GradientDrawable > create< android::graphics::drawable::GradientDrawable>()
+
+android::graphics::drawable::GradientDrawable::operator local_ref<android::graphics::drawable::Drawable>() const
 {
-	return local_ref< android::graphics::drawable::GradientDrawable >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::graphics::drawable::GradientDrawable::J2CPP_CLASS_NAME>(),
-			get_method_id<android::graphics::drawable::GradientDrawable::J2CPP_CLASS_NAME, android::graphics::drawable::GradientDrawable::J2CPP_METHOD_NAME(0), android::graphics::drawable::GradientDrawable::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<android::graphics::drawable::Drawable>(get_jtype());
 }
 
-template <>
-local_ref< android::graphics::drawable::GradientDrawable > create< android::graphics::drawable::GradientDrawable>(local_ref< android::graphics::drawable::GradientDrawable_::Orientation > const &a0, local_ref< cpp_int_array<1> > const &a1)
+
+android::graphics::drawable::GradientDrawable::GradientDrawable()
+: cpp_object<android::graphics::drawable::GradientDrawable>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::graphics::drawable::GradientDrawable::J2CPP_CLASS_NAME>(),
+		get_method_id<android::graphics::drawable::GradientDrawable::J2CPP_CLASS_NAME, android::graphics::drawable::GradientDrawable::J2CPP_METHOD_NAME(0), android::graphics::drawable::GradientDrawable::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
 {
-	return local_ref< android::graphics::drawable::GradientDrawable >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::graphics::drawable::GradientDrawable::J2CPP_CLASS_NAME>(),
-			get_method_id<android::graphics::drawable::GradientDrawable::J2CPP_CLASS_NAME, android::graphics::drawable::GradientDrawable::J2CPP_METHOD_NAME(1), android::graphics::drawable::GradientDrawable::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
 }
+
+
+
+android::graphics::drawable::GradientDrawable::GradientDrawable(local_ref< android::graphics::drawable::GradientDrawable_::Orientation > const &a0, local_ref< cpp_int_array<1> > const &a1)
+: cpp_object<android::graphics::drawable::GradientDrawable>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::graphics::drawable::GradientDrawable::J2CPP_CLASS_NAME>(),
+		get_method_id<android::graphics::drawable::GradientDrawable::J2CPP_CLASS_NAME, android::graphics::drawable::GradientDrawable::J2CPP_METHOD_NAME(1), android::graphics::drawable::GradientDrawable::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
 
 cpp_boolean android::graphics::drawable::GradientDrawable::getPadding(local_ref< android::graphics::Rect > const &a0)
 {

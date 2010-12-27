@@ -10,10 +10,12 @@
 #define J2CPP_ANDROID_GRAPHICS_POINTF_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace android { namespace graphics { class Point; } } }
 
 
 #include <android/graphics/Point.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -41,13 +43,19 @@ namespace android { namespace graphics {
 		J2CPP_DECLARE_FIELD(0)
 		J2CPP_DECLARE_FIELD(1)
 
-		PointF(jobject jobj)
+		explicit PointF(jobject jobj)
 		: cpp_object<PointF>(jobj)
-		, x(jobj)
-		, y(jobj)
+, x(jobj)
+, y(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		PointF();
+		PointF(cpp_float const&, cpp_float const&);
+		PointF(local_ref< android::graphics::Point > const&);
 		void set(cpp_float const&, cpp_float const&);
 		void set(local_ref< android::graphics::PointF > const&);
 		void negate();
@@ -63,7 +71,6 @@ namespace android { namespace graphics {
 } //namespace graphics
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_GRAPHICS_POINTF_HPP_DECL
@@ -76,40 +83,55 @@ namespace android { namespace graphics {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::graphics::PointF > create< android::graphics::PointF>()
+
+android::graphics::PointF::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::graphics::PointF >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::graphics::PointF::J2CPP_CLASS_NAME>(),
-			get_method_id<android::graphics::PointF::J2CPP_CLASS_NAME, android::graphics::PointF::J2CPP_METHOD_NAME(0), android::graphics::PointF::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
 
-template <>
-local_ref< android::graphics::PointF > create< android::graphics::PointF>(cpp_float const &a0, cpp_float const &a1)
+
+android::graphics::PointF::PointF()
+: cpp_object<android::graphics::PointF>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::graphics::PointF::J2CPP_CLASS_NAME>(),
+		get_method_id<android::graphics::PointF::J2CPP_CLASS_NAME, android::graphics::PointF::J2CPP_METHOD_NAME(0), android::graphics::PointF::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+, x(get_jtype())
+, y(get_jtype())
 {
-	return local_ref< android::graphics::PointF >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::graphics::PointF::J2CPP_CLASS_NAME>(),
-			get_method_id<android::graphics::PointF::J2CPP_CLASS_NAME, android::graphics::PointF::J2CPP_METHOD_NAME(1), android::graphics::PointF::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< android::graphics::PointF > create< android::graphics::PointF>(local_ref< android::graphics::Point > const &a0)
+
+
+android::graphics::PointF::PointF(cpp_float const &a0, cpp_float const &a1)
+: cpp_object<android::graphics::PointF>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::graphics::PointF::J2CPP_CLASS_NAME>(),
+		get_method_id<android::graphics::PointF::J2CPP_CLASS_NAME, android::graphics::PointF::J2CPP_METHOD_NAME(1), android::graphics::PointF::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+, x(get_jtype())
+, y(get_jtype())
 {
-	return local_ref< android::graphics::PointF >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::graphics::PointF::J2CPP_CLASS_NAME>(),
-			get_method_id<android::graphics::PointF::J2CPP_CLASS_NAME, android::graphics::PointF::J2CPP_METHOD_NAME(2), android::graphics::PointF::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype()
-		)
-	);
 }
+
+
+
+android::graphics::PointF::PointF(local_ref< android::graphics::Point > const &a0)
+: cpp_object<android::graphics::PointF>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::graphics::PointF::J2CPP_CLASS_NAME>(),
+		get_method_id<android::graphics::PointF::J2CPP_CLASS_NAME, android::graphics::PointF::J2CPP_METHOD_NAME(2), android::graphics::PointF::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype()
+	)
+)
+, x(get_jtype())
+, y(get_jtype())
+{
+}
+
 
 void android::graphics::PointF::set(cpp_float const &a0, cpp_float const &a1)
 {

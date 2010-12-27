@@ -10,12 +10,16 @@
 #define J2CPP_ANDROID_TELEPHONY_PHONENUMBERFORMATTINGTEXTWATCHER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class CharSequence; } } }
 namespace j2cpp { namespace android { namespace text { class Editable; } } }
+namespace j2cpp { namespace android { namespace text { class TextWatcher; } } }
 
 
 #include <android/text/Editable.hpp>
+#include <android/text/TextWatcher.hpp>
 #include <java/lang/CharSequence.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -35,11 +39,16 @@ namespace android { namespace telephony {
 		J2CPP_DECLARE_METHOD(2)
 		J2CPP_DECLARE_METHOD(3)
 
-		PhoneNumberFormattingTextWatcher(jobject jobj)
+		explicit PhoneNumberFormattingTextWatcher(jobject jobj)
 		: cpp_object<PhoneNumberFormattingTextWatcher>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<android::text::TextWatcher>() const;
+
+
+		PhoneNumberFormattingTextWatcher();
 		void afterTextChanged(local_ref< android::text::Editable > const&);
 		void beforeTextChanged(local_ref< java::lang::CharSequence > const&, cpp_int const&, cpp_int const&, cpp_int const&);
 		void onTextChanged(local_ref< java::lang::CharSequence > const&, cpp_int const&, cpp_int const&, cpp_int const&);
@@ -47,7 +56,6 @@ namespace android { namespace telephony {
 
 } //namespace telephony
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -61,16 +69,28 @@ namespace android { namespace telephony {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::telephony::PhoneNumberFormattingTextWatcher > create< android::telephony::PhoneNumberFormattingTextWatcher>()
+
+android::telephony::PhoneNumberFormattingTextWatcher::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::telephony::PhoneNumberFormattingTextWatcher >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::telephony::PhoneNumberFormattingTextWatcher::J2CPP_CLASS_NAME>(),
-			get_method_id<android::telephony::PhoneNumberFormattingTextWatcher::J2CPP_CLASS_NAME, android::telephony::PhoneNumberFormattingTextWatcher::J2CPP_METHOD_NAME(0), android::telephony::PhoneNumberFormattingTextWatcher::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+android::telephony::PhoneNumberFormattingTextWatcher::operator local_ref<android::text::TextWatcher>() const
+{
+	return local_ref<android::text::TextWatcher>(get_jtype());
+}
+
+
+android::telephony::PhoneNumberFormattingTextWatcher::PhoneNumberFormattingTextWatcher()
+: cpp_object<android::telephony::PhoneNumberFormattingTextWatcher>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::telephony::PhoneNumberFormattingTextWatcher::J2CPP_CLASS_NAME>(),
+		get_method_id<android::telephony::PhoneNumberFormattingTextWatcher::J2CPP_CLASS_NAME, android::telephony::PhoneNumberFormattingTextWatcher::J2CPP_METHOD_NAME(0), android::telephony::PhoneNumberFormattingTextWatcher::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 void android::telephony::PhoneNumberFormattingTextWatcher::afterTextChanged(local_ref< android::text::Editable > const &a0)
 {

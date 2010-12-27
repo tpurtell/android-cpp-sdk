@@ -10,8 +10,10 @@
 #define J2CPP_ANDROID_TEXT_INPUTTYPE_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -61,10 +63,13 @@ namespace android { namespace text {
 		J2CPP_DECLARE_FIELD(32)
 		J2CPP_DECLARE_FIELD(33)
 
-		InputType(jobject jobj)
+		explicit InputType(jobject jobj)
 		: cpp_object<InputType>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(0), J2CPP_FIELD_SIGNATURE(0), cpp_int > TYPE_MASK_CLASS;
 		static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(1), J2CPP_FIELD_SIGNATURE(1), cpp_int > TYPE_MASK_VARIATION;
@@ -105,7 +110,6 @@ namespace android { namespace text {
 } //namespace text
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_TEXT_INPUTTYPE_HPP_DECL
@@ -117,6 +121,12 @@ namespace android { namespace text {
 
 namespace j2cpp {
 
+
+
+android::text::InputType::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 static_field<
 	android::text::InputType::J2CPP_CLASS_NAME,

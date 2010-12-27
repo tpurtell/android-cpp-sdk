@@ -30,16 +30,19 @@ namespace android { namespace graphics {
 
 		J2CPP_DECLARE_METHOD(0)
 
-		SumPathEffect(jobject jobj)
+		explicit SumPathEffect(jobject jobj)
 		: cpp_object<SumPathEffect>(jobj)
 		{
 		}
 
+		operator local_ref<android::graphics::PathEffect>() const;
+
+
+		SumPathEffect(local_ref< android::graphics::PathEffect > const&, local_ref< android::graphics::PathEffect > const&);
 	}; //class SumPathEffect
 
 } //namespace graphics
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -53,17 +56,24 @@ namespace android { namespace graphics {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::graphics::SumPathEffect > create< android::graphics::SumPathEffect>(local_ref< android::graphics::PathEffect > const &a0, local_ref< android::graphics::PathEffect > const &a1)
+
+android::graphics::SumPathEffect::operator local_ref<android::graphics::PathEffect>() const
 {
-	return local_ref< android::graphics::SumPathEffect >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::graphics::SumPathEffect::J2CPP_CLASS_NAME>(),
-			get_method_id<android::graphics::SumPathEffect::J2CPP_CLASS_NAME, android::graphics::SumPathEffect::J2CPP_METHOD_NAME(0), android::graphics::SumPathEffect::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<android::graphics::PathEffect>(get_jtype());
 }
+
+
+android::graphics::SumPathEffect::SumPathEffect(local_ref< android::graphics::PathEffect > const &a0, local_ref< android::graphics::PathEffect > const &a1)
+: cpp_object<android::graphics::SumPathEffect>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::graphics::SumPathEffect::J2CPP_CLASS_NAME>(),
+		get_method_id<android::graphics::SumPathEffect::J2CPP_CLASS_NAME, android::graphics::SumPathEffect::J2CPP_METHOD_NAME(0), android::graphics::SumPathEffect::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
 
 
 J2CPP_DEFINE_CLASS(android::graphics::SumPathEffect,"android/graphics/SumPathEffect")

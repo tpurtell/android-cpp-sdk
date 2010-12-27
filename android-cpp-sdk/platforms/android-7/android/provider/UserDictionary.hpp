@@ -10,13 +10,17 @@
 #define J2CPP_ANDROID_PROVIDER_USERDICTIONARY_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace android { namespace net { class Uri; } } }
+namespace j2cpp { namespace android { namespace provider { class BaseColumns; } } }
 namespace j2cpp { namespace android { namespace content { class Context; } } }
 
 
 #include <android/content/Context.hpp>
 #include <android/net/Uri.hpp>
+#include <android/provider/BaseColumns.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -50,11 +54,16 @@ namespace android { namespace provider {
 			J2CPP_DECLARE_FIELD(9)
 			J2CPP_DECLARE_FIELD(10)
 
-			Words(jobject jobj)
+			explicit Words(jobject jobj)
 			: cpp_object<Words>(jobj)
 			{
 			}
 
+			operator local_ref<java::lang::Object>() const;
+			operator local_ref<android::provider::BaseColumns>() const;
+
+
+			Words();
 			static void addWord(local_ref< android::content::Context > const&, local_ref< java::lang::String > const&, cpp_int const&, cpp_int const&);
 
 			static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(0), J2CPP_FIELD_SIGNATURE(0), local_ref< android::net::Uri > > CONTENT_URI;
@@ -86,11 +95,15 @@ namespace android { namespace provider {
 
 		typedef UserDictionary_::Words Words;
 
-		UserDictionary(jobject jobj)
+		explicit UserDictionary(jobject jobj)
 		: cpp_object<UserDictionary>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		UserDictionary();
 
 		static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(0), J2CPP_FIELD_SIGNATURE(0), local_ref< java::lang::String > > AUTHORITY;
 		static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(1), J2CPP_FIELD_SIGNATURE(1), local_ref< android::net::Uri > > CONTENT_URI;
@@ -98,7 +111,6 @@ namespace android { namespace provider {
 
 } //namespace provider
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -113,16 +125,28 @@ namespace j2cpp {
 
 
 
-template <>
-local_ref< android::provider::UserDictionary_::Words > create< android::provider::UserDictionary_::Words>()
+
+android::provider::UserDictionary_::Words::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::provider::UserDictionary_::Words >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::provider::UserDictionary_::Words::J2CPP_CLASS_NAME>(),
-			get_method_id<android::provider::UserDictionary_::Words::J2CPP_CLASS_NAME, android::provider::UserDictionary_::Words::J2CPP_METHOD_NAME(0), android::provider::UserDictionary_::Words::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+android::provider::UserDictionary_::Words::operator local_ref<android::provider::BaseColumns>() const
+{
+	return local_ref<android::provider::BaseColumns>(get_jtype());
+}
+
+
+android::provider::UserDictionary_::Words::Words()
+: cpp_object<android::provider::UserDictionary_::Words>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::provider::UserDictionary_::Words::J2CPP_CLASS_NAME>(),
+		get_method_id<android::provider::UserDictionary_::Words::J2CPP_CLASS_NAME, android::provider::UserDictionary_::Words::J2CPP_METHOD_NAME(0), android::provider::UserDictionary_::Words::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 void android::provider::UserDictionary_::Words::addWord(local_ref< android::content::Context > const &a0, local_ref< java::lang::String > const &a1, cpp_int const &a2, cpp_int const &a3)
 {
@@ -134,6 +158,7 @@ void android::provider::UserDictionary_::Words::addWord(local_ref< android::cont
 		)
 	);
 }
+
 
 
 static_field<
@@ -231,16 +256,24 @@ J2CPP_DEFINE_FIELD(android::provider::UserDictionary_::Words,9,"LOCALE_TYPE_CURR
 J2CPP_DEFINE_FIELD(android::provider::UserDictionary_::Words,10,"DEFAULT_SORT_ORDER","Ljava/lang/String;")
 
 
-template <>
-local_ref< android::provider::UserDictionary > create< android::provider::UserDictionary>()
+
+android::provider::UserDictionary::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::provider::UserDictionary >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::provider::UserDictionary::J2CPP_CLASS_NAME>(),
-			get_method_id<android::provider::UserDictionary::J2CPP_CLASS_NAME, android::provider::UserDictionary::J2CPP_METHOD_NAME(0), android::provider::UserDictionary::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::provider::UserDictionary::UserDictionary()
+: cpp_object<android::provider::UserDictionary>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::provider::UserDictionary::J2CPP_CLASS_NAME>(),
+		get_method_id<android::provider::UserDictionary::J2CPP_CLASS_NAME, android::provider::UserDictionary::J2CPP_METHOD_NAME(0), android::provider::UserDictionary::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
+
 
 
 static_field<

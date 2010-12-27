@@ -10,8 +10,10 @@
 #define J2CPP_ANDROID_GRAPHICS_DRAWABLE_PAINTDRAWABLE_HPP_DECL
 
 
+namespace j2cpp { namespace android { namespace graphics { namespace drawable { class ShapeDrawable; } } } }
 
 
+#include <android/graphics/drawable/ShapeDrawable.hpp>
 
 
 namespace j2cpp {
@@ -32,11 +34,16 @@ namespace android { namespace graphics { namespace drawable {
 		J2CPP_DECLARE_METHOD(3)
 		J2CPP_DECLARE_METHOD(4)
 
-		PaintDrawable(jobject jobj)
+		explicit PaintDrawable(jobject jobj)
 		: cpp_object<PaintDrawable>(jobj)
 		{
 		}
 
+		operator local_ref<android::graphics::drawable::ShapeDrawable>() const;
+
+
+		PaintDrawable();
+		PaintDrawable(cpp_int const&);
 		void setCornerRadius(cpp_float const&);
 		void setCornerRadii(local_ref< cpp_float_array<1> > const&);
 	}; //class PaintDrawable
@@ -44,7 +51,6 @@ namespace android { namespace graphics { namespace drawable {
 } //namespace drawable
 } //namespace graphics
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -58,28 +64,36 @@ namespace android { namespace graphics { namespace drawable {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::graphics::drawable::PaintDrawable > create< android::graphics::drawable::PaintDrawable>()
+
+android::graphics::drawable::PaintDrawable::operator local_ref<android::graphics::drawable::ShapeDrawable>() const
 {
-	return local_ref< android::graphics::drawable::PaintDrawable >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::graphics::drawable::PaintDrawable::J2CPP_CLASS_NAME>(),
-			get_method_id<android::graphics::drawable::PaintDrawable::J2CPP_CLASS_NAME, android::graphics::drawable::PaintDrawable::J2CPP_METHOD_NAME(0), android::graphics::drawable::PaintDrawable::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<android::graphics::drawable::ShapeDrawable>(get_jtype());
 }
 
-template <>
-local_ref< android::graphics::drawable::PaintDrawable > create< android::graphics::drawable::PaintDrawable>(cpp_int const &a0)
+
+android::graphics::drawable::PaintDrawable::PaintDrawable()
+: cpp_object<android::graphics::drawable::PaintDrawable>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::graphics::drawable::PaintDrawable::J2CPP_CLASS_NAME>(),
+		get_method_id<android::graphics::drawable::PaintDrawable::J2CPP_CLASS_NAME, android::graphics::drawable::PaintDrawable::J2CPP_METHOD_NAME(0), android::graphics::drawable::PaintDrawable::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
 {
-	return local_ref< android::graphics::drawable::PaintDrawable >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::graphics::drawable::PaintDrawable::J2CPP_CLASS_NAME>(),
-			get_method_id<android::graphics::drawable::PaintDrawable::J2CPP_CLASS_NAME, android::graphics::drawable::PaintDrawable::J2CPP_METHOD_NAME(1), android::graphics::drawable::PaintDrawable::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
 }
+
+
+
+android::graphics::drawable::PaintDrawable::PaintDrawable(cpp_int const &a0)
+: cpp_object<android::graphics::drawable::PaintDrawable>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::graphics::drawable::PaintDrawable::J2CPP_CLASS_NAME>(),
+		get_method_id<android::graphics::drawable::PaintDrawable::J2CPP_CLASS_NAME, android::graphics::drawable::PaintDrawable::J2CPP_METHOD_NAME(1), android::graphics::drawable::PaintDrawable::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 void android::graphics::drawable::PaintDrawable::setCornerRadius(cpp_float const &a0)
 {

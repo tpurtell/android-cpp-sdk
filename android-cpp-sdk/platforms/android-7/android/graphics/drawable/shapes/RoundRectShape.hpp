@@ -46,11 +46,15 @@ namespace android { namespace graphics { namespace drawable { namespace shapes {
 		J2CPP_DECLARE_METHOD(5)
 		J2CPP_DECLARE_METHOD(6)
 
-		RoundRectShape(jobject jobj)
+		explicit RoundRectShape(jobject jobj)
 		: cpp_object<RoundRectShape>(jobj)
 		{
 		}
 
+		operator local_ref<android::graphics::drawable::shapes::RectShape>() const;
+
+
+		RoundRectShape(local_ref< cpp_float_array<1> > const&, local_ref< android::graphics::RectF > const&, local_ref< cpp_float_array<1> > const&);
 		void draw(local_ref< android::graphics::Canvas > const&, local_ref< android::graphics::Paint > const&);
 		local_ref< android::graphics::drawable::shapes::RoundRectShape > clone();
 		local_ref< android::graphics::drawable::shapes::RectShape > clone_1();
@@ -62,7 +66,6 @@ namespace android { namespace graphics { namespace drawable { namespace shapes {
 } //namespace drawable
 } //namespace graphics
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -76,17 +79,24 @@ namespace android { namespace graphics { namespace drawable { namespace shapes {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::graphics::drawable::shapes::RoundRectShape > create< android::graphics::drawable::shapes::RoundRectShape>(local_ref< cpp_float_array<1> > const &a0, local_ref< android::graphics::RectF > const &a1, local_ref< cpp_float_array<1> > const &a2)
+
+android::graphics::drawable::shapes::RoundRectShape::operator local_ref<android::graphics::drawable::shapes::RectShape>() const
 {
-	return local_ref< android::graphics::drawable::shapes::RoundRectShape >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::graphics::drawable::shapes::RoundRectShape::J2CPP_CLASS_NAME>(),
-			get_method_id<android::graphics::drawable::shapes::RoundRectShape::J2CPP_CLASS_NAME, android::graphics::drawable::shapes::RoundRectShape::J2CPP_METHOD_NAME(0), android::graphics::drawable::shapes::RoundRectShape::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
-		)
-	);
+	return local_ref<android::graphics::drawable::shapes::RectShape>(get_jtype());
 }
+
+
+android::graphics::drawable::shapes::RoundRectShape::RoundRectShape(local_ref< cpp_float_array<1> > const &a0, local_ref< android::graphics::RectF > const &a1, local_ref< cpp_float_array<1> > const &a2)
+: cpp_object<android::graphics::drawable::shapes::RoundRectShape>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::graphics::drawable::shapes::RoundRectShape::J2CPP_CLASS_NAME>(),
+		get_method_id<android::graphics::drawable::shapes::RoundRectShape::J2CPP_CLASS_NAME, android::graphics::drawable::shapes::RoundRectShape::J2CPP_METHOD_NAME(0), android::graphics::drawable::shapes::RoundRectShape::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
+	)
+)
+{
+}
+
 
 void android::graphics::drawable::shapes::RoundRectShape::draw(local_ref< android::graphics::Canvas > const &a0, local_ref< android::graphics::Paint > const &a1)
 {

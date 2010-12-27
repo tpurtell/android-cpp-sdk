@@ -43,11 +43,17 @@ namespace java { namespace util { namespace jar {
 		J2CPP_DECLARE_METHOD(4)
 		J2CPP_DECLARE_METHOD(5)
 
-		JarEntry(jobject jobj)
+		explicit JarEntry(jobject jobj)
 		: cpp_object<JarEntry>(jobj)
 		{
 		}
 
+		operator local_ref<java::util::zip::ZipEntry>() const;
+
+
+		JarEntry(local_ref< java::lang::String > const&);
+		JarEntry(local_ref< java::util::zip::ZipEntry > const&);
+		JarEntry(local_ref< java::util::jar::JarEntry > const&);
 		local_ref< java::util::jar::Attributes > getAttributes();
 		local_ref< cpp_object_array<java::security::cert::Certificate, 1> > getCertificates();
 		local_ref< cpp_object_array<java::security::CodeSigner, 1> > getCodeSigners();
@@ -56,7 +62,6 @@ namespace java { namespace util { namespace jar {
 } //namespace jar
 } //namespace util
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -70,41 +75,50 @@ namespace java { namespace util { namespace jar {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::util::jar::JarEntry > create< java::util::jar::JarEntry>(local_ref< java::lang::String > const &a0)
+
+java::util::jar::JarEntry::operator local_ref<java::util::zip::ZipEntry>() const
 {
-	return local_ref< java::util::jar::JarEntry >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::jar::JarEntry::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::jar::JarEntry::J2CPP_CLASS_NAME, java::util::jar::JarEntry::J2CPP_METHOD_NAME(0), java::util::jar::JarEntry::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::util::zip::ZipEntry>(get_jtype());
 }
 
-template <>
-local_ref< java::util::jar::JarEntry > create< java::util::jar::JarEntry>(local_ref< java::util::zip::ZipEntry > const &a0)
+
+java::util::jar::JarEntry::JarEntry(local_ref< java::lang::String > const &a0)
+: cpp_object<java::util::jar::JarEntry>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::util::jar::JarEntry::J2CPP_CLASS_NAME>(),
+		get_method_id<java::util::jar::JarEntry::J2CPP_CLASS_NAME, java::util::jar::JarEntry::J2CPP_METHOD_NAME(0), java::util::jar::JarEntry::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< java::util::jar::JarEntry >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::jar::JarEntry::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::jar::JarEntry::J2CPP_CLASS_NAME, java::util::jar::JarEntry::J2CPP_METHOD_NAME(1), java::util::jar::JarEntry::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< java::util::jar::JarEntry > create< java::util::jar::JarEntry>(local_ref< java::util::jar::JarEntry > const &a0)
+
+
+java::util::jar::JarEntry::JarEntry(local_ref< java::util::zip::ZipEntry > const &a0)
+: cpp_object<java::util::jar::JarEntry>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::util::jar::JarEntry::J2CPP_CLASS_NAME>(),
+		get_method_id<java::util::jar::JarEntry::J2CPP_CLASS_NAME, java::util::jar::JarEntry::J2CPP_METHOD_NAME(1), java::util::jar::JarEntry::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< java::util::jar::JarEntry >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::jar::JarEntry::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::jar::JarEntry::J2CPP_CLASS_NAME, java::util::jar::JarEntry::J2CPP_METHOD_NAME(2), java::util::jar::JarEntry::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype()
-		)
-	);
 }
+
+
+
+java::util::jar::JarEntry::JarEntry(local_ref< java::util::jar::JarEntry > const &a0)
+: cpp_object<java::util::jar::JarEntry>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::util::jar::JarEntry::J2CPP_CLASS_NAME>(),
+		get_method_id<java::util::jar::JarEntry::J2CPP_CLASS_NAME, java::util::jar::JarEntry::J2CPP_METHOD_NAME(2), java::util::jar::JarEntry::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 local_ref< java::util::jar::Attributes > java::util::jar::JarEntry::getAttributes()
 {

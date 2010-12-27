@@ -10,9 +10,11 @@
 #define J2CPP_JAVA_LANG_ITERABLE_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace util { class Iterator; } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/util/Iterator.hpp>
 
 
@@ -30,17 +32,19 @@ namespace java { namespace lang {
 
 		J2CPP_DECLARE_METHOD(0)
 
-		Iterable(jobject jobj)
+		explicit Iterable(jobject jobj)
 		: cpp_object<Iterable>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		local_ref< java::util::Iterator > iterator();
 	}; //class Iterable
 
 } //namespace lang
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -53,6 +57,12 @@ namespace java { namespace lang {
 
 namespace j2cpp {
 
+
+
+java::lang::Iterable::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 local_ref< java::util::Iterator > java::lang::Iterable::iterator()
 {

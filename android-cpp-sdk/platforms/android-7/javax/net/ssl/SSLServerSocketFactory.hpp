@@ -35,10 +35,13 @@ namespace javax { namespace net { namespace ssl {
 		J2CPP_DECLARE_METHOD(2)
 		J2CPP_DECLARE_METHOD(3)
 
-		SSLServerSocketFactory(jobject jobj)
+		explicit SSLServerSocketFactory(jobject jobj)
 		: cpp_object<SSLServerSocketFactory>(jobj)
 		{
 		}
+
+		operator local_ref<javax::net::ServerSocketFactory>() const;
+
 
 		static local_ref< javax::net::ServerSocketFactory > getDefault();
 		local_ref< cpp_object_array<java::lang::String, 1> > getDefaultCipherSuites();
@@ -48,7 +51,6 @@ namespace javax { namespace net { namespace ssl {
 } //namespace ssl
 } //namespace net
 } //namespace javax
-
 
 } //namespace j2cpp
 
@@ -62,16 +64,12 @@ namespace javax { namespace net { namespace ssl {
 namespace j2cpp {
 
 
-template <>
-local_ref< javax::net::ssl::SSLServerSocketFactory > create< javax::net::ssl::SSLServerSocketFactory>()
+
+javax::net::ssl::SSLServerSocketFactory::operator local_ref<javax::net::ServerSocketFactory>() const
 {
-	return local_ref< javax::net::ssl::SSLServerSocketFactory >(
-		environment::get().get_jenv()->NewObject(
-			get_class<javax::net::ssl::SSLServerSocketFactory::J2CPP_CLASS_NAME>(),
-			get_method_id<javax::net::ssl::SSLServerSocketFactory::J2CPP_CLASS_NAME, javax::net::ssl::SSLServerSocketFactory::J2CPP_METHOD_NAME(0), javax::net::ssl::SSLServerSocketFactory::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<javax::net::ServerSocketFactory>(get_jtype());
 }
+
 
 local_ref< javax::net::ServerSocketFactory > javax::net::ssl::SSLServerSocketFactory::getDefault()
 {

@@ -10,11 +10,13 @@
 #define J2CPP_ANDROID_OS_POWERMANAGER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace android { namespace os { namespace PowerManager_ { class WakeLock; } } } }
 
 
 #include <android/os/PowerManager.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -43,10 +45,13 @@ namespace android { namespace os {
 			J2CPP_DECLARE_METHOD(7)
 			J2CPP_DECLARE_FIELD(0)
 
-			WakeLock(jobject jobj)
+			explicit WakeLock(jobject jobj)
 			: cpp_object<WakeLock>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+
 
 			void setReferenceCounted(cpp_boolean const&);
 			void acquire();
@@ -80,10 +85,13 @@ namespace android { namespace os {
 
 		typedef PowerManager_::WakeLock WakeLock;
 
-		PowerManager(jobject jobj)
+		explicit PowerManager(jobject jobj)
 		: cpp_object<PowerManager>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		local_ref< android::os::PowerManager_::WakeLock > newWakeLock(cpp_int const&, local_ref< java::lang::String > const&);
 		void userActivity(cpp_long const&, cpp_boolean const&);
@@ -101,7 +109,6 @@ namespace android { namespace os {
 } //namespace os
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_OS_POWERMANAGER_HPP_DECL
@@ -115,17 +122,12 @@ namespace j2cpp {
 
 
 
-template <>
-local_ref< android::os::PowerManager_::WakeLock > create< android::os::PowerManager_::WakeLock>(local_ref< android::os::PowerManager > const &a0)
+
+android::os::PowerManager_::WakeLock::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::os::PowerManager_::WakeLock >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::os::PowerManager_::WakeLock::J2CPP_CLASS_NAME>(),
-			get_method_id<android::os::PowerManager_::WakeLock::J2CPP_CLASS_NAME, android::os::PowerManager_::WakeLock::J2CPP_METHOD_NAME(0), android::os::PowerManager_::WakeLock::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
 
 void android::os::PowerManager_::WakeLock::setReferenceCounted(cpp_boolean const &a0)
 {
@@ -204,16 +206,12 @@ J2CPP_DEFINE_METHOD(android::os::PowerManager_::WakeLock,7,"finalize","()V")
 J2CPP_DEFINE_FIELD(android::os::PowerManager_::WakeLock,0,"this$0","Landroid/os/PowerManager;")
 
 
-template <>
-local_ref< android::os::PowerManager > create< android::os::PowerManager>()
+
+android::os::PowerManager::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::os::PowerManager >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::os::PowerManager::J2CPP_CLASS_NAME>(),
-			get_method_id<android::os::PowerManager::J2CPP_CLASS_NAME, android::os::PowerManager::J2CPP_METHOD_NAME(0), android::os::PowerManager::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
 
 local_ref< android::os::PowerManager_::WakeLock > android::os::PowerManager::newWakeLock(cpp_int const &a0, local_ref< java::lang::String > const &a1)
 {

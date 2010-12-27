@@ -10,6 +10,7 @@
 #define J2CPP_ANDROID_WIDGET_POPUPWINDOW_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace android { namespace graphics { namespace drawable { class Drawable; } } } }
 namespace j2cpp { namespace android { namespace content { class Context; } } }
 namespace j2cpp { namespace android { namespace view { class View; } } }
@@ -23,6 +24,7 @@ namespace j2cpp { namespace android { namespace util { class AttributeSet; } } }
 #include <android/util/AttributeSet.hpp>
 #include <android/view/View.hpp>
 #include <android/widget/PopupWindow.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -42,10 +44,13 @@ namespace android { namespace widget {
 
 			J2CPP_DECLARE_METHOD(0)
 
-			OnDismissListener(jobject jobj)
+			explicit OnDismissListener(jobject jobj)
 			: cpp_object<OnDismissListener>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+
 
 			void onDismiss();
 		}; //class OnDismissListener
@@ -113,11 +118,22 @@ namespace android { namespace widget {
 
 		typedef PopupWindow_::OnDismissListener OnDismissListener;
 
-		PopupWindow(jobject jobj)
+		explicit PopupWindow(jobject jobj)
 		: cpp_object<PopupWindow>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		PopupWindow(local_ref< android::content::Context > const&);
+		PopupWindow(local_ref< android::content::Context > const&, local_ref< android::util::AttributeSet > const&);
+		PopupWindow(local_ref< android::content::Context > const&, local_ref< android::util::AttributeSet > const&, cpp_int const&);
+		PopupWindow();
+		PopupWindow(local_ref< android::view::View > const&);
+		PopupWindow(cpp_int const&, cpp_int const&);
+		PopupWindow(local_ref< android::view::View > const&, cpp_int const&, cpp_int const&);
+		PopupWindow(local_ref< android::view::View > const&, cpp_int const&, cpp_int const&, cpp_boolean const&);
 		local_ref< android::graphics::drawable::Drawable > getBackground();
 		void setBackgroundDrawable(local_ref< android::graphics::drawable::Drawable > const&);
 		cpp_int getAnimationStyle();
@@ -167,7 +183,6 @@ namespace android { namespace widget {
 } //namespace widget
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_WIDGET_POPUPWINDOW_HPP_DECL
@@ -180,6 +195,12 @@ namespace android { namespace widget {
 namespace j2cpp {
 
 
+
+
+android::widget::PopupWindow_::OnDismissListener::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 void android::widget::PopupWindow_::OnDismissListener::onDismiss()
 {
@@ -196,100 +217,114 @@ J2CPP_DEFINE_CLASS(android::widget::PopupWindow_::OnDismissListener,"android/wid
 J2CPP_DEFINE_METHOD(android::widget::PopupWindow_::OnDismissListener,0,"onDismiss","()V")
 
 
-template <>
-local_ref< android::widget::PopupWindow > create< android::widget::PopupWindow>(local_ref< android::content::Context > const &a0)
+
+android::widget::PopupWindow::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::widget::PopupWindow >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::widget::PopupWindow::J2CPP_CLASS_NAME>(),
-			get_method_id<android::widget::PopupWindow::J2CPP_CLASS_NAME, android::widget::PopupWindow::J2CPP_METHOD_NAME(0), android::widget::PopupWindow::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
 
-template <>
-local_ref< android::widget::PopupWindow > create< android::widget::PopupWindow>(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1)
+
+android::widget::PopupWindow::PopupWindow(local_ref< android::content::Context > const &a0)
+: cpp_object<android::widget::PopupWindow>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::widget::PopupWindow::J2CPP_CLASS_NAME>(),
+		get_method_id<android::widget::PopupWindow::J2CPP_CLASS_NAME, android::widget::PopupWindow::J2CPP_METHOD_NAME(0), android::widget::PopupWindow::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< android::widget::PopupWindow >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::widget::PopupWindow::J2CPP_CLASS_NAME>(),
-			get_method_id<android::widget::PopupWindow::J2CPP_CLASS_NAME, android::widget::PopupWindow::J2CPP_METHOD_NAME(1), android::widget::PopupWindow::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< android::widget::PopupWindow > create< android::widget::PopupWindow>(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1, cpp_int const &a2)
+
+
+android::widget::PopupWindow::PopupWindow(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1)
+: cpp_object<android::widget::PopupWindow>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::widget::PopupWindow::J2CPP_CLASS_NAME>(),
+		get_method_id<android::widget::PopupWindow::J2CPP_CLASS_NAME, android::widget::PopupWindow::J2CPP_METHOD_NAME(1), android::widget::PopupWindow::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
 {
-	return local_ref< android::widget::PopupWindow >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::widget::PopupWindow::J2CPP_CLASS_NAME>(),
-			get_method_id<android::widget::PopupWindow::J2CPP_CLASS_NAME, android::widget::PopupWindow::J2CPP_METHOD_NAME(2), android::widget::PopupWindow::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< android::widget::PopupWindow > create< android::widget::PopupWindow>()
+
+
+android::widget::PopupWindow::PopupWindow(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1, cpp_int const &a2)
+: cpp_object<android::widget::PopupWindow>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::widget::PopupWindow::J2CPP_CLASS_NAME>(),
+		get_method_id<android::widget::PopupWindow::J2CPP_CLASS_NAME, android::widget::PopupWindow::J2CPP_METHOD_NAME(2), android::widget::PopupWindow::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
+	)
+)
 {
-	return local_ref< android::widget::PopupWindow >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::widget::PopupWindow::J2CPP_CLASS_NAME>(),
-			get_method_id<android::widget::PopupWindow::J2CPP_CLASS_NAME, android::widget::PopupWindow::J2CPP_METHOD_NAME(3), android::widget::PopupWindow::J2CPP_METHOD_SIGNATURE(3), false>()
-		)
-	);
 }
 
-template <>
-local_ref< android::widget::PopupWindow > create< android::widget::PopupWindow>(local_ref< android::view::View > const &a0)
+
+
+android::widget::PopupWindow::PopupWindow()
+: cpp_object<android::widget::PopupWindow>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::widget::PopupWindow::J2CPP_CLASS_NAME>(),
+		get_method_id<android::widget::PopupWindow::J2CPP_CLASS_NAME, android::widget::PopupWindow::J2CPP_METHOD_NAME(3), android::widget::PopupWindow::J2CPP_METHOD_SIGNATURE(3), false>()
+	)
+)
 {
-	return local_ref< android::widget::PopupWindow >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::widget::PopupWindow::J2CPP_CLASS_NAME>(),
-			get_method_id<android::widget::PopupWindow::J2CPP_CLASS_NAME, android::widget::PopupWindow::J2CPP_METHOD_NAME(4), android::widget::PopupWindow::J2CPP_METHOD_SIGNATURE(4), false>(),
-			a0.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< android::widget::PopupWindow > create< android::widget::PopupWindow>(cpp_int const &a0, cpp_int const &a1)
+
+
+android::widget::PopupWindow::PopupWindow(local_ref< android::view::View > const &a0)
+: cpp_object<android::widget::PopupWindow>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::widget::PopupWindow::J2CPP_CLASS_NAME>(),
+		get_method_id<android::widget::PopupWindow::J2CPP_CLASS_NAME, android::widget::PopupWindow::J2CPP_METHOD_NAME(4), android::widget::PopupWindow::J2CPP_METHOD_SIGNATURE(4), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< android::widget::PopupWindow >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::widget::PopupWindow::J2CPP_CLASS_NAME>(),
-			get_method_id<android::widget::PopupWindow::J2CPP_CLASS_NAME, android::widget::PopupWindow::J2CPP_METHOD_NAME(5), android::widget::PopupWindow::J2CPP_METHOD_SIGNATURE(5), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< android::widget::PopupWindow > create< android::widget::PopupWindow>(local_ref< android::view::View > const &a0, cpp_int const &a1, cpp_int const &a2)
+
+
+android::widget::PopupWindow::PopupWindow(cpp_int const &a0, cpp_int const &a1)
+: cpp_object<android::widget::PopupWindow>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::widget::PopupWindow::J2CPP_CLASS_NAME>(),
+		get_method_id<android::widget::PopupWindow::J2CPP_CLASS_NAME, android::widget::PopupWindow::J2CPP_METHOD_NAME(5), android::widget::PopupWindow::J2CPP_METHOD_SIGNATURE(5), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
 {
-	return local_ref< android::widget::PopupWindow >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::widget::PopupWindow::J2CPP_CLASS_NAME>(),
-			get_method_id<android::widget::PopupWindow::J2CPP_CLASS_NAME, android::widget::PopupWindow::J2CPP_METHOD_NAME(6), android::widget::PopupWindow::J2CPP_METHOD_SIGNATURE(6), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< android::widget::PopupWindow > create< android::widget::PopupWindow>(local_ref< android::view::View > const &a0, cpp_int const &a1, cpp_int const &a2, cpp_boolean const &a3)
+
+
+android::widget::PopupWindow::PopupWindow(local_ref< android::view::View > const &a0, cpp_int const &a1, cpp_int const &a2)
+: cpp_object<android::widget::PopupWindow>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::widget::PopupWindow::J2CPP_CLASS_NAME>(),
+		get_method_id<android::widget::PopupWindow::J2CPP_CLASS_NAME, android::widget::PopupWindow::J2CPP_METHOD_NAME(6), android::widget::PopupWindow::J2CPP_METHOD_SIGNATURE(6), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
+	)
+)
 {
-	return local_ref< android::widget::PopupWindow >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::widget::PopupWindow::J2CPP_CLASS_NAME>(),
-			get_method_id<android::widget::PopupWindow::J2CPP_CLASS_NAME, android::widget::PopupWindow::J2CPP_METHOD_NAME(7), android::widget::PopupWindow::J2CPP_METHOD_SIGNATURE(7), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype()
-		)
-	);
 }
+
+
+
+android::widget::PopupWindow::PopupWindow(local_ref< android::view::View > const &a0, cpp_int const &a1, cpp_int const &a2, cpp_boolean const &a3)
+: cpp_object<android::widget::PopupWindow>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::widget::PopupWindow::J2CPP_CLASS_NAME>(),
+		get_method_id<android::widget::PopupWindow::J2CPP_CLASS_NAME, android::widget::PopupWindow::J2CPP_METHOD_NAME(7), android::widget::PopupWindow::J2CPP_METHOD_SIGNATURE(7), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype()
+	)
+)
+{
+}
+
 
 local_ref< android::graphics::drawable::Drawable > android::widget::PopupWindow::getBackground()
 {

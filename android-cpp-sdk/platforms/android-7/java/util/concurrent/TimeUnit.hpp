@@ -11,10 +11,12 @@
 
 
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace lang { class Enum; } } }
 namespace j2cpp { namespace java { namespace lang { class Thread; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 
 
+#include <java/lang/Enum.hpp>
 #include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/lang/Thread.hpp>
@@ -50,10 +52,13 @@ namespace java { namespace util { namespace concurrent {
 		J2CPP_DECLARE_FIELD(3)
 		J2CPP_DECLARE_FIELD(4)
 
-		TimeUnit(jobject jobj)
+		explicit TimeUnit(jobject jobj)
 		: cpp_object<TimeUnit>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Enum>() const;
+
 
 		static local_ref< cpp_object_array<java::util::concurrent::TimeUnit, 1> > values();
 		static local_ref< java::util::concurrent::TimeUnit > valueOf(local_ref< java::lang::String > const&);
@@ -76,7 +81,6 @@ namespace java { namespace util { namespace concurrent {
 } //namespace util
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_UTIL_CONCURRENT_TIMEUNIT_HPP_DECL
@@ -88,6 +92,12 @@ namespace java { namespace util { namespace concurrent {
 
 namespace j2cpp {
 
+
+
+java::util::concurrent::TimeUnit::operator local_ref<java::lang::Enum>() const
+{
+	return local_ref<java::lang::Enum>(get_jtype());
+}
 
 local_ref< cpp_object_array<java::util::concurrent::TimeUnit, 1> > java::util::concurrent::TimeUnit::values()
 {
@@ -110,17 +120,6 @@ local_ref< java::util::concurrent::TimeUnit > java::util::concurrent::TimeUnit::
 	);
 }
 
-template <>
-local_ref< java::util::concurrent::TimeUnit > create< java::util::concurrent::TimeUnit>(local_ref< java::lang::String > const &a0, cpp_int const &a1)
-{
-	return local_ref< java::util::concurrent::TimeUnit >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::concurrent::TimeUnit::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::concurrent::TimeUnit::J2CPP_CLASS_NAME, java::util::concurrent::TimeUnit::J2CPP_METHOD_NAME(2), java::util::concurrent::TimeUnit::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
-}
 
 cpp_long java::util::concurrent::TimeUnit::convert(cpp_long const &a0, local_ref< java::util::concurrent::TimeUnit > const &a1)
 {
@@ -209,6 +208,7 @@ void java::util::concurrent::TimeUnit::sleep(cpp_long const &a0)
 		)
 	);
 }
+
 
 
 static_field<

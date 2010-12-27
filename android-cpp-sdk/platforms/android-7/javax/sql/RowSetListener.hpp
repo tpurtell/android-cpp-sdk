@@ -11,8 +11,12 @@
 
 
 namespace j2cpp { namespace javax { namespace sql { class RowSetEvent; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace util { class EventListener; } } }
 
 
+#include <java/lang/Object.hpp>
+#include <java/util/EventListener.hpp>
 #include <javax/sql/RowSetEvent.hpp>
 
 
@@ -32,10 +36,14 @@ namespace javax { namespace sql {
 		J2CPP_DECLARE_METHOD(1)
 		J2CPP_DECLARE_METHOD(2)
 
-		RowSetListener(jobject jobj)
+		explicit RowSetListener(jobject jobj)
 		: cpp_object<RowSetListener>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::util::EventListener>() const;
+
 
 		void cursorMoved(local_ref< javax::sql::RowSetEvent > const&);
 		void rowChanged(local_ref< javax::sql::RowSetEvent > const&);
@@ -44,7 +52,6 @@ namespace javax { namespace sql {
 
 } //namespace sql
 } //namespace javax
-
 
 } //namespace j2cpp
 
@@ -57,6 +64,17 @@ namespace javax { namespace sql {
 
 namespace j2cpp {
 
+
+
+javax::sql::RowSetListener::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
+
+javax::sql::RowSetListener::operator local_ref<java::util::EventListener>() const
+{
+	return local_ref<java::util::EventListener>(get_jtype());
+}
 
 void javax::sql::RowSetListener::cursorMoved(local_ref< javax::sql::RowSetEvent > const &a0)
 {

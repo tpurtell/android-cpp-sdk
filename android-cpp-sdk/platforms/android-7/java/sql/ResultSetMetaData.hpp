@@ -10,9 +10,11 @@
 #define J2CPP_JAVA_SQL_RESULTSETMETADATA_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -53,10 +55,13 @@ namespace java { namespace sql {
 		J2CPP_DECLARE_FIELD(1)
 		J2CPP_DECLARE_FIELD(2)
 
-		ResultSetMetaData(jobject jobj)
+		explicit ResultSetMetaData(jobject jobj)
 		: cpp_object<ResultSetMetaData>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		local_ref< java::lang::String > getCatalogName(cpp_int const&);
 		local_ref< java::lang::String > getColumnClassName(cpp_int const&);
@@ -88,7 +93,6 @@ namespace java { namespace sql {
 } //namespace sql
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_SQL_RESULTSETMETADATA_HPP_DECL
@@ -100,6 +104,12 @@ namespace java { namespace sql {
 
 namespace j2cpp {
 
+
+
+java::sql::ResultSetMetaData::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 local_ref< java::lang::String > java::sql::ResultSetMetaData::getCatalogName(cpp_int const &a0)
 {

@@ -10,10 +10,14 @@
 #define J2CPP_ANDROID_VIEW_ORIENTATIONLISTENER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace android { namespace hardware { class SensorListener; } } }
 namespace j2cpp { namespace android { namespace content { class Context; } } }
 
 
 #include <android/content/Context.hpp>
+#include <android/hardware/SensorListener.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -37,11 +41,17 @@ namespace android { namespace view {
 		J2CPP_DECLARE_METHOD(6)
 		J2CPP_DECLARE_FIELD(0)
 
-		OrientationListener(jobject jobj)
+		explicit OrientationListener(jobject jobj)
 		: cpp_object<OrientationListener>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<android::hardware::SensorListener>() const;
+
+
+		OrientationListener(local_ref< android::content::Context > const&);
+		OrientationListener(local_ref< android::content::Context > const&, cpp_int const&);
 		void enable();
 		void disable();
 		void onAccuracyChanged(cpp_int const&, cpp_int const&);
@@ -53,7 +63,6 @@ namespace android { namespace view {
 
 } //namespace view
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -67,29 +76,42 @@ namespace android { namespace view {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::view::OrientationListener > create< android::view::OrientationListener>(local_ref< android::content::Context > const &a0)
+
+android::view::OrientationListener::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::view::OrientationListener >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::view::OrientationListener::J2CPP_CLASS_NAME>(),
-			get_method_id<android::view::OrientationListener::J2CPP_CLASS_NAME, android::view::OrientationListener::J2CPP_METHOD_NAME(0), android::view::OrientationListener::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
 
-template <>
-local_ref< android::view::OrientationListener > create< android::view::OrientationListener>(local_ref< android::content::Context > const &a0, cpp_int const &a1)
+android::view::OrientationListener::operator local_ref<android::hardware::SensorListener>() const
 {
-	return local_ref< android::view::OrientationListener >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::view::OrientationListener::J2CPP_CLASS_NAME>(),
-			get_method_id<android::view::OrientationListener::J2CPP_CLASS_NAME, android::view::OrientationListener::J2CPP_METHOD_NAME(1), android::view::OrientationListener::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<android::hardware::SensorListener>(get_jtype());
 }
+
+
+android::view::OrientationListener::OrientationListener(local_ref< android::content::Context > const &a0)
+: cpp_object<android::view::OrientationListener>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::view::OrientationListener::J2CPP_CLASS_NAME>(),
+		get_method_id<android::view::OrientationListener::J2CPP_CLASS_NAME, android::view::OrientationListener::J2CPP_METHOD_NAME(0), android::view::OrientationListener::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
+
+
+android::view::OrientationListener::OrientationListener(local_ref< android::content::Context > const &a0, cpp_int const &a1)
+: cpp_object<android::view::OrientationListener>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::view::OrientationListener::J2CPP_CLASS_NAME>(),
+		get_method_id<android::view::OrientationListener::J2CPP_CLASS_NAME, android::view::OrientationListener::J2CPP_METHOD_NAME(1), android::view::OrientationListener::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
 
 void android::view::OrientationListener::enable()
 {

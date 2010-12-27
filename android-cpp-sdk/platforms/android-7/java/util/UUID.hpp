@@ -10,10 +10,14 @@
 #define J2CPP_JAVA_UTIL_UUID_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace lang { class Comparable; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 
 
+#include <java/io/Serializable.hpp>
+#include <java/lang/Comparable.hpp>
 #include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
@@ -47,11 +51,17 @@ namespace java { namespace util {
 		J2CPP_DECLARE_METHOD(14)
 		J2CPP_DECLARE_METHOD(15)
 
-		UUID(jobject jobj)
+		explicit UUID(jobject jobj)
 		: cpp_object<UUID>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::io::Serializable>() const;
+		operator local_ref<java::lang::Comparable>() const;
+
+
+		UUID(cpp_long const&, cpp_long const&);
 		static local_ref< java::util::UUID > randomUUID();
 		static local_ref< java::util::UUID > nameUUIDFromBytes(local_ref< cpp_byte_array<1> > const&);
 		static local_ref< java::util::UUID > fromString(local_ref< java::lang::String > const&);
@@ -72,7 +82,6 @@ namespace java { namespace util {
 } //namespace util
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_UTIL_UUID_HPP_DECL
@@ -85,17 +94,34 @@ namespace java { namespace util {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::util::UUID > create< java::util::UUID>(cpp_long const &a0, cpp_long const &a1)
+
+java::util::UUID::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::util::UUID >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::UUID::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::UUID::J2CPP_CLASS_NAME, java::util::UUID::J2CPP_METHOD_NAME(0), java::util::UUID::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+java::util::UUID::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jtype());
+}
+
+java::util::UUID::operator local_ref<java::lang::Comparable>() const
+{
+	return local_ref<java::lang::Comparable>(get_jtype());
+}
+
+
+java::util::UUID::UUID(cpp_long const &a0, cpp_long const &a1)
+: cpp_object<java::util::UUID>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::util::UUID::J2CPP_CLASS_NAME>(),
+		get_method_id<java::util::UUID::J2CPP_CLASS_NAME, java::util::UUID::J2CPP_METHOD_NAME(0), java::util::UUID::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
 
 local_ref< java::util::UUID > java::util::UUID::randomUUID()
 {

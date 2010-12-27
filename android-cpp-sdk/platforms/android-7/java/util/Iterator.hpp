@@ -32,10 +32,13 @@ namespace java { namespace util {
 		J2CPP_DECLARE_METHOD(1)
 		J2CPP_DECLARE_METHOD(2)
 
-		Iterator(jobject jobj)
+		explicit Iterator(jobject jobj)
 		: cpp_object<Iterator>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		cpp_boolean hasNext();
 		local_ref< java::lang::Object > next();
@@ -44,7 +47,6 @@ namespace java { namespace util {
 
 } //namespace util
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -57,6 +59,12 @@ namespace java { namespace util {
 
 namespace j2cpp {
 
+
+
+java::util::Iterator::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 cpp_boolean java::util::Iterator::hasNext()
 {

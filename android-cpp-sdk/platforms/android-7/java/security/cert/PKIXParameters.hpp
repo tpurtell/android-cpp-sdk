@@ -14,6 +14,7 @@ namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace security { class KeyStore; } } }
 namespace j2cpp { namespace java { namespace security { namespace cert { class CertSelector; } } } }
+namespace j2cpp { namespace java { namespace security { namespace cert { class CertPathParameters; } } } }
 namespace j2cpp { namespace java { namespace security { namespace cert { class CertStore; } } } }
 namespace j2cpp { namespace java { namespace security { namespace cert { class PKIXCertPathChecker; } } } }
 namespace j2cpp { namespace java { namespace util { class Set; } } }
@@ -24,6 +25,7 @@ namespace j2cpp { namespace java { namespace util { class List; } } }
 #include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/security/KeyStore.hpp>
+#include <java/security/cert/CertPathParameters.hpp>
 #include <java/security/cert/CertSelector.hpp>
 #include <java/security/cert/CertStore.hpp>
 #include <java/security/cert/PKIXCertPathChecker.hpp>
@@ -75,11 +77,17 @@ namespace java { namespace security { namespace cert {
 		J2CPP_DECLARE_METHOD(28)
 		J2CPP_DECLARE_METHOD(29)
 
-		PKIXParameters(jobject jobj)
+		explicit PKIXParameters(jobject jobj)
 		: cpp_object<PKIXParameters>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::security::cert::CertPathParameters>() const;
+
+
+		PKIXParameters(local_ref< java::util::Set > const&);
+		PKIXParameters(local_ref< java::security::KeyStore > const&);
 		local_ref< java::util::Set > getTrustAnchors();
 		void setTrustAnchors(local_ref< java::util::Set > const&);
 		cpp_boolean isAnyPolicyInhibited();
@@ -114,7 +122,6 @@ namespace java { namespace security { namespace cert {
 } //namespace security
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_SECURITY_CERT_PKIXPARAMETERS_HPP_DECL
@@ -127,29 +134,42 @@ namespace java { namespace security { namespace cert {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::security::cert::PKIXParameters > create< java::security::cert::PKIXParameters>(local_ref< java::util::Set > const &a0)
+
+java::security::cert::PKIXParameters::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::security::cert::PKIXParameters >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::security::cert::PKIXParameters::J2CPP_CLASS_NAME>(),
-			get_method_id<java::security::cert::PKIXParameters::J2CPP_CLASS_NAME, java::security::cert::PKIXParameters::J2CPP_METHOD_NAME(0), java::security::cert::PKIXParameters::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
 
-template <>
-local_ref< java::security::cert::PKIXParameters > create< java::security::cert::PKIXParameters>(local_ref< java::security::KeyStore > const &a0)
+java::security::cert::PKIXParameters::operator local_ref<java::security::cert::CertPathParameters>() const
 {
-	return local_ref< java::security::cert::PKIXParameters >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::security::cert::PKIXParameters::J2CPP_CLASS_NAME>(),
-			get_method_id<java::security::cert::PKIXParameters::J2CPP_CLASS_NAME, java::security::cert::PKIXParameters::J2CPP_METHOD_NAME(1), java::security::cert::PKIXParameters::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::security::cert::CertPathParameters>(get_jtype());
 }
+
+
+java::security::cert::PKIXParameters::PKIXParameters(local_ref< java::util::Set > const &a0)
+: cpp_object<java::security::cert::PKIXParameters>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::security::cert::PKIXParameters::J2CPP_CLASS_NAME>(),
+		get_method_id<java::security::cert::PKIXParameters::J2CPP_CLASS_NAME, java::security::cert::PKIXParameters::J2CPP_METHOD_NAME(0), java::security::cert::PKIXParameters::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
+
+
+java::security::cert::PKIXParameters::PKIXParameters(local_ref< java::security::KeyStore > const &a0)
+: cpp_object<java::security::cert::PKIXParameters>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::security::cert::PKIXParameters::J2CPP_CLASS_NAME>(),
+		get_method_id<java::security::cert::PKIXParameters::J2CPP_CLASS_NAME, java::security::cert::PKIXParameters::J2CPP_METHOD_NAME(1), java::security::cert::PKIXParameters::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 local_ref< java::util::Set > java::security::cert::PKIXParameters::getTrustAnchors()
 {

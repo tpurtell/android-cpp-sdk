@@ -11,8 +11,10 @@
 
 
 namespace j2cpp { namespace java { namespace io { class PipedInputStream; } } }
+namespace j2cpp { namespace java { namespace io { class OutputStream; } } }
 
 
+#include <java/io/OutputStream.hpp>
 #include <java/io/PipedInputStream.hpp>
 
 
@@ -36,11 +38,16 @@ namespace java { namespace io {
 		J2CPP_DECLARE_METHOD(5)
 		J2CPP_DECLARE_METHOD(6)
 
-		PipedOutputStream(jobject jobj)
+		explicit PipedOutputStream(jobject jobj)
 		: cpp_object<PipedOutputStream>(jobj)
 		{
 		}
 
+		operator local_ref<java::io::OutputStream>() const;
+
+
+		PipedOutputStream();
+		PipedOutputStream(local_ref< java::io::PipedInputStream > const&);
 		void close();
 		void connect(local_ref< java::io::PipedInputStream > const&);
 		void flush();
@@ -50,7 +57,6 @@ namespace java { namespace io {
 
 } //namespace io
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -64,28 +70,36 @@ namespace java { namespace io {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::io::PipedOutputStream > create< java::io::PipedOutputStream>()
+
+java::io::PipedOutputStream::operator local_ref<java::io::OutputStream>() const
 {
-	return local_ref< java::io::PipedOutputStream >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::io::PipedOutputStream::J2CPP_CLASS_NAME>(),
-			get_method_id<java::io::PipedOutputStream::J2CPP_CLASS_NAME, java::io::PipedOutputStream::J2CPP_METHOD_NAME(0), java::io::PipedOutputStream::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::io::OutputStream>(get_jtype());
 }
 
-template <>
-local_ref< java::io::PipedOutputStream > create< java::io::PipedOutputStream>(local_ref< java::io::PipedInputStream > const &a0)
+
+java::io::PipedOutputStream::PipedOutputStream()
+: cpp_object<java::io::PipedOutputStream>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::io::PipedOutputStream::J2CPP_CLASS_NAME>(),
+		get_method_id<java::io::PipedOutputStream::J2CPP_CLASS_NAME, java::io::PipedOutputStream::J2CPP_METHOD_NAME(0), java::io::PipedOutputStream::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
 {
-	return local_ref< java::io::PipedOutputStream >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::io::PipedOutputStream::J2CPP_CLASS_NAME>(),
-			get_method_id<java::io::PipedOutputStream::J2CPP_CLASS_NAME, java::io::PipedOutputStream::J2CPP_METHOD_NAME(1), java::io::PipedOutputStream::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
 }
+
+
+
+java::io::PipedOutputStream::PipedOutputStream(local_ref< java::io::PipedInputStream > const &a0)
+: cpp_object<java::io::PipedOutputStream>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::io::PipedOutputStream::J2CPP_CLASS_NAME>(),
+		get_method_id<java::io::PipedOutputStream::J2CPP_CLASS_NAME, java::io::PipedOutputStream::J2CPP_METHOD_NAME(1), java::io::PipedOutputStream::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 void java::io::PipedOutputStream::close()
 {

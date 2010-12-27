@@ -10,11 +10,13 @@
 #define J2CPP_ANDROID_WEBKIT_GEOLOCATIONPERMISSIONS_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace android { namespace webkit { class ValueCallback; } } }
 
 
 #include <android/webkit/ValueCallback.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -35,10 +37,13 @@ namespace android { namespace webkit {
 
 			J2CPP_DECLARE_METHOD(0)
 
-			Callback(jobject jobj)
+			explicit Callback(jobject jobj)
 			: cpp_object<Callback>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+
 
 			void invoke(local_ref< java::lang::String > const&, cpp_boolean const&, cpp_boolean const&);
 		}; //class Callback
@@ -62,11 +67,15 @@ namespace android { namespace webkit {
 
 		typedef GeolocationPermissions_::Callback Callback;
 
-		GeolocationPermissions(jobject jobj)
+		explicit GeolocationPermissions(jobject jobj)
 		: cpp_object<GeolocationPermissions>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		GeolocationPermissions();
 		static local_ref< android::webkit::GeolocationPermissions > getInstance();
 		void getOrigins(local_ref< android::webkit::ValueCallback > const&);
 		void getAllowed(local_ref< java::lang::String > const&, local_ref< android::webkit::ValueCallback > const&);
@@ -77,7 +86,6 @@ namespace android { namespace webkit {
 
 } //namespace webkit
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -91,6 +99,12 @@ namespace android { namespace webkit {
 namespace j2cpp {
 
 
+
+
+android::webkit::GeolocationPermissions_::Callback::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 void android::webkit::GeolocationPermissions_::Callback::invoke(local_ref< java::lang::String > const &a0, cpp_boolean const &a1, cpp_boolean const &a2)
 {
@@ -108,16 +122,23 @@ J2CPP_DEFINE_CLASS(android::webkit::GeolocationPermissions_::Callback,"android/w
 J2CPP_DEFINE_METHOD(android::webkit::GeolocationPermissions_::Callback,0,"invoke","(Ljava/lang/String;ZZ)V")
 
 
-template <>
-local_ref< android::webkit::GeolocationPermissions > create< android::webkit::GeolocationPermissions>()
+
+android::webkit::GeolocationPermissions::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::webkit::GeolocationPermissions >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::webkit::GeolocationPermissions::J2CPP_CLASS_NAME>(),
-			get_method_id<android::webkit::GeolocationPermissions::J2CPP_CLASS_NAME, android::webkit::GeolocationPermissions::J2CPP_METHOD_NAME(0), android::webkit::GeolocationPermissions::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::webkit::GeolocationPermissions::GeolocationPermissions()
+: cpp_object<android::webkit::GeolocationPermissions>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::webkit::GeolocationPermissions::J2CPP_CLASS_NAME>(),
+		get_method_id<android::webkit::GeolocationPermissions::J2CPP_CLASS_NAME, android::webkit::GeolocationPermissions::J2CPP_METHOD_NAME(0), android::webkit::GeolocationPermissions::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 local_ref< android::webkit::GeolocationPermissions > android::webkit::GeolocationPermissions::getInstance()
 {

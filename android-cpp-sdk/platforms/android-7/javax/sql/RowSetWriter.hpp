@@ -11,8 +11,10 @@
 
 
 namespace j2cpp { namespace javax { namespace sql { class RowSetInternal; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
+#include <java/lang/Object.hpp>
 #include <javax/sql/RowSetInternal.hpp>
 
 
@@ -30,17 +32,19 @@ namespace javax { namespace sql {
 
 		J2CPP_DECLARE_METHOD(0)
 
-		RowSetWriter(jobject jobj)
+		explicit RowSetWriter(jobject jobj)
 		: cpp_object<RowSetWriter>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		cpp_boolean writeData(local_ref< javax::sql::RowSetInternal > const&);
 	}; //class RowSetWriter
 
 } //namespace sql
 } //namespace javax
-
 
 } //namespace j2cpp
 
@@ -53,6 +57,12 @@ namespace javax { namespace sql {
 
 namespace j2cpp {
 
+
+
+javax::sql::RowSetWriter::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 cpp_boolean javax::sql::RowSetWriter::writeData(local_ref< javax::sql::RowSetInternal > const &a0)
 {

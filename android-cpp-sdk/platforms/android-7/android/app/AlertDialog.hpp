@@ -10,11 +10,14 @@
 #define J2CPP_ANDROID_APP_ALERTDIALOG_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class CharSequence; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace android { namespace app { namespace AlertDialog_ { class Builder; } } } }
+namespace j2cpp { namespace android { namespace app { class Dialog; } } }
 namespace j2cpp { namespace android { namespace database { class Cursor; } } }
 namespace j2cpp { namespace android { namespace graphics { namespace drawable { class Drawable; } } } }
+namespace j2cpp { namespace android { namespace content { class DialogInterface; } } }
 namespace j2cpp { namespace android { namespace content { namespace DialogInterface_ { class OnMultiChoiceClickListener; } } } }
 namespace j2cpp { namespace android { namespace content { class Context; } } }
 namespace j2cpp { namespace android { namespace content { namespace DialogInterface_ { class OnCancelListener; } } } }
@@ -30,6 +33,7 @@ namespace j2cpp { namespace android { namespace os { class Message; } } }
 
 
 #include <android/app/AlertDialog.hpp>
+#include <android/app/Dialog.hpp>
 #include <android/content/Context.hpp>
 #include <android/content/DialogInterface.hpp>
 #include <android/database/Cursor.hpp>
@@ -42,6 +46,7 @@ namespace j2cpp { namespace android { namespace os { class Message; } } }
 #include <android/widget/ListAdapter.hpp>
 #include <android/widget/ListView.hpp>
 #include <java/lang/CharSequence.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -94,11 +99,15 @@ namespace android { namespace app {
 			J2CPP_DECLARE_METHOD(31)
 			J2CPP_DECLARE_METHOD(32)
 
-			Builder(jobject jobj)
+			explicit Builder(jobject jobj)
 			: cpp_object<Builder>(jobj)
 			{
 			}
 
+			operator local_ref<java::lang::Object>() const;
+
+
+			Builder(local_ref< android::content::Context > const&);
 			local_ref< android::app::AlertDialog_::Builder > setTitle(cpp_int const&);
 			local_ref< android::app::AlertDialog_::Builder > setTitle(local_ref< java::lang::CharSequence > const&);
 			local_ref< android::app::AlertDialog_::Builder > setCustomTitle(local_ref< android::view::View > const&);
@@ -169,10 +178,14 @@ namespace android { namespace app {
 
 		typedef AlertDialog_::Builder Builder;
 
-		AlertDialog(jobject jobj)
+		explicit AlertDialog(jobject jobj)
 		: cpp_object<AlertDialog>(jobj)
 		{
 		}
+
+		operator local_ref<android::app::Dialog>() const;
+		operator local_ref<android::content::DialogInterface>() const;
+
 
 		local_ref< android::widget::Button > getButton(cpp_int const&);
 		local_ref< android::widget::ListView > getListView();
@@ -199,7 +212,6 @@ namespace android { namespace app {
 } //namespace app
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_APP_ALERTDIALOG_HPP_DECL
@@ -213,17 +225,24 @@ namespace j2cpp {
 
 
 
-template <>
-local_ref< android::app::AlertDialog_::Builder > create< android::app::AlertDialog_::Builder>(local_ref< android::content::Context > const &a0)
+
+android::app::AlertDialog_::Builder::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::app::AlertDialog_::Builder >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::app::AlertDialog_::Builder::J2CPP_CLASS_NAME>(),
-			get_method_id<android::app::AlertDialog_::Builder::J2CPP_CLASS_NAME, android::app::AlertDialog_::Builder::J2CPP_METHOD_NAME(0), android::app::AlertDialog_::Builder::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::app::AlertDialog_::Builder::Builder(local_ref< android::content::Context > const &a0)
+: cpp_object<android::app::AlertDialog_::Builder>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::app::AlertDialog_::Builder::J2CPP_CLASS_NAME>(),
+		get_method_id<android::app::AlertDialog_::Builder::J2CPP_CLASS_NAME, android::app::AlertDialog_::Builder::J2CPP_METHOD_NAME(0), android::app::AlertDialog_::Builder::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 local_ref< android::app::AlertDialog_::Builder > android::app::AlertDialog_::Builder::setTitle(cpp_int const &a0)
 {
@@ -612,41 +631,19 @@ J2CPP_DEFINE_METHOD(android::app::AlertDialog_::Builder,31,"create","()Landroid/
 J2CPP_DEFINE_METHOD(android::app::AlertDialog_::Builder,32,"show","()Landroid/app/AlertDialog;")
 
 
-template <>
-local_ref< android::app::AlertDialog > create< android::app::AlertDialog>(local_ref< android::content::Context > const &a0)
+
+android::app::AlertDialog::operator local_ref<android::app::Dialog>() const
 {
-	return local_ref< android::app::AlertDialog >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::app::AlertDialog::J2CPP_CLASS_NAME>(),
-			get_method_id<android::app::AlertDialog::J2CPP_CLASS_NAME, android::app::AlertDialog::J2CPP_METHOD_NAME(0), android::app::AlertDialog::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<android::app::Dialog>(get_jtype());
 }
 
-template <>
-local_ref< android::app::AlertDialog > create< android::app::AlertDialog>(local_ref< android::content::Context > const &a0, cpp_int const &a1)
+android::app::AlertDialog::operator local_ref<android::content::DialogInterface>() const
 {
-	return local_ref< android::app::AlertDialog >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::app::AlertDialog::J2CPP_CLASS_NAME>(),
-			get_method_id<android::app::AlertDialog::J2CPP_CLASS_NAME, android::app::AlertDialog::J2CPP_METHOD_NAME(1), android::app::AlertDialog::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<android::content::DialogInterface>(get_jtype());
 }
 
-template <>
-local_ref< android::app::AlertDialog > create< android::app::AlertDialog>(local_ref< android::content::Context > const &a0, cpp_boolean const &a1, local_ref< android::content::DialogInterface_::OnCancelListener > const &a2)
-{
-	return local_ref< android::app::AlertDialog >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::app::AlertDialog::J2CPP_CLASS_NAME>(),
-			get_method_id<android::app::AlertDialog::J2CPP_CLASS_NAME, android::app::AlertDialog::J2CPP_METHOD_NAME(2), android::app::AlertDialog::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
-		)
-	);
-}
+
+
 
 local_ref< android::widget::Button > android::app::AlertDialog::getButton(cpp_int const &a0)
 {

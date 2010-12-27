@@ -10,6 +10,7 @@
 #define J2CPP_ANDROID_VIEW_VIEWPARENT_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace android { namespace graphics { class Point; } } }
 namespace j2cpp { namespace android { namespace graphics { class Rect; } } }
 namespace j2cpp { namespace android { namespace view { class View; } } }
@@ -20,6 +21,7 @@ namespace j2cpp { namespace android { namespace view { class ContextMenu; } } }
 #include <android/graphics/Rect.hpp>
 #include <android/view/ContextMenu.hpp>
 #include <android/view/View.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -53,10 +55,13 @@ namespace android { namespace view {
 		J2CPP_DECLARE_METHOD(16)
 		J2CPP_DECLARE_METHOD(17)
 
-		ViewParent(jobject jobj)
+		explicit ViewParent(jobject jobj)
 		: cpp_object<ViewParent>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		void requestLayout();
 		cpp_boolean isLayoutRequested();
@@ -81,7 +86,6 @@ namespace android { namespace view {
 } //namespace view
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_VIEW_VIEWPARENT_HPP_DECL
@@ -93,6 +97,12 @@ namespace android { namespace view {
 
 namespace j2cpp {
 
+
+
+android::view::ViewParent::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 void android::view::ViewParent::requestLayout()
 {

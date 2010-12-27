@@ -17,9 +17,11 @@ namespace j2cpp { namespace org { namespace xml { namespace sax { class ContentH
 namespace j2cpp { namespace org { namespace xml { namespace sax { class EntityResolver; } } } }
 namespace j2cpp { namespace org { namespace xml { namespace sax { class ErrorHandler; } } } }
 namespace j2cpp { namespace org { namespace xml { namespace sax { class InputSource; } } } }
+namespace j2cpp { namespace org { namespace xml { namespace sax { class DocumentHandler; } } } }
 namespace j2cpp { namespace org { namespace xml { namespace sax { class Parser; } } } }
 namespace j2cpp { namespace org { namespace xml { namespace sax { class DTDHandler; } } } }
 namespace j2cpp { namespace org { namespace xml { namespace sax { class Locator; } } } }
+namespace j2cpp { namespace org { namespace xml { namespace sax { class XMLReader; } } } }
 
 
 #include <java/lang/Object.hpp>
@@ -27,11 +29,13 @@ namespace j2cpp { namespace org { namespace xml { namespace sax { class Locator;
 #include <org/xml/sax/AttributeList.hpp>
 #include <org/xml/sax/ContentHandler.hpp>
 #include <org/xml/sax/DTDHandler.hpp>
+#include <org/xml/sax/DocumentHandler.hpp>
 #include <org/xml/sax/EntityResolver.hpp>
 #include <org/xml/sax/ErrorHandler.hpp>
 #include <org/xml/sax/InputSource.hpp>
 #include <org/xml/sax/Locator.hpp>
 #include <org/xml/sax/Parser.hpp>
+#include <org/xml/sax/XMLReader.hpp>
 
 
 namespace j2cpp {
@@ -71,11 +75,18 @@ namespace org { namespace xml { namespace sax { namespace helpers {
 		J2CPP_DECLARE_METHOD(22)
 		J2CPP_DECLARE_METHOD(23)
 
-		ParserAdapter(jobject jobj)
+		explicit ParserAdapter(jobject jobj)
 		: cpp_object<ParserAdapter>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<org::xml::sax::XMLReader>() const;
+		operator local_ref<org::xml::sax::DocumentHandler>() const;
+
+
+		ParserAdapter();
+		ParserAdapter(local_ref< org::xml::sax::Parser > const&);
 		void setFeature(local_ref< java::lang::String > const&, cpp_boolean const&);
 		cpp_boolean getFeature(local_ref< java::lang::String > const&);
 		void setProperty(local_ref< java::lang::String > const&, local_ref< java::lang::Object > const&);
@@ -105,7 +116,6 @@ namespace org { namespace xml { namespace sax { namespace helpers {
 } //namespace xml
 } //namespace org
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ORG_XML_SAX_HELPERS_PARSERADAPTER_HPP_DECL
@@ -118,28 +128,46 @@ namespace org { namespace xml { namespace sax { namespace helpers {
 namespace j2cpp {
 
 
-template <>
-local_ref< org::xml::sax::helpers::ParserAdapter > create< org::xml::sax::helpers::ParserAdapter>()
+
+org::xml::sax::helpers::ParserAdapter::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< org::xml::sax::helpers::ParserAdapter >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::xml::sax::helpers::ParserAdapter::J2CPP_CLASS_NAME>(),
-			get_method_id<org::xml::sax::helpers::ParserAdapter::J2CPP_CLASS_NAME, org::xml::sax::helpers::ParserAdapter::J2CPP_METHOD_NAME(0), org::xml::sax::helpers::ParserAdapter::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
 
-template <>
-local_ref< org::xml::sax::helpers::ParserAdapter > create< org::xml::sax::helpers::ParserAdapter>(local_ref< org::xml::sax::Parser > const &a0)
+org::xml::sax::helpers::ParserAdapter::operator local_ref<org::xml::sax::XMLReader>() const
 {
-	return local_ref< org::xml::sax::helpers::ParserAdapter >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::xml::sax::helpers::ParserAdapter::J2CPP_CLASS_NAME>(),
-			get_method_id<org::xml::sax::helpers::ParserAdapter::J2CPP_CLASS_NAME, org::xml::sax::helpers::ParserAdapter::J2CPP_METHOD_NAME(1), org::xml::sax::helpers::ParserAdapter::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<org::xml::sax::XMLReader>(get_jtype());
 }
+
+org::xml::sax::helpers::ParserAdapter::operator local_ref<org::xml::sax::DocumentHandler>() const
+{
+	return local_ref<org::xml::sax::DocumentHandler>(get_jtype());
+}
+
+
+org::xml::sax::helpers::ParserAdapter::ParserAdapter()
+: cpp_object<org::xml::sax::helpers::ParserAdapter>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::xml::sax::helpers::ParserAdapter::J2CPP_CLASS_NAME>(),
+		get_method_id<org::xml::sax::helpers::ParserAdapter::J2CPP_CLASS_NAME, org::xml::sax::helpers::ParserAdapter::J2CPP_METHOD_NAME(0), org::xml::sax::helpers::ParserAdapter::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
+
+
+org::xml::sax::helpers::ParserAdapter::ParserAdapter(local_ref< org::xml::sax::Parser > const &a0)
+: cpp_object<org::xml::sax::helpers::ParserAdapter>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::xml::sax::helpers::ParserAdapter::J2CPP_CLASS_NAME>(),
+		get_method_id<org::xml::sax::helpers::ParserAdapter::J2CPP_CLASS_NAME, org::xml::sax::helpers::ParserAdapter::J2CPP_METHOD_NAME(1), org::xml::sax::helpers::ParserAdapter::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 void org::xml::sax::helpers::ParserAdapter::setFeature(local_ref< java::lang::String > const &a0, cpp_boolean const &a1)
 {

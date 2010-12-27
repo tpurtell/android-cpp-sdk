@@ -10,11 +10,15 @@
 #define J2CPP_JAVA_TEXT_DATEFORMATSYMBOLS_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace lang { class Cloneable; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace util { class Locale; } } }
 
 
+#include <java/io/Serializable.hpp>
+#include <java/lang/Cloneable.hpp>
 #include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/util/Locale.hpp>
@@ -54,11 +58,18 @@ namespace java { namespace text {
 		J2CPP_DECLARE_METHOD(19)
 		J2CPP_DECLARE_METHOD(20)
 
-		DateFormatSymbols(jobject jobj)
+		explicit DateFormatSymbols(jobject jobj)
 		: cpp_object<DateFormatSymbols>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::io::Serializable>() const;
+		operator local_ref<java::lang::Cloneable>() const;
+
+
+		DateFormatSymbols();
+		DateFormatSymbols(local_ref< java::util::Locale > const&);
 		local_ref< java::lang::Object > clone();
 		cpp_boolean equals(local_ref< java::lang::Object > const&);
 		local_ref< cpp_object_array<java::lang::String, 1> > getAmPmStrings();
@@ -83,7 +94,6 @@ namespace java { namespace text {
 } //namespace text
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_TEXT_DATEFORMATSYMBOLS_HPP_DECL
@@ -96,28 +106,46 @@ namespace java { namespace text {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::text::DateFormatSymbols > create< java::text::DateFormatSymbols>()
+
+java::text::DateFormatSymbols::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::text::DateFormatSymbols >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::text::DateFormatSymbols::J2CPP_CLASS_NAME>(),
-			get_method_id<java::text::DateFormatSymbols::J2CPP_CLASS_NAME, java::text::DateFormatSymbols::J2CPP_METHOD_NAME(0), java::text::DateFormatSymbols::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
 
-template <>
-local_ref< java::text::DateFormatSymbols > create< java::text::DateFormatSymbols>(local_ref< java::util::Locale > const &a0)
+java::text::DateFormatSymbols::operator local_ref<java::io::Serializable>() const
 {
-	return local_ref< java::text::DateFormatSymbols >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::text::DateFormatSymbols::J2CPP_CLASS_NAME>(),
-			get_method_id<java::text::DateFormatSymbols::J2CPP_CLASS_NAME, java::text::DateFormatSymbols::J2CPP_METHOD_NAME(1), java::text::DateFormatSymbols::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::io::Serializable>(get_jtype());
 }
+
+java::text::DateFormatSymbols::operator local_ref<java::lang::Cloneable>() const
+{
+	return local_ref<java::lang::Cloneable>(get_jtype());
+}
+
+
+java::text::DateFormatSymbols::DateFormatSymbols()
+: cpp_object<java::text::DateFormatSymbols>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::text::DateFormatSymbols::J2CPP_CLASS_NAME>(),
+		get_method_id<java::text::DateFormatSymbols::J2CPP_CLASS_NAME, java::text::DateFormatSymbols::J2CPP_METHOD_NAME(0), java::text::DateFormatSymbols::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
+
+
+java::text::DateFormatSymbols::DateFormatSymbols(local_ref< java::util::Locale > const &a0)
+: cpp_object<java::text::DateFormatSymbols>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::text::DateFormatSymbols::J2CPP_CLASS_NAME>(),
+		get_method_id<java::text::DateFormatSymbols::J2CPP_CLASS_NAME, java::text::DateFormatSymbols::J2CPP_METHOD_NAME(1), java::text::DateFormatSymbols::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 local_ref< java::lang::Object > java::text::DateFormatSymbols::clone()
 {

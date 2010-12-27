@@ -11,8 +11,10 @@
 
 
 namespace j2cpp { namespace java { namespace net { class URI; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/net/URI.hpp>
 
 
@@ -33,11 +35,15 @@ namespace org { namespace apache { namespace http { namespace impl { namespace c
 		J2CPP_DECLARE_METHOD(2)
 		J2CPP_DECLARE_METHOD(3)
 
-		RedirectLocations(jobject jobj)
+		explicit RedirectLocations(jobject jobj)
 		: cpp_object<RedirectLocations>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		RedirectLocations();
 		cpp_boolean contains(local_ref< java::net::URI > const&);
 		void add(local_ref< java::net::URI > const&);
 		cpp_boolean remove(local_ref< java::net::URI > const&);
@@ -48,7 +54,6 @@ namespace org { namespace apache { namespace http { namespace impl { namespace c
 } //namespace http
 } //namespace apache
 } //namespace org
-
 
 } //namespace j2cpp
 
@@ -62,16 +67,23 @@ namespace org { namespace apache { namespace http { namespace impl { namespace c
 namespace j2cpp {
 
 
-template <>
-local_ref< org::apache::http::impl::client::RedirectLocations > create< org::apache::http::impl::client::RedirectLocations>()
+
+org::apache::http::impl::client::RedirectLocations::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< org::apache::http::impl::client::RedirectLocations >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::apache::http::impl::client::RedirectLocations::J2CPP_CLASS_NAME>(),
-			get_method_id<org::apache::http::impl::client::RedirectLocations::J2CPP_CLASS_NAME, org::apache::http::impl::client::RedirectLocations::J2CPP_METHOD_NAME(0), org::apache::http::impl::client::RedirectLocations::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+org::apache::http::impl::client::RedirectLocations::RedirectLocations()
+: cpp_object<org::apache::http::impl::client::RedirectLocations>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::apache::http::impl::client::RedirectLocations::J2CPP_CLASS_NAME>(),
+		get_method_id<org::apache::http::impl::client::RedirectLocations::J2CPP_CLASS_NAME, org::apache::http::impl::client::RedirectLocations::J2CPP_METHOD_NAME(0), org::apache::http::impl::client::RedirectLocations::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 cpp_boolean org::apache::http::impl::client::RedirectLocations::contains(local_ref< java::net::URI > const &a0)
 {

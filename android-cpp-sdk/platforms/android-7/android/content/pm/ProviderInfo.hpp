@@ -11,12 +11,15 @@
 
 
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace android { namespace content { namespace pm { class ComponentInfo; } } } }
 namespace j2cpp { namespace android { namespace content { namespace pm { class PathPermission; } } } }
 namespace j2cpp { namespace android { namespace os { class Parcel; } } }
+namespace j2cpp { namespace android { namespace os { class Parcelable; } } }
 namespace j2cpp { namespace android { namespace os { namespace Parcelable_ { class Creator; } } } }
 namespace j2cpp { namespace android { namespace os { class PatternMatcher; } } }
 
 
+#include <android/content/pm/ComponentInfo.hpp>
 #include <android/content/pm/PathPermission.hpp>
 #include <android/os/Parcel.hpp>
 #include <android/os/Parcelable.hpp>
@@ -53,20 +56,26 @@ namespace android { namespace content { namespace pm {
 		J2CPP_DECLARE_FIELD(8)
 		J2CPP_DECLARE_FIELD(9)
 
-		ProviderInfo(jobject jobj)
+		explicit ProviderInfo(jobject jobj)
 		: cpp_object<ProviderInfo>(jobj)
-		, authority(jobj)
-		, readPermission(jobj)
-		, writePermission(jobj)
-		, grantUriPermissions(jobj)
-		, uriPermissionPatterns(jobj)
-		, pathPermissions(jobj)
-		, multiprocess(jobj)
-		, initOrder(jobj)
-		, isSyncable(jobj)
+, authority(jobj)
+, readPermission(jobj)
+, writePermission(jobj)
+, grantUriPermissions(jobj)
+, uriPermissionPatterns(jobj)
+, pathPermissions(jobj)
+, multiprocess(jobj)
+, initOrder(jobj)
+, isSyncable(jobj)
 		{
 		}
 
+		operator local_ref<android::content::pm::ComponentInfo>() const;
+		operator local_ref<android::os::Parcelable>() const;
+
+
+		ProviderInfo();
+		ProviderInfo(local_ref< android::content::pm::ProviderInfo > const&);
 		cpp_int describeContents();
 		void writeToParcel(local_ref< android::os::Parcel > const&, cpp_int const&);
 		local_ref< java::lang::String > toString();
@@ -87,7 +96,6 @@ namespace android { namespace content { namespace pm {
 } //namespace content
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_CONTENT_PM_PROVIDERINFO_HPP_DECL
@@ -100,28 +108,59 @@ namespace android { namespace content { namespace pm {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::content::pm::ProviderInfo > create< android::content::pm::ProviderInfo>()
+
+android::content::pm::ProviderInfo::operator local_ref<android::content::pm::ComponentInfo>() const
 {
-	return local_ref< android::content::pm::ProviderInfo >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::content::pm::ProviderInfo::J2CPP_CLASS_NAME>(),
-			get_method_id<android::content::pm::ProviderInfo::J2CPP_CLASS_NAME, android::content::pm::ProviderInfo::J2CPP_METHOD_NAME(0), android::content::pm::ProviderInfo::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<android::content::pm::ComponentInfo>(get_jtype());
 }
 
-template <>
-local_ref< android::content::pm::ProviderInfo > create< android::content::pm::ProviderInfo>(local_ref< android::content::pm::ProviderInfo > const &a0)
+android::content::pm::ProviderInfo::operator local_ref<android::os::Parcelable>() const
 {
-	return local_ref< android::content::pm::ProviderInfo >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::content::pm::ProviderInfo::J2CPP_CLASS_NAME>(),
-			get_method_id<android::content::pm::ProviderInfo::J2CPP_CLASS_NAME, android::content::pm::ProviderInfo::J2CPP_METHOD_NAME(1), android::content::pm::ProviderInfo::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<android::os::Parcelable>(get_jtype());
 }
+
+
+android::content::pm::ProviderInfo::ProviderInfo()
+: cpp_object<android::content::pm::ProviderInfo>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::content::pm::ProviderInfo::J2CPP_CLASS_NAME>(),
+		get_method_id<android::content::pm::ProviderInfo::J2CPP_CLASS_NAME, android::content::pm::ProviderInfo::J2CPP_METHOD_NAME(0), android::content::pm::ProviderInfo::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+, authority(get_jtype())
+, readPermission(get_jtype())
+, writePermission(get_jtype())
+, grantUriPermissions(get_jtype())
+, uriPermissionPatterns(get_jtype())
+, pathPermissions(get_jtype())
+, multiprocess(get_jtype())
+, initOrder(get_jtype())
+, isSyncable(get_jtype())
+{
+}
+
+
+
+android::content::pm::ProviderInfo::ProviderInfo(local_ref< android::content::pm::ProviderInfo > const &a0)
+: cpp_object<android::content::pm::ProviderInfo>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::content::pm::ProviderInfo::J2CPP_CLASS_NAME>(),
+		get_method_id<android::content::pm::ProviderInfo::J2CPP_CLASS_NAME, android::content::pm::ProviderInfo::J2CPP_METHOD_NAME(1), android::content::pm::ProviderInfo::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
+, authority(get_jtype())
+, readPermission(get_jtype())
+, writePermission(get_jtype())
+, grantUriPermissions(get_jtype())
+, uriPermissionPatterns(get_jtype())
+, pathPermissions(get_jtype())
+, multiprocess(get_jtype())
+, initOrder(get_jtype())
+, isSyncable(get_jtype())
+{
+}
+
 
 cpp_int android::content::pm::ProviderInfo::describeContents()
 {
@@ -153,6 +192,7 @@ local_ref< java::lang::String > android::content::pm::ProviderInfo::toString()
 		)
 	);
 }
+
 
 
 static_field<

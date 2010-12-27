@@ -10,6 +10,7 @@
 #define J2CPP_ANDROID_VIEW_ACCESSIBILITY_ACCESSIBILITYEVENT_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class CharSequence; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace util { class List; } } }
@@ -21,6 +22,7 @@ namespace j2cpp { namespace android { namespace os { namespace Parcelable_ { cla
 #include <android/os/Parcel.hpp>
 #include <android/os/Parcelable.hpp>
 #include <java/lang/CharSequence.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/util/List.hpp>
 
@@ -91,10 +93,14 @@ namespace android { namespace view { namespace accessibility {
 		J2CPP_DECLARE_FIELD(9)
 		J2CPP_DECLARE_FIELD(10)
 
-		AccessibilityEvent(jobject jobj)
+		explicit AccessibilityEvent(jobject jobj)
 		: cpp_object<AccessibilityEvent>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<android::os::Parcelable>() const;
+
 
 		cpp_boolean isChecked();
 		void setChecked(cpp_boolean const&);
@@ -154,7 +160,6 @@ namespace android { namespace view { namespace accessibility {
 } //namespace view
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_VIEW_ACCESSIBILITY_ACCESSIBILITYEVENT_HPP_DECL
@@ -167,16 +172,17 @@ namespace android { namespace view { namespace accessibility {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::view::accessibility::AccessibilityEvent > create< android::view::accessibility::AccessibilityEvent>()
+
+android::view::accessibility::AccessibilityEvent::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::view::accessibility::AccessibilityEvent >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::view::accessibility::AccessibilityEvent::J2CPP_CLASS_NAME>(),
-			get_method_id<android::view::accessibility::AccessibilityEvent::J2CPP_CLASS_NAME, android::view::accessibility::AccessibilityEvent::J2CPP_METHOD_NAME(0), android::view::accessibility::AccessibilityEvent::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+android::view::accessibility::AccessibilityEvent::operator local_ref<android::os::Parcelable>() const
+{
+	return local_ref<android::os::Parcelable>(get_jtype());
+}
+
 
 cpp_boolean android::view::accessibility::AccessibilityEvent::isChecked()
 {
@@ -596,6 +602,7 @@ local_ref< java::lang::String > android::view::accessibility::AccessibilityEvent
 		)
 	);
 }
+
 
 
 static_field<

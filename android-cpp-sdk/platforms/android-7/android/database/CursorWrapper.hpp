@@ -10,6 +10,7 @@
 #define J2CPP_ANDROID_DATABASE_CURSORWRAPPER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace android { namespace net { class Uri; } } }
 namespace j2cpp { namespace android { namespace database { class CharArrayBuffer; } } }
@@ -27,6 +28,7 @@ namespace j2cpp { namespace android { namespace os { class Bundle; } } }
 #include <android/database/DataSetObserver.hpp>
 #include <android/net/Uri.hpp>
 #include <android/os/Bundle.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -82,11 +84,16 @@ namespace android { namespace database {
 		J2CPP_DECLARE_METHOD(37)
 		J2CPP_DECLARE_METHOD(38)
 
-		CursorWrapper(jobject jobj)
+		explicit CursorWrapper(jobject jobj)
 		: cpp_object<CursorWrapper>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<android::database::Cursor>() const;
+
+
+		CursorWrapper(local_ref< android::database::Cursor > const&);
 		void close();
 		cpp_boolean isClosed();
 		cpp_int getCount();
@@ -130,7 +137,6 @@ namespace android { namespace database {
 } //namespace database
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_DATABASE_CURSORWRAPPER_HPP_DECL
@@ -143,17 +149,29 @@ namespace android { namespace database {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::database::CursorWrapper > create< android::database::CursorWrapper>(local_ref< android::database::Cursor > const &a0)
+
+android::database::CursorWrapper::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::database::CursorWrapper >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::database::CursorWrapper::J2CPP_CLASS_NAME>(),
-			get_method_id<android::database::CursorWrapper::J2CPP_CLASS_NAME, android::database::CursorWrapper::J2CPP_METHOD_NAME(0), android::database::CursorWrapper::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+android::database::CursorWrapper::operator local_ref<android::database::Cursor>() const
+{
+	return local_ref<android::database::Cursor>(get_jtype());
+}
+
+
+android::database::CursorWrapper::CursorWrapper(local_ref< android::database::Cursor > const &a0)
+: cpp_object<android::database::CursorWrapper>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::database::CursorWrapper::J2CPP_CLASS_NAME>(),
+		get_method_id<android::database::CursorWrapper::J2CPP_CLASS_NAME, android::database::CursorWrapper::J2CPP_METHOD_NAME(0), android::database::CursorWrapper::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 void android::database::CursorWrapper::close()
 {

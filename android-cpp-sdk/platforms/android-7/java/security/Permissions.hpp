@@ -10,11 +10,15 @@
 #define J2CPP_JAVA_SECURITY_PERMISSIONS_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 namespace j2cpp { namespace java { namespace security { class Permission; } } }
+namespace j2cpp { namespace java { namespace security { class PermissionCollection; } } }
 namespace j2cpp { namespace java { namespace util { class Enumeration; } } }
 
 
+#include <java/io/Serializable.hpp>
 #include <java/security/Permission.hpp>
+#include <java/security/PermissionCollection.hpp>
 #include <java/util/Enumeration.hpp>
 
 
@@ -35,11 +39,16 @@ namespace java { namespace security {
 		J2CPP_DECLARE_METHOD(2)
 		J2CPP_DECLARE_METHOD(3)
 
-		Permissions(jobject jobj)
+		explicit Permissions(jobject jobj)
 		: cpp_object<Permissions>(jobj)
 		{
 		}
 
+		operator local_ref<java::security::PermissionCollection>() const;
+		operator local_ref<java::io::Serializable>() const;
+
+
+		Permissions();
 		void add(local_ref< java::security::Permission > const&);
 		local_ref< java::util::Enumeration > elements();
 		cpp_boolean implies(local_ref< java::security::Permission > const&);
@@ -47,7 +56,6 @@ namespace java { namespace security {
 
 } //namespace security
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -61,16 +69,28 @@ namespace java { namespace security {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::security::Permissions > create< java::security::Permissions>()
+
+java::security::Permissions::operator local_ref<java::security::PermissionCollection>() const
 {
-	return local_ref< java::security::Permissions >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::security::Permissions::J2CPP_CLASS_NAME>(),
-			get_method_id<java::security::Permissions::J2CPP_CLASS_NAME, java::security::Permissions::J2CPP_METHOD_NAME(0), java::security::Permissions::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::security::PermissionCollection>(get_jtype());
 }
+
+java::security::Permissions::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jtype());
+}
+
+
+java::security::Permissions::Permissions()
+: cpp_object<java::security::Permissions>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::security::Permissions::J2CPP_CLASS_NAME>(),
+		get_method_id<java::security::Permissions::J2CPP_CLASS_NAME, java::security::Permissions::J2CPP_METHOD_NAME(0), java::security::Permissions::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 void java::security::Permissions::add(local_ref< java::security::Permission > const &a0)
 {

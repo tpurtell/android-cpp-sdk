@@ -12,10 +12,12 @@
 
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace math { class BigInteger; } } }
+namespace j2cpp { namespace java { namespace security { namespace spec { class ECField; } } } }
 
 
 #include <java/lang/Object.hpp>
 #include <java/math/BigInteger.hpp>
+#include <java/security/spec/ECField.hpp>
 
 
 namespace j2cpp {
@@ -40,11 +42,18 @@ namespace java { namespace security { namespace spec {
 		J2CPP_DECLARE_METHOD(7)
 		J2CPP_DECLARE_METHOD(8)
 
-		ECFieldF2m(jobject jobj)
+		explicit ECFieldF2m(jobject jobj)
 		: cpp_object<ECFieldF2m>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::security::spec::ECField>() const;
+
+
+		ECFieldF2m(cpp_int const&);
+		ECFieldF2m(cpp_int const&, local_ref< java::math::BigInteger > const&);
+		ECFieldF2m(cpp_int const&, local_ref< cpp_int_array<1> > const&);
 		cpp_boolean equals(local_ref< java::lang::Object > const&);
 		cpp_int getFieldSize();
 		cpp_int getM();
@@ -56,7 +65,6 @@ namespace java { namespace security { namespace spec {
 } //namespace spec
 } //namespace security
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -70,41 +78,55 @@ namespace java { namespace security { namespace spec {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::security::spec::ECFieldF2m > create< java::security::spec::ECFieldF2m>(cpp_int const &a0)
+
+java::security::spec::ECFieldF2m::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::security::spec::ECFieldF2m >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::security::spec::ECFieldF2m::J2CPP_CLASS_NAME>(),
-			get_method_id<java::security::spec::ECFieldF2m::J2CPP_CLASS_NAME, java::security::spec::ECFieldF2m::J2CPP_METHOD_NAME(0), java::security::spec::ECFieldF2m::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
 
-template <>
-local_ref< java::security::spec::ECFieldF2m > create< java::security::spec::ECFieldF2m>(cpp_int const &a0, local_ref< java::math::BigInteger > const &a1)
+java::security::spec::ECFieldF2m::operator local_ref<java::security::spec::ECField>() const
 {
-	return local_ref< java::security::spec::ECFieldF2m >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::security::spec::ECFieldF2m::J2CPP_CLASS_NAME>(),
-			get_method_id<java::security::spec::ECFieldF2m::J2CPP_CLASS_NAME, java::security::spec::ECFieldF2m::J2CPP_METHOD_NAME(1), java::security::spec::ECFieldF2m::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<java::security::spec::ECField>(get_jtype());
 }
 
-template <>
-local_ref< java::security::spec::ECFieldF2m > create< java::security::spec::ECFieldF2m>(cpp_int const &a0, local_ref< cpp_int_array<1> > const &a1)
+
+java::security::spec::ECFieldF2m::ECFieldF2m(cpp_int const &a0)
+: cpp_object<java::security::spec::ECFieldF2m>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::security::spec::ECFieldF2m::J2CPP_CLASS_NAME>(),
+		get_method_id<java::security::spec::ECFieldF2m::J2CPP_CLASS_NAME, java::security::spec::ECFieldF2m::J2CPP_METHOD_NAME(0), java::security::spec::ECFieldF2m::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< java::security::spec::ECFieldF2m >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::security::spec::ECFieldF2m::J2CPP_CLASS_NAME>(),
-			get_method_id<java::security::spec::ECFieldF2m::J2CPP_CLASS_NAME, java::security::spec::ECFieldF2m::J2CPP_METHOD_NAME(2), java::security::spec::ECFieldF2m::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
 }
+
+
+
+java::security::spec::ECFieldF2m::ECFieldF2m(cpp_int const &a0, local_ref< java::math::BigInteger > const &a1)
+: cpp_object<java::security::spec::ECFieldF2m>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::security::spec::ECFieldF2m::J2CPP_CLASS_NAME>(),
+		get_method_id<java::security::spec::ECFieldF2m::J2CPP_CLASS_NAME, java::security::spec::ECFieldF2m::J2CPP_METHOD_NAME(1), java::security::spec::ECFieldF2m::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
+
+
+java::security::spec::ECFieldF2m::ECFieldF2m(cpp_int const &a0, local_ref< cpp_int_array<1> > const &a1)
+: cpp_object<java::security::spec::ECFieldF2m>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::security::spec::ECFieldF2m::J2CPP_CLASS_NAME>(),
+		get_method_id<java::security::spec::ECFieldF2m::J2CPP_CLASS_NAME, java::security::spec::ECFieldF2m::J2CPP_METHOD_NAME(2), java::security::spec::ECFieldF2m::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
 
 cpp_boolean java::security::spec::ECFieldF2m::equals(local_ref< java::lang::Object > const &a0)
 {

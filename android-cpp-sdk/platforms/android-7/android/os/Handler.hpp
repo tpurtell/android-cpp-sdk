@@ -45,10 +45,13 @@ namespace android { namespace os {
 
 			J2CPP_DECLARE_METHOD(0)
 
-			Callback(jobject jobj)
+			explicit Callback(jobject jobj)
 			: cpp_object<Callback>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+
 
 			cpp_boolean handleMessage(local_ref< android::os::Message > const&);
 		}; //class Callback
@@ -98,11 +101,18 @@ namespace android { namespace os {
 
 		typedef Handler_::Callback Callback;
 
-		Handler(jobject jobj)
+		explicit Handler(jobject jobj)
 		: cpp_object<Handler>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		Handler();
+		Handler(local_ref< android::os::Handler_::Callback > const&);
+		Handler(local_ref< android::os::Looper > const&);
+		Handler(local_ref< android::os::Looper > const&, local_ref< android::os::Handler_::Callback > const&);
 		void handleMessage(local_ref< android::os::Message > const&);
 		void dispatchMessage(local_ref< android::os::Message > const&);
 		local_ref< android::os::Message > obtainMessage();
@@ -137,7 +147,6 @@ namespace android { namespace os {
 } //namespace os
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_OS_HANDLER_HPP_DECL
@@ -150,6 +159,12 @@ namespace android { namespace os {
 namespace j2cpp {
 
 
+
+
+android::os::Handler_::Callback::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 cpp_boolean android::os::Handler_::Callback::handleMessage(local_ref< android::os::Message > const &a0)
 {
@@ -167,52 +182,62 @@ J2CPP_DEFINE_CLASS(android::os::Handler_::Callback,"android/os/Handler$Callback"
 J2CPP_DEFINE_METHOD(android::os::Handler_::Callback,0,"handleMessage","(Landroid/os/Message;)Z")
 
 
-template <>
-local_ref< android::os::Handler > create< android::os::Handler>()
+
+android::os::Handler::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::os::Handler >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::os::Handler::J2CPP_CLASS_NAME>(),
-			get_method_id<android::os::Handler::J2CPP_CLASS_NAME, android::os::Handler::J2CPP_METHOD_NAME(0), android::os::Handler::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
 
-template <>
-local_ref< android::os::Handler > create< android::os::Handler>(local_ref< android::os::Handler_::Callback > const &a0)
+
+android::os::Handler::Handler()
+: cpp_object<android::os::Handler>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::os::Handler::J2CPP_CLASS_NAME>(),
+		get_method_id<android::os::Handler::J2CPP_CLASS_NAME, android::os::Handler::J2CPP_METHOD_NAME(0), android::os::Handler::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
 {
-	return local_ref< android::os::Handler >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::os::Handler::J2CPP_CLASS_NAME>(),
-			get_method_id<android::os::Handler::J2CPP_CLASS_NAME, android::os::Handler::J2CPP_METHOD_NAME(1), android::os::Handler::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< android::os::Handler > create< android::os::Handler>(local_ref< android::os::Looper > const &a0)
+
+
+android::os::Handler::Handler(local_ref< android::os::Handler_::Callback > const &a0)
+: cpp_object<android::os::Handler>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::os::Handler::J2CPP_CLASS_NAME>(),
+		get_method_id<android::os::Handler::J2CPP_CLASS_NAME, android::os::Handler::J2CPP_METHOD_NAME(1), android::os::Handler::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< android::os::Handler >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::os::Handler::J2CPP_CLASS_NAME>(),
-			get_method_id<android::os::Handler::J2CPP_CLASS_NAME, android::os::Handler::J2CPP_METHOD_NAME(2), android::os::Handler::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< android::os::Handler > create< android::os::Handler>(local_ref< android::os::Looper > const &a0, local_ref< android::os::Handler_::Callback > const &a1)
+
+
+android::os::Handler::Handler(local_ref< android::os::Looper > const &a0)
+: cpp_object<android::os::Handler>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::os::Handler::J2CPP_CLASS_NAME>(),
+		get_method_id<android::os::Handler::J2CPP_CLASS_NAME, android::os::Handler::J2CPP_METHOD_NAME(2), android::os::Handler::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< android::os::Handler >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::os::Handler::J2CPP_CLASS_NAME>(),
-			get_method_id<android::os::Handler::J2CPP_CLASS_NAME, android::os::Handler::J2CPP_METHOD_NAME(3), android::os::Handler::J2CPP_METHOD_SIGNATURE(3), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
 }
+
+
+
+android::os::Handler::Handler(local_ref< android::os::Looper > const &a0, local_ref< android::os::Handler_::Callback > const &a1)
+: cpp_object<android::os::Handler>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::os::Handler::J2CPP_CLASS_NAME>(),
+		get_method_id<android::os::Handler::J2CPP_CLASS_NAME, android::os::Handler::J2CPP_METHOD_NAME(3), android::os::Handler::J2CPP_METHOD_SIGNATURE(3), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
 
 void android::os::Handler::handleMessage(local_ref< android::os::Message > const &a0)
 {

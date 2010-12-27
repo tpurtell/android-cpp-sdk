@@ -13,12 +13,16 @@
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class CharSequence; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace util { class Comparator; } } }
 namespace j2cpp { namespace android { namespace content { namespace pm { class PackageManager; } } } }
+namespace j2cpp { namespace android { namespace content { namespace pm { class PackageItemInfo; } } } }
 namespace j2cpp { namespace android { namespace util { class Printer; } } }
 namespace j2cpp { namespace android { namespace os { class Parcel; } } }
+namespace j2cpp { namespace android { namespace os { class Parcelable; } } }
 namespace j2cpp { namespace android { namespace os { namespace Parcelable_ { class Creator; } } } }
 
 
+#include <android/content/pm/PackageItemInfo.hpp>
 #include <android/content/pm/PackageManager.hpp>
 #include <android/os/Parcel.hpp>
 #include <android/os/Parcelable.hpp>
@@ -26,6 +30,7 @@ namespace j2cpp { namespace android { namespace os { namespace Parcelable_ { cla
 #include <java/lang/CharSequence.hpp>
 #include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
+#include <java/util/Comparator.hpp>
 
 
 namespace j2cpp {
@@ -47,11 +52,16 @@ namespace android { namespace content { namespace pm {
 			J2CPP_DECLARE_METHOD(1)
 			J2CPP_DECLARE_METHOD(2)
 
-			DisplayNameComparator(jobject jobj)
+			explicit DisplayNameComparator(jobject jobj)
 			: cpp_object<DisplayNameComparator>(jobj)
 			{
 			}
 
+			operator local_ref<java::lang::Object>() const;
+			operator local_ref<java::util::Comparator>() const;
+
+
+			DisplayNameComparator(local_ref< android::content::pm::PackageManager > const&);
 			cpp_int compare(local_ref< android::content::pm::ApplicationInfo > const&, local_ref< android::content::pm::ApplicationInfo > const&);
 			cpp_int compare(local_ref< java::lang::Object > const&, local_ref< java::lang::Object > const&);
 		}; //class DisplayNameComparator
@@ -106,26 +116,32 @@ namespace android { namespace content { namespace pm {
 
 		typedef ApplicationInfo_::DisplayNameComparator DisplayNameComparator;
 
-		ApplicationInfo(jobject jobj)
+		explicit ApplicationInfo(jobject jobj)
 		: cpp_object<ApplicationInfo>(jobj)
-		, taskAffinity(jobj)
-		, permission(jobj)
-		, processName(jobj)
-		, className(jobj)
-		, descriptionRes(jobj)
-		, theme(jobj)
-		, manageSpaceActivityName(jobj)
-		, flags(jobj)
-		, sourceDir(jobj)
-		, publicSourceDir(jobj)
-		, sharedLibraryFiles(jobj)
-		, dataDir(jobj)
-		, uid(jobj)
-		, targetSdkVersion(jobj)
-		, enabled(jobj)
+, taskAffinity(jobj)
+, permission(jobj)
+, processName(jobj)
+, className(jobj)
+, descriptionRes(jobj)
+, theme(jobj)
+, manageSpaceActivityName(jobj)
+, flags(jobj)
+, sourceDir(jobj)
+, publicSourceDir(jobj)
+, sharedLibraryFiles(jobj)
+, dataDir(jobj)
+, uid(jobj)
+, targetSdkVersion(jobj)
+, enabled(jobj)
 		{
 		}
 
+		operator local_ref<android::content::pm::PackageItemInfo>() const;
+		operator local_ref<android::os::Parcelable>() const;
+
+
+		ApplicationInfo();
+		ApplicationInfo(local_ref< android::content::pm::ApplicationInfo > const&);
 		void dump(local_ref< android::util::Printer > const&, local_ref< java::lang::String > const&);
 		local_ref< java::lang::String > toString();
 		cpp_int describeContents();
@@ -168,7 +184,6 @@ namespace android { namespace content { namespace pm {
 } //namespace content
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_CONTENT_PM_APPLICATIONINFO_HPP_DECL
@@ -182,17 +197,29 @@ namespace j2cpp {
 
 
 
-template <>
-local_ref< android::content::pm::ApplicationInfo_::DisplayNameComparator > create< android::content::pm::ApplicationInfo_::DisplayNameComparator>(local_ref< android::content::pm::PackageManager > const &a0)
+
+android::content::pm::ApplicationInfo_::DisplayNameComparator::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::content::pm::ApplicationInfo_::DisplayNameComparator >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::content::pm::ApplicationInfo_::DisplayNameComparator::J2CPP_CLASS_NAME>(),
-			get_method_id<android::content::pm::ApplicationInfo_::DisplayNameComparator::J2CPP_CLASS_NAME, android::content::pm::ApplicationInfo_::DisplayNameComparator::J2CPP_METHOD_NAME(0), android::content::pm::ApplicationInfo_::DisplayNameComparator::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+android::content::pm::ApplicationInfo_::DisplayNameComparator::operator local_ref<java::util::Comparator>() const
+{
+	return local_ref<java::util::Comparator>(get_jtype());
+}
+
+
+android::content::pm::ApplicationInfo_::DisplayNameComparator::DisplayNameComparator(local_ref< android::content::pm::PackageManager > const &a0)
+: cpp_object<android::content::pm::ApplicationInfo_::DisplayNameComparator>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::content::pm::ApplicationInfo_::DisplayNameComparator::J2CPP_CLASS_NAME>(),
+		get_method_id<android::content::pm::ApplicationInfo_::DisplayNameComparator::J2CPP_CLASS_NAME, android::content::pm::ApplicationInfo_::DisplayNameComparator::J2CPP_METHOD_NAME(0), android::content::pm::ApplicationInfo_::DisplayNameComparator::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 cpp_int android::content::pm::ApplicationInfo_::DisplayNameComparator::compare(local_ref< android::content::pm::ApplicationInfo > const &a0, local_ref< android::content::pm::ApplicationInfo > const &a1)
 {
@@ -223,28 +250,71 @@ J2CPP_DEFINE_METHOD(android::content::pm::ApplicationInfo_::DisplayNameComparato
 J2CPP_DEFINE_METHOD(android::content::pm::ApplicationInfo_::DisplayNameComparator,2,"compare","(Ljava/lang/Object;Ljava/lang/Object;)I")
 
 
-template <>
-local_ref< android::content::pm::ApplicationInfo > create< android::content::pm::ApplicationInfo>()
+
+android::content::pm::ApplicationInfo::operator local_ref<android::content::pm::PackageItemInfo>() const
 {
-	return local_ref< android::content::pm::ApplicationInfo >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::content::pm::ApplicationInfo::J2CPP_CLASS_NAME>(),
-			get_method_id<android::content::pm::ApplicationInfo::J2CPP_CLASS_NAME, android::content::pm::ApplicationInfo::J2CPP_METHOD_NAME(0), android::content::pm::ApplicationInfo::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<android::content::pm::PackageItemInfo>(get_jtype());
 }
 
-template <>
-local_ref< android::content::pm::ApplicationInfo > create< android::content::pm::ApplicationInfo>(local_ref< android::content::pm::ApplicationInfo > const &a0)
+android::content::pm::ApplicationInfo::operator local_ref<android::os::Parcelable>() const
 {
-	return local_ref< android::content::pm::ApplicationInfo >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::content::pm::ApplicationInfo::J2CPP_CLASS_NAME>(),
-			get_method_id<android::content::pm::ApplicationInfo::J2CPP_CLASS_NAME, android::content::pm::ApplicationInfo::J2CPP_METHOD_NAME(1), android::content::pm::ApplicationInfo::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<android::os::Parcelable>(get_jtype());
 }
+
+
+android::content::pm::ApplicationInfo::ApplicationInfo()
+: cpp_object<android::content::pm::ApplicationInfo>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::content::pm::ApplicationInfo::J2CPP_CLASS_NAME>(),
+		get_method_id<android::content::pm::ApplicationInfo::J2CPP_CLASS_NAME, android::content::pm::ApplicationInfo::J2CPP_METHOD_NAME(0), android::content::pm::ApplicationInfo::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+, taskAffinity(get_jtype())
+, permission(get_jtype())
+, processName(get_jtype())
+, className(get_jtype())
+, descriptionRes(get_jtype())
+, theme(get_jtype())
+, manageSpaceActivityName(get_jtype())
+, flags(get_jtype())
+, sourceDir(get_jtype())
+, publicSourceDir(get_jtype())
+, sharedLibraryFiles(get_jtype())
+, dataDir(get_jtype())
+, uid(get_jtype())
+, targetSdkVersion(get_jtype())
+, enabled(get_jtype())
+{
+}
+
+
+
+android::content::pm::ApplicationInfo::ApplicationInfo(local_ref< android::content::pm::ApplicationInfo > const &a0)
+: cpp_object<android::content::pm::ApplicationInfo>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::content::pm::ApplicationInfo::J2CPP_CLASS_NAME>(),
+		get_method_id<android::content::pm::ApplicationInfo::J2CPP_CLASS_NAME, android::content::pm::ApplicationInfo::J2CPP_METHOD_NAME(1), android::content::pm::ApplicationInfo::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
+, taskAffinity(get_jtype())
+, permission(get_jtype())
+, processName(get_jtype())
+, className(get_jtype())
+, descriptionRes(get_jtype())
+, theme(get_jtype())
+, manageSpaceActivityName(get_jtype())
+, flags(get_jtype())
+, sourceDir(get_jtype())
+, publicSourceDir(get_jtype())
+, sharedLibraryFiles(get_jtype())
+, dataDir(get_jtype())
+, uid(get_jtype())
+, targetSdkVersion(get_jtype())
+, enabled(get_jtype())
+{
+}
+
 
 void android::content::pm::ApplicationInfo::dump(local_ref< android::util::Printer > const &a0, local_ref< java::lang::String > const &a1)
 {
@@ -298,6 +368,7 @@ local_ref< java::lang::CharSequence > android::content::pm::ApplicationInfo::loa
 		)
 	);
 }
+
 
 
 static_field<

@@ -10,18 +10,23 @@
 #define J2CPP_ANDROID_INPUTMETHODSERVICE_ABSTRACTINPUTMETHODSERVICE_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace android { namespace app { class Service; } } }
 namespace j2cpp { namespace android { namespace inputmethodservice { namespace AbstractInputMethodService_ { class AbstractInputMethodSessionImpl; } } } }
 namespace j2cpp { namespace android { namespace inputmethodservice { namespace AbstractInputMethodService_ { class AbstractInputMethodImpl; } } } }
 namespace j2cpp { namespace android { namespace content { class Intent; } } }
 namespace j2cpp { namespace android { namespace view { namespace inputmethod { class InputMethodSession; } } } }
+namespace j2cpp { namespace android { namespace view { namespace inputmethod { class InputMethod; } } } }
 namespace j2cpp { namespace android { namespace view { namespace inputmethod { namespace InputMethod_ { class SessionCallback; } } } } }
 namespace j2cpp { namespace android { namespace view { namespace inputmethod { namespace InputMethodSession_ { class EventCallback; } } } } }
 namespace j2cpp { namespace android { namespace view { class KeyEvent; } } }
+namespace j2cpp { namespace android { namespace view { namespace KeyEvent_ { class Callback; } } } }
 namespace j2cpp { namespace android { namespace view { class MotionEvent; } } }
 namespace j2cpp { namespace android { namespace view { namespace KeyEvent_ { class DispatcherState; } } } }
 namespace j2cpp { namespace android { namespace os { class IBinder; } } }
 
 
+#include <android/app/Service.hpp>
 #include <android/content/Intent.hpp>
 #include <android/inputmethodservice/AbstractInputMethodService.hpp>
 #include <android/os/IBinder.hpp>
@@ -29,6 +34,7 @@ namespace j2cpp { namespace android { namespace os { class IBinder; } } }
 #include <android/view/MotionEvent.hpp>
 #include <android/view/inputmethod/InputMethod.hpp>
 #include <android/view/inputmethod/InputMethodSession.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -55,11 +61,16 @@ namespace android { namespace inputmethodservice {
 			J2CPP_DECLARE_METHOD(6)
 			J2CPP_DECLARE_FIELD(0)
 
-			AbstractInputMethodSessionImpl(jobject jobj)
+			explicit AbstractInputMethodSessionImpl(jobject jobj)
 			: cpp_object<AbstractInputMethodSessionImpl>(jobj)
 			{
 			}
 
+			operator local_ref<java::lang::Object>() const;
+			operator local_ref<android::view::inputmethod::InputMethodSession>() const;
+
+
+			AbstractInputMethodSessionImpl(local_ref< android::inputmethodservice::AbstractInputMethodService > const&);
 			cpp_boolean isEnabled();
 			cpp_boolean isRevoked();
 			void setEnabled(cpp_boolean const&);
@@ -83,11 +94,16 @@ namespace android { namespace inputmethodservice {
 			J2CPP_DECLARE_METHOD(3)
 			J2CPP_DECLARE_FIELD(0)
 
-			AbstractInputMethodImpl(jobject jobj)
+			explicit AbstractInputMethodImpl(jobject jobj)
 			: cpp_object<AbstractInputMethodImpl>(jobj)
 			{
 			}
 
+			operator local_ref<java::lang::Object>() const;
+			operator local_ref<android::view::inputmethod::InputMethod>() const;
+
+
+			AbstractInputMethodImpl(local_ref< android::inputmethodservice::AbstractInputMethodService > const&);
 			void createSession(local_ref< android::view::inputmethod::InputMethod_::SessionCallback > const&);
 			void setSessionEnabled(local_ref< android::view::inputmethod::InputMethodSession > const&, cpp_boolean const&);
 			void revokeSession(local_ref< android::view::inputmethod::InputMethodSession > const&);
@@ -114,11 +130,16 @@ namespace android { namespace inputmethodservice {
 		typedef AbstractInputMethodService_::AbstractInputMethodSessionImpl AbstractInputMethodSessionImpl;
 		typedef AbstractInputMethodService_::AbstractInputMethodImpl AbstractInputMethodImpl;
 
-		AbstractInputMethodService(jobject jobj)
+		explicit AbstractInputMethodService(jobject jobj)
 		: cpp_object<AbstractInputMethodService>(jobj)
 		{
 		}
 
+		operator local_ref<android::app::Service>() const;
+		operator local_ref<android::view::KeyEvent_::Callback>() const;
+
+
+		AbstractInputMethodService();
 		local_ref< android::view::KeyEvent_::DispatcherState > getKeyDispatcherState();
 		local_ref< android::inputmethodservice::AbstractInputMethodService_::AbstractInputMethodImpl > onCreateInputMethodInterface();
 		local_ref< android::inputmethodservice::AbstractInputMethodService_::AbstractInputMethodSessionImpl > onCreateInputMethodSessionInterface();
@@ -128,7 +149,6 @@ namespace android { namespace inputmethodservice {
 
 } //namespace inputmethodservice
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -143,17 +163,29 @@ namespace j2cpp {
 
 
 
-template <>
-local_ref< android::inputmethodservice::AbstractInputMethodService_::AbstractInputMethodSessionImpl > create< android::inputmethodservice::AbstractInputMethodService_::AbstractInputMethodSessionImpl>(local_ref< android::inputmethodservice::AbstractInputMethodService > const &a0)
+
+android::inputmethodservice::AbstractInputMethodService_::AbstractInputMethodSessionImpl::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::inputmethodservice::AbstractInputMethodService_::AbstractInputMethodSessionImpl >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::inputmethodservice::AbstractInputMethodService_::AbstractInputMethodSessionImpl::J2CPP_CLASS_NAME>(),
-			get_method_id<android::inputmethodservice::AbstractInputMethodService_::AbstractInputMethodSessionImpl::J2CPP_CLASS_NAME, android::inputmethodservice::AbstractInputMethodService_::AbstractInputMethodSessionImpl::J2CPP_METHOD_NAME(0), android::inputmethodservice::AbstractInputMethodService_::AbstractInputMethodSessionImpl::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+android::inputmethodservice::AbstractInputMethodService_::AbstractInputMethodSessionImpl::operator local_ref<android::view::inputmethod::InputMethodSession>() const
+{
+	return local_ref<android::view::inputmethod::InputMethodSession>(get_jtype());
+}
+
+
+android::inputmethodservice::AbstractInputMethodService_::AbstractInputMethodSessionImpl::AbstractInputMethodSessionImpl(local_ref< android::inputmethodservice::AbstractInputMethodService > const &a0)
+: cpp_object<android::inputmethodservice::AbstractInputMethodService_::AbstractInputMethodSessionImpl>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::inputmethodservice::AbstractInputMethodService_::AbstractInputMethodSessionImpl::J2CPP_CLASS_NAME>(),
+		get_method_id<android::inputmethodservice::AbstractInputMethodService_::AbstractInputMethodSessionImpl::J2CPP_CLASS_NAME, android::inputmethodservice::AbstractInputMethodService_::AbstractInputMethodSessionImpl::J2CPP_METHOD_NAME(0), android::inputmethodservice::AbstractInputMethodService_::AbstractInputMethodSessionImpl::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 cpp_boolean android::inputmethodservice::AbstractInputMethodService_::AbstractInputMethodSessionImpl::isEnabled()
 {
@@ -230,17 +262,29 @@ J2CPP_DEFINE_METHOD(android::inputmethodservice::AbstractInputMethodService_::Ab
 J2CPP_DEFINE_METHOD(android::inputmethodservice::AbstractInputMethodService_::AbstractInputMethodSessionImpl,6,"dispatchTrackballEvent","(ILandroid/view/MotionEvent;Landroid/view/inputmethod/InputMethodSession$EventCallback;)V")
 J2CPP_DEFINE_FIELD(android::inputmethodservice::AbstractInputMethodService_::AbstractInputMethodSessionImpl,0,"this$0","Landroid/inputmethodservice/AbstractInputMethodService;")
 
-template <>
-local_ref< android::inputmethodservice::AbstractInputMethodService_::AbstractInputMethodImpl > create< android::inputmethodservice::AbstractInputMethodService_::AbstractInputMethodImpl>(local_ref< android::inputmethodservice::AbstractInputMethodService > const &a0)
+
+android::inputmethodservice::AbstractInputMethodService_::AbstractInputMethodImpl::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::inputmethodservice::AbstractInputMethodService_::AbstractInputMethodImpl >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::inputmethodservice::AbstractInputMethodService_::AbstractInputMethodImpl::J2CPP_CLASS_NAME>(),
-			get_method_id<android::inputmethodservice::AbstractInputMethodService_::AbstractInputMethodImpl::J2CPP_CLASS_NAME, android::inputmethodservice::AbstractInputMethodService_::AbstractInputMethodImpl::J2CPP_METHOD_NAME(0), android::inputmethodservice::AbstractInputMethodService_::AbstractInputMethodImpl::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+android::inputmethodservice::AbstractInputMethodService_::AbstractInputMethodImpl::operator local_ref<android::view::inputmethod::InputMethod>() const
+{
+	return local_ref<android::view::inputmethod::InputMethod>(get_jtype());
+}
+
+
+android::inputmethodservice::AbstractInputMethodService_::AbstractInputMethodImpl::AbstractInputMethodImpl(local_ref< android::inputmethodservice::AbstractInputMethodService > const &a0)
+: cpp_object<android::inputmethodservice::AbstractInputMethodService_::AbstractInputMethodImpl>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::inputmethodservice::AbstractInputMethodService_::AbstractInputMethodImpl::J2CPP_CLASS_NAME>(),
+		get_method_id<android::inputmethodservice::AbstractInputMethodService_::AbstractInputMethodImpl::J2CPP_CLASS_NAME, android::inputmethodservice::AbstractInputMethodService_::AbstractInputMethodImpl::J2CPP_METHOD_NAME(0), android::inputmethodservice::AbstractInputMethodService_::AbstractInputMethodImpl::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 void android::inputmethodservice::AbstractInputMethodService_::AbstractInputMethodImpl::createSession(local_ref< android::view::inputmethod::InputMethod_::SessionCallback > const &a0)
 {
@@ -285,16 +329,28 @@ J2CPP_DEFINE_METHOD(android::inputmethodservice::AbstractInputMethodService_::Ab
 J2CPP_DEFINE_FIELD(android::inputmethodservice::AbstractInputMethodService_::AbstractInputMethodImpl,0,"this$0","Landroid/inputmethodservice/AbstractInputMethodService;")
 
 
-template <>
-local_ref< android::inputmethodservice::AbstractInputMethodService > create< android::inputmethodservice::AbstractInputMethodService>()
+
+android::inputmethodservice::AbstractInputMethodService::operator local_ref<android::app::Service>() const
 {
-	return local_ref< android::inputmethodservice::AbstractInputMethodService >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::inputmethodservice::AbstractInputMethodService::J2CPP_CLASS_NAME>(),
-			get_method_id<android::inputmethodservice::AbstractInputMethodService::J2CPP_CLASS_NAME, android::inputmethodservice::AbstractInputMethodService::J2CPP_METHOD_NAME(0), android::inputmethodservice::AbstractInputMethodService::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<android::app::Service>(get_jtype());
 }
+
+android::inputmethodservice::AbstractInputMethodService::operator local_ref<android::view::KeyEvent_::Callback>() const
+{
+	return local_ref<android::view::KeyEvent_::Callback>(get_jtype());
+}
+
+
+android::inputmethodservice::AbstractInputMethodService::AbstractInputMethodService()
+: cpp_object<android::inputmethodservice::AbstractInputMethodService>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::inputmethodservice::AbstractInputMethodService::J2CPP_CLASS_NAME>(),
+		get_method_id<android::inputmethodservice::AbstractInputMethodService::J2CPP_CLASS_NAME, android::inputmethodservice::AbstractInputMethodService::J2CPP_METHOD_NAME(0), android::inputmethodservice::AbstractInputMethodService::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 local_ref< android::view::KeyEvent_::DispatcherState > android::inputmethodservice::AbstractInputMethodService::getKeyDispatcherState()
 {

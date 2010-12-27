@@ -166,10 +166,13 @@ namespace android { namespace os {
 		J2CPP_DECLARE_METHOD(102)
 		J2CPP_DECLARE_FIELD(0)
 
-		Parcel(jobject jobj)
+		explicit Parcel(jobject jobj)
 		: cpp_object<Parcel>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		static local_ref< android::os::Parcel > obtain();
 		void recycle();
@@ -277,7 +280,6 @@ namespace android { namespace os {
 } //namespace os
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_OS_PARCEL_HPP_DECL
@@ -290,16 +292,12 @@ namespace android { namespace os {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::os::Parcel > create< android::os::Parcel>()
+
+android::os::Parcel::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::os::Parcel >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::os::Parcel::J2CPP_CLASS_NAME>(),
-			get_method_id<android::os::Parcel::J2CPP_CLASS_NAME, android::os::Parcel::J2CPP_METHOD_NAME(0), android::os::Parcel::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
 
 local_ref< android::os::Parcel > android::os::Parcel::obtain()
 {
@@ -1357,6 +1355,7 @@ local_ref< java::io::Serializable > android::os::Parcel::readSerializable()
 		)
 	);
 }
+
 
 
 

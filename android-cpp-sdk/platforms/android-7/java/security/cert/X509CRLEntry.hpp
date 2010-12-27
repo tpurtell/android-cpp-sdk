@@ -14,12 +14,14 @@ namespace j2cpp { namespace javax { namespace security { namespace auth { namesp
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace math { class BigInteger; } } }
+namespace j2cpp { namespace java { namespace security { namespace cert { class X509Extension; } } } }
 namespace j2cpp { namespace java { namespace util { class Date; } } }
 
 
 #include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/math/BigInteger.hpp>
+#include <java/security/cert/X509Extension.hpp>
 #include <java/util/Date.hpp>
 #include <javax/security/auth/x500/X500Principal.hpp>
 
@@ -46,11 +48,16 @@ namespace java { namespace security { namespace cert {
 		J2CPP_DECLARE_METHOD(7)
 		J2CPP_DECLARE_METHOD(8)
 
-		X509CRLEntry(jobject jobj)
+		explicit X509CRLEntry(jobject jobj)
 		: cpp_object<X509CRLEntry>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::security::cert::X509Extension>() const;
+
+
+		X509CRLEntry();
 		cpp_boolean equals(local_ref< java::lang::Object > const&);
 		cpp_int hashCode();
 		local_ref< cpp_byte_array<1> > getEncoded();
@@ -65,7 +72,6 @@ namespace java { namespace security { namespace cert {
 } //namespace security
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_SECURITY_CERT_X509CRLENTRY_HPP_DECL
@@ -78,16 +84,28 @@ namespace java { namespace security { namespace cert {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::security::cert::X509CRLEntry > create< java::security::cert::X509CRLEntry>()
+
+java::security::cert::X509CRLEntry::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::security::cert::X509CRLEntry >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::security::cert::X509CRLEntry::J2CPP_CLASS_NAME>(),
-			get_method_id<java::security::cert::X509CRLEntry::J2CPP_CLASS_NAME, java::security::cert::X509CRLEntry::J2CPP_METHOD_NAME(0), java::security::cert::X509CRLEntry::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+java::security::cert::X509CRLEntry::operator local_ref<java::security::cert::X509Extension>() const
+{
+	return local_ref<java::security::cert::X509Extension>(get_jtype());
+}
+
+
+java::security::cert::X509CRLEntry::X509CRLEntry()
+: cpp_object<java::security::cert::X509CRLEntry>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::security::cert::X509CRLEntry::J2CPP_CLASS_NAME>(),
+		get_method_id<java::security::cert::X509CRLEntry::J2CPP_CLASS_NAME, java::security::cert::X509CRLEntry::J2CPP_METHOD_NAME(0), java::security::cert::X509CRLEntry::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 cpp_boolean java::security::cert::X509CRLEntry::equals(local_ref< java::lang::Object > const &a0)
 {

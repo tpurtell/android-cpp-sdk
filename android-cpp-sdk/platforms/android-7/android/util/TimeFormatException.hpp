@@ -10,8 +10,10 @@
 #define J2CPP_ANDROID_UTIL_TIMEFORMATEXCEPTION_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class RuntimeException; } } }
 
 
+#include <java/lang/RuntimeException.hpp>
 
 
 namespace j2cpp {
@@ -28,16 +30,18 @@ namespace android { namespace util {
 
 		J2CPP_DECLARE_METHOD(0)
 
-		TimeFormatException(jobject jobj)
+		explicit TimeFormatException(jobject jobj)
 		: cpp_object<TimeFormatException>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::RuntimeException>() const;
+
 
 	}; //class TimeFormatException
 
 } //namespace util
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -51,16 +55,12 @@ namespace android { namespace util {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::util::TimeFormatException > create< android::util::TimeFormatException>()
+
+android::util::TimeFormatException::operator local_ref<java::lang::RuntimeException>() const
 {
-	return local_ref< android::util::TimeFormatException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::util::TimeFormatException::J2CPP_CLASS_NAME>(),
-			get_method_id<android::util::TimeFormatException::J2CPP_CLASS_NAME, android::util::TimeFormatException::J2CPP_METHOD_NAME(0), android::util::TimeFormatException::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::RuntimeException>(get_jtype());
 }
+
 
 
 J2CPP_DEFINE_CLASS(android::util::TimeFormatException,"android/util/TimeFormatException")

@@ -39,11 +39,16 @@ namespace java { namespace io {
 		J2CPP_DECLARE_METHOD(6)
 		J2CPP_DECLARE_METHOD(7)
 
-		BufferedWriter(jobject jobj)
+		explicit BufferedWriter(jobject jobj)
 		: cpp_object<BufferedWriter>(jobj)
 		{
 		}
 
+		operator local_ref<java::io::Writer>() const;
+
+
+		BufferedWriter(local_ref< java::io::Writer > const&);
+		BufferedWriter(local_ref< java::io::Writer > const&, cpp_int const&);
 		void close();
 		void flush();
 		void newLine();
@@ -54,7 +59,6 @@ namespace java { namespace io {
 
 } //namespace io
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -68,29 +72,37 @@ namespace java { namespace io {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::io::BufferedWriter > create< java::io::BufferedWriter>(local_ref< java::io::Writer > const &a0)
+
+java::io::BufferedWriter::operator local_ref<java::io::Writer>() const
 {
-	return local_ref< java::io::BufferedWriter >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::io::BufferedWriter::J2CPP_CLASS_NAME>(),
-			get_method_id<java::io::BufferedWriter::J2CPP_CLASS_NAME, java::io::BufferedWriter::J2CPP_METHOD_NAME(0), java::io::BufferedWriter::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::io::Writer>(get_jtype());
 }
 
-template <>
-local_ref< java::io::BufferedWriter > create< java::io::BufferedWriter>(local_ref< java::io::Writer > const &a0, cpp_int const &a1)
+
+java::io::BufferedWriter::BufferedWriter(local_ref< java::io::Writer > const &a0)
+: cpp_object<java::io::BufferedWriter>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::io::BufferedWriter::J2CPP_CLASS_NAME>(),
+		get_method_id<java::io::BufferedWriter::J2CPP_CLASS_NAME, java::io::BufferedWriter::J2CPP_METHOD_NAME(0), java::io::BufferedWriter::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< java::io::BufferedWriter >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::io::BufferedWriter::J2CPP_CLASS_NAME>(),
-			get_method_id<java::io::BufferedWriter::J2CPP_CLASS_NAME, java::io::BufferedWriter::J2CPP_METHOD_NAME(1), java::io::BufferedWriter::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
 }
+
+
+
+java::io::BufferedWriter::BufferedWriter(local_ref< java::io::Writer > const &a0, cpp_int const &a1)
+: cpp_object<java::io::BufferedWriter>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::io::BufferedWriter::J2CPP_CLASS_NAME>(),
+		get_method_id<java::io::BufferedWriter::J2CPP_CLASS_NAME, java::io::BufferedWriter::J2CPP_METHOD_NAME(1), java::io::BufferedWriter::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
 
 void java::io::BufferedWriter::close()
 {

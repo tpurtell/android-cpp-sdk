@@ -10,10 +10,14 @@
 #define J2CPP_ORG_APACHE_HTTP_TOKENITERATOR_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace util { class Iterator; } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
+#include <java/util/Iterator.hpp>
 
 
 namespace j2cpp {
@@ -31,10 +35,14 @@ namespace org { namespace apache { namespace http {
 		J2CPP_DECLARE_METHOD(0)
 		J2CPP_DECLARE_METHOD(1)
 
-		TokenIterator(jobject jobj)
+		explicit TokenIterator(jobject jobj)
 		: cpp_object<TokenIterator>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::util::Iterator>() const;
+
 
 		cpp_boolean hasNext();
 		local_ref< java::lang::String > nextToken();
@@ -43,7 +51,6 @@ namespace org { namespace apache { namespace http {
 } //namespace http
 } //namespace apache
 } //namespace org
-
 
 } //namespace j2cpp
 
@@ -56,6 +63,17 @@ namespace org { namespace apache { namespace http {
 
 namespace j2cpp {
 
+
+
+org::apache::http::TokenIterator::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
+
+org::apache::http::TokenIterator::operator local_ref<java::util::Iterator>() const
+{
+	return local_ref<java::util::Iterator>(get_jtype());
+}
 
 cpp_boolean org::apache::http::TokenIterator::hasNext()
 {

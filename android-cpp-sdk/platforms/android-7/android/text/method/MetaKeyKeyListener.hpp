@@ -64,11 +64,15 @@ namespace android { namespace text { namespace method {
 		J2CPP_DECLARE_FIELD(4)
 		J2CPP_DECLARE_FIELD(5)
 
-		MetaKeyKeyListener(jobject jobj)
+		explicit MetaKeyKeyListener(jobject jobj)
 		: cpp_object<MetaKeyKeyListener>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		MetaKeyKeyListener();
 		static void resetMetaState(local_ref< android::text::Spannable > const&);
 		static cpp_int getMetaState(local_ref< java::lang::CharSequence > const&);
 		static cpp_int getMetaState(local_ref< java::lang::CharSequence > const&, cpp_int const&);
@@ -99,7 +103,6 @@ namespace android { namespace text { namespace method {
 } //namespace text
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_TEXT_METHOD_METAKEYKEYLISTENER_HPP_DECL
@@ -112,16 +115,23 @@ namespace android { namespace text { namespace method {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::text::method::MetaKeyKeyListener > create< android::text::method::MetaKeyKeyListener>()
+
+android::text::method::MetaKeyKeyListener::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::text::method::MetaKeyKeyListener >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::text::method::MetaKeyKeyListener::J2CPP_CLASS_NAME>(),
-			get_method_id<android::text::method::MetaKeyKeyListener::J2CPP_CLASS_NAME, android::text::method::MetaKeyKeyListener::J2CPP_METHOD_NAME(0), android::text::method::MetaKeyKeyListener::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::text::method::MetaKeyKeyListener::MetaKeyKeyListener()
+: cpp_object<android::text::method::MetaKeyKeyListener>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::text::method::MetaKeyKeyListener::J2CPP_CLASS_NAME>(),
+		get_method_id<android::text::method::MetaKeyKeyListener::J2CPP_CLASS_NAME, android::text::method::MetaKeyKeyListener::J2CPP_METHOD_NAME(0), android::text::method::MetaKeyKeyListener::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 void android::text::method::MetaKeyKeyListener::resetMetaState(local_ref< android::text::Spannable > const &a0)
 {

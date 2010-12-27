@@ -10,16 +10,20 @@
 #define J2CPP_JAVA_SECURITY_ACL_ACL_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace security { namespace acl { class AclEntry; } } } }
+namespace j2cpp { namespace java { namespace security { namespace acl { class Owner; } } } }
 namespace j2cpp { namespace java { namespace security { namespace acl { class Permission; } } } }
 namespace j2cpp { namespace java { namespace security { class Principal; } } }
 namespace j2cpp { namespace java { namespace util { class Enumeration; } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/security/Principal.hpp>
 #include <java/security/acl/AclEntry.hpp>
+#include <java/security/acl/Owner.hpp>
 #include <java/security/acl/Permission.hpp>
 #include <java/util/Enumeration.hpp>
 
@@ -45,10 +49,14 @@ namespace java { namespace security { namespace acl {
 		J2CPP_DECLARE_METHOD(6)
 		J2CPP_DECLARE_METHOD(7)
 
-		Acl(jobject jobj)
+		explicit Acl(jobject jobj)
 		: cpp_object<Acl>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::security::acl::Owner>() const;
+
 
 		void setName(local_ref< java::security::Principal > const&, local_ref< java::lang::String > const&);
 		local_ref< java::lang::String > getName();
@@ -64,7 +72,6 @@ namespace java { namespace security { namespace acl {
 } //namespace security
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_SECURITY_ACL_ACL_HPP_DECL
@@ -76,6 +83,17 @@ namespace java { namespace security { namespace acl {
 
 namespace j2cpp {
 
+
+
+java::security::acl::Acl::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
+
+java::security::acl::Acl::operator local_ref<java::security::acl::Owner>() const
+{
+	return local_ref<java::security::acl::Owner>(get_jtype());
+}
 
 void java::security::acl::Acl::setName(local_ref< java::security::Principal > const &a0, local_ref< java::lang::String > const &a1)
 {

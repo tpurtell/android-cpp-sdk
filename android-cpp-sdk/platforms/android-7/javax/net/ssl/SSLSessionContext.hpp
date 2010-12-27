@@ -11,9 +11,11 @@
 
 
 namespace j2cpp { namespace javax { namespace net { namespace ssl { class SSLSession; } } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace util { class Enumeration; } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/util/Enumeration.hpp>
 #include <javax/net/ssl/SSLSession.hpp>
 
@@ -37,10 +39,13 @@ namespace javax { namespace net { namespace ssl {
 		J2CPP_DECLARE_METHOD(4)
 		J2CPP_DECLARE_METHOD(5)
 
-		SSLSessionContext(jobject jobj)
+		explicit SSLSessionContext(jobject jobj)
 		: cpp_object<SSLSessionContext>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		local_ref< java::util::Enumeration > getIds();
 		local_ref< javax::net::ssl::SSLSession > getSession(local_ref< cpp_byte_array<1> > const&);
@@ -54,7 +59,6 @@ namespace javax { namespace net { namespace ssl {
 } //namespace net
 } //namespace javax
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVAX_NET_SSL_SSLSESSIONCONTEXT_HPP_DECL
@@ -66,6 +70,12 @@ namespace javax { namespace net { namespace ssl {
 
 namespace j2cpp {
 
+
+
+javax::net::ssl::SSLSessionContext::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 local_ref< java::util::Enumeration > javax::net::ssl::SSLSessionContext::getIds()
 {

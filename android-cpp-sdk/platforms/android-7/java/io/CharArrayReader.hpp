@@ -10,8 +10,10 @@
 #define J2CPP_JAVA_IO_CHARARRAYREADER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class Reader; } } }
 
 
+#include <java/io/Reader.hpp>
 
 
 namespace j2cpp {
@@ -41,11 +43,16 @@ namespace java { namespace io {
 		J2CPP_DECLARE_FIELD(2)
 		J2CPP_DECLARE_FIELD(3)
 
-		CharArrayReader(jobject jobj)
+		explicit CharArrayReader(jobject jobj)
 		: cpp_object<CharArrayReader>(jobj)
 		{
 		}
 
+		operator local_ref<java::io::Reader>() const;
+
+
+		CharArrayReader(local_ref< cpp_char_array<1> > const&);
+		CharArrayReader(local_ref< cpp_char_array<1> > const&, cpp_int const&, cpp_int const&);
 		void close();
 		void mark(cpp_int const&);
 		cpp_boolean markSupported();
@@ -60,7 +67,6 @@ namespace java { namespace io {
 } //namespace io
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_IO_CHARARRAYREADER_HPP_DECL
@@ -73,29 +79,37 @@ namespace java { namespace io {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::io::CharArrayReader > create< java::io::CharArrayReader>(local_ref< cpp_char_array<1> > const &a0)
+
+java::io::CharArrayReader::operator local_ref<java::io::Reader>() const
 {
-	return local_ref< java::io::CharArrayReader >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::io::CharArrayReader::J2CPP_CLASS_NAME>(),
-			get_method_id<java::io::CharArrayReader::J2CPP_CLASS_NAME, java::io::CharArrayReader::J2CPP_METHOD_NAME(0), java::io::CharArrayReader::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::io::Reader>(get_jtype());
 }
 
-template <>
-local_ref< java::io::CharArrayReader > create< java::io::CharArrayReader>(local_ref< cpp_char_array<1> > const &a0, cpp_int const &a1, cpp_int const &a2)
+
+java::io::CharArrayReader::CharArrayReader(local_ref< cpp_char_array<1> > const &a0)
+: cpp_object<java::io::CharArrayReader>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::io::CharArrayReader::J2CPP_CLASS_NAME>(),
+		get_method_id<java::io::CharArrayReader::J2CPP_CLASS_NAME, java::io::CharArrayReader::J2CPP_METHOD_NAME(0), java::io::CharArrayReader::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< java::io::CharArrayReader >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::io::CharArrayReader::J2CPP_CLASS_NAME>(),
-			get_method_id<java::io::CharArrayReader::J2CPP_CLASS_NAME, java::io::CharArrayReader::J2CPP_METHOD_NAME(1), java::io::CharArrayReader::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
-		)
-	);
 }
+
+
+
+java::io::CharArrayReader::CharArrayReader(local_ref< cpp_char_array<1> > const &a0, cpp_int const &a1, cpp_int const &a2)
+: cpp_object<java::io::CharArrayReader>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::io::CharArrayReader::J2CPP_CLASS_NAME>(),
+		get_method_id<java::io::CharArrayReader::J2CPP_CLASS_NAME, java::io::CharArrayReader::J2CPP_METHOD_NAME(1), java::io::CharArrayReader::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
+	)
+)
+{
+}
+
 
 void java::io::CharArrayReader::close()
 {

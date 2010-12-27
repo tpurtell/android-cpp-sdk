@@ -10,9 +10,11 @@
 #define J2CPP_ORG_APACHE_HTTP_COOKIE_SM_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -33,10 +35,13 @@ namespace org { namespace apache { namespace http { namespace cookie {
 		J2CPP_DECLARE_FIELD(2)
 		J2CPP_DECLARE_FIELD(3)
 
-		SM(jobject jobj)
+		explicit SM(jobject jobj)
 		: cpp_object<SM>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(0), J2CPP_FIELD_SIGNATURE(0), local_ref< java::lang::String > > COOKIE;
 		static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(1), J2CPP_FIELD_SIGNATURE(1), local_ref< java::lang::String > > COOKIE2;
@@ -49,7 +54,6 @@ namespace org { namespace apache { namespace http { namespace cookie {
 } //namespace apache
 } //namespace org
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ORG_APACHE_HTTP_COOKIE_SM_HPP_DECL
@@ -61,6 +65,12 @@ namespace org { namespace apache { namespace http { namespace cookie {
 
 namespace j2cpp {
 
+
+
+org::apache::http::cookie::SM::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 static_field<
 	org::apache::http::cookie::SM::J2CPP_CLASS_NAME,

@@ -10,9 +10,11 @@
 #define J2CPP_ORG_APACHE_HTTP_CONN_PARAMS_CONNPERROUTE_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace conn { namespace routing { class HttpRoute; } } } } } }
 
 
+#include <java/lang/Object.hpp>
 #include <org/apache/http/conn/routing/HttpRoute.hpp>
 
 
@@ -30,10 +32,13 @@ namespace org { namespace apache { namespace http { namespace conn { namespace p
 
 		J2CPP_DECLARE_METHOD(0)
 
-		ConnPerRoute(jobject jobj)
+		explicit ConnPerRoute(jobject jobj)
 		: cpp_object<ConnPerRoute>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		cpp_int getMaxForRoute(local_ref< org::apache::http::conn::routing::HttpRoute > const&);
 	}; //class ConnPerRoute
@@ -43,7 +48,6 @@ namespace org { namespace apache { namespace http { namespace conn { namespace p
 } //namespace http
 } //namespace apache
 } //namespace org
-
 
 } //namespace j2cpp
 
@@ -56,6 +60,12 @@ namespace org { namespace apache { namespace http { namespace conn { namespace p
 
 namespace j2cpp {
 
+
+
+org::apache::http::conn::params::ConnPerRoute::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 cpp_int org::apache::http::conn::params::ConnPerRoute::getMaxForRoute(local_ref< org::apache::http::conn::routing::HttpRoute > const &a0)
 {

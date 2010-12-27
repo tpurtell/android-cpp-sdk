@@ -12,10 +12,13 @@
 
 namespace j2cpp { namespace android { namespace graphics { class Canvas; } } }
 namespace j2cpp { namespace android { namespace graphics { namespace drawable { class Drawable; } } } }
+namespace j2cpp { namespace android { namespace graphics { namespace drawable { namespace Drawable_ { class Callback; } } } } }
+namespace j2cpp { namespace android { namespace graphics { namespace drawable { class LayerDrawable; } } } }
 
 
 #include <android/graphics/Canvas.hpp>
 #include <android/graphics/drawable/Drawable.hpp>
+#include <android/graphics/drawable/LayerDrawable.hpp>
 
 
 namespace j2cpp {
@@ -38,11 +41,16 @@ namespace android { namespace graphics { namespace drawable {
 		J2CPP_DECLARE_METHOD(5)
 		J2CPP_DECLARE_METHOD(6)
 
-		TransitionDrawable(jobject jobj)
+		explicit TransitionDrawable(jobject jobj)
 		: cpp_object<TransitionDrawable>(jobj)
 		{
 		}
 
+		operator local_ref<android::graphics::drawable::LayerDrawable>() const;
+		operator local_ref<android::graphics::drawable::Drawable_::Callback>() const;
+
+
+		TransitionDrawable(local_ref< cpp_object_array<android::graphics::drawable::Drawable, 1> > const&);
 		void startTransition(cpp_int const&);
 		void resetTransition();
 		void reverseTransition(cpp_int const&);
@@ -54,7 +62,6 @@ namespace android { namespace graphics { namespace drawable {
 } //namespace drawable
 } //namespace graphics
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -68,17 +75,29 @@ namespace android { namespace graphics { namespace drawable {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::graphics::drawable::TransitionDrawable > create< android::graphics::drawable::TransitionDrawable>(local_ref< cpp_object_array<android::graphics::drawable::Drawable, 1> > const &a0)
+
+android::graphics::drawable::TransitionDrawable::operator local_ref<android::graphics::drawable::LayerDrawable>() const
 {
-	return local_ref< android::graphics::drawable::TransitionDrawable >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::graphics::drawable::TransitionDrawable::J2CPP_CLASS_NAME>(),
-			get_method_id<android::graphics::drawable::TransitionDrawable::J2CPP_CLASS_NAME, android::graphics::drawable::TransitionDrawable::J2CPP_METHOD_NAME(0), android::graphics::drawable::TransitionDrawable::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<android::graphics::drawable::LayerDrawable>(get_jtype());
 }
+
+android::graphics::drawable::TransitionDrawable::operator local_ref<android::graphics::drawable::Drawable_::Callback>() const
+{
+	return local_ref<android::graphics::drawable::Drawable_::Callback>(get_jtype());
+}
+
+
+android::graphics::drawable::TransitionDrawable::TransitionDrawable(local_ref< cpp_object_array<android::graphics::drawable::Drawable, 1> > const &a0)
+: cpp_object<android::graphics::drawable::TransitionDrawable>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::graphics::drawable::TransitionDrawable::J2CPP_CLASS_NAME>(),
+		get_method_id<android::graphics::drawable::TransitionDrawable::J2CPP_CLASS_NAME, android::graphics::drawable::TransitionDrawable::J2CPP_METHOD_NAME(0), android::graphics::drawable::TransitionDrawable::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 void android::graphics::drawable::TransitionDrawable::startTransition(cpp_int const &a0)
 {

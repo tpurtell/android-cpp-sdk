@@ -10,13 +10,19 @@
 #define J2CPP_ORG_APACHE_HTTP_PARAMS_BASICHTTPPARAMS_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace lang { class Cloneable; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { namespace params { class AbstractHttpParams; } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace params { class HttpParams; } } } } }
 
 
+#include <java/io/Serializable.hpp>
+#include <java/lang/Cloneable.hpp>
 #include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
+#include <org/apache/http/params/AbstractHttpParams.hpp>
 #include <org/apache/http/params/HttpParams.hpp>
 
 
@@ -44,11 +50,17 @@ namespace org { namespace apache { namespace http { namespace params {
 		J2CPP_DECLARE_METHOD(9)
 		J2CPP_DECLARE_METHOD(10)
 
-		BasicHttpParams(jobject jobj)
+		explicit BasicHttpParams(jobject jobj)
 		: cpp_object<BasicHttpParams>(jobj)
 		{
 		}
 
+		operator local_ref<org::apache::http::params::AbstractHttpParams>() const;
+		operator local_ref<java::io::Serializable>() const;
+		operator local_ref<java::lang::Cloneable>() const;
+
+
+		BasicHttpParams();
 		local_ref< java::lang::Object > getParameter(local_ref< java::lang::String > const&);
 		local_ref< org::apache::http::params::HttpParams > setParameter(local_ref< java::lang::String > const&, local_ref< java::lang::Object > const&);
 		cpp_boolean removeParameter(local_ref< java::lang::String > const&);
@@ -65,7 +77,6 @@ namespace org { namespace apache { namespace http { namespace params {
 } //namespace apache
 } //namespace org
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ORG_APACHE_HTTP_PARAMS_BASICHTTPPARAMS_HPP_DECL
@@ -78,16 +89,33 @@ namespace org { namespace apache { namespace http { namespace params {
 namespace j2cpp {
 
 
-template <>
-local_ref< org::apache::http::params::BasicHttpParams > create< org::apache::http::params::BasicHttpParams>()
+
+org::apache::http::params::BasicHttpParams::operator local_ref<org::apache::http::params::AbstractHttpParams>() const
 {
-	return local_ref< org::apache::http::params::BasicHttpParams >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::apache::http::params::BasicHttpParams::J2CPP_CLASS_NAME>(),
-			get_method_id<org::apache::http::params::BasicHttpParams::J2CPP_CLASS_NAME, org::apache::http::params::BasicHttpParams::J2CPP_METHOD_NAME(0), org::apache::http::params::BasicHttpParams::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<org::apache::http::params::AbstractHttpParams>(get_jtype());
 }
+
+org::apache::http::params::BasicHttpParams::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jtype());
+}
+
+org::apache::http::params::BasicHttpParams::operator local_ref<java::lang::Cloneable>() const
+{
+	return local_ref<java::lang::Cloneable>(get_jtype());
+}
+
+
+org::apache::http::params::BasicHttpParams::BasicHttpParams()
+: cpp_object<org::apache::http::params::BasicHttpParams>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::apache::http::params::BasicHttpParams::J2CPP_CLASS_NAME>(),
+		get_method_id<org::apache::http::params::BasicHttpParams::J2CPP_CLASS_NAME, org::apache::http::params::BasicHttpParams::J2CPP_METHOD_NAME(0), org::apache::http::params::BasicHttpParams::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 local_ref< java::lang::Object > org::apache::http::params::BasicHttpParams::getParameter(local_ref< java::lang::String > const &a0)
 {

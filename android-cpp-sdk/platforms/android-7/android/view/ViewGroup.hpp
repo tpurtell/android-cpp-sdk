@@ -10,6 +10,7 @@
 #define J2CPP_ANDROID_VIEW_VIEWGROUP_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace util { class ArrayList; } } }
 namespace j2cpp { namespace android { namespace graphics { class Point; } } }
 namespace j2cpp { namespace android { namespace graphics { class Region; } } }
@@ -18,6 +19,7 @@ namespace j2cpp { namespace android { namespace content { class Context; } } }
 namespace j2cpp { namespace android { namespace view { class View; } } }
 namespace j2cpp { namespace android { namespace view { namespace ViewGroup_ { class OnHierarchyChangeListener; } } } }
 namespace j2cpp { namespace android { namespace view { class KeyEvent; } } }
+namespace j2cpp { namespace android { namespace view { class ViewManager; } } }
 namespace j2cpp { namespace android { namespace view { class ViewParent; } } }
 namespace j2cpp { namespace android { namespace view { namespace ViewGroup_ { class MarginLayoutParams; } } } }
 namespace j2cpp { namespace android { namespace view { class MotionEvent; } } }
@@ -38,10 +40,12 @@ namespace j2cpp { namespace android { namespace util { class AttributeSet; } } }
 #include <android/view/MotionEvent.hpp>
 #include <android/view/View.hpp>
 #include <android/view/ViewGroup.hpp>
+#include <android/view/ViewManager.hpp>
 #include <android/view/ViewParent.hpp>
 #include <android/view/accessibility/AccessibilityEvent.hpp>
 #include <android/view/animation/Animation.hpp>
 #include <android/view/animation/LayoutAnimationController.hpp>
+#include <java/lang/Object.hpp>
 #include <java/util/ArrayList.hpp>
 
 
@@ -63,10 +67,13 @@ namespace android { namespace view {
 			J2CPP_DECLARE_METHOD(0)
 			J2CPP_DECLARE_METHOD(1)
 
-			OnHierarchyChangeListener(jobject jobj)
+			explicit OnHierarchyChangeListener(jobject jobj)
 			: cpp_object<OnHierarchyChangeListener>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+
 
 			void onChildViewAdded(local_ref< android::view::View > const&, local_ref< android::view::View > const&);
 			void onChildViewRemoved(local_ref< android::view::View > const&, local_ref< android::view::View > const&);
@@ -90,15 +97,22 @@ namespace android { namespace view {
 			J2CPP_DECLARE_FIELD(2)
 			J2CPP_DECLARE_FIELD(3)
 
-			MarginLayoutParams(jobject jobj)
+			explicit MarginLayoutParams(jobject jobj)
 			: cpp_object<MarginLayoutParams>(jobj)
-			, leftMargin(jobj)
-			, topMargin(jobj)
-			, rightMargin(jobj)
-			, bottomMargin(jobj)
+, leftMargin(jobj)
+, topMargin(jobj)
+, rightMargin(jobj)
+, bottomMargin(jobj)
 			{
 			}
 
+			operator local_ref<android::view::ViewGroup_::LayoutParams>() const;
+
+
+			MarginLayoutParams(local_ref< android::content::Context > const&, local_ref< android::util::AttributeSet > const&);
+			MarginLayoutParams(cpp_int const&, cpp_int const&);
+			MarginLayoutParams(local_ref< android::view::ViewGroup_::MarginLayoutParams > const&);
+			MarginLayoutParams(local_ref< android::view::ViewGroup_::LayoutParams > const&);
 			void setMargins(cpp_int const&, cpp_int const&, cpp_int const&, cpp_int const&);
 
 			field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(0), J2CPP_FIELD_SIGNATURE(0), cpp_int > leftMargin;
@@ -125,14 +139,20 @@ namespace android { namespace view {
 			J2CPP_DECLARE_FIELD(3)
 			J2CPP_DECLARE_FIELD(4)
 
-			LayoutParams(jobject jobj)
+			explicit LayoutParams(jobject jobj)
 			: cpp_object<LayoutParams>(jobj)
-			, width(jobj)
-			, height(jobj)
-			, layoutAnimationParameters(jobj)
+, width(jobj)
+, height(jobj)
+, layoutAnimationParameters(jobj)
 			{
 			}
 
+			operator local_ref<java::lang::Object>() const;
+
+
+			LayoutParams(local_ref< android::content::Context > const&, local_ref< android::util::AttributeSet > const&);
+			LayoutParams(cpp_int const&, cpp_int const&);
+			LayoutParams(local_ref< android::view::ViewGroup_::LayoutParams > const&);
 
 			static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(0), J2CPP_FIELD_SIGNATURE(0), cpp_int > FILL_PARENT;
 			static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(1), J2CPP_FIELD_SIGNATURE(1), cpp_int > WRAP_CONTENT;
@@ -282,11 +302,19 @@ namespace android { namespace view {
 		typedef ViewGroup_::MarginLayoutParams MarginLayoutParams;
 		typedef ViewGroup_::LayoutParams LayoutParams;
 
-		ViewGroup(jobject jobj)
+		explicit ViewGroup(jobject jobj)
 		: cpp_object<ViewGroup>(jobj)
 		{
 		}
 
+		operator local_ref<android::view::View>() const;
+		operator local_ref<android::view::ViewParent>() const;
+		operator local_ref<android::view::ViewManager>() const;
+
+
+		ViewGroup(local_ref< android::content::Context > const&);
+		ViewGroup(local_ref< android::content::Context > const&, local_ref< android::util::AttributeSet > const&);
+		ViewGroup(local_ref< android::content::Context > const&, local_ref< android::util::AttributeSet > const&, cpp_int const&);
 		cpp_int getDescendantFocusability();
 		void setDescendantFocusability(cpp_int const&);
 		void requestChildFocus(local_ref< android::view::View > const&, local_ref< android::view::View > const&);
@@ -376,7 +404,6 @@ namespace android { namespace view {
 } //namespace view
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_VIEW_VIEWGROUP_HPP_DECL
@@ -389,6 +416,12 @@ namespace android { namespace view {
 namespace j2cpp {
 
 
+
+
+android::view::ViewGroup_::OnHierarchyChangeListener::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 void android::view::ViewGroup_::OnHierarchyChangeListener::onChildViewAdded(local_ref< android::view::View > const &a0, local_ref< android::view::View > const &a1)
 {
@@ -417,53 +450,79 @@ J2CPP_DEFINE_CLASS(android::view::ViewGroup_::OnHierarchyChangeListener,"android
 J2CPP_DEFINE_METHOD(android::view::ViewGroup_::OnHierarchyChangeListener,0,"onChildViewAdded","(Landroid/view/View;Landroid/view/View;)V")
 J2CPP_DEFINE_METHOD(android::view::ViewGroup_::OnHierarchyChangeListener,1,"onChildViewRemoved","(Landroid/view/View;Landroid/view/View;)V")
 
-template <>
-local_ref< android::view::ViewGroup_::MarginLayoutParams > create< android::view::ViewGroup_::MarginLayoutParams>(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1)
+
+android::view::ViewGroup_::MarginLayoutParams::operator local_ref<android::view::ViewGroup_::LayoutParams>() const
 {
-	return local_ref< android::view::ViewGroup_::MarginLayoutParams >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::view::ViewGroup_::MarginLayoutParams::J2CPP_CLASS_NAME>(),
-			get_method_id<android::view::ViewGroup_::MarginLayoutParams::J2CPP_CLASS_NAME, android::view::ViewGroup_::MarginLayoutParams::J2CPP_METHOD_NAME(0), android::view::ViewGroup_::MarginLayoutParams::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<android::view::ViewGroup_::LayoutParams>(get_jtype());
 }
 
-template <>
-local_ref< android::view::ViewGroup_::MarginLayoutParams > create< android::view::ViewGroup_::MarginLayoutParams>(cpp_int const &a0, cpp_int const &a1)
+
+android::view::ViewGroup_::MarginLayoutParams::MarginLayoutParams(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1)
+: cpp_object<android::view::ViewGroup_::MarginLayoutParams>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::view::ViewGroup_::MarginLayoutParams::J2CPP_CLASS_NAME>(),
+		get_method_id<android::view::ViewGroup_::MarginLayoutParams::J2CPP_CLASS_NAME, android::view::ViewGroup_::MarginLayoutParams::J2CPP_METHOD_NAME(0), android::view::ViewGroup_::MarginLayoutParams::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+, leftMargin(get_jtype())
+, topMargin(get_jtype())
+, rightMargin(get_jtype())
+, bottomMargin(get_jtype())
 {
-	return local_ref< android::view::ViewGroup_::MarginLayoutParams >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::view::ViewGroup_::MarginLayoutParams::J2CPP_CLASS_NAME>(),
-			get_method_id<android::view::ViewGroup_::MarginLayoutParams::J2CPP_CLASS_NAME, android::view::ViewGroup_::MarginLayoutParams::J2CPP_METHOD_NAME(1), android::view::ViewGroup_::MarginLayoutParams::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< android::view::ViewGroup_::MarginLayoutParams > create< android::view::ViewGroup_::MarginLayoutParams>(local_ref< android::view::ViewGroup_::MarginLayoutParams > const &a0)
+
+
+android::view::ViewGroup_::MarginLayoutParams::MarginLayoutParams(cpp_int const &a0, cpp_int const &a1)
+: cpp_object<android::view::ViewGroup_::MarginLayoutParams>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::view::ViewGroup_::MarginLayoutParams::J2CPP_CLASS_NAME>(),
+		get_method_id<android::view::ViewGroup_::MarginLayoutParams::J2CPP_CLASS_NAME, android::view::ViewGroup_::MarginLayoutParams::J2CPP_METHOD_NAME(1), android::view::ViewGroup_::MarginLayoutParams::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+, leftMargin(get_jtype())
+, topMargin(get_jtype())
+, rightMargin(get_jtype())
+, bottomMargin(get_jtype())
 {
-	return local_ref< android::view::ViewGroup_::MarginLayoutParams >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::view::ViewGroup_::MarginLayoutParams::J2CPP_CLASS_NAME>(),
-			get_method_id<android::view::ViewGroup_::MarginLayoutParams::J2CPP_CLASS_NAME, android::view::ViewGroup_::MarginLayoutParams::J2CPP_METHOD_NAME(2), android::view::ViewGroup_::MarginLayoutParams::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< android::view::ViewGroup_::MarginLayoutParams > create< android::view::ViewGroup_::MarginLayoutParams>(local_ref< android::view::ViewGroup_::LayoutParams > const &a0)
+
+
+android::view::ViewGroup_::MarginLayoutParams::MarginLayoutParams(local_ref< android::view::ViewGroup_::MarginLayoutParams > const &a0)
+: cpp_object<android::view::ViewGroup_::MarginLayoutParams>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::view::ViewGroup_::MarginLayoutParams::J2CPP_CLASS_NAME>(),
+		get_method_id<android::view::ViewGroup_::MarginLayoutParams::J2CPP_CLASS_NAME, android::view::ViewGroup_::MarginLayoutParams::J2CPP_METHOD_NAME(2), android::view::ViewGroup_::MarginLayoutParams::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype()
+	)
+)
+, leftMargin(get_jtype())
+, topMargin(get_jtype())
+, rightMargin(get_jtype())
+, bottomMargin(get_jtype())
 {
-	return local_ref< android::view::ViewGroup_::MarginLayoutParams >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::view::ViewGroup_::MarginLayoutParams::J2CPP_CLASS_NAME>(),
-			get_method_id<android::view::ViewGroup_::MarginLayoutParams::J2CPP_CLASS_NAME, android::view::ViewGroup_::MarginLayoutParams::J2CPP_METHOD_NAME(3), android::view::ViewGroup_::MarginLayoutParams::J2CPP_METHOD_SIGNATURE(3), false>(),
-			a0.get_jtype()
-		)
-	);
 }
+
+
+
+android::view::ViewGroup_::MarginLayoutParams::MarginLayoutParams(local_ref< android::view::ViewGroup_::LayoutParams > const &a0)
+: cpp_object<android::view::ViewGroup_::MarginLayoutParams>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::view::ViewGroup_::MarginLayoutParams::J2CPP_CLASS_NAME>(),
+		get_method_id<android::view::ViewGroup_::MarginLayoutParams::J2CPP_CLASS_NAME, android::view::ViewGroup_::MarginLayoutParams::J2CPP_METHOD_NAME(3), android::view::ViewGroup_::MarginLayoutParams::J2CPP_METHOD_SIGNATURE(3), false>(),
+		a0.get_jtype()
+	)
+)
+, leftMargin(get_jtype())
+, topMargin(get_jtype())
+, rightMargin(get_jtype())
+, bottomMargin(get_jtype())
+{
+}
+
 
 void android::view::ViewGroup_::MarginLayoutParams::setMargins(cpp_int const &a0, cpp_int const &a1, cpp_int const &a2, cpp_int const &a3)
 {
@@ -489,41 +548,59 @@ J2CPP_DEFINE_FIELD(android::view::ViewGroup_::MarginLayoutParams,1,"topMargin","
 J2CPP_DEFINE_FIELD(android::view::ViewGroup_::MarginLayoutParams,2,"rightMargin","I")
 J2CPP_DEFINE_FIELD(android::view::ViewGroup_::MarginLayoutParams,3,"bottomMargin","I")
 
-template <>
-local_ref< android::view::ViewGroup_::LayoutParams > create< android::view::ViewGroup_::LayoutParams>(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1)
+
+android::view::ViewGroup_::LayoutParams::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::view::ViewGroup_::LayoutParams >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::view::ViewGroup_::LayoutParams::J2CPP_CLASS_NAME>(),
-			get_method_id<android::view::ViewGroup_::LayoutParams::J2CPP_CLASS_NAME, android::view::ViewGroup_::LayoutParams::J2CPP_METHOD_NAME(0), android::view::ViewGroup_::LayoutParams::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
 
-template <>
-local_ref< android::view::ViewGroup_::LayoutParams > create< android::view::ViewGroup_::LayoutParams>(cpp_int const &a0, cpp_int const &a1)
+
+android::view::ViewGroup_::LayoutParams::LayoutParams(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1)
+: cpp_object<android::view::ViewGroup_::LayoutParams>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::view::ViewGroup_::LayoutParams::J2CPP_CLASS_NAME>(),
+		get_method_id<android::view::ViewGroup_::LayoutParams::J2CPP_CLASS_NAME, android::view::ViewGroup_::LayoutParams::J2CPP_METHOD_NAME(0), android::view::ViewGroup_::LayoutParams::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+, width(get_jtype())
+, height(get_jtype())
+, layoutAnimationParameters(get_jtype())
 {
-	return local_ref< android::view::ViewGroup_::LayoutParams >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::view::ViewGroup_::LayoutParams::J2CPP_CLASS_NAME>(),
-			get_method_id<android::view::ViewGroup_::LayoutParams::J2CPP_CLASS_NAME, android::view::ViewGroup_::LayoutParams::J2CPP_METHOD_NAME(1), android::view::ViewGroup_::LayoutParams::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< android::view::ViewGroup_::LayoutParams > create< android::view::ViewGroup_::LayoutParams>(local_ref< android::view::ViewGroup_::LayoutParams > const &a0)
+
+
+android::view::ViewGroup_::LayoutParams::LayoutParams(cpp_int const &a0, cpp_int const &a1)
+: cpp_object<android::view::ViewGroup_::LayoutParams>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::view::ViewGroup_::LayoutParams::J2CPP_CLASS_NAME>(),
+		get_method_id<android::view::ViewGroup_::LayoutParams::J2CPP_CLASS_NAME, android::view::ViewGroup_::LayoutParams::J2CPP_METHOD_NAME(1), android::view::ViewGroup_::LayoutParams::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+, width(get_jtype())
+, height(get_jtype())
+, layoutAnimationParameters(get_jtype())
 {
-	return local_ref< android::view::ViewGroup_::LayoutParams >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::view::ViewGroup_::LayoutParams::J2CPP_CLASS_NAME>(),
-			get_method_id<android::view::ViewGroup_::LayoutParams::J2CPP_CLASS_NAME, android::view::ViewGroup_::LayoutParams::J2CPP_METHOD_NAME(2), android::view::ViewGroup_::LayoutParams::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype()
-		)
-	);
 }
+
+
+
+android::view::ViewGroup_::LayoutParams::LayoutParams(local_ref< android::view::ViewGroup_::LayoutParams > const &a0)
+: cpp_object<android::view::ViewGroup_::LayoutParams>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::view::ViewGroup_::LayoutParams::J2CPP_CLASS_NAME>(),
+		get_method_id<android::view::ViewGroup_::LayoutParams::J2CPP_CLASS_NAME, android::view::ViewGroup_::LayoutParams::J2CPP_METHOD_NAME(2), android::view::ViewGroup_::LayoutParams::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype()
+	)
+)
+, width(get_jtype())
+, height(get_jtype())
+, layoutAnimationParameters(get_jtype())
+{
+}
+
 
 
 
@@ -554,41 +631,60 @@ J2CPP_DEFINE_FIELD(android::view::ViewGroup_::LayoutParams,3,"height","I")
 J2CPP_DEFINE_FIELD(android::view::ViewGroup_::LayoutParams,4,"layoutAnimationParameters","Landroid/view/animation/LayoutAnimationController$AnimationParameters;")
 
 
-template <>
-local_ref< android::view::ViewGroup > create< android::view::ViewGroup>(local_ref< android::content::Context > const &a0)
+
+android::view::ViewGroup::operator local_ref<android::view::View>() const
 {
-	return local_ref< android::view::ViewGroup >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::view::ViewGroup::J2CPP_CLASS_NAME>(),
-			get_method_id<android::view::ViewGroup::J2CPP_CLASS_NAME, android::view::ViewGroup::J2CPP_METHOD_NAME(0), android::view::ViewGroup::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<android::view::View>(get_jtype());
 }
 
-template <>
-local_ref< android::view::ViewGroup > create< android::view::ViewGroup>(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1)
+android::view::ViewGroup::operator local_ref<android::view::ViewParent>() const
 {
-	return local_ref< android::view::ViewGroup >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::view::ViewGroup::J2CPP_CLASS_NAME>(),
-			get_method_id<android::view::ViewGroup::J2CPP_CLASS_NAME, android::view::ViewGroup::J2CPP_METHOD_NAME(1), android::view::ViewGroup::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<android::view::ViewParent>(get_jtype());
 }
 
-template <>
-local_ref< android::view::ViewGroup > create< android::view::ViewGroup>(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1, cpp_int const &a2)
+android::view::ViewGroup::operator local_ref<android::view::ViewManager>() const
 {
-	return local_ref< android::view::ViewGroup >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::view::ViewGroup::J2CPP_CLASS_NAME>(),
-			get_method_id<android::view::ViewGroup::J2CPP_CLASS_NAME, android::view::ViewGroup::J2CPP_METHOD_NAME(2), android::view::ViewGroup::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
-		)
-	);
+	return local_ref<android::view::ViewManager>(get_jtype());
 }
+
+
+android::view::ViewGroup::ViewGroup(local_ref< android::content::Context > const &a0)
+: cpp_object<android::view::ViewGroup>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::view::ViewGroup::J2CPP_CLASS_NAME>(),
+		get_method_id<android::view::ViewGroup::J2CPP_CLASS_NAME, android::view::ViewGroup::J2CPP_METHOD_NAME(0), android::view::ViewGroup::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
+
+
+android::view::ViewGroup::ViewGroup(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1)
+: cpp_object<android::view::ViewGroup>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::view::ViewGroup::J2CPP_CLASS_NAME>(),
+		get_method_id<android::view::ViewGroup::J2CPP_CLASS_NAME, android::view::ViewGroup::J2CPP_METHOD_NAME(1), android::view::ViewGroup::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
+
+
+android::view::ViewGroup::ViewGroup(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1, cpp_int const &a2)
+: cpp_object<android::view::ViewGroup>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::view::ViewGroup::J2CPP_CLASS_NAME>(),
+		get_method_id<android::view::ViewGroup::J2CPP_CLASS_NAME, android::view::ViewGroup::J2CPP_METHOD_NAME(2), android::view::ViewGroup::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
+	)
+)
+{
+}
+
 
 cpp_int android::view::ViewGroup::getDescendantFocusability()
 {

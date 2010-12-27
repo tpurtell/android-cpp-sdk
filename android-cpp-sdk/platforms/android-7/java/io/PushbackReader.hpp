@@ -11,8 +11,10 @@
 
 
 namespace j2cpp { namespace java { namespace io { class Reader; } } }
+namespace j2cpp { namespace java { namespace io { class FilterReader; } } }
 
 
+#include <java/io/FilterReader.hpp>
 #include <java/io/Reader.hpp>
 
 
@@ -42,11 +44,16 @@ namespace java { namespace io {
 		J2CPP_DECLARE_METHOD(11)
 		J2CPP_DECLARE_METHOD(12)
 
-		PushbackReader(jobject jobj)
+		explicit PushbackReader(jobject jobj)
 		: cpp_object<PushbackReader>(jobj)
 		{
 		}
 
+		operator local_ref<java::io::FilterReader>() const;
+
+
+		PushbackReader(local_ref< java::io::Reader > const&);
+		PushbackReader(local_ref< java::io::Reader > const&, cpp_int const&);
 		void close();
 		void mark(cpp_int const&);
 		cpp_boolean markSupported();
@@ -63,7 +70,6 @@ namespace java { namespace io {
 } //namespace io
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_IO_PUSHBACKREADER_HPP_DECL
@@ -76,29 +82,37 @@ namespace java { namespace io {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::io::PushbackReader > create< java::io::PushbackReader>(local_ref< java::io::Reader > const &a0)
+
+java::io::PushbackReader::operator local_ref<java::io::FilterReader>() const
 {
-	return local_ref< java::io::PushbackReader >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::io::PushbackReader::J2CPP_CLASS_NAME>(),
-			get_method_id<java::io::PushbackReader::J2CPP_CLASS_NAME, java::io::PushbackReader::J2CPP_METHOD_NAME(0), java::io::PushbackReader::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::io::FilterReader>(get_jtype());
 }
 
-template <>
-local_ref< java::io::PushbackReader > create< java::io::PushbackReader>(local_ref< java::io::Reader > const &a0, cpp_int const &a1)
+
+java::io::PushbackReader::PushbackReader(local_ref< java::io::Reader > const &a0)
+: cpp_object<java::io::PushbackReader>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::io::PushbackReader::J2CPP_CLASS_NAME>(),
+		get_method_id<java::io::PushbackReader::J2CPP_CLASS_NAME, java::io::PushbackReader::J2CPP_METHOD_NAME(0), java::io::PushbackReader::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< java::io::PushbackReader >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::io::PushbackReader::J2CPP_CLASS_NAME>(),
-			get_method_id<java::io::PushbackReader::J2CPP_CLASS_NAME, java::io::PushbackReader::J2CPP_METHOD_NAME(1), java::io::PushbackReader::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
 }
+
+
+
+java::io::PushbackReader::PushbackReader(local_ref< java::io::Reader > const &a0, cpp_int const &a1)
+: cpp_object<java::io::PushbackReader>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::io::PushbackReader::J2CPP_CLASS_NAME>(),
+		get_method_id<java::io::PushbackReader::J2CPP_CLASS_NAME, java::io::PushbackReader::J2CPP_METHOD_NAME(1), java::io::PushbackReader::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
 
 void java::io::PushbackReader::close()
 {

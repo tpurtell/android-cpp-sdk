@@ -11,6 +11,7 @@
 
 
 namespace j2cpp { namespace javax { namespace crypto { class SecretKey; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace security { class Provider; } } }
 namespace j2cpp { namespace java { namespace security { class Key; } } }
@@ -18,6 +19,7 @@ namespace j2cpp { namespace java { namespace security { class SecureRandom; } } 
 namespace j2cpp { namespace java { namespace security { namespace spec { class AlgorithmParameterSpec; } } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/security/Key.hpp>
 #include <java/security/Provider.hpp>
@@ -53,10 +55,13 @@ namespace javax { namespace crypto {
 		J2CPP_DECLARE_METHOD(12)
 		J2CPP_DECLARE_METHOD(13)
 
-		KeyAgreement(jobject jobj)
+		explicit KeyAgreement(jobject jobj)
 		: cpp_object<KeyAgreement>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		local_ref< java::lang::String > getAlgorithm();
 		local_ref< java::security::Provider > getProvider();
@@ -76,7 +81,6 @@ namespace javax { namespace crypto {
 } //namespace crypto
 } //namespace javax
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVAX_CRYPTO_KEYAGREEMENT_HPP_DECL
@@ -89,17 +93,12 @@ namespace javax { namespace crypto {
 namespace j2cpp {
 
 
-template <>
-local_ref< javax::crypto::KeyAgreement > create< javax::crypto::KeyAgreement>(local_ref< javax::crypto::KeyAgreementSpi > const &a0, local_ref< java::security::Provider > const &a1, local_ref< java::lang::String > const &a2)
+
+javax::crypto::KeyAgreement::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< javax::crypto::KeyAgreement >(
-		environment::get().get_jenv()->NewObject(
-			get_class<javax::crypto::KeyAgreement::J2CPP_CLASS_NAME>(),
-			get_method_id<javax::crypto::KeyAgreement::J2CPP_CLASS_NAME, javax::crypto::KeyAgreement::J2CPP_METHOD_NAME(0), javax::crypto::KeyAgreement::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
 
 local_ref< java::lang::String > javax::crypto::KeyAgreement::getAlgorithm()
 {

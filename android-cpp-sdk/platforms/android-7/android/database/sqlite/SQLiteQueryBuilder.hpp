@@ -10,6 +10,7 @@
 #define J2CPP_ANDROID_DATABASE_SQLITE_SQLITEQUERYBUILDER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class StringBuilder; } } }
 namespace j2cpp { namespace java { namespace lang { class CharSequence; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
@@ -23,6 +24,7 @@ namespace j2cpp { namespace android { namespace database { namespace sqlite { na
 #include <android/database/Cursor.hpp>
 #include <android/database/sqlite/SQLiteDatabase.hpp>
 #include <java/lang/CharSequence.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/lang/StringBuilder.hpp>
 #include <java/util/Map.hpp>
@@ -57,11 +59,15 @@ namespace android { namespace database { namespace sqlite {
 		J2CPP_DECLARE_METHOD(13)
 		J2CPP_DECLARE_METHOD(14)
 
-		SQLiteQueryBuilder(jobject jobj)
+		explicit SQLiteQueryBuilder(jobject jobj)
 		: cpp_object<SQLiteQueryBuilder>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		SQLiteQueryBuilder();
 		void setDistinct(cpp_boolean const&);
 		local_ref< java::lang::String > getTables();
 		void setTables(local_ref< java::lang::String > const&);
@@ -82,7 +88,6 @@ namespace android { namespace database { namespace sqlite {
 } //namespace database
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_DATABASE_SQLITE_SQLITEQUERYBUILDER_HPP_DECL
@@ -95,16 +100,23 @@ namespace android { namespace database { namespace sqlite {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::database::sqlite::SQLiteQueryBuilder > create< android::database::sqlite::SQLiteQueryBuilder>()
+
+android::database::sqlite::SQLiteQueryBuilder::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::database::sqlite::SQLiteQueryBuilder >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::database::sqlite::SQLiteQueryBuilder::J2CPP_CLASS_NAME>(),
-			get_method_id<android::database::sqlite::SQLiteQueryBuilder::J2CPP_CLASS_NAME, android::database::sqlite::SQLiteQueryBuilder::J2CPP_METHOD_NAME(0), android::database::sqlite::SQLiteQueryBuilder::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::database::sqlite::SQLiteQueryBuilder::SQLiteQueryBuilder()
+: cpp_object<android::database::sqlite::SQLiteQueryBuilder>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::database::sqlite::SQLiteQueryBuilder::J2CPP_CLASS_NAME>(),
+		get_method_id<android::database::sqlite::SQLiteQueryBuilder::J2CPP_CLASS_NAME, android::database::sqlite::SQLiteQueryBuilder::J2CPP_METHOD_NAME(0), android::database::sqlite::SQLiteQueryBuilder::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 void android::database::sqlite::SQLiteQueryBuilder::setDistinct(cpp_boolean const &a0)
 {

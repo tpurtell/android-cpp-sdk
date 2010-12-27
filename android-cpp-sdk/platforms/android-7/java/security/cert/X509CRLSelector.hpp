@@ -15,6 +15,7 @@ namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace math { class BigInteger; } } }
 namespace j2cpp { namespace java { namespace security { namespace cert { class CRL; } } } }
+namespace j2cpp { namespace java { namespace security { namespace cert { class CRLSelector; } } } }
 namespace j2cpp { namespace java { namespace security { namespace cert { class X509Certificate; } } } }
 namespace j2cpp { namespace java { namespace util { class Date; } } }
 namespace j2cpp { namespace java { namespace util { class Collection; } } }
@@ -24,6 +25,7 @@ namespace j2cpp { namespace java { namespace util { class Collection; } } }
 #include <java/lang/String.hpp>
 #include <java/math/BigInteger.hpp>
 #include <java/security/cert/CRL.hpp>
+#include <java/security/cert/CRLSelector.hpp>
 #include <java/security/cert/X509Certificate.hpp>
 #include <java/util/Collection.hpp>
 #include <java/util/Date.hpp>
@@ -62,11 +64,16 @@ namespace java { namespace security { namespace cert {
 		J2CPP_DECLARE_METHOD(17)
 		J2CPP_DECLARE_METHOD(18)
 
-		X509CRLSelector(jobject jobj)
+		explicit X509CRLSelector(jobject jobj)
 		: cpp_object<X509CRLSelector>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::security::cert::CRLSelector>() const;
+
+
+		X509CRLSelector();
 		void setIssuers(local_ref< java::util::Collection > const&);
 		void setIssuerNames(local_ref< java::util::Collection > const&);
 		void addIssuer(local_ref< javax::security::auth::x500::X500Principal > const&);
@@ -91,7 +98,6 @@ namespace java { namespace security { namespace cert {
 } //namespace security
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_SECURITY_CERT_X509CRLSELECTOR_HPP_DECL
@@ -104,16 +110,28 @@ namespace java { namespace security { namespace cert {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::security::cert::X509CRLSelector > create< java::security::cert::X509CRLSelector>()
+
+java::security::cert::X509CRLSelector::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::security::cert::X509CRLSelector >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::security::cert::X509CRLSelector::J2CPP_CLASS_NAME>(),
-			get_method_id<java::security::cert::X509CRLSelector::J2CPP_CLASS_NAME, java::security::cert::X509CRLSelector::J2CPP_METHOD_NAME(0), java::security::cert::X509CRLSelector::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+java::security::cert::X509CRLSelector::operator local_ref<java::security::cert::CRLSelector>() const
+{
+	return local_ref<java::security::cert::CRLSelector>(get_jtype());
+}
+
+
+java::security::cert::X509CRLSelector::X509CRLSelector()
+: cpp_object<java::security::cert::X509CRLSelector>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::security::cert::X509CRLSelector::J2CPP_CLASS_NAME>(),
+		get_method_id<java::security::cert::X509CRLSelector::J2CPP_CLASS_NAME, java::security::cert::X509CRLSelector::J2CPP_METHOD_NAME(0), java::security::cert::X509CRLSelector::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 void java::security::cert::X509CRLSelector::setIssuers(local_ref< java::util::Collection > const &a0)
 {

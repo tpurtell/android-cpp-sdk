@@ -10,8 +10,10 @@
 #define J2CPP_ANDROID_TEXT_ANDROIDCHARACTER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -31,11 +33,15 @@ namespace android { namespace text {
 		J2CPP_DECLARE_METHOD(2)
 		J2CPP_DECLARE_METHOD(3)
 
-		AndroidCharacter(jobject jobj)
+		explicit AndroidCharacter(jobject jobj)
 		: cpp_object<AndroidCharacter>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		AndroidCharacter();
 		static void getDirectionalities(local_ref< cpp_char_array<1> > const&, local_ref< cpp_byte_array<1> > const&, cpp_int const&);
 		static cpp_boolean mirror(local_ref< cpp_char_array<1> > const&, cpp_int const&, cpp_int const&);
 		static cpp_char getMirror(cpp_char const&);
@@ -43,7 +49,6 @@ namespace android { namespace text {
 
 } //namespace text
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -57,16 +62,23 @@ namespace android { namespace text {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::text::AndroidCharacter > create< android::text::AndroidCharacter>()
+
+android::text::AndroidCharacter::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::text::AndroidCharacter >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::text::AndroidCharacter::J2CPP_CLASS_NAME>(),
-			get_method_id<android::text::AndroidCharacter::J2CPP_CLASS_NAME, android::text::AndroidCharacter::J2CPP_METHOD_NAME(0), android::text::AndroidCharacter::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::text::AndroidCharacter::AndroidCharacter()
+: cpp_object<android::text::AndroidCharacter>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::text::AndroidCharacter::J2CPP_CLASS_NAME>(),
+		get_method_id<android::text::AndroidCharacter::J2CPP_CLASS_NAME, android::text::AndroidCharacter::J2CPP_METHOD_NAME(0), android::text::AndroidCharacter::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 void android::text::AndroidCharacter::getDirectionalities(local_ref< cpp_char_array<1> > const &a0, local_ref< cpp_byte_array<1> > const &a1, cpp_int const &a2)
 {

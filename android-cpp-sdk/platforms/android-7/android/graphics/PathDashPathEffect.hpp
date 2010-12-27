@@ -10,13 +10,17 @@
 #define J2CPP_ANDROID_GRAPHICS_PATHDASHPATHEFFECT_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Enum; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace android { namespace graphics { class PathEffect; } } }
 namespace j2cpp { namespace android { namespace graphics { namespace PathDashPathEffect_ { class Style; } } } }
 namespace j2cpp { namespace android { namespace graphics { class Path; } } }
 
 
 #include <android/graphics/Path.hpp>
 #include <android/graphics/PathDashPathEffect.hpp>
+#include <android/graphics/PathEffect.hpp>
+#include <java/lang/Enum.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -44,10 +48,13 @@ namespace android { namespace graphics {
 			J2CPP_DECLARE_FIELD(2)
 			J2CPP_DECLARE_FIELD(3)
 
-			Style(jobject jobj)
+			explicit Style(jobject jobj)
 			: cpp_object<Style>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Enum>() const;
+
 
 			static local_ref< cpp_object_array<android::graphics::PathDashPathEffect_::Style, 1> > values();
 			static local_ref< android::graphics::PathDashPathEffect_::Style > valueOf(local_ref< java::lang::String > const&);
@@ -70,16 +77,19 @@ namespace android { namespace graphics {
 
 		typedef PathDashPathEffect_::Style Style;
 
-		PathDashPathEffect(jobject jobj)
+		explicit PathDashPathEffect(jobject jobj)
 		: cpp_object<PathDashPathEffect>(jobj)
 		{
 		}
 
+		operator local_ref<android::graphics::PathEffect>() const;
+
+
+		PathDashPathEffect(local_ref< android::graphics::Path > const&, cpp_float const&, cpp_float const&, local_ref< android::graphics::PathDashPathEffect_::Style > const&);
 	}; //class PathDashPathEffect
 
 } //namespace graphics
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -93,6 +103,12 @@ namespace android { namespace graphics {
 namespace j2cpp {
 
 
+
+
+android::graphics::PathDashPathEffect_::Style::operator local_ref<java::lang::Enum>() const
+{
+	return local_ref<java::lang::Enum>(get_jtype());
+}
 
 local_ref< cpp_object_array<android::graphics::PathDashPathEffect_::Style, 1> > android::graphics::PathDashPathEffect_::Style::values()
 {
@@ -115,17 +131,7 @@ local_ref< android::graphics::PathDashPathEffect_::Style > android::graphics::Pa
 	);
 }
 
-template <>
-local_ref< android::graphics::PathDashPathEffect_::Style > create< android::graphics::PathDashPathEffect_::Style>(local_ref< java::lang::String > const &a0, cpp_int const &a1)
-{
-	return local_ref< android::graphics::PathDashPathEffect_::Style >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::graphics::PathDashPathEffect_::Style::J2CPP_CLASS_NAME>(),
-			get_method_id<android::graphics::PathDashPathEffect_::Style::J2CPP_CLASS_NAME, android::graphics::PathDashPathEffect_::Style::J2CPP_METHOD_NAME(2), android::graphics::PathDashPathEffect_::Style::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
-}
+
 
 
 static_field<
@@ -161,17 +167,24 @@ J2CPP_DEFINE_FIELD(android::graphics::PathDashPathEffect_::Style,2,"TRANSLATE","
 J2CPP_DEFINE_FIELD(android::graphics::PathDashPathEffect_::Style,3,"$VALUES","[android.graphics.PathDashPathEffect.Style")
 
 
-template <>
-local_ref< android::graphics::PathDashPathEffect > create< android::graphics::PathDashPathEffect>(local_ref< android::graphics::Path > const &a0, cpp_float const &a1, cpp_float const &a2, local_ref< android::graphics::PathDashPathEffect_::Style > const &a3)
+
+android::graphics::PathDashPathEffect::operator local_ref<android::graphics::PathEffect>() const
 {
-	return local_ref< android::graphics::PathDashPathEffect >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::graphics::PathDashPathEffect::J2CPP_CLASS_NAME>(),
-			get_method_id<android::graphics::PathDashPathEffect::J2CPP_CLASS_NAME, android::graphics::PathDashPathEffect::J2CPP_METHOD_NAME(0), android::graphics::PathDashPathEffect::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype()
-		)
-	);
+	return local_ref<android::graphics::PathEffect>(get_jtype());
 }
+
+
+android::graphics::PathDashPathEffect::PathDashPathEffect(local_ref< android::graphics::Path > const &a0, cpp_float const &a1, cpp_float const &a2, local_ref< android::graphics::PathDashPathEffect_::Style > const &a3)
+: cpp_object<android::graphics::PathDashPathEffect>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::graphics::PathDashPathEffect::J2CPP_CLASS_NAME>(),
+		get_method_id<android::graphics::PathDashPathEffect::J2CPP_CLASS_NAME, android::graphics::PathDashPathEffect::J2CPP_METHOD_NAME(0), android::graphics::PathDashPathEffect::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype()
+	)
+)
+{
+}
+
 
 
 J2CPP_DEFINE_CLASS(android::graphics::PathDashPathEffect,"android/graphics/PathDashPathEffect")

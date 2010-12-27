@@ -11,9 +11,11 @@
 
 
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace security { class GeneralSecurityException; } } }
 
 
 #include <java/lang/String.hpp>
+#include <java/security/GeneralSecurityException.hpp>
 
 
 namespace j2cpp {
@@ -31,16 +33,20 @@ namespace javax { namespace crypto {
 		J2CPP_DECLARE_METHOD(0)
 		J2CPP_DECLARE_METHOD(1)
 
-		BadPaddingException(jobject jobj)
+		explicit BadPaddingException(jobject jobj)
 		: cpp_object<BadPaddingException>(jobj)
 		{
 		}
 
+		operator local_ref<java::security::GeneralSecurityException>() const;
+
+
+		BadPaddingException(local_ref< java::lang::String > const&);
+		BadPaddingException();
 	}; //class BadPaddingException
 
 } //namespace crypto
 } //namespace javax
-
 
 } //namespace j2cpp
 
@@ -54,28 +60,36 @@ namespace javax { namespace crypto {
 namespace j2cpp {
 
 
-template <>
-local_ref< javax::crypto::BadPaddingException > create< javax::crypto::BadPaddingException>(local_ref< java::lang::String > const &a0)
+
+javax::crypto::BadPaddingException::operator local_ref<java::security::GeneralSecurityException>() const
 {
-	return local_ref< javax::crypto::BadPaddingException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<javax::crypto::BadPaddingException::J2CPP_CLASS_NAME>(),
-			get_method_id<javax::crypto::BadPaddingException::J2CPP_CLASS_NAME, javax::crypto::BadPaddingException::J2CPP_METHOD_NAME(0), javax::crypto::BadPaddingException::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::security::GeneralSecurityException>(get_jtype());
 }
 
-template <>
-local_ref< javax::crypto::BadPaddingException > create< javax::crypto::BadPaddingException>()
+
+javax::crypto::BadPaddingException::BadPaddingException(local_ref< java::lang::String > const &a0)
+: cpp_object<javax::crypto::BadPaddingException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<javax::crypto::BadPaddingException::J2CPP_CLASS_NAME>(),
+		get_method_id<javax::crypto::BadPaddingException::J2CPP_CLASS_NAME, javax::crypto::BadPaddingException::J2CPP_METHOD_NAME(0), javax::crypto::BadPaddingException::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< javax::crypto::BadPaddingException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<javax::crypto::BadPaddingException::J2CPP_CLASS_NAME>(),
-			get_method_id<javax::crypto::BadPaddingException::J2CPP_CLASS_NAME, javax::crypto::BadPaddingException::J2CPP_METHOD_NAME(1), javax::crypto::BadPaddingException::J2CPP_METHOD_SIGNATURE(1), false>()
-		)
-	);
 }
+
+
+
+javax::crypto::BadPaddingException::BadPaddingException()
+: cpp_object<javax::crypto::BadPaddingException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<javax::crypto::BadPaddingException::J2CPP_CLASS_NAME>(),
+		get_method_id<javax::crypto::BadPaddingException::J2CPP_CLASS_NAME, javax::crypto::BadPaddingException::J2CPP_METHOD_NAME(1), javax::crypto::BadPaddingException::J2CPP_METHOD_SIGNATURE(1), false>()
+	)
+)
+{
+}
+
 
 
 J2CPP_DEFINE_CLASS(javax::crypto::BadPaddingException,"javax/crypto/BadPaddingException")

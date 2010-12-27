@@ -10,13 +10,17 @@
 #define J2CPP_JAVA_LANG_STRINGBUILDER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class StringBuffer; } } }
 namespace j2cpp { namespace java { namespace lang { class Appendable; } } }
 namespace j2cpp { namespace java { namespace lang { class CharSequence; } } }
+namespace j2cpp { namespace java { namespace lang { class AbstractStringBuilder; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 
 
+#include <java/io/Serializable.hpp>
+#include <java/lang/AbstractStringBuilder.hpp>
 #include <java/lang/Appendable.hpp>
 #include <java/lang/CharSequence.hpp>
 #include <java/lang/Object.hpp>
@@ -75,11 +79,21 @@ namespace java { namespace lang {
 		J2CPP_DECLARE_METHOD(36)
 		J2CPP_DECLARE_METHOD(37)
 
-		StringBuilder(jobject jobj)
+		explicit StringBuilder(jobject jobj)
 		: cpp_object<StringBuilder>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::AbstractStringBuilder>() const;
+		operator local_ref<java::lang::Appendable>() const;
+		operator local_ref<java::lang::CharSequence>() const;
+		operator local_ref<java::io::Serializable>() const;
+
+
+		StringBuilder();
+		StringBuilder(cpp_int const&);
+		StringBuilder(local_ref< java::lang::CharSequence > const&);
+		StringBuilder(local_ref< java::lang::String > const&);
 		local_ref< java::lang::StringBuilder > append(cpp_boolean const&);
 		local_ref< java::lang::StringBuilder > append(cpp_char const&);
 		local_ref< java::lang::StringBuilder > append(cpp_int const&);
@@ -119,7 +133,6 @@ namespace java { namespace lang {
 } //namespace lang
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_LANG_STRINGBUILDER_HPP_DECL
@@ -132,52 +145,77 @@ namespace java { namespace lang {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::lang::StringBuilder > create< java::lang::StringBuilder>()
+
+java::lang::StringBuilder::operator local_ref<java::lang::AbstractStringBuilder>() const
 {
-	return local_ref< java::lang::StringBuilder >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::lang::StringBuilder::J2CPP_CLASS_NAME>(),
-			get_method_id<java::lang::StringBuilder::J2CPP_CLASS_NAME, java::lang::StringBuilder::J2CPP_METHOD_NAME(0), java::lang::StringBuilder::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::AbstractStringBuilder>(get_jtype());
 }
 
-template <>
-local_ref< java::lang::StringBuilder > create< java::lang::StringBuilder>(cpp_int const &a0)
+java::lang::StringBuilder::operator local_ref<java::lang::Appendable>() const
 {
-	return local_ref< java::lang::StringBuilder >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::lang::StringBuilder::J2CPP_CLASS_NAME>(),
-			get_method_id<java::lang::StringBuilder::J2CPP_CLASS_NAME, java::lang::StringBuilder::J2CPP_METHOD_NAME(1), java::lang::StringBuilder::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Appendable>(get_jtype());
 }
 
-template <>
-local_ref< java::lang::StringBuilder > create< java::lang::StringBuilder>(local_ref< java::lang::CharSequence > const &a0)
+java::lang::StringBuilder::operator local_ref<java::lang::CharSequence>() const
 {
-	return local_ref< java::lang::StringBuilder >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::lang::StringBuilder::J2CPP_CLASS_NAME>(),
-			get_method_id<java::lang::StringBuilder::J2CPP_CLASS_NAME, java::lang::StringBuilder::J2CPP_METHOD_NAME(2), java::lang::StringBuilder::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::lang::CharSequence>(get_jtype());
 }
 
-template <>
-local_ref< java::lang::StringBuilder > create< java::lang::StringBuilder>(local_ref< java::lang::String > const &a0)
+java::lang::StringBuilder::operator local_ref<java::io::Serializable>() const
 {
-	return local_ref< java::lang::StringBuilder >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::lang::StringBuilder::J2CPP_CLASS_NAME>(),
-			get_method_id<java::lang::StringBuilder::J2CPP_CLASS_NAME, java::lang::StringBuilder::J2CPP_METHOD_NAME(3), java::lang::StringBuilder::J2CPP_METHOD_SIGNATURE(3), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::io::Serializable>(get_jtype());
 }
+
+
+java::lang::StringBuilder::StringBuilder()
+: cpp_object<java::lang::StringBuilder>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::lang::StringBuilder::J2CPP_CLASS_NAME>(),
+		get_method_id<java::lang::StringBuilder::J2CPP_CLASS_NAME, java::lang::StringBuilder::J2CPP_METHOD_NAME(0), java::lang::StringBuilder::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
+
+
+java::lang::StringBuilder::StringBuilder(cpp_int const &a0)
+: cpp_object<java::lang::StringBuilder>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::lang::StringBuilder::J2CPP_CLASS_NAME>(),
+		get_method_id<java::lang::StringBuilder::J2CPP_CLASS_NAME, java::lang::StringBuilder::J2CPP_METHOD_NAME(1), java::lang::StringBuilder::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
+
+
+java::lang::StringBuilder::StringBuilder(local_ref< java::lang::CharSequence > const &a0)
+: cpp_object<java::lang::StringBuilder>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::lang::StringBuilder::J2CPP_CLASS_NAME>(),
+		get_method_id<java::lang::StringBuilder::J2CPP_CLASS_NAME, java::lang::StringBuilder::J2CPP_METHOD_NAME(2), java::lang::StringBuilder::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
+
+
+java::lang::StringBuilder::StringBuilder(local_ref< java::lang::String > const &a0)
+: cpp_object<java::lang::StringBuilder>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::lang::StringBuilder::J2CPP_CLASS_NAME>(),
+		get_method_id<java::lang::StringBuilder::J2CPP_CLASS_NAME, java::lang::StringBuilder::J2CPP_METHOD_NAME(3), java::lang::StringBuilder::J2CPP_METHOD_SIGNATURE(3), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 local_ref< java::lang::StringBuilder > java::lang::StringBuilder::append(cpp_boolean const &a0)
 {

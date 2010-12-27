@@ -10,18 +10,22 @@
 #define J2CPP_JAVAX_NET_SSL_X509KEYMANAGER_HPP_DECL
 
 
+namespace j2cpp { namespace javax { namespace net { namespace ssl { class KeyManager; } } } }
 namespace j2cpp { namespace java { namespace net { class Socket; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace security { class PrivateKey; } } }
 namespace j2cpp { namespace java { namespace security { class Principal; } } }
 namespace j2cpp { namespace java { namespace security { namespace cert { class X509Certificate; } } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/net/Socket.hpp>
 #include <java/security/Principal.hpp>
 #include <java/security/PrivateKey.hpp>
 #include <java/security/cert/X509Certificate.hpp>
+#include <javax/net/ssl/KeyManager.hpp>
 
 
 namespace j2cpp {
@@ -43,10 +47,14 @@ namespace javax { namespace net { namespace ssl {
 		J2CPP_DECLARE_METHOD(4)
 		J2CPP_DECLARE_METHOD(5)
 
-		X509KeyManager(jobject jobj)
+		explicit X509KeyManager(jobject jobj)
 		: cpp_object<X509KeyManager>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<javax::net::ssl::KeyManager>() const;
+
 
 		local_ref< java::lang::String > chooseClientAlias(local_ref< cpp_object_array<java::lang::String, 1> > const&, local_ref< cpp_object_array<java::security::Principal, 1> > const&, local_ref< java::net::Socket > const&);
 		local_ref< java::lang::String > chooseServerAlias(local_ref< java::lang::String > const&, local_ref< cpp_object_array<java::security::Principal, 1> > const&, local_ref< java::net::Socket > const&);
@@ -60,7 +68,6 @@ namespace javax { namespace net { namespace ssl {
 } //namespace net
 } //namespace javax
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVAX_NET_SSL_X509KEYMANAGER_HPP_DECL
@@ -72,6 +79,17 @@ namespace javax { namespace net { namespace ssl {
 
 namespace j2cpp {
 
+
+
+javax::net::ssl::X509KeyManager::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
+
+javax::net::ssl::X509KeyManager::operator local_ref<javax::net::ssl::KeyManager>() const
+{
+	return local_ref<javax::net::ssl::KeyManager>(get_jtype());
+}
 
 local_ref< java::lang::String > javax::net::ssl::X509KeyManager::chooseClientAlias(local_ref< cpp_object_array<java::lang::String, 1> > const &a0, local_ref< cpp_object_array<java::security::Principal, 1> > const &a1, local_ref< java::net::Socket > const &a2)
 {

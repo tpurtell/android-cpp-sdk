@@ -12,13 +12,16 @@
 
 namespace j2cpp { namespace javax { namespace net { namespace ssl { class SSLSession; } } } }
 namespace j2cpp { namespace java { namespace net { class InetAddress; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace util { namespace concurrent { class TimeUnit; } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { class HttpConnectionMetrics; } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { class HttpRequest; } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { class HttpEntityEnclosingRequest; } } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { namespace conn { class ManagedClientConnection; } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { class HttpResponse; } } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/net/InetAddress.hpp>
 #include <java/util/concurrent/TimeUnit.hpp>
 #include <javax/net/ssl/SSLSession.hpp>
@@ -26,6 +29,7 @@ namespace j2cpp { namespace org { namespace apache { namespace http { class Http
 #include <org/apache/http/HttpEntityEnclosingRequest.hpp>
 #include <org/apache/http/HttpRequest.hpp>
 #include <org/apache/http/HttpResponse.hpp>
+#include <org/apache/http/conn/ManagedClientConnection.hpp>
 
 
 namespace j2cpp {
@@ -70,10 +74,14 @@ namespace org { namespace apache { namespace http { namespace impl { namespace c
 		J2CPP_DECLARE_METHOD(27)
 		J2CPP_DECLARE_METHOD(28)
 
-		AbstractClientConnAdapter(jobject jobj)
+		explicit AbstractClientConnAdapter(jobject jobj)
 		: cpp_object<AbstractClientConnAdapter>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<org::apache::http::conn::ManagedClientConnection>() const;
+
 
 		cpp_boolean isOpen();
 		cpp_boolean isStale();
@@ -106,7 +114,6 @@ namespace org { namespace apache { namespace http { namespace impl { namespace c
 } //namespace apache
 } //namespace org
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ORG_APACHE_HTTP_IMPL_CONN_ABSTRACTCLIENTCONNADAPTER_HPP_DECL
@@ -119,17 +126,17 @@ namespace org { namespace apache { namespace http { namespace impl { namespace c
 namespace j2cpp {
 
 
-template <>
-local_ref< org::apache::http::impl::conn::AbstractClientConnAdapter > create< org::apache::http::impl::conn::AbstractClientConnAdapter>(local_ref< org::apache::http::conn::ClientConnectionManager > const &a0, local_ref< org::apache::http::conn::OperatedClientConnection > const &a1)
+
+org::apache::http::impl::conn::AbstractClientConnAdapter::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< org::apache::http::impl::conn::AbstractClientConnAdapter >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::apache::http::impl::conn::AbstractClientConnAdapter::J2CPP_CLASS_NAME>(),
-			get_method_id<org::apache::http::impl::conn::AbstractClientConnAdapter::J2CPP_CLASS_NAME, org::apache::http::impl::conn::AbstractClientConnAdapter::J2CPP_METHOD_NAME(0), org::apache::http::impl::conn::AbstractClientConnAdapter::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+org::apache::http::impl::conn::AbstractClientConnAdapter::operator local_ref<org::apache::http::conn::ManagedClientConnection>() const
+{
+	return local_ref<org::apache::http::conn::ManagedClientConnection>(get_jtype());
+}
+
 
 
 

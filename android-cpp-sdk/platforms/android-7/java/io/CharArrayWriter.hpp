@@ -58,11 +58,16 @@ namespace java { namespace io {
 		J2CPP_DECLARE_FIELD(0)
 		J2CPP_DECLARE_FIELD(1)
 
-		CharArrayWriter(jobject jobj)
+		explicit CharArrayWriter(jobject jobj)
 		: cpp_object<CharArrayWriter>(jobj)
 		{
 		}
 
+		operator local_ref<java::io::Writer>() const;
+
+
+		CharArrayWriter();
+		CharArrayWriter(cpp_int const&);
 		void close();
 		void flush();
 		void reset();
@@ -88,7 +93,6 @@ namespace java { namespace io {
 } //namespace io
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_IO_CHARARRAYWRITER_HPP_DECL
@@ -101,28 +105,36 @@ namespace java { namespace io {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::io::CharArrayWriter > create< java::io::CharArrayWriter>()
+
+java::io::CharArrayWriter::operator local_ref<java::io::Writer>() const
 {
-	return local_ref< java::io::CharArrayWriter >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::io::CharArrayWriter::J2CPP_CLASS_NAME>(),
-			get_method_id<java::io::CharArrayWriter::J2CPP_CLASS_NAME, java::io::CharArrayWriter::J2CPP_METHOD_NAME(0), java::io::CharArrayWriter::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::io::Writer>(get_jtype());
 }
 
-template <>
-local_ref< java::io::CharArrayWriter > create< java::io::CharArrayWriter>(cpp_int const &a0)
+
+java::io::CharArrayWriter::CharArrayWriter()
+: cpp_object<java::io::CharArrayWriter>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::io::CharArrayWriter::J2CPP_CLASS_NAME>(),
+		get_method_id<java::io::CharArrayWriter::J2CPP_CLASS_NAME, java::io::CharArrayWriter::J2CPP_METHOD_NAME(0), java::io::CharArrayWriter::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
 {
-	return local_ref< java::io::CharArrayWriter >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::io::CharArrayWriter::J2CPP_CLASS_NAME>(),
-			get_method_id<java::io::CharArrayWriter::J2CPP_CLASS_NAME, java::io::CharArrayWriter::J2CPP_METHOD_NAME(1), java::io::CharArrayWriter::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
 }
+
+
+
+java::io::CharArrayWriter::CharArrayWriter(cpp_int const &a0)
+: cpp_object<java::io::CharArrayWriter>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::io::CharArrayWriter::J2CPP_CLASS_NAME>(),
+		get_method_id<java::io::CharArrayWriter::J2CPP_CLASS_NAME, java::io::CharArrayWriter::J2CPP_METHOD_NAME(1), java::io::CharArrayWriter::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 void java::io::CharArrayWriter::close()
 {

@@ -11,9 +11,11 @@
 
 
 namespace j2cpp { namespace java { namespace io { class InputStream; } } }
+namespace j2cpp { namespace java { namespace util { namespace zip { class InflaterInputStream; } } } }
 
 
 #include <java/io/InputStream.hpp>
+#include <java/util/zip/InflaterInputStream.hpp>
 
 
 namespace j2cpp {
@@ -36,11 +38,16 @@ namespace java { namespace util { namespace zip {
 		J2CPP_DECLARE_FIELD(1)
 		J2CPP_DECLARE_FIELD(2)
 
-		GZIPInputStream(jobject jobj)
+		explicit GZIPInputStream(jobject jobj)
 		: cpp_object<GZIPInputStream>(jobj)
 		{
 		}
 
+		operator local_ref<java::util::zip::InflaterInputStream>() const;
+
+
+		GZIPInputStream(local_ref< java::io::InputStream > const&);
+		GZIPInputStream(local_ref< java::io::InputStream > const&, cpp_int const&);
 		void close();
 		cpp_int read(local_ref< cpp_byte_array<1> > const&, cpp_int const&, cpp_int const&);
 
@@ -50,7 +57,6 @@ namespace java { namespace util { namespace zip {
 } //namespace zip
 } //namespace util
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -64,29 +70,37 @@ namespace java { namespace util { namespace zip {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::util::zip::GZIPInputStream > create< java::util::zip::GZIPInputStream>(local_ref< java::io::InputStream > const &a0)
+
+java::util::zip::GZIPInputStream::operator local_ref<java::util::zip::InflaterInputStream>() const
 {
-	return local_ref< java::util::zip::GZIPInputStream >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::zip::GZIPInputStream::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::zip::GZIPInputStream::J2CPP_CLASS_NAME, java::util::zip::GZIPInputStream::J2CPP_METHOD_NAME(0), java::util::zip::GZIPInputStream::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::util::zip::InflaterInputStream>(get_jtype());
 }
 
-template <>
-local_ref< java::util::zip::GZIPInputStream > create< java::util::zip::GZIPInputStream>(local_ref< java::io::InputStream > const &a0, cpp_int const &a1)
+
+java::util::zip::GZIPInputStream::GZIPInputStream(local_ref< java::io::InputStream > const &a0)
+: cpp_object<java::util::zip::GZIPInputStream>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::util::zip::GZIPInputStream::J2CPP_CLASS_NAME>(),
+		get_method_id<java::util::zip::GZIPInputStream::J2CPP_CLASS_NAME, java::util::zip::GZIPInputStream::J2CPP_METHOD_NAME(0), java::util::zip::GZIPInputStream::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< java::util::zip::GZIPInputStream >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::zip::GZIPInputStream::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::zip::GZIPInputStream::J2CPP_CLASS_NAME, java::util::zip::GZIPInputStream::J2CPP_METHOD_NAME(1), java::util::zip::GZIPInputStream::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
 }
+
+
+
+java::util::zip::GZIPInputStream::GZIPInputStream(local_ref< java::io::InputStream > const &a0, cpp_int const &a1)
+: cpp_object<java::util::zip::GZIPInputStream>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::util::zip::GZIPInputStream::J2CPP_CLASS_NAME>(),
+		get_method_id<java::util::zip::GZIPInputStream::J2CPP_CLASS_NAME, java::util::zip::GZIPInputStream::J2CPP_METHOD_NAME(1), java::util::zip::GZIPInputStream::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
 
 void java::util::zip::GZIPInputStream::close()
 {

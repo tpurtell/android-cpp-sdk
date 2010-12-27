@@ -10,8 +10,10 @@
 #define J2CPP_ANDROID_MEDIA_TONEGENERATOR_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -134,11 +136,15 @@ namespace android { namespace media {
 		J2CPP_DECLARE_FIELD(99)
 		J2CPP_DECLARE_FIELD(100)
 
-		ToneGenerator(jobject jobj)
+		explicit ToneGenerator(jobject jobj)
 		: cpp_object<ToneGenerator>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		ToneGenerator(cpp_int const&, cpp_int const&);
 		cpp_boolean startTone(cpp_int const&);
 		cpp_boolean startTone(cpp_int const&, cpp_int const&);
 		void stopTone();
@@ -250,7 +256,6 @@ namespace android { namespace media {
 } //namespace media
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_MEDIA_TONEGENERATOR_HPP_DECL
@@ -263,17 +268,24 @@ namespace android { namespace media {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::media::ToneGenerator > create< android::media::ToneGenerator>(cpp_int const &a0, cpp_int const &a1)
+
+android::media::ToneGenerator::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::media::ToneGenerator >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::media::ToneGenerator::J2CPP_CLASS_NAME>(),
-			get_method_id<android::media::ToneGenerator::J2CPP_CLASS_NAME, android::media::ToneGenerator::J2CPP_METHOD_NAME(0), android::media::ToneGenerator::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::media::ToneGenerator::ToneGenerator(cpp_int const &a0, cpp_int const &a1)
+: cpp_object<android::media::ToneGenerator>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::media::ToneGenerator::J2CPP_CLASS_NAME>(),
+		get_method_id<android::media::ToneGenerator::J2CPP_CLASS_NAME, android::media::ToneGenerator::J2CPP_METHOD_NAME(0), android::media::ToneGenerator::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
 
 cpp_boolean android::media::ToneGenerator::startTone(cpp_int const &a0)
 {

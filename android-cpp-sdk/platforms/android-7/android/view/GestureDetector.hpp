@@ -10,6 +10,7 @@
 #define J2CPP_ANDROID_VIEW_GESTUREDETECTOR_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace android { namespace content { class Context; } } }
 namespace j2cpp { namespace android { namespace view { namespace GestureDetector_ { class OnGestureListener; } } } }
 namespace j2cpp { namespace android { namespace view { class MotionEvent; } } }
@@ -21,6 +22,7 @@ namespace j2cpp { namespace android { namespace os { class Handler; } } }
 #include <android/os/Handler.hpp>
 #include <android/view/GestureDetector.hpp>
 #include <android/view/MotionEvent.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -45,10 +47,13 @@ namespace android { namespace view {
 			J2CPP_DECLARE_METHOD(4)
 			J2CPP_DECLARE_METHOD(5)
 
-			OnGestureListener(jobject jobj)
+			explicit OnGestureListener(jobject jobj)
 			: cpp_object<OnGestureListener>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+
 
 			cpp_boolean onDown(local_ref< android::view::MotionEvent > const&);
 			void onShowPress(local_ref< android::view::MotionEvent > const&);
@@ -70,10 +75,13 @@ namespace android { namespace view {
 			J2CPP_DECLARE_METHOD(1)
 			J2CPP_DECLARE_METHOD(2)
 
-			OnDoubleTapListener(jobject jobj)
+			explicit OnDoubleTapListener(jobject jobj)
 			: cpp_object<OnDoubleTapListener>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+
 
 			cpp_boolean onSingleTapConfirmed(local_ref< android::view::MotionEvent > const&);
 			cpp_boolean onDoubleTap(local_ref< android::view::MotionEvent > const&);
@@ -99,11 +107,17 @@ namespace android { namespace view {
 			J2CPP_DECLARE_METHOD(8)
 			J2CPP_DECLARE_METHOD(9)
 
-			SimpleOnGestureListener(jobject jobj)
+			explicit SimpleOnGestureListener(jobject jobj)
 			: cpp_object<SimpleOnGestureListener>(jobj)
 			{
 			}
 
+			operator local_ref<java::lang::Object>() const;
+			operator local_ref<android::view::GestureDetector_::OnGestureListener>() const;
+			operator local_ref<android::view::GestureDetector_::OnDoubleTapListener>() const;
+
+
+			SimpleOnGestureListener();
 			cpp_boolean onSingleTapUp(local_ref< android::view::MotionEvent > const&);
 			void onLongPress(local_ref< android::view::MotionEvent > const&);
 			cpp_boolean onScroll(local_ref< android::view::MotionEvent > const&, local_ref< android::view::MotionEvent > const&, cpp_float const&, cpp_float const&);
@@ -137,11 +151,18 @@ namespace android { namespace view {
 		typedef GestureDetector_::OnDoubleTapListener OnDoubleTapListener;
 		typedef GestureDetector_::SimpleOnGestureListener SimpleOnGestureListener;
 
-		GestureDetector(jobject jobj)
+		explicit GestureDetector(jobject jobj)
 		: cpp_object<GestureDetector>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		GestureDetector(local_ref< android::view::GestureDetector_::OnGestureListener > const&, local_ref< android::os::Handler > const&);
+		GestureDetector(local_ref< android::view::GestureDetector_::OnGestureListener > const&);
+		GestureDetector(local_ref< android::content::Context > const&, local_ref< android::view::GestureDetector_::OnGestureListener > const&);
+		GestureDetector(local_ref< android::content::Context > const&, local_ref< android::view::GestureDetector_::OnGestureListener > const&, local_ref< android::os::Handler > const&);
 		void setOnDoubleTapListener(local_ref< android::view::GestureDetector_::OnDoubleTapListener > const&);
 		void setIsLongpressEnabled(cpp_boolean const&);
 		cpp_boolean isLongpressEnabled();
@@ -150,7 +171,6 @@ namespace android { namespace view {
 
 } //namespace view
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -164,6 +184,12 @@ namespace android { namespace view {
 namespace j2cpp {
 
 
+
+
+android::view::GestureDetector_::OnGestureListener::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 cpp_boolean android::view::GestureDetector_::OnGestureListener::onDown(local_ref< android::view::MotionEvent > const &a0)
 {
@@ -240,6 +266,12 @@ J2CPP_DEFINE_METHOD(android::view::GestureDetector_::OnGestureListener,3,"onScro
 J2CPP_DEFINE_METHOD(android::view::GestureDetector_::OnGestureListener,4,"onLongPress","(Landroid/view/MotionEvent;)V")
 J2CPP_DEFINE_METHOD(android::view::GestureDetector_::OnGestureListener,5,"onFling","(Landroid/view/MotionEvent;Landroid/view/MotionEvent;FF)Z")
 
+
+android::view::GestureDetector_::OnDoubleTapListener::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
+
 cpp_boolean android::view::GestureDetector_::OnDoubleTapListener::onSingleTapConfirmed(local_ref< android::view::MotionEvent > const &a0)
 {
 	return cpp_boolean(
@@ -279,16 +311,33 @@ J2CPP_DEFINE_METHOD(android::view::GestureDetector_::OnDoubleTapListener,0,"onSi
 J2CPP_DEFINE_METHOD(android::view::GestureDetector_::OnDoubleTapListener,1,"onDoubleTap","(Landroid/view/MotionEvent;)Z")
 J2CPP_DEFINE_METHOD(android::view::GestureDetector_::OnDoubleTapListener,2,"onDoubleTapEvent","(Landroid/view/MotionEvent;)Z")
 
-template <>
-local_ref< android::view::GestureDetector_::SimpleOnGestureListener > create< android::view::GestureDetector_::SimpleOnGestureListener>()
+
+android::view::GestureDetector_::SimpleOnGestureListener::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::view::GestureDetector_::SimpleOnGestureListener >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::view::GestureDetector_::SimpleOnGestureListener::J2CPP_CLASS_NAME>(),
-			get_method_id<android::view::GestureDetector_::SimpleOnGestureListener::J2CPP_CLASS_NAME, android::view::GestureDetector_::SimpleOnGestureListener::J2CPP_METHOD_NAME(0), android::view::GestureDetector_::SimpleOnGestureListener::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+android::view::GestureDetector_::SimpleOnGestureListener::operator local_ref<android::view::GestureDetector_::OnGestureListener>() const
+{
+	return local_ref<android::view::GestureDetector_::OnGestureListener>(get_jtype());
+}
+
+android::view::GestureDetector_::SimpleOnGestureListener::operator local_ref<android::view::GestureDetector_::OnDoubleTapListener>() const
+{
+	return local_ref<android::view::GestureDetector_::OnDoubleTapListener>(get_jtype());
+}
+
+
+android::view::GestureDetector_::SimpleOnGestureListener::SimpleOnGestureListener()
+: cpp_object<android::view::GestureDetector_::SimpleOnGestureListener>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::view::GestureDetector_::SimpleOnGestureListener::J2CPP_CLASS_NAME>(),
+		get_method_id<android::view::GestureDetector_::SimpleOnGestureListener::J2CPP_CLASS_NAME, android::view::GestureDetector_::SimpleOnGestureListener::J2CPP_METHOD_NAME(0), android::view::GestureDetector_::SimpleOnGestureListener::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 cpp_boolean android::view::GestureDetector_::SimpleOnGestureListener::onSingleTapUp(local_ref< android::view::MotionEvent > const &a0)
 {
@@ -403,53 +452,63 @@ J2CPP_DEFINE_METHOD(android::view::GestureDetector_::SimpleOnGestureListener,8,"
 J2CPP_DEFINE_METHOD(android::view::GestureDetector_::SimpleOnGestureListener,9,"onSingleTapConfirmed","(Landroid/view/MotionEvent;)Z")
 
 
-template <>
-local_ref< android::view::GestureDetector > create< android::view::GestureDetector>(local_ref< android::view::GestureDetector_::OnGestureListener > const &a0, local_ref< android::os::Handler > const &a1)
+
+android::view::GestureDetector::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::view::GestureDetector >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::view::GestureDetector::J2CPP_CLASS_NAME>(),
-			get_method_id<android::view::GestureDetector::J2CPP_CLASS_NAME, android::view::GestureDetector::J2CPP_METHOD_NAME(0), android::view::GestureDetector::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
 
-template <>
-local_ref< android::view::GestureDetector > create< android::view::GestureDetector>(local_ref< android::view::GestureDetector_::OnGestureListener > const &a0)
+
+android::view::GestureDetector::GestureDetector(local_ref< android::view::GestureDetector_::OnGestureListener > const &a0, local_ref< android::os::Handler > const &a1)
+: cpp_object<android::view::GestureDetector>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::view::GestureDetector::J2CPP_CLASS_NAME>(),
+		get_method_id<android::view::GestureDetector::J2CPP_CLASS_NAME, android::view::GestureDetector::J2CPP_METHOD_NAME(0), android::view::GestureDetector::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
 {
-	return local_ref< android::view::GestureDetector >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::view::GestureDetector::J2CPP_CLASS_NAME>(),
-			get_method_id<android::view::GestureDetector::J2CPP_CLASS_NAME, android::view::GestureDetector::J2CPP_METHOD_NAME(1), android::view::GestureDetector::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< android::view::GestureDetector > create< android::view::GestureDetector>(local_ref< android::content::Context > const &a0, local_ref< android::view::GestureDetector_::OnGestureListener > const &a1)
+
+
+android::view::GestureDetector::GestureDetector(local_ref< android::view::GestureDetector_::OnGestureListener > const &a0)
+: cpp_object<android::view::GestureDetector>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::view::GestureDetector::J2CPP_CLASS_NAME>(),
+		get_method_id<android::view::GestureDetector::J2CPP_CLASS_NAME, android::view::GestureDetector::J2CPP_METHOD_NAME(1), android::view::GestureDetector::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< android::view::GestureDetector >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::view::GestureDetector::J2CPP_CLASS_NAME>(),
-			get_method_id<android::view::GestureDetector::J2CPP_CLASS_NAME, android::view::GestureDetector::J2CPP_METHOD_NAME(2), android::view::GestureDetector::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< android::view::GestureDetector > create< android::view::GestureDetector>(local_ref< android::content::Context > const &a0, local_ref< android::view::GestureDetector_::OnGestureListener > const &a1, local_ref< android::os::Handler > const &a2)
+
+
+android::view::GestureDetector::GestureDetector(local_ref< android::content::Context > const &a0, local_ref< android::view::GestureDetector_::OnGestureListener > const &a1)
+: cpp_object<android::view::GestureDetector>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::view::GestureDetector::J2CPP_CLASS_NAME>(),
+		get_method_id<android::view::GestureDetector::J2CPP_CLASS_NAME, android::view::GestureDetector::J2CPP_METHOD_NAME(2), android::view::GestureDetector::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
 {
-	return local_ref< android::view::GestureDetector >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::view::GestureDetector::J2CPP_CLASS_NAME>(),
-			get_method_id<android::view::GestureDetector::J2CPP_CLASS_NAME, android::view::GestureDetector::J2CPP_METHOD_NAME(3), android::view::GestureDetector::J2CPP_METHOD_SIGNATURE(3), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
-		)
-	);
 }
+
+
+
+android::view::GestureDetector::GestureDetector(local_ref< android::content::Context > const &a0, local_ref< android::view::GestureDetector_::OnGestureListener > const &a1, local_ref< android::os::Handler > const &a2)
+: cpp_object<android::view::GestureDetector>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::view::GestureDetector::J2CPP_CLASS_NAME>(),
+		get_method_id<android::view::GestureDetector::J2CPP_CLASS_NAME, android::view::GestureDetector::J2CPP_METHOD_NAME(3), android::view::GestureDetector::J2CPP_METHOD_SIGNATURE(3), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
+	)
+)
+{
+}
+
 
 void android::view::GestureDetector::setOnDoubleTapListener(local_ref< android::view::GestureDetector_::OnDoubleTapListener > const &a0)
 {

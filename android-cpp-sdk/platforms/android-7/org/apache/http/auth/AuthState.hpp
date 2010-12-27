@@ -10,12 +10,14 @@
 #define J2CPP_ORG_APACHE_HTTP_AUTH_AUTHSTATE_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace auth { class Credentials; } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace auth { class AuthScope; } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace auth { class AuthScheme; } } } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <org/apache/http/auth/AuthScheme.hpp>
 #include <org/apache/http/auth/AuthScope.hpp>
@@ -45,11 +47,15 @@ namespace org { namespace apache { namespace http { namespace auth {
 		J2CPP_DECLARE_METHOD(8)
 		J2CPP_DECLARE_METHOD(9)
 
-		AuthState(jobject jobj)
+		explicit AuthState(jobject jobj)
 		: cpp_object<AuthState>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		AuthState();
 		void invalidate();
 		cpp_boolean isValid();
 		void setAuthScheme(local_ref< org::apache::http::auth::AuthScheme > const&);
@@ -66,7 +72,6 @@ namespace org { namespace apache { namespace http { namespace auth {
 } //namespace apache
 } //namespace org
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ORG_APACHE_HTTP_AUTH_AUTHSTATE_HPP_DECL
@@ -79,16 +84,23 @@ namespace org { namespace apache { namespace http { namespace auth {
 namespace j2cpp {
 
 
-template <>
-local_ref< org::apache::http::auth::AuthState > create< org::apache::http::auth::AuthState>()
+
+org::apache::http::auth::AuthState::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< org::apache::http::auth::AuthState >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::apache::http::auth::AuthState::J2CPP_CLASS_NAME>(),
-			get_method_id<org::apache::http::auth::AuthState::J2CPP_CLASS_NAME, org::apache::http::auth::AuthState::J2CPP_METHOD_NAME(0), org::apache::http::auth::AuthState::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+org::apache::http::auth::AuthState::AuthState()
+: cpp_object<org::apache::http::auth::AuthState>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::apache::http::auth::AuthState::J2CPP_CLASS_NAME>(),
+		get_method_id<org::apache::http::auth::AuthState::J2CPP_CLASS_NAME, org::apache::http::auth::AuthState::J2CPP_METHOD_NAME(0), org::apache::http::auth::AuthState::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 void org::apache::http::auth::AuthState::invalidate()
 {

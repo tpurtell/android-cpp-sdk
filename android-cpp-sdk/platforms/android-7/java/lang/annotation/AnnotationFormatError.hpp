@@ -10,10 +10,12 @@
 #define J2CPP_JAVA_LANG_ANNOTATION_ANNOTATIONFORMATERROR_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Error; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace lang { class Throwable; } } }
 
 
+#include <java/lang/Error.hpp>
 #include <java/lang/String.hpp>
 #include <java/lang/Throwable.hpp>
 
@@ -34,17 +36,22 @@ namespace java { namespace lang { namespace annotation {
 		J2CPP_DECLARE_METHOD(1)
 		J2CPP_DECLARE_METHOD(2)
 
-		AnnotationFormatError(jobject jobj)
+		explicit AnnotationFormatError(jobject jobj)
 		: cpp_object<AnnotationFormatError>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Error>() const;
+
+
+		AnnotationFormatError(local_ref< java::lang::String > const&);
+		AnnotationFormatError(local_ref< java::lang::String > const&, local_ref< java::lang::Throwable > const&);
+		AnnotationFormatError(local_ref< java::lang::Throwable > const&);
 	}; //class AnnotationFormatError
 
 } //namespace annotation
 } //namespace lang
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -58,41 +65,50 @@ namespace java { namespace lang { namespace annotation {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::lang::annotation::AnnotationFormatError > create< java::lang::annotation::AnnotationFormatError>(local_ref< java::lang::String > const &a0)
+
+java::lang::annotation::AnnotationFormatError::operator local_ref<java::lang::Error>() const
 {
-	return local_ref< java::lang::annotation::AnnotationFormatError >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::lang::annotation::AnnotationFormatError::J2CPP_CLASS_NAME>(),
-			get_method_id<java::lang::annotation::AnnotationFormatError::J2CPP_CLASS_NAME, java::lang::annotation::AnnotationFormatError::J2CPP_METHOD_NAME(0), java::lang::annotation::AnnotationFormatError::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Error>(get_jtype());
 }
 
-template <>
-local_ref< java::lang::annotation::AnnotationFormatError > create< java::lang::annotation::AnnotationFormatError>(local_ref< java::lang::String > const &a0, local_ref< java::lang::Throwable > const &a1)
+
+java::lang::annotation::AnnotationFormatError::AnnotationFormatError(local_ref< java::lang::String > const &a0)
+: cpp_object<java::lang::annotation::AnnotationFormatError>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::lang::annotation::AnnotationFormatError::J2CPP_CLASS_NAME>(),
+		get_method_id<java::lang::annotation::AnnotationFormatError::J2CPP_CLASS_NAME, java::lang::annotation::AnnotationFormatError::J2CPP_METHOD_NAME(0), java::lang::annotation::AnnotationFormatError::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< java::lang::annotation::AnnotationFormatError >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::lang::annotation::AnnotationFormatError::J2CPP_CLASS_NAME>(),
-			get_method_id<java::lang::annotation::AnnotationFormatError::J2CPP_CLASS_NAME, java::lang::annotation::AnnotationFormatError::J2CPP_METHOD_NAME(1), java::lang::annotation::AnnotationFormatError::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< java::lang::annotation::AnnotationFormatError > create< java::lang::annotation::AnnotationFormatError>(local_ref< java::lang::Throwable > const &a0)
+
+
+java::lang::annotation::AnnotationFormatError::AnnotationFormatError(local_ref< java::lang::String > const &a0, local_ref< java::lang::Throwable > const &a1)
+: cpp_object<java::lang::annotation::AnnotationFormatError>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::lang::annotation::AnnotationFormatError::J2CPP_CLASS_NAME>(),
+		get_method_id<java::lang::annotation::AnnotationFormatError::J2CPP_CLASS_NAME, java::lang::annotation::AnnotationFormatError::J2CPP_METHOD_NAME(1), java::lang::annotation::AnnotationFormatError::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
 {
-	return local_ref< java::lang::annotation::AnnotationFormatError >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::lang::annotation::AnnotationFormatError::J2CPP_CLASS_NAME>(),
-			get_method_id<java::lang::annotation::AnnotationFormatError::J2CPP_CLASS_NAME, java::lang::annotation::AnnotationFormatError::J2CPP_METHOD_NAME(2), java::lang::annotation::AnnotationFormatError::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype()
-		)
-	);
 }
+
+
+
+java::lang::annotation::AnnotationFormatError::AnnotationFormatError(local_ref< java::lang::Throwable > const &a0)
+: cpp_object<java::lang::annotation::AnnotationFormatError>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::lang::annotation::AnnotationFormatError::J2CPP_CLASS_NAME>(),
+		get_method_id<java::lang::annotation::AnnotationFormatError::J2CPP_CLASS_NAME, java::lang::annotation::AnnotationFormatError::J2CPP_METHOD_NAME(2), java::lang::annotation::AnnotationFormatError::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 
 J2CPP_DEFINE_CLASS(java::lang::annotation::AnnotationFormatError,"java/lang/annotation/AnnotationFormatError")

@@ -10,10 +10,12 @@
 #define J2CPP_ORG_APACHE_HTTP_HEADER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { class HeaderElement; } } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <org/apache/http/HeaderElement.hpp>
 
@@ -34,10 +36,13 @@ namespace org { namespace apache { namespace http {
 		J2CPP_DECLARE_METHOD(1)
 		J2CPP_DECLARE_METHOD(2)
 
-		Header(jobject jobj)
+		explicit Header(jobject jobj)
 		: cpp_object<Header>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		local_ref< java::lang::String > getName();
 		local_ref< java::lang::String > getValue();
@@ -47,7 +52,6 @@ namespace org { namespace apache { namespace http {
 } //namespace http
 } //namespace apache
 } //namespace org
-
 
 } //namespace j2cpp
 
@@ -60,6 +64,12 @@ namespace org { namespace apache { namespace http {
 
 namespace j2cpp {
 
+
+
+org::apache::http::Header::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 local_ref< java::lang::String > org::apache::http::Header::getName()
 {

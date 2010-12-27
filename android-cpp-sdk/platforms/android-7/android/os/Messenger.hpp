@@ -13,6 +13,7 @@
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace android { namespace os { class IBinder; } } }
 namespace j2cpp { namespace android { namespace os { class Parcel; } } }
+namespace j2cpp { namespace android { namespace os { class Parcelable; } } }
 namespace j2cpp { namespace android { namespace os { class Handler; } } }
 namespace j2cpp { namespace android { namespace os { namespace Parcelable_ { class Creator; } } } }
 namespace j2cpp { namespace android { namespace os { class Message; } } }
@@ -51,11 +52,17 @@ namespace android { namespace os {
 		J2CPP_DECLARE_METHOD(10)
 		J2CPP_DECLARE_FIELD(0)
 
-		Messenger(jobject jobj)
+		explicit Messenger(jobject jobj)
 		: cpp_object<Messenger>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<android::os::Parcelable>() const;
+
+
+		Messenger(local_ref< android::os::Handler > const&);
+		Messenger(local_ref< android::os::IBinder > const&);
 		void send(local_ref< android::os::Message > const&);
 		local_ref< android::os::IBinder > getBinder();
 		cpp_boolean equals(local_ref< java::lang::Object > const&);
@@ -71,7 +78,6 @@ namespace android { namespace os {
 } //namespace os
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_OS_MESSENGER_HPP_DECL
@@ -84,29 +90,42 @@ namespace android { namespace os {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::os::Messenger > create< android::os::Messenger>(local_ref< android::os::Handler > const &a0)
+
+android::os::Messenger::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::os::Messenger >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::os::Messenger::J2CPP_CLASS_NAME>(),
-			get_method_id<android::os::Messenger::J2CPP_CLASS_NAME, android::os::Messenger::J2CPP_METHOD_NAME(0), android::os::Messenger::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
 
-template <>
-local_ref< android::os::Messenger > create< android::os::Messenger>(local_ref< android::os::IBinder > const &a0)
+android::os::Messenger::operator local_ref<android::os::Parcelable>() const
 {
-	return local_ref< android::os::Messenger >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::os::Messenger::J2CPP_CLASS_NAME>(),
-			get_method_id<android::os::Messenger::J2CPP_CLASS_NAME, android::os::Messenger::J2CPP_METHOD_NAME(1), android::os::Messenger::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<android::os::Parcelable>(get_jtype());
 }
+
+
+android::os::Messenger::Messenger(local_ref< android::os::Handler > const &a0)
+: cpp_object<android::os::Messenger>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::os::Messenger::J2CPP_CLASS_NAME>(),
+		get_method_id<android::os::Messenger::J2CPP_CLASS_NAME, android::os::Messenger::J2CPP_METHOD_NAME(0), android::os::Messenger::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
+
+
+android::os::Messenger::Messenger(local_ref< android::os::IBinder > const &a0)
+: cpp_object<android::os::Messenger>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::os::Messenger::J2CPP_CLASS_NAME>(),
+		get_method_id<android::os::Messenger::J2CPP_CLASS_NAME, android::os::Messenger::J2CPP_METHOD_NAME(1), android::os::Messenger::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 void android::os::Messenger::send(local_ref< android::os::Message > const &a0)
 {
@@ -192,6 +211,7 @@ local_ref< android::os::Messenger > android::os::Messenger::readMessengerOrNullF
 		)
 	);
 }
+
 
 
 static_field<

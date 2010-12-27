@@ -11,10 +11,14 @@
 
 
 namespace j2cpp { namespace java { namespace io { class PrintWriter; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace android { namespace util { class Printer; } } }
 
 
+#include <android/util/Printer.hpp>
 #include <java/io/PrintWriter.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -33,17 +37,21 @@ namespace android { namespace util {
 		J2CPP_DECLARE_METHOD(0)
 		J2CPP_DECLARE_METHOD(1)
 
-		PrintWriterPrinter(jobject jobj)
+		explicit PrintWriterPrinter(jobject jobj)
 		: cpp_object<PrintWriterPrinter>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<android::util::Printer>() const;
+
+
+		PrintWriterPrinter(local_ref< java::io::PrintWriter > const&);
 		void println(local_ref< java::lang::String > const&);
 	}; //class PrintWriterPrinter
 
 } //namespace util
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -57,17 +65,29 @@ namespace android { namespace util {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::util::PrintWriterPrinter > create< android::util::PrintWriterPrinter>(local_ref< java::io::PrintWriter > const &a0)
+
+android::util::PrintWriterPrinter::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::util::PrintWriterPrinter >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::util::PrintWriterPrinter::J2CPP_CLASS_NAME>(),
-			get_method_id<android::util::PrintWriterPrinter::J2CPP_CLASS_NAME, android::util::PrintWriterPrinter::J2CPP_METHOD_NAME(0), android::util::PrintWriterPrinter::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+android::util::PrintWriterPrinter::operator local_ref<android::util::Printer>() const
+{
+	return local_ref<android::util::Printer>(get_jtype());
+}
+
+
+android::util::PrintWriterPrinter::PrintWriterPrinter(local_ref< java::io::PrintWriter > const &a0)
+: cpp_object<android::util::PrintWriterPrinter>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::util::PrintWriterPrinter::J2CPP_CLASS_NAME>(),
+		get_method_id<android::util::PrintWriterPrinter::J2CPP_CLASS_NAME, android::util::PrintWriterPrinter::J2CPP_METHOD_NAME(0), android::util::PrintWriterPrinter::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 void android::util::PrintWriterPrinter::println(local_ref< java::lang::String > const &a0)
 {

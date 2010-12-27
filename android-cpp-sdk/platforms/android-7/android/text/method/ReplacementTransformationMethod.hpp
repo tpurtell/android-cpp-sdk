@@ -10,14 +10,18 @@
 #define J2CPP_ANDROID_TEXT_METHOD_REPLACEMENTTRANSFORMATIONMETHOD_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class CharSequence; } } }
 namespace j2cpp { namespace android { namespace graphics { class Rect; } } }
 namespace j2cpp { namespace android { namespace view { class View; } } }
+namespace j2cpp { namespace android { namespace text { namespace method { class TransformationMethod; } } } }
 
 
 #include <android/graphics/Rect.hpp>
+#include <android/text/method/TransformationMethod.hpp>
 #include <android/view/View.hpp>
 #include <java/lang/CharSequence.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -38,11 +42,16 @@ namespace android { namespace text { namespace method {
 		J2CPP_DECLARE_METHOD(3)
 		J2CPP_DECLARE_METHOD(4)
 
-		ReplacementTransformationMethod(jobject jobj)
+		explicit ReplacementTransformationMethod(jobject jobj)
 		: cpp_object<ReplacementTransformationMethod>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<android::text::method::TransformationMethod>() const;
+
+
+		ReplacementTransformationMethod();
 		local_ref< java::lang::CharSequence > getTransformation(local_ref< java::lang::CharSequence > const&, local_ref< android::view::View > const&);
 		void onFocusChanged(local_ref< android::view::View > const&, local_ref< java::lang::CharSequence > const&, cpp_boolean const&, cpp_int const&, local_ref< android::graphics::Rect > const&);
 	}; //class ReplacementTransformationMethod
@@ -50,7 +59,6 @@ namespace android { namespace text { namespace method {
 } //namespace method
 } //namespace text
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -64,16 +72,28 @@ namespace android { namespace text { namespace method {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::text::method::ReplacementTransformationMethod > create< android::text::method::ReplacementTransformationMethod>()
+
+android::text::method::ReplacementTransformationMethod::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::text::method::ReplacementTransformationMethod >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::text::method::ReplacementTransformationMethod::J2CPP_CLASS_NAME>(),
-			get_method_id<android::text::method::ReplacementTransformationMethod::J2CPP_CLASS_NAME, android::text::method::ReplacementTransformationMethod::J2CPP_METHOD_NAME(0), android::text::method::ReplacementTransformationMethod::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+android::text::method::ReplacementTransformationMethod::operator local_ref<android::text::method::TransformationMethod>() const
+{
+	return local_ref<android::text::method::TransformationMethod>(get_jtype());
+}
+
+
+android::text::method::ReplacementTransformationMethod::ReplacementTransformationMethod()
+: cpp_object<android::text::method::ReplacementTransformationMethod>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::text::method::ReplacementTransformationMethod::J2CPP_CLASS_NAME>(),
+		get_method_id<android::text::method::ReplacementTransformationMethod::J2CPP_CLASS_NAME, android::text::method::ReplacementTransformationMethod::J2CPP_METHOD_NAME(0), android::text::method::ReplacementTransformationMethod::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 
 

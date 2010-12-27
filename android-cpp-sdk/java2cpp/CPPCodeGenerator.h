@@ -46,6 +46,7 @@ protected:
 	std::ostream&					end_comment(std::ostream &os) const;
 	std::ostream&					write_header(std::ostream &os) const;
 	std::ostream&					write_class(std::ostream &os, std::size_t indent_pos, shared_ptr<model::Class> const &clazz) const;
+	std::ostream&					write_class_creators(std::ostream &os, shared_ptr<model::Class> const &clazz) const;
 	std::ostream&					write_class_definitions(std::ostream &os, shared_ptr<model::Class> const &clazz) const;
 	
 

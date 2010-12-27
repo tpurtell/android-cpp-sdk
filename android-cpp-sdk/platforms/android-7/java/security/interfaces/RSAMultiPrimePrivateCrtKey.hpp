@@ -10,11 +10,15 @@
 #define J2CPP_JAVA_SECURITY_INTERFACES_RSAMULTIPRIMEPRIVATECRTKEY_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace math { class BigInteger; } } }
+namespace j2cpp { namespace java { namespace security { namespace interfaces { class RSAPrivateKey; } } } }
 namespace j2cpp { namespace java { namespace security { namespace spec { class RSAOtherPrimeInfo; } } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/math/BigInteger.hpp>
+#include <java/security/interfaces/RSAPrivateKey.hpp>
 #include <java/security/spec/RSAOtherPrimeInfo.hpp>
 
 
@@ -39,10 +43,14 @@ namespace java { namespace security { namespace interfaces {
 		J2CPP_DECLARE_METHOD(6)
 		J2CPP_DECLARE_FIELD(0)
 
-		RSAMultiPrimePrivateCrtKey(jobject jobj)
+		explicit RSAMultiPrimePrivateCrtKey(jobject jobj)
 		: cpp_object<RSAMultiPrimePrivateCrtKey>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::security::interfaces::RSAPrivateKey>() const;
+
 
 		local_ref< java::math::BigInteger > getCrtCoefficient();
 		local_ref< cpp_object_array<java::security::spec::RSAOtherPrimeInfo, 1> > getOtherPrimeInfo();
@@ -59,7 +67,6 @@ namespace java { namespace security { namespace interfaces {
 } //namespace security
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_SECURITY_INTERFACES_RSAMULTIPRIMEPRIVATECRTKEY_HPP_DECL
@@ -71,6 +78,17 @@ namespace java { namespace security { namespace interfaces {
 
 namespace j2cpp {
 
+
+
+java::security::interfaces::RSAMultiPrimePrivateCrtKey::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
+
+java::security::interfaces::RSAMultiPrimePrivateCrtKey::operator local_ref<java::security::interfaces::RSAPrivateKey>() const
+{
+	return local_ref<java::security::interfaces::RSAPrivateKey>(get_jtype());
+}
 
 local_ref< java::math::BigInteger > java::security::interfaces::RSAMultiPrimePrivateCrtKey::getCrtCoefficient()
 {

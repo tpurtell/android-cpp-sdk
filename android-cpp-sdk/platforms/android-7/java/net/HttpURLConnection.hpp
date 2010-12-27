@@ -10,6 +10,7 @@
 #define J2CPP_JAVA_NET_HTTPURLCONNECTION_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace net { class URLConnection; } } }
 namespace j2cpp { namespace java { namespace io { class InputStream; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace security { class Permission; } } }
@@ -17,6 +18,7 @@ namespace j2cpp { namespace java { namespace security { class Permission; } } }
 
 #include <java/io/InputStream.hpp>
 #include <java/lang/String.hpp>
+#include <java/net/URLConnection.hpp>
 #include <java/security/Permission.hpp>
 
 
@@ -91,10 +93,13 @@ namespace java { namespace net {
 		J2CPP_DECLARE_FIELD(40)
 		J2CPP_DECLARE_FIELD(41)
 
-		HttpURLConnection(jobject jobj)
+		explicit HttpURLConnection(jobject jobj)
 		: cpp_object<HttpURLConnection>(jobj)
 		{
 		}
+
+		operator local_ref<java::net::URLConnection>() const;
+
 
 		void disconnect();
 		local_ref< java::io::InputStream > getErrorStream();
@@ -153,7 +158,6 @@ namespace java { namespace net {
 } //namespace net
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_NET_HTTPURLCONNECTION_HPP_DECL
@@ -166,17 +170,12 @@ namespace java { namespace net {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::net::HttpURLConnection > create< java::net::HttpURLConnection>(local_ref< java::net::URL > const &a0)
+
+java::net::HttpURLConnection::operator local_ref<java::net::URLConnection>() const
 {
-	return local_ref< java::net::HttpURLConnection >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::net::HttpURLConnection::J2CPP_CLASS_NAME>(),
-			get_method_id<java::net::HttpURLConnection::J2CPP_CLASS_NAME, java::net::HttpURLConnection::J2CPP_METHOD_NAME(0), java::net::HttpURLConnection::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::net::URLConnection>(get_jtype());
 }
+
 
 void java::net::HttpURLConnection::disconnect()
 {

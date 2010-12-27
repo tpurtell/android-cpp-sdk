@@ -10,9 +10,11 @@
 #define J2CPP_JAVA_LANG_VIRTUALMACHINEERROR_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Error; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 
 
+#include <java/lang/Error.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -31,16 +33,20 @@ namespace java { namespace lang {
 		J2CPP_DECLARE_METHOD(0)
 		J2CPP_DECLARE_METHOD(1)
 
-		VirtualMachineError(jobject jobj)
+		explicit VirtualMachineError(jobject jobj)
 		: cpp_object<VirtualMachineError>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Error>() const;
+
+
+		VirtualMachineError();
+		VirtualMachineError(local_ref< java::lang::String > const&);
 	}; //class VirtualMachineError
 
 } //namespace lang
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -54,28 +60,36 @@ namespace java { namespace lang {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::lang::VirtualMachineError > create< java::lang::VirtualMachineError>()
+
+java::lang::VirtualMachineError::operator local_ref<java::lang::Error>() const
 {
-	return local_ref< java::lang::VirtualMachineError >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::lang::VirtualMachineError::J2CPP_CLASS_NAME>(),
-			get_method_id<java::lang::VirtualMachineError::J2CPP_CLASS_NAME, java::lang::VirtualMachineError::J2CPP_METHOD_NAME(0), java::lang::VirtualMachineError::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Error>(get_jtype());
 }
 
-template <>
-local_ref< java::lang::VirtualMachineError > create< java::lang::VirtualMachineError>(local_ref< java::lang::String > const &a0)
+
+java::lang::VirtualMachineError::VirtualMachineError()
+: cpp_object<java::lang::VirtualMachineError>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::lang::VirtualMachineError::J2CPP_CLASS_NAME>(),
+		get_method_id<java::lang::VirtualMachineError::J2CPP_CLASS_NAME, java::lang::VirtualMachineError::J2CPP_METHOD_NAME(0), java::lang::VirtualMachineError::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
 {
-	return local_ref< java::lang::VirtualMachineError >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::lang::VirtualMachineError::J2CPP_CLASS_NAME>(),
-			get_method_id<java::lang::VirtualMachineError::J2CPP_CLASS_NAME, java::lang::VirtualMachineError::J2CPP_METHOD_NAME(1), java::lang::VirtualMachineError::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
 }
+
+
+
+java::lang::VirtualMachineError::VirtualMachineError(local_ref< java::lang::String > const &a0)
+: cpp_object<java::lang::VirtualMachineError>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::lang::VirtualMachineError::J2CPP_CLASS_NAME>(),
+		get_method_id<java::lang::VirtualMachineError::J2CPP_CLASS_NAME, java::lang::VirtualMachineError::J2CPP_METHOD_NAME(1), java::lang::VirtualMachineError::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 
 J2CPP_DEFINE_CLASS(java::lang::VirtualMachineError,"java/lang/VirtualMachineError")

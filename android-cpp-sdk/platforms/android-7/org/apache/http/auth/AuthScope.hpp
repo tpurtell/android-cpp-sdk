@@ -49,11 +49,18 @@ namespace org { namespace apache { namespace http { namespace auth {
 		J2CPP_DECLARE_FIELD(3)
 		J2CPP_DECLARE_FIELD(4)
 
-		AuthScope(jobject jobj)
+		explicit AuthScope(jobject jobj)
 		: cpp_object<AuthScope>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		AuthScope(local_ref< java::lang::String > const&, cpp_int const&, local_ref< java::lang::String > const&, local_ref< java::lang::String > const&);
+		AuthScope(local_ref< java::lang::String > const&, cpp_int const&, local_ref< java::lang::String > const&);
+		AuthScope(local_ref< java::lang::String > const&, cpp_int const&);
+		AuthScope(local_ref< org::apache::http::auth::AuthScope > const&);
 		local_ref< java::lang::String > getHost();
 		cpp_int getPort();
 		local_ref< java::lang::String > getRealm();
@@ -75,7 +82,6 @@ namespace org { namespace apache { namespace http { namespace auth {
 } //namespace apache
 } //namespace org
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ORG_APACHE_HTTP_AUTH_AUTHSCOPE_HPP_DECL
@@ -88,53 +94,63 @@ namespace org { namespace apache { namespace http { namespace auth {
 namespace j2cpp {
 
 
-template <>
-local_ref< org::apache::http::auth::AuthScope > create< org::apache::http::auth::AuthScope>(local_ref< java::lang::String > const &a0, cpp_int const &a1, local_ref< java::lang::String > const &a2, local_ref< java::lang::String > const &a3)
+
+org::apache::http::auth::AuthScope::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< org::apache::http::auth::AuthScope >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::apache::http::auth::AuthScope::J2CPP_CLASS_NAME>(),
-			get_method_id<org::apache::http::auth::AuthScope::J2CPP_CLASS_NAME, org::apache::http::auth::AuthScope::J2CPP_METHOD_NAME(0), org::apache::http::auth::AuthScope::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
 
-template <>
-local_ref< org::apache::http::auth::AuthScope > create< org::apache::http::auth::AuthScope>(local_ref< java::lang::String > const &a0, cpp_int const &a1, local_ref< java::lang::String > const &a2)
+
+org::apache::http::auth::AuthScope::AuthScope(local_ref< java::lang::String > const &a0, cpp_int const &a1, local_ref< java::lang::String > const &a2, local_ref< java::lang::String > const &a3)
+: cpp_object<org::apache::http::auth::AuthScope>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::apache::http::auth::AuthScope::J2CPP_CLASS_NAME>(),
+		get_method_id<org::apache::http::auth::AuthScope::J2CPP_CLASS_NAME, org::apache::http::auth::AuthScope::J2CPP_METHOD_NAME(0), org::apache::http::auth::AuthScope::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype()
+	)
+)
 {
-	return local_ref< org::apache::http::auth::AuthScope >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::apache::http::auth::AuthScope::J2CPP_CLASS_NAME>(),
-			get_method_id<org::apache::http::auth::AuthScope::J2CPP_CLASS_NAME, org::apache::http::auth::AuthScope::J2CPP_METHOD_NAME(1), org::apache::http::auth::AuthScope::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< org::apache::http::auth::AuthScope > create< org::apache::http::auth::AuthScope>(local_ref< java::lang::String > const &a0, cpp_int const &a1)
+
+
+org::apache::http::auth::AuthScope::AuthScope(local_ref< java::lang::String > const &a0, cpp_int const &a1, local_ref< java::lang::String > const &a2)
+: cpp_object<org::apache::http::auth::AuthScope>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::apache::http::auth::AuthScope::J2CPP_CLASS_NAME>(),
+		get_method_id<org::apache::http::auth::AuthScope::J2CPP_CLASS_NAME, org::apache::http::auth::AuthScope::J2CPP_METHOD_NAME(1), org::apache::http::auth::AuthScope::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
+	)
+)
 {
-	return local_ref< org::apache::http::auth::AuthScope >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::apache::http::auth::AuthScope::J2CPP_CLASS_NAME>(),
-			get_method_id<org::apache::http::auth::AuthScope::J2CPP_CLASS_NAME, org::apache::http::auth::AuthScope::J2CPP_METHOD_NAME(2), org::apache::http::auth::AuthScope::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< org::apache::http::auth::AuthScope > create< org::apache::http::auth::AuthScope>(local_ref< org::apache::http::auth::AuthScope > const &a0)
+
+
+org::apache::http::auth::AuthScope::AuthScope(local_ref< java::lang::String > const &a0, cpp_int const &a1)
+: cpp_object<org::apache::http::auth::AuthScope>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::apache::http::auth::AuthScope::J2CPP_CLASS_NAME>(),
+		get_method_id<org::apache::http::auth::AuthScope::J2CPP_CLASS_NAME, org::apache::http::auth::AuthScope::J2CPP_METHOD_NAME(2), org::apache::http::auth::AuthScope::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
 {
-	return local_ref< org::apache::http::auth::AuthScope >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::apache::http::auth::AuthScope::J2CPP_CLASS_NAME>(),
-			get_method_id<org::apache::http::auth::AuthScope::J2CPP_CLASS_NAME, org::apache::http::auth::AuthScope::J2CPP_METHOD_NAME(3), org::apache::http::auth::AuthScope::J2CPP_METHOD_SIGNATURE(3), false>(),
-			a0.get_jtype()
-		)
-	);
 }
+
+
+
+org::apache::http::auth::AuthScope::AuthScope(local_ref< org::apache::http::auth::AuthScope > const &a0)
+: cpp_object<org::apache::http::auth::AuthScope>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::apache::http::auth::AuthScope::J2CPP_CLASS_NAME>(),
+		get_method_id<org::apache::http::auth::AuthScope::J2CPP_CLASS_NAME, org::apache::http::auth::AuthScope::J2CPP_METHOD_NAME(3), org::apache::http::auth::AuthScope::J2CPP_METHOD_SIGNATURE(3), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 local_ref< java::lang::String > org::apache::http::auth::AuthScope::getHost()
 {
@@ -217,6 +233,7 @@ cpp_int org::apache::http::auth::AuthScope::hashCode()
 		)
 	);
 }
+
 
 
 static_field<

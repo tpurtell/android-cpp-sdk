@@ -10,6 +10,7 @@
 #define J2CPP_ANDROID_WEBKIT_WEBICONDATABASE_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace android { namespace graphics { class Bitmap; } } }
 namespace j2cpp { namespace android { namespace webkit { namespace WebIconDatabase_ { class IconListener; } } } }
@@ -17,6 +18,7 @@ namespace j2cpp { namespace android { namespace webkit { namespace WebIconDataba
 
 #include <android/graphics/Bitmap.hpp>
 #include <android/webkit/WebIconDatabase.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -37,10 +39,13 @@ namespace android { namespace webkit {
 
 			J2CPP_DECLARE_METHOD(0)
 
-			IconListener(jobject jobj)
+			explicit IconListener(jobject jobj)
 			: cpp_object<IconListener>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+
 
 			void onReceivedIcon(local_ref< java::lang::String > const&, local_ref< android::graphics::Bitmap > const&);
 		}; //class IconListener
@@ -65,10 +70,13 @@ namespace android { namespace webkit {
 
 		typedef WebIconDatabase_::IconListener IconListener;
 
-		WebIconDatabase(jobject jobj)
+		explicit WebIconDatabase(jobject jobj)
 		: cpp_object<WebIconDatabase>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		void open(local_ref< java::lang::String > const&);
 		void close();
@@ -82,7 +90,6 @@ namespace android { namespace webkit {
 } //namespace webkit
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_WEBKIT_WEBICONDATABASE_HPP_DECL
@@ -95,6 +102,12 @@ namespace android { namespace webkit {
 namespace j2cpp {
 
 
+
+
+android::webkit::WebIconDatabase_::IconListener::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 void android::webkit::WebIconDatabase_::IconListener::onReceivedIcon(local_ref< java::lang::String > const &a0, local_ref< android::graphics::Bitmap > const &a1)
 {
@@ -112,16 +125,12 @@ J2CPP_DEFINE_CLASS(android::webkit::WebIconDatabase_::IconListener,"android/webk
 J2CPP_DEFINE_METHOD(android::webkit::WebIconDatabase_::IconListener,0,"onReceivedIcon","(Ljava/lang/String;Landroid/graphics/Bitmap;)V")
 
 
-template <>
-local_ref< android::webkit::WebIconDatabase > create< android::webkit::WebIconDatabase>()
+
+android::webkit::WebIconDatabase::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::webkit::WebIconDatabase >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::webkit::WebIconDatabase::J2CPP_CLASS_NAME>(),
-			get_method_id<android::webkit::WebIconDatabase::J2CPP_CLASS_NAME, android::webkit::WebIconDatabase::J2CPP_METHOD_NAME(0), android::webkit::WebIconDatabase::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
 
 void android::webkit::WebIconDatabase::open(local_ref< java::lang::String > const &a0)
 {

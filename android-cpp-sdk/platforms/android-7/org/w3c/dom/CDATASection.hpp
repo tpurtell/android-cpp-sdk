@@ -10,8 +10,12 @@
 #define J2CPP_ORG_W3C_DOM_CDATASECTION_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace org { namespace w3c { namespace dom { class Text; } } } }
 
 
+#include <java/lang/Object.hpp>
+#include <org/w3c/dom/Text.hpp>
 
 
 namespace j2cpp {
@@ -27,16 +31,19 @@ namespace org { namespace w3c { namespace dom {
 		J2CPP_DECLARE_CLASS
 
 
-		CDATASection(jobject jobj)
+		explicit CDATASection(jobject jobj)
 		: cpp_object<CDATASection>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<org::w3c::dom::Text>() const;
+
 	}; //class CDATASection
 
 } //namespace dom
 } //namespace w3c
 } //namespace org
-
 
 } //namespace j2cpp
 
@@ -49,6 +56,17 @@ namespace org { namespace w3c { namespace dom {
 
 namespace j2cpp {
 
+
+
+org::w3c::dom::CDATASection::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
+
+org::w3c::dom::CDATASection::operator local_ref<org::w3c::dom::Text>() const
+{
+	return local_ref<org::w3c::dom::Text>(get_jtype());
+}
 
 J2CPP_DEFINE_CLASS(org::w3c::dom::CDATASection,"org/w3c/dom/CDATASection")
 

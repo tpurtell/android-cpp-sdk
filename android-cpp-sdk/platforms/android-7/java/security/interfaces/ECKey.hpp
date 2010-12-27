@@ -10,9 +10,11 @@
 #define J2CPP_JAVA_SECURITY_INTERFACES_ECKEY_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace security { namespace spec { class ECParameterSpec; } } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/security/spec/ECParameterSpec.hpp>
 
 
@@ -30,10 +32,13 @@ namespace java { namespace security { namespace interfaces {
 
 		J2CPP_DECLARE_METHOD(0)
 
-		ECKey(jobject jobj)
+		explicit ECKey(jobject jobj)
 		: cpp_object<ECKey>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		local_ref< java::security::spec::ECParameterSpec > getParams();
 	}; //class ECKey
@@ -41,7 +46,6 @@ namespace java { namespace security { namespace interfaces {
 } //namespace interfaces
 } //namespace security
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -54,6 +58,12 @@ namespace java { namespace security { namespace interfaces {
 
 namespace j2cpp {
 
+
+
+java::security::interfaces::ECKey::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 local_ref< java::security::spec::ECParameterSpec > java::security::interfaces::ECKey::getParams()
 {

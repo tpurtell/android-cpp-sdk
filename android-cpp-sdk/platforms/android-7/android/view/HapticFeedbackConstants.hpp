@@ -10,8 +10,10 @@
 #define J2CPP_ANDROID_VIEW_HAPTICFEEDBACKCONSTANTS_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -32,10 +34,13 @@ namespace android { namespace view {
 		J2CPP_DECLARE_FIELD(2)
 		J2CPP_DECLARE_FIELD(3)
 
-		HapticFeedbackConstants(jobject jobj)
+		explicit HapticFeedbackConstants(jobject jobj)
 		: cpp_object<HapticFeedbackConstants>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 
 		static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(0), J2CPP_FIELD_SIGNATURE(0), cpp_int > LONG_PRESS;
@@ -46,7 +51,6 @@ namespace android { namespace view {
 
 } //namespace view
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -60,16 +64,12 @@ namespace android { namespace view {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::view::HapticFeedbackConstants > create< android::view::HapticFeedbackConstants>()
+
+android::view::HapticFeedbackConstants::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::view::HapticFeedbackConstants >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::view::HapticFeedbackConstants::J2CPP_CLASS_NAME>(),
-			get_method_id<android::view::HapticFeedbackConstants::J2CPP_CLASS_NAME, android::view::HapticFeedbackConstants::J2CPP_METHOD_NAME(0), android::view::HapticFeedbackConstants::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
 
 
 static_field<

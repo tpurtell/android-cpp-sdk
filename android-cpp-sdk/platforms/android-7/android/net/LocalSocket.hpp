@@ -13,6 +13,7 @@
 namespace j2cpp { namespace java { namespace io { class FileDescriptor; } } }
 namespace j2cpp { namespace java { namespace io { class InputStream; } } }
 namespace j2cpp { namespace java { namespace io { class OutputStream; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace android { namespace net { class Credentials; } } }
 namespace j2cpp { namespace android { namespace net { class LocalSocketAddress; } } }
@@ -23,6 +24,7 @@ namespace j2cpp { namespace android { namespace net { class LocalSocketAddress; 
 #include <java/io/FileDescriptor.hpp>
 #include <java/io/InputStream.hpp>
 #include <java/io/OutputStream.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -66,11 +68,15 @@ namespace android { namespace net {
 		J2CPP_DECLARE_METHOD(25)
 		J2CPP_DECLARE_METHOD(26)
 
-		LocalSocket(jobject jobj)
+		explicit LocalSocket(jobject jobj)
 		: cpp_object<LocalSocket>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		LocalSocket();
 		local_ref< java::lang::String > toString();
 		void connect(local_ref< android::net::LocalSocketAddress > const&);
 		void bind(local_ref< android::net::LocalSocketAddress > const&);
@@ -102,7 +108,6 @@ namespace android { namespace net {
 } //namespace net
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_NET_LOCALSOCKET_HPP_DECL
@@ -115,16 +120,23 @@ namespace android { namespace net {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::net::LocalSocket > create< android::net::LocalSocket>()
+
+android::net::LocalSocket::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::net::LocalSocket >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::net::LocalSocket::J2CPP_CLASS_NAME>(),
-			get_method_id<android::net::LocalSocket::J2CPP_CLASS_NAME, android::net::LocalSocket::J2CPP_METHOD_NAME(0), android::net::LocalSocket::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::net::LocalSocket::LocalSocket()
+: cpp_object<android::net::LocalSocket>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::net::LocalSocket::J2CPP_CLASS_NAME>(),
+		get_method_id<android::net::LocalSocket::J2CPP_CLASS_NAME, android::net::LocalSocket::J2CPP_METHOD_NAME(0), android::net::LocalSocket::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 local_ref< java::lang::String > android::net::LocalSocket::toString()
 {

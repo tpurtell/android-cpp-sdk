@@ -10,8 +10,10 @@
 #define J2CPP_ANDROID_MEDIA_AUDIOFORMAT_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -70,11 +72,15 @@ namespace android { namespace media {
 		J2CPP_DECLARE_FIELD(40)
 		J2CPP_DECLARE_FIELD(41)
 
-		AudioFormat(jobject jobj)
+		explicit AudioFormat(jobject jobj)
 		: cpp_object<AudioFormat>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		AudioFormat();
 
 		static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(0), J2CPP_FIELD_SIGNATURE(0), cpp_int > ENCODING_INVALID;
 		static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(1), J2CPP_FIELD_SIGNATURE(1), cpp_int > ENCODING_DEFAULT;
@@ -123,7 +129,6 @@ namespace android { namespace media {
 } //namespace media
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_MEDIA_AUDIOFORMAT_HPP_DECL
@@ -136,16 +141,23 @@ namespace android { namespace media {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::media::AudioFormat > create< android::media::AudioFormat>()
+
+android::media::AudioFormat::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::media::AudioFormat >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::media::AudioFormat::J2CPP_CLASS_NAME>(),
-			get_method_id<android::media::AudioFormat::J2CPP_CLASS_NAME, android::media::AudioFormat::J2CPP_METHOD_NAME(0), android::media::AudioFormat::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::media::AudioFormat::AudioFormat()
+: cpp_object<android::media::AudioFormat>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::media::AudioFormat::J2CPP_CLASS_NAME>(),
+		get_method_id<android::media::AudioFormat::J2CPP_CLASS_NAME, android::media::AudioFormat::J2CPP_METHOD_NAME(0), android::media::AudioFormat::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 
 static_field<

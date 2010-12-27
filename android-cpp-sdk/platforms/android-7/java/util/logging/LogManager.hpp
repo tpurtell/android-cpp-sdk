@@ -11,6 +11,7 @@
 
 
 namespace j2cpp { namespace java { namespace io { class InputStream; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace beans { class PropertyChangeListener; } } }
 namespace j2cpp { namespace java { namespace util { namespace logging { class LoggingMXBean; } } } }
@@ -20,6 +21,7 @@ namespace j2cpp { namespace java { namespace util { class Enumeration; } } }
 
 #include <java/beans/PropertyChangeListener.hpp>
 #include <java/io/InputStream.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/util/Enumeration.hpp>
 #include <java/util/logging/Logger.hpp>
@@ -53,10 +55,13 @@ namespace java { namespace util { namespace logging {
 		J2CPP_DECLARE_METHOD(12)
 		J2CPP_DECLARE_FIELD(0)
 
-		LogManager(jobject jobj)
+		explicit LogManager(jobject jobj)
 		: cpp_object<LogManager>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		static local_ref< java::util::logging::LoggingMXBean > getLoggingMXBean();
 		void checkAccess();
@@ -78,7 +83,6 @@ namespace java { namespace util { namespace logging {
 } //namespace util
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_UTIL_LOGGING_LOGMANAGER_HPP_DECL
@@ -91,16 +95,12 @@ namespace java { namespace util { namespace logging {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::util::logging::LogManager > create< java::util::logging::LogManager>()
+
+java::util::logging::LogManager::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::util::logging::LogManager >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::logging::LogManager::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::logging::LogManager::J2CPP_CLASS_NAME, java::util::logging::LogManager::J2CPP_METHOD_NAME(0), java::util::logging::LogManager::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
 
 local_ref< java::util::logging::LoggingMXBean > java::util::logging::LogManager::getLoggingMXBean()
 {

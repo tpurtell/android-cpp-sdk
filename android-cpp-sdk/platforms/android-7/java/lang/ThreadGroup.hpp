@@ -10,11 +10,14 @@
 #define J2CPP_JAVA_LANG_THREADGROUP_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class Thread; } } }
+namespace j2cpp { namespace java { namespace lang { namespace Thread_ { class UncaughtExceptionHandler; } } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace lang { class Throwable; } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/lang/Thread.hpp>
 #include <java/lang/Throwable.hpp>
@@ -59,11 +62,17 @@ namespace java { namespace lang {
 		J2CPP_DECLARE_METHOD(24)
 		J2CPP_DECLARE_METHOD(25)
 
-		ThreadGroup(jobject jobj)
+		explicit ThreadGroup(jobject jobj)
 		: cpp_object<ThreadGroup>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::lang::Thread_::UncaughtExceptionHandler>() const;
+
+
+		ThreadGroup(local_ref< java::lang::String > const&);
+		ThreadGroup(local_ref< java::lang::ThreadGroup > const&, local_ref< java::lang::String > const&);
 		cpp_int activeCount();
 		cpp_int activeGroupCount();
 		cpp_boolean allowThreadSuspension(cpp_boolean const&);
@@ -93,7 +102,6 @@ namespace java { namespace lang {
 } //namespace lang
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_LANG_THREADGROUP_HPP_DECL
@@ -106,29 +114,42 @@ namespace java { namespace lang {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::lang::ThreadGroup > create< java::lang::ThreadGroup>(local_ref< java::lang::String > const &a0)
+
+java::lang::ThreadGroup::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::lang::ThreadGroup >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::lang::ThreadGroup::J2CPP_CLASS_NAME>(),
-			get_method_id<java::lang::ThreadGroup::J2CPP_CLASS_NAME, java::lang::ThreadGroup::J2CPP_METHOD_NAME(0), java::lang::ThreadGroup::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
 
-template <>
-local_ref< java::lang::ThreadGroup > create< java::lang::ThreadGroup>(local_ref< java::lang::ThreadGroup > const &a0, local_ref< java::lang::String > const &a1)
+java::lang::ThreadGroup::operator local_ref<java::lang::Thread_::UncaughtExceptionHandler>() const
 {
-	return local_ref< java::lang::ThreadGroup >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::lang::ThreadGroup::J2CPP_CLASS_NAME>(),
-			get_method_id<java::lang::ThreadGroup::J2CPP_CLASS_NAME, java::lang::ThreadGroup::J2CPP_METHOD_NAME(1), java::lang::ThreadGroup::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Thread_::UncaughtExceptionHandler>(get_jtype());
 }
+
+
+java::lang::ThreadGroup::ThreadGroup(local_ref< java::lang::String > const &a0)
+: cpp_object<java::lang::ThreadGroup>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::lang::ThreadGroup::J2CPP_CLASS_NAME>(),
+		get_method_id<java::lang::ThreadGroup::J2CPP_CLASS_NAME, java::lang::ThreadGroup::J2CPP_METHOD_NAME(0), java::lang::ThreadGroup::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
+
+
+java::lang::ThreadGroup::ThreadGroup(local_ref< java::lang::ThreadGroup > const &a0, local_ref< java::lang::String > const &a1)
+: cpp_object<java::lang::ThreadGroup>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::lang::ThreadGroup::J2CPP_CLASS_NAME>(),
+		get_method_id<java::lang::ThreadGroup::J2CPP_CLASS_NAME, java::lang::ThreadGroup::J2CPP_METHOD_NAME(1), java::lang::ThreadGroup::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
 
 cpp_int java::lang::ThreadGroup::activeCount()
 {

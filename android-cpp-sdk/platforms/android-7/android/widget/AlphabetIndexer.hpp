@@ -13,9 +13,13 @@
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class CharSequence; } } }
 namespace j2cpp { namespace android { namespace database { class Cursor; } } }
+namespace j2cpp { namespace android { namespace database { class DataSetObserver; } } }
+namespace j2cpp { namespace android { namespace widget { class SectionIndexer; } } }
 
 
 #include <android/database/Cursor.hpp>
+#include <android/database/DataSetObserver.hpp>
+#include <android/widget/SectionIndexer.hpp>
 #include <java/lang/CharSequence.hpp>
 #include <java/lang/Object.hpp>
 
@@ -44,11 +48,16 @@ namespace android { namespace widget {
 		J2CPP_DECLARE_FIELD(1)
 		J2CPP_DECLARE_FIELD(2)
 
-		AlphabetIndexer(jobject jobj)
+		explicit AlphabetIndexer(jobject jobj)
 		: cpp_object<AlphabetIndexer>(jobj)
 		{
 		}
 
+		operator local_ref<android::database::DataSetObserver>() const;
+		operator local_ref<android::widget::SectionIndexer>() const;
+
+
+		AlphabetIndexer(local_ref< android::database::Cursor > const&, cpp_int const&, local_ref< java::lang::CharSequence > const&);
 		local_ref< cpp_object_array<java::lang::Object, 1> > getSections();
 		void setCursor(local_ref< android::database::Cursor > const&);
 		cpp_int getPositionForSection(cpp_int const&);
@@ -60,7 +69,6 @@ namespace android { namespace widget {
 
 } //namespace widget
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -74,17 +82,29 @@ namespace android { namespace widget {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::widget::AlphabetIndexer > create< android::widget::AlphabetIndexer>(local_ref< android::database::Cursor > const &a0, cpp_int const &a1, local_ref< java::lang::CharSequence > const &a2)
+
+android::widget::AlphabetIndexer::operator local_ref<android::database::DataSetObserver>() const
 {
-	return local_ref< android::widget::AlphabetIndexer >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::widget::AlphabetIndexer::J2CPP_CLASS_NAME>(),
-			get_method_id<android::widget::AlphabetIndexer::J2CPP_CLASS_NAME, android::widget::AlphabetIndexer::J2CPP_METHOD_NAME(0), android::widget::AlphabetIndexer::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
-		)
-	);
+	return local_ref<android::database::DataSetObserver>(get_jtype());
 }
+
+android::widget::AlphabetIndexer::operator local_ref<android::widget::SectionIndexer>() const
+{
+	return local_ref<android::widget::SectionIndexer>(get_jtype());
+}
+
+
+android::widget::AlphabetIndexer::AlphabetIndexer(local_ref< android::database::Cursor > const &a0, cpp_int const &a1, local_ref< java::lang::CharSequence > const &a2)
+: cpp_object<android::widget::AlphabetIndexer>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::widget::AlphabetIndexer::J2CPP_CLASS_NAME>(),
+		get_method_id<android::widget::AlphabetIndexer::J2CPP_CLASS_NAME, android::widget::AlphabetIndexer::J2CPP_METHOD_NAME(0), android::widget::AlphabetIndexer::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
+	)
+)
+{
+}
+
 
 local_ref< cpp_object_array<java::lang::Object, 1> > android::widget::AlphabetIndexer::getSections()
 {

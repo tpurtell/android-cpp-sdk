@@ -10,9 +10,11 @@
 #define J2CPP_ANDROID_WEBKIT_DOWNLOADLISTENER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -30,17 +32,19 @@ namespace android { namespace webkit {
 
 		J2CPP_DECLARE_METHOD(0)
 
-		DownloadListener(jobject jobj)
+		explicit DownloadListener(jobject jobj)
 		: cpp_object<DownloadListener>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		void onDownloadStart(local_ref< java::lang::String > const&, local_ref< java::lang::String > const&, local_ref< java::lang::String > const&, local_ref< java::lang::String > const&, cpp_long const&);
 	}; //class DownloadListener
 
 } //namespace webkit
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -53,6 +57,12 @@ namespace android { namespace webkit {
 
 namespace j2cpp {
 
+
+
+android::webkit::DownloadListener::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 void android::webkit::DownloadListener::onDownloadStart(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1, local_ref< java::lang::String > const &a2, local_ref< java::lang::String > const &a3, cpp_long const &a4)
 {

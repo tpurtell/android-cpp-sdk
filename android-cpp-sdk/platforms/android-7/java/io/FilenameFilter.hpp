@@ -11,10 +11,12 @@
 
 
 namespace j2cpp { namespace java { namespace io { class File; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 
 
 #include <java/io/File.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -32,17 +34,19 @@ namespace java { namespace io {
 
 		J2CPP_DECLARE_METHOD(0)
 
-		FilenameFilter(jobject jobj)
+		explicit FilenameFilter(jobject jobj)
 		: cpp_object<FilenameFilter>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		cpp_boolean accept(local_ref< java::io::File > const&, local_ref< java::lang::String > const&);
 	}; //class FilenameFilter
 
 } //namespace io
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -55,6 +59,12 @@ namespace java { namespace io {
 
 namespace j2cpp {
 
+
+
+java::io::FilenameFilter::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 cpp_boolean java::io::FilenameFilter::accept(local_ref< java::io::File > const &a0, local_ref< java::lang::String > const &a1)
 {

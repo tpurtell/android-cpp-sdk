@@ -10,8 +10,10 @@
 #define J2CPP_ANDROID_GESTURE_GESTUREPOINT_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -31,14 +33,18 @@ namespace android { namespace gesture {
 		J2CPP_DECLARE_FIELD(1)
 		J2CPP_DECLARE_FIELD(2)
 
-		GesturePoint(jobject jobj)
+		explicit GesturePoint(jobject jobj)
 		: cpp_object<GesturePoint>(jobj)
-		, x(jobj)
-		, y(jobj)
-		, timestamp(jobj)
+, x(jobj)
+, y(jobj)
+, timestamp(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		GesturePoint(cpp_float const&, cpp_float const&, cpp_long const&);
 
 		field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(0), J2CPP_FIELD_SIGNATURE(0), cpp_float > x;
 		field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(1), J2CPP_FIELD_SIGNATURE(1), cpp_float > y;
@@ -47,7 +53,6 @@ namespace android { namespace gesture {
 
 } //namespace gesture
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -61,17 +66,27 @@ namespace android { namespace gesture {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::gesture::GesturePoint > create< android::gesture::GesturePoint>(cpp_float const &a0, cpp_float const &a1, cpp_long const &a2)
+
+android::gesture::GesturePoint::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::gesture::GesturePoint >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::gesture::GesturePoint::J2CPP_CLASS_NAME>(),
-			get_method_id<android::gesture::GesturePoint::J2CPP_CLASS_NAME, android::gesture::GesturePoint::J2CPP_METHOD_NAME(0), android::gesture::GesturePoint::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::gesture::GesturePoint::GesturePoint(cpp_float const &a0, cpp_float const &a1, cpp_long const &a2)
+: cpp_object<android::gesture::GesturePoint>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::gesture::GesturePoint::J2CPP_CLASS_NAME>(),
+		get_method_id<android::gesture::GesturePoint::J2CPP_CLASS_NAME, android::gesture::GesturePoint::J2CPP_METHOD_NAME(0), android::gesture::GesturePoint::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
+	)
+)
+, x(get_jtype())
+, y(get_jtype())
+, timestamp(get_jtype())
+{
+}
+
 
 
 

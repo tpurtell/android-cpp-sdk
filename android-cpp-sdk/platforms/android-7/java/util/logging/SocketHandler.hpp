@@ -11,11 +11,13 @@
 
 
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace util { namespace logging { class StreamHandler; } } } }
 namespace j2cpp { namespace java { namespace util { namespace logging { class LogRecord; } } } }
 
 
 #include <java/lang/String.hpp>
 #include <java/util/logging/LogRecord.hpp>
+#include <java/util/logging/StreamHandler.hpp>
 
 
 namespace j2cpp {
@@ -35,11 +37,16 @@ namespace java { namespace util { namespace logging {
 		J2CPP_DECLARE_METHOD(2)
 		J2CPP_DECLARE_METHOD(3)
 
-		SocketHandler(jobject jobj)
+		explicit SocketHandler(jobject jobj)
 		: cpp_object<SocketHandler>(jobj)
 		{
 		}
 
+		operator local_ref<java::util::logging::StreamHandler>() const;
+
+
+		SocketHandler();
+		SocketHandler(local_ref< java::lang::String > const&, cpp_int const&);
 		void close();
 		void publish(local_ref< java::util::logging::LogRecord > const&);
 	}; //class SocketHandler
@@ -47,7 +54,6 @@ namespace java { namespace util { namespace logging {
 } //namespace logging
 } //namespace util
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -61,28 +67,36 @@ namespace java { namespace util { namespace logging {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::util::logging::SocketHandler > create< java::util::logging::SocketHandler>()
+
+java::util::logging::SocketHandler::operator local_ref<java::util::logging::StreamHandler>() const
 {
-	return local_ref< java::util::logging::SocketHandler >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::logging::SocketHandler::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::logging::SocketHandler::J2CPP_CLASS_NAME, java::util::logging::SocketHandler::J2CPP_METHOD_NAME(0), java::util::logging::SocketHandler::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::util::logging::StreamHandler>(get_jtype());
 }
 
-template <>
-local_ref< java::util::logging::SocketHandler > create< java::util::logging::SocketHandler>(local_ref< java::lang::String > const &a0, cpp_int const &a1)
+
+java::util::logging::SocketHandler::SocketHandler()
+: cpp_object<java::util::logging::SocketHandler>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::util::logging::SocketHandler::J2CPP_CLASS_NAME>(),
+		get_method_id<java::util::logging::SocketHandler::J2CPP_CLASS_NAME, java::util::logging::SocketHandler::J2CPP_METHOD_NAME(0), java::util::logging::SocketHandler::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
 {
-	return local_ref< java::util::logging::SocketHandler >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::logging::SocketHandler::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::logging::SocketHandler::J2CPP_CLASS_NAME, java::util::logging::SocketHandler::J2CPP_METHOD_NAME(1), java::util::logging::SocketHandler::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
 }
+
+
+
+java::util::logging::SocketHandler::SocketHandler(local_ref< java::lang::String > const &a0, cpp_int const &a1)
+: cpp_object<java::util::logging::SocketHandler>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::util::logging::SocketHandler::J2CPP_CLASS_NAME>(),
+		get_method_id<java::util::logging::SocketHandler::J2CPP_CLASS_NAME, java::util::logging::SocketHandler::J2CPP_METHOD_NAME(1), java::util::logging::SocketHandler::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
 
 void java::util::logging::SocketHandler::close()
 {

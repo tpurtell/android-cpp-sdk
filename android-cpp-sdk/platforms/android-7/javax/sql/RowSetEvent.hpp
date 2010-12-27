@@ -11,8 +11,12 @@
 
 
 namespace j2cpp { namespace javax { namespace sql { class RowSet; } } }
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
+namespace j2cpp { namespace java { namespace util { class EventObject; } } }
 
 
+#include <java/io/Serializable.hpp>
+#include <java/util/EventObject.hpp>
 #include <javax/sql/RowSet.hpp>
 
 
@@ -30,16 +34,20 @@ namespace javax { namespace sql {
 
 		J2CPP_DECLARE_METHOD(0)
 
-		RowSetEvent(jobject jobj)
+		explicit RowSetEvent(jobject jobj)
 		: cpp_object<RowSetEvent>(jobj)
 		{
 		}
 
+		operator local_ref<java::util::EventObject>() const;
+		operator local_ref<java::io::Serializable>() const;
+
+
+		RowSetEvent(local_ref< javax::sql::RowSet > const&);
 	}; //class RowSetEvent
 
 } //namespace sql
 } //namespace javax
-
 
 } //namespace j2cpp
 
@@ -53,17 +61,29 @@ namespace javax { namespace sql {
 namespace j2cpp {
 
 
-template <>
-local_ref< javax::sql::RowSetEvent > create< javax::sql::RowSetEvent>(local_ref< javax::sql::RowSet > const &a0)
+
+javax::sql::RowSetEvent::operator local_ref<java::util::EventObject>() const
 {
-	return local_ref< javax::sql::RowSetEvent >(
-		environment::get().get_jenv()->NewObject(
-			get_class<javax::sql::RowSetEvent::J2CPP_CLASS_NAME>(),
-			get_method_id<javax::sql::RowSetEvent::J2CPP_CLASS_NAME, javax::sql::RowSetEvent::J2CPP_METHOD_NAME(0), javax::sql::RowSetEvent::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::util::EventObject>(get_jtype());
 }
+
+javax::sql::RowSetEvent::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jtype());
+}
+
+
+javax::sql::RowSetEvent::RowSetEvent(local_ref< javax::sql::RowSet > const &a0)
+: cpp_object<javax::sql::RowSetEvent>(
+	environment::get().get_jenv()->NewObject(
+		get_class<javax::sql::RowSetEvent::J2CPP_CLASS_NAME>(),
+		get_method_id<javax::sql::RowSetEvent::J2CPP_CLASS_NAME, javax::sql::RowSetEvent::J2CPP_METHOD_NAME(0), javax::sql::RowSetEvent::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 
 J2CPP_DEFINE_CLASS(javax::sql::RowSetEvent,"javax/sql/RowSetEvent")

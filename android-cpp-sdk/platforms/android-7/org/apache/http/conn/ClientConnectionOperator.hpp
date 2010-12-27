@@ -11,12 +11,14 @@
 
 
 namespace j2cpp { namespace java { namespace net { class InetAddress; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace protocol { class HttpContext; } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace conn { class OperatedClientConnection; } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace params { class HttpParams; } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { class HttpHost; } } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/net/InetAddress.hpp>
 #include <org/apache/http/HttpHost.hpp>
 #include <org/apache/http/conn/OperatedClientConnection.hpp>
@@ -40,10 +42,13 @@ namespace org { namespace apache { namespace http { namespace conn {
 		J2CPP_DECLARE_METHOD(1)
 		J2CPP_DECLARE_METHOD(2)
 
-		ClientConnectionOperator(jobject jobj)
+		explicit ClientConnectionOperator(jobject jobj)
 		: cpp_object<ClientConnectionOperator>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		local_ref< org::apache::http::conn::OperatedClientConnection > createConnection();
 		void openConnection(local_ref< org::apache::http::conn::OperatedClientConnection > const&, local_ref< org::apache::http::HttpHost > const&, local_ref< java::net::InetAddress > const&, local_ref< org::apache::http::protocol::HttpContext > const&, local_ref< org::apache::http::params::HttpParams > const&);
@@ -54,7 +59,6 @@ namespace org { namespace apache { namespace http { namespace conn {
 } //namespace http
 } //namespace apache
 } //namespace org
-
 
 } //namespace j2cpp
 
@@ -67,6 +71,12 @@ namespace org { namespace apache { namespace http { namespace conn {
 
 namespace j2cpp {
 
+
+
+org::apache::http::conn::ClientConnectionOperator::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 local_ref< org::apache::http::conn::OperatedClientConnection > org::apache::http::conn::ClientConnectionOperator::createConnection()
 {

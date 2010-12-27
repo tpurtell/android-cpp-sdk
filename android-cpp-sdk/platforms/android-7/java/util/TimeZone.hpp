@@ -10,12 +10,16 @@
 #define J2CPP_JAVA_UTIL_TIMEZONE_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace lang { class Cloneable; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace util { class Locale; } } }
 namespace j2cpp { namespace java { namespace util { class Date; } } }
 
 
+#include <java/io/Serializable.hpp>
+#include <java/lang/Cloneable.hpp>
 #include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/util/Date.hpp>
@@ -58,11 +62,17 @@ namespace java { namespace util {
 		J2CPP_DECLARE_FIELD(0)
 		J2CPP_DECLARE_FIELD(1)
 
-		TimeZone(jobject jobj)
+		explicit TimeZone(jobject jobj)
 		: cpp_object<TimeZone>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::io::Serializable>() const;
+		operator local_ref<java::lang::Cloneable>() const;
+
+
+		TimeZone();
 		local_ref< java::lang::Object > clone();
 		static local_ref< cpp_object_array<java::lang::String, 1> > getAvailableIDs();
 		static local_ref< cpp_object_array<java::lang::String, 1> > getAvailableIDs(cpp_int const&);
@@ -91,7 +101,6 @@ namespace java { namespace util {
 } //namespace util
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_UTIL_TIMEZONE_HPP_DECL
@@ -104,16 +113,33 @@ namespace java { namespace util {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::util::TimeZone > create< java::util::TimeZone>()
+
+java::util::TimeZone::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::util::TimeZone >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::TimeZone::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::TimeZone::J2CPP_CLASS_NAME, java::util::TimeZone::J2CPP_METHOD_NAME(0), java::util::TimeZone::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+java::util::TimeZone::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jtype());
+}
+
+java::util::TimeZone::operator local_ref<java::lang::Cloneable>() const
+{
+	return local_ref<java::lang::Cloneable>(get_jtype());
+}
+
+
+java::util::TimeZone::TimeZone()
+: cpp_object<java::util::TimeZone>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::util::TimeZone::J2CPP_CLASS_NAME>(),
+		get_method_id<java::util::TimeZone::J2CPP_CLASS_NAME, java::util::TimeZone::J2CPP_METHOD_NAME(0), java::util::TimeZone::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 local_ref< java::lang::Object > java::util::TimeZone::clone()
 {

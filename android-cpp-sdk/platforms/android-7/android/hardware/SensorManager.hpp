@@ -10,6 +10,7 @@
 #define J2CPP_ANDROID_HARDWARE_SENSORMANAGER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace util { class List; } } }
 namespace j2cpp { namespace android { namespace hardware { class SensorListener; } } }
 namespace j2cpp { namespace android { namespace hardware { class Sensor; } } }
@@ -21,6 +22,7 @@ namespace j2cpp { namespace android { namespace os { class Handler; } } }
 #include <android/hardware/SensorEventListener.hpp>
 #include <android/hardware/SensorListener.hpp>
 #include <android/os/Handler.hpp>
+#include <java/lang/Object.hpp>
 #include <java/util/List.hpp>
 
 
@@ -109,10 +111,13 @@ namespace android { namespace hardware {
 		J2CPP_DECLARE_FIELD(54)
 		J2CPP_DECLARE_FIELD(55)
 
-		SensorManager(jobject jobj)
+		explicit SensorManager(jobject jobj)
 		: cpp_object<SensorManager>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		cpp_int getSensors();
 		local_ref< java::util::List > getSensorList(cpp_int const&);
@@ -191,7 +196,6 @@ namespace android { namespace hardware {
 } //namespace hardware
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_HARDWARE_SENSORMANAGER_HPP_DECL
@@ -204,16 +208,12 @@ namespace android { namespace hardware {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::hardware::SensorManager > create< android::hardware::SensorManager>()
+
+android::hardware::SensorManager::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::hardware::SensorManager >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::hardware::SensorManager::J2CPP_CLASS_NAME>(),
-			get_method_id<android::hardware::SensorManager::J2CPP_CLASS_NAME, android::hardware::SensorManager::J2CPP_METHOD_NAME(0), android::hardware::SensorManager::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
 
 cpp_int android::hardware::SensorManager::getSensors()
 {

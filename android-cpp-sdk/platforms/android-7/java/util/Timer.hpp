@@ -10,11 +10,13 @@
 #define J2CPP_JAVA_UTIL_TIMER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace util { class Date; } } }
 namespace j2cpp { namespace java { namespace util { class TimerTask; } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/util/Date.hpp>
 #include <java/util/TimerTask.hpp>
@@ -45,11 +47,18 @@ namespace java { namespace util {
 		J2CPP_DECLARE_METHOD(10)
 		J2CPP_DECLARE_METHOD(11)
 
-		Timer(jobject jobj)
+		explicit Timer(jobject jobj)
 		: cpp_object<Timer>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		Timer(local_ref< java::lang::String > const&, cpp_boolean const&);
+		Timer(local_ref< java::lang::String > const&);
+		Timer(cpp_boolean const&);
+		Timer();
 		void cancel();
 		cpp_int purge();
 		void schedule(local_ref< java::util::TimerTask > const&, local_ref< java::util::Date > const&);
@@ -63,7 +72,6 @@ namespace java { namespace util {
 } //namespace util
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_UTIL_TIMER_HPP_DECL
@@ -76,52 +84,62 @@ namespace java { namespace util {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::util::Timer > create< java::util::Timer>(local_ref< java::lang::String > const &a0, cpp_boolean const &a1)
+
+java::util::Timer::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::util::Timer >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::Timer::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::Timer::J2CPP_CLASS_NAME, java::util::Timer::J2CPP_METHOD_NAME(0), java::util::Timer::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
 
-template <>
-local_ref< java::util::Timer > create< java::util::Timer>(local_ref< java::lang::String > const &a0)
+
+java::util::Timer::Timer(local_ref< java::lang::String > const &a0, cpp_boolean const &a1)
+: cpp_object<java::util::Timer>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::util::Timer::J2CPP_CLASS_NAME>(),
+		get_method_id<java::util::Timer::J2CPP_CLASS_NAME, java::util::Timer::J2CPP_METHOD_NAME(0), java::util::Timer::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
 {
-	return local_ref< java::util::Timer >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::Timer::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::Timer::J2CPP_CLASS_NAME, java::util::Timer::J2CPP_METHOD_NAME(1), java::util::Timer::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< java::util::Timer > create< java::util::Timer>(cpp_boolean const &a0)
+
+
+java::util::Timer::Timer(local_ref< java::lang::String > const &a0)
+: cpp_object<java::util::Timer>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::util::Timer::J2CPP_CLASS_NAME>(),
+		get_method_id<java::util::Timer::J2CPP_CLASS_NAME, java::util::Timer::J2CPP_METHOD_NAME(1), java::util::Timer::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< java::util::Timer >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::Timer::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::Timer::J2CPP_CLASS_NAME, java::util::Timer::J2CPP_METHOD_NAME(2), java::util::Timer::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< java::util::Timer > create< java::util::Timer>()
+
+
+java::util::Timer::Timer(cpp_boolean const &a0)
+: cpp_object<java::util::Timer>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::util::Timer::J2CPP_CLASS_NAME>(),
+		get_method_id<java::util::Timer::J2CPP_CLASS_NAME, java::util::Timer::J2CPP_METHOD_NAME(2), java::util::Timer::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< java::util::Timer >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::Timer::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::Timer::J2CPP_CLASS_NAME, java::util::Timer::J2CPP_METHOD_NAME(3), java::util::Timer::J2CPP_METHOD_SIGNATURE(3), false>()
-		)
-	);
 }
+
+
+
+java::util::Timer::Timer()
+: cpp_object<java::util::Timer>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::util::Timer::J2CPP_CLASS_NAME>(),
+		get_method_id<java::util::Timer::J2CPP_CLASS_NAME, java::util::Timer::J2CPP_METHOD_NAME(3), java::util::Timer::J2CPP_METHOD_SIGNATURE(3), false>()
+	)
+)
+{
+}
+
 
 void java::util::Timer::cancel()
 {

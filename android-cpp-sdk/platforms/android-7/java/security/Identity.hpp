@@ -10,17 +10,21 @@
 #define J2CPP_JAVA_SECURITY_IDENTITY_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace security { class IdentityScope; } } }
 namespace j2cpp { namespace java { namespace security { class Certificate; } } }
 namespace j2cpp { namespace java { namespace security { class PublicKey; } } }
+namespace j2cpp { namespace java { namespace security { class Principal; } } }
 
 
+#include <java/io/Serializable.hpp>
 #include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/security/Certificate.hpp>
 #include <java/security/IdentityScope.hpp>
+#include <java/security/Principal.hpp>
 #include <java/security/PublicKey.hpp>
 
 
@@ -54,11 +58,18 @@ namespace java { namespace security {
 		J2CPP_DECLARE_METHOD(15)
 		J2CPP_DECLARE_METHOD(16)
 
-		Identity(jobject jobj)
+		explicit Identity(jobject jobj)
 		: cpp_object<Identity>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::security::Principal>() const;
+		operator local_ref<java::io::Serializable>() const;
+
+
+		Identity(local_ref< java::lang::String > const&);
+		Identity(local_ref< java::lang::String > const&, local_ref< java::security::IdentityScope > const&);
 		void addCertificate(local_ref< java::security::Certificate > const&);
 		void removeCertificate(local_ref< java::security::Certificate > const&);
 		local_ref< cpp_object_array<java::security::Certificate, 1> > certificates();
@@ -77,7 +88,6 @@ namespace java { namespace security {
 } //namespace security
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_SECURITY_IDENTITY_HPP_DECL
@@ -90,40 +100,48 @@ namespace java { namespace security {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::security::Identity > create< java::security::Identity>()
+
+java::security::Identity::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::security::Identity >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::security::Identity::J2CPP_CLASS_NAME>(),
-			get_method_id<java::security::Identity::J2CPP_CLASS_NAME, java::security::Identity::J2CPP_METHOD_NAME(0), java::security::Identity::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
 
-template <>
-local_ref< java::security::Identity > create< java::security::Identity>(local_ref< java::lang::String > const &a0)
+java::security::Identity::operator local_ref<java::security::Principal>() const
 {
-	return local_ref< java::security::Identity >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::security::Identity::J2CPP_CLASS_NAME>(),
-			get_method_id<java::security::Identity::J2CPP_CLASS_NAME, java::security::Identity::J2CPP_METHOD_NAME(1), java::security::Identity::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::security::Principal>(get_jtype());
 }
 
-template <>
-local_ref< java::security::Identity > create< java::security::Identity>(local_ref< java::lang::String > const &a0, local_ref< java::security::IdentityScope > const &a1)
+java::security::Identity::operator local_ref<java::io::Serializable>() const
 {
-	return local_ref< java::security::Identity >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::security::Identity::J2CPP_CLASS_NAME>(),
-			get_method_id<java::security::Identity::J2CPP_CLASS_NAME, java::security::Identity::J2CPP_METHOD_NAME(2), java::security::Identity::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<java::io::Serializable>(get_jtype());
 }
+
+
+
+java::security::Identity::Identity(local_ref< java::lang::String > const &a0)
+: cpp_object<java::security::Identity>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::security::Identity::J2CPP_CLASS_NAME>(),
+		get_method_id<java::security::Identity::J2CPP_CLASS_NAME, java::security::Identity::J2CPP_METHOD_NAME(1), java::security::Identity::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
+
+
+java::security::Identity::Identity(local_ref< java::lang::String > const &a0, local_ref< java::security::IdentityScope > const &a1)
+: cpp_object<java::security::Identity>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::security::Identity::J2CPP_CLASS_NAME>(),
+		get_method_id<java::security::Identity::J2CPP_CLASS_NAME, java::security::Identity::J2CPP_METHOD_NAME(2), java::security::Identity::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
 
 void java::security::Identity::addCertificate(local_ref< java::security::Certificate > const &a0)
 {

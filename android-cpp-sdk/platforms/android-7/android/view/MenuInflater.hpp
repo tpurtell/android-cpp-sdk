@@ -10,12 +10,14 @@
 #define J2CPP_ANDROID_VIEW_MENUINFLATER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace android { namespace content { class Context; } } }
 namespace j2cpp { namespace android { namespace view { class Menu; } } }
 
 
 #include <android/content/Context.hpp>
 #include <android/view/Menu.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -33,17 +35,20 @@ namespace android { namespace view {
 		J2CPP_DECLARE_METHOD(0)
 		J2CPP_DECLARE_METHOD(1)
 
-		MenuInflater(jobject jobj)
+		explicit MenuInflater(jobject jobj)
 		: cpp_object<MenuInflater>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		MenuInflater(local_ref< android::content::Context > const&);
 		void inflate(cpp_int const&, local_ref< android::view::Menu > const&);
 	}; //class MenuInflater
 
 } //namespace view
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -57,17 +62,24 @@ namespace android { namespace view {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::view::MenuInflater > create< android::view::MenuInflater>(local_ref< android::content::Context > const &a0)
+
+android::view::MenuInflater::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::view::MenuInflater >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::view::MenuInflater::J2CPP_CLASS_NAME>(),
-			get_method_id<android::view::MenuInflater::J2CPP_CLASS_NAME, android::view::MenuInflater::J2CPP_METHOD_NAME(0), android::view::MenuInflater::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::view::MenuInflater::MenuInflater(local_ref< android::content::Context > const &a0)
+: cpp_object<android::view::MenuInflater>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::view::MenuInflater::J2CPP_CLASS_NAME>(),
+		get_method_id<android::view::MenuInflater::J2CPP_CLASS_NAME, android::view::MenuInflater::J2CPP_METHOD_NAME(0), android::view::MenuInflater::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 void android::view::MenuInflater::inflate(cpp_int const &a0, local_ref< android::view::Menu > const &a1)
 {

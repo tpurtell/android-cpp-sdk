@@ -10,8 +10,10 @@
 #define J2CPP_JAVA_IO_FILTERINPUTSTREAM_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class InputStream; } } }
 
 
+#include <java/io/InputStream.hpp>
 
 
 namespace j2cpp {
@@ -38,10 +40,13 @@ namespace java { namespace io {
 		J2CPP_DECLARE_METHOD(9)
 		J2CPP_DECLARE_FIELD(0)
 
-		FilterInputStream(jobject jobj)
+		explicit FilterInputStream(jobject jobj)
 		: cpp_object<FilterInputStream>(jobj)
 		{
 		}
+
+		operator local_ref<java::io::InputStream>() const;
+
 
 		cpp_int available();
 		void close();
@@ -58,7 +63,6 @@ namespace java { namespace io {
 } //namespace io
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_IO_FILTERINPUTSTREAM_HPP_DECL
@@ -71,17 +75,12 @@ namespace java { namespace io {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::io::FilterInputStream > create< java::io::FilterInputStream>(local_ref< java::io::InputStream > const &a0)
+
+java::io::FilterInputStream::operator local_ref<java::io::InputStream>() const
 {
-	return local_ref< java::io::FilterInputStream >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::io::FilterInputStream::J2CPP_CLASS_NAME>(),
-			get_method_id<java::io::FilterInputStream::J2CPP_CLASS_NAME, java::io::FilterInputStream::J2CPP_METHOD_NAME(0), java::io::FilterInputStream::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::io::InputStream>(get_jtype());
 }
+
 
 cpp_int java::io::FilterInputStream::available()
 {

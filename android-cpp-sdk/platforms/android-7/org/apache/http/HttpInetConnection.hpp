@@ -11,9 +11,13 @@
 
 
 namespace j2cpp { namespace java { namespace net { class InetAddress; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { class HttpConnection; } } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/net/InetAddress.hpp>
+#include <org/apache/http/HttpConnection.hpp>
 
 
 namespace j2cpp {
@@ -33,10 +37,14 @@ namespace org { namespace apache { namespace http {
 		J2CPP_DECLARE_METHOD(2)
 		J2CPP_DECLARE_METHOD(3)
 
-		HttpInetConnection(jobject jobj)
+		explicit HttpInetConnection(jobject jobj)
 		: cpp_object<HttpInetConnection>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<org::apache::http::HttpConnection>() const;
+
 
 		local_ref< java::net::InetAddress > getLocalAddress();
 		cpp_int getLocalPort();
@@ -47,7 +55,6 @@ namespace org { namespace apache { namespace http {
 } //namespace http
 } //namespace apache
 } //namespace org
-
 
 } //namespace j2cpp
 
@@ -60,6 +67,17 @@ namespace org { namespace apache { namespace http {
 
 namespace j2cpp {
 
+
+
+org::apache::http::HttpInetConnection::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
+
+org::apache::http::HttpInetConnection::operator local_ref<org::apache::http::HttpConnection>() const
+{
+	return local_ref<org::apache::http::HttpConnection>(get_jtype());
+}
 
 local_ref< java::net::InetAddress > org::apache::http::HttpInetConnection::getLocalAddress()
 {

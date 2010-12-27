@@ -10,6 +10,7 @@
 #define J2CPP_ANDROID_CONTENT_SHAREDPREFERENCES_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace util { class Map; } } }
 namespace j2cpp { namespace android { namespace content { namespace SharedPreferences_ { class OnSharedPreferenceChangeListener; } } } }
@@ -17,6 +18,7 @@ namespace j2cpp { namespace android { namespace content { namespace SharedPrefer
 
 
 #include <android/content/SharedPreferences.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/util/Map.hpp>
 
@@ -38,10 +40,13 @@ namespace android { namespace content {
 
 			J2CPP_DECLARE_METHOD(0)
 
-			OnSharedPreferenceChangeListener(jobject jobj)
+			explicit OnSharedPreferenceChangeListener(jobject jobj)
 			: cpp_object<OnSharedPreferenceChangeListener>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+
 
 			void onSharedPreferenceChanged(local_ref< android::content::SharedPreferences > const&, local_ref< java::lang::String > const&);
 		}; //class OnSharedPreferenceChangeListener
@@ -63,10 +68,13 @@ namespace android { namespace content {
 			J2CPP_DECLARE_METHOD(6)
 			J2CPP_DECLARE_METHOD(7)
 
-			Editor(jobject jobj)
+			explicit Editor(jobject jobj)
 			: cpp_object<Editor>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+
 
 			local_ref< android::content::SharedPreferences_::Editor > putString(local_ref< java::lang::String > const&, local_ref< java::lang::String > const&);
 			local_ref< android::content::SharedPreferences_::Editor > putInt(local_ref< java::lang::String > const&, cpp_int const&);
@@ -101,10 +109,13 @@ namespace android { namespace content {
 		typedef SharedPreferences_::OnSharedPreferenceChangeListener OnSharedPreferenceChangeListener;
 		typedef SharedPreferences_::Editor Editor;
 
-		SharedPreferences(jobject jobj)
+		explicit SharedPreferences(jobject jobj)
 		: cpp_object<SharedPreferences>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		local_ref< java::util::Map > getAll();
 		local_ref< java::lang::String > getString(local_ref< java::lang::String > const&, local_ref< java::lang::String > const&);
@@ -121,7 +132,6 @@ namespace android { namespace content {
 } //namespace content
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_CONTENT_SHAREDPREFERENCES_HPP_DECL
@@ -134,6 +144,12 @@ namespace android { namespace content {
 namespace j2cpp {
 
 
+
+
+android::content::SharedPreferences_::OnSharedPreferenceChangeListener::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 void android::content::SharedPreferences_::OnSharedPreferenceChangeListener::onSharedPreferenceChanged(local_ref< android::content::SharedPreferences > const &a0, local_ref< java::lang::String > const &a1)
 {
@@ -149,6 +165,12 @@ void android::content::SharedPreferences_::OnSharedPreferenceChangeListener::onS
 
 J2CPP_DEFINE_CLASS(android::content::SharedPreferences_::OnSharedPreferenceChangeListener,"android/content/SharedPreferences$OnSharedPreferenceChangeListener")
 J2CPP_DEFINE_METHOD(android::content::SharedPreferences_::OnSharedPreferenceChangeListener,0,"onSharedPreferenceChanged","(Landroid/content/SharedPreferences;Ljava/lang/String;)V")
+
+
+android::content::SharedPreferences_::Editor::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 local_ref< android::content::SharedPreferences_::Editor > android::content::SharedPreferences_::Editor::putString(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
 {
@@ -247,6 +269,12 @@ J2CPP_DEFINE_METHOD(android::content::SharedPreferences_::Editor,5,"remove","(Lj
 J2CPP_DEFINE_METHOD(android::content::SharedPreferences_::Editor,6,"clear","()Landroid/content/SharedPreferences$Editor;")
 J2CPP_DEFINE_METHOD(android::content::SharedPreferences_::Editor,7,"commit","()Z")
 
+
+
+android::content::SharedPreferences::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 local_ref< java::util::Map > android::content::SharedPreferences::getAll()
 {

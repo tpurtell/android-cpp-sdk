@@ -11,8 +11,12 @@
 
 
 namespace j2cpp { namespace android { namespace content { namespace res { class Configuration; } } } }
+namespace j2cpp { namespace android { namespace content { class ComponentCallbacks; } } }
+namespace j2cpp { namespace android { namespace content { class ContextWrapper; } } }
 
 
+#include <android/content/ComponentCallbacks.hpp>
+#include <android/content/ContextWrapper.hpp>
 #include <android/content/res/Configuration.hpp>
 
 
@@ -34,11 +38,16 @@ namespace android { namespace app {
 		J2CPP_DECLARE_METHOD(3)
 		J2CPP_DECLARE_METHOD(4)
 
-		Application(jobject jobj)
+		explicit Application(jobject jobj)
 		: cpp_object<Application>(jobj)
 		{
 		}
 
+		operator local_ref<android::content::ContextWrapper>() const;
+		operator local_ref<android::content::ComponentCallbacks>() const;
+
+
+		Application();
 		void onCreate();
 		void onTerminate();
 		void onConfigurationChanged(local_ref< android::content::res::Configuration > const&);
@@ -47,7 +56,6 @@ namespace android { namespace app {
 
 } //namespace app
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -61,16 +69,28 @@ namespace android { namespace app {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::app::Application > create< android::app::Application>()
+
+android::app::Application::operator local_ref<android::content::ContextWrapper>() const
 {
-	return local_ref< android::app::Application >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::app::Application::J2CPP_CLASS_NAME>(),
-			get_method_id<android::app::Application::J2CPP_CLASS_NAME, android::app::Application::J2CPP_METHOD_NAME(0), android::app::Application::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<android::content::ContextWrapper>(get_jtype());
 }
+
+android::app::Application::operator local_ref<android::content::ComponentCallbacks>() const
+{
+	return local_ref<android::content::ComponentCallbacks>(get_jtype());
+}
+
+
+android::app::Application::Application()
+: cpp_object<android::app::Application>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::app::Application::J2CPP_CLASS_NAME>(),
+		get_method_id<android::app::Application::J2CPP_CLASS_NAME, android::app::Application::J2CPP_METHOD_NAME(0), android::app::Application::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 void android::app::Application::onCreate()
 {

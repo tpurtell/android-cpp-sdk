@@ -11,12 +11,14 @@
 
 
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace util { class Queue; } } }
 namespace j2cpp { namespace java { namespace util { namespace concurrent { class TimeUnit; } } } }
 namespace j2cpp { namespace java { namespace util { class Collection; } } }
 
 
 #include <java/lang/Object.hpp>
 #include <java/util/Collection.hpp>
+#include <java/util/Queue.hpp>
 #include <java/util/concurrent/TimeUnit.hpp>
 
 
@@ -44,10 +46,14 @@ namespace java { namespace util { namespace concurrent {
 		J2CPP_DECLARE_METHOD(9)
 		J2CPP_DECLARE_METHOD(10)
 
-		BlockingQueue(jobject jobj)
+		explicit BlockingQueue(jobject jobj)
 		: cpp_object<BlockingQueue>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::util::Queue>() const;
+
 
 		cpp_boolean add(local_ref< java::lang::Object > const&);
 		cpp_boolean offer(local_ref< java::lang::Object > const&);
@@ -66,7 +72,6 @@ namespace java { namespace util { namespace concurrent {
 } //namespace util
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_UTIL_CONCURRENT_BLOCKINGQUEUE_HPP_DECL
@@ -78,6 +83,17 @@ namespace java { namespace util { namespace concurrent {
 
 namespace j2cpp {
 
+
+
+java::util::concurrent::BlockingQueue::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
+
+java::util::concurrent::BlockingQueue::operator local_ref<java::util::Queue>() const
+{
+	return local_ref<java::util::Queue>(get_jtype());
+}
 
 cpp_boolean java::util::concurrent::BlockingQueue::add(local_ref< java::lang::Object > const &a0)
 {

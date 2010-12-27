@@ -10,10 +10,12 @@
 #define J2CPP_JAVA_UTIL_CONCURRENT_THREADFACTORY_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class Thread; } } }
 namespace j2cpp { namespace java { namespace lang { class Runnable; } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/Runnable.hpp>
 #include <java/lang/Thread.hpp>
 
@@ -32,10 +34,13 @@ namespace java { namespace util { namespace concurrent {
 
 		J2CPP_DECLARE_METHOD(0)
 
-		ThreadFactory(jobject jobj)
+		explicit ThreadFactory(jobject jobj)
 		: cpp_object<ThreadFactory>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		local_ref< java::lang::Thread > newThread(local_ref< java::lang::Runnable > const&);
 	}; //class ThreadFactory
@@ -43,7 +48,6 @@ namespace java { namespace util { namespace concurrent {
 } //namespace concurrent
 } //namespace util
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -56,6 +60,12 @@ namespace java { namespace util { namespace concurrent {
 
 namespace j2cpp {
 
+
+
+java::util::concurrent::ThreadFactory::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 local_ref< java::lang::Thread > java::util::concurrent::ThreadFactory::newThread(local_ref< java::lang::Runnable > const &a0)
 {

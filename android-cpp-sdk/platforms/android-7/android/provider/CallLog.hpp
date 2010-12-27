@@ -10,11 +10,15 @@
 #define J2CPP_ANDROID_PROVIDER_CALLLOG_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace android { namespace net { class Uri; } } }
+namespace j2cpp { namespace android { namespace provider { class BaseColumns; } } }
 
 
 #include <android/net/Uri.hpp>
+#include <android/provider/BaseColumns.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -52,11 +56,16 @@ namespace android { namespace provider {
 			J2CPP_DECLARE_FIELD(14)
 			J2CPP_DECLARE_FIELD(15)
 
-			Calls(jobject jobj)
+			explicit Calls(jobject jobj)
 			: cpp_object<Calls>(jobj)
 			{
 			}
 
+			operator local_ref<java::lang::Object>() const;
+			operator local_ref<android::provider::BaseColumns>() const;
+
+
+			Calls();
 
 			static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(0), J2CPP_FIELD_SIGNATURE(0), local_ref< android::net::Uri > > CONTENT_URI;
 			static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(1), J2CPP_FIELD_SIGNATURE(1), local_ref< android::net::Uri > > CONTENT_FILTER_URI;
@@ -92,11 +101,15 @@ namespace android { namespace provider {
 
 		typedef CallLog_::Calls Calls;
 
-		CallLog(jobject jobj)
+		explicit CallLog(jobject jobj)
 		: cpp_object<CallLog>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		CallLog();
 
 		static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(0), J2CPP_FIELD_SIGNATURE(0), local_ref< java::lang::String > > AUTHORITY;
 		static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(1), J2CPP_FIELD_SIGNATURE(1), local_ref< android::net::Uri > > CONTENT_URI;
@@ -104,7 +117,6 @@ namespace android { namespace provider {
 
 } //namespace provider
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -119,16 +131,29 @@ namespace j2cpp {
 
 
 
-template <>
-local_ref< android::provider::CallLog_::Calls > create< android::provider::CallLog_::Calls>()
+
+android::provider::CallLog_::Calls::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::provider::CallLog_::Calls >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::provider::CallLog_::Calls::J2CPP_CLASS_NAME>(),
-			get_method_id<android::provider::CallLog_::Calls::J2CPP_CLASS_NAME, android::provider::CallLog_::Calls::J2CPP_METHOD_NAME(0), android::provider::CallLog_::Calls::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+android::provider::CallLog_::Calls::operator local_ref<android::provider::BaseColumns>() const
+{
+	return local_ref<android::provider::BaseColumns>(get_jtype());
+}
+
+
+android::provider::CallLog_::Calls::Calls()
+: cpp_object<android::provider::CallLog_::Calls>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::provider::CallLog_::Calls::J2CPP_CLASS_NAME>(),
+		get_method_id<android::provider::CallLog_::Calls::J2CPP_CLASS_NAME, android::provider::CallLog_::Calls::J2CPP_METHOD_NAME(0), android::provider::CallLog_::Calls::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
+
 
 
 static_field<
@@ -265,16 +290,24 @@ J2CPP_DEFINE_FIELD(android::provider::CallLog_::Calls,14,"CACHED_NUMBER_TYPE","L
 J2CPP_DEFINE_FIELD(android::provider::CallLog_::Calls,15,"CACHED_NUMBER_LABEL","Ljava/lang/String;")
 
 
-template <>
-local_ref< android::provider::CallLog > create< android::provider::CallLog>()
+
+android::provider::CallLog::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::provider::CallLog >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::provider::CallLog::J2CPP_CLASS_NAME>(),
-			get_method_id<android::provider::CallLog::J2CPP_CLASS_NAME, android::provider::CallLog::J2CPP_METHOD_NAME(0), android::provider::CallLog::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::provider::CallLog::CallLog()
+: cpp_object<android::provider::CallLog>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::provider::CallLog::J2CPP_CLASS_NAME>(),
+		get_method_id<android::provider::CallLog::J2CPP_CLASS_NAME, android::provider::CallLog::J2CPP_METHOD_NAME(0), android::provider::CallLog::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
+
 
 
 static_field<

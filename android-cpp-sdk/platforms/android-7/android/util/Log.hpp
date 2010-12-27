@@ -10,10 +10,12 @@
 #define J2CPP_ANDROID_UTIL_LOG_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace lang { class Throwable; } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/lang/Throwable.hpp>
 
@@ -52,10 +54,13 @@ namespace android { namespace util {
 		J2CPP_DECLARE_FIELD(4)
 		J2CPP_DECLARE_FIELD(5)
 
-		Log(jobject jobj)
+		explicit Log(jobject jobj)
 		: cpp_object<Log>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		static cpp_int v(local_ref< java::lang::String > const&, local_ref< java::lang::String > const&);
 		static cpp_int v(local_ref< java::lang::String > const&, local_ref< java::lang::String > const&, local_ref< java::lang::Throwable > const&);
@@ -83,7 +88,6 @@ namespace android { namespace util {
 } //namespace util
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_UTIL_LOG_HPP_DECL
@@ -96,16 +100,12 @@ namespace android { namespace util {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::util::Log > create< android::util::Log>()
+
+android::util::Log::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::util::Log >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::util::Log::J2CPP_CLASS_NAME>(),
-			get_method_id<android::util::Log::J2CPP_CLASS_NAME, android::util::Log::J2CPP_METHOD_NAME(0), android::util::Log::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
 
 cpp_int android::util::Log::v(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
 {

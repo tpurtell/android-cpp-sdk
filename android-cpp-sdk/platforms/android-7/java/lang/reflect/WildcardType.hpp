@@ -10,9 +10,11 @@
 #define J2CPP_JAVA_LANG_REFLECT_WILDCARDTYPE_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { namespace reflect { class Type; } } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/reflect/Type.hpp>
 
 
@@ -31,10 +33,14 @@ namespace java { namespace lang { namespace reflect {
 		J2CPP_DECLARE_METHOD(0)
 		J2CPP_DECLARE_METHOD(1)
 
-		WildcardType(jobject jobj)
+		explicit WildcardType(jobject jobj)
 		: cpp_object<WildcardType>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::lang::reflect::Type>() const;
+
 
 		local_ref< cpp_object_array<java::lang::reflect::Type, 1> > getUpperBounds();
 		local_ref< cpp_object_array<java::lang::reflect::Type, 1> > getLowerBounds();
@@ -43,7 +49,6 @@ namespace java { namespace lang { namespace reflect {
 } //namespace reflect
 } //namespace lang
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -56,6 +61,17 @@ namespace java { namespace lang { namespace reflect {
 
 namespace j2cpp {
 
+
+
+java::lang::reflect::WildcardType::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
+
+java::lang::reflect::WildcardType::operator local_ref<java::lang::reflect::Type>() const
+{
+	return local_ref<java::lang::reflect::Type>(get_jtype());
+}
 
 local_ref< cpp_object_array<java::lang::reflect::Type, 1> > java::lang::reflect::WildcardType::getUpperBounds()
 {

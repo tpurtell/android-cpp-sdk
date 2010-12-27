@@ -10,6 +10,7 @@
 #define J2CPP_ANDROID_WIDGET_TOAST_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class CharSequence; } } }
 namespace j2cpp { namespace android { namespace content { class Context; } } }
 namespace j2cpp { namespace android { namespace view { class View; } } }
@@ -18,6 +19,7 @@ namespace j2cpp { namespace android { namespace view { class View; } } }
 #include <android/content/Context.hpp>
 #include <android/view/View.hpp>
 #include <java/lang/CharSequence.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -53,11 +55,15 @@ namespace android { namespace widget {
 		J2CPP_DECLARE_FIELD(0)
 		J2CPP_DECLARE_FIELD(1)
 
-		Toast(jobject jobj)
+		explicit Toast(jobject jobj)
 		: cpp_object<Toast>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		Toast(local_ref< android::content::Context > const&);
 		void show();
 		void cancel();
 		void setView(local_ref< android::view::View > const&);
@@ -83,7 +89,6 @@ namespace android { namespace widget {
 } //namespace widget
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_WIDGET_TOAST_HPP_DECL
@@ -96,17 +101,24 @@ namespace android { namespace widget {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::widget::Toast > create< android::widget::Toast>(local_ref< android::content::Context > const &a0)
+
+android::widget::Toast::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::widget::Toast >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::widget::Toast::J2CPP_CLASS_NAME>(),
-			get_method_id<android::widget::Toast::J2CPP_CLASS_NAME, android::widget::Toast::J2CPP_METHOD_NAME(0), android::widget::Toast::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::widget::Toast::Toast(local_ref< android::content::Context > const &a0)
+: cpp_object<android::widget::Toast>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::widget::Toast::J2CPP_CLASS_NAME>(),
+		get_method_id<android::widget::Toast::J2CPP_CLASS_NAME, android::widget::Toast::J2CPP_METHOD_NAME(0), android::widget::Toast::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 void android::widget::Toast::show()
 {

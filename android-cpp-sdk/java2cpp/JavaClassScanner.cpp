@@ -251,6 +251,32 @@ bool JavaClassScanner::scan()
 {
 	if(shared_ptr<JavaClass> jClass=shared_ptr<JavaClass>(jclass_class_new_from_buffer(m_ClassData.get()), bind(&jclass_class_free, _1)))
 	{
+		if(char *pSuperClassName=jclass_class_get_super_class_name(jClass.get()))
+		{
+			std::string strSuperFQCName(pSuperClassName);
+			algorithm::replace_all(strSuperFQCName,"/",".");
+			algorithm::replace_all(strSuperFQCName,"$",".");
+			shared_ptr<model::Class> pSuperClass=shared_ptr<model::Class>(
+				m_RootNS->find_entity(strSuperFQCName),
+				detail::dynamic_cast_tag()
+			);
+			BOOST_ASSERT(pSuperClass);
+			m_Class->set_super(pSuperClass);
+		}
+
+		for(char **pClassInterfaceName=jclass_class_get_interfaces(jClass.get());pClassInterfaceName && *pClassInterfaceName;++pClassInterfaceName)
+		{
+			std::string strInterfaceFQCName(*pClassInterfaceName);
+			algorithm::replace_all(strInterfaceFQCName,"/",".");
+			algorithm::replace_all(strInterfaceFQCName,"$",".");
+			shared_ptr<model::Class> pInterfaceClass=shared_ptr<model::Class>(
+				m_RootNS->find_entity(strInterfaceFQCName),
+				detail::dynamic_cast_tag()
+			);
+			BOOST_ASSERT(pInterfaceClass);
+			m_Class->add_interface(pInterfaceClass);
+		}
+	
 		for(uint16_t m=0;m<jClass->methods_count;++m)
 		{
 			shared_ptr<char> pDescriptor=shared_ptr<char>(jclass_field_get_descriptor(jClass->methods+m, jClass->constant_pool), bind(&free, _1));

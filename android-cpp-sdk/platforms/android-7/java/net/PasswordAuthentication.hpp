@@ -10,9 +10,11 @@
 #define J2CPP_JAVA_NET_PASSWORDAUTHENTICATION_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -32,18 +34,21 @@ namespace java { namespace net {
 		J2CPP_DECLARE_METHOD(1)
 		J2CPP_DECLARE_METHOD(2)
 
-		PasswordAuthentication(jobject jobj)
+		explicit PasswordAuthentication(jobject jobj)
 		: cpp_object<PasswordAuthentication>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		PasswordAuthentication(local_ref< java::lang::String > const&, local_ref< cpp_char_array<1> > const&);
 		local_ref< cpp_char_array<1> > getPassword();
 		local_ref< java::lang::String > getUserName();
 	}; //class PasswordAuthentication
 
 } //namespace net
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -57,17 +62,24 @@ namespace java { namespace net {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::net::PasswordAuthentication > create< java::net::PasswordAuthentication>(local_ref< java::lang::String > const &a0, local_ref< cpp_char_array<1> > const &a1)
+
+java::net::PasswordAuthentication::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::net::PasswordAuthentication >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::net::PasswordAuthentication::J2CPP_CLASS_NAME>(),
-			get_method_id<java::net::PasswordAuthentication::J2CPP_CLASS_NAME, java::net::PasswordAuthentication::J2CPP_METHOD_NAME(0), java::net::PasswordAuthentication::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+java::net::PasswordAuthentication::PasswordAuthentication(local_ref< java::lang::String > const &a0, local_ref< cpp_char_array<1> > const &a1)
+: cpp_object<java::net::PasswordAuthentication>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::net::PasswordAuthentication::J2CPP_CLASS_NAME>(),
+		get_method_id<java::net::PasswordAuthentication::J2CPP_CLASS_NAME, java::net::PasswordAuthentication::J2CPP_METHOD_NAME(0), java::net::PasswordAuthentication::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
 
 local_ref< cpp_char_array<1> > java::net::PasswordAuthentication::getPassword()
 {

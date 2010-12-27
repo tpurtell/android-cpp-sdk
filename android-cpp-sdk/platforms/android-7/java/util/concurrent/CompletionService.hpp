@@ -42,10 +42,13 @@ namespace java { namespace util { namespace concurrent {
 		J2CPP_DECLARE_METHOD(3)
 		J2CPP_DECLARE_METHOD(4)
 
-		CompletionService(jobject jobj)
+		explicit CompletionService(jobject jobj)
 		: cpp_object<CompletionService>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		local_ref< java::util::concurrent::Future > submit(local_ref< java::util::concurrent::Callable > const&);
 		local_ref< java::util::concurrent::Future > submit(local_ref< java::lang::Runnable > const&, local_ref< java::lang::Object > const&);
@@ -58,7 +61,6 @@ namespace java { namespace util { namespace concurrent {
 } //namespace util
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_UTIL_CONCURRENT_COMPLETIONSERVICE_HPP_DECL
@@ -70,6 +72,12 @@ namespace java { namespace util { namespace concurrent {
 
 namespace j2cpp {
 
+
+
+java::util::concurrent::CompletionService::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 local_ref< java::util::concurrent::Future > java::util::concurrent::CompletionService::submit(local_ref< java::util::concurrent::Callable > const &a0)
 {

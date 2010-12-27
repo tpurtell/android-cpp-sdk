@@ -13,12 +13,14 @@
 namespace j2cpp { namespace java { namespace net { class InetAddress; } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace conn { namespace routing { class HttpRoute; } } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace params { class HttpParams; } } } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { namespace params { class HttpAbstractParamBean; } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { class HttpHost; } } } }
 
 
 #include <java/net/InetAddress.hpp>
 #include <org/apache/http/HttpHost.hpp>
 #include <org/apache/http/conn/routing/HttpRoute.hpp>
+#include <org/apache/http/params/HttpAbstractParamBean.hpp>
 #include <org/apache/http/params/HttpParams.hpp>
 
 
@@ -39,11 +41,15 @@ namespace org { namespace apache { namespace http { namespace conn { namespace p
 		J2CPP_DECLARE_METHOD(2)
 		J2CPP_DECLARE_METHOD(3)
 
-		ConnRouteParamBean(jobject jobj)
+		explicit ConnRouteParamBean(jobject jobj)
 		: cpp_object<ConnRouteParamBean>(jobj)
 		{
 		}
 
+		operator local_ref<org::apache::http::params::HttpAbstractParamBean>() const;
+
+
+		ConnRouteParamBean(local_ref< org::apache::http::params::HttpParams > const&);
 		void setDefaultProxy(local_ref< org::apache::http::HttpHost > const&);
 		void setLocalAddress(local_ref< java::net::InetAddress > const&);
 		void setForcedRoute(local_ref< org::apache::http::conn::routing::HttpRoute > const&);
@@ -54,7 +60,6 @@ namespace org { namespace apache { namespace http { namespace conn { namespace p
 } //namespace http
 } //namespace apache
 } //namespace org
-
 
 } //namespace j2cpp
 
@@ -68,17 +73,24 @@ namespace org { namespace apache { namespace http { namespace conn { namespace p
 namespace j2cpp {
 
 
-template <>
-local_ref< org::apache::http::conn::params::ConnRouteParamBean > create< org::apache::http::conn::params::ConnRouteParamBean>(local_ref< org::apache::http::params::HttpParams > const &a0)
+
+org::apache::http::conn::params::ConnRouteParamBean::operator local_ref<org::apache::http::params::HttpAbstractParamBean>() const
 {
-	return local_ref< org::apache::http::conn::params::ConnRouteParamBean >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::apache::http::conn::params::ConnRouteParamBean::J2CPP_CLASS_NAME>(),
-			get_method_id<org::apache::http::conn::params::ConnRouteParamBean::J2CPP_CLASS_NAME, org::apache::http::conn::params::ConnRouteParamBean::J2CPP_METHOD_NAME(0), org::apache::http::conn::params::ConnRouteParamBean::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<org::apache::http::params::HttpAbstractParamBean>(get_jtype());
 }
+
+
+org::apache::http::conn::params::ConnRouteParamBean::ConnRouteParamBean(local_ref< org::apache::http::params::HttpParams > const &a0)
+: cpp_object<org::apache::http::conn::params::ConnRouteParamBean>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::apache::http::conn::params::ConnRouteParamBean::J2CPP_CLASS_NAME>(),
+		get_method_id<org::apache::http::conn::params::ConnRouteParamBean::J2CPP_CLASS_NAME, org::apache::http::conn::params::ConnRouteParamBean::J2CPP_METHOD_NAME(0), org::apache::http::conn::params::ConnRouteParamBean::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 void org::apache::http::conn::params::ConnRouteParamBean::setDefaultProxy(local_ref< org::apache::http::HttpHost > const &a0)
 {

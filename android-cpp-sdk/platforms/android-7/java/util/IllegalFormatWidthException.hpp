@@ -11,9 +11,11 @@
 
 
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace util { class IllegalFormatException; } } }
 
 
 #include <java/lang/String.hpp>
+#include <java/util/IllegalFormatException.hpp>
 
 
 namespace j2cpp {
@@ -32,18 +34,21 @@ namespace java { namespace util {
 		J2CPP_DECLARE_METHOD(1)
 		J2CPP_DECLARE_METHOD(2)
 
-		IllegalFormatWidthException(jobject jobj)
+		explicit IllegalFormatWidthException(jobject jobj)
 		: cpp_object<IllegalFormatWidthException>(jobj)
 		{
 		}
 
+		operator local_ref<java::util::IllegalFormatException>() const;
+
+
+		IllegalFormatWidthException(cpp_int const&);
 		cpp_int getWidth();
 		local_ref< java::lang::String > getMessage();
 	}; //class IllegalFormatWidthException
 
 } //namespace util
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -57,17 +62,24 @@ namespace java { namespace util {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::util::IllegalFormatWidthException > create< java::util::IllegalFormatWidthException>(cpp_int const &a0)
+
+java::util::IllegalFormatWidthException::operator local_ref<java::util::IllegalFormatException>() const
 {
-	return local_ref< java::util::IllegalFormatWidthException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::IllegalFormatWidthException::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::IllegalFormatWidthException::J2CPP_CLASS_NAME, java::util::IllegalFormatWidthException::J2CPP_METHOD_NAME(0), java::util::IllegalFormatWidthException::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::util::IllegalFormatException>(get_jtype());
 }
+
+
+java::util::IllegalFormatWidthException::IllegalFormatWidthException(cpp_int const &a0)
+: cpp_object<java::util::IllegalFormatWidthException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::util::IllegalFormatWidthException::J2CPP_CLASS_NAME>(),
+		get_method_id<java::util::IllegalFormatWidthException::J2CPP_CLASS_NAME, java::util::IllegalFormatWidthException::J2CPP_METHOD_NAME(0), java::util::IllegalFormatWidthException::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 cpp_int java::util::IllegalFormatWidthException::getWidth()
 {

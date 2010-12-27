@@ -10,8 +10,10 @@
 #define J2CPP_ANDROID_OS_REMOTEEXCEPTION_HPP_DECL
 
 
+namespace j2cpp { namespace android { namespace util { class AndroidException; } } }
 
 
+#include <android/util/AndroidException.hpp>
 
 
 namespace j2cpp {
@@ -28,16 +30,19 @@ namespace android { namespace os {
 
 		J2CPP_DECLARE_METHOD(0)
 
-		RemoteException(jobject jobj)
+		explicit RemoteException(jobject jobj)
 		: cpp_object<RemoteException>(jobj)
 		{
 		}
 
+		operator local_ref<android::util::AndroidException>() const;
+
+
+		RemoteException();
 	}; //class RemoteException
 
 } //namespace os
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -51,16 +56,23 @@ namespace android { namespace os {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::os::RemoteException > create< android::os::RemoteException>()
+
+android::os::RemoteException::operator local_ref<android::util::AndroidException>() const
 {
-	return local_ref< android::os::RemoteException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::os::RemoteException::J2CPP_CLASS_NAME>(),
-			get_method_id<android::os::RemoteException::J2CPP_CLASS_NAME, android::os::RemoteException::J2CPP_METHOD_NAME(0), android::os::RemoteException::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<android::util::AndroidException>(get_jtype());
 }
+
+
+android::os::RemoteException::RemoteException()
+: cpp_object<android::os::RemoteException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::os::RemoteException::J2CPP_CLASS_NAME>(),
+		get_method_id<android::os::RemoteException::J2CPP_CLASS_NAME, android::os::RemoteException::J2CPP_METHOD_NAME(0), android::os::RemoteException::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 
 J2CPP_DEFINE_CLASS(android::os::RemoteException,"android/os/RemoteException")

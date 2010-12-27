@@ -10,9 +10,11 @@
 #define J2CPP_DALVIK_SYSTEM_VMDEBUG_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -73,10 +75,13 @@ namespace dalvik { namespace system {
 		J2CPP_DECLARE_FIELD(19)
 		J2CPP_DECLARE_FIELD(20)
 
-		VMDebug(jobject jobj)
+		explicit VMDebug(jobject jobj)
 		: cpp_object<VMDebug>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		static cpp_long lastDebuggerActivity();
 		static cpp_boolean isDebuggingEnabled();
@@ -127,7 +132,6 @@ namespace dalvik { namespace system {
 } //namespace system
 } //namespace dalvik
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_DALVIK_SYSTEM_VMDEBUG_HPP_DECL
@@ -140,16 +144,12 @@ namespace dalvik { namespace system {
 namespace j2cpp {
 
 
-template <>
-local_ref< dalvik::system::VMDebug > create< dalvik::system::VMDebug>()
+
+dalvik::system::VMDebug::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< dalvik::system::VMDebug >(
-		environment::get().get_jenv()->NewObject(
-			get_class<dalvik::system::VMDebug::J2CPP_CLASS_NAME>(),
-			get_method_id<dalvik::system::VMDebug::J2CPP_CLASS_NAME, dalvik::system::VMDebug::J2CPP_METHOD_NAME(0), dalvik::system::VMDebug::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
 
 cpp_long dalvik::system::VMDebug::lastDebuggerActivity()
 {

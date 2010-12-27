@@ -41,11 +41,16 @@ namespace java { namespace security { namespace spec {
 		J2CPP_DECLARE_METHOD(6)
 		J2CPP_DECLARE_METHOD(7)
 
-		EllipticCurve(jobject jobj)
+		explicit EllipticCurve(jobject jobj)
 		: cpp_object<EllipticCurve>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		EllipticCurve(local_ref< java::security::spec::ECField > const&, local_ref< java::math::BigInteger > const&, local_ref< java::math::BigInteger > const&, local_ref< cpp_byte_array<1> > const&);
+		EllipticCurve(local_ref< java::security::spec::ECField > const&, local_ref< java::math::BigInteger > const&, local_ref< java::math::BigInteger > const&);
 		local_ref< java::math::BigInteger > getA();
 		local_ref< java::math::BigInteger > getB();
 		local_ref< java::security::spec::ECField > getField();
@@ -57,7 +62,6 @@ namespace java { namespace security { namespace spec {
 } //namespace spec
 } //namespace security
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -71,29 +75,37 @@ namespace java { namespace security { namespace spec {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::security::spec::EllipticCurve > create< java::security::spec::EllipticCurve>(local_ref< java::security::spec::ECField > const &a0, local_ref< java::math::BigInteger > const &a1, local_ref< java::math::BigInteger > const &a2, local_ref< cpp_byte_array<1> > const &a3)
+
+java::security::spec::EllipticCurve::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::security::spec::EllipticCurve >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::security::spec::EllipticCurve::J2CPP_CLASS_NAME>(),
-			get_method_id<java::security::spec::EllipticCurve::J2CPP_CLASS_NAME, java::security::spec::EllipticCurve::J2CPP_METHOD_NAME(0), java::security::spec::EllipticCurve::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
 
-template <>
-local_ref< java::security::spec::EllipticCurve > create< java::security::spec::EllipticCurve>(local_ref< java::security::spec::ECField > const &a0, local_ref< java::math::BigInteger > const &a1, local_ref< java::math::BigInteger > const &a2)
+
+java::security::spec::EllipticCurve::EllipticCurve(local_ref< java::security::spec::ECField > const &a0, local_ref< java::math::BigInteger > const &a1, local_ref< java::math::BigInteger > const &a2, local_ref< cpp_byte_array<1> > const &a3)
+: cpp_object<java::security::spec::EllipticCurve>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::security::spec::EllipticCurve::J2CPP_CLASS_NAME>(),
+		get_method_id<java::security::spec::EllipticCurve::J2CPP_CLASS_NAME, java::security::spec::EllipticCurve::J2CPP_METHOD_NAME(0), java::security::spec::EllipticCurve::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype()
+	)
+)
 {
-	return local_ref< java::security::spec::EllipticCurve >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::security::spec::EllipticCurve::J2CPP_CLASS_NAME>(),
-			get_method_id<java::security::spec::EllipticCurve::J2CPP_CLASS_NAME, java::security::spec::EllipticCurve::J2CPP_METHOD_NAME(1), java::security::spec::EllipticCurve::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
-		)
-	);
 }
+
+
+
+java::security::spec::EllipticCurve::EllipticCurve(local_ref< java::security::spec::ECField > const &a0, local_ref< java::math::BigInteger > const &a1, local_ref< java::math::BigInteger > const &a2)
+: cpp_object<java::security::spec::EllipticCurve>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::security::spec::EllipticCurve::J2CPP_CLASS_NAME>(),
+		get_method_id<java::security::spec::EllipticCurve::J2CPP_CLASS_NAME, java::security::spec::EllipticCurve::J2CPP_METHOD_NAME(1), java::security::spec::EllipticCurve::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
+	)
+)
+{
+}
+
 
 local_ref< java::math::BigInteger > java::security::spec::EllipticCurve::getA()
 {

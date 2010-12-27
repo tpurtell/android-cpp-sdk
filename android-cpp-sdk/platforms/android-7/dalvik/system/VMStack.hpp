@@ -11,6 +11,7 @@
 
 
 namespace j2cpp { namespace java { namespace lang { class ClassLoader; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class Class; } } }
 namespace j2cpp { namespace java { namespace lang { class Thread; } } }
 namespace j2cpp { namespace java { namespace lang { class StackTraceElement; } } }
@@ -18,6 +19,7 @@ namespace j2cpp { namespace java { namespace lang { class StackTraceElement; } }
 
 #include <java/lang/Class.hpp>
 #include <java/lang/ClassLoader.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/StackTraceElement.hpp>
 #include <java/lang/Thread.hpp>
 
@@ -40,11 +42,15 @@ namespace dalvik { namespace system {
 		J2CPP_DECLARE_METHOD(3)
 		J2CPP_DECLARE_METHOD(4)
 
-		VMStack(jobject jobj)
+		explicit VMStack(jobject jobj)
 		: cpp_object<VMStack>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		VMStack();
 		static local_ref< java::lang::ClassLoader > getCallingClassLoader();
 		static local_ref< java::lang::ClassLoader > getCallingClassLoader2();
 		static local_ref< cpp_object_array<java::lang::Class, 1> > getClasses(cpp_int const&, cpp_boolean const&);
@@ -53,7 +59,6 @@ namespace dalvik { namespace system {
 
 } //namespace system
 } //namespace dalvik
-
 
 } //namespace j2cpp
 
@@ -67,16 +72,23 @@ namespace dalvik { namespace system {
 namespace j2cpp {
 
 
-template <>
-local_ref< dalvik::system::VMStack > create< dalvik::system::VMStack>()
+
+dalvik::system::VMStack::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< dalvik::system::VMStack >(
-		environment::get().get_jenv()->NewObject(
-			get_class<dalvik::system::VMStack::J2CPP_CLASS_NAME>(),
-			get_method_id<dalvik::system::VMStack::J2CPP_CLASS_NAME, dalvik::system::VMStack::J2CPP_METHOD_NAME(0), dalvik::system::VMStack::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+dalvik::system::VMStack::VMStack()
+: cpp_object<dalvik::system::VMStack>(
+	environment::get().get_jenv()->NewObject(
+		get_class<dalvik::system::VMStack::J2CPP_CLASS_NAME>(),
+		get_method_id<dalvik::system::VMStack::J2CPP_CLASS_NAME, dalvik::system::VMStack::J2CPP_METHOD_NAME(0), dalvik::system::VMStack::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 local_ref< java::lang::ClassLoader > dalvik::system::VMStack::getCallingClassLoader()
 {

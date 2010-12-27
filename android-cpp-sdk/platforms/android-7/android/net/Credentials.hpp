@@ -10,8 +10,10 @@
 #define J2CPP_ANDROID_NET_CREDENTIALS_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -31,11 +33,15 @@ namespace android { namespace net {
 		J2CPP_DECLARE_METHOD(2)
 		J2CPP_DECLARE_METHOD(3)
 
-		Credentials(jobject jobj)
+		explicit Credentials(jobject jobj)
 		: cpp_object<Credentials>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		Credentials(cpp_int const&, cpp_int const&, cpp_int const&);
 		cpp_int getPid();
 		cpp_int getUid();
 		cpp_int getGid();
@@ -43,7 +49,6 @@ namespace android { namespace net {
 
 } //namespace net
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -57,17 +62,24 @@ namespace android { namespace net {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::net::Credentials > create< android::net::Credentials>(cpp_int const &a0, cpp_int const &a1, cpp_int const &a2)
+
+android::net::Credentials::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::net::Credentials >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::net::Credentials::J2CPP_CLASS_NAME>(),
-			get_method_id<android::net::Credentials::J2CPP_CLASS_NAME, android::net::Credentials::J2CPP_METHOD_NAME(0), android::net::Credentials::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::net::Credentials::Credentials(cpp_int const &a0, cpp_int const &a1, cpp_int const &a2)
+: cpp_object<android::net::Credentials>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::net::Credentials::J2CPP_CLASS_NAME>(),
+		get_method_id<android::net::Credentials::J2CPP_CLASS_NAME, android::net::Credentials::J2CPP_METHOD_NAME(0), android::net::Credentials::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
+	)
+)
+{
+}
+
 
 cpp_int android::net::Credentials::getPid()
 {

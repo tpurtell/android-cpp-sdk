@@ -11,14 +11,18 @@
 
 
 namespace j2cpp { namespace java { namespace net { class URL; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class Class; } } }
 namespace j2cpp { namespace java { namespace lang { namespace annotation { class Annotation; } } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace lang { namespace reflect { class AnnotatedElement; } } } }
 
 
 #include <java/lang/Class.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/lang/annotation/Annotation.hpp>
+#include <java/lang/reflect/AnnotatedElement.hpp>
 #include <java/net/URL.hpp>
 
 
@@ -54,10 +58,14 @@ namespace java { namespace lang {
 		J2CPP_DECLARE_METHOD(17)
 		J2CPP_DECLARE_METHOD(18)
 
-		Package(jobject jobj)
+		explicit Package(jobject jobj)
 		: cpp_object<Package>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::lang::reflect::AnnotatedElement>() const;
+
 
 		local_ref< java::lang::annotation::Annotation > getAnnotation(local_ref< java::lang::Class > const&);
 		local_ref< cpp_object_array<java::lang::annotation::Annotation, 1> > getAnnotations();
@@ -82,7 +90,6 @@ namespace java { namespace lang {
 } //namespace lang
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_LANG_PACKAGE_HPP_DECL
@@ -95,16 +102,17 @@ namespace java { namespace lang {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::lang::Package > create< java::lang::Package>()
+
+java::lang::Package::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::lang::Package >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::lang::Package::J2CPP_CLASS_NAME>(),
-			get_method_id<java::lang::Package::J2CPP_CLASS_NAME, java::lang::Package::J2CPP_METHOD_NAME(0), java::lang::Package::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+java::lang::Package::operator local_ref<java::lang::reflect::AnnotatedElement>() const
+{
+	return local_ref<java::lang::reflect::AnnotatedElement>(get_jtype());
+}
+
 
 local_ref< java::lang::annotation::Annotation > java::lang::Package::getAnnotation(local_ref< java::lang::Class > const &a0)
 {

@@ -10,16 +10,19 @@
 #define J2CPP_ANDROID_APP_DIALOG_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class CharSequence; } } }
 namespace j2cpp { namespace android { namespace net { class Uri; } } }
 namespace j2cpp { namespace android { namespace app { class Activity; } } }
 namespace j2cpp { namespace android { namespace graphics { namespace drawable { class Drawable; } } } }
+namespace j2cpp { namespace android { namespace content { class DialogInterface; } } }
 namespace j2cpp { namespace android { namespace content { namespace DialogInterface_ { class OnDismissListener; } } } }
 namespace j2cpp { namespace android { namespace content { class Context; } } }
 namespace j2cpp { namespace android { namespace content { namespace DialogInterface_ { class OnCancelListener; } } } }
 namespace j2cpp { namespace android { namespace content { namespace DialogInterface_ { class OnKeyListener; } } } }
 namespace j2cpp { namespace android { namespace view { class View; } } }
 namespace j2cpp { namespace android { namespace view { class Window; } } }
+namespace j2cpp { namespace android { namespace view { namespace Window_ { class Callback; } } } }
 namespace j2cpp { namespace android { namespace view { class LayoutInflater; } } }
 namespace j2cpp { namespace android { namespace view { class KeyEvent; } } }
 namespace j2cpp { namespace android { namespace view { class ContextMenu; } } }
@@ -28,6 +31,7 @@ namespace j2cpp { namespace android { namespace view { namespace accessibility {
 namespace j2cpp { namespace android { namespace view { class MenuItem; } } }
 namespace j2cpp { namespace android { namespace view { namespace ViewGroup_ { class LayoutParams; } } } }
 namespace j2cpp { namespace android { namespace view { class Menu; } } }
+namespace j2cpp { namespace android { namespace view { namespace View_ { class OnCreateContextMenuListener; } } } }
 namespace j2cpp { namespace android { namespace view { namespace ContextMenu_ { class ContextMenuInfo; } } } }
 namespace j2cpp { namespace android { namespace view { namespace WindowManager_ { class LayoutParams; } } } }
 namespace j2cpp { namespace android { namespace os { class Bundle; } } }
@@ -53,6 +57,7 @@ namespace j2cpp { namespace android { namespace os { class Message; } } }
 #include <android/view/WindowManager.hpp>
 #include <android/view/accessibility/AccessibilityEvent.hpp>
 #include <java/lang/CharSequence.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -144,11 +149,19 @@ namespace android { namespace app {
 		J2CPP_DECLARE_METHOD(74)
 		J2CPP_DECLARE_METHOD(75)
 
-		Dialog(jobject jobj)
+		explicit Dialog(jobject jobj)
 		: cpp_object<Dialog>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<android::content::DialogInterface>() const;
+		operator local_ref<android::view::Window_::Callback>() const;
+		operator local_ref<android::view::View_::OnCreateContextMenuListener>() const;
+
+
+		Dialog(local_ref< android::content::Context > const&);
+		Dialog(local_ref< android::content::Context > const&, cpp_int const&);
 		local_ref< android::content::Context > getContext();
 		void setOwnerActivity(local_ref< android::app::Activity > const&);
 		local_ref< android::app::Activity > getOwnerActivity();
@@ -224,7 +237,6 @@ namespace android { namespace app {
 } //namespace app
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_APP_DIALOG_HPP_DECL
@@ -237,41 +249,53 @@ namespace android { namespace app {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::app::Dialog > create< android::app::Dialog>(local_ref< android::content::Context > const &a0)
+
+android::app::Dialog::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::app::Dialog >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::app::Dialog::J2CPP_CLASS_NAME>(),
-			get_method_id<android::app::Dialog::J2CPP_CLASS_NAME, android::app::Dialog::J2CPP_METHOD_NAME(0), android::app::Dialog::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
 
-template <>
-local_ref< android::app::Dialog > create< android::app::Dialog>(local_ref< android::content::Context > const &a0, cpp_int const &a1)
+android::app::Dialog::operator local_ref<android::content::DialogInterface>() const
 {
-	return local_ref< android::app::Dialog >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::app::Dialog::J2CPP_CLASS_NAME>(),
-			get_method_id<android::app::Dialog::J2CPP_CLASS_NAME, android::app::Dialog::J2CPP_METHOD_NAME(1), android::app::Dialog::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<android::content::DialogInterface>(get_jtype());
 }
 
-template <>
-local_ref< android::app::Dialog > create< android::app::Dialog>(local_ref< android::content::Context > const &a0, cpp_boolean const &a1, local_ref< android::content::DialogInterface_::OnCancelListener > const &a2)
+android::app::Dialog::operator local_ref<android::view::Window_::Callback>() const
 {
-	return local_ref< android::app::Dialog >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::app::Dialog::J2CPP_CLASS_NAME>(),
-			get_method_id<android::app::Dialog::J2CPP_CLASS_NAME, android::app::Dialog::J2CPP_METHOD_NAME(2), android::app::Dialog::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
-		)
-	);
+	return local_ref<android::view::Window_::Callback>(get_jtype());
 }
+
+android::app::Dialog::operator local_ref<android::view::View_::OnCreateContextMenuListener>() const
+{
+	return local_ref<android::view::View_::OnCreateContextMenuListener>(get_jtype());
+}
+
+
+android::app::Dialog::Dialog(local_ref< android::content::Context > const &a0)
+: cpp_object<android::app::Dialog>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::app::Dialog::J2CPP_CLASS_NAME>(),
+		get_method_id<android::app::Dialog::J2CPP_CLASS_NAME, android::app::Dialog::J2CPP_METHOD_NAME(0), android::app::Dialog::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
+
+
+android::app::Dialog::Dialog(local_ref< android::content::Context > const &a0, cpp_int const &a1)
+: cpp_object<android::app::Dialog>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::app::Dialog::J2CPP_CLASS_NAME>(),
+		get_method_id<android::app::Dialog::J2CPP_CLASS_NAME, android::app::Dialog::J2CPP_METHOD_NAME(1), android::app::Dialog::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
+
 
 local_ref< android::content::Context > android::app::Dialog::getContext()
 {

@@ -10,6 +10,7 @@
 #define J2CPP_ANDROID_GESTURE_GESTUREOVERLAYVIEW_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace util { class ArrayList; } } }
 namespace j2cpp { namespace android { namespace graphics { class Canvas; } } }
 namespace j2cpp { namespace android { namespace graphics { class Path; } } }
@@ -19,6 +20,7 @@ namespace j2cpp { namespace android { namespace gesture { class Gesture; } } }
 namespace j2cpp { namespace android { namespace gesture { namespace GestureOverlayView_ { class OnGesturingListener; } } } }
 namespace j2cpp { namespace android { namespace gesture { namespace GestureOverlayView_ { class OnGestureListener; } } } }
 namespace j2cpp { namespace android { namespace gesture { namespace GestureOverlayView_ { class OnGesturePerformedListener; } } } }
+namespace j2cpp { namespace android { namespace widget { class FrameLayout; } } }
 namespace j2cpp { namespace android { namespace util { class AttributeSet; } } }
 
 
@@ -29,6 +31,8 @@ namespace j2cpp { namespace android { namespace util { class AttributeSet; } } }
 #include <android/graphics/Path.hpp>
 #include <android/util/AttributeSet.hpp>
 #include <android/view/MotionEvent.hpp>
+#include <android/widget/FrameLayout.hpp>
+#include <java/lang/Object.hpp>
 #include <java/util/ArrayList.hpp>
 
 
@@ -50,10 +54,13 @@ namespace android { namespace gesture {
 			J2CPP_DECLARE_METHOD(0)
 			J2CPP_DECLARE_METHOD(1)
 
-			OnGesturingListener(jobject jobj)
+			explicit OnGesturingListener(jobject jobj)
 			: cpp_object<OnGesturingListener>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+
 
 			void onGesturingStarted(local_ref< android::gesture::GestureOverlayView > const&);
 			void onGesturingEnded(local_ref< android::gesture::GestureOverlayView > const&);
@@ -72,10 +79,13 @@ namespace android { namespace gesture {
 			J2CPP_DECLARE_METHOD(2)
 			J2CPP_DECLARE_METHOD(3)
 
-			OnGestureListener(jobject jobj)
+			explicit OnGestureListener(jobject jobj)
 			: cpp_object<OnGestureListener>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+
 
 			void onGestureStarted(local_ref< android::gesture::GestureOverlayView > const&, local_ref< android::view::MotionEvent > const&);
 			void onGesture(local_ref< android::gesture::GestureOverlayView > const&, local_ref< android::view::MotionEvent > const&);
@@ -93,10 +103,13 @@ namespace android { namespace gesture {
 
 			J2CPP_DECLARE_METHOD(0)
 
-			OnGesturePerformedListener(jobject jobj)
+			explicit OnGesturePerformedListener(jobject jobj)
 			: cpp_object<OnGesturePerformedListener>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+
 
 			void onGesturePerformed(local_ref< android::gesture::GestureOverlayView > const&, local_ref< android::gesture::Gesture > const&);
 		}; //class OnGesturePerformedListener
@@ -167,11 +180,17 @@ namespace android { namespace gesture {
 		typedef GestureOverlayView_::OnGestureListener OnGestureListener;
 		typedef GestureOverlayView_::OnGesturePerformedListener OnGesturePerformedListener;
 
-		GestureOverlayView(jobject jobj)
+		explicit GestureOverlayView(jobject jobj)
 		: cpp_object<GestureOverlayView>(jobj)
 		{
 		}
 
+		operator local_ref<android::widget::FrameLayout>() const;
+
+
+		GestureOverlayView(local_ref< android::content::Context > const&);
+		GestureOverlayView(local_ref< android::content::Context > const&, local_ref< android::util::AttributeSet > const&);
+		GestureOverlayView(local_ref< android::content::Context > const&, local_ref< android::util::AttributeSet > const&, cpp_int const&);
 		local_ref< java::util::ArrayList > getCurrentStroke();
 		cpp_int getOrientation();
 		void setOrientation(cpp_int const&);
@@ -226,7 +245,6 @@ namespace android { namespace gesture {
 } //namespace gesture
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_GESTURE_GESTUREOVERLAYVIEW_HPP_DECL
@@ -239,6 +257,12 @@ namespace android { namespace gesture {
 namespace j2cpp {
 
 
+
+
+android::gesture::GestureOverlayView_::OnGesturingListener::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 void android::gesture::GestureOverlayView_::OnGesturingListener::onGesturingStarted(local_ref< android::gesture::GestureOverlayView > const &a0)
 {
@@ -266,6 +290,12 @@ void android::gesture::GestureOverlayView_::OnGesturingListener::onGesturingEnde
 J2CPP_DEFINE_CLASS(android::gesture::GestureOverlayView_::OnGesturingListener,"android/gesture/GestureOverlayView$OnGesturingListener")
 J2CPP_DEFINE_METHOD(android::gesture::GestureOverlayView_::OnGesturingListener,0,"onGesturingStarted","(Landroid/gesture/GestureOverlayView;)V")
 J2CPP_DEFINE_METHOD(android::gesture::GestureOverlayView_::OnGesturingListener,1,"onGesturingEnded","(Landroid/gesture/GestureOverlayView;)V")
+
+
+android::gesture::GestureOverlayView_::OnGestureListener::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 void android::gesture::GestureOverlayView_::OnGestureListener::onGestureStarted(local_ref< android::gesture::GestureOverlayView > const &a0, local_ref< android::view::MotionEvent > const &a1)
 {
@@ -318,6 +348,12 @@ J2CPP_DEFINE_METHOD(android::gesture::GestureOverlayView_::OnGestureListener,1,"
 J2CPP_DEFINE_METHOD(android::gesture::GestureOverlayView_::OnGestureListener,2,"onGestureEnded","(Landroid/gesture/GestureOverlayView;Landroid/view/MotionEvent;)V")
 J2CPP_DEFINE_METHOD(android::gesture::GestureOverlayView_::OnGestureListener,3,"onGestureCancelled","(Landroid/gesture/GestureOverlayView;Landroid/view/MotionEvent;)V")
 
+
+android::gesture::GestureOverlayView_::OnGesturePerformedListener::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
+
 void android::gesture::GestureOverlayView_::OnGesturePerformedListener::onGesturePerformed(local_ref< android::gesture::GestureOverlayView > const &a0, local_ref< android::gesture::Gesture > const &a1)
 {
 	return void(
@@ -334,41 +370,50 @@ J2CPP_DEFINE_CLASS(android::gesture::GestureOverlayView_::OnGesturePerformedList
 J2CPP_DEFINE_METHOD(android::gesture::GestureOverlayView_::OnGesturePerformedListener,0,"onGesturePerformed","(Landroid/gesture/GestureOverlayView;Landroid/gesture/Gesture;)V")
 
 
-template <>
-local_ref< android::gesture::GestureOverlayView > create< android::gesture::GestureOverlayView>(local_ref< android::content::Context > const &a0)
+
+android::gesture::GestureOverlayView::operator local_ref<android::widget::FrameLayout>() const
 {
-	return local_ref< android::gesture::GestureOverlayView >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::gesture::GestureOverlayView::J2CPP_CLASS_NAME>(),
-			get_method_id<android::gesture::GestureOverlayView::J2CPP_CLASS_NAME, android::gesture::GestureOverlayView::J2CPP_METHOD_NAME(0), android::gesture::GestureOverlayView::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<android::widget::FrameLayout>(get_jtype());
 }
 
-template <>
-local_ref< android::gesture::GestureOverlayView > create< android::gesture::GestureOverlayView>(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1)
+
+android::gesture::GestureOverlayView::GestureOverlayView(local_ref< android::content::Context > const &a0)
+: cpp_object<android::gesture::GestureOverlayView>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::gesture::GestureOverlayView::J2CPP_CLASS_NAME>(),
+		get_method_id<android::gesture::GestureOverlayView::J2CPP_CLASS_NAME, android::gesture::GestureOverlayView::J2CPP_METHOD_NAME(0), android::gesture::GestureOverlayView::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< android::gesture::GestureOverlayView >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::gesture::GestureOverlayView::J2CPP_CLASS_NAME>(),
-			get_method_id<android::gesture::GestureOverlayView::J2CPP_CLASS_NAME, android::gesture::GestureOverlayView::J2CPP_METHOD_NAME(1), android::gesture::GestureOverlayView::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< android::gesture::GestureOverlayView > create< android::gesture::GestureOverlayView>(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1, cpp_int const &a2)
+
+
+android::gesture::GestureOverlayView::GestureOverlayView(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1)
+: cpp_object<android::gesture::GestureOverlayView>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::gesture::GestureOverlayView::J2CPP_CLASS_NAME>(),
+		get_method_id<android::gesture::GestureOverlayView::J2CPP_CLASS_NAME, android::gesture::GestureOverlayView::J2CPP_METHOD_NAME(1), android::gesture::GestureOverlayView::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
 {
-	return local_ref< android::gesture::GestureOverlayView >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::gesture::GestureOverlayView::J2CPP_CLASS_NAME>(),
-			get_method_id<android::gesture::GestureOverlayView::J2CPP_CLASS_NAME, android::gesture::GestureOverlayView::J2CPP_METHOD_NAME(2), android::gesture::GestureOverlayView::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
-		)
-	);
 }
+
+
+
+android::gesture::GestureOverlayView::GestureOverlayView(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1, cpp_int const &a2)
+: cpp_object<android::gesture::GestureOverlayView>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::gesture::GestureOverlayView::J2CPP_CLASS_NAME>(),
+		get_method_id<android::gesture::GestureOverlayView::J2CPP_CLASS_NAME, android::gesture::GestureOverlayView::J2CPP_METHOD_NAME(2), android::gesture::GestureOverlayView::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
+	)
+)
+{
+}
+
 
 local_ref< java::util::ArrayList > android::gesture::GestureOverlayView::getCurrentStroke()
 {

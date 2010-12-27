@@ -10,8 +10,10 @@
 #define J2CPP_ANDROID_TEXT_METHOD_DATEKEYLISTENER_HPP_DECL
 
 
+namespace j2cpp { namespace android { namespace text { namespace method { class NumberKeyListener; } } } }
 
 
+#include <android/text/method/NumberKeyListener.hpp>
 
 
 namespace j2cpp {
@@ -33,11 +35,15 @@ namespace android { namespace text { namespace method {
 		J2CPP_DECLARE_METHOD(4)
 		J2CPP_DECLARE_FIELD(0)
 
-		DateKeyListener(jobject jobj)
+		explicit DateKeyListener(jobject jobj)
 		: cpp_object<DateKeyListener>(jobj)
 		{
 		}
 
+		operator local_ref<android::text::method::NumberKeyListener>() const;
+
+
+		DateKeyListener();
 		cpp_int getInputType();
 		static local_ref< android::text::method::DateKeyListener > getInstance();
 
@@ -47,7 +53,6 @@ namespace android { namespace text { namespace method {
 } //namespace method
 } //namespace text
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -61,16 +66,23 @@ namespace android { namespace text { namespace method {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::text::method::DateKeyListener > create< android::text::method::DateKeyListener>()
+
+android::text::method::DateKeyListener::operator local_ref<android::text::method::NumberKeyListener>() const
 {
-	return local_ref< android::text::method::DateKeyListener >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::text::method::DateKeyListener::J2CPP_CLASS_NAME>(),
-			get_method_id<android::text::method::DateKeyListener::J2CPP_CLASS_NAME, android::text::method::DateKeyListener::J2CPP_METHOD_NAME(0), android::text::method::DateKeyListener::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<android::text::method::NumberKeyListener>(get_jtype());
 }
+
+
+android::text::method::DateKeyListener::DateKeyListener()
+: cpp_object<android::text::method::DateKeyListener>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::text::method::DateKeyListener::J2CPP_CLASS_NAME>(),
+		get_method_id<android::text::method::DateKeyListener::J2CPP_CLASS_NAME, android::text::method::DateKeyListener::J2CPP_METHOD_NAME(0), android::text::method::DateKeyListener::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 cpp_int android::text::method::DateKeyListener::getInputType()
 {
@@ -92,6 +104,7 @@ local_ref< android::text::method::DateKeyListener > android::text::method::DateK
 		)
 	);
 }
+
 
 
 static_field<

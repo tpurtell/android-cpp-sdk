@@ -10,15 +10,18 @@
 #define J2CPP_ANDROID_ACCOUNTS_ACCOUNTAUTHENTICATORRESPONSE_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace android { namespace os { class Parcel; } } }
 namespace j2cpp { namespace android { namespace os { class Bundle; } } }
+namespace j2cpp { namespace android { namespace os { class Parcelable; } } }
 namespace j2cpp { namespace android { namespace os { namespace Parcelable_ { class Creator; } } } }
 
 
 #include <android/os/Bundle.hpp>
 #include <android/os/Parcel.hpp>
 #include <android/os/Parcelable.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -43,11 +46,16 @@ namespace android { namespace accounts {
 		J2CPP_DECLARE_METHOD(6)
 		J2CPP_DECLARE_FIELD(0)
 
-		AccountAuthenticatorResponse(jobject jobj)
+		explicit AccountAuthenticatorResponse(jobject jobj)
 		: cpp_object<AccountAuthenticatorResponse>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<android::os::Parcelable>() const;
+
+
+		AccountAuthenticatorResponse(local_ref< android::os::Parcel > const&);
 		void onResult(local_ref< android::os::Bundle > const&);
 		void onRequestContinued();
 		void onError(cpp_int const&, local_ref< java::lang::String > const&);
@@ -59,7 +67,6 @@ namespace android { namespace accounts {
 
 } //namespace accounts
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -73,17 +80,29 @@ namespace android { namespace accounts {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::accounts::AccountAuthenticatorResponse > create< android::accounts::AccountAuthenticatorResponse>(local_ref< android::os::Parcel > const &a0)
+
+android::accounts::AccountAuthenticatorResponse::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::accounts::AccountAuthenticatorResponse >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::accounts::AccountAuthenticatorResponse::J2CPP_CLASS_NAME>(),
-			get_method_id<android::accounts::AccountAuthenticatorResponse::J2CPP_CLASS_NAME, android::accounts::AccountAuthenticatorResponse::J2CPP_METHOD_NAME(0), android::accounts::AccountAuthenticatorResponse::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+android::accounts::AccountAuthenticatorResponse::operator local_ref<android::os::Parcelable>() const
+{
+	return local_ref<android::os::Parcelable>(get_jtype());
+}
+
+
+android::accounts::AccountAuthenticatorResponse::AccountAuthenticatorResponse(local_ref< android::os::Parcel > const &a0)
+: cpp_object<android::accounts::AccountAuthenticatorResponse>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::accounts::AccountAuthenticatorResponse::J2CPP_CLASS_NAME>(),
+		get_method_id<android::accounts::AccountAuthenticatorResponse::J2CPP_CLASS_NAME, android::accounts::AccountAuthenticatorResponse::J2CPP_METHOD_NAME(0), android::accounts::AccountAuthenticatorResponse::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 void android::accounts::AccountAuthenticatorResponse::onResult(local_ref< android::os::Bundle > const &a0)
 {
@@ -137,6 +156,7 @@ void android::accounts::AccountAuthenticatorResponse::writeToParcel(local_ref< a
 		)
 	);
 }
+
 
 
 static_field<

@@ -12,15 +12,20 @@
 
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class Class; } } }
+namespace j2cpp { namespace java { namespace lang { class Cloneable; } } }
 namespace j2cpp { namespace java { namespace util { class List; } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { class HttpRequest; } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { class HttpRequestInterceptor; } } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { namespace protocol { class HttpResponseInterceptorList; } } } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { namespace protocol { class HttpProcessor; } } } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { namespace protocol { class HttpRequestInterceptorList; } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace protocol { class HttpContext; } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { class HttpResponseInterceptor; } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { class HttpResponse; } } } }
 
 
 #include <java/lang/Class.hpp>
+#include <java/lang/Cloneable.hpp>
 #include <java/lang/Object.hpp>
 #include <java/util/List.hpp>
 #include <org/apache/http/HttpRequest.hpp>
@@ -28,6 +33,9 @@ namespace j2cpp { namespace org { namespace apache { namespace http { class Http
 #include <org/apache/http/HttpResponse.hpp>
 #include <org/apache/http/HttpResponseInterceptor.hpp>
 #include <org/apache/http/protocol/HttpContext.hpp>
+#include <org/apache/http/protocol/HttpProcessor.hpp>
+#include <org/apache/http/protocol/HttpRequestInterceptorList.hpp>
+#include <org/apache/http/protocol/HttpResponseInterceptorList.hpp>
 
 
 namespace j2cpp {
@@ -69,11 +77,19 @@ namespace org { namespace apache { namespace http { namespace protocol {
 		J2CPP_DECLARE_FIELD(0)
 		J2CPP_DECLARE_FIELD(1)
 
-		BasicHttpProcessor(jobject jobj)
+		explicit BasicHttpProcessor(jobject jobj)
 		: cpp_object<BasicHttpProcessor>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<org::apache::http::protocol::HttpProcessor>() const;
+		operator local_ref<org::apache::http::protocol::HttpRequestInterceptorList>() const;
+		operator local_ref<org::apache::http::protocol::HttpResponseInterceptorList>() const;
+		operator local_ref<java::lang::Cloneable>() const;
+
+
+		BasicHttpProcessor();
 		void addRequestInterceptor(local_ref< org::apache::http::HttpRequestInterceptor > const&);
 		void addRequestInterceptor(local_ref< org::apache::http::HttpRequestInterceptor > const&, cpp_int const&);
 		void addResponseInterceptor(local_ref< org::apache::http::HttpResponseInterceptor > const&, cpp_int const&);
@@ -104,7 +120,6 @@ namespace org { namespace apache { namespace http { namespace protocol {
 } //namespace apache
 } //namespace org
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ORG_APACHE_HTTP_PROTOCOL_BASICHTTPPROCESSOR_HPP_DECL
@@ -117,16 +132,43 @@ namespace org { namespace apache { namespace http { namespace protocol {
 namespace j2cpp {
 
 
-template <>
-local_ref< org::apache::http::protocol::BasicHttpProcessor > create< org::apache::http::protocol::BasicHttpProcessor>()
+
+org::apache::http::protocol::BasicHttpProcessor::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< org::apache::http::protocol::BasicHttpProcessor >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::apache::http::protocol::BasicHttpProcessor::J2CPP_CLASS_NAME>(),
-			get_method_id<org::apache::http::protocol::BasicHttpProcessor::J2CPP_CLASS_NAME, org::apache::http::protocol::BasicHttpProcessor::J2CPP_METHOD_NAME(0), org::apache::http::protocol::BasicHttpProcessor::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+org::apache::http::protocol::BasicHttpProcessor::operator local_ref<org::apache::http::protocol::HttpProcessor>() const
+{
+	return local_ref<org::apache::http::protocol::HttpProcessor>(get_jtype());
+}
+
+org::apache::http::protocol::BasicHttpProcessor::operator local_ref<org::apache::http::protocol::HttpRequestInterceptorList>() const
+{
+	return local_ref<org::apache::http::protocol::HttpRequestInterceptorList>(get_jtype());
+}
+
+org::apache::http::protocol::BasicHttpProcessor::operator local_ref<org::apache::http::protocol::HttpResponseInterceptorList>() const
+{
+	return local_ref<org::apache::http::protocol::HttpResponseInterceptorList>(get_jtype());
+}
+
+org::apache::http::protocol::BasicHttpProcessor::operator local_ref<java::lang::Cloneable>() const
+{
+	return local_ref<java::lang::Cloneable>(get_jtype());
+}
+
+
+org::apache::http::protocol::BasicHttpProcessor::BasicHttpProcessor()
+: cpp_object<org::apache::http::protocol::BasicHttpProcessor>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::apache::http::protocol::BasicHttpProcessor::J2CPP_CLASS_NAME>(),
+		get_method_id<org::apache::http::protocol::BasicHttpProcessor::J2CPP_CLASS_NAME, org::apache::http::protocol::BasicHttpProcessor::J2CPP_METHOD_NAME(0), org::apache::http::protocol::BasicHttpProcessor::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 void org::apache::http::protocol::BasicHttpProcessor::addRequestInterceptor(local_ref< org::apache::http::HttpRequestInterceptor > const &a0)
 {

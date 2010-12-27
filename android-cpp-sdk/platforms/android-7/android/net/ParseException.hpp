@@ -10,9 +10,11 @@
 #define J2CPP_ANDROID_NET_PARSEEXCEPTION_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class RuntimeException; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 
 
+#include <java/lang/RuntimeException.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -31,11 +33,14 @@ namespace android { namespace net {
 		J2CPP_DECLARE_METHOD(0)
 		J2CPP_DECLARE_FIELD(0)
 
-		ParseException(jobject jobj)
+		explicit ParseException(jobject jobj)
 		: cpp_object<ParseException>(jobj)
-		, response(jobj)
+, response(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::RuntimeException>() const;
+
 
 
 		field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(0), J2CPP_FIELD_SIGNATURE(0), local_ref< java::lang::String > > response;
@@ -43,7 +48,6 @@ namespace android { namespace net {
 
 } //namespace net
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -57,16 +61,12 @@ namespace android { namespace net {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::net::ParseException > create< android::net::ParseException>()
+
+android::net::ParseException::operator local_ref<java::lang::RuntimeException>() const
 {
-	return local_ref< android::net::ParseException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::net::ParseException::J2CPP_CLASS_NAME>(),
-			get_method_id<android::net::ParseException::J2CPP_CLASS_NAME, android::net::ParseException::J2CPP_METHOD_NAME(0), android::net::ParseException::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::RuntimeException>(get_jtype());
 }
+
 
 
 

@@ -11,9 +11,11 @@
 
 
 namespace j2cpp { namespace java { namespace io { class OutputStream; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
 #include <java/io/OutputStream.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -30,10 +32,13 @@ namespace org { namespace apache { namespace http { namespace entity {
 
 		J2CPP_DECLARE_METHOD(0)
 
-		ContentProducer(jobject jobj)
+		explicit ContentProducer(jobject jobj)
 		: cpp_object<ContentProducer>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		void writeTo(local_ref< java::io::OutputStream > const&);
 	}; //class ContentProducer
@@ -42,7 +47,6 @@ namespace org { namespace apache { namespace http { namespace entity {
 } //namespace http
 } //namespace apache
 } //namespace org
-
 
 } //namespace j2cpp
 
@@ -55,6 +59,12 @@ namespace org { namespace apache { namespace http { namespace entity {
 
 namespace j2cpp {
 
+
+
+org::apache::http::entity::ContentProducer::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 void org::apache::http::entity::ContentProducer::writeTo(local_ref< java::io::OutputStream > const &a0)
 {

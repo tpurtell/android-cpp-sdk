@@ -18,15 +18,21 @@ namespace j2cpp { namespace org { namespace xml { namespace sax { class EntityRe
 namespace j2cpp { namespace org { namespace xml { namespace sax { class ErrorHandler; } } } }
 namespace j2cpp { namespace org { namespace xml { namespace sax { class InputSource; } } } }
 namespace j2cpp { namespace org { namespace xml { namespace sax { class DTDHandler; } } } }
+namespace j2cpp { namespace org { namespace xml { namespace sax { class Attributes; } } } }
+namespace j2cpp { namespace org { namespace xml { namespace sax { class Locator; } } } }
+namespace j2cpp { namespace org { namespace xml { namespace sax { class XMLReader; } } } }
 
 
 #include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
+#include <org/xml/sax/Attributes.hpp>
 #include <org/xml/sax/ContentHandler.hpp>
 #include <org/xml/sax/DTDHandler.hpp>
 #include <org/xml/sax/EntityResolver.hpp>
 #include <org/xml/sax/ErrorHandler.hpp>
 #include <org/xml/sax/InputSource.hpp>
+#include <org/xml/sax/Locator.hpp>
+#include <org/xml/sax/XMLReader.hpp>
 #include <org/xmlpull/v1/XmlPullParser.hpp>
 
 
@@ -88,11 +94,19 @@ namespace org { namespace xmlpull { namespace v1 { namespace sax2 {
 		J2CPP_DECLARE_FIELD(9)
 		J2CPP_DECLARE_FIELD(10)
 
-		Driver(jobject jobj)
+		explicit Driver(jobject jobj)
 		: cpp_object<Driver>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<org::xml::sax::Locator>() const;
+		operator local_ref<org::xml::sax::XMLReader>() const;
+		operator local_ref<org::xml::sax::Attributes>() const;
+
+
+		Driver();
+		Driver(local_ref< org::xmlpull::v1::XmlPullParser > const&);
 		cpp_int getLength();
 		local_ref< java::lang::String > getURI(cpp_int const&);
 		local_ref< java::lang::String > getLocalName(cpp_int const&);
@@ -132,7 +146,6 @@ namespace org { namespace xmlpull { namespace v1 { namespace sax2 {
 } //namespace xmlpull
 } //namespace org
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ORG_XMLPULL_V1_SAX2_DRIVER_HPP_DECL
@@ -145,28 +158,51 @@ namespace org { namespace xmlpull { namespace v1 { namespace sax2 {
 namespace j2cpp {
 
 
-template <>
-local_ref< org::xmlpull::v1::sax2::Driver > create< org::xmlpull::v1::sax2::Driver>()
+
+org::xmlpull::v1::sax2::Driver::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< org::xmlpull::v1::sax2::Driver >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::xmlpull::v1::sax2::Driver::J2CPP_CLASS_NAME>(),
-			get_method_id<org::xmlpull::v1::sax2::Driver::J2CPP_CLASS_NAME, org::xmlpull::v1::sax2::Driver::J2CPP_METHOD_NAME(0), org::xmlpull::v1::sax2::Driver::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
 
-template <>
-local_ref< org::xmlpull::v1::sax2::Driver > create< org::xmlpull::v1::sax2::Driver>(local_ref< org::xmlpull::v1::XmlPullParser > const &a0)
+org::xmlpull::v1::sax2::Driver::operator local_ref<org::xml::sax::Locator>() const
 {
-	return local_ref< org::xmlpull::v1::sax2::Driver >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::xmlpull::v1::sax2::Driver::J2CPP_CLASS_NAME>(),
-			get_method_id<org::xmlpull::v1::sax2::Driver::J2CPP_CLASS_NAME, org::xmlpull::v1::sax2::Driver::J2CPP_METHOD_NAME(1), org::xmlpull::v1::sax2::Driver::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<org::xml::sax::Locator>(get_jtype());
 }
+
+org::xmlpull::v1::sax2::Driver::operator local_ref<org::xml::sax::XMLReader>() const
+{
+	return local_ref<org::xml::sax::XMLReader>(get_jtype());
+}
+
+org::xmlpull::v1::sax2::Driver::operator local_ref<org::xml::sax::Attributes>() const
+{
+	return local_ref<org::xml::sax::Attributes>(get_jtype());
+}
+
+
+org::xmlpull::v1::sax2::Driver::Driver()
+: cpp_object<org::xmlpull::v1::sax2::Driver>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::xmlpull::v1::sax2::Driver::J2CPP_CLASS_NAME>(),
+		get_method_id<org::xmlpull::v1::sax2::Driver::J2CPP_CLASS_NAME, org::xmlpull::v1::sax2::Driver::J2CPP_METHOD_NAME(0), org::xmlpull::v1::sax2::Driver::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
+
+
+org::xmlpull::v1::sax2::Driver::Driver(local_ref< org::xmlpull::v1::XmlPullParser > const &a0)
+: cpp_object<org::xmlpull::v1::sax2::Driver>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::xmlpull::v1::sax2::Driver::J2CPP_CLASS_NAME>(),
+		get_method_id<org::xmlpull::v1::sax2::Driver::J2CPP_CLASS_NAME, org::xmlpull::v1::sax2::Driver::J2CPP_METHOD_NAME(1), org::xmlpull::v1::sax2::Driver::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 cpp_int org::xmlpull::v1::sax2::Driver::getLength()
 {

@@ -11,12 +11,14 @@
 
 
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace lang { class Cloneable; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace security { namespace acl { class Permission; } } } }
 namespace j2cpp { namespace java { namespace security { class Principal; } } }
 namespace j2cpp { namespace java { namespace util { class Enumeration; } } }
 
 
+#include <java/lang/Cloneable.hpp>
 #include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/security/Principal.hpp>
@@ -47,10 +49,14 @@ namespace java { namespace security { namespace acl {
 		J2CPP_DECLARE_METHOD(8)
 		J2CPP_DECLARE_METHOD(9)
 
-		AclEntry(jobject jobj)
+		explicit AclEntry(jobject jobj)
 		: cpp_object<AclEntry>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::lang::Cloneable>() const;
+
 
 		cpp_boolean setPrincipal(local_ref< java::security::Principal > const&);
 		local_ref< java::security::Principal > getPrincipal();
@@ -68,7 +74,6 @@ namespace java { namespace security { namespace acl {
 } //namespace security
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_SECURITY_ACL_ACLENTRY_HPP_DECL
@@ -80,6 +85,17 @@ namespace java { namespace security { namespace acl {
 
 namespace j2cpp {
 
+
+
+java::security::acl::AclEntry::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
+
+java::security::acl::AclEntry::operator local_ref<java::lang::Cloneable>() const
+{
+	return local_ref<java::lang::Cloneable>(get_jtype());
+}
 
 cpp_boolean java::security::acl::AclEntry::setPrincipal(local_ref< java::security::Principal > const &a0)
 {

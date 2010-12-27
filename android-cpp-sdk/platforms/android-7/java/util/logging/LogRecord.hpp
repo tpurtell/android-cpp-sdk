@@ -10,6 +10,7 @@
 #define J2CPP_JAVA_UTIL_LOGGING_LOGRECORD_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace lang { class Throwable; } } }
@@ -17,6 +18,7 @@ namespace j2cpp { namespace java { namespace util { namespace logging { class Le
 namespace j2cpp { namespace java { namespace util { class ResourceBundle; } } }
 
 
+#include <java/io/Serializable.hpp>
 #include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/lang/Throwable.hpp>
@@ -62,11 +64,16 @@ namespace java { namespace util { namespace logging {
 		J2CPP_DECLARE_METHOD(23)
 		J2CPP_DECLARE_METHOD(24)
 
-		LogRecord(jobject jobj)
+		explicit LogRecord(jobject jobj)
 		: cpp_object<LogRecord>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::io::Serializable>() const;
+
+
+		LogRecord(local_ref< java::util::logging::Level > const&, local_ref< java::lang::String > const&);
 		local_ref< java::util::logging::Level > getLevel();
 		void setLevel(local_ref< java::util::logging::Level > const&);
 		local_ref< java::lang::String > getLoggerName();
@@ -97,7 +104,6 @@ namespace java { namespace util { namespace logging {
 } //namespace util
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_UTIL_LOGGING_LOGRECORD_HPP_DECL
@@ -110,17 +116,29 @@ namespace java { namespace util { namespace logging {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::util::logging::LogRecord > create< java::util::logging::LogRecord>(local_ref< java::util::logging::Level > const &a0, local_ref< java::lang::String > const &a1)
+
+java::util::logging::LogRecord::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::util::logging::LogRecord >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::logging::LogRecord::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::logging::LogRecord::J2CPP_CLASS_NAME, java::util::logging::LogRecord::J2CPP_METHOD_NAME(0), java::util::logging::LogRecord::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+java::util::logging::LogRecord::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jtype());
+}
+
+
+java::util::logging::LogRecord::LogRecord(local_ref< java::util::logging::Level > const &a0, local_ref< java::lang::String > const &a1)
+: cpp_object<java::util::logging::LogRecord>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::util::logging::LogRecord::J2CPP_CLASS_NAME>(),
+		get_method_id<java::util::logging::LogRecord::J2CPP_CLASS_NAME, java::util::logging::LogRecord::J2CPP_METHOD_NAME(0), java::util::logging::LogRecord::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
 
 local_ref< java::util::logging::Level > java::util::logging::LogRecord::getLevel()
 {

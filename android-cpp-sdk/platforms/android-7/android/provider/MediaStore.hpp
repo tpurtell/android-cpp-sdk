@@ -10,9 +10,19 @@
 #define J2CPP_ANDROID_PROVIDER_MEDIASTORE_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace android { namespace net { class Uri; } } }
 namespace j2cpp { namespace android { namespace database { class Cursor; } } }
+namespace j2cpp { namespace android { namespace provider { namespace MediaStore_ { namespace Video_ { class VideoColumns; } } } } }
+namespace j2cpp { namespace android { namespace provider { namespace MediaStore_ { class MediaColumns; } } } }
+namespace j2cpp { namespace android { namespace provider { class BaseColumns; } } }
+namespace j2cpp { namespace android { namespace provider { namespace MediaStore_ { namespace Audio_ { class PlaylistsColumns; } } } } }
+namespace j2cpp { namespace android { namespace provider { namespace MediaStore_ { namespace Audio_ { class GenresColumns; } } } } }
+namespace j2cpp { namespace android { namespace provider { namespace MediaStore_ { namespace Images_ { class ImageColumns; } } } } }
+namespace j2cpp { namespace android { namespace provider { namespace MediaStore_ { namespace Audio_ { class AlbumColumns; } } } } }
+namespace j2cpp { namespace android { namespace provider { namespace MediaStore_ { namespace Audio_ { class ArtistColumns; } } } } }
+namespace j2cpp { namespace android { namespace provider { namespace MediaStore_ { namespace Audio_ { class AudioColumns; } } } } }
 namespace j2cpp { namespace android { namespace graphics { class Bitmap; } } }
 namespace j2cpp { namespace android { namespace graphics { namespace BitmapFactory_ { class Options; } } } }
 namespace j2cpp { namespace android { namespace content { class ContentResolver; } } }
@@ -23,6 +33,9 @@ namespace j2cpp { namespace android { namespace content { class ContentResolver;
 #include <android/graphics/Bitmap.hpp>
 #include <android/graphics/BitmapFactory.hpp>
 #include <android/net/Uri.hpp>
+#include <android/provider/BaseColumns.hpp>
+#include <android/provider/MediaStore.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -61,10 +74,14 @@ namespace android { namespace provider {
 				J2CPP_DECLARE_FIELD(14)
 				J2CPP_DECLARE_FIELD(15)
 
-				VideoColumns(jobject jobj)
+				explicit VideoColumns(jobject jobj)
 				: cpp_object<VideoColumns>(jobj)
 				{
 				}
+
+				operator local_ref<java::lang::Object>() const;
+				operator local_ref<android::provider::MediaStore_::MediaColumns>() const;
+
 
 				static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(0), J2CPP_FIELD_SIGNATURE(0), local_ref< java::lang::String > > DURATION;
 				static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(1), J2CPP_FIELD_SIGNATURE(1), local_ref< java::lang::String > > ARTIST;
@@ -100,11 +117,16 @@ namespace android { namespace provider {
 				J2CPP_DECLARE_FIELD(2)
 				J2CPP_DECLARE_FIELD(3)
 
-				Media(jobject jobj)
+				explicit Media(jobject jobj)
 				: cpp_object<Media>(jobj)
 				{
 				}
 
+				operator local_ref<java::lang::Object>() const;
+				operator local_ref<android::provider::MediaStore_::Video_::VideoColumns>() const;
+
+
+				Media();
 				static local_ref< android::net::Uri > getContentUri(local_ref< java::lang::String > const&);
 
 				static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(0), J2CPP_FIELD_SIGNATURE(0), local_ref< android::net::Uri > > INTERNAL_CONTENT_URI;
@@ -138,11 +160,16 @@ namespace android { namespace provider {
 				J2CPP_DECLARE_FIELD(9)
 				J2CPP_DECLARE_FIELD(10)
 
-				Thumbnails(jobject jobj)
+				explicit Thumbnails(jobject jobj)
 				: cpp_object<Thumbnails>(jobj)
 				{
 				}
 
+				operator local_ref<java::lang::Object>() const;
+				operator local_ref<android::provider::BaseColumns>() const;
+
+
+				Thumbnails();
 				static void cancelThumbnailRequest(local_ref< android::content::ContentResolver > const&, cpp_long const&);
 				static local_ref< android::graphics::Bitmap > getThumbnail(local_ref< android::content::ContentResolver > const&, cpp_long const&, cpp_int const&, local_ref< android::graphics::BitmapFactory_::Options > const&);
 				static local_ref< android::net::Uri > getContentUri(local_ref< java::lang::String > const&);
@@ -177,11 +204,15 @@ namespace android { namespace provider {
 			typedef Video_::Media Media;
 			typedef Video_::Thumbnails Thumbnails;
 
-			Video(jobject jobj)
+			explicit Video(jobject jobj)
 			: cpp_object<Video>(jobj)
 			{
 			}
 
+			operator local_ref<java::lang::Object>() const;
+
+
+			Video();
 			static local_ref< android::database::Cursor > query(local_ref< android::content::ContentResolver > const&, local_ref< android::net::Uri > const&, local_ref< cpp_object_array<java::lang::String, 1> > const&);
 
 			static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(0), J2CPP_FIELD_SIGNATURE(0), local_ref< java::lang::String > > DEFAULT_SORT_ORDER;
@@ -204,11 +235,16 @@ namespace android { namespace provider {
 					J2CPP_DECLARE_METHOD(0)
 					J2CPP_DECLARE_METHOD(1)
 
-					Albums(jobject jobj)
+					explicit Albums(jobject jobj)
 					: cpp_object<Albums>(jobj)
 					{
 					}
 
+					operator local_ref<java::lang::Object>() const;
+					operator local_ref<android::provider::MediaStore_::Audio_::AlbumColumns>() const;
+
+
+					Albums();
 					static local_ref< android::net::Uri > getContentUri(local_ref< java::lang::String > const&, cpp_long const&);
 				}; //class Albums
 
@@ -232,11 +268,17 @@ namespace android { namespace provider {
 
 				typedef Artists_::Albums Albums;
 
-				Artists(jobject jobj)
+				explicit Artists(jobject jobj)
 				: cpp_object<Artists>(jobj)
 				{
 				}
 
+				operator local_ref<java::lang::Object>() const;
+				operator local_ref<android::provider::BaseColumns>() const;
+				operator local_ref<android::provider::MediaStore_::Audio_::ArtistColumns>() const;
+
+
+				Artists();
 				static local_ref< android::net::Uri > getContentUri(local_ref< java::lang::String > const&);
 
 				static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(0), J2CPP_FIELD_SIGNATURE(0), local_ref< android::net::Uri > > INTERNAL_CONTENT_URI;
@@ -266,11 +308,16 @@ namespace android { namespace provider {
 					J2CPP_DECLARE_FIELD(4)
 					J2CPP_DECLARE_FIELD(5)
 
-					Members(jobject jobj)
+					explicit Members(jobject jobj)
 					: cpp_object<Members>(jobj)
 					{
 					}
 
+					operator local_ref<java::lang::Object>() const;
+					operator local_ref<android::provider::MediaStore_::Audio_::AudioColumns>() const;
+
+
+					Members();
 					static local_ref< android::net::Uri > getContentUri(local_ref< java::lang::String > const&, cpp_long const&);
 
 					static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(0), J2CPP_FIELD_SIGNATURE(0), local_ref< java::lang::String > > _ID;
@@ -301,11 +348,17 @@ namespace android { namespace provider {
 
 				typedef Playlists_::Members Members;
 
-				Playlists(jobject jobj)
+				explicit Playlists(jobject jobj)
 				: cpp_object<Playlists>(jobj)
 				{
 				}
 
+				operator local_ref<java::lang::Object>() const;
+				operator local_ref<android::provider::BaseColumns>() const;
+				operator local_ref<android::provider::MediaStore_::Audio_::PlaylistsColumns>() const;
+
+
+				Playlists();
 				static local_ref< android::net::Uri > getContentUri(local_ref< java::lang::String > const&);
 
 				static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(0), J2CPP_FIELD_SIGNATURE(0), local_ref< android::net::Uri > > INTERNAL_CONTENT_URI;
@@ -328,10 +381,13 @@ namespace android { namespace provider {
 				J2CPP_DECLARE_FIELD(2)
 				J2CPP_DECLARE_FIELD(3)
 
-				PlaylistsColumns(jobject jobj)
+				explicit PlaylistsColumns(jobject jobj)
 				: cpp_object<PlaylistsColumns>(jobj)
 				{
 				}
+
+				operator local_ref<java::lang::Object>() const;
+
 
 				static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(0), J2CPP_FIELD_SIGNATURE(0), local_ref< java::lang::String > > NAME;
 				static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(1), J2CPP_FIELD_SIGNATURE(1), local_ref< java::lang::String > > DATA;
@@ -349,10 +405,13 @@ namespace android { namespace provider {
 
 				J2CPP_DECLARE_FIELD(0)
 
-				GenresColumns(jobject jobj)
+				explicit GenresColumns(jobject jobj)
 				: cpp_object<GenresColumns>(jobj)
 				{
 				}
+
+				operator local_ref<java::lang::Object>() const;
+
 
 				static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(0), J2CPP_FIELD_SIGNATURE(0), local_ref< java::lang::String > > NAME;
 			}; //class GenresColumns
@@ -374,11 +433,17 @@ namespace android { namespace provider {
 				J2CPP_DECLARE_FIELD(3)
 				J2CPP_DECLARE_FIELD(4)
 
-				Albums(jobject jobj)
+				explicit Albums(jobject jobj)
 				: cpp_object<Albums>(jobj)
 				{
 				}
 
+				operator local_ref<java::lang::Object>() const;
+				operator local_ref<android::provider::BaseColumns>() const;
+				operator local_ref<android::provider::MediaStore_::Audio_::AlbumColumns>() const;
+
+
+				Albums();
 				static local_ref< android::net::Uri > getContentUri(local_ref< java::lang::String > const&);
 
 				static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(0), J2CPP_FIELD_SIGNATURE(0), local_ref< android::net::Uri > > INTERNAL_CONTENT_URI;
@@ -406,10 +471,13 @@ namespace android { namespace provider {
 				J2CPP_DECLARE_FIELD(7)
 				J2CPP_DECLARE_FIELD(8)
 
-				AlbumColumns(jobject jobj)
+				explicit AlbumColumns(jobject jobj)
 				: cpp_object<AlbumColumns>(jobj)
 				{
 				}
+
+				operator local_ref<java::lang::Object>() const;
+
 
 				static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(0), J2CPP_FIELD_SIGNATURE(0), local_ref< java::lang::String > > ALBUM_ID;
 				static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(1), J2CPP_FIELD_SIGNATURE(1), local_ref< java::lang::String > > ALBUM;
@@ -440,11 +508,16 @@ namespace android { namespace provider {
 					J2CPP_DECLARE_FIELD(2)
 					J2CPP_DECLARE_FIELD(3)
 
-					Members(jobject jobj)
+					explicit Members(jobject jobj)
 					: cpp_object<Members>(jobj)
 					{
 					}
 
+					operator local_ref<java::lang::Object>() const;
+					operator local_ref<android::provider::MediaStore_::Audio_::AudioColumns>() const;
+
+
+					Members();
 					static local_ref< android::net::Uri > getContentUri(local_ref< java::lang::String > const&, cpp_long const&);
 
 					static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(0), J2CPP_FIELD_SIGNATURE(0), local_ref< java::lang::String > > CONTENT_DIRECTORY;
@@ -473,11 +546,17 @@ namespace android { namespace provider {
 
 				typedef Genres_::Members Members;
 
-				Genres(jobject jobj)
+				explicit Genres(jobject jobj)
 				: cpp_object<Genres>(jobj)
 				{
 				}
 
+				operator local_ref<java::lang::Object>() const;
+				operator local_ref<android::provider::BaseColumns>() const;
+				operator local_ref<android::provider::MediaStore_::Audio_::GenresColumns>() const;
+
+
+				Genres();
 				static local_ref< android::net::Uri > getContentUri(local_ref< java::lang::String > const&);
 
 				static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(0), J2CPP_FIELD_SIGNATURE(0), local_ref< android::net::Uri > > INTERNAL_CONTENT_URI;
@@ -500,10 +579,13 @@ namespace android { namespace provider {
 				J2CPP_DECLARE_FIELD(2)
 				J2CPP_DECLARE_FIELD(3)
 
-				ArtistColumns(jobject jobj)
+				explicit ArtistColumns(jobject jobj)
 				: cpp_object<ArtistColumns>(jobj)
 				{
 				}
+
+				operator local_ref<java::lang::Object>() const;
+
 
 				static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(0), J2CPP_FIELD_SIGNATURE(0), local_ref< java::lang::String > > ARTIST;
 				static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(1), J2CPP_FIELD_SIGNATURE(1), local_ref< java::lang::String > > ARTIST_KEY;
@@ -536,10 +618,14 @@ namespace android { namespace provider {
 				J2CPP_DECLARE_FIELD(14)
 				J2CPP_DECLARE_FIELD(15)
 
-				AudioColumns(jobject jobj)
+				explicit AudioColumns(jobject jobj)
 				: cpp_object<AudioColumns>(jobj)
 				{
 				}
+
+				operator local_ref<java::lang::Object>() const;
+				operator local_ref<android::provider::MediaStore_::MediaColumns>() const;
+
 
 				static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(0), J2CPP_FIELD_SIGNATURE(0), local_ref< java::lang::String > > TITLE_KEY;
 				static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(1), J2CPP_FIELD_SIGNATURE(1), local_ref< java::lang::String > > DURATION;
@@ -578,11 +664,16 @@ namespace android { namespace provider {
 				J2CPP_DECLARE_FIELD(4)
 				J2CPP_DECLARE_FIELD(5)
 
-				Media(jobject jobj)
+				explicit Media(jobject jobj)
 				: cpp_object<Media>(jobj)
 				{
 				}
 
+				operator local_ref<java::lang::Object>() const;
+				operator local_ref<android::provider::MediaStore_::Audio_::AudioColumns>() const;
+
+
+				Media();
 				static local_ref< android::net::Uri > getContentUri(local_ref< java::lang::String > const&);
 				static local_ref< android::net::Uri > getContentUriForPath(local_ref< java::lang::String > const&);
 
@@ -617,11 +708,15 @@ namespace android { namespace provider {
 			typedef Audio_::AudioColumns AudioColumns;
 			typedef Audio_::Media Media;
 
-			Audio(jobject jobj)
+			explicit Audio(jobject jobj)
 			: cpp_object<Audio>(jobj)
 			{
 			}
 
+			operator local_ref<java::lang::Object>() const;
+
+
+			Audio();
 			static local_ref< java::lang::String > keyFor(local_ref< java::lang::String > const&);
 		}; //class Audio
 
@@ -641,10 +736,14 @@ namespace android { namespace provider {
 			J2CPP_DECLARE_FIELD(5)
 			J2CPP_DECLARE_FIELD(6)
 
-			MediaColumns(jobject jobj)
+			explicit MediaColumns(jobject jobj)
 			: cpp_object<MediaColumns>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+			operator local_ref<android::provider::BaseColumns>() const;
+
 
 			static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(0), J2CPP_FIELD_SIGNATURE(0), local_ref< java::lang::String > > DATA;
 			static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(1), J2CPP_FIELD_SIGNATURE(1), local_ref< java::lang::String > > SIZE;
@@ -677,10 +776,14 @@ namespace android { namespace provider {
 				J2CPP_DECLARE_FIELD(8)
 				J2CPP_DECLARE_FIELD(9)
 
-				ImageColumns(jobject jobj)
+				explicit ImageColumns(jobject jobj)
 				: cpp_object<ImageColumns>(jobj)
 				{
 				}
+
+				operator local_ref<java::lang::Object>() const;
+				operator local_ref<android::provider::MediaStore_::MediaColumns>() const;
+
 
 				static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(0), J2CPP_FIELD_SIGNATURE(0), local_ref< java::lang::String > > DESCRIPTION;
 				static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(1), J2CPP_FIELD_SIGNATURE(1), local_ref< java::lang::String > > PICASA_ID;
@@ -723,11 +826,16 @@ namespace android { namespace provider {
 				J2CPP_DECLARE_FIELD(10)
 				J2CPP_DECLARE_FIELD(11)
 
-				Thumbnails(jobject jobj)
+				explicit Thumbnails(jobject jobj)
 				: cpp_object<Thumbnails>(jobj)
 				{
 				}
 
+				operator local_ref<java::lang::Object>() const;
+				operator local_ref<android::provider::BaseColumns>() const;
+
+
+				Thumbnails();
 				static local_ref< android::database::Cursor > query(local_ref< android::content::ContentResolver > const&, local_ref< android::net::Uri > const&, local_ref< cpp_object_array<java::lang::String, 1> > const&);
 				static local_ref< android::database::Cursor > queryMiniThumbnails(local_ref< android::content::ContentResolver > const&, local_ref< android::net::Uri > const&, cpp_int const&, local_ref< cpp_object_array<java::lang::String, 1> > const&);
 				static local_ref< android::database::Cursor > queryMiniThumbnail(local_ref< android::content::ContentResolver > const&, cpp_long const&, cpp_int const&, local_ref< cpp_object_array<java::lang::String, 1> > const&);
@@ -771,11 +879,16 @@ namespace android { namespace provider {
 				J2CPP_DECLARE_FIELD(2)
 				J2CPP_DECLARE_FIELD(3)
 
-				Media(jobject jobj)
+				explicit Media(jobject jobj)
 				: cpp_object<Media>(jobj)
 				{
 				}
 
+				operator local_ref<java::lang::Object>() const;
+				operator local_ref<android::provider::MediaStore_::Images_::ImageColumns>() const;
+
+
+				Media();
 				static local_ref< android::database::Cursor > query(local_ref< android::content::ContentResolver > const&, local_ref< android::net::Uri > const&, local_ref< cpp_object_array<java::lang::String, 1> > const&);
 				static local_ref< android::database::Cursor > query(local_ref< android::content::ContentResolver > const&, local_ref< android::net::Uri > const&, local_ref< cpp_object_array<java::lang::String, 1> > const&, local_ref< java::lang::String > const&, local_ref< java::lang::String > const&);
 				static local_ref< android::database::Cursor > query(local_ref< android::content::ContentResolver > const&, local_ref< android::net::Uri > const&, local_ref< cpp_object_array<java::lang::String, 1> > const&, local_ref< java::lang::String > const&, local_ref< cpp_object_array<java::lang::String, 1> > const&, local_ref< java::lang::String > const&);
@@ -805,11 +918,15 @@ namespace android { namespace provider {
 			typedef Images_::Thumbnails Thumbnails;
 			typedef Images_::Media Media;
 
-			Images(jobject jobj)
+			explicit Images(jobject jobj)
 			: cpp_object<Images>(jobj)
 			{
 			}
 
+			operator local_ref<java::lang::Object>() const;
+
+
+			Images();
 		}; //class Images
 
 	} //namespace MediaStore_
@@ -844,11 +961,15 @@ namespace android { namespace provider {
 		typedef MediaStore_::MediaColumns MediaColumns;
 		typedef MediaStore_::Images Images;
 
-		MediaStore(jobject jobj)
+		explicit MediaStore(jobject jobj)
 		: cpp_object<MediaStore>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		MediaStore();
 		static local_ref< android::net::Uri > getMediaScannerUri();
 
 		static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(0), J2CPP_FIELD_SIGNATURE(0), local_ref< java::lang::String > > AUTHORITY;
@@ -871,7 +992,6 @@ namespace android { namespace provider {
 } //namespace provider
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_PROVIDER_MEDIASTORE_HPP_DECL
@@ -885,6 +1005,17 @@ namespace j2cpp {
 
 
 
+
+
+android::provider::MediaStore_::Video_::VideoColumns::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
+
+android::provider::MediaStore_::Video_::VideoColumns::operator local_ref<android::provider::MediaStore_::MediaColumns>() const
+{
+	return local_ref<android::provider::MediaStore_::MediaColumns>(get_jtype());
+}
 
 static_field<
 	android::provider::MediaStore_::Video_::VideoColumns::J2CPP_CLASS_NAME,
@@ -1017,16 +1148,28 @@ J2CPP_DEFINE_FIELD(android::provider::MediaStore_::Video_::VideoColumns,13,"BUCK
 J2CPP_DEFINE_FIELD(android::provider::MediaStore_::Video_::VideoColumns,14,"BUCKET_DISPLAY_NAME","Ljava/lang/String;")
 J2CPP_DEFINE_FIELD(android::provider::MediaStore_::Video_::VideoColumns,15,"BOOKMARK","Ljava/lang/String;")
 
-template <>
-local_ref< android::provider::MediaStore_::Video_::Media > create< android::provider::MediaStore_::Video_::Media>()
+
+android::provider::MediaStore_::Video_::Media::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::provider::MediaStore_::Video_::Media >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::provider::MediaStore_::Video_::Media::J2CPP_CLASS_NAME>(),
-			get_method_id<android::provider::MediaStore_::Video_::Media::J2CPP_CLASS_NAME, android::provider::MediaStore_::Video_::Media::J2CPP_METHOD_NAME(0), android::provider::MediaStore_::Video_::Media::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+android::provider::MediaStore_::Video_::Media::operator local_ref<android::provider::MediaStore_::Video_::VideoColumns>() const
+{
+	return local_ref<android::provider::MediaStore_::Video_::VideoColumns>(get_jtype());
+}
+
+
+android::provider::MediaStore_::Video_::Media::Media()
+: cpp_object<android::provider::MediaStore_::Video_::Media>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::provider::MediaStore_::Video_::Media::J2CPP_CLASS_NAME>(),
+		get_method_id<android::provider::MediaStore_::Video_::Media::J2CPP_CLASS_NAME, android::provider::MediaStore_::Video_::Media::J2CPP_METHOD_NAME(0), android::provider::MediaStore_::Video_::Media::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 local_ref< android::net::Uri > android::provider::MediaStore_::Video_::Media::getContentUri(local_ref< java::lang::String > const &a0)
 {
@@ -1038,6 +1181,7 @@ local_ref< android::net::Uri > android::provider::MediaStore_::Video_::Media::ge
 		)
 	);
 }
+
 
 
 static_field<
@@ -1078,16 +1222,28 @@ J2CPP_DEFINE_FIELD(android::provider::MediaStore_::Video_::Media,1,"EXTERNAL_CON
 J2CPP_DEFINE_FIELD(android::provider::MediaStore_::Video_::Media,2,"CONTENT_TYPE","Ljava/lang/String;")
 J2CPP_DEFINE_FIELD(android::provider::MediaStore_::Video_::Media,3,"DEFAULT_SORT_ORDER","Ljava/lang/String;")
 
-template <>
-local_ref< android::provider::MediaStore_::Video_::Thumbnails > create< android::provider::MediaStore_::Video_::Thumbnails>()
+
+android::provider::MediaStore_::Video_::Thumbnails::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::provider::MediaStore_::Video_::Thumbnails >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::provider::MediaStore_::Video_::Thumbnails::J2CPP_CLASS_NAME>(),
-			get_method_id<android::provider::MediaStore_::Video_::Thumbnails::J2CPP_CLASS_NAME, android::provider::MediaStore_::Video_::Thumbnails::J2CPP_METHOD_NAME(0), android::provider::MediaStore_::Video_::Thumbnails::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+android::provider::MediaStore_::Video_::Thumbnails::operator local_ref<android::provider::BaseColumns>() const
+{
+	return local_ref<android::provider::BaseColumns>(get_jtype());
+}
+
+
+android::provider::MediaStore_::Video_::Thumbnails::Thumbnails()
+: cpp_object<android::provider::MediaStore_::Video_::Thumbnails>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::provider::MediaStore_::Video_::Thumbnails::J2CPP_CLASS_NAME>(),
+		get_method_id<android::provider::MediaStore_::Video_::Thumbnails::J2CPP_CLASS_NAME, android::provider::MediaStore_::Video_::Thumbnails::J2CPP_METHOD_NAME(0), android::provider::MediaStore_::Video_::Thumbnails::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 void android::provider::MediaStore_::Video_::Thumbnails::cancelThumbnailRequest(local_ref< android::content::ContentResolver > const &a0, cpp_long const &a1)
 {
@@ -1121,6 +1277,7 @@ local_ref< android::net::Uri > android::provider::MediaStore_::Video_::Thumbnail
 		)
 	);
 }
+
 
 
 static_field<
@@ -1220,16 +1377,23 @@ J2CPP_DEFINE_FIELD(android::provider::MediaStore_::Video_::Thumbnails,9,"WIDTH",
 J2CPP_DEFINE_FIELD(android::provider::MediaStore_::Video_::Thumbnails,10,"HEIGHT","Ljava/lang/String;")
 
 
-template <>
-local_ref< android::provider::MediaStore_::Video > create< android::provider::MediaStore_::Video>()
+
+android::provider::MediaStore_::Video::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::provider::MediaStore_::Video >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::provider::MediaStore_::Video::J2CPP_CLASS_NAME>(),
-			get_method_id<android::provider::MediaStore_::Video::J2CPP_CLASS_NAME, android::provider::MediaStore_::Video::J2CPP_METHOD_NAME(0), android::provider::MediaStore_::Video::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::provider::MediaStore_::Video::Video()
+: cpp_object<android::provider::MediaStore_::Video>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::provider::MediaStore_::Video::J2CPP_CLASS_NAME>(),
+		get_method_id<android::provider::MediaStore_::Video::J2CPP_CLASS_NAME, android::provider::MediaStore_::Video::J2CPP_METHOD_NAME(0), android::provider::MediaStore_::Video::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 local_ref< android::database::Cursor > android::provider::MediaStore_::Video::query(local_ref< android::content::ContentResolver > const &a0, local_ref< android::net::Uri > const &a1, local_ref< cpp_object_array<java::lang::String, 1> > const &a2)
 {
@@ -1258,16 +1422,28 @@ J2CPP_DEFINE_FIELD(android::provider::MediaStore_::Video,0,"DEFAULT_SORT_ORDER",
 
 
 
-template <>
-local_ref< android::provider::MediaStore_::Audio_::Artists_::Albums > create< android::provider::MediaStore_::Audio_::Artists_::Albums>()
+
+android::provider::MediaStore_::Audio_::Artists_::Albums::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::provider::MediaStore_::Audio_::Artists_::Albums >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::provider::MediaStore_::Audio_::Artists_::Albums::J2CPP_CLASS_NAME>(),
-			get_method_id<android::provider::MediaStore_::Audio_::Artists_::Albums::J2CPP_CLASS_NAME, android::provider::MediaStore_::Audio_::Artists_::Albums::J2CPP_METHOD_NAME(0), android::provider::MediaStore_::Audio_::Artists_::Albums::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+android::provider::MediaStore_::Audio_::Artists_::Albums::operator local_ref<android::provider::MediaStore_::Audio_::AlbumColumns>() const
+{
+	return local_ref<android::provider::MediaStore_::Audio_::AlbumColumns>(get_jtype());
+}
+
+
+android::provider::MediaStore_::Audio_::Artists_::Albums::Albums()
+: cpp_object<android::provider::MediaStore_::Audio_::Artists_::Albums>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::provider::MediaStore_::Audio_::Artists_::Albums::J2CPP_CLASS_NAME>(),
+		get_method_id<android::provider::MediaStore_::Audio_::Artists_::Albums::J2CPP_CLASS_NAME, android::provider::MediaStore_::Audio_::Artists_::Albums::J2CPP_METHOD_NAME(0), android::provider::MediaStore_::Audio_::Artists_::Albums::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 local_ref< android::net::Uri > android::provider::MediaStore_::Audio_::Artists_::Albums::getContentUri(local_ref< java::lang::String > const &a0, cpp_long const &a1)
 {
@@ -1286,16 +1462,33 @@ J2CPP_DEFINE_METHOD(android::provider::MediaStore_::Audio_::Artists_::Albums,0,"
 J2CPP_DEFINE_METHOD(android::provider::MediaStore_::Audio_::Artists_::Albums,1,"getContentUri","(Ljava/lang/String;J)Landroid/net/Uri;")
 
 
-template <>
-local_ref< android::provider::MediaStore_::Audio_::Artists > create< android::provider::MediaStore_::Audio_::Artists>()
+
+android::provider::MediaStore_::Audio_::Artists::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::provider::MediaStore_::Audio_::Artists >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::provider::MediaStore_::Audio_::Artists::J2CPP_CLASS_NAME>(),
-			get_method_id<android::provider::MediaStore_::Audio_::Artists::J2CPP_CLASS_NAME, android::provider::MediaStore_::Audio_::Artists::J2CPP_METHOD_NAME(0), android::provider::MediaStore_::Audio_::Artists::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+android::provider::MediaStore_::Audio_::Artists::operator local_ref<android::provider::BaseColumns>() const
+{
+	return local_ref<android::provider::BaseColumns>(get_jtype());
+}
+
+android::provider::MediaStore_::Audio_::Artists::operator local_ref<android::provider::MediaStore_::Audio_::ArtistColumns>() const
+{
+	return local_ref<android::provider::MediaStore_::Audio_::ArtistColumns>(get_jtype());
+}
+
+
+android::provider::MediaStore_::Audio_::Artists::Artists()
+: cpp_object<android::provider::MediaStore_::Audio_::Artists>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::provider::MediaStore_::Audio_::Artists::J2CPP_CLASS_NAME>(),
+		get_method_id<android::provider::MediaStore_::Audio_::Artists::J2CPP_CLASS_NAME, android::provider::MediaStore_::Audio_::Artists::J2CPP_METHOD_NAME(0), android::provider::MediaStore_::Audio_::Artists::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 local_ref< android::net::Uri > android::provider::MediaStore_::Audio_::Artists::getContentUri(local_ref< java::lang::String > const &a0)
 {
@@ -1307,6 +1500,7 @@ local_ref< android::net::Uri > android::provider::MediaStore_::Audio_::Artists::
 		)
 	);
 }
+
 
 
 static_field<
@@ -1356,16 +1550,28 @@ J2CPP_DEFINE_FIELD(android::provider::MediaStore_::Audio_::Artists,3,"ENTRY_CONT
 J2CPP_DEFINE_FIELD(android::provider::MediaStore_::Audio_::Artists,4,"DEFAULT_SORT_ORDER","Ljava/lang/String;")
 
 
-template <>
-local_ref< android::provider::MediaStore_::Audio_::Playlists_::Members > create< android::provider::MediaStore_::Audio_::Playlists_::Members>()
+
+android::provider::MediaStore_::Audio_::Playlists_::Members::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::provider::MediaStore_::Audio_::Playlists_::Members >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::provider::MediaStore_::Audio_::Playlists_::Members::J2CPP_CLASS_NAME>(),
-			get_method_id<android::provider::MediaStore_::Audio_::Playlists_::Members::J2CPP_CLASS_NAME, android::provider::MediaStore_::Audio_::Playlists_::Members::J2CPP_METHOD_NAME(0), android::provider::MediaStore_::Audio_::Playlists_::Members::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+android::provider::MediaStore_::Audio_::Playlists_::Members::operator local_ref<android::provider::MediaStore_::Audio_::AudioColumns>() const
+{
+	return local_ref<android::provider::MediaStore_::Audio_::AudioColumns>(get_jtype());
+}
+
+
+android::provider::MediaStore_::Audio_::Playlists_::Members::Members()
+: cpp_object<android::provider::MediaStore_::Audio_::Playlists_::Members>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::provider::MediaStore_::Audio_::Playlists_::Members::J2CPP_CLASS_NAME>(),
+		get_method_id<android::provider::MediaStore_::Audio_::Playlists_::Members::J2CPP_CLASS_NAME, android::provider::MediaStore_::Audio_::Playlists_::Members::J2CPP_METHOD_NAME(0), android::provider::MediaStore_::Audio_::Playlists_::Members::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 local_ref< android::net::Uri > android::provider::MediaStore_::Audio_::Playlists_::Members::getContentUri(local_ref< java::lang::String > const &a0, cpp_long const &a1)
 {
@@ -1433,16 +1639,33 @@ J2CPP_DEFINE_FIELD(android::provider::MediaStore_::Audio_::Playlists_::Members,4
 J2CPP_DEFINE_FIELD(android::provider::MediaStore_::Audio_::Playlists_::Members,5,"DEFAULT_SORT_ORDER","Ljava/lang/String;")
 
 
-template <>
-local_ref< android::provider::MediaStore_::Audio_::Playlists > create< android::provider::MediaStore_::Audio_::Playlists>()
+
+android::provider::MediaStore_::Audio_::Playlists::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::provider::MediaStore_::Audio_::Playlists >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::provider::MediaStore_::Audio_::Playlists::J2CPP_CLASS_NAME>(),
-			get_method_id<android::provider::MediaStore_::Audio_::Playlists::J2CPP_CLASS_NAME, android::provider::MediaStore_::Audio_::Playlists::J2CPP_METHOD_NAME(0), android::provider::MediaStore_::Audio_::Playlists::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+android::provider::MediaStore_::Audio_::Playlists::operator local_ref<android::provider::BaseColumns>() const
+{
+	return local_ref<android::provider::BaseColumns>(get_jtype());
+}
+
+android::provider::MediaStore_::Audio_::Playlists::operator local_ref<android::provider::MediaStore_::Audio_::PlaylistsColumns>() const
+{
+	return local_ref<android::provider::MediaStore_::Audio_::PlaylistsColumns>(get_jtype());
+}
+
+
+android::provider::MediaStore_::Audio_::Playlists::Playlists()
+: cpp_object<android::provider::MediaStore_::Audio_::Playlists>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::provider::MediaStore_::Audio_::Playlists::J2CPP_CLASS_NAME>(),
+		get_method_id<android::provider::MediaStore_::Audio_::Playlists::J2CPP_CLASS_NAME, android::provider::MediaStore_::Audio_::Playlists::J2CPP_METHOD_NAME(0), android::provider::MediaStore_::Audio_::Playlists::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 local_ref< android::net::Uri > android::provider::MediaStore_::Audio_::Playlists::getContentUri(local_ref< java::lang::String > const &a0)
 {
@@ -1454,6 +1677,7 @@ local_ref< android::net::Uri > android::provider::MediaStore_::Audio_::Playlists
 		)
 	);
 }
+
 
 
 static_field<
@@ -1502,6 +1726,12 @@ J2CPP_DEFINE_FIELD(android::provider::MediaStore_::Audio_::Playlists,2,"CONTENT_
 J2CPP_DEFINE_FIELD(android::provider::MediaStore_::Audio_::Playlists,3,"ENTRY_CONTENT_TYPE","Ljava/lang/String;")
 J2CPP_DEFINE_FIELD(android::provider::MediaStore_::Audio_::Playlists,4,"DEFAULT_SORT_ORDER","Ljava/lang/String;")
 
+
+android::provider::MediaStore_::Audio_::PlaylistsColumns::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
+
 static_field<
 	android::provider::MediaStore_::Audio_::PlaylistsColumns::J2CPP_CLASS_NAME,
 	android::provider::MediaStore_::Audio_::PlaylistsColumns::J2CPP_FIELD_NAME(0),
@@ -1537,6 +1767,12 @@ J2CPP_DEFINE_FIELD(android::provider::MediaStore_::Audio_::PlaylistsColumns,1,"D
 J2CPP_DEFINE_FIELD(android::provider::MediaStore_::Audio_::PlaylistsColumns,2,"DATE_ADDED","Ljava/lang/String;")
 J2CPP_DEFINE_FIELD(android::provider::MediaStore_::Audio_::PlaylistsColumns,3,"DATE_MODIFIED","Ljava/lang/String;")
 
+
+android::provider::MediaStore_::Audio_::GenresColumns::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
+
 static_field<
 	android::provider::MediaStore_::Audio_::GenresColumns::J2CPP_CLASS_NAME,
 	android::provider::MediaStore_::Audio_::GenresColumns::J2CPP_FIELD_NAME(0),
@@ -1548,16 +1784,33 @@ static_field<
 J2CPP_DEFINE_CLASS(android::provider::MediaStore_::Audio_::GenresColumns,"android/provider/MediaStore$Audio$GenresColumns")
 J2CPP_DEFINE_FIELD(android::provider::MediaStore_::Audio_::GenresColumns,0,"NAME","Ljava/lang/String;")
 
-template <>
-local_ref< android::provider::MediaStore_::Audio_::Albums > create< android::provider::MediaStore_::Audio_::Albums>()
+
+android::provider::MediaStore_::Audio_::Albums::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::provider::MediaStore_::Audio_::Albums >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::provider::MediaStore_::Audio_::Albums::J2CPP_CLASS_NAME>(),
-			get_method_id<android::provider::MediaStore_::Audio_::Albums::J2CPP_CLASS_NAME, android::provider::MediaStore_::Audio_::Albums::J2CPP_METHOD_NAME(0), android::provider::MediaStore_::Audio_::Albums::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+android::provider::MediaStore_::Audio_::Albums::operator local_ref<android::provider::BaseColumns>() const
+{
+	return local_ref<android::provider::BaseColumns>(get_jtype());
+}
+
+android::provider::MediaStore_::Audio_::Albums::operator local_ref<android::provider::MediaStore_::Audio_::AlbumColumns>() const
+{
+	return local_ref<android::provider::MediaStore_::Audio_::AlbumColumns>(get_jtype());
+}
+
+
+android::provider::MediaStore_::Audio_::Albums::Albums()
+: cpp_object<android::provider::MediaStore_::Audio_::Albums>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::provider::MediaStore_::Audio_::Albums::J2CPP_CLASS_NAME>(),
+		get_method_id<android::provider::MediaStore_::Audio_::Albums::J2CPP_CLASS_NAME, android::provider::MediaStore_::Audio_::Albums::J2CPP_METHOD_NAME(0), android::provider::MediaStore_::Audio_::Albums::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 local_ref< android::net::Uri > android::provider::MediaStore_::Audio_::Albums::getContentUri(local_ref< java::lang::String > const &a0)
 {
@@ -1569,6 +1822,7 @@ local_ref< android::net::Uri > android::provider::MediaStore_::Audio_::Albums::g
 		)
 	);
 }
+
 
 
 static_field<
@@ -1616,6 +1870,12 @@ J2CPP_DEFINE_FIELD(android::provider::MediaStore_::Audio_::Albums,1,"EXTERNAL_CO
 J2CPP_DEFINE_FIELD(android::provider::MediaStore_::Audio_::Albums,2,"CONTENT_TYPE","Ljava/lang/String;")
 J2CPP_DEFINE_FIELD(android::provider::MediaStore_::Audio_::Albums,3,"ENTRY_CONTENT_TYPE","Ljava/lang/String;")
 J2CPP_DEFINE_FIELD(android::provider::MediaStore_::Audio_::Albums,4,"DEFAULT_SORT_ORDER","Ljava/lang/String;")
+
+
+android::provider::MediaStore_::Audio_::AlbumColumns::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 static_field<
 	android::provider::MediaStore_::Audio_::AlbumColumns::J2CPP_CLASS_NAME,
@@ -1693,16 +1953,28 @@ J2CPP_DEFINE_FIELD(android::provider::MediaStore_::Audio_::AlbumColumns,7,"ALBUM
 J2CPP_DEFINE_FIELD(android::provider::MediaStore_::Audio_::AlbumColumns,8,"ALBUM_ART","Ljava/lang/String;")
 
 
-template <>
-local_ref< android::provider::MediaStore_::Audio_::Genres_::Members > create< android::provider::MediaStore_::Audio_::Genres_::Members>()
+
+android::provider::MediaStore_::Audio_::Genres_::Members::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::provider::MediaStore_::Audio_::Genres_::Members >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::provider::MediaStore_::Audio_::Genres_::Members::J2CPP_CLASS_NAME>(),
-			get_method_id<android::provider::MediaStore_::Audio_::Genres_::Members::J2CPP_CLASS_NAME, android::provider::MediaStore_::Audio_::Genres_::Members::J2CPP_METHOD_NAME(0), android::provider::MediaStore_::Audio_::Genres_::Members::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+android::provider::MediaStore_::Audio_::Genres_::Members::operator local_ref<android::provider::MediaStore_::Audio_::AudioColumns>() const
+{
+	return local_ref<android::provider::MediaStore_::Audio_::AudioColumns>(get_jtype());
+}
+
+
+android::provider::MediaStore_::Audio_::Genres_::Members::Members()
+: cpp_object<android::provider::MediaStore_::Audio_::Genres_::Members>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::provider::MediaStore_::Audio_::Genres_::Members::J2CPP_CLASS_NAME>(),
+		get_method_id<android::provider::MediaStore_::Audio_::Genres_::Members::J2CPP_CLASS_NAME, android::provider::MediaStore_::Audio_::Genres_::Members::J2CPP_METHOD_NAME(0), android::provider::MediaStore_::Audio_::Genres_::Members::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 local_ref< android::net::Uri > android::provider::MediaStore_::Audio_::Genres_::Members::getContentUri(local_ref< java::lang::String > const &a0, cpp_long const &a1)
 {
@@ -1754,16 +2026,33 @@ J2CPP_DEFINE_FIELD(android::provider::MediaStore_::Audio_::Genres_::Members,2,"A
 J2CPP_DEFINE_FIELD(android::provider::MediaStore_::Audio_::Genres_::Members,3,"GENRE_ID","Ljava/lang/String;")
 
 
-template <>
-local_ref< android::provider::MediaStore_::Audio_::Genres > create< android::provider::MediaStore_::Audio_::Genres>()
+
+android::provider::MediaStore_::Audio_::Genres::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::provider::MediaStore_::Audio_::Genres >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::provider::MediaStore_::Audio_::Genres::J2CPP_CLASS_NAME>(),
-			get_method_id<android::provider::MediaStore_::Audio_::Genres::J2CPP_CLASS_NAME, android::provider::MediaStore_::Audio_::Genres::J2CPP_METHOD_NAME(0), android::provider::MediaStore_::Audio_::Genres::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+android::provider::MediaStore_::Audio_::Genres::operator local_ref<android::provider::BaseColumns>() const
+{
+	return local_ref<android::provider::BaseColumns>(get_jtype());
+}
+
+android::provider::MediaStore_::Audio_::Genres::operator local_ref<android::provider::MediaStore_::Audio_::GenresColumns>() const
+{
+	return local_ref<android::provider::MediaStore_::Audio_::GenresColumns>(get_jtype());
+}
+
+
+android::provider::MediaStore_::Audio_::Genres::Genres()
+: cpp_object<android::provider::MediaStore_::Audio_::Genres>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::provider::MediaStore_::Audio_::Genres::J2CPP_CLASS_NAME>(),
+		get_method_id<android::provider::MediaStore_::Audio_::Genres::J2CPP_CLASS_NAME, android::provider::MediaStore_::Audio_::Genres::J2CPP_METHOD_NAME(0), android::provider::MediaStore_::Audio_::Genres::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 local_ref< android::net::Uri > android::provider::MediaStore_::Audio_::Genres::getContentUri(local_ref< java::lang::String > const &a0)
 {
@@ -1775,6 +2064,7 @@ local_ref< android::net::Uri > android::provider::MediaStore_::Audio_::Genres::g
 		)
 	);
 }
+
 
 
 static_field<
@@ -1823,6 +2113,12 @@ J2CPP_DEFINE_FIELD(android::provider::MediaStore_::Audio_::Genres,2,"CONTENT_TYP
 J2CPP_DEFINE_FIELD(android::provider::MediaStore_::Audio_::Genres,3,"ENTRY_CONTENT_TYPE","Ljava/lang/String;")
 J2CPP_DEFINE_FIELD(android::provider::MediaStore_::Audio_::Genres,4,"DEFAULT_SORT_ORDER","Ljava/lang/String;")
 
+
+android::provider::MediaStore_::Audio_::ArtistColumns::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
+
 static_field<
 	android::provider::MediaStore_::Audio_::ArtistColumns::J2CPP_CLASS_NAME,
 	android::provider::MediaStore_::Audio_::ArtistColumns::J2CPP_FIELD_NAME(0),
@@ -1857,6 +2153,17 @@ J2CPP_DEFINE_FIELD(android::provider::MediaStore_::Audio_::ArtistColumns,0,"ARTI
 J2CPP_DEFINE_FIELD(android::provider::MediaStore_::Audio_::ArtistColumns,1,"ARTIST_KEY","Ljava/lang/String;")
 J2CPP_DEFINE_FIELD(android::provider::MediaStore_::Audio_::ArtistColumns,2,"NUMBER_OF_ALBUMS","Ljava/lang/String;")
 J2CPP_DEFINE_FIELD(android::provider::MediaStore_::Audio_::ArtistColumns,3,"NUMBER_OF_TRACKS","Ljava/lang/String;")
+
+
+android::provider::MediaStore_::Audio_::AudioColumns::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
+
+android::provider::MediaStore_::Audio_::AudioColumns::operator local_ref<android::provider::MediaStore_::MediaColumns>() const
+{
+	return local_ref<android::provider::MediaStore_::MediaColumns>(get_jtype());
+}
 
 static_field<
 	android::provider::MediaStore_::Audio_::AudioColumns::J2CPP_CLASS_NAME,
@@ -1989,16 +2296,28 @@ J2CPP_DEFINE_FIELD(android::provider::MediaStore_::Audio_::AudioColumns,13,"IS_R
 J2CPP_DEFINE_FIELD(android::provider::MediaStore_::Audio_::AudioColumns,14,"IS_ALARM","Ljava/lang/String;")
 J2CPP_DEFINE_FIELD(android::provider::MediaStore_::Audio_::AudioColumns,15,"IS_NOTIFICATION","Ljava/lang/String;")
 
-template <>
-local_ref< android::provider::MediaStore_::Audio_::Media > create< android::provider::MediaStore_::Audio_::Media>()
+
+android::provider::MediaStore_::Audio_::Media::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::provider::MediaStore_::Audio_::Media >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::provider::MediaStore_::Audio_::Media::J2CPP_CLASS_NAME>(),
-			get_method_id<android::provider::MediaStore_::Audio_::Media::J2CPP_CLASS_NAME, android::provider::MediaStore_::Audio_::Media::J2CPP_METHOD_NAME(0), android::provider::MediaStore_::Audio_::Media::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+android::provider::MediaStore_::Audio_::Media::operator local_ref<android::provider::MediaStore_::Audio_::AudioColumns>() const
+{
+	return local_ref<android::provider::MediaStore_::Audio_::AudioColumns>(get_jtype());
+}
+
+
+android::provider::MediaStore_::Audio_::Media::Media()
+: cpp_object<android::provider::MediaStore_::Audio_::Media>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::provider::MediaStore_::Audio_::Media::J2CPP_CLASS_NAME>(),
+		get_method_id<android::provider::MediaStore_::Audio_::Media::J2CPP_CLASS_NAME, android::provider::MediaStore_::Audio_::Media::J2CPP_METHOD_NAME(0), android::provider::MediaStore_::Audio_::Media::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 local_ref< android::net::Uri > android::provider::MediaStore_::Audio_::Media::getContentUri(local_ref< java::lang::String > const &a0)
 {
@@ -2021,6 +2340,7 @@ local_ref< android::net::Uri > android::provider::MediaStore_::Audio_::Media::ge
 		)
 	);
 }
+
 
 
 static_field<
@@ -2079,16 +2399,23 @@ J2CPP_DEFINE_FIELD(android::provider::MediaStore_::Audio_::Media,4,"RECORD_SOUND
 J2CPP_DEFINE_FIELD(android::provider::MediaStore_::Audio_::Media,5,"EXTRA_MAX_BYTES","Ljava/lang/String;")
 
 
-template <>
-local_ref< android::provider::MediaStore_::Audio > create< android::provider::MediaStore_::Audio>()
+
+android::provider::MediaStore_::Audio::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::provider::MediaStore_::Audio >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::provider::MediaStore_::Audio::J2CPP_CLASS_NAME>(),
-			get_method_id<android::provider::MediaStore_::Audio::J2CPP_CLASS_NAME, android::provider::MediaStore_::Audio::J2CPP_METHOD_NAME(0), android::provider::MediaStore_::Audio::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::provider::MediaStore_::Audio::Audio()
+: cpp_object<android::provider::MediaStore_::Audio>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::provider::MediaStore_::Audio::J2CPP_CLASS_NAME>(),
+		get_method_id<android::provider::MediaStore_::Audio::J2CPP_CLASS_NAME, android::provider::MediaStore_::Audio::J2CPP_METHOD_NAME(0), android::provider::MediaStore_::Audio::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 local_ref< java::lang::String > android::provider::MediaStore_::Audio::keyFor(local_ref< java::lang::String > const &a0)
 {
@@ -2105,6 +2432,17 @@ local_ref< java::lang::String > android::provider::MediaStore_::Audio::keyFor(lo
 J2CPP_DEFINE_CLASS(android::provider::MediaStore_::Audio,"android/provider/MediaStore$Audio")
 J2CPP_DEFINE_METHOD(android::provider::MediaStore_::Audio,0,"<init>","()V")
 J2CPP_DEFINE_METHOD(android::provider::MediaStore_::Audio,1,"keyFor","(Ljava/lang/String;)Ljava/lang/String;")
+
+
+android::provider::MediaStore_::MediaColumns::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
+
+android::provider::MediaStore_::MediaColumns::operator local_ref<android::provider::BaseColumns>() const
+{
+	return local_ref<android::provider::BaseColumns>(get_jtype());
+}
 
 static_field<
 	android::provider::MediaStore_::MediaColumns::J2CPP_CLASS_NAME,
@@ -2165,6 +2503,17 @@ J2CPP_DEFINE_FIELD(android::provider::MediaStore_::MediaColumns,4,"DATE_ADDED","
 J2CPP_DEFINE_FIELD(android::provider::MediaStore_::MediaColumns,5,"DATE_MODIFIED","Ljava/lang/String;")
 J2CPP_DEFINE_FIELD(android::provider::MediaStore_::MediaColumns,6,"MIME_TYPE","Ljava/lang/String;")
 
+
+
+android::provider::MediaStore_::Images_::ImageColumns::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
+
+android::provider::MediaStore_::Images_::ImageColumns::operator local_ref<android::provider::MediaStore_::MediaColumns>() const
+{
+	return local_ref<android::provider::MediaStore_::MediaColumns>(get_jtype());
+}
 
 static_field<
 	android::provider::MediaStore_::Images_::ImageColumns::J2CPP_CLASS_NAME,
@@ -2249,16 +2598,28 @@ J2CPP_DEFINE_FIELD(android::provider::MediaStore_::Images_::ImageColumns,7,"MINI
 J2CPP_DEFINE_FIELD(android::provider::MediaStore_::Images_::ImageColumns,8,"BUCKET_ID","Ljava/lang/String;")
 J2CPP_DEFINE_FIELD(android::provider::MediaStore_::Images_::ImageColumns,9,"BUCKET_DISPLAY_NAME","Ljava/lang/String;")
 
-template <>
-local_ref< android::provider::MediaStore_::Images_::Thumbnails > create< android::provider::MediaStore_::Images_::Thumbnails>()
+
+android::provider::MediaStore_::Images_::Thumbnails::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::provider::MediaStore_::Images_::Thumbnails >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::provider::MediaStore_::Images_::Thumbnails::J2CPP_CLASS_NAME>(),
-			get_method_id<android::provider::MediaStore_::Images_::Thumbnails::J2CPP_CLASS_NAME, android::provider::MediaStore_::Images_::Thumbnails::J2CPP_METHOD_NAME(0), android::provider::MediaStore_::Images_::Thumbnails::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+android::provider::MediaStore_::Images_::Thumbnails::operator local_ref<android::provider::BaseColumns>() const
+{
+	return local_ref<android::provider::BaseColumns>(get_jtype());
+}
+
+
+android::provider::MediaStore_::Images_::Thumbnails::Thumbnails()
+: cpp_object<android::provider::MediaStore_::Images_::Thumbnails>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::provider::MediaStore_::Images_::Thumbnails::J2CPP_CLASS_NAME>(),
+		get_method_id<android::provider::MediaStore_::Images_::Thumbnails::J2CPP_CLASS_NAME, android::provider::MediaStore_::Images_::Thumbnails::J2CPP_METHOD_NAME(0), android::provider::MediaStore_::Images_::Thumbnails::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 local_ref< android::database::Cursor > android::provider::MediaStore_::Images_::Thumbnails::query(local_ref< android::content::ContentResolver > const &a0, local_ref< android::net::Uri > const &a1, local_ref< cpp_object_array<java::lang::String, 1> > const &a2)
 {
@@ -2325,6 +2686,7 @@ local_ref< android::net::Uri > android::provider::MediaStore_::Images_::Thumbnai
 		)
 	);
 }
+
 
 
 static_field<
@@ -2434,16 +2796,28 @@ J2CPP_DEFINE_FIELD(android::provider::MediaStore_::Images_::Thumbnails,9,"THUMB_
 J2CPP_DEFINE_FIELD(android::provider::MediaStore_::Images_::Thumbnails,10,"WIDTH","Ljava/lang/String;")
 J2CPP_DEFINE_FIELD(android::provider::MediaStore_::Images_::Thumbnails,11,"HEIGHT","Ljava/lang/String;")
 
-template <>
-local_ref< android::provider::MediaStore_::Images_::Media > create< android::provider::MediaStore_::Images_::Media>()
+
+android::provider::MediaStore_::Images_::Media::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::provider::MediaStore_::Images_::Media >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::provider::MediaStore_::Images_::Media::J2CPP_CLASS_NAME>(),
-			get_method_id<android::provider::MediaStore_::Images_::Media::J2CPP_CLASS_NAME, android::provider::MediaStore_::Images_::Media::J2CPP_METHOD_NAME(0), android::provider::MediaStore_::Images_::Media::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+android::provider::MediaStore_::Images_::Media::operator local_ref<android::provider::MediaStore_::Images_::ImageColumns>() const
+{
+	return local_ref<android::provider::MediaStore_::Images_::ImageColumns>(get_jtype());
+}
+
+
+android::provider::MediaStore_::Images_::Media::Media()
+: cpp_object<android::provider::MediaStore_::Images_::Media>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::provider::MediaStore_::Images_::Media::J2CPP_CLASS_NAME>(),
+		get_method_id<android::provider::MediaStore_::Images_::Media::J2CPP_CLASS_NAME, android::provider::MediaStore_::Images_::Media::J2CPP_METHOD_NAME(0), android::provider::MediaStore_::Images_::Media::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 local_ref< android::database::Cursor > android::provider::MediaStore_::Images_::Media::query(local_ref< android::content::ContentResolver > const &a0, local_ref< android::net::Uri > const &a1, local_ref< cpp_object_array<java::lang::String, 1> > const &a2)
 {
@@ -2523,6 +2897,7 @@ local_ref< android::net::Uri > android::provider::MediaStore_::Images_::Media::g
 }
 
 
+
 static_field<
 	android::provider::MediaStore_::Images_::Media::J2CPP_CLASS_NAME,
 	android::provider::MediaStore_::Images_::Media::J2CPP_FIELD_NAME(0),
@@ -2568,32 +2943,46 @@ J2CPP_DEFINE_FIELD(android::provider::MediaStore_::Images_::Media,2,"CONTENT_TYP
 J2CPP_DEFINE_FIELD(android::provider::MediaStore_::Images_::Media,3,"DEFAULT_SORT_ORDER","Ljava/lang/String;")
 
 
-template <>
-local_ref< android::provider::MediaStore_::Images > create< android::provider::MediaStore_::Images>()
+
+android::provider::MediaStore_::Images::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::provider::MediaStore_::Images >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::provider::MediaStore_::Images::J2CPP_CLASS_NAME>(),
-			get_method_id<android::provider::MediaStore_::Images::J2CPP_CLASS_NAME, android::provider::MediaStore_::Images::J2CPP_METHOD_NAME(0), android::provider::MediaStore_::Images::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::provider::MediaStore_::Images::Images()
+: cpp_object<android::provider::MediaStore_::Images>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::provider::MediaStore_::Images::J2CPP_CLASS_NAME>(),
+		get_method_id<android::provider::MediaStore_::Images::J2CPP_CLASS_NAME, android::provider::MediaStore_::Images::J2CPP_METHOD_NAME(0), android::provider::MediaStore_::Images::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 
 J2CPP_DEFINE_CLASS(android::provider::MediaStore_::Images,"android/provider/MediaStore$Images")
 J2CPP_DEFINE_METHOD(android::provider::MediaStore_::Images,0,"<init>","()V")
 
 
-template <>
-local_ref< android::provider::MediaStore > create< android::provider::MediaStore>()
+
+android::provider::MediaStore::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::provider::MediaStore >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::provider::MediaStore::J2CPP_CLASS_NAME>(),
-			get_method_id<android::provider::MediaStore::J2CPP_CLASS_NAME, android::provider::MediaStore::J2CPP_METHOD_NAME(0), android::provider::MediaStore::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::provider::MediaStore::MediaStore()
+: cpp_object<android::provider::MediaStore>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::provider::MediaStore::J2CPP_CLASS_NAME>(),
+		get_method_id<android::provider::MediaStore::J2CPP_CLASS_NAME, android::provider::MediaStore::J2CPP_METHOD_NAME(0), android::provider::MediaStore::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 local_ref< android::net::Uri > android::provider::MediaStore::getMediaScannerUri()
 {

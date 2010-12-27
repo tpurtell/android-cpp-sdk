@@ -11,6 +11,8 @@
 
 
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace lang { class Enum; } } }
+namespace j2cpp { namespace java { namespace lang { namespace annotation { class Annotation; } } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace android { namespace view { class View; } } }
 namespace j2cpp { namespace android { namespace view { namespace ViewDebug_ { class RecyclerTraceType; } } } }
@@ -21,8 +23,10 @@ namespace j2cpp { namespace android { namespace view { namespace ViewDebug_ { cl
 
 #include <android/view/View.hpp>
 #include <android/view/ViewDebug.hpp>
+#include <java/lang/Enum.hpp>
 #include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
+#include <java/lang/annotation/Annotation.hpp>
 
 
 namespace j2cpp {
@@ -47,10 +51,14 @@ namespace android { namespace view {
 			J2CPP_DECLARE_METHOD(4)
 			J2CPP_DECLARE_METHOD(5)
 
-			ExportedProperty(jobject jobj)
+			explicit ExportedProperty(jobject jobj)
 			: cpp_object<ExportedProperty>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+			operator local_ref<java::lang::annotation::Annotation>() const;
+
 
 			cpp_boolean resolveId();
 			local_ref< cpp_object_array<android::view::ViewDebug_::IntToString, 1> > mapping();
@@ -81,10 +89,13 @@ namespace android { namespace view {
 			J2CPP_DECLARE_FIELD(6)
 			J2CPP_DECLARE_FIELD(7)
 
-			RecyclerTraceType(jobject jobj)
+			explicit RecyclerTraceType(jobject jobj)
 			: cpp_object<RecyclerTraceType>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Enum>() const;
+
 
 			static local_ref< cpp_object_array<android::view::ViewDebug_::RecyclerTraceType, 1> > values();
 			static local_ref< android::view::ViewDebug_::RecyclerTraceType > valueOf(local_ref< java::lang::String > const&);
@@ -111,10 +122,14 @@ namespace android { namespace view {
 			J2CPP_DECLARE_METHOD(2)
 			J2CPP_DECLARE_METHOD(3)
 
-			FlagToString(jobject jobj)
+			explicit FlagToString(jobject jobj)
 			: cpp_object<FlagToString>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+			operator local_ref<java::lang::annotation::Annotation>() const;
+
 
 			cpp_int mask();
 			cpp_int equals();
@@ -133,10 +148,14 @@ namespace android { namespace view {
 			J2CPP_DECLARE_METHOD(0)
 			J2CPP_DECLARE_METHOD(1)
 
-			IntToString(jobject jobj)
+			explicit IntToString(jobject jobj)
 			: cpp_object<IntToString>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+			operator local_ref<java::lang::annotation::Annotation>() const;
+
 
 			cpp_int from();
 			local_ref< java::lang::String > to();
@@ -152,10 +171,14 @@ namespace android { namespace view {
 
 			J2CPP_DECLARE_METHOD(0)
 
-			CapturedViewProperty(jobject jobj)
+			explicit CapturedViewProperty(jobject jobj)
 			: cpp_object<CapturedViewProperty>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+			operator local_ref<java::lang::annotation::Annotation>() const;
+
 
 			cpp_boolean retrieveReturn();
 		}; //class CapturedViewProperty
@@ -182,10 +205,13 @@ namespace android { namespace view {
 			J2CPP_DECLARE_FIELD(7)
 			J2CPP_DECLARE_FIELD(8)
 
-			HierarchyTraceType(jobject jobj)
+			explicit HierarchyTraceType(jobject jobj)
 			: cpp_object<HierarchyTraceType>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Enum>() const;
+
 
 			static local_ref< cpp_object_array<android::view::ViewDebug_::HierarchyTraceType, 1> > values();
 			static local_ref< android::view::ViewDebug_::HierarchyTraceType > valueOf(local_ref< java::lang::String > const&);
@@ -227,11 +253,15 @@ namespace android { namespace view {
 		typedef ViewDebug_::CapturedViewProperty CapturedViewProperty;
 		typedef ViewDebug_::HierarchyTraceType HierarchyTraceType;
 
-		ViewDebug(jobject jobj)
+		explicit ViewDebug(jobject jobj)
 		: cpp_object<ViewDebug>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		ViewDebug();
 		static void trace(local_ref< android::view::View > const&, local_ref< android::view::ViewDebug_::RecyclerTraceType > const&, local_ref< cpp_int_array<1> > const&);
 		static void startRecyclerTracing(local_ref< java::lang::String > const&, local_ref< android::view::View > const&);
 		static void stopRecyclerTracing();
@@ -247,7 +277,6 @@ namespace android { namespace view {
 } //namespace view
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_VIEW_VIEWDEBUG_HPP_DECL
@@ -260,6 +289,17 @@ namespace android { namespace view {
 namespace j2cpp {
 
 
+
+
+android::view::ViewDebug_::ExportedProperty::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
+
+android::view::ViewDebug_::ExportedProperty::operator local_ref<java::lang::annotation::Annotation>() const
+{
+	return local_ref<java::lang::annotation::Annotation>(get_jtype());
+}
 
 cpp_boolean android::view::ViewDebug_::ExportedProperty::resolveId()
 {
@@ -330,6 +370,12 @@ J2CPP_DEFINE_METHOD(android::view::ViewDebug_::ExportedProperty,3,"flagMapping",
 J2CPP_DEFINE_METHOD(android::view::ViewDebug_::ExportedProperty,4,"deepExport","()Z")
 J2CPP_DEFINE_METHOD(android::view::ViewDebug_::ExportedProperty,5,"prefix","()Ljava/lang/String;")
 
+
+android::view::ViewDebug_::RecyclerTraceType::operator local_ref<java::lang::Enum>() const
+{
+	return local_ref<java::lang::Enum>(get_jtype());
+}
+
 local_ref< cpp_object_array<android::view::ViewDebug_::RecyclerTraceType, 1> > android::view::ViewDebug_::RecyclerTraceType::values()
 {
 	return local_ref< cpp_object_array<android::view::ViewDebug_::RecyclerTraceType, 1> >(
@@ -351,17 +397,7 @@ local_ref< android::view::ViewDebug_::RecyclerTraceType > android::view::ViewDeb
 	);
 }
 
-template <>
-local_ref< android::view::ViewDebug_::RecyclerTraceType > create< android::view::ViewDebug_::RecyclerTraceType>(local_ref< java::lang::String > const &a0, cpp_int const &a1)
-{
-	return local_ref< android::view::ViewDebug_::RecyclerTraceType >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::view::ViewDebug_::RecyclerTraceType::J2CPP_CLASS_NAME>(),
-			get_method_id<android::view::ViewDebug_::RecyclerTraceType::J2CPP_CLASS_NAME, android::view::ViewDebug_::RecyclerTraceType::J2CPP_METHOD_NAME(2), android::view::ViewDebug_::RecyclerTraceType::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
-}
+
 
 
 static_field<
@@ -428,6 +464,17 @@ J2CPP_DEFINE_FIELD(android::view::ViewDebug_::RecyclerTraceType,5,"RECYCLE_FROM_
 J2CPP_DEFINE_FIELD(android::view::ViewDebug_::RecyclerTraceType,6,"RECYCLE_FROM_SCRAP_HEAP","Landroid/view/ViewDebug$RecyclerTraceType;")
 J2CPP_DEFINE_FIELD(android::view::ViewDebug_::RecyclerTraceType,7,"$VALUES","[android.view.ViewDebug.RecyclerTraceType")
 
+
+android::view::ViewDebug_::FlagToString::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
+
+android::view::ViewDebug_::FlagToString::operator local_ref<java::lang::annotation::Annotation>() const
+{
+	return local_ref<java::lang::annotation::Annotation>(get_jtype());
+}
+
 cpp_int android::view::ViewDebug_::FlagToString::mask()
 {
 	return cpp_int(
@@ -475,6 +522,17 @@ J2CPP_DEFINE_METHOD(android::view::ViewDebug_::FlagToString,1,"equals","()I")
 J2CPP_DEFINE_METHOD(android::view::ViewDebug_::FlagToString,2,"name","()Ljava/lang/String;")
 J2CPP_DEFINE_METHOD(android::view::ViewDebug_::FlagToString,3,"outputIf","()Z")
 
+
+android::view::ViewDebug_::IntToString::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
+
+android::view::ViewDebug_::IntToString::operator local_ref<java::lang::annotation::Annotation>() const
+{
+	return local_ref<java::lang::annotation::Annotation>(get_jtype());
+}
+
 cpp_int android::view::ViewDebug_::IntToString::from()
 {
 	return cpp_int(
@@ -500,6 +558,17 @@ J2CPP_DEFINE_CLASS(android::view::ViewDebug_::IntToString,"android/view/ViewDebu
 J2CPP_DEFINE_METHOD(android::view::ViewDebug_::IntToString,0,"from","()I")
 J2CPP_DEFINE_METHOD(android::view::ViewDebug_::IntToString,1,"to","()Ljava/lang/String;")
 
+
+android::view::ViewDebug_::CapturedViewProperty::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
+
+android::view::ViewDebug_::CapturedViewProperty::operator local_ref<java::lang::annotation::Annotation>() const
+{
+	return local_ref<java::lang::annotation::Annotation>(get_jtype());
+}
+
 cpp_boolean android::view::ViewDebug_::CapturedViewProperty::retrieveReturn()
 {
 	return cpp_boolean(
@@ -513,6 +582,12 @@ cpp_boolean android::view::ViewDebug_::CapturedViewProperty::retrieveReturn()
 
 J2CPP_DEFINE_CLASS(android::view::ViewDebug_::CapturedViewProperty,"android/view/ViewDebug$CapturedViewProperty")
 J2CPP_DEFINE_METHOD(android::view::ViewDebug_::CapturedViewProperty,0,"retrieveReturn","()Z")
+
+
+android::view::ViewDebug_::HierarchyTraceType::operator local_ref<java::lang::Enum>() const
+{
+	return local_ref<java::lang::Enum>(get_jtype());
+}
 
 local_ref< cpp_object_array<android::view::ViewDebug_::HierarchyTraceType, 1> > android::view::ViewDebug_::HierarchyTraceType::values()
 {
@@ -535,17 +610,7 @@ local_ref< android::view::ViewDebug_::HierarchyTraceType > android::view::ViewDe
 	);
 }
 
-template <>
-local_ref< android::view::ViewDebug_::HierarchyTraceType > create< android::view::ViewDebug_::HierarchyTraceType>(local_ref< java::lang::String > const &a0, cpp_int const &a1)
-{
-	return local_ref< android::view::ViewDebug_::HierarchyTraceType >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::view::ViewDebug_::HierarchyTraceType::J2CPP_CLASS_NAME>(),
-			get_method_id<android::view::ViewDebug_::HierarchyTraceType::J2CPP_CLASS_NAME, android::view::ViewDebug_::HierarchyTraceType::J2CPP_METHOD_NAME(2), android::view::ViewDebug_::HierarchyTraceType::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
-}
+
 
 
 static_field<
@@ -621,16 +686,23 @@ J2CPP_DEFINE_FIELD(android::view::ViewDebug_::HierarchyTraceType,7,"REQUEST_LAYO
 J2CPP_DEFINE_FIELD(android::view::ViewDebug_::HierarchyTraceType,8,"$VALUES","[android.view.ViewDebug.HierarchyTraceType")
 
 
-template <>
-local_ref< android::view::ViewDebug > create< android::view::ViewDebug>()
+
+android::view::ViewDebug::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::view::ViewDebug >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::view::ViewDebug::J2CPP_CLASS_NAME>(),
-			get_method_id<android::view::ViewDebug::J2CPP_CLASS_NAME, android::view::ViewDebug::J2CPP_METHOD_NAME(0), android::view::ViewDebug::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::view::ViewDebug::ViewDebug()
+: cpp_object<android::view::ViewDebug>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::view::ViewDebug::J2CPP_CLASS_NAME>(),
+		get_method_id<android::view::ViewDebug::J2CPP_CLASS_NAME, android::view::ViewDebug::J2CPP_METHOD_NAME(0), android::view::ViewDebug::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 void android::view::ViewDebug::trace(local_ref< android::view::View > const &a0, local_ref< android::view::ViewDebug_::RecyclerTraceType > const &a1, local_ref< cpp_int_array<1> > const &a2)
 {

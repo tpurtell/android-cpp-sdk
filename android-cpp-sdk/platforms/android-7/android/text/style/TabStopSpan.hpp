@@ -10,8 +10,12 @@
 #define J2CPP_ANDROID_TEXT_STYLE_TABSTOPSPAN_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace android { namespace text { namespace style { class ParagraphStyle; } } } }
 
 
+#include <android/text/style/ParagraphStyle.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -32,11 +36,16 @@ namespace android { namespace text { namespace style {
 			J2CPP_DECLARE_METHOD(0)
 			J2CPP_DECLARE_METHOD(1)
 
-			Standard(jobject jobj)
+			explicit Standard(jobject jobj)
 			: cpp_object<Standard>(jobj)
 			{
 			}
 
+			operator local_ref<java::lang::Object>() const;
+			operator local_ref<android::text::style::TabStopSpan>() const;
+
+
+			Standard(cpp_int const&);
 			cpp_int getTabStop();
 		}; //class Standard
 
@@ -53,10 +62,14 @@ namespace android { namespace text { namespace style {
 
 		typedef TabStopSpan_::Standard Standard;
 
-		TabStopSpan(jobject jobj)
+		explicit TabStopSpan(jobject jobj)
 		: cpp_object<TabStopSpan>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<android::text::style::ParagraphStyle>() const;
+
 
 		cpp_int getTabStop();
 	}; //class TabStopSpan
@@ -64,7 +77,6 @@ namespace android { namespace text { namespace style {
 } //namespace style
 } //namespace text
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -79,17 +91,29 @@ namespace j2cpp {
 
 
 
-template <>
-local_ref< android::text::style::TabStopSpan_::Standard > create< android::text::style::TabStopSpan_::Standard>(cpp_int const &a0)
+
+android::text::style::TabStopSpan_::Standard::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::text::style::TabStopSpan_::Standard >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::text::style::TabStopSpan_::Standard::J2CPP_CLASS_NAME>(),
-			get_method_id<android::text::style::TabStopSpan_::Standard::J2CPP_CLASS_NAME, android::text::style::TabStopSpan_::Standard::J2CPP_METHOD_NAME(0), android::text::style::TabStopSpan_::Standard::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+android::text::style::TabStopSpan_::Standard::operator local_ref<android::text::style::TabStopSpan>() const
+{
+	return local_ref<android::text::style::TabStopSpan>(get_jtype());
+}
+
+
+android::text::style::TabStopSpan_::Standard::Standard(cpp_int const &a0)
+: cpp_object<android::text::style::TabStopSpan_::Standard>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::text::style::TabStopSpan_::Standard::J2CPP_CLASS_NAME>(),
+		get_method_id<android::text::style::TabStopSpan_::Standard::J2CPP_CLASS_NAME, android::text::style::TabStopSpan_::Standard::J2CPP_METHOD_NAME(0), android::text::style::TabStopSpan_::Standard::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 cpp_int android::text::style::TabStopSpan_::Standard::getTabStop()
 {
@@ -106,6 +130,17 @@ J2CPP_DEFINE_CLASS(android::text::style::TabStopSpan_::Standard,"android/text/st
 J2CPP_DEFINE_METHOD(android::text::style::TabStopSpan_::Standard,0,"<init>","(I)V")
 J2CPP_DEFINE_METHOD(android::text::style::TabStopSpan_::Standard,1,"getTabStop","()I")
 
+
+
+android::text::style::TabStopSpan::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
+
+android::text::style::TabStopSpan::operator local_ref<android::text::style::ParagraphStyle>() const
+{
+	return local_ref<android::text::style::ParagraphStyle>(get_jtype());
+}
 
 cpp_int android::text::style::TabStopSpan::getTabStop()
 {

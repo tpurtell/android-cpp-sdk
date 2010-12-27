@@ -10,9 +10,11 @@
 #define J2CPP_ANDROID_TEST_ASSERTIONFAILEDERROR_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Error; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 
 
+#include <java/lang/Error.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -31,16 +33,20 @@ namespace android { namespace test {
 		J2CPP_DECLARE_METHOD(0)
 		J2CPP_DECLARE_METHOD(1)
 
-		AssertionFailedError(jobject jobj)
+		explicit AssertionFailedError(jobject jobj)
 		: cpp_object<AssertionFailedError>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Error>() const;
+
+
+		AssertionFailedError();
+		AssertionFailedError(local_ref< java::lang::String > const&);
 	}; //class AssertionFailedError
 
 } //namespace test
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -54,28 +60,36 @@ namespace android { namespace test {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::test::AssertionFailedError > create< android::test::AssertionFailedError>()
+
+android::test::AssertionFailedError::operator local_ref<java::lang::Error>() const
 {
-	return local_ref< android::test::AssertionFailedError >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::test::AssertionFailedError::J2CPP_CLASS_NAME>(),
-			get_method_id<android::test::AssertionFailedError::J2CPP_CLASS_NAME, android::test::AssertionFailedError::J2CPP_METHOD_NAME(0), android::test::AssertionFailedError::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Error>(get_jtype());
 }
 
-template <>
-local_ref< android::test::AssertionFailedError > create< android::test::AssertionFailedError>(local_ref< java::lang::String > const &a0)
+
+android::test::AssertionFailedError::AssertionFailedError()
+: cpp_object<android::test::AssertionFailedError>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::test::AssertionFailedError::J2CPP_CLASS_NAME>(),
+		get_method_id<android::test::AssertionFailedError::J2CPP_CLASS_NAME, android::test::AssertionFailedError::J2CPP_METHOD_NAME(0), android::test::AssertionFailedError::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
 {
-	return local_ref< android::test::AssertionFailedError >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::test::AssertionFailedError::J2CPP_CLASS_NAME>(),
-			get_method_id<android::test::AssertionFailedError::J2CPP_CLASS_NAME, android::test::AssertionFailedError::J2CPP_METHOD_NAME(1), android::test::AssertionFailedError::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
 }
+
+
+
+android::test::AssertionFailedError::AssertionFailedError(local_ref< java::lang::String > const &a0)
+: cpp_object<android::test::AssertionFailedError>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::test::AssertionFailedError::J2CPP_CLASS_NAME>(),
+		get_method_id<android::test::AssertionFailedError::J2CPP_CLASS_NAME, android::test::AssertionFailedError::J2CPP_METHOD_NAME(1), android::test::AssertionFailedError::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 
 J2CPP_DEFINE_CLASS(android::test::AssertionFailedError,"android/test/AssertionFailedError")

@@ -10,8 +10,12 @@
 #define J2CPP_ANDROID_TEXT_GETCHARS_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace lang { class CharSequence; } } }
 
 
+#include <java/lang/CharSequence.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -28,17 +32,20 @@ namespace android { namespace text {
 
 		J2CPP_DECLARE_METHOD(0)
 
-		GetChars(jobject jobj)
+		explicit GetChars(jobject jobj)
 		: cpp_object<GetChars>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::lang::CharSequence>() const;
+
 
 		void getChars(cpp_int const&, cpp_int const&, local_ref< cpp_char_array<1> > const&, cpp_int const&);
 	}; //class GetChars
 
 } //namespace text
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -51,6 +58,17 @@ namespace android { namespace text {
 
 namespace j2cpp {
 
+
+
+android::text::GetChars::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
+
+android::text::GetChars::operator local_ref<java::lang::CharSequence>() const
+{
+	return local_ref<java::lang::CharSequence>(get_jtype());
+}
 
 void android::text::GetChars::getChars(cpp_int const &a0, cpp_int const &a1, local_ref< cpp_char_array<1> > const &a2, cpp_int const &a3)
 {

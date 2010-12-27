@@ -10,10 +10,12 @@
 #define J2CPP_ANDROID_APP_LISTACTIVITY_HPP_DECL
 
 
+namespace j2cpp { namespace android { namespace app { class Activity; } } }
 namespace j2cpp { namespace android { namespace widget { class ListAdapter; } } }
 namespace j2cpp { namespace android { namespace widget { class ListView; } } }
 
 
+#include <android/app/Activity.hpp>
 #include <android/widget/ListAdapter.hpp>
 #include <android/widget/ListView.hpp>
 
@@ -41,11 +43,15 @@ namespace android { namespace app {
 		J2CPP_DECLARE_METHOD(8)
 		J2CPP_DECLARE_METHOD(9)
 
-		ListActivity(jobject jobj)
+		explicit ListActivity(jobject jobj)
 		: cpp_object<ListActivity>(jobj)
 		{
 		}
 
+		operator local_ref<android::app::Activity>() const;
+
+
+		ListActivity();
 		void onContentChanged();
 		void setListAdapter(local_ref< android::widget::ListAdapter > const&);
 		void setSelection(cpp_int const&);
@@ -57,7 +63,6 @@ namespace android { namespace app {
 
 } //namespace app
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -71,16 +76,23 @@ namespace android { namespace app {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::app::ListActivity > create< android::app::ListActivity>()
+
+android::app::ListActivity::operator local_ref<android::app::Activity>() const
 {
-	return local_ref< android::app::ListActivity >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::app::ListActivity::J2CPP_CLASS_NAME>(),
-			get_method_id<android::app::ListActivity::J2CPP_CLASS_NAME, android::app::ListActivity::J2CPP_METHOD_NAME(0), android::app::ListActivity::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<android::app::Activity>(get_jtype());
 }
+
+
+android::app::ListActivity::ListActivity()
+: cpp_object<android::app::ListActivity>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::app::ListActivity::J2CPP_CLASS_NAME>(),
+		get_method_id<android::app::ListActivity::J2CPP_CLASS_NAME, android::app::ListActivity::J2CPP_METHOD_NAME(0), android::app::ListActivity::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 
 

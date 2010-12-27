@@ -10,12 +10,14 @@
 #define J2CPP_ORG_APACHE_HTTP_HTTPRESPONSEFACTORY_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace protocol { class HttpContext; } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { class ProtocolVersion; } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { class HttpResponse; } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { class StatusLine; } } } }
 
 
+#include <java/lang/Object.hpp>
 #include <org/apache/http/HttpResponse.hpp>
 #include <org/apache/http/ProtocolVersion.hpp>
 #include <org/apache/http/StatusLine.hpp>
@@ -37,10 +39,13 @@ namespace org { namespace apache { namespace http {
 		J2CPP_DECLARE_METHOD(0)
 		J2CPP_DECLARE_METHOD(1)
 
-		HttpResponseFactory(jobject jobj)
+		explicit HttpResponseFactory(jobject jobj)
 		: cpp_object<HttpResponseFactory>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		local_ref< org::apache::http::HttpResponse > newHttpResponse(local_ref< org::apache::http::ProtocolVersion > const&, cpp_int const&, local_ref< org::apache::http::protocol::HttpContext > const&);
 		local_ref< org::apache::http::HttpResponse > newHttpResponse(local_ref< org::apache::http::StatusLine > const&, local_ref< org::apache::http::protocol::HttpContext > const&);
@@ -49,7 +54,6 @@ namespace org { namespace apache { namespace http {
 } //namespace http
 } //namespace apache
 } //namespace org
-
 
 } //namespace j2cpp
 
@@ -62,6 +66,12 @@ namespace org { namespace apache { namespace http {
 
 namespace j2cpp {
 
+
+
+org::apache::http::HttpResponseFactory::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 local_ref< org::apache::http::HttpResponse > org::apache::http::HttpResponseFactory::newHttpResponse(local_ref< org::apache::http::ProtocolVersion > const &a0, cpp_int const &a1, local_ref< org::apache::http::protocol::HttpContext > const &a2)
 {

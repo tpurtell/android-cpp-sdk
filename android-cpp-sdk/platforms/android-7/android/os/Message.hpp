@@ -15,6 +15,7 @@ namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace lang { class Runnable; } } }
 namespace j2cpp { namespace android { namespace os { class Parcel; } } }
 namespace j2cpp { namespace android { namespace os { class Bundle; } } }
+namespace j2cpp { namespace android { namespace os { class Parcelable; } } }
 namespace j2cpp { namespace android { namespace os { class Handler; } } }
 namespace j2cpp { namespace android { namespace os { namespace Parcelable_ { class Creator; } } } }
 namespace j2cpp { namespace android { namespace os { class Messenger; } } }
@@ -72,16 +73,21 @@ namespace android { namespace os {
 		J2CPP_DECLARE_FIELD(4)
 		J2CPP_DECLARE_FIELD(5)
 
-		Message(jobject jobj)
+		explicit Message(jobject jobj)
 		: cpp_object<Message>(jobj)
-		, what(jobj)
-		, arg1(jobj)
-		, arg2(jobj)
-		, obj(jobj)
-		, replyTo(jobj)
+, what(jobj)
+, arg1(jobj)
+, arg2(jobj)
+, obj(jobj)
+, replyTo(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<android::os::Parcelable>() const;
+
+
+		Message();
 		static local_ref< android::os::Message > obtain();
 		static local_ref< android::os::Message > obtain(local_ref< android::os::Message > const&);
 		static local_ref< android::os::Message > obtain(local_ref< android::os::Handler > const&);
@@ -115,7 +121,6 @@ namespace android { namespace os {
 } //namespace os
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_OS_MESSAGE_HPP_DECL
@@ -128,16 +133,33 @@ namespace android { namespace os {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::os::Message > create< android::os::Message>()
+
+android::os::Message::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::os::Message >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::os::Message::J2CPP_CLASS_NAME>(),
-			get_method_id<android::os::Message::J2CPP_CLASS_NAME, android::os::Message::J2CPP_METHOD_NAME(0), android::os::Message::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+android::os::Message::operator local_ref<android::os::Parcelable>() const
+{
+	return local_ref<android::os::Parcelable>(get_jtype());
+}
+
+
+android::os::Message::Message()
+: cpp_object<android::os::Message>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::os::Message::J2CPP_CLASS_NAME>(),
+		get_method_id<android::os::Message::J2CPP_CLASS_NAME, android::os::Message::J2CPP_METHOD_NAME(0), android::os::Message::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+, what(get_jtype())
+, arg1(get_jtype())
+, arg2(get_jtype())
+, obj(get_jtype())
+, replyTo(get_jtype())
+{
+}
+
 
 local_ref< android::os::Message > android::os::Message::obtain()
 {
@@ -359,6 +381,7 @@ void android::os::Message::writeToParcel(local_ref< android::os::Parcel > const 
 		)
 	);
 }
+
 
 
 static_field<

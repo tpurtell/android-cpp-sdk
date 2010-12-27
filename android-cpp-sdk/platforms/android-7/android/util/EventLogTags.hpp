@@ -11,12 +11,14 @@
 
 
 namespace j2cpp { namespace java { namespace io { class BufferedReader; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace android { namespace util { namespace EventLogTags_ { class Description; } } } }
 
 
 #include <android/util/EventLogTags.hpp>
 #include <java/io/BufferedReader.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -39,12 +41,15 @@ namespace android { namespace util {
 			J2CPP_DECLARE_FIELD(0)
 			J2CPP_DECLARE_FIELD(1)
 
-			Description(jobject jobj)
+			explicit Description(jobject jobj)
 			: cpp_object<Description>(jobj)
-			, mTag(jobj)
-			, mName(jobj)
+, mTag(jobj)
+, mName(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+
 
 
 			field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(0), J2CPP_FIELD_SIGNATURE(0), cpp_int > mTag;
@@ -67,18 +72,22 @@ namespace android { namespace util {
 
 		typedef EventLogTags_::Description Description;
 
-		EventLogTags(jobject jobj)
+		explicit EventLogTags(jobject jobj)
 		: cpp_object<EventLogTags>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		EventLogTags();
+		EventLogTags(local_ref< java::io::BufferedReader > const&);
 		local_ref< android::util::EventLogTags_::Description > get(local_ref< java::lang::String > const&);
 		local_ref< android::util::EventLogTags_::Description > get(cpp_int const&);
 	}; //class EventLogTags
 
 } //namespace util
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -93,16 +102,12 @@ namespace j2cpp {
 
 
 
-template <>
-local_ref< android::util::EventLogTags_::Description > create< android::util::EventLogTags_::Description>()
+
+android::util::EventLogTags_::Description::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::util::EventLogTags_::Description >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::util::EventLogTags_::Description::J2CPP_CLASS_NAME>(),
-			get_method_id<android::util::EventLogTags_::Description::J2CPP_CLASS_NAME, android::util::EventLogTags_::Description::J2CPP_METHOD_NAME(0), android::util::EventLogTags_::Description::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
 
 
 
@@ -112,28 +117,36 @@ J2CPP_DEFINE_FIELD(android::util::EventLogTags_::Description,0,"mTag","I")
 J2CPP_DEFINE_FIELD(android::util::EventLogTags_::Description,1,"mName","Ljava/lang/String;")
 
 
-template <>
-local_ref< android::util::EventLogTags > create< android::util::EventLogTags>()
+
+android::util::EventLogTags::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::util::EventLogTags >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::util::EventLogTags::J2CPP_CLASS_NAME>(),
-			get_method_id<android::util::EventLogTags::J2CPP_CLASS_NAME, android::util::EventLogTags::J2CPP_METHOD_NAME(0), android::util::EventLogTags::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
 
-template <>
-local_ref< android::util::EventLogTags > create< android::util::EventLogTags>(local_ref< java::io::BufferedReader > const &a0)
+
+android::util::EventLogTags::EventLogTags()
+: cpp_object<android::util::EventLogTags>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::util::EventLogTags::J2CPP_CLASS_NAME>(),
+		get_method_id<android::util::EventLogTags::J2CPP_CLASS_NAME, android::util::EventLogTags::J2CPP_METHOD_NAME(0), android::util::EventLogTags::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
 {
-	return local_ref< android::util::EventLogTags >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::util::EventLogTags::J2CPP_CLASS_NAME>(),
-			get_method_id<android::util::EventLogTags::J2CPP_CLASS_NAME, android::util::EventLogTags::J2CPP_METHOD_NAME(1), android::util::EventLogTags::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
 }
+
+
+
+android::util::EventLogTags::EventLogTags(local_ref< java::io::BufferedReader > const &a0)
+: cpp_object<android::util::EventLogTags>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::util::EventLogTags::J2CPP_CLASS_NAME>(),
+		get_method_id<android::util::EventLogTags::J2CPP_CLASS_NAME, android::util::EventLogTags::J2CPP_METHOD_NAME(1), android::util::EventLogTags::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 local_ref< android::util::EventLogTags_::Description > android::util::EventLogTags::get(local_ref< java::lang::String > const &a0)
 {

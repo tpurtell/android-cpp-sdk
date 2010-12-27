@@ -10,6 +10,8 @@
 #define J2CPP_ANDROID_VIEW_ANIMATION_ANIMATION_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace lang { class Cloneable; } } }
 namespace j2cpp { namespace android { namespace content { class Context; } } }
 namespace j2cpp { namespace android { namespace view { namespace animation { class Transformation; } } } }
 namespace j2cpp { namespace android { namespace view { namespace animation { class Interpolator; } } } }
@@ -22,6 +24,8 @@ namespace j2cpp { namespace android { namespace util { class AttributeSet; } } }
 #include <android/view/animation/Animation.hpp>
 #include <android/view/animation/Interpolator.hpp>
 #include <android/view/animation/Transformation.hpp>
+#include <java/lang/Cloneable.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -43,10 +47,13 @@ namespace android { namespace view { namespace animation {
 			J2CPP_DECLARE_METHOD(1)
 			J2CPP_DECLARE_METHOD(2)
 
-			AnimationListener(jobject jobj)
+			explicit AnimationListener(jobject jobj)
 			: cpp_object<AnimationListener>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+
 
 			void onAnimationStart(local_ref< android::view::animation::Animation > const&);
 			void onAnimationEnd(local_ref< android::view::animation::Animation > const&);
@@ -65,12 +72,15 @@ namespace android { namespace view { namespace animation {
 			J2CPP_DECLARE_FIELD(0)
 			J2CPP_DECLARE_FIELD(1)
 
-			Description(jobject jobj)
+			explicit Description(jobject jobj)
 			: cpp_object<Description>(jobj)
-			, type(jobj)
-			, value(jobj)
+, type(jobj)
+, value(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+
 
 
 			field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(0), J2CPP_FIELD_SIGNATURE(0), cpp_int > type;
@@ -144,11 +154,17 @@ namespace android { namespace view { namespace animation {
 		typedef Animation_::AnimationListener AnimationListener;
 		typedef Animation_::Description Description;
 
-		Animation(jobject jobj)
+		explicit Animation(jobject jobj)
 		: cpp_object<Animation>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::lang::Cloneable>() const;
+
+
+		Animation();
+		Animation(local_ref< android::content::Context > const&, local_ref< android::util::AttributeSet > const&);
 		void reset();
 		cpp_boolean isInitialized();
 		void initialize(cpp_int const&, cpp_int const&, cpp_int const&, cpp_int const&);
@@ -203,7 +219,6 @@ namespace android { namespace view { namespace animation {
 } //namespace view
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_VIEW_ANIMATION_ANIMATION_HPP_DECL
@@ -216,6 +231,12 @@ namespace android { namespace view { namespace animation {
 namespace j2cpp {
 
 
+
+
+android::view::animation::Animation_::AnimationListener::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 void android::view::animation::Animation_::AnimationListener::onAnimationStart(local_ref< android::view::animation::Animation > const &a0)
 {
@@ -256,16 +277,12 @@ J2CPP_DEFINE_METHOD(android::view::animation::Animation_::AnimationListener,0,"o
 J2CPP_DEFINE_METHOD(android::view::animation::Animation_::AnimationListener,1,"onAnimationEnd","(Landroid/view/animation/Animation;)V")
 J2CPP_DEFINE_METHOD(android::view::animation::Animation_::AnimationListener,2,"onAnimationRepeat","(Landroid/view/animation/Animation;)V")
 
-template <>
-local_ref< android::view::animation::Animation_::Description > create< android::view::animation::Animation_::Description>()
+
+android::view::animation::Animation_::Description::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::view::animation::Animation_::Description >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::view::animation::Animation_::Description::J2CPP_CLASS_NAME>(),
-			get_method_id<android::view::animation::Animation_::Description::J2CPP_CLASS_NAME, android::view::animation::Animation_::Description::J2CPP_METHOD_NAME(0), android::view::animation::Animation_::Description::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
 
 
 
@@ -275,28 +292,41 @@ J2CPP_DEFINE_FIELD(android::view::animation::Animation_::Description,0,"type","I
 J2CPP_DEFINE_FIELD(android::view::animation::Animation_::Description,1,"value","F")
 
 
-template <>
-local_ref< android::view::animation::Animation > create< android::view::animation::Animation>()
+
+android::view::animation::Animation::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::view::animation::Animation >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::view::animation::Animation::J2CPP_CLASS_NAME>(),
-			get_method_id<android::view::animation::Animation::J2CPP_CLASS_NAME, android::view::animation::Animation::J2CPP_METHOD_NAME(0), android::view::animation::Animation::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
 
-template <>
-local_ref< android::view::animation::Animation > create< android::view::animation::Animation>(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1)
+android::view::animation::Animation::operator local_ref<java::lang::Cloneable>() const
 {
-	return local_ref< android::view::animation::Animation >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::view::animation::Animation::J2CPP_CLASS_NAME>(),
-			get_method_id<android::view::animation::Animation::J2CPP_CLASS_NAME, android::view::animation::Animation::J2CPP_METHOD_NAME(1), android::view::animation::Animation::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Cloneable>(get_jtype());
 }
+
+
+android::view::animation::Animation::Animation()
+: cpp_object<android::view::animation::Animation>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::view::animation::Animation::J2CPP_CLASS_NAME>(),
+		get_method_id<android::view::animation::Animation::J2CPP_CLASS_NAME, android::view::animation::Animation::J2CPP_METHOD_NAME(0), android::view::animation::Animation::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
+
+
+android::view::animation::Animation::Animation(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1)
+: cpp_object<android::view::animation::Animation>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::view::animation::Animation::J2CPP_CLASS_NAME>(),
+		get_method_id<android::view::animation::Animation::J2CPP_CLASS_NAME, android::view::animation::Animation::J2CPP_METHOD_NAME(1), android::view::animation::Animation::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
 
 
 void android::view::animation::Animation::reset()

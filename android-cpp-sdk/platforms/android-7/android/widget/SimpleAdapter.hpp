@@ -19,13 +19,17 @@ namespace j2cpp { namespace android { namespace view { class ViewGroup; } } }
 namespace j2cpp { namespace android { namespace widget { class Filter; } } }
 namespace j2cpp { namespace android { namespace widget { class ImageView; } } }
 namespace j2cpp { namespace android { namespace widget { class TextView; } } }
+namespace j2cpp { namespace android { namespace widget { class BaseAdapter; } } }
 namespace j2cpp { namespace android { namespace widget { namespace SimpleAdapter_ { class ViewBinder; } } } }
+namespace j2cpp { namespace android { namespace widget { class Filterable; } } }
 
 
 #include <android/content/Context.hpp>
 #include <android/view/View.hpp>
 #include <android/view/ViewGroup.hpp>
+#include <android/widget/BaseAdapter.hpp>
 #include <android/widget/Filter.hpp>
+#include <android/widget/Filterable.hpp>
 #include <android/widget/ImageView.hpp>
 #include <android/widget/SimpleAdapter.hpp>
 #include <android/widget/TextView.hpp>
@@ -51,10 +55,13 @@ namespace android { namespace widget {
 
 			J2CPP_DECLARE_METHOD(0)
 
-			ViewBinder(jobject jobj)
+			explicit ViewBinder(jobject jobj)
 			: cpp_object<ViewBinder>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+
 
 			cpp_boolean setViewValue(local_ref< android::view::View > const&, local_ref< java::lang::Object > const&, local_ref< java::lang::String > const&);
 		}; //class ViewBinder
@@ -84,11 +91,16 @@ namespace android { namespace widget {
 
 		typedef SimpleAdapter_::ViewBinder ViewBinder;
 
-		SimpleAdapter(jobject jobj)
+		explicit SimpleAdapter(jobject jobj)
 		: cpp_object<SimpleAdapter>(jobj)
 		{
 		}
 
+		operator local_ref<android::widget::BaseAdapter>() const;
+		operator local_ref<android::widget::Filterable>() const;
+
+
+		SimpleAdapter(local_ref< android::content::Context > const&, local_ref< java::util::List > const&, cpp_int const&, local_ref< cpp_object_array<java::lang::String, 1> > const&, local_ref< cpp_int_array<1> > const&);
 		cpp_int getCount();
 		local_ref< java::lang::Object > getItem(cpp_int const&);
 		cpp_long getItemId(cpp_int const&);
@@ -106,7 +118,6 @@ namespace android { namespace widget {
 } //namespace widget
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_WIDGET_SIMPLEADAPTER_HPP_DECL
@@ -119,6 +130,12 @@ namespace android { namespace widget {
 namespace j2cpp {
 
 
+
+
+android::widget::SimpleAdapter_::ViewBinder::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 cpp_boolean android::widget::SimpleAdapter_::ViewBinder::setViewValue(local_ref< android::view::View > const &a0, local_ref< java::lang::Object > const &a1, local_ref< java::lang::String > const &a2)
 {
@@ -136,17 +153,29 @@ J2CPP_DEFINE_CLASS(android::widget::SimpleAdapter_::ViewBinder,"android/widget/S
 J2CPP_DEFINE_METHOD(android::widget::SimpleAdapter_::ViewBinder,0,"setViewValue","(Landroid/view/View;Ljava/lang/Object;Ljava/lang/String;)Z")
 
 
-template <>
-local_ref< android::widget::SimpleAdapter > create< android::widget::SimpleAdapter>(local_ref< android::content::Context > const &a0, local_ref< java::util::List > const &a1, cpp_int const &a2, local_ref< cpp_object_array<java::lang::String, 1> > const &a3, local_ref< cpp_int_array<1> > const &a4)
+
+android::widget::SimpleAdapter::operator local_ref<android::widget::BaseAdapter>() const
 {
-	return local_ref< android::widget::SimpleAdapter >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::widget::SimpleAdapter::J2CPP_CLASS_NAME>(),
-			get_method_id<android::widget::SimpleAdapter::J2CPP_CLASS_NAME, android::widget::SimpleAdapter::J2CPP_METHOD_NAME(0), android::widget::SimpleAdapter::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype(), a4.get_jtype()
-		)
-	);
+	return local_ref<android::widget::BaseAdapter>(get_jtype());
 }
+
+android::widget::SimpleAdapter::operator local_ref<android::widget::Filterable>() const
+{
+	return local_ref<android::widget::Filterable>(get_jtype());
+}
+
+
+android::widget::SimpleAdapter::SimpleAdapter(local_ref< android::content::Context > const &a0, local_ref< java::util::List > const &a1, cpp_int const &a2, local_ref< cpp_object_array<java::lang::String, 1> > const &a3, local_ref< cpp_int_array<1> > const &a4)
+: cpp_object<android::widget::SimpleAdapter>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::widget::SimpleAdapter::J2CPP_CLASS_NAME>(),
+		get_method_id<android::widget::SimpleAdapter::J2CPP_CLASS_NAME, android::widget::SimpleAdapter::J2CPP_METHOD_NAME(0), android::widget::SimpleAdapter::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype(), a4.get_jtype()
+	)
+)
+{
+}
+
 
 cpp_int android::widget::SimpleAdapter::getCount()
 {

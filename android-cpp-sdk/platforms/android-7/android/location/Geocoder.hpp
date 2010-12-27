@@ -10,6 +10,7 @@
 #define J2CPP_ANDROID_LOCATION_GEOCODER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace util { class Locale; } } }
 namespace j2cpp { namespace java { namespace util { class List; } } }
@@ -17,6 +18,7 @@ namespace j2cpp { namespace android { namespace content { class Context; } } }
 
 
 #include <android/content/Context.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/util/List.hpp>
 #include <java/util/Locale.hpp>
@@ -40,11 +42,16 @@ namespace android { namespace location {
 		J2CPP_DECLARE_METHOD(3)
 		J2CPP_DECLARE_METHOD(4)
 
-		Geocoder(jobject jobj)
+		explicit Geocoder(jobject jobj)
 		: cpp_object<Geocoder>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		Geocoder(local_ref< android::content::Context > const&, local_ref< java::util::Locale > const&);
+		Geocoder(local_ref< android::content::Context > const&);
 		local_ref< java::util::List > getFromLocation(cpp_double const&, cpp_double const&, cpp_int const&);
 		local_ref< java::util::List > getFromLocationName(local_ref< java::lang::String > const&, cpp_int const&);
 		local_ref< java::util::List > getFromLocationName(local_ref< java::lang::String > const&, cpp_int const&, cpp_double const&, cpp_double const&, cpp_double const&, cpp_double const&);
@@ -52,7 +59,6 @@ namespace android { namespace location {
 
 } //namespace location
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -66,29 +72,37 @@ namespace android { namespace location {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::location::Geocoder > create< android::location::Geocoder>(local_ref< android::content::Context > const &a0, local_ref< java::util::Locale > const &a1)
+
+android::location::Geocoder::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::location::Geocoder >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::location::Geocoder::J2CPP_CLASS_NAME>(),
-			get_method_id<android::location::Geocoder::J2CPP_CLASS_NAME, android::location::Geocoder::J2CPP_METHOD_NAME(0), android::location::Geocoder::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
 
-template <>
-local_ref< android::location::Geocoder > create< android::location::Geocoder>(local_ref< android::content::Context > const &a0)
+
+android::location::Geocoder::Geocoder(local_ref< android::content::Context > const &a0, local_ref< java::util::Locale > const &a1)
+: cpp_object<android::location::Geocoder>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::location::Geocoder::J2CPP_CLASS_NAME>(),
+		get_method_id<android::location::Geocoder::J2CPP_CLASS_NAME, android::location::Geocoder::J2CPP_METHOD_NAME(0), android::location::Geocoder::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
 {
-	return local_ref< android::location::Geocoder >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::location::Geocoder::J2CPP_CLASS_NAME>(),
-			get_method_id<android::location::Geocoder::J2CPP_CLASS_NAME, android::location::Geocoder::J2CPP_METHOD_NAME(1), android::location::Geocoder::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
 }
+
+
+
+android::location::Geocoder::Geocoder(local_ref< android::content::Context > const &a0)
+: cpp_object<android::location::Geocoder>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::location::Geocoder::J2CPP_CLASS_NAME>(),
+		get_method_id<android::location::Geocoder::J2CPP_CLASS_NAME, android::location::Geocoder::J2CPP_METHOD_NAME(1), android::location::Geocoder::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 local_ref< java::util::List > android::location::Geocoder::getFromLocation(cpp_double const &a0, cpp_double const &a1, cpp_int const &a2)
 {

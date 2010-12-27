@@ -13,12 +13,14 @@
 namespace j2cpp { namespace android { namespace view { class KeyEvent; } } }
 namespace j2cpp { namespace android { namespace view { class MotionEvent; } } }
 namespace j2cpp { namespace android { namespace text { class Spannable; } } }
+namespace j2cpp { namespace android { namespace text { namespace method { class ScrollingMovementMethod; } } } }
 namespace j2cpp { namespace android { namespace text { namespace method { class MovementMethod; } } } }
 namespace j2cpp { namespace android { namespace widget { class TextView; } } }
 
 
 #include <android/text/Spannable.hpp>
 #include <android/text/method/MovementMethod.hpp>
+#include <android/text/method/ScrollingMovementMethod.hpp>
 #include <android/view/KeyEvent.hpp>
 #include <android/view/MotionEvent.hpp>
 #include <android/widget/TextView.hpp>
@@ -48,11 +50,15 @@ namespace android { namespace text { namespace method {
 		J2CPP_DECLARE_METHOD(9)
 		J2CPP_DECLARE_METHOD(10)
 
-		LinkMovementMethod(jobject jobj)
+		explicit LinkMovementMethod(jobject jobj)
 		: cpp_object<LinkMovementMethod>(jobj)
 		{
 		}
 
+		operator local_ref<android::text::method::ScrollingMovementMethod>() const;
+
+
+		LinkMovementMethod();
 		cpp_boolean onKeyDown(local_ref< android::widget::TextView > const&, local_ref< android::text::Spannable > const&, cpp_int const&, local_ref< android::view::KeyEvent > const&);
 		cpp_boolean onKeyUp(local_ref< android::widget::TextView > const&, local_ref< android::text::Spannable > const&, cpp_int const&, local_ref< android::view::KeyEvent > const&);
 		cpp_boolean onTouchEvent(local_ref< android::widget::TextView > const&, local_ref< android::text::Spannable > const&, local_ref< android::view::MotionEvent > const&);
@@ -64,7 +70,6 @@ namespace android { namespace text { namespace method {
 } //namespace method
 } //namespace text
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -78,16 +83,23 @@ namespace android { namespace text { namespace method {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::text::method::LinkMovementMethod > create< android::text::method::LinkMovementMethod>()
+
+android::text::method::LinkMovementMethod::operator local_ref<android::text::method::ScrollingMovementMethod>() const
 {
-	return local_ref< android::text::method::LinkMovementMethod >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::text::method::LinkMovementMethod::J2CPP_CLASS_NAME>(),
-			get_method_id<android::text::method::LinkMovementMethod::J2CPP_CLASS_NAME, android::text::method::LinkMovementMethod::J2CPP_METHOD_NAME(0), android::text::method::LinkMovementMethod::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<android::text::method::ScrollingMovementMethod>(get_jtype());
 }
+
+
+android::text::method::LinkMovementMethod::LinkMovementMethod()
+: cpp_object<android::text::method::LinkMovementMethod>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::text::method::LinkMovementMethod::J2CPP_CLASS_NAME>(),
+		get_method_id<android::text::method::LinkMovementMethod::J2CPP_CLASS_NAME, android::text::method::LinkMovementMethod::J2CPP_METHOD_NAME(0), android::text::method::LinkMovementMethod::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 cpp_boolean android::text::method::LinkMovementMethod::onKeyDown(local_ref< android::widget::TextView > const &a0, local_ref< android::text::Spannable > const &a1, cpp_int const &a2, local_ref< android::view::KeyEvent > const &a3)
 {

@@ -10,15 +10,19 @@
 #define J2CPP_ORG_APACHE_HTTP_MESSAGE_ABSTRACTHTTPMESSAGE_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { class HeaderIterator; } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { class Header; } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace params { class HttpParams; } } } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { class HttpMessage; } } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <org/apache/http/Header.hpp>
 #include <org/apache/http/HeaderIterator.hpp>
+#include <org/apache/http/HttpMessage.hpp>
 #include <org/apache/http/params/HttpParams.hpp>
 
 
@@ -55,10 +59,14 @@ namespace org { namespace apache { namespace http { namespace message {
 		J2CPP_DECLARE_FIELD(0)
 		J2CPP_DECLARE_FIELD(1)
 
-		AbstractHttpMessage(jobject jobj)
+		explicit AbstractHttpMessage(jobject jobj)
 		: cpp_object<AbstractHttpMessage>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<org::apache::http::HttpMessage>() const;
+
 
 		cpp_boolean containsHeader(local_ref< java::lang::String > const&);
 		local_ref< cpp_object_array<org::apache::http::Header, 1> > getHeaders(local_ref< java::lang::String > const&);
@@ -84,7 +92,6 @@ namespace org { namespace apache { namespace http { namespace message {
 } //namespace apache
 } //namespace org
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ORG_APACHE_HTTP_MESSAGE_ABSTRACTHTTPMESSAGE_HPP_DECL
@@ -97,28 +104,18 @@ namespace org { namespace apache { namespace http { namespace message {
 namespace j2cpp {
 
 
-template <>
-local_ref< org::apache::http::message::AbstractHttpMessage > create< org::apache::http::message::AbstractHttpMessage>(local_ref< org::apache::http::params::HttpParams > const &a0)
+
+org::apache::http::message::AbstractHttpMessage::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< org::apache::http::message::AbstractHttpMessage >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::apache::http::message::AbstractHttpMessage::J2CPP_CLASS_NAME>(),
-			get_method_id<org::apache::http::message::AbstractHttpMessage::J2CPP_CLASS_NAME, org::apache::http::message::AbstractHttpMessage::J2CPP_METHOD_NAME(0), org::apache::http::message::AbstractHttpMessage::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
 
-template <>
-local_ref< org::apache::http::message::AbstractHttpMessage > create< org::apache::http::message::AbstractHttpMessage>()
+org::apache::http::message::AbstractHttpMessage::operator local_ref<org::apache::http::HttpMessage>() const
 {
-	return local_ref< org::apache::http::message::AbstractHttpMessage >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::apache::http::message::AbstractHttpMessage::J2CPP_CLASS_NAME>(),
-			get_method_id<org::apache::http::message::AbstractHttpMessage::J2CPP_CLASS_NAME, org::apache::http::message::AbstractHttpMessage::J2CPP_METHOD_NAME(1), org::apache::http::message::AbstractHttpMessage::J2CPP_METHOD_SIGNATURE(1), false>()
-		)
-	);
+	return local_ref<org::apache::http::HttpMessage>(get_jtype());
 }
+
+
 
 cpp_boolean org::apache::http::message::AbstractHttpMessage::containsHeader(local_ref< java::lang::String > const &a0)
 {

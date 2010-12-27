@@ -10,10 +10,14 @@
 #define J2CPP_ORG_W3C_DOM_ENTITY_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace org { namespace w3c { namespace dom { class Node; } } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
+#include <org/w3c/dom/Node.hpp>
 
 
 namespace j2cpp {
@@ -32,10 +36,14 @@ namespace org { namespace w3c { namespace dom {
 		J2CPP_DECLARE_METHOD(1)
 		J2CPP_DECLARE_METHOD(2)
 
-		Entity(jobject jobj)
+		explicit Entity(jobject jobj)
 		: cpp_object<Entity>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<org::w3c::dom::Node>() const;
+
 
 		local_ref< java::lang::String > getPublicId();
 		local_ref< java::lang::String > getSystemId();
@@ -45,7 +53,6 @@ namespace org { namespace w3c { namespace dom {
 } //namespace dom
 } //namespace w3c
 } //namespace org
-
 
 } //namespace j2cpp
 
@@ -58,6 +65,17 @@ namespace org { namespace w3c { namespace dom {
 
 namespace j2cpp {
 
+
+
+org::w3c::dom::Entity::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
+
+org::w3c::dom::Entity::operator local_ref<org::w3c::dom::Node>() const
+{
+	return local_ref<org::w3c::dom::Node>(get_jtype());
+}
 
 local_ref< java::lang::String > org::w3c::dom::Entity::getPublicId()
 {

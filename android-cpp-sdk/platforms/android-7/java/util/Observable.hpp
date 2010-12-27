@@ -41,11 +41,15 @@ namespace java { namespace util {
 		J2CPP_DECLARE_METHOD(8)
 		J2CPP_DECLARE_METHOD(9)
 
-		Observable(jobject jobj)
+		explicit Observable(jobject jobj)
 		: cpp_object<Observable>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		Observable();
 		void addObserver(local_ref< java::util::Observer > const&);
 		cpp_int countObservers();
 		void deleteObserver(local_ref< java::util::Observer > const&);
@@ -57,7 +61,6 @@ namespace java { namespace util {
 
 } //namespace util
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -71,16 +74,23 @@ namespace java { namespace util {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::util::Observable > create< java::util::Observable>()
+
+java::util::Observable::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::util::Observable >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::Observable::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::Observable::J2CPP_CLASS_NAME, java::util::Observable::J2CPP_METHOD_NAME(0), java::util::Observable::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+java::util::Observable::Observable()
+: cpp_object<java::util::Observable>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::util::Observable::J2CPP_CLASS_NAME>(),
+		get_method_id<java::util::Observable::J2CPP_CLASS_NAME, java::util::Observable::J2CPP_METHOD_NAME(0), java::util::Observable::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 void java::util::Observable::addObserver(local_ref< java::util::Observer > const &a0)
 {

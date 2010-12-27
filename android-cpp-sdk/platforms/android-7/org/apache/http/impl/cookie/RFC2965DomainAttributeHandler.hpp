@@ -10,14 +10,18 @@
 #define J2CPP_ORG_APACHE_HTTP_IMPL_COOKIE_RFC2965DOMAINATTRIBUTEHANDLER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { namespace cookie { class CookieAttributeHandler; } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace cookie { class CookieOrigin; } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace cookie { class Cookie; } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace cookie { class SetCookie; } } } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <org/apache/http/cookie/Cookie.hpp>
+#include <org/apache/http/cookie/CookieAttributeHandler.hpp>
 #include <org/apache/http/cookie/CookieOrigin.hpp>
 #include <org/apache/http/cookie/SetCookie.hpp>
 
@@ -40,11 +44,16 @@ namespace org { namespace apache { namespace http { namespace impl { namespace c
 		J2CPP_DECLARE_METHOD(3)
 		J2CPP_DECLARE_METHOD(4)
 
-		RFC2965DomainAttributeHandler(jobject jobj)
+		explicit RFC2965DomainAttributeHandler(jobject jobj)
 		: cpp_object<RFC2965DomainAttributeHandler>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<org::apache::http::cookie::CookieAttributeHandler>() const;
+
+
+		RFC2965DomainAttributeHandler();
 		void parse(local_ref< org::apache::http::cookie::SetCookie > const&, local_ref< java::lang::String > const&);
 		cpp_boolean domainMatch(local_ref< java::lang::String > const&, local_ref< java::lang::String > const&);
 		void validate(local_ref< org::apache::http::cookie::Cookie > const&, local_ref< org::apache::http::cookie::CookieOrigin > const&);
@@ -56,7 +65,6 @@ namespace org { namespace apache { namespace http { namespace impl { namespace c
 } //namespace http
 } //namespace apache
 } //namespace org
-
 
 } //namespace j2cpp
 
@@ -70,16 +78,28 @@ namespace org { namespace apache { namespace http { namespace impl { namespace c
 namespace j2cpp {
 
 
-template <>
-local_ref< org::apache::http::impl::cookie::RFC2965DomainAttributeHandler > create< org::apache::http::impl::cookie::RFC2965DomainAttributeHandler>()
+
+org::apache::http::impl::cookie::RFC2965DomainAttributeHandler::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< org::apache::http::impl::cookie::RFC2965DomainAttributeHandler >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::apache::http::impl::cookie::RFC2965DomainAttributeHandler::J2CPP_CLASS_NAME>(),
-			get_method_id<org::apache::http::impl::cookie::RFC2965DomainAttributeHandler::J2CPP_CLASS_NAME, org::apache::http::impl::cookie::RFC2965DomainAttributeHandler::J2CPP_METHOD_NAME(0), org::apache::http::impl::cookie::RFC2965DomainAttributeHandler::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+org::apache::http::impl::cookie::RFC2965DomainAttributeHandler::operator local_ref<org::apache::http::cookie::CookieAttributeHandler>() const
+{
+	return local_ref<org::apache::http::cookie::CookieAttributeHandler>(get_jtype());
+}
+
+
+org::apache::http::impl::cookie::RFC2965DomainAttributeHandler::RFC2965DomainAttributeHandler()
+: cpp_object<org::apache::http::impl::cookie::RFC2965DomainAttributeHandler>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::apache::http::impl::cookie::RFC2965DomainAttributeHandler::J2CPP_CLASS_NAME>(),
+		get_method_id<org::apache::http::impl::cookie::RFC2965DomainAttributeHandler::J2CPP_CLASS_NAME, org::apache::http::impl::cookie::RFC2965DomainAttributeHandler::J2CPP_METHOD_NAME(0), org::apache::http::impl::cookie::RFC2965DomainAttributeHandler::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 void org::apache::http::impl::cookie::RFC2965DomainAttributeHandler::parse(local_ref< org::apache::http::cookie::SetCookie > const &a0, local_ref< java::lang::String > const &a1)
 {

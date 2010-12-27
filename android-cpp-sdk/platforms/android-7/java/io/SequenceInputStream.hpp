@@ -37,11 +37,16 @@ namespace java { namespace io {
 		J2CPP_DECLARE_METHOD(4)
 		J2CPP_DECLARE_METHOD(5)
 
-		SequenceInputStream(jobject jobj)
+		explicit SequenceInputStream(jobject jobj)
 		: cpp_object<SequenceInputStream>(jobj)
 		{
 		}
 
+		operator local_ref<java::io::InputStream>() const;
+
+
+		SequenceInputStream(local_ref< java::io::InputStream > const&, local_ref< java::io::InputStream > const&);
+		SequenceInputStream(local_ref< java::util::Enumeration > const&);
 		cpp_int available();
 		void close();
 		cpp_int read();
@@ -50,7 +55,6 @@ namespace java { namespace io {
 
 } //namespace io
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -64,29 +68,37 @@ namespace java { namespace io {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::io::SequenceInputStream > create< java::io::SequenceInputStream>(local_ref< java::io::InputStream > const &a0, local_ref< java::io::InputStream > const &a1)
+
+java::io::SequenceInputStream::operator local_ref<java::io::InputStream>() const
 {
-	return local_ref< java::io::SequenceInputStream >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::io::SequenceInputStream::J2CPP_CLASS_NAME>(),
-			get_method_id<java::io::SequenceInputStream::J2CPP_CLASS_NAME, java::io::SequenceInputStream::J2CPP_METHOD_NAME(0), java::io::SequenceInputStream::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<java::io::InputStream>(get_jtype());
 }
 
-template <>
-local_ref< java::io::SequenceInputStream > create< java::io::SequenceInputStream>(local_ref< java::util::Enumeration > const &a0)
+
+java::io::SequenceInputStream::SequenceInputStream(local_ref< java::io::InputStream > const &a0, local_ref< java::io::InputStream > const &a1)
+: cpp_object<java::io::SequenceInputStream>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::io::SequenceInputStream::J2CPP_CLASS_NAME>(),
+		get_method_id<java::io::SequenceInputStream::J2CPP_CLASS_NAME, java::io::SequenceInputStream::J2CPP_METHOD_NAME(0), java::io::SequenceInputStream::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
 {
-	return local_ref< java::io::SequenceInputStream >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::io::SequenceInputStream::J2CPP_CLASS_NAME>(),
-			get_method_id<java::io::SequenceInputStream::J2CPP_CLASS_NAME, java::io::SequenceInputStream::J2CPP_METHOD_NAME(1), java::io::SequenceInputStream::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
 }
+
+
+
+java::io::SequenceInputStream::SequenceInputStream(local_ref< java::util::Enumeration > const &a0)
+: cpp_object<java::io::SequenceInputStream>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::io::SequenceInputStream::J2CPP_CLASS_NAME>(),
+		get_method_id<java::io::SequenceInputStream::J2CPP_CLASS_NAME, java::io::SequenceInputStream::J2CPP_METHOD_NAME(1), java::io::SequenceInputStream::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 cpp_int java::io::SequenceInputStream::available()
 {

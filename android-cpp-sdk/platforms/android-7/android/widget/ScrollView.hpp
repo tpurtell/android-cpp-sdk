@@ -16,6 +16,7 @@ namespace j2cpp { namespace android { namespace view { class View; } } }
 namespace j2cpp { namespace android { namespace view { class KeyEvent; } } }
 namespace j2cpp { namespace android { namespace view { class MotionEvent; } } }
 namespace j2cpp { namespace android { namespace view { namespace ViewGroup_ { class LayoutParams; } } } }
+namespace j2cpp { namespace android { namespace widget { class FrameLayout; } } }
 namespace j2cpp { namespace android { namespace util { class AttributeSet; } } }
 
 
@@ -26,6 +27,7 @@ namespace j2cpp { namespace android { namespace util { class AttributeSet; } } }
 #include <android/view/MotionEvent.hpp>
 #include <android/view/View.hpp>
 #include <android/view/ViewGroup.hpp>
+#include <android/widget/FrameLayout.hpp>
 
 
 namespace j2cpp {
@@ -78,11 +80,17 @@ namespace android { namespace widget {
 		J2CPP_DECLARE_METHOD(35)
 		J2CPP_DECLARE_METHOD(36)
 
-		ScrollView(jobject jobj)
+		explicit ScrollView(jobject jobj)
 		: cpp_object<ScrollView>(jobj)
 		{
 		}
 
+		operator local_ref<android::widget::FrameLayout>() const;
+
+
+		ScrollView(local_ref< android::content::Context > const&);
+		ScrollView(local_ref< android::content::Context > const&, local_ref< android::util::AttributeSet > const&);
+		ScrollView(local_ref< android::content::Context > const&, local_ref< android::util::AttributeSet > const&, cpp_int const&);
 		cpp_int getMaxScrollAmount();
 		void addView(local_ref< android::view::View > const&);
 		void addView(local_ref< android::view::View > const&, cpp_int const&);
@@ -112,7 +120,6 @@ namespace android { namespace widget {
 } //namespace widget
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_WIDGET_SCROLLVIEW_HPP_DECL
@@ -125,41 +132,50 @@ namespace android { namespace widget {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::widget::ScrollView > create< android::widget::ScrollView>(local_ref< android::content::Context > const &a0)
+
+android::widget::ScrollView::operator local_ref<android::widget::FrameLayout>() const
 {
-	return local_ref< android::widget::ScrollView >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::widget::ScrollView::J2CPP_CLASS_NAME>(),
-			get_method_id<android::widget::ScrollView::J2CPP_CLASS_NAME, android::widget::ScrollView::J2CPP_METHOD_NAME(0), android::widget::ScrollView::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<android::widget::FrameLayout>(get_jtype());
 }
 
-template <>
-local_ref< android::widget::ScrollView > create< android::widget::ScrollView>(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1)
+
+android::widget::ScrollView::ScrollView(local_ref< android::content::Context > const &a0)
+: cpp_object<android::widget::ScrollView>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::widget::ScrollView::J2CPP_CLASS_NAME>(),
+		get_method_id<android::widget::ScrollView::J2CPP_CLASS_NAME, android::widget::ScrollView::J2CPP_METHOD_NAME(0), android::widget::ScrollView::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< android::widget::ScrollView >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::widget::ScrollView::J2CPP_CLASS_NAME>(),
-			get_method_id<android::widget::ScrollView::J2CPP_CLASS_NAME, android::widget::ScrollView::J2CPP_METHOD_NAME(1), android::widget::ScrollView::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< android::widget::ScrollView > create< android::widget::ScrollView>(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1, cpp_int const &a2)
+
+
+android::widget::ScrollView::ScrollView(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1)
+: cpp_object<android::widget::ScrollView>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::widget::ScrollView::J2CPP_CLASS_NAME>(),
+		get_method_id<android::widget::ScrollView::J2CPP_CLASS_NAME, android::widget::ScrollView::J2CPP_METHOD_NAME(1), android::widget::ScrollView::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
 {
-	return local_ref< android::widget::ScrollView >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::widget::ScrollView::J2CPP_CLASS_NAME>(),
-			get_method_id<android::widget::ScrollView::J2CPP_CLASS_NAME, android::widget::ScrollView::J2CPP_METHOD_NAME(2), android::widget::ScrollView::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
-		)
-	);
 }
+
+
+
+android::widget::ScrollView::ScrollView(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1, cpp_int const &a2)
+: cpp_object<android::widget::ScrollView>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::widget::ScrollView::J2CPP_CLASS_NAME>(),
+		get_method_id<android::widget::ScrollView::J2CPP_CLASS_NAME, android::widget::ScrollView::J2CPP_METHOD_NAME(2), android::widget::ScrollView::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
+	)
+)
+{
+}
+
 
 
 

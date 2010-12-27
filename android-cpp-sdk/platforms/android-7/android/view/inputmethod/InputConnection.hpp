@@ -10,6 +10,7 @@
 #define J2CPP_ANDROID_VIEW_INPUTMETHOD_INPUTCONNECTION_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class CharSequence; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace android { namespace view { namespace inputmethod { class ExtractedText; } } } }
@@ -25,6 +26,7 @@ namespace j2cpp { namespace android { namespace os { class Bundle; } } }
 #include <android/view/inputmethod/ExtractedText.hpp>
 #include <android/view/inputmethod/ExtractedTextRequest.hpp>
 #include <java/lang/CharSequence.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -61,10 +63,13 @@ namespace android { namespace view { namespace inputmethod {
 		J2CPP_DECLARE_FIELD(0)
 		J2CPP_DECLARE_FIELD(1)
 
-		InputConnection(jobject jobj)
+		explicit InputConnection(jobject jobj)
 		: cpp_object<InputConnection>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		local_ref< java::lang::CharSequence > getTextBeforeCursor(cpp_int const&, cpp_int const&);
 		local_ref< java::lang::CharSequence > getTextAfterCursor(cpp_int const&, cpp_int const&);
@@ -93,7 +98,6 @@ namespace android { namespace view { namespace inputmethod {
 } //namespace view
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_VIEW_INPUTMETHOD_INPUTCONNECTION_HPP_DECL
@@ -105,6 +109,12 @@ namespace android { namespace view { namespace inputmethod {
 
 namespace j2cpp {
 
+
+
+android::view::inputmethod::InputConnection::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 local_ref< java::lang::CharSequence > android::view::inputmethod::InputConnection::getTextBeforeCursor(cpp_int const &a0, cpp_int const &a1)
 {

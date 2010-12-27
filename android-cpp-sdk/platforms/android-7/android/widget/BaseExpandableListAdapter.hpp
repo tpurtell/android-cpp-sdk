@@ -10,10 +10,14 @@
 #define J2CPP_ANDROID_WIDGET_BASEEXPANDABLELISTADAPTER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace android { namespace database { class DataSetObserver; } } }
+namespace j2cpp { namespace android { namespace widget { class ExpandableListAdapter; } } }
 
 
 #include <android/database/DataSetObserver.hpp>
+#include <android/widget/ExpandableListAdapter.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -40,11 +44,16 @@ namespace android { namespace widget {
 		J2CPP_DECLARE_METHOD(9)
 		J2CPP_DECLARE_METHOD(10)
 
-		BaseExpandableListAdapter(jobject jobj)
+		explicit BaseExpandableListAdapter(jobject jobj)
 		: cpp_object<BaseExpandableListAdapter>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<android::widget::ExpandableListAdapter>() const;
+
+
+		BaseExpandableListAdapter();
 		void registerDataSetObserver(local_ref< android::database::DataSetObserver > const&);
 		void unregisterDataSetObserver(local_ref< android::database::DataSetObserver > const&);
 		void notifyDataSetInvalidated();
@@ -60,7 +69,6 @@ namespace android { namespace widget {
 } //namespace widget
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_WIDGET_BASEEXPANDABLELISTADAPTER_HPP_DECL
@@ -73,16 +81,28 @@ namespace android { namespace widget {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::widget::BaseExpandableListAdapter > create< android::widget::BaseExpandableListAdapter>()
+
+android::widget::BaseExpandableListAdapter::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::widget::BaseExpandableListAdapter >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::widget::BaseExpandableListAdapter::J2CPP_CLASS_NAME>(),
-			get_method_id<android::widget::BaseExpandableListAdapter::J2CPP_CLASS_NAME, android::widget::BaseExpandableListAdapter::J2CPP_METHOD_NAME(0), android::widget::BaseExpandableListAdapter::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+android::widget::BaseExpandableListAdapter::operator local_ref<android::widget::ExpandableListAdapter>() const
+{
+	return local_ref<android::widget::ExpandableListAdapter>(get_jtype());
+}
+
+
+android::widget::BaseExpandableListAdapter::BaseExpandableListAdapter()
+: cpp_object<android::widget::BaseExpandableListAdapter>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::widget::BaseExpandableListAdapter::J2CPP_CLASS_NAME>(),
+		get_method_id<android::widget::BaseExpandableListAdapter::J2CPP_CLASS_NAME, android::widget::BaseExpandableListAdapter::J2CPP_METHOD_NAME(0), android::widget::BaseExpandableListAdapter::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 void android::widget::BaseExpandableListAdapter::registerDataSetObserver(local_ref< android::database::DataSetObserver > const &a0)
 {

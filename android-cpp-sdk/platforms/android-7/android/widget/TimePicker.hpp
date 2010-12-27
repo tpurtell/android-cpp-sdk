@@ -11,17 +11,21 @@
 
 
 namespace j2cpp { namespace java { namespace lang { class Integer; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class Boolean; } } }
 namespace j2cpp { namespace android { namespace content { class Context; } } }
 namespace j2cpp { namespace android { namespace widget { namespace TimePicker_ { class OnTimeChangedListener; } } } }
+namespace j2cpp { namespace android { namespace widget { class FrameLayout; } } }
 namespace j2cpp { namespace android { namespace util { class AttributeSet; } } }
 
 
 #include <android/content/Context.hpp>
 #include <android/util/AttributeSet.hpp>
+#include <android/widget/FrameLayout.hpp>
 #include <android/widget/TimePicker.hpp>
 #include <java/lang/Boolean.hpp>
 #include <java/lang/Integer.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -41,10 +45,13 @@ namespace android { namespace widget {
 
 			J2CPP_DECLARE_METHOD(0)
 
-			OnTimeChangedListener(jobject jobj)
+			explicit OnTimeChangedListener(jobject jobj)
 			: cpp_object<OnTimeChangedListener>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+
 
 			void onTimeChanged(local_ref< android::widget::TimePicker > const&, cpp_int const&, cpp_int const&);
 		}; //class OnTimeChangedListener
@@ -75,11 +82,17 @@ namespace android { namespace widget {
 
 		typedef TimePicker_::OnTimeChangedListener OnTimeChangedListener;
 
-		TimePicker(jobject jobj)
+		explicit TimePicker(jobject jobj)
 		: cpp_object<TimePicker>(jobj)
 		{
 		}
 
+		operator local_ref<android::widget::FrameLayout>() const;
+
+
+		TimePicker(local_ref< android::content::Context > const&);
+		TimePicker(local_ref< android::content::Context > const&, local_ref< android::util::AttributeSet > const&);
+		TimePicker(local_ref< android::content::Context > const&, local_ref< android::util::AttributeSet > const&, cpp_int const&);
 		void setEnabled(cpp_boolean const&);
 		void setOnTimeChangedListener(local_ref< android::widget::TimePicker_::OnTimeChangedListener > const&);
 		local_ref< java::lang::Integer > getCurrentHour();
@@ -94,7 +107,6 @@ namespace android { namespace widget {
 } //namespace widget
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_WIDGET_TIMEPICKER_HPP_DECL
@@ -107,6 +119,12 @@ namespace android { namespace widget {
 namespace j2cpp {
 
 
+
+
+android::widget::TimePicker_::OnTimeChangedListener::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 void android::widget::TimePicker_::OnTimeChangedListener::onTimeChanged(local_ref< android::widget::TimePicker > const &a0, cpp_int const &a1, cpp_int const &a2)
 {
@@ -124,41 +142,50 @@ J2CPP_DEFINE_CLASS(android::widget::TimePicker_::OnTimeChangedListener,"android/
 J2CPP_DEFINE_METHOD(android::widget::TimePicker_::OnTimeChangedListener,0,"onTimeChanged","(Landroid/widget/TimePicker;II)V")
 
 
-template <>
-local_ref< android::widget::TimePicker > create< android::widget::TimePicker>(local_ref< android::content::Context > const &a0)
+
+android::widget::TimePicker::operator local_ref<android::widget::FrameLayout>() const
 {
-	return local_ref< android::widget::TimePicker >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::widget::TimePicker::J2CPP_CLASS_NAME>(),
-			get_method_id<android::widget::TimePicker::J2CPP_CLASS_NAME, android::widget::TimePicker::J2CPP_METHOD_NAME(0), android::widget::TimePicker::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<android::widget::FrameLayout>(get_jtype());
 }
 
-template <>
-local_ref< android::widget::TimePicker > create< android::widget::TimePicker>(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1)
+
+android::widget::TimePicker::TimePicker(local_ref< android::content::Context > const &a0)
+: cpp_object<android::widget::TimePicker>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::widget::TimePicker::J2CPP_CLASS_NAME>(),
+		get_method_id<android::widget::TimePicker::J2CPP_CLASS_NAME, android::widget::TimePicker::J2CPP_METHOD_NAME(0), android::widget::TimePicker::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< android::widget::TimePicker >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::widget::TimePicker::J2CPP_CLASS_NAME>(),
-			get_method_id<android::widget::TimePicker::J2CPP_CLASS_NAME, android::widget::TimePicker::J2CPP_METHOD_NAME(1), android::widget::TimePicker::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< android::widget::TimePicker > create< android::widget::TimePicker>(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1, cpp_int const &a2)
+
+
+android::widget::TimePicker::TimePicker(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1)
+: cpp_object<android::widget::TimePicker>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::widget::TimePicker::J2CPP_CLASS_NAME>(),
+		get_method_id<android::widget::TimePicker::J2CPP_CLASS_NAME, android::widget::TimePicker::J2CPP_METHOD_NAME(1), android::widget::TimePicker::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
 {
-	return local_ref< android::widget::TimePicker >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::widget::TimePicker::J2CPP_CLASS_NAME>(),
-			get_method_id<android::widget::TimePicker::J2CPP_CLASS_NAME, android::widget::TimePicker::J2CPP_METHOD_NAME(2), android::widget::TimePicker::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
-		)
-	);
 }
+
+
+
+android::widget::TimePicker::TimePicker(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1, cpp_int const &a2)
+: cpp_object<android::widget::TimePicker>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::widget::TimePicker::J2CPP_CLASS_NAME>(),
+		get_method_id<android::widget::TimePicker::J2CPP_CLASS_NAME, android::widget::TimePicker::J2CPP_METHOD_NAME(2), android::widget::TimePicker::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
+	)
+)
+{
+}
+
 
 void android::widget::TimePicker::setEnabled(cpp_boolean const &a0)
 {

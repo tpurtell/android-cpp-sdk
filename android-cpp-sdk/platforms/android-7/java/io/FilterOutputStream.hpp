@@ -36,11 +36,15 @@ namespace java { namespace io {
 		J2CPP_DECLARE_METHOD(5)
 		J2CPP_DECLARE_FIELD(0)
 
-		FilterOutputStream(jobject jobj)
+		explicit FilterOutputStream(jobject jobj)
 		: cpp_object<FilterOutputStream>(jobj)
 		{
 		}
 
+		operator local_ref<java::io::OutputStream>() const;
+
+
+		FilterOutputStream(local_ref< java::io::OutputStream > const&);
 		void close();
 		void flush();
 		void write(local_ref< cpp_byte_array<1> > const&);
@@ -51,7 +55,6 @@ namespace java { namespace io {
 
 } //namespace io
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -65,17 +68,24 @@ namespace java { namespace io {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::io::FilterOutputStream > create< java::io::FilterOutputStream>(local_ref< java::io::OutputStream > const &a0)
+
+java::io::FilterOutputStream::operator local_ref<java::io::OutputStream>() const
 {
-	return local_ref< java::io::FilterOutputStream >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::io::FilterOutputStream::J2CPP_CLASS_NAME>(),
-			get_method_id<java::io::FilterOutputStream::J2CPP_CLASS_NAME, java::io::FilterOutputStream::J2CPP_METHOD_NAME(0), java::io::FilterOutputStream::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::io::OutputStream>(get_jtype());
 }
+
+
+java::io::FilterOutputStream::FilterOutputStream(local_ref< java::io::OutputStream > const &a0)
+: cpp_object<java::io::FilterOutputStream>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::io::FilterOutputStream::J2CPP_CLASS_NAME>(),
+		get_method_id<java::io::FilterOutputStream::J2CPP_CLASS_NAME, java::io::FilterOutputStream::J2CPP_METHOD_NAME(0), java::io::FilterOutputStream::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 void java::io::FilterOutputStream::close()
 {

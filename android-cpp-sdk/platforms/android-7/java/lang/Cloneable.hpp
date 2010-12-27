@@ -10,8 +10,10 @@
 #define J2CPP_JAVA_LANG_CLONEABLE_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -27,15 +29,17 @@ namespace java { namespace lang {
 		J2CPP_DECLARE_CLASS
 
 
-		Cloneable(jobject jobj)
+		explicit Cloneable(jobject jobj)
 		: cpp_object<Cloneable>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 	}; //class Cloneable
 
 } //namespace lang
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -48,6 +52,12 @@ namespace java { namespace lang {
 
 namespace j2cpp {
 
+
+
+java::lang::Cloneable::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 J2CPP_DEFINE_CLASS(java::lang::Cloneable,"java/lang/Cloneable")
 

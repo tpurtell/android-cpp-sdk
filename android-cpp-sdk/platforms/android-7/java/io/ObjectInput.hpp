@@ -10,9 +10,11 @@
 #define J2CPP_JAVA_IO_OBJECTINPUT_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class DataInput; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
+#include <java/io/DataInput.hpp>
 #include <java/lang/Object.hpp>
 
 
@@ -36,10 +38,14 @@ namespace java { namespace io {
 		J2CPP_DECLARE_METHOD(5)
 		J2CPP_DECLARE_METHOD(6)
 
-		ObjectInput(jobject jobj)
+		explicit ObjectInput(jobject jobj)
 		: cpp_object<ObjectInput>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::io::DataInput>() const;
+
 
 		cpp_int available();
 		void close();
@@ -53,7 +59,6 @@ namespace java { namespace io {
 } //namespace io
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_IO_OBJECTINPUT_HPP_DECL
@@ -65,6 +70,17 @@ namespace java { namespace io {
 
 namespace j2cpp {
 
+
+
+java::io::ObjectInput::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
+
+java::io::ObjectInput::operator local_ref<java::io::DataInput>() const
+{
+	return local_ref<java::io::DataInput>(get_jtype());
+}
 
 cpp_int java::io::ObjectInput::available()
 {

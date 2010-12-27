@@ -11,8 +11,10 @@
 
 
 namespace j2cpp { namespace java { namespace nio { namespace channels { namespace spi { class SelectorProvider; } } } } }
+namespace j2cpp { namespace java { namespace nio { namespace channels { class Selector; } } } }
 
 
+#include <java/nio/channels/Selector.hpp>
 #include <java/nio/channels/spi/SelectorProvider.hpp>
 
 
@@ -39,10 +41,13 @@ namespace java { namespace nio { namespace channels { namespace spi {
 		J2CPP_DECLARE_METHOD(8)
 		J2CPP_DECLARE_METHOD(9)
 
-		AbstractSelector(jobject jobj)
+		explicit AbstractSelector(jobject jobj)
 		: cpp_object<AbstractSelector>(jobj)
 		{
 		}
+
+		operator local_ref<java::nio::channels::Selector>() const;
+
 
 		void close();
 		cpp_boolean isOpen();
@@ -53,7 +58,6 @@ namespace java { namespace nio { namespace channels { namespace spi {
 } //namespace channels
 } //namespace nio
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -67,17 +71,12 @@ namespace java { namespace nio { namespace channels { namespace spi {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::nio::channels::spi::AbstractSelector > create< java::nio::channels::spi::AbstractSelector>(local_ref< java::nio::channels::spi::SelectorProvider > const &a0)
+
+java::nio::channels::spi::AbstractSelector::operator local_ref<java::nio::channels::Selector>() const
 {
-	return local_ref< java::nio::channels::spi::AbstractSelector >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::nio::channels::spi::AbstractSelector::J2CPP_CLASS_NAME>(),
-			get_method_id<java::nio::channels::spi::AbstractSelector::J2CPP_CLASS_NAME, java::nio::channels::spi::AbstractSelector::J2CPP_METHOD_NAME(0), java::nio::channels::spi::AbstractSelector::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::nio::channels::Selector>(get_jtype());
 }
+
 
 void java::nio::channels::spi::AbstractSelector::close()
 {

@@ -10,9 +10,11 @@
 #define J2CPP_JAVA_LANG_READABLE_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace nio { class CharBuffer; } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/nio/CharBuffer.hpp>
 
 
@@ -30,17 +32,19 @@ namespace java { namespace lang {
 
 		J2CPP_DECLARE_METHOD(0)
 
-		Readable(jobject jobj)
+		explicit Readable(jobject jobj)
 		: cpp_object<Readable>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		cpp_int read(local_ref< java::nio::CharBuffer > const&);
 	}; //class Readable
 
 } //namespace lang
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -53,6 +57,12 @@ namespace java { namespace lang {
 
 namespace j2cpp {
 
+
+
+java::lang::Readable::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 cpp_int java::lang::Readable::read(local_ref< java::nio::CharBuffer > const &a0)
 {

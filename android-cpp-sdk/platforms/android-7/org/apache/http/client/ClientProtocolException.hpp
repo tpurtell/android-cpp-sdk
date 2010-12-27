@@ -10,10 +10,12 @@
 #define J2CPP_ORG_APACHE_HTTP_CLIENT_CLIENTPROTOCOLEXCEPTION_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class IOException; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace lang { class Throwable; } } }
 
 
+#include <java/io/IOException.hpp>
 #include <java/lang/String.hpp>
 #include <java/lang/Throwable.hpp>
 
@@ -35,18 +37,24 @@ namespace org { namespace apache { namespace http { namespace client {
 		J2CPP_DECLARE_METHOD(2)
 		J2CPP_DECLARE_METHOD(3)
 
-		ClientProtocolException(jobject jobj)
+		explicit ClientProtocolException(jobject jobj)
 		: cpp_object<ClientProtocolException>(jobj)
 		{
 		}
 
+		operator local_ref<java::io::IOException>() const;
+
+
+		ClientProtocolException();
+		ClientProtocolException(local_ref< java::lang::String > const&);
+		ClientProtocolException(local_ref< java::lang::Throwable > const&);
+		ClientProtocolException(local_ref< java::lang::String > const&, local_ref< java::lang::Throwable > const&);
 	}; //class ClientProtocolException
 
 } //namespace client
 } //namespace http
 } //namespace apache
 } //namespace org
-
 
 } //namespace j2cpp
 
@@ -60,52 +68,62 @@ namespace org { namespace apache { namespace http { namespace client {
 namespace j2cpp {
 
 
-template <>
-local_ref< org::apache::http::client::ClientProtocolException > create< org::apache::http::client::ClientProtocolException>()
+
+org::apache::http::client::ClientProtocolException::operator local_ref<java::io::IOException>() const
 {
-	return local_ref< org::apache::http::client::ClientProtocolException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::apache::http::client::ClientProtocolException::J2CPP_CLASS_NAME>(),
-			get_method_id<org::apache::http::client::ClientProtocolException::J2CPP_CLASS_NAME, org::apache::http::client::ClientProtocolException::J2CPP_METHOD_NAME(0), org::apache::http::client::ClientProtocolException::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::io::IOException>(get_jtype());
 }
 
-template <>
-local_ref< org::apache::http::client::ClientProtocolException > create< org::apache::http::client::ClientProtocolException>(local_ref< java::lang::String > const &a0)
+
+org::apache::http::client::ClientProtocolException::ClientProtocolException()
+: cpp_object<org::apache::http::client::ClientProtocolException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::apache::http::client::ClientProtocolException::J2CPP_CLASS_NAME>(),
+		get_method_id<org::apache::http::client::ClientProtocolException::J2CPP_CLASS_NAME, org::apache::http::client::ClientProtocolException::J2CPP_METHOD_NAME(0), org::apache::http::client::ClientProtocolException::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
 {
-	return local_ref< org::apache::http::client::ClientProtocolException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::apache::http::client::ClientProtocolException::J2CPP_CLASS_NAME>(),
-			get_method_id<org::apache::http::client::ClientProtocolException::J2CPP_CLASS_NAME, org::apache::http::client::ClientProtocolException::J2CPP_METHOD_NAME(1), org::apache::http::client::ClientProtocolException::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< org::apache::http::client::ClientProtocolException > create< org::apache::http::client::ClientProtocolException>(local_ref< java::lang::Throwable > const &a0)
+
+
+org::apache::http::client::ClientProtocolException::ClientProtocolException(local_ref< java::lang::String > const &a0)
+: cpp_object<org::apache::http::client::ClientProtocolException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::apache::http::client::ClientProtocolException::J2CPP_CLASS_NAME>(),
+		get_method_id<org::apache::http::client::ClientProtocolException::J2CPP_CLASS_NAME, org::apache::http::client::ClientProtocolException::J2CPP_METHOD_NAME(1), org::apache::http::client::ClientProtocolException::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< org::apache::http::client::ClientProtocolException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::apache::http::client::ClientProtocolException::J2CPP_CLASS_NAME>(),
-			get_method_id<org::apache::http::client::ClientProtocolException::J2CPP_CLASS_NAME, org::apache::http::client::ClientProtocolException::J2CPP_METHOD_NAME(2), org::apache::http::client::ClientProtocolException::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< org::apache::http::client::ClientProtocolException > create< org::apache::http::client::ClientProtocolException>(local_ref< java::lang::String > const &a0, local_ref< java::lang::Throwable > const &a1)
+
+
+org::apache::http::client::ClientProtocolException::ClientProtocolException(local_ref< java::lang::Throwable > const &a0)
+: cpp_object<org::apache::http::client::ClientProtocolException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::apache::http::client::ClientProtocolException::J2CPP_CLASS_NAME>(),
+		get_method_id<org::apache::http::client::ClientProtocolException::J2CPP_CLASS_NAME, org::apache::http::client::ClientProtocolException::J2CPP_METHOD_NAME(2), org::apache::http::client::ClientProtocolException::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< org::apache::http::client::ClientProtocolException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::apache::http::client::ClientProtocolException::J2CPP_CLASS_NAME>(),
-			get_method_id<org::apache::http::client::ClientProtocolException::J2CPP_CLASS_NAME, org::apache::http::client::ClientProtocolException::J2CPP_METHOD_NAME(3), org::apache::http::client::ClientProtocolException::J2CPP_METHOD_SIGNATURE(3), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
 }
+
+
+
+org::apache::http::client::ClientProtocolException::ClientProtocolException(local_ref< java::lang::String > const &a0, local_ref< java::lang::Throwable > const &a1)
+: cpp_object<org::apache::http::client::ClientProtocolException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::apache::http::client::ClientProtocolException::J2CPP_CLASS_NAME>(),
+		get_method_id<org::apache::http::client::ClientProtocolException::J2CPP_CLASS_NAME, org::apache::http::client::ClientProtocolException::J2CPP_METHOD_NAME(3), org::apache::http::client::ClientProtocolException::J2CPP_METHOD_SIGNATURE(3), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
 
 
 J2CPP_DEFINE_CLASS(org::apache::http::client::ClientProtocolException,"org/apache/http/client/ClientProtocolException")

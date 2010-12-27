@@ -10,12 +10,14 @@
 #define J2CPP_JAVA_NET_SOCKETPERMISSION_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace security { class Permission; } } }
 namespace j2cpp { namespace java { namespace security { class PermissionCollection; } } }
 
 
+#include <java/io/Serializable.hpp>
 #include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/security/Permission.hpp>
@@ -41,11 +43,16 @@ namespace java { namespace net {
 		J2CPP_DECLARE_METHOD(4)
 		J2CPP_DECLARE_METHOD(5)
 
-		SocketPermission(jobject jobj)
+		explicit SocketPermission(jobject jobj)
 		: cpp_object<SocketPermission>(jobj)
 		{
 		}
 
+		operator local_ref<java::security::Permission>() const;
+		operator local_ref<java::io::Serializable>() const;
+
+
+		SocketPermission(local_ref< java::lang::String > const&, local_ref< java::lang::String > const&);
 		cpp_boolean equals(local_ref< java::lang::Object > const&);
 		cpp_int hashCode();
 		local_ref< java::lang::String > getActions();
@@ -55,7 +62,6 @@ namespace java { namespace net {
 
 } //namespace net
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -69,17 +75,29 @@ namespace java { namespace net {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::net::SocketPermission > create< java::net::SocketPermission>(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
+
+java::net::SocketPermission::operator local_ref<java::security::Permission>() const
 {
-	return local_ref< java::net::SocketPermission >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::net::SocketPermission::J2CPP_CLASS_NAME>(),
-			get_method_id<java::net::SocketPermission::J2CPP_CLASS_NAME, java::net::SocketPermission::J2CPP_METHOD_NAME(0), java::net::SocketPermission::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<java::security::Permission>(get_jtype());
 }
+
+java::net::SocketPermission::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jtype());
+}
+
+
+java::net::SocketPermission::SocketPermission(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
+: cpp_object<java::net::SocketPermission>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::net::SocketPermission::J2CPP_CLASS_NAME>(),
+		get_method_id<java::net::SocketPermission::J2CPP_CLASS_NAME, java::net::SocketPermission::J2CPP_METHOD_NAME(0), java::net::SocketPermission::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
 
 cpp_boolean java::net::SocketPermission::equals(local_ref< java::lang::Object > const &a0)
 {

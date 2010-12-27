@@ -10,10 +10,12 @@
 #define J2CPP_ORG_APACHE_HTTP_STATUSLINE_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { class ProtocolVersion; } } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <org/apache/http/ProtocolVersion.hpp>
 
@@ -34,10 +36,13 @@ namespace org { namespace apache { namespace http {
 		J2CPP_DECLARE_METHOD(1)
 		J2CPP_DECLARE_METHOD(2)
 
-		StatusLine(jobject jobj)
+		explicit StatusLine(jobject jobj)
 		: cpp_object<StatusLine>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		local_ref< org::apache::http::ProtocolVersion > getProtocolVersion();
 		cpp_int getStatusCode();
@@ -47,7 +52,6 @@ namespace org { namespace apache { namespace http {
 } //namespace http
 } //namespace apache
 } //namespace org
-
 
 } //namespace j2cpp
 
@@ -60,6 +64,12 @@ namespace org { namespace apache { namespace http {
 
 namespace j2cpp {
 
+
+
+org::apache::http::StatusLine::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 local_ref< org::apache::http::ProtocolVersion > org::apache::http::StatusLine::getProtocolVersion()
 {

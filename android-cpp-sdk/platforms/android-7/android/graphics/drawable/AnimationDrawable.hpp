@@ -12,13 +12,17 @@
 
 namespace j2cpp { namespace java { namespace lang { class Runnable; } } }
 namespace j2cpp { namespace org { namespace xmlpull { namespace v1 { class XmlPullParser; } } } }
+namespace j2cpp { namespace android { namespace graphics { namespace drawable { class Animatable; } } } }
+namespace j2cpp { namespace android { namespace graphics { namespace drawable { class DrawableContainer; } } } }
 namespace j2cpp { namespace android { namespace graphics { namespace drawable { class Drawable; } } } }
 namespace j2cpp { namespace android { namespace content { namespace res { class Resources; } } } }
 namespace j2cpp { namespace android { namespace util { class AttributeSet; } } }
 
 
 #include <android/content/res/Resources.hpp>
+#include <android/graphics/drawable/Animatable.hpp>
 #include <android/graphics/drawable/Drawable.hpp>
+#include <android/graphics/drawable/DrawableContainer.hpp>
 #include <android/util/AttributeSet.hpp>
 #include <java/lang/Runnable.hpp>
 #include <org/xmlpull/v1/XmlPullParser.hpp>
@@ -52,11 +56,17 @@ namespace android { namespace graphics { namespace drawable {
 		J2CPP_DECLARE_METHOD(13)
 		J2CPP_DECLARE_METHOD(14)
 
-		AnimationDrawable(jobject jobj)
+		explicit AnimationDrawable(jobject jobj)
 		: cpp_object<AnimationDrawable>(jobj)
 		{
 		}
 
+		operator local_ref<android::graphics::drawable::DrawableContainer>() const;
+		operator local_ref<java::lang::Runnable>() const;
+		operator local_ref<android::graphics::drawable::Animatable>() const;
+
+
+		AnimationDrawable();
 		cpp_boolean setVisible(cpp_boolean const&, cpp_boolean const&);
 		void start();
 		void stop();
@@ -77,7 +87,6 @@ namespace android { namespace graphics { namespace drawable {
 } //namespace graphics
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_GRAPHICS_DRAWABLE_ANIMATIONDRAWABLE_HPP_DECL
@@ -90,16 +99,33 @@ namespace android { namespace graphics { namespace drawable {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::graphics::drawable::AnimationDrawable > create< android::graphics::drawable::AnimationDrawable>()
+
+android::graphics::drawable::AnimationDrawable::operator local_ref<android::graphics::drawable::DrawableContainer>() const
 {
-	return local_ref< android::graphics::drawable::AnimationDrawable >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::graphics::drawable::AnimationDrawable::J2CPP_CLASS_NAME>(),
-			get_method_id<android::graphics::drawable::AnimationDrawable::J2CPP_CLASS_NAME, android::graphics::drawable::AnimationDrawable::J2CPP_METHOD_NAME(0), android::graphics::drawable::AnimationDrawable::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<android::graphics::drawable::DrawableContainer>(get_jtype());
 }
+
+android::graphics::drawable::AnimationDrawable::operator local_ref<java::lang::Runnable>() const
+{
+	return local_ref<java::lang::Runnable>(get_jtype());
+}
+
+android::graphics::drawable::AnimationDrawable::operator local_ref<android::graphics::drawable::Animatable>() const
+{
+	return local_ref<android::graphics::drawable::Animatable>(get_jtype());
+}
+
+
+android::graphics::drawable::AnimationDrawable::AnimationDrawable()
+: cpp_object<android::graphics::drawable::AnimationDrawable>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::graphics::drawable::AnimationDrawable::J2CPP_CLASS_NAME>(),
+		get_method_id<android::graphics::drawable::AnimationDrawable::J2CPP_CLASS_NAME, android::graphics::drawable::AnimationDrawable::J2CPP_METHOD_NAME(0), android::graphics::drawable::AnimationDrawable::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 cpp_boolean android::graphics::drawable::AnimationDrawable::setVisible(cpp_boolean const &a0, cpp_boolean const &a1)
 {

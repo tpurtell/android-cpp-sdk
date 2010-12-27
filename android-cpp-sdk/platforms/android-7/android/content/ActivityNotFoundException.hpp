@@ -10,9 +10,11 @@
 #define J2CPP_ANDROID_CONTENT_ACTIVITYNOTFOUNDEXCEPTION_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class RuntimeException; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 
 
+#include <java/lang/RuntimeException.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -31,16 +33,20 @@ namespace android { namespace content {
 		J2CPP_DECLARE_METHOD(0)
 		J2CPP_DECLARE_METHOD(1)
 
-		ActivityNotFoundException(jobject jobj)
+		explicit ActivityNotFoundException(jobject jobj)
 		: cpp_object<ActivityNotFoundException>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::RuntimeException>() const;
+
+
+		ActivityNotFoundException();
+		ActivityNotFoundException(local_ref< java::lang::String > const&);
 	}; //class ActivityNotFoundException
 
 } //namespace content
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -54,28 +60,36 @@ namespace android { namespace content {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::content::ActivityNotFoundException > create< android::content::ActivityNotFoundException>()
+
+android::content::ActivityNotFoundException::operator local_ref<java::lang::RuntimeException>() const
 {
-	return local_ref< android::content::ActivityNotFoundException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::content::ActivityNotFoundException::J2CPP_CLASS_NAME>(),
-			get_method_id<android::content::ActivityNotFoundException::J2CPP_CLASS_NAME, android::content::ActivityNotFoundException::J2CPP_METHOD_NAME(0), android::content::ActivityNotFoundException::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::RuntimeException>(get_jtype());
 }
 
-template <>
-local_ref< android::content::ActivityNotFoundException > create< android::content::ActivityNotFoundException>(local_ref< java::lang::String > const &a0)
+
+android::content::ActivityNotFoundException::ActivityNotFoundException()
+: cpp_object<android::content::ActivityNotFoundException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::content::ActivityNotFoundException::J2CPP_CLASS_NAME>(),
+		get_method_id<android::content::ActivityNotFoundException::J2CPP_CLASS_NAME, android::content::ActivityNotFoundException::J2CPP_METHOD_NAME(0), android::content::ActivityNotFoundException::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
 {
-	return local_ref< android::content::ActivityNotFoundException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::content::ActivityNotFoundException::J2CPP_CLASS_NAME>(),
-			get_method_id<android::content::ActivityNotFoundException::J2CPP_CLASS_NAME, android::content::ActivityNotFoundException::J2CPP_METHOD_NAME(1), android::content::ActivityNotFoundException::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
 }
+
+
+
+android::content::ActivityNotFoundException::ActivityNotFoundException(local_ref< java::lang::String > const &a0)
+: cpp_object<android::content::ActivityNotFoundException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::content::ActivityNotFoundException::J2CPP_CLASS_NAME>(),
+		get_method_id<android::content::ActivityNotFoundException::J2CPP_CLASS_NAME, android::content::ActivityNotFoundException::J2CPP_METHOD_NAME(1), android::content::ActivityNotFoundException::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 
 J2CPP_DEFINE_CLASS(android::content::ActivityNotFoundException,"android/content/ActivityNotFoundException")

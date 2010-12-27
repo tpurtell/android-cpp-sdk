@@ -16,6 +16,7 @@ namespace j2cpp { namespace org { namespace apache { namespace http { class Http
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace cookie { class CookieSpecRegistry; } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { class ConnectionReuseStrategy; } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { class HttpRequestInterceptor; } } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { namespace client { class HttpClient; } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace client { namespace methods { class HttpUriRequest; } } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace client { class UserTokenHandler; } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace client { class ResponseHandler; } } } } }
@@ -48,6 +49,7 @@ namespace j2cpp { namespace org { namespace apache { namespace http { namespace 
 #include <org/apache/http/client/AuthenticationHandler.hpp>
 #include <org/apache/http/client/CookieStore.hpp>
 #include <org/apache/http/client/CredentialsProvider.hpp>
+#include <org/apache/http/client/HttpClient.hpp>
 #include <org/apache/http/client/HttpRequestRetryHandler.hpp>
 #include <org/apache/http/client/RedirectHandler.hpp>
 #include <org/apache/http/client/ResponseHandler.hpp>
@@ -144,10 +146,14 @@ namespace org { namespace apache { namespace http { namespace impl { namespace c
 		J2CPP_DECLARE_METHOD(67)
 		J2CPP_DECLARE_METHOD(68)
 
-		AbstractHttpClient(jobject jobj)
+		explicit AbstractHttpClient(jobject jobj)
 		: cpp_object<AbstractHttpClient>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<org::apache::http::client::HttpClient>() const;
+
 
 		local_ref< org::apache::http::params::HttpParams > getParams();
 		void setParams(local_ref< org::apache::http::params::HttpParams > const&);
@@ -205,7 +211,6 @@ namespace org { namespace apache { namespace http { namespace impl { namespace c
 } //namespace apache
 } //namespace org
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ORG_APACHE_HTTP_IMPL_CLIENT_ABSTRACTHTTPCLIENT_HPP_DECL
@@ -218,17 +223,17 @@ namespace org { namespace apache { namespace http { namespace impl { namespace c
 namespace j2cpp {
 
 
-template <>
-local_ref< org::apache::http::impl::client::AbstractHttpClient > create< org::apache::http::impl::client::AbstractHttpClient>(local_ref< org::apache::http::conn::ClientConnectionManager > const &a0, local_ref< org::apache::http::params::HttpParams > const &a1)
+
+org::apache::http::impl::client::AbstractHttpClient::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< org::apache::http::impl::client::AbstractHttpClient >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::apache::http::impl::client::AbstractHttpClient::J2CPP_CLASS_NAME>(),
-			get_method_id<org::apache::http::impl::client::AbstractHttpClient::J2CPP_CLASS_NAME, org::apache::http::impl::client::AbstractHttpClient::J2CPP_METHOD_NAME(0), org::apache::http::impl::client::AbstractHttpClient::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+org::apache::http::impl::client::AbstractHttpClient::operator local_ref<org::apache::http::client::HttpClient>() const
+{
+	return local_ref<org::apache::http::client::HttpClient>(get_jtype());
+}
+
 
 
 

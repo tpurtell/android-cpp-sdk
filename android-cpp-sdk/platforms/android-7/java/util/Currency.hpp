@@ -10,10 +10,14 @@
 #define J2CPP_JAVA_UTIL_CURRENCY_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace util { class Locale; } } }
 
 
+#include <java/io/Serializable.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/util/Locale.hpp>
 
@@ -39,10 +43,14 @@ namespace java { namespace util {
 		J2CPP_DECLARE_METHOD(6)
 		J2CPP_DECLARE_METHOD(7)
 
-		Currency(jobject jobj)
+		explicit Currency(jobject jobj)
 		: cpp_object<Currency>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::io::Serializable>() const;
+
 
 		static local_ref< java::util::Currency > getInstance(local_ref< java::lang::String > const&);
 		static local_ref< java::util::Currency > getInstance(local_ref< java::util::Locale > const&);
@@ -56,7 +64,6 @@ namespace java { namespace util {
 } //namespace util
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_UTIL_CURRENCY_HPP_DECL
@@ -69,16 +76,17 @@ namespace java { namespace util {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::util::Currency > create< java::util::Currency>()
+
+java::util::Currency::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::util::Currency >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::Currency::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::Currency::J2CPP_CLASS_NAME, java::util::Currency::J2CPP_METHOD_NAME(0), java::util::Currency::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+java::util::Currency::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jtype());
+}
+
 
 local_ref< java::util::Currency > java::util::Currency::getInstance(local_ref< java::lang::String > const &a0)
 {

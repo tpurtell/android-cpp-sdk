@@ -10,9 +10,11 @@
 #define J2CPP_JAVA_LANG_NULLPOINTEREXCEPTION_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class RuntimeException; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 
 
+#include <java/lang/RuntimeException.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -31,16 +33,20 @@ namespace java { namespace lang {
 		J2CPP_DECLARE_METHOD(0)
 		J2CPP_DECLARE_METHOD(1)
 
-		NullPointerException(jobject jobj)
+		explicit NullPointerException(jobject jobj)
 		: cpp_object<NullPointerException>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::RuntimeException>() const;
+
+
+		NullPointerException();
+		NullPointerException(local_ref< java::lang::String > const&);
 	}; //class NullPointerException
 
 } //namespace lang
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -54,28 +60,36 @@ namespace java { namespace lang {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::lang::NullPointerException > create< java::lang::NullPointerException>()
+
+java::lang::NullPointerException::operator local_ref<java::lang::RuntimeException>() const
 {
-	return local_ref< java::lang::NullPointerException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::lang::NullPointerException::J2CPP_CLASS_NAME>(),
-			get_method_id<java::lang::NullPointerException::J2CPP_CLASS_NAME, java::lang::NullPointerException::J2CPP_METHOD_NAME(0), java::lang::NullPointerException::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::RuntimeException>(get_jtype());
 }
 
-template <>
-local_ref< java::lang::NullPointerException > create< java::lang::NullPointerException>(local_ref< java::lang::String > const &a0)
+
+java::lang::NullPointerException::NullPointerException()
+: cpp_object<java::lang::NullPointerException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::lang::NullPointerException::J2CPP_CLASS_NAME>(),
+		get_method_id<java::lang::NullPointerException::J2CPP_CLASS_NAME, java::lang::NullPointerException::J2CPP_METHOD_NAME(0), java::lang::NullPointerException::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
 {
-	return local_ref< java::lang::NullPointerException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::lang::NullPointerException::J2CPP_CLASS_NAME>(),
-			get_method_id<java::lang::NullPointerException::J2CPP_CLASS_NAME, java::lang::NullPointerException::J2CPP_METHOD_NAME(1), java::lang::NullPointerException::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
 }
+
+
+
+java::lang::NullPointerException::NullPointerException(local_ref< java::lang::String > const &a0)
+: cpp_object<java::lang::NullPointerException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::lang::NullPointerException::J2CPP_CLASS_NAME>(),
+		get_method_id<java::lang::NullPointerException::J2CPP_CLASS_NAME, java::lang::NullPointerException::J2CPP_METHOD_NAME(1), java::lang::NullPointerException::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 
 J2CPP_DEFINE_CLASS(java::lang::NullPointerException,"java/lang/NullPointerException")

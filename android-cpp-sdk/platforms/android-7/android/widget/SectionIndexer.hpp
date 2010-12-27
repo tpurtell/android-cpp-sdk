@@ -32,10 +32,13 @@ namespace android { namespace widget {
 		J2CPP_DECLARE_METHOD(1)
 		J2CPP_DECLARE_METHOD(2)
 
-		SectionIndexer(jobject jobj)
+		explicit SectionIndexer(jobject jobj)
 		: cpp_object<SectionIndexer>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		local_ref< cpp_object_array<java::lang::Object, 1> > getSections();
 		cpp_int getPositionForSection(cpp_int const&);
@@ -44,7 +47,6 @@ namespace android { namespace widget {
 
 } //namespace widget
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -57,6 +59,12 @@ namespace android { namespace widget {
 
 namespace j2cpp {
 
+
+
+android::widget::SectionIndexer::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 local_ref< cpp_object_array<java::lang::Object, 1> > android::widget::SectionIndexer::getSections()
 {

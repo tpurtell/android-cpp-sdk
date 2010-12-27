@@ -16,6 +16,7 @@ namespace j2cpp { namespace java { namespace util { class UUID; } } }
 namespace j2cpp { namespace android { namespace bluetooth { class BluetoothClass; } } }
 namespace j2cpp { namespace android { namespace bluetooth { class BluetoothSocket; } } }
 namespace j2cpp { namespace android { namespace os { class Parcel; } } }
+namespace j2cpp { namespace android { namespace os { class Parcelable; } } }
 namespace j2cpp { namespace android { namespace os { namespace Parcelable_ { class Creator; } } } }
 
 
@@ -71,10 +72,14 @@ namespace android { namespace bluetooth {
 		J2CPP_DECLARE_FIELD(16)
 		J2CPP_DECLARE_FIELD(17)
 
-		BluetoothDevice(jobject jobj)
+		explicit BluetoothDevice(jobject jobj)
 		: cpp_object<BluetoothDevice>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<android::os::Parcelable>() const;
+
 
 		cpp_boolean equals(local_ref< java::lang::Object > const&);
 		cpp_int hashCode();
@@ -110,7 +115,6 @@ namespace android { namespace bluetooth {
 } //namespace bluetooth
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_BLUETOOTH_BLUETOOTHDEVICE_HPP_DECL
@@ -123,16 +127,17 @@ namespace android { namespace bluetooth {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::bluetooth::BluetoothDevice > create< android::bluetooth::BluetoothDevice>()
+
+android::bluetooth::BluetoothDevice::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::bluetooth::BluetoothDevice >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::bluetooth::BluetoothDevice::J2CPP_CLASS_NAME>(),
-			get_method_id<android::bluetooth::BluetoothDevice::J2CPP_CLASS_NAME, android::bluetooth::BluetoothDevice::J2CPP_METHOD_NAME(0), android::bluetooth::BluetoothDevice::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+android::bluetooth::BluetoothDevice::operator local_ref<android::os::Parcelable>() const
+{
+	return local_ref<android::os::Parcelable>(get_jtype());
+}
+
 
 cpp_boolean android::bluetooth::BluetoothDevice::equals(local_ref< java::lang::Object > const &a0)
 {
@@ -236,6 +241,7 @@ local_ref< android::bluetooth::BluetoothSocket > android::bluetooth::BluetoothDe
 		)
 	);
 }
+
 
 
 static_field<

@@ -10,8 +10,10 @@
 #define J2CPP_JAVA_UTIL_ZIP_CHECKSUM_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -31,10 +33,13 @@ namespace java { namespace util { namespace zip {
 		J2CPP_DECLARE_METHOD(2)
 		J2CPP_DECLARE_METHOD(3)
 
-		Checksum(jobject jobj)
+		explicit Checksum(jobject jobj)
 		: cpp_object<Checksum>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		cpp_long getValue();
 		void reset();
@@ -45,7 +50,6 @@ namespace java { namespace util { namespace zip {
 } //namespace zip
 } //namespace util
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -58,6 +62,12 @@ namespace java { namespace util { namespace zip {
 
 namespace j2cpp {
 
+
+
+java::util::zip::Checksum::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 cpp_long java::util::zip::Checksum::getValue()
 {

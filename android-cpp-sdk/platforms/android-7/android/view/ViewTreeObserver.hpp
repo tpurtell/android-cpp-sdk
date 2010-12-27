@@ -10,6 +10,7 @@
 #define J2CPP_ANDROID_VIEW_VIEWTREEOBSERVER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace android { namespace view { class View; } } }
 namespace j2cpp { namespace android { namespace view { namespace ViewTreeObserver_ { class OnTouchModeChangeListener; } } } }
 namespace j2cpp { namespace android { namespace view { namespace ViewTreeObserver_ { class OnPreDrawListener; } } } }
@@ -20,6 +21,7 @@ namespace j2cpp { namespace android { namespace view { namespace ViewTreeObserve
 
 #include <android/view/View.hpp>
 #include <android/view/ViewTreeObserver.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -39,10 +41,13 @@ namespace android { namespace view {
 
 			J2CPP_DECLARE_METHOD(0)
 
-			OnTouchModeChangeListener(jobject jobj)
+			explicit OnTouchModeChangeListener(jobject jobj)
 			: cpp_object<OnTouchModeChangeListener>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+
 
 			void onTouchModeChanged(cpp_boolean const&);
 		}; //class OnTouchModeChangeListener
@@ -57,10 +62,13 @@ namespace android { namespace view {
 
 			J2CPP_DECLARE_METHOD(0)
 
-			OnPreDrawListener(jobject jobj)
+			explicit OnPreDrawListener(jobject jobj)
 			: cpp_object<OnPreDrawListener>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+
 
 			cpp_boolean onPreDraw();
 		}; //class OnPreDrawListener
@@ -75,10 +83,13 @@ namespace android { namespace view {
 
 			J2CPP_DECLARE_METHOD(0)
 
-			OnGlobalFocusChangeListener(jobject jobj)
+			explicit OnGlobalFocusChangeListener(jobject jobj)
 			: cpp_object<OnGlobalFocusChangeListener>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+
 
 			void onGlobalFocusChanged(local_ref< android::view::View > const&, local_ref< android::view::View > const&);
 		}; //class OnGlobalFocusChangeListener
@@ -93,10 +104,13 @@ namespace android { namespace view {
 
 			J2CPP_DECLARE_METHOD(0)
 
-			OnGlobalLayoutListener(jobject jobj)
+			explicit OnGlobalLayoutListener(jobject jobj)
 			: cpp_object<OnGlobalLayoutListener>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+
 
 			void onGlobalLayout();
 		}; //class OnGlobalLayoutListener
@@ -111,10 +125,13 @@ namespace android { namespace view {
 
 			J2CPP_DECLARE_METHOD(0)
 
-			OnScrollChangedListener(jobject jobj)
+			explicit OnScrollChangedListener(jobject jobj)
 			: cpp_object<OnScrollChangedListener>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+
 
 			void onScrollChanged();
 		}; //class OnScrollChangedListener
@@ -149,10 +166,13 @@ namespace android { namespace view {
 		typedef ViewTreeObserver_::OnGlobalLayoutListener OnGlobalLayoutListener;
 		typedef ViewTreeObserver_::OnScrollChangedListener OnScrollChangedListener;
 
-		ViewTreeObserver(jobject jobj)
+		explicit ViewTreeObserver(jobject jobj)
 		: cpp_object<ViewTreeObserver>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		void addOnGlobalFocusChangeListener(local_ref< android::view::ViewTreeObserver_::OnGlobalFocusChangeListener > const&);
 		void removeOnGlobalFocusChangeListener(local_ref< android::view::ViewTreeObserver_::OnGlobalFocusChangeListener > const&);
@@ -172,7 +192,6 @@ namespace android { namespace view {
 } //namespace view
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_VIEW_VIEWTREEOBSERVER_HPP_DECL
@@ -185,6 +204,12 @@ namespace android { namespace view {
 namespace j2cpp {
 
 
+
+
+android::view::ViewTreeObserver_::OnTouchModeChangeListener::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 void android::view::ViewTreeObserver_::OnTouchModeChangeListener::onTouchModeChanged(cpp_boolean const &a0)
 {
@@ -201,6 +226,12 @@ void android::view::ViewTreeObserver_::OnTouchModeChangeListener::onTouchModeCha
 J2CPP_DEFINE_CLASS(android::view::ViewTreeObserver_::OnTouchModeChangeListener,"android/view/ViewTreeObserver$OnTouchModeChangeListener")
 J2CPP_DEFINE_METHOD(android::view::ViewTreeObserver_::OnTouchModeChangeListener,0,"onTouchModeChanged","(Z)V")
 
+
+android::view::ViewTreeObserver_::OnPreDrawListener::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
+
 cpp_boolean android::view::ViewTreeObserver_::OnPreDrawListener::onPreDraw()
 {
 	return cpp_boolean(
@@ -214,6 +245,12 @@ cpp_boolean android::view::ViewTreeObserver_::OnPreDrawListener::onPreDraw()
 
 J2CPP_DEFINE_CLASS(android::view::ViewTreeObserver_::OnPreDrawListener,"android/view/ViewTreeObserver$OnPreDrawListener")
 J2CPP_DEFINE_METHOD(android::view::ViewTreeObserver_::OnPreDrawListener,0,"onPreDraw","()Z")
+
+
+android::view::ViewTreeObserver_::OnGlobalFocusChangeListener::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 void android::view::ViewTreeObserver_::OnGlobalFocusChangeListener::onGlobalFocusChanged(local_ref< android::view::View > const &a0, local_ref< android::view::View > const &a1)
 {
@@ -230,6 +267,12 @@ void android::view::ViewTreeObserver_::OnGlobalFocusChangeListener::onGlobalFocu
 J2CPP_DEFINE_CLASS(android::view::ViewTreeObserver_::OnGlobalFocusChangeListener,"android/view/ViewTreeObserver$OnGlobalFocusChangeListener")
 J2CPP_DEFINE_METHOD(android::view::ViewTreeObserver_::OnGlobalFocusChangeListener,0,"onGlobalFocusChanged","(Landroid/view/View;Landroid/view/View;)V")
 
+
+android::view::ViewTreeObserver_::OnGlobalLayoutListener::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
+
 void android::view::ViewTreeObserver_::OnGlobalLayoutListener::onGlobalLayout()
 {
 	return void(
@@ -243,6 +286,12 @@ void android::view::ViewTreeObserver_::OnGlobalLayoutListener::onGlobalLayout()
 
 J2CPP_DEFINE_CLASS(android::view::ViewTreeObserver_::OnGlobalLayoutListener,"android/view/ViewTreeObserver$OnGlobalLayoutListener")
 J2CPP_DEFINE_METHOD(android::view::ViewTreeObserver_::OnGlobalLayoutListener,0,"onGlobalLayout","()V")
+
+
+android::view::ViewTreeObserver_::OnScrollChangedListener::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 void android::view::ViewTreeObserver_::OnScrollChangedListener::onScrollChanged()
 {
@@ -259,16 +308,12 @@ J2CPP_DEFINE_CLASS(android::view::ViewTreeObserver_::OnScrollChangedListener,"an
 J2CPP_DEFINE_METHOD(android::view::ViewTreeObserver_::OnScrollChangedListener,0,"onScrollChanged","()V")
 
 
-template <>
-local_ref< android::view::ViewTreeObserver > create< android::view::ViewTreeObserver>()
+
+android::view::ViewTreeObserver::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::view::ViewTreeObserver >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::view::ViewTreeObserver::J2CPP_CLASS_NAME>(),
-			get_method_id<android::view::ViewTreeObserver::J2CPP_CLASS_NAME, android::view::ViewTreeObserver::J2CPP_METHOD_NAME(0), android::view::ViewTreeObserver::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
 
 void android::view::ViewTreeObserver::addOnGlobalFocusChangeListener(local_ref< android::view::ViewTreeObserver_::OnGlobalFocusChangeListener > const &a0)
 {

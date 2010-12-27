@@ -10,12 +10,14 @@
 #define J2CPP_ORG_APACHE_HTTP_CONN_ROUTING_HTTPROUTEPLANNER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { class HttpRequest; } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace protocol { class HttpContext; } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace conn { namespace routing { class HttpRoute; } } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { class HttpHost; } } } }
 
 
+#include <java/lang/Object.hpp>
 #include <org/apache/http/HttpHost.hpp>
 #include <org/apache/http/HttpRequest.hpp>
 #include <org/apache/http/conn/routing/HttpRoute.hpp>
@@ -36,10 +38,13 @@ namespace org { namespace apache { namespace http { namespace conn { namespace r
 
 		J2CPP_DECLARE_METHOD(0)
 
-		HttpRoutePlanner(jobject jobj)
+		explicit HttpRoutePlanner(jobject jobj)
 		: cpp_object<HttpRoutePlanner>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		local_ref< org::apache::http::conn::routing::HttpRoute > determineRoute(local_ref< org::apache::http::HttpHost > const&, local_ref< org::apache::http::HttpRequest > const&, local_ref< org::apache::http::protocol::HttpContext > const&);
 	}; //class HttpRoutePlanner
@@ -49,7 +54,6 @@ namespace org { namespace apache { namespace http { namespace conn { namespace r
 } //namespace http
 } //namespace apache
 } //namespace org
-
 
 } //namespace j2cpp
 
@@ -62,6 +66,12 @@ namespace org { namespace apache { namespace http { namespace conn { namespace r
 
 namespace j2cpp {
 
+
+
+org::apache::http::conn::routing::HttpRoutePlanner::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 local_ref< org::apache::http::conn::routing::HttpRoute > org::apache::http::conn::routing::HttpRoutePlanner::determineRoute(local_ref< org::apache::http::HttpHost > const &a0, local_ref< org::apache::http::HttpRequest > const &a1, local_ref< org::apache::http::protocol::HttpContext > const &a2)
 {

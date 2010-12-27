@@ -11,10 +11,12 @@
 
 
 namespace j2cpp { namespace java { namespace net { class URI; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { class HttpHost; } } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/net/URI.hpp>
 #include <org/apache/http/HttpHost.hpp>
@@ -39,10 +41,13 @@ namespace org { namespace apache { namespace http { namespace client { namespace
 		J2CPP_DECLARE_METHOD(4)
 		J2CPP_DECLARE_METHOD(5)
 
-		URIUtils(jobject jobj)
+		explicit URIUtils(jobject jobj)
 		: cpp_object<URIUtils>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		static local_ref< java::net::URI > createURI(local_ref< java::lang::String > const&, local_ref< java::lang::String > const&, cpp_int const&, local_ref< java::lang::String > const&, local_ref< java::lang::String > const&, local_ref< java::lang::String > const&);
 		static local_ref< java::net::URI > rewriteURI(local_ref< java::net::URI > const&, local_ref< org::apache::http::HttpHost > const&, cpp_boolean const&);
@@ -57,7 +62,6 @@ namespace org { namespace apache { namespace http { namespace client { namespace
 } //namespace apache
 } //namespace org
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ORG_APACHE_HTTP_CLIENT_UTILS_URIUTILS_HPP_DECL
@@ -70,16 +74,12 @@ namespace org { namespace apache { namespace http { namespace client { namespace
 namespace j2cpp {
 
 
-template <>
-local_ref< org::apache::http::client::utils::URIUtils > create< org::apache::http::client::utils::URIUtils>()
+
+org::apache::http::client::utils::URIUtils::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< org::apache::http::client::utils::URIUtils >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::apache::http::client::utils::URIUtils::J2CPP_CLASS_NAME>(),
-			get_method_id<org::apache::http::client::utils::URIUtils::J2CPP_CLASS_NAME, org::apache::http::client::utils::URIUtils::J2CPP_METHOD_NAME(0), org::apache::http::client::utils::URIUtils::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
 
 local_ref< java::net::URI > org::apache::http::client::utils::URIUtils::createURI(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1, cpp_int const &a2, local_ref< java::lang::String > const &a3, local_ref< java::lang::String > const &a4, local_ref< java::lang::String > const &a5)
 {

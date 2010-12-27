@@ -11,14 +11,17 @@
 
 
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace lang { class Comparable; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace util { class Locale; } } }
 namespace j2cpp { namespace android { namespace os { class Parcel; } } }
+namespace j2cpp { namespace android { namespace os { class Parcelable; } } }
 namespace j2cpp { namespace android { namespace os { namespace Parcelable_ { class Creator; } } } }
 
 
 #include <android/os/Parcel.hpp>
 #include <android/os/Parcelable.hpp>
+#include <java/lang/Comparable.hpp>
 #include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/util/Locale.hpp>
@@ -100,23 +103,30 @@ namespace android { namespace content { namespace res {
 		J2CPP_DECLARE_FIELD(46)
 		J2CPP_DECLARE_FIELD(47)
 
-		Configuration(jobject jobj)
+		explicit Configuration(jobject jobj)
 		: cpp_object<Configuration>(jobj)
-		, fontScale(jobj)
-		, mcc(jobj)
-		, mnc(jobj)
-		, locale(jobj)
-		, screenLayout(jobj)
-		, touchscreen(jobj)
-		, keyboard(jobj)
-		, keyboardHidden(jobj)
-		, hardKeyboardHidden(jobj)
-		, navigation(jobj)
-		, navigationHidden(jobj)
-		, orientation(jobj)
+, fontScale(jobj)
+, mcc(jobj)
+, mnc(jobj)
+, locale(jobj)
+, screenLayout(jobj)
+, touchscreen(jobj)
+, keyboard(jobj)
+, keyboardHidden(jobj)
+, hardKeyboardHidden(jobj)
+, navigation(jobj)
+, navigationHidden(jobj)
+, orientation(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<android::os::Parcelable>() const;
+		operator local_ref<java::lang::Comparable>() const;
+
+
+		Configuration();
+		Configuration(local_ref< android::content::res::Configuration > const&);
 		local_ref< java::lang::String > toString();
 		void setToDefaults();
 		cpp_int updateFrom(local_ref< android::content::res::Configuration > const&);
@@ -184,7 +194,6 @@ namespace android { namespace content { namespace res {
 } //namespace content
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_CONTENT_RES_CONFIGURATION_HPP_DECL
@@ -197,28 +206,70 @@ namespace android { namespace content { namespace res {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::content::res::Configuration > create< android::content::res::Configuration>()
+
+android::content::res::Configuration::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::content::res::Configuration >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::content::res::Configuration::J2CPP_CLASS_NAME>(),
-			get_method_id<android::content::res::Configuration::J2CPP_CLASS_NAME, android::content::res::Configuration::J2CPP_METHOD_NAME(0), android::content::res::Configuration::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
 
-template <>
-local_ref< android::content::res::Configuration > create< android::content::res::Configuration>(local_ref< android::content::res::Configuration > const &a0)
+android::content::res::Configuration::operator local_ref<android::os::Parcelable>() const
 {
-	return local_ref< android::content::res::Configuration >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::content::res::Configuration::J2CPP_CLASS_NAME>(),
-			get_method_id<android::content::res::Configuration::J2CPP_CLASS_NAME, android::content::res::Configuration::J2CPP_METHOD_NAME(1), android::content::res::Configuration::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<android::os::Parcelable>(get_jtype());
 }
+
+android::content::res::Configuration::operator local_ref<java::lang::Comparable>() const
+{
+	return local_ref<java::lang::Comparable>(get_jtype());
+}
+
+
+android::content::res::Configuration::Configuration()
+: cpp_object<android::content::res::Configuration>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::content::res::Configuration::J2CPP_CLASS_NAME>(),
+		get_method_id<android::content::res::Configuration::J2CPP_CLASS_NAME, android::content::res::Configuration::J2CPP_METHOD_NAME(0), android::content::res::Configuration::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+, fontScale(get_jtype())
+, mcc(get_jtype())
+, mnc(get_jtype())
+, locale(get_jtype())
+, screenLayout(get_jtype())
+, touchscreen(get_jtype())
+, keyboard(get_jtype())
+, keyboardHidden(get_jtype())
+, hardKeyboardHidden(get_jtype())
+, navigation(get_jtype())
+, navigationHidden(get_jtype())
+, orientation(get_jtype())
+{
+}
+
+
+
+android::content::res::Configuration::Configuration(local_ref< android::content::res::Configuration > const &a0)
+: cpp_object<android::content::res::Configuration>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::content::res::Configuration::J2CPP_CLASS_NAME>(),
+		get_method_id<android::content::res::Configuration::J2CPP_CLASS_NAME, android::content::res::Configuration::J2CPP_METHOD_NAME(1), android::content::res::Configuration::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
+, fontScale(get_jtype())
+, mcc(get_jtype())
+, mnc(get_jtype())
+, locale(get_jtype())
+, screenLayout(get_jtype())
+, touchscreen(get_jtype())
+, keyboard(get_jtype())
+, keyboardHidden(get_jtype())
+, hardKeyboardHidden(get_jtype())
+, navigation(get_jtype())
+, navigationHidden(get_jtype())
+, orientation(get_jtype())
+{
+}
+
 
 local_ref< java::lang::String > android::content::res::Configuration::toString()
 {
@@ -347,6 +398,7 @@ cpp_int android::content::res::Configuration::compareTo(local_ref< java::lang::O
 		)
 	);
 }
+
 
 
 static_field<

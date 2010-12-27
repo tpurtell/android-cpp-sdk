@@ -10,12 +10,15 @@
 #define J2CPP_ANDROID_VIEW_INPUTMETHOD_EXTRACTEDTEXTREQUEST_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace android { namespace os { class Parcel; } } }
+namespace j2cpp { namespace android { namespace os { class Parcelable; } } }
 namespace j2cpp { namespace android { namespace os { namespace Parcelable_ { class Creator; } } } }
 
 
 #include <android/os/Parcel.hpp>
 #include <android/os/Parcelable.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -40,15 +43,20 @@ namespace android { namespace view { namespace inputmethod {
 		J2CPP_DECLARE_FIELD(3)
 		J2CPP_DECLARE_FIELD(4)
 
-		ExtractedTextRequest(jobject jobj)
+		explicit ExtractedTextRequest(jobject jobj)
 		: cpp_object<ExtractedTextRequest>(jobj)
-		, token(jobj)
-		, flags(jobj)
-		, hintMaxLines(jobj)
-		, hintMaxChars(jobj)
+, token(jobj)
+, flags(jobj)
+, hintMaxLines(jobj)
+, hintMaxChars(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<android::os::Parcelable>() const;
+
+
+		ExtractedTextRequest();
 		void writeToParcel(local_ref< android::os::Parcel > const&, cpp_int const&);
 		cpp_int describeContents();
 
@@ -63,7 +71,6 @@ namespace android { namespace view { namespace inputmethod {
 } //namespace view
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_VIEW_INPUTMETHOD_EXTRACTEDTEXTREQUEST_HPP_DECL
@@ -76,16 +83,32 @@ namespace android { namespace view { namespace inputmethod {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::view::inputmethod::ExtractedTextRequest > create< android::view::inputmethod::ExtractedTextRequest>()
+
+android::view::inputmethod::ExtractedTextRequest::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::view::inputmethod::ExtractedTextRequest >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::view::inputmethod::ExtractedTextRequest::J2CPP_CLASS_NAME>(),
-			get_method_id<android::view::inputmethod::ExtractedTextRequest::J2CPP_CLASS_NAME, android::view::inputmethod::ExtractedTextRequest::J2CPP_METHOD_NAME(0), android::view::inputmethod::ExtractedTextRequest::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+android::view::inputmethod::ExtractedTextRequest::operator local_ref<android::os::Parcelable>() const
+{
+	return local_ref<android::os::Parcelable>(get_jtype());
+}
+
+
+android::view::inputmethod::ExtractedTextRequest::ExtractedTextRequest()
+: cpp_object<android::view::inputmethod::ExtractedTextRequest>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::view::inputmethod::ExtractedTextRequest::J2CPP_CLASS_NAME>(),
+		get_method_id<android::view::inputmethod::ExtractedTextRequest::J2CPP_CLASS_NAME, android::view::inputmethod::ExtractedTextRequest::J2CPP_METHOD_NAME(0), android::view::inputmethod::ExtractedTextRequest::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+, token(get_jtype())
+, flags(get_jtype())
+, hintMaxLines(get_jtype())
+, hintMaxChars(get_jtype())
+{
+}
+
 
 void android::view::inputmethod::ExtractedTextRequest::writeToParcel(local_ref< android::os::Parcel > const &a0, cpp_int const &a1)
 {
@@ -107,6 +130,7 @@ cpp_int android::view::inputmethod::ExtractedTextRequest::describeContents()
 		)
 	);
 }
+
 
 
 static_field<

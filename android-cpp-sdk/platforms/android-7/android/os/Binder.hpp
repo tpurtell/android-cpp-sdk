@@ -11,7 +11,9 @@
 
 
 namespace j2cpp { namespace java { namespace io { class FileDescriptor; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace android { namespace os { class IBinder; } } }
 namespace j2cpp { namespace android { namespace os { namespace IBinder_ { class DeathRecipient; } } } }
 namespace j2cpp { namespace android { namespace os { class Parcel; } } }
 namespace j2cpp { namespace android { namespace os { class IInterface; } } }
@@ -21,6 +23,7 @@ namespace j2cpp { namespace android { namespace os { class IInterface; } } }
 #include <android/os/IInterface.hpp>
 #include <android/os/Parcel.hpp>
 #include <java/io/FileDescriptor.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -56,11 +59,16 @@ namespace android { namespace os {
 		J2CPP_DECLARE_METHOD(17)
 		J2CPP_DECLARE_METHOD(18)
 
-		Binder(jobject jobj)
+		explicit Binder(jobject jobj)
 		: cpp_object<Binder>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<android::os::IBinder>() const;
+
+
+		Binder();
 		static cpp_int getCallingPid();
 		static cpp_int getCallingUid();
 		static cpp_long clearCallingIdentity();
@@ -81,7 +89,6 @@ namespace android { namespace os {
 } //namespace os
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_OS_BINDER_HPP_DECL
@@ -94,16 +101,28 @@ namespace android { namespace os {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::os::Binder > create< android::os::Binder>()
+
+android::os::Binder::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::os::Binder >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::os::Binder::J2CPP_CLASS_NAME>(),
-			get_method_id<android::os::Binder::J2CPP_CLASS_NAME, android::os::Binder::J2CPP_METHOD_NAME(0), android::os::Binder::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+android::os::Binder::operator local_ref<android::os::IBinder>() const
+{
+	return local_ref<android::os::IBinder>(get_jtype());
+}
+
+
+android::os::Binder::Binder()
+: cpp_object<android::os::Binder>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::os::Binder::J2CPP_CLASS_NAME>(),
+		get_method_id<android::os::Binder::J2CPP_CLASS_NAME, android::os::Binder::J2CPP_METHOD_NAME(0), android::os::Binder::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 cpp_int android::os::Binder::getCallingPid()
 {

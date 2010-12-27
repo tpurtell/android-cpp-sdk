@@ -10,9 +10,11 @@
 #define J2CPP_ANDROID_GESTURE_PREDICTION_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -33,12 +35,15 @@ namespace android { namespace gesture {
 		J2CPP_DECLARE_FIELD(0)
 		J2CPP_DECLARE_FIELD(1)
 
-		Prediction(jobject jobj)
+		explicit Prediction(jobject jobj)
 		: cpp_object<Prediction>(jobj)
-		, name(jobj)
-		, score(jobj)
+, name(jobj)
+, score(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		local_ref< java::lang::String > toString();
 
@@ -48,7 +53,6 @@ namespace android { namespace gesture {
 
 } //namespace gesture
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -62,16 +66,12 @@ namespace android { namespace gesture {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::gesture::Prediction > create< android::gesture::Prediction>()
+
+android::gesture::Prediction::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::gesture::Prediction >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::gesture::Prediction::J2CPP_CLASS_NAME>(),
-			get_method_id<android::gesture::Prediction::J2CPP_CLASS_NAME, android::gesture::Prediction::J2CPP_METHOD_NAME(0), android::gesture::Prediction::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
 
 local_ref< java::lang::String > android::gesture::Prediction::toString()
 {

@@ -10,8 +10,12 @@
 #define J2CPP_ORG_W3C_DOM_DOCUMENTFRAGMENT_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace org { namespace w3c { namespace dom { class Node; } } } }
 
 
+#include <java/lang/Object.hpp>
+#include <org/w3c/dom/Node.hpp>
 
 
 namespace j2cpp {
@@ -27,16 +31,19 @@ namespace org { namespace w3c { namespace dom {
 		J2CPP_DECLARE_CLASS
 
 
-		DocumentFragment(jobject jobj)
+		explicit DocumentFragment(jobject jobj)
 		: cpp_object<DocumentFragment>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<org::w3c::dom::Node>() const;
+
 	}; //class DocumentFragment
 
 } //namespace dom
 } //namespace w3c
 } //namespace org
-
 
 } //namespace j2cpp
 
@@ -49,6 +56,17 @@ namespace org { namespace w3c { namespace dom {
 
 namespace j2cpp {
 
+
+
+org::w3c::dom::DocumentFragment::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
+
+org::w3c::dom::DocumentFragment::operator local_ref<org::w3c::dom::Node>() const
+{
+	return local_ref<org::w3c::dom::Node>(get_jtype());
+}
 
 J2CPP_DEFINE_CLASS(org::w3c::dom::DocumentFragment,"org/w3c/dom/DocumentFragment")
 

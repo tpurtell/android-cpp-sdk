@@ -12,11 +12,13 @@
 
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace android { namespace content { class Context; } } }
+namespace j2cpp { namespace android { namespace preference { class DialogPreference; } } }
 namespace j2cpp { namespace android { namespace widget { class EditText; } } }
 namespace j2cpp { namespace android { namespace util { class AttributeSet; } } }
 
 
 #include <android/content/Context.hpp>
+#include <android/preference/DialogPreference.hpp>
 #include <android/util/AttributeSet.hpp>
 #include <android/widget/EditText.hpp>
 #include <java/lang/String.hpp>
@@ -49,11 +51,17 @@ namespace android { namespace preference {
 		J2CPP_DECLARE_METHOD(12)
 		J2CPP_DECLARE_METHOD(13)
 
-		EditTextPreference(jobject jobj)
+		explicit EditTextPreference(jobject jobj)
 		: cpp_object<EditTextPreference>(jobj)
 		{
 		}
 
+		operator local_ref<android::preference::DialogPreference>() const;
+
+
+		EditTextPreference(local_ref< android::content::Context > const&, local_ref< android::util::AttributeSet > const&, cpp_int const&);
+		EditTextPreference(local_ref< android::content::Context > const&, local_ref< android::util::AttributeSet > const&);
+		EditTextPreference(local_ref< android::content::Context > const&);
 		void setText(local_ref< java::lang::String > const&);
 		local_ref< java::lang::String > getText();
 		cpp_boolean shouldDisableDependents();
@@ -62,7 +70,6 @@ namespace android { namespace preference {
 
 } //namespace preference
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -76,41 +83,50 @@ namespace android { namespace preference {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::preference::EditTextPreference > create< android::preference::EditTextPreference>(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1, cpp_int const &a2)
+
+android::preference::EditTextPreference::operator local_ref<android::preference::DialogPreference>() const
 {
-	return local_ref< android::preference::EditTextPreference >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::preference::EditTextPreference::J2CPP_CLASS_NAME>(),
-			get_method_id<android::preference::EditTextPreference::J2CPP_CLASS_NAME, android::preference::EditTextPreference::J2CPP_METHOD_NAME(0), android::preference::EditTextPreference::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
-		)
-	);
+	return local_ref<android::preference::DialogPreference>(get_jtype());
 }
 
-template <>
-local_ref< android::preference::EditTextPreference > create< android::preference::EditTextPreference>(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1)
+
+android::preference::EditTextPreference::EditTextPreference(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1, cpp_int const &a2)
+: cpp_object<android::preference::EditTextPreference>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::preference::EditTextPreference::J2CPP_CLASS_NAME>(),
+		get_method_id<android::preference::EditTextPreference::J2CPP_CLASS_NAME, android::preference::EditTextPreference::J2CPP_METHOD_NAME(0), android::preference::EditTextPreference::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
+	)
+)
 {
-	return local_ref< android::preference::EditTextPreference >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::preference::EditTextPreference::J2CPP_CLASS_NAME>(),
-			get_method_id<android::preference::EditTextPreference::J2CPP_CLASS_NAME, android::preference::EditTextPreference::J2CPP_METHOD_NAME(1), android::preference::EditTextPreference::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< android::preference::EditTextPreference > create< android::preference::EditTextPreference>(local_ref< android::content::Context > const &a0)
+
+
+android::preference::EditTextPreference::EditTextPreference(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1)
+: cpp_object<android::preference::EditTextPreference>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::preference::EditTextPreference::J2CPP_CLASS_NAME>(),
+		get_method_id<android::preference::EditTextPreference::J2CPP_CLASS_NAME, android::preference::EditTextPreference::J2CPP_METHOD_NAME(1), android::preference::EditTextPreference::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
 {
-	return local_ref< android::preference::EditTextPreference >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::preference::EditTextPreference::J2CPP_CLASS_NAME>(),
-			get_method_id<android::preference::EditTextPreference::J2CPP_CLASS_NAME, android::preference::EditTextPreference::J2CPP_METHOD_NAME(2), android::preference::EditTextPreference::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype()
-		)
-	);
 }
+
+
+
+android::preference::EditTextPreference::EditTextPreference(local_ref< android::content::Context > const &a0)
+: cpp_object<android::preference::EditTextPreference>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::preference::EditTextPreference::J2CPP_CLASS_NAME>(),
+		get_method_id<android::preference::EditTextPreference::J2CPP_CLASS_NAME, android::preference::EditTextPreference::J2CPP_METHOD_NAME(2), android::preference::EditTextPreference::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 void android::preference::EditTextPreference::setText(local_ref< java::lang::String > const &a0)
 {

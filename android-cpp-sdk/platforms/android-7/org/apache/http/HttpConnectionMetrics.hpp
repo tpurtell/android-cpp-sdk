@@ -37,10 +37,13 @@ namespace org { namespace apache { namespace http {
 		J2CPP_DECLARE_METHOD(4)
 		J2CPP_DECLARE_METHOD(5)
 
-		HttpConnectionMetrics(jobject jobj)
+		explicit HttpConnectionMetrics(jobject jobj)
 		: cpp_object<HttpConnectionMetrics>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		cpp_long getRequestCount();
 		cpp_long getResponseCount();
@@ -54,7 +57,6 @@ namespace org { namespace apache { namespace http {
 } //namespace apache
 } //namespace org
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ORG_APACHE_HTTP_HTTPCONNECTIONMETRICS_HPP_DECL
@@ -66,6 +68,12 @@ namespace org { namespace apache { namespace http {
 
 namespace j2cpp {
 
+
+
+org::apache::http::HttpConnectionMetrics::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 cpp_long org::apache::http::HttpConnectionMetrics::getRequestCount()
 {

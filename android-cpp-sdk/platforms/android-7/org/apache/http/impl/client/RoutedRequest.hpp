@@ -10,10 +10,12 @@
 #define J2CPP_ORG_APACHE_HTTP_IMPL_CLIENT_ROUTEDREQUEST_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace conn { namespace routing { class HttpRoute; } } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace impl { namespace client { class RequestWrapper; } } } } } }
 
 
+#include <java/lang/Object.hpp>
 #include <org/apache/http/conn/routing/HttpRoute.hpp>
 #include <org/apache/http/impl/client/RequestWrapper.hpp>
 
@@ -36,11 +38,15 @@ namespace org { namespace apache { namespace http { namespace impl { namespace c
 		J2CPP_DECLARE_FIELD(0)
 		J2CPP_DECLARE_FIELD(1)
 
-		RoutedRequest(jobject jobj)
+		explicit RoutedRequest(jobject jobj)
 		: cpp_object<RoutedRequest>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		RoutedRequest(local_ref< org::apache::http::impl::client::RequestWrapper > const&, local_ref< org::apache::http::conn::routing::HttpRoute > const&);
 		local_ref< org::apache::http::impl::client::RequestWrapper > getRequest();
 		local_ref< org::apache::http::conn::routing::HttpRoute > getRoute();
 
@@ -51,7 +57,6 @@ namespace org { namespace apache { namespace http { namespace impl { namespace c
 } //namespace http
 } //namespace apache
 } //namespace org
-
 
 } //namespace j2cpp
 
@@ -65,17 +70,24 @@ namespace org { namespace apache { namespace http { namespace impl { namespace c
 namespace j2cpp {
 
 
-template <>
-local_ref< org::apache::http::impl::client::RoutedRequest > create< org::apache::http::impl::client::RoutedRequest>(local_ref< org::apache::http::impl::client::RequestWrapper > const &a0, local_ref< org::apache::http::conn::routing::HttpRoute > const &a1)
+
+org::apache::http::impl::client::RoutedRequest::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< org::apache::http::impl::client::RoutedRequest >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::apache::http::impl::client::RoutedRequest::J2CPP_CLASS_NAME>(),
-			get_method_id<org::apache::http::impl::client::RoutedRequest::J2CPP_CLASS_NAME, org::apache::http::impl::client::RoutedRequest::J2CPP_METHOD_NAME(0), org::apache::http::impl::client::RoutedRequest::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+org::apache::http::impl::client::RoutedRequest::RoutedRequest(local_ref< org::apache::http::impl::client::RequestWrapper > const &a0, local_ref< org::apache::http::conn::routing::HttpRoute > const &a1)
+: cpp_object<org::apache::http::impl::client::RoutedRequest>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::apache::http::impl::client::RoutedRequest::J2CPP_CLASS_NAME>(),
+		get_method_id<org::apache::http::impl::client::RoutedRequest::J2CPP_CLASS_NAME, org::apache::http::impl::client::RoutedRequest::J2CPP_METHOD_NAME(0), org::apache::http::impl::client::RoutedRequest::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
 
 local_ref< org::apache::http::impl::client::RequestWrapper > org::apache::http::impl::client::RoutedRequest::getRequest()
 {

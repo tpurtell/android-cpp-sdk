@@ -10,8 +10,10 @@
 #define J2CPP_ANDROID_TEST_ACTIVITYTESTCASE_HPP_DECL
 
 
+namespace j2cpp { namespace android { namespace test { class InstrumentationTestCase; } } }
 
 
+#include <android/test/InstrumentationTestCase.hpp>
 
 
 namespace j2cpp {
@@ -31,16 +33,19 @@ namespace android { namespace test {
 		J2CPP_DECLARE_METHOD(2)
 		J2CPP_DECLARE_METHOD(3)
 
-		ActivityTestCase(jobject jobj)
+		explicit ActivityTestCase(jobject jobj)
 		: cpp_object<ActivityTestCase>(jobj)
 		{
 		}
 
+		operator local_ref<android::test::InstrumentationTestCase>() const;
+
+
+		ActivityTestCase();
 	}; //class ActivityTestCase
 
 } //namespace test
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -54,16 +59,23 @@ namespace android { namespace test {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::test::ActivityTestCase > create< android::test::ActivityTestCase>()
+
+android::test::ActivityTestCase::operator local_ref<android::test::InstrumentationTestCase>() const
 {
-	return local_ref< android::test::ActivityTestCase >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::test::ActivityTestCase::J2CPP_CLASS_NAME>(),
-			get_method_id<android::test::ActivityTestCase::J2CPP_CLASS_NAME, android::test::ActivityTestCase::J2CPP_METHOD_NAME(0), android::test::ActivityTestCase::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<android::test::InstrumentationTestCase>(get_jtype());
 }
+
+
+android::test::ActivityTestCase::ActivityTestCase()
+: cpp_object<android::test::ActivityTestCase>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::test::ActivityTestCase::J2CPP_CLASS_NAME>(),
+		get_method_id<android::test::ActivityTestCase::J2CPP_CLASS_NAME, android::test::ActivityTestCase::J2CPP_METHOD_NAME(0), android::test::ActivityTestCase::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 
 

@@ -10,12 +10,16 @@
 #define J2CPP_JAVA_LANG_ENUM_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class Class; } } }
+namespace j2cpp { namespace java { namespace lang { class Comparable; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 
 
+#include <java/io/Serializable.hpp>
 #include <java/lang/Class.hpp>
+#include <java/lang/Comparable.hpp>
 #include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
@@ -44,10 +48,15 @@ namespace java { namespace lang {
 		J2CPP_DECLARE_METHOD(9)
 		J2CPP_DECLARE_METHOD(10)
 
-		Enum(jobject jobj)
+		explicit Enum(jobject jobj)
 		: cpp_object<Enum>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::io::Serializable>() const;
+		operator local_ref<java::lang::Comparable>() const;
+
 
 		local_ref< java::lang::String > name();
 		cpp_int ordinal();
@@ -63,7 +72,6 @@ namespace java { namespace lang {
 } //namespace lang
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_LANG_ENUM_HPP_DECL
@@ -76,17 +84,22 @@ namespace java { namespace lang {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::lang::Enum > create< java::lang::Enum>(local_ref< java::lang::String > const &a0, cpp_int const &a1)
+
+java::lang::Enum::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::lang::Enum >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::lang::Enum::J2CPP_CLASS_NAME>(),
-			get_method_id<java::lang::Enum::J2CPP_CLASS_NAME, java::lang::Enum::J2CPP_METHOD_NAME(0), java::lang::Enum::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+java::lang::Enum::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jtype());
+}
+
+java::lang::Enum::operator local_ref<java::lang::Comparable>() const
+{
+	return local_ref<java::lang::Comparable>(get_jtype());
+}
+
 
 local_ref< java::lang::String > java::lang::Enum::name()
 {

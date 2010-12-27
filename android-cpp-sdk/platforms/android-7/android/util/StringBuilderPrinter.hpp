@@ -10,10 +10,14 @@
 #define J2CPP_ANDROID_UTIL_STRINGBUILDERPRINTER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class StringBuilder; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace android { namespace util { class Printer; } } }
 
 
+#include <android/util/Printer.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/lang/StringBuilder.hpp>
 
@@ -33,17 +37,21 @@ namespace android { namespace util {
 		J2CPP_DECLARE_METHOD(0)
 		J2CPP_DECLARE_METHOD(1)
 
-		StringBuilderPrinter(jobject jobj)
+		explicit StringBuilderPrinter(jobject jobj)
 		: cpp_object<StringBuilderPrinter>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<android::util::Printer>() const;
+
+
+		StringBuilderPrinter(local_ref< java::lang::StringBuilder > const&);
 		void println(local_ref< java::lang::String > const&);
 	}; //class StringBuilderPrinter
 
 } //namespace util
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -57,17 +65,29 @@ namespace android { namespace util {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::util::StringBuilderPrinter > create< android::util::StringBuilderPrinter>(local_ref< java::lang::StringBuilder > const &a0)
+
+android::util::StringBuilderPrinter::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::util::StringBuilderPrinter >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::util::StringBuilderPrinter::J2CPP_CLASS_NAME>(),
-			get_method_id<android::util::StringBuilderPrinter::J2CPP_CLASS_NAME, android::util::StringBuilderPrinter::J2CPP_METHOD_NAME(0), android::util::StringBuilderPrinter::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+android::util::StringBuilderPrinter::operator local_ref<android::util::Printer>() const
+{
+	return local_ref<android::util::Printer>(get_jtype());
+}
+
+
+android::util::StringBuilderPrinter::StringBuilderPrinter(local_ref< java::lang::StringBuilder > const &a0)
+: cpp_object<android::util::StringBuilderPrinter>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::util::StringBuilderPrinter::J2CPP_CLASS_NAME>(),
+		get_method_id<android::util::StringBuilderPrinter::J2CPP_CLASS_NAME, android::util::StringBuilderPrinter::J2CPP_METHOD_NAME(0), android::util::StringBuilderPrinter::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 void android::util::StringBuilderPrinter::println(local_ref< java::lang::String > const &a0)
 {

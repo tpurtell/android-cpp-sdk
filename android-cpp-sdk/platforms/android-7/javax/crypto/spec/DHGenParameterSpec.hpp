@@ -10,8 +10,12 @@
 #define J2CPP_JAVAX_CRYPTO_SPEC_DHGENPARAMETERSPEC_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace security { namespace spec { class AlgorithmParameterSpec; } } } }
 
 
+#include <java/lang/Object.hpp>
+#include <java/security/spec/AlgorithmParameterSpec.hpp>
 
 
 namespace j2cpp {
@@ -30,11 +34,16 @@ namespace javax { namespace crypto { namespace spec {
 		J2CPP_DECLARE_METHOD(1)
 		J2CPP_DECLARE_METHOD(2)
 
-		DHGenParameterSpec(jobject jobj)
+		explicit DHGenParameterSpec(jobject jobj)
 		: cpp_object<DHGenParameterSpec>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::security::spec::AlgorithmParameterSpec>() const;
+
+
+		DHGenParameterSpec(cpp_int const&, cpp_int const&);
 		cpp_int getPrimeSize();
 		cpp_int getExponentSize();
 	}; //class DHGenParameterSpec
@@ -42,7 +51,6 @@ namespace javax { namespace crypto { namespace spec {
 } //namespace spec
 } //namespace crypto
 } //namespace javax
-
 
 } //namespace j2cpp
 
@@ -56,17 +64,29 @@ namespace javax { namespace crypto { namespace spec {
 namespace j2cpp {
 
 
-template <>
-local_ref< javax::crypto::spec::DHGenParameterSpec > create< javax::crypto::spec::DHGenParameterSpec>(cpp_int const &a0, cpp_int const &a1)
+
+javax::crypto::spec::DHGenParameterSpec::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< javax::crypto::spec::DHGenParameterSpec >(
-		environment::get().get_jenv()->NewObject(
-			get_class<javax::crypto::spec::DHGenParameterSpec::J2CPP_CLASS_NAME>(),
-			get_method_id<javax::crypto::spec::DHGenParameterSpec::J2CPP_CLASS_NAME, javax::crypto::spec::DHGenParameterSpec::J2CPP_METHOD_NAME(0), javax::crypto::spec::DHGenParameterSpec::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+javax::crypto::spec::DHGenParameterSpec::operator local_ref<java::security::spec::AlgorithmParameterSpec>() const
+{
+	return local_ref<java::security::spec::AlgorithmParameterSpec>(get_jtype());
+}
+
+
+javax::crypto::spec::DHGenParameterSpec::DHGenParameterSpec(cpp_int const &a0, cpp_int const &a1)
+: cpp_object<javax::crypto::spec::DHGenParameterSpec>(
+	environment::get().get_jenv()->NewObject(
+		get_class<javax::crypto::spec::DHGenParameterSpec::J2CPP_CLASS_NAME>(),
+		get_method_id<javax::crypto::spec::DHGenParameterSpec::J2CPP_CLASS_NAME, javax::crypto::spec::DHGenParameterSpec::J2CPP_METHOD_NAME(0), javax::crypto::spec::DHGenParameterSpec::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
 
 cpp_int javax::crypto::spec::DHGenParameterSpec::getPrimeSize()
 {

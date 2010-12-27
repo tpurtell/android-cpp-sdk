@@ -19,6 +19,7 @@ namespace j2cpp { namespace android { namespace graphics { class Canvas; } } }
 namespace j2cpp { namespace android { namespace graphics { class Bitmap; } } }
 namespace j2cpp { namespace android { namespace graphics { class Point; } } }
 namespace j2cpp { namespace android { namespace graphics { namespace drawable { class Drawable; } } } }
+namespace j2cpp { namespace android { namespace graphics { namespace drawable { namespace Drawable_ { class Callback; } } } } }
 namespace j2cpp { namespace android { namespace graphics { class Rect; } } }
 namespace j2cpp { namespace android { namespace content { namespace res { class Resources; } } } }
 namespace j2cpp { namespace android { namespace content { class Context; } } }
@@ -31,9 +32,11 @@ namespace j2cpp { namespace android { namespace view { class KeyEvent; } } }
 namespace j2cpp { namespace android { namespace view { class ViewParent; } } }
 namespace j2cpp { namespace android { namespace view { class ContextMenu; } } }
 namespace j2cpp { namespace android { namespace view { namespace View_ { class OnLongClickListener; } } } }
+namespace j2cpp { namespace android { namespace view { class AbsSavedState; } } }
 namespace j2cpp { namespace android { namespace view { class TouchDelegate; } } }
 namespace j2cpp { namespace android { namespace view { class MotionEvent; } } }
 namespace j2cpp { namespace android { namespace view { namespace accessibility { class AccessibilityEvent; } } } }
+namespace j2cpp { namespace android { namespace view { namespace accessibility { class AccessibilityEventSource; } } } }
 namespace j2cpp { namespace android { namespace view { namespace KeyEvent_ { class DispatcherState; } } } }
 namespace j2cpp { namespace android { namespace view { namespace View_ { class OnClickListener; } } } }
 namespace j2cpp { namespace android { namespace view { namespace ViewGroup_ { class LayoutParams; } } } }
@@ -64,6 +67,7 @@ namespace j2cpp { namespace android { namespace os { namespace Parcelable_ { cla
 #include <android/os/Parcelable.hpp>
 #include <android/util/AttributeSet.hpp>
 #include <android/util/SparseArray.hpp>
+#include <android/view/AbsSavedState.hpp>
 #include <android/view/ContextMenu.hpp>
 #include <android/view/KeyEvent.hpp>
 #include <android/view/MotionEvent.hpp>
@@ -73,6 +77,7 @@ namespace j2cpp { namespace android { namespace os { namespace Parcelable_ { cla
 #include <android/view/ViewParent.hpp>
 #include <android/view/ViewTreeObserver.hpp>
 #include <android/view/accessibility/AccessibilityEvent.hpp>
+#include <android/view/accessibility/AccessibilityEventSource.hpp>
 #include <android/view/animation/Animation.hpp>
 #include <android/view/inputmethod/EditorInfo.hpp>
 #include <android/view/inputmethod/InputConnection.hpp>
@@ -100,10 +105,13 @@ namespace android { namespace view {
 
 			J2CPP_DECLARE_METHOD(0)
 
-			OnTouchListener(jobject jobj)
+			explicit OnTouchListener(jobject jobj)
 			: cpp_object<OnTouchListener>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+
 
 			cpp_boolean onTouch(local_ref< android::view::View > const&, local_ref< android::view::MotionEvent > const&);
 		}; //class OnTouchListener
@@ -121,11 +129,16 @@ namespace android { namespace view {
 			J2CPP_DECLARE_METHOD(2)
 			J2CPP_DECLARE_FIELD(0)
 
-			BaseSavedState(jobject jobj)
+			explicit BaseSavedState(jobject jobj)
 			: cpp_object<BaseSavedState>(jobj)
 			{
 			}
 
+			operator local_ref<android::view::AbsSavedState>() const;
+
+
+			BaseSavedState(local_ref< android::os::Parcel > const&);
+			BaseSavedState(local_ref< android::os::Parcelable > const&);
 
 			static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(0), J2CPP_FIELD_SIGNATURE(0), local_ref< android::os::Parcelable_::Creator > > CREATOR;
 		}; //class BaseSavedState
@@ -140,10 +153,13 @@ namespace android { namespace view {
 
 			J2CPP_DECLARE_METHOD(0)
 
-			OnLongClickListener(jobject jobj)
+			explicit OnLongClickListener(jobject jobj)
 			: cpp_object<OnLongClickListener>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+
 
 			cpp_boolean onLongClick(local_ref< android::view::View > const&);
 		}; //class OnLongClickListener
@@ -158,10 +174,13 @@ namespace android { namespace view {
 
 			J2CPP_DECLARE_METHOD(0)
 
-			OnClickListener(jobject jobj)
+			explicit OnClickListener(jobject jobj)
 			: cpp_object<OnClickListener>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+
 
 			void onClick(local_ref< android::view::View > const&);
 		}; //class OnClickListener
@@ -176,10 +195,13 @@ namespace android { namespace view {
 
 			J2CPP_DECLARE_METHOD(0)
 
-			OnFocusChangeListener(jobject jobj)
+			explicit OnFocusChangeListener(jobject jobj)
 			: cpp_object<OnFocusChangeListener>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+
 
 			void onFocusChange(local_ref< android::view::View > const&, cpp_boolean const&);
 		}; //class OnFocusChangeListener
@@ -194,10 +216,13 @@ namespace android { namespace view {
 
 			J2CPP_DECLARE_METHOD(0)
 
-			OnKeyListener(jobject jobj)
+			explicit OnKeyListener(jobject jobj)
 			: cpp_object<OnKeyListener>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+
 
 			cpp_boolean onKey(local_ref< android::view::View > const&, cpp_int const&, local_ref< android::view::KeyEvent > const&);
 		}; //class OnKeyListener
@@ -212,10 +237,13 @@ namespace android { namespace view {
 
 			J2CPP_DECLARE_METHOD(0)
 
-			OnCreateContextMenuListener(jobject jobj)
+			explicit OnCreateContextMenuListener(jobject jobj)
 			: cpp_object<OnCreateContextMenuListener>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+
 
 			void onCreateContextMenu(local_ref< android::view::ContextMenu > const&, local_ref< android::view::View > const&, local_ref< android::view::ContextMenu_::ContextMenuInfo > const&);
 		}; //class OnCreateContextMenuListener
@@ -237,11 +265,15 @@ namespace android { namespace view {
 			J2CPP_DECLARE_FIELD(1)
 			J2CPP_DECLARE_FIELD(2)
 
-			MeasureSpec(jobject jobj)
+			explicit MeasureSpec(jobject jobj)
 			: cpp_object<MeasureSpec>(jobj)
 			{
 			}
 
+			operator local_ref<java::lang::Object>() const;
+
+
+			MeasureSpec();
 			static cpp_int makeMeasureSpec(cpp_int const&, cpp_int const&);
 			static cpp_int getMode(cpp_int const&);
 			static cpp_int getSize(cpp_int const&);
@@ -605,11 +637,19 @@ namespace android { namespace view {
 		typedef View_::OnCreateContextMenuListener OnCreateContextMenuListener;
 		typedef View_::MeasureSpec MeasureSpec;
 
-		View(jobject jobj)
+		explicit View(jobject jobj)
 		: cpp_object<View>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<android::graphics::drawable::Drawable_::Callback>() const;
+		operator local_ref<android::view::accessibility::AccessibilityEventSource>() const;
+
+
+		View(local_ref< android::content::Context > const&);
+		View(local_ref< android::content::Context > const&, local_ref< android::util::AttributeSet > const&);
+		View(local_ref< android::content::Context > const&, local_ref< android::util::AttributeSet > const&, cpp_int const&);
 		cpp_int getVerticalFadingEdgeLength();
 		void setFadingEdgeLength(cpp_int const&);
 		cpp_int getHorizontalFadingEdgeLength();
@@ -860,7 +900,6 @@ namespace android { namespace view {
 } //namespace view
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_VIEW_VIEW_HPP_DECL
@@ -873,6 +912,12 @@ namespace android { namespace view {
 namespace j2cpp {
 
 
+
+
+android::view::View_::OnTouchListener::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 cpp_boolean android::view::View_::OnTouchListener::onTouch(local_ref< android::view::View > const &a0, local_ref< android::view::MotionEvent > const &a1)
 {
@@ -889,29 +934,38 @@ cpp_boolean android::view::View_::OnTouchListener::onTouch(local_ref< android::v
 J2CPP_DEFINE_CLASS(android::view::View_::OnTouchListener,"android/view/View$OnTouchListener")
 J2CPP_DEFINE_METHOD(android::view::View_::OnTouchListener,0,"onTouch","(Landroid/view/View;Landroid/view/MotionEvent;)Z")
 
-template <>
-local_ref< android::view::View_::BaseSavedState > create< android::view::View_::BaseSavedState>(local_ref< android::os::Parcel > const &a0)
+
+android::view::View_::BaseSavedState::operator local_ref<android::view::AbsSavedState>() const
 {
-	return local_ref< android::view::View_::BaseSavedState >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::view::View_::BaseSavedState::J2CPP_CLASS_NAME>(),
-			get_method_id<android::view::View_::BaseSavedState::J2CPP_CLASS_NAME, android::view::View_::BaseSavedState::J2CPP_METHOD_NAME(0), android::view::View_::BaseSavedState::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<android::view::AbsSavedState>(get_jtype());
 }
 
-template <>
-local_ref< android::view::View_::BaseSavedState > create< android::view::View_::BaseSavedState>(local_ref< android::os::Parcelable > const &a0)
+
+android::view::View_::BaseSavedState::BaseSavedState(local_ref< android::os::Parcel > const &a0)
+: cpp_object<android::view::View_::BaseSavedState>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::view::View_::BaseSavedState::J2CPP_CLASS_NAME>(),
+		get_method_id<android::view::View_::BaseSavedState::J2CPP_CLASS_NAME, android::view::View_::BaseSavedState::J2CPP_METHOD_NAME(0), android::view::View_::BaseSavedState::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< android::view::View_::BaseSavedState >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::view::View_::BaseSavedState::J2CPP_CLASS_NAME>(),
-			get_method_id<android::view::View_::BaseSavedState::J2CPP_CLASS_NAME, android::view::View_::BaseSavedState::J2CPP_METHOD_NAME(1), android::view::View_::BaseSavedState::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
 }
+
+
+
+android::view::View_::BaseSavedState::BaseSavedState(local_ref< android::os::Parcelable > const &a0)
+: cpp_object<android::view::View_::BaseSavedState>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::view::View_::BaseSavedState::J2CPP_CLASS_NAME>(),
+		get_method_id<android::view::View_::BaseSavedState::J2CPP_CLASS_NAME, android::view::View_::BaseSavedState::J2CPP_METHOD_NAME(1), android::view::View_::BaseSavedState::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
+
 
 
 static_field<
@@ -928,6 +982,12 @@ J2CPP_DEFINE_METHOD(android::view::View_::BaseSavedState,1,"<init>","(Landroid/o
 J2CPP_DEFINE_METHOD(android::view::View_::BaseSavedState,2,"<clinit>","()V")
 J2CPP_DEFINE_FIELD(android::view::View_::BaseSavedState,0,"CREATOR","Landroid/os/Parcelable$Creator;")
 
+
+android::view::View_::OnLongClickListener::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
+
 cpp_boolean android::view::View_::OnLongClickListener::onLongClick(local_ref< android::view::View > const &a0)
 {
 	return cpp_boolean(
@@ -942,6 +1002,12 @@ cpp_boolean android::view::View_::OnLongClickListener::onLongClick(local_ref< an
 
 J2CPP_DEFINE_CLASS(android::view::View_::OnLongClickListener,"android/view/View$OnLongClickListener")
 J2CPP_DEFINE_METHOD(android::view::View_::OnLongClickListener,0,"onLongClick","(Landroid/view/View;)Z")
+
+
+android::view::View_::OnClickListener::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 void android::view::View_::OnClickListener::onClick(local_ref< android::view::View > const &a0)
 {
@@ -958,6 +1024,12 @@ void android::view::View_::OnClickListener::onClick(local_ref< android::view::Vi
 J2CPP_DEFINE_CLASS(android::view::View_::OnClickListener,"android/view/View$OnClickListener")
 J2CPP_DEFINE_METHOD(android::view::View_::OnClickListener,0,"onClick","(Landroid/view/View;)V")
 
+
+android::view::View_::OnFocusChangeListener::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
+
 void android::view::View_::OnFocusChangeListener::onFocusChange(local_ref< android::view::View > const &a0, cpp_boolean const &a1)
 {
 	return void(
@@ -972,6 +1044,12 @@ void android::view::View_::OnFocusChangeListener::onFocusChange(local_ref< andro
 
 J2CPP_DEFINE_CLASS(android::view::View_::OnFocusChangeListener,"android/view/View$OnFocusChangeListener")
 J2CPP_DEFINE_METHOD(android::view::View_::OnFocusChangeListener,0,"onFocusChange","(Landroid/view/View;Z)V")
+
+
+android::view::View_::OnKeyListener::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 cpp_boolean android::view::View_::OnKeyListener::onKey(local_ref< android::view::View > const &a0, cpp_int const &a1, local_ref< android::view::KeyEvent > const &a2)
 {
@@ -988,6 +1066,12 @@ cpp_boolean android::view::View_::OnKeyListener::onKey(local_ref< android::view:
 J2CPP_DEFINE_CLASS(android::view::View_::OnKeyListener,"android/view/View$OnKeyListener")
 J2CPP_DEFINE_METHOD(android::view::View_::OnKeyListener,0,"onKey","(Landroid/view/View;ILandroid/view/KeyEvent;)Z")
 
+
+android::view::View_::OnCreateContextMenuListener::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
+
 void android::view::View_::OnCreateContextMenuListener::onCreateContextMenu(local_ref< android::view::ContextMenu > const &a0, local_ref< android::view::View > const &a1, local_ref< android::view::ContextMenu_::ContextMenuInfo > const &a2)
 {
 	return void(
@@ -1003,16 +1087,23 @@ void android::view::View_::OnCreateContextMenuListener::onCreateContextMenu(loca
 J2CPP_DEFINE_CLASS(android::view::View_::OnCreateContextMenuListener,"android/view/View$OnCreateContextMenuListener")
 J2CPP_DEFINE_METHOD(android::view::View_::OnCreateContextMenuListener,0,"onCreateContextMenu","(Landroid/view/ContextMenu;Landroid/view/View;Landroid/view/ContextMenu$ContextMenuInfo;)V")
 
-template <>
-local_ref< android::view::View_::MeasureSpec > create< android::view::View_::MeasureSpec>()
+
+android::view::View_::MeasureSpec::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::view::View_::MeasureSpec >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::view::View_::MeasureSpec::J2CPP_CLASS_NAME>(),
-			get_method_id<android::view::View_::MeasureSpec::J2CPP_CLASS_NAME, android::view::View_::MeasureSpec::J2CPP_METHOD_NAME(0), android::view::View_::MeasureSpec::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::view::View_::MeasureSpec::MeasureSpec()
+: cpp_object<android::view::View_::MeasureSpec>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::view::View_::MeasureSpec::J2CPP_CLASS_NAME>(),
+		get_method_id<android::view::View_::MeasureSpec::J2CPP_CLASS_NAME, android::view::View_::MeasureSpec::J2CPP_METHOD_NAME(0), android::view::View_::MeasureSpec::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 cpp_int android::view::View_::MeasureSpec::makeMeasureSpec(cpp_int const &a0, cpp_int const &a1)
 {
@@ -1092,41 +1183,60 @@ J2CPP_DEFINE_FIELD(android::view::View_::MeasureSpec,1,"EXACTLY","I")
 J2CPP_DEFINE_FIELD(android::view::View_::MeasureSpec,2,"AT_MOST","I")
 
 
-template <>
-local_ref< android::view::View > create< android::view::View>(local_ref< android::content::Context > const &a0)
+
+android::view::View::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::view::View >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::view::View::J2CPP_CLASS_NAME>(),
-			get_method_id<android::view::View::J2CPP_CLASS_NAME, android::view::View::J2CPP_METHOD_NAME(0), android::view::View::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
 
-template <>
-local_ref< android::view::View > create< android::view::View>(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1)
+android::view::View::operator local_ref<android::graphics::drawable::Drawable_::Callback>() const
 {
-	return local_ref< android::view::View >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::view::View::J2CPP_CLASS_NAME>(),
-			get_method_id<android::view::View::J2CPP_CLASS_NAME, android::view::View::J2CPP_METHOD_NAME(1), android::view::View::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<android::graphics::drawable::Drawable_::Callback>(get_jtype());
 }
 
-template <>
-local_ref< android::view::View > create< android::view::View>(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1, cpp_int const &a2)
+android::view::View::operator local_ref<android::view::accessibility::AccessibilityEventSource>() const
 {
-	return local_ref< android::view::View >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::view::View::J2CPP_CLASS_NAME>(),
-			get_method_id<android::view::View::J2CPP_CLASS_NAME, android::view::View::J2CPP_METHOD_NAME(2), android::view::View::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
-		)
-	);
+	return local_ref<android::view::accessibility::AccessibilityEventSource>(get_jtype());
 }
+
+
+android::view::View::View(local_ref< android::content::Context > const &a0)
+: cpp_object<android::view::View>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::view::View::J2CPP_CLASS_NAME>(),
+		get_method_id<android::view::View::J2CPP_CLASS_NAME, android::view::View::J2CPP_METHOD_NAME(0), android::view::View::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
+
+
+android::view::View::View(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1)
+: cpp_object<android::view::View>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::view::View::J2CPP_CLASS_NAME>(),
+		get_method_id<android::view::View::J2CPP_CLASS_NAME, android::view::View::J2CPP_METHOD_NAME(1), android::view::View::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
+
+
+android::view::View::View(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1, cpp_int const &a2)
+: cpp_object<android::view::View>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::view::View::J2CPP_CLASS_NAME>(),
+		get_method_id<android::view::View::J2CPP_CLASS_NAME, android::view::View::J2CPP_METHOD_NAME(2), android::view::View::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
+	)
+)
+{
+}
+
 
 
 
@@ -3524,6 +3634,7 @@ local_ref< android::view::View > android::view::View::inflate(local_ref< android
 		)
 	);
 }
+
 
 
 static_field<

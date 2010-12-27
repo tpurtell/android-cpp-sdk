@@ -10,11 +10,13 @@
 #define J2CPP_ORG_APACHE_HTTP_CONN_CLIENTCONNECTIONMANAGERFACTORY_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace conn { class ClientConnectionManager; } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace conn { namespace scheme { class SchemeRegistry; } } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace params { class HttpParams; } } } } }
 
 
+#include <java/lang/Object.hpp>
 #include <org/apache/http/conn/ClientConnectionManager.hpp>
 #include <org/apache/http/conn/scheme/SchemeRegistry.hpp>
 #include <org/apache/http/params/HttpParams.hpp>
@@ -34,10 +36,13 @@ namespace org { namespace apache { namespace http { namespace conn {
 
 		J2CPP_DECLARE_METHOD(0)
 
-		ClientConnectionManagerFactory(jobject jobj)
+		explicit ClientConnectionManagerFactory(jobject jobj)
 		: cpp_object<ClientConnectionManagerFactory>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		local_ref< org::apache::http::conn::ClientConnectionManager > newInstance(local_ref< org::apache::http::params::HttpParams > const&, local_ref< org::apache::http::conn::scheme::SchemeRegistry > const&);
 	}; //class ClientConnectionManagerFactory
@@ -46,7 +51,6 @@ namespace org { namespace apache { namespace http { namespace conn {
 } //namespace http
 } //namespace apache
 } //namespace org
-
 
 } //namespace j2cpp
 
@@ -59,6 +63,12 @@ namespace org { namespace apache { namespace http { namespace conn {
 
 namespace j2cpp {
 
+
+
+org::apache::http::conn::ClientConnectionManagerFactory::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 local_ref< org::apache::http::conn::ClientConnectionManager > org::apache::http::conn::ClientConnectionManagerFactory::newInstance(local_ref< org::apache::http::params::HttpParams > const &a0, local_ref< org::apache::http::conn::scheme::SchemeRegistry > const &a1)
 {

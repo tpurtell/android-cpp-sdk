@@ -25,20 +25,25 @@ namespace j2cpp { namespace android { namespace content { class IntentSender; } 
 namespace j2cpp { namespace android { namespace content { namespace res { class Configuration; } } } }
 namespace j2cpp { namespace android { namespace content { class ComponentName; } } }
 namespace j2cpp { namespace android { namespace content { class Intent; } } }
+namespace j2cpp { namespace android { namespace content { class ComponentCallbacks; } } }
 namespace j2cpp { namespace android { namespace content { class SharedPreferences; } } }
 namespace j2cpp { namespace android { namespace content { class Context; } } }
 namespace j2cpp { namespace android { namespace view { class View; } } }
 namespace j2cpp { namespace android { namespace view { class WindowManager; } } }
 namespace j2cpp { namespace android { namespace view { class Window; } } }
+namespace j2cpp { namespace android { namespace view { namespace Window_ { class Callback; } } } }
 namespace j2cpp { namespace android { namespace view { class LayoutInflater; } } }
+namespace j2cpp { namespace android { namespace view { namespace LayoutInflater_ { class Factory; } } } }
 namespace j2cpp { namespace android { namespace view { class KeyEvent; } } }
 namespace j2cpp { namespace android { namespace view { class MenuInflater; } } }
 namespace j2cpp { namespace android { namespace view { class ContextMenu; } } }
 namespace j2cpp { namespace android { namespace view { class MotionEvent; } } }
 namespace j2cpp { namespace android { namespace view { namespace accessibility { class AccessibilityEvent; } } } }
+namespace j2cpp { namespace android { namespace view { class ContextThemeWrapper; } } }
 namespace j2cpp { namespace android { namespace view { class MenuItem; } } }
 namespace j2cpp { namespace android { namespace view { namespace ViewGroup_ { class LayoutParams; } } } }
 namespace j2cpp { namespace android { namespace view { class Menu; } } }
+namespace j2cpp { namespace android { namespace view { namespace View_ { class OnCreateContextMenuListener; } } } }
 namespace j2cpp { namespace android { namespace view { namespace ContextMenu_ { class ContextMenuInfo; } } } }
 namespace j2cpp { namespace android { namespace view { namespace WindowManager_ { class LayoutParams; } } } }
 namespace j2cpp { namespace android { namespace util { class AttributeSet; } } }
@@ -47,6 +52,7 @@ namespace j2cpp { namespace android { namespace os { class Bundle; } } }
 
 #include <android/app/Application.hpp>
 #include <android/app/PendingIntent.hpp>
+#include <android/content/ComponentCallbacks.hpp>
 #include <android/content/ComponentName.hpp>
 #include <android/content/Context.hpp>
 #include <android/content/Intent.hpp>
@@ -61,6 +67,7 @@ namespace j2cpp { namespace android { namespace os { class Bundle; } } }
 #include <android/os/Bundle.hpp>
 #include <android/util/AttributeSet.hpp>
 #include <android/view/ContextMenu.hpp>
+#include <android/view/ContextThemeWrapper.hpp>
 #include <android/view/KeyEvent.hpp>
 #include <android/view/LayoutInflater.hpp>
 #include <android/view/Menu.hpp>
@@ -244,11 +251,19 @@ namespace android { namespace app {
 		J2CPP_DECLARE_FIELD(7)
 		J2CPP_DECLARE_FIELD(8)
 
-		Activity(jobject jobj)
+		explicit Activity(jobject jobj)
 		: cpp_object<Activity>(jobj)
 		{
 		}
 
+		operator local_ref<android::view::ContextThemeWrapper>() const;
+		operator local_ref<android::view::LayoutInflater_::Factory>() const;
+		operator local_ref<android::view::Window_::Callback>() const;
+		operator local_ref<android::view::View_::OnCreateContextMenuListener>() const;
+		operator local_ref<android::content::ComponentCallbacks>() const;
+
+
+		Activity();
 		static cpp_long getInstanceCount();
 		local_ref< android::content::Intent > getIntent();
 		void setIntent(local_ref< android::content::Intent > const&);
@@ -385,7 +400,6 @@ namespace android { namespace app {
 } //namespace app
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_APP_ACTIVITY_HPP_DECL
@@ -398,16 +412,43 @@ namespace android { namespace app {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::app::Activity > create< android::app::Activity>()
+
+android::app::Activity::operator local_ref<android::view::ContextThemeWrapper>() const
 {
-	return local_ref< android::app::Activity >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::app::Activity::J2CPP_CLASS_NAME>(),
-			get_method_id<android::app::Activity::J2CPP_CLASS_NAME, android::app::Activity::J2CPP_METHOD_NAME(0), android::app::Activity::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<android::view::ContextThemeWrapper>(get_jtype());
 }
+
+android::app::Activity::operator local_ref<android::view::LayoutInflater_::Factory>() const
+{
+	return local_ref<android::view::LayoutInflater_::Factory>(get_jtype());
+}
+
+android::app::Activity::operator local_ref<android::view::Window_::Callback>() const
+{
+	return local_ref<android::view::Window_::Callback>(get_jtype());
+}
+
+android::app::Activity::operator local_ref<android::view::View_::OnCreateContextMenuListener>() const
+{
+	return local_ref<android::view::View_::OnCreateContextMenuListener>(get_jtype());
+}
+
+android::app::Activity::operator local_ref<android::content::ComponentCallbacks>() const
+{
+	return local_ref<android::content::ComponentCallbacks>(get_jtype());
+}
+
+
+android::app::Activity::Activity()
+: cpp_object<android::app::Activity>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::app::Activity::J2CPP_CLASS_NAME>(),
+		get_method_id<android::app::Activity::J2CPP_CLASS_NAME, android::app::Activity::J2CPP_METHOD_NAME(0), android::app::Activity::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 
 cpp_long android::app::Activity::getInstanceCount()
@@ -1731,6 +1772,7 @@ local_ref< android::view::View > android::app::Activity::onCreateView(local_ref<
 		)
 	);
 }
+
 
 
 static_field<

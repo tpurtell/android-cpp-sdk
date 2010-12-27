@@ -12,10 +12,12 @@
 
 namespace j2cpp { namespace android { namespace graphics { class Paint; } } }
 namespace j2cpp { namespace android { namespace graphics { class Canvas; } } }
+namespace j2cpp { namespace android { namespace graphics { namespace drawable { namespace shapes { class RectShape; } } } } }
 
 
 #include <android/graphics/Canvas.hpp>
 #include <android/graphics/Paint.hpp>
+#include <android/graphics/drawable/shapes/RectShape.hpp>
 
 
 namespace j2cpp {
@@ -33,11 +35,15 @@ namespace android { namespace graphics { namespace drawable { namespace shapes {
 		J2CPP_DECLARE_METHOD(0)
 		J2CPP_DECLARE_METHOD(1)
 
-		ArcShape(jobject jobj)
+		explicit ArcShape(jobject jobj)
 		: cpp_object<ArcShape>(jobj)
 		{
 		}
 
+		operator local_ref<android::graphics::drawable::shapes::RectShape>() const;
+
+
+		ArcShape(cpp_float const&, cpp_float const&);
 		void draw(local_ref< android::graphics::Canvas > const&, local_ref< android::graphics::Paint > const&);
 	}; //class ArcShape
 
@@ -45,7 +51,6 @@ namespace android { namespace graphics { namespace drawable { namespace shapes {
 } //namespace drawable
 } //namespace graphics
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -59,17 +64,24 @@ namespace android { namespace graphics { namespace drawable { namespace shapes {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::graphics::drawable::shapes::ArcShape > create< android::graphics::drawable::shapes::ArcShape>(cpp_float const &a0, cpp_float const &a1)
+
+android::graphics::drawable::shapes::ArcShape::operator local_ref<android::graphics::drawable::shapes::RectShape>() const
 {
-	return local_ref< android::graphics::drawable::shapes::ArcShape >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::graphics::drawable::shapes::ArcShape::J2CPP_CLASS_NAME>(),
-			get_method_id<android::graphics::drawable::shapes::ArcShape::J2CPP_CLASS_NAME, android::graphics::drawable::shapes::ArcShape::J2CPP_METHOD_NAME(0), android::graphics::drawable::shapes::ArcShape::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<android::graphics::drawable::shapes::RectShape>(get_jtype());
 }
+
+
+android::graphics::drawable::shapes::ArcShape::ArcShape(cpp_float const &a0, cpp_float const &a1)
+: cpp_object<android::graphics::drawable::shapes::ArcShape>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::graphics::drawable::shapes::ArcShape::J2CPP_CLASS_NAME>(),
+		get_method_id<android::graphics::drawable::shapes::ArcShape::J2CPP_CLASS_NAME, android::graphics::drawable::shapes::ArcShape::J2CPP_METHOD_NAME(0), android::graphics::drawable::shapes::ArcShape::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
 
 void android::graphics::drawable::shapes::ArcShape::draw(local_ref< android::graphics::Canvas > const &a0, local_ref< android::graphics::Paint > const &a1)
 {

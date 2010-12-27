@@ -10,6 +10,7 @@
 #define J2CPP_ANDROID_UTIL_TYPEDVALUE_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class CharSequence; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace android { namespace util { class DisplayMetrics; } } }
@@ -17,6 +18,7 @@ namespace j2cpp { namespace android { namespace util { class DisplayMetrics; } }
 
 #include <android/util/DisplayMetrics.hpp>
 #include <java/lang/CharSequence.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -93,18 +95,22 @@ namespace android { namespace util {
 		J2CPP_DECLARE_FIELD(43)
 		J2CPP_DECLARE_FIELD(44)
 
-		TypedValue(jobject jobj)
+		explicit TypedValue(jobject jobj)
 		: cpp_object<TypedValue>(jobj)
-		, type(jobj)
-		, string(jobj)
-		, data(jobj)
-		, assetCookie(jobj)
-		, resourceId(jobj)
-		, changingConfigurations(jobj)
-		, density(jobj)
+, type(jobj)
+, string(jobj)
+, data(jobj)
+, assetCookie(jobj)
+, resourceId(jobj)
+, changingConfigurations(jobj)
+, density(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		TypedValue();
 		cpp_float getFloat();
 		static cpp_float complexToFloat(cpp_int const&);
 		static cpp_float complexToDimension(cpp_int const&, local_ref< android::util::DisplayMetrics > const&);
@@ -170,7 +176,6 @@ namespace android { namespace util {
 } //namespace util
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_UTIL_TYPEDVALUE_HPP_DECL
@@ -183,16 +188,30 @@ namespace android { namespace util {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::util::TypedValue > create< android::util::TypedValue>()
+
+android::util::TypedValue::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::util::TypedValue >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::util::TypedValue::J2CPP_CLASS_NAME>(),
-			get_method_id<android::util::TypedValue::J2CPP_CLASS_NAME, android::util::TypedValue::J2CPP_METHOD_NAME(0), android::util::TypedValue::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::util::TypedValue::TypedValue()
+: cpp_object<android::util::TypedValue>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::util::TypedValue::J2CPP_CLASS_NAME>(),
+		get_method_id<android::util::TypedValue::J2CPP_CLASS_NAME, android::util::TypedValue::J2CPP_METHOD_NAME(0), android::util::TypedValue::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+, type(get_jtype())
+, string(get_jtype())
+, data(get_jtype())
+, assetCookie(get_jtype())
+, resourceId(get_jtype())
+, changingConfigurations(get_jtype())
+, density(get_jtype())
+{
+}
+
 
 cpp_float android::util::TypedValue::getFloat()
 {

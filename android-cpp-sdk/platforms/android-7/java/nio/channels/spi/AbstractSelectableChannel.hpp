@@ -48,15 +48,18 @@ namespace java { namespace nio { namespace channels { namespace spi {
 		J2CPP_DECLARE_METHOD(9)
 		J2CPP_DECLARE_METHOD(10)
 
-		AbstractSelectableChannel(jobject jobj)
+		explicit AbstractSelectableChannel(jobject jobj)
 		: cpp_object<AbstractSelectableChannel>(jobj)
 		{
 		}
 
+		operator local_ref<java::nio::channels::SelectableChannel>() const;
+
+
 		local_ref< java::nio::channels::spi::SelectorProvider > provider();
 		cpp_boolean isRegistered();
 		local_ref< java::nio::channels::SelectionKey > keyFor(local_ref< java::nio::channels::Selector > const&);
-		local_ref< java::nio::channels::SelectionKey > register(local_ref< java::nio::channels::Selector > const&, cpp_int const&, local_ref< java::lang::Object > const&);
+		local_ref< java::nio::channels::SelectionKey > Register(local_ref< java::nio::channels::Selector > const&, cpp_int const&, local_ref< java::lang::Object > const&);
 		cpp_boolean isBlocking();
 		local_ref< java::lang::Object > blockingLock();
 		local_ref< java::nio::channels::SelectableChannel > configureBlocking(cpp_boolean const&);
@@ -66,7 +69,6 @@ namespace java { namespace nio { namespace channels { namespace spi {
 } //namespace channels
 } //namespace nio
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -80,17 +82,12 @@ namespace java { namespace nio { namespace channels { namespace spi {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::nio::channels::spi::AbstractSelectableChannel > create< java::nio::channels::spi::AbstractSelectableChannel>(local_ref< java::nio::channels::spi::SelectorProvider > const &a0)
+
+java::nio::channels::spi::AbstractSelectableChannel::operator local_ref<java::nio::channels::SelectableChannel>() const
 {
-	return local_ref< java::nio::channels::spi::AbstractSelectableChannel >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::nio::channels::spi::AbstractSelectableChannel::J2CPP_CLASS_NAME>(),
-			get_method_id<java::nio::channels::spi::AbstractSelectableChannel::J2CPP_CLASS_NAME, java::nio::channels::spi::AbstractSelectableChannel::J2CPP_METHOD_NAME(0), java::nio::channels::spi::AbstractSelectableChannel::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::nio::channels::SelectableChannel>(get_jtype());
 }
+
 
 local_ref< java::nio::channels::spi::SelectorProvider > java::nio::channels::spi::AbstractSelectableChannel::provider()
 {
@@ -123,7 +120,7 @@ local_ref< java::nio::channels::SelectionKey > java::nio::channels::spi::Abstrac
 	);
 }
 
-local_ref< java::nio::channels::SelectionKey > java::nio::channels::spi::AbstractSelectableChannel::register(local_ref< java::nio::channels::Selector > const &a0, cpp_int const &a1, local_ref< java::lang::Object > const &a2)
+local_ref< java::nio::channels::SelectionKey > java::nio::channels::spi::AbstractSelectableChannel::Register(local_ref< java::nio::channels::Selector > const &a0, cpp_int const &a1, local_ref< java::lang::Object > const &a2)
 {
 	return local_ref< java::nio::channels::SelectionKey >(
 		environment::get().get_jenv()->CallObjectMethod(

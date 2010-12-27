@@ -10,14 +10,18 @@
 #define J2CPP_JAVAX_MICROEDITION_KHRONOS_OPENGLES_GL11EXTENSIONPACK_HPP_DECL
 
 
+namespace j2cpp { namespace javax { namespace microedition { namespace khronos { namespace opengles { class GL; } } } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace nio { class FloatBuffer; } } }
 namespace j2cpp { namespace java { namespace nio { class IntBuffer; } } }
 namespace j2cpp { namespace java { namespace nio { class Buffer; } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/nio/Buffer.hpp>
 #include <java/nio/FloatBuffer.hpp>
 #include <java/nio/IntBuffer.hpp>
+#include <javax/microedition/khronos/opengles/GL.hpp>
 
 
 namespace j2cpp {
@@ -172,10 +176,14 @@ namespace javax { namespace microedition { namespace khronos { namespace opengle
 		J2CPP_DECLARE_FIELD(84)
 		J2CPP_DECLARE_FIELD(85)
 
-		GL11ExtensionPack(jobject jobj)
+		explicit GL11ExtensionPack(jobject jobj)
 		: cpp_object<GL11ExtensionPack>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<javax::microedition::khronos::opengles::GL>() const;
+
 
 		void glBindFramebufferOES(cpp_int const&, cpp_int const&);
 		void glBindRenderbufferOES(cpp_int const&, cpp_int const&);
@@ -324,7 +332,6 @@ namespace javax { namespace microedition { namespace khronos { namespace opengle
 } //namespace microedition
 } //namespace javax
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVAX_MICROEDITION_KHRONOS_OPENGLES_GL11EXTENSIONPACK_HPP_DECL
@@ -336,6 +343,17 @@ namespace javax { namespace microedition { namespace khronos { namespace opengle
 
 namespace j2cpp {
 
+
+
+javax::microedition::khronos::opengles::GL11ExtensionPack::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
+
+javax::microedition::khronos::opengles::GL11ExtensionPack::operator local_ref<javax::microedition::khronos::opengles::GL>() const
+{
+	return local_ref<javax::microedition::khronos::opengles::GL>(get_jtype());
+}
 
 void javax::microedition::khronos::opengles::GL11ExtensionPack::glBindFramebufferOES(cpp_int const &a0, cpp_int const &a1)
 {

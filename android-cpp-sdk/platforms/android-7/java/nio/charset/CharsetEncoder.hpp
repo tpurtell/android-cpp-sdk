@@ -10,6 +10,7 @@
 #define J2CPP_JAVA_NIO_CHARSET_CHARSETENCODER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class CharSequence; } } }
 namespace j2cpp { namespace java { namespace nio { class CharBuffer; } } }
 namespace j2cpp { namespace java { namespace nio { class ByteBuffer; } } }
@@ -19,6 +20,7 @@ namespace j2cpp { namespace java { namespace nio { namespace charset { class Cod
 
 
 #include <java/lang/CharSequence.hpp>
+#include <java/lang/Object.hpp>
 #include <java/nio/ByteBuffer.hpp>
 #include <java/nio/CharBuffer.hpp>
 #include <java/nio/charset/Charset.hpp>
@@ -63,10 +65,13 @@ namespace java { namespace nio { namespace charset {
 		J2CPP_DECLARE_METHOD(22)
 		J2CPP_DECLARE_METHOD(23)
 
-		CharsetEncoder(jobject jobj)
+		explicit CharsetEncoder(jobject jobj)
 		: cpp_object<CharsetEncoder>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		cpp_float averageBytesPerChar();
 		cpp_boolean canEncode(cpp_char const&);
@@ -90,7 +95,6 @@ namespace java { namespace nio { namespace charset {
 } //namespace nio
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_NIO_CHARSET_CHARSETENCODER_HPP_DECL
@@ -103,29 +107,13 @@ namespace java { namespace nio { namespace charset {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::nio::charset::CharsetEncoder > create< java::nio::charset::CharsetEncoder>(local_ref< java::nio::charset::Charset > const &a0, cpp_float const &a1, cpp_float const &a2)
+
+java::nio::charset::CharsetEncoder::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::nio::charset::CharsetEncoder >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::nio::charset::CharsetEncoder::J2CPP_CLASS_NAME>(),
-			get_method_id<java::nio::charset::CharsetEncoder::J2CPP_CLASS_NAME, java::nio::charset::CharsetEncoder::J2CPP_METHOD_NAME(0), java::nio::charset::CharsetEncoder::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
 
-template <>
-local_ref< java::nio::charset::CharsetEncoder > create< java::nio::charset::CharsetEncoder>(local_ref< java::nio::charset::Charset > const &a0, cpp_float const &a1, cpp_float const &a2, local_ref< cpp_byte_array<1> > const &a3)
-{
-	return local_ref< java::nio::charset::CharsetEncoder >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::nio::charset::CharsetEncoder::J2CPP_CLASS_NAME>(),
-			get_method_id<java::nio::charset::CharsetEncoder::J2CPP_CLASS_NAME, java::nio::charset::CharsetEncoder::J2CPP_METHOD_NAME(1), java::nio::charset::CharsetEncoder::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype()
-		)
-	);
-}
+
 
 cpp_float java::nio::charset::CharsetEncoder::averageBytesPerChar()
 {

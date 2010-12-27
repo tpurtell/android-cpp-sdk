@@ -11,11 +11,15 @@
 
 
 namespace j2cpp { namespace android { namespace text { class TextPaint; } } }
+namespace j2cpp { namespace android { namespace text { namespace style { class MetricAffectingSpan; } } } }
+namespace j2cpp { namespace android { namespace text { class ParcelableSpan; } } }
 namespace j2cpp { namespace android { namespace os { class Parcel; } } }
 
 
 #include <android/os/Parcel.hpp>
+#include <android/text/ParcelableSpan.hpp>
 #include <android/text/TextPaint.hpp>
+#include <android/text/style/MetricAffectingSpan.hpp>
 
 
 namespace j2cpp {
@@ -38,11 +42,17 @@ namespace android { namespace text { namespace style {
 		J2CPP_DECLARE_METHOD(5)
 		J2CPP_DECLARE_METHOD(6)
 
-		SubscriptSpan(jobject jobj)
+		explicit SubscriptSpan(jobject jobj)
 		: cpp_object<SubscriptSpan>(jobj)
 		{
 		}
 
+		operator local_ref<android::text::style::MetricAffectingSpan>() const;
+		operator local_ref<android::text::ParcelableSpan>() const;
+
+
+		SubscriptSpan();
+		SubscriptSpan(local_ref< android::os::Parcel > const&);
 		cpp_int getSpanTypeId();
 		cpp_int describeContents();
 		void writeToParcel(local_ref< android::os::Parcel > const&, cpp_int const&);
@@ -53,7 +63,6 @@ namespace android { namespace text { namespace style {
 } //namespace style
 } //namespace text
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -67,28 +76,41 @@ namespace android { namespace text { namespace style {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::text::style::SubscriptSpan > create< android::text::style::SubscriptSpan>()
+
+android::text::style::SubscriptSpan::operator local_ref<android::text::style::MetricAffectingSpan>() const
 {
-	return local_ref< android::text::style::SubscriptSpan >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::text::style::SubscriptSpan::J2CPP_CLASS_NAME>(),
-			get_method_id<android::text::style::SubscriptSpan::J2CPP_CLASS_NAME, android::text::style::SubscriptSpan::J2CPP_METHOD_NAME(0), android::text::style::SubscriptSpan::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<android::text::style::MetricAffectingSpan>(get_jtype());
 }
 
-template <>
-local_ref< android::text::style::SubscriptSpan > create< android::text::style::SubscriptSpan>(local_ref< android::os::Parcel > const &a0)
+android::text::style::SubscriptSpan::operator local_ref<android::text::ParcelableSpan>() const
 {
-	return local_ref< android::text::style::SubscriptSpan >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::text::style::SubscriptSpan::J2CPP_CLASS_NAME>(),
-			get_method_id<android::text::style::SubscriptSpan::J2CPP_CLASS_NAME, android::text::style::SubscriptSpan::J2CPP_METHOD_NAME(1), android::text::style::SubscriptSpan::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<android::text::ParcelableSpan>(get_jtype());
 }
+
+
+android::text::style::SubscriptSpan::SubscriptSpan()
+: cpp_object<android::text::style::SubscriptSpan>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::text::style::SubscriptSpan::J2CPP_CLASS_NAME>(),
+		get_method_id<android::text::style::SubscriptSpan::J2CPP_CLASS_NAME, android::text::style::SubscriptSpan::J2CPP_METHOD_NAME(0), android::text::style::SubscriptSpan::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
+
+
+android::text::style::SubscriptSpan::SubscriptSpan(local_ref< android::os::Parcel > const &a0)
+: cpp_object<android::text::style::SubscriptSpan>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::text::style::SubscriptSpan::J2CPP_CLASS_NAME>(),
+		get_method_id<android::text::style::SubscriptSpan::J2CPP_CLASS_NAME, android::text::style::SubscriptSpan::J2CPP_METHOD_NAME(1), android::text::style::SubscriptSpan::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 cpp_int android::text::style::SubscriptSpan::getSpanTypeId()
 {

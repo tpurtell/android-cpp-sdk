@@ -10,15 +10,18 @@
 #define J2CPP_ANDROID_GRAPHICS_RECTF_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace android { namespace graphics { class Rect; } } }
 namespace j2cpp { namespace android { namespace os { class Parcel; } } }
+namespace j2cpp { namespace android { namespace os { class Parcelable; } } }
 namespace j2cpp { namespace android { namespace os { namespace Parcelable_ { class Creator; } } } }
 
 
 #include <android/graphics/Rect.hpp>
 #include <android/os/Parcel.hpp>
 #include <android/os/Parcelable.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -75,15 +78,23 @@ namespace android { namespace graphics {
 		J2CPP_DECLARE_FIELD(3)
 		J2CPP_DECLARE_FIELD(4)
 
-		RectF(jobject jobj)
+		explicit RectF(jobject jobj)
 		: cpp_object<RectF>(jobj)
-		, left(jobj)
-		, top(jobj)
-		, right(jobj)
-		, bottom(jobj)
+, left(jobj)
+, top(jobj)
+, right(jobj)
+, bottom(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<android::os::Parcelable>() const;
+
+
+		RectF();
+		RectF(cpp_float const&, cpp_float const&, cpp_float const&, cpp_float const&);
+		RectF(local_ref< android::graphics::RectF > const&);
+		RectF(local_ref< android::graphics::Rect > const&);
 		local_ref< java::lang::String > toString();
 		cpp_boolean isEmpty();
 		cpp_float width();
@@ -125,7 +136,6 @@ namespace android { namespace graphics {
 } //namespace graphics
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_GRAPHICS_RECTF_HPP_DECL
@@ -138,52 +148,83 @@ namespace android { namespace graphics {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::graphics::RectF > create< android::graphics::RectF>()
+
+android::graphics::RectF::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::graphics::RectF >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::graphics::RectF::J2CPP_CLASS_NAME>(),
-			get_method_id<android::graphics::RectF::J2CPP_CLASS_NAME, android::graphics::RectF::J2CPP_METHOD_NAME(0), android::graphics::RectF::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
 
-template <>
-local_ref< android::graphics::RectF > create< android::graphics::RectF>(cpp_float const &a0, cpp_float const &a1, cpp_float const &a2, cpp_float const &a3)
+android::graphics::RectF::operator local_ref<android::os::Parcelable>() const
 {
-	return local_ref< android::graphics::RectF >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::graphics::RectF::J2CPP_CLASS_NAME>(),
-			get_method_id<android::graphics::RectF::J2CPP_CLASS_NAME, android::graphics::RectF::J2CPP_METHOD_NAME(1), android::graphics::RectF::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype()
-		)
-	);
+	return local_ref<android::os::Parcelable>(get_jtype());
 }
 
-template <>
-local_ref< android::graphics::RectF > create< android::graphics::RectF>(local_ref< android::graphics::RectF > const &a0)
+
+android::graphics::RectF::RectF()
+: cpp_object<android::graphics::RectF>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::graphics::RectF::J2CPP_CLASS_NAME>(),
+		get_method_id<android::graphics::RectF::J2CPP_CLASS_NAME, android::graphics::RectF::J2CPP_METHOD_NAME(0), android::graphics::RectF::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+, left(get_jtype())
+, top(get_jtype())
+, right(get_jtype())
+, bottom(get_jtype())
 {
-	return local_ref< android::graphics::RectF >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::graphics::RectF::J2CPP_CLASS_NAME>(),
-			get_method_id<android::graphics::RectF::J2CPP_CLASS_NAME, android::graphics::RectF::J2CPP_METHOD_NAME(2), android::graphics::RectF::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< android::graphics::RectF > create< android::graphics::RectF>(local_ref< android::graphics::Rect > const &a0)
+
+
+android::graphics::RectF::RectF(cpp_float const &a0, cpp_float const &a1, cpp_float const &a2, cpp_float const &a3)
+: cpp_object<android::graphics::RectF>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::graphics::RectF::J2CPP_CLASS_NAME>(),
+		get_method_id<android::graphics::RectF::J2CPP_CLASS_NAME, android::graphics::RectF::J2CPP_METHOD_NAME(1), android::graphics::RectF::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype()
+	)
+)
+, left(get_jtype())
+, top(get_jtype())
+, right(get_jtype())
+, bottom(get_jtype())
 {
-	return local_ref< android::graphics::RectF >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::graphics::RectF::J2CPP_CLASS_NAME>(),
-			get_method_id<android::graphics::RectF::J2CPP_CLASS_NAME, android::graphics::RectF::J2CPP_METHOD_NAME(3), android::graphics::RectF::J2CPP_METHOD_SIGNATURE(3), false>(),
-			a0.get_jtype()
-		)
-	);
 }
+
+
+
+android::graphics::RectF::RectF(local_ref< android::graphics::RectF > const &a0)
+: cpp_object<android::graphics::RectF>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::graphics::RectF::J2CPP_CLASS_NAME>(),
+		get_method_id<android::graphics::RectF::J2CPP_CLASS_NAME, android::graphics::RectF::J2CPP_METHOD_NAME(2), android::graphics::RectF::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype()
+	)
+)
+, left(get_jtype())
+, top(get_jtype())
+, right(get_jtype())
+, bottom(get_jtype())
+{
+}
+
+
+
+android::graphics::RectF::RectF(local_ref< android::graphics::Rect > const &a0)
+: cpp_object<android::graphics::RectF>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::graphics::RectF::J2CPP_CLASS_NAME>(),
+		get_method_id<android::graphics::RectF::J2CPP_CLASS_NAME, android::graphics::RectF::J2CPP_METHOD_NAME(3), android::graphics::RectF::J2CPP_METHOD_SIGNATURE(3), false>(),
+		a0.get_jtype()
+	)
+)
+, left(get_jtype())
+, top(get_jtype())
+, right(get_jtype())
+, bottom(get_jtype())
+{
+}
+
 
 local_ref< java::lang::String > android::graphics::RectF::toString()
 {
@@ -505,6 +546,7 @@ void android::graphics::RectF::readFromParcel(local_ref< android::os::Parcel > c
 		)
 	);
 }
+
 
 
 static_field<

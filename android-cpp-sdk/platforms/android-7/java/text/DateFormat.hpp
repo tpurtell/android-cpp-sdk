@@ -13,6 +13,8 @@
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class StringBuffer; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace text { class Format; } } }
+namespace j2cpp { namespace java { namespace text { namespace Format_ { class Field; } } } }
 namespace j2cpp { namespace java { namespace text { class NumberFormat; } } }
 namespace j2cpp { namespace java { namespace text { class ParsePosition; } } }
 namespace j2cpp { namespace java { namespace text { namespace DateFormat_ { class Field; } } } }
@@ -28,6 +30,7 @@ namespace j2cpp { namespace java { namespace util { class TimeZone; } } }
 #include <java/lang/StringBuffer.hpp>
 #include <java/text/DateFormat.hpp>
 #include <java/text/FieldPosition.hpp>
+#include <java/text/Format.hpp>
 #include <java/text/NumberFormat.hpp>
 #include <java/text/ParsePosition.hpp>
 #include <java/util/Calendar.hpp>
@@ -75,10 +78,13 @@ namespace java { namespace text {
 			J2CPP_DECLARE_FIELD(16)
 			J2CPP_DECLARE_FIELD(17)
 
-			Field(jobject jobj)
+			explicit Field(jobject jobj)
 			: cpp_object<Field>(jobj)
 			{
 			}
+
+			operator local_ref<java::text::Format_::Field>() const;
+
 
 			cpp_int getCalendarField();
 			static local_ref< java::text::DateFormat_::Field > ofCalendarField(cpp_int const&);
@@ -169,10 +175,13 @@ namespace java { namespace text {
 
 		typedef DateFormat_::Field Field;
 
-		DateFormat(jobject jobj)
+		explicit DateFormat(jobject jobj)
 		: cpp_object<DateFormat>(jobj)
 		{
 		}
+
+		operator local_ref<java::text::Format>() const;
+
 
 		local_ref< java::lang::Object > clone();
 		cpp_boolean equals(local_ref< java::lang::Object > const&);
@@ -231,7 +240,6 @@ namespace java { namespace text {
 } //namespace text
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_TEXT_DATEFORMAT_HPP_DECL
@@ -245,17 +253,12 @@ namespace j2cpp {
 
 
 
-template <>
-local_ref< java::text::DateFormat_::Field > create< java::text::DateFormat_::Field>(local_ref< java::lang::String > const &a0, cpp_int const &a1)
+
+java::text::DateFormat_::Field::operator local_ref<java::text::Format_::Field>() const
 {
-	return local_ref< java::text::DateFormat_::Field >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::text::DateFormat_::Field::J2CPP_CLASS_NAME>(),
-			get_method_id<java::text::DateFormat_::Field::J2CPP_CLASS_NAME, java::text::DateFormat_::Field::J2CPP_METHOD_NAME(0), java::text::DateFormat_::Field::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<java::text::Format_::Field>(get_jtype());
 }
+
 
 cpp_int java::text::DateFormat_::Field::getCalendarField()
 {
@@ -277,6 +280,7 @@ local_ref< java::text::DateFormat_::Field > java::text::DateFormat_::Field::ofCa
 		)
 	);
 }
+
 
 
 
@@ -433,16 +437,12 @@ J2CPP_DEFINE_FIELD(java::text::DateFormat_::Field,16,"HOUR1","Ljava/text/DateFor
 J2CPP_DEFINE_FIELD(java::text::DateFormat_::Field,17,"TIME_ZONE","Ljava/text/DateFormat$Field;")
 
 
-template <>
-local_ref< java::text::DateFormat > create< java::text::DateFormat>()
+
+java::text::DateFormat::operator local_ref<java::text::Format>() const
 {
-	return local_ref< java::text::DateFormat >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::text::DateFormat::J2CPP_CLASS_NAME>(),
-			get_method_id<java::text::DateFormat::J2CPP_CLASS_NAME, java::text::DateFormat::J2CPP_METHOD_NAME(0), java::text::DateFormat::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::text::Format>(get_jtype());
 }
+
 
 local_ref< java::lang::Object > java::text::DateFormat::clone()
 {

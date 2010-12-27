@@ -10,11 +10,13 @@
 #define J2CPP_ORG_APACHE_HTTP_IMPL_COOKIE_NETSCAPEDRAFTHEADERPARSER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace message { class ParserCursor; } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { class HeaderElement; } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace util { class CharArrayBuffer; } } } } }
 
 
+#include <java/lang/Object.hpp>
 #include <org/apache/http/HeaderElement.hpp>
 #include <org/apache/http/message/ParserCursor.hpp>
 #include <org/apache/http/util/CharArrayBuffer.hpp>
@@ -37,11 +39,15 @@ namespace org { namespace apache { namespace http { namespace impl { namespace c
 		J2CPP_DECLARE_METHOD(2)
 		J2CPP_DECLARE_FIELD(0)
 
-		NetscapeDraftHeaderParser(jobject jobj)
+		explicit NetscapeDraftHeaderParser(jobject jobj)
 		: cpp_object<NetscapeDraftHeaderParser>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		NetscapeDraftHeaderParser();
 		local_ref< org::apache::http::HeaderElement > parseHeader(local_ref< org::apache::http::util::CharArrayBuffer > const&, local_ref< org::apache::http::message::ParserCursor > const&);
 
 		static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(0), J2CPP_FIELD_SIGNATURE(0), local_ref< org::apache::http::impl::cookie::NetscapeDraftHeaderParser > > DEFAULT;
@@ -52,7 +58,6 @@ namespace org { namespace apache { namespace http { namespace impl { namespace c
 } //namespace http
 } //namespace apache
 } //namespace org
-
 
 } //namespace j2cpp
 
@@ -66,16 +71,23 @@ namespace org { namespace apache { namespace http { namespace impl { namespace c
 namespace j2cpp {
 
 
-template <>
-local_ref< org::apache::http::impl::cookie::NetscapeDraftHeaderParser > create< org::apache::http::impl::cookie::NetscapeDraftHeaderParser>()
+
+org::apache::http::impl::cookie::NetscapeDraftHeaderParser::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< org::apache::http::impl::cookie::NetscapeDraftHeaderParser >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::apache::http::impl::cookie::NetscapeDraftHeaderParser::J2CPP_CLASS_NAME>(),
-			get_method_id<org::apache::http::impl::cookie::NetscapeDraftHeaderParser::J2CPP_CLASS_NAME, org::apache::http::impl::cookie::NetscapeDraftHeaderParser::J2CPP_METHOD_NAME(0), org::apache::http::impl::cookie::NetscapeDraftHeaderParser::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+org::apache::http::impl::cookie::NetscapeDraftHeaderParser::NetscapeDraftHeaderParser()
+: cpp_object<org::apache::http::impl::cookie::NetscapeDraftHeaderParser>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::apache::http::impl::cookie::NetscapeDraftHeaderParser::J2CPP_CLASS_NAME>(),
+		get_method_id<org::apache::http::impl::cookie::NetscapeDraftHeaderParser::J2CPP_CLASS_NAME, org::apache::http::impl::cookie::NetscapeDraftHeaderParser::J2CPP_METHOD_NAME(0), org::apache::http::impl::cookie::NetscapeDraftHeaderParser::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 local_ref< org::apache::http::HeaderElement > org::apache::http::impl::cookie::NetscapeDraftHeaderParser::parseHeader(local_ref< org::apache::http::util::CharArrayBuffer > const &a0, local_ref< org::apache::http::message::ParserCursor > const &a1)
 {
@@ -87,6 +99,7 @@ local_ref< org::apache::http::HeaderElement > org::apache::http::impl::cookie::N
 		)
 	);
 }
+
 
 
 static_field<

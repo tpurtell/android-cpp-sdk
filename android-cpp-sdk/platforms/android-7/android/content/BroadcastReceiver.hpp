@@ -10,6 +10,7 @@
 #define J2CPP_ANDROID_CONTENT_BROADCASTRECEIVER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace android { namespace content { class Intent; } } }
 namespace j2cpp { namespace android { namespace content { class Context; } } }
@@ -21,6 +22,7 @@ namespace j2cpp { namespace android { namespace os { class Bundle; } } }
 #include <android/content/Intent.hpp>
 #include <android/os/Bundle.hpp>
 #include <android/os/IBinder.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -55,11 +57,15 @@ namespace android { namespace content {
 		J2CPP_DECLARE_METHOD(16)
 		J2CPP_DECLARE_METHOD(17)
 
-		BroadcastReceiver(jobject jobj)
+		explicit BroadcastReceiver(jobject jobj)
 		: cpp_object<BroadcastReceiver>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		BroadcastReceiver();
 		void onReceive(local_ref< android::content::Context > const&, local_ref< android::content::Intent > const&);
 		local_ref< android::os::IBinder > peekService(local_ref< android::content::Context > const&, local_ref< android::content::Intent > const&);
 		void setResultCode(cpp_int const&);
@@ -82,7 +88,6 @@ namespace android { namespace content {
 } //namespace content
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_CONTENT_BROADCASTRECEIVER_HPP_DECL
@@ -95,16 +100,23 @@ namespace android { namespace content {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::content::BroadcastReceiver > create< android::content::BroadcastReceiver>()
+
+android::content::BroadcastReceiver::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::content::BroadcastReceiver >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::content::BroadcastReceiver::J2CPP_CLASS_NAME>(),
-			get_method_id<android::content::BroadcastReceiver::J2CPP_CLASS_NAME, android::content::BroadcastReceiver::J2CPP_METHOD_NAME(0), android::content::BroadcastReceiver::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::content::BroadcastReceiver::BroadcastReceiver()
+: cpp_object<android::content::BroadcastReceiver>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::content::BroadcastReceiver::J2CPP_CLASS_NAME>(),
+		get_method_id<android::content::BroadcastReceiver::J2CPP_CLASS_NAME, android::content::BroadcastReceiver::J2CPP_METHOD_NAME(0), android::content::BroadcastReceiver::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 void android::content::BroadcastReceiver::onReceive(local_ref< android::content::Context > const &a0, local_ref< android::content::Intent > const &a1)
 {

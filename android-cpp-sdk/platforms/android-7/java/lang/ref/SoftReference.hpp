@@ -11,10 +11,12 @@
 
 
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace lang { namespace ref { class Reference; } } } }
 namespace j2cpp { namespace java { namespace lang { namespace ref { class ReferenceQueue; } } } }
 
 
 #include <java/lang/Object.hpp>
+#include <java/lang/ref/Reference.hpp>
 #include <java/lang/ref/ReferenceQueue.hpp>
 
 
@@ -33,17 +35,21 @@ namespace java { namespace lang { namespace ref {
 		J2CPP_DECLARE_METHOD(0)
 		J2CPP_DECLARE_METHOD(1)
 
-		SoftReference(jobject jobj)
+		explicit SoftReference(jobject jobj)
 		: cpp_object<SoftReference>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::ref::Reference>() const;
+
+
+		SoftReference(local_ref< java::lang::Object > const&);
+		SoftReference(local_ref< java::lang::Object > const&, local_ref< java::lang::ref::ReferenceQueue > const&);
 	}; //class SoftReference
 
 } //namespace ref
 } //namespace lang
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -57,29 +63,37 @@ namespace java { namespace lang { namespace ref {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::lang::ref::SoftReference > create< java::lang::ref::SoftReference>(local_ref< java::lang::Object > const &a0)
+
+java::lang::ref::SoftReference::operator local_ref<java::lang::ref::Reference>() const
 {
-	return local_ref< java::lang::ref::SoftReference >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::lang::ref::SoftReference::J2CPP_CLASS_NAME>(),
-			get_method_id<java::lang::ref::SoftReference::J2CPP_CLASS_NAME, java::lang::ref::SoftReference::J2CPP_METHOD_NAME(0), java::lang::ref::SoftReference::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::lang::ref::Reference>(get_jtype());
 }
 
-template <>
-local_ref< java::lang::ref::SoftReference > create< java::lang::ref::SoftReference>(local_ref< java::lang::Object > const &a0, local_ref< java::lang::ref::ReferenceQueue > const &a1)
+
+java::lang::ref::SoftReference::SoftReference(local_ref< java::lang::Object > const &a0)
+: cpp_object<java::lang::ref::SoftReference>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::lang::ref::SoftReference::J2CPP_CLASS_NAME>(),
+		get_method_id<java::lang::ref::SoftReference::J2CPP_CLASS_NAME, java::lang::ref::SoftReference::J2CPP_METHOD_NAME(0), java::lang::ref::SoftReference::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< java::lang::ref::SoftReference >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::lang::ref::SoftReference::J2CPP_CLASS_NAME>(),
-			get_method_id<java::lang::ref::SoftReference::J2CPP_CLASS_NAME, java::lang::ref::SoftReference::J2CPP_METHOD_NAME(1), java::lang::ref::SoftReference::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
 }
+
+
+
+java::lang::ref::SoftReference::SoftReference(local_ref< java::lang::Object > const &a0, local_ref< java::lang::ref::ReferenceQueue > const &a1)
+: cpp_object<java::lang::ref::SoftReference>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::lang::ref::SoftReference::J2CPP_CLASS_NAME>(),
+		get_method_id<java::lang::ref::SoftReference::J2CPP_CLASS_NAME, java::lang::ref::SoftReference::J2CPP_METHOD_NAME(1), java::lang::ref::SoftReference::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
 
 
 J2CPP_DEFINE_CLASS(java::lang::ref::SoftReference,"java/lang/ref/SoftReference")

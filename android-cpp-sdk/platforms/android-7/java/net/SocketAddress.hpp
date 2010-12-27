@@ -10,8 +10,12 @@
 #define J2CPP_JAVA_NET_SOCKETADDRESS_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
+#include <java/io/Serializable.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -28,16 +32,20 @@ namespace java { namespace net {
 
 		J2CPP_DECLARE_METHOD(0)
 
-		SocketAddress(jobject jobj)
+		explicit SocketAddress(jobject jobj)
 		: cpp_object<SocketAddress>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::io::Serializable>() const;
+
+
+		SocketAddress();
 	}; //class SocketAddress
 
 } //namespace net
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -51,16 +59,28 @@ namespace java { namespace net {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::net::SocketAddress > create< java::net::SocketAddress>()
+
+java::net::SocketAddress::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::net::SocketAddress >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::net::SocketAddress::J2CPP_CLASS_NAME>(),
-			get_method_id<java::net::SocketAddress::J2CPP_CLASS_NAME, java::net::SocketAddress::J2CPP_METHOD_NAME(0), java::net::SocketAddress::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+java::net::SocketAddress::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jtype());
+}
+
+
+java::net::SocketAddress::SocketAddress()
+: cpp_object<java::net::SocketAddress>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::net::SocketAddress::J2CPP_CLASS_NAME>(),
+		get_method_id<java::net::SocketAddress::J2CPP_CLASS_NAME, java::net::SocketAddress::J2CPP_METHOD_NAME(0), java::net::SocketAddress::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 
 J2CPP_DEFINE_CLASS(java::net::SocketAddress,"java/net/SocketAddress")

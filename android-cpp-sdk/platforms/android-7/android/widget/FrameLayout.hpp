@@ -14,6 +14,7 @@ namespace j2cpp { namespace android { namespace graphics { class Canvas; } } }
 namespace j2cpp { namespace android { namespace graphics { class Region; } } }
 namespace j2cpp { namespace android { namespace graphics { namespace drawable { class Drawable; } } } }
 namespace j2cpp { namespace android { namespace content { class Context; } } }
+namespace j2cpp { namespace android { namespace view { class ViewGroup; } } }
 namespace j2cpp { namespace android { namespace view { namespace ViewGroup_ { class MarginLayoutParams; } } } }
 namespace j2cpp { namespace android { namespace view { namespace ViewGroup_ { class LayoutParams; } } } }
 namespace j2cpp { namespace android { namespace widget { namespace FrameLayout_ { class LayoutParams; } } } }
@@ -51,12 +52,20 @@ namespace android { namespace widget {
 			J2CPP_DECLARE_METHOD(4)
 			J2CPP_DECLARE_FIELD(0)
 
-			LayoutParams(jobject jobj)
+			explicit LayoutParams(jobject jobj)
 			: cpp_object<LayoutParams>(jobj)
-			, gravity(jobj)
+, gravity(jobj)
 			{
 			}
 
+			operator local_ref<android::view::ViewGroup_::MarginLayoutParams>() const;
+
+
+			LayoutParams(local_ref< android::content::Context > const&, local_ref< android::util::AttributeSet > const&);
+			LayoutParams(cpp_int const&, cpp_int const&);
+			LayoutParams(cpp_int const&, cpp_int const&, cpp_int const&);
+			LayoutParams(local_ref< android::view::ViewGroup_::LayoutParams > const&);
+			LayoutParams(local_ref< android::view::ViewGroup_::MarginLayoutParams > const&);
 
 			field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(0), J2CPP_FIELD_SIGNATURE(0), cpp_int > gravity;
 		}; //class LayoutParams
@@ -94,11 +103,17 @@ namespace android { namespace widget {
 
 		typedef FrameLayout_::LayoutParams LayoutParams;
 
-		FrameLayout(jobject jobj)
+		explicit FrameLayout(jobject jobj)
 		: cpp_object<FrameLayout>(jobj)
 		{
 		}
 
+		operator local_ref<android::view::ViewGroup>() const;
+
+
+		FrameLayout(local_ref< android::content::Context > const&);
+		FrameLayout(local_ref< android::content::Context > const&, local_ref< android::util::AttributeSet > const&);
+		FrameLayout(local_ref< android::content::Context > const&, local_ref< android::util::AttributeSet > const&, cpp_int const&);
 		void setForegroundGravity(cpp_int const&);
 		void setForeground(local_ref< android::graphics::drawable::Drawable > const&);
 		local_ref< android::graphics::drawable::Drawable > getForeground();
@@ -113,7 +128,6 @@ namespace android { namespace widget {
 } //namespace widget
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_WIDGET_FRAMELAYOUT_HPP_DECL
@@ -127,65 +141,81 @@ namespace j2cpp {
 
 
 
-template <>
-local_ref< android::widget::FrameLayout_::LayoutParams > create< android::widget::FrameLayout_::LayoutParams>(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1)
+
+android::widget::FrameLayout_::LayoutParams::operator local_ref<android::view::ViewGroup_::MarginLayoutParams>() const
 {
-	return local_ref< android::widget::FrameLayout_::LayoutParams >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::widget::FrameLayout_::LayoutParams::J2CPP_CLASS_NAME>(),
-			get_method_id<android::widget::FrameLayout_::LayoutParams::J2CPP_CLASS_NAME, android::widget::FrameLayout_::LayoutParams::J2CPP_METHOD_NAME(0), android::widget::FrameLayout_::LayoutParams::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<android::view::ViewGroup_::MarginLayoutParams>(get_jtype());
 }
 
-template <>
-local_ref< android::widget::FrameLayout_::LayoutParams > create< android::widget::FrameLayout_::LayoutParams>(cpp_int const &a0, cpp_int const &a1)
+
+android::widget::FrameLayout_::LayoutParams::LayoutParams(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1)
+: cpp_object<android::widget::FrameLayout_::LayoutParams>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::widget::FrameLayout_::LayoutParams::J2CPP_CLASS_NAME>(),
+		get_method_id<android::widget::FrameLayout_::LayoutParams::J2CPP_CLASS_NAME, android::widget::FrameLayout_::LayoutParams::J2CPP_METHOD_NAME(0), android::widget::FrameLayout_::LayoutParams::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+, gravity(get_jtype())
 {
-	return local_ref< android::widget::FrameLayout_::LayoutParams >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::widget::FrameLayout_::LayoutParams::J2CPP_CLASS_NAME>(),
-			get_method_id<android::widget::FrameLayout_::LayoutParams::J2CPP_CLASS_NAME, android::widget::FrameLayout_::LayoutParams::J2CPP_METHOD_NAME(1), android::widget::FrameLayout_::LayoutParams::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< android::widget::FrameLayout_::LayoutParams > create< android::widget::FrameLayout_::LayoutParams>(cpp_int const &a0, cpp_int const &a1, cpp_int const &a2)
+
+
+android::widget::FrameLayout_::LayoutParams::LayoutParams(cpp_int const &a0, cpp_int const &a1)
+: cpp_object<android::widget::FrameLayout_::LayoutParams>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::widget::FrameLayout_::LayoutParams::J2CPP_CLASS_NAME>(),
+		get_method_id<android::widget::FrameLayout_::LayoutParams::J2CPP_CLASS_NAME, android::widget::FrameLayout_::LayoutParams::J2CPP_METHOD_NAME(1), android::widget::FrameLayout_::LayoutParams::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+, gravity(get_jtype())
 {
-	return local_ref< android::widget::FrameLayout_::LayoutParams >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::widget::FrameLayout_::LayoutParams::J2CPP_CLASS_NAME>(),
-			get_method_id<android::widget::FrameLayout_::LayoutParams::J2CPP_CLASS_NAME, android::widget::FrameLayout_::LayoutParams::J2CPP_METHOD_NAME(2), android::widget::FrameLayout_::LayoutParams::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< android::widget::FrameLayout_::LayoutParams > create< android::widget::FrameLayout_::LayoutParams>(local_ref< android::view::ViewGroup_::LayoutParams > const &a0)
+
+
+android::widget::FrameLayout_::LayoutParams::LayoutParams(cpp_int const &a0, cpp_int const &a1, cpp_int const &a2)
+: cpp_object<android::widget::FrameLayout_::LayoutParams>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::widget::FrameLayout_::LayoutParams::J2CPP_CLASS_NAME>(),
+		get_method_id<android::widget::FrameLayout_::LayoutParams::J2CPP_CLASS_NAME, android::widget::FrameLayout_::LayoutParams::J2CPP_METHOD_NAME(2), android::widget::FrameLayout_::LayoutParams::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
+	)
+)
+, gravity(get_jtype())
 {
-	return local_ref< android::widget::FrameLayout_::LayoutParams >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::widget::FrameLayout_::LayoutParams::J2CPP_CLASS_NAME>(),
-			get_method_id<android::widget::FrameLayout_::LayoutParams::J2CPP_CLASS_NAME, android::widget::FrameLayout_::LayoutParams::J2CPP_METHOD_NAME(3), android::widget::FrameLayout_::LayoutParams::J2CPP_METHOD_SIGNATURE(3), false>(),
-			a0.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< android::widget::FrameLayout_::LayoutParams > create< android::widget::FrameLayout_::LayoutParams>(local_ref< android::view::ViewGroup_::MarginLayoutParams > const &a0)
+
+
+android::widget::FrameLayout_::LayoutParams::LayoutParams(local_ref< android::view::ViewGroup_::LayoutParams > const &a0)
+: cpp_object<android::widget::FrameLayout_::LayoutParams>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::widget::FrameLayout_::LayoutParams::J2CPP_CLASS_NAME>(),
+		get_method_id<android::widget::FrameLayout_::LayoutParams::J2CPP_CLASS_NAME, android::widget::FrameLayout_::LayoutParams::J2CPP_METHOD_NAME(3), android::widget::FrameLayout_::LayoutParams::J2CPP_METHOD_SIGNATURE(3), false>(),
+		a0.get_jtype()
+	)
+)
+, gravity(get_jtype())
 {
-	return local_ref< android::widget::FrameLayout_::LayoutParams >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::widget::FrameLayout_::LayoutParams::J2CPP_CLASS_NAME>(),
-			get_method_id<android::widget::FrameLayout_::LayoutParams::J2CPP_CLASS_NAME, android::widget::FrameLayout_::LayoutParams::J2CPP_METHOD_NAME(4), android::widget::FrameLayout_::LayoutParams::J2CPP_METHOD_SIGNATURE(4), false>(),
-			a0.get_jtype()
-		)
-	);
 }
+
+
+
+android::widget::FrameLayout_::LayoutParams::LayoutParams(local_ref< android::view::ViewGroup_::MarginLayoutParams > const &a0)
+: cpp_object<android::widget::FrameLayout_::LayoutParams>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::widget::FrameLayout_::LayoutParams::J2CPP_CLASS_NAME>(),
+		get_method_id<android::widget::FrameLayout_::LayoutParams::J2CPP_CLASS_NAME, android::widget::FrameLayout_::LayoutParams::J2CPP_METHOD_NAME(4), android::widget::FrameLayout_::LayoutParams::J2CPP_METHOD_SIGNATURE(4), false>(),
+		a0.get_jtype()
+	)
+)
+, gravity(get_jtype())
+{
+}
+
 
 
 
@@ -198,41 +228,50 @@ J2CPP_DEFINE_METHOD(android::widget::FrameLayout_::LayoutParams,4,"<init>","(Lan
 J2CPP_DEFINE_FIELD(android::widget::FrameLayout_::LayoutParams,0,"gravity","I")
 
 
-template <>
-local_ref< android::widget::FrameLayout > create< android::widget::FrameLayout>(local_ref< android::content::Context > const &a0)
+
+android::widget::FrameLayout::operator local_ref<android::view::ViewGroup>() const
 {
-	return local_ref< android::widget::FrameLayout >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::widget::FrameLayout::J2CPP_CLASS_NAME>(),
-			get_method_id<android::widget::FrameLayout::J2CPP_CLASS_NAME, android::widget::FrameLayout::J2CPP_METHOD_NAME(0), android::widget::FrameLayout::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<android::view::ViewGroup>(get_jtype());
 }
 
-template <>
-local_ref< android::widget::FrameLayout > create< android::widget::FrameLayout>(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1)
+
+android::widget::FrameLayout::FrameLayout(local_ref< android::content::Context > const &a0)
+: cpp_object<android::widget::FrameLayout>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::widget::FrameLayout::J2CPP_CLASS_NAME>(),
+		get_method_id<android::widget::FrameLayout::J2CPP_CLASS_NAME, android::widget::FrameLayout::J2CPP_METHOD_NAME(0), android::widget::FrameLayout::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< android::widget::FrameLayout >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::widget::FrameLayout::J2CPP_CLASS_NAME>(),
-			get_method_id<android::widget::FrameLayout::J2CPP_CLASS_NAME, android::widget::FrameLayout::J2CPP_METHOD_NAME(1), android::widget::FrameLayout::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< android::widget::FrameLayout > create< android::widget::FrameLayout>(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1, cpp_int const &a2)
+
+
+android::widget::FrameLayout::FrameLayout(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1)
+: cpp_object<android::widget::FrameLayout>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::widget::FrameLayout::J2CPP_CLASS_NAME>(),
+		get_method_id<android::widget::FrameLayout::J2CPP_CLASS_NAME, android::widget::FrameLayout::J2CPP_METHOD_NAME(1), android::widget::FrameLayout::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
 {
-	return local_ref< android::widget::FrameLayout >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::widget::FrameLayout::J2CPP_CLASS_NAME>(),
-			get_method_id<android::widget::FrameLayout::J2CPP_CLASS_NAME, android::widget::FrameLayout::J2CPP_METHOD_NAME(2), android::widget::FrameLayout::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
-		)
-	);
 }
+
+
+
+android::widget::FrameLayout::FrameLayout(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1, cpp_int const &a2)
+: cpp_object<android::widget::FrameLayout>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::widget::FrameLayout::J2CPP_CLASS_NAME>(),
+		get_method_id<android::widget::FrameLayout::J2CPP_CLASS_NAME, android::widget::FrameLayout::J2CPP_METHOD_NAME(2), android::widget::FrameLayout::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
+	)
+)
+{
+}
+
 
 void android::widget::FrameLayout::setForegroundGravity(cpp_int const &a0)
 {

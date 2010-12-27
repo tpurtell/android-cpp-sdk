@@ -10,8 +10,10 @@
 #define J2CPP_JAVA_LANG_STRICTMATH_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -74,10 +76,13 @@ namespace java { namespace lang {
 		J2CPP_DECLARE_FIELD(0)
 		J2CPP_DECLARE_FIELD(1)
 
-		StrictMath(jobject jobj)
+		explicit StrictMath(jobject jobj)
 		: cpp_object<StrictMath>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		static cpp_double abs(cpp_double const&);
 		static cpp_float abs(cpp_float const&);
@@ -131,7 +136,6 @@ namespace java { namespace lang {
 } //namespace lang
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_LANG_STRICTMATH_HPP_DECL
@@ -144,16 +148,12 @@ namespace java { namespace lang {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::lang::StrictMath > create< java::lang::StrictMath>()
+
+java::lang::StrictMath::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::lang::StrictMath >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::lang::StrictMath::J2CPP_CLASS_NAME>(),
-			get_method_id<java::lang::StrictMath::J2CPP_CLASS_NAME, java::lang::StrictMath::J2CPP_METHOD_NAME(0), java::lang::StrictMath::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
 
 cpp_double java::lang::StrictMath::abs(cpp_double const &a0)
 {

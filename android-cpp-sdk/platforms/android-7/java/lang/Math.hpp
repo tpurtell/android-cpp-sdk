@@ -10,8 +10,10 @@
 #define J2CPP_JAVA_LANG_MATH_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -74,10 +76,13 @@ namespace java { namespace lang {
 		J2CPP_DECLARE_FIELD(0)
 		J2CPP_DECLARE_FIELD(1)
 
-		Math(jobject jobj)
+		explicit Math(jobject jobj)
 		: cpp_object<Math>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		static cpp_double abs(cpp_double const&);
 		static cpp_float abs(cpp_float const&);
@@ -131,7 +136,6 @@ namespace java { namespace lang {
 } //namespace lang
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_LANG_MATH_HPP_DECL
@@ -144,16 +148,12 @@ namespace java { namespace lang {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::lang::Math > create< java::lang::Math>()
+
+java::lang::Math::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::lang::Math >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::lang::Math::J2CPP_CLASS_NAME>(),
-			get_method_id<java::lang::Math::J2CPP_CLASS_NAME, java::lang::Math::J2CPP_METHOD_NAME(0), java::lang::Math::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
 
 cpp_double java::lang::Math::abs(cpp_double const &a0)
 {

@@ -10,9 +10,13 @@
 #define J2CPP_ANDROID_UTIL_LOGPRINTER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace android { namespace util { class Printer; } } }
 
 
+#include <android/util/Printer.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -31,17 +35,21 @@ namespace android { namespace util {
 		J2CPP_DECLARE_METHOD(0)
 		J2CPP_DECLARE_METHOD(1)
 
-		LogPrinter(jobject jobj)
+		explicit LogPrinter(jobject jobj)
 		: cpp_object<LogPrinter>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<android::util::Printer>() const;
+
+
+		LogPrinter(cpp_int const&, local_ref< java::lang::String > const&);
 		void println(local_ref< java::lang::String > const&);
 	}; //class LogPrinter
 
 } //namespace util
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -55,17 +63,29 @@ namespace android { namespace util {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::util::LogPrinter > create< android::util::LogPrinter>(cpp_int const &a0, local_ref< java::lang::String > const &a1)
+
+android::util::LogPrinter::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::util::LogPrinter >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::util::LogPrinter::J2CPP_CLASS_NAME>(),
-			get_method_id<android::util::LogPrinter::J2CPP_CLASS_NAME, android::util::LogPrinter::J2CPP_METHOD_NAME(0), android::util::LogPrinter::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+android::util::LogPrinter::operator local_ref<android::util::Printer>() const
+{
+	return local_ref<android::util::Printer>(get_jtype());
+}
+
+
+android::util::LogPrinter::LogPrinter(cpp_int const &a0, local_ref< java::lang::String > const &a1)
+: cpp_object<android::util::LogPrinter>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::util::LogPrinter::J2CPP_CLASS_NAME>(),
+		get_method_id<android::util::LogPrinter::J2CPP_CLASS_NAME, android::util::LogPrinter::J2CPP_METHOD_NAME(0), android::util::LogPrinter::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
 
 void android::util::LogPrinter::println(local_ref< java::lang::String > const &a0)
 {

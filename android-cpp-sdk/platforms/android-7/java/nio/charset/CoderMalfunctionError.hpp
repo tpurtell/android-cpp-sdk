@@ -10,9 +10,11 @@
 #define J2CPP_JAVA_NIO_CHARSET_CODERMALFUNCTIONERROR_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Error; } } }
 namespace j2cpp { namespace java { namespace lang { class Exception; } } }
 
 
+#include <java/lang/Error.hpp>
 #include <java/lang/Exception.hpp>
 
 
@@ -30,17 +32,20 @@ namespace java { namespace nio { namespace charset {
 
 		J2CPP_DECLARE_METHOD(0)
 
-		CoderMalfunctionError(jobject jobj)
+		explicit CoderMalfunctionError(jobject jobj)
 		: cpp_object<CoderMalfunctionError>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Error>() const;
+
+
+		CoderMalfunctionError(local_ref< java::lang::Exception > const&);
 	}; //class CoderMalfunctionError
 
 } //namespace charset
 } //namespace nio
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -54,17 +59,24 @@ namespace java { namespace nio { namespace charset {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::nio::charset::CoderMalfunctionError > create< java::nio::charset::CoderMalfunctionError>(local_ref< java::lang::Exception > const &a0)
+
+java::nio::charset::CoderMalfunctionError::operator local_ref<java::lang::Error>() const
 {
-	return local_ref< java::nio::charset::CoderMalfunctionError >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::nio::charset::CoderMalfunctionError::J2CPP_CLASS_NAME>(),
-			get_method_id<java::nio::charset::CoderMalfunctionError::J2CPP_CLASS_NAME, java::nio::charset::CoderMalfunctionError::J2CPP_METHOD_NAME(0), java::nio::charset::CoderMalfunctionError::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Error>(get_jtype());
 }
+
+
+java::nio::charset::CoderMalfunctionError::CoderMalfunctionError(local_ref< java::lang::Exception > const &a0)
+: cpp_object<java::nio::charset::CoderMalfunctionError>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::nio::charset::CoderMalfunctionError::J2CPP_CLASS_NAME>(),
+		get_method_id<java::nio::charset::CoderMalfunctionError::J2CPP_CLASS_NAME, java::nio::charset::CoderMalfunctionError::J2CPP_METHOD_NAME(0), java::nio::charset::CoderMalfunctionError::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 
 J2CPP_DEFINE_CLASS(java::nio::charset::CoderMalfunctionError,"java/nio/charset/CoderMalfunctionError")

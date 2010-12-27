@@ -10,8 +10,10 @@
 #define J2CPP_ANDROID_UTIL_MONTHDISPLAYHELPER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -42,11 +44,16 @@ namespace android { namespace util {
 		J2CPP_DECLARE_METHOD(13)
 		J2CPP_DECLARE_METHOD(14)
 
-		MonthDisplayHelper(jobject jobj)
+		explicit MonthDisplayHelper(jobject jobj)
 		: cpp_object<MonthDisplayHelper>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		MonthDisplayHelper(cpp_int const&, cpp_int const&, cpp_int const&);
+		MonthDisplayHelper(cpp_int const&, cpp_int const&);
 		cpp_int getYear();
 		cpp_int getMonth();
 		cpp_int getWeekStartDay();
@@ -65,7 +72,6 @@ namespace android { namespace util {
 } //namespace util
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_UTIL_MONTHDISPLAYHELPER_HPP_DECL
@@ -78,29 +84,37 @@ namespace android { namespace util {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::util::MonthDisplayHelper > create< android::util::MonthDisplayHelper>(cpp_int const &a0, cpp_int const &a1, cpp_int const &a2)
+
+android::util::MonthDisplayHelper::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::util::MonthDisplayHelper >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::util::MonthDisplayHelper::J2CPP_CLASS_NAME>(),
-			get_method_id<android::util::MonthDisplayHelper::J2CPP_CLASS_NAME, android::util::MonthDisplayHelper::J2CPP_METHOD_NAME(0), android::util::MonthDisplayHelper::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
 
-template <>
-local_ref< android::util::MonthDisplayHelper > create< android::util::MonthDisplayHelper>(cpp_int const &a0, cpp_int const &a1)
+
+android::util::MonthDisplayHelper::MonthDisplayHelper(cpp_int const &a0, cpp_int const &a1, cpp_int const &a2)
+: cpp_object<android::util::MonthDisplayHelper>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::util::MonthDisplayHelper::J2CPP_CLASS_NAME>(),
+		get_method_id<android::util::MonthDisplayHelper::J2CPP_CLASS_NAME, android::util::MonthDisplayHelper::J2CPP_METHOD_NAME(0), android::util::MonthDisplayHelper::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
+	)
+)
 {
-	return local_ref< android::util::MonthDisplayHelper >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::util::MonthDisplayHelper::J2CPP_CLASS_NAME>(),
-			get_method_id<android::util::MonthDisplayHelper::J2CPP_CLASS_NAME, android::util::MonthDisplayHelper::J2CPP_METHOD_NAME(1), android::util::MonthDisplayHelper::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
 }
+
+
+
+android::util::MonthDisplayHelper::MonthDisplayHelper(cpp_int const &a0, cpp_int const &a1)
+: cpp_object<android::util::MonthDisplayHelper>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::util::MonthDisplayHelper::J2CPP_CLASS_NAME>(),
+		get_method_id<android::util::MonthDisplayHelper::J2CPP_CLASS_NAME, android::util::MonthDisplayHelper::J2CPP_METHOD_NAME(1), android::util::MonthDisplayHelper::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
 
 cpp_int android::util::MonthDisplayHelper::getYear()
 {

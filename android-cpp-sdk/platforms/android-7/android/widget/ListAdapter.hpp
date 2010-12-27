@@ -10,8 +10,12 @@
 #define J2CPP_ANDROID_WIDGET_LISTADAPTER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace android { namespace widget { class Adapter; } } }
 
 
+#include <android/widget/Adapter.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -29,10 +33,14 @@ namespace android { namespace widget {
 		J2CPP_DECLARE_METHOD(0)
 		J2CPP_DECLARE_METHOD(1)
 
-		ListAdapter(jobject jobj)
+		explicit ListAdapter(jobject jobj)
 		: cpp_object<ListAdapter>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<android::widget::Adapter>() const;
+
 
 		cpp_boolean areAllItemsEnabled();
 		cpp_boolean isEnabled(cpp_int const&);
@@ -40,7 +48,6 @@ namespace android { namespace widget {
 
 } //namespace widget
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -53,6 +60,17 @@ namespace android { namespace widget {
 
 namespace j2cpp {
 
+
+
+android::widget::ListAdapter::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
+
+android::widget::ListAdapter::operator local_ref<android::widget::Adapter>() const
+{
+	return local_ref<android::widget::Adapter>(get_jtype());
+}
 
 cpp_boolean android::widget::ListAdapter::areAllItemsEnabled()
 {

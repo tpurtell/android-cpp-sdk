@@ -10,8 +10,10 @@
 #define J2CPP_ANDROID_VIEW_ANIMATION_INTERPOLATOR_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -28,10 +30,13 @@ namespace android { namespace view { namespace animation {
 
 		J2CPP_DECLARE_METHOD(0)
 
-		Interpolator(jobject jobj)
+		explicit Interpolator(jobject jobj)
 		: cpp_object<Interpolator>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		cpp_float getInterpolation(cpp_float const&);
 	}; //class Interpolator
@@ -39,7 +44,6 @@ namespace android { namespace view { namespace animation {
 } //namespace animation
 } //namespace view
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -52,6 +56,12 @@ namespace android { namespace view { namespace animation {
 
 namespace j2cpp {
 
+
+
+android::view::animation::Interpolator::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 cpp_float android::view::animation::Interpolator::getInterpolation(cpp_float const &a0)
 {

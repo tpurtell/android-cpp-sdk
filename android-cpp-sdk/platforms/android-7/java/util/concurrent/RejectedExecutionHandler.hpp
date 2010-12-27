@@ -10,10 +10,12 @@
 #define J2CPP_JAVA_UTIL_CONCURRENT_REJECTEDEXECUTIONHANDLER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class Runnable; } } }
 namespace j2cpp { namespace java { namespace util { namespace concurrent { class ThreadPoolExecutor; } } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/Runnable.hpp>
 #include <java/util/concurrent/ThreadPoolExecutor.hpp>
 
@@ -32,10 +34,13 @@ namespace java { namespace util { namespace concurrent {
 
 		J2CPP_DECLARE_METHOD(0)
 
-		RejectedExecutionHandler(jobject jobj)
+		explicit RejectedExecutionHandler(jobject jobj)
 		: cpp_object<RejectedExecutionHandler>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		void rejectedExecution(local_ref< java::lang::Runnable > const&, local_ref< java::util::concurrent::ThreadPoolExecutor > const&);
 	}; //class RejectedExecutionHandler
@@ -43,7 +48,6 @@ namespace java { namespace util { namespace concurrent {
 } //namespace concurrent
 } //namespace util
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -56,6 +60,12 @@ namespace java { namespace util { namespace concurrent {
 
 namespace j2cpp {
 
+
+
+java::util::concurrent::RejectedExecutionHandler::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 void java::util::concurrent::RejectedExecutionHandler::rejectedExecution(local_ref< java::lang::Runnable > const &a0, local_ref< java::util::concurrent::ThreadPoolExecutor > const &a1)
 {

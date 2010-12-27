@@ -10,11 +10,13 @@
 #define J2CPP_JAVA_MATH_MATHCONTEXT_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace math { class RoundingMode; } } }
 
 
+#include <java/io/Serializable.hpp>
 #include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/math/RoundingMode.hpp>
@@ -46,11 +48,18 @@ namespace java { namespace math {
 		J2CPP_DECLARE_FIELD(2)
 		J2CPP_DECLARE_FIELD(3)
 
-		MathContext(jobject jobj)
+		explicit MathContext(jobject jobj)
 		: cpp_object<MathContext>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::io::Serializable>() const;
+
+
+		MathContext(cpp_int const&);
+		MathContext(cpp_int const&, local_ref< java::math::RoundingMode > const&);
+		MathContext(local_ref< java::lang::String > const&);
 		cpp_int getPrecision();
 		local_ref< java::math::RoundingMode > getRoundingMode();
 		cpp_boolean equals(local_ref< java::lang::Object > const&);
@@ -66,7 +75,6 @@ namespace java { namespace math {
 } //namespace math
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_MATH_MATHCONTEXT_HPP_DECL
@@ -79,41 +87,55 @@ namespace java { namespace math {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::math::MathContext > create< java::math::MathContext>(cpp_int const &a0)
+
+java::math::MathContext::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::math::MathContext >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::math::MathContext::J2CPP_CLASS_NAME>(),
-			get_method_id<java::math::MathContext::J2CPP_CLASS_NAME, java::math::MathContext::J2CPP_METHOD_NAME(0), java::math::MathContext::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
 
-template <>
-local_ref< java::math::MathContext > create< java::math::MathContext>(cpp_int const &a0, local_ref< java::math::RoundingMode > const &a1)
+java::math::MathContext::operator local_ref<java::io::Serializable>() const
 {
-	return local_ref< java::math::MathContext >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::math::MathContext::J2CPP_CLASS_NAME>(),
-			get_method_id<java::math::MathContext::J2CPP_CLASS_NAME, java::math::MathContext::J2CPP_METHOD_NAME(1), java::math::MathContext::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<java::io::Serializable>(get_jtype());
 }
 
-template <>
-local_ref< java::math::MathContext > create< java::math::MathContext>(local_ref< java::lang::String > const &a0)
+
+java::math::MathContext::MathContext(cpp_int const &a0)
+: cpp_object<java::math::MathContext>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::math::MathContext::J2CPP_CLASS_NAME>(),
+		get_method_id<java::math::MathContext::J2CPP_CLASS_NAME, java::math::MathContext::J2CPP_METHOD_NAME(0), java::math::MathContext::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< java::math::MathContext >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::math::MathContext::J2CPP_CLASS_NAME>(),
-			get_method_id<java::math::MathContext::J2CPP_CLASS_NAME, java::math::MathContext::J2CPP_METHOD_NAME(2), java::math::MathContext::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype()
-		)
-	);
 }
+
+
+
+java::math::MathContext::MathContext(cpp_int const &a0, local_ref< java::math::RoundingMode > const &a1)
+: cpp_object<java::math::MathContext>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::math::MathContext::J2CPP_CLASS_NAME>(),
+		get_method_id<java::math::MathContext::J2CPP_CLASS_NAME, java::math::MathContext::J2CPP_METHOD_NAME(1), java::math::MathContext::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
+
+
+java::math::MathContext::MathContext(local_ref< java::lang::String > const &a0)
+: cpp_object<java::math::MathContext>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::math::MathContext::J2CPP_CLASS_NAME>(),
+		get_method_id<java::math::MathContext::J2CPP_CLASS_NAME, java::math::MathContext::J2CPP_METHOD_NAME(2), java::math::MathContext::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 cpp_int java::math::MathContext::getPrecision()
 {
@@ -165,6 +187,7 @@ local_ref< java::lang::String > java::math::MathContext::toString()
 		)
 	);
 }
+
 
 
 static_field<

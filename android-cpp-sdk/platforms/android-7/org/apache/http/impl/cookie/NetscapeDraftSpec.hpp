@@ -14,12 +14,14 @@ namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace util { class List; } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace cookie { class CookieOrigin; } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { class Header; } } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { namespace impl { namespace cookie { class CookieSpecBase; } } } } } }
 
 
 #include <java/lang/String.hpp>
 #include <java/util/List.hpp>
 #include <org/apache/http/Header.hpp>
 #include <org/apache/http/cookie/CookieOrigin.hpp>
+#include <org/apache/http/impl/cookie/CookieSpecBase.hpp>
 
 
 namespace j2cpp {
@@ -42,11 +44,16 @@ namespace org { namespace apache { namespace http { namespace impl { namespace c
 		J2CPP_DECLARE_METHOD(5)
 		J2CPP_DECLARE_FIELD(0)
 
-		NetscapeDraftSpec(jobject jobj)
+		explicit NetscapeDraftSpec(jobject jobj)
 		: cpp_object<NetscapeDraftSpec>(jobj)
 		{
 		}
 
+		operator local_ref<org::apache::http::impl::cookie::CookieSpecBase>() const;
+
+
+		NetscapeDraftSpec(local_ref< cpp_object_array<java::lang::String, 1> > const&);
+		NetscapeDraftSpec();
 		local_ref< java::util::List > parse(local_ref< org::apache::http::Header > const&, local_ref< org::apache::http::cookie::CookieOrigin > const&);
 		local_ref< java::util::List > formatCookies(local_ref< java::util::List > const&);
 		cpp_int getVersion();
@@ -60,7 +67,6 @@ namespace org { namespace apache { namespace http { namespace impl { namespace c
 } //namespace apache
 } //namespace org
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ORG_APACHE_HTTP_IMPL_COOKIE_NETSCAPEDRAFTSPEC_HPP_DECL
@@ -73,28 +79,36 @@ namespace org { namespace apache { namespace http { namespace impl { namespace c
 namespace j2cpp {
 
 
-template <>
-local_ref< org::apache::http::impl::cookie::NetscapeDraftSpec > create< org::apache::http::impl::cookie::NetscapeDraftSpec>(local_ref< cpp_object_array<java::lang::String, 1> > const &a0)
+
+org::apache::http::impl::cookie::NetscapeDraftSpec::operator local_ref<org::apache::http::impl::cookie::CookieSpecBase>() const
 {
-	return local_ref< org::apache::http::impl::cookie::NetscapeDraftSpec >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::apache::http::impl::cookie::NetscapeDraftSpec::J2CPP_CLASS_NAME>(),
-			get_method_id<org::apache::http::impl::cookie::NetscapeDraftSpec::J2CPP_CLASS_NAME, org::apache::http::impl::cookie::NetscapeDraftSpec::J2CPP_METHOD_NAME(0), org::apache::http::impl::cookie::NetscapeDraftSpec::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<org::apache::http::impl::cookie::CookieSpecBase>(get_jtype());
 }
 
-template <>
-local_ref< org::apache::http::impl::cookie::NetscapeDraftSpec > create< org::apache::http::impl::cookie::NetscapeDraftSpec>()
+
+org::apache::http::impl::cookie::NetscapeDraftSpec::NetscapeDraftSpec(local_ref< cpp_object_array<java::lang::String, 1> > const &a0)
+: cpp_object<org::apache::http::impl::cookie::NetscapeDraftSpec>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::apache::http::impl::cookie::NetscapeDraftSpec::J2CPP_CLASS_NAME>(),
+		get_method_id<org::apache::http::impl::cookie::NetscapeDraftSpec::J2CPP_CLASS_NAME, org::apache::http::impl::cookie::NetscapeDraftSpec::J2CPP_METHOD_NAME(0), org::apache::http::impl::cookie::NetscapeDraftSpec::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< org::apache::http::impl::cookie::NetscapeDraftSpec >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::apache::http::impl::cookie::NetscapeDraftSpec::J2CPP_CLASS_NAME>(),
-			get_method_id<org::apache::http::impl::cookie::NetscapeDraftSpec::J2CPP_CLASS_NAME, org::apache::http::impl::cookie::NetscapeDraftSpec::J2CPP_METHOD_NAME(1), org::apache::http::impl::cookie::NetscapeDraftSpec::J2CPP_METHOD_SIGNATURE(1), false>()
-		)
-	);
 }
+
+
+
+org::apache::http::impl::cookie::NetscapeDraftSpec::NetscapeDraftSpec()
+: cpp_object<org::apache::http::impl::cookie::NetscapeDraftSpec>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::apache::http::impl::cookie::NetscapeDraftSpec::J2CPP_CLASS_NAME>(),
+		get_method_id<org::apache::http::impl::cookie::NetscapeDraftSpec::J2CPP_CLASS_NAME, org::apache::http::impl::cookie::NetscapeDraftSpec::J2CPP_METHOD_NAME(1), org::apache::http::impl::cookie::NetscapeDraftSpec::J2CPP_METHOD_SIGNATURE(1), false>()
+	)
+)
+{
+}
+
 
 local_ref< java::util::List > org::apache::http::impl::cookie::NetscapeDraftSpec::parse(local_ref< org::apache::http::Header > const &a0, local_ref< org::apache::http::cookie::CookieOrigin > const &a1)
 {

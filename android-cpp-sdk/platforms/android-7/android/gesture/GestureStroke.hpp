@@ -10,6 +10,7 @@
 #define J2CPP_ANDROID_GESTURE_GESTURESTROKE_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace util { class ArrayList; } } }
 namespace j2cpp { namespace android { namespace graphics { class Path; } } }
 namespace j2cpp { namespace android { namespace graphics { class RectF; } } }
@@ -19,6 +20,7 @@ namespace j2cpp { namespace android { namespace gesture { class OrientedBounding
 #include <android/gesture/OrientedBoundingBox.hpp>
 #include <android/graphics/Path.hpp>
 #include <android/graphics/RectF.hpp>
+#include <java/lang/Object.hpp>
 #include <java/util/ArrayList.hpp>
 
 
@@ -43,14 +45,18 @@ namespace android { namespace gesture {
 		J2CPP_DECLARE_FIELD(1)
 		J2CPP_DECLARE_FIELD(2)
 
-		GestureStroke(jobject jobj)
+		explicit GestureStroke(jobject jobj)
 		: cpp_object<GestureStroke>(jobj)
-		, boundingBox(jobj)
-		, length(jobj)
-		, points(jobj)
+, boundingBox(jobj)
+, length(jobj)
+, points(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		GestureStroke(local_ref< java::util::ArrayList > const&);
 		local_ref< android::graphics::Path > getPath();
 		local_ref< android::graphics::Path > toPath(cpp_float const&, cpp_float const&, cpp_int const&);
 		void clearPath();
@@ -64,7 +70,6 @@ namespace android { namespace gesture {
 } //namespace gesture
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_GESTURE_GESTURESTROKE_HPP_DECL
@@ -77,17 +82,27 @@ namespace android { namespace gesture {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::gesture::GestureStroke > create< android::gesture::GestureStroke>(local_ref< java::util::ArrayList > const &a0)
+
+android::gesture::GestureStroke::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::gesture::GestureStroke >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::gesture::GestureStroke::J2CPP_CLASS_NAME>(),
-			get_method_id<android::gesture::GestureStroke::J2CPP_CLASS_NAME, android::gesture::GestureStroke::J2CPP_METHOD_NAME(0), android::gesture::GestureStroke::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::gesture::GestureStroke::GestureStroke(local_ref< java::util::ArrayList > const &a0)
+: cpp_object<android::gesture::GestureStroke>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::gesture::GestureStroke::J2CPP_CLASS_NAME>(),
+		get_method_id<android::gesture::GestureStroke::J2CPP_CLASS_NAME, android::gesture::GestureStroke::J2CPP_METHOD_NAME(0), android::gesture::GestureStroke::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
+, boundingBox(get_jtype())
+, length(get_jtype())
+, points(get_jtype())
+{
+}
+
 
 local_ref< android::graphics::Path > android::gesture::GestureStroke::getPath()
 {

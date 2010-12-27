@@ -10,10 +10,12 @@
 #define J2CPP_ANDROID_OS_MESSAGEQUEUE_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace android { namespace os { namespace MessageQueue_ { class IdleHandler; } } } }
 
 
 #include <android/os/MessageQueue.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -33,10 +35,13 @@ namespace android { namespace os {
 
 			J2CPP_DECLARE_METHOD(0)
 
-			IdleHandler(jobject jobj)
+			explicit IdleHandler(jobject jobj)
 			: cpp_object<IdleHandler>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+
 
 			cpp_boolean queueIdle();
 		}; //class IdleHandler
@@ -56,10 +61,13 @@ namespace android { namespace os {
 
 		typedef MessageQueue_::IdleHandler IdleHandler;
 
-		MessageQueue(jobject jobj)
+		explicit MessageQueue(jobject jobj)
 		: cpp_object<MessageQueue>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		void addIdleHandler(local_ref< android::os::MessageQueue_::IdleHandler > const&);
 		void removeIdleHandler(local_ref< android::os::MessageQueue_::IdleHandler > const&);
@@ -67,7 +75,6 @@ namespace android { namespace os {
 
 } //namespace os
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -81,6 +88,12 @@ namespace android { namespace os {
 namespace j2cpp {
 
 
+
+
+android::os::MessageQueue_::IdleHandler::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 cpp_boolean android::os::MessageQueue_::IdleHandler::queueIdle()
 {
@@ -97,16 +110,12 @@ J2CPP_DEFINE_CLASS(android::os::MessageQueue_::IdleHandler,"android/os/MessageQu
 J2CPP_DEFINE_METHOD(android::os::MessageQueue_::IdleHandler,0,"queueIdle","()Z")
 
 
-template <>
-local_ref< android::os::MessageQueue > create< android::os::MessageQueue>()
+
+android::os::MessageQueue::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::os::MessageQueue >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::os::MessageQueue::J2CPP_CLASS_NAME>(),
-			get_method_id<android::os::MessageQueue::J2CPP_CLASS_NAME, android::os::MessageQueue::J2CPP_METHOD_NAME(0), android::os::MessageQueue::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
 
 void android::os::MessageQueue::addIdleHandler(local_ref< android::os::MessageQueue_::IdleHandler > const &a0)
 {

@@ -11,11 +11,14 @@
 
 
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace android { namespace content { namespace pm { class ComponentInfo; } } } }
 namespace j2cpp { namespace android { namespace util { class Printer; } } }
 namespace j2cpp { namespace android { namespace os { class Parcel; } } }
+namespace j2cpp { namespace android { namespace os { class Parcelable; } } }
 namespace j2cpp { namespace android { namespace os { namespace Parcelable_ { class Creator; } } } }
 
 
+#include <android/content/pm/ComponentInfo.hpp>
 #include <android/os/Parcel.hpp>
 #include <android/os/Parcelable.hpp>
 #include <android/util/Printer.hpp>
@@ -83,20 +86,26 @@ namespace android { namespace content { namespace pm {
 		J2CPP_DECLARE_FIELD(38)
 		J2CPP_DECLARE_FIELD(39)
 
-		ActivityInfo(jobject jobj)
+		explicit ActivityInfo(jobject jobj)
 		: cpp_object<ActivityInfo>(jobj)
-		, theme(jobj)
-		, launchMode(jobj)
-		, permission(jobj)
-		, taskAffinity(jobj)
-		, targetActivity(jobj)
-		, flags(jobj)
-		, screenOrientation(jobj)
-		, configChanges(jobj)
-		, softInputMode(jobj)
+, theme(jobj)
+, launchMode(jobj)
+, permission(jobj)
+, taskAffinity(jobj)
+, targetActivity(jobj)
+, flags(jobj)
+, screenOrientation(jobj)
+, configChanges(jobj)
+, softInputMode(jobj)
 		{
 		}
 
+		operator local_ref<android::content::pm::ComponentInfo>() const;
+		operator local_ref<android::os::Parcelable>() const;
+
+
+		ActivityInfo();
+		ActivityInfo(local_ref< android::content::pm::ActivityInfo > const&);
 		cpp_int getThemeResource();
 		void dump(local_ref< android::util::Printer > const&, local_ref< java::lang::String > const&);
 		local_ref< java::lang::String > toString();
@@ -149,7 +158,6 @@ namespace android { namespace content { namespace pm {
 } //namespace content
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_CONTENT_PM_ACTIVITYINFO_HPP_DECL
@@ -162,28 +170,59 @@ namespace android { namespace content { namespace pm {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::content::pm::ActivityInfo > create< android::content::pm::ActivityInfo>()
+
+android::content::pm::ActivityInfo::operator local_ref<android::content::pm::ComponentInfo>() const
 {
-	return local_ref< android::content::pm::ActivityInfo >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::content::pm::ActivityInfo::J2CPP_CLASS_NAME>(),
-			get_method_id<android::content::pm::ActivityInfo::J2CPP_CLASS_NAME, android::content::pm::ActivityInfo::J2CPP_METHOD_NAME(0), android::content::pm::ActivityInfo::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<android::content::pm::ComponentInfo>(get_jtype());
 }
 
-template <>
-local_ref< android::content::pm::ActivityInfo > create< android::content::pm::ActivityInfo>(local_ref< android::content::pm::ActivityInfo > const &a0)
+android::content::pm::ActivityInfo::operator local_ref<android::os::Parcelable>() const
 {
-	return local_ref< android::content::pm::ActivityInfo >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::content::pm::ActivityInfo::J2CPP_CLASS_NAME>(),
-			get_method_id<android::content::pm::ActivityInfo::J2CPP_CLASS_NAME, android::content::pm::ActivityInfo::J2CPP_METHOD_NAME(1), android::content::pm::ActivityInfo::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<android::os::Parcelable>(get_jtype());
 }
+
+
+android::content::pm::ActivityInfo::ActivityInfo()
+: cpp_object<android::content::pm::ActivityInfo>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::content::pm::ActivityInfo::J2CPP_CLASS_NAME>(),
+		get_method_id<android::content::pm::ActivityInfo::J2CPP_CLASS_NAME, android::content::pm::ActivityInfo::J2CPP_METHOD_NAME(0), android::content::pm::ActivityInfo::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+, theme(get_jtype())
+, launchMode(get_jtype())
+, permission(get_jtype())
+, taskAffinity(get_jtype())
+, targetActivity(get_jtype())
+, flags(get_jtype())
+, screenOrientation(get_jtype())
+, configChanges(get_jtype())
+, softInputMode(get_jtype())
+{
+}
+
+
+
+android::content::pm::ActivityInfo::ActivityInfo(local_ref< android::content::pm::ActivityInfo > const &a0)
+: cpp_object<android::content::pm::ActivityInfo>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::content::pm::ActivityInfo::J2CPP_CLASS_NAME>(),
+		get_method_id<android::content::pm::ActivityInfo::J2CPP_CLASS_NAME, android::content::pm::ActivityInfo::J2CPP_METHOD_NAME(1), android::content::pm::ActivityInfo::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
+, theme(get_jtype())
+, launchMode(get_jtype())
+, permission(get_jtype())
+, taskAffinity(get_jtype())
+, targetActivity(get_jtype())
+, flags(get_jtype())
+, screenOrientation(get_jtype())
+, configChanges(get_jtype())
+, softInputMode(get_jtype())
+{
+}
+
 
 cpp_int android::content::pm::ActivityInfo::getThemeResource()
 {
@@ -236,6 +275,7 @@ void android::content::pm::ActivityInfo::writeToParcel(local_ref< android::os::P
 		)
 	);
 }
+
 
 
 static_field<

@@ -10,8 +10,10 @@
 #define J2CPP_JAVAX_CRYPTO_CIPHERSPI_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -46,16 +48,19 @@ namespace javax { namespace crypto {
 		J2CPP_DECLARE_METHOD(17)
 		J2CPP_DECLARE_METHOD(18)
 
-		CipherSpi(jobject jobj)
+		explicit CipherSpi(jobject jobj)
 		: cpp_object<CipherSpi>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		CipherSpi();
 	}; //class CipherSpi
 
 } //namespace crypto
 } //namespace javax
-
 
 } //namespace j2cpp
 
@@ -69,16 +74,23 @@ namespace javax { namespace crypto {
 namespace j2cpp {
 
 
-template <>
-local_ref< javax::crypto::CipherSpi > create< javax::crypto::CipherSpi>()
+
+javax::crypto::CipherSpi::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< javax::crypto::CipherSpi >(
-		environment::get().get_jenv()->NewObject(
-			get_class<javax::crypto::CipherSpi::J2CPP_CLASS_NAME>(),
-			get_method_id<javax::crypto::CipherSpi::J2CPP_CLASS_NAME, javax::crypto::CipherSpi::J2CPP_METHOD_NAME(0), javax::crypto::CipherSpi::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+javax::crypto::CipherSpi::CipherSpi()
+: cpp_object<javax::crypto::CipherSpi>(
+	environment::get().get_jenv()->NewObject(
+		get_class<javax::crypto::CipherSpi::J2CPP_CLASS_NAME>(),
+		get_method_id<javax::crypto::CipherSpi::J2CPP_CLASS_NAME, javax::crypto::CipherSpi::J2CPP_METHOD_NAME(0), javax::crypto::CipherSpi::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 
 

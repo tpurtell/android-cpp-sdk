@@ -10,11 +10,13 @@
 #define J2CPP_JAVA_SECURITY_CERT_CERTIFICATE_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace security { class PublicKey; } } }
 
 
+#include <java/io/Serializable.hpp>
 #include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/security/PublicKey.hpp>
@@ -38,10 +40,14 @@ namespace java { namespace security { namespace cert {
 			J2CPP_DECLARE_METHOD(0)
 			J2CPP_DECLARE_METHOD(1)
 
-			CertificateRep(jobject jobj)
+			explicit CertificateRep(jobject jobj)
 			: cpp_object<CertificateRep>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+			operator local_ref<java::io::Serializable>() const;
+
 
 		}; //class CertificateRep
 
@@ -67,10 +73,14 @@ namespace java { namespace security { namespace cert {
 
 		typedef Certificate_::CertificateRep CertificateRep;
 
-		Certificate(jobject jobj)
+		explicit Certificate(jobject jobj)
 		: cpp_object<Certificate>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::io::Serializable>() const;
+
 
 		local_ref< java::lang::String > getType();
 		cpp_boolean equals(local_ref< java::lang::Object > const&);
@@ -86,7 +96,6 @@ namespace java { namespace security { namespace cert {
 } //namespace security
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_SECURITY_CERT_CERTIFICATE_HPP_DECL
@@ -100,17 +109,17 @@ namespace j2cpp {
 
 
 
-template <>
-local_ref< java::security::cert::Certificate_::CertificateRep > create< java::security::cert::Certificate_::CertificateRep>(local_ref< java::lang::String > const &a0, local_ref< cpp_byte_array<1> > const &a1)
+
+java::security::cert::Certificate_::CertificateRep::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::security::cert::Certificate_::CertificateRep >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::security::cert::Certificate_::CertificateRep::J2CPP_CLASS_NAME>(),
-			get_method_id<java::security::cert::Certificate_::CertificateRep::J2CPP_CLASS_NAME, java::security::cert::Certificate_::CertificateRep::J2CPP_METHOD_NAME(0), java::security::cert::Certificate_::CertificateRep::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+java::security::cert::Certificate_::CertificateRep::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jtype());
+}
+
 
 
 
@@ -119,17 +128,17 @@ J2CPP_DEFINE_METHOD(java::security::cert::Certificate_::CertificateRep,0,"<init>
 J2CPP_DEFINE_METHOD(java::security::cert::Certificate_::CertificateRep,1,"readResolve","()Ljava/lang/Object;")
 
 
-template <>
-local_ref< java::security::cert::Certificate > create< java::security::cert::Certificate>(local_ref< java::lang::String > const &a0)
+
+java::security::cert::Certificate::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::security::cert::Certificate >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::security::cert::Certificate::J2CPP_CLASS_NAME>(),
-			get_method_id<java::security::cert::Certificate::J2CPP_CLASS_NAME, java::security::cert::Certificate::J2CPP_METHOD_NAME(0), java::security::cert::Certificate::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+java::security::cert::Certificate::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jtype());
+}
+
 
 local_ref< java::lang::String > java::security::cert::Certificate::getType()
 {

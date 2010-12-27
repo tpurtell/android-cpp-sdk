@@ -37,10 +37,13 @@ namespace java { namespace lang { namespace annotation {
 		J2CPP_DECLARE_METHOD(2)
 		J2CPP_DECLARE_METHOD(3)
 
-		Annotation(jobject jobj)
+		explicit Annotation(jobject jobj)
 		: cpp_object<Annotation>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		local_ref< java::lang::Class > annotationType();
 		cpp_boolean equals(local_ref< java::lang::Object > const&);
@@ -51,7 +54,6 @@ namespace java { namespace lang { namespace annotation {
 } //namespace annotation
 } //namespace lang
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -64,6 +66,12 @@ namespace java { namespace lang { namespace annotation {
 
 namespace j2cpp {
 
+
+
+java::lang::annotation::Annotation::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 local_ref< java::lang::Class > java::lang::annotation::Annotation::annotationType()
 {

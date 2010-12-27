@@ -10,9 +10,11 @@
 #define J2CPP_JAVA_IO_SYNCFAILEDEXCEPTION_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class IOException; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 
 
+#include <java/io/IOException.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -30,16 +32,19 @@ namespace java { namespace io {
 
 		J2CPP_DECLARE_METHOD(0)
 
-		SyncFailedException(jobject jobj)
+		explicit SyncFailedException(jobject jobj)
 		: cpp_object<SyncFailedException>(jobj)
 		{
 		}
 
+		operator local_ref<java::io::IOException>() const;
+
+
+		SyncFailedException(local_ref< java::lang::String > const&);
 	}; //class SyncFailedException
 
 } //namespace io
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -53,17 +58,24 @@ namespace java { namespace io {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::io::SyncFailedException > create< java::io::SyncFailedException>(local_ref< java::lang::String > const &a0)
+
+java::io::SyncFailedException::operator local_ref<java::io::IOException>() const
 {
-	return local_ref< java::io::SyncFailedException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::io::SyncFailedException::J2CPP_CLASS_NAME>(),
-			get_method_id<java::io::SyncFailedException::J2CPP_CLASS_NAME, java::io::SyncFailedException::J2CPP_METHOD_NAME(0), java::io::SyncFailedException::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::io::IOException>(get_jtype());
 }
+
+
+java::io::SyncFailedException::SyncFailedException(local_ref< java::lang::String > const &a0)
+: cpp_object<java::io::SyncFailedException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::io::SyncFailedException::J2CPP_CLASS_NAME>(),
+		get_method_id<java::io::SyncFailedException::J2CPP_CLASS_NAME, java::io::SyncFailedException::J2CPP_METHOD_NAME(0), java::io::SyncFailedException::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 
 J2CPP_DEFINE_CLASS(java::io::SyncFailedException,"java/io/SyncFailedException")

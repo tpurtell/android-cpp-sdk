@@ -10,9 +10,11 @@
 #define J2CPP_ANDROID_PROVIDER_BROWSER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace android { namespace net { class Uri; } } }
 namespace j2cpp { namespace android { namespace database { class Cursor; } } }
+namespace j2cpp { namespace android { namespace provider { class BaseColumns; } } }
 namespace j2cpp { namespace android { namespace content { class ContentResolver; } } }
 namespace j2cpp { namespace android { namespace content { class Context; } } }
 namespace j2cpp { namespace android { namespace webkit { namespace WebIconDatabase_ { class IconListener; } } } }
@@ -22,7 +24,9 @@ namespace j2cpp { namespace android { namespace webkit { namespace WebIconDataba
 #include <android/content/Context.hpp>
 #include <android/database/Cursor.hpp>
 #include <android/net/Uri.hpp>
+#include <android/provider/BaseColumns.hpp>
 #include <android/webkit/WebIconDatabase.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -50,11 +54,16 @@ namespace android { namespace provider {
 			J2CPP_DECLARE_FIELD(5)
 			J2CPP_DECLARE_FIELD(6)
 
-			BookmarkColumns(jobject jobj)
+			explicit BookmarkColumns(jobject jobj)
 			: cpp_object<BookmarkColumns>(jobj)
 			{
 			}
 
+			operator local_ref<java::lang::Object>() const;
+			operator local_ref<android::provider::BaseColumns>() const;
+
+
+			BookmarkColumns();
 
 			static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(0), J2CPP_FIELD_SIGNATURE(0), local_ref< java::lang::String > > URL;
 			static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(1), J2CPP_FIELD_SIGNATURE(1), local_ref< java::lang::String > > VISITS;
@@ -78,11 +87,16 @@ namespace android { namespace provider {
 			J2CPP_DECLARE_FIELD(1)
 			J2CPP_DECLARE_FIELD(2)
 
-			SearchColumns(jobject jobj)
+			explicit SearchColumns(jobject jobj)
 			: cpp_object<SearchColumns>(jobj)
 			{
 			}
 
+			operator local_ref<java::lang::Object>() const;
+			operator local_ref<android::provider::BaseColumns>() const;
+
+
+			SearchColumns();
 
 			static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(0), J2CPP_FIELD_SIGNATURE(0), local_ref< java::lang::String > > URL;
 			static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(1), J2CPP_FIELD_SIGNATURE(1), local_ref< java::lang::String > > SEARCH;
@@ -135,11 +149,15 @@ namespace android { namespace provider {
 		typedef Browser_::BookmarkColumns BookmarkColumns;
 		typedef Browser_::SearchColumns SearchColumns;
 
-		Browser(jobject jobj)
+		explicit Browser(jobject jobj)
 		: cpp_object<Browser>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		Browser();
 		static void saveBookmark(local_ref< android::content::Context > const&, local_ref< java::lang::String > const&, local_ref< java::lang::String > const&);
 		static void sendString(local_ref< android::content::Context > const&, local_ref< java::lang::String > const&);
 		static local_ref< android::database::Cursor > getAllBookmarks(local_ref< android::content::ContentResolver > const&);
@@ -177,7 +195,6 @@ namespace android { namespace provider {
 } //namespace provider
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_PROVIDER_BROWSER_HPP_DECL
@@ -191,16 +208,28 @@ namespace j2cpp {
 
 
 
-template <>
-local_ref< android::provider::Browser_::BookmarkColumns > create< android::provider::Browser_::BookmarkColumns>()
+
+android::provider::Browser_::BookmarkColumns::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::provider::Browser_::BookmarkColumns >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::provider::Browser_::BookmarkColumns::J2CPP_CLASS_NAME>(),
-			get_method_id<android::provider::Browser_::BookmarkColumns::J2CPP_CLASS_NAME, android::provider::Browser_::BookmarkColumns::J2CPP_METHOD_NAME(0), android::provider::Browser_::BookmarkColumns::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+android::provider::Browser_::BookmarkColumns::operator local_ref<android::provider::BaseColumns>() const
+{
+	return local_ref<android::provider::BaseColumns>(get_jtype());
+}
+
+
+android::provider::Browser_::BookmarkColumns::BookmarkColumns()
+: cpp_object<android::provider::Browser_::BookmarkColumns>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::provider::Browser_::BookmarkColumns::J2CPP_CLASS_NAME>(),
+		get_method_id<android::provider::Browser_::BookmarkColumns::J2CPP_CLASS_NAME, android::provider::Browser_::BookmarkColumns::J2CPP_METHOD_NAME(0), android::provider::Browser_::BookmarkColumns::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 
 static_field<
@@ -263,16 +292,28 @@ J2CPP_DEFINE_FIELD(android::provider::Browser_::BookmarkColumns,4,"TITLE","Ljava
 J2CPP_DEFINE_FIELD(android::provider::Browser_::BookmarkColumns,5,"CREATED","Ljava/lang/String;")
 J2CPP_DEFINE_FIELD(android::provider::Browser_::BookmarkColumns,6,"FAVICON","Ljava/lang/String;")
 
-template <>
-local_ref< android::provider::Browser_::SearchColumns > create< android::provider::Browser_::SearchColumns>()
+
+android::provider::Browser_::SearchColumns::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::provider::Browser_::SearchColumns >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::provider::Browser_::SearchColumns::J2CPP_CLASS_NAME>(),
-			get_method_id<android::provider::Browser_::SearchColumns::J2CPP_CLASS_NAME, android::provider::Browser_::SearchColumns::J2CPP_METHOD_NAME(0), android::provider::Browser_::SearchColumns::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+android::provider::Browser_::SearchColumns::operator local_ref<android::provider::BaseColumns>() const
+{
+	return local_ref<android::provider::BaseColumns>(get_jtype());
+}
+
+
+android::provider::Browser_::SearchColumns::SearchColumns()
+: cpp_object<android::provider::Browser_::SearchColumns>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::provider::Browser_::SearchColumns::J2CPP_CLASS_NAME>(),
+		get_method_id<android::provider::Browser_::SearchColumns::J2CPP_CLASS_NAME, android::provider::Browser_::SearchColumns::J2CPP_METHOD_NAME(0), android::provider::Browser_::SearchColumns::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 
 static_field<
@@ -304,16 +345,23 @@ J2CPP_DEFINE_FIELD(android::provider::Browser_::SearchColumns,1,"SEARCH","Ljava/
 J2CPP_DEFINE_FIELD(android::provider::Browser_::SearchColumns,2,"DATE","Ljava/lang/String;")
 
 
-template <>
-local_ref< android::provider::Browser > create< android::provider::Browser>()
+
+android::provider::Browser::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::provider::Browser >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::provider::Browser::J2CPP_CLASS_NAME>(),
-			get_method_id<android::provider::Browser::J2CPP_CLASS_NAME, android::provider::Browser::J2CPP_METHOD_NAME(0), android::provider::Browser::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::provider::Browser::Browser()
+: cpp_object<android::provider::Browser>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::provider::Browser::J2CPP_CLASS_NAME>(),
+		get_method_id<android::provider::Browser::J2CPP_CLASS_NAME, android::provider::Browser::J2CPP_METHOD_NAME(0), android::provider::Browser::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 void android::provider::Browser::saveBookmark(local_ref< android::content::Context > const &a0, local_ref< java::lang::String > const &a1, local_ref< java::lang::String > const &a2)
 {
@@ -457,6 +505,7 @@ void android::provider::Browser::requestAllIcons(local_ref< android::content::Co
 		)
 	);
 }
+
 
 
 static_field<

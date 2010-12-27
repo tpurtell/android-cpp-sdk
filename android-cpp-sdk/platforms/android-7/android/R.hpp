@@ -10,8 +10,10 @@
 #define J2CPP_ANDROID_R_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -34,11 +36,15 @@ namespace android {
 			J2CPP_DECLARE_FIELD(1)
 			J2CPP_DECLARE_FIELD(2)
 
-			dimen(jobject jobj)
+			explicit dimen(jobject jobj)
 			: cpp_object<dimen>(jobj)
 			{
 			}
 
+			operator local_ref<java::lang::Object>() const;
+
+
+			dimen();
 
 			static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(0), J2CPP_FIELD_SIGNATURE(0), cpp_int > app_icon_size;
 			static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(1), J2CPP_FIELD_SIGNATURE(1), cpp_int > thumbnail_height;
@@ -58,11 +64,15 @@ namespace android {
 			J2CPP_DECLARE_FIELD(1)
 			J2CPP_DECLARE_FIELD(2)
 
-			integer(jobject jobj)
+			explicit integer(jobject jobj)
 			: cpp_object<integer>(jobj)
 			{
 			}
 
+			operator local_ref<java::lang::Object>() const;
+
+
+			integer();
 
 			static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(0), J2CPP_FIELD_SIGNATURE(0), cpp_int > config_longAnimTime;
 			static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(1), J2CPP_FIELD_SIGNATURE(1), cpp_int > config_mediumAnimTime;
@@ -101,11 +111,15 @@ namespace android {
 			J2CPP_DECLARE_FIELD(20)
 			J2CPP_DECLARE_FIELD(21)
 
-			string(jobject jobj)
+			explicit string(jobject jobj)
 			: cpp_object<string>(jobj)
 			{
 			}
 
+			operator local_ref<java::lang::Object>() const;
+
+
+			string();
 
 			static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(0), J2CPP_FIELD_SIGNATURE(0), cpp_int > VideoView_error_button;
 			static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(1), J2CPP_FIELD_SIGNATURE(1), cpp_int > VideoView_error_text_invalid_progressive_playback;
@@ -141,11 +155,15 @@ namespace android {
 
 			J2CPP_DECLARE_METHOD(0)
 
-			xml(jobject jobj)
+			explicit xml(jobject jobj)
 			: cpp_object<xml>(jobj)
 			{
 			}
 
+			operator local_ref<java::lang::Object>() const;
+
+
+			xml();
 		}; //class xml
 
 		class raw;
@@ -158,11 +176,15 @@ namespace android {
 
 			J2CPP_DECLARE_METHOD(0)
 
-			raw(jobject jobj)
+			explicit raw(jobject jobj)
 			: cpp_object<raw>(jobj)
 			{
 			}
 
+			operator local_ref<java::lang::Object>() const;
+
+
+			raw();
 		}; //class raw
 
 		class color;
@@ -193,11 +215,15 @@ namespace android {
 			J2CPP_DECLARE_FIELD(16)
 			J2CPP_DECLARE_FIELD(17)
 
-			color(jobject jobj)
+			explicit color(jobject jobj)
 			: cpp_object<color>(jobj)
 			{
 			}
 
+			operator local_ref<java::lang::Object>() const;
+
+
+			color();
 
 			static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(0), J2CPP_FIELD_SIGNATURE(0), cpp_int > background_dark;
 			static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(1), J2CPP_FIELD_SIGNATURE(1), cpp_int > background_light;
@@ -395,11 +421,15 @@ namespace android {
 			J2CPP_DECLARE_FIELD(164)
 			J2CPP_DECLARE_FIELD(165)
 
-			drawable(jobject jobj)
+			explicit drawable(jobject jobj)
 			: cpp_object<drawable>(jobj)
 			{
 			}
 
+			operator local_ref<java::lang::Object>() const;
+
+
+			drawable();
 
 			static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(0), J2CPP_FIELD_SIGNATURE(0), cpp_int > alert_dark_frame;
 			static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(1), J2CPP_FIELD_SIGNATURE(1), cpp_int > alert_light_frame;
@@ -591,11 +621,15 @@ namespace android {
 			J2CPP_DECLARE_FIELD(10)
 			J2CPP_DECLARE_FIELD(11)
 
-			anim(jobject jobj)
+			explicit anim(jobject jobj)
 			: cpp_object<anim>(jobj)
 			{
 			}
 
+			operator local_ref<java::lang::Object>() const;
+
+
+			anim();
 
 			static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(0), J2CPP_FIELD_SIGNATURE(0), cpp_int > accelerate_decelerate_interpolator;
 			static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(1), J2CPP_FIELD_SIGNATURE(1), cpp_int > accelerate_interpolator;
@@ -719,11 +753,15 @@ namespace android {
 			J2CPP_DECLARE_FIELD(96)
 			J2CPP_DECLARE_FIELD(97)
 
-			style(jobject jobj)
+			explicit style(jobject jobj)
 			: cpp_object<style>(jobj)
 			{
 			}
 
+			operator local_ref<java::lang::Object>() const;
+
+
+			style();
 
 			static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(0), J2CPP_FIELD_SIGNATURE(0), cpp_int > Animation;
 			static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(1), J2CPP_FIELD_SIGNATURE(1), cpp_int > Animation_Activity;
@@ -835,11 +873,15 @@ namespace android {
 
 			J2CPP_DECLARE_METHOD(0)
 
-			bool(jobject jobj)
+			explicit bool(jobject jobj)
 			: cpp_object<bool>(jobj)
 			{
 			}
 
+			operator local_ref<java::lang::Object>() const;
+
+
+			bool();
 		}; //class bool
 
 		class attr;
@@ -1545,11 +1587,15 @@ namespace android {
 			J2CPP_DECLARE_FIELD(691)
 			J2CPP_DECLARE_FIELD(692)
 
-			attr(jobject jobj)
+			explicit attr(jobject jobj)
 			: cpp_object<attr>(jobj)
 			{
 			}
 
+			operator local_ref<java::lang::Object>() const;
+
+
+			attr();
 
 			static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(0), J2CPP_FIELD_SIGNATURE(0), cpp_int > absListViewStyle;
 			static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(1), J2CPP_FIELD_SIGNATURE(1), cpp_int > accountPreferences;
@@ -2299,11 +2345,15 @@ namespace android {
 			J2CPP_DECLARE_FIELD(41)
 			J2CPP_DECLARE_FIELD(42)
 
-			id(jobject jobj)
+			explicit id(jobject jobj)
 			: cpp_object<id>(jobj)
 			{
 			}
 
+			operator local_ref<java::lang::Object>() const;
+
+
+			id();
 
 			static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(0), J2CPP_FIELD_SIGNATURE(0), cpp_int > addToDictionary;
 			static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(1), J2CPP_FIELD_SIGNATURE(1), cpp_int > background;
@@ -2380,11 +2430,15 @@ namespace android {
 			J2CPP_DECLARE_FIELD(18)
 			J2CPP_DECLARE_FIELD(19)
 
-			layout(jobject jobj)
+			explicit layout(jobject jobj)
 			: cpp_object<layout>(jobj)
 			{
 			}
 
+			operator local_ref<java::lang::Object>() const;
+
+
+			layout();
 
 			static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(0), J2CPP_FIELD_SIGNATURE(0), cpp_int > activity_list_item;
 			static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(1), J2CPP_FIELD_SIGNATURE(1), cpp_int > browser_link_context_header;
@@ -2418,11 +2472,15 @@ namespace android {
 
 			J2CPP_DECLARE_METHOD(0)
 
-			plurals(jobject jobj)
+			explicit plurals(jobject jobj)
 			: cpp_object<plurals>(jobj)
 			{
 			}
 
+			operator local_ref<java::lang::Object>() const;
+
+
+			plurals();
 		}; //class plurals
 
 		class array;
@@ -2440,11 +2498,15 @@ namespace android {
 			J2CPP_DECLARE_FIELD(3)
 			J2CPP_DECLARE_FIELD(4)
 
-			array(jobject jobj)
+			explicit array(jobject jobj)
 			: cpp_object<array>(jobj)
 			{
 			}
 
+			operator local_ref<java::lang::Object>() const;
+
+
+			array();
 
 			static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(0), J2CPP_FIELD_SIGNATURE(0), cpp_int > emailAddressTypes;
 			static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(1), J2CPP_FIELD_SIGNATURE(1), cpp_int > imProtocols;
@@ -2480,15 +2542,18 @@ namespace android {
 		typedef R_::plurals plurals;
 		typedef R_::array array;
 
-		R(jobject jobj)
+		explicit R(jobject jobj)
 		: cpp_object<R>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		R();
 	}; //class R
 
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -2503,16 +2568,23 @@ namespace j2cpp {
 
 
 
-template <>
-local_ref< android::R_::dimen > create< android::R_::dimen>()
+
+android::R_::dimen::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::R_::dimen >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::R_::dimen::J2CPP_CLASS_NAME>(),
-			get_method_id<android::R_::dimen::J2CPP_CLASS_NAME, android::R_::dimen::J2CPP_METHOD_NAME(0), android::R_::dimen::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::R_::dimen::dimen()
+: cpp_object<android::R_::dimen>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::R_::dimen::J2CPP_CLASS_NAME>(),
+		get_method_id<android::R_::dimen::J2CPP_CLASS_NAME, android::R_::dimen::J2CPP_METHOD_NAME(0), android::R_::dimen::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 
 static_field<
@@ -2543,16 +2615,23 @@ J2CPP_DEFINE_FIELD(android::R_::dimen,0,"app_icon_size","I")
 J2CPP_DEFINE_FIELD(android::R_::dimen,1,"thumbnail_height","I")
 J2CPP_DEFINE_FIELD(android::R_::dimen,2,"thumbnail_width","I")
 
-template <>
-local_ref< android::R_::integer > create< android::R_::integer>()
+
+android::R_::integer::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::R_::integer >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::R_::integer::J2CPP_CLASS_NAME>(),
-			get_method_id<android::R_::integer::J2CPP_CLASS_NAME, android::R_::integer::J2CPP_METHOD_NAME(0), android::R_::integer::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::R_::integer::integer()
+: cpp_object<android::R_::integer>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::R_::integer::J2CPP_CLASS_NAME>(),
+		get_method_id<android::R_::integer::J2CPP_CLASS_NAME, android::R_::integer::J2CPP_METHOD_NAME(0), android::R_::integer::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 
 static_field<
@@ -2583,16 +2662,23 @@ J2CPP_DEFINE_FIELD(android::R_::integer,0,"config_longAnimTime","I")
 J2CPP_DEFINE_FIELD(android::R_::integer,1,"config_mediumAnimTime","I")
 J2CPP_DEFINE_FIELD(android::R_::integer,2,"config_shortAnimTime","I")
 
-template <>
-local_ref< android::R_::string > create< android::R_::string>()
+
+android::R_::string::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::R_::string >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::R_::string::J2CPP_CLASS_NAME>(),
-			get_method_id<android::R_::string::J2CPP_CLASS_NAME, android::R_::string::J2CPP_METHOD_NAME(0), android::R_::string::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::R_::string::string()
+: cpp_object<android::R_::string>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::R_::string::J2CPP_CLASS_NAME>(),
+		get_method_id<android::R_::string::J2CPP_CLASS_NAME, android::R_::string::J2CPP_METHOD_NAME(0), android::R_::string::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 
 static_field<
@@ -2775,46 +2861,67 @@ J2CPP_DEFINE_FIELD(android::R_::string,19,"unknownName","I")
 J2CPP_DEFINE_FIELD(android::R_::string,20,"untitled","I")
 J2CPP_DEFINE_FIELD(android::R_::string,21,"yes","I")
 
-template <>
-local_ref< android::R_::xml > create< android::R_::xml>()
+
+android::R_::xml::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::R_::xml >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::R_::xml::J2CPP_CLASS_NAME>(),
-			get_method_id<android::R_::xml::J2CPP_CLASS_NAME, android::R_::xml::J2CPP_METHOD_NAME(0), android::R_::xml::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::R_::xml::xml()
+: cpp_object<android::R_::xml>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::R_::xml::J2CPP_CLASS_NAME>(),
+		get_method_id<android::R_::xml::J2CPP_CLASS_NAME, android::R_::xml::J2CPP_METHOD_NAME(0), android::R_::xml::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 
 J2CPP_DEFINE_CLASS(android::R_::xml,"android/R$xml")
 J2CPP_DEFINE_METHOD(android::R_::xml,0,"<init>","()V")
 
-template <>
-local_ref< android::R_::raw > create< android::R_::raw>()
+
+android::R_::raw::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::R_::raw >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::R_::raw::J2CPP_CLASS_NAME>(),
-			get_method_id<android::R_::raw::J2CPP_CLASS_NAME, android::R_::raw::J2CPP_METHOD_NAME(0), android::R_::raw::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::R_::raw::raw()
+: cpp_object<android::R_::raw>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::R_::raw::J2CPP_CLASS_NAME>(),
+		get_method_id<android::R_::raw::J2CPP_CLASS_NAME, android::R_::raw::J2CPP_METHOD_NAME(0), android::R_::raw::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 
 J2CPP_DEFINE_CLASS(android::R_::raw,"android/R$raw")
 J2CPP_DEFINE_METHOD(android::R_::raw,0,"<init>","()V")
 
-template <>
-local_ref< android::R_::color > create< android::R_::color>()
+
+android::R_::color::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::R_::color >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::R_::color::J2CPP_CLASS_NAME>(),
-			get_method_id<android::R_::color::J2CPP_CLASS_NAME, android::R_::color::J2CPP_METHOD_NAME(0), android::R_::color::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::R_::color::color()
+: cpp_object<android::R_::color>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::R_::color::J2CPP_CLASS_NAME>(),
+		get_method_id<android::R_::color::J2CPP_CLASS_NAME, android::R_::color::J2CPP_METHOD_NAME(0), android::R_::color::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 
 static_field<
@@ -2965,16 +3072,23 @@ J2CPP_DEFINE_FIELD(android::R_::color,15,"transparent","I")
 J2CPP_DEFINE_FIELD(android::R_::color,16,"white","I")
 J2CPP_DEFINE_FIELD(android::R_::color,17,"widget_edittext_dark","I")
 
-template <>
-local_ref< android::R_::drawable > create< android::R_::drawable>()
+
+android::R_::drawable::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::R_::drawable >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::R_::drawable::J2CPP_CLASS_NAME>(),
-			get_method_id<android::R_::drawable::J2CPP_CLASS_NAME, android::R_::drawable::J2CPP_METHOD_NAME(0), android::R_::drawable::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::R_::drawable::drawable()
+: cpp_object<android::R_::drawable>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::R_::drawable::J2CPP_CLASS_NAME>(),
+		get_method_id<android::R_::drawable::J2CPP_CLASS_NAME, android::R_::drawable::J2CPP_METHOD_NAME(0), android::R_::drawable::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 
 static_field<
@@ -4309,16 +4423,23 @@ J2CPP_DEFINE_FIELD(android::R_::drawable,163,"title_bar_tall","I")
 J2CPP_DEFINE_FIELD(android::R_::drawable,164,"toast_frame","I")
 J2CPP_DEFINE_FIELD(android::R_::drawable,165,"zoom_plate","I")
 
-template <>
-local_ref< android::R_::anim > create< android::R_::anim>()
+
+android::R_::anim::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::R_::anim >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::R_::anim::J2CPP_CLASS_NAME>(),
-			get_method_id<android::R_::anim::J2CPP_CLASS_NAME, android::R_::anim::J2CPP_METHOD_NAME(0), android::R_::anim::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::R_::anim::anim()
+: cpp_object<android::R_::anim>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::R_::anim::J2CPP_CLASS_NAME>(),
+		get_method_id<android::R_::anim::J2CPP_CLASS_NAME, android::R_::anim::J2CPP_METHOD_NAME(0), android::R_::anim::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 
 static_field<
@@ -4421,16 +4542,23 @@ J2CPP_DEFINE_FIELD(android::R_::anim,9,"overshoot_interpolator","I")
 J2CPP_DEFINE_FIELD(android::R_::anim,10,"slide_in_left","I")
 J2CPP_DEFINE_FIELD(android::R_::anim,11,"slide_out_right","I")
 
-template <>
-local_ref< android::R_::style > create< android::R_::style>()
+
+android::R_::style::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::R_::style >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::R_::style::J2CPP_CLASS_NAME>(),
-			get_method_id<android::R_::style::J2CPP_CLASS_NAME, android::R_::style::J2CPP_METHOD_NAME(0), android::R_::style::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::R_::style::style()
+: cpp_object<android::R_::style>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::R_::style::J2CPP_CLASS_NAME>(),
+		get_method_id<android::R_::style::J2CPP_CLASS_NAME, android::R_::style::J2CPP_METHOD_NAME(0), android::R_::style::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 
 static_field<
@@ -5221,31 +5349,45 @@ J2CPP_DEFINE_FIELD(android::R_::style,95,"Widget_TextView_PopupMenu","I")
 J2CPP_DEFINE_FIELD(android::R_::style,96,"Widget_TextView_SpinnerItem","I")
 J2CPP_DEFINE_FIELD(android::R_::style,97,"Widget_WebView","I")
 
-template <>
-local_ref< android::R_::bool > create< android::R_::bool>()
+
+android::R_::bool::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::R_::bool >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::R_::bool::J2CPP_CLASS_NAME>(),
-			get_method_id<android::R_::bool::J2CPP_CLASS_NAME, android::R_::bool::J2CPP_METHOD_NAME(0), android::R_::bool::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::R_::bool::bool()
+: cpp_object<android::R_::bool>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::R_::bool::J2CPP_CLASS_NAME>(),
+		get_method_id<android::R_::bool::J2CPP_CLASS_NAME, android::R_::bool::J2CPP_METHOD_NAME(0), android::R_::bool::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 
 J2CPP_DEFINE_CLASS(android::R_::bool,"android/R$bool")
 J2CPP_DEFINE_METHOD(android::R_::bool,0,"<init>","()V")
 
-template <>
-local_ref< android::R_::attr > create< android::R_::attr>()
+
+android::R_::attr::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::R_::attr >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::R_::attr::J2CPP_CLASS_NAME>(),
-			get_method_id<android::R_::attr::J2CPP_CLASS_NAME, android::R_::attr::J2CPP_METHOD_NAME(0), android::R_::attr::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::R_::attr::attr()
+: cpp_object<android::R_::attr>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::R_::attr::J2CPP_CLASS_NAME>(),
+		get_method_id<android::R_::attr::J2CPP_CLASS_NAME, android::R_::attr::J2CPP_METHOD_NAME(0), android::R_::attr::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 
 static_field<
@@ -10796,16 +10938,23 @@ J2CPP_DEFINE_FIELD(android::R_::attr,690,"y","I")
 J2CPP_DEFINE_FIELD(android::R_::attr,691,"yesNoPreferenceStyle","I")
 J2CPP_DEFINE_FIELD(android::R_::attr,692,"zAdjustment","I")
 
-template <>
-local_ref< android::R_::id > create< android::R_::id>()
+
+android::R_::id::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::R_::id >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::R_::id::J2CPP_CLASS_NAME>(),
-			get_method_id<android::R_::id::J2CPP_CLASS_NAME, android::R_::id::J2CPP_METHOD_NAME(0), android::R_::id::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::R_::id::id()
+: cpp_object<android::R_::id>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::R_::id::J2CPP_CLASS_NAME>(),
+		get_method_id<android::R_::id::J2CPP_CLASS_NAME, android::R_::id::J2CPP_METHOD_NAME(0), android::R_::id::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 
 static_field<
@@ -11156,16 +11305,23 @@ J2CPP_DEFINE_FIELD(android::R_::id,40,"title","I")
 J2CPP_DEFINE_FIELD(android::R_::id,41,"toggle","I")
 J2CPP_DEFINE_FIELD(android::R_::id,42,"widget_frame","I")
 
-template <>
-local_ref< android::R_::layout > create< android::R_::layout>()
+
+android::R_::layout::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::R_::layout >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::R_::layout::J2CPP_CLASS_NAME>(),
-			get_method_id<android::R_::layout::J2CPP_CLASS_NAME, android::R_::layout::J2CPP_METHOD_NAME(0), android::R_::layout::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::R_::layout::layout()
+: cpp_object<android::R_::layout>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::R_::layout::J2CPP_CLASS_NAME>(),
+		get_method_id<android::R_::layout::J2CPP_CLASS_NAME, android::R_::layout::J2CPP_METHOD_NAME(0), android::R_::layout::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 
 static_field<
@@ -11332,31 +11488,45 @@ J2CPP_DEFINE_FIELD(android::R_::layout,17,"simple_spinner_item","I")
 J2CPP_DEFINE_FIELD(android::R_::layout,18,"test_list_item","I")
 J2CPP_DEFINE_FIELD(android::R_::layout,19,"two_line_list_item","I")
 
-template <>
-local_ref< android::R_::plurals > create< android::R_::plurals>()
+
+android::R_::plurals::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::R_::plurals >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::R_::plurals::J2CPP_CLASS_NAME>(),
-			get_method_id<android::R_::plurals::J2CPP_CLASS_NAME, android::R_::plurals::J2CPP_METHOD_NAME(0), android::R_::plurals::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::R_::plurals::plurals()
+: cpp_object<android::R_::plurals>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::R_::plurals::J2CPP_CLASS_NAME>(),
+		get_method_id<android::R_::plurals::J2CPP_CLASS_NAME, android::R_::plurals::J2CPP_METHOD_NAME(0), android::R_::plurals::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 
 J2CPP_DEFINE_CLASS(android::R_::plurals,"android/R$plurals")
 J2CPP_DEFINE_METHOD(android::R_::plurals,0,"<init>","()V")
 
-template <>
-local_ref< android::R_::array > create< android::R_::array>()
+
+android::R_::array::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::R_::array >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::R_::array::J2CPP_CLASS_NAME>(),
-			get_method_id<android::R_::array::J2CPP_CLASS_NAME, android::R_::array::J2CPP_METHOD_NAME(0), android::R_::array::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::R_::array::array()
+: cpp_object<android::R_::array>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::R_::array::J2CPP_CLASS_NAME>(),
+		get_method_id<android::R_::array::J2CPP_CLASS_NAME, android::R_::array::J2CPP_METHOD_NAME(0), android::R_::array::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 
 static_field<
@@ -11404,16 +11574,23 @@ J2CPP_DEFINE_FIELD(android::R_::array,3,"phoneTypes","I")
 J2CPP_DEFINE_FIELD(android::R_::array,4,"postalAddressTypes","I")
 
 
-template <>
-local_ref< android::R > create< android::R>()
+
+android::R::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::R >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::R::J2CPP_CLASS_NAME>(),
-			get_method_id<android::R::J2CPP_CLASS_NAME, android::R::J2CPP_METHOD_NAME(0), android::R::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::R::R()
+: cpp_object<android::R>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::R::J2CPP_CLASS_NAME>(),
+		get_method_id<android::R::J2CPP_CLASS_NAME, android::R::J2CPP_METHOD_NAME(0), android::R::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 
 J2CPP_DEFINE_CLASS(android::R,"android/R")

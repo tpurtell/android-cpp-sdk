@@ -10,13 +10,16 @@
 #define J2CPP_ANDROID_TELEPHONY_NEIGHBORINGCELLINFO_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace android { namespace os { class Parcel; } } }
+namespace j2cpp { namespace android { namespace os { class Parcelable; } } }
 namespace j2cpp { namespace android { namespace os { namespace Parcelable_ { class Creator; } } } }
 
 
 #include <android/os/Parcel.hpp>
 #include <android/os/Parcelable.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -51,11 +54,19 @@ namespace android { namespace telephony {
 		J2CPP_DECLARE_FIELD(1)
 		J2CPP_DECLARE_FIELD(2)
 
-		NeighboringCellInfo(jobject jobj)
+		explicit NeighboringCellInfo(jobject jobj)
 		: cpp_object<NeighboringCellInfo>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<android::os::Parcelable>() const;
+
+
+		NeighboringCellInfo();
+		NeighboringCellInfo(cpp_int const&, cpp_int const&);
+		NeighboringCellInfo(cpp_int const&, local_ref< java::lang::String > const&, cpp_int const&);
+		NeighboringCellInfo(local_ref< android::os::Parcel > const&);
 		cpp_int getRssi();
 		cpp_int getLac();
 		cpp_int getCid();
@@ -75,7 +86,6 @@ namespace android { namespace telephony {
 } //namespace telephony
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_TELEPHONY_NEIGHBORINGCELLINFO_HPP_DECL
@@ -88,52 +98,67 @@ namespace android { namespace telephony {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::telephony::NeighboringCellInfo > create< android::telephony::NeighboringCellInfo>()
+
+android::telephony::NeighboringCellInfo::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::telephony::NeighboringCellInfo >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::telephony::NeighboringCellInfo::J2CPP_CLASS_NAME>(),
-			get_method_id<android::telephony::NeighboringCellInfo::J2CPP_CLASS_NAME, android::telephony::NeighboringCellInfo::J2CPP_METHOD_NAME(0), android::telephony::NeighboringCellInfo::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
 
-template <>
-local_ref< android::telephony::NeighboringCellInfo > create< android::telephony::NeighboringCellInfo>(cpp_int const &a0, cpp_int const &a1)
+android::telephony::NeighboringCellInfo::operator local_ref<android::os::Parcelable>() const
 {
-	return local_ref< android::telephony::NeighboringCellInfo >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::telephony::NeighboringCellInfo::J2CPP_CLASS_NAME>(),
-			get_method_id<android::telephony::NeighboringCellInfo::J2CPP_CLASS_NAME, android::telephony::NeighboringCellInfo::J2CPP_METHOD_NAME(1), android::telephony::NeighboringCellInfo::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<android::os::Parcelable>(get_jtype());
 }
 
-template <>
-local_ref< android::telephony::NeighboringCellInfo > create< android::telephony::NeighboringCellInfo>(cpp_int const &a0, local_ref< java::lang::String > const &a1, cpp_int const &a2)
+
+android::telephony::NeighboringCellInfo::NeighboringCellInfo()
+: cpp_object<android::telephony::NeighboringCellInfo>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::telephony::NeighboringCellInfo::J2CPP_CLASS_NAME>(),
+		get_method_id<android::telephony::NeighboringCellInfo::J2CPP_CLASS_NAME, android::telephony::NeighboringCellInfo::J2CPP_METHOD_NAME(0), android::telephony::NeighboringCellInfo::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
 {
-	return local_ref< android::telephony::NeighboringCellInfo >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::telephony::NeighboringCellInfo::J2CPP_CLASS_NAME>(),
-			get_method_id<android::telephony::NeighboringCellInfo::J2CPP_CLASS_NAME, android::telephony::NeighboringCellInfo::J2CPP_METHOD_NAME(2), android::telephony::NeighboringCellInfo::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< android::telephony::NeighboringCellInfo > create< android::telephony::NeighboringCellInfo>(local_ref< android::os::Parcel > const &a0)
+
+
+android::telephony::NeighboringCellInfo::NeighboringCellInfo(cpp_int const &a0, cpp_int const &a1)
+: cpp_object<android::telephony::NeighboringCellInfo>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::telephony::NeighboringCellInfo::J2CPP_CLASS_NAME>(),
+		get_method_id<android::telephony::NeighboringCellInfo::J2CPP_CLASS_NAME, android::telephony::NeighboringCellInfo::J2CPP_METHOD_NAME(1), android::telephony::NeighboringCellInfo::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
 {
-	return local_ref< android::telephony::NeighboringCellInfo >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::telephony::NeighboringCellInfo::J2CPP_CLASS_NAME>(),
-			get_method_id<android::telephony::NeighboringCellInfo::J2CPP_CLASS_NAME, android::telephony::NeighboringCellInfo::J2CPP_METHOD_NAME(3), android::telephony::NeighboringCellInfo::J2CPP_METHOD_SIGNATURE(3), false>(),
-			a0.get_jtype()
-		)
-	);
 }
+
+
+
+android::telephony::NeighboringCellInfo::NeighboringCellInfo(cpp_int const &a0, local_ref< java::lang::String > const &a1, cpp_int const &a2)
+: cpp_object<android::telephony::NeighboringCellInfo>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::telephony::NeighboringCellInfo::J2CPP_CLASS_NAME>(),
+		get_method_id<android::telephony::NeighboringCellInfo::J2CPP_CLASS_NAME, android::telephony::NeighboringCellInfo::J2CPP_METHOD_NAME(2), android::telephony::NeighboringCellInfo::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
+	)
+)
+{
+}
+
+
+
+android::telephony::NeighboringCellInfo::NeighboringCellInfo(local_ref< android::os::Parcel > const &a0)
+: cpp_object<android::telephony::NeighboringCellInfo>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::telephony::NeighboringCellInfo::J2CPP_CLASS_NAME>(),
+		get_method_id<android::telephony::NeighboringCellInfo::J2CPP_CLASS_NAME, android::telephony::NeighboringCellInfo::J2CPP_METHOD_NAME(3), android::telephony::NeighboringCellInfo::J2CPP_METHOD_SIGNATURE(3), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 cpp_int android::telephony::NeighboringCellInfo::getRssi()
 {
@@ -237,6 +262,7 @@ void android::telephony::NeighboringCellInfo::writeToParcel(local_ref< android::
 		)
 	);
 }
+
 
 
 static_field<

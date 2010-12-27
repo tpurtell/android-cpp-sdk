@@ -10,10 +10,12 @@
 #define J2CPP_ANDROID_VIEW_ACCESSIBILITY_ACCESSIBILITYEVENTSOURCE_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace android { namespace view { namespace accessibility { class AccessibilityEvent; } } } }
 
 
 #include <android/view/accessibility/AccessibilityEvent.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -31,10 +33,13 @@ namespace android { namespace view { namespace accessibility {
 		J2CPP_DECLARE_METHOD(0)
 		J2CPP_DECLARE_METHOD(1)
 
-		AccessibilityEventSource(jobject jobj)
+		explicit AccessibilityEventSource(jobject jobj)
 		: cpp_object<AccessibilityEventSource>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		void sendAccessibilityEvent(cpp_int const&);
 		void sendAccessibilityEventUnchecked(local_ref< android::view::accessibility::AccessibilityEvent > const&);
@@ -43,7 +48,6 @@ namespace android { namespace view { namespace accessibility {
 } //namespace accessibility
 } //namespace view
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -56,6 +60,12 @@ namespace android { namespace view { namespace accessibility {
 
 namespace j2cpp {
 
+
+
+android::view::accessibility::AccessibilityEventSource::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 void android::view::accessibility::AccessibilityEventSource::sendAccessibilityEvent(cpp_int const &a0)
 {

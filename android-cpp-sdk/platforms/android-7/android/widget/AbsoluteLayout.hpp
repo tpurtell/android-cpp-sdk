@@ -12,6 +12,7 @@
 
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace android { namespace content { class Context; } } }
+namespace j2cpp { namespace android { namespace view { class ViewGroup; } } }
 namespace j2cpp { namespace android { namespace view { namespace ViewGroup_ { class LayoutParams; } } } }
 namespace j2cpp { namespace android { namespace util { class AttributeSet; } } }
 
@@ -44,13 +45,19 @@ namespace android { namespace widget {
 			J2CPP_DECLARE_FIELD(0)
 			J2CPP_DECLARE_FIELD(1)
 
-			LayoutParams(jobject jobj)
+			explicit LayoutParams(jobject jobj)
 			: cpp_object<LayoutParams>(jobj)
-			, x(jobj)
-			, y(jobj)
+, x(jobj)
+, y(jobj)
 			{
 			}
 
+			operator local_ref<android::view::ViewGroup_::LayoutParams>() const;
+
+
+			LayoutParams(cpp_int const&, cpp_int const&, cpp_int const&, cpp_int const&);
+			LayoutParams(local_ref< android::content::Context > const&, local_ref< android::util::AttributeSet > const&);
+			LayoutParams(local_ref< android::view::ViewGroup_::LayoutParams > const&);
 			local_ref< java::lang::String > debug(local_ref< java::lang::String > const&);
 
 			field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(0), J2CPP_FIELD_SIGNATURE(0), cpp_int > x;
@@ -78,17 +85,22 @@ namespace android { namespace widget {
 
 		typedef AbsoluteLayout_::LayoutParams LayoutParams;
 
-		AbsoluteLayout(jobject jobj)
+		explicit AbsoluteLayout(jobject jobj)
 		: cpp_object<AbsoluteLayout>(jobj)
 		{
 		}
 
+		operator local_ref<android::view::ViewGroup>() const;
+
+
+		AbsoluteLayout(local_ref< android::content::Context > const&);
+		AbsoluteLayout(local_ref< android::content::Context > const&, local_ref< android::util::AttributeSet > const&);
+		AbsoluteLayout(local_ref< android::content::Context > const&, local_ref< android::util::AttributeSet > const&, cpp_int const&);
 		local_ref< android::view::ViewGroup_::LayoutParams > generateLayoutParams(local_ref< android::util::AttributeSet > const&);
 	}; //class AbsoluteLayout
 
 } //namespace widget
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -103,41 +115,56 @@ namespace j2cpp {
 
 
 
-template <>
-local_ref< android::widget::AbsoluteLayout_::LayoutParams > create< android::widget::AbsoluteLayout_::LayoutParams>(cpp_int const &a0, cpp_int const &a1, cpp_int const &a2, cpp_int const &a3)
+
+android::widget::AbsoluteLayout_::LayoutParams::operator local_ref<android::view::ViewGroup_::LayoutParams>() const
 {
-	return local_ref< android::widget::AbsoluteLayout_::LayoutParams >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::widget::AbsoluteLayout_::LayoutParams::J2CPP_CLASS_NAME>(),
-			get_method_id<android::widget::AbsoluteLayout_::LayoutParams::J2CPP_CLASS_NAME, android::widget::AbsoluteLayout_::LayoutParams::J2CPP_METHOD_NAME(0), android::widget::AbsoluteLayout_::LayoutParams::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype()
-		)
-	);
+	return local_ref<android::view::ViewGroup_::LayoutParams>(get_jtype());
 }
 
-template <>
-local_ref< android::widget::AbsoluteLayout_::LayoutParams > create< android::widget::AbsoluteLayout_::LayoutParams>(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1)
+
+android::widget::AbsoluteLayout_::LayoutParams::LayoutParams(cpp_int const &a0, cpp_int const &a1, cpp_int const &a2, cpp_int const &a3)
+: cpp_object<android::widget::AbsoluteLayout_::LayoutParams>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::widget::AbsoluteLayout_::LayoutParams::J2CPP_CLASS_NAME>(),
+		get_method_id<android::widget::AbsoluteLayout_::LayoutParams::J2CPP_CLASS_NAME, android::widget::AbsoluteLayout_::LayoutParams::J2CPP_METHOD_NAME(0), android::widget::AbsoluteLayout_::LayoutParams::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype()
+	)
+)
+, x(get_jtype())
+, y(get_jtype())
 {
-	return local_ref< android::widget::AbsoluteLayout_::LayoutParams >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::widget::AbsoluteLayout_::LayoutParams::J2CPP_CLASS_NAME>(),
-			get_method_id<android::widget::AbsoluteLayout_::LayoutParams::J2CPP_CLASS_NAME, android::widget::AbsoluteLayout_::LayoutParams::J2CPP_METHOD_NAME(1), android::widget::AbsoluteLayout_::LayoutParams::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< android::widget::AbsoluteLayout_::LayoutParams > create< android::widget::AbsoluteLayout_::LayoutParams>(local_ref< android::view::ViewGroup_::LayoutParams > const &a0)
+
+
+android::widget::AbsoluteLayout_::LayoutParams::LayoutParams(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1)
+: cpp_object<android::widget::AbsoluteLayout_::LayoutParams>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::widget::AbsoluteLayout_::LayoutParams::J2CPP_CLASS_NAME>(),
+		get_method_id<android::widget::AbsoluteLayout_::LayoutParams::J2CPP_CLASS_NAME, android::widget::AbsoluteLayout_::LayoutParams::J2CPP_METHOD_NAME(1), android::widget::AbsoluteLayout_::LayoutParams::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+, x(get_jtype())
+, y(get_jtype())
 {
-	return local_ref< android::widget::AbsoluteLayout_::LayoutParams >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::widget::AbsoluteLayout_::LayoutParams::J2CPP_CLASS_NAME>(),
-			get_method_id<android::widget::AbsoluteLayout_::LayoutParams::J2CPP_CLASS_NAME, android::widget::AbsoluteLayout_::LayoutParams::J2CPP_METHOD_NAME(2), android::widget::AbsoluteLayout_::LayoutParams::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype()
-		)
-	);
 }
+
+
+
+android::widget::AbsoluteLayout_::LayoutParams::LayoutParams(local_ref< android::view::ViewGroup_::LayoutParams > const &a0)
+: cpp_object<android::widget::AbsoluteLayout_::LayoutParams>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::widget::AbsoluteLayout_::LayoutParams::J2CPP_CLASS_NAME>(),
+		get_method_id<android::widget::AbsoluteLayout_::LayoutParams::J2CPP_CLASS_NAME, android::widget::AbsoluteLayout_::LayoutParams::J2CPP_METHOD_NAME(2), android::widget::AbsoluteLayout_::LayoutParams::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype()
+	)
+)
+, x(get_jtype())
+, y(get_jtype())
+{
+}
+
 
 local_ref< java::lang::String > android::widget::AbsoluteLayout_::LayoutParams::debug(local_ref< java::lang::String > const &a0)
 {
@@ -161,41 +188,50 @@ J2CPP_DEFINE_FIELD(android::widget::AbsoluteLayout_::LayoutParams,0,"x","I")
 J2CPP_DEFINE_FIELD(android::widget::AbsoluteLayout_::LayoutParams,1,"y","I")
 
 
-template <>
-local_ref< android::widget::AbsoluteLayout > create< android::widget::AbsoluteLayout>(local_ref< android::content::Context > const &a0)
+
+android::widget::AbsoluteLayout::operator local_ref<android::view::ViewGroup>() const
 {
-	return local_ref< android::widget::AbsoluteLayout >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::widget::AbsoluteLayout::J2CPP_CLASS_NAME>(),
-			get_method_id<android::widget::AbsoluteLayout::J2CPP_CLASS_NAME, android::widget::AbsoluteLayout::J2CPP_METHOD_NAME(0), android::widget::AbsoluteLayout::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<android::view::ViewGroup>(get_jtype());
 }
 
-template <>
-local_ref< android::widget::AbsoluteLayout > create< android::widget::AbsoluteLayout>(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1)
+
+android::widget::AbsoluteLayout::AbsoluteLayout(local_ref< android::content::Context > const &a0)
+: cpp_object<android::widget::AbsoluteLayout>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::widget::AbsoluteLayout::J2CPP_CLASS_NAME>(),
+		get_method_id<android::widget::AbsoluteLayout::J2CPP_CLASS_NAME, android::widget::AbsoluteLayout::J2CPP_METHOD_NAME(0), android::widget::AbsoluteLayout::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< android::widget::AbsoluteLayout >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::widget::AbsoluteLayout::J2CPP_CLASS_NAME>(),
-			get_method_id<android::widget::AbsoluteLayout::J2CPP_CLASS_NAME, android::widget::AbsoluteLayout::J2CPP_METHOD_NAME(1), android::widget::AbsoluteLayout::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< android::widget::AbsoluteLayout > create< android::widget::AbsoluteLayout>(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1, cpp_int const &a2)
+
+
+android::widget::AbsoluteLayout::AbsoluteLayout(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1)
+: cpp_object<android::widget::AbsoluteLayout>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::widget::AbsoluteLayout::J2CPP_CLASS_NAME>(),
+		get_method_id<android::widget::AbsoluteLayout::J2CPP_CLASS_NAME, android::widget::AbsoluteLayout::J2CPP_METHOD_NAME(1), android::widget::AbsoluteLayout::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
 {
-	return local_ref< android::widget::AbsoluteLayout >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::widget::AbsoluteLayout::J2CPP_CLASS_NAME>(),
-			get_method_id<android::widget::AbsoluteLayout::J2CPP_CLASS_NAME, android::widget::AbsoluteLayout::J2CPP_METHOD_NAME(2), android::widget::AbsoluteLayout::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
-		)
-	);
 }
+
+
+
+android::widget::AbsoluteLayout::AbsoluteLayout(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1, cpp_int const &a2)
+: cpp_object<android::widget::AbsoluteLayout>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::widget::AbsoluteLayout::J2CPP_CLASS_NAME>(),
+		get_method_id<android::widget::AbsoluteLayout::J2CPP_CLASS_NAME, android::widget::AbsoluteLayout::J2CPP_METHOD_NAME(2), android::widget::AbsoluteLayout::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
+	)
+)
+{
+}
+
 
 
 

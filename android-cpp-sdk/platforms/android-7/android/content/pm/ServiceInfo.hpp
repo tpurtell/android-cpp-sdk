@@ -11,11 +11,14 @@
 
 
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace android { namespace content { namespace pm { class ComponentInfo; } } } }
 namespace j2cpp { namespace android { namespace util { class Printer; } } }
 namespace j2cpp { namespace android { namespace os { class Parcel; } } }
+namespace j2cpp { namespace android { namespace os { class Parcelable; } } }
 namespace j2cpp { namespace android { namespace os { namespace Parcelable_ { class Creator; } } } }
 
 
+#include <android/content/pm/ComponentInfo.hpp>
 #include <android/os/Parcel.hpp>
 #include <android/os/Parcelable.hpp>
 #include <android/util/Printer.hpp>
@@ -44,12 +47,18 @@ namespace android { namespace content { namespace pm {
 		J2CPP_DECLARE_FIELD(0)
 		J2CPP_DECLARE_FIELD(1)
 
-		ServiceInfo(jobject jobj)
+		explicit ServiceInfo(jobject jobj)
 		: cpp_object<ServiceInfo>(jobj)
-		, permission(jobj)
+, permission(jobj)
 		{
 		}
 
+		operator local_ref<android::content::pm::ComponentInfo>() const;
+		operator local_ref<android::os::Parcelable>() const;
+
+
+		ServiceInfo();
+		ServiceInfo(local_ref< android::content::pm::ServiceInfo > const&);
 		void dump(local_ref< android::util::Printer > const&, local_ref< java::lang::String > const&);
 		local_ref< java::lang::String > toString();
 		cpp_int describeContents();
@@ -63,7 +72,6 @@ namespace android { namespace content { namespace pm {
 } //namespace content
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_CONTENT_PM_SERVICEINFO_HPP_DECL
@@ -76,28 +84,43 @@ namespace android { namespace content { namespace pm {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::content::pm::ServiceInfo > create< android::content::pm::ServiceInfo>()
+
+android::content::pm::ServiceInfo::operator local_ref<android::content::pm::ComponentInfo>() const
 {
-	return local_ref< android::content::pm::ServiceInfo >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::content::pm::ServiceInfo::J2CPP_CLASS_NAME>(),
-			get_method_id<android::content::pm::ServiceInfo::J2CPP_CLASS_NAME, android::content::pm::ServiceInfo::J2CPP_METHOD_NAME(0), android::content::pm::ServiceInfo::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<android::content::pm::ComponentInfo>(get_jtype());
 }
 
-template <>
-local_ref< android::content::pm::ServiceInfo > create< android::content::pm::ServiceInfo>(local_ref< android::content::pm::ServiceInfo > const &a0)
+android::content::pm::ServiceInfo::operator local_ref<android::os::Parcelable>() const
 {
-	return local_ref< android::content::pm::ServiceInfo >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::content::pm::ServiceInfo::J2CPP_CLASS_NAME>(),
-			get_method_id<android::content::pm::ServiceInfo::J2CPP_CLASS_NAME, android::content::pm::ServiceInfo::J2CPP_METHOD_NAME(1), android::content::pm::ServiceInfo::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<android::os::Parcelable>(get_jtype());
 }
+
+
+android::content::pm::ServiceInfo::ServiceInfo()
+: cpp_object<android::content::pm::ServiceInfo>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::content::pm::ServiceInfo::J2CPP_CLASS_NAME>(),
+		get_method_id<android::content::pm::ServiceInfo::J2CPP_CLASS_NAME, android::content::pm::ServiceInfo::J2CPP_METHOD_NAME(0), android::content::pm::ServiceInfo::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+, permission(get_jtype())
+{
+}
+
+
+
+android::content::pm::ServiceInfo::ServiceInfo(local_ref< android::content::pm::ServiceInfo > const &a0)
+: cpp_object<android::content::pm::ServiceInfo>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::content::pm::ServiceInfo::J2CPP_CLASS_NAME>(),
+		get_method_id<android::content::pm::ServiceInfo::J2CPP_CLASS_NAME, android::content::pm::ServiceInfo::J2CPP_METHOD_NAME(1), android::content::pm::ServiceInfo::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
+, permission(get_jtype())
+{
+}
+
 
 void android::content::pm::ServiceInfo::dump(local_ref< android::util::Printer > const &a0, local_ref< java::lang::String > const &a1)
 {
@@ -140,6 +163,7 @@ void android::content::pm::ServiceInfo::writeToParcel(local_ref< android::os::Pa
 		)
 	);
 }
+
 
 
 static_field<

@@ -10,6 +10,7 @@
 #define J2CPP_ANDROID_VIEW_WINDOW_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class CharSequence; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace android { namespace net { class Uri; } } }
@@ -50,6 +51,7 @@ namespace j2cpp { namespace android { namespace os { class Bundle; } } }
 #include <android/view/WindowManager.hpp>
 #include <android/view/accessibility/AccessibilityEvent.hpp>
 #include <java/lang/CharSequence.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -85,10 +87,13 @@ namespace android { namespace view {
 			J2CPP_DECLARE_METHOD(14)
 			J2CPP_DECLARE_METHOD(15)
 
-			Callback(jobject jobj)
+			explicit Callback(jobject jobj)
 			: cpp_object<Callback>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+
 
 			cpp_boolean dispatchKeyEvent(local_ref< android::view::KeyEvent > const&);
 			cpp_boolean dispatchTouchEvent(local_ref< android::view::MotionEvent > const&);
@@ -206,11 +211,15 @@ namespace android { namespace view {
 
 		typedef Window_::Callback Callback;
 
-		Window(jobject jobj)
+		explicit Window(jobject jobj)
 		: cpp_object<Window>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		Window(local_ref< android::content::Context > const&);
 		local_ref< android::content::Context > getContext();
 		local_ref< android::content::res::TypedArray > getWindowStyle();
 		void setContainer(local_ref< android::view::Window > const&);
@@ -295,7 +304,6 @@ namespace android { namespace view {
 } //namespace view
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_VIEW_WINDOW_HPP_DECL
@@ -308,6 +316,12 @@ namespace android { namespace view {
 namespace j2cpp {
 
 
+
+
+android::view::Window_::Callback::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 cpp_boolean android::view::Window_::Callback::dispatchKeyEvent(local_ref< android::view::KeyEvent > const &a0)
 {
@@ -501,17 +515,24 @@ J2CPP_DEFINE_METHOD(android::view::Window_::Callback,14,"onPanelClosed","(ILandr
 J2CPP_DEFINE_METHOD(android::view::Window_::Callback,15,"onSearchRequested","()Z")
 
 
-template <>
-local_ref< android::view::Window > create< android::view::Window>(local_ref< android::content::Context > const &a0)
+
+android::view::Window::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::view::Window >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::view::Window::J2CPP_CLASS_NAME>(),
-			get_method_id<android::view::Window::J2CPP_CLASS_NAME, android::view::Window::J2CPP_METHOD_NAME(0), android::view::Window::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::view::Window::Window(local_ref< android::content::Context > const &a0)
+: cpp_object<android::view::Window>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::view::Window::J2CPP_CLASS_NAME>(),
+		get_method_id<android::view::Window::J2CPP_CLASS_NAME, android::view::Window::J2CPP_METHOD_NAME(0), android::view::Window::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 local_ref< android::content::Context > android::view::Window::getContext()
 {

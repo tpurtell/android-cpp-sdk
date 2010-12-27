@@ -11,11 +11,13 @@
 
 
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace lang { class Cloneable; } } }
 namespace j2cpp { namespace java { namespace security { namespace cert { class Certificate; } } } }
 namespace j2cpp { namespace java { namespace util { class Set; } } }
 namespace j2cpp { namespace java { namespace util { class Collection; } } }
 
 
+#include <java/lang/Cloneable.hpp>
 #include <java/lang/Object.hpp>
 #include <java/security/cert/Certificate.hpp>
 #include <java/util/Collection.hpp>
@@ -41,10 +43,14 @@ namespace java { namespace security { namespace cert {
 		J2CPP_DECLARE_METHOD(4)
 		J2CPP_DECLARE_METHOD(5)
 
-		PKIXCertPathChecker(jobject jobj)
+		explicit PKIXCertPathChecker(jobject jobj)
 		: cpp_object<PKIXCertPathChecker>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::lang::Cloneable>() const;
+
 
 		local_ref< java::lang::Object > clone();
 		void init(cpp_boolean const&);
@@ -56,7 +62,6 @@ namespace java { namespace security { namespace cert {
 } //namespace cert
 } //namespace security
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -70,16 +75,17 @@ namespace java { namespace security { namespace cert {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::security::cert::PKIXCertPathChecker > create< java::security::cert::PKIXCertPathChecker>()
+
+java::security::cert::PKIXCertPathChecker::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::security::cert::PKIXCertPathChecker >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::security::cert::PKIXCertPathChecker::J2CPP_CLASS_NAME>(),
-			get_method_id<java::security::cert::PKIXCertPathChecker::J2CPP_CLASS_NAME, java::security::cert::PKIXCertPathChecker::J2CPP_METHOD_NAME(0), java::security::cert::PKIXCertPathChecker::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+java::security::cert::PKIXCertPathChecker::operator local_ref<java::lang::Cloneable>() const
+{
+	return local_ref<java::lang::Cloneable>(get_jtype());
+}
+
 
 local_ref< java::lang::Object > java::security::cert::PKIXCertPathChecker::clone()
 {

@@ -10,10 +10,12 @@
 #define J2CPP_ANDROID_VIEW_VELOCITYTRACKER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace android { namespace view { class MotionEvent; } } }
 
 
 #include <android/view/MotionEvent.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -38,10 +40,13 @@ namespace android { namespace view {
 		J2CPP_DECLARE_METHOD(7)
 		J2CPP_DECLARE_METHOD(8)
 
-		VelocityTracker(jobject jobj)
+		explicit VelocityTracker(jobject jobj)
 		: cpp_object<VelocityTracker>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		static local_ref< android::view::VelocityTracker > obtain();
 		void recycle();
@@ -56,7 +61,6 @@ namespace android { namespace view {
 } //namespace view
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_VIEW_VELOCITYTRACKER_HPP_DECL
@@ -69,16 +73,12 @@ namespace android { namespace view {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::view::VelocityTracker > create< android::view::VelocityTracker>()
+
+android::view::VelocityTracker::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::view::VelocityTracker >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::view::VelocityTracker::J2CPP_CLASS_NAME>(),
-			get_method_id<android::view::VelocityTracker::J2CPP_CLASS_NAME, android::view::VelocityTracker::J2CPP_METHOD_NAME(0), android::view::VelocityTracker::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
 
 local_ref< android::view::VelocityTracker > android::view::VelocityTracker::obtain()
 {

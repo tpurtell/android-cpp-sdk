@@ -10,10 +10,12 @@
 #define J2CPP_JAVA_UTIL_CONCURRENT_REJECTEDEXECUTIONEXCEPTION_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class RuntimeException; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace lang { class Throwable; } } }
 
 
+#include <java/lang/RuntimeException.hpp>
 #include <java/lang/String.hpp>
 #include <java/lang/Throwable.hpp>
 
@@ -35,17 +37,23 @@ namespace java { namespace util { namespace concurrent {
 		J2CPP_DECLARE_METHOD(2)
 		J2CPP_DECLARE_METHOD(3)
 
-		RejectedExecutionException(jobject jobj)
+		explicit RejectedExecutionException(jobject jobj)
 		: cpp_object<RejectedExecutionException>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::RuntimeException>() const;
+
+
+		RejectedExecutionException();
+		RejectedExecutionException(local_ref< java::lang::String > const&);
+		RejectedExecutionException(local_ref< java::lang::String > const&, local_ref< java::lang::Throwable > const&);
+		RejectedExecutionException(local_ref< java::lang::Throwable > const&);
 	}; //class RejectedExecutionException
 
 } //namespace concurrent
 } //namespace util
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -59,52 +67,62 @@ namespace java { namespace util { namespace concurrent {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::util::concurrent::RejectedExecutionException > create< java::util::concurrent::RejectedExecutionException>()
+
+java::util::concurrent::RejectedExecutionException::operator local_ref<java::lang::RuntimeException>() const
 {
-	return local_ref< java::util::concurrent::RejectedExecutionException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::concurrent::RejectedExecutionException::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::concurrent::RejectedExecutionException::J2CPP_CLASS_NAME, java::util::concurrent::RejectedExecutionException::J2CPP_METHOD_NAME(0), java::util::concurrent::RejectedExecutionException::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::RuntimeException>(get_jtype());
 }
 
-template <>
-local_ref< java::util::concurrent::RejectedExecutionException > create< java::util::concurrent::RejectedExecutionException>(local_ref< java::lang::String > const &a0)
+
+java::util::concurrent::RejectedExecutionException::RejectedExecutionException()
+: cpp_object<java::util::concurrent::RejectedExecutionException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::util::concurrent::RejectedExecutionException::J2CPP_CLASS_NAME>(),
+		get_method_id<java::util::concurrent::RejectedExecutionException::J2CPP_CLASS_NAME, java::util::concurrent::RejectedExecutionException::J2CPP_METHOD_NAME(0), java::util::concurrent::RejectedExecutionException::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
 {
-	return local_ref< java::util::concurrent::RejectedExecutionException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::concurrent::RejectedExecutionException::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::concurrent::RejectedExecutionException::J2CPP_CLASS_NAME, java::util::concurrent::RejectedExecutionException::J2CPP_METHOD_NAME(1), java::util::concurrent::RejectedExecutionException::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< java::util::concurrent::RejectedExecutionException > create< java::util::concurrent::RejectedExecutionException>(local_ref< java::lang::String > const &a0, local_ref< java::lang::Throwable > const &a1)
+
+
+java::util::concurrent::RejectedExecutionException::RejectedExecutionException(local_ref< java::lang::String > const &a0)
+: cpp_object<java::util::concurrent::RejectedExecutionException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::util::concurrent::RejectedExecutionException::J2CPP_CLASS_NAME>(),
+		get_method_id<java::util::concurrent::RejectedExecutionException::J2CPP_CLASS_NAME, java::util::concurrent::RejectedExecutionException::J2CPP_METHOD_NAME(1), java::util::concurrent::RejectedExecutionException::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< java::util::concurrent::RejectedExecutionException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::concurrent::RejectedExecutionException::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::concurrent::RejectedExecutionException::J2CPP_CLASS_NAME, java::util::concurrent::RejectedExecutionException::J2CPP_METHOD_NAME(2), java::util::concurrent::RejectedExecutionException::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< java::util::concurrent::RejectedExecutionException > create< java::util::concurrent::RejectedExecutionException>(local_ref< java::lang::Throwable > const &a0)
+
+
+java::util::concurrent::RejectedExecutionException::RejectedExecutionException(local_ref< java::lang::String > const &a0, local_ref< java::lang::Throwable > const &a1)
+: cpp_object<java::util::concurrent::RejectedExecutionException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::util::concurrent::RejectedExecutionException::J2CPP_CLASS_NAME>(),
+		get_method_id<java::util::concurrent::RejectedExecutionException::J2CPP_CLASS_NAME, java::util::concurrent::RejectedExecutionException::J2CPP_METHOD_NAME(2), java::util::concurrent::RejectedExecutionException::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
 {
-	return local_ref< java::util::concurrent::RejectedExecutionException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::concurrent::RejectedExecutionException::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::concurrent::RejectedExecutionException::J2CPP_CLASS_NAME, java::util::concurrent::RejectedExecutionException::J2CPP_METHOD_NAME(3), java::util::concurrent::RejectedExecutionException::J2CPP_METHOD_SIGNATURE(3), false>(),
-			a0.get_jtype()
-		)
-	);
 }
+
+
+
+java::util::concurrent::RejectedExecutionException::RejectedExecutionException(local_ref< java::lang::Throwable > const &a0)
+: cpp_object<java::util::concurrent::RejectedExecutionException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::util::concurrent::RejectedExecutionException::J2CPP_CLASS_NAME>(),
+		get_method_id<java::util::concurrent::RejectedExecutionException::J2CPP_CLASS_NAME, java::util::concurrent::RejectedExecutionException::J2CPP_METHOD_NAME(3), java::util::concurrent::RejectedExecutionException::J2CPP_METHOD_SIGNATURE(3), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 
 J2CPP_DEFINE_CLASS(java::util::concurrent::RejectedExecutionException,"java/util/concurrent/RejectedExecutionException")

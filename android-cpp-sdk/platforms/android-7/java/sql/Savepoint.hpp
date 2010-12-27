@@ -10,9 +10,11 @@
 #define J2CPP_JAVA_SQL_SAVEPOINT_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -31,10 +33,13 @@ namespace java { namespace sql {
 		J2CPP_DECLARE_METHOD(0)
 		J2CPP_DECLARE_METHOD(1)
 
-		Savepoint(jobject jobj)
+		explicit Savepoint(jobject jobj)
 		: cpp_object<Savepoint>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		cpp_int getSavepointId();
 		local_ref< java::lang::String > getSavepointName();
@@ -42,7 +47,6 @@ namespace java { namespace sql {
 
 } //namespace sql
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -55,6 +59,12 @@ namespace java { namespace sql {
 
 namespace j2cpp {
 
+
+
+java::sql::Savepoint::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 cpp_int java::sql::Savepoint::getSavepointId()
 {

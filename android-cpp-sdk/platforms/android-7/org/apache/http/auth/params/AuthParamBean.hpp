@@ -12,9 +12,11 @@
 
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace params { class HttpParams; } } } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { namespace params { class HttpAbstractParamBean; } } } } }
 
 
 #include <java/lang/String.hpp>
+#include <org/apache/http/params/HttpAbstractParamBean.hpp>
 #include <org/apache/http/params/HttpParams.hpp>
 
 
@@ -33,11 +35,15 @@ namespace org { namespace apache { namespace http { namespace auth { namespace p
 		J2CPP_DECLARE_METHOD(0)
 		J2CPP_DECLARE_METHOD(1)
 
-		AuthParamBean(jobject jobj)
+		explicit AuthParamBean(jobject jobj)
 		: cpp_object<AuthParamBean>(jobj)
 		{
 		}
 
+		operator local_ref<org::apache::http::params::HttpAbstractParamBean>() const;
+
+
+		AuthParamBean(local_ref< org::apache::http::params::HttpParams > const&);
 		void setCredentialCharset(local_ref< java::lang::String > const&);
 	}; //class AuthParamBean
 
@@ -46,7 +52,6 @@ namespace org { namespace apache { namespace http { namespace auth { namespace p
 } //namespace http
 } //namespace apache
 } //namespace org
-
 
 } //namespace j2cpp
 
@@ -60,17 +65,24 @@ namespace org { namespace apache { namespace http { namespace auth { namespace p
 namespace j2cpp {
 
 
-template <>
-local_ref< org::apache::http::auth::params::AuthParamBean > create< org::apache::http::auth::params::AuthParamBean>(local_ref< org::apache::http::params::HttpParams > const &a0)
+
+org::apache::http::auth::params::AuthParamBean::operator local_ref<org::apache::http::params::HttpAbstractParamBean>() const
 {
-	return local_ref< org::apache::http::auth::params::AuthParamBean >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::apache::http::auth::params::AuthParamBean::J2CPP_CLASS_NAME>(),
-			get_method_id<org::apache::http::auth::params::AuthParamBean::J2CPP_CLASS_NAME, org::apache::http::auth::params::AuthParamBean::J2CPP_METHOD_NAME(0), org::apache::http::auth::params::AuthParamBean::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<org::apache::http::params::HttpAbstractParamBean>(get_jtype());
 }
+
+
+org::apache::http::auth::params::AuthParamBean::AuthParamBean(local_ref< org::apache::http::params::HttpParams > const &a0)
+: cpp_object<org::apache::http::auth::params::AuthParamBean>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::apache::http::auth::params::AuthParamBean::J2CPP_CLASS_NAME>(),
+		get_method_id<org::apache::http::auth::params::AuthParamBean::J2CPP_CLASS_NAME, org::apache::http::auth::params::AuthParamBean::J2CPP_METHOD_NAME(0), org::apache::http::auth::params::AuthParamBean::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 void org::apache::http::auth::params::AuthParamBean::setCredentialCharset(local_ref< java::lang::String > const &a0)
 {

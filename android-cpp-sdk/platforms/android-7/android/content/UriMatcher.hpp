@@ -10,11 +10,13 @@
 #define J2CPP_ANDROID_CONTENT_URIMATCHER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace android { namespace net { class Uri; } } }
 
 
 #include <android/net/Uri.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -35,11 +37,15 @@ namespace android { namespace content {
 		J2CPP_DECLARE_METHOD(2)
 		J2CPP_DECLARE_FIELD(0)
 
-		UriMatcher(jobject jobj)
+		explicit UriMatcher(jobject jobj)
 		: cpp_object<UriMatcher>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		UriMatcher(cpp_int const&);
 		void addURI(local_ref< java::lang::String > const&, local_ref< java::lang::String > const&, cpp_int const&);
 		cpp_int match(local_ref< android::net::Uri > const&);
 
@@ -48,7 +54,6 @@ namespace android { namespace content {
 
 } //namespace content
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -62,17 +67,24 @@ namespace android { namespace content {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::content::UriMatcher > create< android::content::UriMatcher>(cpp_int const &a0)
+
+android::content::UriMatcher::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::content::UriMatcher >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::content::UriMatcher::J2CPP_CLASS_NAME>(),
-			get_method_id<android::content::UriMatcher::J2CPP_CLASS_NAME, android::content::UriMatcher::J2CPP_METHOD_NAME(0), android::content::UriMatcher::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::content::UriMatcher::UriMatcher(cpp_int const &a0)
+: cpp_object<android::content::UriMatcher>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::content::UriMatcher::J2CPP_CLASS_NAME>(),
+		get_method_id<android::content::UriMatcher::J2CPP_CLASS_NAME, android::content::UriMatcher::J2CPP_METHOD_NAME(0), android::content::UriMatcher::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 void android::content::UriMatcher::addURI(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1, cpp_int const &a2)
 {

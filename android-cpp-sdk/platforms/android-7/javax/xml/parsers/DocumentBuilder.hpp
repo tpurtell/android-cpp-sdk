@@ -12,6 +12,7 @@
 
 namespace j2cpp { namespace java { namespace io { class File; } } }
 namespace j2cpp { namespace java { namespace io { class InputStream; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace org { namespace w3c { namespace dom { class Document; } } } }
 namespace j2cpp { namespace org { namespace w3c { namespace dom { class DOMImplementation; } } } }
@@ -22,6 +23,7 @@ namespace j2cpp { namespace org { namespace xml { namespace sax { class InputSou
 
 #include <java/io/File.hpp>
 #include <java/io/InputStream.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <org/w3c/dom/DOMImplementation.hpp>
 #include <org/w3c/dom/Document.hpp>
@@ -57,10 +59,13 @@ namespace javax { namespace xml { namespace parsers {
 		J2CPP_DECLARE_METHOD(12)
 		J2CPP_DECLARE_METHOD(13)
 
-		DocumentBuilder(jobject jobj)
+		explicit DocumentBuilder(jobject jobj)
 		: cpp_object<DocumentBuilder>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		local_ref< org::w3c::dom::DOMImplementation > getDOMImplementation();
 		cpp_boolean isNamespaceAware();
@@ -81,7 +86,6 @@ namespace javax { namespace xml { namespace parsers {
 } //namespace xml
 } //namespace javax
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVAX_XML_PARSERS_DOCUMENTBUILDER_HPP_DECL
@@ -94,16 +98,12 @@ namespace javax { namespace xml { namespace parsers {
 namespace j2cpp {
 
 
-template <>
-local_ref< javax::xml::parsers::DocumentBuilder > create< javax::xml::parsers::DocumentBuilder>()
+
+javax::xml::parsers::DocumentBuilder::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< javax::xml::parsers::DocumentBuilder >(
-		environment::get().get_jenv()->NewObject(
-			get_class<javax::xml::parsers::DocumentBuilder::J2CPP_CLASS_NAME>(),
-			get_method_id<javax::xml::parsers::DocumentBuilder::J2CPP_CLASS_NAME, javax::xml::parsers::DocumentBuilder::J2CPP_METHOD_NAME(0), javax::xml::parsers::DocumentBuilder::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
 
 local_ref< org::w3c::dom::DOMImplementation > javax::xml::parsers::DocumentBuilder::getDOMImplementation()
 {

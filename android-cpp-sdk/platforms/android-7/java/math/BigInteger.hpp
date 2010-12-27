@@ -10,11 +10,17 @@
 #define J2CPP_JAVA_MATH_BIGINTEGER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace lang { class Comparable; } } }
+namespace j2cpp { namespace java { namespace lang { class Number; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace util { class Random; } } }
 
 
+#include <java/io/Serializable.hpp>
+#include <java/lang/Comparable.hpp>
+#include <java/lang/Number.hpp>
 #include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/util/Random.hpp>
@@ -88,11 +94,22 @@ namespace java { namespace math {
 		J2CPP_DECLARE_FIELD(1)
 		J2CPP_DECLARE_FIELD(2)
 
-		BigInteger(jobject jobj)
+		explicit BigInteger(jobject jobj)
 		: cpp_object<BigInteger>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Number>() const;
+		operator local_ref<java::lang::Comparable>() const;
+		operator local_ref<java::io::Serializable>() const;
+
+
+		BigInteger(cpp_int const&, local_ref< java::util::Random > const&);
+		BigInteger(cpp_int const&, cpp_int const&, local_ref< java::util::Random > const&);
+		BigInteger(local_ref< java::lang::String > const&);
+		BigInteger(local_ref< java::lang::String > const&, cpp_int const&);
+		BigInteger(cpp_int const&, local_ref< cpp_byte_array<1> > const&);
+		BigInteger(local_ref< cpp_byte_array<1> > const&);
 		static local_ref< java::math::BigInteger > valueOf(cpp_long const&);
 		local_ref< cpp_byte_array<1> > toByteArray();
 		local_ref< java::math::BigInteger > abs();
@@ -147,7 +164,6 @@ namespace java { namespace math {
 } //namespace math
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_MATH_BIGINTEGER_HPP_DECL
@@ -160,77 +176,99 @@ namespace java { namespace math {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::math::BigInteger > create< java::math::BigInteger>(cpp_int const &a0, local_ref< java::util::Random > const &a1)
+
+java::math::BigInteger::operator local_ref<java::lang::Number>() const
 {
-	return local_ref< java::math::BigInteger >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::math::BigInteger::J2CPP_CLASS_NAME>(),
-			get_method_id<java::math::BigInteger::J2CPP_CLASS_NAME, java::math::BigInteger::J2CPP_METHOD_NAME(0), java::math::BigInteger::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Number>(get_jtype());
 }
 
-template <>
-local_ref< java::math::BigInteger > create< java::math::BigInteger>(cpp_int const &a0, cpp_int const &a1, local_ref< java::util::Random > const &a2)
+java::math::BigInteger::operator local_ref<java::lang::Comparable>() const
 {
-	return local_ref< java::math::BigInteger >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::math::BigInteger::J2CPP_CLASS_NAME>(),
-			get_method_id<java::math::BigInteger::J2CPP_CLASS_NAME, java::math::BigInteger::J2CPP_METHOD_NAME(1), java::math::BigInteger::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Comparable>(get_jtype());
 }
 
-template <>
-local_ref< java::math::BigInteger > create< java::math::BigInteger>(local_ref< java::lang::String > const &a0)
+java::math::BigInteger::operator local_ref<java::io::Serializable>() const
 {
-	return local_ref< java::math::BigInteger >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::math::BigInteger::J2CPP_CLASS_NAME>(),
-			get_method_id<java::math::BigInteger::J2CPP_CLASS_NAME, java::math::BigInteger::J2CPP_METHOD_NAME(2), java::math::BigInteger::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::io::Serializable>(get_jtype());
 }
 
-template <>
-local_ref< java::math::BigInteger > create< java::math::BigInteger>(local_ref< java::lang::String > const &a0, cpp_int const &a1)
+
+java::math::BigInteger::BigInteger(cpp_int const &a0, local_ref< java::util::Random > const &a1)
+: cpp_object<java::math::BigInteger>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::math::BigInteger::J2CPP_CLASS_NAME>(),
+		get_method_id<java::math::BigInteger::J2CPP_CLASS_NAME, java::math::BigInteger::J2CPP_METHOD_NAME(0), java::math::BigInteger::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
 {
-	return local_ref< java::math::BigInteger >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::math::BigInteger::J2CPP_CLASS_NAME>(),
-			get_method_id<java::math::BigInteger::J2CPP_CLASS_NAME, java::math::BigInteger::J2CPP_METHOD_NAME(3), java::math::BigInteger::J2CPP_METHOD_SIGNATURE(3), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< java::math::BigInteger > create< java::math::BigInteger>(cpp_int const &a0, local_ref< cpp_byte_array<1> > const &a1)
+
+
+java::math::BigInteger::BigInteger(cpp_int const &a0, cpp_int const &a1, local_ref< java::util::Random > const &a2)
+: cpp_object<java::math::BigInteger>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::math::BigInteger::J2CPP_CLASS_NAME>(),
+		get_method_id<java::math::BigInteger::J2CPP_CLASS_NAME, java::math::BigInteger::J2CPP_METHOD_NAME(1), java::math::BigInteger::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
+	)
+)
 {
-	return local_ref< java::math::BigInteger >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::math::BigInteger::J2CPP_CLASS_NAME>(),
-			get_method_id<java::math::BigInteger::J2CPP_CLASS_NAME, java::math::BigInteger::J2CPP_METHOD_NAME(4), java::math::BigInteger::J2CPP_METHOD_SIGNATURE(4), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< java::math::BigInteger > create< java::math::BigInteger>(local_ref< cpp_byte_array<1> > const &a0)
+
+
+java::math::BigInteger::BigInteger(local_ref< java::lang::String > const &a0)
+: cpp_object<java::math::BigInteger>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::math::BigInteger::J2CPP_CLASS_NAME>(),
+		get_method_id<java::math::BigInteger::J2CPP_CLASS_NAME, java::math::BigInteger::J2CPP_METHOD_NAME(2), java::math::BigInteger::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< java::math::BigInteger >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::math::BigInteger::J2CPP_CLASS_NAME>(),
-			get_method_id<java::math::BigInteger::J2CPP_CLASS_NAME, java::math::BigInteger::J2CPP_METHOD_NAME(5), java::math::BigInteger::J2CPP_METHOD_SIGNATURE(5), false>(),
-			a0.get_jtype()
-		)
-	);
 }
+
+
+
+java::math::BigInteger::BigInteger(local_ref< java::lang::String > const &a0, cpp_int const &a1)
+: cpp_object<java::math::BigInteger>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::math::BigInteger::J2CPP_CLASS_NAME>(),
+		get_method_id<java::math::BigInteger::J2CPP_CLASS_NAME, java::math::BigInteger::J2CPP_METHOD_NAME(3), java::math::BigInteger::J2CPP_METHOD_SIGNATURE(3), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
+
+
+java::math::BigInteger::BigInteger(cpp_int const &a0, local_ref< cpp_byte_array<1> > const &a1)
+: cpp_object<java::math::BigInteger>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::math::BigInteger::J2CPP_CLASS_NAME>(),
+		get_method_id<java::math::BigInteger::J2CPP_CLASS_NAME, java::math::BigInteger::J2CPP_METHOD_NAME(4), java::math::BigInteger::J2CPP_METHOD_SIGNATURE(4), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
+
+
+java::math::BigInteger::BigInteger(local_ref< cpp_byte_array<1> > const &a0)
+: cpp_object<java::math::BigInteger>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::math::BigInteger::J2CPP_CLASS_NAME>(),
+		get_method_id<java::math::BigInteger::J2CPP_CLASS_NAME, java::math::BigInteger::J2CPP_METHOD_NAME(5), java::math::BigInteger::J2CPP_METHOD_SIGNATURE(5), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 local_ref< java::math::BigInteger > java::math::BigInteger::valueOf(cpp_long const &a0)
 {
@@ -711,6 +749,7 @@ cpp_int java::math::BigInteger::compareTo(local_ref< java::lang::Object > const 
 		)
 	);
 }
+
 
 
 static_field<

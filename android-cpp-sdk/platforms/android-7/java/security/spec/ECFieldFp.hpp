@@ -12,10 +12,12 @@
 
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace math { class BigInteger; } } }
+namespace j2cpp { namespace java { namespace security { namespace spec { class ECField; } } } }
 
 
 #include <java/lang/Object.hpp>
 #include <java/math/BigInteger.hpp>
+#include <java/security/spec/ECField.hpp>
 
 
 namespace j2cpp {
@@ -36,11 +38,16 @@ namespace java { namespace security { namespace spec {
 		J2CPP_DECLARE_METHOD(3)
 		J2CPP_DECLARE_METHOD(4)
 
-		ECFieldFp(jobject jobj)
+		explicit ECFieldFp(jobject jobj)
 		: cpp_object<ECFieldFp>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::security::spec::ECField>() const;
+
+
+		ECFieldFp(local_ref< java::math::BigInteger > const&);
 		cpp_int getFieldSize();
 		local_ref< java::math::BigInteger > getP();
 		cpp_boolean equals(local_ref< java::lang::Object > const&);
@@ -50,7 +57,6 @@ namespace java { namespace security { namespace spec {
 } //namespace spec
 } //namespace security
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -64,17 +70,29 @@ namespace java { namespace security { namespace spec {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::security::spec::ECFieldFp > create< java::security::spec::ECFieldFp>(local_ref< java::math::BigInteger > const &a0)
+
+java::security::spec::ECFieldFp::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::security::spec::ECFieldFp >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::security::spec::ECFieldFp::J2CPP_CLASS_NAME>(),
-			get_method_id<java::security::spec::ECFieldFp::J2CPP_CLASS_NAME, java::security::spec::ECFieldFp::J2CPP_METHOD_NAME(0), java::security::spec::ECFieldFp::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+java::security::spec::ECFieldFp::operator local_ref<java::security::spec::ECField>() const
+{
+	return local_ref<java::security::spec::ECField>(get_jtype());
+}
+
+
+java::security::spec::ECFieldFp::ECFieldFp(local_ref< java::math::BigInteger > const &a0)
+: cpp_object<java::security::spec::ECFieldFp>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::security::spec::ECFieldFp::J2CPP_CLASS_NAME>(),
+		get_method_id<java::security::spec::ECFieldFp::J2CPP_CLASS_NAME, java::security::spec::ECFieldFp::J2CPP_METHOD_NAME(0), java::security::spec::ECFieldFp::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 cpp_int java::security::spec::ECFieldFp::getFieldSize()
 {

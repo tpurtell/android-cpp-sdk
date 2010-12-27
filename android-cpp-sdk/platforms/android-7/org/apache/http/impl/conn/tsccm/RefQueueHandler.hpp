@@ -10,9 +10,11 @@
 #define J2CPP_ORG_APACHE_HTTP_IMPL_CONN_TSCCM_REFQUEUEHANDLER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { namespace ref { class Reference; } } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/ref/Reference.hpp>
 
 
@@ -30,10 +32,13 @@ namespace org { namespace apache { namespace http { namespace impl { namespace c
 
 		J2CPP_DECLARE_METHOD(0)
 
-		RefQueueHandler(jobject jobj)
+		explicit RefQueueHandler(jobject jobj)
 		: cpp_object<RefQueueHandler>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		void handleReference(local_ref< java::lang::ref::Reference > const&);
 	}; //class RefQueueHandler
@@ -44,7 +49,6 @@ namespace org { namespace apache { namespace http { namespace impl { namespace c
 } //namespace http
 } //namespace apache
 } //namespace org
-
 
 } //namespace j2cpp
 
@@ -57,6 +61,12 @@ namespace org { namespace apache { namespace http { namespace impl { namespace c
 
 namespace j2cpp {
 
+
+
+org::apache::http::impl::conn::tsccm::RefQueueHandler::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 void org::apache::http::impl::conn::tsccm::RefQueueHandler::handleReference(local_ref< java::lang::ref::Reference > const &a0)
 {

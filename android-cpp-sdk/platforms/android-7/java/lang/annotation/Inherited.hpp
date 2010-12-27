@@ -10,8 +10,12 @@
 #define J2CPP_JAVA_LANG_ANNOTATION_INHERITED_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace lang { namespace annotation { class Annotation; } } } }
 
 
+#include <java/lang/Object.hpp>
+#include <java/lang/annotation/Annotation.hpp>
 
 
 namespace j2cpp {
@@ -27,16 +31,19 @@ namespace java { namespace lang { namespace annotation {
 		J2CPP_DECLARE_CLASS
 
 
-		Inherited(jobject jobj)
+		explicit Inherited(jobject jobj)
 		: cpp_object<Inherited>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::lang::annotation::Annotation>() const;
+
 	}; //class Inherited
 
 } //namespace annotation
 } //namespace lang
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -49,6 +56,17 @@ namespace java { namespace lang { namespace annotation {
 
 namespace j2cpp {
 
+
+
+java::lang::annotation::Inherited::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
+
+java::lang::annotation::Inherited::operator local_ref<java::lang::annotation::Annotation>() const
+{
+	return local_ref<java::lang::annotation::Annotation>(get_jtype());
+}
 
 J2CPP_DEFINE_CLASS(java::lang::annotation::Inherited,"java/lang/annotation/Inherited")
 

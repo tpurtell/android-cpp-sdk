@@ -10,7 +10,9 @@
 #define J2CPP_ANDROID_SERVICE_WALLPAPER_WALLPAPERSERVICE_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace android { namespace app { class Service; } } }
 namespace j2cpp { namespace android { namespace service { namespace wallpaper { namespace WallpaperService_ { class Engine; } } } } }
 namespace j2cpp { namespace android { namespace content { class Intent; } } }
 namespace j2cpp { namespace android { namespace view { class SurfaceHolder; } } }
@@ -19,12 +21,14 @@ namespace j2cpp { namespace android { namespace os { class IBinder; } } }
 namespace j2cpp { namespace android { namespace os { class Bundle; } } }
 
 
+#include <android/app/Service.hpp>
 #include <android/content/Intent.hpp>
 #include <android/os/Bundle.hpp>
 #include <android/os/IBinder.hpp>
 #include <android/service/wallpaper/WallpaperService.hpp>
 #include <android/view/MotionEvent.hpp>
 #include <android/view/SurfaceHolder.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -62,11 +66,15 @@ namespace android { namespace service { namespace wallpaper {
 			J2CPP_DECLARE_METHOD(16)
 			J2CPP_DECLARE_FIELD(0)
 
-			Engine(jobject jobj)
+			explicit Engine(jobject jobj)
 			: cpp_object<Engine>(jobj)
 			{
 			}
 
+			operator local_ref<java::lang::Object>() const;
+
+
+			Engine(local_ref< android::service::wallpaper::WallpaperService > const&);
 			local_ref< android::view::SurfaceHolder > getSurfaceHolder();
 			cpp_int getDesiredMinimumWidth();
 			cpp_int getDesiredMinimumHeight();
@@ -105,11 +113,15 @@ namespace android { namespace service { namespace wallpaper {
 
 		typedef WallpaperService_::Engine Engine;
 
-		WallpaperService(jobject jobj)
+		explicit WallpaperService(jobject jobj)
 		: cpp_object<WallpaperService>(jobj)
 		{
 		}
 
+		operator local_ref<android::app::Service>() const;
+
+
+		WallpaperService();
 		void onCreate();
 		void onDestroy();
 		local_ref< android::os::IBinder > onBind(local_ref< android::content::Intent > const&);
@@ -122,7 +134,6 @@ namespace android { namespace service { namespace wallpaper {
 } //namespace wallpaper
 } //namespace service
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -137,17 +148,24 @@ namespace j2cpp {
 
 
 
-template <>
-local_ref< android::service::wallpaper::WallpaperService_::Engine > create< android::service::wallpaper::WallpaperService_::Engine>(local_ref< android::service::wallpaper::WallpaperService > const &a0)
+
+android::service::wallpaper::WallpaperService_::Engine::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::service::wallpaper::WallpaperService_::Engine >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::service::wallpaper::WallpaperService_::Engine::J2CPP_CLASS_NAME>(),
-			get_method_id<android::service::wallpaper::WallpaperService_::Engine::J2CPP_CLASS_NAME, android::service::wallpaper::WallpaperService_::Engine::J2CPP_METHOD_NAME(0), android::service::wallpaper::WallpaperService_::Engine::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::service::wallpaper::WallpaperService_::Engine::Engine(local_ref< android::service::wallpaper::WallpaperService > const &a0)
+: cpp_object<android::service::wallpaper::WallpaperService_::Engine>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::service::wallpaper::WallpaperService_::Engine::J2CPP_CLASS_NAME>(),
+		get_method_id<android::service::wallpaper::WallpaperService_::Engine::J2CPP_CLASS_NAME, android::service::wallpaper::WallpaperService_::Engine::J2CPP_METHOD_NAME(0), android::service::wallpaper::WallpaperService_::Engine::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 local_ref< android::view::SurfaceHolder > android::service::wallpaper::WallpaperService_::Engine::getSurfaceHolder()
 {
@@ -342,16 +360,23 @@ J2CPP_DEFINE_METHOD(android::service::wallpaper::WallpaperService_::Engine,16,"o
 J2CPP_DEFINE_FIELD(android::service::wallpaper::WallpaperService_::Engine,0,"this$0","Landroid/service/wallpaper/WallpaperService;")
 
 
-template <>
-local_ref< android::service::wallpaper::WallpaperService > create< android::service::wallpaper::WallpaperService>()
+
+android::service::wallpaper::WallpaperService::operator local_ref<android::app::Service>() const
 {
-	return local_ref< android::service::wallpaper::WallpaperService >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::service::wallpaper::WallpaperService::J2CPP_CLASS_NAME>(),
-			get_method_id<android::service::wallpaper::WallpaperService::J2CPP_CLASS_NAME, android::service::wallpaper::WallpaperService::J2CPP_METHOD_NAME(0), android::service::wallpaper::WallpaperService::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<android::app::Service>(get_jtype());
 }
+
+
+android::service::wallpaper::WallpaperService::WallpaperService()
+: cpp_object<android::service::wallpaper::WallpaperService>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::service::wallpaper::WallpaperService::J2CPP_CLASS_NAME>(),
+		get_method_id<android::service::wallpaper::WallpaperService::J2CPP_CLASS_NAME, android::service::wallpaper::WallpaperService::J2CPP_METHOD_NAME(0), android::service::wallpaper::WallpaperService::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 void android::service::wallpaper::WallpaperService::onCreate()
 {

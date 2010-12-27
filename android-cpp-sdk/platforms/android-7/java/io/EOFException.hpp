@@ -10,9 +10,11 @@
 #define J2CPP_JAVA_IO_EOFEXCEPTION_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class IOException; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 
 
+#include <java/io/IOException.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -31,16 +33,20 @@ namespace java { namespace io {
 		J2CPP_DECLARE_METHOD(0)
 		J2CPP_DECLARE_METHOD(1)
 
-		EOFException(jobject jobj)
+		explicit EOFException(jobject jobj)
 		: cpp_object<EOFException>(jobj)
 		{
 		}
 
+		operator local_ref<java::io::IOException>() const;
+
+
+		EOFException();
+		EOFException(local_ref< java::lang::String > const&);
 	}; //class EOFException
 
 } //namespace io
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -54,28 +60,36 @@ namespace java { namespace io {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::io::EOFException > create< java::io::EOFException>()
+
+java::io::EOFException::operator local_ref<java::io::IOException>() const
 {
-	return local_ref< java::io::EOFException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::io::EOFException::J2CPP_CLASS_NAME>(),
-			get_method_id<java::io::EOFException::J2CPP_CLASS_NAME, java::io::EOFException::J2CPP_METHOD_NAME(0), java::io::EOFException::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::io::IOException>(get_jtype());
 }
 
-template <>
-local_ref< java::io::EOFException > create< java::io::EOFException>(local_ref< java::lang::String > const &a0)
+
+java::io::EOFException::EOFException()
+: cpp_object<java::io::EOFException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::io::EOFException::J2CPP_CLASS_NAME>(),
+		get_method_id<java::io::EOFException::J2CPP_CLASS_NAME, java::io::EOFException::J2CPP_METHOD_NAME(0), java::io::EOFException::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
 {
-	return local_ref< java::io::EOFException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::io::EOFException::J2CPP_CLASS_NAME>(),
-			get_method_id<java::io::EOFException::J2CPP_CLASS_NAME, java::io::EOFException::J2CPP_METHOD_NAME(1), java::io::EOFException::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
 }
+
+
+
+java::io::EOFException::EOFException(local_ref< java::lang::String > const &a0)
+: cpp_object<java::io::EOFException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::io::EOFException::J2CPP_CLASS_NAME>(),
+		get_method_id<java::io::EOFException::J2CPP_CLASS_NAME, java::io::EOFException::J2CPP_METHOD_NAME(1), java::io::EOFException::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 
 J2CPP_DEFINE_CLASS(java::io::EOFException,"java/io/EOFException")

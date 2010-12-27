@@ -10,9 +10,11 @@
 #define J2CPP_JAVA_NET_URLENCODER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -32,10 +34,13 @@ namespace java { namespace net {
 		J2CPP_DECLARE_METHOD(1)
 		J2CPP_DECLARE_METHOD(2)
 
-		URLEncoder(jobject jobj)
+		explicit URLEncoder(jobject jobj)
 		: cpp_object<URLEncoder>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		static local_ref< java::lang::String > encode(local_ref< java::lang::String > const&);
 		static local_ref< java::lang::String > encode(local_ref< java::lang::String > const&, local_ref< java::lang::String > const&);
@@ -43,7 +48,6 @@ namespace java { namespace net {
 
 } //namespace net
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -57,16 +61,12 @@ namespace java { namespace net {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::net::URLEncoder > create< java::net::URLEncoder>()
+
+java::net::URLEncoder::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::net::URLEncoder >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::net::URLEncoder::J2CPP_CLASS_NAME>(),
-			get_method_id<java::net::URLEncoder::J2CPP_CLASS_NAME, java::net::URLEncoder::J2CPP_METHOD_NAME(0), java::net::URLEncoder::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
 
 local_ref< java::lang::String > java::net::URLEncoder::encode(local_ref< java::lang::String > const &a0)
 {

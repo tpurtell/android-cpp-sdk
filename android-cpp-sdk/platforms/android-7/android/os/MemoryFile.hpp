@@ -12,11 +12,13 @@
 
 namespace j2cpp { namespace java { namespace io { class InputStream; } } }
 namespace j2cpp { namespace java { namespace io { class OutputStream; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 
 
 #include <java/io/InputStream.hpp>
 #include <java/io/OutputStream.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -43,11 +45,15 @@ namespace android { namespace os {
 		J2CPP_DECLARE_METHOD(8)
 		J2CPP_DECLARE_METHOD(9)
 
-		MemoryFile(jobject jobj)
+		explicit MemoryFile(jobject jobj)
 		: cpp_object<MemoryFile>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		MemoryFile(local_ref< java::lang::String > const&, cpp_int const&);
 		void close();
 		cpp_int length();
 		cpp_boolean isPurgingAllowed();
@@ -61,7 +67,6 @@ namespace android { namespace os {
 } //namespace os
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_OS_MEMORYFILE_HPP_DECL
@@ -74,17 +79,24 @@ namespace android { namespace os {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::os::MemoryFile > create< android::os::MemoryFile>(local_ref< java::lang::String > const &a0, cpp_int const &a1)
+
+android::os::MemoryFile::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::os::MemoryFile >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::os::MemoryFile::J2CPP_CLASS_NAME>(),
-			get_method_id<android::os::MemoryFile::J2CPP_CLASS_NAME, android::os::MemoryFile::J2CPP_METHOD_NAME(0), android::os::MemoryFile::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::os::MemoryFile::MemoryFile(local_ref< java::lang::String > const &a0, cpp_int const &a1)
+: cpp_object<android::os::MemoryFile>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::os::MemoryFile::J2CPP_CLASS_NAME>(),
+		get_method_id<android::os::MemoryFile::J2CPP_CLASS_NAME, android::os::MemoryFile::J2CPP_METHOD_NAME(0), android::os::MemoryFile::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
 
 void android::os::MemoryFile::close()
 {

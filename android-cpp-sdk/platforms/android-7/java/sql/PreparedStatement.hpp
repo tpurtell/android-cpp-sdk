@@ -19,6 +19,7 @@ namespace j2cpp { namespace java { namespace math { class BigDecimal; } } }
 namespace j2cpp { namespace java { namespace sql { class Ref; } } }
 namespace j2cpp { namespace java { namespace sql { class Clob; } } }
 namespace j2cpp { namespace java { namespace sql { class Blob; } } }
+namespace j2cpp { namespace java { namespace sql { class Statement; } } }
 namespace j2cpp { namespace java { namespace sql { class Date; } } }
 namespace j2cpp { namespace java { namespace sql { class ResultSet; } } }
 namespace j2cpp { namespace java { namespace sql { class ParameterMetaData; } } }
@@ -43,6 +44,7 @@ namespace j2cpp { namespace java { namespace util { class Calendar; } } }
 #include <java/sql/Ref.hpp>
 #include <java/sql/ResultSet.hpp>
 #include <java/sql/ResultSetMetaData.hpp>
+#include <java/sql/Statement.hpp>
 #include <java/sql/Time.hpp>
 #include <java/sql/Timestamp.hpp>
 #include <java/util/Calendar.hpp>
@@ -98,10 +100,14 @@ namespace java { namespace sql {
 		J2CPP_DECLARE_METHOD(35)
 		J2CPP_DECLARE_METHOD(36)
 
-		PreparedStatement(jobject jobj)
+		explicit PreparedStatement(jobject jobj)
 		: cpp_object<PreparedStatement>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::sql::Statement>() const;
+
 
 		void addBatch();
 		void clearParameters();
@@ -145,7 +151,6 @@ namespace java { namespace sql {
 } //namespace sql
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_SQL_PREPAREDSTATEMENT_HPP_DECL
@@ -157,6 +162,17 @@ namespace java { namespace sql {
 
 namespace j2cpp {
 
+
+
+java::sql::PreparedStatement::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
+
+java::sql::PreparedStatement::operator local_ref<java::sql::Statement>() const
+{
+	return local_ref<java::sql::Statement>(get_jtype());
+}
 
 void java::sql::PreparedStatement::addBatch()
 {

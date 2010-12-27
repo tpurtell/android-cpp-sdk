@@ -10,6 +10,7 @@
 #define J2CPP_ANDROID_APP_NOTIFICATION_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class CharSequence; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace android { namespace net { class Uri; } } }
@@ -17,6 +18,7 @@ namespace j2cpp { namespace android { namespace app { class PendingIntent; } } }
 namespace j2cpp { namespace android { namespace content { class Context; } } }
 namespace j2cpp { namespace android { namespace widget { class RemoteViews; } } }
 namespace j2cpp { namespace android { namespace os { class Parcel; } } }
+namespace j2cpp { namespace android { namespace os { class Parcelable; } } }
 namespace j2cpp { namespace android { namespace os { namespace Parcelable_ { class Creator; } } } }
 
 
@@ -27,6 +29,7 @@ namespace j2cpp { namespace android { namespace os { namespace Parcelable_ { cla
 #include <android/os/Parcelable.hpp>
 #include <android/widget/RemoteViews.hpp>
 #include <java/lang/CharSequence.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -80,27 +83,34 @@ namespace android { namespace app {
 		J2CPP_DECLARE_FIELD(27)
 		J2CPP_DECLARE_FIELD(28)
 
-		Notification(jobject jobj)
+		explicit Notification(jobject jobj)
 		: cpp_object<Notification>(jobj)
-		, when(jobj)
-		, icon(jobj)
-		, number(jobj)
-		, contentIntent(jobj)
-		, deleteIntent(jobj)
-		, tickerText(jobj)
-		, contentView(jobj)
-		, iconLevel(jobj)
-		, sound(jobj)
-		, audioStreamType(jobj)
-		, vibrate(jobj)
-		, ledARGB(jobj)
-		, ledOnMS(jobj)
-		, ledOffMS(jobj)
-		, defaults(jobj)
-		, flags(jobj)
+, when(jobj)
+, icon(jobj)
+, number(jobj)
+, contentIntent(jobj)
+, deleteIntent(jobj)
+, tickerText(jobj)
+, contentView(jobj)
+, iconLevel(jobj)
+, sound(jobj)
+, audioStreamType(jobj)
+, vibrate(jobj)
+, ledARGB(jobj)
+, ledOnMS(jobj)
+, ledOffMS(jobj)
+, defaults(jobj)
+, flags(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<android::os::Parcelable>() const;
+
+
+		Notification();
+		Notification(cpp_int const&, local_ref< java::lang::CharSequence > const&, cpp_long const&);
+		Notification(local_ref< android::os::Parcel > const&);
 		cpp_int describeContents();
 		void writeToParcel(local_ref< android::os::Parcel > const&, cpp_int const&);
 		void setLatestEventInfo(local_ref< android::content::Context > const&, local_ref< java::lang::CharSequence > const&, local_ref< java::lang::CharSequence > const&, local_ref< android::app::PendingIntent > const&);
@@ -140,7 +150,6 @@ namespace android { namespace app {
 } //namespace app
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_APP_NOTIFICATION_HPP_DECL
@@ -153,40 +162,102 @@ namespace android { namespace app {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::app::Notification > create< android::app::Notification>()
+
+android::app::Notification::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::app::Notification >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::app::Notification::J2CPP_CLASS_NAME>(),
-			get_method_id<android::app::Notification::J2CPP_CLASS_NAME, android::app::Notification::J2CPP_METHOD_NAME(0), android::app::Notification::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
 
-template <>
-local_ref< android::app::Notification > create< android::app::Notification>(cpp_int const &a0, local_ref< java::lang::CharSequence > const &a1, cpp_long const &a2)
+android::app::Notification::operator local_ref<android::os::Parcelable>() const
 {
-	return local_ref< android::app::Notification >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::app::Notification::J2CPP_CLASS_NAME>(),
-			get_method_id<android::app::Notification::J2CPP_CLASS_NAME, android::app::Notification::J2CPP_METHOD_NAME(1), android::app::Notification::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
-		)
-	);
+	return local_ref<android::os::Parcelable>(get_jtype());
 }
 
-template <>
-local_ref< android::app::Notification > create< android::app::Notification>(local_ref< android::os::Parcel > const &a0)
+
+android::app::Notification::Notification()
+: cpp_object<android::app::Notification>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::app::Notification::J2CPP_CLASS_NAME>(),
+		get_method_id<android::app::Notification::J2CPP_CLASS_NAME, android::app::Notification::J2CPP_METHOD_NAME(0), android::app::Notification::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+, when(get_jtype())
+, icon(get_jtype())
+, number(get_jtype())
+, contentIntent(get_jtype())
+, deleteIntent(get_jtype())
+, tickerText(get_jtype())
+, contentView(get_jtype())
+, iconLevel(get_jtype())
+, sound(get_jtype())
+, audioStreamType(get_jtype())
+, vibrate(get_jtype())
+, ledARGB(get_jtype())
+, ledOnMS(get_jtype())
+, ledOffMS(get_jtype())
+, defaults(get_jtype())
+, flags(get_jtype())
 {
-	return local_ref< android::app::Notification >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::app::Notification::J2CPP_CLASS_NAME>(),
-			get_method_id<android::app::Notification::J2CPP_CLASS_NAME, android::app::Notification::J2CPP_METHOD_NAME(2), android::app::Notification::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype()
-		)
-	);
 }
+
+
+
+android::app::Notification::Notification(cpp_int const &a0, local_ref< java::lang::CharSequence > const &a1, cpp_long const &a2)
+: cpp_object<android::app::Notification>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::app::Notification::J2CPP_CLASS_NAME>(),
+		get_method_id<android::app::Notification::J2CPP_CLASS_NAME, android::app::Notification::J2CPP_METHOD_NAME(1), android::app::Notification::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
+	)
+)
+, when(get_jtype())
+, icon(get_jtype())
+, number(get_jtype())
+, contentIntent(get_jtype())
+, deleteIntent(get_jtype())
+, tickerText(get_jtype())
+, contentView(get_jtype())
+, iconLevel(get_jtype())
+, sound(get_jtype())
+, audioStreamType(get_jtype())
+, vibrate(get_jtype())
+, ledARGB(get_jtype())
+, ledOnMS(get_jtype())
+, ledOffMS(get_jtype())
+, defaults(get_jtype())
+, flags(get_jtype())
+{
+}
+
+
+
+android::app::Notification::Notification(local_ref< android::os::Parcel > const &a0)
+: cpp_object<android::app::Notification>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::app::Notification::J2CPP_CLASS_NAME>(),
+		get_method_id<android::app::Notification::J2CPP_CLASS_NAME, android::app::Notification::J2CPP_METHOD_NAME(2), android::app::Notification::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype()
+	)
+)
+, when(get_jtype())
+, icon(get_jtype())
+, number(get_jtype())
+, contentIntent(get_jtype())
+, deleteIntent(get_jtype())
+, tickerText(get_jtype())
+, contentView(get_jtype())
+, iconLevel(get_jtype())
+, sound(get_jtype())
+, audioStreamType(get_jtype())
+, vibrate(get_jtype())
+, ledARGB(get_jtype())
+, ledOnMS(get_jtype())
+, ledOffMS(get_jtype())
+, defaults(get_jtype())
+, flags(get_jtype())
+{
+}
+
 
 cpp_int android::app::Notification::describeContents()
 {
@@ -229,6 +300,7 @@ local_ref< java::lang::String > android::app::Notification::toString()
 		)
 	);
 }
+
 
 
 static_field<

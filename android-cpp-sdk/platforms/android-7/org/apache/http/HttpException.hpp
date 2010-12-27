@@ -12,8 +12,10 @@
 
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace lang { class Throwable; } } }
+namespace j2cpp { namespace java { namespace lang { class Exception; } } }
 
 
+#include <java/lang/Exception.hpp>
 #include <java/lang/String.hpp>
 #include <java/lang/Throwable.hpp>
 
@@ -34,17 +36,22 @@ namespace org { namespace apache { namespace http {
 		J2CPP_DECLARE_METHOD(1)
 		J2CPP_DECLARE_METHOD(2)
 
-		HttpException(jobject jobj)
+		explicit HttpException(jobject jobj)
 		: cpp_object<HttpException>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Exception>() const;
+
+
+		HttpException();
+		HttpException(local_ref< java::lang::String > const&);
+		HttpException(local_ref< java::lang::String > const&, local_ref< java::lang::Throwable > const&);
 	}; //class HttpException
 
 } //namespace http
 } //namespace apache
 } //namespace org
-
 
 } //namespace j2cpp
 
@@ -58,40 +65,49 @@ namespace org { namespace apache { namespace http {
 namespace j2cpp {
 
 
-template <>
-local_ref< org::apache::http::HttpException > create< org::apache::http::HttpException>()
+
+org::apache::http::HttpException::operator local_ref<java::lang::Exception>() const
 {
-	return local_ref< org::apache::http::HttpException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::apache::http::HttpException::J2CPP_CLASS_NAME>(),
-			get_method_id<org::apache::http::HttpException::J2CPP_CLASS_NAME, org::apache::http::HttpException::J2CPP_METHOD_NAME(0), org::apache::http::HttpException::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Exception>(get_jtype());
 }
 
-template <>
-local_ref< org::apache::http::HttpException > create< org::apache::http::HttpException>(local_ref< java::lang::String > const &a0)
+
+org::apache::http::HttpException::HttpException()
+: cpp_object<org::apache::http::HttpException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::apache::http::HttpException::J2CPP_CLASS_NAME>(),
+		get_method_id<org::apache::http::HttpException::J2CPP_CLASS_NAME, org::apache::http::HttpException::J2CPP_METHOD_NAME(0), org::apache::http::HttpException::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
 {
-	return local_ref< org::apache::http::HttpException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::apache::http::HttpException::J2CPP_CLASS_NAME>(),
-			get_method_id<org::apache::http::HttpException::J2CPP_CLASS_NAME, org::apache::http::HttpException::J2CPP_METHOD_NAME(1), org::apache::http::HttpException::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< org::apache::http::HttpException > create< org::apache::http::HttpException>(local_ref< java::lang::String > const &a0, local_ref< java::lang::Throwable > const &a1)
+
+
+org::apache::http::HttpException::HttpException(local_ref< java::lang::String > const &a0)
+: cpp_object<org::apache::http::HttpException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::apache::http::HttpException::J2CPP_CLASS_NAME>(),
+		get_method_id<org::apache::http::HttpException::J2CPP_CLASS_NAME, org::apache::http::HttpException::J2CPP_METHOD_NAME(1), org::apache::http::HttpException::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< org::apache::http::HttpException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::apache::http::HttpException::J2CPP_CLASS_NAME>(),
-			get_method_id<org::apache::http::HttpException::J2CPP_CLASS_NAME, org::apache::http::HttpException::J2CPP_METHOD_NAME(2), org::apache::http::HttpException::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
 }
+
+
+
+org::apache::http::HttpException::HttpException(local_ref< java::lang::String > const &a0, local_ref< java::lang::Throwable > const &a1)
+: cpp_object<org::apache::http::HttpException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::apache::http::HttpException::J2CPP_CLASS_NAME>(),
+		get_method_id<org::apache::http::HttpException::J2CPP_CLASS_NAME, org::apache::http::HttpException::J2CPP_METHOD_NAME(2), org::apache::http::HttpException::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
 
 
 J2CPP_DEFINE_CLASS(org::apache::http::HttpException,"org/apache/http/HttpException")

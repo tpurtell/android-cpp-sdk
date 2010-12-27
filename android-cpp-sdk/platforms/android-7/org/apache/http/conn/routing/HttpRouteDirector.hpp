@@ -10,9 +10,11 @@
 #define J2CPP_ORG_APACHE_HTTP_CONN_ROUTING_HTTPROUTEDIRECTOR_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace conn { namespace routing { class RouteInfo; } } } } } }
 
 
+#include <java/lang/Object.hpp>
 #include <org/apache/http/conn/routing/RouteInfo.hpp>
 
 
@@ -37,10 +39,13 @@ namespace org { namespace apache { namespace http { namespace conn { namespace r
 		J2CPP_DECLARE_FIELD(5)
 		J2CPP_DECLARE_FIELD(6)
 
-		HttpRouteDirector(jobject jobj)
+		explicit HttpRouteDirector(jobject jobj)
 		: cpp_object<HttpRouteDirector>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		cpp_int nextStep(local_ref< org::apache::http::conn::routing::RouteInfo > const&, local_ref< org::apache::http::conn::routing::RouteInfo > const&);
 
@@ -59,7 +64,6 @@ namespace org { namespace apache { namespace http { namespace conn { namespace r
 } //namespace apache
 } //namespace org
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ORG_APACHE_HTTP_CONN_ROUTING_HTTPROUTEDIRECTOR_HPP_DECL
@@ -71,6 +75,12 @@ namespace org { namespace apache { namespace http { namespace conn { namespace r
 
 namespace j2cpp {
 
+
+
+org::apache::http::conn::routing::HttpRouteDirector::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 cpp_int org::apache::http::conn::routing::HttpRouteDirector::nextStep(local_ref< org::apache::http::conn::routing::RouteInfo > const &a0, local_ref< org::apache::http::conn::routing::RouteInfo > const &a1)
 {

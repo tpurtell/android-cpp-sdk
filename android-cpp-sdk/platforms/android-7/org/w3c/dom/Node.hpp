@@ -10,12 +10,14 @@
 #define J2CPP_ORG_W3C_DOM_NODE_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace org { namespace w3c { namespace dom { class Document; } } } }
 namespace j2cpp { namespace org { namespace w3c { namespace dom { class NamedNodeMap; } } } }
 namespace j2cpp { namespace org { namespace w3c { namespace dom { class NodeList; } } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <org/w3c/dom/Document.hpp>
 #include <org/w3c/dom/NamedNodeMap.hpp>
@@ -72,10 +74,13 @@ namespace org { namespace w3c { namespace dom {
 		J2CPP_DECLARE_FIELD(10)
 		J2CPP_DECLARE_FIELD(11)
 
-		Node(jobject jobj)
+		explicit Node(jobject jobj)
 		: cpp_object<Node>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		local_ref< java::lang::String > getNodeName();
 		local_ref< java::lang::String > getNodeValue();
@@ -121,7 +126,6 @@ namespace org { namespace w3c { namespace dom {
 } //namespace w3c
 } //namespace org
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ORG_W3C_DOM_NODE_HPP_DECL
@@ -133,6 +137,12 @@ namespace org { namespace w3c { namespace dom {
 
 namespace j2cpp {
 
+
+
+org::w3c::dom::Node::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 local_ref< java::lang::String > org::w3c::dom::Node::getNodeName()
 {

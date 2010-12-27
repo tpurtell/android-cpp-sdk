@@ -11,10 +11,12 @@
 
 
 namespace j2cpp { namespace java { namespace lang { class Class; } } }
+namespace j2cpp { namespace java { namespace lang { class RuntimeException; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 
 
 #include <java/lang/Class.hpp>
+#include <java/lang/RuntimeException.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -34,18 +36,21 @@ namespace java { namespace lang {
 		J2CPP_DECLARE_METHOD(1)
 		J2CPP_DECLARE_METHOD(2)
 
-		EnumConstantNotPresentException(jobject jobj)
+		explicit EnumConstantNotPresentException(jobject jobj)
 		: cpp_object<EnumConstantNotPresentException>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::RuntimeException>() const;
+
+
+		EnumConstantNotPresentException(local_ref< java::lang::Class > const&, local_ref< java::lang::String > const&);
 		local_ref< java::lang::Class > enumType();
 		local_ref< java::lang::String > constantName();
 	}; //class EnumConstantNotPresentException
 
 } //namespace lang
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -59,17 +64,24 @@ namespace java { namespace lang {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::lang::EnumConstantNotPresentException > create< java::lang::EnumConstantNotPresentException>(local_ref< java::lang::Class > const &a0, local_ref< java::lang::String > const &a1)
+
+java::lang::EnumConstantNotPresentException::operator local_ref<java::lang::RuntimeException>() const
 {
-	return local_ref< java::lang::EnumConstantNotPresentException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::lang::EnumConstantNotPresentException::J2CPP_CLASS_NAME>(),
-			get_method_id<java::lang::EnumConstantNotPresentException::J2CPP_CLASS_NAME, java::lang::EnumConstantNotPresentException::J2CPP_METHOD_NAME(0), java::lang::EnumConstantNotPresentException::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<java::lang::RuntimeException>(get_jtype());
 }
+
+
+java::lang::EnumConstantNotPresentException::EnumConstantNotPresentException(local_ref< java::lang::Class > const &a0, local_ref< java::lang::String > const &a1)
+: cpp_object<java::lang::EnumConstantNotPresentException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::lang::EnumConstantNotPresentException::J2CPP_CLASS_NAME>(),
+		get_method_id<java::lang::EnumConstantNotPresentException::J2CPP_CLASS_NAME, java::lang::EnumConstantNotPresentException::J2CPP_METHOD_NAME(0), java::lang::EnumConstantNotPresentException::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
 
 local_ref< java::lang::Class > java::lang::EnumConstantNotPresentException::enumType()
 {

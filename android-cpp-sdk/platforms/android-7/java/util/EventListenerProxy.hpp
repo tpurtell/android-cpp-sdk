@@ -10,9 +10,11 @@
 #define J2CPP_JAVA_UTIL_EVENTLISTENERPROXY_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace util { class EventListener; } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/util/EventListener.hpp>
 
 
@@ -31,17 +33,21 @@ namespace java { namespace util {
 		J2CPP_DECLARE_METHOD(0)
 		J2CPP_DECLARE_METHOD(1)
 
-		EventListenerProxy(jobject jobj)
+		explicit EventListenerProxy(jobject jobj)
 		: cpp_object<EventListenerProxy>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::util::EventListener>() const;
+
+
+		EventListenerProxy(local_ref< java::util::EventListener > const&);
 		local_ref< java::util::EventListener > getListener();
 	}; //class EventListenerProxy
 
 } //namespace util
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -55,17 +61,29 @@ namespace java { namespace util {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::util::EventListenerProxy > create< java::util::EventListenerProxy>(local_ref< java::util::EventListener > const &a0)
+
+java::util::EventListenerProxy::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::util::EventListenerProxy >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::EventListenerProxy::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::EventListenerProxy::J2CPP_CLASS_NAME, java::util::EventListenerProxy::J2CPP_METHOD_NAME(0), java::util::EventListenerProxy::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+java::util::EventListenerProxy::operator local_ref<java::util::EventListener>() const
+{
+	return local_ref<java::util::EventListener>(get_jtype());
+}
+
+
+java::util::EventListenerProxy::EventListenerProxy(local_ref< java::util::EventListener > const &a0)
+: cpp_object<java::util::EventListenerProxy>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::util::EventListenerProxy::J2CPP_CLASS_NAME>(),
+		get_method_id<java::util::EventListenerProxy::J2CPP_CLASS_NAME, java::util::EventListenerProxy::J2CPP_METHOD_NAME(0), java::util::EventListenerProxy::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 local_ref< java::util::EventListener > java::util::EventListenerProxy::getListener()
 {

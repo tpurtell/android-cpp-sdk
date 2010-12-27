@@ -11,10 +11,14 @@
 
 
 namespace j2cpp { namespace javax { namespace net { namespace ssl { class SSLSession; } } } }
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace util { class EventObject; } } }
 
 
+#include <java/io/Serializable.hpp>
 #include <java/lang/String.hpp>
+#include <java/util/EventObject.hpp>
 #include <javax/net/ssl/SSLSession.hpp>
 
 
@@ -34,11 +38,16 @@ namespace javax { namespace net { namespace ssl {
 		J2CPP_DECLARE_METHOD(1)
 		J2CPP_DECLARE_METHOD(2)
 
-		SSLSessionBindingEvent(jobject jobj)
+		explicit SSLSessionBindingEvent(jobject jobj)
 		: cpp_object<SSLSessionBindingEvent>(jobj)
 		{
 		}
 
+		operator local_ref<java::util::EventObject>() const;
+		operator local_ref<java::io::Serializable>() const;
+
+
+		SSLSessionBindingEvent(local_ref< javax::net::ssl::SSLSession > const&, local_ref< java::lang::String > const&);
 		local_ref< java::lang::String > getName();
 		local_ref< javax::net::ssl::SSLSession > getSession();
 	}; //class SSLSessionBindingEvent
@@ -46,7 +55,6 @@ namespace javax { namespace net { namespace ssl {
 } //namespace ssl
 } //namespace net
 } //namespace javax
-
 
 } //namespace j2cpp
 
@@ -60,17 +68,29 @@ namespace javax { namespace net { namespace ssl {
 namespace j2cpp {
 
 
-template <>
-local_ref< javax::net::ssl::SSLSessionBindingEvent > create< javax::net::ssl::SSLSessionBindingEvent>(local_ref< javax::net::ssl::SSLSession > const &a0, local_ref< java::lang::String > const &a1)
+
+javax::net::ssl::SSLSessionBindingEvent::operator local_ref<java::util::EventObject>() const
 {
-	return local_ref< javax::net::ssl::SSLSessionBindingEvent >(
-		environment::get().get_jenv()->NewObject(
-			get_class<javax::net::ssl::SSLSessionBindingEvent::J2CPP_CLASS_NAME>(),
-			get_method_id<javax::net::ssl::SSLSessionBindingEvent::J2CPP_CLASS_NAME, javax::net::ssl::SSLSessionBindingEvent::J2CPP_METHOD_NAME(0), javax::net::ssl::SSLSessionBindingEvent::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<java::util::EventObject>(get_jtype());
 }
+
+javax::net::ssl::SSLSessionBindingEvent::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jtype());
+}
+
+
+javax::net::ssl::SSLSessionBindingEvent::SSLSessionBindingEvent(local_ref< javax::net::ssl::SSLSession > const &a0, local_ref< java::lang::String > const &a1)
+: cpp_object<javax::net::ssl::SSLSessionBindingEvent>(
+	environment::get().get_jenv()->NewObject(
+		get_class<javax::net::ssl::SSLSessionBindingEvent::J2CPP_CLASS_NAME>(),
+		get_method_id<javax::net::ssl::SSLSessionBindingEvent::J2CPP_CLASS_NAME, javax::net::ssl::SSLSessionBindingEvent::J2CPP_METHOD_NAME(0), javax::net::ssl::SSLSessionBindingEvent::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
 
 local_ref< java::lang::String > javax::net::ssl::SSLSessionBindingEvent::getName()
 {

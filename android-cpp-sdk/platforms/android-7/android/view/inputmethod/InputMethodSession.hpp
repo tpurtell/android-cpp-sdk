@@ -10,6 +10,7 @@
 #define J2CPP_ANDROID_VIEW_INPUTMETHOD_INPUTMETHODSESSION_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace android { namespace graphics { class Rect; } } }
 namespace j2cpp { namespace android { namespace view { namespace inputmethod { class ExtractedText; } } } }
@@ -27,6 +28,7 @@ namespace j2cpp { namespace android { namespace os { class Bundle; } } }
 #include <android/view/inputmethod/CompletionInfo.hpp>
 #include <android/view/inputmethod/ExtractedText.hpp>
 #include <android/view/inputmethod/InputMethodSession.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -47,10 +49,13 @@ namespace android { namespace view { namespace inputmethod {
 
 			J2CPP_DECLARE_METHOD(0)
 
-			EventCallback(jobject jobj)
+			explicit EventCallback(jobject jobj)
 			: cpp_object<EventCallback>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+
 
 			void finishedEvent(cpp_int const&, cpp_boolean const&);
 		}; //class EventCallback
@@ -76,10 +81,13 @@ namespace android { namespace view { namespace inputmethod {
 
 		typedef InputMethodSession_::EventCallback EventCallback;
 
-		InputMethodSession(jobject jobj)
+		explicit InputMethodSession(jobject jobj)
 		: cpp_object<InputMethodSession>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		void finishInput();
 		void updateSelection(cpp_int const&, cpp_int const&, cpp_int const&, cpp_int const&, cpp_int const&, cpp_int const&);
@@ -96,7 +104,6 @@ namespace android { namespace view { namespace inputmethod {
 } //namespace view
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_VIEW_INPUTMETHOD_INPUTMETHODSESSION_HPP_DECL
@@ -109,6 +116,12 @@ namespace android { namespace view { namespace inputmethod {
 namespace j2cpp {
 
 
+
+
+android::view::inputmethod::InputMethodSession_::EventCallback::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 void android::view::inputmethod::InputMethodSession_::EventCallback::finishedEvent(cpp_int const &a0, cpp_boolean const &a1)
 {
@@ -125,6 +138,12 @@ void android::view::inputmethod::InputMethodSession_::EventCallback::finishedEve
 J2CPP_DEFINE_CLASS(android::view::inputmethod::InputMethodSession_::EventCallback,"android/view/inputmethod/InputMethodSession$EventCallback")
 J2CPP_DEFINE_METHOD(android::view::inputmethod::InputMethodSession_::EventCallback,0,"finishedEvent","(IZ)V")
 
+
+
+android::view::inputmethod::InputMethodSession::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 void android::view::inputmethod::InputMethodSession::finishInput()
 {

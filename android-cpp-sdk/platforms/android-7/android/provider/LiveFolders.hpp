@@ -10,9 +10,13 @@
 #define J2CPP_ANDROID_PROVIDER_LIVEFOLDERS_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace android { namespace provider { class BaseColumns; } } }
 
 
+#include <android/provider/BaseColumns.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -43,10 +47,14 @@ namespace android { namespace provider {
 		J2CPP_DECLARE_FIELD(11)
 		J2CPP_DECLARE_FIELD(12)
 
-		LiveFolders(jobject jobj)
+		explicit LiveFolders(jobject jobj)
 		: cpp_object<LiveFolders>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<android::provider::BaseColumns>() const;
+
 
 
 		static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(0), J2CPP_FIELD_SIGNATURE(0), local_ref< java::lang::String > > NAME;
@@ -67,7 +75,6 @@ namespace android { namespace provider {
 } //namespace provider
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_PROVIDER_LIVEFOLDERS_HPP_DECL
@@ -80,16 +87,17 @@ namespace android { namespace provider {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::provider::LiveFolders > create< android::provider::LiveFolders>()
+
+android::provider::LiveFolders::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::provider::LiveFolders >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::provider::LiveFolders::J2CPP_CLASS_NAME>(),
-			get_method_id<android::provider::LiveFolders::J2CPP_CLASS_NAME, android::provider::LiveFolders::J2CPP_METHOD_NAME(0), android::provider::LiveFolders::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+android::provider::LiveFolders::operator local_ref<android::provider::BaseColumns>() const
+{
+	return local_ref<android::provider::BaseColumns>(get_jtype());
+}
+
 
 
 static_field<

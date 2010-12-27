@@ -10,9 +10,11 @@
 #define J2CPP_JAVA_IO_INTERRUPTEDIOEXCEPTION_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class IOException; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 
 
+#include <java/io/IOException.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -32,19 +34,23 @@ namespace java { namespace io {
 		J2CPP_DECLARE_METHOD(1)
 		J2CPP_DECLARE_FIELD(0)
 
-		InterruptedIOException(jobject jobj)
+		explicit InterruptedIOException(jobject jobj)
 		: cpp_object<InterruptedIOException>(jobj)
-		, bytesTransferred(jobj)
+, bytesTransferred(jobj)
 		{
 		}
 
+		operator local_ref<java::io::IOException>() const;
+
+
+		InterruptedIOException();
+		InterruptedIOException(local_ref< java::lang::String > const&);
 
 		field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(0), J2CPP_FIELD_SIGNATURE(0), cpp_int > bytesTransferred;
 	}; //class InterruptedIOException
 
 } //namespace io
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -58,28 +64,38 @@ namespace java { namespace io {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::io::InterruptedIOException > create< java::io::InterruptedIOException>()
+
+java::io::InterruptedIOException::operator local_ref<java::io::IOException>() const
 {
-	return local_ref< java::io::InterruptedIOException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::io::InterruptedIOException::J2CPP_CLASS_NAME>(),
-			get_method_id<java::io::InterruptedIOException::J2CPP_CLASS_NAME, java::io::InterruptedIOException::J2CPP_METHOD_NAME(0), java::io::InterruptedIOException::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::io::IOException>(get_jtype());
 }
 
-template <>
-local_ref< java::io::InterruptedIOException > create< java::io::InterruptedIOException>(local_ref< java::lang::String > const &a0)
+
+java::io::InterruptedIOException::InterruptedIOException()
+: cpp_object<java::io::InterruptedIOException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::io::InterruptedIOException::J2CPP_CLASS_NAME>(),
+		get_method_id<java::io::InterruptedIOException::J2CPP_CLASS_NAME, java::io::InterruptedIOException::J2CPP_METHOD_NAME(0), java::io::InterruptedIOException::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+, bytesTransferred(get_jtype())
 {
-	return local_ref< java::io::InterruptedIOException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::io::InterruptedIOException::J2CPP_CLASS_NAME>(),
-			get_method_id<java::io::InterruptedIOException::J2CPP_CLASS_NAME, java::io::InterruptedIOException::J2CPP_METHOD_NAME(1), java::io::InterruptedIOException::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
 }
+
+
+
+java::io::InterruptedIOException::InterruptedIOException(local_ref< java::lang::String > const &a0)
+: cpp_object<java::io::InterruptedIOException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::io::InterruptedIOException::J2CPP_CLASS_NAME>(),
+		get_method_id<java::io::InterruptedIOException::J2CPP_CLASS_NAME, java::io::InterruptedIOException::J2CPP_METHOD_NAME(1), java::io::InterruptedIOException::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
+, bytesTransferred(get_jtype())
+{
+}
+
 
 
 

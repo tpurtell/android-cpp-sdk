@@ -10,8 +10,12 @@
 #define J2CPP_JAVA_LANG_NUMBER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
+#include <java/io/Serializable.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -34,11 +38,16 @@ namespace java { namespace lang {
 		J2CPP_DECLARE_METHOD(5)
 		J2CPP_DECLARE_METHOD(6)
 
-		Number(jobject jobj)
+		explicit Number(jobject jobj)
 		: cpp_object<Number>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::io::Serializable>() const;
+
+
+		Number();
 		cpp_byte byteValue();
 		cpp_double doubleValue();
 		cpp_float floatValue();
@@ -49,7 +58,6 @@ namespace java { namespace lang {
 
 } //namespace lang
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -63,16 +71,28 @@ namespace java { namespace lang {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::lang::Number > create< java::lang::Number>()
+
+java::lang::Number::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::lang::Number >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::lang::Number::J2CPP_CLASS_NAME>(),
-			get_method_id<java::lang::Number::J2CPP_CLASS_NAME, java::lang::Number::J2CPP_METHOD_NAME(0), java::lang::Number::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+java::lang::Number::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jtype());
+}
+
+
+java::lang::Number::Number()
+: cpp_object<java::lang::Number>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::lang::Number::J2CPP_CLASS_NAME>(),
+		get_method_id<java::lang::Number::J2CPP_CLASS_NAME, java::lang::Number::J2CPP_METHOD_NAME(0), java::lang::Number::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 cpp_byte java::lang::Number::byteValue()
 {

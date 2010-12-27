@@ -12,10 +12,12 @@
 
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace android { namespace telephony { class CellLocation; } } }
 namespace j2cpp { namespace android { namespace os { class Bundle; } } }
 
 
 #include <android/os/Bundle.hpp>
+#include <android/telephony/CellLocation.hpp>
 #include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
@@ -43,11 +45,16 @@ namespace android { namespace telephony { namespace gsm {
 		J2CPP_DECLARE_METHOD(8)
 		J2CPP_DECLARE_METHOD(9)
 
-		GsmCellLocation(jobject jobj)
+		explicit GsmCellLocation(jobject jobj)
 		: cpp_object<GsmCellLocation>(jobj)
 		{
 		}
 
+		operator local_ref<android::telephony::CellLocation>() const;
+
+
+		GsmCellLocation();
+		GsmCellLocation(local_ref< android::os::Bundle > const&);
 		cpp_int getLac();
 		cpp_int getCid();
 		void setStateInvalid();
@@ -62,7 +69,6 @@ namespace android { namespace telephony { namespace gsm {
 } //namespace telephony
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_TELEPHONY_GSM_GSMCELLLOCATION_HPP_DECL
@@ -75,28 +81,36 @@ namespace android { namespace telephony { namespace gsm {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::telephony::gsm::GsmCellLocation > create< android::telephony::gsm::GsmCellLocation>()
+
+android::telephony::gsm::GsmCellLocation::operator local_ref<android::telephony::CellLocation>() const
 {
-	return local_ref< android::telephony::gsm::GsmCellLocation >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::telephony::gsm::GsmCellLocation::J2CPP_CLASS_NAME>(),
-			get_method_id<android::telephony::gsm::GsmCellLocation::J2CPP_CLASS_NAME, android::telephony::gsm::GsmCellLocation::J2CPP_METHOD_NAME(0), android::telephony::gsm::GsmCellLocation::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<android::telephony::CellLocation>(get_jtype());
 }
 
-template <>
-local_ref< android::telephony::gsm::GsmCellLocation > create< android::telephony::gsm::GsmCellLocation>(local_ref< android::os::Bundle > const &a0)
+
+android::telephony::gsm::GsmCellLocation::GsmCellLocation()
+: cpp_object<android::telephony::gsm::GsmCellLocation>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::telephony::gsm::GsmCellLocation::J2CPP_CLASS_NAME>(),
+		get_method_id<android::telephony::gsm::GsmCellLocation::J2CPP_CLASS_NAME, android::telephony::gsm::GsmCellLocation::J2CPP_METHOD_NAME(0), android::telephony::gsm::GsmCellLocation::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
 {
-	return local_ref< android::telephony::gsm::GsmCellLocation >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::telephony::gsm::GsmCellLocation::J2CPP_CLASS_NAME>(),
-			get_method_id<android::telephony::gsm::GsmCellLocation::J2CPP_CLASS_NAME, android::telephony::gsm::GsmCellLocation::J2CPP_METHOD_NAME(1), android::telephony::gsm::GsmCellLocation::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
 }
+
+
+
+android::telephony::gsm::GsmCellLocation::GsmCellLocation(local_ref< android::os::Bundle > const &a0)
+: cpp_object<android::telephony::gsm::GsmCellLocation>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::telephony::gsm::GsmCellLocation::J2CPP_CLASS_NAME>(),
+		get_method_id<android::telephony::gsm::GsmCellLocation::J2CPP_CLASS_NAME, android::telephony::gsm::GsmCellLocation::J2CPP_METHOD_NAME(1), android::telephony::gsm::GsmCellLocation::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 cpp_int android::telephony::gsm::GsmCellLocation::getLac()
 {

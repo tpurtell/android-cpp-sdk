@@ -10,8 +10,10 @@
 #define J2CPP_ANDROID_GRAPHICS_DISCRETEPATHEFFECT_HPP_DECL
 
 
+namespace j2cpp { namespace android { namespace graphics { class PathEffect; } } }
 
 
+#include <android/graphics/PathEffect.hpp>
 
 
 namespace j2cpp {
@@ -28,16 +30,19 @@ namespace android { namespace graphics {
 
 		J2CPP_DECLARE_METHOD(0)
 
-		DiscretePathEffect(jobject jobj)
+		explicit DiscretePathEffect(jobject jobj)
 		: cpp_object<DiscretePathEffect>(jobj)
 		{
 		}
 
+		operator local_ref<android::graphics::PathEffect>() const;
+
+
+		DiscretePathEffect(cpp_float const&, cpp_float const&);
 	}; //class DiscretePathEffect
 
 } //namespace graphics
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -51,17 +56,24 @@ namespace android { namespace graphics {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::graphics::DiscretePathEffect > create< android::graphics::DiscretePathEffect>(cpp_float const &a0, cpp_float const &a1)
+
+android::graphics::DiscretePathEffect::operator local_ref<android::graphics::PathEffect>() const
 {
-	return local_ref< android::graphics::DiscretePathEffect >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::graphics::DiscretePathEffect::J2CPP_CLASS_NAME>(),
-			get_method_id<android::graphics::DiscretePathEffect::J2CPP_CLASS_NAME, android::graphics::DiscretePathEffect::J2CPP_METHOD_NAME(0), android::graphics::DiscretePathEffect::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<android::graphics::PathEffect>(get_jtype());
 }
+
+
+android::graphics::DiscretePathEffect::DiscretePathEffect(cpp_float const &a0, cpp_float const &a1)
+: cpp_object<android::graphics::DiscretePathEffect>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::graphics::DiscretePathEffect::J2CPP_CLASS_NAME>(),
+		get_method_id<android::graphics::DiscretePathEffect::J2CPP_CLASS_NAME, android::graphics::DiscretePathEffect::J2CPP_METHOD_NAME(0), android::graphics::DiscretePathEffect::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
 
 
 J2CPP_DEFINE_CLASS(android::graphics::DiscretePathEffect,"android/graphics/DiscretePathEffect")

@@ -13,6 +13,7 @@
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class Iterable; } } }
 namespace j2cpp { namespace java { namespace lang { class Class; } } }
+namespace j2cpp { namespace java { namespace lang { class Enum; } } }
 namespace j2cpp { namespace java { namespace lang { class CharSequence; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace util { namespace regex { class Pattern; } } } }
@@ -22,6 +23,7 @@ namespace j2cpp { namespace android { namespace text { namespace TextUtils_ { cl
 namespace j2cpp { namespace android { namespace text { class TextPaint; } } }
 namespace j2cpp { namespace android { namespace text { namespace TextUtils_ { class EllipsizeCallback; } } } }
 namespace j2cpp { namespace android { namespace text { class Spanned; } } }
+namespace j2cpp { namespace android { namespace text { namespace TextUtils_ { class StringSplitter; } } } }
 namespace j2cpp { namespace android { namespace util { class Printer; } } }
 namespace j2cpp { namespace android { namespace os { class Parcel; } } }
 namespace j2cpp { namespace android { namespace os { namespace Parcelable_ { class Creator; } } } }
@@ -36,6 +38,7 @@ namespace j2cpp { namespace android { namespace os { namespace Parcelable_ { cla
 #include <android/util/Printer.hpp>
 #include <java/lang/CharSequence.hpp>
 #include <java/lang/Class.hpp>
+#include <java/lang/Enum.hpp>
 #include <java/lang/Iterable.hpp>
 #include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
@@ -68,10 +71,13 @@ namespace android { namespace text {
 			J2CPP_DECLARE_FIELD(3)
 			J2CPP_DECLARE_FIELD(4)
 
-			TruncateAt(jobject jobj)
+			explicit TruncateAt(jobject jobj)
 			: cpp_object<TruncateAt>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Enum>() const;
+
 
 			static local_ref< cpp_object_array<android::text::TextUtils_::TruncateAt, 1> > values();
 			static local_ref< android::text::TextUtils_::TruncateAt > valueOf(local_ref< java::lang::String > const&);
@@ -92,10 +98,13 @@ namespace android { namespace text {
 
 			J2CPP_DECLARE_METHOD(0)
 
-			EllipsizeCallback(jobject jobj)
+			explicit EllipsizeCallback(jobject jobj)
 			: cpp_object<EllipsizeCallback>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+
 
 			void ellipsized(cpp_int const&, cpp_int const&);
 		}; //class EllipsizeCallback
@@ -116,11 +125,17 @@ namespace android { namespace text {
 			J2CPP_DECLARE_METHOD(5)
 			J2CPP_DECLARE_METHOD(6)
 
-			SimpleStringSplitter(jobject jobj)
+			explicit SimpleStringSplitter(jobject jobj)
 			: cpp_object<SimpleStringSplitter>(jobj)
 			{
 			}
 
+			operator local_ref<java::lang::Object>() const;
+			operator local_ref<android::text::TextUtils_::StringSplitter>() const;
+			operator local_ref<java::util::Iterator>() const;
+
+
+			SimpleStringSplitter(cpp_char const&);
 			void setString(local_ref< java::lang::String > const&);
 			local_ref< java::util::Iterator > iterator();
 			cpp_boolean hasNext();
@@ -139,10 +154,14 @@ namespace android { namespace text {
 
 			J2CPP_DECLARE_METHOD(0)
 
-			StringSplitter(jobject jobj)
+			explicit StringSplitter(jobject jobj)
 			: cpp_object<StringSplitter>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+			operator local_ref<java::lang::Iterable>() const;
+
 
 			void setString(local_ref< java::lang::String > const&);
 		}; //class StringSplitter
@@ -205,10 +224,13 @@ namespace android { namespace text {
 		typedef TextUtils_::SimpleStringSplitter SimpleStringSplitter;
 		typedef TextUtils_::StringSplitter StringSplitter;
 
-		TextUtils(jobject jobj)
+		explicit TextUtils(jobject jobj)
 		: cpp_object<TextUtils>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		static void getChars(local_ref< java::lang::CharSequence > const&, cpp_int const&, cpp_int const&, local_ref< cpp_char_array<1> > const&, cpp_int const&);
 		static cpp_int indexOf(local_ref< java::lang::CharSequence > const&, cpp_char const&);
@@ -257,7 +279,6 @@ namespace android { namespace text {
 } //namespace text
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_TEXT_TEXTUTILS_HPP_DECL
@@ -270,6 +291,12 @@ namespace android { namespace text {
 namespace j2cpp {
 
 
+
+
+android::text::TextUtils_::TruncateAt::operator local_ref<java::lang::Enum>() const
+{
+	return local_ref<java::lang::Enum>(get_jtype());
+}
 
 local_ref< cpp_object_array<android::text::TextUtils_::TruncateAt, 1> > android::text::TextUtils_::TruncateAt::values()
 {
@@ -292,17 +319,7 @@ local_ref< android::text::TextUtils_::TruncateAt > android::text::TextUtils_::Tr
 	);
 }
 
-template <>
-local_ref< android::text::TextUtils_::TruncateAt > create< android::text::TextUtils_::TruncateAt>(local_ref< java::lang::String > const &a0, cpp_int const &a1)
-{
-	return local_ref< android::text::TextUtils_::TruncateAt >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::text::TextUtils_::TruncateAt::J2CPP_CLASS_NAME>(),
-			get_method_id<android::text::TextUtils_::TruncateAt::J2CPP_CLASS_NAME, android::text::TextUtils_::TruncateAt::J2CPP_METHOD_NAME(2), android::text::TextUtils_::TruncateAt::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
-}
+
 
 
 static_field<
@@ -345,6 +362,12 @@ J2CPP_DEFINE_FIELD(android::text::TextUtils_::TruncateAt,2,"MIDDLE","Landroid/te
 J2CPP_DEFINE_FIELD(android::text::TextUtils_::TruncateAt,3,"START","Landroid/text/TextUtils$TruncateAt;")
 J2CPP_DEFINE_FIELD(android::text::TextUtils_::TruncateAt,4,"$VALUES","[android.text.TextUtils.TruncateAt")
 
+
+android::text::TextUtils_::EllipsizeCallback::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
+
 void android::text::TextUtils_::EllipsizeCallback::ellipsized(cpp_int const &a0, cpp_int const &a1)
 {
 	return void(
@@ -360,17 +383,34 @@ void android::text::TextUtils_::EllipsizeCallback::ellipsized(cpp_int const &a0,
 J2CPP_DEFINE_CLASS(android::text::TextUtils_::EllipsizeCallback,"android/text/TextUtils$EllipsizeCallback")
 J2CPP_DEFINE_METHOD(android::text::TextUtils_::EllipsizeCallback,0,"ellipsized","(II)V")
 
-template <>
-local_ref< android::text::TextUtils_::SimpleStringSplitter > create< android::text::TextUtils_::SimpleStringSplitter>(cpp_char const &a0)
+
+android::text::TextUtils_::SimpleStringSplitter::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::text::TextUtils_::SimpleStringSplitter >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::text::TextUtils_::SimpleStringSplitter::J2CPP_CLASS_NAME>(),
-			get_method_id<android::text::TextUtils_::SimpleStringSplitter::J2CPP_CLASS_NAME, android::text::TextUtils_::SimpleStringSplitter::J2CPP_METHOD_NAME(0), android::text::TextUtils_::SimpleStringSplitter::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+android::text::TextUtils_::SimpleStringSplitter::operator local_ref<android::text::TextUtils_::StringSplitter>() const
+{
+	return local_ref<android::text::TextUtils_::StringSplitter>(get_jtype());
+}
+
+android::text::TextUtils_::SimpleStringSplitter::operator local_ref<java::util::Iterator>() const
+{
+	return local_ref<java::util::Iterator>(get_jtype());
+}
+
+
+android::text::TextUtils_::SimpleStringSplitter::SimpleStringSplitter(cpp_char const &a0)
+: cpp_object<android::text::TextUtils_::SimpleStringSplitter>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::text::TextUtils_::SimpleStringSplitter::J2CPP_CLASS_NAME>(),
+		get_method_id<android::text::TextUtils_::SimpleStringSplitter::J2CPP_CLASS_NAME, android::text::TextUtils_::SimpleStringSplitter::J2CPP_METHOD_NAME(0), android::text::TextUtils_::SimpleStringSplitter::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 void android::text::TextUtils_::SimpleStringSplitter::setString(local_ref< java::lang::String > const &a0)
 {
@@ -443,6 +483,17 @@ J2CPP_DEFINE_METHOD(android::text::TextUtils_::SimpleStringSplitter,4,"next","()
 J2CPP_DEFINE_METHOD(android::text::TextUtils_::SimpleStringSplitter,5,"remove","()V")
 J2CPP_DEFINE_METHOD(android::text::TextUtils_::SimpleStringSplitter,6,"next","()Ljava/lang/Object;")
 
+
+android::text::TextUtils_::StringSplitter::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
+
+android::text::TextUtils_::StringSplitter::operator local_ref<java::lang::Iterable>() const
+{
+	return local_ref<java::lang::Iterable>(get_jtype());
+}
+
 void android::text::TextUtils_::StringSplitter::setString(local_ref< java::lang::String > const &a0)
 {
 	return void(
@@ -459,16 +510,12 @@ J2CPP_DEFINE_CLASS(android::text::TextUtils_::StringSplitter,"android/text/TextU
 J2CPP_DEFINE_METHOD(android::text::TextUtils_::StringSplitter,0,"setString","(Ljava/lang/String;)V")
 
 
-template <>
-local_ref< android::text::TextUtils > create< android::text::TextUtils>()
+
+android::text::TextUtils::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::text::TextUtils >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::text::TextUtils::J2CPP_CLASS_NAME>(),
-			get_method_id<android::text::TextUtils::J2CPP_CLASS_NAME, android::text::TextUtils::J2CPP_METHOD_NAME(0), android::text::TextUtils::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
 
 void android::text::TextUtils::getChars(local_ref< java::lang::CharSequence > const &a0, cpp_int const &a1, cpp_int const &a2, local_ref< cpp_char_array<1> > const &a3, cpp_int const &a4)
 {
@@ -876,6 +923,7 @@ cpp_int android::text::TextUtils::getCapsMode(local_ref< java::lang::CharSequenc
 		)
 	);
 }
+
 
 
 static_field<

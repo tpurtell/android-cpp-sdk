@@ -10,8 +10,10 @@
 #define J2CPP_ANDROID_OPENGL_VISIBILITY_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -31,11 +33,15 @@ namespace android { namespace opengl {
 		J2CPP_DECLARE_METHOD(2)
 		J2CPP_DECLARE_METHOD(3)
 
-		Visibility(jobject jobj)
+		explicit Visibility(jobject jobj)
 		: cpp_object<Visibility>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		Visibility();
 		static cpp_int visibilityTest(local_ref< cpp_float_array<1> > const&, cpp_int const&, local_ref< cpp_float_array<1> > const&, cpp_int const&, local_ref< cpp_char_array<1> > const&, cpp_int const&, cpp_int const&);
 		static cpp_int frustumCullSpheres(local_ref< cpp_float_array<1> > const&, cpp_int const&, local_ref< cpp_float_array<1> > const&, cpp_int const&, cpp_int const&, local_ref< cpp_int_array<1> > const&, cpp_int const&, cpp_int const&);
 		static void computeBoundingSphere(local_ref< cpp_float_array<1> > const&, cpp_int const&, cpp_int const&, local_ref< cpp_float_array<1> > const&, cpp_int const&);
@@ -43,7 +49,6 @@ namespace android { namespace opengl {
 
 } //namespace opengl
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -57,16 +62,23 @@ namespace android { namespace opengl {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::opengl::Visibility > create< android::opengl::Visibility>()
+
+android::opengl::Visibility::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::opengl::Visibility >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::opengl::Visibility::J2CPP_CLASS_NAME>(),
-			get_method_id<android::opengl::Visibility::J2CPP_CLASS_NAME, android::opengl::Visibility::J2CPP_METHOD_NAME(0), android::opengl::Visibility::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::opengl::Visibility::Visibility()
+: cpp_object<android::opengl::Visibility>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::opengl::Visibility::J2CPP_CLASS_NAME>(),
+		get_method_id<android::opengl::Visibility::J2CPP_CLASS_NAME, android::opengl::Visibility::J2CPP_METHOD_NAME(0), android::opengl::Visibility::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 cpp_int android::opengl::Visibility::visibilityTest(local_ref< cpp_float_array<1> > const &a0, cpp_int const &a1, local_ref< cpp_float_array<1> > const &a2, cpp_int const &a3, local_ref< cpp_char_array<1> > const &a4, cpp_int const &a5, cpp_int const &a6)
 {

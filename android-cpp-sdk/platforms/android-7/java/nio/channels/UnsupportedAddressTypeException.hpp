@@ -10,8 +10,10 @@
 #define J2CPP_JAVA_NIO_CHANNELS_UNSUPPORTEDADDRESSTYPEEXCEPTION_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class IllegalArgumentException; } } }
 
 
+#include <java/lang/IllegalArgumentException.hpp>
 
 
 namespace j2cpp {
@@ -28,17 +30,20 @@ namespace java { namespace nio { namespace channels {
 
 		J2CPP_DECLARE_METHOD(0)
 
-		UnsupportedAddressTypeException(jobject jobj)
+		explicit UnsupportedAddressTypeException(jobject jobj)
 		: cpp_object<UnsupportedAddressTypeException>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::IllegalArgumentException>() const;
+
+
+		UnsupportedAddressTypeException();
 	}; //class UnsupportedAddressTypeException
 
 } //namespace channels
 } //namespace nio
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -52,16 +57,23 @@ namespace java { namespace nio { namespace channels {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::nio::channels::UnsupportedAddressTypeException > create< java::nio::channels::UnsupportedAddressTypeException>()
+
+java::nio::channels::UnsupportedAddressTypeException::operator local_ref<java::lang::IllegalArgumentException>() const
 {
-	return local_ref< java::nio::channels::UnsupportedAddressTypeException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::nio::channels::UnsupportedAddressTypeException::J2CPP_CLASS_NAME>(),
-			get_method_id<java::nio::channels::UnsupportedAddressTypeException::J2CPP_CLASS_NAME, java::nio::channels::UnsupportedAddressTypeException::J2CPP_METHOD_NAME(0), java::nio::channels::UnsupportedAddressTypeException::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::IllegalArgumentException>(get_jtype());
 }
+
+
+java::nio::channels::UnsupportedAddressTypeException::UnsupportedAddressTypeException()
+: cpp_object<java::nio::channels::UnsupportedAddressTypeException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::nio::channels::UnsupportedAddressTypeException::J2CPP_CLASS_NAME>(),
+		get_method_id<java::nio::channels::UnsupportedAddressTypeException::J2CPP_CLASS_NAME, java::nio::channels::UnsupportedAddressTypeException::J2CPP_METHOD_NAME(0), java::nio::channels::UnsupportedAddressTypeException::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 
 J2CPP_DEFINE_CLASS(java::nio::channels::UnsupportedAddressTypeException,"java/nio/channels/UnsupportedAddressTypeException")

@@ -10,20 +10,28 @@
 #define J2CPP_JAVA_UTIL_CONCURRENT_LOCKS_ABSTRACTQUEUEDSYNCHRONIZER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class Thread; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace util { class Date; } } }
+namespace j2cpp { namespace java { namespace util { namespace concurrent { namespace locks { class AbstractOwnableSynchronizer; } } } } }
+namespace j2cpp { namespace java { namespace util { namespace concurrent { namespace locks { class Condition; } } } } }
 namespace j2cpp { namespace java { namespace util { namespace concurrent { namespace locks { namespace AbstractQueuedSynchronizer_ { class ConditionObject; } } } } } }
 namespace j2cpp { namespace java { namespace util { namespace concurrent { class TimeUnit; } } } }
 namespace j2cpp { namespace java { namespace util { class Collection; } } }
 
 
+#include <java/io/Serializable.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/lang/Thread.hpp>
 #include <java/util/Collection.hpp>
 #include <java/util/Date.hpp>
 #include <java/util/concurrent/TimeUnit.hpp>
+#include <java/util/concurrent/locks/AbstractOwnableSynchronizer.hpp>
 #include <java/util/concurrent/locks/AbstractQueuedSynchronizer.hpp>
+#include <java/util/concurrent/locks/Condition.hpp>
 
 
 namespace j2cpp {
@@ -54,11 +62,17 @@ namespace java { namespace util { namespace concurrent { namespace locks {
 			J2CPP_DECLARE_METHOD(10)
 			J2CPP_DECLARE_FIELD(0)
 
-			ConditionObject(jobject jobj)
+			explicit ConditionObject(jobject jobj)
 			: cpp_object<ConditionObject>(jobj)
 			{
 			}
 
+			operator local_ref<java::lang::Object>() const;
+			operator local_ref<java::util::concurrent::locks::Condition>() const;
+			operator local_ref<java::io::Serializable>() const;
+
+
+			ConditionObject(local_ref< java::util::concurrent::locks::AbstractQueuedSynchronizer > const&);
 			void signal();
 			void signalAll();
 			void awaitUninterruptibly();
@@ -111,10 +125,14 @@ namespace java { namespace util { namespace concurrent { namespace locks {
 
 		typedef AbstractQueuedSynchronizer_::ConditionObject ConditionObject;
 
-		AbstractQueuedSynchronizer(jobject jobj)
+		explicit AbstractQueuedSynchronizer(jobject jobj)
 		: cpp_object<AbstractQueuedSynchronizer>(jobj)
 		{
 		}
+
+		operator local_ref<java::util::concurrent::locks::AbstractOwnableSynchronizer>() const;
+		operator local_ref<java::io::Serializable>() const;
+
 
 		void acquire(cpp_int const&);
 		void acquireInterruptibly(cpp_int const&);
@@ -144,7 +162,6 @@ namespace java { namespace util { namespace concurrent { namespace locks {
 } //namespace util
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_UTIL_CONCURRENT_LOCKS_ABSTRACTQUEUEDSYNCHRONIZER_HPP_DECL
@@ -158,17 +175,34 @@ namespace j2cpp {
 
 
 
-template <>
-local_ref< java::util::concurrent::locks::AbstractQueuedSynchronizer_::ConditionObject > create< java::util::concurrent::locks::AbstractQueuedSynchronizer_::ConditionObject>(local_ref< java::util::concurrent::locks::AbstractQueuedSynchronizer > const &a0)
+
+java::util::concurrent::locks::AbstractQueuedSynchronizer_::ConditionObject::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::util::concurrent::locks::AbstractQueuedSynchronizer_::ConditionObject >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::concurrent::locks::AbstractQueuedSynchronizer_::ConditionObject::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::concurrent::locks::AbstractQueuedSynchronizer_::ConditionObject::J2CPP_CLASS_NAME, java::util::concurrent::locks::AbstractQueuedSynchronizer_::ConditionObject::J2CPP_METHOD_NAME(0), java::util::concurrent::locks::AbstractQueuedSynchronizer_::ConditionObject::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+java::util::concurrent::locks::AbstractQueuedSynchronizer_::ConditionObject::operator local_ref<java::util::concurrent::locks::Condition>() const
+{
+	return local_ref<java::util::concurrent::locks::Condition>(get_jtype());
+}
+
+java::util::concurrent::locks::AbstractQueuedSynchronizer_::ConditionObject::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jtype());
+}
+
+
+java::util::concurrent::locks::AbstractQueuedSynchronizer_::ConditionObject::ConditionObject(local_ref< java::util::concurrent::locks::AbstractQueuedSynchronizer > const &a0)
+: cpp_object<java::util::concurrent::locks::AbstractQueuedSynchronizer_::ConditionObject>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::util::concurrent::locks::AbstractQueuedSynchronizer_::ConditionObject::J2CPP_CLASS_NAME>(),
+		get_method_id<java::util::concurrent::locks::AbstractQueuedSynchronizer_::ConditionObject::J2CPP_CLASS_NAME, java::util::concurrent::locks::AbstractQueuedSynchronizer_::ConditionObject::J2CPP_METHOD_NAME(0), java::util::concurrent::locks::AbstractQueuedSynchronizer_::ConditionObject::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 void java::util::concurrent::locks::AbstractQueuedSynchronizer_::ConditionObject::signal()
 {
@@ -263,16 +297,17 @@ J2CPP_DEFINE_METHOD(java::util::concurrent::locks::AbstractQueuedSynchronizer_::
 J2CPP_DEFINE_FIELD(java::util::concurrent::locks::AbstractQueuedSynchronizer_::ConditionObject,0,"this$0","Ljava/util/concurrent/locks/AbstractQueuedSynchronizer;")
 
 
-template <>
-local_ref< java::util::concurrent::locks::AbstractQueuedSynchronizer > create< java::util::concurrent::locks::AbstractQueuedSynchronizer>()
+
+java::util::concurrent::locks::AbstractQueuedSynchronizer::operator local_ref<java::util::concurrent::locks::AbstractOwnableSynchronizer>() const
 {
-	return local_ref< java::util::concurrent::locks::AbstractQueuedSynchronizer >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::concurrent::locks::AbstractQueuedSynchronizer::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::concurrent::locks::AbstractQueuedSynchronizer::J2CPP_CLASS_NAME, java::util::concurrent::locks::AbstractQueuedSynchronizer::J2CPP_METHOD_NAME(0), java::util::concurrent::locks::AbstractQueuedSynchronizer::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::util::concurrent::locks::AbstractOwnableSynchronizer>(get_jtype());
 }
+
+java::util::concurrent::locks::AbstractQueuedSynchronizer::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jtype());
+}
+
 
 
 

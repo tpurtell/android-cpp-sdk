@@ -10,8 +10,10 @@
 #define J2CPP_ORG_APACHE_HTTP_HTTPSTATUS_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -75,10 +77,13 @@ namespace org { namespace apache { namespace http {
 		J2CPP_DECLARE_FIELD(46)
 		J2CPP_DECLARE_FIELD(47)
 
-		HttpStatus(jobject jobj)
+		explicit HttpStatus(jobject jobj)
 		: cpp_object<HttpStatus>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(0), J2CPP_FIELD_SIGNATURE(0), cpp_int > SC_CONTINUE;
 		static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(1), J2CPP_FIELD_SIGNATURE(1), cpp_int > SC_SWITCHING_PROTOCOLS;
@@ -134,7 +139,6 @@ namespace org { namespace apache { namespace http {
 } //namespace apache
 } //namespace org
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ORG_APACHE_HTTP_HTTPSTATUS_HPP_DECL
@@ -146,6 +150,12 @@ namespace org { namespace apache { namespace http {
 
 namespace j2cpp {
 
+
+
+org::apache::http::HttpStatus::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 static_field<
 	org::apache::http::HttpStatus::J2CPP_CLASS_NAME,

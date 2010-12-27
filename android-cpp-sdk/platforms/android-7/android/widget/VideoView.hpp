@@ -13,9 +13,11 @@
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace android { namespace net { class Uri; } } }
 namespace j2cpp { namespace android { namespace content { class Context; } } }
+namespace j2cpp { namespace android { namespace view { class SurfaceView; } } }
 namespace j2cpp { namespace android { namespace view { class KeyEvent; } } }
 namespace j2cpp { namespace android { namespace view { class MotionEvent; } } }
 namespace j2cpp { namespace android { namespace widget { class MediaController; } } }
+namespace j2cpp { namespace android { namespace widget { namespace MediaController_ { class MediaPlayerControl; } } } }
 namespace j2cpp { namespace android { namespace util { class AttributeSet; } } }
 namespace j2cpp { namespace android { namespace media { namespace MediaPlayer_ { class OnErrorListener; } } } }
 namespace j2cpp { namespace android { namespace media { namespace MediaPlayer_ { class OnCompletionListener; } } } }
@@ -28,6 +30,7 @@ namespace j2cpp { namespace android { namespace media { namespace MediaPlayer_ {
 #include <android/util/AttributeSet.hpp>
 #include <android/view/KeyEvent.hpp>
 #include <android/view/MotionEvent.hpp>
+#include <android/view/SurfaceView.hpp>
 #include <android/widget/MediaController.hpp>
 #include <java/lang/String.hpp>
 
@@ -70,11 +73,18 @@ namespace android { namespace widget {
 		J2CPP_DECLARE_METHOD(23)
 		J2CPP_DECLARE_METHOD(24)
 
-		VideoView(jobject jobj)
+		explicit VideoView(jobject jobj)
 		: cpp_object<VideoView>(jobj)
 		{
 		}
 
+		operator local_ref<android::view::SurfaceView>() const;
+		operator local_ref<android::widget::MediaController_::MediaPlayerControl>() const;
+
+
+		VideoView(local_ref< android::content::Context > const&);
+		VideoView(local_ref< android::content::Context > const&, local_ref< android::util::AttributeSet > const&);
+		VideoView(local_ref< android::content::Context > const&, local_ref< android::util::AttributeSet > const&, cpp_int const&);
 		cpp_int resolveAdjustedSize(cpp_int const&, cpp_int const&);
 		void setVideoPath(local_ref< java::lang::String > const&);
 		void setVideoURI(local_ref< android::net::Uri > const&);
@@ -101,7 +111,6 @@ namespace android { namespace widget {
 } //namespace widget
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_WIDGET_VIDEOVIEW_HPP_DECL
@@ -114,41 +123,55 @@ namespace android { namespace widget {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::widget::VideoView > create< android::widget::VideoView>(local_ref< android::content::Context > const &a0)
+
+android::widget::VideoView::operator local_ref<android::view::SurfaceView>() const
 {
-	return local_ref< android::widget::VideoView >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::widget::VideoView::J2CPP_CLASS_NAME>(),
-			get_method_id<android::widget::VideoView::J2CPP_CLASS_NAME, android::widget::VideoView::J2CPP_METHOD_NAME(0), android::widget::VideoView::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<android::view::SurfaceView>(get_jtype());
 }
 
-template <>
-local_ref< android::widget::VideoView > create< android::widget::VideoView>(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1)
+android::widget::VideoView::operator local_ref<android::widget::MediaController_::MediaPlayerControl>() const
 {
-	return local_ref< android::widget::VideoView >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::widget::VideoView::J2CPP_CLASS_NAME>(),
-			get_method_id<android::widget::VideoView::J2CPP_CLASS_NAME, android::widget::VideoView::J2CPP_METHOD_NAME(1), android::widget::VideoView::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<android::widget::MediaController_::MediaPlayerControl>(get_jtype());
 }
 
-template <>
-local_ref< android::widget::VideoView > create< android::widget::VideoView>(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1, cpp_int const &a2)
+
+android::widget::VideoView::VideoView(local_ref< android::content::Context > const &a0)
+: cpp_object<android::widget::VideoView>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::widget::VideoView::J2CPP_CLASS_NAME>(),
+		get_method_id<android::widget::VideoView::J2CPP_CLASS_NAME, android::widget::VideoView::J2CPP_METHOD_NAME(0), android::widget::VideoView::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< android::widget::VideoView >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::widget::VideoView::J2CPP_CLASS_NAME>(),
-			get_method_id<android::widget::VideoView::J2CPP_CLASS_NAME, android::widget::VideoView::J2CPP_METHOD_NAME(2), android::widget::VideoView::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
-		)
-	);
 }
+
+
+
+android::widget::VideoView::VideoView(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1)
+: cpp_object<android::widget::VideoView>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::widget::VideoView::J2CPP_CLASS_NAME>(),
+		get_method_id<android::widget::VideoView::J2CPP_CLASS_NAME, android::widget::VideoView::J2CPP_METHOD_NAME(1), android::widget::VideoView::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
+
+
+android::widget::VideoView::VideoView(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1, cpp_int const &a2)
+: cpp_object<android::widget::VideoView>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::widget::VideoView::J2CPP_CLASS_NAME>(),
+		get_method_id<android::widget::VideoView::J2CPP_CLASS_NAME, android::widget::VideoView::J2CPP_METHOD_NAME(2), android::widget::VideoView::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
+	)
+)
+{
+}
+
 
 
 cpp_int android::widget::VideoView::resolveAdjustedSize(cpp_int const &a0, cpp_int const &a1)

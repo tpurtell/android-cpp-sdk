@@ -55,10 +55,13 @@ namespace org { namespace apache { namespace http { namespace client {
 		J2CPP_DECLARE_METHOD(8)
 		J2CPP_DECLARE_METHOD(9)
 
-		HttpClient(jobject jobj)
+		explicit HttpClient(jobject jobj)
 		: cpp_object<HttpClient>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		local_ref< org::apache::http::params::HttpParams > getParams();
 		local_ref< org::apache::http::conn::ClientConnectionManager > getConnectionManager();
@@ -77,7 +80,6 @@ namespace org { namespace apache { namespace http { namespace client {
 } //namespace apache
 } //namespace org
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ORG_APACHE_HTTP_CLIENT_HTTPCLIENT_HPP_DECL
@@ -89,6 +91,12 @@ namespace org { namespace apache { namespace http { namespace client {
 
 namespace j2cpp {
 
+
+
+org::apache::http::client::HttpClient::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 local_ref< org::apache::http::params::HttpParams > org::apache::http::client::HttpClient::getParams()
 {

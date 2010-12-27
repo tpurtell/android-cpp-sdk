@@ -42,11 +42,15 @@ namespace org { namespace apache { namespace http { namespace conn { namespace s
 		J2CPP_DECLARE_METHOD(7)
 		J2CPP_DECLARE_METHOD(8)
 
-		Scheme(jobject jobj)
+		explicit Scheme(jobject jobj)
 		: cpp_object<Scheme>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		Scheme(local_ref< java::lang::String > const&, local_ref< org::apache::http::conn::scheme::SocketFactory > const&, cpp_int const&);
 		cpp_int getDefaultPort();
 		local_ref< org::apache::http::conn::scheme::SocketFactory > getSocketFactory();
 		local_ref< java::lang::String > getName();
@@ -63,7 +67,6 @@ namespace org { namespace apache { namespace http { namespace conn { namespace s
 } //namespace apache
 } //namespace org
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ORG_APACHE_HTTP_CONN_SCHEME_SCHEME_HPP_DECL
@@ -76,17 +79,24 @@ namespace org { namespace apache { namespace http { namespace conn { namespace s
 namespace j2cpp {
 
 
-template <>
-local_ref< org::apache::http::conn::scheme::Scheme > create< org::apache::http::conn::scheme::Scheme>(local_ref< java::lang::String > const &a0, local_ref< org::apache::http::conn::scheme::SocketFactory > const &a1, cpp_int const &a2)
+
+org::apache::http::conn::scheme::Scheme::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< org::apache::http::conn::scheme::Scheme >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::apache::http::conn::scheme::Scheme::J2CPP_CLASS_NAME>(),
-			get_method_id<org::apache::http::conn::scheme::Scheme::J2CPP_CLASS_NAME, org::apache::http::conn::scheme::Scheme::J2CPP_METHOD_NAME(0), org::apache::http::conn::scheme::Scheme::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+org::apache::http::conn::scheme::Scheme::Scheme(local_ref< java::lang::String > const &a0, local_ref< org::apache::http::conn::scheme::SocketFactory > const &a1, cpp_int const &a2)
+: cpp_object<org::apache::http::conn::scheme::Scheme>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::apache::http::conn::scheme::Scheme::J2CPP_CLASS_NAME>(),
+		get_method_id<org::apache::http::conn::scheme::Scheme::J2CPP_CLASS_NAME, org::apache::http::conn::scheme::Scheme::J2CPP_METHOD_NAME(0), org::apache::http::conn::scheme::Scheme::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
+	)
+)
+{
+}
+
 
 cpp_int org::apache::http::conn::scheme::Scheme::getDefaultPort()
 {

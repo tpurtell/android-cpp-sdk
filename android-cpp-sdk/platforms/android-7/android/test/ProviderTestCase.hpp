@@ -16,12 +16,14 @@ namespace j2cpp { namespace android { namespace content { class ContentResolver;
 namespace j2cpp { namespace android { namespace content { class Context; } } }
 namespace j2cpp { namespace android { namespace content { class ContentProvider; } } }
 namespace j2cpp { namespace android { namespace test { class IsolatedContext; } } }
+namespace j2cpp { namespace android { namespace test { class InstrumentationTestCase; } } }
 namespace j2cpp { namespace android { namespace test { namespace mock { class MockContentResolver; } } } }
 
 
 #include <android/content/ContentProvider.hpp>
 #include <android/content/ContentResolver.hpp>
 #include <android/content/Context.hpp>
+#include <android/test/InstrumentationTestCase.hpp>
 #include <android/test/IsolatedContext.hpp>
 #include <android/test/mock/MockContentResolver.hpp>
 #include <java/lang/Class.hpp>
@@ -47,11 +49,15 @@ namespace android { namespace test {
 		J2CPP_DECLARE_METHOD(4)
 		J2CPP_DECLARE_METHOD(5)
 
-		ProviderTestCase(jobject jobj)
+		explicit ProviderTestCase(jobject jobj)
 		: cpp_object<ProviderTestCase>(jobj)
 		{
 		}
 
+		operator local_ref<android::test::InstrumentationTestCase>() const;
+
+
+		ProviderTestCase(local_ref< java::lang::Class > const&, local_ref< java::lang::String > const&);
 		local_ref< android::content::ContentProvider > getProvider();
 		local_ref< android::test::mock::MockContentResolver > getMockContentResolver();
 		local_ref< android::test::IsolatedContext > getMockContext();
@@ -60,7 +66,6 @@ namespace android { namespace test {
 
 } //namespace test
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -74,17 +79,24 @@ namespace android { namespace test {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::test::ProviderTestCase > create< android::test::ProviderTestCase>(local_ref< java::lang::Class > const &a0, local_ref< java::lang::String > const &a1)
+
+android::test::ProviderTestCase::operator local_ref<android::test::InstrumentationTestCase>() const
 {
-	return local_ref< android::test::ProviderTestCase >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::test::ProviderTestCase::J2CPP_CLASS_NAME>(),
-			get_method_id<android::test::ProviderTestCase::J2CPP_CLASS_NAME, android::test::ProviderTestCase::J2CPP_METHOD_NAME(0), android::test::ProviderTestCase::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<android::test::InstrumentationTestCase>(get_jtype());
 }
+
+
+android::test::ProviderTestCase::ProviderTestCase(local_ref< java::lang::Class > const &a0, local_ref< java::lang::String > const &a1)
+: cpp_object<android::test::ProviderTestCase>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::test::ProviderTestCase::J2CPP_CLASS_NAME>(),
+		get_method_id<android::test::ProviderTestCase::J2CPP_CLASS_NAME, android::test::ProviderTestCase::J2CPP_METHOD_NAME(0), android::test::ProviderTestCase::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
 
 local_ref< android::content::ContentProvider > android::test::ProviderTestCase::getProvider()
 {

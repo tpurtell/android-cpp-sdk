@@ -10,12 +10,16 @@
 #define J2CPP_JAVA_LANG_STRINGBUFFER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class Appendable; } } }
 namespace j2cpp { namespace java { namespace lang { class CharSequence; } } }
+namespace j2cpp { namespace java { namespace lang { class AbstractStringBuilder; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 
 
+#include <java/io/Serializable.hpp>
+#include <java/lang/AbstractStringBuilder.hpp>
 #include <java/lang/Appendable.hpp>
 #include <java/lang/CharSequence.hpp>
 #include <java/lang/Object.hpp>
@@ -88,11 +92,21 @@ namespace java { namespace lang {
 		J2CPP_DECLARE_METHOD(51)
 		J2CPP_DECLARE_METHOD(52)
 
-		StringBuffer(jobject jobj)
+		explicit StringBuffer(jobject jobj)
 		: cpp_object<StringBuffer>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::AbstractStringBuilder>() const;
+		operator local_ref<java::lang::Appendable>() const;
+		operator local_ref<java::io::Serializable>() const;
+		operator local_ref<java::lang::CharSequence>() const;
+
+
+		StringBuffer();
+		StringBuffer(cpp_int const&);
+		StringBuffer(local_ref< java::lang::String > const&);
+		StringBuffer(local_ref< java::lang::CharSequence > const&);
 		local_ref< java::lang::StringBuffer > append(cpp_boolean const&);
 		local_ref< java::lang::StringBuffer > append(cpp_char const&);
 		local_ref< java::lang::StringBuffer > append(cpp_double const&);
@@ -147,7 +161,6 @@ namespace java { namespace lang {
 } //namespace lang
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_LANG_STRINGBUFFER_HPP_DECL
@@ -160,52 +173,77 @@ namespace java { namespace lang {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::lang::StringBuffer > create< java::lang::StringBuffer>()
+
+java::lang::StringBuffer::operator local_ref<java::lang::AbstractStringBuilder>() const
 {
-	return local_ref< java::lang::StringBuffer >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::lang::StringBuffer::J2CPP_CLASS_NAME>(),
-			get_method_id<java::lang::StringBuffer::J2CPP_CLASS_NAME, java::lang::StringBuffer::J2CPP_METHOD_NAME(0), java::lang::StringBuffer::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::AbstractStringBuilder>(get_jtype());
 }
 
-template <>
-local_ref< java::lang::StringBuffer > create< java::lang::StringBuffer>(cpp_int const &a0)
+java::lang::StringBuffer::operator local_ref<java::lang::Appendable>() const
 {
-	return local_ref< java::lang::StringBuffer >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::lang::StringBuffer::J2CPP_CLASS_NAME>(),
-			get_method_id<java::lang::StringBuffer::J2CPP_CLASS_NAME, java::lang::StringBuffer::J2CPP_METHOD_NAME(1), java::lang::StringBuffer::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Appendable>(get_jtype());
 }
 
-template <>
-local_ref< java::lang::StringBuffer > create< java::lang::StringBuffer>(local_ref< java::lang::String > const &a0)
+java::lang::StringBuffer::operator local_ref<java::io::Serializable>() const
 {
-	return local_ref< java::lang::StringBuffer >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::lang::StringBuffer::J2CPP_CLASS_NAME>(),
-			get_method_id<java::lang::StringBuffer::J2CPP_CLASS_NAME, java::lang::StringBuffer::J2CPP_METHOD_NAME(2), java::lang::StringBuffer::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::io::Serializable>(get_jtype());
 }
 
-template <>
-local_ref< java::lang::StringBuffer > create< java::lang::StringBuffer>(local_ref< java::lang::CharSequence > const &a0)
+java::lang::StringBuffer::operator local_ref<java::lang::CharSequence>() const
 {
-	return local_ref< java::lang::StringBuffer >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::lang::StringBuffer::J2CPP_CLASS_NAME>(),
-			get_method_id<java::lang::StringBuffer::J2CPP_CLASS_NAME, java::lang::StringBuffer::J2CPP_METHOD_NAME(3), java::lang::StringBuffer::J2CPP_METHOD_SIGNATURE(3), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::lang::CharSequence>(get_jtype());
 }
+
+
+java::lang::StringBuffer::StringBuffer()
+: cpp_object<java::lang::StringBuffer>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::lang::StringBuffer::J2CPP_CLASS_NAME>(),
+		get_method_id<java::lang::StringBuffer::J2CPP_CLASS_NAME, java::lang::StringBuffer::J2CPP_METHOD_NAME(0), java::lang::StringBuffer::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
+
+
+java::lang::StringBuffer::StringBuffer(cpp_int const &a0)
+: cpp_object<java::lang::StringBuffer>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::lang::StringBuffer::J2CPP_CLASS_NAME>(),
+		get_method_id<java::lang::StringBuffer::J2CPP_CLASS_NAME, java::lang::StringBuffer::J2CPP_METHOD_NAME(1), java::lang::StringBuffer::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
+
+
+java::lang::StringBuffer::StringBuffer(local_ref< java::lang::String > const &a0)
+: cpp_object<java::lang::StringBuffer>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::lang::StringBuffer::J2CPP_CLASS_NAME>(),
+		get_method_id<java::lang::StringBuffer::J2CPP_CLASS_NAME, java::lang::StringBuffer::J2CPP_METHOD_NAME(2), java::lang::StringBuffer::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
+
+
+java::lang::StringBuffer::StringBuffer(local_ref< java::lang::CharSequence > const &a0)
+: cpp_object<java::lang::StringBuffer>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::lang::StringBuffer::J2CPP_CLASS_NAME>(),
+		get_method_id<java::lang::StringBuffer::J2CPP_CLASS_NAME, java::lang::StringBuffer::J2CPP_METHOD_NAME(3), java::lang::StringBuffer::J2CPP_METHOD_SIGNATURE(3), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 local_ref< java::lang::StringBuffer > java::lang::StringBuffer::append(cpp_boolean const &a0)
 {

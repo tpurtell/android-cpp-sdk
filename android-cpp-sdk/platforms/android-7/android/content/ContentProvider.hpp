@@ -10,6 +10,7 @@
 #define J2CPP_ANDROID_CONTENT_CONTENTPROVIDER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace util { class ArrayList; } } }
 namespace j2cpp { namespace android { namespace net { class Uri; } } }
@@ -19,11 +20,13 @@ namespace j2cpp { namespace android { namespace content { namespace pm { class P
 namespace j2cpp { namespace android { namespace content { namespace res { class AssetFileDescriptor; } } } }
 namespace j2cpp { namespace android { namespace content { namespace res { class Configuration; } } } }
 namespace j2cpp { namespace android { namespace content { class ContentProviderResult; } } }
+namespace j2cpp { namespace android { namespace content { class ComponentCallbacks; } } }
 namespace j2cpp { namespace android { namespace content { class Context; } } }
 namespace j2cpp { namespace android { namespace content { class ContentValues; } } }
 namespace j2cpp { namespace android { namespace os { class ParcelFileDescriptor; } } }
 
 
+#include <android/content/ComponentCallbacks.hpp>
 #include <android/content/ContentProviderResult.hpp>
 #include <android/content/ContentValues.hpp>
 #include <android/content/Context.hpp>
@@ -34,6 +37,7 @@ namespace j2cpp { namespace android { namespace os { class ParcelFileDescriptor;
 #include <android/database/Cursor.hpp>
 #include <android/net/Uri.hpp>
 #include <android/os/ParcelFileDescriptor.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/util/ArrayList.hpp>
 
@@ -74,11 +78,16 @@ namespace android { namespace content {
 		J2CPP_DECLARE_METHOD(21)
 		J2CPP_DECLARE_METHOD(22)
 
-		ContentProvider(jobject jobj)
+		explicit ContentProvider(jobject jobj)
 		: cpp_object<ContentProvider>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<android::content::ComponentCallbacks>() const;
+
+
+		ContentProvider();
 		local_ref< android::content::Context > getContext();
 		local_ref< java::lang::String > getReadPermission();
 		local_ref< java::lang::String > getWritePermission();
@@ -101,7 +110,6 @@ namespace android { namespace content {
 } //namespace content
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_CONTENT_CONTENTPROVIDER_HPP_DECL
@@ -114,16 +122,28 @@ namespace android { namespace content {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::content::ContentProvider > create< android::content::ContentProvider>()
+
+android::content::ContentProvider::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::content::ContentProvider >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::content::ContentProvider::J2CPP_CLASS_NAME>(),
-			get_method_id<android::content::ContentProvider::J2CPP_CLASS_NAME, android::content::ContentProvider::J2CPP_METHOD_NAME(0), android::content::ContentProvider::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+android::content::ContentProvider::operator local_ref<android::content::ComponentCallbacks>() const
+{
+	return local_ref<android::content::ComponentCallbacks>(get_jtype());
+}
+
+
+android::content::ContentProvider::ContentProvider()
+: cpp_object<android::content::ContentProvider>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::content::ContentProvider::J2CPP_CLASS_NAME>(),
+		get_method_id<android::content::ContentProvider::J2CPP_CLASS_NAME, android::content::ContentProvider::J2CPP_METHOD_NAME(0), android::content::ContentProvider::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 local_ref< android::content::Context > android::content::ContentProvider::getContext()
 {

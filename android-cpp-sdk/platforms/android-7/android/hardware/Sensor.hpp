@@ -10,9 +10,11 @@
 #define J2CPP_ANDROID_HARDWARE_SENSOR_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -46,10 +48,13 @@ namespace android { namespace hardware {
 		J2CPP_DECLARE_FIELD(7)
 		J2CPP_DECLARE_FIELD(8)
 
-		Sensor(jobject jobj)
+		explicit Sensor(jobject jobj)
 		: cpp_object<Sensor>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		local_ref< java::lang::String > getName();
 		local_ref< java::lang::String > getVendor();
@@ -73,7 +78,6 @@ namespace android { namespace hardware {
 } //namespace hardware
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_HARDWARE_SENSOR_HPP_DECL
@@ -86,16 +90,12 @@ namespace android { namespace hardware {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::hardware::Sensor > create< android::hardware::Sensor>()
+
+android::hardware::Sensor::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::hardware::Sensor >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::hardware::Sensor::J2CPP_CLASS_NAME>(),
-			get_method_id<android::hardware::Sensor::J2CPP_CLASS_NAME, android::hardware::Sensor::J2CPP_METHOD_NAME(0), android::hardware::Sensor::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
 
 local_ref< java::lang::String > android::hardware::Sensor::getName()
 {

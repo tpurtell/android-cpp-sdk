@@ -10,11 +10,14 @@
 #define J2CPP_ANDROID_APP_SEARCHMANAGER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace android { namespace app { namespace SearchManager_ { class OnCancelListener; } } } }
 namespace j2cpp { namespace android { namespace app { namespace SearchManager_ { class OnDismissListener; } } } }
 namespace j2cpp { namespace android { namespace content { class DialogInterface; } } }
+namespace j2cpp { namespace android { namespace content { namespace DialogInterface_ { class OnDismissListener; } } } }
 namespace j2cpp { namespace android { namespace content { class ComponentName; } } }
+namespace j2cpp { namespace android { namespace content { namespace DialogInterface_ { class OnCancelListener; } } } }
 namespace j2cpp { namespace android { namespace os { class Bundle; } } }
 
 
@@ -22,6 +25,7 @@ namespace j2cpp { namespace android { namespace os { class Bundle; } } }
 #include <android/content/ComponentName.hpp>
 #include <android/content/DialogInterface.hpp>
 #include <android/os/Bundle.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -42,10 +46,13 @@ namespace android { namespace app {
 
 			J2CPP_DECLARE_METHOD(0)
 
-			OnCancelListener(jobject jobj)
+			explicit OnCancelListener(jobject jobj)
 			: cpp_object<OnCancelListener>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+
 
 			void onCancel();
 		}; //class OnCancelListener
@@ -60,10 +67,13 @@ namespace android { namespace app {
 
 			J2CPP_DECLARE_METHOD(0)
 
-			OnDismissListener(jobject jobj)
+			explicit OnDismissListener(jobject jobj)
 			: cpp_object<OnDismissListener>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+
 
 			void onDismiss();
 		}; //class OnDismissListener
@@ -118,10 +128,15 @@ namespace android { namespace app {
 		typedef SearchManager_::OnCancelListener OnCancelListener;
 		typedef SearchManager_::OnDismissListener OnDismissListener;
 
-		SearchManager(jobject jobj)
+		explicit SearchManager(jobject jobj)
 		: cpp_object<SearchManager>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<android::content::DialogInterface_::OnDismissListener>() const;
+		operator local_ref<android::content::DialogInterface_::OnCancelListener>() const;
+
 
 		void startSearch(local_ref< java::lang::String > const&, cpp_boolean const&, local_ref< android::content::ComponentName > const&, local_ref< android::os::Bundle > const&, cpp_boolean const&);
 		void triggerSearch(local_ref< java::lang::String > const&, local_ref< android::content::ComponentName > const&, local_ref< android::os::Bundle > const&);
@@ -165,7 +180,6 @@ namespace android { namespace app {
 } //namespace app
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_APP_SEARCHMANAGER_HPP_DECL
@@ -178,6 +192,12 @@ namespace android { namespace app {
 namespace j2cpp {
 
 
+
+
+android::app::SearchManager_::OnCancelListener::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 void android::app::SearchManager_::OnCancelListener::onCancel()
 {
@@ -192,6 +212,12 @@ void android::app::SearchManager_::OnCancelListener::onCancel()
 
 J2CPP_DEFINE_CLASS(android::app::SearchManager_::OnCancelListener,"android/app/SearchManager$OnCancelListener")
 J2CPP_DEFINE_METHOD(android::app::SearchManager_::OnCancelListener,0,"onCancel","()V")
+
+
+android::app::SearchManager_::OnDismissListener::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 void android::app::SearchManager_::OnDismissListener::onDismiss()
 {
@@ -208,16 +234,22 @@ J2CPP_DEFINE_CLASS(android::app::SearchManager_::OnDismissListener,"android/app/
 J2CPP_DEFINE_METHOD(android::app::SearchManager_::OnDismissListener,0,"onDismiss","()V")
 
 
-template <>
-local_ref< android::app::SearchManager > create< android::app::SearchManager>()
+
+android::app::SearchManager::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::app::SearchManager >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::app::SearchManager::J2CPP_CLASS_NAME>(),
-			get_method_id<android::app::SearchManager::J2CPP_CLASS_NAME, android::app::SearchManager::J2CPP_METHOD_NAME(0), android::app::SearchManager::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+android::app::SearchManager::operator local_ref<android::content::DialogInterface_::OnDismissListener>() const
+{
+	return local_ref<android::content::DialogInterface_::OnDismissListener>(get_jtype());
+}
+
+android::app::SearchManager::operator local_ref<android::content::DialogInterface_::OnCancelListener>() const
+{
+	return local_ref<android::content::DialogInterface_::OnCancelListener>(get_jtype());
+}
+
 
 void android::app::SearchManager::startSearch(local_ref< java::lang::String > const &a0, cpp_boolean const &a1, local_ref< android::content::ComponentName > const &a2, local_ref< android::os::Bundle > const &a3, cpp_boolean const &a4)
 {

@@ -12,10 +12,12 @@
 
 namespace j2cpp { namespace android { namespace appwidget { class AppWidgetManager; } } }
 namespace j2cpp { namespace android { namespace content { class Intent; } } }
+namespace j2cpp { namespace android { namespace content { class BroadcastReceiver; } } }
 namespace j2cpp { namespace android { namespace content { class Context; } } }
 
 
 #include <android/appwidget/AppWidgetManager.hpp>
+#include <android/content/BroadcastReceiver.hpp>
 #include <android/content/Context.hpp>
 #include <android/content/Intent.hpp>
 
@@ -39,11 +41,15 @@ namespace android { namespace appwidget {
 		J2CPP_DECLARE_METHOD(4)
 		J2CPP_DECLARE_METHOD(5)
 
-		AppWidgetProvider(jobject jobj)
+		explicit AppWidgetProvider(jobject jobj)
 		: cpp_object<AppWidgetProvider>(jobj)
 		{
 		}
 
+		operator local_ref<android::content::BroadcastReceiver>() const;
+
+
+		AppWidgetProvider();
 		void onReceive(local_ref< android::content::Context > const&, local_ref< android::content::Intent > const&);
 		void onUpdate(local_ref< android::content::Context > const&, local_ref< android::appwidget::AppWidgetManager > const&, local_ref< cpp_int_array<1> > const&);
 		void onDeleted(local_ref< android::content::Context > const&, local_ref< cpp_int_array<1> > const&);
@@ -53,7 +59,6 @@ namespace android { namespace appwidget {
 
 } //namespace appwidget
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -67,16 +72,23 @@ namespace android { namespace appwidget {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::appwidget::AppWidgetProvider > create< android::appwidget::AppWidgetProvider>()
+
+android::appwidget::AppWidgetProvider::operator local_ref<android::content::BroadcastReceiver>() const
 {
-	return local_ref< android::appwidget::AppWidgetProvider >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::appwidget::AppWidgetProvider::J2CPP_CLASS_NAME>(),
-			get_method_id<android::appwidget::AppWidgetProvider::J2CPP_CLASS_NAME, android::appwidget::AppWidgetProvider::J2CPP_METHOD_NAME(0), android::appwidget::AppWidgetProvider::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<android::content::BroadcastReceiver>(get_jtype());
 }
+
+
+android::appwidget::AppWidgetProvider::AppWidgetProvider()
+: cpp_object<android::appwidget::AppWidgetProvider>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::appwidget::AppWidgetProvider::J2CPP_CLASS_NAME>(),
+		get_method_id<android::appwidget::AppWidgetProvider::J2CPP_CLASS_NAME, android::appwidget::AppWidgetProvider::J2CPP_METHOD_NAME(0), android::appwidget::AppWidgetProvider::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 void android::appwidget::AppWidgetProvider::onReceive(local_ref< android::content::Context > const &a0, local_ref< android::content::Intent > const &a1)
 {

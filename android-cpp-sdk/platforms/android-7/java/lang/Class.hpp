@@ -11,6 +11,7 @@
 
 
 namespace j2cpp { namespace java { namespace net { class URL; } } }
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 namespace j2cpp { namespace java { namespace io { class InputStream; } } }
 namespace j2cpp { namespace java { namespace lang { class ClassLoader; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
@@ -20,19 +21,24 @@ namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace lang { namespace reflect { class Field; } } } }
 namespace j2cpp { namespace java { namespace lang { namespace reflect { class Method; } } } }
 namespace j2cpp { namespace java { namespace lang { namespace reflect { class Constructor; } } } }
+namespace j2cpp { namespace java { namespace lang { namespace reflect { class AnnotatedElement; } } } }
 namespace j2cpp { namespace java { namespace lang { namespace reflect { class Type; } } } }
+namespace j2cpp { namespace java { namespace lang { namespace reflect { class GenericDeclaration; } } } }
 namespace j2cpp { namespace java { namespace lang { namespace reflect { class TypeVariable; } } } }
 namespace j2cpp { namespace java { namespace security { class ProtectionDomain; } } }
 
 
 #include <java/io/InputStream.hpp>
+#include <java/io/Serializable.hpp>
 #include <java/lang/ClassLoader.hpp>
 #include <java/lang/Object.hpp>
 #include <java/lang/Package.hpp>
 #include <java/lang/String.hpp>
 #include <java/lang/annotation/Annotation.hpp>
+#include <java/lang/reflect/AnnotatedElement.hpp>
 #include <java/lang/reflect/Constructor.hpp>
 #include <java/lang/reflect/Field.hpp>
+#include <java/lang/reflect/GenericDeclaration.hpp>
 #include <java/lang/reflect/Method.hpp>
 #include <java/lang/reflect/Type.hpp>
 #include <java/lang/reflect/TypeVariable.hpp>
@@ -111,10 +117,17 @@ namespace java { namespace lang {
 		J2CPP_DECLARE_METHOD(56)
 		J2CPP_DECLARE_METHOD(57)
 
-		Class(jobject jobj)
+		explicit Class(jobject jobj)
 		: cpp_object<Class>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::io::Serializable>() const;
+		operator local_ref<java::lang::reflect::AnnotatedElement>() const;
+		operator local_ref<java::lang::reflect::GenericDeclaration>() const;
+		operator local_ref<java::lang::reflect::Type>() const;
+
 
 		static local_ref< java::lang::Class > forName(local_ref< java::lang::String > const&);
 		static local_ref< java::lang::Class > forName(local_ref< java::lang::String > const&, cpp_boolean const&, local_ref< java::lang::ClassLoader > const&);
@@ -178,7 +191,6 @@ namespace java { namespace lang {
 } //namespace lang
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_LANG_CLASS_HPP_DECL
@@ -191,16 +203,32 @@ namespace java { namespace lang {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::lang::Class > create< java::lang::Class>()
+
+java::lang::Class::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::lang::Class >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::lang::Class::J2CPP_CLASS_NAME>(),
-			get_method_id<java::lang::Class::J2CPP_CLASS_NAME, java::lang::Class::J2CPP_METHOD_NAME(0), java::lang::Class::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+java::lang::Class::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jtype());
+}
+
+java::lang::Class::operator local_ref<java::lang::reflect::AnnotatedElement>() const
+{
+	return local_ref<java::lang::reflect::AnnotatedElement>(get_jtype());
+}
+
+java::lang::Class::operator local_ref<java::lang::reflect::GenericDeclaration>() const
+{
+	return local_ref<java::lang::reflect::GenericDeclaration>(get_jtype());
+}
+
+java::lang::Class::operator local_ref<java::lang::reflect::Type>() const
+{
+	return local_ref<java::lang::reflect::Type>(get_jtype());
+}
+
 
 local_ref< java::lang::Class > java::lang::Class::forName(local_ref< java::lang::String > const &a0)
 {

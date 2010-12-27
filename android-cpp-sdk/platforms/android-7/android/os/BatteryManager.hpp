@@ -10,9 +10,11 @@
 #define J2CPP_ANDROID_OS_BATTERYMANAGER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -53,11 +55,15 @@ namespace android { namespace os {
 		J2CPP_DECLARE_FIELD(21)
 		J2CPP_DECLARE_FIELD(22)
 
-		BatteryManager(jobject jobj)
+		explicit BatteryManager(jobject jobj)
 		: cpp_object<BatteryManager>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		BatteryManager();
 
 		static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(0), J2CPP_FIELD_SIGNATURE(0), local_ref< java::lang::String > > EXTRA_STATUS;
 		static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(1), J2CPP_FIELD_SIGNATURE(1), local_ref< java::lang::String > > EXTRA_HEALTH;
@@ -87,7 +93,6 @@ namespace android { namespace os {
 } //namespace os
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_OS_BATTERYMANAGER_HPP_DECL
@@ -100,16 +105,23 @@ namespace android { namespace os {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::os::BatteryManager > create< android::os::BatteryManager>()
+
+android::os::BatteryManager::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::os::BatteryManager >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::os::BatteryManager::J2CPP_CLASS_NAME>(),
-			get_method_id<android::os::BatteryManager::J2CPP_CLASS_NAME, android::os::BatteryManager::J2CPP_METHOD_NAME(0), android::os::BatteryManager::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::os::BatteryManager::BatteryManager()
+: cpp_object<android::os::BatteryManager>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::os::BatteryManager::J2CPP_CLASS_NAME>(),
+		get_method_id<android::os::BatteryManager::J2CPP_CLASS_NAME, android::os::BatteryManager::J2CPP_METHOD_NAME(0), android::os::BatteryManager::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 
 static_field<

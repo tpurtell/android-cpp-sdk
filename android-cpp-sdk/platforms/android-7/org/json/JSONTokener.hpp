@@ -49,11 +49,15 @@ namespace org { namespace json {
 		J2CPP_DECLARE_METHOD(14)
 		J2CPP_DECLARE_METHOD(15)
 
-		JSONTokener(jobject jobj)
+		explicit JSONTokener(jobject jobj)
 		: cpp_object<JSONTokener>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		JSONTokener(local_ref< java::lang::String > const&);
 		void back();
 		static cpp_int dehexchar(cpp_char const&);
 		cpp_boolean more();
@@ -74,7 +78,6 @@ namespace org { namespace json {
 } //namespace json
 } //namespace org
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ORG_JSON_JSONTOKENER_HPP_DECL
@@ -87,17 +90,24 @@ namespace org { namespace json {
 namespace j2cpp {
 
 
-template <>
-local_ref< org::json::JSONTokener > create< org::json::JSONTokener>(local_ref< java::lang::String > const &a0)
+
+org::json::JSONTokener::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< org::json::JSONTokener >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::json::JSONTokener::J2CPP_CLASS_NAME>(),
-			get_method_id<org::json::JSONTokener::J2CPP_CLASS_NAME, org::json::JSONTokener::J2CPP_METHOD_NAME(0), org::json::JSONTokener::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+org::json::JSONTokener::JSONTokener(local_ref< java::lang::String > const &a0)
+: cpp_object<org::json::JSONTokener>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::json::JSONTokener::J2CPP_CLASS_NAME>(),
+		get_method_id<org::json::JSONTokener::J2CPP_CLASS_NAME, org::json::JSONTokener::J2CPP_METHOD_NAME(0), org::json::JSONTokener::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 void org::json::JSONTokener::back()
 {

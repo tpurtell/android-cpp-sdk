@@ -10,9 +10,11 @@
 #define J2CPP_ANDROID_WEBKIT_COOKIEMANAGER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -40,10 +42,13 @@ namespace android { namespace webkit {
 		J2CPP_DECLARE_METHOD(9)
 		J2CPP_DECLARE_METHOD(10)
 
-		CookieManager(jobject jobj)
+		explicit CookieManager(jobject jobj)
 		: cpp_object<CookieManager>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		static local_ref< android::webkit::CookieManager > getInstance();
 		void setAcceptCookie(cpp_boolean const&);
@@ -59,7 +64,6 @@ namespace android { namespace webkit {
 } //namespace webkit
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_WEBKIT_COOKIEMANAGER_HPP_DECL
@@ -72,16 +76,12 @@ namespace android { namespace webkit {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::webkit::CookieManager > create< android::webkit::CookieManager>()
+
+android::webkit::CookieManager::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::webkit::CookieManager >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::webkit::CookieManager::J2CPP_CLASS_NAME>(),
-			get_method_id<android::webkit::CookieManager::J2CPP_CLASS_NAME, android::webkit::CookieManager::J2CPP_METHOD_NAME(0), android::webkit::CookieManager::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
 
 
 local_ref< android::webkit::CookieManager > android::webkit::CookieManager::getInstance()

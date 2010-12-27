@@ -10,13 +10,17 @@
 #define J2CPP_ORG_W3C_DOM_ELEMENT_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace org { namespace w3c { namespace dom { class Attr; } } } }
+namespace j2cpp { namespace org { namespace w3c { namespace dom { class Node; } } } }
 namespace j2cpp { namespace org { namespace w3c { namespace dom { class NodeList; } } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <org/w3c/dom/Attr.hpp>
+#include <org/w3c/dom/Node.hpp>
 #include <org/w3c/dom/NodeList.hpp>
 
 
@@ -49,10 +53,14 @@ namespace org { namespace w3c { namespace dom {
 		J2CPP_DECLARE_METHOD(14)
 		J2CPP_DECLARE_METHOD(15)
 
-		Element(jobject jobj)
+		explicit Element(jobject jobj)
 		: cpp_object<Element>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<org::w3c::dom::Node>() const;
+
 
 		local_ref< java::lang::String > getTagName();
 		local_ref< java::lang::String > getAttribute(local_ref< java::lang::String > const&);
@@ -76,7 +84,6 @@ namespace org { namespace w3c { namespace dom {
 } //namespace w3c
 } //namespace org
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ORG_W3C_DOM_ELEMENT_HPP_DECL
@@ -88,6 +95,17 @@ namespace org { namespace w3c { namespace dom {
 
 namespace j2cpp {
 
+
+
+org::w3c::dom::Element::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
+
+org::w3c::dom::Element::operator local_ref<org::w3c::dom::Node>() const
+{
+	return local_ref<org::w3c::dom::Node>(get_jtype());
+}
 
 local_ref< java::lang::String > org::w3c::dom::Element::getTagName()
 {

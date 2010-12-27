@@ -11,9 +11,11 @@
 
 
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace lang { class Cloneable; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 
 
+#include <java/lang/Cloneable.hpp>
 #include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
@@ -49,11 +51,19 @@ namespace org { namespace apache { namespace http {
 		J2CPP_DECLARE_FIELD(3)
 		J2CPP_DECLARE_FIELD(4)
 
-		HttpHost(jobject jobj)
+		explicit HttpHost(jobject jobj)
 		: cpp_object<HttpHost>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::lang::Cloneable>() const;
+
+
+		HttpHost(local_ref< java::lang::String > const&, cpp_int const&, local_ref< java::lang::String > const&);
+		HttpHost(local_ref< java::lang::String > const&, cpp_int const&);
+		HttpHost(local_ref< java::lang::String > const&);
+		HttpHost(local_ref< org::apache::http::HttpHost > const&);
 		local_ref< java::lang::String > getHostName();
 		cpp_int getPort();
 		local_ref< java::lang::String > getSchemeName();
@@ -71,7 +81,6 @@ namespace org { namespace apache { namespace http {
 } //namespace apache
 } //namespace org
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ORG_APACHE_HTTP_HTTPHOST_HPP_DECL
@@ -84,53 +93,68 @@ namespace org { namespace apache { namespace http {
 namespace j2cpp {
 
 
-template <>
-local_ref< org::apache::http::HttpHost > create< org::apache::http::HttpHost>(local_ref< java::lang::String > const &a0, cpp_int const &a1, local_ref< java::lang::String > const &a2)
+
+org::apache::http::HttpHost::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< org::apache::http::HttpHost >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::apache::http::HttpHost::J2CPP_CLASS_NAME>(),
-			get_method_id<org::apache::http::HttpHost::J2CPP_CLASS_NAME, org::apache::http::HttpHost::J2CPP_METHOD_NAME(0), org::apache::http::HttpHost::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
 
-template <>
-local_ref< org::apache::http::HttpHost > create< org::apache::http::HttpHost>(local_ref< java::lang::String > const &a0, cpp_int const &a1)
+org::apache::http::HttpHost::operator local_ref<java::lang::Cloneable>() const
 {
-	return local_ref< org::apache::http::HttpHost >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::apache::http::HttpHost::J2CPP_CLASS_NAME>(),
-			get_method_id<org::apache::http::HttpHost::J2CPP_CLASS_NAME, org::apache::http::HttpHost::J2CPP_METHOD_NAME(1), org::apache::http::HttpHost::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Cloneable>(get_jtype());
 }
 
-template <>
-local_ref< org::apache::http::HttpHost > create< org::apache::http::HttpHost>(local_ref< java::lang::String > const &a0)
+
+org::apache::http::HttpHost::HttpHost(local_ref< java::lang::String > const &a0, cpp_int const &a1, local_ref< java::lang::String > const &a2)
+: cpp_object<org::apache::http::HttpHost>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::apache::http::HttpHost::J2CPP_CLASS_NAME>(),
+		get_method_id<org::apache::http::HttpHost::J2CPP_CLASS_NAME, org::apache::http::HttpHost::J2CPP_METHOD_NAME(0), org::apache::http::HttpHost::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
+	)
+)
 {
-	return local_ref< org::apache::http::HttpHost >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::apache::http::HttpHost::J2CPP_CLASS_NAME>(),
-			get_method_id<org::apache::http::HttpHost::J2CPP_CLASS_NAME, org::apache::http::HttpHost::J2CPP_METHOD_NAME(2), org::apache::http::HttpHost::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< org::apache::http::HttpHost > create< org::apache::http::HttpHost>(local_ref< org::apache::http::HttpHost > const &a0)
+
+
+org::apache::http::HttpHost::HttpHost(local_ref< java::lang::String > const &a0, cpp_int const &a1)
+: cpp_object<org::apache::http::HttpHost>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::apache::http::HttpHost::J2CPP_CLASS_NAME>(),
+		get_method_id<org::apache::http::HttpHost::J2CPP_CLASS_NAME, org::apache::http::HttpHost::J2CPP_METHOD_NAME(1), org::apache::http::HttpHost::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
 {
-	return local_ref< org::apache::http::HttpHost >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::apache::http::HttpHost::J2CPP_CLASS_NAME>(),
-			get_method_id<org::apache::http::HttpHost::J2CPP_CLASS_NAME, org::apache::http::HttpHost::J2CPP_METHOD_NAME(3), org::apache::http::HttpHost::J2CPP_METHOD_SIGNATURE(3), false>(),
-			a0.get_jtype()
-		)
-	);
 }
+
+
+
+org::apache::http::HttpHost::HttpHost(local_ref< java::lang::String > const &a0)
+: cpp_object<org::apache::http::HttpHost>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::apache::http::HttpHost::J2CPP_CLASS_NAME>(),
+		get_method_id<org::apache::http::HttpHost::J2CPP_CLASS_NAME, org::apache::http::HttpHost::J2CPP_METHOD_NAME(2), org::apache::http::HttpHost::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
+
+
+org::apache::http::HttpHost::HttpHost(local_ref< org::apache::http::HttpHost > const &a0)
+: cpp_object<org::apache::http::HttpHost>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::apache::http::HttpHost::J2CPP_CLASS_NAME>(),
+		get_method_id<org::apache::http::HttpHost::J2CPP_CLASS_NAME, org::apache::http::HttpHost::J2CPP_METHOD_NAME(3), org::apache::http::HttpHost::J2CPP_METHOD_SIGNATURE(3), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 local_ref< java::lang::String > org::apache::http::HttpHost::getHostName()
 {

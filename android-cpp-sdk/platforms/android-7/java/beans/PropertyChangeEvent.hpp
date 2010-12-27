@@ -12,10 +12,12 @@
 
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace util { class EventObject; } } }
 
 
 #include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
+#include <java/util/EventObject.hpp>
 
 
 namespace j2cpp {
@@ -37,11 +39,15 @@ namespace java { namespace beans {
 		J2CPP_DECLARE_METHOD(4)
 		J2CPP_DECLARE_METHOD(5)
 
-		PropertyChangeEvent(jobject jobj)
+		explicit PropertyChangeEvent(jobject jobj)
 		: cpp_object<PropertyChangeEvent>(jobj)
 		{
 		}
 
+		operator local_ref<java::util::EventObject>() const;
+
+
+		PropertyChangeEvent(local_ref< java::lang::Object > const&, local_ref< java::lang::String > const&, local_ref< java::lang::Object > const&, local_ref< java::lang::Object > const&);
 		local_ref< java::lang::String > getPropertyName();
 		void setPropagationId(local_ref< java::lang::Object > const&);
 		local_ref< java::lang::Object > getPropagationId();
@@ -51,7 +57,6 @@ namespace java { namespace beans {
 
 } //namespace beans
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -65,17 +70,24 @@ namespace java { namespace beans {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::beans::PropertyChangeEvent > create< java::beans::PropertyChangeEvent>(local_ref< java::lang::Object > const &a0, local_ref< java::lang::String > const &a1, local_ref< java::lang::Object > const &a2, local_ref< java::lang::Object > const &a3)
+
+java::beans::PropertyChangeEvent::operator local_ref<java::util::EventObject>() const
 {
-	return local_ref< java::beans::PropertyChangeEvent >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::beans::PropertyChangeEvent::J2CPP_CLASS_NAME>(),
-			get_method_id<java::beans::PropertyChangeEvent::J2CPP_CLASS_NAME, java::beans::PropertyChangeEvent::J2CPP_METHOD_NAME(0), java::beans::PropertyChangeEvent::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype()
-		)
-	);
+	return local_ref<java::util::EventObject>(get_jtype());
 }
+
+
+java::beans::PropertyChangeEvent::PropertyChangeEvent(local_ref< java::lang::Object > const &a0, local_ref< java::lang::String > const &a1, local_ref< java::lang::Object > const &a2, local_ref< java::lang::Object > const &a3)
+: cpp_object<java::beans::PropertyChangeEvent>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::beans::PropertyChangeEvent::J2CPP_CLASS_NAME>(),
+		get_method_id<java::beans::PropertyChangeEvent::J2CPP_CLASS_NAME, java::beans::PropertyChangeEvent::J2CPP_METHOD_NAME(0), java::beans::PropertyChangeEvent::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype()
+	)
+)
+{
+}
+
 
 local_ref< java::lang::String > java::beans::PropertyChangeEvent::getPropertyName()
 {

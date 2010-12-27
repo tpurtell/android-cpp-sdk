@@ -10,6 +10,7 @@
 #define J2CPP_ANDROID_VIEW_ABSSAVEDSTATE_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace android { namespace os { class Parcel; } } }
 namespace j2cpp { namespace android { namespace os { class Parcelable; } } }
 namespace j2cpp { namespace android { namespace os { namespace Parcelable_ { class Creator; } } } }
@@ -17,6 +18,7 @@ namespace j2cpp { namespace android { namespace os { namespace Parcelable_ { cla
 
 #include <android/os/Parcel.hpp>
 #include <android/os/Parcelable.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -40,10 +42,14 @@ namespace android { namespace view {
 		J2CPP_DECLARE_FIELD(0)
 		J2CPP_DECLARE_FIELD(1)
 
-		AbsSavedState(jobject jobj)
+		explicit AbsSavedState(jobject jobj)
 		: cpp_object<AbsSavedState>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<android::os::Parcelable>() const;
+
 
 		local_ref< android::os::Parcelable > getSuperState();
 		cpp_int describeContents();
@@ -55,7 +61,6 @@ namespace android { namespace view {
 
 } //namespace view
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -69,29 +74,18 @@ namespace android { namespace view {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::view::AbsSavedState > create< android::view::AbsSavedState>(local_ref< android::os::Parcelable > const &a0)
+
+android::view::AbsSavedState::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::view::AbsSavedState >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::view::AbsSavedState::J2CPP_CLASS_NAME>(),
-			get_method_id<android::view::AbsSavedState::J2CPP_CLASS_NAME, android::view::AbsSavedState::J2CPP_METHOD_NAME(0), android::view::AbsSavedState::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
 
-template <>
-local_ref< android::view::AbsSavedState > create< android::view::AbsSavedState>(local_ref< android::os::Parcel > const &a0)
+android::view::AbsSavedState::operator local_ref<android::os::Parcelable>() const
 {
-	return local_ref< android::view::AbsSavedState >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::view::AbsSavedState::J2CPP_CLASS_NAME>(),
-			get_method_id<android::view::AbsSavedState::J2CPP_CLASS_NAME, android::view::AbsSavedState::J2CPP_METHOD_NAME(1), android::view::AbsSavedState::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<android::os::Parcelable>(get_jtype());
 }
+
+
 
 local_ref< android::os::Parcelable > android::view::AbsSavedState::getSuperState()
 {
@@ -123,6 +117,7 @@ void android::view::AbsSavedState::writeToParcel(local_ref< android::os::Parcel 
 		)
 	);
 }
+
 
 
 static_field<

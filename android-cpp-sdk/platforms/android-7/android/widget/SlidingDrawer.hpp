@@ -10,8 +10,10 @@
 #define J2CPP_ANDROID_WIDGET_SLIDINGDRAWER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace android { namespace content { class Context; } } }
 namespace j2cpp { namespace android { namespace view { class View; } } }
+namespace j2cpp { namespace android { namespace view { class ViewGroup; } } }
 namespace j2cpp { namespace android { namespace view { class MotionEvent; } } }
 namespace j2cpp { namespace android { namespace widget { namespace SlidingDrawer_ { class OnDrawerOpenListener; } } } }
 namespace j2cpp { namespace android { namespace widget { namespace SlidingDrawer_ { class OnDrawerCloseListener; } } } }
@@ -23,7 +25,9 @@ namespace j2cpp { namespace android { namespace util { class AttributeSet; } } }
 #include <android/util/AttributeSet.hpp>
 #include <android/view/MotionEvent.hpp>
 #include <android/view/View.hpp>
+#include <android/view/ViewGroup.hpp>
 #include <android/widget/SlidingDrawer.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -43,10 +47,13 @@ namespace android { namespace widget {
 
 			J2CPP_DECLARE_METHOD(0)
 
-			OnDrawerOpenListener(jobject jobj)
+			explicit OnDrawerOpenListener(jobject jobj)
 			: cpp_object<OnDrawerOpenListener>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+
 
 			void onDrawerOpened();
 		}; //class OnDrawerOpenListener
@@ -61,10 +68,13 @@ namespace android { namespace widget {
 
 			J2CPP_DECLARE_METHOD(0)
 
-			OnDrawerCloseListener(jobject jobj)
+			explicit OnDrawerCloseListener(jobject jobj)
 			: cpp_object<OnDrawerCloseListener>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+
 
 			void onDrawerClosed();
 		}; //class OnDrawerCloseListener
@@ -80,10 +90,13 @@ namespace android { namespace widget {
 			J2CPP_DECLARE_METHOD(0)
 			J2CPP_DECLARE_METHOD(1)
 
-			OnDrawerScrollListener(jobject jobj)
+			explicit OnDrawerScrollListener(jobject jobj)
 			: cpp_object<OnDrawerScrollListener>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+
 
 			void onScrollStarted();
 			void onScrollEnded();
@@ -128,11 +141,16 @@ namespace android { namespace widget {
 		typedef SlidingDrawer_::OnDrawerCloseListener OnDrawerCloseListener;
 		typedef SlidingDrawer_::OnDrawerScrollListener OnDrawerScrollListener;
 
-		SlidingDrawer(jobject jobj)
+		explicit SlidingDrawer(jobject jobj)
 		: cpp_object<SlidingDrawer>(jobj)
 		{
 		}
 
+		operator local_ref<android::view::ViewGroup>() const;
+
+
+		SlidingDrawer(local_ref< android::content::Context > const&, local_ref< android::util::AttributeSet > const&);
+		SlidingDrawer(local_ref< android::content::Context > const&, local_ref< android::util::AttributeSet > const&, cpp_int const&);
 		cpp_boolean onInterceptTouchEvent(local_ref< android::view::MotionEvent > const&);
 		cpp_boolean onTouchEvent(local_ref< android::view::MotionEvent > const&);
 		void toggle();
@@ -158,7 +176,6 @@ namespace android { namespace widget {
 } //namespace widget
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_WIDGET_SLIDINGDRAWER_HPP_DECL
@@ -171,6 +188,12 @@ namespace android { namespace widget {
 namespace j2cpp {
 
 
+
+
+android::widget::SlidingDrawer_::OnDrawerOpenListener::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 void android::widget::SlidingDrawer_::OnDrawerOpenListener::onDrawerOpened()
 {
@@ -186,6 +209,12 @@ void android::widget::SlidingDrawer_::OnDrawerOpenListener::onDrawerOpened()
 J2CPP_DEFINE_CLASS(android::widget::SlidingDrawer_::OnDrawerOpenListener,"android/widget/SlidingDrawer$OnDrawerOpenListener")
 J2CPP_DEFINE_METHOD(android::widget::SlidingDrawer_::OnDrawerOpenListener,0,"onDrawerOpened","()V")
 
+
+android::widget::SlidingDrawer_::OnDrawerCloseListener::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
+
 void android::widget::SlidingDrawer_::OnDrawerCloseListener::onDrawerClosed()
 {
 	return void(
@@ -199,6 +228,12 @@ void android::widget::SlidingDrawer_::OnDrawerCloseListener::onDrawerClosed()
 
 J2CPP_DEFINE_CLASS(android::widget::SlidingDrawer_::OnDrawerCloseListener,"android/widget/SlidingDrawer$OnDrawerCloseListener")
 J2CPP_DEFINE_METHOD(android::widget::SlidingDrawer_::OnDrawerCloseListener,0,"onDrawerClosed","()V")
+
+
+android::widget::SlidingDrawer_::OnDrawerScrollListener::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 void android::widget::SlidingDrawer_::OnDrawerScrollListener::onScrollStarted()
 {
@@ -226,29 +261,37 @@ J2CPP_DEFINE_METHOD(android::widget::SlidingDrawer_::OnDrawerScrollListener,0,"o
 J2CPP_DEFINE_METHOD(android::widget::SlidingDrawer_::OnDrawerScrollListener,1,"onScrollEnded","()V")
 
 
-template <>
-local_ref< android::widget::SlidingDrawer > create< android::widget::SlidingDrawer>(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1)
+
+android::widget::SlidingDrawer::operator local_ref<android::view::ViewGroup>() const
 {
-	return local_ref< android::widget::SlidingDrawer >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::widget::SlidingDrawer::J2CPP_CLASS_NAME>(),
-			get_method_id<android::widget::SlidingDrawer::J2CPP_CLASS_NAME, android::widget::SlidingDrawer::J2CPP_METHOD_NAME(0), android::widget::SlidingDrawer::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<android::view::ViewGroup>(get_jtype());
 }
 
-template <>
-local_ref< android::widget::SlidingDrawer > create< android::widget::SlidingDrawer>(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1, cpp_int const &a2)
+
+android::widget::SlidingDrawer::SlidingDrawer(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1)
+: cpp_object<android::widget::SlidingDrawer>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::widget::SlidingDrawer::J2CPP_CLASS_NAME>(),
+		get_method_id<android::widget::SlidingDrawer::J2CPP_CLASS_NAME, android::widget::SlidingDrawer::J2CPP_METHOD_NAME(0), android::widget::SlidingDrawer::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
 {
-	return local_ref< android::widget::SlidingDrawer >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::widget::SlidingDrawer::J2CPP_CLASS_NAME>(),
-			get_method_id<android::widget::SlidingDrawer::J2CPP_CLASS_NAME, android::widget::SlidingDrawer::J2CPP_METHOD_NAME(1), android::widget::SlidingDrawer::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
-		)
-	);
 }
+
+
+
+android::widget::SlidingDrawer::SlidingDrawer(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1, cpp_int const &a2)
+: cpp_object<android::widget::SlidingDrawer>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::widget::SlidingDrawer::J2CPP_CLASS_NAME>(),
+		get_method_id<android::widget::SlidingDrawer::J2CPP_CLASS_NAME, android::widget::SlidingDrawer::J2CPP_METHOD_NAME(1), android::widget::SlidingDrawer::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
+	)
+)
+{
+}
+
 
 
 

@@ -10,6 +10,7 @@
 #define J2CPP_ANDROID_TEXT_METHOD_MOVEMENTMETHOD_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace android { namespace view { class KeyEvent; } } }
 namespace j2cpp { namespace android { namespace view { class MotionEvent; } } }
 namespace j2cpp { namespace android { namespace text { class Spannable; } } }
@@ -20,6 +21,7 @@ namespace j2cpp { namespace android { namespace widget { class TextView; } } }
 #include <android/view/KeyEvent.hpp>
 #include <android/view/MotionEvent.hpp>
 #include <android/widget/TextView.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -43,10 +45,13 @@ namespace android { namespace text { namespace method {
 		J2CPP_DECLARE_METHOD(6)
 		J2CPP_DECLARE_METHOD(7)
 
-		MovementMethod(jobject jobj)
+		explicit MovementMethod(jobject jobj)
 		: cpp_object<MovementMethod>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		void initialize(local_ref< android::widget::TextView > const&, local_ref< android::text::Spannable > const&);
 		cpp_boolean onKeyDown(local_ref< android::widget::TextView > const&, local_ref< android::text::Spannable > const&, cpp_int const&, local_ref< android::view::KeyEvent > const&);
@@ -62,7 +67,6 @@ namespace android { namespace text { namespace method {
 } //namespace text
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_TEXT_METHOD_MOVEMENTMETHOD_HPP_DECL
@@ -74,6 +78,12 @@ namespace android { namespace text { namespace method {
 
 namespace j2cpp {
 
+
+
+android::text::method::MovementMethod::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 void android::text::method::MovementMethod::initialize(local_ref< android::widget::TextView > const &a0, local_ref< android::text::Spannable > const &a1)
 {

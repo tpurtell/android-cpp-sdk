@@ -10,13 +10,19 @@
 #define J2CPP_JAVA_MATH_BIGDECIMAL_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace lang { class Comparable; } } }
+namespace j2cpp { namespace java { namespace lang { class Number; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace math { class BigInteger; } } }
 namespace j2cpp { namespace java { namespace math { class MathContext; } } }
 namespace j2cpp { namespace java { namespace math { class RoundingMode; } } }
 
 
+#include <java/io/Serializable.hpp>
+#include <java/lang/Comparable.hpp>
+#include <java/lang/Number.hpp>
 #include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/math/BigInteger.hpp>
@@ -126,11 +132,32 @@ namespace java { namespace math {
 		J2CPP_DECLARE_FIELD(9)
 		J2CPP_DECLARE_FIELD(10)
 
-		BigDecimal(jobject jobj)
+		explicit BigDecimal(jobject jobj)
 		: cpp_object<BigDecimal>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Number>() const;
+		operator local_ref<java::lang::Comparable>() const;
+		operator local_ref<java::io::Serializable>() const;
+
+
+		BigDecimal(local_ref< cpp_char_array<1> > const&, cpp_int const&, cpp_int const&);
+		BigDecimal(local_ref< cpp_char_array<1> > const&, cpp_int const&, cpp_int const&, local_ref< java::math::MathContext > const&);
+		BigDecimal(local_ref< cpp_char_array<1> > const&);
+		BigDecimal(local_ref< cpp_char_array<1> > const&, local_ref< java::math::MathContext > const&);
+		BigDecimal(local_ref< java::lang::String > const&);
+		BigDecimal(local_ref< java::lang::String > const&, local_ref< java::math::MathContext > const&);
+		BigDecimal(cpp_double const&);
+		BigDecimal(cpp_double const&, local_ref< java::math::MathContext > const&);
+		BigDecimal(local_ref< java::math::BigInteger > const&);
+		BigDecimal(local_ref< java::math::BigInteger > const&, local_ref< java::math::MathContext > const&);
+		BigDecimal(local_ref< java::math::BigInteger > const&, cpp_int const&);
+		BigDecimal(local_ref< java::math::BigInteger > const&, cpp_int const&, local_ref< java::math::MathContext > const&);
+		BigDecimal(cpp_int const&);
+		BigDecimal(cpp_int const&, local_ref< java::math::MathContext > const&);
+		BigDecimal(cpp_long const&);
+		BigDecimal(cpp_long const&, local_ref< java::math::MathContext > const&);
 		static local_ref< java::math::BigDecimal > valueOf(cpp_long const&, cpp_int const&);
 		static local_ref< java::math::BigDecimal > valueOf(cpp_long const&);
 		static local_ref< java::math::BigDecimal > valueOf(cpp_double const&);
@@ -209,7 +236,6 @@ namespace java { namespace math {
 } //namespace math
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_MATH_BIGDECIMAL_HPP_DECL
@@ -222,197 +248,229 @@ namespace java { namespace math {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::math::BigDecimal > create< java::math::BigDecimal>(local_ref< cpp_char_array<1> > const &a0, cpp_int const &a1, cpp_int const &a2)
+
+java::math::BigDecimal::operator local_ref<java::lang::Number>() const
 {
-	return local_ref< java::math::BigDecimal >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::math::BigDecimal::J2CPP_CLASS_NAME>(),
-			get_method_id<java::math::BigDecimal::J2CPP_CLASS_NAME, java::math::BigDecimal::J2CPP_METHOD_NAME(0), java::math::BigDecimal::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Number>(get_jtype());
 }
 
-template <>
-local_ref< java::math::BigDecimal > create< java::math::BigDecimal>(local_ref< cpp_char_array<1> > const &a0, cpp_int const &a1, cpp_int const &a2, local_ref< java::math::MathContext > const &a3)
+java::math::BigDecimal::operator local_ref<java::lang::Comparable>() const
 {
-	return local_ref< java::math::BigDecimal >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::math::BigDecimal::J2CPP_CLASS_NAME>(),
-			get_method_id<java::math::BigDecimal::J2CPP_CLASS_NAME, java::math::BigDecimal::J2CPP_METHOD_NAME(1), java::math::BigDecimal::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Comparable>(get_jtype());
 }
 
-template <>
-local_ref< java::math::BigDecimal > create< java::math::BigDecimal>(local_ref< cpp_char_array<1> > const &a0)
+java::math::BigDecimal::operator local_ref<java::io::Serializable>() const
 {
-	return local_ref< java::math::BigDecimal >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::math::BigDecimal::J2CPP_CLASS_NAME>(),
-			get_method_id<java::math::BigDecimal::J2CPP_CLASS_NAME, java::math::BigDecimal::J2CPP_METHOD_NAME(2), java::math::BigDecimal::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::io::Serializable>(get_jtype());
 }
 
-template <>
-local_ref< java::math::BigDecimal > create< java::math::BigDecimal>(local_ref< cpp_char_array<1> > const &a0, local_ref< java::math::MathContext > const &a1)
+
+java::math::BigDecimal::BigDecimal(local_ref< cpp_char_array<1> > const &a0, cpp_int const &a1, cpp_int const &a2)
+: cpp_object<java::math::BigDecimal>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::math::BigDecimal::J2CPP_CLASS_NAME>(),
+		get_method_id<java::math::BigDecimal::J2CPP_CLASS_NAME, java::math::BigDecimal::J2CPP_METHOD_NAME(0), java::math::BigDecimal::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
+	)
+)
 {
-	return local_ref< java::math::BigDecimal >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::math::BigDecimal::J2CPP_CLASS_NAME>(),
-			get_method_id<java::math::BigDecimal::J2CPP_CLASS_NAME, java::math::BigDecimal::J2CPP_METHOD_NAME(3), java::math::BigDecimal::J2CPP_METHOD_SIGNATURE(3), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< java::math::BigDecimal > create< java::math::BigDecimal>(local_ref< java::lang::String > const &a0)
+
+
+java::math::BigDecimal::BigDecimal(local_ref< cpp_char_array<1> > const &a0, cpp_int const &a1, cpp_int const &a2, local_ref< java::math::MathContext > const &a3)
+: cpp_object<java::math::BigDecimal>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::math::BigDecimal::J2CPP_CLASS_NAME>(),
+		get_method_id<java::math::BigDecimal::J2CPP_CLASS_NAME, java::math::BigDecimal::J2CPP_METHOD_NAME(1), java::math::BigDecimal::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype()
+	)
+)
 {
-	return local_ref< java::math::BigDecimal >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::math::BigDecimal::J2CPP_CLASS_NAME>(),
-			get_method_id<java::math::BigDecimal::J2CPP_CLASS_NAME, java::math::BigDecimal::J2CPP_METHOD_NAME(4), java::math::BigDecimal::J2CPP_METHOD_SIGNATURE(4), false>(),
-			a0.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< java::math::BigDecimal > create< java::math::BigDecimal>(local_ref< java::lang::String > const &a0, local_ref< java::math::MathContext > const &a1)
+
+
+java::math::BigDecimal::BigDecimal(local_ref< cpp_char_array<1> > const &a0)
+: cpp_object<java::math::BigDecimal>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::math::BigDecimal::J2CPP_CLASS_NAME>(),
+		get_method_id<java::math::BigDecimal::J2CPP_CLASS_NAME, java::math::BigDecimal::J2CPP_METHOD_NAME(2), java::math::BigDecimal::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< java::math::BigDecimal >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::math::BigDecimal::J2CPP_CLASS_NAME>(),
-			get_method_id<java::math::BigDecimal::J2CPP_CLASS_NAME, java::math::BigDecimal::J2CPP_METHOD_NAME(5), java::math::BigDecimal::J2CPP_METHOD_SIGNATURE(5), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< java::math::BigDecimal > create< java::math::BigDecimal>(cpp_double const &a0)
+
+
+java::math::BigDecimal::BigDecimal(local_ref< cpp_char_array<1> > const &a0, local_ref< java::math::MathContext > const &a1)
+: cpp_object<java::math::BigDecimal>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::math::BigDecimal::J2CPP_CLASS_NAME>(),
+		get_method_id<java::math::BigDecimal::J2CPP_CLASS_NAME, java::math::BigDecimal::J2CPP_METHOD_NAME(3), java::math::BigDecimal::J2CPP_METHOD_SIGNATURE(3), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
 {
-	return local_ref< java::math::BigDecimal >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::math::BigDecimal::J2CPP_CLASS_NAME>(),
-			get_method_id<java::math::BigDecimal::J2CPP_CLASS_NAME, java::math::BigDecimal::J2CPP_METHOD_NAME(6), java::math::BigDecimal::J2CPP_METHOD_SIGNATURE(6), false>(),
-			a0.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< java::math::BigDecimal > create< java::math::BigDecimal>(cpp_double const &a0, local_ref< java::math::MathContext > const &a1)
+
+
+java::math::BigDecimal::BigDecimal(local_ref< java::lang::String > const &a0)
+: cpp_object<java::math::BigDecimal>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::math::BigDecimal::J2CPP_CLASS_NAME>(),
+		get_method_id<java::math::BigDecimal::J2CPP_CLASS_NAME, java::math::BigDecimal::J2CPP_METHOD_NAME(4), java::math::BigDecimal::J2CPP_METHOD_SIGNATURE(4), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< java::math::BigDecimal >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::math::BigDecimal::J2CPP_CLASS_NAME>(),
-			get_method_id<java::math::BigDecimal::J2CPP_CLASS_NAME, java::math::BigDecimal::J2CPP_METHOD_NAME(7), java::math::BigDecimal::J2CPP_METHOD_SIGNATURE(7), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< java::math::BigDecimal > create< java::math::BigDecimal>(local_ref< java::math::BigInteger > const &a0)
+
+
+java::math::BigDecimal::BigDecimal(local_ref< java::lang::String > const &a0, local_ref< java::math::MathContext > const &a1)
+: cpp_object<java::math::BigDecimal>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::math::BigDecimal::J2CPP_CLASS_NAME>(),
+		get_method_id<java::math::BigDecimal::J2CPP_CLASS_NAME, java::math::BigDecimal::J2CPP_METHOD_NAME(5), java::math::BigDecimal::J2CPP_METHOD_SIGNATURE(5), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
 {
-	return local_ref< java::math::BigDecimal >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::math::BigDecimal::J2CPP_CLASS_NAME>(),
-			get_method_id<java::math::BigDecimal::J2CPP_CLASS_NAME, java::math::BigDecimal::J2CPP_METHOD_NAME(8), java::math::BigDecimal::J2CPP_METHOD_SIGNATURE(8), false>(),
-			a0.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< java::math::BigDecimal > create< java::math::BigDecimal>(local_ref< java::math::BigInteger > const &a0, local_ref< java::math::MathContext > const &a1)
+
+
+java::math::BigDecimal::BigDecimal(cpp_double const &a0)
+: cpp_object<java::math::BigDecimal>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::math::BigDecimal::J2CPP_CLASS_NAME>(),
+		get_method_id<java::math::BigDecimal::J2CPP_CLASS_NAME, java::math::BigDecimal::J2CPP_METHOD_NAME(6), java::math::BigDecimal::J2CPP_METHOD_SIGNATURE(6), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< java::math::BigDecimal >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::math::BigDecimal::J2CPP_CLASS_NAME>(),
-			get_method_id<java::math::BigDecimal::J2CPP_CLASS_NAME, java::math::BigDecimal::J2CPP_METHOD_NAME(9), java::math::BigDecimal::J2CPP_METHOD_SIGNATURE(9), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< java::math::BigDecimal > create< java::math::BigDecimal>(local_ref< java::math::BigInteger > const &a0, cpp_int const &a1)
+
+
+java::math::BigDecimal::BigDecimal(cpp_double const &a0, local_ref< java::math::MathContext > const &a1)
+: cpp_object<java::math::BigDecimal>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::math::BigDecimal::J2CPP_CLASS_NAME>(),
+		get_method_id<java::math::BigDecimal::J2CPP_CLASS_NAME, java::math::BigDecimal::J2CPP_METHOD_NAME(7), java::math::BigDecimal::J2CPP_METHOD_SIGNATURE(7), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
 {
-	return local_ref< java::math::BigDecimal >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::math::BigDecimal::J2CPP_CLASS_NAME>(),
-			get_method_id<java::math::BigDecimal::J2CPP_CLASS_NAME, java::math::BigDecimal::J2CPP_METHOD_NAME(10), java::math::BigDecimal::J2CPP_METHOD_SIGNATURE(10), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< java::math::BigDecimal > create< java::math::BigDecimal>(local_ref< java::math::BigInteger > const &a0, cpp_int const &a1, local_ref< java::math::MathContext > const &a2)
+
+
+java::math::BigDecimal::BigDecimal(local_ref< java::math::BigInteger > const &a0)
+: cpp_object<java::math::BigDecimal>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::math::BigDecimal::J2CPP_CLASS_NAME>(),
+		get_method_id<java::math::BigDecimal::J2CPP_CLASS_NAME, java::math::BigDecimal::J2CPP_METHOD_NAME(8), java::math::BigDecimal::J2CPP_METHOD_SIGNATURE(8), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< java::math::BigDecimal >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::math::BigDecimal::J2CPP_CLASS_NAME>(),
-			get_method_id<java::math::BigDecimal::J2CPP_CLASS_NAME, java::math::BigDecimal::J2CPP_METHOD_NAME(11), java::math::BigDecimal::J2CPP_METHOD_SIGNATURE(11), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< java::math::BigDecimal > create< java::math::BigDecimal>(cpp_int const &a0)
+
+
+java::math::BigDecimal::BigDecimal(local_ref< java::math::BigInteger > const &a0, local_ref< java::math::MathContext > const &a1)
+: cpp_object<java::math::BigDecimal>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::math::BigDecimal::J2CPP_CLASS_NAME>(),
+		get_method_id<java::math::BigDecimal::J2CPP_CLASS_NAME, java::math::BigDecimal::J2CPP_METHOD_NAME(9), java::math::BigDecimal::J2CPP_METHOD_SIGNATURE(9), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
 {
-	return local_ref< java::math::BigDecimal >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::math::BigDecimal::J2CPP_CLASS_NAME>(),
-			get_method_id<java::math::BigDecimal::J2CPP_CLASS_NAME, java::math::BigDecimal::J2CPP_METHOD_NAME(12), java::math::BigDecimal::J2CPP_METHOD_SIGNATURE(12), false>(),
-			a0.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< java::math::BigDecimal > create< java::math::BigDecimal>(cpp_int const &a0, local_ref< java::math::MathContext > const &a1)
+
+
+java::math::BigDecimal::BigDecimal(local_ref< java::math::BigInteger > const &a0, cpp_int const &a1)
+: cpp_object<java::math::BigDecimal>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::math::BigDecimal::J2CPP_CLASS_NAME>(),
+		get_method_id<java::math::BigDecimal::J2CPP_CLASS_NAME, java::math::BigDecimal::J2CPP_METHOD_NAME(10), java::math::BigDecimal::J2CPP_METHOD_SIGNATURE(10), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
 {
-	return local_ref< java::math::BigDecimal >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::math::BigDecimal::J2CPP_CLASS_NAME>(),
-			get_method_id<java::math::BigDecimal::J2CPP_CLASS_NAME, java::math::BigDecimal::J2CPP_METHOD_NAME(13), java::math::BigDecimal::J2CPP_METHOD_SIGNATURE(13), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< java::math::BigDecimal > create< java::math::BigDecimal>(cpp_long const &a0)
+
+
+java::math::BigDecimal::BigDecimal(local_ref< java::math::BigInteger > const &a0, cpp_int const &a1, local_ref< java::math::MathContext > const &a2)
+: cpp_object<java::math::BigDecimal>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::math::BigDecimal::J2CPP_CLASS_NAME>(),
+		get_method_id<java::math::BigDecimal::J2CPP_CLASS_NAME, java::math::BigDecimal::J2CPP_METHOD_NAME(11), java::math::BigDecimal::J2CPP_METHOD_SIGNATURE(11), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
+	)
+)
 {
-	return local_ref< java::math::BigDecimal >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::math::BigDecimal::J2CPP_CLASS_NAME>(),
-			get_method_id<java::math::BigDecimal::J2CPP_CLASS_NAME, java::math::BigDecimal::J2CPP_METHOD_NAME(14), java::math::BigDecimal::J2CPP_METHOD_SIGNATURE(14), false>(),
-			a0.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< java::math::BigDecimal > create< java::math::BigDecimal>(cpp_long const &a0, local_ref< java::math::MathContext > const &a1)
+
+
+java::math::BigDecimal::BigDecimal(cpp_int const &a0)
+: cpp_object<java::math::BigDecimal>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::math::BigDecimal::J2CPP_CLASS_NAME>(),
+		get_method_id<java::math::BigDecimal::J2CPP_CLASS_NAME, java::math::BigDecimal::J2CPP_METHOD_NAME(12), java::math::BigDecimal::J2CPP_METHOD_SIGNATURE(12), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< java::math::BigDecimal >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::math::BigDecimal::J2CPP_CLASS_NAME>(),
-			get_method_id<java::math::BigDecimal::J2CPP_CLASS_NAME, java::math::BigDecimal::J2CPP_METHOD_NAME(15), java::math::BigDecimal::J2CPP_METHOD_SIGNATURE(15), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
 }
+
+
+
+java::math::BigDecimal::BigDecimal(cpp_int const &a0, local_ref< java::math::MathContext > const &a1)
+: cpp_object<java::math::BigDecimal>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::math::BigDecimal::J2CPP_CLASS_NAME>(),
+		get_method_id<java::math::BigDecimal::J2CPP_CLASS_NAME, java::math::BigDecimal::J2CPP_METHOD_NAME(13), java::math::BigDecimal::J2CPP_METHOD_SIGNATURE(13), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
+
+
+java::math::BigDecimal::BigDecimal(cpp_long const &a0)
+: cpp_object<java::math::BigDecimal>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::math::BigDecimal::J2CPP_CLASS_NAME>(),
+		get_method_id<java::math::BigDecimal::J2CPP_CLASS_NAME, java::math::BigDecimal::J2CPP_METHOD_NAME(14), java::math::BigDecimal::J2CPP_METHOD_SIGNATURE(14), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
+
+
+java::math::BigDecimal::BigDecimal(cpp_long const &a0, local_ref< java::math::MathContext > const &a1)
+: cpp_object<java::math::BigDecimal>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::math::BigDecimal::J2CPP_CLASS_NAME>(),
+		get_method_id<java::math::BigDecimal::J2CPP_CLASS_NAME, java::math::BigDecimal::J2CPP_METHOD_NAME(15), java::math::BigDecimal::J2CPP_METHOD_SIGNATURE(15), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
 
 local_ref< java::math::BigDecimal > java::math::BigDecimal::valueOf(cpp_long const &a0, cpp_int const &a1)
 {
@@ -1061,6 +1119,7 @@ cpp_int java::math::BigDecimal::compareTo(local_ref< java::lang::Object > const 
 		)
 	);
 }
+
 
 
 static_field<

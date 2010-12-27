@@ -10,8 +10,10 @@
 #define J2CPP_DALVIK_BYTECODE_OPCODES_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -283,10 +285,13 @@ namespace dalvik { namespace bytecode {
 		J2CPP_DECLARE_FIELD(254)
 		J2CPP_DECLARE_FIELD(255)
 
-		Opcodes(jobject jobj)
+		explicit Opcodes(jobject jobj)
 		: cpp_object<Opcodes>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(0), J2CPP_FIELD_SIGNATURE(0), cpp_int > OP_NOP;
 		static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(1), J2CPP_FIELD_SIGNATURE(1), cpp_int > OP_MOVE;
@@ -549,7 +554,6 @@ namespace dalvik { namespace bytecode {
 } //namespace bytecode
 } //namespace dalvik
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_DALVIK_BYTECODE_OPCODES_HPP_DECL
@@ -561,6 +565,12 @@ namespace dalvik { namespace bytecode {
 
 namespace j2cpp {
 
+
+
+dalvik::bytecode::Opcodes::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 static_field<
 	dalvik::bytecode::Opcodes::J2CPP_CLASS_NAME,

@@ -11,9 +11,11 @@
 
 
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace util { class Collection; } } }
 
 
 #include <java/lang/Object.hpp>
+#include <java/util/Collection.hpp>
 
 
 namespace j2cpp {
@@ -34,10 +36,14 @@ namespace java { namespace util {
 		J2CPP_DECLARE_METHOD(3)
 		J2CPP_DECLARE_METHOD(4)
 
-		Queue(jobject jobj)
+		explicit Queue(jobject jobj)
 		: cpp_object<Queue>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::util::Collection>() const;
+
 
 		cpp_boolean offer(local_ref< java::lang::Object > const&);
 		local_ref< java::lang::Object > poll();
@@ -48,7 +54,6 @@ namespace java { namespace util {
 
 } //namespace util
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -61,6 +66,17 @@ namespace java { namespace util {
 
 namespace j2cpp {
 
+
+
+java::util::Queue::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
+
+java::util::Queue::operator local_ref<java::util::Collection>() const
+{
+	return local_ref<java::util::Collection>(get_jtype());
+}
 
 cpp_boolean java::util::Queue::offer(local_ref< java::lang::Object > const &a0)
 {

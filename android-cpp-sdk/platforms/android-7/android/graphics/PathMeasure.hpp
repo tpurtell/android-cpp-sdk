@@ -10,12 +10,14 @@
 #define J2CPP_ANDROID_GRAPHICS_PATHMEASURE_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace android { namespace graphics { class Matrix; } } }
 namespace j2cpp { namespace android { namespace graphics { class Path; } } }
 
 
 #include <android/graphics/Matrix.hpp>
 #include <android/graphics/Path.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -43,11 +45,16 @@ namespace android { namespace graphics {
 		J2CPP_DECLARE_FIELD(0)
 		J2CPP_DECLARE_FIELD(1)
 
-		PathMeasure(jobject jobj)
+		explicit PathMeasure(jobject jobj)
 		: cpp_object<PathMeasure>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		PathMeasure();
+		PathMeasure(local_ref< android::graphics::Path > const&, cpp_boolean const&);
 		void setPath(local_ref< android::graphics::Path > const&, cpp_boolean const&);
 		cpp_float getLength();
 		cpp_boolean getPosTan(cpp_float const&, local_ref< cpp_float_array<1> > const&, local_ref< cpp_float_array<1> > const&);
@@ -63,7 +70,6 @@ namespace android { namespace graphics {
 } //namespace graphics
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_GRAPHICS_PATHMEASURE_HPP_DECL
@@ -76,28 +82,36 @@ namespace android { namespace graphics {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::graphics::PathMeasure > create< android::graphics::PathMeasure>()
+
+android::graphics::PathMeasure::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::graphics::PathMeasure >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::graphics::PathMeasure::J2CPP_CLASS_NAME>(),
-			get_method_id<android::graphics::PathMeasure::J2CPP_CLASS_NAME, android::graphics::PathMeasure::J2CPP_METHOD_NAME(0), android::graphics::PathMeasure::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
 
-template <>
-local_ref< android::graphics::PathMeasure > create< android::graphics::PathMeasure>(local_ref< android::graphics::Path > const &a0, cpp_boolean const &a1)
+
+android::graphics::PathMeasure::PathMeasure()
+: cpp_object<android::graphics::PathMeasure>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::graphics::PathMeasure::J2CPP_CLASS_NAME>(),
+		get_method_id<android::graphics::PathMeasure::J2CPP_CLASS_NAME, android::graphics::PathMeasure::J2CPP_METHOD_NAME(0), android::graphics::PathMeasure::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
 {
-	return local_ref< android::graphics::PathMeasure >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::graphics::PathMeasure::J2CPP_CLASS_NAME>(),
-			get_method_id<android::graphics::PathMeasure::J2CPP_CLASS_NAME, android::graphics::PathMeasure::J2CPP_METHOD_NAME(1), android::graphics::PathMeasure::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
 }
+
+
+
+android::graphics::PathMeasure::PathMeasure(local_ref< android::graphics::Path > const &a0, cpp_boolean const &a1)
+: cpp_object<android::graphics::PathMeasure>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::graphics::PathMeasure::J2CPP_CLASS_NAME>(),
+		get_method_id<android::graphics::PathMeasure::J2CPP_CLASS_NAME, android::graphics::PathMeasure::J2CPP_METHOD_NAME(1), android::graphics::PathMeasure::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
 
 void android::graphics::PathMeasure::setPath(local_ref< android::graphics::Path > const &a0, cpp_boolean const &a1)
 {

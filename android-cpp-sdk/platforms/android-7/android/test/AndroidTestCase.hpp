@@ -10,6 +10,7 @@
 #define J2CPP_ANDROID_TEST_ANDROIDTESTCASE_HPP_DECL
 
 
+namespace j2cpp { namespace junit { namespace framework { class TestCase; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace android { namespace net { class Uri; } } }
 namespace j2cpp { namespace android { namespace content { class Context; } } }
@@ -18,6 +19,7 @@ namespace j2cpp { namespace android { namespace content { class Context; } } }
 #include <android/content/Context.hpp>
 #include <android/net/Uri.hpp>
 #include <java/lang/String.hpp>
+#include <junit/framework/TestCase.hpp>
 
 
 namespace j2cpp {
@@ -44,11 +46,15 @@ namespace android { namespace test {
 		J2CPP_DECLARE_METHOD(9)
 		J2CPP_DECLARE_FIELD(0)
 
-		AndroidTestCase(jobject jobj)
+		explicit AndroidTestCase(jobject jobj)
 		: cpp_object<AndroidTestCase>(jobj)
 		{
 		}
 
+		operator local_ref<junit::framework::TestCase>() const;
+
+
+		AndroidTestCase();
 		void testAndroidTestCaseSetupProperly();
 		void setContext(local_ref< android::content::Context > const&);
 		local_ref< android::content::Context > getContext();
@@ -60,7 +66,6 @@ namespace android { namespace test {
 
 } //namespace test
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -74,16 +79,23 @@ namespace android { namespace test {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::test::AndroidTestCase > create< android::test::AndroidTestCase>()
+
+android::test::AndroidTestCase::operator local_ref<junit::framework::TestCase>() const
 {
-	return local_ref< android::test::AndroidTestCase >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::test::AndroidTestCase::J2CPP_CLASS_NAME>(),
-			get_method_id<android::test::AndroidTestCase::J2CPP_CLASS_NAME, android::test::AndroidTestCase::J2CPP_METHOD_NAME(0), android::test::AndroidTestCase::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<junit::framework::TestCase>(get_jtype());
 }
+
+
+android::test::AndroidTestCase::AndroidTestCase()
+: cpp_object<android::test::AndroidTestCase>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::test::AndroidTestCase::J2CPP_CLASS_NAME>(),
+		get_method_id<android::test::AndroidTestCase::J2CPP_CLASS_NAME, android::test::AndroidTestCase::J2CPP_METHOD_NAME(0), android::test::AndroidTestCase::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 
 

@@ -10,8 +10,10 @@
 #define J2CPP_JAVA_NIO_CHANNELS_CLOSEDCHANNELEXCEPTION_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class IOException; } } }
 
 
+#include <java/io/IOException.hpp>
 
 
 namespace j2cpp {
@@ -28,17 +30,20 @@ namespace java { namespace nio { namespace channels {
 
 		J2CPP_DECLARE_METHOD(0)
 
-		ClosedChannelException(jobject jobj)
+		explicit ClosedChannelException(jobject jobj)
 		: cpp_object<ClosedChannelException>(jobj)
 		{
 		}
 
+		operator local_ref<java::io::IOException>() const;
+
+
+		ClosedChannelException();
 	}; //class ClosedChannelException
 
 } //namespace channels
 } //namespace nio
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -52,16 +57,23 @@ namespace java { namespace nio { namespace channels {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::nio::channels::ClosedChannelException > create< java::nio::channels::ClosedChannelException>()
+
+java::nio::channels::ClosedChannelException::operator local_ref<java::io::IOException>() const
 {
-	return local_ref< java::nio::channels::ClosedChannelException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::nio::channels::ClosedChannelException::J2CPP_CLASS_NAME>(),
-			get_method_id<java::nio::channels::ClosedChannelException::J2CPP_CLASS_NAME, java::nio::channels::ClosedChannelException::J2CPP_METHOD_NAME(0), java::nio::channels::ClosedChannelException::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::io::IOException>(get_jtype());
 }
+
+
+java::nio::channels::ClosedChannelException::ClosedChannelException()
+: cpp_object<java::nio::channels::ClosedChannelException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::nio::channels::ClosedChannelException::J2CPP_CLASS_NAME>(),
+		get_method_id<java::nio::channels::ClosedChannelException::J2CPP_CLASS_NAME, java::nio::channels::ClosedChannelException::J2CPP_METHOD_NAME(0), java::nio::channels::ClosedChannelException::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 
 J2CPP_DEFINE_CLASS(java::nio::channels::ClosedChannelException,"java/nio/channels/ClosedChannelException")

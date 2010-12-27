@@ -10,6 +10,7 @@
 #define J2CPP_ANDROID_NET_WIFI_WIFIMANAGER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace util { class List; } } }
 namespace j2cpp { namespace android { namespace net { namespace wifi { class WifiConfiguration; } } } }
@@ -23,6 +24,7 @@ namespace j2cpp { namespace android { namespace net { class DhcpInfo; } } }
 #include <android/net/wifi/WifiConfiguration.hpp>
 #include <android/net/wifi/WifiInfo.hpp>
 #include <android/net/wifi/WifiManager.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/util/List.hpp>
 
@@ -51,10 +53,13 @@ namespace android { namespace net { namespace wifi {
 			J2CPP_DECLARE_METHOD(6)
 			J2CPP_DECLARE_FIELD(0)
 
-			MulticastLock(jobject jobj)
+			explicit MulticastLock(jobject jobj)
 			: cpp_object<MulticastLock>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+
 
 			void acquire();
 			void release();
@@ -81,10 +86,13 @@ namespace android { namespace net { namespace wifi {
 			J2CPP_DECLARE_METHOD(6)
 			J2CPP_DECLARE_FIELD(0)
 
-			WifiLock(jobject jobj)
+			explicit WifiLock(jobject jobj)
 			: cpp_object<WifiLock>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+
 
 			void acquire();
 			void release();
@@ -155,10 +163,13 @@ namespace android { namespace net { namespace wifi {
 		typedef WifiManager_::MulticastLock MulticastLock;
 		typedef WifiManager_::WifiLock WifiLock;
 
-		WifiManager(jobject jobj)
+		explicit WifiManager(jobject jobj)
 		: cpp_object<WifiManager>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		local_ref< java::util::List > getConfiguredNetworks();
 		cpp_int addNetwork(local_ref< android::net::wifi::WifiConfiguration > const&);
@@ -214,7 +225,6 @@ namespace android { namespace net { namespace wifi {
 } //namespace net
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_NET_WIFI_WIFIMANAGER_HPP_DECL
@@ -228,17 +238,12 @@ namespace j2cpp {
 
 
 
-template <>
-local_ref< android::net::wifi::WifiManager_::MulticastLock > create< android::net::wifi::WifiManager_::MulticastLock>(local_ref< android::net::wifi::WifiManager > const &a0)
+
+android::net::wifi::WifiManager_::MulticastLock::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::net::wifi::WifiManager_::MulticastLock >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::net::wifi::WifiManager_::MulticastLock::J2CPP_CLASS_NAME>(),
-			get_method_id<android::net::wifi::WifiManager_::MulticastLock::J2CPP_CLASS_NAME, android::net::wifi::WifiManager_::MulticastLock::J2CPP_METHOD_NAME(0), android::net::wifi::WifiManager_::MulticastLock::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
 
 void android::net::wifi::WifiManager_::MulticastLock::acquire()
 {
@@ -304,17 +309,12 @@ J2CPP_DEFINE_METHOD(android::net::wifi::WifiManager_::MulticastLock,5,"toString"
 J2CPP_DEFINE_METHOD(android::net::wifi::WifiManager_::MulticastLock,6,"finalize","()V")
 J2CPP_DEFINE_FIELD(android::net::wifi::WifiManager_::MulticastLock,0,"this$0","Landroid/net/wifi/WifiManager;")
 
-template <>
-local_ref< android::net::wifi::WifiManager_::WifiLock > create< android::net::wifi::WifiManager_::WifiLock>(local_ref< android::net::wifi::WifiManager > const &a0)
+
+android::net::wifi::WifiManager_::WifiLock::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::net::wifi::WifiManager_::WifiLock >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::net::wifi::WifiManager_::WifiLock::J2CPP_CLASS_NAME>(),
-			get_method_id<android::net::wifi::WifiManager_::WifiLock::J2CPP_CLASS_NAME, android::net::wifi::WifiManager_::WifiLock::J2CPP_METHOD_NAME(0), android::net::wifi::WifiManager_::WifiLock::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
 
 void android::net::wifi::WifiManager_::WifiLock::acquire()
 {
@@ -381,16 +381,12 @@ J2CPP_DEFINE_METHOD(android::net::wifi::WifiManager_::WifiLock,6,"finalize","()V
 J2CPP_DEFINE_FIELD(android::net::wifi::WifiManager_::WifiLock,0,"this$0","Landroid/net/wifi/WifiManager;")
 
 
-template <>
-local_ref< android::net::wifi::WifiManager > create< android::net::wifi::WifiManager>()
+
+android::net::wifi::WifiManager::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::net::wifi::WifiManager >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::net::wifi::WifiManager::J2CPP_CLASS_NAME>(),
-			get_method_id<android::net::wifi::WifiManager::J2CPP_CLASS_NAME, android::net::wifi::WifiManager::J2CPP_METHOD_NAME(0), android::net::wifi::WifiManager::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
 
 local_ref< java::util::List > android::net::wifi::WifiManager::getConfiguredNetworks()
 {

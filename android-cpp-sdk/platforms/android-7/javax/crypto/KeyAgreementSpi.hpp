@@ -10,8 +10,10 @@
 #define J2CPP_JAVAX_CRYPTO_KEYAGREEMENTSPI_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -34,16 +36,19 @@ namespace javax { namespace crypto {
 		J2CPP_DECLARE_METHOD(5)
 		J2CPP_DECLARE_METHOD(6)
 
-		KeyAgreementSpi(jobject jobj)
+		explicit KeyAgreementSpi(jobject jobj)
 		: cpp_object<KeyAgreementSpi>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		KeyAgreementSpi();
 	}; //class KeyAgreementSpi
 
 } //namespace crypto
 } //namespace javax
-
 
 } //namespace j2cpp
 
@@ -57,16 +62,23 @@ namespace javax { namespace crypto {
 namespace j2cpp {
 
 
-template <>
-local_ref< javax::crypto::KeyAgreementSpi > create< javax::crypto::KeyAgreementSpi>()
+
+javax::crypto::KeyAgreementSpi::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< javax::crypto::KeyAgreementSpi >(
-		environment::get().get_jenv()->NewObject(
-			get_class<javax::crypto::KeyAgreementSpi::J2CPP_CLASS_NAME>(),
-			get_method_id<javax::crypto::KeyAgreementSpi::J2CPP_CLASS_NAME, javax::crypto::KeyAgreementSpi::J2CPP_METHOD_NAME(0), javax::crypto::KeyAgreementSpi::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+javax::crypto::KeyAgreementSpi::KeyAgreementSpi()
+: cpp_object<javax::crypto::KeyAgreementSpi>(
+	environment::get().get_jenv()->NewObject(
+		get_class<javax::crypto::KeyAgreementSpi::J2CPP_CLASS_NAME>(),
+		get_method_id<javax::crypto::KeyAgreementSpi::J2CPP_CLASS_NAME, javax::crypto::KeyAgreementSpi::J2CPP_METHOD_NAME(0), javax::crypto::KeyAgreementSpi::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 
 

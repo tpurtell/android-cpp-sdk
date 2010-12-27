@@ -14,10 +14,12 @@ namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace message { class HeaderValueParser; } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { class HeaderElement; } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { class HeaderIterator; } } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { class HeaderElementIterator; } } } }
 
 
 #include <java/lang/Object.hpp>
 #include <org/apache/http/HeaderElement.hpp>
+#include <org/apache/http/HeaderElementIterator.hpp>
 #include <org/apache/http/HeaderIterator.hpp>
 #include <org/apache/http/message/HeaderValueParser.hpp>
 
@@ -41,11 +43,17 @@ namespace org { namespace apache { namespace http { namespace message {
 		J2CPP_DECLARE_METHOD(4)
 		J2CPP_DECLARE_METHOD(5)
 
-		BasicHeaderElementIterator(jobject jobj)
+		explicit BasicHeaderElementIterator(jobject jobj)
 		: cpp_object<BasicHeaderElementIterator>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<org::apache::http::HeaderElementIterator>() const;
+
+
+		BasicHeaderElementIterator(local_ref< org::apache::http::HeaderIterator > const&, local_ref< org::apache::http::message::HeaderValueParser > const&);
+		BasicHeaderElementIterator(local_ref< org::apache::http::HeaderIterator > const&);
 		cpp_boolean hasNext();
 		local_ref< org::apache::http::HeaderElement > nextElement();
 		local_ref< java::lang::Object > next();
@@ -56,7 +64,6 @@ namespace org { namespace apache { namespace http { namespace message {
 } //namespace http
 } //namespace apache
 } //namespace org
-
 
 } //namespace j2cpp
 
@@ -70,29 +77,42 @@ namespace org { namespace apache { namespace http { namespace message {
 namespace j2cpp {
 
 
-template <>
-local_ref< org::apache::http::message::BasicHeaderElementIterator > create< org::apache::http::message::BasicHeaderElementIterator>(local_ref< org::apache::http::HeaderIterator > const &a0, local_ref< org::apache::http::message::HeaderValueParser > const &a1)
+
+org::apache::http::message::BasicHeaderElementIterator::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< org::apache::http::message::BasicHeaderElementIterator >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::apache::http::message::BasicHeaderElementIterator::J2CPP_CLASS_NAME>(),
-			get_method_id<org::apache::http::message::BasicHeaderElementIterator::J2CPP_CLASS_NAME, org::apache::http::message::BasicHeaderElementIterator::J2CPP_METHOD_NAME(0), org::apache::http::message::BasicHeaderElementIterator::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
 
-template <>
-local_ref< org::apache::http::message::BasicHeaderElementIterator > create< org::apache::http::message::BasicHeaderElementIterator>(local_ref< org::apache::http::HeaderIterator > const &a0)
+org::apache::http::message::BasicHeaderElementIterator::operator local_ref<org::apache::http::HeaderElementIterator>() const
 {
-	return local_ref< org::apache::http::message::BasicHeaderElementIterator >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::apache::http::message::BasicHeaderElementIterator::J2CPP_CLASS_NAME>(),
-			get_method_id<org::apache::http::message::BasicHeaderElementIterator::J2CPP_CLASS_NAME, org::apache::http::message::BasicHeaderElementIterator::J2CPP_METHOD_NAME(1), org::apache::http::message::BasicHeaderElementIterator::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<org::apache::http::HeaderElementIterator>(get_jtype());
 }
+
+
+org::apache::http::message::BasicHeaderElementIterator::BasicHeaderElementIterator(local_ref< org::apache::http::HeaderIterator > const &a0, local_ref< org::apache::http::message::HeaderValueParser > const &a1)
+: cpp_object<org::apache::http::message::BasicHeaderElementIterator>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::apache::http::message::BasicHeaderElementIterator::J2CPP_CLASS_NAME>(),
+		get_method_id<org::apache::http::message::BasicHeaderElementIterator::J2CPP_CLASS_NAME, org::apache::http::message::BasicHeaderElementIterator::J2CPP_METHOD_NAME(0), org::apache::http::message::BasicHeaderElementIterator::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
+
+
+org::apache::http::message::BasicHeaderElementIterator::BasicHeaderElementIterator(local_ref< org::apache::http::HeaderIterator > const &a0)
+: cpp_object<org::apache::http::message::BasicHeaderElementIterator>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::apache::http::message::BasicHeaderElementIterator::J2CPP_CLASS_NAME>(),
+		get_method_id<org::apache::http::message::BasicHeaderElementIterator::J2CPP_CLASS_NAME, org::apache::http::message::BasicHeaderElementIterator::J2CPP_METHOD_NAME(1), org::apache::http::message::BasicHeaderElementIterator::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 cpp_boolean org::apache::http::message::BasicHeaderElementIterator::hasNext()
 {

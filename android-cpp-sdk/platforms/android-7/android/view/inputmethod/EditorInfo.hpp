@@ -10,19 +10,24 @@
 #define J2CPP_ANDROID_VIEW_INPUTMETHOD_EDITORINFO_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class CharSequence; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace android { namespace text { class InputType; } } }
 namespace j2cpp { namespace android { namespace util { class Printer; } } }
 namespace j2cpp { namespace android { namespace os { class Parcel; } } }
 namespace j2cpp { namespace android { namespace os { class Bundle; } } }
+namespace j2cpp { namespace android { namespace os { class Parcelable; } } }
 namespace j2cpp { namespace android { namespace os { namespace Parcelable_ { class Creator; } } } }
 
 
 #include <android/os/Bundle.hpp>
 #include <android/os/Parcel.hpp>
 #include <android/os/Parcelable.hpp>
+#include <android/text/InputType.hpp>
 #include <android/util/Printer.hpp>
 #include <java/lang/CharSequence.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -71,25 +76,31 @@ namespace android { namespace view { namespace inputmethod {
 		J2CPP_DECLARE_FIELD(25)
 		J2CPP_DECLARE_FIELD(26)
 
-		EditorInfo(jobject jobj)
+		explicit EditorInfo(jobject jobj)
 		: cpp_object<EditorInfo>(jobj)
-		, inputType(jobj)
-		, imeOptions(jobj)
-		, privateImeOptions(jobj)
-		, actionLabel(jobj)
-		, actionId(jobj)
-		, initialSelStart(jobj)
-		, initialSelEnd(jobj)
-		, initialCapsMode(jobj)
-		, hintText(jobj)
-		, label(jobj)
-		, packageName(jobj)
-		, fieldId(jobj)
-		, fieldName(jobj)
-		, extras(jobj)
+, inputType(jobj)
+, imeOptions(jobj)
+, privateImeOptions(jobj)
+, actionLabel(jobj)
+, actionId(jobj)
+, initialSelStart(jobj)
+, initialSelEnd(jobj)
+, initialCapsMode(jobj)
+, hintText(jobj)
+, label(jobj)
+, packageName(jobj)
+, fieldId(jobj)
+, fieldName(jobj)
+, extras(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<android::text::InputType>() const;
+		operator local_ref<android::os::Parcelable>() const;
+
+
+		EditorInfo();
 		void dump(local_ref< android::util::Printer > const&, local_ref< java::lang::String > const&);
 		void writeToParcel(local_ref< android::os::Parcel > const&, cpp_int const&);
 		cpp_int describeContents();
@@ -127,7 +138,6 @@ namespace android { namespace view { namespace inputmethod {
 } //namespace view
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_VIEW_INPUTMETHOD_EDITORINFO_HPP_DECL
@@ -140,16 +150,47 @@ namespace android { namespace view { namespace inputmethod {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::view::inputmethod::EditorInfo > create< android::view::inputmethod::EditorInfo>()
+
+android::view::inputmethod::EditorInfo::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::view::inputmethod::EditorInfo >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::view::inputmethod::EditorInfo::J2CPP_CLASS_NAME>(),
-			get_method_id<android::view::inputmethod::EditorInfo::J2CPP_CLASS_NAME, android::view::inputmethod::EditorInfo::J2CPP_METHOD_NAME(0), android::view::inputmethod::EditorInfo::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+android::view::inputmethod::EditorInfo::operator local_ref<android::text::InputType>() const
+{
+	return local_ref<android::text::InputType>(get_jtype());
+}
+
+android::view::inputmethod::EditorInfo::operator local_ref<android::os::Parcelable>() const
+{
+	return local_ref<android::os::Parcelable>(get_jtype());
+}
+
+
+android::view::inputmethod::EditorInfo::EditorInfo()
+: cpp_object<android::view::inputmethod::EditorInfo>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::view::inputmethod::EditorInfo::J2CPP_CLASS_NAME>(),
+		get_method_id<android::view::inputmethod::EditorInfo::J2CPP_CLASS_NAME, android::view::inputmethod::EditorInfo::J2CPP_METHOD_NAME(0), android::view::inputmethod::EditorInfo::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+, inputType(get_jtype())
+, imeOptions(get_jtype())
+, privateImeOptions(get_jtype())
+, actionLabel(get_jtype())
+, actionId(get_jtype())
+, initialSelStart(get_jtype())
+, initialSelEnd(get_jtype())
+, initialCapsMode(get_jtype())
+, hintText(get_jtype())
+, label(get_jtype())
+, packageName(get_jtype())
+, fieldId(get_jtype())
+, fieldName(get_jtype())
+, extras(get_jtype())
+{
+}
+
 
 void android::view::inputmethod::EditorInfo::dump(local_ref< android::util::Printer > const &a0, local_ref< java::lang::String > const &a1)
 {
@@ -182,6 +223,7 @@ cpp_int android::view::inputmethod::EditorInfo::describeContents()
 		)
 	);
 }
+
 
 
 static_field<

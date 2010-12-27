@@ -10,9 +10,11 @@
 #define J2CPP_JAVA_NET_UNKNOWNSERVICEEXCEPTION_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class IOException; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 
 
+#include <java/io/IOException.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -31,16 +33,20 @@ namespace java { namespace net {
 		J2CPP_DECLARE_METHOD(0)
 		J2CPP_DECLARE_METHOD(1)
 
-		UnknownServiceException(jobject jobj)
+		explicit UnknownServiceException(jobject jobj)
 		: cpp_object<UnknownServiceException>(jobj)
 		{
 		}
 
+		operator local_ref<java::io::IOException>() const;
+
+
+		UnknownServiceException();
+		UnknownServiceException(local_ref< java::lang::String > const&);
 	}; //class UnknownServiceException
 
 } //namespace net
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -54,28 +60,36 @@ namespace java { namespace net {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::net::UnknownServiceException > create< java::net::UnknownServiceException>()
+
+java::net::UnknownServiceException::operator local_ref<java::io::IOException>() const
 {
-	return local_ref< java::net::UnknownServiceException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::net::UnknownServiceException::J2CPP_CLASS_NAME>(),
-			get_method_id<java::net::UnknownServiceException::J2CPP_CLASS_NAME, java::net::UnknownServiceException::J2CPP_METHOD_NAME(0), java::net::UnknownServiceException::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::io::IOException>(get_jtype());
 }
 
-template <>
-local_ref< java::net::UnknownServiceException > create< java::net::UnknownServiceException>(local_ref< java::lang::String > const &a0)
+
+java::net::UnknownServiceException::UnknownServiceException()
+: cpp_object<java::net::UnknownServiceException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::net::UnknownServiceException::J2CPP_CLASS_NAME>(),
+		get_method_id<java::net::UnknownServiceException::J2CPP_CLASS_NAME, java::net::UnknownServiceException::J2CPP_METHOD_NAME(0), java::net::UnknownServiceException::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
 {
-	return local_ref< java::net::UnknownServiceException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::net::UnknownServiceException::J2CPP_CLASS_NAME>(),
-			get_method_id<java::net::UnknownServiceException::J2CPP_CLASS_NAME, java::net::UnknownServiceException::J2CPP_METHOD_NAME(1), java::net::UnknownServiceException::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
 }
+
+
+
+java::net::UnknownServiceException::UnknownServiceException(local_ref< java::lang::String > const &a0)
+: cpp_object<java::net::UnknownServiceException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::net::UnknownServiceException::J2CPP_CLASS_NAME>(),
+		get_method_id<java::net::UnknownServiceException::J2CPP_CLASS_NAME, java::net::UnknownServiceException::J2CPP_METHOD_NAME(1), java::net::UnknownServiceException::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 
 J2CPP_DEFINE_CLASS(java::net::UnknownServiceException,"java/net/UnknownServiceException")

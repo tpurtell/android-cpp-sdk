@@ -48,11 +48,16 @@ namespace java { namespace sql {
 		J2CPP_DECLARE_METHOD(13)
 		J2CPP_DECLARE_METHOD(14)
 
-		Timestamp(jobject jobj)
+		explicit Timestamp(jobject jobj)
 		: cpp_object<Timestamp>(jobj)
 		{
 		}
 
+		operator local_ref<java::util::Date>() const;
+
+
+		Timestamp(cpp_int const&, cpp_int const&, cpp_int const&, cpp_int const&, cpp_int const&, cpp_int const&, cpp_int const&);
+		Timestamp(cpp_long const&);
 		cpp_boolean after(local_ref< java::sql::Timestamp > const&);
 		cpp_boolean before(local_ref< java::sql::Timestamp > const&);
 		cpp_int compareTo(local_ref< java::util::Date > const&);
@@ -71,7 +76,6 @@ namespace java { namespace sql {
 } //namespace sql
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_SQL_TIMESTAMP_HPP_DECL
@@ -84,29 +88,37 @@ namespace java { namespace sql {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::sql::Timestamp > create< java::sql::Timestamp>(cpp_int const &a0, cpp_int const &a1, cpp_int const &a2, cpp_int const &a3, cpp_int const &a4, cpp_int const &a5, cpp_int const &a6)
+
+java::sql::Timestamp::operator local_ref<java::util::Date>() const
 {
-	return local_ref< java::sql::Timestamp >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::sql::Timestamp::J2CPP_CLASS_NAME>(),
-			get_method_id<java::sql::Timestamp::J2CPP_CLASS_NAME, java::sql::Timestamp::J2CPP_METHOD_NAME(0), java::sql::Timestamp::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype(), a4.get_jtype(), a5.get_jtype(), a6.get_jtype()
-		)
-	);
+	return local_ref<java::util::Date>(get_jtype());
 }
 
-template <>
-local_ref< java::sql::Timestamp > create< java::sql::Timestamp>(cpp_long const &a0)
+
+java::sql::Timestamp::Timestamp(cpp_int const &a0, cpp_int const &a1, cpp_int const &a2, cpp_int const &a3, cpp_int const &a4, cpp_int const &a5, cpp_int const &a6)
+: cpp_object<java::sql::Timestamp>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::sql::Timestamp::J2CPP_CLASS_NAME>(),
+		get_method_id<java::sql::Timestamp::J2CPP_CLASS_NAME, java::sql::Timestamp::J2CPP_METHOD_NAME(0), java::sql::Timestamp::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype(), a4.get_jtype(), a5.get_jtype(), a6.get_jtype()
+	)
+)
 {
-	return local_ref< java::sql::Timestamp >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::sql::Timestamp::J2CPP_CLASS_NAME>(),
-			get_method_id<java::sql::Timestamp::J2CPP_CLASS_NAME, java::sql::Timestamp::J2CPP_METHOD_NAME(1), java::sql::Timestamp::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
 }
+
+
+
+java::sql::Timestamp::Timestamp(cpp_long const &a0)
+: cpp_object<java::sql::Timestamp>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::sql::Timestamp::J2CPP_CLASS_NAME>(),
+		get_method_id<java::sql::Timestamp::J2CPP_CLASS_NAME, java::sql::Timestamp::J2CPP_METHOD_NAME(1), java::sql::Timestamp::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 cpp_boolean java::sql::Timestamp::after(local_ref< java::sql::Timestamp > const &a0)
 {

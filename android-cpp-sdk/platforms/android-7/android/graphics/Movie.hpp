@@ -11,6 +11,7 @@
 
 
 namespace j2cpp { namespace java { namespace io { class InputStream; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace android { namespace graphics { class Paint; } } }
 namespace j2cpp { namespace android { namespace graphics { class Canvas; } } }
@@ -19,6 +20,7 @@ namespace j2cpp { namespace android { namespace graphics { class Canvas; } } }
 #include <android/graphics/Canvas.hpp>
 #include <android/graphics/Paint.hpp>
 #include <java/io/InputStream.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -46,10 +48,13 @@ namespace android { namespace graphics {
 		J2CPP_DECLARE_METHOD(9)
 		J2CPP_DECLARE_METHOD(10)
 
-		Movie(jobject jobj)
+		explicit Movie(jobject jobj)
 		: cpp_object<Movie>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		cpp_int width();
 		cpp_int height();
@@ -66,7 +71,6 @@ namespace android { namespace graphics {
 } //namespace graphics
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_GRAPHICS_MOVIE_HPP_DECL
@@ -79,16 +83,12 @@ namespace android { namespace graphics {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::graphics::Movie > create< android::graphics::Movie>()
+
+android::graphics::Movie::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::graphics::Movie >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::graphics::Movie::J2CPP_CLASS_NAME>(),
-			get_method_id<android::graphics::Movie::J2CPP_CLASS_NAME, android::graphics::Movie::J2CPP_METHOD_NAME(0), android::graphics::Movie::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
 
 cpp_int android::graphics::Movie::width()
 {

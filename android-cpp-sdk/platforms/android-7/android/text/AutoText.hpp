@@ -10,6 +10,7 @@
 #define J2CPP_ANDROID_TEXT_AUTOTEXT_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class CharSequence; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace android { namespace view { class View; } } }
@@ -17,6 +18,7 @@ namespace j2cpp { namespace android { namespace view { class View; } } }
 
 #include <android/view/View.hpp>
 #include <java/lang/CharSequence.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -36,10 +38,13 @@ namespace android { namespace text {
 		J2CPP_DECLARE_METHOD(1)
 		J2CPP_DECLARE_METHOD(2)
 
-		AutoText(jobject jobj)
+		explicit AutoText(jobject jobj)
 		: cpp_object<AutoText>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		static local_ref< java::lang::String > get(local_ref< java::lang::CharSequence > const&, cpp_int const&, cpp_int const&, local_ref< android::view::View > const&);
 		static cpp_int getSize(local_ref< android::view::View > const&);
@@ -47,7 +52,6 @@ namespace android { namespace text {
 
 } //namespace text
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -61,16 +65,12 @@ namespace android { namespace text {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::text::AutoText > create< android::text::AutoText>()
+
+android::text::AutoText::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::text::AutoText >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::text::AutoText::J2CPP_CLASS_NAME>(),
-			get_method_id<android::text::AutoText::J2CPP_CLASS_NAME, android::text::AutoText::J2CPP_METHOD_NAME(0), android::text::AutoText::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
 
 local_ref< java::lang::String > android::text::AutoText::get(local_ref< java::lang::CharSequence > const &a0, cpp_int const &a1, cpp_int const &a2, local_ref< android::view::View > const &a3)
 {

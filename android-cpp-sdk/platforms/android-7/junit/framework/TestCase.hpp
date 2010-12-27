@@ -10,11 +10,15 @@
 #define J2CPP_JUNIT_FRAMEWORK_TESTCASE_HPP_DECL
 
 
+namespace j2cpp { namespace junit { namespace framework { class Assert; } } }
 namespace j2cpp { namespace junit { namespace framework { class TestResult; } } }
+namespace j2cpp { namespace junit { namespace framework { class Test; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 
 
 #include <java/lang/String.hpp>
+#include <junit/framework/Assert.hpp>
+#include <junit/framework/Test.hpp>
 #include <junit/framework/TestResult.hpp>
 
 
@@ -44,11 +48,17 @@ namespace junit { namespace framework {
 		J2CPP_DECLARE_METHOD(11)
 		J2CPP_DECLARE_METHOD(12)
 
-		TestCase(jobject jobj)
+		explicit TestCase(jobject jobj)
 		: cpp_object<TestCase>(jobj)
 		{
 		}
 
+		operator local_ref<junit::framework::Assert>() const;
+		operator local_ref<junit::framework::Test>() const;
+
+
+		TestCase();
+		TestCase(local_ref< java::lang::String > const&);
 		cpp_int countTestCases();
 		local_ref< junit::framework::TestResult > run();
 		void run(local_ref< junit::framework::TestResult > const&);
@@ -60,7 +70,6 @@ namespace junit { namespace framework {
 
 } //namespace framework
 } //namespace junit
-
 
 } //namespace j2cpp
 
@@ -74,28 +83,41 @@ namespace junit { namespace framework {
 namespace j2cpp {
 
 
-template <>
-local_ref< junit::framework::TestCase > create< junit::framework::TestCase>()
+
+junit::framework::TestCase::operator local_ref<junit::framework::Assert>() const
 {
-	return local_ref< junit::framework::TestCase >(
-		environment::get().get_jenv()->NewObject(
-			get_class<junit::framework::TestCase::J2CPP_CLASS_NAME>(),
-			get_method_id<junit::framework::TestCase::J2CPP_CLASS_NAME, junit::framework::TestCase::J2CPP_METHOD_NAME(0), junit::framework::TestCase::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<junit::framework::Assert>(get_jtype());
 }
 
-template <>
-local_ref< junit::framework::TestCase > create< junit::framework::TestCase>(local_ref< java::lang::String > const &a0)
+junit::framework::TestCase::operator local_ref<junit::framework::Test>() const
 {
-	return local_ref< junit::framework::TestCase >(
-		environment::get().get_jenv()->NewObject(
-			get_class<junit::framework::TestCase::J2CPP_CLASS_NAME>(),
-			get_method_id<junit::framework::TestCase::J2CPP_CLASS_NAME, junit::framework::TestCase::J2CPP_METHOD_NAME(1), junit::framework::TestCase::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<junit::framework::Test>(get_jtype());
 }
+
+
+junit::framework::TestCase::TestCase()
+: cpp_object<junit::framework::TestCase>(
+	environment::get().get_jenv()->NewObject(
+		get_class<junit::framework::TestCase::J2CPP_CLASS_NAME>(),
+		get_method_id<junit::framework::TestCase::J2CPP_CLASS_NAME, junit::framework::TestCase::J2CPP_METHOD_NAME(0), junit::framework::TestCase::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
+
+
+junit::framework::TestCase::TestCase(local_ref< java::lang::String > const &a0)
+: cpp_object<junit::framework::TestCase>(
+	environment::get().get_jenv()->NewObject(
+		get_class<junit::framework::TestCase::J2CPP_CLASS_NAME>(),
+		get_method_id<junit::framework::TestCase::J2CPP_CLASS_NAME, junit::framework::TestCase::J2CPP_METHOD_NAME(1), junit::framework::TestCase::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 cpp_int junit::framework::TestCase::countTestCases()
 {

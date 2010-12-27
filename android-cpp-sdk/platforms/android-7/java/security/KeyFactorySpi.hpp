@@ -10,8 +10,10 @@
 #define J2CPP_JAVA_SECURITY_KEYFACTORYSPI_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -32,16 +34,19 @@ namespace java { namespace security {
 		J2CPP_DECLARE_METHOD(3)
 		J2CPP_DECLARE_METHOD(4)
 
-		KeyFactorySpi(jobject jobj)
+		explicit KeyFactorySpi(jobject jobj)
 		: cpp_object<KeyFactorySpi>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		KeyFactorySpi();
 	}; //class KeyFactorySpi
 
 } //namespace security
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -55,16 +60,23 @@ namespace java { namespace security {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::security::KeyFactorySpi > create< java::security::KeyFactorySpi>()
+
+java::security::KeyFactorySpi::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::security::KeyFactorySpi >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::security::KeyFactorySpi::J2CPP_CLASS_NAME>(),
-			get_method_id<java::security::KeyFactorySpi::J2CPP_CLASS_NAME, java::security::KeyFactorySpi::J2CPP_METHOD_NAME(0), java::security::KeyFactorySpi::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+java::security::KeyFactorySpi::KeyFactorySpi()
+: cpp_object<java::security::KeyFactorySpi>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::security::KeyFactorySpi::J2CPP_CLASS_NAME>(),
+		get_method_id<java::security::KeyFactorySpi::J2CPP_CLASS_NAME, java::security::KeyFactorySpi::J2CPP_METHOD_NAME(0), java::security::KeyFactorySpi::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 
 

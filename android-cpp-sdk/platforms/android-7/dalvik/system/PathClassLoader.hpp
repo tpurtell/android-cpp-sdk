@@ -38,16 +38,20 @@ namespace dalvik { namespace system {
 		J2CPP_DECLARE_METHOD(5)
 		J2CPP_DECLARE_METHOD(6)
 
-		PathClassLoader(jobject jobj)
+		explicit PathClassLoader(jobject jobj)
 		: cpp_object<PathClassLoader>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::ClassLoader>() const;
+
+
+		PathClassLoader(local_ref< java::lang::String > const&, local_ref< java::lang::ClassLoader > const&);
+		PathClassLoader(local_ref< java::lang::String > const&, local_ref< java::lang::String > const&, local_ref< java::lang::ClassLoader > const&);
 	}; //class PathClassLoader
 
 } //namespace system
 } //namespace dalvik
-
 
 } //namespace j2cpp
 
@@ -61,29 +65,37 @@ namespace dalvik { namespace system {
 namespace j2cpp {
 
 
-template <>
-local_ref< dalvik::system::PathClassLoader > create< dalvik::system::PathClassLoader>(local_ref< java::lang::String > const &a0, local_ref< java::lang::ClassLoader > const &a1)
+
+dalvik::system::PathClassLoader::operator local_ref<java::lang::ClassLoader>() const
 {
-	return local_ref< dalvik::system::PathClassLoader >(
-		environment::get().get_jenv()->NewObject(
-			get_class<dalvik::system::PathClassLoader::J2CPP_CLASS_NAME>(),
-			get_method_id<dalvik::system::PathClassLoader::J2CPP_CLASS_NAME, dalvik::system::PathClassLoader::J2CPP_METHOD_NAME(0), dalvik::system::PathClassLoader::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<java::lang::ClassLoader>(get_jtype());
 }
 
-template <>
-local_ref< dalvik::system::PathClassLoader > create< dalvik::system::PathClassLoader>(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1, local_ref< java::lang::ClassLoader > const &a2)
+
+dalvik::system::PathClassLoader::PathClassLoader(local_ref< java::lang::String > const &a0, local_ref< java::lang::ClassLoader > const &a1)
+: cpp_object<dalvik::system::PathClassLoader>(
+	environment::get().get_jenv()->NewObject(
+		get_class<dalvik::system::PathClassLoader::J2CPP_CLASS_NAME>(),
+		get_method_id<dalvik::system::PathClassLoader::J2CPP_CLASS_NAME, dalvik::system::PathClassLoader::J2CPP_METHOD_NAME(0), dalvik::system::PathClassLoader::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
 {
-	return local_ref< dalvik::system::PathClassLoader >(
-		environment::get().get_jenv()->NewObject(
-			get_class<dalvik::system::PathClassLoader::J2CPP_CLASS_NAME>(),
-			get_method_id<dalvik::system::PathClassLoader::J2CPP_CLASS_NAME, dalvik::system::PathClassLoader::J2CPP_METHOD_NAME(1), dalvik::system::PathClassLoader::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
-		)
-	);
 }
+
+
+
+dalvik::system::PathClassLoader::PathClassLoader(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1, local_ref< java::lang::ClassLoader > const &a2)
+: cpp_object<dalvik::system::PathClassLoader>(
+	environment::get().get_jenv()->NewObject(
+		get_class<dalvik::system::PathClassLoader::J2CPP_CLASS_NAME>(),
+		get_method_id<dalvik::system::PathClassLoader::J2CPP_CLASS_NAME, dalvik::system::PathClassLoader::J2CPP_METHOD_NAME(1), dalvik::system::PathClassLoader::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
+	)
+)
+{
+}
+
 
 
 

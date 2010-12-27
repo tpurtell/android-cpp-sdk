@@ -10,8 +10,10 @@
 #define J2CPP_JAVA_IO_CLOSEABLE_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -28,17 +30,19 @@ namespace java { namespace io {
 
 		J2CPP_DECLARE_METHOD(0)
 
-		Closeable(jobject jobj)
+		explicit Closeable(jobject jobj)
 		: cpp_object<Closeable>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		void close();
 	}; //class Closeable
 
 } //namespace io
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -51,6 +55,12 @@ namespace java { namespace io {
 
 namespace j2cpp {
 
+
+
+java::io::Closeable::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 void java::io::Closeable::close()
 {

@@ -11,10 +11,12 @@
 
 
 namespace j2cpp { namespace java { namespace net { class NetworkInterface; } } }
+namespace j2cpp { namespace java { namespace net { class InetAddress; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 
 
 #include <java/lang/String.hpp>
+#include <java/net/InetAddress.hpp>
 #include <java/net/NetworkInterface.hpp>
 
 
@@ -48,10 +50,13 @@ namespace java { namespace net {
 		J2CPP_DECLARE_METHOD(15)
 		J2CPP_DECLARE_METHOD(16)
 
-		Inet6Address(jobject jobj)
+		explicit Inet6Address(jobject jobj)
 		: cpp_object<Inet6Address>(jobj)
 		{
 		}
+
+		operator local_ref<java::net::InetAddress>() const;
+
 
 		static local_ref< java::net::Inet6Address > getByAddress(local_ref< java::lang::String > const&, local_ref< cpp_byte_array<1> > const&, cpp_int const&);
 		static local_ref< java::net::Inet6Address > getByAddress(local_ref< java::lang::String > const&, local_ref< cpp_byte_array<1> > const&, local_ref< java::net::NetworkInterface > const&);
@@ -74,7 +79,6 @@ namespace java { namespace net {
 } //namespace net
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_NET_INET6ADDRESS_HPP_DECL
@@ -87,16 +91,12 @@ namespace java { namespace net {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::net::Inet6Address > create< java::net::Inet6Address>()
+
+java::net::Inet6Address::operator local_ref<java::net::InetAddress>() const
 {
-	return local_ref< java::net::Inet6Address >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::net::Inet6Address::J2CPP_CLASS_NAME>(),
-			get_method_id<java::net::Inet6Address::J2CPP_CLASS_NAME, java::net::Inet6Address::J2CPP_METHOD_NAME(0), java::net::Inet6Address::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::net::InetAddress>(get_jtype());
 }
+
 
 local_ref< java::net::Inet6Address > java::net::Inet6Address::getByAddress(local_ref< java::lang::String > const &a0, local_ref< cpp_byte_array<1> > const &a1, cpp_int const &a2)
 {

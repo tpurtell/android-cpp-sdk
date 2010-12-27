@@ -10,14 +10,18 @@
 #define J2CPP_ORG_APACHE_HTTP_CONN_SSL_X509HOSTNAMEVERIFIER_HPP_DECL
 
 
+namespace j2cpp { namespace javax { namespace net { namespace ssl { class HostnameVerifier; } } } }
 namespace j2cpp { namespace javax { namespace net { namespace ssl { class SSLSession; } } } }
 namespace j2cpp { namespace javax { namespace net { namespace ssl { class SSLSocket; } } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace security { namespace cert { class X509Certificate; } } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/security/cert/X509Certificate.hpp>
+#include <javax/net/ssl/HostnameVerifier.hpp>
 #include <javax/net/ssl/SSLSession.hpp>
 #include <javax/net/ssl/SSLSocket.hpp>
 
@@ -39,10 +43,14 @@ namespace org { namespace apache { namespace http { namespace conn { namespace s
 		J2CPP_DECLARE_METHOD(2)
 		J2CPP_DECLARE_METHOD(3)
 
-		X509HostnameVerifier(jobject jobj)
+		explicit X509HostnameVerifier(jobject jobj)
 		: cpp_object<X509HostnameVerifier>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<javax::net::ssl::HostnameVerifier>() const;
+
 
 		cpp_boolean verify(local_ref< java::lang::String > const&, local_ref< javax::net::ssl::SSLSession > const&);
 		void verify(local_ref< java::lang::String > const&, local_ref< javax::net::ssl::SSLSocket > const&);
@@ -56,7 +64,6 @@ namespace org { namespace apache { namespace http { namespace conn { namespace s
 } //namespace apache
 } //namespace org
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ORG_APACHE_HTTP_CONN_SSL_X509HOSTNAMEVERIFIER_HPP_DECL
@@ -68,6 +75,17 @@ namespace org { namespace apache { namespace http { namespace conn { namespace s
 
 namespace j2cpp {
 
+
+
+org::apache::http::conn::ssl::X509HostnameVerifier::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
+
+org::apache::http::conn::ssl::X509HostnameVerifier::operator local_ref<javax::net::ssl::HostnameVerifier>() const
+{
+	return local_ref<javax::net::ssl::HostnameVerifier>(get_jtype());
+}
 
 cpp_boolean org::apache::http::conn::ssl::X509HostnameVerifier::verify(local_ref< java::lang::String > const &a0, local_ref< javax::net::ssl::SSLSession > const &a1)
 {

@@ -11,9 +11,11 @@
 
 
 namespace j2cpp { namespace java { namespace io { class OutputStream; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
 #include <java/io/OutputStream.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -32,18 +34,21 @@ namespace java { namespace net {
 		J2CPP_DECLARE_METHOD(1)
 		J2CPP_DECLARE_METHOD(2)
 
-		CacheRequest(jobject jobj)
+		explicit CacheRequest(jobject jobj)
 		: cpp_object<CacheRequest>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		CacheRequest();
 		void abort();
 		local_ref< java::io::OutputStream > getBody();
 	}; //class CacheRequest
 
 } //namespace net
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -57,16 +62,23 @@ namespace java { namespace net {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::net::CacheRequest > create< java::net::CacheRequest>()
+
+java::net::CacheRequest::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::net::CacheRequest >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::net::CacheRequest::J2CPP_CLASS_NAME>(),
-			get_method_id<java::net::CacheRequest::J2CPP_CLASS_NAME, java::net::CacheRequest::J2CPP_METHOD_NAME(0), java::net::CacheRequest::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+java::net::CacheRequest::CacheRequest()
+: cpp_object<java::net::CacheRequest>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::net::CacheRequest::J2CPP_CLASS_NAME>(),
+		get_method_id<java::net::CacheRequest::J2CPP_CLASS_NAME, java::net::CacheRequest::J2CPP_METHOD_NAME(0), java::net::CacheRequest::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 void java::net::CacheRequest::abort()
 {

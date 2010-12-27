@@ -10,18 +10,22 @@
 #define J2CPP_ORG_APACHE_HTTP_CLIENT_PROTOCOL_CLIENTCONTEXTCONFIGURER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace util { class List; } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace cookie { class CookieSpecRegistry; } } } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { namespace client { namespace protocol { class ClientContext; } } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace client { class CredentialsProvider; } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace client { class CookieStore; } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace protocol { class HttpContext; } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace auth { class AuthSchemeRegistry; } } } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/util/List.hpp>
 #include <org/apache/http/auth/AuthSchemeRegistry.hpp>
 #include <org/apache/http/client/CookieStore.hpp>
 #include <org/apache/http/client/CredentialsProvider.hpp>
+#include <org/apache/http/client/protocol/ClientContext.hpp>
 #include <org/apache/http/cookie/CookieSpecRegistry.hpp>
 #include <org/apache/http/protocol/HttpContext.hpp>
 
@@ -45,11 +49,16 @@ namespace org { namespace apache { namespace http { namespace client { namespace
 		J2CPP_DECLARE_METHOD(4)
 		J2CPP_DECLARE_METHOD(5)
 
-		ClientContextConfigurer(jobject jobj)
+		explicit ClientContextConfigurer(jobject jobj)
 		: cpp_object<ClientContextConfigurer>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<org::apache::http::client::protocol::ClientContext>() const;
+
+
+		ClientContextConfigurer(local_ref< org::apache::http::protocol::HttpContext > const&);
 		void setCookieSpecRegistry(local_ref< org::apache::http::cookie::CookieSpecRegistry > const&);
 		void setAuthSchemeRegistry(local_ref< org::apache::http::auth::AuthSchemeRegistry > const&);
 		void setCookieStore(local_ref< org::apache::http::client::CookieStore > const&);
@@ -63,7 +72,6 @@ namespace org { namespace apache { namespace http { namespace client { namespace
 } //namespace apache
 } //namespace org
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ORG_APACHE_HTTP_CLIENT_PROTOCOL_CLIENTCONTEXTCONFIGURER_HPP_DECL
@@ -76,17 +84,29 @@ namespace org { namespace apache { namespace http { namespace client { namespace
 namespace j2cpp {
 
 
-template <>
-local_ref< org::apache::http::client::protocol::ClientContextConfigurer > create< org::apache::http::client::protocol::ClientContextConfigurer>(local_ref< org::apache::http::protocol::HttpContext > const &a0)
+
+org::apache::http::client::protocol::ClientContextConfigurer::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< org::apache::http::client::protocol::ClientContextConfigurer >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::apache::http::client::protocol::ClientContextConfigurer::J2CPP_CLASS_NAME>(),
-			get_method_id<org::apache::http::client::protocol::ClientContextConfigurer::J2CPP_CLASS_NAME, org::apache::http::client::protocol::ClientContextConfigurer::J2CPP_METHOD_NAME(0), org::apache::http::client::protocol::ClientContextConfigurer::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+org::apache::http::client::protocol::ClientContextConfigurer::operator local_ref<org::apache::http::client::protocol::ClientContext>() const
+{
+	return local_ref<org::apache::http::client::protocol::ClientContext>(get_jtype());
+}
+
+
+org::apache::http::client::protocol::ClientContextConfigurer::ClientContextConfigurer(local_ref< org::apache::http::protocol::HttpContext > const &a0)
+: cpp_object<org::apache::http::client::protocol::ClientContextConfigurer>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::apache::http::client::protocol::ClientContextConfigurer::J2CPP_CLASS_NAME>(),
+		get_method_id<org::apache::http::client::protocol::ClientContextConfigurer::J2CPP_CLASS_NAME, org::apache::http::client::protocol::ClientContextConfigurer::J2CPP_METHOD_NAME(0), org::apache::http::client::protocol::ClientContextConfigurer::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 void org::apache::http::client::protocol::ClientContextConfigurer::setCookieSpecRegistry(local_ref< org::apache::http::cookie::CookieSpecRegistry > const &a0)
 {

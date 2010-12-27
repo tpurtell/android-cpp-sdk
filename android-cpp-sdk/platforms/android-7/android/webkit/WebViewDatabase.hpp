@@ -10,10 +10,12 @@
 #define J2CPP_ANDROID_WEBKIT_WEBVIEWDATABASE_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace android { namespace content { class Context; } } }
 
 
 #include <android/content/Context.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -38,10 +40,13 @@ namespace android { namespace webkit {
 		J2CPP_DECLARE_METHOD(7)
 		J2CPP_DECLARE_FIELD(0)
 
-		WebViewDatabase(jobject jobj)
+		explicit WebViewDatabase(jobject jobj)
 		: cpp_object<WebViewDatabase>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		static local_ref< android::webkit::WebViewDatabase > getInstance(local_ref< android::content::Context > const&);
 		cpp_boolean hasUsernamePassword();
@@ -56,7 +61,6 @@ namespace android { namespace webkit {
 } //namespace webkit
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_WEBKIT_WEBVIEWDATABASE_HPP_DECL
@@ -69,16 +73,12 @@ namespace android { namespace webkit {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::webkit::WebViewDatabase > create< android::webkit::WebViewDatabase>()
+
+android::webkit::WebViewDatabase::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::webkit::WebViewDatabase >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::webkit::WebViewDatabase::J2CPP_CLASS_NAME>(),
-			get_method_id<android::webkit::WebViewDatabase::J2CPP_CLASS_NAME, android::webkit::WebViewDatabase::J2CPP_METHOD_NAME(0), android::webkit::WebViewDatabase::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
 
 local_ref< android::webkit::WebViewDatabase > android::webkit::WebViewDatabase::getInstance(local_ref< android::content::Context > const &a0)
 {

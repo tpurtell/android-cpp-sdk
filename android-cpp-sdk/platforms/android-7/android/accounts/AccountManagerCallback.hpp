@@ -10,10 +10,12 @@
 #define J2CPP_ANDROID_ACCOUNTS_ACCOUNTMANAGERCALLBACK_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace android { namespace accounts { class AccountManagerFuture; } } }
 
 
 #include <android/accounts/AccountManagerFuture.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -30,17 +32,19 @@ namespace android { namespace accounts {
 
 		J2CPP_DECLARE_METHOD(0)
 
-		AccountManagerCallback(jobject jobj)
+		explicit AccountManagerCallback(jobject jobj)
 		: cpp_object<AccountManagerCallback>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		void run(local_ref< android::accounts::AccountManagerFuture > const&);
 	}; //class AccountManagerCallback
 
 } //namespace accounts
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -53,6 +57,12 @@ namespace android { namespace accounts {
 
 namespace j2cpp {
 
+
+
+android::accounts::AccountManagerCallback::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 void android::accounts::AccountManagerCallback::run(local_ref< android::accounts::AccountManagerFuture > const &a0)
 {

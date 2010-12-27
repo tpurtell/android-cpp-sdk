@@ -10,12 +10,14 @@
 #define J2CPP_ANDROID_TELEPHONY_SMSMANAGER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace util { class ArrayList; } } }
 namespace j2cpp { namespace android { namespace app { class PendingIntent; } } }
 
 
 #include <android/app/PendingIntent.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/util/ArrayList.hpp>
 
@@ -48,10 +50,13 @@ namespace android { namespace telephony {
 		J2CPP_DECLARE_FIELD(7)
 		J2CPP_DECLARE_FIELD(8)
 
-		SmsManager(jobject jobj)
+		explicit SmsManager(jobject jobj)
 		: cpp_object<SmsManager>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		void sendTextMessage(local_ref< java::lang::String > const&, local_ref< java::lang::String > const&, local_ref< java::lang::String > const&, local_ref< android::app::PendingIntent > const&, local_ref< android::app::PendingIntent > const&);
 		local_ref< java::util::ArrayList > divideMessage(local_ref< java::lang::String > const&);
@@ -73,7 +78,6 @@ namespace android { namespace telephony {
 } //namespace telephony
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_TELEPHONY_SMSMANAGER_HPP_DECL
@@ -86,16 +90,12 @@ namespace android { namespace telephony {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::telephony::SmsManager > create< android::telephony::SmsManager>()
+
+android::telephony::SmsManager::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::telephony::SmsManager >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::telephony::SmsManager::J2CPP_CLASS_NAME>(),
-			get_method_id<android::telephony::SmsManager::J2CPP_CLASS_NAME, android::telephony::SmsManager::J2CPP_METHOD_NAME(0), android::telephony::SmsManager::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
 
 void android::telephony::SmsManager::sendTextMessage(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1, local_ref< java::lang::String > const &a2, local_ref< android::app::PendingIntent > const &a3, local_ref< android::app::PendingIntent > const &a4)
 {

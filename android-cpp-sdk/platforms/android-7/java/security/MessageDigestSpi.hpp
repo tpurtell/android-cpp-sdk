@@ -38,17 +38,20 @@ namespace java { namespace security {
 		J2CPP_DECLARE_METHOD(7)
 		J2CPP_DECLARE_METHOD(8)
 
-		MessageDigestSpi(jobject jobj)
+		explicit MessageDigestSpi(jobject jobj)
 		: cpp_object<MessageDigestSpi>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		MessageDigestSpi();
 		local_ref< java::lang::Object > clone();
 	}; //class MessageDigestSpi
 
 } //namespace security
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -62,16 +65,23 @@ namespace java { namespace security {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::security::MessageDigestSpi > create< java::security::MessageDigestSpi>()
+
+java::security::MessageDigestSpi::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::security::MessageDigestSpi >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::security::MessageDigestSpi::J2CPP_CLASS_NAME>(),
-			get_method_id<java::security::MessageDigestSpi::J2CPP_CLASS_NAME, java::security::MessageDigestSpi::J2CPP_METHOD_NAME(0), java::security::MessageDigestSpi::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+java::security::MessageDigestSpi::MessageDigestSpi()
+: cpp_object<java::security::MessageDigestSpi>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::security::MessageDigestSpi::J2CPP_CLASS_NAME>(),
+		get_method_id<java::security::MessageDigestSpi::J2CPP_CLASS_NAME, java::security::MessageDigestSpi::J2CPP_METHOD_NAME(0), java::security::MessageDigestSpi::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 
 

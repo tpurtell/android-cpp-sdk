@@ -10,8 +10,10 @@
 #define J2CPP_JAVA_SECURITY_SECURECLASSLOADER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class ClassLoader; } } }
 
 
+#include <java/lang/ClassLoader.hpp>
 
 
 namespace j2cpp {
@@ -32,16 +34,18 @@ namespace java { namespace security {
 		J2CPP_DECLARE_METHOD(3)
 		J2CPP_DECLARE_METHOD(4)
 
-		SecureClassLoader(jobject jobj)
+		explicit SecureClassLoader(jobject jobj)
 		: cpp_object<SecureClassLoader>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::ClassLoader>() const;
+
 
 	}; //class SecureClassLoader
 
 } //namespace security
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -55,28 +59,13 @@ namespace java { namespace security {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::security::SecureClassLoader > create< java::security::SecureClassLoader>()
+
+java::security::SecureClassLoader::operator local_ref<java::lang::ClassLoader>() const
 {
-	return local_ref< java::security::SecureClassLoader >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::security::SecureClassLoader::J2CPP_CLASS_NAME>(),
-			get_method_id<java::security::SecureClassLoader::J2CPP_CLASS_NAME, java::security::SecureClassLoader::J2CPP_METHOD_NAME(0), java::security::SecureClassLoader::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::ClassLoader>(get_jtype());
 }
 
-template <>
-local_ref< java::security::SecureClassLoader > create< java::security::SecureClassLoader>(local_ref< java::lang::ClassLoader > const &a0)
-{
-	return local_ref< java::security::SecureClassLoader >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::security::SecureClassLoader::J2CPP_CLASS_NAME>(),
-			get_method_id<java::security::SecureClassLoader::J2CPP_CLASS_NAME, java::security::SecureClassLoader::J2CPP_METHOD_NAME(1), java::security::SecureClassLoader::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
-}
+
 
 
 

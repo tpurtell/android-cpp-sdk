@@ -10,8 +10,10 @@
 #define J2CPP_ANDROID_APP_ALIASACTIVITY_HPP_DECL
 
 
+namespace j2cpp { namespace android { namespace app { class Activity; } } }
 
 
+#include <android/app/Activity.hpp>
 
 
 namespace j2cpp {
@@ -29,16 +31,19 @@ namespace android { namespace app {
 		J2CPP_DECLARE_METHOD(0)
 		J2CPP_DECLARE_METHOD(1)
 
-		AliasActivity(jobject jobj)
+		explicit AliasActivity(jobject jobj)
 		: cpp_object<AliasActivity>(jobj)
 		{
 		}
 
+		operator local_ref<android::app::Activity>() const;
+
+
+		AliasActivity();
 	}; //class AliasActivity
 
 } //namespace app
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -52,16 +57,23 @@ namespace android { namespace app {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::app::AliasActivity > create< android::app::AliasActivity>()
+
+android::app::AliasActivity::operator local_ref<android::app::Activity>() const
 {
-	return local_ref< android::app::AliasActivity >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::app::AliasActivity::J2CPP_CLASS_NAME>(),
-			get_method_id<android::app::AliasActivity::J2CPP_CLASS_NAME, android::app::AliasActivity::J2CPP_METHOD_NAME(0), android::app::AliasActivity::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<android::app::Activity>(get_jtype());
 }
+
+
+android::app::AliasActivity::AliasActivity()
+: cpp_object<android::app::AliasActivity>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::app::AliasActivity::J2CPP_CLASS_NAME>(),
+		get_method_id<android::app::AliasActivity::J2CPP_CLASS_NAME, android::app::AliasActivity::J2CPP_METHOD_NAME(0), android::app::AliasActivity::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 
 

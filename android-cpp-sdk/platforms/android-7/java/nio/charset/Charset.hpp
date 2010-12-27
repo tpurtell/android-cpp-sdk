@@ -11,6 +11,7 @@
 
 
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace lang { class Comparable; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace util { class Set; } } }
 namespace j2cpp { namespace java { namespace util { class SortedMap; } } }
@@ -21,6 +22,7 @@ namespace j2cpp { namespace java { namespace nio { namespace charset { class Cha
 namespace j2cpp { namespace java { namespace nio { namespace charset { class CharsetDecoder; } } } }
 
 
+#include <java/lang/Comparable.hpp>
 #include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/nio/ByteBuffer.hpp>
@@ -67,10 +69,14 @@ namespace java { namespace nio { namespace charset {
 		J2CPP_DECLARE_METHOD(20)
 		J2CPP_DECLARE_METHOD(21)
 
-		Charset(jobject jobj)
+		explicit Charset(jobject jobj)
 		: cpp_object<Charset>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::lang::Comparable>() const;
+
 
 		static local_ref< java::util::SortedMap > availableCharsets();
 		static local_ref< java::nio::charset::Charset > forName(local_ref< java::lang::String > const&);
@@ -99,7 +105,6 @@ namespace java { namespace nio { namespace charset {
 } //namespace nio
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_NIO_CHARSET_CHARSET_HPP_DECL
@@ -112,17 +117,17 @@ namespace java { namespace nio { namespace charset {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::nio::charset::Charset > create< java::nio::charset::Charset>(local_ref< java::lang::String > const &a0, local_ref< cpp_object_array<java::lang::String, 1> > const &a1)
+
+java::nio::charset::Charset::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::nio::charset::Charset >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::nio::charset::Charset::J2CPP_CLASS_NAME>(),
-			get_method_id<java::nio::charset::Charset::J2CPP_CLASS_NAME, java::nio::charset::Charset::J2CPP_METHOD_NAME(0), java::nio::charset::Charset::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+java::nio::charset::Charset::operator local_ref<java::lang::Comparable>() const
+{
+	return local_ref<java::lang::Comparable>(get_jtype());
+}
+
 
 local_ref< java::util::SortedMap > java::nio::charset::Charset::availableCharsets()
 {

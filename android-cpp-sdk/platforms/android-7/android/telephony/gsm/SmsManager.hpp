@@ -10,12 +10,14 @@
 #define J2CPP_ANDROID_TELEPHONY_GSM_SMSMANAGER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace util { class ArrayList; } } }
 namespace j2cpp { namespace android { namespace app { class PendingIntent; } } }
 
 
 #include <android/app/PendingIntent.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/util/ArrayList.hpp>
 
@@ -48,10 +50,13 @@ namespace android { namespace telephony { namespace gsm {
 		J2CPP_DECLARE_FIELD(7)
 		J2CPP_DECLARE_FIELD(8)
 
-		SmsManager(jobject jobj)
+		explicit SmsManager(jobject jobj)
 		: cpp_object<SmsManager>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		static local_ref< android::telephony::gsm::SmsManager > getDefault();
 		void sendTextMessage(local_ref< java::lang::String > const&, local_ref< java::lang::String > const&, local_ref< java::lang::String > const&, local_ref< android::app::PendingIntent > const&, local_ref< android::app::PendingIntent > const&);
@@ -74,7 +79,6 @@ namespace android { namespace telephony { namespace gsm {
 } //namespace telephony
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_TELEPHONY_GSM_SMSMANAGER_HPP_DECL
@@ -87,16 +91,12 @@ namespace android { namespace telephony { namespace gsm {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::telephony::gsm::SmsManager > create< android::telephony::gsm::SmsManager>()
+
+android::telephony::gsm::SmsManager::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::telephony::gsm::SmsManager >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::telephony::gsm::SmsManager::J2CPP_CLASS_NAME>(),
-			get_method_id<android::telephony::gsm::SmsManager::J2CPP_CLASS_NAME, android::telephony::gsm::SmsManager::J2CPP_METHOD_NAME(0), android::telephony::gsm::SmsManager::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
 
 local_ref< android::telephony::gsm::SmsManager > android::telephony::gsm::SmsManager::getDefault()
 {

@@ -10,10 +10,12 @@
 #define J2CPP_ANDROID_GRAPHICS_PORTERDUFFXFERMODE_HPP_DECL
 
 
+namespace j2cpp { namespace android { namespace graphics { class Xfermode; } } }
 namespace j2cpp { namespace android { namespace graphics { namespace PorterDuff_ { class Mode; } } } }
 
 
 #include <android/graphics/PorterDuff.hpp>
+#include <android/graphics/Xfermode.hpp>
 
 
 namespace j2cpp {
@@ -30,16 +32,19 @@ namespace android { namespace graphics {
 
 		J2CPP_DECLARE_METHOD(0)
 
-		PorterDuffXfermode(jobject jobj)
+		explicit PorterDuffXfermode(jobject jobj)
 		: cpp_object<PorterDuffXfermode>(jobj)
 		{
 		}
 
+		operator local_ref<android::graphics::Xfermode>() const;
+
+
+		PorterDuffXfermode(local_ref< android::graphics::PorterDuff_::Mode > const&);
 	}; //class PorterDuffXfermode
 
 } //namespace graphics
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -53,17 +58,24 @@ namespace android { namespace graphics {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::graphics::PorterDuffXfermode > create< android::graphics::PorterDuffXfermode>(local_ref< android::graphics::PorterDuff_::Mode > const &a0)
+
+android::graphics::PorterDuffXfermode::operator local_ref<android::graphics::Xfermode>() const
 {
-	return local_ref< android::graphics::PorterDuffXfermode >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::graphics::PorterDuffXfermode::J2CPP_CLASS_NAME>(),
-			get_method_id<android::graphics::PorterDuffXfermode::J2CPP_CLASS_NAME, android::graphics::PorterDuffXfermode::J2CPP_METHOD_NAME(0), android::graphics::PorterDuffXfermode::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<android::graphics::Xfermode>(get_jtype());
 }
+
+
+android::graphics::PorterDuffXfermode::PorterDuffXfermode(local_ref< android::graphics::PorterDuff_::Mode > const &a0)
+: cpp_object<android::graphics::PorterDuffXfermode>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::graphics::PorterDuffXfermode::J2CPP_CLASS_NAME>(),
+		get_method_id<android::graphics::PorterDuffXfermode::J2CPP_CLASS_NAME, android::graphics::PorterDuffXfermode::J2CPP_METHOD_NAME(0), android::graphics::PorterDuffXfermode::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 
 J2CPP_DEFINE_CLASS(android::graphics::PorterDuffXfermode,"android/graphics/PorterDuffXfermode")

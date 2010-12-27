@@ -12,10 +12,14 @@
 
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace org { namespace xml { namespace sax { class Attributes; } } } }
+namespace j2cpp { namespace org { namespace xml { namespace sax { namespace ext { class Attributes2; } } } } }
+namespace j2cpp { namespace org { namespace xml { namespace sax { namespace helpers { class AttributesImpl; } } } } }
 
 
 #include <java/lang/String.hpp>
 #include <org/xml/sax/Attributes.hpp>
+#include <org/xml/sax/ext/Attributes2.hpp>
+#include <org/xml/sax/helpers/AttributesImpl.hpp>
 
 
 namespace j2cpp {
@@ -44,11 +48,17 @@ namespace org { namespace xml { namespace sax { namespace ext {
 		J2CPP_DECLARE_METHOD(11)
 		J2CPP_DECLARE_METHOD(12)
 
-		Attributes2Impl(jobject jobj)
+		explicit Attributes2Impl(jobject jobj)
 		: cpp_object<Attributes2Impl>(jobj)
 		{
 		}
 
+		operator local_ref<org::xml::sax::helpers::AttributesImpl>() const;
+		operator local_ref<org::xml::sax::ext::Attributes2>() const;
+
+
+		Attributes2Impl();
+		Attributes2Impl(local_ref< org::xml::sax::Attributes > const&);
 		cpp_boolean isDeclared(cpp_int const&);
 		cpp_boolean isDeclared(local_ref< java::lang::String > const&, local_ref< java::lang::String > const&);
 		cpp_boolean isDeclared(local_ref< java::lang::String > const&);
@@ -67,7 +77,6 @@ namespace org { namespace xml { namespace sax { namespace ext {
 } //namespace xml
 } //namespace org
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ORG_XML_SAX_EXT_ATTRIBUTES2IMPL_HPP_DECL
@@ -80,28 +89,41 @@ namespace org { namespace xml { namespace sax { namespace ext {
 namespace j2cpp {
 
 
-template <>
-local_ref< org::xml::sax::ext::Attributes2Impl > create< org::xml::sax::ext::Attributes2Impl>()
+
+org::xml::sax::ext::Attributes2Impl::operator local_ref<org::xml::sax::helpers::AttributesImpl>() const
 {
-	return local_ref< org::xml::sax::ext::Attributes2Impl >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::xml::sax::ext::Attributes2Impl::J2CPP_CLASS_NAME>(),
-			get_method_id<org::xml::sax::ext::Attributes2Impl::J2CPP_CLASS_NAME, org::xml::sax::ext::Attributes2Impl::J2CPP_METHOD_NAME(0), org::xml::sax::ext::Attributes2Impl::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<org::xml::sax::helpers::AttributesImpl>(get_jtype());
 }
 
-template <>
-local_ref< org::xml::sax::ext::Attributes2Impl > create< org::xml::sax::ext::Attributes2Impl>(local_ref< org::xml::sax::Attributes > const &a0)
+org::xml::sax::ext::Attributes2Impl::operator local_ref<org::xml::sax::ext::Attributes2>() const
 {
-	return local_ref< org::xml::sax::ext::Attributes2Impl >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::xml::sax::ext::Attributes2Impl::J2CPP_CLASS_NAME>(),
-			get_method_id<org::xml::sax::ext::Attributes2Impl::J2CPP_CLASS_NAME, org::xml::sax::ext::Attributes2Impl::J2CPP_METHOD_NAME(1), org::xml::sax::ext::Attributes2Impl::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<org::xml::sax::ext::Attributes2>(get_jtype());
 }
+
+
+org::xml::sax::ext::Attributes2Impl::Attributes2Impl()
+: cpp_object<org::xml::sax::ext::Attributes2Impl>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::xml::sax::ext::Attributes2Impl::J2CPP_CLASS_NAME>(),
+		get_method_id<org::xml::sax::ext::Attributes2Impl::J2CPP_CLASS_NAME, org::xml::sax::ext::Attributes2Impl::J2CPP_METHOD_NAME(0), org::xml::sax::ext::Attributes2Impl::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
+
+
+org::xml::sax::ext::Attributes2Impl::Attributes2Impl(local_ref< org::xml::sax::Attributes > const &a0)
+: cpp_object<org::xml::sax::ext::Attributes2Impl>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::xml::sax::ext::Attributes2Impl::J2CPP_CLASS_NAME>(),
+		get_method_id<org::xml::sax::ext::Attributes2Impl::J2CPP_CLASS_NAME, org::xml::sax::ext::Attributes2Impl::J2CPP_METHOD_NAME(1), org::xml::sax::ext::Attributes2Impl::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 cpp_boolean org::xml::sax::ext::Attributes2Impl::isDeclared(cpp_int const &a0)
 {

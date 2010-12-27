@@ -10,10 +10,12 @@
 #define J2CPP_ANDROID_NET_MAILTO_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace util { class Map; } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/util/Map.hpp>
 
@@ -41,10 +43,13 @@ namespace android { namespace net {
 		J2CPP_DECLARE_METHOD(8)
 		J2CPP_DECLARE_FIELD(0)
 
-		MailTo(jobject jobj)
+		explicit MailTo(jobject jobj)
 		: cpp_object<MailTo>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		static cpp_boolean isMailTo(local_ref< java::lang::String > const&);
 		static local_ref< android::net::MailTo > parse(local_ref< java::lang::String > const&);
@@ -61,7 +66,6 @@ namespace android { namespace net {
 } //namespace net
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_NET_MAILTO_HPP_DECL
@@ -74,16 +78,12 @@ namespace android { namespace net {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::net::MailTo > create< android::net::MailTo>()
+
+android::net::MailTo::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::net::MailTo >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::net::MailTo::J2CPP_CLASS_NAME>(),
-			get_method_id<android::net::MailTo::J2CPP_CLASS_NAME, android::net::MailTo::J2CPP_METHOD_NAME(0), android::net::MailTo::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
 
 cpp_boolean android::net::MailTo::isMailTo(local_ref< java::lang::String > const &a0)
 {

@@ -11,9 +11,11 @@
 
 
 namespace j2cpp { namespace java { namespace net { class URLStreamHandler; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/net/URLStreamHandler.hpp>
 
@@ -32,17 +34,19 @@ namespace java { namespace net {
 
 		J2CPP_DECLARE_METHOD(0)
 
-		URLStreamHandlerFactory(jobject jobj)
+		explicit URLStreamHandlerFactory(jobject jobj)
 		: cpp_object<URLStreamHandlerFactory>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		local_ref< java::net::URLStreamHandler > createURLStreamHandler(local_ref< java::lang::String > const&);
 	}; //class URLStreamHandlerFactory
 
 } //namespace net
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -55,6 +59,12 @@ namespace java { namespace net {
 
 namespace j2cpp {
 
+
+
+java::net::URLStreamHandlerFactory::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 local_ref< java::net::URLStreamHandler > java::net::URLStreamHandlerFactory::createURLStreamHandler(local_ref< java::lang::String > const &a0)
 {

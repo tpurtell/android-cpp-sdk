@@ -10,10 +10,12 @@
 #define J2CPP_JAVAX_NET_SSL_SSLEXCEPTION_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class IOException; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace lang { class Throwable; } } }
 
 
+#include <java/io/IOException.hpp>
 #include <java/lang/String.hpp>
 #include <java/lang/Throwable.hpp>
 
@@ -34,17 +36,22 @@ namespace javax { namespace net { namespace ssl {
 		J2CPP_DECLARE_METHOD(1)
 		J2CPP_DECLARE_METHOD(2)
 
-		SSLException(jobject jobj)
+		explicit SSLException(jobject jobj)
 		: cpp_object<SSLException>(jobj)
 		{
 		}
 
+		operator local_ref<java::io::IOException>() const;
+
+
+		SSLException(local_ref< java::lang::String > const&);
+		SSLException(local_ref< java::lang::String > const&, local_ref< java::lang::Throwable > const&);
+		SSLException(local_ref< java::lang::Throwable > const&);
 	}; //class SSLException
 
 } //namespace ssl
 } //namespace net
 } //namespace javax
-
 
 } //namespace j2cpp
 
@@ -58,41 +65,50 @@ namespace javax { namespace net { namespace ssl {
 namespace j2cpp {
 
 
-template <>
-local_ref< javax::net::ssl::SSLException > create< javax::net::ssl::SSLException>(local_ref< java::lang::String > const &a0)
+
+javax::net::ssl::SSLException::operator local_ref<java::io::IOException>() const
 {
-	return local_ref< javax::net::ssl::SSLException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<javax::net::ssl::SSLException::J2CPP_CLASS_NAME>(),
-			get_method_id<javax::net::ssl::SSLException::J2CPP_CLASS_NAME, javax::net::ssl::SSLException::J2CPP_METHOD_NAME(0), javax::net::ssl::SSLException::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::io::IOException>(get_jtype());
 }
 
-template <>
-local_ref< javax::net::ssl::SSLException > create< javax::net::ssl::SSLException>(local_ref< java::lang::String > const &a0, local_ref< java::lang::Throwable > const &a1)
+
+javax::net::ssl::SSLException::SSLException(local_ref< java::lang::String > const &a0)
+: cpp_object<javax::net::ssl::SSLException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<javax::net::ssl::SSLException::J2CPP_CLASS_NAME>(),
+		get_method_id<javax::net::ssl::SSLException::J2CPP_CLASS_NAME, javax::net::ssl::SSLException::J2CPP_METHOD_NAME(0), javax::net::ssl::SSLException::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< javax::net::ssl::SSLException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<javax::net::ssl::SSLException::J2CPP_CLASS_NAME>(),
-			get_method_id<javax::net::ssl::SSLException::J2CPP_CLASS_NAME, javax::net::ssl::SSLException::J2CPP_METHOD_NAME(1), javax::net::ssl::SSLException::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< javax::net::ssl::SSLException > create< javax::net::ssl::SSLException>(local_ref< java::lang::Throwable > const &a0)
+
+
+javax::net::ssl::SSLException::SSLException(local_ref< java::lang::String > const &a0, local_ref< java::lang::Throwable > const &a1)
+: cpp_object<javax::net::ssl::SSLException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<javax::net::ssl::SSLException::J2CPP_CLASS_NAME>(),
+		get_method_id<javax::net::ssl::SSLException::J2CPP_CLASS_NAME, javax::net::ssl::SSLException::J2CPP_METHOD_NAME(1), javax::net::ssl::SSLException::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
 {
-	return local_ref< javax::net::ssl::SSLException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<javax::net::ssl::SSLException::J2CPP_CLASS_NAME>(),
-			get_method_id<javax::net::ssl::SSLException::J2CPP_CLASS_NAME, javax::net::ssl::SSLException::J2CPP_METHOD_NAME(2), javax::net::ssl::SSLException::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype()
-		)
-	);
 }
+
+
+
+javax::net::ssl::SSLException::SSLException(local_ref< java::lang::Throwable > const &a0)
+: cpp_object<javax::net::ssl::SSLException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<javax::net::ssl::SSLException::J2CPP_CLASS_NAME>(),
+		get_method_id<javax::net::ssl::SSLException::J2CPP_CLASS_NAME, javax::net::ssl::SSLException::J2CPP_METHOD_NAME(2), javax::net::ssl::SSLException::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 
 J2CPP_DEFINE_CLASS(javax::net::ssl::SSLException,"javax/net/ssl/SSLException")

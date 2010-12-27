@@ -10,9 +10,11 @@
 #define J2CPP_JAVA_UTIL_CONCURRENT_LOCKS_READWRITELOCK_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace util { namespace concurrent { namespace locks { class Lock; } } } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/util/concurrent/locks/Lock.hpp>
 
 
@@ -31,10 +33,13 @@ namespace java { namespace util { namespace concurrent { namespace locks {
 		J2CPP_DECLARE_METHOD(0)
 		J2CPP_DECLARE_METHOD(1)
 
-		ReadWriteLock(jobject jobj)
+		explicit ReadWriteLock(jobject jobj)
 		: cpp_object<ReadWriteLock>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		local_ref< java::util::concurrent::locks::Lock > readLock();
 		local_ref< java::util::concurrent::locks::Lock > writeLock();
@@ -44,7 +49,6 @@ namespace java { namespace util { namespace concurrent { namespace locks {
 } //namespace concurrent
 } //namespace util
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -57,6 +61,12 @@ namespace java { namespace util { namespace concurrent { namespace locks {
 
 namespace j2cpp {
 
+
+
+java::util::concurrent::locks::ReadWriteLock::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 local_ref< java::util::concurrent::locks::Lock > java::util::concurrent::locks::ReadWriteLock::readLock()
 {

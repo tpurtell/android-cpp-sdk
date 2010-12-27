@@ -10,9 +10,11 @@
 #define J2CPP_ANDROID_OS_STATFS_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -36,11 +38,15 @@ namespace android { namespace os {
 		J2CPP_DECLARE_METHOD(5)
 		J2CPP_DECLARE_METHOD(6)
 
-		StatFs(jobject jobj)
+		explicit StatFs(jobject jobj)
 		: cpp_object<StatFs>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		StatFs(local_ref< java::lang::String > const&);
 		void restat(local_ref< java::lang::String > const&);
 		cpp_int getBlockSize();
 		cpp_int getBlockCount();
@@ -50,7 +56,6 @@ namespace android { namespace os {
 
 } //namespace os
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -64,17 +69,24 @@ namespace android { namespace os {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::os::StatFs > create< android::os::StatFs>(local_ref< java::lang::String > const &a0)
+
+android::os::StatFs::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::os::StatFs >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::os::StatFs::J2CPP_CLASS_NAME>(),
-			get_method_id<android::os::StatFs::J2CPP_CLASS_NAME, android::os::StatFs::J2CPP_METHOD_NAME(0), android::os::StatFs::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::os::StatFs::StatFs(local_ref< java::lang::String > const &a0)
+: cpp_object<android::os::StatFs>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::os::StatFs::J2CPP_CLASS_NAME>(),
+		get_method_id<android::os::StatFs::J2CPP_CLASS_NAME, android::os::StatFs::J2CPP_METHOD_NAME(0), android::os::StatFs::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 void android::os::StatFs::restat(local_ref< java::lang::String > const &a0)
 {

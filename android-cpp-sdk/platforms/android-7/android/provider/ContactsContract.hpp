@@ -12,9 +12,28 @@
 
 namespace j2cpp { namespace java { namespace io { class InputStream; } } }
 namespace j2cpp { namespace java { namespace lang { class Integer; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class CharSequence; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace android { namespace net { class Uri; } } }
+namespace j2cpp { namespace android { namespace provider { namespace ContactsContract_ { class ContactOptionsColumns; } } } }
+namespace j2cpp { namespace android { namespace provider { namespace ContactsContract_ { class SyncColumns; } } } }
+namespace j2cpp { namespace android { namespace provider { namespace ContactsContract_ { class DataColumns; } } } }
+namespace j2cpp { namespace android { namespace provider { namespace ContactsContract_ { namespace CommonDataKinds_ { class BaseTypes; } } } } }
+namespace j2cpp { namespace android { namespace provider { class BaseColumns; } } }
+namespace j2cpp { namespace android { namespace provider { namespace ContactsContract_ { class DataColumnsWithJoins; } } } }
+namespace j2cpp { namespace android { namespace provider { namespace ContactsContract_ { class GroupsColumns; } } } }
+namespace j2cpp { namespace android { namespace provider { namespace ContactsContract_ { namespace CommonDataKinds_ { class CommonColumns; } } } } }
+namespace j2cpp { namespace android { namespace provider { namespace ContactsContract_ { class ContactStatusColumns; } } } }
+namespace j2cpp { namespace android { namespace provider { namespace ContactsContract_ { class StatusColumns; } } } }
+namespace j2cpp { namespace android { namespace provider { namespace ContactsContract_ { class PresenceColumns; } } } }
+namespace j2cpp { namespace android { namespace provider { namespace ContactsContract_ { class SettingsColumns; } } } }
+namespace j2cpp { namespace android { namespace provider { namespace ContactsContract_ { class RawContactsColumns; } } } }
+namespace j2cpp { namespace android { namespace provider { namespace ContactsContract_ { class BaseSyncColumns; } } } }
+namespace j2cpp { namespace android { namespace provider { namespace ContactsContract_ { class StatusUpdates; } } } }
+namespace j2cpp { namespace android { namespace provider { namespace SyncStateContract_ { class Columns; } } } }
+namespace j2cpp { namespace android { namespace provider { namespace ContactsContract_ { class ContactsColumns; } } } }
+namespace j2cpp { namespace android { namespace provider { namespace ContactsContract_ { class PhoneLookupColumns; } } } }
 namespace j2cpp { namespace android { namespace accounts { class Account; } } }
 namespace j2cpp { namespace android { namespace graphics { class Rect; } } }
 namespace j2cpp { namespace android { namespace content { class ContentProviderClient; } } }
@@ -34,11 +53,15 @@ namespace j2cpp { namespace android { namespace util { class Pair; } } }
 #include <android/content/res/Resources.hpp>
 #include <android/graphics/Rect.hpp>
 #include <android/net/Uri.hpp>
+#include <android/provider/BaseColumns.hpp>
+#include <android/provider/ContactsContract.hpp>
+#include <android/provider/SyncStateContract.hpp>
 #include <android/util/Pair.hpp>
 #include <android/view/View.hpp>
 #include <java/io/InputStream.hpp>
 #include <java/lang/CharSequence.hpp>
 #include <java/lang/Integer.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -89,11 +112,15 @@ namespace android { namespace provider {
 				J2CPP_DECLARE_FIELD(25)
 				J2CPP_DECLARE_FIELD(26)
 
-				Insert(jobject jobj)
+				explicit Insert(jobject jobj)
 				: cpp_object<Insert>(jobj)
 				{
 				}
 
+				operator local_ref<java::lang::Object>() const;
+
+
+				Insert();
 
 				static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(0), J2CPP_FIELD_SIGNATURE(0), local_ref< java::lang::String > > ACTION;
 				static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(1), J2CPP_FIELD_SIGNATURE(1), local_ref< java::lang::String > > FULL_MODE;
@@ -144,11 +171,15 @@ namespace android { namespace provider {
 
 			typedef Intents_::Insert Insert;
 
-			Intents(jobject jobj)
+			explicit Intents(jobject jobj)
 			: cpp_object<Intents>(jobj)
 			{
 			}
 
+			operator local_ref<java::lang::Object>() const;
+
+
+			Intents();
 
 			static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(0), J2CPP_FIELD_SIGNATURE(0), local_ref< java::lang::String > > SEARCH_SUGGESTION_CLICKED;
 			static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(1), J2CPP_FIELD_SIGNATURE(1), local_ref< java::lang::String > > SEARCH_SUGGESTION_DIAL_NUMBER_CLICKED;
@@ -173,10 +204,15 @@ namespace android { namespace provider {
 				J2CPP_DECLARE_METHOD(0)
 				J2CPP_DECLARE_FIELD(0)
 
-				AggregationSuggestions(jobject jobj)
+				explicit AggregationSuggestions(jobject jobj)
 				: cpp_object<AggregationSuggestions>(jobj)
 				{
 				}
+
+				operator local_ref<java::lang::Object>() const;
+				operator local_ref<android::provider::BaseColumns>() const;
+				operator local_ref<android::provider::ContactsContract_::ContactsColumns>() const;
+
 
 
 				static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(0), J2CPP_FIELD_SIGNATURE(0), local_ref< java::lang::String > > CONTENT_DIRECTORY;
@@ -193,10 +229,15 @@ namespace android { namespace provider {
 				J2CPP_DECLARE_METHOD(0)
 				J2CPP_DECLARE_FIELD(0)
 
-				Photo(jobject jobj)
+				explicit Photo(jobject jobj)
 				: cpp_object<Photo>(jobj)
 				{
 				}
+
+				operator local_ref<java::lang::Object>() const;
+				operator local_ref<android::provider::BaseColumns>() const;
+				operator local_ref<android::provider::ContactsContract_::DataColumns>() const;
+
 
 
 				static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(0), J2CPP_FIELD_SIGNATURE(0), local_ref< java::lang::String > > CONTENT_DIRECTORY;
@@ -213,10 +254,15 @@ namespace android { namespace provider {
 				J2CPP_DECLARE_METHOD(0)
 				J2CPP_DECLARE_FIELD(0)
 
-				Data(jobject jobj)
+				explicit Data(jobject jobj)
 				: cpp_object<Data>(jobj)
 				{
 				}
+
+				operator local_ref<java::lang::Object>() const;
+				operator local_ref<android::provider::BaseColumns>() const;
+				operator local_ref<android::provider::ContactsContract_::DataColumns>() const;
+
 
 
 				static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(0), J2CPP_FIELD_SIGNATURE(0), local_ref< java::lang::String > > CONTENT_DIRECTORY;
@@ -253,10 +299,17 @@ namespace android { namespace provider {
 			typedef Contacts_::Photo Photo;
 			typedef Contacts_::Data Data;
 
-			Contacts(jobject jobj)
+			explicit Contacts(jobject jobj)
 			: cpp_object<Contacts>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+			operator local_ref<android::provider::BaseColumns>() const;
+			operator local_ref<android::provider::ContactsContract_::ContactsColumns>() const;
+			operator local_ref<android::provider::ContactsContract_::ContactOptionsColumns>() const;
+			operator local_ref<android::provider::ContactsContract_::ContactStatusColumns>() const;
+
 
 			static local_ref< android::net::Uri > getLookupUri(local_ref< android::content::ContentResolver > const&, local_ref< android::net::Uri > const&);
 			static local_ref< android::net::Uri > getLookupUri(cpp_long const&, local_ref< java::lang::String > const&);
@@ -290,10 +343,13 @@ namespace android { namespace provider {
 			J2CPP_DECLARE_FIELD(3)
 			J2CPP_DECLARE_FIELD(4)
 
-			ContactOptionsColumns(jobject jobj)
+			explicit ContactOptionsColumns(jobject jobj)
 			: cpp_object<ContactOptionsColumns>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+
 
 			static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(0), J2CPP_FIELD_SIGNATURE(0), local_ref< java::lang::String > > TIMES_CONTACTED;
 			static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(1), J2CPP_FIELD_SIGNATURE(1), local_ref< java::lang::String > > LAST_TIME_CONTACTED;
@@ -318,10 +374,14 @@ namespace android { namespace provider {
 				J2CPP_DECLARE_FIELD(1)
 				J2CPP_DECLARE_FIELD(2)
 
-				GroupMembership(jobject jobj)
+				explicit GroupMembership(jobject jobj)
 				: cpp_object<GroupMembership>(jobj)
 				{
 				}
+
+				operator local_ref<java::lang::Object>() const;
+				operator local_ref<android::provider::ContactsContract_::DataColumnsWithJoins>() const;
+
 
 
 				static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(0), J2CPP_FIELD_SIGNATURE(0), local_ref< java::lang::String > > CONTENT_ITEM_TYPE;
@@ -346,10 +406,15 @@ namespace android { namespace provider {
 				J2CPP_DECLARE_FIELD(5)
 				J2CPP_DECLARE_FIELD(6)
 
-				Nickname(jobject jobj)
+				explicit Nickname(jobject jobj)
 				: cpp_object<Nickname>(jobj)
 				{
 				}
+
+				operator local_ref<java::lang::Object>() const;
+				operator local_ref<android::provider::ContactsContract_::DataColumnsWithJoins>() const;
+				operator local_ref<android::provider::ContactsContract_::CommonDataKinds_::CommonColumns>() const;
+
 
 
 				static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(0), J2CPP_FIELD_SIGNATURE(0), local_ref< java::lang::String > > CONTENT_ITEM_TYPE;
@@ -371,10 +436,13 @@ namespace android { namespace provider {
 
 				J2CPP_DECLARE_FIELD(0)
 
-				BaseTypes(jobject jobj)
+				explicit BaseTypes(jobject jobj)
 				: cpp_object<BaseTypes>(jobj)
 				{
 				}
+
+				operator local_ref<java::lang::Object>() const;
+
 
 				static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(0), J2CPP_FIELD_SIGNATURE(0), cpp_int > TYPE_CUSTOM;
 			}; //class BaseTypes
@@ -409,10 +477,15 @@ namespace android { namespace provider {
 				J2CPP_DECLARE_FIELD(14)
 				J2CPP_DECLARE_FIELD(15)
 
-				Im(jobject jobj)
+				explicit Im(jobject jobj)
 				: cpp_object<Im>(jobj)
 				{
 				}
+
+				operator local_ref<java::lang::Object>() const;
+				operator local_ref<android::provider::ContactsContract_::DataColumnsWithJoins>() const;
+				operator local_ref<android::provider::ContactsContract_::CommonDataKinds_::CommonColumns>() const;
+
 
 				static cpp_int getTypeLabelResource(cpp_int const&);
 				static local_ref< java::lang::CharSequence > getTypeLabel(local_ref< android::content::res::Resources > const&, cpp_int const&, local_ref< java::lang::CharSequence > const&);
@@ -449,10 +522,14 @@ namespace android { namespace provider {
 				J2CPP_DECLARE_FIELD(1)
 				J2CPP_DECLARE_FIELD(2)
 
-				CommonColumns(jobject jobj)
+				explicit CommonColumns(jobject jobj)
 				: cpp_object<CommonColumns>(jobj)
 				{
 				}
+
+				operator local_ref<java::lang::Object>() const;
+				operator local_ref<android::provider::ContactsContract_::CommonDataKinds_::BaseTypes>() const;
+
 
 				static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(0), J2CPP_FIELD_SIGNATURE(0), local_ref< java::lang::String > > DATA;
 				static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(1), J2CPP_FIELD_SIGNATURE(1), local_ref< java::lang::String > > TYPE;
@@ -481,10 +558,15 @@ namespace android { namespace provider {
 				J2CPP_DECLARE_FIELD(8)
 				J2CPP_DECLARE_FIELD(9)
 
-				Organization(jobject jobj)
+				explicit Organization(jobject jobj)
 				: cpp_object<Organization>(jobj)
 				{
 				}
+
+				operator local_ref<java::lang::Object>() const;
+				operator local_ref<android::provider::ContactsContract_::DataColumnsWithJoins>() const;
+				operator local_ref<android::provider::ContactsContract_::CommonDataKinds_::CommonColumns>() const;
+
 
 				static cpp_int getTypeLabelResource(cpp_int const&);
 				static local_ref< java::lang::CharSequence > getTypeLabel(local_ref< android::content::res::Resources > const&, cpp_int const&, local_ref< java::lang::CharSequence > const&);
@@ -528,10 +610,15 @@ namespace android { namespace provider {
 				J2CPP_DECLARE_FIELD(12)
 				J2CPP_DECLARE_FIELD(13)
 
-				StructuredPostal(jobject jobj)
+				explicit StructuredPostal(jobject jobj)
 				: cpp_object<StructuredPostal>(jobj)
 				{
 				}
+
+				operator local_ref<java::lang::Object>() const;
+				operator local_ref<android::provider::ContactsContract_::DataColumnsWithJoins>() const;
+				operator local_ref<android::provider::ContactsContract_::CommonDataKinds_::CommonColumns>() const;
+
 
 				static cpp_int getTypeLabelResource(cpp_int const&);
 				static local_ref< java::lang::CharSequence > getTypeLabel(local_ref< android::content::res::Resources > const&, cpp_int const&, local_ref< java::lang::CharSequence > const&);
@@ -568,10 +655,15 @@ namespace android { namespace provider {
 				J2CPP_DECLARE_FIELD(3)
 				J2CPP_DECLARE_FIELD(4)
 
-				Event(jobject jobj)
+				explicit Event(jobject jobj)
 				: cpp_object<Event>(jobj)
 				{
 				}
+
+				operator local_ref<java::lang::Object>() const;
+				operator local_ref<android::provider::ContactsContract_::DataColumnsWithJoins>() const;
+				operator local_ref<android::provider::ContactsContract_::CommonDataKinds_::CommonColumns>() const;
+
 
 				static cpp_int getTypeResource(local_ref< java::lang::Integer > const&);
 
@@ -601,10 +693,15 @@ namespace android { namespace provider {
 				J2CPP_DECLARE_FIELD(7)
 				J2CPP_DECLARE_FIELD(8)
 
-				Website(jobject jobj)
+				explicit Website(jobject jobj)
 				: cpp_object<Website>(jobj)
 				{
 				}
+
+				operator local_ref<java::lang::Object>() const;
+				operator local_ref<android::provider::ContactsContract_::DataColumnsWithJoins>() const;
+				operator local_ref<android::provider::ContactsContract_::CommonDataKinds_::CommonColumns>() const;
+
 
 
 				static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(0), J2CPP_FIELD_SIGNATURE(0), local_ref< java::lang::String > > CONTENT_ITEM_TYPE;
@@ -656,10 +753,15 @@ namespace android { namespace provider {
 				J2CPP_DECLARE_FIELD(23)
 				J2CPP_DECLARE_FIELD(24)
 
-				Phone(jobject jobj)
+				explicit Phone(jobject jobj)
 				: cpp_object<Phone>(jobj)
 				{
 				}
+
+				operator local_ref<java::lang::Object>() const;
+				operator local_ref<android::provider::ContactsContract_::DataColumnsWithJoins>() const;
+				operator local_ref<android::provider::ContactsContract_::CommonDataKinds_::CommonColumns>() const;
+
 
 				static cpp_int getTypeLabelResource(cpp_int const&);
 				static local_ref< java::lang::CharSequence > getTypeLabel(local_ref< android::content::res::Resources > const&, cpp_int const&, local_ref< java::lang::CharSequence > const&);
@@ -703,10 +805,14 @@ namespace android { namespace provider {
 				J2CPP_DECLARE_FIELD(0)
 				J2CPP_DECLARE_FIELD(1)
 
-				Note(jobject jobj)
+				explicit Note(jobject jobj)
 				: cpp_object<Note>(jobj)
 				{
 				}
+
+				operator local_ref<java::lang::Object>() const;
+				operator local_ref<android::provider::ContactsContract_::DataColumnsWithJoins>() const;
+
 
 
 				static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(0), J2CPP_FIELD_SIGNATURE(0), local_ref< java::lang::String > > CONTENT_ITEM_TYPE;
@@ -739,10 +845,15 @@ namespace android { namespace provider {
 				J2CPP_DECLARE_FIELD(14)
 				J2CPP_DECLARE_FIELD(15)
 
-				Relation(jobject jobj)
+				explicit Relation(jobject jobj)
 				: cpp_object<Relation>(jobj)
 				{
 				}
+
+				operator local_ref<java::lang::Object>() const;
+				operator local_ref<android::provider::ContactsContract_::DataColumnsWithJoins>() const;
+				operator local_ref<android::provider::ContactsContract_::CommonDataKinds_::CommonColumns>() const;
+
 
 
 				static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(0), J2CPP_FIELD_SIGNATURE(0), local_ref< java::lang::String > > CONTENT_ITEM_TYPE;
@@ -786,10 +897,15 @@ namespace android { namespace provider {
 				J2CPP_DECLARE_FIELD(8)
 				J2CPP_DECLARE_FIELD(9)
 
-				Email(jobject jobj)
+				explicit Email(jobject jobj)
 				: cpp_object<Email>(jobj)
 				{
 				}
+
+				operator local_ref<java::lang::Object>() const;
+				operator local_ref<android::provider::ContactsContract_::DataColumnsWithJoins>() const;
+				operator local_ref<android::provider::ContactsContract_::CommonDataKinds_::CommonColumns>() const;
+
 
 				static cpp_int getTypeLabelResource(cpp_int const&);
 				static local_ref< java::lang::CharSequence > getTypeLabel(local_ref< android::content::res::Resources > const&, cpp_int const&, local_ref< java::lang::CharSequence > const&);
@@ -818,10 +934,14 @@ namespace android { namespace provider {
 				J2CPP_DECLARE_FIELD(0)
 				J2CPP_DECLARE_FIELD(1)
 
-				Photo(jobject jobj)
+				explicit Photo(jobject jobj)
 				: cpp_object<Photo>(jobj)
 				{
 				}
+
+				operator local_ref<java::lang::Object>() const;
+				operator local_ref<android::provider::ContactsContract_::DataColumnsWithJoins>() const;
+
 
 
 				static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(0), J2CPP_FIELD_SIGNATURE(0), local_ref< java::lang::String > > CONTENT_ITEM_TYPE;
@@ -848,10 +968,14 @@ namespace android { namespace provider {
 				J2CPP_DECLARE_FIELD(8)
 				J2CPP_DECLARE_FIELD(9)
 
-				StructuredName(jobject jobj)
+				explicit StructuredName(jobject jobj)
 				: cpp_object<StructuredName>(jobj)
 				{
 				}
+
+				operator local_ref<java::lang::Object>() const;
+				operator local_ref<android::provider::ContactsContract_::DataColumnsWithJoins>() const;
+
 
 
 				static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(0), J2CPP_FIELD_SIGNATURE(0), local_ref< java::lang::String > > CONTENT_ITEM_TYPE;
@@ -893,10 +1017,13 @@ namespace android { namespace provider {
 			typedef CommonDataKinds_::Photo Photo;
 			typedef CommonDataKinds_::StructuredName StructuredName;
 
-			CommonDataKinds(jobject jobj)
+			explicit CommonDataKinds(jobject jobj)
 			: cpp_object<CommonDataKinds>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+
 
 		}; //class CommonDataKinds
 
@@ -914,10 +1041,14 @@ namespace android { namespace provider {
 			J2CPP_DECLARE_FIELD(3)
 			J2CPP_DECLARE_FIELD(4)
 
-			SyncColumns(jobject jobj)
+			explicit SyncColumns(jobject jobj)
 			: cpp_object<SyncColumns>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+			operator local_ref<android::provider::ContactsContract_::BaseSyncColumns>() const;
+
 
 			static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(0), J2CPP_FIELD_SIGNATURE(0), local_ref< java::lang::String > > ACCOUNT_NAME;
 			static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(1), J2CPP_FIELD_SIGNATURE(1), local_ref< java::lang::String > > ACCOUNT_TYPE;
@@ -940,10 +1071,14 @@ namespace android { namespace provider {
 			J2CPP_DECLARE_FIELD(1)
 			J2CPP_DECLARE_FIELD(2)
 
-			Settings(jobject jobj)
+			explicit Settings(jobject jobj)
 			: cpp_object<Settings>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+			operator local_ref<android::provider::ContactsContract_::SettingsColumns>() const;
+
 
 
 			static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(0), J2CPP_FIELD_SIGNATURE(0), local_ref< android::net::Uri > > CONTENT_URI;
@@ -984,10 +1119,13 @@ namespace android { namespace provider {
 			J2CPP_DECLARE_FIELD(22)
 			J2CPP_DECLARE_FIELD(23)
 
-			DataColumns(jobject jobj)
+			explicit DataColumns(jobject jobj)
 			: cpp_object<DataColumns>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+
 
 			static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(0), J2CPP_FIELD_SIGNATURE(0), local_ref< java::lang::String > > MIMETYPE;
 			static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(1), J2CPP_FIELD_SIGNATURE(1), local_ref< java::lang::String > > RAW_CONTACT_ID;
@@ -1030,10 +1168,15 @@ namespace android { namespace provider {
 				J2CPP_DECLARE_FIELD(0)
 				J2CPP_DECLARE_FIELD(1)
 
-				Entity(jobject jobj)
+				explicit Entity(jobject jobj)
 				: cpp_object<Entity>(jobj)
 				{
 				}
+
+				operator local_ref<java::lang::Object>() const;
+				operator local_ref<android::provider::BaseColumns>() const;
+				operator local_ref<android::provider::ContactsContract_::DataColumns>() const;
+
 
 
 				static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(0), J2CPP_FIELD_SIGNATURE(0), local_ref< java::lang::String > > CONTENT_DIRECTORY;
@@ -1051,10 +1194,15 @@ namespace android { namespace provider {
 				J2CPP_DECLARE_METHOD(0)
 				J2CPP_DECLARE_FIELD(0)
 
-				Data(jobject jobj)
+				explicit Data(jobject jobj)
 				: cpp_object<Data>(jobj)
 				{
 				}
+
+				operator local_ref<java::lang::Object>() const;
+				operator local_ref<android::provider::BaseColumns>() const;
+				operator local_ref<android::provider::ContactsContract_::DataColumns>() const;
+
 
 
 				static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(0), J2CPP_FIELD_SIGNATURE(0), local_ref< java::lang::String > > CONTENT_DIRECTORY;
@@ -1083,10 +1231,17 @@ namespace android { namespace provider {
 			typedef RawContacts_::Entity Entity;
 			typedef RawContacts_::Data Data;
 
-			RawContacts(jobject jobj)
+			explicit RawContacts(jobject jobj)
 			: cpp_object<RawContacts>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+			operator local_ref<android::provider::BaseColumns>() const;
+			operator local_ref<android::provider::ContactsContract_::RawContactsColumns>() const;
+			operator local_ref<android::provider::ContactsContract_::ContactOptionsColumns>() const;
+			operator local_ref<android::provider::ContactsContract_::SyncColumns>() const;
+
 
 			static local_ref< android::net::Uri > getContactLookupUri(local_ref< android::content::ContentResolver > const&, local_ref< android::net::Uri > const&);
 
@@ -1119,10 +1274,14 @@ namespace android { namespace provider {
 			J2CPP_DECLARE_FIELD(7)
 			J2CPP_DECLARE_FIELD(8)
 
-			AggregationExceptions(jobject jobj)
+			explicit AggregationExceptions(jobject jobj)
 			: cpp_object<AggregationExceptions>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+			operator local_ref<android::provider::BaseColumns>() const;
+
 
 
 			static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(0), J2CPP_FIELD_SIGNATURE(0), local_ref< android::net::Uri > > CONTENT_URI;
@@ -1151,11 +1310,15 @@ namespace android { namespace provider {
 			J2CPP_DECLARE_FIELD(1)
 			J2CPP_DECLARE_FIELD(2)
 
-			QuickContact(jobject jobj)
+			explicit QuickContact(jobject jobj)
 			: cpp_object<QuickContact>(jobj)
 			{
 			}
 
+			operator local_ref<java::lang::Object>() const;
+
+
+			QuickContact();
 			static void showQuickContact(local_ref< android::content::Context > const&, local_ref< android::view::View > const&, local_ref< android::net::Uri > const&, cpp_int const&, local_ref< cpp_object_array<java::lang::String, 1> > const&);
 			static void showQuickContact(local_ref< android::content::Context > const&, local_ref< android::graphics::Rect > const&, local_ref< android::net::Uri > const&, cpp_int const&, local_ref< cpp_object_array<java::lang::String, 1> > const&);
 
@@ -1173,10 +1336,20 @@ namespace android { namespace provider {
 			J2CPP_DECLARE_CLASS
 
 
-			DataColumnsWithJoins(jobject jobj)
+			explicit DataColumnsWithJoins(jobject jobj)
 			: cpp_object<DataColumnsWithJoins>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+			operator local_ref<android::provider::BaseColumns>() const;
+			operator local_ref<android::provider::ContactsContract_::DataColumns>() const;
+			operator local_ref<android::provider::ContactsContract_::StatusColumns>() const;
+			operator local_ref<android::provider::ContactsContract_::RawContactsColumns>() const;
+			operator local_ref<android::provider::ContactsContract_::ContactsColumns>() const;
+			operator local_ref<android::provider::ContactsContract_::ContactOptionsColumns>() const;
+			operator local_ref<android::provider::ContactsContract_::ContactStatusColumns>() const;
+
 		}; //class DataColumnsWithJoins
 
 		class GroupsColumns;
@@ -1196,10 +1369,13 @@ namespace android { namespace provider {
 			J2CPP_DECLARE_FIELD(6)
 			J2CPP_DECLARE_FIELD(7)
 
-			GroupsColumns(jobject jobj)
+			explicit GroupsColumns(jobject jobj)
 			: cpp_object<GroupsColumns>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+
 
 			static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(0), J2CPP_FIELD_SIGNATURE(0), local_ref< java::lang::String > > TITLE;
 			static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(1), J2CPP_FIELD_SIGNATURE(1), local_ref< java::lang::String > > NOTES;
@@ -1228,10 +1404,14 @@ namespace android { namespace provider {
 			J2CPP_DECLARE_FIELD(0)
 			J2CPP_DECLARE_FIELD(1)
 
-			SyncState(jobject jobj)
+			explicit SyncState(jobject jobj)
 			: cpp_object<SyncState>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+			operator local_ref<android::provider::SyncStateContract_::Columns>() const;
+
 
 			static local_ref< cpp_byte_array<1> > get(local_ref< android::content::ContentProviderClient > const&, local_ref< android::accounts::Account > const&);
 			static local_ref< android::util::Pair > getWithUri(local_ref< android::content::ContentProviderClient > const&, local_ref< android::accounts::Account > const&);
@@ -1257,10 +1437,13 @@ namespace android { namespace provider {
 			J2CPP_DECLARE_FIELD(4)
 			J2CPP_DECLARE_FIELD(5)
 
-			ContactStatusColumns(jobject jobj)
+			explicit ContactStatusColumns(jobject jobj)
 			: cpp_object<ContactStatusColumns>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+
 
 			static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(0), J2CPP_FIELD_SIGNATURE(0), local_ref< java::lang::String > > CONTACT_PRESENCE;
 			static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(1), J2CPP_FIELD_SIGNATURE(1), local_ref< java::lang::String > > CONTACT_STATUS;
@@ -1285,10 +1468,13 @@ namespace android { namespace provider {
 			J2CPP_DECLARE_FIELD(4)
 			J2CPP_DECLARE_FIELD(5)
 
-			StatusColumns(jobject jobj)
+			explicit StatusColumns(jobject jobj)
 			: cpp_object<StatusColumns>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+
 
 			static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(0), J2CPP_FIELD_SIGNATURE(0), local_ref< java::lang::String > > PRESENCE;
 			static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(1), J2CPP_FIELD_SIGNATURE(1), local_ref< java::lang::String > > STATUS;
@@ -1312,10 +1498,13 @@ namespace android { namespace provider {
 			J2CPP_DECLARE_FIELD(3)
 			J2CPP_DECLARE_FIELD(4)
 
-			PresenceColumns(jobject jobj)
+			explicit PresenceColumns(jobject jobj)
 			: cpp_object<PresenceColumns>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+
 
 			static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(0), J2CPP_FIELD_SIGNATURE(0), local_ref< java::lang::String > > DATA_ID;
 			static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(1), J2CPP_FIELD_SIGNATURE(1), local_ref< java::lang::String > > PROTOCOL;
@@ -1336,10 +1525,17 @@ namespace android { namespace provider {
 			J2CPP_DECLARE_METHOD(1)
 			J2CPP_DECLARE_FIELD(0)
 
-			PhoneLookup(jobject jobj)
+			explicit PhoneLookup(jobject jobj)
 			: cpp_object<PhoneLookup>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+			operator local_ref<android::provider::BaseColumns>() const;
+			operator local_ref<android::provider::ContactsContract_::PhoneLookupColumns>() const;
+			operator local_ref<android::provider::ContactsContract_::ContactsColumns>() const;
+			operator local_ref<android::provider::ContactsContract_::ContactOptionsColumns>() const;
+
 
 
 			static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(0), J2CPP_FIELD_SIGNATURE(0), local_ref< android::net::Uri > > CONTENT_FILTER_URI;
@@ -1360,10 +1556,16 @@ namespace android { namespace provider {
 			J2CPP_DECLARE_FIELD(2)
 			J2CPP_DECLARE_FIELD(3)
 
-			Groups(jobject jobj)
+			explicit Groups(jobject jobj)
 			: cpp_object<Groups>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+			operator local_ref<android::provider::BaseColumns>() const;
+			operator local_ref<android::provider::ContactsContract_::GroupsColumns>() const;
+			operator local_ref<android::provider::ContactsContract_::SyncColumns>() const;
+
 
 
 			static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(0), J2CPP_FIELD_SIGNATURE(0), local_ref< android::net::Uri > > CONTENT_URI;
@@ -1388,10 +1590,13 @@ namespace android { namespace provider {
 			J2CPP_DECLARE_FIELD(5)
 			J2CPP_DECLARE_FIELD(6)
 
-			SettingsColumns(jobject jobj)
+			explicit SettingsColumns(jobject jobj)
 			: cpp_object<SettingsColumns>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+
 
 			static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(0), J2CPP_FIELD_SIGNATURE(0), local_ref< java::lang::String > > ACCOUNT_NAME;
 			static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(1), J2CPP_FIELD_SIGNATURE(1), local_ref< java::lang::String > > ACCOUNT_TYPE;
@@ -1414,10 +1619,13 @@ namespace android { namespace provider {
 			J2CPP_DECLARE_FIELD(1)
 			J2CPP_DECLARE_FIELD(2)
 
-			RawContactsColumns(jobject jobj)
+			explicit RawContactsColumns(jobject jobj)
 			: cpp_object<RawContactsColumns>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+
 
 			static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(0), J2CPP_FIELD_SIGNATURE(0), local_ref< java::lang::String > > CONTACT_ID;
 			static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(1), J2CPP_FIELD_SIGNATURE(1), local_ref< java::lang::String > > AGGREGATION_MODE;
@@ -1437,10 +1645,13 @@ namespace android { namespace provider {
 			J2CPP_DECLARE_FIELD(2)
 			J2CPP_DECLARE_FIELD(3)
 
-			BaseSyncColumns(jobject jobj)
+			explicit BaseSyncColumns(jobject jobj)
 			: cpp_object<BaseSyncColumns>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+
 
 			static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(0), J2CPP_FIELD_SIGNATURE(0), local_ref< java::lang::String > > SYNC1;
 			static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(1), J2CPP_FIELD_SIGNATURE(1), local_ref< java::lang::String > > SYNC2;
@@ -1464,10 +1675,15 @@ namespace android { namespace provider {
 			J2CPP_DECLARE_FIELD(1)
 			J2CPP_DECLARE_FIELD(2)
 
-			StatusUpdates(jobject jobj)
+			explicit StatusUpdates(jobject jobj)
 			: cpp_object<StatusUpdates>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+			operator local_ref<android::provider::ContactsContract_::StatusColumns>() const;
+			operator local_ref<android::provider::ContactsContract_::PresenceColumns>() const;
+
 
 			static cpp_int getPresenceIconResourceId(cpp_int const&);
 			static cpp_int getPresencePrecedence(cpp_int const&);
@@ -1491,10 +1707,14 @@ namespace android { namespace provider {
 			J2CPP_DECLARE_FIELD(0)
 			J2CPP_DECLARE_FIELD(1)
 
-			Data(jobject jobj)
+			explicit Data(jobject jobj)
 			: cpp_object<Data>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+			operator local_ref<android::provider::ContactsContract_::DataColumnsWithJoins>() const;
+
 
 			static local_ref< android::net::Uri > getContactLookupUri(local_ref< android::content::ContentResolver > const&, local_ref< android::net::Uri > const&);
 
@@ -1516,10 +1736,16 @@ namespace android { namespace provider {
 			J2CPP_DECLARE_FIELD(1)
 			J2CPP_DECLARE_FIELD(2)
 
-			RawContactsEntity(jobject jobj)
+			explicit RawContactsEntity(jobject jobj)
 			: cpp_object<RawContactsEntity>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+			operator local_ref<android::provider::BaseColumns>() const;
+			operator local_ref<android::provider::ContactsContract_::DataColumns>() const;
+			operator local_ref<android::provider::ContactsContract_::RawContactsColumns>() const;
+
 
 
 			static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(0), J2CPP_FIELD_SIGNATURE(0), local_ref< android::net::Uri > > CONTENT_URI;
@@ -1537,11 +1763,15 @@ namespace android { namespace provider {
 
 			J2CPP_DECLARE_METHOD(0)
 
-			Presence(jobject jobj)
+			explicit Presence(jobject jobj)
 			: cpp_object<Presence>(jobj)
 			{
 			}
 
+			operator local_ref<android::provider::ContactsContract_::StatusUpdates>() const;
+
+
+			Presence();
 		}; //class Presence
 
 		class ContactsColumns;
@@ -1558,10 +1788,13 @@ namespace android { namespace provider {
 			J2CPP_DECLARE_FIELD(3)
 			J2CPP_DECLARE_FIELD(4)
 
-			ContactsColumns(jobject jobj)
+			explicit ContactsColumns(jobject jobj)
 			: cpp_object<ContactsColumns>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+
 
 			static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(0), J2CPP_FIELD_SIGNATURE(0), local_ref< java::lang::String > > DISPLAY_NAME;
 			static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(1), J2CPP_FIELD_SIGNATURE(1), local_ref< java::lang::String > > PHOTO_ID;
@@ -1582,10 +1815,13 @@ namespace android { namespace provider {
 			J2CPP_DECLARE_FIELD(1)
 			J2CPP_DECLARE_FIELD(2)
 
-			PhoneLookupColumns(jobject jobj)
+			explicit PhoneLookupColumns(jobject jobj)
 			: cpp_object<PhoneLookupColumns>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+
 
 			static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(0), J2CPP_FIELD_SIGNATURE(0), local_ref< java::lang::String > > NUMBER;
 			static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(1), J2CPP_FIELD_SIGNATURE(1), local_ref< java::lang::String > > TYPE;
@@ -1635,11 +1871,15 @@ namespace android { namespace provider {
 		typedef ContactsContract_::ContactsColumns ContactsColumns;
 		typedef ContactsContract_::PhoneLookupColumns PhoneLookupColumns;
 
-		ContactsContract(jobject jobj)
+		explicit ContactsContract(jobject jobj)
 		: cpp_object<ContactsContract>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		ContactsContract();
 
 		static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(0), J2CPP_FIELD_SIGNATURE(0), local_ref< java::lang::String > > AUTHORITY;
 		static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(1), J2CPP_FIELD_SIGNATURE(1), local_ref< android::net::Uri > > AUTHORITY_URI;
@@ -1648,7 +1888,6 @@ namespace android { namespace provider {
 
 } //namespace provider
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -1664,16 +1903,23 @@ namespace j2cpp {
 
 
 
-template <>
-local_ref< android::provider::ContactsContract_::Intents_::Insert > create< android::provider::ContactsContract_::Intents_::Insert>()
+
+android::provider::ContactsContract_::Intents_::Insert::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::provider::ContactsContract_::Intents_::Insert >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::provider::ContactsContract_::Intents_::Insert::J2CPP_CLASS_NAME>(),
-			get_method_id<android::provider::ContactsContract_::Intents_::Insert::J2CPP_CLASS_NAME, android::provider::ContactsContract_::Intents_::Insert::J2CPP_METHOD_NAME(0), android::provider::ContactsContract_::Intents_::Insert::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::provider::ContactsContract_::Intents_::Insert::Insert()
+: cpp_object<android::provider::ContactsContract_::Intents_::Insert>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::provider::ContactsContract_::Intents_::Insert::J2CPP_CLASS_NAME>(),
+		get_method_id<android::provider::ContactsContract_::Intents_::Insert::J2CPP_CLASS_NAME, android::provider::ContactsContract_::Intents_::Insert::J2CPP_METHOD_NAME(0), android::provider::ContactsContract_::Intents_::Insert::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 
 static_field<
@@ -1897,16 +2143,23 @@ J2CPP_DEFINE_FIELD(android::provider::ContactsContract_::Intents_::Insert,25,"IM
 J2CPP_DEFINE_FIELD(android::provider::ContactsContract_::Intents_::Insert,26,"IM_ISPRIMARY","Ljava/lang/String;")
 
 
-template <>
-local_ref< android::provider::ContactsContract_::Intents > create< android::provider::ContactsContract_::Intents>()
+
+android::provider::ContactsContract_::Intents::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::provider::ContactsContract_::Intents >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::provider::ContactsContract_::Intents::J2CPP_CLASS_NAME>(),
-			get_method_id<android::provider::ContactsContract_::Intents::J2CPP_CLASS_NAME, android::provider::ContactsContract_::Intents::J2CPP_METHOD_NAME(0), android::provider::ContactsContract_::Intents::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::provider::ContactsContract_::Intents::Intents()
+: cpp_object<android::provider::ContactsContract_::Intents>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::provider::ContactsContract_::Intents::J2CPP_CLASS_NAME>(),
+		get_method_id<android::provider::ContactsContract_::Intents::J2CPP_CLASS_NAME, android::provider::ContactsContract_::Intents::J2CPP_METHOD_NAME(0), android::provider::ContactsContract_::Intents::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 
 static_field<
@@ -1970,16 +2223,22 @@ J2CPP_DEFINE_FIELD(android::provider::ContactsContract_::Intents,5,"EXTRA_FORCE_
 J2CPP_DEFINE_FIELD(android::provider::ContactsContract_::Intents,6,"EXTRA_CREATE_DESCRIPTION","Ljava/lang/String;")
 
 
-template <>
-local_ref< android::provider::ContactsContract_::Contacts_::AggregationSuggestions > create< android::provider::ContactsContract_::Contacts_::AggregationSuggestions>()
+
+android::provider::ContactsContract_::Contacts_::AggregationSuggestions::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::provider::ContactsContract_::Contacts_::AggregationSuggestions >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::provider::ContactsContract_::Contacts_::AggregationSuggestions::J2CPP_CLASS_NAME>(),
-			get_method_id<android::provider::ContactsContract_::Contacts_::AggregationSuggestions::J2CPP_CLASS_NAME, android::provider::ContactsContract_::Contacts_::AggregationSuggestions::J2CPP_METHOD_NAME(0), android::provider::ContactsContract_::Contacts_::AggregationSuggestions::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+android::provider::ContactsContract_::Contacts_::AggregationSuggestions::operator local_ref<android::provider::BaseColumns>() const
+{
+	return local_ref<android::provider::BaseColumns>(get_jtype());
+}
+
+android::provider::ContactsContract_::Contacts_::AggregationSuggestions::operator local_ref<android::provider::ContactsContract_::ContactsColumns>() const
+{
+	return local_ref<android::provider::ContactsContract_::ContactsColumns>(get_jtype());
+}
+
 
 
 static_field<
@@ -1994,16 +2253,22 @@ J2CPP_DEFINE_CLASS(android::provider::ContactsContract_::Contacts_::AggregationS
 J2CPP_DEFINE_METHOD(android::provider::ContactsContract_::Contacts_::AggregationSuggestions,0,"<init>","()V")
 J2CPP_DEFINE_FIELD(android::provider::ContactsContract_::Contacts_::AggregationSuggestions,0,"CONTENT_DIRECTORY","Ljava/lang/String;")
 
-template <>
-local_ref< android::provider::ContactsContract_::Contacts_::Photo > create< android::provider::ContactsContract_::Contacts_::Photo>()
+
+android::provider::ContactsContract_::Contacts_::Photo::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::provider::ContactsContract_::Contacts_::Photo >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::provider::ContactsContract_::Contacts_::Photo::J2CPP_CLASS_NAME>(),
-			get_method_id<android::provider::ContactsContract_::Contacts_::Photo::J2CPP_CLASS_NAME, android::provider::ContactsContract_::Contacts_::Photo::J2CPP_METHOD_NAME(0), android::provider::ContactsContract_::Contacts_::Photo::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+android::provider::ContactsContract_::Contacts_::Photo::operator local_ref<android::provider::BaseColumns>() const
+{
+	return local_ref<android::provider::BaseColumns>(get_jtype());
+}
+
+android::provider::ContactsContract_::Contacts_::Photo::operator local_ref<android::provider::ContactsContract_::DataColumns>() const
+{
+	return local_ref<android::provider::ContactsContract_::DataColumns>(get_jtype());
+}
+
 
 
 static_field<
@@ -2018,16 +2283,22 @@ J2CPP_DEFINE_CLASS(android::provider::ContactsContract_::Contacts_::Photo,"andro
 J2CPP_DEFINE_METHOD(android::provider::ContactsContract_::Contacts_::Photo,0,"<init>","()V")
 J2CPP_DEFINE_FIELD(android::provider::ContactsContract_::Contacts_::Photo,0,"CONTENT_DIRECTORY","Ljava/lang/String;")
 
-template <>
-local_ref< android::provider::ContactsContract_::Contacts_::Data > create< android::provider::ContactsContract_::Contacts_::Data>()
+
+android::provider::ContactsContract_::Contacts_::Data::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::provider::ContactsContract_::Contacts_::Data >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::provider::ContactsContract_::Contacts_::Data::J2CPP_CLASS_NAME>(),
-			get_method_id<android::provider::ContactsContract_::Contacts_::Data::J2CPP_CLASS_NAME, android::provider::ContactsContract_::Contacts_::Data::J2CPP_METHOD_NAME(0), android::provider::ContactsContract_::Contacts_::Data::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+android::provider::ContactsContract_::Contacts_::Data::operator local_ref<android::provider::BaseColumns>() const
+{
+	return local_ref<android::provider::BaseColumns>(get_jtype());
+}
+
+android::provider::ContactsContract_::Contacts_::Data::operator local_ref<android::provider::ContactsContract_::DataColumns>() const
+{
+	return local_ref<android::provider::ContactsContract_::DataColumns>(get_jtype());
+}
+
 
 
 static_field<
@@ -2043,16 +2314,32 @@ J2CPP_DEFINE_METHOD(android::provider::ContactsContract_::Contacts_::Data,0,"<in
 J2CPP_DEFINE_FIELD(android::provider::ContactsContract_::Contacts_::Data,0,"CONTENT_DIRECTORY","Ljava/lang/String;")
 
 
-template <>
-local_ref< android::provider::ContactsContract_::Contacts > create< android::provider::ContactsContract_::Contacts>()
+
+android::provider::ContactsContract_::Contacts::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::provider::ContactsContract_::Contacts >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::provider::ContactsContract_::Contacts::J2CPP_CLASS_NAME>(),
-			get_method_id<android::provider::ContactsContract_::Contacts::J2CPP_CLASS_NAME, android::provider::ContactsContract_::Contacts::J2CPP_METHOD_NAME(0), android::provider::ContactsContract_::Contacts::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+android::provider::ContactsContract_::Contacts::operator local_ref<android::provider::BaseColumns>() const
+{
+	return local_ref<android::provider::BaseColumns>(get_jtype());
+}
+
+android::provider::ContactsContract_::Contacts::operator local_ref<android::provider::ContactsContract_::ContactsColumns>() const
+{
+	return local_ref<android::provider::ContactsContract_::ContactsColumns>(get_jtype());
+}
+
+android::provider::ContactsContract_::Contacts::operator local_ref<android::provider::ContactsContract_::ContactOptionsColumns>() const
+{
+	return local_ref<android::provider::ContactsContract_::ContactOptionsColumns>(get_jtype());
+}
+
+android::provider::ContactsContract_::Contacts::operator local_ref<android::provider::ContactsContract_::ContactStatusColumns>() const
+{
+	return local_ref<android::provider::ContactsContract_::ContactStatusColumns>(get_jtype());
+}
+
 
 local_ref< android::net::Uri > android::provider::ContactsContract_::Contacts::getLookupUri(local_ref< android::content::ContentResolver > const &a0, local_ref< android::net::Uri > const &a1)
 {
@@ -2108,6 +2395,7 @@ local_ref< java::io::InputStream > android::provider::ContactsContract_::Contact
 		)
 	);
 }
+
 
 
 static_field<
@@ -2200,6 +2488,12 @@ J2CPP_DEFINE_FIELD(android::provider::ContactsContract_::Contacts,7,"CONTENT_TYP
 J2CPP_DEFINE_FIELD(android::provider::ContactsContract_::Contacts,8,"CONTENT_ITEM_TYPE","Ljava/lang/String;")
 J2CPP_DEFINE_FIELD(android::provider::ContactsContract_::Contacts,9,"CONTENT_VCARD_TYPE","Ljava/lang/String;")
 
+
+android::provider::ContactsContract_::ContactOptionsColumns::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
+
 static_field<
 	android::provider::ContactsContract_::ContactOptionsColumns::J2CPP_CLASS_NAME,
 	android::provider::ContactsContract_::ContactOptionsColumns::J2CPP_FIELD_NAME(0),
@@ -2244,16 +2538,17 @@ J2CPP_DEFINE_FIELD(android::provider::ContactsContract_::ContactOptionsColumns,3
 J2CPP_DEFINE_FIELD(android::provider::ContactsContract_::ContactOptionsColumns,4,"SEND_TO_VOICEMAIL","Ljava/lang/String;")
 
 
-template <>
-local_ref< android::provider::ContactsContract_::CommonDataKinds_::GroupMembership > create< android::provider::ContactsContract_::CommonDataKinds_::GroupMembership>()
+
+android::provider::ContactsContract_::CommonDataKinds_::GroupMembership::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::provider::ContactsContract_::CommonDataKinds_::GroupMembership >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::provider::ContactsContract_::CommonDataKinds_::GroupMembership::J2CPP_CLASS_NAME>(),
-			get_method_id<android::provider::ContactsContract_::CommonDataKinds_::GroupMembership::J2CPP_CLASS_NAME, android::provider::ContactsContract_::CommonDataKinds_::GroupMembership::J2CPP_METHOD_NAME(0), android::provider::ContactsContract_::CommonDataKinds_::GroupMembership::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+android::provider::ContactsContract_::CommonDataKinds_::GroupMembership::operator local_ref<android::provider::ContactsContract_::DataColumnsWithJoins>() const
+{
+	return local_ref<android::provider::ContactsContract_::DataColumnsWithJoins>(get_jtype());
+}
+
 
 
 static_field<
@@ -2284,16 +2579,22 @@ J2CPP_DEFINE_FIELD(android::provider::ContactsContract_::CommonDataKinds_::Group
 J2CPP_DEFINE_FIELD(android::provider::ContactsContract_::CommonDataKinds_::GroupMembership,1,"GROUP_ROW_ID","Ljava/lang/String;")
 J2CPP_DEFINE_FIELD(android::provider::ContactsContract_::CommonDataKinds_::GroupMembership,2,"GROUP_SOURCE_ID","Ljava/lang/String;")
 
-template <>
-local_ref< android::provider::ContactsContract_::CommonDataKinds_::Nickname > create< android::provider::ContactsContract_::CommonDataKinds_::Nickname>()
+
+android::provider::ContactsContract_::CommonDataKinds_::Nickname::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::provider::ContactsContract_::CommonDataKinds_::Nickname >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::provider::ContactsContract_::CommonDataKinds_::Nickname::J2CPP_CLASS_NAME>(),
-			get_method_id<android::provider::ContactsContract_::CommonDataKinds_::Nickname::J2CPP_CLASS_NAME, android::provider::ContactsContract_::CommonDataKinds_::Nickname::J2CPP_METHOD_NAME(0), android::provider::ContactsContract_::CommonDataKinds_::Nickname::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+android::provider::ContactsContract_::CommonDataKinds_::Nickname::operator local_ref<android::provider::ContactsContract_::DataColumnsWithJoins>() const
+{
+	return local_ref<android::provider::ContactsContract_::DataColumnsWithJoins>(get_jtype());
+}
+
+android::provider::ContactsContract_::CommonDataKinds_::Nickname::operator local_ref<android::provider::ContactsContract_::CommonDataKinds_::CommonColumns>() const
+{
+	return local_ref<android::provider::ContactsContract_::CommonDataKinds_::CommonColumns>(get_jtype());
+}
+
 
 
 static_field<
@@ -2356,6 +2657,12 @@ J2CPP_DEFINE_FIELD(android::provider::ContactsContract_::CommonDataKinds_::Nickn
 J2CPP_DEFINE_FIELD(android::provider::ContactsContract_::CommonDataKinds_::Nickname,5,"TYPE_INITIALS","I")
 J2CPP_DEFINE_FIELD(android::provider::ContactsContract_::CommonDataKinds_::Nickname,6,"NAME","Ljava/lang/String;")
 
+
+android::provider::ContactsContract_::CommonDataKinds_::BaseTypes::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
+
 static_field<
 	android::provider::ContactsContract_::CommonDataKinds_::BaseTypes::J2CPP_CLASS_NAME,
 	android::provider::ContactsContract_::CommonDataKinds_::BaseTypes::J2CPP_FIELD_NAME(0),
@@ -2367,16 +2674,22 @@ static_field<
 J2CPP_DEFINE_CLASS(android::provider::ContactsContract_::CommonDataKinds_::BaseTypes,"android/provider/ContactsContract$CommonDataKinds$BaseTypes")
 J2CPP_DEFINE_FIELD(android::provider::ContactsContract_::CommonDataKinds_::BaseTypes,0,"TYPE_CUSTOM","I")
 
-template <>
-local_ref< android::provider::ContactsContract_::CommonDataKinds_::Im > create< android::provider::ContactsContract_::CommonDataKinds_::Im>()
+
+android::provider::ContactsContract_::CommonDataKinds_::Im::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::provider::ContactsContract_::CommonDataKinds_::Im >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::provider::ContactsContract_::CommonDataKinds_::Im::J2CPP_CLASS_NAME>(),
-			get_method_id<android::provider::ContactsContract_::CommonDataKinds_::Im::J2CPP_CLASS_NAME, android::provider::ContactsContract_::CommonDataKinds_::Im::J2CPP_METHOD_NAME(0), android::provider::ContactsContract_::CommonDataKinds_::Im::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+android::provider::ContactsContract_::CommonDataKinds_::Im::operator local_ref<android::provider::ContactsContract_::DataColumnsWithJoins>() const
+{
+	return local_ref<android::provider::ContactsContract_::DataColumnsWithJoins>(get_jtype());
+}
+
+android::provider::ContactsContract_::CommonDataKinds_::Im::operator local_ref<android::provider::ContactsContract_::CommonDataKinds_::CommonColumns>() const
+{
+	return local_ref<android::provider::ContactsContract_::CommonDataKinds_::CommonColumns>(get_jtype());
+}
+
 
 cpp_int android::provider::ContactsContract_::CommonDataKinds_::Im::getTypeLabelResource(cpp_int const &a0)
 {
@@ -2559,6 +2872,17 @@ J2CPP_DEFINE_FIELD(android::provider::ContactsContract_::CommonDataKinds_::Im,13
 J2CPP_DEFINE_FIELD(android::provider::ContactsContract_::CommonDataKinds_::Im,14,"PROTOCOL_JABBER","I")
 J2CPP_DEFINE_FIELD(android::provider::ContactsContract_::CommonDataKinds_::Im,15,"PROTOCOL_NETMEETING","I")
 
+
+android::provider::ContactsContract_::CommonDataKinds_::CommonColumns::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
+
+android::provider::ContactsContract_::CommonDataKinds_::CommonColumns::operator local_ref<android::provider::ContactsContract_::CommonDataKinds_::BaseTypes>() const
+{
+	return local_ref<android::provider::ContactsContract_::CommonDataKinds_::BaseTypes>(get_jtype());
+}
+
 static_field<
 	android::provider::ContactsContract_::CommonDataKinds_::CommonColumns::J2CPP_CLASS_NAME,
 	android::provider::ContactsContract_::CommonDataKinds_::CommonColumns::J2CPP_FIELD_NAME(0),
@@ -2586,16 +2910,22 @@ J2CPP_DEFINE_FIELD(android::provider::ContactsContract_::CommonDataKinds_::Commo
 J2CPP_DEFINE_FIELD(android::provider::ContactsContract_::CommonDataKinds_::CommonColumns,1,"TYPE","Ljava/lang/String;")
 J2CPP_DEFINE_FIELD(android::provider::ContactsContract_::CommonDataKinds_::CommonColumns,2,"LABEL","Ljava/lang/String;")
 
-template <>
-local_ref< android::provider::ContactsContract_::CommonDataKinds_::Organization > create< android::provider::ContactsContract_::CommonDataKinds_::Organization>()
+
+android::provider::ContactsContract_::CommonDataKinds_::Organization::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::provider::ContactsContract_::CommonDataKinds_::Organization >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::provider::ContactsContract_::CommonDataKinds_::Organization::J2CPP_CLASS_NAME>(),
-			get_method_id<android::provider::ContactsContract_::CommonDataKinds_::Organization::J2CPP_CLASS_NAME, android::provider::ContactsContract_::CommonDataKinds_::Organization::J2CPP_METHOD_NAME(0), android::provider::ContactsContract_::CommonDataKinds_::Organization::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+android::provider::ContactsContract_::CommonDataKinds_::Organization::operator local_ref<android::provider::ContactsContract_::DataColumnsWithJoins>() const
+{
+	return local_ref<android::provider::ContactsContract_::DataColumnsWithJoins>(get_jtype());
+}
+
+android::provider::ContactsContract_::CommonDataKinds_::Organization::operator local_ref<android::provider::ContactsContract_::CommonDataKinds_::CommonColumns>() const
+{
+	return local_ref<android::provider::ContactsContract_::CommonDataKinds_::CommonColumns>(get_jtype());
+}
+
 
 cpp_int android::provider::ContactsContract_::CommonDataKinds_::Organization::getTypeLabelResource(cpp_int const &a0)
 {
@@ -2706,16 +3036,22 @@ J2CPP_DEFINE_FIELD(android::provider::ContactsContract_::CommonDataKinds_::Organ
 J2CPP_DEFINE_FIELD(android::provider::ContactsContract_::CommonDataKinds_::Organization,8,"PHONETIC_NAME","Ljava/lang/String;")
 J2CPP_DEFINE_FIELD(android::provider::ContactsContract_::CommonDataKinds_::Organization,9,"OFFICE_LOCATION","Ljava/lang/String;")
 
-template <>
-local_ref< android::provider::ContactsContract_::CommonDataKinds_::StructuredPostal > create< android::provider::ContactsContract_::CommonDataKinds_::StructuredPostal>()
+
+android::provider::ContactsContract_::CommonDataKinds_::StructuredPostal::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::provider::ContactsContract_::CommonDataKinds_::StructuredPostal >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::provider::ContactsContract_::CommonDataKinds_::StructuredPostal::J2CPP_CLASS_NAME>(),
-			get_method_id<android::provider::ContactsContract_::CommonDataKinds_::StructuredPostal::J2CPP_CLASS_NAME, android::provider::ContactsContract_::CommonDataKinds_::StructuredPostal::J2CPP_METHOD_NAME(0), android::provider::ContactsContract_::CommonDataKinds_::StructuredPostal::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+android::provider::ContactsContract_::CommonDataKinds_::StructuredPostal::operator local_ref<android::provider::ContactsContract_::DataColumnsWithJoins>() const
+{
+	return local_ref<android::provider::ContactsContract_::DataColumnsWithJoins>(get_jtype());
+}
+
+android::provider::ContactsContract_::CommonDataKinds_::StructuredPostal::operator local_ref<android::provider::ContactsContract_::CommonDataKinds_::CommonColumns>() const
+{
+	return local_ref<android::provider::ContactsContract_::CommonDataKinds_::CommonColumns>(get_jtype());
+}
+
 
 cpp_int android::provider::ContactsContract_::CommonDataKinds_::StructuredPostal::getTypeLabelResource(cpp_int const &a0)
 {
@@ -2738,6 +3074,7 @@ local_ref< java::lang::CharSequence > android::provider::ContactsContract_::Comm
 		)
 	);
 }
+
 
 
 static_field<
@@ -2859,16 +3196,22 @@ J2CPP_DEFINE_FIELD(android::provider::ContactsContract_::CommonDataKinds_::Struc
 J2CPP_DEFINE_FIELD(android::provider::ContactsContract_::CommonDataKinds_::StructuredPostal,12,"POSTCODE","Ljava/lang/String;")
 J2CPP_DEFINE_FIELD(android::provider::ContactsContract_::CommonDataKinds_::StructuredPostal,13,"COUNTRY","Ljava/lang/String;")
 
-template <>
-local_ref< android::provider::ContactsContract_::CommonDataKinds_::Event > create< android::provider::ContactsContract_::CommonDataKinds_::Event>()
+
+android::provider::ContactsContract_::CommonDataKinds_::Event::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::provider::ContactsContract_::CommonDataKinds_::Event >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::provider::ContactsContract_::CommonDataKinds_::Event::J2CPP_CLASS_NAME>(),
-			get_method_id<android::provider::ContactsContract_::CommonDataKinds_::Event::J2CPP_CLASS_NAME, android::provider::ContactsContract_::CommonDataKinds_::Event::J2CPP_METHOD_NAME(0), android::provider::ContactsContract_::CommonDataKinds_::Event::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+android::provider::ContactsContract_::CommonDataKinds_::Event::operator local_ref<android::provider::ContactsContract_::DataColumnsWithJoins>() const
+{
+	return local_ref<android::provider::ContactsContract_::DataColumnsWithJoins>(get_jtype());
+}
+
+android::provider::ContactsContract_::CommonDataKinds_::Event::operator local_ref<android::provider::ContactsContract_::CommonDataKinds_::CommonColumns>() const
+{
+	return local_ref<android::provider::ContactsContract_::CommonDataKinds_::CommonColumns>(get_jtype());
+}
+
 
 cpp_int android::provider::ContactsContract_::CommonDataKinds_::Event::getTypeResource(local_ref< java::lang::Integer > const &a0)
 {
@@ -2927,16 +3270,22 @@ J2CPP_DEFINE_FIELD(android::provider::ContactsContract_::CommonDataKinds_::Event
 J2CPP_DEFINE_FIELD(android::provider::ContactsContract_::CommonDataKinds_::Event,3,"TYPE_BIRTHDAY","I")
 J2CPP_DEFINE_FIELD(android::provider::ContactsContract_::CommonDataKinds_::Event,4,"START_DATE","Ljava/lang/String;")
 
-template <>
-local_ref< android::provider::ContactsContract_::CommonDataKinds_::Website > create< android::provider::ContactsContract_::CommonDataKinds_::Website>()
+
+android::provider::ContactsContract_::CommonDataKinds_::Website::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::provider::ContactsContract_::CommonDataKinds_::Website >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::provider::ContactsContract_::CommonDataKinds_::Website::J2CPP_CLASS_NAME>(),
-			get_method_id<android::provider::ContactsContract_::CommonDataKinds_::Website::J2CPP_CLASS_NAME, android::provider::ContactsContract_::CommonDataKinds_::Website::J2CPP_METHOD_NAME(0), android::provider::ContactsContract_::CommonDataKinds_::Website::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+android::provider::ContactsContract_::CommonDataKinds_::Website::operator local_ref<android::provider::ContactsContract_::DataColumnsWithJoins>() const
+{
+	return local_ref<android::provider::ContactsContract_::DataColumnsWithJoins>(get_jtype());
+}
+
+android::provider::ContactsContract_::CommonDataKinds_::Website::operator local_ref<android::provider::ContactsContract_::CommonDataKinds_::CommonColumns>() const
+{
+	return local_ref<android::provider::ContactsContract_::CommonDataKinds_::CommonColumns>(get_jtype());
+}
+
 
 
 static_field<
@@ -3015,16 +3364,22 @@ J2CPP_DEFINE_FIELD(android::provider::ContactsContract_::CommonDataKinds_::Websi
 J2CPP_DEFINE_FIELD(android::provider::ContactsContract_::CommonDataKinds_::Website,7,"TYPE_OTHER","I")
 J2CPP_DEFINE_FIELD(android::provider::ContactsContract_::CommonDataKinds_::Website,8,"URL","Ljava/lang/String;")
 
-template <>
-local_ref< android::provider::ContactsContract_::CommonDataKinds_::Phone > create< android::provider::ContactsContract_::CommonDataKinds_::Phone>()
+
+android::provider::ContactsContract_::CommonDataKinds_::Phone::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::provider::ContactsContract_::CommonDataKinds_::Phone >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::provider::ContactsContract_::CommonDataKinds_::Phone::J2CPP_CLASS_NAME>(),
-			get_method_id<android::provider::ContactsContract_::CommonDataKinds_::Phone::J2CPP_CLASS_NAME, android::provider::ContactsContract_::CommonDataKinds_::Phone::J2CPP_METHOD_NAME(0), android::provider::ContactsContract_::CommonDataKinds_::Phone::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+android::provider::ContactsContract_::CommonDataKinds_::Phone::operator local_ref<android::provider::ContactsContract_::DataColumnsWithJoins>() const
+{
+	return local_ref<android::provider::ContactsContract_::DataColumnsWithJoins>(get_jtype());
+}
+
+android::provider::ContactsContract_::CommonDataKinds_::Phone::operator local_ref<android::provider::ContactsContract_::CommonDataKinds_::CommonColumns>() const
+{
+	return local_ref<android::provider::ContactsContract_::CommonDataKinds_::CommonColumns>(get_jtype());
+}
+
 
 cpp_int android::provider::ContactsContract_::CommonDataKinds_::Phone::getTypeLabelResource(cpp_int const &a0)
 {
@@ -3047,6 +3402,7 @@ local_ref< java::lang::CharSequence > android::provider::ContactsContract_::Comm
 		)
 	);
 }
+
 
 
 static_field<
@@ -3256,16 +3612,17 @@ J2CPP_DEFINE_FIELD(android::provider::ContactsContract_::CommonDataKinds_::Phone
 J2CPP_DEFINE_FIELD(android::provider::ContactsContract_::CommonDataKinds_::Phone,23,"TYPE_MMS","I")
 J2CPP_DEFINE_FIELD(android::provider::ContactsContract_::CommonDataKinds_::Phone,24,"NUMBER","Ljava/lang/String;")
 
-template <>
-local_ref< android::provider::ContactsContract_::CommonDataKinds_::Note > create< android::provider::ContactsContract_::CommonDataKinds_::Note>()
+
+android::provider::ContactsContract_::CommonDataKinds_::Note::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::provider::ContactsContract_::CommonDataKinds_::Note >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::provider::ContactsContract_::CommonDataKinds_::Note::J2CPP_CLASS_NAME>(),
-			get_method_id<android::provider::ContactsContract_::CommonDataKinds_::Note::J2CPP_CLASS_NAME, android::provider::ContactsContract_::CommonDataKinds_::Note::J2CPP_METHOD_NAME(0), android::provider::ContactsContract_::CommonDataKinds_::Note::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+android::provider::ContactsContract_::CommonDataKinds_::Note::operator local_ref<android::provider::ContactsContract_::DataColumnsWithJoins>() const
+{
+	return local_ref<android::provider::ContactsContract_::DataColumnsWithJoins>(get_jtype());
+}
+
 
 
 static_field<
@@ -3288,16 +3645,22 @@ J2CPP_DEFINE_METHOD(android::provider::ContactsContract_::CommonDataKinds_::Note
 J2CPP_DEFINE_FIELD(android::provider::ContactsContract_::CommonDataKinds_::Note,0,"CONTENT_ITEM_TYPE","Ljava/lang/String;")
 J2CPP_DEFINE_FIELD(android::provider::ContactsContract_::CommonDataKinds_::Note,1,"NOTE","Ljava/lang/String;")
 
-template <>
-local_ref< android::provider::ContactsContract_::CommonDataKinds_::Relation > create< android::provider::ContactsContract_::CommonDataKinds_::Relation>()
+
+android::provider::ContactsContract_::CommonDataKinds_::Relation::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::provider::ContactsContract_::CommonDataKinds_::Relation >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::provider::ContactsContract_::CommonDataKinds_::Relation::J2CPP_CLASS_NAME>(),
-			get_method_id<android::provider::ContactsContract_::CommonDataKinds_::Relation::J2CPP_CLASS_NAME, android::provider::ContactsContract_::CommonDataKinds_::Relation::J2CPP_METHOD_NAME(0), android::provider::ContactsContract_::CommonDataKinds_::Relation::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+android::provider::ContactsContract_::CommonDataKinds_::Relation::operator local_ref<android::provider::ContactsContract_::DataColumnsWithJoins>() const
+{
+	return local_ref<android::provider::ContactsContract_::DataColumnsWithJoins>(get_jtype());
+}
+
+android::provider::ContactsContract_::CommonDataKinds_::Relation::operator local_ref<android::provider::ContactsContract_::CommonDataKinds_::CommonColumns>() const
+{
+	return local_ref<android::provider::ContactsContract_::CommonDataKinds_::CommonColumns>(get_jtype());
+}
+
 
 
 static_field<
@@ -3432,16 +3795,22 @@ J2CPP_DEFINE_FIELD(android::provider::ContactsContract_::CommonDataKinds_::Relat
 J2CPP_DEFINE_FIELD(android::provider::ContactsContract_::CommonDataKinds_::Relation,14,"TYPE_SPOUSE","I")
 J2CPP_DEFINE_FIELD(android::provider::ContactsContract_::CommonDataKinds_::Relation,15,"NAME","Ljava/lang/String;")
 
-template <>
-local_ref< android::provider::ContactsContract_::CommonDataKinds_::Email > create< android::provider::ContactsContract_::CommonDataKinds_::Email>()
+
+android::provider::ContactsContract_::CommonDataKinds_::Email::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::provider::ContactsContract_::CommonDataKinds_::Email >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::provider::ContactsContract_::CommonDataKinds_::Email::J2CPP_CLASS_NAME>(),
-			get_method_id<android::provider::ContactsContract_::CommonDataKinds_::Email::J2CPP_CLASS_NAME, android::provider::ContactsContract_::CommonDataKinds_::Email::J2CPP_METHOD_NAME(0), android::provider::ContactsContract_::CommonDataKinds_::Email::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+android::provider::ContactsContract_::CommonDataKinds_::Email::operator local_ref<android::provider::ContactsContract_::DataColumnsWithJoins>() const
+{
+	return local_ref<android::provider::ContactsContract_::DataColumnsWithJoins>(get_jtype());
+}
+
+android::provider::ContactsContract_::CommonDataKinds_::Email::operator local_ref<android::provider::ContactsContract_::CommonDataKinds_::CommonColumns>() const
+{
+	return local_ref<android::provider::ContactsContract_::CommonDataKinds_::CommonColumns>(get_jtype());
+}
+
 
 cpp_int android::provider::ContactsContract_::CommonDataKinds_::Email::getTypeLabelResource(cpp_int const &a0)
 {
@@ -3464,6 +3833,7 @@ local_ref< java::lang::CharSequence > android::provider::ContactsContract_::Comm
 		)
 	);
 }
+
 
 
 static_field<
@@ -3553,16 +3923,17 @@ J2CPP_DEFINE_FIELD(android::provider::ContactsContract_::CommonDataKinds_::Email
 J2CPP_DEFINE_FIELD(android::provider::ContactsContract_::CommonDataKinds_::Email,8,"TYPE_MOBILE","I")
 J2CPP_DEFINE_FIELD(android::provider::ContactsContract_::CommonDataKinds_::Email,9,"DISPLAY_NAME","Ljava/lang/String;")
 
-template <>
-local_ref< android::provider::ContactsContract_::CommonDataKinds_::Photo > create< android::provider::ContactsContract_::CommonDataKinds_::Photo>()
+
+android::provider::ContactsContract_::CommonDataKinds_::Photo::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::provider::ContactsContract_::CommonDataKinds_::Photo >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::provider::ContactsContract_::CommonDataKinds_::Photo::J2CPP_CLASS_NAME>(),
-			get_method_id<android::provider::ContactsContract_::CommonDataKinds_::Photo::J2CPP_CLASS_NAME, android::provider::ContactsContract_::CommonDataKinds_::Photo::J2CPP_METHOD_NAME(0), android::provider::ContactsContract_::CommonDataKinds_::Photo::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+android::provider::ContactsContract_::CommonDataKinds_::Photo::operator local_ref<android::provider::ContactsContract_::DataColumnsWithJoins>() const
+{
+	return local_ref<android::provider::ContactsContract_::DataColumnsWithJoins>(get_jtype());
+}
+
 
 
 static_field<
@@ -3585,16 +3956,17 @@ J2CPP_DEFINE_METHOD(android::provider::ContactsContract_::CommonDataKinds_::Phot
 J2CPP_DEFINE_FIELD(android::provider::ContactsContract_::CommonDataKinds_::Photo,0,"CONTENT_ITEM_TYPE","Ljava/lang/String;")
 J2CPP_DEFINE_FIELD(android::provider::ContactsContract_::CommonDataKinds_::Photo,1,"PHOTO","Ljava/lang/String;")
 
-template <>
-local_ref< android::provider::ContactsContract_::CommonDataKinds_::StructuredName > create< android::provider::ContactsContract_::CommonDataKinds_::StructuredName>()
+
+android::provider::ContactsContract_::CommonDataKinds_::StructuredName::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::provider::ContactsContract_::CommonDataKinds_::StructuredName >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::provider::ContactsContract_::CommonDataKinds_::StructuredName::J2CPP_CLASS_NAME>(),
-			get_method_id<android::provider::ContactsContract_::CommonDataKinds_::StructuredName::J2CPP_CLASS_NAME, android::provider::ContactsContract_::CommonDataKinds_::StructuredName::J2CPP_METHOD_NAME(0), android::provider::ContactsContract_::CommonDataKinds_::StructuredName::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+android::provider::ContactsContract_::CommonDataKinds_::StructuredName::operator local_ref<android::provider::ContactsContract_::DataColumnsWithJoins>() const
+{
+	return local_ref<android::provider::ContactsContract_::DataColumnsWithJoins>(get_jtype());
+}
+
 
 
 static_field<
@@ -3682,20 +4054,27 @@ J2CPP_DEFINE_FIELD(android::provider::ContactsContract_::CommonDataKinds_::Struc
 J2CPP_DEFINE_FIELD(android::provider::ContactsContract_::CommonDataKinds_::StructuredName,9,"PHONETIC_FAMILY_NAME","Ljava/lang/String;")
 
 
-template <>
-local_ref< android::provider::ContactsContract_::CommonDataKinds > create< android::provider::ContactsContract_::CommonDataKinds>()
+
+android::provider::ContactsContract_::CommonDataKinds::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::provider::ContactsContract_::CommonDataKinds >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::provider::ContactsContract_::CommonDataKinds::J2CPP_CLASS_NAME>(),
-			get_method_id<android::provider::ContactsContract_::CommonDataKinds::J2CPP_CLASS_NAME, android::provider::ContactsContract_::CommonDataKinds::J2CPP_METHOD_NAME(0), android::provider::ContactsContract_::CommonDataKinds::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
 
 
 J2CPP_DEFINE_CLASS(android::provider::ContactsContract_::CommonDataKinds,"android/provider/ContactsContract$CommonDataKinds")
 J2CPP_DEFINE_METHOD(android::provider::ContactsContract_::CommonDataKinds,0,"<init>","()V")
+
+
+android::provider::ContactsContract_::SyncColumns::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
+
+android::provider::ContactsContract_::SyncColumns::operator local_ref<android::provider::ContactsContract_::BaseSyncColumns>() const
+{
+	return local_ref<android::provider::ContactsContract_::BaseSyncColumns>(get_jtype());
+}
 
 static_field<
 	android::provider::ContactsContract_::SyncColumns::J2CPP_CLASS_NAME,
@@ -3740,16 +4119,18 @@ J2CPP_DEFINE_FIELD(android::provider::ContactsContract_::SyncColumns,2,"SOURCE_I
 J2CPP_DEFINE_FIELD(android::provider::ContactsContract_::SyncColumns,3,"VERSION","Ljava/lang/String;")
 J2CPP_DEFINE_FIELD(android::provider::ContactsContract_::SyncColumns,4,"DIRTY","Ljava/lang/String;")
 
-template <>
-local_ref< android::provider::ContactsContract_::Settings > create< android::provider::ContactsContract_::Settings>()
+
+android::provider::ContactsContract_::Settings::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::provider::ContactsContract_::Settings >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::provider::ContactsContract_::Settings::J2CPP_CLASS_NAME>(),
-			get_method_id<android::provider::ContactsContract_::Settings::J2CPP_CLASS_NAME, android::provider::ContactsContract_::Settings::J2CPP_METHOD_NAME(0), android::provider::ContactsContract_::Settings::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+android::provider::ContactsContract_::Settings::operator local_ref<android::provider::ContactsContract_::SettingsColumns>() const
+{
+	return local_ref<android::provider::ContactsContract_::SettingsColumns>(get_jtype());
+}
+
+
 
 
 static_field<
@@ -3780,6 +4161,12 @@ J2CPP_DEFINE_METHOD(android::provider::ContactsContract_::Settings,1,"<clinit>",
 J2CPP_DEFINE_FIELD(android::provider::ContactsContract_::Settings,0,"CONTENT_URI","Landroid/net/Uri;")
 J2CPP_DEFINE_FIELD(android::provider::ContactsContract_::Settings,1,"CONTENT_TYPE","Ljava/lang/String;")
 J2CPP_DEFINE_FIELD(android::provider::ContactsContract_::Settings,2,"CONTENT_ITEM_TYPE","Ljava/lang/String;")
+
+
+android::provider::ContactsContract_::DataColumns::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 static_field<
 	android::provider::ContactsContract_::DataColumns::J2CPP_CLASS_NAME,
@@ -3977,16 +4364,22 @@ J2CPP_DEFINE_FIELD(android::provider::ContactsContract_::DataColumns,22,"SYNC3",
 J2CPP_DEFINE_FIELD(android::provider::ContactsContract_::DataColumns,23,"SYNC4","Ljava/lang/String;")
 
 
-template <>
-local_ref< android::provider::ContactsContract_::RawContacts_::Entity > create< android::provider::ContactsContract_::RawContacts_::Entity>()
+
+android::provider::ContactsContract_::RawContacts_::Entity::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::provider::ContactsContract_::RawContacts_::Entity >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::provider::ContactsContract_::RawContacts_::Entity::J2CPP_CLASS_NAME>(),
-			get_method_id<android::provider::ContactsContract_::RawContacts_::Entity::J2CPP_CLASS_NAME, android::provider::ContactsContract_::RawContacts_::Entity::J2CPP_METHOD_NAME(0), android::provider::ContactsContract_::RawContacts_::Entity::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+android::provider::ContactsContract_::RawContacts_::Entity::operator local_ref<android::provider::BaseColumns>() const
+{
+	return local_ref<android::provider::BaseColumns>(get_jtype());
+}
+
+android::provider::ContactsContract_::RawContacts_::Entity::operator local_ref<android::provider::ContactsContract_::DataColumns>() const
+{
+	return local_ref<android::provider::ContactsContract_::DataColumns>(get_jtype());
+}
+
 
 
 static_field<
@@ -4009,16 +4402,22 @@ J2CPP_DEFINE_METHOD(android::provider::ContactsContract_::RawContacts_::Entity,0
 J2CPP_DEFINE_FIELD(android::provider::ContactsContract_::RawContacts_::Entity,0,"CONTENT_DIRECTORY","Ljava/lang/String;")
 J2CPP_DEFINE_FIELD(android::provider::ContactsContract_::RawContacts_::Entity,1,"DATA_ID","Ljava/lang/String;")
 
-template <>
-local_ref< android::provider::ContactsContract_::RawContacts_::Data > create< android::provider::ContactsContract_::RawContacts_::Data>()
+
+android::provider::ContactsContract_::RawContacts_::Data::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::provider::ContactsContract_::RawContacts_::Data >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::provider::ContactsContract_::RawContacts_::Data::J2CPP_CLASS_NAME>(),
-			get_method_id<android::provider::ContactsContract_::RawContacts_::Data::J2CPP_CLASS_NAME, android::provider::ContactsContract_::RawContacts_::Data::J2CPP_METHOD_NAME(0), android::provider::ContactsContract_::RawContacts_::Data::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+android::provider::ContactsContract_::RawContacts_::Data::operator local_ref<android::provider::BaseColumns>() const
+{
+	return local_ref<android::provider::BaseColumns>(get_jtype());
+}
+
+android::provider::ContactsContract_::RawContacts_::Data::operator local_ref<android::provider::ContactsContract_::DataColumns>() const
+{
+	return local_ref<android::provider::ContactsContract_::DataColumns>(get_jtype());
+}
+
 
 
 static_field<
@@ -4034,16 +4433,32 @@ J2CPP_DEFINE_METHOD(android::provider::ContactsContract_::RawContacts_::Data,0,"
 J2CPP_DEFINE_FIELD(android::provider::ContactsContract_::RawContacts_::Data,0,"CONTENT_DIRECTORY","Ljava/lang/String;")
 
 
-template <>
-local_ref< android::provider::ContactsContract_::RawContacts > create< android::provider::ContactsContract_::RawContacts>()
+
+android::provider::ContactsContract_::RawContacts::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::provider::ContactsContract_::RawContacts >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::provider::ContactsContract_::RawContacts::J2CPP_CLASS_NAME>(),
-			get_method_id<android::provider::ContactsContract_::RawContacts::J2CPP_CLASS_NAME, android::provider::ContactsContract_::RawContacts::J2CPP_METHOD_NAME(0), android::provider::ContactsContract_::RawContacts::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+android::provider::ContactsContract_::RawContacts::operator local_ref<android::provider::BaseColumns>() const
+{
+	return local_ref<android::provider::BaseColumns>(get_jtype());
+}
+
+android::provider::ContactsContract_::RawContacts::operator local_ref<android::provider::ContactsContract_::RawContactsColumns>() const
+{
+	return local_ref<android::provider::ContactsContract_::RawContactsColumns>(get_jtype());
+}
+
+android::provider::ContactsContract_::RawContacts::operator local_ref<android::provider::ContactsContract_::ContactOptionsColumns>() const
+{
+	return local_ref<android::provider::ContactsContract_::ContactOptionsColumns>(get_jtype());
+}
+
+android::provider::ContactsContract_::RawContacts::operator local_ref<android::provider::ContactsContract_::SyncColumns>() const
+{
+	return local_ref<android::provider::ContactsContract_::SyncColumns>(get_jtype());
+}
+
 
 local_ref< android::net::Uri > android::provider::ContactsContract_::RawContacts::getContactLookupUri(local_ref< android::content::ContentResolver > const &a0, local_ref< android::net::Uri > const &a1)
 {
@@ -4055,6 +4470,7 @@ local_ref< android::net::Uri > android::provider::ContactsContract_::RawContacts
 		)
 	);
 }
+
 
 
 static_field<
@@ -4119,16 +4535,18 @@ J2CPP_DEFINE_FIELD(android::provider::ContactsContract_::RawContacts,4,"AGGREGAT
 J2CPP_DEFINE_FIELD(android::provider::ContactsContract_::RawContacts,5,"AGGREGATION_MODE_SUSPENDED","I")
 J2CPP_DEFINE_FIELD(android::provider::ContactsContract_::RawContacts,6,"AGGREGATION_MODE_DISABLED","I")
 
-template <>
-local_ref< android::provider::ContactsContract_::AggregationExceptions > create< android::provider::ContactsContract_::AggregationExceptions>()
+
+android::provider::ContactsContract_::AggregationExceptions::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::provider::ContactsContract_::AggregationExceptions >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::provider::ContactsContract_::AggregationExceptions::J2CPP_CLASS_NAME>(),
-			get_method_id<android::provider::ContactsContract_::AggregationExceptions::J2CPP_CLASS_NAME, android::provider::ContactsContract_::AggregationExceptions::J2CPP_METHOD_NAME(0), android::provider::ContactsContract_::AggregationExceptions::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+android::provider::ContactsContract_::AggregationExceptions::operator local_ref<android::provider::BaseColumns>() const
+{
+	return local_ref<android::provider::BaseColumns>(get_jtype());
+}
+
+
 
 
 static_field<
@@ -4208,16 +4626,23 @@ J2CPP_DEFINE_FIELD(android::provider::ContactsContract_::AggregationExceptions,6
 J2CPP_DEFINE_FIELD(android::provider::ContactsContract_::AggregationExceptions,7,"RAW_CONTACT_ID1","Ljava/lang/String;")
 J2CPP_DEFINE_FIELD(android::provider::ContactsContract_::AggregationExceptions,8,"RAW_CONTACT_ID2","Ljava/lang/String;")
 
-template <>
-local_ref< android::provider::ContactsContract_::QuickContact > create< android::provider::ContactsContract_::QuickContact>()
+
+android::provider::ContactsContract_::QuickContact::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::provider::ContactsContract_::QuickContact >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::provider::ContactsContract_::QuickContact::J2CPP_CLASS_NAME>(),
-			get_method_id<android::provider::ContactsContract_::QuickContact::J2CPP_CLASS_NAME, android::provider::ContactsContract_::QuickContact::J2CPP_METHOD_NAME(0), android::provider::ContactsContract_::QuickContact::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::provider::ContactsContract_::QuickContact::QuickContact()
+: cpp_object<android::provider::ContactsContract_::QuickContact>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::provider::ContactsContract_::QuickContact::J2CPP_CLASS_NAME>(),
+		get_method_id<android::provider::ContactsContract_::QuickContact::J2CPP_CLASS_NAME, android::provider::ContactsContract_::QuickContact::J2CPP_METHOD_NAME(0), android::provider::ContactsContract_::QuickContact::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 void android::provider::ContactsContract_::QuickContact::showQuickContact(local_ref< android::content::Context > const &a0, local_ref< android::view::View > const &a1, local_ref< android::net::Uri > const &a2, cpp_int const &a3, local_ref< cpp_object_array<java::lang::String, 1> > const &a4)
 {
@@ -4272,7 +4697,54 @@ J2CPP_DEFINE_FIELD(android::provider::ContactsContract_::QuickContact,0,"MODE_SM
 J2CPP_DEFINE_FIELD(android::provider::ContactsContract_::QuickContact,1,"MODE_MEDIUM","I")
 J2CPP_DEFINE_FIELD(android::provider::ContactsContract_::QuickContact,2,"MODE_LARGE","I")
 
+
+android::provider::ContactsContract_::DataColumnsWithJoins::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
+
+android::provider::ContactsContract_::DataColumnsWithJoins::operator local_ref<android::provider::BaseColumns>() const
+{
+	return local_ref<android::provider::BaseColumns>(get_jtype());
+}
+
+android::provider::ContactsContract_::DataColumnsWithJoins::operator local_ref<android::provider::ContactsContract_::DataColumns>() const
+{
+	return local_ref<android::provider::ContactsContract_::DataColumns>(get_jtype());
+}
+
+android::provider::ContactsContract_::DataColumnsWithJoins::operator local_ref<android::provider::ContactsContract_::StatusColumns>() const
+{
+	return local_ref<android::provider::ContactsContract_::StatusColumns>(get_jtype());
+}
+
+android::provider::ContactsContract_::DataColumnsWithJoins::operator local_ref<android::provider::ContactsContract_::RawContactsColumns>() const
+{
+	return local_ref<android::provider::ContactsContract_::RawContactsColumns>(get_jtype());
+}
+
+android::provider::ContactsContract_::DataColumnsWithJoins::operator local_ref<android::provider::ContactsContract_::ContactsColumns>() const
+{
+	return local_ref<android::provider::ContactsContract_::ContactsColumns>(get_jtype());
+}
+
+android::provider::ContactsContract_::DataColumnsWithJoins::operator local_ref<android::provider::ContactsContract_::ContactOptionsColumns>() const
+{
+	return local_ref<android::provider::ContactsContract_::ContactOptionsColumns>(get_jtype());
+}
+
+android::provider::ContactsContract_::DataColumnsWithJoins::operator local_ref<android::provider::ContactsContract_::ContactStatusColumns>() const
+{
+	return local_ref<android::provider::ContactsContract_::ContactStatusColumns>(get_jtype());
+}
+
 J2CPP_DEFINE_CLASS(android::provider::ContactsContract_::DataColumnsWithJoins,"android/provider/ContactsContract$DataColumnsWithJoins")
+
+
+android::provider::ContactsContract_::GroupsColumns::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 static_field<
 	android::provider::ContactsContract_::GroupsColumns::J2CPP_CLASS_NAME,
@@ -4341,16 +4813,17 @@ J2CPP_DEFINE_FIELD(android::provider::ContactsContract_::GroupsColumns,5,"GROUP_
 J2CPP_DEFINE_FIELD(android::provider::ContactsContract_::GroupsColumns,6,"DELETED","Ljava/lang/String;")
 J2CPP_DEFINE_FIELD(android::provider::ContactsContract_::GroupsColumns,7,"SHOULD_SYNC","Ljava/lang/String;")
 
-template <>
-local_ref< android::provider::ContactsContract_::SyncState > create< android::provider::ContactsContract_::SyncState>()
+
+android::provider::ContactsContract_::SyncState::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::provider::ContactsContract_::SyncState >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::provider::ContactsContract_::SyncState::J2CPP_CLASS_NAME>(),
-			get_method_id<android::provider::ContactsContract_::SyncState::J2CPP_CLASS_NAME, android::provider::ContactsContract_::SyncState::J2CPP_METHOD_NAME(0), android::provider::ContactsContract_::SyncState::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+android::provider::ContactsContract_::SyncState::operator local_ref<android::provider::SyncStateContract_::Columns>() const
+{
+	return local_ref<android::provider::SyncStateContract_::Columns>(get_jtype());
+}
+
 
 local_ref< cpp_byte_array<1> > android::provider::ContactsContract_::SyncState::get(local_ref< android::content::ContentProviderClient > const &a0, local_ref< android::accounts::Account > const &a1)
 {
@@ -4397,6 +4870,7 @@ local_ref< android::content::ContentProviderOperation > android::provider::Conta
 }
 
 
+
 static_field<
 	android::provider::ContactsContract_::SyncState::J2CPP_CLASS_NAME,
 	android::provider::ContactsContract_::SyncState::J2CPP_FIELD_NAME(0),
@@ -4421,6 +4895,12 @@ J2CPP_DEFINE_METHOD(android::provider::ContactsContract_::SyncState,4,"newSetOpe
 J2CPP_DEFINE_METHOD(android::provider::ContactsContract_::SyncState,5,"<clinit>","()V")
 J2CPP_DEFINE_FIELD(android::provider::ContactsContract_::SyncState,0,"CONTENT_DIRECTORY","Ljava/lang/String;")
 J2CPP_DEFINE_FIELD(android::provider::ContactsContract_::SyncState,1,"CONTENT_URI","Landroid/net/Uri;")
+
+
+android::provider::ContactsContract_::ContactStatusColumns::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 static_field<
 	android::provider::ContactsContract_::ContactStatusColumns::J2CPP_CLASS_NAME,
@@ -4473,6 +4953,12 @@ J2CPP_DEFINE_FIELD(android::provider::ContactsContract_::ContactStatusColumns,3,
 J2CPP_DEFINE_FIELD(android::provider::ContactsContract_::ContactStatusColumns,4,"CONTACT_STATUS_LABEL","Ljava/lang/String;")
 J2CPP_DEFINE_FIELD(android::provider::ContactsContract_::ContactStatusColumns,5,"CONTACT_STATUS_ICON","Ljava/lang/String;")
 
+
+android::provider::ContactsContract_::StatusColumns::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
+
 static_field<
 	android::provider::ContactsContract_::StatusColumns::J2CPP_CLASS_NAME,
 	android::provider::ContactsContract_::StatusColumns::J2CPP_FIELD_NAME(0),
@@ -4524,6 +5010,12 @@ J2CPP_DEFINE_FIELD(android::provider::ContactsContract_::StatusColumns,3,"STATUS
 J2CPP_DEFINE_FIELD(android::provider::ContactsContract_::StatusColumns,4,"STATUS_LABEL","Ljava/lang/String;")
 J2CPP_DEFINE_FIELD(android::provider::ContactsContract_::StatusColumns,5,"STATUS_ICON","Ljava/lang/String;")
 
+
+android::provider::ContactsContract_::PresenceColumns::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
+
 static_field<
 	android::provider::ContactsContract_::PresenceColumns::J2CPP_CLASS_NAME,
 	android::provider::ContactsContract_::PresenceColumns::J2CPP_FIELD_NAME(0),
@@ -4567,16 +5059,33 @@ J2CPP_DEFINE_FIELD(android::provider::ContactsContract_::PresenceColumns,2,"CUST
 J2CPP_DEFINE_FIELD(android::provider::ContactsContract_::PresenceColumns,3,"IM_HANDLE","Ljava/lang/String;")
 J2CPP_DEFINE_FIELD(android::provider::ContactsContract_::PresenceColumns,4,"IM_ACCOUNT","Ljava/lang/String;")
 
-template <>
-local_ref< android::provider::ContactsContract_::PhoneLookup > create< android::provider::ContactsContract_::PhoneLookup>()
+
+android::provider::ContactsContract_::PhoneLookup::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::provider::ContactsContract_::PhoneLookup >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::provider::ContactsContract_::PhoneLookup::J2CPP_CLASS_NAME>(),
-			get_method_id<android::provider::ContactsContract_::PhoneLookup::J2CPP_CLASS_NAME, android::provider::ContactsContract_::PhoneLookup::J2CPP_METHOD_NAME(0), android::provider::ContactsContract_::PhoneLookup::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+android::provider::ContactsContract_::PhoneLookup::operator local_ref<android::provider::BaseColumns>() const
+{
+	return local_ref<android::provider::BaseColumns>(get_jtype());
+}
+
+android::provider::ContactsContract_::PhoneLookup::operator local_ref<android::provider::ContactsContract_::PhoneLookupColumns>() const
+{
+	return local_ref<android::provider::ContactsContract_::PhoneLookupColumns>(get_jtype());
+}
+
+android::provider::ContactsContract_::PhoneLookup::operator local_ref<android::provider::ContactsContract_::ContactsColumns>() const
+{
+	return local_ref<android::provider::ContactsContract_::ContactsColumns>(get_jtype());
+}
+
+android::provider::ContactsContract_::PhoneLookup::operator local_ref<android::provider::ContactsContract_::ContactOptionsColumns>() const
+{
+	return local_ref<android::provider::ContactsContract_::ContactOptionsColumns>(get_jtype());
+}
+
+
 
 
 static_field<
@@ -4592,16 +5101,28 @@ J2CPP_DEFINE_METHOD(android::provider::ContactsContract_::PhoneLookup,0,"<init>"
 J2CPP_DEFINE_METHOD(android::provider::ContactsContract_::PhoneLookup,1,"<clinit>","()V")
 J2CPP_DEFINE_FIELD(android::provider::ContactsContract_::PhoneLookup,0,"CONTENT_FILTER_URI","Landroid/net/Uri;")
 
-template <>
-local_ref< android::provider::ContactsContract_::Groups > create< android::provider::ContactsContract_::Groups>()
+
+android::provider::ContactsContract_::Groups::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::provider::ContactsContract_::Groups >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::provider::ContactsContract_::Groups::J2CPP_CLASS_NAME>(),
-			get_method_id<android::provider::ContactsContract_::Groups::J2CPP_CLASS_NAME, android::provider::ContactsContract_::Groups::J2CPP_METHOD_NAME(0), android::provider::ContactsContract_::Groups::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+android::provider::ContactsContract_::Groups::operator local_ref<android::provider::BaseColumns>() const
+{
+	return local_ref<android::provider::BaseColumns>(get_jtype());
+}
+
+android::provider::ContactsContract_::Groups::operator local_ref<android::provider::ContactsContract_::GroupsColumns>() const
+{
+	return local_ref<android::provider::ContactsContract_::GroupsColumns>(get_jtype());
+}
+
+android::provider::ContactsContract_::Groups::operator local_ref<android::provider::ContactsContract_::SyncColumns>() const
+{
+	return local_ref<android::provider::ContactsContract_::SyncColumns>(get_jtype());
+}
+
+
 
 
 static_field<
@@ -4640,6 +5161,12 @@ J2CPP_DEFINE_FIELD(android::provider::ContactsContract_::Groups,0,"CONTENT_URI",
 J2CPP_DEFINE_FIELD(android::provider::ContactsContract_::Groups,1,"CONTENT_SUMMARY_URI","Landroid/net/Uri;")
 J2CPP_DEFINE_FIELD(android::provider::ContactsContract_::Groups,2,"CONTENT_TYPE","Ljava/lang/String;")
 J2CPP_DEFINE_FIELD(android::provider::ContactsContract_::Groups,3,"CONTENT_ITEM_TYPE","Ljava/lang/String;")
+
+
+android::provider::ContactsContract_::SettingsColumns::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 static_field<
 	android::provider::ContactsContract_::SettingsColumns::J2CPP_CLASS_NAME,
@@ -4700,6 +5227,12 @@ J2CPP_DEFINE_FIELD(android::provider::ContactsContract_::SettingsColumns,4,"ANY_
 J2CPP_DEFINE_FIELD(android::provider::ContactsContract_::SettingsColumns,5,"UNGROUPED_COUNT","Ljava/lang/String;")
 J2CPP_DEFINE_FIELD(android::provider::ContactsContract_::SettingsColumns,6,"UNGROUPED_WITH_PHONES","Ljava/lang/String;")
 
+
+android::provider::ContactsContract_::RawContactsColumns::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
+
 static_field<
 	android::provider::ContactsContract_::RawContactsColumns::J2CPP_CLASS_NAME,
 	android::provider::ContactsContract_::RawContactsColumns::J2CPP_FIELD_NAME(0),
@@ -4726,6 +5259,12 @@ J2CPP_DEFINE_CLASS(android::provider::ContactsContract_::RawContactsColumns,"and
 J2CPP_DEFINE_FIELD(android::provider::ContactsContract_::RawContactsColumns,0,"CONTACT_ID","Ljava/lang/String;")
 J2CPP_DEFINE_FIELD(android::provider::ContactsContract_::RawContactsColumns,1,"AGGREGATION_MODE","Ljava/lang/String;")
 J2CPP_DEFINE_FIELD(android::provider::ContactsContract_::RawContactsColumns,2,"DELETED","Ljava/lang/String;")
+
+
+android::provider::ContactsContract_::BaseSyncColumns::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 static_field<
 	android::provider::ContactsContract_::BaseSyncColumns::J2CPP_CLASS_NAME,
@@ -4762,16 +5301,22 @@ J2CPP_DEFINE_FIELD(android::provider::ContactsContract_::BaseSyncColumns,1,"SYNC
 J2CPP_DEFINE_FIELD(android::provider::ContactsContract_::BaseSyncColumns,2,"SYNC3","Ljava/lang/String;")
 J2CPP_DEFINE_FIELD(android::provider::ContactsContract_::BaseSyncColumns,3,"SYNC4","Ljava/lang/String;")
 
-template <>
-local_ref< android::provider::ContactsContract_::StatusUpdates > create< android::provider::ContactsContract_::StatusUpdates>()
+
+android::provider::ContactsContract_::StatusUpdates::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::provider::ContactsContract_::StatusUpdates >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::provider::ContactsContract_::StatusUpdates::J2CPP_CLASS_NAME>(),
-			get_method_id<android::provider::ContactsContract_::StatusUpdates::J2CPP_CLASS_NAME, android::provider::ContactsContract_::StatusUpdates::J2CPP_METHOD_NAME(0), android::provider::ContactsContract_::StatusUpdates::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+android::provider::ContactsContract_::StatusUpdates::operator local_ref<android::provider::ContactsContract_::StatusColumns>() const
+{
+	return local_ref<android::provider::ContactsContract_::StatusColumns>(get_jtype());
+}
+
+android::provider::ContactsContract_::StatusUpdates::operator local_ref<android::provider::ContactsContract_::PresenceColumns>() const
+{
+	return local_ref<android::provider::ContactsContract_::PresenceColumns>(get_jtype());
+}
+
 
 cpp_int android::provider::ContactsContract_::StatusUpdates::getPresenceIconResourceId(cpp_int const &a0)
 {
@@ -4794,6 +5339,7 @@ cpp_int android::provider::ContactsContract_::StatusUpdates::getPresencePreceden
 		)
 	);
 }
+
 
 
 static_field<
@@ -4827,16 +5373,17 @@ J2CPP_DEFINE_FIELD(android::provider::ContactsContract_::StatusUpdates,0,"CONTEN
 J2CPP_DEFINE_FIELD(android::provider::ContactsContract_::StatusUpdates,1,"CONTENT_TYPE","Ljava/lang/String;")
 J2CPP_DEFINE_FIELD(android::provider::ContactsContract_::StatusUpdates,2,"CONTENT_ITEM_TYPE","Ljava/lang/String;")
 
-template <>
-local_ref< android::provider::ContactsContract_::Data > create< android::provider::ContactsContract_::Data>()
+
+android::provider::ContactsContract_::Data::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::provider::ContactsContract_::Data >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::provider::ContactsContract_::Data::J2CPP_CLASS_NAME>(),
-			get_method_id<android::provider::ContactsContract_::Data::J2CPP_CLASS_NAME, android::provider::ContactsContract_::Data::J2CPP_METHOD_NAME(0), android::provider::ContactsContract_::Data::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+android::provider::ContactsContract_::Data::operator local_ref<android::provider::ContactsContract_::DataColumnsWithJoins>() const
+{
+	return local_ref<android::provider::ContactsContract_::DataColumnsWithJoins>(get_jtype());
+}
+
 
 local_ref< android::net::Uri > android::provider::ContactsContract_::Data::getContactLookupUri(local_ref< android::content::ContentResolver > const &a0, local_ref< android::net::Uri > const &a1)
 {
@@ -4848,6 +5395,7 @@ local_ref< android::net::Uri > android::provider::ContactsContract_::Data::getCo
 		)
 	);
 }
+
 
 
 static_field<
@@ -4872,16 +5420,28 @@ J2CPP_DEFINE_METHOD(android::provider::ContactsContract_::Data,2,"<clinit>","()V
 J2CPP_DEFINE_FIELD(android::provider::ContactsContract_::Data,0,"CONTENT_URI","Landroid/net/Uri;")
 J2CPP_DEFINE_FIELD(android::provider::ContactsContract_::Data,1,"CONTENT_TYPE","Ljava/lang/String;")
 
-template <>
-local_ref< android::provider::ContactsContract_::RawContactsEntity > create< android::provider::ContactsContract_::RawContactsEntity>()
+
+android::provider::ContactsContract_::RawContactsEntity::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::provider::ContactsContract_::RawContactsEntity >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::provider::ContactsContract_::RawContactsEntity::J2CPP_CLASS_NAME>(),
-			get_method_id<android::provider::ContactsContract_::RawContactsEntity::J2CPP_CLASS_NAME, android::provider::ContactsContract_::RawContactsEntity::J2CPP_METHOD_NAME(0), android::provider::ContactsContract_::RawContactsEntity::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+android::provider::ContactsContract_::RawContactsEntity::operator local_ref<android::provider::BaseColumns>() const
+{
+	return local_ref<android::provider::BaseColumns>(get_jtype());
+}
+
+android::provider::ContactsContract_::RawContactsEntity::operator local_ref<android::provider::ContactsContract_::DataColumns>() const
+{
+	return local_ref<android::provider::ContactsContract_::DataColumns>(get_jtype());
+}
+
+android::provider::ContactsContract_::RawContactsEntity::operator local_ref<android::provider::ContactsContract_::RawContactsColumns>() const
+{
+	return local_ref<android::provider::ContactsContract_::RawContactsColumns>(get_jtype());
+}
+
+
 
 
 static_field<
@@ -4913,20 +5473,33 @@ J2CPP_DEFINE_FIELD(android::provider::ContactsContract_::RawContactsEntity,0,"CO
 J2CPP_DEFINE_FIELD(android::provider::ContactsContract_::RawContactsEntity,1,"CONTENT_TYPE","Ljava/lang/String;")
 J2CPP_DEFINE_FIELD(android::provider::ContactsContract_::RawContactsEntity,2,"DATA_ID","Ljava/lang/String;")
 
-template <>
-local_ref< android::provider::ContactsContract_::Presence > create< android::provider::ContactsContract_::Presence>()
+
+android::provider::ContactsContract_::Presence::operator local_ref<android::provider::ContactsContract_::StatusUpdates>() const
 {
-	return local_ref< android::provider::ContactsContract_::Presence >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::provider::ContactsContract_::Presence::J2CPP_CLASS_NAME>(),
-			get_method_id<android::provider::ContactsContract_::Presence::J2CPP_CLASS_NAME, android::provider::ContactsContract_::Presence::J2CPP_METHOD_NAME(0), android::provider::ContactsContract_::Presence::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<android::provider::ContactsContract_::StatusUpdates>(get_jtype());
 }
+
+
+android::provider::ContactsContract_::Presence::Presence()
+: cpp_object<android::provider::ContactsContract_::Presence>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::provider::ContactsContract_::Presence::J2CPP_CLASS_NAME>(),
+		get_method_id<android::provider::ContactsContract_::Presence::J2CPP_CLASS_NAME, android::provider::ContactsContract_::Presence::J2CPP_METHOD_NAME(0), android::provider::ContactsContract_::Presence::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 
 J2CPP_DEFINE_CLASS(android::provider::ContactsContract_::Presence,"android/provider/ContactsContract$Presence")
 J2CPP_DEFINE_METHOD(android::provider::ContactsContract_::Presence,0,"<init>","()V")
+
+
+android::provider::ContactsContract_::ContactsColumns::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 static_field<
 	android::provider::ContactsContract_::ContactsColumns::J2CPP_CLASS_NAME,
@@ -4971,6 +5544,12 @@ J2CPP_DEFINE_FIELD(android::provider::ContactsContract_::ContactsColumns,2,"IN_V
 J2CPP_DEFINE_FIELD(android::provider::ContactsContract_::ContactsColumns,3,"HAS_PHONE_NUMBER","Ljava/lang/String;")
 J2CPP_DEFINE_FIELD(android::provider::ContactsContract_::ContactsColumns,4,"LOOKUP_KEY","Ljava/lang/String;")
 
+
+android::provider::ContactsContract_::PhoneLookupColumns::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
+
 static_field<
 	android::provider::ContactsContract_::PhoneLookupColumns::J2CPP_CLASS_NAME,
 	android::provider::ContactsContract_::PhoneLookupColumns::J2CPP_FIELD_NAME(0),
@@ -4999,16 +5578,24 @@ J2CPP_DEFINE_FIELD(android::provider::ContactsContract_::PhoneLookupColumns,1,"T
 J2CPP_DEFINE_FIELD(android::provider::ContactsContract_::PhoneLookupColumns,2,"LABEL","Ljava/lang/String;")
 
 
-template <>
-local_ref< android::provider::ContactsContract > create< android::provider::ContactsContract>()
+
+android::provider::ContactsContract::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::provider::ContactsContract >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::provider::ContactsContract::J2CPP_CLASS_NAME>(),
-			get_method_id<android::provider::ContactsContract::J2CPP_CLASS_NAME, android::provider::ContactsContract::J2CPP_METHOD_NAME(0), android::provider::ContactsContract::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::provider::ContactsContract::ContactsContract()
+: cpp_object<android::provider::ContactsContract>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::provider::ContactsContract::J2CPP_CLASS_NAME>(),
+		get_method_id<android::provider::ContactsContract::J2CPP_CLASS_NAME, android::provider::ContactsContract::J2CPP_METHOD_NAME(0), android::provider::ContactsContract::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
+
 
 
 static_field<

@@ -10,8 +10,10 @@
 #define J2CPP_ANDROID_GRAPHICS_DASHPATHEFFECT_HPP_DECL
 
 
+namespace j2cpp { namespace android { namespace graphics { class PathEffect; } } }
 
 
+#include <android/graphics/PathEffect.hpp>
 
 
 namespace j2cpp {
@@ -28,16 +30,19 @@ namespace android { namespace graphics {
 
 		J2CPP_DECLARE_METHOD(0)
 
-		DashPathEffect(jobject jobj)
+		explicit DashPathEffect(jobject jobj)
 		: cpp_object<DashPathEffect>(jobj)
 		{
 		}
 
+		operator local_ref<android::graphics::PathEffect>() const;
+
+
+		DashPathEffect(local_ref< cpp_float_array<1> > const&, cpp_float const&);
 	}; //class DashPathEffect
 
 } //namespace graphics
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -51,17 +56,24 @@ namespace android { namespace graphics {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::graphics::DashPathEffect > create< android::graphics::DashPathEffect>(local_ref< cpp_float_array<1> > const &a0, cpp_float const &a1)
+
+android::graphics::DashPathEffect::operator local_ref<android::graphics::PathEffect>() const
 {
-	return local_ref< android::graphics::DashPathEffect >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::graphics::DashPathEffect::J2CPP_CLASS_NAME>(),
-			get_method_id<android::graphics::DashPathEffect::J2CPP_CLASS_NAME, android::graphics::DashPathEffect::J2CPP_METHOD_NAME(0), android::graphics::DashPathEffect::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<android::graphics::PathEffect>(get_jtype());
 }
+
+
+android::graphics::DashPathEffect::DashPathEffect(local_ref< cpp_float_array<1> > const &a0, cpp_float const &a1)
+: cpp_object<android::graphics::DashPathEffect>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::graphics::DashPathEffect::J2CPP_CLASS_NAME>(),
+		get_method_id<android::graphics::DashPathEffect::J2CPP_CLASS_NAME, android::graphics::DashPathEffect::J2CPP_METHOD_NAME(0), android::graphics::DashPathEffect::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
 
 
 J2CPP_DEFINE_CLASS(android::graphics::DashPathEffect,"android/graphics/DashPathEffect")

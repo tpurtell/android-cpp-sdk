@@ -10,11 +10,13 @@
 #define J2CPP_JAVA_SQL_SQLDATA_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace sql { class SQLInput; } } }
 namespace j2cpp { namespace java { namespace sql { class SQLOutput; } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/sql/SQLInput.hpp>
 #include <java/sql/SQLOutput.hpp>
@@ -36,10 +38,13 @@ namespace java { namespace sql {
 		J2CPP_DECLARE_METHOD(1)
 		J2CPP_DECLARE_METHOD(2)
 
-		SQLData(jobject jobj)
+		explicit SQLData(jobject jobj)
 		: cpp_object<SQLData>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		local_ref< java::lang::String > getSQLTypeName();
 		void readSQL(local_ref< java::sql::SQLInput > const&, local_ref< java::lang::String > const&);
@@ -48,7 +53,6 @@ namespace java { namespace sql {
 
 } //namespace sql
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -61,6 +65,12 @@ namespace java { namespace sql {
 
 namespace j2cpp {
 
+
+
+java::sql::SQLData::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 local_ref< java::lang::String > java::sql::SQLData::getSQLTypeName()
 {

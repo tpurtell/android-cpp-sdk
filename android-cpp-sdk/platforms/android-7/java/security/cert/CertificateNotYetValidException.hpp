@@ -11,9 +11,11 @@
 
 
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace security { namespace cert { class CertificateException; } } } }
 
 
 #include <java/lang/String.hpp>
+#include <java/security/cert/CertificateException.hpp>
 
 
 namespace j2cpp {
@@ -31,17 +33,21 @@ namespace java { namespace security { namespace cert {
 		J2CPP_DECLARE_METHOD(0)
 		J2CPP_DECLARE_METHOD(1)
 
-		CertificateNotYetValidException(jobject jobj)
+		explicit CertificateNotYetValidException(jobject jobj)
 		: cpp_object<CertificateNotYetValidException>(jobj)
 		{
 		}
 
+		operator local_ref<java::security::cert::CertificateException>() const;
+
+
+		CertificateNotYetValidException(local_ref< java::lang::String > const&);
+		CertificateNotYetValidException();
 	}; //class CertificateNotYetValidException
 
 } //namespace cert
 } //namespace security
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -55,28 +61,36 @@ namespace java { namespace security { namespace cert {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::security::cert::CertificateNotYetValidException > create< java::security::cert::CertificateNotYetValidException>(local_ref< java::lang::String > const &a0)
+
+java::security::cert::CertificateNotYetValidException::operator local_ref<java::security::cert::CertificateException>() const
 {
-	return local_ref< java::security::cert::CertificateNotYetValidException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::security::cert::CertificateNotYetValidException::J2CPP_CLASS_NAME>(),
-			get_method_id<java::security::cert::CertificateNotYetValidException::J2CPP_CLASS_NAME, java::security::cert::CertificateNotYetValidException::J2CPP_METHOD_NAME(0), java::security::cert::CertificateNotYetValidException::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::security::cert::CertificateException>(get_jtype());
 }
 
-template <>
-local_ref< java::security::cert::CertificateNotYetValidException > create< java::security::cert::CertificateNotYetValidException>()
+
+java::security::cert::CertificateNotYetValidException::CertificateNotYetValidException(local_ref< java::lang::String > const &a0)
+: cpp_object<java::security::cert::CertificateNotYetValidException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::security::cert::CertificateNotYetValidException::J2CPP_CLASS_NAME>(),
+		get_method_id<java::security::cert::CertificateNotYetValidException::J2CPP_CLASS_NAME, java::security::cert::CertificateNotYetValidException::J2CPP_METHOD_NAME(0), java::security::cert::CertificateNotYetValidException::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< java::security::cert::CertificateNotYetValidException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::security::cert::CertificateNotYetValidException::J2CPP_CLASS_NAME>(),
-			get_method_id<java::security::cert::CertificateNotYetValidException::J2CPP_CLASS_NAME, java::security::cert::CertificateNotYetValidException::J2CPP_METHOD_NAME(1), java::security::cert::CertificateNotYetValidException::J2CPP_METHOD_SIGNATURE(1), false>()
-		)
-	);
 }
+
+
+
+java::security::cert::CertificateNotYetValidException::CertificateNotYetValidException()
+: cpp_object<java::security::cert::CertificateNotYetValidException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::security::cert::CertificateNotYetValidException::J2CPP_CLASS_NAME>(),
+		get_method_id<java::security::cert::CertificateNotYetValidException::J2CPP_CLASS_NAME, java::security::cert::CertificateNotYetValidException::J2CPP_METHOD_NAME(1), java::security::cert::CertificateNotYetValidException::J2CPP_METHOD_SIGNATURE(1), false>()
+	)
+)
+{
+}
+
 
 
 J2CPP_DEFINE_CLASS(java::security::cert::CertificateNotYetValidException,"java/security/cert/CertificateNotYetValidException")

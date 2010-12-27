@@ -10,12 +10,14 @@
 #define J2CPP_ANDROID_WIDGET_FILTERQUERYPROVIDER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class CharSequence; } } }
 namespace j2cpp { namespace android { namespace database { class Cursor; } } }
 
 
 #include <android/database/Cursor.hpp>
 #include <java/lang/CharSequence.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -32,17 +34,19 @@ namespace android { namespace widget {
 
 		J2CPP_DECLARE_METHOD(0)
 
-		FilterQueryProvider(jobject jobj)
+		explicit FilterQueryProvider(jobject jobj)
 		: cpp_object<FilterQueryProvider>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		local_ref< android::database::Cursor > runQuery(local_ref< java::lang::CharSequence > const&);
 	}; //class FilterQueryProvider
 
 } //namespace widget
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -55,6 +59,12 @@ namespace android { namespace widget {
 
 namespace j2cpp {
 
+
+
+android::widget::FilterQueryProvider::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 local_ref< android::database::Cursor > android::widget::FilterQueryProvider::runQuery(local_ref< java::lang::CharSequence > const &a0)
 {

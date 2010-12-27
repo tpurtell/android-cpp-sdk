@@ -54,10 +54,13 @@ namespace javax { namespace xml { namespace parsers {
 		J2CPP_DECLARE_METHOD(19)
 		J2CPP_DECLARE_METHOD(20)
 
-		DocumentBuilderFactory(jobject jobj)
+		explicit DocumentBuilderFactory(jobject jobj)
 		: cpp_object<DocumentBuilderFactory>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		local_ref< java::lang::Object > getAttribute(local_ref< java::lang::String > const&);
 		cpp_boolean getFeature(local_ref< java::lang::String > const&);
@@ -85,7 +88,6 @@ namespace javax { namespace xml { namespace parsers {
 } //namespace xml
 } //namespace javax
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVAX_XML_PARSERS_DOCUMENTBUILDERFACTORY_HPP_DECL
@@ -98,16 +100,12 @@ namespace javax { namespace xml { namespace parsers {
 namespace j2cpp {
 
 
-template <>
-local_ref< javax::xml::parsers::DocumentBuilderFactory > create< javax::xml::parsers::DocumentBuilderFactory>()
+
+javax::xml::parsers::DocumentBuilderFactory::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< javax::xml::parsers::DocumentBuilderFactory >(
-		environment::get().get_jenv()->NewObject(
-			get_class<javax::xml::parsers::DocumentBuilderFactory::J2CPP_CLASS_NAME>(),
-			get_method_id<javax::xml::parsers::DocumentBuilderFactory::J2CPP_CLASS_NAME, javax::xml::parsers::DocumentBuilderFactory::J2CPP_METHOD_NAME(0), javax::xml::parsers::DocumentBuilderFactory::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
 
 local_ref< java::lang::Object > javax::xml::parsers::DocumentBuilderFactory::getAttribute(local_ref< java::lang::String > const &a0)
 {

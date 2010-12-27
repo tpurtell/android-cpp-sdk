@@ -10,14 +10,18 @@
 #define J2CPP_JAVAX_SECURITY_AUTH_X500_X500PRINCIPAL_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 namespace j2cpp { namespace java { namespace io { class InputStream; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace security { class Principal; } } }
 
 
 #include <java/io/InputStream.hpp>
+#include <java/io/Serializable.hpp>
 #include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
+#include <java/security/Principal.hpp>
 
 
 namespace j2cpp {
@@ -45,11 +49,19 @@ namespace javax { namespace security { namespace auth { namespace x500 {
 		J2CPP_DECLARE_FIELD(1)
 		J2CPP_DECLARE_FIELD(2)
 
-		X500Principal(jobject jobj)
+		explicit X500Principal(jobject jobj)
 		: cpp_object<X500Principal>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::io::Serializable>() const;
+		operator local_ref<java::security::Principal>() const;
+
+
+		X500Principal(local_ref< cpp_byte_array<1> > const&);
+		X500Principal(local_ref< java::io::InputStream > const&);
+		X500Principal(local_ref< java::lang::String > const&);
 		cpp_boolean equals(local_ref< java::lang::Object > const&);
 		local_ref< cpp_byte_array<1> > getEncoded();
 		local_ref< java::lang::String > getName();
@@ -67,7 +79,6 @@ namespace javax { namespace security { namespace auth { namespace x500 {
 } //namespace security
 } //namespace javax
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVAX_SECURITY_AUTH_X500_X500PRINCIPAL_HPP_DECL
@@ -80,41 +91,60 @@ namespace javax { namespace security { namespace auth { namespace x500 {
 namespace j2cpp {
 
 
-template <>
-local_ref< javax::security::auth::x500::X500Principal > create< javax::security::auth::x500::X500Principal>(local_ref< cpp_byte_array<1> > const &a0)
+
+javax::security::auth::x500::X500Principal::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< javax::security::auth::x500::X500Principal >(
-		environment::get().get_jenv()->NewObject(
-			get_class<javax::security::auth::x500::X500Principal::J2CPP_CLASS_NAME>(),
-			get_method_id<javax::security::auth::x500::X500Principal::J2CPP_CLASS_NAME, javax::security::auth::x500::X500Principal::J2CPP_METHOD_NAME(0), javax::security::auth::x500::X500Principal::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
 
-template <>
-local_ref< javax::security::auth::x500::X500Principal > create< javax::security::auth::x500::X500Principal>(local_ref< java::io::InputStream > const &a0)
+javax::security::auth::x500::X500Principal::operator local_ref<java::io::Serializable>() const
 {
-	return local_ref< javax::security::auth::x500::X500Principal >(
-		environment::get().get_jenv()->NewObject(
-			get_class<javax::security::auth::x500::X500Principal::J2CPP_CLASS_NAME>(),
-			get_method_id<javax::security::auth::x500::X500Principal::J2CPP_CLASS_NAME, javax::security::auth::x500::X500Principal::J2CPP_METHOD_NAME(1), javax::security::auth::x500::X500Principal::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::io::Serializable>(get_jtype());
 }
 
-template <>
-local_ref< javax::security::auth::x500::X500Principal > create< javax::security::auth::x500::X500Principal>(local_ref< java::lang::String > const &a0)
+javax::security::auth::x500::X500Principal::operator local_ref<java::security::Principal>() const
 {
-	return local_ref< javax::security::auth::x500::X500Principal >(
-		environment::get().get_jenv()->NewObject(
-			get_class<javax::security::auth::x500::X500Principal::J2CPP_CLASS_NAME>(),
-			get_method_id<javax::security::auth::x500::X500Principal::J2CPP_CLASS_NAME, javax::security::auth::x500::X500Principal::J2CPP_METHOD_NAME(2), javax::security::auth::x500::X500Principal::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::security::Principal>(get_jtype());
 }
+
+
+javax::security::auth::x500::X500Principal::X500Principal(local_ref< cpp_byte_array<1> > const &a0)
+: cpp_object<javax::security::auth::x500::X500Principal>(
+	environment::get().get_jenv()->NewObject(
+		get_class<javax::security::auth::x500::X500Principal::J2CPP_CLASS_NAME>(),
+		get_method_id<javax::security::auth::x500::X500Principal::J2CPP_CLASS_NAME, javax::security::auth::x500::X500Principal::J2CPP_METHOD_NAME(0), javax::security::auth::x500::X500Principal::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
+
+
+javax::security::auth::x500::X500Principal::X500Principal(local_ref< java::io::InputStream > const &a0)
+: cpp_object<javax::security::auth::x500::X500Principal>(
+	environment::get().get_jenv()->NewObject(
+		get_class<javax::security::auth::x500::X500Principal::J2CPP_CLASS_NAME>(),
+		get_method_id<javax::security::auth::x500::X500Principal::J2CPP_CLASS_NAME, javax::security::auth::x500::X500Principal::J2CPP_METHOD_NAME(1), javax::security::auth::x500::X500Principal::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
+
+
+javax::security::auth::x500::X500Principal::X500Principal(local_ref< java::lang::String > const &a0)
+: cpp_object<javax::security::auth::x500::X500Principal>(
+	environment::get().get_jenv()->NewObject(
+		get_class<javax::security::auth::x500::X500Principal::J2CPP_CLASS_NAME>(),
+		get_method_id<javax::security::auth::x500::X500Principal::J2CPP_CLASS_NAME, javax::security::auth::x500::X500Principal::J2CPP_METHOD_NAME(2), javax::security::auth::x500::X500Principal::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 cpp_boolean javax::security::auth::x500::X500Principal::equals(local_ref< java::lang::Object > const &a0)
 {

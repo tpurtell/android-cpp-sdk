@@ -10,14 +10,18 @@
 #define J2CPP_ANDROID_BLUETOOTH_BLUETOOTHSOCKET_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class Closeable; } } }
 namespace j2cpp { namespace java { namespace io { class InputStream; } } }
 namespace j2cpp { namespace java { namespace io { class OutputStream; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace android { namespace bluetooth { class BluetoothDevice; } } }
 
 
 #include <android/bluetooth/BluetoothDevice.hpp>
+#include <java/io/Closeable.hpp>
 #include <java/io/InputStream.hpp>
 #include <java/io/OutputStream.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -39,10 +43,14 @@ namespace android { namespace bluetooth {
 		J2CPP_DECLARE_METHOD(4)
 		J2CPP_DECLARE_METHOD(5)
 
-		BluetoothSocket(jobject jobj)
+		explicit BluetoothSocket(jobject jobj)
 		: cpp_object<BluetoothSocket>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::io::Closeable>() const;
+
 
 		void connect();
 		void close();
@@ -53,7 +61,6 @@ namespace android { namespace bluetooth {
 
 } //namespace bluetooth
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -67,16 +74,17 @@ namespace android { namespace bluetooth {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::bluetooth::BluetoothSocket > create< android::bluetooth::BluetoothSocket>()
+
+android::bluetooth::BluetoothSocket::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::bluetooth::BluetoothSocket >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::bluetooth::BluetoothSocket::J2CPP_CLASS_NAME>(),
-			get_method_id<android::bluetooth::BluetoothSocket::J2CPP_CLASS_NAME, android::bluetooth::BluetoothSocket::J2CPP_METHOD_NAME(0), android::bluetooth::BluetoothSocket::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+android::bluetooth::BluetoothSocket::operator local_ref<java::io::Closeable>() const
+{
+	return local_ref<java::io::Closeable>(get_jtype());
+}
+
 
 void android::bluetooth::BluetoothSocket::connect()
 {

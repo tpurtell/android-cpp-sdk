@@ -16,8 +16,10 @@ namespace j2cpp { namespace java { namespace lang { class Exception; } } }
 namespace j2cpp { namespace android { namespace content { namespace IntentSender_ { class OnFinished; } } } }
 namespace j2cpp { namespace android { namespace content { class Intent; } } }
 namespace j2cpp { namespace android { namespace content { class Context; } } }
+namespace j2cpp { namespace android { namespace util { class AndroidException; } } }
 namespace j2cpp { namespace android { namespace os { class Parcel; } } }
 namespace j2cpp { namespace android { namespace os { class Bundle; } } }
+namespace j2cpp { namespace android { namespace os { class Parcelable; } } }
 namespace j2cpp { namespace android { namespace os { class Handler; } } }
 namespace j2cpp { namespace android { namespace os { namespace Parcelable_ { class Creator; } } } }
 
@@ -29,6 +31,7 @@ namespace j2cpp { namespace android { namespace os { namespace Parcelable_ { cla
 #include <android/os/Handler.hpp>
 #include <android/os/Parcel.hpp>
 #include <android/os/Parcelable.hpp>
+#include <android/util/AndroidException.hpp>
 #include <java/lang/Exception.hpp>
 #include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
@@ -51,10 +54,13 @@ namespace android { namespace content {
 
 			J2CPP_DECLARE_METHOD(0)
 
-			OnFinished(jobject jobj)
+			explicit OnFinished(jobject jobj)
 			: cpp_object<OnFinished>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+
 
 			void onSendFinished(local_ref< android::content::IntentSender > const&, local_ref< android::content::Intent > const&, cpp_int const&, local_ref< java::lang::String > const&, local_ref< android::os::Bundle > const&);
 		}; //class OnFinished
@@ -71,11 +77,17 @@ namespace android { namespace content {
 			J2CPP_DECLARE_METHOD(1)
 			J2CPP_DECLARE_METHOD(2)
 
-			SendIntentException(jobject jobj)
+			explicit SendIntentException(jobject jobj)
 			: cpp_object<SendIntentException>(jobj)
 			{
 			}
 
+			operator local_ref<android::util::AndroidException>() const;
+
+
+			SendIntentException();
+			SendIntentException(local_ref< java::lang::String > const&);
+			SendIntentException(local_ref< java::lang::Exception > const&);
 		}; //class SendIntentException
 
 	} //namespace IntentSender_
@@ -102,10 +114,14 @@ namespace android { namespace content {
 		typedef IntentSender_::OnFinished OnFinished;
 		typedef IntentSender_::SendIntentException SendIntentException;
 
-		IntentSender(jobject jobj)
+		explicit IntentSender(jobject jobj)
 		: cpp_object<IntentSender>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<android::os::Parcelable>() const;
+
 
 		void sendIntent(local_ref< android::content::Context > const&, cpp_int const&, local_ref< android::content::Intent > const&, local_ref< android::content::IntentSender_::OnFinished > const&, local_ref< android::os::Handler > const&);
 		cpp_boolean equals(local_ref< java::lang::Object > const&);
@@ -122,7 +138,6 @@ namespace android { namespace content {
 } //namespace content
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_CONTENT_INTENTSENDER_HPP_DECL
@@ -135,6 +150,12 @@ namespace android { namespace content {
 namespace j2cpp {
 
 
+
+
+android::content::IntentSender_::OnFinished::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 void android::content::IntentSender_::OnFinished::onSendFinished(local_ref< android::content::IntentSender > const &a0, local_ref< android::content::Intent > const &a1, cpp_int const &a2, local_ref< java::lang::String > const &a3, local_ref< android::os::Bundle > const &a4)
 {
@@ -151,40 +172,49 @@ void android::content::IntentSender_::OnFinished::onSendFinished(local_ref< andr
 J2CPP_DEFINE_CLASS(android::content::IntentSender_::OnFinished,"android/content/IntentSender$OnFinished")
 J2CPP_DEFINE_METHOD(android::content::IntentSender_::OnFinished,0,"onSendFinished","(Landroid/content/IntentSender;Landroid/content/Intent;ILjava/lang/String;Landroid/os/Bundle;)V")
 
-template <>
-local_ref< android::content::IntentSender_::SendIntentException > create< android::content::IntentSender_::SendIntentException>()
+
+android::content::IntentSender_::SendIntentException::operator local_ref<android::util::AndroidException>() const
 {
-	return local_ref< android::content::IntentSender_::SendIntentException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::content::IntentSender_::SendIntentException::J2CPP_CLASS_NAME>(),
-			get_method_id<android::content::IntentSender_::SendIntentException::J2CPP_CLASS_NAME, android::content::IntentSender_::SendIntentException::J2CPP_METHOD_NAME(0), android::content::IntentSender_::SendIntentException::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<android::util::AndroidException>(get_jtype());
 }
 
-template <>
-local_ref< android::content::IntentSender_::SendIntentException > create< android::content::IntentSender_::SendIntentException>(local_ref< java::lang::String > const &a0)
+
+android::content::IntentSender_::SendIntentException::SendIntentException()
+: cpp_object<android::content::IntentSender_::SendIntentException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::content::IntentSender_::SendIntentException::J2CPP_CLASS_NAME>(),
+		get_method_id<android::content::IntentSender_::SendIntentException::J2CPP_CLASS_NAME, android::content::IntentSender_::SendIntentException::J2CPP_METHOD_NAME(0), android::content::IntentSender_::SendIntentException::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
 {
-	return local_ref< android::content::IntentSender_::SendIntentException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::content::IntentSender_::SendIntentException::J2CPP_CLASS_NAME>(),
-			get_method_id<android::content::IntentSender_::SendIntentException::J2CPP_CLASS_NAME, android::content::IntentSender_::SendIntentException::J2CPP_METHOD_NAME(1), android::content::IntentSender_::SendIntentException::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< android::content::IntentSender_::SendIntentException > create< android::content::IntentSender_::SendIntentException>(local_ref< java::lang::Exception > const &a0)
+
+
+android::content::IntentSender_::SendIntentException::SendIntentException(local_ref< java::lang::String > const &a0)
+: cpp_object<android::content::IntentSender_::SendIntentException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::content::IntentSender_::SendIntentException::J2CPP_CLASS_NAME>(),
+		get_method_id<android::content::IntentSender_::SendIntentException::J2CPP_CLASS_NAME, android::content::IntentSender_::SendIntentException::J2CPP_METHOD_NAME(1), android::content::IntentSender_::SendIntentException::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< android::content::IntentSender_::SendIntentException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::content::IntentSender_::SendIntentException::J2CPP_CLASS_NAME>(),
-			get_method_id<android::content::IntentSender_::SendIntentException::J2CPP_CLASS_NAME, android::content::IntentSender_::SendIntentException::J2CPP_METHOD_NAME(2), android::content::IntentSender_::SendIntentException::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype()
-		)
-	);
 }
+
+
+
+android::content::IntentSender_::SendIntentException::SendIntentException(local_ref< java::lang::Exception > const &a0)
+: cpp_object<android::content::IntentSender_::SendIntentException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::content::IntentSender_::SendIntentException::J2CPP_CLASS_NAME>(),
+		get_method_id<android::content::IntentSender_::SendIntentException::J2CPP_CLASS_NAME, android::content::IntentSender_::SendIntentException::J2CPP_METHOD_NAME(2), android::content::IntentSender_::SendIntentException::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 
 J2CPP_DEFINE_CLASS(android::content::IntentSender_::SendIntentException,"android/content/IntentSender$SendIntentException")
@@ -193,16 +223,17 @@ J2CPP_DEFINE_METHOD(android::content::IntentSender_::SendIntentException,1,"<ini
 J2CPP_DEFINE_METHOD(android::content::IntentSender_::SendIntentException,2,"<init>","(Ljava/lang/Exception;)V")
 
 
-template <>
-local_ref< android::content::IntentSender > create< android::content::IntentSender>()
+
+android::content::IntentSender::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::content::IntentSender >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::content::IntentSender::J2CPP_CLASS_NAME>(),
-			get_method_id<android::content::IntentSender::J2CPP_CLASS_NAME, android::content::IntentSender::J2CPP_METHOD_NAME(0), android::content::IntentSender::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+android::content::IntentSender::operator local_ref<android::os::Parcelable>() const
+{
+	return local_ref<android::os::Parcelable>(get_jtype());
+}
+
 
 void android::content::IntentSender::sendIntent(local_ref< android::content::Context > const &a0, cpp_int const &a1, local_ref< android::content::Intent > const &a2, local_ref< android::content::IntentSender_::OnFinished > const &a3, local_ref< android::os::Handler > const &a4)
 {
@@ -288,6 +319,7 @@ local_ref< android::content::IntentSender > android::content::IntentSender::read
 		)
 	);
 }
+
 
 
 static_field<

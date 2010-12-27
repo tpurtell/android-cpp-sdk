@@ -43,11 +43,14 @@ namespace java { namespace lang {
 		J2CPP_DECLARE_METHOD(10)
 		J2CPP_DECLARE_METHOD(11)
 
-		Object(jobject jobj)
+		explicit Object(jobject jobj)
 		: cpp_object<Object>(jobj)
 		{
 		}
 
+
+
+		Object();
 		cpp_boolean equals(local_ref< java::lang::Object > const&);
 		local_ref< java::lang::Class > getClass();
 		cpp_int hashCode();
@@ -62,7 +65,6 @@ namespace java { namespace lang {
 } //namespace lang
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_LANG_OBJECT_HPP_DECL
@@ -75,16 +77,18 @@ namespace java { namespace lang {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::lang::Object > create< java::lang::Object>()
+
+
+java::lang::Object::Object()
+: cpp_object<java::lang::Object>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::lang::Object::J2CPP_CLASS_NAME>(),
+		get_method_id<java::lang::Object::J2CPP_CLASS_NAME, java::lang::Object::J2CPP_METHOD_NAME(0), java::lang::Object::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
 {
-	return local_ref< java::lang::Object >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::lang::Object::J2CPP_CLASS_NAME>(),
-			get_method_id<java::lang::Object::J2CPP_CLASS_NAME, java::lang::Object::J2CPP_METHOD_NAME(0), java::lang::Object::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
 }
+
 
 
 cpp_boolean java::lang::Object::equals(local_ref< java::lang::Object > const &a0)

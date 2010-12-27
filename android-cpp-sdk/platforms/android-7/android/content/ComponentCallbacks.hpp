@@ -10,10 +10,12 @@
 #define J2CPP_ANDROID_CONTENT_COMPONENTCALLBACKS_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace android { namespace content { namespace res { class Configuration; } } } }
 
 
 #include <android/content/res/Configuration.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -31,10 +33,13 @@ namespace android { namespace content {
 		J2CPP_DECLARE_METHOD(0)
 		J2CPP_DECLARE_METHOD(1)
 
-		ComponentCallbacks(jobject jobj)
+		explicit ComponentCallbacks(jobject jobj)
 		: cpp_object<ComponentCallbacks>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		void onConfigurationChanged(local_ref< android::content::res::Configuration > const&);
 		void onLowMemory();
@@ -42,7 +47,6 @@ namespace android { namespace content {
 
 } //namespace content
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -55,6 +59,12 @@ namespace android { namespace content {
 
 namespace j2cpp {
 
+
+
+android::content::ComponentCallbacks::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 void android::content::ComponentCallbacks::onConfigurationChanged(local_ref< android::content::res::Configuration > const &a0)
 {

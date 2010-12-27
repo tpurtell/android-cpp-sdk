@@ -10,9 +10,11 @@
 #define J2CPP_JAVA_IO_OBJECTOUTPUT_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class DataOutput; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
+#include <java/io/DataOutput.hpp>
 #include <java/lang/Object.hpp>
 
 
@@ -35,10 +37,14 @@ namespace java { namespace io {
 		J2CPP_DECLARE_METHOD(4)
 		J2CPP_DECLARE_METHOD(5)
 
-		ObjectOutput(jobject jobj)
+		explicit ObjectOutput(jobject jobj)
 		: cpp_object<ObjectOutput>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::io::DataOutput>() const;
+
 
 		void close();
 		void flush();
@@ -51,7 +57,6 @@ namespace java { namespace io {
 } //namespace io
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_IO_OBJECTOUTPUT_HPP_DECL
@@ -63,6 +68,17 @@ namespace java { namespace io {
 
 namespace j2cpp {
 
+
+
+java::io::ObjectOutput::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
+
+java::io::ObjectOutput::operator local_ref<java::io::DataOutput>() const
+{
+	return local_ref<java::io::DataOutput>(get_jtype());
+}
 
 void java::io::ObjectOutput::close()
 {

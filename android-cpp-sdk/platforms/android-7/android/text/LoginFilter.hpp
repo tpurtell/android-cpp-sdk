@@ -10,12 +10,16 @@
 #define J2CPP_ANDROID_TEXT_LOGINFILTER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class CharSequence; } } }
+namespace j2cpp { namespace android { namespace text { class InputFilter; } } }
 namespace j2cpp { namespace android { namespace text { class Spanned; } } }
 
 
+#include <android/text/InputFilter.hpp>
 #include <android/text/Spanned.hpp>
 #include <java/lang/CharSequence.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -37,11 +41,16 @@ namespace android { namespace text {
 			J2CPP_DECLARE_METHOD(1)
 			J2CPP_DECLARE_METHOD(2)
 
-			UsernameFilterGeneric(jobject jobj)
+			explicit UsernameFilterGeneric(jobject jobj)
 			: cpp_object<UsernameFilterGeneric>(jobj)
 			{
 			}
 
+			operator local_ref<android::text::LoginFilter>() const;
+
+
+			UsernameFilterGeneric();
+			UsernameFilterGeneric(cpp_boolean const&);
 			cpp_boolean isAllowed(cpp_char const&);
 		}; //class UsernameFilterGeneric
 
@@ -57,11 +66,16 @@ namespace android { namespace text {
 			J2CPP_DECLARE_METHOD(1)
 			J2CPP_DECLARE_METHOD(2)
 
-			UsernameFilterGMail(jobject jobj)
+			explicit UsernameFilterGMail(jobject jobj)
 			: cpp_object<UsernameFilterGMail>(jobj)
 			{
 			}
 
+			operator local_ref<android::text::LoginFilter>() const;
+
+
+			UsernameFilterGMail();
+			UsernameFilterGMail(cpp_boolean const&);
 			cpp_boolean isAllowed(cpp_char const&);
 		}; //class UsernameFilterGMail
 
@@ -77,11 +91,16 @@ namespace android { namespace text {
 			J2CPP_DECLARE_METHOD(1)
 			J2CPP_DECLARE_METHOD(2)
 
-			PasswordFilterGMail(jobject jobj)
+			explicit PasswordFilterGMail(jobject jobj)
 			: cpp_object<PasswordFilterGMail>(jobj)
 			{
 			}
 
+			operator local_ref<android::text::LoginFilter>() const;
+
+
+			PasswordFilterGMail();
+			PasswordFilterGMail(cpp_boolean const&);
 			cpp_boolean isAllowed(cpp_char const&);
 		}; //class PasswordFilterGMail
 
@@ -105,10 +124,14 @@ namespace android { namespace text {
 		typedef LoginFilter_::UsernameFilterGMail UsernameFilterGMail;
 		typedef LoginFilter_::PasswordFilterGMail PasswordFilterGMail;
 
-		LoginFilter(jobject jobj)
+		explicit LoginFilter(jobject jobj)
 		: cpp_object<LoginFilter>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<android::text::InputFilter>() const;
+
 
 		local_ref< java::lang::CharSequence > filter(local_ref< java::lang::CharSequence > const&, cpp_int const&, cpp_int const&, local_ref< android::text::Spanned > const&, cpp_int const&, cpp_int const&);
 		void onStart();
@@ -119,7 +142,6 @@ namespace android { namespace text {
 
 } //namespace text
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -134,28 +156,36 @@ namespace j2cpp {
 
 
 
-template <>
-local_ref< android::text::LoginFilter_::UsernameFilterGeneric > create< android::text::LoginFilter_::UsernameFilterGeneric>()
+
+android::text::LoginFilter_::UsernameFilterGeneric::operator local_ref<android::text::LoginFilter>() const
 {
-	return local_ref< android::text::LoginFilter_::UsernameFilterGeneric >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::text::LoginFilter_::UsernameFilterGeneric::J2CPP_CLASS_NAME>(),
-			get_method_id<android::text::LoginFilter_::UsernameFilterGeneric::J2CPP_CLASS_NAME, android::text::LoginFilter_::UsernameFilterGeneric::J2CPP_METHOD_NAME(0), android::text::LoginFilter_::UsernameFilterGeneric::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<android::text::LoginFilter>(get_jtype());
 }
 
-template <>
-local_ref< android::text::LoginFilter_::UsernameFilterGeneric > create< android::text::LoginFilter_::UsernameFilterGeneric>(cpp_boolean const &a0)
+
+android::text::LoginFilter_::UsernameFilterGeneric::UsernameFilterGeneric()
+: cpp_object<android::text::LoginFilter_::UsernameFilterGeneric>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::text::LoginFilter_::UsernameFilterGeneric::J2CPP_CLASS_NAME>(),
+		get_method_id<android::text::LoginFilter_::UsernameFilterGeneric::J2CPP_CLASS_NAME, android::text::LoginFilter_::UsernameFilterGeneric::J2CPP_METHOD_NAME(0), android::text::LoginFilter_::UsernameFilterGeneric::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
 {
-	return local_ref< android::text::LoginFilter_::UsernameFilterGeneric >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::text::LoginFilter_::UsernameFilterGeneric::J2CPP_CLASS_NAME>(),
-			get_method_id<android::text::LoginFilter_::UsernameFilterGeneric::J2CPP_CLASS_NAME, android::text::LoginFilter_::UsernameFilterGeneric::J2CPP_METHOD_NAME(1), android::text::LoginFilter_::UsernameFilterGeneric::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
 }
+
+
+
+android::text::LoginFilter_::UsernameFilterGeneric::UsernameFilterGeneric(cpp_boolean const &a0)
+: cpp_object<android::text::LoginFilter_::UsernameFilterGeneric>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::text::LoginFilter_::UsernameFilterGeneric::J2CPP_CLASS_NAME>(),
+		get_method_id<android::text::LoginFilter_::UsernameFilterGeneric::J2CPP_CLASS_NAME, android::text::LoginFilter_::UsernameFilterGeneric::J2CPP_METHOD_NAME(1), android::text::LoginFilter_::UsernameFilterGeneric::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 cpp_boolean android::text::LoginFilter_::UsernameFilterGeneric::isAllowed(cpp_char const &a0)
 {
@@ -174,28 +204,36 @@ J2CPP_DEFINE_METHOD(android::text::LoginFilter_::UsernameFilterGeneric,0,"<init>
 J2CPP_DEFINE_METHOD(android::text::LoginFilter_::UsernameFilterGeneric,1,"<init>","(Z)V")
 J2CPP_DEFINE_METHOD(android::text::LoginFilter_::UsernameFilterGeneric,2,"isAllowed","(C)Z")
 
-template <>
-local_ref< android::text::LoginFilter_::UsernameFilterGMail > create< android::text::LoginFilter_::UsernameFilterGMail>()
+
+android::text::LoginFilter_::UsernameFilterGMail::operator local_ref<android::text::LoginFilter>() const
 {
-	return local_ref< android::text::LoginFilter_::UsernameFilterGMail >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::text::LoginFilter_::UsernameFilterGMail::J2CPP_CLASS_NAME>(),
-			get_method_id<android::text::LoginFilter_::UsernameFilterGMail::J2CPP_CLASS_NAME, android::text::LoginFilter_::UsernameFilterGMail::J2CPP_METHOD_NAME(0), android::text::LoginFilter_::UsernameFilterGMail::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<android::text::LoginFilter>(get_jtype());
 }
 
-template <>
-local_ref< android::text::LoginFilter_::UsernameFilterGMail > create< android::text::LoginFilter_::UsernameFilterGMail>(cpp_boolean const &a0)
+
+android::text::LoginFilter_::UsernameFilterGMail::UsernameFilterGMail()
+: cpp_object<android::text::LoginFilter_::UsernameFilterGMail>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::text::LoginFilter_::UsernameFilterGMail::J2CPP_CLASS_NAME>(),
+		get_method_id<android::text::LoginFilter_::UsernameFilterGMail::J2CPP_CLASS_NAME, android::text::LoginFilter_::UsernameFilterGMail::J2CPP_METHOD_NAME(0), android::text::LoginFilter_::UsernameFilterGMail::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
 {
-	return local_ref< android::text::LoginFilter_::UsernameFilterGMail >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::text::LoginFilter_::UsernameFilterGMail::J2CPP_CLASS_NAME>(),
-			get_method_id<android::text::LoginFilter_::UsernameFilterGMail::J2CPP_CLASS_NAME, android::text::LoginFilter_::UsernameFilterGMail::J2CPP_METHOD_NAME(1), android::text::LoginFilter_::UsernameFilterGMail::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
 }
+
+
+
+android::text::LoginFilter_::UsernameFilterGMail::UsernameFilterGMail(cpp_boolean const &a0)
+: cpp_object<android::text::LoginFilter_::UsernameFilterGMail>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::text::LoginFilter_::UsernameFilterGMail::J2CPP_CLASS_NAME>(),
+		get_method_id<android::text::LoginFilter_::UsernameFilterGMail::J2CPP_CLASS_NAME, android::text::LoginFilter_::UsernameFilterGMail::J2CPP_METHOD_NAME(1), android::text::LoginFilter_::UsernameFilterGMail::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 cpp_boolean android::text::LoginFilter_::UsernameFilterGMail::isAllowed(cpp_char const &a0)
 {
@@ -214,28 +252,36 @@ J2CPP_DEFINE_METHOD(android::text::LoginFilter_::UsernameFilterGMail,0,"<init>",
 J2CPP_DEFINE_METHOD(android::text::LoginFilter_::UsernameFilterGMail,1,"<init>","(Z)V")
 J2CPP_DEFINE_METHOD(android::text::LoginFilter_::UsernameFilterGMail,2,"isAllowed","(C)Z")
 
-template <>
-local_ref< android::text::LoginFilter_::PasswordFilterGMail > create< android::text::LoginFilter_::PasswordFilterGMail>()
+
+android::text::LoginFilter_::PasswordFilterGMail::operator local_ref<android::text::LoginFilter>() const
 {
-	return local_ref< android::text::LoginFilter_::PasswordFilterGMail >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::text::LoginFilter_::PasswordFilterGMail::J2CPP_CLASS_NAME>(),
-			get_method_id<android::text::LoginFilter_::PasswordFilterGMail::J2CPP_CLASS_NAME, android::text::LoginFilter_::PasswordFilterGMail::J2CPP_METHOD_NAME(0), android::text::LoginFilter_::PasswordFilterGMail::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<android::text::LoginFilter>(get_jtype());
 }
 
-template <>
-local_ref< android::text::LoginFilter_::PasswordFilterGMail > create< android::text::LoginFilter_::PasswordFilterGMail>(cpp_boolean const &a0)
+
+android::text::LoginFilter_::PasswordFilterGMail::PasswordFilterGMail()
+: cpp_object<android::text::LoginFilter_::PasswordFilterGMail>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::text::LoginFilter_::PasswordFilterGMail::J2CPP_CLASS_NAME>(),
+		get_method_id<android::text::LoginFilter_::PasswordFilterGMail::J2CPP_CLASS_NAME, android::text::LoginFilter_::PasswordFilterGMail::J2CPP_METHOD_NAME(0), android::text::LoginFilter_::PasswordFilterGMail::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
 {
-	return local_ref< android::text::LoginFilter_::PasswordFilterGMail >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::text::LoginFilter_::PasswordFilterGMail::J2CPP_CLASS_NAME>(),
-			get_method_id<android::text::LoginFilter_::PasswordFilterGMail::J2CPP_CLASS_NAME, android::text::LoginFilter_::PasswordFilterGMail::J2CPP_METHOD_NAME(1), android::text::LoginFilter_::PasswordFilterGMail::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
 }
+
+
+
+android::text::LoginFilter_::PasswordFilterGMail::PasswordFilterGMail(cpp_boolean const &a0)
+: cpp_object<android::text::LoginFilter_::PasswordFilterGMail>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::text::LoginFilter_::PasswordFilterGMail::J2CPP_CLASS_NAME>(),
+		get_method_id<android::text::LoginFilter_::PasswordFilterGMail::J2CPP_CLASS_NAME, android::text::LoginFilter_::PasswordFilterGMail::J2CPP_METHOD_NAME(1), android::text::LoginFilter_::PasswordFilterGMail::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 cpp_boolean android::text::LoginFilter_::PasswordFilterGMail::isAllowed(cpp_char const &a0)
 {
@@ -255,16 +301,17 @@ J2CPP_DEFINE_METHOD(android::text::LoginFilter_::PasswordFilterGMail,1,"<init>",
 J2CPP_DEFINE_METHOD(android::text::LoginFilter_::PasswordFilterGMail,2,"isAllowed","(C)Z")
 
 
-template <>
-local_ref< android::text::LoginFilter > create< android::text::LoginFilter>()
+
+android::text::LoginFilter::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::text::LoginFilter >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::text::LoginFilter::J2CPP_CLASS_NAME>(),
-			get_method_id<android::text::LoginFilter::J2CPP_CLASS_NAME, android::text::LoginFilter::J2CPP_METHOD_NAME(0), android::text::LoginFilter::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+android::text::LoginFilter::operator local_ref<android::text::InputFilter>() const
+{
+	return local_ref<android::text::InputFilter>(get_jtype());
+}
+
 
 local_ref< java::lang::CharSequence > android::text::LoginFilter::filter(local_ref< java::lang::CharSequence > const &a0, cpp_int const &a1, cpp_int const &a2, local_ref< android::text::Spanned > const &a3, cpp_int const &a4, cpp_int const &a5)
 {

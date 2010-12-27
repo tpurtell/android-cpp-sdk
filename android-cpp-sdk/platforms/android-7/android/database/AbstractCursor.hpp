@@ -10,11 +10,13 @@
 #define J2CPP_ANDROID_DATABASE_ABSTRACTCURSOR_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace android { namespace net { class Uri; } } }
 namespace j2cpp { namespace android { namespace database { class CharArrayBuffer; } } }
 namespace j2cpp { namespace android { namespace database { class CursorWindow; } } }
 namespace j2cpp { namespace android { namespace database { class DataSetObserver; } } }
+namespace j2cpp { namespace android { namespace database { class CrossProcessCursor; } } }
 namespace j2cpp { namespace android { namespace database { class ContentObserver; } } }
 namespace j2cpp { namespace android { namespace content { class ContentResolver; } } }
 namespace j2cpp { namespace android { namespace os { class Bundle; } } }
@@ -23,10 +25,12 @@ namespace j2cpp { namespace android { namespace os { class Bundle; } } }
 #include <android/content/ContentResolver.hpp>
 #include <android/database/CharArrayBuffer.hpp>
 #include <android/database/ContentObserver.hpp>
+#include <android/database/CrossProcessCursor.hpp>
 #include <android/database/CursorWindow.hpp>
 #include <android/database/DataSetObserver.hpp>
 #include <android/net/Uri.hpp>
 #include <android/os/Bundle.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -49,11 +53,15 @@ namespace android { namespace database {
 			J2CPP_DECLARE_METHOD(1)
 			J2CPP_DECLARE_METHOD(2)
 
-			SelfContentObserver(jobject jobj)
+			explicit SelfContentObserver(jobject jobj)
 			: cpp_object<SelfContentObserver>(jobj)
 			{
 			}
 
+			operator local_ref<android::database::ContentObserver>() const;
+
+
+			SelfContentObserver(local_ref< android::database::AbstractCursor > const&);
 			cpp_boolean deliverSelfNotifications();
 			void onChange(cpp_boolean const&);
 		}; //class SelfContentObserver
@@ -123,11 +131,16 @@ namespace android { namespace database {
 
 		typedef AbstractCursor_::SelfContentObserver SelfContentObserver;
 
-		AbstractCursor(jobject jobj)
+		explicit AbstractCursor(jobject jobj)
 		: cpp_object<AbstractCursor>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<android::database::CrossProcessCursor>() const;
+
+
+		AbstractCursor();
 		cpp_int getCount();
 		local_ref< cpp_object_array<java::lang::String, 1> > getColumnNames();
 		local_ref< java::lang::String > getString(cpp_int const&);
@@ -175,7 +188,6 @@ namespace android { namespace database {
 } //namespace database
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_DATABASE_ABSTRACTCURSOR_HPP_DECL
@@ -189,17 +201,24 @@ namespace j2cpp {
 
 
 
-template <>
-local_ref< android::database::AbstractCursor_::SelfContentObserver > create< android::database::AbstractCursor_::SelfContentObserver>(local_ref< android::database::AbstractCursor > const &a0)
+
+android::database::AbstractCursor_::SelfContentObserver::operator local_ref<android::database::ContentObserver>() const
 {
-	return local_ref< android::database::AbstractCursor_::SelfContentObserver >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::database::AbstractCursor_::SelfContentObserver::J2CPP_CLASS_NAME>(),
-			get_method_id<android::database::AbstractCursor_::SelfContentObserver::J2CPP_CLASS_NAME, android::database::AbstractCursor_::SelfContentObserver::J2CPP_METHOD_NAME(0), android::database::AbstractCursor_::SelfContentObserver::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<android::database::ContentObserver>(get_jtype());
 }
+
+
+android::database::AbstractCursor_::SelfContentObserver::SelfContentObserver(local_ref< android::database::AbstractCursor > const &a0)
+: cpp_object<android::database::AbstractCursor_::SelfContentObserver>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::database::AbstractCursor_::SelfContentObserver::J2CPP_CLASS_NAME>(),
+		get_method_id<android::database::AbstractCursor_::SelfContentObserver::J2CPP_CLASS_NAME, android::database::AbstractCursor_::SelfContentObserver::J2CPP_METHOD_NAME(0), android::database::AbstractCursor_::SelfContentObserver::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 cpp_boolean android::database::AbstractCursor_::SelfContentObserver::deliverSelfNotifications()
 {
@@ -229,16 +248,28 @@ J2CPP_DEFINE_METHOD(android::database::AbstractCursor_::SelfContentObserver,1,"d
 J2CPP_DEFINE_METHOD(android::database::AbstractCursor_::SelfContentObserver,2,"onChange","(Z)V")
 
 
-template <>
-local_ref< android::database::AbstractCursor > create< android::database::AbstractCursor>()
+
+android::database::AbstractCursor::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::database::AbstractCursor >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::database::AbstractCursor::J2CPP_CLASS_NAME>(),
-			get_method_id<android::database::AbstractCursor::J2CPP_CLASS_NAME, android::database::AbstractCursor::J2CPP_METHOD_NAME(0), android::database::AbstractCursor::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+android::database::AbstractCursor::operator local_ref<android::database::CrossProcessCursor>() const
+{
+	return local_ref<android::database::CrossProcessCursor>(get_jtype());
+}
+
+
+android::database::AbstractCursor::AbstractCursor()
+: cpp_object<android::database::AbstractCursor>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::database::AbstractCursor::J2CPP_CLASS_NAME>(),
+		get_method_id<android::database::AbstractCursor::J2CPP_CLASS_NAME, android::database::AbstractCursor::J2CPP_METHOD_NAME(0), android::database::AbstractCursor::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 cpp_int android::database::AbstractCursor::getCount()
 {

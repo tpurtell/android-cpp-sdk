@@ -10,9 +10,13 @@
 #define J2CPP_JAVA_UTIL_PREFS_PREFERENCECHANGELISTENER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace util { namespace prefs { class PreferenceChangeEvent; } } } }
+namespace j2cpp { namespace java { namespace util { class EventListener; } } }
 
 
+#include <java/lang/Object.hpp>
+#include <java/util/EventListener.hpp>
 #include <java/util/prefs/PreferenceChangeEvent.hpp>
 
 
@@ -30,10 +34,14 @@ namespace java { namespace util { namespace prefs {
 
 		J2CPP_DECLARE_METHOD(0)
 
-		PreferenceChangeListener(jobject jobj)
+		explicit PreferenceChangeListener(jobject jobj)
 		: cpp_object<PreferenceChangeListener>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::util::EventListener>() const;
+
 
 		void preferenceChange(local_ref< java::util::prefs::PreferenceChangeEvent > const&);
 	}; //class PreferenceChangeListener
@@ -41,7 +49,6 @@ namespace java { namespace util { namespace prefs {
 } //namespace prefs
 } //namespace util
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -54,6 +61,17 @@ namespace java { namespace util { namespace prefs {
 
 namespace j2cpp {
 
+
+
+java::util::prefs::PreferenceChangeListener::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
+
+java::util::prefs::PreferenceChangeListener::operator local_ref<java::util::EventListener>() const
+{
+	return local_ref<java::util::EventListener>(get_jtype());
+}
 
 void java::util::prefs::PreferenceChangeListener::preferenceChange(local_ref< java::util::prefs::PreferenceChangeEvent > const &a0)
 {

@@ -35,10 +35,13 @@ namespace org { namespace apache { namespace http { namespace protocol {
 		J2CPP_DECLARE_METHOD(2)
 		J2CPP_DECLARE_FIELD(0)
 
-		HttpContext(jobject jobj)
+		explicit HttpContext(jobject jobj)
 		: cpp_object<HttpContext>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		local_ref< java::lang::Object > getAttribute(local_ref< java::lang::String > const&);
 		void setAttribute(local_ref< java::lang::String > const&, local_ref< java::lang::Object > const&);
@@ -52,7 +55,6 @@ namespace org { namespace apache { namespace http { namespace protocol {
 } //namespace apache
 } //namespace org
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ORG_APACHE_HTTP_PROTOCOL_HTTPCONTEXT_HPP_DECL
@@ -64,6 +66,12 @@ namespace org { namespace apache { namespace http { namespace protocol {
 
 namespace j2cpp {
 
+
+
+org::apache::http::protocol::HttpContext::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 local_ref< java::lang::Object > org::apache::http::protocol::HttpContext::getAttribute(local_ref< java::lang::String > const &a0)
 {

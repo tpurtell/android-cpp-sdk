@@ -10,8 +10,10 @@
 #define J2CPP_JAVA_NIO_CHANNELS_FILELOCKINTERRUPTIONEXCEPTION_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class IOException; } } }
 
 
+#include <java/io/IOException.hpp>
 
 
 namespace j2cpp {
@@ -28,17 +30,20 @@ namespace java { namespace nio { namespace channels {
 
 		J2CPP_DECLARE_METHOD(0)
 
-		FileLockInterruptionException(jobject jobj)
+		explicit FileLockInterruptionException(jobject jobj)
 		: cpp_object<FileLockInterruptionException>(jobj)
 		{
 		}
 
+		operator local_ref<java::io::IOException>() const;
+
+
+		FileLockInterruptionException();
 	}; //class FileLockInterruptionException
 
 } //namespace channels
 } //namespace nio
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -52,16 +57,23 @@ namespace java { namespace nio { namespace channels {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::nio::channels::FileLockInterruptionException > create< java::nio::channels::FileLockInterruptionException>()
+
+java::nio::channels::FileLockInterruptionException::operator local_ref<java::io::IOException>() const
 {
-	return local_ref< java::nio::channels::FileLockInterruptionException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::nio::channels::FileLockInterruptionException::J2CPP_CLASS_NAME>(),
-			get_method_id<java::nio::channels::FileLockInterruptionException::J2CPP_CLASS_NAME, java::nio::channels::FileLockInterruptionException::J2CPP_METHOD_NAME(0), java::nio::channels::FileLockInterruptionException::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::io::IOException>(get_jtype());
 }
+
+
+java::nio::channels::FileLockInterruptionException::FileLockInterruptionException()
+: cpp_object<java::nio::channels::FileLockInterruptionException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::nio::channels::FileLockInterruptionException::J2CPP_CLASS_NAME>(),
+		get_method_id<java::nio::channels::FileLockInterruptionException::J2CPP_CLASS_NAME, java::nio::channels::FileLockInterruptionException::J2CPP_METHOD_NAME(0), java::nio::channels::FileLockInterruptionException::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 
 J2CPP_DEFINE_CLASS(java::nio::channels::FileLockInterruptionException,"java/nio/channels/FileLockInterruptionException")

@@ -10,13 +10,19 @@
 #define J2CPP_JAVA_UTIL_HASHMAP_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace lang { class Cloneable; } } }
 namespace j2cpp { namespace java { namespace util { class Set; } } }
 namespace j2cpp { namespace java { namespace util { class Map; } } }
+namespace j2cpp { namespace java { namespace util { class AbstractMap; } } }
 namespace j2cpp { namespace java { namespace util { class Collection; } } }
 
 
+#include <java/io/Serializable.hpp>
+#include <java/lang/Cloneable.hpp>
 #include <java/lang/Object.hpp>
+#include <java/util/AbstractMap.hpp>
 #include <java/util/Collection.hpp>
 #include <java/util/Map.hpp>
 #include <java/util/Set.hpp>
@@ -52,11 +58,21 @@ namespace java { namespace util {
 		J2CPP_DECLARE_METHOD(15)
 		J2CPP_DECLARE_METHOD(16)
 
-		HashMap(jobject jobj)
+		explicit HashMap(jobject jobj)
 		: cpp_object<HashMap>(jobj)
 		{
 		}
 
+		operator local_ref<java::util::AbstractMap>() const;
+		operator local_ref<java::lang::Cloneable>() const;
+		operator local_ref<java::io::Serializable>() const;
+		operator local_ref<java::util::Map>() const;
+
+
+		HashMap();
+		HashMap(cpp_int const&);
+		HashMap(cpp_int const&, cpp_float const&);
+		HashMap(local_ref< java::util::Map > const&);
 		local_ref< java::lang::Object > clone();
 		cpp_boolean isEmpty();
 		cpp_int size();
@@ -75,7 +91,6 @@ namespace java { namespace util {
 } //namespace util
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_UTIL_HASHMAP_HPP_DECL
@@ -88,52 +103,77 @@ namespace java { namespace util {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::util::HashMap > create< java::util::HashMap>()
+
+java::util::HashMap::operator local_ref<java::util::AbstractMap>() const
 {
-	return local_ref< java::util::HashMap >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::HashMap::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::HashMap::J2CPP_CLASS_NAME, java::util::HashMap::J2CPP_METHOD_NAME(0), java::util::HashMap::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::util::AbstractMap>(get_jtype());
 }
 
-template <>
-local_ref< java::util::HashMap > create< java::util::HashMap>(cpp_int const &a0)
+java::util::HashMap::operator local_ref<java::lang::Cloneable>() const
 {
-	return local_ref< java::util::HashMap >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::HashMap::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::HashMap::J2CPP_CLASS_NAME, java::util::HashMap::J2CPP_METHOD_NAME(1), java::util::HashMap::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Cloneable>(get_jtype());
 }
 
-template <>
-local_ref< java::util::HashMap > create< java::util::HashMap>(cpp_int const &a0, cpp_float const &a1)
+java::util::HashMap::operator local_ref<java::io::Serializable>() const
 {
-	return local_ref< java::util::HashMap >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::HashMap::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::HashMap::J2CPP_CLASS_NAME, java::util::HashMap::J2CPP_METHOD_NAME(2), java::util::HashMap::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<java::io::Serializable>(get_jtype());
 }
 
-template <>
-local_ref< java::util::HashMap > create< java::util::HashMap>(local_ref< java::util::Map > const &a0)
+java::util::HashMap::operator local_ref<java::util::Map>() const
 {
-	return local_ref< java::util::HashMap >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::HashMap::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::HashMap::J2CPP_CLASS_NAME, java::util::HashMap::J2CPP_METHOD_NAME(3), java::util::HashMap::J2CPP_METHOD_SIGNATURE(3), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::util::Map>(get_jtype());
 }
+
+
+java::util::HashMap::HashMap()
+: cpp_object<java::util::HashMap>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::util::HashMap::J2CPP_CLASS_NAME>(),
+		get_method_id<java::util::HashMap::J2CPP_CLASS_NAME, java::util::HashMap::J2CPP_METHOD_NAME(0), java::util::HashMap::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
+
+
+java::util::HashMap::HashMap(cpp_int const &a0)
+: cpp_object<java::util::HashMap>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::util::HashMap::J2CPP_CLASS_NAME>(),
+		get_method_id<java::util::HashMap::J2CPP_CLASS_NAME, java::util::HashMap::J2CPP_METHOD_NAME(1), java::util::HashMap::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
+
+
+java::util::HashMap::HashMap(cpp_int const &a0, cpp_float const &a1)
+: cpp_object<java::util::HashMap>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::util::HashMap::J2CPP_CLASS_NAME>(),
+		get_method_id<java::util::HashMap::J2CPP_CLASS_NAME, java::util::HashMap::J2CPP_METHOD_NAME(2), java::util::HashMap::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
+
+
+java::util::HashMap::HashMap(local_ref< java::util::Map > const &a0)
+: cpp_object<java::util::HashMap>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::util::HashMap::J2CPP_CLASS_NAME>(),
+		get_method_id<java::util::HashMap::J2CPP_CLASS_NAME, java::util::HashMap::J2CPP_METHOD_NAME(3), java::util::HashMap::J2CPP_METHOD_SIGNATURE(3), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 local_ref< java::lang::Object > java::util::HashMap::clone()
 {

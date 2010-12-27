@@ -10,8 +10,10 @@
 #define J2CPP_ANDROID_OS_VIBRATOR_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -31,10 +33,13 @@ namespace android { namespace os {
 		J2CPP_DECLARE_METHOD(2)
 		J2CPP_DECLARE_METHOD(3)
 
-		Vibrator(jobject jobj)
+		explicit Vibrator(jobject jobj)
 		: cpp_object<Vibrator>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		void vibrate(cpp_long const&);
 		void vibrate(local_ref< cpp_long_array<1> > const&, cpp_int const&);
@@ -43,7 +48,6 @@ namespace android { namespace os {
 
 } //namespace os
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -57,16 +61,12 @@ namespace android { namespace os {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::os::Vibrator > create< android::os::Vibrator>()
+
+android::os::Vibrator::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::os::Vibrator >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::os::Vibrator::J2CPP_CLASS_NAME>(),
-			get_method_id<android::os::Vibrator::J2CPP_CLASS_NAME, android::os::Vibrator::J2CPP_METHOD_NAME(0), android::os::Vibrator::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
 
 void android::os::Vibrator::vibrate(cpp_long const &a0)
 {

@@ -10,6 +10,7 @@
 #define J2CPP_ANDROID_WIDGET_AUTOCOMPLETETEXTVIEW_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class CharSequence; } } }
 namespace j2cpp { namespace android { namespace graphics { namespace drawable { class Drawable; } } } }
 namespace j2cpp { namespace android { namespace content { class Context; } } }
@@ -17,7 +18,9 @@ namespace j2cpp { namespace android { namespace view { namespace inputmethod { c
 namespace j2cpp { namespace android { namespace view { class KeyEvent; } } }
 namespace j2cpp { namespace android { namespace view { namespace View_ { class OnClickListener; } } } }
 namespace j2cpp { namespace android { namespace widget { class ListAdapter; } } }
+namespace j2cpp { namespace android { namespace widget { class EditText; } } }
 namespace j2cpp { namespace android { namespace widget { namespace AdapterView_ { class OnItemSelectedListener; } } } }
+namespace j2cpp { namespace android { namespace widget { namespace Filter_ { class FilterListener; } } } }
 namespace j2cpp { namespace android { namespace widget { namespace AutoCompleteTextView_ { class Validator; } } } }
 namespace j2cpp { namespace android { namespace widget { namespace AdapterView_ { class OnItemClickListener; } } } }
 namespace j2cpp { namespace android { namespace util { class AttributeSet; } } }
@@ -31,8 +34,11 @@ namespace j2cpp { namespace android { namespace util { class AttributeSet; } } }
 #include <android/view/inputmethod/CompletionInfo.hpp>
 #include <android/widget/AdapterView.hpp>
 #include <android/widget/AutoCompleteTextView.hpp>
+#include <android/widget/EditText.hpp>
+#include <android/widget/Filter.hpp>
 #include <android/widget/ListAdapter.hpp>
 #include <java/lang/CharSequence.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -53,10 +59,13 @@ namespace android { namespace widget {
 			J2CPP_DECLARE_METHOD(0)
 			J2CPP_DECLARE_METHOD(1)
 
-			Validator(jobject jobj)
+			explicit Validator(jobject jobj)
 			: cpp_object<Validator>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+
 
 			cpp_boolean isValid(local_ref< java::lang::CharSequence > const&);
 			local_ref< java::lang::CharSequence > fixText(local_ref< java::lang::CharSequence > const&);
@@ -128,11 +137,18 @@ namespace android { namespace widget {
 
 		typedef AutoCompleteTextView_::Validator Validator;
 
-		AutoCompleteTextView(jobject jobj)
+		explicit AutoCompleteTextView(jobject jobj)
 		: cpp_object<AutoCompleteTextView>(jobj)
 		{
 		}
 
+		operator local_ref<android::widget::EditText>() const;
+		operator local_ref<android::widget::Filter_::FilterListener>() const;
+
+
+		AutoCompleteTextView(local_ref< android::content::Context > const&);
+		AutoCompleteTextView(local_ref< android::content::Context > const&, local_ref< android::util::AttributeSet > const&);
+		AutoCompleteTextView(local_ref< android::content::Context > const&, local_ref< android::util::AttributeSet > const&, cpp_int const&);
 		void setOnClickListener(local_ref< android::view::View_::OnClickListener > const&);
 		void setCompletionHint(local_ref< java::lang::CharSequence > const&);
 		cpp_int getDropDownWidth();
@@ -181,7 +197,6 @@ namespace android { namespace widget {
 } //namespace widget
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_WIDGET_AUTOCOMPLETETEXTVIEW_HPP_DECL
@@ -194,6 +209,12 @@ namespace android { namespace widget {
 namespace j2cpp {
 
 
+
+
+android::widget::AutoCompleteTextView_::Validator::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 cpp_boolean android::widget::AutoCompleteTextView_::Validator::isValid(local_ref< java::lang::CharSequence > const &a0)
 {
@@ -223,41 +244,55 @@ J2CPP_DEFINE_METHOD(android::widget::AutoCompleteTextView_::Validator,0,"isValid
 J2CPP_DEFINE_METHOD(android::widget::AutoCompleteTextView_::Validator,1,"fixText","(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;")
 
 
-template <>
-local_ref< android::widget::AutoCompleteTextView > create< android::widget::AutoCompleteTextView>(local_ref< android::content::Context > const &a0)
+
+android::widget::AutoCompleteTextView::operator local_ref<android::widget::EditText>() const
 {
-	return local_ref< android::widget::AutoCompleteTextView >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::widget::AutoCompleteTextView::J2CPP_CLASS_NAME>(),
-			get_method_id<android::widget::AutoCompleteTextView::J2CPP_CLASS_NAME, android::widget::AutoCompleteTextView::J2CPP_METHOD_NAME(0), android::widget::AutoCompleteTextView::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<android::widget::EditText>(get_jtype());
 }
 
-template <>
-local_ref< android::widget::AutoCompleteTextView > create< android::widget::AutoCompleteTextView>(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1)
+android::widget::AutoCompleteTextView::operator local_ref<android::widget::Filter_::FilterListener>() const
 {
-	return local_ref< android::widget::AutoCompleteTextView >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::widget::AutoCompleteTextView::J2CPP_CLASS_NAME>(),
-			get_method_id<android::widget::AutoCompleteTextView::J2CPP_CLASS_NAME, android::widget::AutoCompleteTextView::J2CPP_METHOD_NAME(1), android::widget::AutoCompleteTextView::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<android::widget::Filter_::FilterListener>(get_jtype());
 }
 
-template <>
-local_ref< android::widget::AutoCompleteTextView > create< android::widget::AutoCompleteTextView>(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1, cpp_int const &a2)
+
+android::widget::AutoCompleteTextView::AutoCompleteTextView(local_ref< android::content::Context > const &a0)
+: cpp_object<android::widget::AutoCompleteTextView>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::widget::AutoCompleteTextView::J2CPP_CLASS_NAME>(),
+		get_method_id<android::widget::AutoCompleteTextView::J2CPP_CLASS_NAME, android::widget::AutoCompleteTextView::J2CPP_METHOD_NAME(0), android::widget::AutoCompleteTextView::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< android::widget::AutoCompleteTextView >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::widget::AutoCompleteTextView::J2CPP_CLASS_NAME>(),
-			get_method_id<android::widget::AutoCompleteTextView::J2CPP_CLASS_NAME, android::widget::AutoCompleteTextView::J2CPP_METHOD_NAME(2), android::widget::AutoCompleteTextView::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
-		)
-	);
 }
+
+
+
+android::widget::AutoCompleteTextView::AutoCompleteTextView(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1)
+: cpp_object<android::widget::AutoCompleteTextView>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::widget::AutoCompleteTextView::J2CPP_CLASS_NAME>(),
+		get_method_id<android::widget::AutoCompleteTextView::J2CPP_CLASS_NAME, android::widget::AutoCompleteTextView::J2CPP_METHOD_NAME(1), android::widget::AutoCompleteTextView::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
+
+
+android::widget::AutoCompleteTextView::AutoCompleteTextView(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1, cpp_int const &a2)
+: cpp_object<android::widget::AutoCompleteTextView>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::widget::AutoCompleteTextView::J2CPP_CLASS_NAME>(),
+		get_method_id<android::widget::AutoCompleteTextView::J2CPP_CLASS_NAME, android::widget::AutoCompleteTextView::J2CPP_METHOD_NAME(2), android::widget::AutoCompleteTextView::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
+	)
+)
+{
+}
+
 
 void android::widget::AutoCompleteTextView::setOnClickListener(local_ref< android::view::View_::OnClickListener > const &a0)
 {

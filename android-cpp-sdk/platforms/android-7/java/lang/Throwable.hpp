@@ -10,14 +10,18 @@
 #define J2CPP_JAVA_LANG_THROWABLE_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 namespace j2cpp { namespace java { namespace io { class PrintStream; } } }
 namespace j2cpp { namespace java { namespace io { class PrintWriter; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class StackTraceElement; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 
 
 #include <java/io/PrintStream.hpp>
 #include <java/io/PrintWriter.hpp>
+#include <java/io/Serializable.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/StackTraceElement.hpp>
 #include <java/lang/String.hpp>
 
@@ -50,11 +54,19 @@ namespace java { namespace lang {
 		J2CPP_DECLARE_METHOD(13)
 		J2CPP_DECLARE_METHOD(14)
 
-		Throwable(jobject jobj)
+		explicit Throwable(jobject jobj)
 		: cpp_object<Throwable>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::io::Serializable>() const;
+
+
+		Throwable();
+		Throwable(local_ref< java::lang::String > const&);
+		Throwable(local_ref< java::lang::String > const&, local_ref< java::lang::Throwable > const&);
+		Throwable(local_ref< java::lang::Throwable > const&);
 		local_ref< java::lang::Throwable > fillInStackTrace();
 		local_ref< java::lang::String > getMessage();
 		local_ref< java::lang::String > getLocalizedMessage();
@@ -71,7 +83,6 @@ namespace java { namespace lang {
 } //namespace lang
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_LANG_THROWABLE_HPP_DECL
@@ -84,52 +95,67 @@ namespace java { namespace lang {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::lang::Throwable > create< java::lang::Throwable>()
+
+java::lang::Throwable::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::lang::Throwable >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::lang::Throwable::J2CPP_CLASS_NAME>(),
-			get_method_id<java::lang::Throwable::J2CPP_CLASS_NAME, java::lang::Throwable::J2CPP_METHOD_NAME(0), java::lang::Throwable::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
 
-template <>
-local_ref< java::lang::Throwable > create< java::lang::Throwable>(local_ref< java::lang::String > const &a0)
+java::lang::Throwable::operator local_ref<java::io::Serializable>() const
 {
-	return local_ref< java::lang::Throwable >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::lang::Throwable::J2CPP_CLASS_NAME>(),
-			get_method_id<java::lang::Throwable::J2CPP_CLASS_NAME, java::lang::Throwable::J2CPP_METHOD_NAME(1), java::lang::Throwable::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::io::Serializable>(get_jtype());
 }
 
-template <>
-local_ref< java::lang::Throwable > create< java::lang::Throwable>(local_ref< java::lang::String > const &a0, local_ref< java::lang::Throwable > const &a1)
+
+java::lang::Throwable::Throwable()
+: cpp_object<java::lang::Throwable>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::lang::Throwable::J2CPP_CLASS_NAME>(),
+		get_method_id<java::lang::Throwable::J2CPP_CLASS_NAME, java::lang::Throwable::J2CPP_METHOD_NAME(0), java::lang::Throwable::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
 {
-	return local_ref< java::lang::Throwable >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::lang::Throwable::J2CPP_CLASS_NAME>(),
-			get_method_id<java::lang::Throwable::J2CPP_CLASS_NAME, java::lang::Throwable::J2CPP_METHOD_NAME(2), java::lang::Throwable::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< java::lang::Throwable > create< java::lang::Throwable>(local_ref< java::lang::Throwable > const &a0)
+
+
+java::lang::Throwable::Throwable(local_ref< java::lang::String > const &a0)
+: cpp_object<java::lang::Throwable>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::lang::Throwable::J2CPP_CLASS_NAME>(),
+		get_method_id<java::lang::Throwable::J2CPP_CLASS_NAME, java::lang::Throwable::J2CPP_METHOD_NAME(1), java::lang::Throwable::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< java::lang::Throwable >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::lang::Throwable::J2CPP_CLASS_NAME>(),
-			get_method_id<java::lang::Throwable::J2CPP_CLASS_NAME, java::lang::Throwable::J2CPP_METHOD_NAME(3), java::lang::Throwable::J2CPP_METHOD_SIGNATURE(3), false>(),
-			a0.get_jtype()
-		)
-	);
 }
+
+
+
+java::lang::Throwable::Throwable(local_ref< java::lang::String > const &a0, local_ref< java::lang::Throwable > const &a1)
+: cpp_object<java::lang::Throwable>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::lang::Throwable::J2CPP_CLASS_NAME>(),
+		get_method_id<java::lang::Throwable::J2CPP_CLASS_NAME, java::lang::Throwable::J2CPP_METHOD_NAME(2), java::lang::Throwable::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
+
+
+java::lang::Throwable::Throwable(local_ref< java::lang::Throwable > const &a0)
+: cpp_object<java::lang::Throwable>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::lang::Throwable::J2CPP_CLASS_NAME>(),
+		get_method_id<java::lang::Throwable::J2CPP_CLASS_NAME, java::lang::Throwable::J2CPP_METHOD_NAME(3), java::lang::Throwable::J2CPP_METHOD_SIGNATURE(3), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 local_ref< java::lang::Throwable > java::lang::Throwable::fillInStackTrace()
 {

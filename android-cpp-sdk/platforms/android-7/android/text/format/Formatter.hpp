@@ -10,11 +10,13 @@
 #define J2CPP_ANDROID_TEXT_FORMAT_FORMATTER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace android { namespace content { class Context; } } }
 
 
 #include <android/content/Context.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -35,11 +37,15 @@ namespace android { namespace text { namespace format {
 		J2CPP_DECLARE_METHOD(2)
 		J2CPP_DECLARE_METHOD(3)
 
-		Formatter(jobject jobj)
+		explicit Formatter(jobject jobj)
 		: cpp_object<Formatter>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		Formatter();
 		static local_ref< java::lang::String > formatFileSize(local_ref< android::content::Context > const&, cpp_long const&);
 		static local_ref< java::lang::String > formatShortFileSize(local_ref< android::content::Context > const&, cpp_long const&);
 		static local_ref< java::lang::String > formatIpAddress(cpp_int const&);
@@ -48,7 +54,6 @@ namespace android { namespace text { namespace format {
 } //namespace format
 } //namespace text
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -62,16 +67,23 @@ namespace android { namespace text { namespace format {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::text::format::Formatter > create< android::text::format::Formatter>()
+
+android::text::format::Formatter::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::text::format::Formatter >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::text::format::Formatter::J2CPP_CLASS_NAME>(),
-			get_method_id<android::text::format::Formatter::J2CPP_CLASS_NAME, android::text::format::Formatter::J2CPP_METHOD_NAME(0), android::text::format::Formatter::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::text::format::Formatter::Formatter()
+: cpp_object<android::text::format::Formatter>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::text::format::Formatter::J2CPP_CLASS_NAME>(),
+		get_method_id<android::text::format::Formatter::J2CPP_CLASS_NAME, android::text::format::Formatter::J2CPP_METHOD_NAME(0), android::text::format::Formatter::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 local_ref< java::lang::String > android::text::format::Formatter::formatFileSize(local_ref< android::content::Context > const &a0, cpp_long const &a1)
 {

@@ -10,9 +10,11 @@
 #define J2CPP_ORG_APACHE_HTTP_MESSAGE_PARSERCURSOR_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -36,11 +38,15 @@ namespace org { namespace apache { namespace http { namespace message {
 		J2CPP_DECLARE_METHOD(5)
 		J2CPP_DECLARE_METHOD(6)
 
-		ParserCursor(jobject jobj)
+		explicit ParserCursor(jobject jobj)
 		: cpp_object<ParserCursor>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		ParserCursor(cpp_int const&, cpp_int const&);
 		cpp_int getLowerBound();
 		cpp_int getUpperBound();
 		cpp_int getPos();
@@ -54,7 +60,6 @@ namespace org { namespace apache { namespace http { namespace message {
 } //namespace apache
 } //namespace org
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ORG_APACHE_HTTP_MESSAGE_PARSERCURSOR_HPP_DECL
@@ -67,17 +72,24 @@ namespace org { namespace apache { namespace http { namespace message {
 namespace j2cpp {
 
 
-template <>
-local_ref< org::apache::http::message::ParserCursor > create< org::apache::http::message::ParserCursor>(cpp_int const &a0, cpp_int const &a1)
+
+org::apache::http::message::ParserCursor::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< org::apache::http::message::ParserCursor >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::apache::http::message::ParserCursor::J2CPP_CLASS_NAME>(),
-			get_method_id<org::apache::http::message::ParserCursor::J2CPP_CLASS_NAME, org::apache::http::message::ParserCursor::J2CPP_METHOD_NAME(0), org::apache::http::message::ParserCursor::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+org::apache::http::message::ParserCursor::ParserCursor(cpp_int const &a0, cpp_int const &a1)
+: cpp_object<org::apache::http::message::ParserCursor>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::apache::http::message::ParserCursor::J2CPP_CLASS_NAME>(),
+		get_method_id<org::apache::http::message::ParserCursor::J2CPP_CLASS_NAME, org::apache::http::message::ParserCursor::J2CPP_METHOD_NAME(0), org::apache::http::message::ParserCursor::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
 
 cpp_int org::apache::http::message::ParserCursor::getLowerBound()
 {

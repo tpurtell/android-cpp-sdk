@@ -13,6 +13,7 @@
 namespace j2cpp { namespace java { namespace io { class InputStream; } } }
 namespace j2cpp { namespace java { namespace io { class OutputStream; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace lang { class Cloneable; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace util { class Map; } } }
 namespace j2cpp { namespace java { namespace util { namespace jar { class Attributes; } } } }
@@ -20,6 +21,7 @@ namespace j2cpp { namespace java { namespace util { namespace jar { class Attrib
 
 #include <java/io/InputStream.hpp>
 #include <java/io/OutputStream.hpp>
+#include <java/lang/Cloneable.hpp>
 #include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/util/Map.hpp>
@@ -51,11 +53,18 @@ namespace java { namespace util { namespace jar {
 		J2CPP_DECLARE_METHOD(10)
 		J2CPP_DECLARE_METHOD(11)
 
-		Manifest(jobject jobj)
+		explicit Manifest(jobject jobj)
 		: cpp_object<Manifest>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::lang::Cloneable>() const;
+
+
+		Manifest();
+		Manifest(local_ref< java::io::InputStream > const&);
+		Manifest(local_ref< java::util::jar::Manifest > const&);
 		void clear();
 		local_ref< java::util::jar::Attributes > getAttributes(local_ref< java::lang::String > const&);
 		local_ref< java::util::Map > getEntries();
@@ -71,7 +80,6 @@ namespace java { namespace util { namespace jar {
 } //namespace util
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_UTIL_JAR_MANIFEST_HPP_DECL
@@ -84,40 +92,54 @@ namespace java { namespace util { namespace jar {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::util::jar::Manifest > create< java::util::jar::Manifest>()
+
+java::util::jar::Manifest::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::util::jar::Manifest >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::jar::Manifest::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::jar::Manifest::J2CPP_CLASS_NAME, java::util::jar::Manifest::J2CPP_METHOD_NAME(0), java::util::jar::Manifest::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
 
-template <>
-local_ref< java::util::jar::Manifest > create< java::util::jar::Manifest>(local_ref< java::io::InputStream > const &a0)
+java::util::jar::Manifest::operator local_ref<java::lang::Cloneable>() const
 {
-	return local_ref< java::util::jar::Manifest >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::jar::Manifest::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::jar::Manifest::J2CPP_CLASS_NAME, java::util::jar::Manifest::J2CPP_METHOD_NAME(1), java::util::jar::Manifest::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Cloneable>(get_jtype());
 }
 
-template <>
-local_ref< java::util::jar::Manifest > create< java::util::jar::Manifest>(local_ref< java::util::jar::Manifest > const &a0)
+
+java::util::jar::Manifest::Manifest()
+: cpp_object<java::util::jar::Manifest>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::util::jar::Manifest::J2CPP_CLASS_NAME>(),
+		get_method_id<java::util::jar::Manifest::J2CPP_CLASS_NAME, java::util::jar::Manifest::J2CPP_METHOD_NAME(0), java::util::jar::Manifest::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
 {
-	return local_ref< java::util::jar::Manifest >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::jar::Manifest::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::jar::Manifest::J2CPP_CLASS_NAME, java::util::jar::Manifest::J2CPP_METHOD_NAME(2), java::util::jar::Manifest::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype()
-		)
-	);
 }
+
+
+
+java::util::jar::Manifest::Manifest(local_ref< java::io::InputStream > const &a0)
+: cpp_object<java::util::jar::Manifest>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::util::jar::Manifest::J2CPP_CLASS_NAME>(),
+		get_method_id<java::util::jar::Manifest::J2CPP_CLASS_NAME, java::util::jar::Manifest::J2CPP_METHOD_NAME(1), java::util::jar::Manifest::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
+
+
+java::util::jar::Manifest::Manifest(local_ref< java::util::jar::Manifest > const &a0)
+: cpp_object<java::util::jar::Manifest>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::util::jar::Manifest::J2CPP_CLASS_NAME>(),
+		get_method_id<java::util::jar::Manifest::J2CPP_CLASS_NAME, java::util::jar::Manifest::J2CPP_METHOD_NAME(2), java::util::jar::Manifest::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 void java::util::jar::Manifest::clear()
 {

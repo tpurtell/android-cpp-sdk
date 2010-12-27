@@ -11,6 +11,7 @@
 
 
 namespace j2cpp { namespace java { namespace io { class InputStream; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace security { namespace cert { class CRL; } } } }
 namespace j2cpp { namespace java { namespace security { namespace cert { class CertPath; } } } }
@@ -21,6 +22,7 @@ namespace j2cpp { namespace java { namespace util { class List; } } }
 
 
 #include <java/io/InputStream.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/security/cert/CRL.hpp>
 #include <java/security/cert/CertPath.hpp>
@@ -52,11 +54,15 @@ namespace java { namespace security { namespace cert {
 		J2CPP_DECLARE_METHOD(7)
 		J2CPP_DECLARE_METHOD(8)
 
-		CertificateFactorySpi(jobject jobj)
+		explicit CertificateFactorySpi(jobject jobj)
 		: cpp_object<CertificateFactorySpi>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		CertificateFactorySpi();
 		local_ref< java::security::cert::Certificate > engineGenerateCertificate(local_ref< java::io::InputStream > const&);
 		local_ref< java::util::Collection > engineGenerateCertificates(local_ref< java::io::InputStream > const&);
 		local_ref< java::security::cert::CRL > engineGenerateCRL(local_ref< java::io::InputStream > const&);
@@ -71,7 +77,6 @@ namespace java { namespace security { namespace cert {
 } //namespace security
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_SECURITY_CERT_CERTIFICATEFACTORYSPI_HPP_DECL
@@ -84,16 +89,23 @@ namespace java { namespace security { namespace cert {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::security::cert::CertificateFactorySpi > create< java::security::cert::CertificateFactorySpi>()
+
+java::security::cert::CertificateFactorySpi::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::security::cert::CertificateFactorySpi >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::security::cert::CertificateFactorySpi::J2CPP_CLASS_NAME>(),
-			get_method_id<java::security::cert::CertificateFactorySpi::J2CPP_CLASS_NAME, java::security::cert::CertificateFactorySpi::J2CPP_METHOD_NAME(0), java::security::cert::CertificateFactorySpi::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+java::security::cert::CertificateFactorySpi::CertificateFactorySpi()
+: cpp_object<java::security::cert::CertificateFactorySpi>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::security::cert::CertificateFactorySpi::J2CPP_CLASS_NAME>(),
+		get_method_id<java::security::cert::CertificateFactorySpi::J2CPP_CLASS_NAME, java::security::cert::CertificateFactorySpi::J2CPP_METHOD_NAME(0), java::security::cert::CertificateFactorySpi::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 local_ref< java::security::cert::Certificate > java::security::cert::CertificateFactorySpi::engineGenerateCertificate(local_ref< java::io::InputStream > const &a0)
 {

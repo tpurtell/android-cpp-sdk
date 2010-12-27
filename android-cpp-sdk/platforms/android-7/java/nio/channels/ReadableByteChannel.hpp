@@ -10,10 +10,14 @@
 #define J2CPP_JAVA_NIO_CHANNELS_READABLEBYTECHANNEL_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace nio { namespace channels { class Channel; } } } }
 namespace j2cpp { namespace java { namespace nio { class ByteBuffer; } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/nio/ByteBuffer.hpp>
+#include <java/nio/channels/Channel.hpp>
 
 
 namespace j2cpp {
@@ -30,10 +34,14 @@ namespace java { namespace nio { namespace channels {
 
 		J2CPP_DECLARE_METHOD(0)
 
-		ReadableByteChannel(jobject jobj)
+		explicit ReadableByteChannel(jobject jobj)
 		: cpp_object<ReadableByteChannel>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::nio::channels::Channel>() const;
+
 
 		cpp_int read(local_ref< java::nio::ByteBuffer > const&);
 	}; //class ReadableByteChannel
@@ -41,7 +49,6 @@ namespace java { namespace nio { namespace channels {
 } //namespace channels
 } //namespace nio
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -54,6 +61,17 @@ namespace java { namespace nio { namespace channels {
 
 namespace j2cpp {
 
+
+
+java::nio::channels::ReadableByteChannel::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
+
+java::nio::channels::ReadableByteChannel::operator local_ref<java::nio::channels::Channel>() const
+{
+	return local_ref<java::nio::channels::Channel>(get_jtype());
+}
 
 cpp_int java::nio::channels::ReadableByteChannel::read(local_ref< java::nio::ByteBuffer > const &a0)
 {

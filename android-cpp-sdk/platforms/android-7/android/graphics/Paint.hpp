@@ -10,6 +10,8 @@
 #define J2CPP_ANDROID_GRAPHICS_PAINT_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace lang { class Enum; } } }
 namespace j2cpp { namespace java { namespace lang { class CharSequence; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace android { namespace graphics { namespace Paint_ { class Align; } } } }
@@ -40,6 +42,8 @@ namespace j2cpp { namespace android { namespace graphics { class ColorFilter; } 
 #include <android/graphics/Typeface.hpp>
 #include <android/graphics/Xfermode.hpp>
 #include <java/lang/CharSequence.hpp>
+#include <java/lang/Enum.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -67,10 +71,13 @@ namespace android { namespace graphics {
 			J2CPP_DECLARE_FIELD(2)
 			J2CPP_DECLARE_FIELD(3)
 
-			Align(jobject jobj)
+			explicit Align(jobject jobj)
 			: cpp_object<Align>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Enum>() const;
+
 
 			static local_ref< cpp_object_array<android::graphics::Paint_::Align, 1> > values();
 			static local_ref< android::graphics::Paint_::Align > valueOf(local_ref< java::lang::String > const&);
@@ -95,16 +102,20 @@ namespace android { namespace graphics {
 			J2CPP_DECLARE_FIELD(3)
 			J2CPP_DECLARE_FIELD(4)
 
-			FontMetrics(jobject jobj)
+			explicit FontMetrics(jobject jobj)
 			: cpp_object<FontMetrics>(jobj)
-			, top(jobj)
-			, ascent(jobj)
-			, descent(jobj)
-			, bottom(jobj)
-			, leading(jobj)
+, top(jobj)
+, ascent(jobj)
+, descent(jobj)
+, bottom(jobj)
+, leading(jobj)
 			{
 			}
 
+			operator local_ref<java::lang::Object>() const;
+
+
+			FontMetrics();
 
 			field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(0), J2CPP_FIELD_SIGNATURE(0), cpp_float > top;
 			field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(1), J2CPP_FIELD_SIGNATURE(1), cpp_float > ascent;
@@ -129,16 +140,20 @@ namespace android { namespace graphics {
 			J2CPP_DECLARE_FIELD(3)
 			J2CPP_DECLARE_FIELD(4)
 
-			FontMetricsInt(jobject jobj)
+			explicit FontMetricsInt(jobject jobj)
 			: cpp_object<FontMetricsInt>(jobj)
-			, top(jobj)
-			, ascent(jobj)
-			, descent(jobj)
-			, bottom(jobj)
-			, leading(jobj)
+, top(jobj)
+, ascent(jobj)
+, descent(jobj)
+, bottom(jobj)
+, leading(jobj)
 			{
 			}
 
+			operator local_ref<java::lang::Object>() const;
+
+
+			FontMetricsInt();
 			local_ref< java::lang::String > toString();
 
 			field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(0), J2CPP_FIELD_SIGNATURE(0), cpp_int > top;
@@ -165,10 +180,13 @@ namespace android { namespace graphics {
 			J2CPP_DECLARE_FIELD(2)
 			J2CPP_DECLARE_FIELD(3)
 
-			Join(jobject jobj)
+			explicit Join(jobject jobj)
 			: cpp_object<Join>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Enum>() const;
+
 
 			static local_ref< cpp_object_array<android::graphics::Paint_::Join, 1> > values();
 			static local_ref< android::graphics::Paint_::Join > valueOf(local_ref< java::lang::String > const&);
@@ -195,10 +213,13 @@ namespace android { namespace graphics {
 			J2CPP_DECLARE_FIELD(2)
 			J2CPP_DECLARE_FIELD(3)
 
-			Style(jobject jobj)
+			explicit Style(jobject jobj)
 			: cpp_object<Style>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Enum>() const;
+
 
 			static local_ref< cpp_object_array<android::graphics::Paint_::Style, 1> > values();
 			static local_ref< android::graphics::Paint_::Style > valueOf(local_ref< java::lang::String > const&);
@@ -225,10 +246,13 @@ namespace android { namespace graphics {
 			J2CPP_DECLARE_FIELD(2)
 			J2CPP_DECLARE_FIELD(3)
 
-			Cap(jobject jobj)
+			explicit Cap(jobject jobj)
 			: cpp_object<Cap>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Enum>() const;
+
 
 			static local_ref< cpp_object_array<android::graphics::Paint_::Cap, 1> > values();
 			static local_ref< android::graphics::Paint_::Cap > valueOf(local_ref< java::lang::String > const&);
@@ -350,11 +374,17 @@ namespace android { namespace graphics {
 		typedef Paint_::Style Style;
 		typedef Paint_::Cap Cap;
 
-		Paint(jobject jobj)
+		explicit Paint(jobject jobj)
 		: cpp_object<Paint>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		Paint();
+		Paint(cpp_int const&);
+		Paint(local_ref< android::graphics::Paint > const&);
 		void reset();
 		void set(local_ref< android::graphics::Paint > const&);
 		cpp_int getFlags();
@@ -452,7 +482,6 @@ namespace android { namespace graphics {
 } //namespace graphics
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_GRAPHICS_PAINT_HPP_DECL
@@ -465,6 +494,12 @@ namespace android { namespace graphics {
 namespace j2cpp {
 
 
+
+
+android::graphics::Paint_::Align::operator local_ref<java::lang::Enum>() const
+{
+	return local_ref<java::lang::Enum>(get_jtype());
+}
 
 local_ref< cpp_object_array<android::graphics::Paint_::Align, 1> > android::graphics::Paint_::Align::values()
 {
@@ -487,17 +522,7 @@ local_ref< android::graphics::Paint_::Align > android::graphics::Paint_::Align::
 	);
 }
 
-template <>
-local_ref< android::graphics::Paint_::Align > create< android::graphics::Paint_::Align>(local_ref< java::lang::String > const &a0, cpp_int const &a1)
-{
-	return local_ref< android::graphics::Paint_::Align >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::graphics::Paint_::Align::J2CPP_CLASS_NAME>(),
-			get_method_id<android::graphics::Paint_::Align::J2CPP_CLASS_NAME, android::graphics::Paint_::Align::J2CPP_METHOD_NAME(2), android::graphics::Paint_::Align::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
-}
+
 
 
 static_field<
@@ -532,16 +557,28 @@ J2CPP_DEFINE_FIELD(android::graphics::Paint_::Align,1,"LEFT","Landroid/graphics/
 J2CPP_DEFINE_FIELD(android::graphics::Paint_::Align,2,"RIGHT","Landroid/graphics/Paint$Align;")
 J2CPP_DEFINE_FIELD(android::graphics::Paint_::Align,3,"$VALUES","[android.graphics.Paint.Align")
 
-template <>
-local_ref< android::graphics::Paint_::FontMetrics > create< android::graphics::Paint_::FontMetrics>()
+
+android::graphics::Paint_::FontMetrics::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::graphics::Paint_::FontMetrics >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::graphics::Paint_::FontMetrics::J2CPP_CLASS_NAME>(),
-			get_method_id<android::graphics::Paint_::FontMetrics::J2CPP_CLASS_NAME, android::graphics::Paint_::FontMetrics::J2CPP_METHOD_NAME(0), android::graphics::Paint_::FontMetrics::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::graphics::Paint_::FontMetrics::FontMetrics()
+: cpp_object<android::graphics::Paint_::FontMetrics>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::graphics::Paint_::FontMetrics::J2CPP_CLASS_NAME>(),
+		get_method_id<android::graphics::Paint_::FontMetrics::J2CPP_CLASS_NAME, android::graphics::Paint_::FontMetrics::J2CPP_METHOD_NAME(0), android::graphics::Paint_::FontMetrics::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+, top(get_jtype())
+, ascent(get_jtype())
+, descent(get_jtype())
+, bottom(get_jtype())
+, leading(get_jtype())
+{
+}
+
 
 
 
@@ -553,16 +590,28 @@ J2CPP_DEFINE_FIELD(android::graphics::Paint_::FontMetrics,2,"descent","F")
 J2CPP_DEFINE_FIELD(android::graphics::Paint_::FontMetrics,3,"bottom","F")
 J2CPP_DEFINE_FIELD(android::graphics::Paint_::FontMetrics,4,"leading","F")
 
-template <>
-local_ref< android::graphics::Paint_::FontMetricsInt > create< android::graphics::Paint_::FontMetricsInt>()
+
+android::graphics::Paint_::FontMetricsInt::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::graphics::Paint_::FontMetricsInt >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::graphics::Paint_::FontMetricsInt::J2CPP_CLASS_NAME>(),
-			get_method_id<android::graphics::Paint_::FontMetricsInt::J2CPP_CLASS_NAME, android::graphics::Paint_::FontMetricsInt::J2CPP_METHOD_NAME(0), android::graphics::Paint_::FontMetricsInt::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::graphics::Paint_::FontMetricsInt::FontMetricsInt()
+: cpp_object<android::graphics::Paint_::FontMetricsInt>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::graphics::Paint_::FontMetricsInt::J2CPP_CLASS_NAME>(),
+		get_method_id<android::graphics::Paint_::FontMetricsInt::J2CPP_CLASS_NAME, android::graphics::Paint_::FontMetricsInt::J2CPP_METHOD_NAME(0), android::graphics::Paint_::FontMetricsInt::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+, top(get_jtype())
+, ascent(get_jtype())
+, descent(get_jtype())
+, bottom(get_jtype())
+, leading(get_jtype())
+{
+}
+
 
 local_ref< java::lang::String > android::graphics::Paint_::FontMetricsInt::toString()
 {
@@ -585,6 +634,12 @@ J2CPP_DEFINE_FIELD(android::graphics::Paint_::FontMetricsInt,2,"descent","I")
 J2CPP_DEFINE_FIELD(android::graphics::Paint_::FontMetricsInt,3,"bottom","I")
 J2CPP_DEFINE_FIELD(android::graphics::Paint_::FontMetricsInt,4,"leading","I")
 
+
+android::graphics::Paint_::Join::operator local_ref<java::lang::Enum>() const
+{
+	return local_ref<java::lang::Enum>(get_jtype());
+}
+
 local_ref< cpp_object_array<android::graphics::Paint_::Join, 1> > android::graphics::Paint_::Join::values()
 {
 	return local_ref< cpp_object_array<android::graphics::Paint_::Join, 1> >(
@@ -606,17 +661,7 @@ local_ref< android::graphics::Paint_::Join > android::graphics::Paint_::Join::va
 	);
 }
 
-template <>
-local_ref< android::graphics::Paint_::Join > create< android::graphics::Paint_::Join>(local_ref< java::lang::String > const &a0, cpp_int const &a1)
-{
-	return local_ref< android::graphics::Paint_::Join >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::graphics::Paint_::Join::J2CPP_CLASS_NAME>(),
-			get_method_id<android::graphics::Paint_::Join::J2CPP_CLASS_NAME, android::graphics::Paint_::Join::J2CPP_METHOD_NAME(2), android::graphics::Paint_::Join::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
-}
+
 
 
 static_field<
@@ -651,6 +696,12 @@ J2CPP_DEFINE_FIELD(android::graphics::Paint_::Join,1,"MITER","Landroid/graphics/
 J2CPP_DEFINE_FIELD(android::graphics::Paint_::Join,2,"ROUND","Landroid/graphics/Paint$Join;")
 J2CPP_DEFINE_FIELD(android::graphics::Paint_::Join,3,"$VALUES","[android.graphics.Paint.Join")
 
+
+android::graphics::Paint_::Style::operator local_ref<java::lang::Enum>() const
+{
+	return local_ref<java::lang::Enum>(get_jtype());
+}
+
 local_ref< cpp_object_array<android::graphics::Paint_::Style, 1> > android::graphics::Paint_::Style::values()
 {
 	return local_ref< cpp_object_array<android::graphics::Paint_::Style, 1> >(
@@ -672,17 +723,7 @@ local_ref< android::graphics::Paint_::Style > android::graphics::Paint_::Style::
 	);
 }
 
-template <>
-local_ref< android::graphics::Paint_::Style > create< android::graphics::Paint_::Style>(local_ref< java::lang::String > const &a0, cpp_int const &a1)
-{
-	return local_ref< android::graphics::Paint_::Style >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::graphics::Paint_::Style::J2CPP_CLASS_NAME>(),
-			get_method_id<android::graphics::Paint_::Style::J2CPP_CLASS_NAME, android::graphics::Paint_::Style::J2CPP_METHOD_NAME(2), android::graphics::Paint_::Style::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
-}
+
 
 
 static_field<
@@ -717,6 +758,12 @@ J2CPP_DEFINE_FIELD(android::graphics::Paint_::Style,1,"FILL_AND_STROKE","Landroi
 J2CPP_DEFINE_FIELD(android::graphics::Paint_::Style,2,"STROKE","Landroid/graphics/Paint$Style;")
 J2CPP_DEFINE_FIELD(android::graphics::Paint_::Style,3,"$VALUES","[android.graphics.Paint.Style")
 
+
+android::graphics::Paint_::Cap::operator local_ref<java::lang::Enum>() const
+{
+	return local_ref<java::lang::Enum>(get_jtype());
+}
+
 local_ref< cpp_object_array<android::graphics::Paint_::Cap, 1> > android::graphics::Paint_::Cap::values()
 {
 	return local_ref< cpp_object_array<android::graphics::Paint_::Cap, 1> >(
@@ -738,17 +785,7 @@ local_ref< android::graphics::Paint_::Cap > android::graphics::Paint_::Cap::valu
 	);
 }
 
-template <>
-local_ref< android::graphics::Paint_::Cap > create< android::graphics::Paint_::Cap>(local_ref< java::lang::String > const &a0, cpp_int const &a1)
-{
-	return local_ref< android::graphics::Paint_::Cap >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::graphics::Paint_::Cap::J2CPP_CLASS_NAME>(),
-			get_method_id<android::graphics::Paint_::Cap::J2CPP_CLASS_NAME, android::graphics::Paint_::Cap::J2CPP_METHOD_NAME(2), android::graphics::Paint_::Cap::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
-}
+
 
 
 static_field<
@@ -784,40 +821,49 @@ J2CPP_DEFINE_FIELD(android::graphics::Paint_::Cap,2,"SQUARE","Landroid/graphics/
 J2CPP_DEFINE_FIELD(android::graphics::Paint_::Cap,3,"$VALUES","[android.graphics.Paint.Cap")
 
 
-template <>
-local_ref< android::graphics::Paint > create< android::graphics::Paint>()
+
+android::graphics::Paint::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::graphics::Paint >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::graphics::Paint::J2CPP_CLASS_NAME>(),
-			get_method_id<android::graphics::Paint::J2CPP_CLASS_NAME, android::graphics::Paint::J2CPP_METHOD_NAME(0), android::graphics::Paint::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
 
-template <>
-local_ref< android::graphics::Paint > create< android::graphics::Paint>(cpp_int const &a0)
+
+android::graphics::Paint::Paint()
+: cpp_object<android::graphics::Paint>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::graphics::Paint::J2CPP_CLASS_NAME>(),
+		get_method_id<android::graphics::Paint::J2CPP_CLASS_NAME, android::graphics::Paint::J2CPP_METHOD_NAME(0), android::graphics::Paint::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
 {
-	return local_ref< android::graphics::Paint >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::graphics::Paint::J2CPP_CLASS_NAME>(),
-			get_method_id<android::graphics::Paint::J2CPP_CLASS_NAME, android::graphics::Paint::J2CPP_METHOD_NAME(1), android::graphics::Paint::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< android::graphics::Paint > create< android::graphics::Paint>(local_ref< android::graphics::Paint > const &a0)
+
+
+android::graphics::Paint::Paint(cpp_int const &a0)
+: cpp_object<android::graphics::Paint>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::graphics::Paint::J2CPP_CLASS_NAME>(),
+		get_method_id<android::graphics::Paint::J2CPP_CLASS_NAME, android::graphics::Paint::J2CPP_METHOD_NAME(1), android::graphics::Paint::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< android::graphics::Paint >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::graphics::Paint::J2CPP_CLASS_NAME>(),
-			get_method_id<android::graphics::Paint::J2CPP_CLASS_NAME, android::graphics::Paint::J2CPP_METHOD_NAME(2), android::graphics::Paint::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype()
-		)
-	);
 }
+
+
+
+android::graphics::Paint::Paint(local_ref< android::graphics::Paint > const &a0)
+: cpp_object<android::graphics::Paint>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::graphics::Paint::J2CPP_CLASS_NAME>(),
+		get_method_id<android::graphics::Paint::J2CPP_CLASS_NAME, android::graphics::Paint::J2CPP_METHOD_NAME(2), android::graphics::Paint::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 void android::graphics::Paint::reset()
 {

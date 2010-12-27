@@ -10,10 +10,12 @@
 #define J2CPP_ANDROID_VIEW_INFLATEEXCEPTION_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class RuntimeException; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace lang { class Throwable; } } }
 
 
+#include <java/lang/RuntimeException.hpp>
 #include <java/lang/String.hpp>
 #include <java/lang/Throwable.hpp>
 
@@ -35,16 +37,22 @@ namespace android { namespace view {
 		J2CPP_DECLARE_METHOD(2)
 		J2CPP_DECLARE_METHOD(3)
 
-		InflateException(jobject jobj)
+		explicit InflateException(jobject jobj)
 		: cpp_object<InflateException>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::RuntimeException>() const;
+
+
+		InflateException();
+		InflateException(local_ref< java::lang::String > const&, local_ref< java::lang::Throwable > const&);
+		InflateException(local_ref< java::lang::String > const&);
+		InflateException(local_ref< java::lang::Throwable > const&);
 	}; //class InflateException
 
 } //namespace view
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -58,52 +66,62 @@ namespace android { namespace view {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::view::InflateException > create< android::view::InflateException>()
+
+android::view::InflateException::operator local_ref<java::lang::RuntimeException>() const
 {
-	return local_ref< android::view::InflateException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::view::InflateException::J2CPP_CLASS_NAME>(),
-			get_method_id<android::view::InflateException::J2CPP_CLASS_NAME, android::view::InflateException::J2CPP_METHOD_NAME(0), android::view::InflateException::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::RuntimeException>(get_jtype());
 }
 
-template <>
-local_ref< android::view::InflateException > create< android::view::InflateException>(local_ref< java::lang::String > const &a0, local_ref< java::lang::Throwable > const &a1)
+
+android::view::InflateException::InflateException()
+: cpp_object<android::view::InflateException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::view::InflateException::J2CPP_CLASS_NAME>(),
+		get_method_id<android::view::InflateException::J2CPP_CLASS_NAME, android::view::InflateException::J2CPP_METHOD_NAME(0), android::view::InflateException::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
 {
-	return local_ref< android::view::InflateException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::view::InflateException::J2CPP_CLASS_NAME>(),
-			get_method_id<android::view::InflateException::J2CPP_CLASS_NAME, android::view::InflateException::J2CPP_METHOD_NAME(1), android::view::InflateException::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< android::view::InflateException > create< android::view::InflateException>(local_ref< java::lang::String > const &a0)
+
+
+android::view::InflateException::InflateException(local_ref< java::lang::String > const &a0, local_ref< java::lang::Throwable > const &a1)
+: cpp_object<android::view::InflateException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::view::InflateException::J2CPP_CLASS_NAME>(),
+		get_method_id<android::view::InflateException::J2CPP_CLASS_NAME, android::view::InflateException::J2CPP_METHOD_NAME(1), android::view::InflateException::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
 {
-	return local_ref< android::view::InflateException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::view::InflateException::J2CPP_CLASS_NAME>(),
-			get_method_id<android::view::InflateException::J2CPP_CLASS_NAME, android::view::InflateException::J2CPP_METHOD_NAME(2), android::view::InflateException::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< android::view::InflateException > create< android::view::InflateException>(local_ref< java::lang::Throwable > const &a0)
+
+
+android::view::InflateException::InflateException(local_ref< java::lang::String > const &a0)
+: cpp_object<android::view::InflateException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::view::InflateException::J2CPP_CLASS_NAME>(),
+		get_method_id<android::view::InflateException::J2CPP_CLASS_NAME, android::view::InflateException::J2CPP_METHOD_NAME(2), android::view::InflateException::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< android::view::InflateException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::view::InflateException::J2CPP_CLASS_NAME>(),
-			get_method_id<android::view::InflateException::J2CPP_CLASS_NAME, android::view::InflateException::J2CPP_METHOD_NAME(3), android::view::InflateException::J2CPP_METHOD_SIGNATURE(3), false>(),
-			a0.get_jtype()
-		)
-	);
 }
+
+
+
+android::view::InflateException::InflateException(local_ref< java::lang::Throwable > const &a0)
+: cpp_object<android::view::InflateException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::view::InflateException::J2CPP_CLASS_NAME>(),
+		get_method_id<android::view::InflateException::J2CPP_CLASS_NAME, android::view::InflateException::J2CPP_METHOD_NAME(3), android::view::InflateException::J2CPP_METHOD_SIGNATURE(3), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 
 J2CPP_DEFINE_CLASS(android::view::InflateException,"android/view/InflateException")

@@ -12,8 +12,10 @@
 
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace lang { class Throwable; } } }
+namespace j2cpp { namespace java { namespace lang { class Exception; } } }
 
 
+#include <java/lang/Exception.hpp>
 #include <java/lang/String.hpp>
 #include <java/lang/Throwable.hpp>
 
@@ -36,11 +38,16 @@ namespace java { namespace lang { namespace reflect {
 		J2CPP_DECLARE_METHOD(3)
 		J2CPP_DECLARE_METHOD(4)
 
-		InvocationTargetException(jobject jobj)
+		explicit InvocationTargetException(jobject jobj)
 		: cpp_object<InvocationTargetException>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Exception>() const;
+
+
+		InvocationTargetException(local_ref< java::lang::Throwable > const&);
+		InvocationTargetException(local_ref< java::lang::Throwable > const&, local_ref< java::lang::String > const&);
 		local_ref< java::lang::Throwable > getTargetException();
 		local_ref< java::lang::Throwable > getCause();
 	}; //class InvocationTargetException
@@ -48,7 +55,6 @@ namespace java { namespace lang { namespace reflect {
 } //namespace reflect
 } //namespace lang
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -62,40 +68,38 @@ namespace java { namespace lang { namespace reflect {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::lang::reflect::InvocationTargetException > create< java::lang::reflect::InvocationTargetException>()
+
+java::lang::reflect::InvocationTargetException::operator local_ref<java::lang::Exception>() const
 {
-	return local_ref< java::lang::reflect::InvocationTargetException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::lang::reflect::InvocationTargetException::J2CPP_CLASS_NAME>(),
-			get_method_id<java::lang::reflect::InvocationTargetException::J2CPP_CLASS_NAME, java::lang::reflect::InvocationTargetException::J2CPP_METHOD_NAME(0), java::lang::reflect::InvocationTargetException::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Exception>(get_jtype());
 }
 
-template <>
-local_ref< java::lang::reflect::InvocationTargetException > create< java::lang::reflect::InvocationTargetException>(local_ref< java::lang::Throwable > const &a0)
+
+
+java::lang::reflect::InvocationTargetException::InvocationTargetException(local_ref< java::lang::Throwable > const &a0)
+: cpp_object<java::lang::reflect::InvocationTargetException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::lang::reflect::InvocationTargetException::J2CPP_CLASS_NAME>(),
+		get_method_id<java::lang::reflect::InvocationTargetException::J2CPP_CLASS_NAME, java::lang::reflect::InvocationTargetException::J2CPP_METHOD_NAME(1), java::lang::reflect::InvocationTargetException::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< java::lang::reflect::InvocationTargetException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::lang::reflect::InvocationTargetException::J2CPP_CLASS_NAME>(),
-			get_method_id<java::lang::reflect::InvocationTargetException::J2CPP_CLASS_NAME, java::lang::reflect::InvocationTargetException::J2CPP_METHOD_NAME(1), java::lang::reflect::InvocationTargetException::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< java::lang::reflect::InvocationTargetException > create< java::lang::reflect::InvocationTargetException>(local_ref< java::lang::Throwable > const &a0, local_ref< java::lang::String > const &a1)
+
+
+java::lang::reflect::InvocationTargetException::InvocationTargetException(local_ref< java::lang::Throwable > const &a0, local_ref< java::lang::String > const &a1)
+: cpp_object<java::lang::reflect::InvocationTargetException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::lang::reflect::InvocationTargetException::J2CPP_CLASS_NAME>(),
+		get_method_id<java::lang::reflect::InvocationTargetException::J2CPP_CLASS_NAME, java::lang::reflect::InvocationTargetException::J2CPP_METHOD_NAME(2), java::lang::reflect::InvocationTargetException::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
 {
-	return local_ref< java::lang::reflect::InvocationTargetException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::lang::reflect::InvocationTargetException::J2CPP_CLASS_NAME>(),
-			get_method_id<java::lang::reflect::InvocationTargetException::J2CPP_CLASS_NAME, java::lang::reflect::InvocationTargetException::J2CPP_METHOD_NAME(2), java::lang::reflect::InvocationTargetException::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
 }
+
 
 local_ref< java::lang::Throwable > java::lang::reflect::InvocationTargetException::getTargetException()
 {

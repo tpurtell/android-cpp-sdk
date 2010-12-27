@@ -10,10 +10,12 @@
 #define J2CPP_JAVA_NIO_CHANNELS_FILELOCK_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace nio { namespace channels { class FileChannel; } } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/nio/channels/FileChannel.hpp>
 
@@ -40,10 +42,13 @@ namespace java { namespace nio { namespace channels {
 		J2CPP_DECLARE_METHOD(7)
 		J2CPP_DECLARE_METHOD(8)
 
-		FileLock(jobject jobj)
+		explicit FileLock(jobject jobj)
 		: cpp_object<FileLock>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		local_ref< java::nio::channels::FileChannel > channel();
 		cpp_long position();
@@ -59,7 +64,6 @@ namespace java { namespace nio { namespace channels {
 } //namespace nio
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_NIO_CHANNELS_FILELOCK_HPP_DECL
@@ -72,17 +76,12 @@ namespace java { namespace nio { namespace channels {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::nio::channels::FileLock > create< java::nio::channels::FileLock>(local_ref< java::nio::channels::FileChannel > const &a0, cpp_long const &a1, cpp_long const &a2, cpp_boolean const &a3)
+
+java::nio::channels::FileLock::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::nio::channels::FileLock >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::nio::channels::FileLock::J2CPP_CLASS_NAME>(),
-			get_method_id<java::nio::channels::FileLock::J2CPP_CLASS_NAME, java::nio::channels::FileLock::J2CPP_METHOD_NAME(0), java::nio::channels::FileLock::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
 
 local_ref< java::nio::channels::FileChannel > java::nio::channels::FileLock::channel()
 {

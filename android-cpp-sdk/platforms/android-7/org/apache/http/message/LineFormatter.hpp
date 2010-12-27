@@ -10,6 +10,7 @@
 #define J2CPP_ORG_APACHE_HTTP_MESSAGE_LINEFORMATTER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { class RequestLine; } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { class Header; } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { class ProtocolVersion; } } } }
@@ -17,6 +18,7 @@ namespace j2cpp { namespace org { namespace apache { namespace http { class Stat
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace util { class CharArrayBuffer; } } } } }
 
 
+#include <java/lang/Object.hpp>
 #include <org/apache/http/Header.hpp>
 #include <org/apache/http/ProtocolVersion.hpp>
 #include <org/apache/http/RequestLine.hpp>
@@ -41,10 +43,13 @@ namespace org { namespace apache { namespace http { namespace message {
 		J2CPP_DECLARE_METHOD(2)
 		J2CPP_DECLARE_METHOD(3)
 
-		LineFormatter(jobject jobj)
+		explicit LineFormatter(jobject jobj)
 		: cpp_object<LineFormatter>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		local_ref< org::apache::http::util::CharArrayBuffer > appendProtocolVersion(local_ref< org::apache::http::util::CharArrayBuffer > const&, local_ref< org::apache::http::ProtocolVersion > const&);
 		local_ref< org::apache::http::util::CharArrayBuffer > formatRequestLine(local_ref< org::apache::http::util::CharArrayBuffer > const&, local_ref< org::apache::http::RequestLine > const&);
@@ -57,7 +62,6 @@ namespace org { namespace apache { namespace http { namespace message {
 } //namespace apache
 } //namespace org
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ORG_APACHE_HTTP_MESSAGE_LINEFORMATTER_HPP_DECL
@@ -69,6 +73,12 @@ namespace org { namespace apache { namespace http { namespace message {
 
 namespace j2cpp {
 
+
+
+org::apache::http::message::LineFormatter::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 local_ref< org::apache::http::util::CharArrayBuffer > org::apache::http::message::LineFormatter::appendProtocolVersion(local_ref< org::apache::http::util::CharArrayBuffer > const &a0, local_ref< org::apache::http::ProtocolVersion > const &a1)
 {

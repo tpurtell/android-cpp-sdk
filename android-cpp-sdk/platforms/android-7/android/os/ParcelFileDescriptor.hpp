@@ -11,10 +11,14 @@
 
 
 namespace j2cpp { namespace java { namespace net { class Socket; } } }
+namespace j2cpp { namespace java { namespace io { class FileOutputStream; } } }
 namespace j2cpp { namespace java { namespace io { class File; } } }
 namespace j2cpp { namespace java { namespace io { class FileDescriptor; } } }
+namespace j2cpp { namespace java { namespace io { class FileInputStream; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace android { namespace os { class Parcel; } } }
+namespace j2cpp { namespace android { namespace os { class Parcelable; } } }
 namespace j2cpp { namespace android { namespace os { namespace Parcelable_ { class Creator; } } } }
 
 
@@ -22,6 +26,9 @@ namespace j2cpp { namespace android { namespace os { namespace Parcelable_ { cla
 #include <android/os/Parcelable.hpp>
 #include <java/io/File.hpp>
 #include <java/io/FileDescriptor.hpp>
+#include <java/io/FileInputStream.hpp>
+#include <java/io/FileOutputStream.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/net/Socket.hpp>
 
@@ -44,11 +51,15 @@ namespace android { namespace os {
 			J2CPP_DECLARE_METHOD(0)
 			J2CPP_DECLARE_METHOD(1)
 
-			AutoCloseInputStream(jobject jobj)
+			explicit AutoCloseInputStream(jobject jobj)
 			: cpp_object<AutoCloseInputStream>(jobj)
 			{
 			}
 
+			operator local_ref<java::io::FileInputStream>() const;
+
+
+			AutoCloseInputStream(local_ref< android::os::ParcelFileDescriptor > const&);
 			void close();
 		}; //class AutoCloseInputStream
 
@@ -63,11 +74,15 @@ namespace android { namespace os {
 			J2CPP_DECLARE_METHOD(0)
 			J2CPP_DECLARE_METHOD(1)
 
-			AutoCloseOutputStream(jobject jobj)
+			explicit AutoCloseOutputStream(jobject jobj)
 			: cpp_object<AutoCloseOutputStream>(jobj)
 			{
 			}
 
+			operator local_ref<java::io::FileOutputStream>() const;
+
+
+			AutoCloseOutputStream(local_ref< android::os::ParcelFileDescriptor > const&);
 			void close();
 		}; //class AutoCloseOutputStream
 
@@ -104,11 +119,16 @@ namespace android { namespace os {
 		typedef ParcelFileDescriptor_::AutoCloseInputStream AutoCloseInputStream;
 		typedef ParcelFileDescriptor_::AutoCloseOutputStream AutoCloseOutputStream;
 
-		ParcelFileDescriptor(jobject jobj)
+		explicit ParcelFileDescriptor(jobject jobj)
 		: cpp_object<ParcelFileDescriptor>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<android::os::Parcelable>() const;
+
+
+		ParcelFileDescriptor(local_ref< android::os::ParcelFileDescriptor > const&);
 		static local_ref< android::os::ParcelFileDescriptor > open(local_ref< java::io::File > const&, cpp_int const&);
 		static local_ref< android::os::ParcelFileDescriptor > fromSocket(local_ref< java::net::Socket > const&);
 		local_ref< java::io::FileDescriptor > getFileDescriptor();
@@ -132,7 +152,6 @@ namespace android { namespace os {
 } //namespace os
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_OS_PARCELFILEDESCRIPTOR_HPP_DECL
@@ -146,17 +165,24 @@ namespace j2cpp {
 
 
 
-template <>
-local_ref< android::os::ParcelFileDescriptor_::AutoCloseInputStream > create< android::os::ParcelFileDescriptor_::AutoCloseInputStream>(local_ref< android::os::ParcelFileDescriptor > const &a0)
+
+android::os::ParcelFileDescriptor_::AutoCloseInputStream::operator local_ref<java::io::FileInputStream>() const
 {
-	return local_ref< android::os::ParcelFileDescriptor_::AutoCloseInputStream >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::os::ParcelFileDescriptor_::AutoCloseInputStream::J2CPP_CLASS_NAME>(),
-			get_method_id<android::os::ParcelFileDescriptor_::AutoCloseInputStream::J2CPP_CLASS_NAME, android::os::ParcelFileDescriptor_::AutoCloseInputStream::J2CPP_METHOD_NAME(0), android::os::ParcelFileDescriptor_::AutoCloseInputStream::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::io::FileInputStream>(get_jtype());
 }
+
+
+android::os::ParcelFileDescriptor_::AutoCloseInputStream::AutoCloseInputStream(local_ref< android::os::ParcelFileDescriptor > const &a0)
+: cpp_object<android::os::ParcelFileDescriptor_::AutoCloseInputStream>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::os::ParcelFileDescriptor_::AutoCloseInputStream::J2CPP_CLASS_NAME>(),
+		get_method_id<android::os::ParcelFileDescriptor_::AutoCloseInputStream::J2CPP_CLASS_NAME, android::os::ParcelFileDescriptor_::AutoCloseInputStream::J2CPP_METHOD_NAME(0), android::os::ParcelFileDescriptor_::AutoCloseInputStream::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 void android::os::ParcelFileDescriptor_::AutoCloseInputStream::close()
 {
@@ -173,17 +199,24 @@ J2CPP_DEFINE_CLASS(android::os::ParcelFileDescriptor_::AutoCloseInputStream,"and
 J2CPP_DEFINE_METHOD(android::os::ParcelFileDescriptor_::AutoCloseInputStream,0,"<init>","(Landroid/os/ParcelFileDescriptor;)V")
 J2CPP_DEFINE_METHOD(android::os::ParcelFileDescriptor_::AutoCloseInputStream,1,"close","()V")
 
-template <>
-local_ref< android::os::ParcelFileDescriptor_::AutoCloseOutputStream > create< android::os::ParcelFileDescriptor_::AutoCloseOutputStream>(local_ref< android::os::ParcelFileDescriptor > const &a0)
+
+android::os::ParcelFileDescriptor_::AutoCloseOutputStream::operator local_ref<java::io::FileOutputStream>() const
 {
-	return local_ref< android::os::ParcelFileDescriptor_::AutoCloseOutputStream >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::os::ParcelFileDescriptor_::AutoCloseOutputStream::J2CPP_CLASS_NAME>(),
-			get_method_id<android::os::ParcelFileDescriptor_::AutoCloseOutputStream::J2CPP_CLASS_NAME, android::os::ParcelFileDescriptor_::AutoCloseOutputStream::J2CPP_METHOD_NAME(0), android::os::ParcelFileDescriptor_::AutoCloseOutputStream::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::io::FileOutputStream>(get_jtype());
 }
+
+
+android::os::ParcelFileDescriptor_::AutoCloseOutputStream::AutoCloseOutputStream(local_ref< android::os::ParcelFileDescriptor > const &a0)
+: cpp_object<android::os::ParcelFileDescriptor_::AutoCloseOutputStream>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::os::ParcelFileDescriptor_::AutoCloseOutputStream::J2CPP_CLASS_NAME>(),
+		get_method_id<android::os::ParcelFileDescriptor_::AutoCloseOutputStream::J2CPP_CLASS_NAME, android::os::ParcelFileDescriptor_::AutoCloseOutputStream::J2CPP_METHOD_NAME(0), android::os::ParcelFileDescriptor_::AutoCloseOutputStream::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 void android::os::ParcelFileDescriptor_::AutoCloseOutputStream::close()
 {
@@ -201,17 +234,29 @@ J2CPP_DEFINE_METHOD(android::os::ParcelFileDescriptor_::AutoCloseOutputStream,0,
 J2CPP_DEFINE_METHOD(android::os::ParcelFileDescriptor_::AutoCloseOutputStream,1,"close","()V")
 
 
-template <>
-local_ref< android::os::ParcelFileDescriptor > create< android::os::ParcelFileDescriptor>(local_ref< android::os::ParcelFileDescriptor > const &a0)
+
+android::os::ParcelFileDescriptor::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::os::ParcelFileDescriptor >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::os::ParcelFileDescriptor::J2CPP_CLASS_NAME>(),
-			get_method_id<android::os::ParcelFileDescriptor::J2CPP_CLASS_NAME, android::os::ParcelFileDescriptor::J2CPP_METHOD_NAME(0), android::os::ParcelFileDescriptor::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+android::os::ParcelFileDescriptor::operator local_ref<android::os::Parcelable>() const
+{
+	return local_ref<android::os::Parcelable>(get_jtype());
+}
+
+
+android::os::ParcelFileDescriptor::ParcelFileDescriptor(local_ref< android::os::ParcelFileDescriptor > const &a0)
+: cpp_object<android::os::ParcelFileDescriptor>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::os::ParcelFileDescriptor::J2CPP_CLASS_NAME>(),
+		get_method_id<android::os::ParcelFileDescriptor::J2CPP_CLASS_NAME, android::os::ParcelFileDescriptor::J2CPP_METHOD_NAME(0), android::os::ParcelFileDescriptor::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 local_ref< android::os::ParcelFileDescriptor > android::os::ParcelFileDescriptor::open(local_ref< java::io::File > const &a0, cpp_int const &a1)
 {
@@ -296,6 +341,7 @@ void android::os::ParcelFileDescriptor::writeToParcel(local_ref< android::os::Pa
 		)
 	);
 }
+
 
 
 static_field<

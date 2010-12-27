@@ -10,9 +10,11 @@
 #define J2CPP_JAVA_UTIL_REGEX_MATCHRESULT_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -36,10 +38,13 @@ namespace java { namespace util { namespace regex {
 		J2CPP_DECLARE_METHOD(5)
 		J2CPP_DECLARE_METHOD(6)
 
-		MatchResult(jobject jobj)
+		explicit MatchResult(jobject jobj)
 		: cpp_object<MatchResult>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		cpp_int end();
 		cpp_int end(cpp_int const&);
@@ -54,7 +59,6 @@ namespace java { namespace util { namespace regex {
 } //namespace util
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_UTIL_REGEX_MATCHRESULT_HPP_DECL
@@ -66,6 +70,12 @@ namespace java { namespace util { namespace regex {
 
 namespace j2cpp {
 
+
+
+java::util::regex::MatchResult::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 cpp_int java::util::regex::MatchResult::end()
 {

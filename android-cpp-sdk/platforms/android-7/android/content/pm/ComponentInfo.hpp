@@ -15,10 +15,12 @@ namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace android { namespace graphics { namespace drawable { class Drawable; } } } }
 namespace j2cpp { namespace android { namespace content { namespace pm { class PackageManager; } } } }
 namespace j2cpp { namespace android { namespace content { namespace pm { class ApplicationInfo; } } } }
+namespace j2cpp { namespace android { namespace content { namespace pm { class PackageItemInfo; } } } }
 namespace j2cpp { namespace android { namespace os { class Parcel; } } }
 
 
 #include <android/content/pm/ApplicationInfo.hpp>
+#include <android/content/pm/PackageItemInfo.hpp>
 #include <android/content/pm/PackageManager.hpp>
 #include <android/graphics/drawable/Drawable.hpp>
 #include <android/os/Parcel.hpp>
@@ -52,15 +54,20 @@ namespace android { namespace content { namespace pm {
 		J2CPP_DECLARE_FIELD(2)
 		J2CPP_DECLARE_FIELD(3)
 
-		ComponentInfo(jobject jobj)
+		explicit ComponentInfo(jobject jobj)
 		: cpp_object<ComponentInfo>(jobj)
-		, applicationInfo(jobj)
-		, processName(jobj)
-		, enabled(jobj)
-		, exported(jobj)
+, applicationInfo(jobj)
+, processName(jobj)
+, enabled(jobj)
+, exported(jobj)
 		{
 		}
 
+		operator local_ref<android::content::pm::PackageItemInfo>() const;
+
+
+		ComponentInfo();
+		ComponentInfo(local_ref< android::content::pm::ComponentInfo > const&);
 		local_ref< java::lang::CharSequence > loadLabel(local_ref< android::content::pm::PackageManager > const&);
 		local_ref< android::graphics::drawable::Drawable > loadIcon(local_ref< android::content::pm::PackageManager > const&);
 		cpp_int getIconResource();
@@ -76,7 +83,6 @@ namespace android { namespace content { namespace pm {
 } //namespace content
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_CONTENT_PM_COMPONENTINFO_HPP_DECL
@@ -89,40 +95,45 @@ namespace android { namespace content { namespace pm {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::content::pm::ComponentInfo > create< android::content::pm::ComponentInfo>()
+
+android::content::pm::ComponentInfo::operator local_ref<android::content::pm::PackageItemInfo>() const
 {
-	return local_ref< android::content::pm::ComponentInfo >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::content::pm::ComponentInfo::J2CPP_CLASS_NAME>(),
-			get_method_id<android::content::pm::ComponentInfo::J2CPP_CLASS_NAME, android::content::pm::ComponentInfo::J2CPP_METHOD_NAME(0), android::content::pm::ComponentInfo::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<android::content::pm::PackageItemInfo>(get_jtype());
 }
 
-template <>
-local_ref< android::content::pm::ComponentInfo > create< android::content::pm::ComponentInfo>(local_ref< android::content::pm::ComponentInfo > const &a0)
+
+android::content::pm::ComponentInfo::ComponentInfo()
+: cpp_object<android::content::pm::ComponentInfo>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::content::pm::ComponentInfo::J2CPP_CLASS_NAME>(),
+		get_method_id<android::content::pm::ComponentInfo::J2CPP_CLASS_NAME, android::content::pm::ComponentInfo::J2CPP_METHOD_NAME(0), android::content::pm::ComponentInfo::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+, applicationInfo(get_jtype())
+, processName(get_jtype())
+, enabled(get_jtype())
+, exported(get_jtype())
 {
-	return local_ref< android::content::pm::ComponentInfo >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::content::pm::ComponentInfo::J2CPP_CLASS_NAME>(),
-			get_method_id<android::content::pm::ComponentInfo::J2CPP_CLASS_NAME, android::content::pm::ComponentInfo::J2CPP_METHOD_NAME(1), android::content::pm::ComponentInfo::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< android::content::pm::ComponentInfo > create< android::content::pm::ComponentInfo>(local_ref< android::os::Parcel > const &a0)
+
+
+android::content::pm::ComponentInfo::ComponentInfo(local_ref< android::content::pm::ComponentInfo > const &a0)
+: cpp_object<android::content::pm::ComponentInfo>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::content::pm::ComponentInfo::J2CPP_CLASS_NAME>(),
+		get_method_id<android::content::pm::ComponentInfo::J2CPP_CLASS_NAME, android::content::pm::ComponentInfo::J2CPP_METHOD_NAME(1), android::content::pm::ComponentInfo::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
+, applicationInfo(get_jtype())
+, processName(get_jtype())
+, enabled(get_jtype())
+, exported(get_jtype())
 {
-	return local_ref< android::content::pm::ComponentInfo >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::content::pm::ComponentInfo::J2CPP_CLASS_NAME>(),
-			get_method_id<android::content::pm::ComponentInfo::J2CPP_CLASS_NAME, android::content::pm::ComponentInfo::J2CPP_METHOD_NAME(2), android::content::pm::ComponentInfo::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype()
-		)
-	);
 }
+
+
 
 local_ref< java::lang::CharSequence > android::content::pm::ComponentInfo::loadLabel(local_ref< android::content::pm::PackageManager > const &a0)
 {

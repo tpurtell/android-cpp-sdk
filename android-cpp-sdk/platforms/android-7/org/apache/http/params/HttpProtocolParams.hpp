@@ -10,13 +10,17 @@
 #define J2CPP_ORG_APACHE_HTTP_PARAMS_HTTPPROTOCOLPARAMS_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { class ProtocolVersion; } } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { namespace params { class CoreProtocolPNames; } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace params { class HttpParams; } } } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <org/apache/http/ProtocolVersion.hpp>
+#include <org/apache/http/params/CoreProtocolPNames.hpp>
 #include <org/apache/http/params/HttpParams.hpp>
 
 
@@ -44,10 +48,14 @@ namespace org { namespace apache { namespace http { namespace params {
 		J2CPP_DECLARE_METHOD(9)
 		J2CPP_DECLARE_METHOD(10)
 
-		HttpProtocolParams(jobject jobj)
+		explicit HttpProtocolParams(jobject jobj)
 		: cpp_object<HttpProtocolParams>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<org::apache::http::params::CoreProtocolPNames>() const;
+
 
 		static local_ref< java::lang::String > getHttpElementCharset(local_ref< org::apache::http::params::HttpParams > const&);
 		static void setHttpElementCharset(local_ref< org::apache::http::params::HttpParams > const&, local_ref< java::lang::String > const&);
@@ -66,7 +74,6 @@ namespace org { namespace apache { namespace http { namespace params {
 } //namespace apache
 } //namespace org
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ORG_APACHE_HTTP_PARAMS_HTTPPROTOCOLPARAMS_HPP_DECL
@@ -79,16 +86,17 @@ namespace org { namespace apache { namespace http { namespace params {
 namespace j2cpp {
 
 
-template <>
-local_ref< org::apache::http::params::HttpProtocolParams > create< org::apache::http::params::HttpProtocolParams>()
+
+org::apache::http::params::HttpProtocolParams::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< org::apache::http::params::HttpProtocolParams >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::apache::http::params::HttpProtocolParams::J2CPP_CLASS_NAME>(),
-			get_method_id<org::apache::http::params::HttpProtocolParams::J2CPP_CLASS_NAME, org::apache::http::params::HttpProtocolParams::J2CPP_METHOD_NAME(0), org::apache::http::params::HttpProtocolParams::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+org::apache::http::params::HttpProtocolParams::operator local_ref<org::apache::http::params::CoreProtocolPNames>() const
+{
+	return local_ref<org::apache::http::params::CoreProtocolPNames>(get_jtype());
+}
+
 
 local_ref< java::lang::String > org::apache::http::params::HttpProtocolParams::getHttpElementCharset(local_ref< org::apache::http::params::HttpParams > const &a0)
 {

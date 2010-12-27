@@ -13,11 +13,13 @@
 namespace j2cpp { namespace javax { namespace net { namespace ssl { class SSLEngineResult; } } } }
 namespace j2cpp { namespace javax { namespace net { namespace ssl { class SSLSession; } } } }
 namespace j2cpp { namespace javax { namespace net { namespace ssl { namespace SSLEngineResult_ { class HandshakeStatus; } } } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace lang { class Runnable; } } }
 namespace j2cpp { namespace java { namespace nio { class ByteBuffer; } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/Runnable.hpp>
 #include <java/lang/String.hpp>
 #include <java/nio/ByteBuffer.hpp>
@@ -70,10 +72,13 @@ namespace javax { namespace net { namespace ssl {
 		J2CPP_DECLARE_METHOD(30)
 		J2CPP_DECLARE_METHOD(31)
 
-		SSLEngine(jobject jobj)
+		explicit SSLEngine(jobject jobj)
 		: cpp_object<SSLEngine>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		local_ref< java::lang::String > getPeerHost();
 		cpp_int getPeerPort();
@@ -111,7 +116,6 @@ namespace javax { namespace net { namespace ssl {
 } //namespace net
 } //namespace javax
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVAX_NET_SSL_SSLENGINE_HPP_DECL
@@ -124,28 +128,13 @@ namespace javax { namespace net { namespace ssl {
 namespace j2cpp {
 
 
-template <>
-local_ref< javax::net::ssl::SSLEngine > create< javax::net::ssl::SSLEngine>()
+
+javax::net::ssl::SSLEngine::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< javax::net::ssl::SSLEngine >(
-		environment::get().get_jenv()->NewObject(
-			get_class<javax::net::ssl::SSLEngine::J2CPP_CLASS_NAME>(),
-			get_method_id<javax::net::ssl::SSLEngine::J2CPP_CLASS_NAME, javax::net::ssl::SSLEngine::J2CPP_METHOD_NAME(0), javax::net::ssl::SSLEngine::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
 
-template <>
-local_ref< javax::net::ssl::SSLEngine > create< javax::net::ssl::SSLEngine>(local_ref< java::lang::String > const &a0, cpp_int const &a1)
-{
-	return local_ref< javax::net::ssl::SSLEngine >(
-		environment::get().get_jenv()->NewObject(
-			get_class<javax::net::ssl::SSLEngine::J2CPP_CLASS_NAME>(),
-			get_method_id<javax::net::ssl::SSLEngine::J2CPP_CLASS_NAME, javax::net::ssl::SSLEngine::J2CPP_METHOD_NAME(1), javax::net::ssl::SSLEngine::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
-}
+
 
 local_ref< java::lang::String > javax::net::ssl::SSLEngine::getPeerHost()
 {

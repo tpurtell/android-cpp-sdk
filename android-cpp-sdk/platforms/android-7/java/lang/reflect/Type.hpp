@@ -10,8 +10,10 @@
 #define J2CPP_JAVA_LANG_REFLECT_TYPE_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -27,16 +29,18 @@ namespace java { namespace lang { namespace reflect {
 		J2CPP_DECLARE_CLASS
 
 
-		Type(jobject jobj)
+		explicit Type(jobject jobj)
 		: cpp_object<Type>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 	}; //class Type
 
 } //namespace reflect
 } //namespace lang
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -49,6 +53,12 @@ namespace java { namespace lang { namespace reflect {
 
 namespace j2cpp {
 
+
+
+java::lang::reflect::Type::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 J2CPP_DEFINE_CLASS(java::lang::reflect::Type,"java/lang/reflect/Type")
 

@@ -10,9 +10,13 @@
 #define J2CPP_ORG_APACHE_HTTP_FORMATTEDHEADER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { class Header; } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace util { class CharArrayBuffer; } } } } }
 
 
+#include <java/lang/Object.hpp>
+#include <org/apache/http/Header.hpp>
 #include <org/apache/http/util/CharArrayBuffer.hpp>
 
 
@@ -31,10 +35,14 @@ namespace org { namespace apache { namespace http {
 		J2CPP_DECLARE_METHOD(0)
 		J2CPP_DECLARE_METHOD(1)
 
-		FormattedHeader(jobject jobj)
+		explicit FormattedHeader(jobject jobj)
 		: cpp_object<FormattedHeader>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<org::apache::http::Header>() const;
+
 
 		local_ref< org::apache::http::util::CharArrayBuffer > getBuffer();
 		cpp_int getValuePos();
@@ -43,7 +51,6 @@ namespace org { namespace apache { namespace http {
 } //namespace http
 } //namespace apache
 } //namespace org
-
 
 } //namespace j2cpp
 
@@ -56,6 +63,17 @@ namespace org { namespace apache { namespace http {
 
 namespace j2cpp {
 
+
+
+org::apache::http::FormattedHeader::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
+
+org::apache::http::FormattedHeader::operator local_ref<org::apache::http::Header>() const
+{
+	return local_ref<org::apache::http::Header>(get_jtype());
+}
 
 local_ref< org::apache::http::util::CharArrayBuffer > org::apache::http::FormattedHeader::getBuffer()
 {

@@ -10,11 +10,13 @@
 #define J2CPP_ORG_APACHE_HTTP_PROTOCOL_HTTPEXPECTATIONVERIFIER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { class HttpRequest; } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace protocol { class HttpContext; } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { class HttpResponse; } } } }
 
 
+#include <java/lang/Object.hpp>
 #include <org/apache/http/HttpRequest.hpp>
 #include <org/apache/http/HttpResponse.hpp>
 #include <org/apache/http/protocol/HttpContext.hpp>
@@ -34,10 +36,13 @@ namespace org { namespace apache { namespace http { namespace protocol {
 
 		J2CPP_DECLARE_METHOD(0)
 
-		HttpExpectationVerifier(jobject jobj)
+		explicit HttpExpectationVerifier(jobject jobj)
 		: cpp_object<HttpExpectationVerifier>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		void verify(local_ref< org::apache::http::HttpRequest > const&, local_ref< org::apache::http::HttpResponse > const&, local_ref< org::apache::http::protocol::HttpContext > const&);
 	}; //class HttpExpectationVerifier
@@ -46,7 +51,6 @@ namespace org { namespace apache { namespace http { namespace protocol {
 } //namespace http
 } //namespace apache
 } //namespace org
-
 
 } //namespace j2cpp
 
@@ -59,6 +63,12 @@ namespace org { namespace apache { namespace http { namespace protocol {
 
 namespace j2cpp {
 
+
+
+org::apache::http::protocol::HttpExpectationVerifier::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 void org::apache::http::protocol::HttpExpectationVerifier::verify(local_ref< org::apache::http::HttpRequest > const &a0, local_ref< org::apache::http::HttpResponse > const &a1, local_ref< org::apache::http::protocol::HttpContext > const &a2)
 {

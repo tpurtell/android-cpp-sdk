@@ -18,15 +18,19 @@ namespace j2cpp { namespace android { namespace content { class Context; } } }
 namespace j2cpp { namespace android { namespace view { class View; } } }
 namespace j2cpp { namespace android { namespace view { class ViewGroup; } } }
 namespace j2cpp { namespace android { namespace widget { class Filter; } } }
+namespace j2cpp { namespace android { namespace widget { class BaseExpandableListAdapter; } } }
 namespace j2cpp { namespace android { namespace widget { class FilterQueryProvider; } } }
+namespace j2cpp { namespace android { namespace widget { class Filterable; } } }
 
 
 #include <android/content/Context.hpp>
 #include <android/database/Cursor.hpp>
 #include <android/view/View.hpp>
 #include <android/view/ViewGroup.hpp>
+#include <android/widget/BaseExpandableListAdapter.hpp>
 #include <android/widget/Filter.hpp>
 #include <android/widget/FilterQueryProvider.hpp>
+#include <android/widget/Filterable.hpp>
 #include <java/lang/CharSequence.hpp>
 #include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
@@ -77,11 +81,17 @@ namespace android { namespace widget {
 		J2CPP_DECLARE_METHOD(30)
 		J2CPP_DECLARE_METHOD(31)
 
-		CursorTreeAdapter(jobject jobj)
+		explicit CursorTreeAdapter(jobject jobj)
 		: cpp_object<CursorTreeAdapter>(jobj)
 		{
 		}
 
+		operator local_ref<android::widget::BaseExpandableListAdapter>() const;
+		operator local_ref<android::widget::Filterable>() const;
+
+
+		CursorTreeAdapter(local_ref< android::database::Cursor > const&, local_ref< android::content::Context > const&);
+		CursorTreeAdapter(local_ref< android::database::Cursor > const&, local_ref< android::content::Context > const&, cpp_boolean const&);
 		void setGroupCursor(local_ref< android::database::Cursor > const&);
 		void setChildrenCursor(cpp_int const&, local_ref< android::database::Cursor > const&);
 		local_ref< android::database::Cursor > getChild(cpp_int const&, cpp_int const&);
@@ -112,7 +122,6 @@ namespace android { namespace widget {
 } //namespace widget
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_WIDGET_CURSORTREEADAPTER_HPP_DECL
@@ -125,29 +134,42 @@ namespace android { namespace widget {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::widget::CursorTreeAdapter > create< android::widget::CursorTreeAdapter>(local_ref< android::database::Cursor > const &a0, local_ref< android::content::Context > const &a1)
+
+android::widget::CursorTreeAdapter::operator local_ref<android::widget::BaseExpandableListAdapter>() const
 {
-	return local_ref< android::widget::CursorTreeAdapter >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::widget::CursorTreeAdapter::J2CPP_CLASS_NAME>(),
-			get_method_id<android::widget::CursorTreeAdapter::J2CPP_CLASS_NAME, android::widget::CursorTreeAdapter::J2CPP_METHOD_NAME(0), android::widget::CursorTreeAdapter::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<android::widget::BaseExpandableListAdapter>(get_jtype());
 }
 
-template <>
-local_ref< android::widget::CursorTreeAdapter > create< android::widget::CursorTreeAdapter>(local_ref< android::database::Cursor > const &a0, local_ref< android::content::Context > const &a1, cpp_boolean const &a2)
+android::widget::CursorTreeAdapter::operator local_ref<android::widget::Filterable>() const
 {
-	return local_ref< android::widget::CursorTreeAdapter >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::widget::CursorTreeAdapter::J2CPP_CLASS_NAME>(),
-			get_method_id<android::widget::CursorTreeAdapter::J2CPP_CLASS_NAME, android::widget::CursorTreeAdapter::J2CPP_METHOD_NAME(1), android::widget::CursorTreeAdapter::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
-		)
-	);
+	return local_ref<android::widget::Filterable>(get_jtype());
 }
+
+
+android::widget::CursorTreeAdapter::CursorTreeAdapter(local_ref< android::database::Cursor > const &a0, local_ref< android::content::Context > const &a1)
+: cpp_object<android::widget::CursorTreeAdapter>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::widget::CursorTreeAdapter::J2CPP_CLASS_NAME>(),
+		get_method_id<android::widget::CursorTreeAdapter::J2CPP_CLASS_NAME, android::widget::CursorTreeAdapter::J2CPP_METHOD_NAME(0), android::widget::CursorTreeAdapter::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
+
+
+android::widget::CursorTreeAdapter::CursorTreeAdapter(local_ref< android::database::Cursor > const &a0, local_ref< android::content::Context > const &a1, cpp_boolean const &a2)
+: cpp_object<android::widget::CursorTreeAdapter>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::widget::CursorTreeAdapter::J2CPP_CLASS_NAME>(),
+		get_method_id<android::widget::CursorTreeAdapter::J2CPP_CLASS_NAME, android::widget::CursorTreeAdapter::J2CPP_METHOD_NAME(1), android::widget::CursorTreeAdapter::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
+	)
+)
+{
+}
+
 
 
 void android::widget::CursorTreeAdapter::setGroupCursor(local_ref< android::database::Cursor > const &a0)

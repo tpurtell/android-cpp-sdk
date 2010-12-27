@@ -12,8 +12,10 @@
 
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace beans { class PropertyChangeEvent; } } }
 
 
+#include <java/beans/PropertyChangeEvent.hpp>
 #include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
@@ -33,17 +35,20 @@ namespace java { namespace beans {
 		J2CPP_DECLARE_METHOD(0)
 		J2CPP_DECLARE_METHOD(1)
 
-		IndexedPropertyChangeEvent(jobject jobj)
+		explicit IndexedPropertyChangeEvent(jobject jobj)
 		: cpp_object<IndexedPropertyChangeEvent>(jobj)
 		{
 		}
 
+		operator local_ref<java::beans::PropertyChangeEvent>() const;
+
+
+		IndexedPropertyChangeEvent(local_ref< java::lang::Object > const&, local_ref< java::lang::String > const&, local_ref< java::lang::Object > const&, local_ref< java::lang::Object > const&, cpp_int const&);
 		cpp_int getIndex();
 	}; //class IndexedPropertyChangeEvent
 
 } //namespace beans
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -57,17 +62,24 @@ namespace java { namespace beans {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::beans::IndexedPropertyChangeEvent > create< java::beans::IndexedPropertyChangeEvent>(local_ref< java::lang::Object > const &a0, local_ref< java::lang::String > const &a1, local_ref< java::lang::Object > const &a2, local_ref< java::lang::Object > const &a3, cpp_int const &a4)
+
+java::beans::IndexedPropertyChangeEvent::operator local_ref<java::beans::PropertyChangeEvent>() const
 {
-	return local_ref< java::beans::IndexedPropertyChangeEvent >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::beans::IndexedPropertyChangeEvent::J2CPP_CLASS_NAME>(),
-			get_method_id<java::beans::IndexedPropertyChangeEvent::J2CPP_CLASS_NAME, java::beans::IndexedPropertyChangeEvent::J2CPP_METHOD_NAME(0), java::beans::IndexedPropertyChangeEvent::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype(), a4.get_jtype()
-		)
-	);
+	return local_ref<java::beans::PropertyChangeEvent>(get_jtype());
 }
+
+
+java::beans::IndexedPropertyChangeEvent::IndexedPropertyChangeEvent(local_ref< java::lang::Object > const &a0, local_ref< java::lang::String > const &a1, local_ref< java::lang::Object > const &a2, local_ref< java::lang::Object > const &a3, cpp_int const &a4)
+: cpp_object<java::beans::IndexedPropertyChangeEvent>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::beans::IndexedPropertyChangeEvent::J2CPP_CLASS_NAME>(),
+		get_method_id<java::beans::IndexedPropertyChangeEvent::J2CPP_CLASS_NAME, java::beans::IndexedPropertyChangeEvent::J2CPP_METHOD_NAME(0), java::beans::IndexedPropertyChangeEvent::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype(), a4.get_jtype()
+	)
+)
+{
+}
+
 
 cpp_int java::beans::IndexedPropertyChangeEvent::getIndex()
 {

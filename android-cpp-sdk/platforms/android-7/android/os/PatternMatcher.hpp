@@ -10,13 +10,16 @@
 #define J2CPP_ANDROID_OS_PATTERNMATCHER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace android { namespace os { class Parcel; } } }
+namespace j2cpp { namespace android { namespace os { class Parcelable; } } }
 namespace j2cpp { namespace android { namespace os { namespace Parcelable_ { class Creator; } } } }
 
 
 #include <android/os/Parcel.hpp>
 #include <android/os/Parcelable.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -46,11 +49,17 @@ namespace android { namespace os {
 		J2CPP_DECLARE_FIELD(2)
 		J2CPP_DECLARE_FIELD(3)
 
-		PatternMatcher(jobject jobj)
+		explicit PatternMatcher(jobject jobj)
 		: cpp_object<PatternMatcher>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<android::os::Parcelable>() const;
+
+
+		PatternMatcher(local_ref< java::lang::String > const&, cpp_int const&);
+		PatternMatcher(local_ref< android::os::Parcel > const&);
 		local_ref< java::lang::String > getPath();
 		cpp_int getType();
 		cpp_boolean match(local_ref< java::lang::String > const&);
@@ -67,7 +76,6 @@ namespace android { namespace os {
 } //namespace os
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_OS_PATTERNMATCHER_HPP_DECL
@@ -80,29 +88,42 @@ namespace android { namespace os {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::os::PatternMatcher > create< android::os::PatternMatcher>(local_ref< java::lang::String > const &a0, cpp_int const &a1)
+
+android::os::PatternMatcher::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::os::PatternMatcher >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::os::PatternMatcher::J2CPP_CLASS_NAME>(),
-			get_method_id<android::os::PatternMatcher::J2CPP_CLASS_NAME, android::os::PatternMatcher::J2CPP_METHOD_NAME(0), android::os::PatternMatcher::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
 
-template <>
-local_ref< android::os::PatternMatcher > create< android::os::PatternMatcher>(local_ref< android::os::Parcel > const &a0)
+android::os::PatternMatcher::operator local_ref<android::os::Parcelable>() const
 {
-	return local_ref< android::os::PatternMatcher >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::os::PatternMatcher::J2CPP_CLASS_NAME>(),
-			get_method_id<android::os::PatternMatcher::J2CPP_CLASS_NAME, android::os::PatternMatcher::J2CPP_METHOD_NAME(1), android::os::PatternMatcher::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<android::os::Parcelable>(get_jtype());
 }
+
+
+android::os::PatternMatcher::PatternMatcher(local_ref< java::lang::String > const &a0, cpp_int const &a1)
+: cpp_object<android::os::PatternMatcher>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::os::PatternMatcher::J2CPP_CLASS_NAME>(),
+		get_method_id<android::os::PatternMatcher::J2CPP_CLASS_NAME, android::os::PatternMatcher::J2CPP_METHOD_NAME(0), android::os::PatternMatcher::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
+
+
+android::os::PatternMatcher::PatternMatcher(local_ref< android::os::Parcel > const &a0)
+: cpp_object<android::os::PatternMatcher>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::os::PatternMatcher::J2CPP_CLASS_NAME>(),
+		get_method_id<android::os::PatternMatcher::J2CPP_CLASS_NAME, android::os::PatternMatcher::J2CPP_METHOD_NAME(1), android::os::PatternMatcher::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 local_ref< java::lang::String > android::os::PatternMatcher::getPath()
 {
@@ -165,6 +186,7 @@ void android::os::PatternMatcher::writeToParcel(local_ref< android::os::Parcel >
 		)
 	);
 }
+
 
 
 static_field<

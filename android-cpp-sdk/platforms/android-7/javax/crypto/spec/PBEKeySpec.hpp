@@ -10,8 +10,12 @@
 #define J2CPP_JAVAX_CRYPTO_SPEC_PBEKEYSPEC_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace security { namespace spec { class KeySpec; } } } }
 
 
+#include <java/lang/Object.hpp>
+#include <java/security/spec/KeySpec.hpp>
 
 
 namespace j2cpp {
@@ -35,11 +39,18 @@ namespace javax { namespace crypto { namespace spec {
 		J2CPP_DECLARE_METHOD(6)
 		J2CPP_DECLARE_METHOD(7)
 
-		PBEKeySpec(jobject jobj)
+		explicit PBEKeySpec(jobject jobj)
 		: cpp_object<PBEKeySpec>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::security::spec::KeySpec>() const;
+
+
+		PBEKeySpec(local_ref< cpp_char_array<1> > const&);
+		PBEKeySpec(local_ref< cpp_char_array<1> > const&, local_ref< cpp_byte_array<1> > const&, cpp_int const&, cpp_int const&);
+		PBEKeySpec(local_ref< cpp_char_array<1> > const&, local_ref< cpp_byte_array<1> > const&, cpp_int const&);
 		void clearPassword();
 		local_ref< cpp_char_array<1> > getPassword();
 		local_ref< cpp_byte_array<1> > getSalt();
@@ -50,7 +61,6 @@ namespace javax { namespace crypto { namespace spec {
 } //namespace spec
 } //namespace crypto
 } //namespace javax
-
 
 } //namespace j2cpp
 
@@ -64,41 +74,55 @@ namespace javax { namespace crypto { namespace spec {
 namespace j2cpp {
 
 
-template <>
-local_ref< javax::crypto::spec::PBEKeySpec > create< javax::crypto::spec::PBEKeySpec>(local_ref< cpp_char_array<1> > const &a0)
+
+javax::crypto::spec::PBEKeySpec::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< javax::crypto::spec::PBEKeySpec >(
-		environment::get().get_jenv()->NewObject(
-			get_class<javax::crypto::spec::PBEKeySpec::J2CPP_CLASS_NAME>(),
-			get_method_id<javax::crypto::spec::PBEKeySpec::J2CPP_CLASS_NAME, javax::crypto::spec::PBEKeySpec::J2CPP_METHOD_NAME(0), javax::crypto::spec::PBEKeySpec::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
 
-template <>
-local_ref< javax::crypto::spec::PBEKeySpec > create< javax::crypto::spec::PBEKeySpec>(local_ref< cpp_char_array<1> > const &a0, local_ref< cpp_byte_array<1> > const &a1, cpp_int const &a2, cpp_int const &a3)
+javax::crypto::spec::PBEKeySpec::operator local_ref<java::security::spec::KeySpec>() const
 {
-	return local_ref< javax::crypto::spec::PBEKeySpec >(
-		environment::get().get_jenv()->NewObject(
-			get_class<javax::crypto::spec::PBEKeySpec::J2CPP_CLASS_NAME>(),
-			get_method_id<javax::crypto::spec::PBEKeySpec::J2CPP_CLASS_NAME, javax::crypto::spec::PBEKeySpec::J2CPP_METHOD_NAME(1), javax::crypto::spec::PBEKeySpec::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype()
-		)
-	);
+	return local_ref<java::security::spec::KeySpec>(get_jtype());
 }
 
-template <>
-local_ref< javax::crypto::spec::PBEKeySpec > create< javax::crypto::spec::PBEKeySpec>(local_ref< cpp_char_array<1> > const &a0, local_ref< cpp_byte_array<1> > const &a1, cpp_int const &a2)
+
+javax::crypto::spec::PBEKeySpec::PBEKeySpec(local_ref< cpp_char_array<1> > const &a0)
+: cpp_object<javax::crypto::spec::PBEKeySpec>(
+	environment::get().get_jenv()->NewObject(
+		get_class<javax::crypto::spec::PBEKeySpec::J2CPP_CLASS_NAME>(),
+		get_method_id<javax::crypto::spec::PBEKeySpec::J2CPP_CLASS_NAME, javax::crypto::spec::PBEKeySpec::J2CPP_METHOD_NAME(0), javax::crypto::spec::PBEKeySpec::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< javax::crypto::spec::PBEKeySpec >(
-		environment::get().get_jenv()->NewObject(
-			get_class<javax::crypto::spec::PBEKeySpec::J2CPP_CLASS_NAME>(),
-			get_method_id<javax::crypto::spec::PBEKeySpec::J2CPP_CLASS_NAME, javax::crypto::spec::PBEKeySpec::J2CPP_METHOD_NAME(2), javax::crypto::spec::PBEKeySpec::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
-		)
-	);
 }
+
+
+
+javax::crypto::spec::PBEKeySpec::PBEKeySpec(local_ref< cpp_char_array<1> > const &a0, local_ref< cpp_byte_array<1> > const &a1, cpp_int const &a2, cpp_int const &a3)
+: cpp_object<javax::crypto::spec::PBEKeySpec>(
+	environment::get().get_jenv()->NewObject(
+		get_class<javax::crypto::spec::PBEKeySpec::J2CPP_CLASS_NAME>(),
+		get_method_id<javax::crypto::spec::PBEKeySpec::J2CPP_CLASS_NAME, javax::crypto::spec::PBEKeySpec::J2CPP_METHOD_NAME(1), javax::crypto::spec::PBEKeySpec::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype()
+	)
+)
+{
+}
+
+
+
+javax::crypto::spec::PBEKeySpec::PBEKeySpec(local_ref< cpp_char_array<1> > const &a0, local_ref< cpp_byte_array<1> > const &a1, cpp_int const &a2)
+: cpp_object<javax::crypto::spec::PBEKeySpec>(
+	environment::get().get_jenv()->NewObject(
+		get_class<javax::crypto::spec::PBEKeySpec::J2CPP_CLASS_NAME>(),
+		get_method_id<javax::crypto::spec::PBEKeySpec::J2CPP_CLASS_NAME, javax::crypto::spec::PBEKeySpec::J2CPP_METHOD_NAME(2), javax::crypto::spec::PBEKeySpec::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
+	)
+)
+{
+}
+
 
 void javax::crypto::spec::PBEKeySpec::clearPassword()
 {

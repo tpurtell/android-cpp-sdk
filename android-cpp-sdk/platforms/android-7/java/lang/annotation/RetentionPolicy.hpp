@@ -10,9 +10,11 @@
 #define J2CPP_JAVA_LANG_ANNOTATION_RETENTIONPOLICY_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Enum; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 
 
+#include <java/lang/Enum.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -37,10 +39,13 @@ namespace java { namespace lang { namespace annotation {
 		J2CPP_DECLARE_FIELD(2)
 		J2CPP_DECLARE_FIELD(3)
 
-		RetentionPolicy(jobject jobj)
+		explicit RetentionPolicy(jobject jobj)
 		: cpp_object<RetentionPolicy>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Enum>() const;
+
 
 		static local_ref< cpp_object_array<java::lang::annotation::RetentionPolicy, 1> > values();
 		static local_ref< java::lang::annotation::RetentionPolicy > valueOf(local_ref< java::lang::String > const&);
@@ -54,7 +59,6 @@ namespace java { namespace lang { namespace annotation {
 } //namespace lang
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_LANG_ANNOTATION_RETENTIONPOLICY_HPP_DECL
@@ -66,6 +70,12 @@ namespace java { namespace lang { namespace annotation {
 
 namespace j2cpp {
 
+
+
+java::lang::annotation::RetentionPolicy::operator local_ref<java::lang::Enum>() const
+{
+	return local_ref<java::lang::Enum>(get_jtype());
+}
 
 local_ref< cpp_object_array<java::lang::annotation::RetentionPolicy, 1> > java::lang::annotation::RetentionPolicy::values()
 {
@@ -88,17 +98,7 @@ local_ref< java::lang::annotation::RetentionPolicy > java::lang::annotation::Ret
 	);
 }
 
-template <>
-local_ref< java::lang::annotation::RetentionPolicy > create< java::lang::annotation::RetentionPolicy>(local_ref< java::lang::String > const &a0, cpp_int const &a1)
-{
-	return local_ref< java::lang::annotation::RetentionPolicy >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::lang::annotation::RetentionPolicy::J2CPP_CLASS_NAME>(),
-			get_method_id<java::lang::annotation::RetentionPolicy::J2CPP_CLASS_NAME, java::lang::annotation::RetentionPolicy::J2CPP_METHOD_NAME(2), java::lang::annotation::RetentionPolicy::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
-}
+
 
 
 static_field<

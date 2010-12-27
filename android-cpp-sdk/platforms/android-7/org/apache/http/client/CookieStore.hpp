@@ -10,11 +10,13 @@
 #define J2CPP_ORG_APACHE_HTTP_CLIENT_COOKIESTORE_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace util { class Date; } } }
 namespace j2cpp { namespace java { namespace util { class List; } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace cookie { class Cookie; } } } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/util/Date.hpp>
 #include <java/util/List.hpp>
 #include <org/apache/http/cookie/Cookie.hpp>
@@ -37,10 +39,13 @@ namespace org { namespace apache { namespace http { namespace client {
 		J2CPP_DECLARE_METHOD(2)
 		J2CPP_DECLARE_METHOD(3)
 
-		CookieStore(jobject jobj)
+		explicit CookieStore(jobject jobj)
 		: cpp_object<CookieStore>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		void addCookie(local_ref< org::apache::http::cookie::Cookie > const&);
 		local_ref< java::util::List > getCookies();
@@ -53,7 +58,6 @@ namespace org { namespace apache { namespace http { namespace client {
 } //namespace apache
 } //namespace org
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ORG_APACHE_HTTP_CLIENT_COOKIESTORE_HPP_DECL
@@ -65,6 +69,12 @@ namespace org { namespace apache { namespace http { namespace client {
 
 namespace j2cpp {
 
+
+
+org::apache::http::client::CookieStore::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 void org::apache::http::client::CookieStore::addCookie(local_ref< org::apache::http::cookie::Cookie > const &a0)
 {

@@ -15,12 +15,16 @@ namespace j2cpp { namespace java { namespace lang { class Class; } } }
 namespace j2cpp { namespace java { namespace lang { class Appendable; } } }
 namespace j2cpp { namespace java { namespace lang { class CharSequence; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace android { namespace text { class Spannable; } } }
 namespace j2cpp { namespace android { namespace text { class InputFilter; } } }
 namespace j2cpp { namespace android { namespace text { class Editable; } } }
+namespace j2cpp { namespace android { namespace text { class GetChars; } } }
 
 
 #include <android/text/Editable.hpp>
+#include <android/text/GetChars.hpp>
 #include <android/text/InputFilter.hpp>
+#include <android/text/Spannable.hpp>
 #include <java/lang/Appendable.hpp>
 #include <java/lang/CharSequence.hpp>
 #include <java/lang/Class.hpp>
@@ -80,11 +84,22 @@ namespace android { namespace text {
 		J2CPP_DECLARE_METHOD(37)
 		J2CPP_DECLARE_METHOD(38)
 
-		SpannableStringBuilder(jobject jobj)
+		explicit SpannableStringBuilder(jobject jobj)
 		: cpp_object<SpannableStringBuilder>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::lang::CharSequence>() const;
+		operator local_ref<android::text::GetChars>() const;
+		operator local_ref<android::text::Spannable>() const;
+		operator local_ref<android::text::Editable>() const;
+		operator local_ref<java::lang::Appendable>() const;
+
+
+		SpannableStringBuilder();
+		SpannableStringBuilder(local_ref< java::lang::CharSequence > const&);
+		SpannableStringBuilder(local_ref< java::lang::CharSequence > const&, cpp_int const&, cpp_int const&);
 		static local_ref< android::text::SpannableStringBuilder > valueOf(local_ref< java::lang::CharSequence > const&);
 		cpp_char charAt(cpp_int const&);
 		cpp_int length();
@@ -126,7 +141,6 @@ namespace android { namespace text {
 } //namespace text
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_TEXT_SPANNABLESTRINGBUILDER_HPP_DECL
@@ -139,40 +153,74 @@ namespace android { namespace text {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::text::SpannableStringBuilder > create< android::text::SpannableStringBuilder>()
+
+android::text::SpannableStringBuilder::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::text::SpannableStringBuilder >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::text::SpannableStringBuilder::J2CPP_CLASS_NAME>(),
-			get_method_id<android::text::SpannableStringBuilder::J2CPP_CLASS_NAME, android::text::SpannableStringBuilder::J2CPP_METHOD_NAME(0), android::text::SpannableStringBuilder::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
 
-template <>
-local_ref< android::text::SpannableStringBuilder > create< android::text::SpannableStringBuilder>(local_ref< java::lang::CharSequence > const &a0)
+android::text::SpannableStringBuilder::operator local_ref<java::lang::CharSequence>() const
 {
-	return local_ref< android::text::SpannableStringBuilder >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::text::SpannableStringBuilder::J2CPP_CLASS_NAME>(),
-			get_method_id<android::text::SpannableStringBuilder::J2CPP_CLASS_NAME, android::text::SpannableStringBuilder::J2CPP_METHOD_NAME(1), android::text::SpannableStringBuilder::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::lang::CharSequence>(get_jtype());
 }
 
-template <>
-local_ref< android::text::SpannableStringBuilder > create< android::text::SpannableStringBuilder>(local_ref< java::lang::CharSequence > const &a0, cpp_int const &a1, cpp_int const &a2)
+android::text::SpannableStringBuilder::operator local_ref<android::text::GetChars>() const
 {
-	return local_ref< android::text::SpannableStringBuilder >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::text::SpannableStringBuilder::J2CPP_CLASS_NAME>(),
-			get_method_id<android::text::SpannableStringBuilder::J2CPP_CLASS_NAME, android::text::SpannableStringBuilder::J2CPP_METHOD_NAME(2), android::text::SpannableStringBuilder::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
-		)
-	);
+	return local_ref<android::text::GetChars>(get_jtype());
 }
+
+android::text::SpannableStringBuilder::operator local_ref<android::text::Spannable>() const
+{
+	return local_ref<android::text::Spannable>(get_jtype());
+}
+
+android::text::SpannableStringBuilder::operator local_ref<android::text::Editable>() const
+{
+	return local_ref<android::text::Editable>(get_jtype());
+}
+
+android::text::SpannableStringBuilder::operator local_ref<java::lang::Appendable>() const
+{
+	return local_ref<java::lang::Appendable>(get_jtype());
+}
+
+
+android::text::SpannableStringBuilder::SpannableStringBuilder()
+: cpp_object<android::text::SpannableStringBuilder>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::text::SpannableStringBuilder::J2CPP_CLASS_NAME>(),
+		get_method_id<android::text::SpannableStringBuilder::J2CPP_CLASS_NAME, android::text::SpannableStringBuilder::J2CPP_METHOD_NAME(0), android::text::SpannableStringBuilder::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
+
+
+android::text::SpannableStringBuilder::SpannableStringBuilder(local_ref< java::lang::CharSequence > const &a0)
+: cpp_object<android::text::SpannableStringBuilder>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::text::SpannableStringBuilder::J2CPP_CLASS_NAME>(),
+		get_method_id<android::text::SpannableStringBuilder::J2CPP_CLASS_NAME, android::text::SpannableStringBuilder::J2CPP_METHOD_NAME(1), android::text::SpannableStringBuilder::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
+
+
+android::text::SpannableStringBuilder::SpannableStringBuilder(local_ref< java::lang::CharSequence > const &a0, cpp_int const &a1, cpp_int const &a2)
+: cpp_object<android::text::SpannableStringBuilder>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::text::SpannableStringBuilder::J2CPP_CLASS_NAME>(),
+		get_method_id<android::text::SpannableStringBuilder::J2CPP_CLASS_NAME, android::text::SpannableStringBuilder::J2CPP_METHOD_NAME(2), android::text::SpannableStringBuilder::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
+	)
+)
+{
+}
+
 
 local_ref< android::text::SpannableStringBuilder > android::text::SpannableStringBuilder::valueOf(local_ref< java::lang::CharSequence > const &a0)
 {

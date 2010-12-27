@@ -10,12 +10,16 @@
 #define J2CPP_JAVA_IO_EXTERNALIZABLE_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 namespace j2cpp { namespace java { namespace io { class ObjectInput; } } }
 namespace j2cpp { namespace java { namespace io { class ObjectOutput; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
 #include <java/io/ObjectInput.hpp>
 #include <java/io/ObjectOutput.hpp>
+#include <java/io/Serializable.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -33,10 +37,14 @@ namespace java { namespace io {
 		J2CPP_DECLARE_METHOD(0)
 		J2CPP_DECLARE_METHOD(1)
 
-		Externalizable(jobject jobj)
+		explicit Externalizable(jobject jobj)
 		: cpp_object<Externalizable>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::io::Serializable>() const;
+
 
 		void readExternal(local_ref< java::io::ObjectInput > const&);
 		void writeExternal(local_ref< java::io::ObjectOutput > const&);
@@ -44,7 +52,6 @@ namespace java { namespace io {
 
 } //namespace io
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -57,6 +64,17 @@ namespace java { namespace io {
 
 namespace j2cpp {
 
+
+
+java::io::Externalizable::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
+
+java::io::Externalizable::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jtype());
+}
 
 void java::io::Externalizable::readExternal(local_ref< java::io::ObjectInput > const &a0)
 {

@@ -11,9 +11,11 @@
 
 
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace lang { class Comparable; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 
 
+#include <java/lang/Comparable.hpp>
 #include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
@@ -38,10 +40,14 @@ namespace java { namespace text {
 		J2CPP_DECLARE_METHOD(5)
 		J2CPP_DECLARE_METHOD(6)
 
-		CollationKey(jobject jobj)
+		explicit CollationKey(jobject jobj)
 		: cpp_object<CollationKey>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::lang::Comparable>() const;
+
 
 		cpp_int compareTo(local_ref< java::text::CollationKey > const&);
 		cpp_boolean equals(local_ref< java::lang::Object > const&);
@@ -53,7 +59,6 @@ namespace java { namespace text {
 
 } //namespace text
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -67,16 +72,17 @@ namespace java { namespace text {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::text::CollationKey > create< java::text::CollationKey>()
+
+java::text::CollationKey::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::text::CollationKey >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::text::CollationKey::J2CPP_CLASS_NAME>(),
-			get_method_id<java::text::CollationKey::J2CPP_CLASS_NAME, java::text::CollationKey::J2CPP_METHOD_NAME(0), java::text::CollationKey::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+java::text::CollationKey::operator local_ref<java::lang::Comparable>() const
+{
+	return local_ref<java::lang::Comparable>(get_jtype());
+}
+
 
 cpp_int java::text::CollationKey::compareTo(local_ref< java::text::CollationKey > const &a0)
 {

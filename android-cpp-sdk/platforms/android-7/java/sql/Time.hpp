@@ -11,9 +11,11 @@
 
 
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace util { class Date; } } }
 
 
 #include <java/lang/String.hpp>
+#include <java/util/Date.hpp>
 
 
 namespace j2cpp {
@@ -41,11 +43,16 @@ namespace java { namespace sql {
 		J2CPP_DECLARE_METHOD(10)
 		J2CPP_DECLARE_METHOD(11)
 
-		Time(jobject jobj)
+		explicit Time(jobject jobj)
 		: cpp_object<Time>(jobj)
 		{
 		}
 
+		operator local_ref<java::util::Date>() const;
+
+
+		Time(cpp_int const&, cpp_int const&, cpp_int const&);
+		Time(cpp_long const&);
 		cpp_int getDate();
 		cpp_int getDay();
 		cpp_int getMonth();
@@ -61,7 +68,6 @@ namespace java { namespace sql {
 } //namespace sql
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_SQL_TIME_HPP_DECL
@@ -74,29 +80,37 @@ namespace java { namespace sql {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::sql::Time > create< java::sql::Time>(cpp_int const &a0, cpp_int const &a1, cpp_int const &a2)
+
+java::sql::Time::operator local_ref<java::util::Date>() const
 {
-	return local_ref< java::sql::Time >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::sql::Time::J2CPP_CLASS_NAME>(),
-			get_method_id<java::sql::Time::J2CPP_CLASS_NAME, java::sql::Time::J2CPP_METHOD_NAME(0), java::sql::Time::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
-		)
-	);
+	return local_ref<java::util::Date>(get_jtype());
 }
 
-template <>
-local_ref< java::sql::Time > create< java::sql::Time>(cpp_long const &a0)
+
+java::sql::Time::Time(cpp_int const &a0, cpp_int const &a1, cpp_int const &a2)
+: cpp_object<java::sql::Time>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::sql::Time::J2CPP_CLASS_NAME>(),
+		get_method_id<java::sql::Time::J2CPP_CLASS_NAME, java::sql::Time::J2CPP_METHOD_NAME(0), java::sql::Time::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
+	)
+)
 {
-	return local_ref< java::sql::Time >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::sql::Time::J2CPP_CLASS_NAME>(),
-			get_method_id<java::sql::Time::J2CPP_CLASS_NAME, java::sql::Time::J2CPP_METHOD_NAME(1), java::sql::Time::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
 }
+
+
+
+java::sql::Time::Time(cpp_long const &a0)
+: cpp_object<java::sql::Time>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::sql::Time::J2CPP_CLASS_NAME>(),
+		get_method_id<java::sql::Time::J2CPP_CLASS_NAME, java::sql::Time::J2CPP_METHOD_NAME(1), java::sql::Time::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 cpp_int java::sql::Time::getDate()
 {

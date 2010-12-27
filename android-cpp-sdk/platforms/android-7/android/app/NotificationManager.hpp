@@ -10,11 +10,13 @@
 #define J2CPP_ANDROID_APP_NOTIFICATIONMANAGER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace android { namespace app { class Notification; } } }
 
 
 #include <android/app/Notification.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -37,10 +39,13 @@ namespace android { namespace app {
 		J2CPP_DECLARE_METHOD(4)
 		J2CPP_DECLARE_METHOD(5)
 
-		NotificationManager(jobject jobj)
+		explicit NotificationManager(jobject jobj)
 		: cpp_object<NotificationManager>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		void notify(cpp_int const&, local_ref< android::app::Notification > const&);
 		void notify(local_ref< java::lang::String > const&, cpp_int const&, local_ref< android::app::Notification > const&);
@@ -51,7 +56,6 @@ namespace android { namespace app {
 
 } //namespace app
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -65,16 +69,12 @@ namespace android { namespace app {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::app::NotificationManager > create< android::app::NotificationManager>()
+
+android::app::NotificationManager::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::app::NotificationManager >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::app::NotificationManager::J2CPP_CLASS_NAME>(),
-			get_method_id<android::app::NotificationManager::J2CPP_CLASS_NAME, android::app::NotificationManager::J2CPP_METHOD_NAME(0), android::app::NotificationManager::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
 
 void android::app::NotificationManager::notify(cpp_int const &a0, local_ref< android::app::Notification > const &a1)
 {

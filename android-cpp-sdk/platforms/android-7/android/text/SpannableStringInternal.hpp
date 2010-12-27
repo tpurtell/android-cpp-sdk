@@ -43,10 +43,13 @@ namespace android { namespace text {
 		J2CPP_DECLARE_METHOD(8)
 		J2CPP_DECLARE_METHOD(9)
 
-		SpannableStringInternal(jobject jobj)
+		explicit SpannableStringInternal(jobject jobj)
 		: cpp_object<SpannableStringInternal>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		cpp_int length();
 		cpp_char charAt(cpp_int const&);
@@ -62,7 +65,6 @@ namespace android { namespace text {
 } //namespace text
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_TEXT_SPANNABLESTRINGINTERNAL_HPP_DECL
@@ -75,16 +77,12 @@ namespace android { namespace text {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::text::SpannableStringInternal > create< android::text::SpannableStringInternal>()
+
+android::text::SpannableStringInternal::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::text::SpannableStringInternal >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::text::SpannableStringInternal::J2CPP_CLASS_NAME>(),
-			get_method_id<android::text::SpannableStringInternal::J2CPP_CLASS_NAME, android::text::SpannableStringInternal::J2CPP_METHOD_NAME(0), android::text::SpannableStringInternal::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
 
 cpp_int android::text::SpannableStringInternal::length()
 {

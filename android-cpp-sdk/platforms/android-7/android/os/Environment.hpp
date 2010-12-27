@@ -11,10 +11,12 @@
 
 
 namespace j2cpp { namespace java { namespace io { class File; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 
 
 #include <java/io/File.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -46,11 +48,15 @@ namespace android { namespace os {
 		J2CPP_DECLARE_FIELD(7)
 		J2CPP_DECLARE_FIELD(8)
 
-		Environment(jobject jobj)
+		explicit Environment(jobject jobj)
 		: cpp_object<Environment>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		Environment();
 		static local_ref< java::io::File > getRootDirectory();
 		static local_ref< java::io::File > getDataDirectory();
 		static local_ref< java::io::File > getExternalStorageDirectory();
@@ -71,7 +77,6 @@ namespace android { namespace os {
 } //namespace os
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_OS_ENVIRONMENT_HPP_DECL
@@ -84,16 +89,23 @@ namespace android { namespace os {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::os::Environment > create< android::os::Environment>()
+
+android::os::Environment::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::os::Environment >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::os::Environment::J2CPP_CLASS_NAME>(),
-			get_method_id<android::os::Environment::J2CPP_CLASS_NAME, android::os::Environment::J2CPP_METHOD_NAME(0), android::os::Environment::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::os::Environment::Environment()
+: cpp_object<android::os::Environment>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::os::Environment::J2CPP_CLASS_NAME>(),
+		get_method_id<android::os::Environment::J2CPP_CLASS_NAME, android::os::Environment::J2CPP_METHOD_NAME(0), android::os::Environment::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 local_ref< java::io::File > android::os::Environment::getRootDirectory()
 {

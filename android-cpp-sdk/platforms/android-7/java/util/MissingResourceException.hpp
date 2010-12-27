@@ -10,9 +10,11 @@
 #define J2CPP_JAVA_UTIL_MISSINGRESOURCEEXCEPTION_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class RuntimeException; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 
 
+#include <java/lang/RuntimeException.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -32,18 +34,21 @@ namespace java { namespace util {
 		J2CPP_DECLARE_METHOD(1)
 		J2CPP_DECLARE_METHOD(2)
 
-		MissingResourceException(jobject jobj)
+		explicit MissingResourceException(jobject jobj)
 		: cpp_object<MissingResourceException>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::RuntimeException>() const;
+
+
+		MissingResourceException(local_ref< java::lang::String > const&, local_ref< java::lang::String > const&, local_ref< java::lang::String > const&);
 		local_ref< java::lang::String > getClassName();
 		local_ref< java::lang::String > getKey();
 	}; //class MissingResourceException
 
 } //namespace util
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -57,17 +62,24 @@ namespace java { namespace util {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::util::MissingResourceException > create< java::util::MissingResourceException>(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1, local_ref< java::lang::String > const &a2)
+
+java::util::MissingResourceException::operator local_ref<java::lang::RuntimeException>() const
 {
-	return local_ref< java::util::MissingResourceException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::MissingResourceException::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::MissingResourceException::J2CPP_CLASS_NAME, java::util::MissingResourceException::J2CPP_METHOD_NAME(0), java::util::MissingResourceException::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
-		)
-	);
+	return local_ref<java::lang::RuntimeException>(get_jtype());
 }
+
+
+java::util::MissingResourceException::MissingResourceException(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1, local_ref< java::lang::String > const &a2)
+: cpp_object<java::util::MissingResourceException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::util::MissingResourceException::J2CPP_CLASS_NAME>(),
+		get_method_id<java::util::MissingResourceException::J2CPP_CLASS_NAME, java::util::MissingResourceException::J2CPP_METHOD_NAME(0), java::util::MissingResourceException::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
+	)
+)
+{
+}
+
 
 local_ref< java::lang::String > java::util::MissingResourceException::getClassName()
 {

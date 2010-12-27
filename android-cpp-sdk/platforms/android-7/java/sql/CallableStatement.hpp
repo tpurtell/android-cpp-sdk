@@ -17,6 +17,7 @@ namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace math { class BigDecimal; } } }
 namespace j2cpp { namespace java { namespace sql { class Ref; } } }
+namespace j2cpp { namespace java { namespace sql { class PreparedStatement; } } }
 namespace j2cpp { namespace java { namespace sql { class Clob; } } }
 namespace j2cpp { namespace java { namespace sql { class Blob; } } }
 namespace j2cpp { namespace java { namespace sql { class Date; } } }
@@ -37,6 +38,7 @@ namespace j2cpp { namespace java { namespace util { class Calendar; } } }
 #include <java/sql/Blob.hpp>
 #include <java/sql/Clob.hpp>
 #include <java/sql/Date.hpp>
+#include <java/sql/PreparedStatement.hpp>
 #include <java/sql/Ref.hpp>
 #include <java/sql/Time.hpp>
 #include <java/sql/Timestamp.hpp>
@@ -136,10 +138,14 @@ namespace java { namespace sql {
 		J2CPP_DECLARE_METHOD(77)
 		J2CPP_DECLARE_METHOD(78)
 
-		CallableStatement(jobject jobj)
+		explicit CallableStatement(jobject jobj)
 		: cpp_object<CallableStatement>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::sql::PreparedStatement>() const;
+
 
 		local_ref< java::sql::Array > getArray(cpp_int const&);
 		local_ref< java::sql::Array > getArray(local_ref< java::lang::String > const&);
@@ -225,7 +231,6 @@ namespace java { namespace sql {
 } //namespace sql
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_SQL_CALLABLESTATEMENT_HPP_DECL
@@ -237,6 +242,17 @@ namespace java { namespace sql {
 
 namespace j2cpp {
 
+
+
+java::sql::CallableStatement::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
+
+java::sql::CallableStatement::operator local_ref<java::sql::PreparedStatement>() const
+{
+	return local_ref<java::sql::PreparedStatement>(get_jtype());
+}
 
 local_ref< java::sql::Array > java::sql::CallableStatement::getArray(cpp_int const &a0)
 {

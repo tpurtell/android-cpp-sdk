@@ -13,10 +13,14 @@
 namespace j2cpp { namespace java { namespace io { class FileOutputStream; } } }
 namespace j2cpp { namespace java { namespace io { class FileDescriptor; } } }
 namespace j2cpp { namespace java { namespace io { class FileInputStream; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace android { namespace os { class Parcel; } } }
 namespace j2cpp { namespace android { namespace os { class ParcelFileDescriptor; } } }
+namespace j2cpp { namespace android { namespace os { namespace ParcelFileDescriptor_ { class AutoCloseInputStream; } } } }
+namespace j2cpp { namespace android { namespace os { class Parcelable; } } }
 namespace j2cpp { namespace android { namespace os { namespace Parcelable_ { class Creator; } } } }
+namespace j2cpp { namespace android { namespace os { namespace ParcelFileDescriptor_ { class AutoCloseOutputStream; } } } }
 
 
 #include <android/os/Parcel.hpp>
@@ -25,6 +29,7 @@ namespace j2cpp { namespace android { namespace os { namespace Parcelable_ { cla
 #include <java/io/FileDescriptor.hpp>
 #include <java/io/FileInputStream.hpp>
 #include <java/io/FileOutputStream.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -53,11 +58,15 @@ namespace android { namespace content { namespace res {
 			J2CPP_DECLARE_METHOD(7)
 			J2CPP_DECLARE_METHOD(8)
 
-			AutoCloseInputStream(jobject jobj)
+			explicit AutoCloseInputStream(jobject jobj)
 			: cpp_object<AutoCloseInputStream>(jobj)
 			{
 			}
 
+			operator local_ref<android::os::ParcelFileDescriptor_::AutoCloseInputStream>() const;
+
+
+			AutoCloseInputStream(local_ref< android::content::res::AssetFileDescriptor > const&);
 			cpp_int available();
 			cpp_int read();
 			cpp_int read(local_ref< cpp_byte_array<1> > const&, cpp_int const&, cpp_int const&);
@@ -81,11 +90,15 @@ namespace android { namespace content { namespace res {
 			J2CPP_DECLARE_METHOD(2)
 			J2CPP_DECLARE_METHOD(3)
 
-			AutoCloseOutputStream(jobject jobj)
+			explicit AutoCloseOutputStream(jobject jobj)
 			: cpp_object<AutoCloseOutputStream>(jobj)
 			{
 			}
 
+			operator local_ref<android::os::ParcelFileDescriptor_::AutoCloseOutputStream>() const;
+
+
+			AutoCloseOutputStream(local_ref< android::content::res::AssetFileDescriptor > const&);
 			void write(local_ref< cpp_byte_array<1> > const&, cpp_int const&, cpp_int const&);
 			void write(local_ref< cpp_byte_array<1> > const&);
 			void write(cpp_int const&);
@@ -119,11 +132,16 @@ namespace android { namespace content { namespace res {
 		typedef AssetFileDescriptor_::AutoCloseInputStream AutoCloseInputStream;
 		typedef AssetFileDescriptor_::AutoCloseOutputStream AutoCloseOutputStream;
 
-		AssetFileDescriptor(jobject jobj)
+		explicit AssetFileDescriptor(jobject jobj)
 		: cpp_object<AssetFileDescriptor>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<android::os::Parcelable>() const;
+
+
+		AssetFileDescriptor(local_ref< android::os::ParcelFileDescriptor > const&, cpp_long const&, cpp_long const&);
 		local_ref< android::os::ParcelFileDescriptor > getParcelFileDescriptor();
 		local_ref< java::io::FileDescriptor > getFileDescriptor();
 		cpp_long getStartOffset();
@@ -144,7 +162,6 @@ namespace android { namespace content { namespace res {
 } //namespace content
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_CONTENT_RES_ASSETFILEDESCRIPTOR_HPP_DECL
@@ -158,17 +175,24 @@ namespace j2cpp {
 
 
 
-template <>
-local_ref< android::content::res::AssetFileDescriptor_::AutoCloseInputStream > create< android::content::res::AssetFileDescriptor_::AutoCloseInputStream>(local_ref< android::content::res::AssetFileDescriptor > const &a0)
+
+android::content::res::AssetFileDescriptor_::AutoCloseInputStream::operator local_ref<android::os::ParcelFileDescriptor_::AutoCloseInputStream>() const
 {
-	return local_ref< android::content::res::AssetFileDescriptor_::AutoCloseInputStream >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::content::res::AssetFileDescriptor_::AutoCloseInputStream::J2CPP_CLASS_NAME>(),
-			get_method_id<android::content::res::AssetFileDescriptor_::AutoCloseInputStream::J2CPP_CLASS_NAME, android::content::res::AssetFileDescriptor_::AutoCloseInputStream::J2CPP_METHOD_NAME(0), android::content::res::AssetFileDescriptor_::AutoCloseInputStream::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<android::os::ParcelFileDescriptor_::AutoCloseInputStream>(get_jtype());
 }
+
+
+android::content::res::AssetFileDescriptor_::AutoCloseInputStream::AutoCloseInputStream(local_ref< android::content::res::AssetFileDescriptor > const &a0)
+: cpp_object<android::content::res::AssetFileDescriptor_::AutoCloseInputStream>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::content::res::AssetFileDescriptor_::AutoCloseInputStream::J2CPP_CLASS_NAME>(),
+		get_method_id<android::content::res::AssetFileDescriptor_::AutoCloseInputStream::J2CPP_CLASS_NAME, android::content::res::AssetFileDescriptor_::AutoCloseInputStream::J2CPP_METHOD_NAME(0), android::content::res::AssetFileDescriptor_::AutoCloseInputStream::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 cpp_int android::content::res::AssetFileDescriptor_::AutoCloseInputStream::available()
 {
@@ -266,17 +290,24 @@ J2CPP_DEFINE_METHOD(android::content::res::AssetFileDescriptor_::AutoCloseInputS
 J2CPP_DEFINE_METHOD(android::content::res::AssetFileDescriptor_::AutoCloseInputStream,7,"markSupported","()Z")
 J2CPP_DEFINE_METHOD(android::content::res::AssetFileDescriptor_::AutoCloseInputStream,8,"reset","()V")
 
-template <>
-local_ref< android::content::res::AssetFileDescriptor_::AutoCloseOutputStream > create< android::content::res::AssetFileDescriptor_::AutoCloseOutputStream>(local_ref< android::content::res::AssetFileDescriptor > const &a0)
+
+android::content::res::AssetFileDescriptor_::AutoCloseOutputStream::operator local_ref<android::os::ParcelFileDescriptor_::AutoCloseOutputStream>() const
 {
-	return local_ref< android::content::res::AssetFileDescriptor_::AutoCloseOutputStream >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::content::res::AssetFileDescriptor_::AutoCloseOutputStream::J2CPP_CLASS_NAME>(),
-			get_method_id<android::content::res::AssetFileDescriptor_::AutoCloseOutputStream::J2CPP_CLASS_NAME, android::content::res::AssetFileDescriptor_::AutoCloseOutputStream::J2CPP_METHOD_NAME(0), android::content::res::AssetFileDescriptor_::AutoCloseOutputStream::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<android::os::ParcelFileDescriptor_::AutoCloseOutputStream>(get_jtype());
 }
+
+
+android::content::res::AssetFileDescriptor_::AutoCloseOutputStream::AutoCloseOutputStream(local_ref< android::content::res::AssetFileDescriptor > const &a0)
+: cpp_object<android::content::res::AssetFileDescriptor_::AutoCloseOutputStream>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::content::res::AssetFileDescriptor_::AutoCloseOutputStream::J2CPP_CLASS_NAME>(),
+		get_method_id<android::content::res::AssetFileDescriptor_::AutoCloseOutputStream::J2CPP_CLASS_NAME, android::content::res::AssetFileDescriptor_::AutoCloseOutputStream::J2CPP_METHOD_NAME(0), android::content::res::AssetFileDescriptor_::AutoCloseOutputStream::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 void android::content::res::AssetFileDescriptor_::AutoCloseOutputStream::write(local_ref< cpp_byte_array<1> > const &a0, cpp_int const &a1, cpp_int const &a2)
 {
@@ -319,17 +350,29 @@ J2CPP_DEFINE_METHOD(android::content::res::AssetFileDescriptor_::AutoCloseOutput
 J2CPP_DEFINE_METHOD(android::content::res::AssetFileDescriptor_::AutoCloseOutputStream,3,"write","(I)V")
 
 
-template <>
-local_ref< android::content::res::AssetFileDescriptor > create< android::content::res::AssetFileDescriptor>(local_ref< android::os::ParcelFileDescriptor > const &a0, cpp_long const &a1, cpp_long const &a2)
+
+android::content::res::AssetFileDescriptor::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::content::res::AssetFileDescriptor >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::content::res::AssetFileDescriptor::J2CPP_CLASS_NAME>(),
-			get_method_id<android::content::res::AssetFileDescriptor::J2CPP_CLASS_NAME, android::content::res::AssetFileDescriptor::J2CPP_METHOD_NAME(0), android::content::res::AssetFileDescriptor::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+android::content::res::AssetFileDescriptor::operator local_ref<android::os::Parcelable>() const
+{
+	return local_ref<android::os::Parcelable>(get_jtype());
+}
+
+
+android::content::res::AssetFileDescriptor::AssetFileDescriptor(local_ref< android::os::ParcelFileDescriptor > const &a0, cpp_long const &a1, cpp_long const &a2)
+: cpp_object<android::content::res::AssetFileDescriptor>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::content::res::AssetFileDescriptor::J2CPP_CLASS_NAME>(),
+		get_method_id<android::content::res::AssetFileDescriptor::J2CPP_CLASS_NAME, android::content::res::AssetFileDescriptor::J2CPP_METHOD_NAME(0), android::content::res::AssetFileDescriptor::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
+	)
+)
+{
+}
+
 
 local_ref< android::os::ParcelFileDescriptor > android::content::res::AssetFileDescriptor::getParcelFileDescriptor()
 {
@@ -441,6 +484,7 @@ void android::content::res::AssetFileDescriptor::writeToParcel(local_ref< androi
 		)
 	);
 }
+
 
 
 static_field<

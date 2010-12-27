@@ -10,6 +10,8 @@
 #define J2CPP_ANDROID_GRAPHICS_PATH_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace lang { class Enum; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace android { namespace graphics { class Matrix; } } }
 namespace j2cpp { namespace android { namespace graphics { namespace Path_ { class Direction; } } } }
@@ -20,6 +22,8 @@ namespace j2cpp { namespace android { namespace graphics { class RectF; } } }
 #include <android/graphics/Matrix.hpp>
 #include <android/graphics/Path.hpp>
 #include <android/graphics/RectF.hpp>
+#include <java/lang/Enum.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -46,10 +50,13 @@ namespace android { namespace graphics {
 			J2CPP_DECLARE_FIELD(1)
 			J2CPP_DECLARE_FIELD(2)
 
-			Direction(jobject jobj)
+			explicit Direction(jobject jobj)
 			: cpp_object<Direction>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Enum>() const;
+
 
 			static local_ref< cpp_object_array<android::graphics::Path_::Direction, 1> > values();
 			static local_ref< android::graphics::Path_::Direction > valueOf(local_ref< java::lang::String > const&);
@@ -76,10 +83,13 @@ namespace android { namespace graphics {
 			J2CPP_DECLARE_FIELD(3)
 			J2CPP_DECLARE_FIELD(4)
 
-			FillType(jobject jobj)
+			explicit FillType(jobject jobj)
 			: cpp_object<FillType>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Enum>() const;
+
 
 			static local_ref< cpp_object_array<android::graphics::Path_::FillType, 1> > values();
 			static local_ref< android::graphics::Path_::FillType > valueOf(local_ref< java::lang::String > const&);
@@ -143,11 +153,16 @@ namespace android { namespace graphics {
 		typedef Path_::Direction Direction;
 		typedef Path_::FillType FillType;
 
-		Path(jobject jobj)
+		explicit Path(jobject jobj)
 		: cpp_object<Path>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		Path();
+		Path(local_ref< android::graphics::Path > const&);
 		void reset();
 		void rewind();
 		void set(local_ref< android::graphics::Path > const&);
@@ -190,7 +205,6 @@ namespace android { namespace graphics {
 } //namespace graphics
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_GRAPHICS_PATH_HPP_DECL
@@ -203,6 +217,12 @@ namespace android { namespace graphics {
 namespace j2cpp {
 
 
+
+
+android::graphics::Path_::Direction::operator local_ref<java::lang::Enum>() const
+{
+	return local_ref<java::lang::Enum>(get_jtype());
+}
 
 local_ref< cpp_object_array<android::graphics::Path_::Direction, 1> > android::graphics::Path_::Direction::values()
 {
@@ -225,17 +245,7 @@ local_ref< android::graphics::Path_::Direction > android::graphics::Path_::Direc
 	);
 }
 
-template <>
-local_ref< android::graphics::Path_::Direction > create< android::graphics::Path_::Direction>(local_ref< java::lang::String > const &a0, cpp_int const &a1)
-{
-	return local_ref< android::graphics::Path_::Direction >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::graphics::Path_::Direction::J2CPP_CLASS_NAME>(),
-			get_method_id<android::graphics::Path_::Direction::J2CPP_CLASS_NAME, android::graphics::Path_::Direction::J2CPP_METHOD_NAME(2), android::graphics::Path_::Direction::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
-}
+
 
 
 static_field<
@@ -262,6 +272,12 @@ J2CPP_DEFINE_FIELD(android::graphics::Path_::Direction,0,"CCW","Landroid/graphic
 J2CPP_DEFINE_FIELD(android::graphics::Path_::Direction,1,"CW","Landroid/graphics/Path$Direction;")
 J2CPP_DEFINE_FIELD(android::graphics::Path_::Direction,2,"$VALUES","[android.graphics.Path.Direction")
 
+
+android::graphics::Path_::FillType::operator local_ref<java::lang::Enum>() const
+{
+	return local_ref<java::lang::Enum>(get_jtype());
+}
+
 local_ref< cpp_object_array<android::graphics::Path_::FillType, 1> > android::graphics::Path_::FillType::values()
 {
 	return local_ref< cpp_object_array<android::graphics::Path_::FillType, 1> >(
@@ -283,17 +299,7 @@ local_ref< android::graphics::Path_::FillType > android::graphics::Path_::FillTy
 	);
 }
 
-template <>
-local_ref< android::graphics::Path_::FillType > create< android::graphics::Path_::FillType>(local_ref< java::lang::String > const &a0, cpp_int const &a1)
-{
-	return local_ref< android::graphics::Path_::FillType >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::graphics::Path_::FillType::J2CPP_CLASS_NAME>(),
-			get_method_id<android::graphics::Path_::FillType::J2CPP_CLASS_NAME, android::graphics::Path_::FillType::J2CPP_METHOD_NAME(2), android::graphics::Path_::FillType::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
-}
+
 
 
 static_field<
@@ -337,28 +343,36 @@ J2CPP_DEFINE_FIELD(android::graphics::Path_::FillType,3,"WINDING","Landroid/grap
 J2CPP_DEFINE_FIELD(android::graphics::Path_::FillType,4,"$VALUES","[android.graphics.Path.FillType")
 
 
-template <>
-local_ref< android::graphics::Path > create< android::graphics::Path>()
+
+android::graphics::Path::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::graphics::Path >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::graphics::Path::J2CPP_CLASS_NAME>(),
-			get_method_id<android::graphics::Path::J2CPP_CLASS_NAME, android::graphics::Path::J2CPP_METHOD_NAME(0), android::graphics::Path::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
 
-template <>
-local_ref< android::graphics::Path > create< android::graphics::Path>(local_ref< android::graphics::Path > const &a0)
+
+android::graphics::Path::Path()
+: cpp_object<android::graphics::Path>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::graphics::Path::J2CPP_CLASS_NAME>(),
+		get_method_id<android::graphics::Path::J2CPP_CLASS_NAME, android::graphics::Path::J2CPP_METHOD_NAME(0), android::graphics::Path::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
 {
-	return local_ref< android::graphics::Path >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::graphics::Path::J2CPP_CLASS_NAME>(),
-			get_method_id<android::graphics::Path::J2CPP_CLASS_NAME, android::graphics::Path::J2CPP_METHOD_NAME(1), android::graphics::Path::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
 }
+
+
+
+android::graphics::Path::Path(local_ref< android::graphics::Path > const &a0)
+: cpp_object<android::graphics::Path>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::graphics::Path::J2CPP_CLASS_NAME>(),
+		get_method_id<android::graphics::Path::J2CPP_CLASS_NAME, android::graphics::Path::J2CPP_METHOD_NAME(1), android::graphics::Path::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 void android::graphics::Path::reset()
 {

@@ -14,6 +14,8 @@ namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class StringBuffer; } } }
 namespace j2cpp { namespace java { namespace lang { class Number; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace text { class Format; } } }
+namespace j2cpp { namespace java { namespace text { namespace Format_ { class Field; } } } }
 namespace j2cpp { namespace java { namespace text { namespace NumberFormat_ { class Field; } } } }
 namespace j2cpp { namespace java { namespace text { class ParsePosition; } } }
 namespace j2cpp { namespace java { namespace text { class FieldPosition; } } }
@@ -26,6 +28,7 @@ namespace j2cpp { namespace java { namespace util { class Locale; } } }
 #include <java/lang/String.hpp>
 #include <java/lang/StringBuffer.hpp>
 #include <java/text/FieldPosition.hpp>
+#include <java/text/Format.hpp>
 #include <java/text/NumberFormat.hpp>
 #include <java/text/ParsePosition.hpp>
 #include <java/util/Currency.hpp>
@@ -62,10 +65,13 @@ namespace java { namespace text {
 			J2CPP_DECLARE_FIELD(9)
 			J2CPP_DECLARE_FIELD(10)
 
-			Field(jobject jobj)
+			explicit Field(jobject jobj)
 			: cpp_object<Field>(jobj)
 			{
 			}
+
+			operator local_ref<java::text::Format_::Field>() const;
+
 
 
 			static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(0), J2CPP_FIELD_SIGNATURE(0), local_ref< java::text::NumberFormat_::Field > > SIGN;
@@ -132,11 +138,15 @@ namespace java { namespace text {
 
 		typedef NumberFormat_::Field Field;
 
-		NumberFormat(jobject jobj)
+		explicit NumberFormat(jobject jobj)
 		: cpp_object<NumberFormat>(jobj)
 		{
 		}
 
+		operator local_ref<java::text::Format>() const;
+
+
+		NumberFormat();
 		local_ref< java::lang::Object > clone();
 		cpp_boolean equals(local_ref< java::lang::Object > const&);
 		local_ref< java::lang::String > format(cpp_double const&);
@@ -181,7 +191,6 @@ namespace java { namespace text {
 } //namespace text
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_TEXT_NUMBERFORMAT_HPP_DECL
@@ -195,17 +204,13 @@ namespace j2cpp {
 
 
 
-template <>
-local_ref< java::text::NumberFormat_::Field > create< java::text::NumberFormat_::Field>(local_ref< java::lang::String > const &a0)
+
+java::text::NumberFormat_::Field::operator local_ref<java::text::Format_::Field>() const
 {
-	return local_ref< java::text::NumberFormat_::Field >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::text::NumberFormat_::Field::J2CPP_CLASS_NAME>(),
-			get_method_id<java::text::NumberFormat_::Field::J2CPP_CLASS_NAME, java::text::NumberFormat_::Field::J2CPP_METHOD_NAME(0), java::text::NumberFormat_::Field::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::text::Format_::Field>(get_jtype());
 }
+
+
 
 
 
@@ -304,16 +309,23 @@ J2CPP_DEFINE_FIELD(java::text::NumberFormat_::Field,9,"PERMILLE","Ljava/text/Num
 J2CPP_DEFINE_FIELD(java::text::NumberFormat_::Field,10,"CURRENCY","Ljava/text/NumberFormat$Field;")
 
 
-template <>
-local_ref< java::text::NumberFormat > create< java::text::NumberFormat>()
+
+java::text::NumberFormat::operator local_ref<java::text::Format>() const
 {
-	return local_ref< java::text::NumberFormat >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::text::NumberFormat::J2CPP_CLASS_NAME>(),
-			get_method_id<java::text::NumberFormat::J2CPP_CLASS_NAME, java::text::NumberFormat::J2CPP_METHOD_NAME(0), java::text::NumberFormat::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::text::Format>(get_jtype());
 }
+
+
+java::text::NumberFormat::NumberFormat()
+: cpp_object<java::text::NumberFormat>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::text::NumberFormat::J2CPP_CLASS_NAME>(),
+		get_method_id<java::text::NumberFormat::J2CPP_CLASS_NAME, java::text::NumberFormat::J2CPP_METHOD_NAME(0), java::text::NumberFormat::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 local_ref< java::lang::Object > java::text::NumberFormat::clone()
 {

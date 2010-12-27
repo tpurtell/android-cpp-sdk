@@ -12,8 +12,10 @@
 
 namespace j2cpp { namespace java { namespace net { class SocketAddress; } } }
 namespace j2cpp { namespace java { namespace net { class InetAddress; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/net/InetAddress.hpp>
 #include <java/net/SocketAddress.hpp>
 
@@ -49,11 +51,20 @@ namespace java { namespace net {
 		J2CPP_DECLARE_METHOD(16)
 		J2CPP_DECLARE_METHOD(17)
 
-		DatagramPacket(jobject jobj)
+		explicit DatagramPacket(jobject jobj)
 		: cpp_object<DatagramPacket>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		DatagramPacket(local_ref< cpp_byte_array<1> > const&, cpp_int const&);
+		DatagramPacket(local_ref< cpp_byte_array<1> > const&, cpp_int const&, cpp_int const&);
+		DatagramPacket(local_ref< cpp_byte_array<1> > const&, cpp_int const&, cpp_int const&, local_ref< java::net::InetAddress > const&, cpp_int const&);
+		DatagramPacket(local_ref< cpp_byte_array<1> > const&, cpp_int const&, local_ref< java::net::InetAddress > const&, cpp_int const&);
+		DatagramPacket(local_ref< cpp_byte_array<1> > const&, cpp_int const&, local_ref< java::net::SocketAddress > const&);
+		DatagramPacket(local_ref< cpp_byte_array<1> > const&, cpp_int const&, cpp_int const&, local_ref< java::net::SocketAddress > const&);
 		local_ref< java::net::InetAddress > getAddress();
 		local_ref< cpp_byte_array<1> > getData();
 		cpp_int getLength();
@@ -71,7 +82,6 @@ namespace java { namespace net {
 } //namespace net
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_NET_DATAGRAMPACKET_HPP_DECL
@@ -84,77 +94,89 @@ namespace java { namespace net {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::net::DatagramPacket > create< java::net::DatagramPacket>(local_ref< cpp_byte_array<1> > const &a0, cpp_int const &a1)
+
+java::net::DatagramPacket::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::net::DatagramPacket >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::net::DatagramPacket::J2CPP_CLASS_NAME>(),
-			get_method_id<java::net::DatagramPacket::J2CPP_CLASS_NAME, java::net::DatagramPacket::J2CPP_METHOD_NAME(0), java::net::DatagramPacket::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
 
-template <>
-local_ref< java::net::DatagramPacket > create< java::net::DatagramPacket>(local_ref< cpp_byte_array<1> > const &a0, cpp_int const &a1, cpp_int const &a2)
+
+java::net::DatagramPacket::DatagramPacket(local_ref< cpp_byte_array<1> > const &a0, cpp_int const &a1)
+: cpp_object<java::net::DatagramPacket>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::net::DatagramPacket::J2CPP_CLASS_NAME>(),
+		get_method_id<java::net::DatagramPacket::J2CPP_CLASS_NAME, java::net::DatagramPacket::J2CPP_METHOD_NAME(0), java::net::DatagramPacket::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
 {
-	return local_ref< java::net::DatagramPacket >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::net::DatagramPacket::J2CPP_CLASS_NAME>(),
-			get_method_id<java::net::DatagramPacket::J2CPP_CLASS_NAME, java::net::DatagramPacket::J2CPP_METHOD_NAME(1), java::net::DatagramPacket::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< java::net::DatagramPacket > create< java::net::DatagramPacket>(local_ref< cpp_byte_array<1> > const &a0, cpp_int const &a1, cpp_int const &a2, local_ref< java::net::InetAddress > const &a3, cpp_int const &a4)
+
+
+java::net::DatagramPacket::DatagramPacket(local_ref< cpp_byte_array<1> > const &a0, cpp_int const &a1, cpp_int const &a2)
+: cpp_object<java::net::DatagramPacket>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::net::DatagramPacket::J2CPP_CLASS_NAME>(),
+		get_method_id<java::net::DatagramPacket::J2CPP_CLASS_NAME, java::net::DatagramPacket::J2CPP_METHOD_NAME(1), java::net::DatagramPacket::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
+	)
+)
 {
-	return local_ref< java::net::DatagramPacket >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::net::DatagramPacket::J2CPP_CLASS_NAME>(),
-			get_method_id<java::net::DatagramPacket::J2CPP_CLASS_NAME, java::net::DatagramPacket::J2CPP_METHOD_NAME(2), java::net::DatagramPacket::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype(), a4.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< java::net::DatagramPacket > create< java::net::DatagramPacket>(local_ref< cpp_byte_array<1> > const &a0, cpp_int const &a1, local_ref< java::net::InetAddress > const &a2, cpp_int const &a3)
+
+
+java::net::DatagramPacket::DatagramPacket(local_ref< cpp_byte_array<1> > const &a0, cpp_int const &a1, cpp_int const &a2, local_ref< java::net::InetAddress > const &a3, cpp_int const &a4)
+: cpp_object<java::net::DatagramPacket>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::net::DatagramPacket::J2CPP_CLASS_NAME>(),
+		get_method_id<java::net::DatagramPacket::J2CPP_CLASS_NAME, java::net::DatagramPacket::J2CPP_METHOD_NAME(2), java::net::DatagramPacket::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype(), a4.get_jtype()
+	)
+)
 {
-	return local_ref< java::net::DatagramPacket >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::net::DatagramPacket::J2CPP_CLASS_NAME>(),
-			get_method_id<java::net::DatagramPacket::J2CPP_CLASS_NAME, java::net::DatagramPacket::J2CPP_METHOD_NAME(3), java::net::DatagramPacket::J2CPP_METHOD_SIGNATURE(3), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< java::net::DatagramPacket > create< java::net::DatagramPacket>(local_ref< cpp_byte_array<1> > const &a0, cpp_int const &a1, local_ref< java::net::SocketAddress > const &a2)
+
+
+java::net::DatagramPacket::DatagramPacket(local_ref< cpp_byte_array<1> > const &a0, cpp_int const &a1, local_ref< java::net::InetAddress > const &a2, cpp_int const &a3)
+: cpp_object<java::net::DatagramPacket>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::net::DatagramPacket::J2CPP_CLASS_NAME>(),
+		get_method_id<java::net::DatagramPacket::J2CPP_CLASS_NAME, java::net::DatagramPacket::J2CPP_METHOD_NAME(3), java::net::DatagramPacket::J2CPP_METHOD_SIGNATURE(3), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype()
+	)
+)
 {
-	return local_ref< java::net::DatagramPacket >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::net::DatagramPacket::J2CPP_CLASS_NAME>(),
-			get_method_id<java::net::DatagramPacket::J2CPP_CLASS_NAME, java::net::DatagramPacket::J2CPP_METHOD_NAME(4), java::net::DatagramPacket::J2CPP_METHOD_SIGNATURE(4), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< java::net::DatagramPacket > create< java::net::DatagramPacket>(local_ref< cpp_byte_array<1> > const &a0, cpp_int const &a1, cpp_int const &a2, local_ref< java::net::SocketAddress > const &a3)
+
+
+java::net::DatagramPacket::DatagramPacket(local_ref< cpp_byte_array<1> > const &a0, cpp_int const &a1, local_ref< java::net::SocketAddress > const &a2)
+: cpp_object<java::net::DatagramPacket>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::net::DatagramPacket::J2CPP_CLASS_NAME>(),
+		get_method_id<java::net::DatagramPacket::J2CPP_CLASS_NAME, java::net::DatagramPacket::J2CPP_METHOD_NAME(4), java::net::DatagramPacket::J2CPP_METHOD_SIGNATURE(4), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
+	)
+)
 {
-	return local_ref< java::net::DatagramPacket >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::net::DatagramPacket::J2CPP_CLASS_NAME>(),
-			get_method_id<java::net::DatagramPacket::J2CPP_CLASS_NAME, java::net::DatagramPacket::J2CPP_METHOD_NAME(5), java::net::DatagramPacket::J2CPP_METHOD_SIGNATURE(5), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype()
-		)
-	);
 }
+
+
+
+java::net::DatagramPacket::DatagramPacket(local_ref< cpp_byte_array<1> > const &a0, cpp_int const &a1, cpp_int const &a2, local_ref< java::net::SocketAddress > const &a3)
+: cpp_object<java::net::DatagramPacket>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::net::DatagramPacket::J2CPP_CLASS_NAME>(),
+		get_method_id<java::net::DatagramPacket::J2CPP_CLASS_NAME, java::net::DatagramPacket::J2CPP_METHOD_NAME(5), java::net::DatagramPacket::J2CPP_METHOD_SIGNATURE(5), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype()
+	)
+)
+{
+}
+
 
 local_ref< java::net::InetAddress > java::net::DatagramPacket::getAddress()
 {

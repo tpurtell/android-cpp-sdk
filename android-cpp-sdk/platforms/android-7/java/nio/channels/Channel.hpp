@@ -10,8 +10,12 @@
 #define J2CPP_JAVA_NIO_CHANNELS_CHANNEL_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class Closeable; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
+#include <java/io/Closeable.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -29,10 +33,14 @@ namespace java { namespace nio { namespace channels {
 		J2CPP_DECLARE_METHOD(0)
 		J2CPP_DECLARE_METHOD(1)
 
-		Channel(jobject jobj)
+		explicit Channel(jobject jobj)
 		: cpp_object<Channel>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::io::Closeable>() const;
+
 
 		cpp_boolean isOpen();
 		void close();
@@ -41,7 +49,6 @@ namespace java { namespace nio { namespace channels {
 } //namespace channels
 } //namespace nio
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -54,6 +61,17 @@ namespace java { namespace nio { namespace channels {
 
 namespace j2cpp {
 
+
+
+java::nio::channels::Channel::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
+
+java::nio::channels::Channel::operator local_ref<java::io::Closeable>() const
+{
+	return local_ref<java::io::Closeable>(get_jtype());
+}
 
 cpp_boolean java::nio::channels::Channel::isOpen()
 {

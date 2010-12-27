@@ -10,8 +10,10 @@
 #define J2CPP_JAVAX_CRYPTO_SECRETKEYFACTORYSPI_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -31,16 +33,19 @@ namespace javax { namespace crypto {
 		J2CPP_DECLARE_METHOD(2)
 		J2CPP_DECLARE_METHOD(3)
 
-		SecretKeyFactorySpi(jobject jobj)
+		explicit SecretKeyFactorySpi(jobject jobj)
 		: cpp_object<SecretKeyFactorySpi>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		SecretKeyFactorySpi();
 	}; //class SecretKeyFactorySpi
 
 } //namespace crypto
 } //namespace javax
-
 
 } //namespace j2cpp
 
@@ -54,16 +59,23 @@ namespace javax { namespace crypto {
 namespace j2cpp {
 
 
-template <>
-local_ref< javax::crypto::SecretKeyFactorySpi > create< javax::crypto::SecretKeyFactorySpi>()
+
+javax::crypto::SecretKeyFactorySpi::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< javax::crypto::SecretKeyFactorySpi >(
-		environment::get().get_jenv()->NewObject(
-			get_class<javax::crypto::SecretKeyFactorySpi::J2CPP_CLASS_NAME>(),
-			get_method_id<javax::crypto::SecretKeyFactorySpi::J2CPP_CLASS_NAME, javax::crypto::SecretKeyFactorySpi::J2CPP_METHOD_NAME(0), javax::crypto::SecretKeyFactorySpi::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+javax::crypto::SecretKeyFactorySpi::SecretKeyFactorySpi()
+: cpp_object<javax::crypto::SecretKeyFactorySpi>(
+	environment::get().get_jenv()->NewObject(
+		get_class<javax::crypto::SecretKeyFactorySpi::J2CPP_CLASS_NAME>(),
+		get_method_id<javax::crypto::SecretKeyFactorySpi::J2CPP_CLASS_NAME, javax::crypto::SecretKeyFactorySpi::J2CPP_METHOD_NAME(0), javax::crypto::SecretKeyFactorySpi::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 
 

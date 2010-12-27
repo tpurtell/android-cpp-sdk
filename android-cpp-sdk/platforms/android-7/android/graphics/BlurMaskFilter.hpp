@@ -10,11 +10,15 @@
 #define J2CPP_ANDROID_GRAPHICS_BLURMASKFILTER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Enum; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace android { namespace graphics { class MaskFilter; } } }
 namespace j2cpp { namespace android { namespace graphics { namespace BlurMaskFilter_ { class Blur; } } } }
 
 
 #include <android/graphics/BlurMaskFilter.hpp>
+#include <android/graphics/MaskFilter.hpp>
+#include <java/lang/Enum.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -43,10 +47,13 @@ namespace android { namespace graphics {
 			J2CPP_DECLARE_FIELD(3)
 			J2CPP_DECLARE_FIELD(4)
 
-			Blur(jobject jobj)
+			explicit Blur(jobject jobj)
 			: cpp_object<Blur>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Enum>() const;
+
 
 			static local_ref< cpp_object_array<android::graphics::BlurMaskFilter_::Blur, 1> > values();
 			static local_ref< android::graphics::BlurMaskFilter_::Blur > valueOf(local_ref< java::lang::String > const&);
@@ -70,16 +77,19 @@ namespace android { namespace graphics {
 
 		typedef BlurMaskFilter_::Blur Blur;
 
-		BlurMaskFilter(jobject jobj)
+		explicit BlurMaskFilter(jobject jobj)
 		: cpp_object<BlurMaskFilter>(jobj)
 		{
 		}
 
+		operator local_ref<android::graphics::MaskFilter>() const;
+
+
+		BlurMaskFilter(cpp_float const&, local_ref< android::graphics::BlurMaskFilter_::Blur > const&);
 	}; //class BlurMaskFilter
 
 } //namespace graphics
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -93,6 +103,12 @@ namespace android { namespace graphics {
 namespace j2cpp {
 
 
+
+
+android::graphics::BlurMaskFilter_::Blur::operator local_ref<java::lang::Enum>() const
+{
+	return local_ref<java::lang::Enum>(get_jtype());
+}
 
 local_ref< cpp_object_array<android::graphics::BlurMaskFilter_::Blur, 1> > android::graphics::BlurMaskFilter_::Blur::values()
 {
@@ -115,17 +131,7 @@ local_ref< android::graphics::BlurMaskFilter_::Blur > android::graphics::BlurMas
 	);
 }
 
-template <>
-local_ref< android::graphics::BlurMaskFilter_::Blur > create< android::graphics::BlurMaskFilter_::Blur>(local_ref< java::lang::String > const &a0, cpp_int const &a1)
-{
-	return local_ref< android::graphics::BlurMaskFilter_::Blur >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::graphics::BlurMaskFilter_::Blur::J2CPP_CLASS_NAME>(),
-			get_method_id<android::graphics::BlurMaskFilter_::Blur::J2CPP_CLASS_NAME, android::graphics::BlurMaskFilter_::Blur::J2CPP_METHOD_NAME(2), android::graphics::BlurMaskFilter_::Blur::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
-}
+
 
 
 static_field<
@@ -169,17 +175,24 @@ J2CPP_DEFINE_FIELD(android::graphics::BlurMaskFilter_::Blur,3,"SOLID","Landroid/
 J2CPP_DEFINE_FIELD(android::graphics::BlurMaskFilter_::Blur,4,"$VALUES","[android.graphics.BlurMaskFilter.Blur")
 
 
-template <>
-local_ref< android::graphics::BlurMaskFilter > create< android::graphics::BlurMaskFilter>(cpp_float const &a0, local_ref< android::graphics::BlurMaskFilter_::Blur > const &a1)
+
+android::graphics::BlurMaskFilter::operator local_ref<android::graphics::MaskFilter>() const
 {
-	return local_ref< android::graphics::BlurMaskFilter >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::graphics::BlurMaskFilter::J2CPP_CLASS_NAME>(),
-			get_method_id<android::graphics::BlurMaskFilter::J2CPP_CLASS_NAME, android::graphics::BlurMaskFilter::J2CPP_METHOD_NAME(0), android::graphics::BlurMaskFilter::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<android::graphics::MaskFilter>(get_jtype());
 }
+
+
+android::graphics::BlurMaskFilter::BlurMaskFilter(cpp_float const &a0, local_ref< android::graphics::BlurMaskFilter_::Blur > const &a1)
+: cpp_object<android::graphics::BlurMaskFilter>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::graphics::BlurMaskFilter::J2CPP_CLASS_NAME>(),
+		get_method_id<android::graphics::BlurMaskFilter::J2CPP_CLASS_NAME, android::graphics::BlurMaskFilter::J2CPP_METHOD_NAME(0), android::graphics::BlurMaskFilter::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
 
 
 J2CPP_DEFINE_CLASS(android::graphics::BlurMaskFilter,"android/graphics/BlurMaskFilter")

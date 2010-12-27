@@ -11,11 +11,17 @@
 
 
 namespace j2cpp { namespace android { namespace text { class TextPaint; } } }
+namespace j2cpp { namespace android { namespace text { namespace style { class CharacterStyle; } } } }
+namespace j2cpp { namespace android { namespace text { namespace style { class UpdateAppearance; } } } }
+namespace j2cpp { namespace android { namespace text { class ParcelableSpan; } } }
 namespace j2cpp { namespace android { namespace os { class Parcel; } } }
 
 
 #include <android/os/Parcel.hpp>
+#include <android/text/ParcelableSpan.hpp>
 #include <android/text/TextPaint.hpp>
+#include <android/text/style/CharacterStyle.hpp>
+#include <android/text/style/UpdateAppearance.hpp>
 
 
 namespace j2cpp {
@@ -38,11 +44,18 @@ namespace android { namespace text { namespace style {
 		J2CPP_DECLARE_METHOD(5)
 		J2CPP_DECLARE_METHOD(6)
 
-		BackgroundColorSpan(jobject jobj)
+		explicit BackgroundColorSpan(jobject jobj)
 		: cpp_object<BackgroundColorSpan>(jobj)
 		{
 		}
 
+		operator local_ref<android::text::style::CharacterStyle>() const;
+		operator local_ref<android::text::style::UpdateAppearance>() const;
+		operator local_ref<android::text::ParcelableSpan>() const;
+
+
+		BackgroundColorSpan(cpp_int const&);
+		BackgroundColorSpan(local_ref< android::os::Parcel > const&);
 		cpp_int getSpanTypeId();
 		cpp_int describeContents();
 		void writeToParcel(local_ref< android::os::Parcel > const&, cpp_int const&);
@@ -53,7 +66,6 @@ namespace android { namespace text { namespace style {
 } //namespace style
 } //namespace text
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -67,29 +79,47 @@ namespace android { namespace text { namespace style {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::text::style::BackgroundColorSpan > create< android::text::style::BackgroundColorSpan>(cpp_int const &a0)
+
+android::text::style::BackgroundColorSpan::operator local_ref<android::text::style::CharacterStyle>() const
 {
-	return local_ref< android::text::style::BackgroundColorSpan >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::text::style::BackgroundColorSpan::J2CPP_CLASS_NAME>(),
-			get_method_id<android::text::style::BackgroundColorSpan::J2CPP_CLASS_NAME, android::text::style::BackgroundColorSpan::J2CPP_METHOD_NAME(0), android::text::style::BackgroundColorSpan::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<android::text::style::CharacterStyle>(get_jtype());
 }
 
-template <>
-local_ref< android::text::style::BackgroundColorSpan > create< android::text::style::BackgroundColorSpan>(local_ref< android::os::Parcel > const &a0)
+android::text::style::BackgroundColorSpan::operator local_ref<android::text::style::UpdateAppearance>() const
 {
-	return local_ref< android::text::style::BackgroundColorSpan >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::text::style::BackgroundColorSpan::J2CPP_CLASS_NAME>(),
-			get_method_id<android::text::style::BackgroundColorSpan::J2CPP_CLASS_NAME, android::text::style::BackgroundColorSpan::J2CPP_METHOD_NAME(1), android::text::style::BackgroundColorSpan::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<android::text::style::UpdateAppearance>(get_jtype());
 }
+
+android::text::style::BackgroundColorSpan::operator local_ref<android::text::ParcelableSpan>() const
+{
+	return local_ref<android::text::ParcelableSpan>(get_jtype());
+}
+
+
+android::text::style::BackgroundColorSpan::BackgroundColorSpan(cpp_int const &a0)
+: cpp_object<android::text::style::BackgroundColorSpan>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::text::style::BackgroundColorSpan::J2CPP_CLASS_NAME>(),
+		get_method_id<android::text::style::BackgroundColorSpan::J2CPP_CLASS_NAME, android::text::style::BackgroundColorSpan::J2CPP_METHOD_NAME(0), android::text::style::BackgroundColorSpan::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
+
+
+android::text::style::BackgroundColorSpan::BackgroundColorSpan(local_ref< android::os::Parcel > const &a0)
+: cpp_object<android::text::style::BackgroundColorSpan>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::text::style::BackgroundColorSpan::J2CPP_CLASS_NAME>(),
+		get_method_id<android::text::style::BackgroundColorSpan::J2CPP_CLASS_NAME, android::text::style::BackgroundColorSpan::J2CPP_METHOD_NAME(1), android::text::style::BackgroundColorSpan::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 cpp_int android::text::style::BackgroundColorSpan::getSpanTypeId()
 {

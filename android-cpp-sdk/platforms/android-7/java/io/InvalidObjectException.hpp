@@ -10,9 +10,11 @@
 #define J2CPP_JAVA_IO_INVALIDOBJECTEXCEPTION_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class ObjectStreamException; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 
 
+#include <java/io/ObjectStreamException.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -30,16 +32,19 @@ namespace java { namespace io {
 
 		J2CPP_DECLARE_METHOD(0)
 
-		InvalidObjectException(jobject jobj)
+		explicit InvalidObjectException(jobject jobj)
 		: cpp_object<InvalidObjectException>(jobj)
 		{
 		}
 
+		operator local_ref<java::io::ObjectStreamException>() const;
+
+
+		InvalidObjectException(local_ref< java::lang::String > const&);
 	}; //class InvalidObjectException
 
 } //namespace io
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -53,17 +58,24 @@ namespace java { namespace io {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::io::InvalidObjectException > create< java::io::InvalidObjectException>(local_ref< java::lang::String > const &a0)
+
+java::io::InvalidObjectException::operator local_ref<java::io::ObjectStreamException>() const
 {
-	return local_ref< java::io::InvalidObjectException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::io::InvalidObjectException::J2CPP_CLASS_NAME>(),
-			get_method_id<java::io::InvalidObjectException::J2CPP_CLASS_NAME, java::io::InvalidObjectException::J2CPP_METHOD_NAME(0), java::io::InvalidObjectException::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::io::ObjectStreamException>(get_jtype());
 }
+
+
+java::io::InvalidObjectException::InvalidObjectException(local_ref< java::lang::String > const &a0)
+: cpp_object<java::io::InvalidObjectException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::io::InvalidObjectException::J2CPP_CLASS_NAME>(),
+		get_method_id<java::io::InvalidObjectException::J2CPP_CLASS_NAME, java::io::InvalidObjectException::J2CPP_METHOD_NAME(0), java::io::InvalidObjectException::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 
 J2CPP_DEFINE_CLASS(java::io::InvalidObjectException,"java/io/InvalidObjectException")

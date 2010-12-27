@@ -11,6 +11,7 @@
 
 
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace lang { class Enum; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace android { namespace graphics { class RectF; } } }
 namespace j2cpp { namespace android { namespace graphics { namespace Matrix_ { class ScaleToFit; } } } }
@@ -18,6 +19,7 @@ namespace j2cpp { namespace android { namespace graphics { namespace Matrix_ { c
 
 #include <android/graphics/Matrix.hpp>
 #include <android/graphics/RectF.hpp>
+#include <java/lang/Enum.hpp>
 #include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
@@ -47,10 +49,13 @@ namespace android { namespace graphics {
 			J2CPP_DECLARE_FIELD(3)
 			J2CPP_DECLARE_FIELD(4)
 
-			ScaleToFit(jobject jobj)
+			explicit ScaleToFit(jobject jobj)
 			: cpp_object<ScaleToFit>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Enum>() const;
+
 
 			static local_ref< cpp_object_array<android::graphics::Matrix_::ScaleToFit, 1> > values();
 			static local_ref< android::graphics::Matrix_::ScaleToFit > valueOf(local_ref< java::lang::String > const&);
@@ -132,11 +137,16 @@ namespace android { namespace graphics {
 
 		typedef Matrix_::ScaleToFit ScaleToFit;
 
-		Matrix(jobject jobj)
+		explicit Matrix(jobject jobj)
 		: cpp_object<Matrix>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		Matrix();
+		Matrix(local_ref< android::graphics::Matrix > const&);
 		cpp_boolean isIdentity();
 		cpp_boolean rectStaysRect();
 		void set(local_ref< android::graphics::Matrix > const&);
@@ -199,7 +209,6 @@ namespace android { namespace graphics {
 } //namespace graphics
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_GRAPHICS_MATRIX_HPP_DECL
@@ -212,6 +221,12 @@ namespace android { namespace graphics {
 namespace j2cpp {
 
 
+
+
+android::graphics::Matrix_::ScaleToFit::operator local_ref<java::lang::Enum>() const
+{
+	return local_ref<java::lang::Enum>(get_jtype());
+}
 
 local_ref< cpp_object_array<android::graphics::Matrix_::ScaleToFit, 1> > android::graphics::Matrix_::ScaleToFit::values()
 {
@@ -234,17 +249,7 @@ local_ref< android::graphics::Matrix_::ScaleToFit > android::graphics::Matrix_::
 	);
 }
 
-template <>
-local_ref< android::graphics::Matrix_::ScaleToFit > create< android::graphics::Matrix_::ScaleToFit>(local_ref< java::lang::String > const &a0, cpp_int const &a1)
-{
-	return local_ref< android::graphics::Matrix_::ScaleToFit >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::graphics::Matrix_::ScaleToFit::J2CPP_CLASS_NAME>(),
-			get_method_id<android::graphics::Matrix_::ScaleToFit::J2CPP_CLASS_NAME, android::graphics::Matrix_::ScaleToFit::J2CPP_METHOD_NAME(2), android::graphics::Matrix_::ScaleToFit::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
-}
+
 
 
 static_field<
@@ -288,28 +293,36 @@ J2CPP_DEFINE_FIELD(android::graphics::Matrix_::ScaleToFit,3,"START","Landroid/gr
 J2CPP_DEFINE_FIELD(android::graphics::Matrix_::ScaleToFit,4,"$VALUES","[android.graphics.Matrix.ScaleToFit")
 
 
-template <>
-local_ref< android::graphics::Matrix > create< android::graphics::Matrix>()
+
+android::graphics::Matrix::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::graphics::Matrix >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::graphics::Matrix::J2CPP_CLASS_NAME>(),
-			get_method_id<android::graphics::Matrix::J2CPP_CLASS_NAME, android::graphics::Matrix::J2CPP_METHOD_NAME(0), android::graphics::Matrix::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
 
-template <>
-local_ref< android::graphics::Matrix > create< android::graphics::Matrix>(local_ref< android::graphics::Matrix > const &a0)
+
+android::graphics::Matrix::Matrix()
+: cpp_object<android::graphics::Matrix>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::graphics::Matrix::J2CPP_CLASS_NAME>(),
+		get_method_id<android::graphics::Matrix::J2CPP_CLASS_NAME, android::graphics::Matrix::J2CPP_METHOD_NAME(0), android::graphics::Matrix::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
 {
-	return local_ref< android::graphics::Matrix >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::graphics::Matrix::J2CPP_CLASS_NAME>(),
-			get_method_id<android::graphics::Matrix::J2CPP_CLASS_NAME, android::graphics::Matrix::J2CPP_METHOD_NAME(1), android::graphics::Matrix::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
 }
+
+
+
+android::graphics::Matrix::Matrix(local_ref< android::graphics::Matrix > const &a0)
+: cpp_object<android::graphics::Matrix>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::graphics::Matrix::J2CPP_CLASS_NAME>(),
+		get_method_id<android::graphics::Matrix::J2CPP_CLASS_NAME, android::graphics::Matrix::J2CPP_METHOD_NAME(1), android::graphics::Matrix::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 cpp_boolean android::graphics::Matrix::isIdentity()
 {

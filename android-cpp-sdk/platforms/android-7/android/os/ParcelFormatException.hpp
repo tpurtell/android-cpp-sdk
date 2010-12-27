@@ -10,9 +10,11 @@
 #define J2CPP_ANDROID_OS_PARCELFORMATEXCEPTION_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class RuntimeException; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 
 
+#include <java/lang/RuntimeException.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -31,16 +33,20 @@ namespace android { namespace os {
 		J2CPP_DECLARE_METHOD(0)
 		J2CPP_DECLARE_METHOD(1)
 
-		ParcelFormatException(jobject jobj)
+		explicit ParcelFormatException(jobject jobj)
 		: cpp_object<ParcelFormatException>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::RuntimeException>() const;
+
+
+		ParcelFormatException();
+		ParcelFormatException(local_ref< java::lang::String > const&);
 	}; //class ParcelFormatException
 
 } //namespace os
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -54,28 +60,36 @@ namespace android { namespace os {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::os::ParcelFormatException > create< android::os::ParcelFormatException>()
+
+android::os::ParcelFormatException::operator local_ref<java::lang::RuntimeException>() const
 {
-	return local_ref< android::os::ParcelFormatException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::os::ParcelFormatException::J2CPP_CLASS_NAME>(),
-			get_method_id<android::os::ParcelFormatException::J2CPP_CLASS_NAME, android::os::ParcelFormatException::J2CPP_METHOD_NAME(0), android::os::ParcelFormatException::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::RuntimeException>(get_jtype());
 }
 
-template <>
-local_ref< android::os::ParcelFormatException > create< android::os::ParcelFormatException>(local_ref< java::lang::String > const &a0)
+
+android::os::ParcelFormatException::ParcelFormatException()
+: cpp_object<android::os::ParcelFormatException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::os::ParcelFormatException::J2CPP_CLASS_NAME>(),
+		get_method_id<android::os::ParcelFormatException::J2CPP_CLASS_NAME, android::os::ParcelFormatException::J2CPP_METHOD_NAME(0), android::os::ParcelFormatException::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
 {
-	return local_ref< android::os::ParcelFormatException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::os::ParcelFormatException::J2CPP_CLASS_NAME>(),
-			get_method_id<android::os::ParcelFormatException::J2CPP_CLASS_NAME, android::os::ParcelFormatException::J2CPP_METHOD_NAME(1), android::os::ParcelFormatException::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
 }
+
+
+
+android::os::ParcelFormatException::ParcelFormatException(local_ref< java::lang::String > const &a0)
+: cpp_object<android::os::ParcelFormatException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::os::ParcelFormatException::J2CPP_CLASS_NAME>(),
+		get_method_id<android::os::ParcelFormatException::J2CPP_CLASS_NAME, android::os::ParcelFormatException::J2CPP_METHOD_NAME(1), android::os::ParcelFormatException::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 
 J2CPP_DEFINE_CLASS(android::os::ParcelFormatException,"android/os/ParcelFormatException")

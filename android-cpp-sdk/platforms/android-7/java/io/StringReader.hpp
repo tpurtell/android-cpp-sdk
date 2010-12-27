@@ -10,9 +10,11 @@
 #define J2CPP_JAVA_IO_STRINGREADER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class Reader; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 
 
+#include <java/io/Reader.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -38,11 +40,15 @@ namespace java { namespace io {
 		J2CPP_DECLARE_METHOD(7)
 		J2CPP_DECLARE_METHOD(8)
 
-		StringReader(jobject jobj)
+		explicit StringReader(jobject jobj)
 		: cpp_object<StringReader>(jobj)
 		{
 		}
 
+		operator local_ref<java::io::Reader>() const;
+
+
+		StringReader(local_ref< java::lang::String > const&);
 		void close();
 		void mark(cpp_int const&);
 		cpp_boolean markSupported();
@@ -56,7 +62,6 @@ namespace java { namespace io {
 } //namespace io
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_IO_STRINGREADER_HPP_DECL
@@ -69,17 +74,24 @@ namespace java { namespace io {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::io::StringReader > create< java::io::StringReader>(local_ref< java::lang::String > const &a0)
+
+java::io::StringReader::operator local_ref<java::io::Reader>() const
 {
-	return local_ref< java::io::StringReader >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::io::StringReader::J2CPP_CLASS_NAME>(),
-			get_method_id<java::io::StringReader::J2CPP_CLASS_NAME, java::io::StringReader::J2CPP_METHOD_NAME(0), java::io::StringReader::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::io::Reader>(get_jtype());
 }
+
+
+java::io::StringReader::StringReader(local_ref< java::lang::String > const &a0)
+: cpp_object<java::io::StringReader>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::io::StringReader::J2CPP_CLASS_NAME>(),
+		get_method_id<java::io::StringReader::J2CPP_CLASS_NAME, java::io::StringReader::J2CPP_METHOD_NAME(0), java::io::StringReader::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 void java::io::StringReader::close()
 {

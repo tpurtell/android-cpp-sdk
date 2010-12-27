@@ -12,10 +12,12 @@
 
 namespace j2cpp { namespace java { namespace lang { class CharSequence; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace android { namespace text { namespace method { class NumberKeyListener; } } } }
 namespace j2cpp { namespace android { namespace text { class Spanned; } } }
 
 
 #include <android/text/Spanned.hpp>
+#include <android/text/method/NumberKeyListener.hpp>
 #include <java/lang/CharSequence.hpp>
 #include <java/lang/String.hpp>
 
@@ -41,11 +43,16 @@ namespace android { namespace text { namespace method {
 		J2CPP_DECLARE_METHOD(6)
 		J2CPP_DECLARE_METHOD(7)
 
-		DigitsKeyListener(jobject jobj)
+		explicit DigitsKeyListener(jobject jobj)
 		: cpp_object<DigitsKeyListener>(jobj)
 		{
 		}
 
+		operator local_ref<android::text::method::NumberKeyListener>() const;
+
+
+		DigitsKeyListener();
+		DigitsKeyListener(cpp_boolean const&, cpp_boolean const&);
 		static local_ref< android::text::method::DigitsKeyListener > getInstance();
 		static local_ref< android::text::method::DigitsKeyListener > getInstance(cpp_boolean const&, cpp_boolean const&);
 		static local_ref< android::text::method::DigitsKeyListener > getInstance(local_ref< java::lang::String > const&);
@@ -56,7 +63,6 @@ namespace android { namespace text { namespace method {
 } //namespace method
 } //namespace text
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -70,28 +76,36 @@ namespace android { namespace text { namespace method {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::text::method::DigitsKeyListener > create< android::text::method::DigitsKeyListener>()
+
+android::text::method::DigitsKeyListener::operator local_ref<android::text::method::NumberKeyListener>() const
 {
-	return local_ref< android::text::method::DigitsKeyListener >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::text::method::DigitsKeyListener::J2CPP_CLASS_NAME>(),
-			get_method_id<android::text::method::DigitsKeyListener::J2CPP_CLASS_NAME, android::text::method::DigitsKeyListener::J2CPP_METHOD_NAME(0), android::text::method::DigitsKeyListener::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<android::text::method::NumberKeyListener>(get_jtype());
 }
 
-template <>
-local_ref< android::text::method::DigitsKeyListener > create< android::text::method::DigitsKeyListener>(cpp_boolean const &a0, cpp_boolean const &a1)
+
+android::text::method::DigitsKeyListener::DigitsKeyListener()
+: cpp_object<android::text::method::DigitsKeyListener>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::text::method::DigitsKeyListener::J2CPP_CLASS_NAME>(),
+		get_method_id<android::text::method::DigitsKeyListener::J2CPP_CLASS_NAME, android::text::method::DigitsKeyListener::J2CPP_METHOD_NAME(0), android::text::method::DigitsKeyListener::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
 {
-	return local_ref< android::text::method::DigitsKeyListener >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::text::method::DigitsKeyListener::J2CPP_CLASS_NAME>(),
-			get_method_id<android::text::method::DigitsKeyListener::J2CPP_CLASS_NAME, android::text::method::DigitsKeyListener::J2CPP_METHOD_NAME(1), android::text::method::DigitsKeyListener::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
 }
+
+
+
+android::text::method::DigitsKeyListener::DigitsKeyListener(cpp_boolean const &a0, cpp_boolean const &a1)
+: cpp_object<android::text::method::DigitsKeyListener>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::text::method::DigitsKeyListener::J2CPP_CLASS_NAME>(),
+		get_method_id<android::text::method::DigitsKeyListener::J2CPP_CLASS_NAME, android::text::method::DigitsKeyListener::J2CPP_METHOD_NAME(1), android::text::method::DigitsKeyListener::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
 
 
 local_ref< android::text::method::DigitsKeyListener > android::text::method::DigitsKeyListener::getInstance()

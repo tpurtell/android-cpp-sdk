@@ -12,20 +12,24 @@
 
 namespace j2cpp { namespace java { namespace net { class Socket; } } }
 namespace j2cpp { namespace java { namespace net { class InetAddress; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace security { class KeyStore; } } }
 namespace j2cpp { namespace java { namespace security { class SecureRandom; } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace conn { namespace ssl { class X509HostnameVerifier; } } } } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { namespace conn { namespace scheme { class LayeredSocketFactory; } } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace conn { namespace scheme { class HostNameResolver; } } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace params { class HttpParams; } } } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/net/InetAddress.hpp>
 #include <java/net/Socket.hpp>
 #include <java/security/KeyStore.hpp>
 #include <java/security/SecureRandom.hpp>
 #include <org/apache/http/conn/scheme/HostNameResolver.hpp>
+#include <org/apache/http/conn/scheme/LayeredSocketFactory.hpp>
 #include <org/apache/http/conn/ssl/X509HostnameVerifier.hpp>
 #include <org/apache/http/params/HttpParams.hpp>
 
@@ -61,11 +65,19 @@ namespace org { namespace apache { namespace http { namespace conn { namespace s
 		J2CPP_DECLARE_FIELD(4)
 		J2CPP_DECLARE_FIELD(5)
 
-		SSLSocketFactory(jobject jobj)
+		explicit SSLSocketFactory(jobject jobj)
 		: cpp_object<SSLSocketFactory>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<org::apache::http::conn::scheme::LayeredSocketFactory>() const;
+
+
+		SSLSocketFactory(local_ref< java::lang::String > const&, local_ref< java::security::KeyStore > const&, local_ref< java::lang::String > const&, local_ref< java::security::KeyStore > const&, local_ref< java::security::SecureRandom > const&, local_ref< org::apache::http::conn::scheme::HostNameResolver > const&);
+		SSLSocketFactory(local_ref< java::security::KeyStore > const&, local_ref< java::lang::String > const&, local_ref< java::security::KeyStore > const&);
+		SSLSocketFactory(local_ref< java::security::KeyStore > const&, local_ref< java::lang::String > const&);
+		SSLSocketFactory(local_ref< java::security::KeyStore > const&);
 		static local_ref< org::apache::http::conn::ssl::SSLSocketFactory > getSocketFactory();
 		local_ref< java::net::Socket > createSocket();
 		local_ref< java::net::Socket > connectSocket(local_ref< java::net::Socket > const&, local_ref< java::lang::String > const&, cpp_int const&, local_ref< java::net::InetAddress > const&, cpp_int const&, local_ref< org::apache::http::params::HttpParams > const&);
@@ -88,7 +100,6 @@ namespace org { namespace apache { namespace http { namespace conn { namespace s
 } //namespace apache
 } //namespace org
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ORG_APACHE_HTTP_CONN_SSL_SSLSOCKETFACTORY_HPP_DECL
@@ -101,53 +112,68 @@ namespace org { namespace apache { namespace http { namespace conn { namespace s
 namespace j2cpp {
 
 
-template <>
-local_ref< org::apache::http::conn::ssl::SSLSocketFactory > create< org::apache::http::conn::ssl::SSLSocketFactory>(local_ref< java::lang::String > const &a0, local_ref< java::security::KeyStore > const &a1, local_ref< java::lang::String > const &a2, local_ref< java::security::KeyStore > const &a3, local_ref< java::security::SecureRandom > const &a4, local_ref< org::apache::http::conn::scheme::HostNameResolver > const &a5)
+
+org::apache::http::conn::ssl::SSLSocketFactory::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< org::apache::http::conn::ssl::SSLSocketFactory >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::apache::http::conn::ssl::SSLSocketFactory::J2CPP_CLASS_NAME>(),
-			get_method_id<org::apache::http::conn::ssl::SSLSocketFactory::J2CPP_CLASS_NAME, org::apache::http::conn::ssl::SSLSocketFactory::J2CPP_METHOD_NAME(0), org::apache::http::conn::ssl::SSLSocketFactory::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype(), a4.get_jtype(), a5.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
 
-template <>
-local_ref< org::apache::http::conn::ssl::SSLSocketFactory > create< org::apache::http::conn::ssl::SSLSocketFactory>(local_ref< java::security::KeyStore > const &a0, local_ref< java::lang::String > const &a1, local_ref< java::security::KeyStore > const &a2)
+org::apache::http::conn::ssl::SSLSocketFactory::operator local_ref<org::apache::http::conn::scheme::LayeredSocketFactory>() const
 {
-	return local_ref< org::apache::http::conn::ssl::SSLSocketFactory >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::apache::http::conn::ssl::SSLSocketFactory::J2CPP_CLASS_NAME>(),
-			get_method_id<org::apache::http::conn::ssl::SSLSocketFactory::J2CPP_CLASS_NAME, org::apache::http::conn::ssl::SSLSocketFactory::J2CPP_METHOD_NAME(1), org::apache::http::conn::ssl::SSLSocketFactory::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
-		)
-	);
+	return local_ref<org::apache::http::conn::scheme::LayeredSocketFactory>(get_jtype());
 }
 
-template <>
-local_ref< org::apache::http::conn::ssl::SSLSocketFactory > create< org::apache::http::conn::ssl::SSLSocketFactory>(local_ref< java::security::KeyStore > const &a0, local_ref< java::lang::String > const &a1)
+
+org::apache::http::conn::ssl::SSLSocketFactory::SSLSocketFactory(local_ref< java::lang::String > const &a0, local_ref< java::security::KeyStore > const &a1, local_ref< java::lang::String > const &a2, local_ref< java::security::KeyStore > const &a3, local_ref< java::security::SecureRandom > const &a4, local_ref< org::apache::http::conn::scheme::HostNameResolver > const &a5)
+: cpp_object<org::apache::http::conn::ssl::SSLSocketFactory>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::apache::http::conn::ssl::SSLSocketFactory::J2CPP_CLASS_NAME>(),
+		get_method_id<org::apache::http::conn::ssl::SSLSocketFactory::J2CPP_CLASS_NAME, org::apache::http::conn::ssl::SSLSocketFactory::J2CPP_METHOD_NAME(0), org::apache::http::conn::ssl::SSLSocketFactory::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype(), a4.get_jtype(), a5.get_jtype()
+	)
+)
 {
-	return local_ref< org::apache::http::conn::ssl::SSLSocketFactory >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::apache::http::conn::ssl::SSLSocketFactory::J2CPP_CLASS_NAME>(),
-			get_method_id<org::apache::http::conn::ssl::SSLSocketFactory::J2CPP_CLASS_NAME, org::apache::http::conn::ssl::SSLSocketFactory::J2CPP_METHOD_NAME(2), org::apache::http::conn::ssl::SSLSocketFactory::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< org::apache::http::conn::ssl::SSLSocketFactory > create< org::apache::http::conn::ssl::SSLSocketFactory>(local_ref< java::security::KeyStore > const &a0)
+
+
+org::apache::http::conn::ssl::SSLSocketFactory::SSLSocketFactory(local_ref< java::security::KeyStore > const &a0, local_ref< java::lang::String > const &a1, local_ref< java::security::KeyStore > const &a2)
+: cpp_object<org::apache::http::conn::ssl::SSLSocketFactory>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::apache::http::conn::ssl::SSLSocketFactory::J2CPP_CLASS_NAME>(),
+		get_method_id<org::apache::http::conn::ssl::SSLSocketFactory::J2CPP_CLASS_NAME, org::apache::http::conn::ssl::SSLSocketFactory::J2CPP_METHOD_NAME(1), org::apache::http::conn::ssl::SSLSocketFactory::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
+	)
+)
 {
-	return local_ref< org::apache::http::conn::ssl::SSLSocketFactory >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::apache::http::conn::ssl::SSLSocketFactory::J2CPP_CLASS_NAME>(),
-			get_method_id<org::apache::http::conn::ssl::SSLSocketFactory::J2CPP_CLASS_NAME, org::apache::http::conn::ssl::SSLSocketFactory::J2CPP_METHOD_NAME(3), org::apache::http::conn::ssl::SSLSocketFactory::J2CPP_METHOD_SIGNATURE(3), false>(),
-			a0.get_jtype()
-		)
-	);
 }
+
+
+
+org::apache::http::conn::ssl::SSLSocketFactory::SSLSocketFactory(local_ref< java::security::KeyStore > const &a0, local_ref< java::lang::String > const &a1)
+: cpp_object<org::apache::http::conn::ssl::SSLSocketFactory>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::apache::http::conn::ssl::SSLSocketFactory::J2CPP_CLASS_NAME>(),
+		get_method_id<org::apache::http::conn::ssl::SSLSocketFactory::J2CPP_CLASS_NAME, org::apache::http::conn::ssl::SSLSocketFactory::J2CPP_METHOD_NAME(2), org::apache::http::conn::ssl::SSLSocketFactory::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
+
+
+org::apache::http::conn::ssl::SSLSocketFactory::SSLSocketFactory(local_ref< java::security::KeyStore > const &a0)
+: cpp_object<org::apache::http::conn::ssl::SSLSocketFactory>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::apache::http::conn::ssl::SSLSocketFactory::J2CPP_CLASS_NAME>(),
+		get_method_id<org::apache::http::conn::ssl::SSLSocketFactory::J2CPP_CLASS_NAME, org::apache::http::conn::ssl::SSLSocketFactory::J2CPP_METHOD_NAME(3), org::apache::http::conn::ssl::SSLSocketFactory::J2CPP_METHOD_SIGNATURE(3), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 local_ref< org::apache::http::conn::ssl::SSLSocketFactory > org::apache::http::conn::ssl::SSLSocketFactory::getSocketFactory()
 {
@@ -222,6 +248,7 @@ local_ref< org::apache::http::conn::ssl::X509HostnameVerifier > org::apache::htt
 		)
 	);
 }
+
 
 
 static_field<

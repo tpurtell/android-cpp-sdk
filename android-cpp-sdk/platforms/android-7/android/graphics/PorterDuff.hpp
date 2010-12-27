@@ -10,11 +10,15 @@
 #define J2CPP_ANDROID_GRAPHICS_PORTERDUFF_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace lang { class Enum; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace android { namespace graphics { namespace PorterDuff_ { class Mode; } } } }
 
 
 #include <android/graphics/PorterDuff.hpp>
+#include <java/lang/Enum.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -55,10 +59,13 @@ namespace android { namespace graphics {
 			J2CPP_DECLARE_FIELD(15)
 			J2CPP_DECLARE_FIELD(16)
 
-			Mode(jobject jobj)
+			explicit Mode(jobject jobj)
 			: cpp_object<Mode>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Enum>() const;
+
 
 			static local_ref< cpp_object_array<android::graphics::PorterDuff_::Mode, 1> > values();
 			static local_ref< android::graphics::PorterDuff_::Mode > valueOf(local_ref< java::lang::String > const&);
@@ -94,16 +101,19 @@ namespace android { namespace graphics {
 
 		typedef PorterDuff_::Mode Mode;
 
-		PorterDuff(jobject jobj)
+		explicit PorterDuff(jobject jobj)
 		: cpp_object<PorterDuff>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		PorterDuff();
 	}; //class PorterDuff
 
 } //namespace graphics
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -117,6 +127,12 @@ namespace android { namespace graphics {
 namespace j2cpp {
 
 
+
+
+android::graphics::PorterDuff_::Mode::operator local_ref<java::lang::Enum>() const
+{
+	return local_ref<java::lang::Enum>(get_jtype());
+}
 
 local_ref< cpp_object_array<android::graphics::PorterDuff_::Mode, 1> > android::graphics::PorterDuff_::Mode::values()
 {
@@ -139,17 +155,7 @@ local_ref< android::graphics::PorterDuff_::Mode > android::graphics::PorterDuff_
 	);
 }
 
-template <>
-local_ref< android::graphics::PorterDuff_::Mode > create< android::graphics::PorterDuff_::Mode>(local_ref< java::lang::String > const &a0, cpp_int const &a1)
-{
-	return local_ref< android::graphics::PorterDuff_::Mode >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::graphics::PorterDuff_::Mode::J2CPP_CLASS_NAME>(),
-			get_method_id<android::graphics::PorterDuff_::Mode::J2CPP_CLASS_NAME, android::graphics::PorterDuff_::Mode::J2CPP_METHOD_NAME(2), android::graphics::PorterDuff_::Mode::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
-}
+
 
 
 static_field<
@@ -289,16 +295,23 @@ J2CPP_DEFINE_FIELD(android::graphics::PorterDuff_::Mode,15,"XOR","Landroid/graph
 J2CPP_DEFINE_FIELD(android::graphics::PorterDuff_::Mode,16,"$VALUES","[android.graphics.PorterDuff.Mode")
 
 
-template <>
-local_ref< android::graphics::PorterDuff > create< android::graphics::PorterDuff>()
+
+android::graphics::PorterDuff::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::graphics::PorterDuff >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::graphics::PorterDuff::J2CPP_CLASS_NAME>(),
-			get_method_id<android::graphics::PorterDuff::J2CPP_CLASS_NAME, android::graphics::PorterDuff::J2CPP_METHOD_NAME(0), android::graphics::PorterDuff::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::graphics::PorterDuff::PorterDuff()
+: cpp_object<android::graphics::PorterDuff>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::graphics::PorterDuff::J2CPP_CLASS_NAME>(),
+		get_method_id<android::graphics::PorterDuff::J2CPP_CLASS_NAME, android::graphics::PorterDuff::J2CPP_METHOD_NAME(0), android::graphics::PorterDuff::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 
 J2CPP_DEFINE_CLASS(android::graphics::PorterDuff,"android/graphics/PorterDuff")

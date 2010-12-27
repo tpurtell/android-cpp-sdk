@@ -11,11 +11,13 @@
 
 
 namespace j2cpp { namespace android { namespace content { class Context; } } }
+namespace j2cpp { namespace android { namespace widget { class TextView; } } }
 namespace j2cpp { namespace android { namespace util { class AttributeSet; } } }
 
 
 #include <android/content/Context.hpp>
 #include <android/util/AttributeSet.hpp>
+#include <android/widget/TextView.hpp>
 
 
 namespace j2cpp {
@@ -35,16 +37,20 @@ namespace android { namespace widget {
 		J2CPP_DECLARE_METHOD(2)
 		J2CPP_DECLARE_METHOD(3)
 
-		DigitalClock(jobject jobj)
+		explicit DigitalClock(jobject jobj)
 		: cpp_object<DigitalClock>(jobj)
 		{
 		}
 
+		operator local_ref<android::widget::TextView>() const;
+
+
+		DigitalClock(local_ref< android::content::Context > const&);
+		DigitalClock(local_ref< android::content::Context > const&, local_ref< android::util::AttributeSet > const&);
 	}; //class DigitalClock
 
 } //namespace widget
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -58,29 +64,37 @@ namespace android { namespace widget {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::widget::DigitalClock > create< android::widget::DigitalClock>(local_ref< android::content::Context > const &a0)
+
+android::widget::DigitalClock::operator local_ref<android::widget::TextView>() const
 {
-	return local_ref< android::widget::DigitalClock >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::widget::DigitalClock::J2CPP_CLASS_NAME>(),
-			get_method_id<android::widget::DigitalClock::J2CPP_CLASS_NAME, android::widget::DigitalClock::J2CPP_METHOD_NAME(0), android::widget::DigitalClock::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<android::widget::TextView>(get_jtype());
 }
 
-template <>
-local_ref< android::widget::DigitalClock > create< android::widget::DigitalClock>(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1)
+
+android::widget::DigitalClock::DigitalClock(local_ref< android::content::Context > const &a0)
+: cpp_object<android::widget::DigitalClock>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::widget::DigitalClock::J2CPP_CLASS_NAME>(),
+		get_method_id<android::widget::DigitalClock::J2CPP_CLASS_NAME, android::widget::DigitalClock::J2CPP_METHOD_NAME(0), android::widget::DigitalClock::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< android::widget::DigitalClock >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::widget::DigitalClock::J2CPP_CLASS_NAME>(),
-			get_method_id<android::widget::DigitalClock::J2CPP_CLASS_NAME, android::widget::DigitalClock::J2CPP_METHOD_NAME(1), android::widget::DigitalClock::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
 }
+
+
+
+android::widget::DigitalClock::DigitalClock(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1)
+: cpp_object<android::widget::DigitalClock>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::widget::DigitalClock::J2CPP_CLASS_NAME>(),
+		get_method_id<android::widget::DigitalClock::J2CPP_CLASS_NAME, android::widget::DigitalClock::J2CPP_METHOD_NAME(1), android::widget::DigitalClock::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
 
 
 

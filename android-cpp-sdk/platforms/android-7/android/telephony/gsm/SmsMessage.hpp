@@ -10,6 +10,8 @@
 #define J2CPP_ANDROID_TELEPHONY_GSM_SMSMESSAGE_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace lang { class Enum; } } }
 namespace j2cpp { namespace java { namespace lang { class CharSequence; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace android { namespace telephony { namespace gsm { namespace SmsMessage_ { class SubmitPdu; } } } } }
@@ -18,6 +20,8 @@ namespace j2cpp { namespace android { namespace telephony { namespace gsm { name
 
 #include <android/telephony/gsm/SmsMessage.hpp>
 #include <java/lang/CharSequence.hpp>
+#include <java/lang/Enum.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -41,13 +45,17 @@ namespace android { namespace telephony { namespace gsm {
 			J2CPP_DECLARE_FIELD(0)
 			J2CPP_DECLARE_FIELD(1)
 
-			SubmitPdu(jobject jobj)
+			explicit SubmitPdu(jobject jobj)
 			: cpp_object<SubmitPdu>(jobj)
-			, encodedScAddress(jobj)
-			, encodedMessage(jobj)
+, encodedScAddress(jobj)
+, encodedMessage(jobj)
 			{
 			}
 
+			operator local_ref<java::lang::Object>() const;
+
+
+			SubmitPdu();
 			local_ref< java::lang::String > toString();
 
 			field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(0), J2CPP_FIELD_SIGNATURE(0), local_ref< cpp_byte_array<1> > > encodedScAddress;
@@ -73,10 +81,13 @@ namespace android { namespace telephony { namespace gsm {
 			J2CPP_DECLARE_FIELD(4)
 			J2CPP_DECLARE_FIELD(5)
 
-			MessageClass(jobject jobj)
+			explicit MessageClass(jobject jobj)
 			: cpp_object<MessageClass>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Enum>() const;
+
 
 			static local_ref< cpp_object_array<android::telephony::gsm::SmsMessage_::MessageClass, 1> > values();
 			static local_ref< android::telephony::gsm::SmsMessage_::MessageClass > valueOf(local_ref< java::lang::String > const&);
@@ -139,11 +150,15 @@ namespace android { namespace telephony { namespace gsm {
 		typedef SmsMessage_::SubmitPdu SubmitPdu;
 		typedef SmsMessage_::MessageClass MessageClass;
 
-		SmsMessage(jobject jobj)
+		explicit SmsMessage(jobject jobj)
 		: cpp_object<SmsMessage>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		SmsMessage();
 		static local_ref< android::telephony::gsm::SmsMessage > createFromPdu(local_ref< cpp_byte_array<1> > const&);
 		static cpp_int getTPLayerLengthForPDU(local_ref< java::lang::String > const&);
 		static local_ref< cpp_int_array<1> > calculateLength(local_ref< java::lang::CharSequence > const&, cpp_boolean const&);
@@ -188,7 +203,6 @@ namespace android { namespace telephony { namespace gsm {
 } //namespace telephony
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_TELEPHONY_GSM_SMSMESSAGE_HPP_DECL
@@ -202,16 +216,25 @@ namespace j2cpp {
 
 
 
-template <>
-local_ref< android::telephony::gsm::SmsMessage_::SubmitPdu > create< android::telephony::gsm::SmsMessage_::SubmitPdu>()
+
+android::telephony::gsm::SmsMessage_::SubmitPdu::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::telephony::gsm::SmsMessage_::SubmitPdu >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::telephony::gsm::SmsMessage_::SubmitPdu::J2CPP_CLASS_NAME>(),
-			get_method_id<android::telephony::gsm::SmsMessage_::SubmitPdu::J2CPP_CLASS_NAME, android::telephony::gsm::SmsMessage_::SubmitPdu::J2CPP_METHOD_NAME(0), android::telephony::gsm::SmsMessage_::SubmitPdu::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::telephony::gsm::SmsMessage_::SubmitPdu::SubmitPdu()
+: cpp_object<android::telephony::gsm::SmsMessage_::SubmitPdu>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::telephony::gsm::SmsMessage_::SubmitPdu::J2CPP_CLASS_NAME>(),
+		get_method_id<android::telephony::gsm::SmsMessage_::SubmitPdu::J2CPP_CLASS_NAME, android::telephony::gsm::SmsMessage_::SubmitPdu::J2CPP_METHOD_NAME(0), android::telephony::gsm::SmsMessage_::SubmitPdu::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+, encodedScAddress(get_jtype())
+, encodedMessage(get_jtype())
+{
+}
+
 
 local_ref< java::lang::String > android::telephony::gsm::SmsMessage_::SubmitPdu::toString()
 {
@@ -230,6 +253,12 @@ J2CPP_DEFINE_METHOD(android::telephony::gsm::SmsMessage_::SubmitPdu,0,"<init>","
 J2CPP_DEFINE_METHOD(android::telephony::gsm::SmsMessage_::SubmitPdu,1,"toString","()Ljava/lang/String;")
 J2CPP_DEFINE_FIELD(android::telephony::gsm::SmsMessage_::SubmitPdu,0,"encodedScAddress","[B")
 J2CPP_DEFINE_FIELD(android::telephony::gsm::SmsMessage_::SubmitPdu,1,"encodedMessage","[B")
+
+
+android::telephony::gsm::SmsMessage_::MessageClass::operator local_ref<java::lang::Enum>() const
+{
+	return local_ref<java::lang::Enum>(get_jtype());
+}
 
 local_ref< cpp_object_array<android::telephony::gsm::SmsMessage_::MessageClass, 1> > android::telephony::gsm::SmsMessage_::MessageClass::values()
 {
@@ -252,17 +281,7 @@ local_ref< android::telephony::gsm::SmsMessage_::MessageClass > android::telepho
 	);
 }
 
-template <>
-local_ref< android::telephony::gsm::SmsMessage_::MessageClass > create< android::telephony::gsm::SmsMessage_::MessageClass>(local_ref< java::lang::String > const &a0, cpp_int const &a1)
-{
-	return local_ref< android::telephony::gsm::SmsMessage_::MessageClass >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::telephony::gsm::SmsMessage_::MessageClass::J2CPP_CLASS_NAME>(),
-			get_method_id<android::telephony::gsm::SmsMessage_::MessageClass::J2CPP_CLASS_NAME, android::telephony::gsm::SmsMessage_::MessageClass::J2CPP_METHOD_NAME(2), android::telephony::gsm::SmsMessage_::MessageClass::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
-}
+
 
 
 static_field<
@@ -314,16 +333,23 @@ J2CPP_DEFINE_FIELD(android::telephony::gsm::SmsMessage_::MessageClass,4,"UNKNOWN
 J2CPP_DEFINE_FIELD(android::telephony::gsm::SmsMessage_::MessageClass,5,"$VALUES","[android.telephony.gsm.SmsMessage.MessageClass")
 
 
-template <>
-local_ref< android::telephony::gsm::SmsMessage > create< android::telephony::gsm::SmsMessage>()
+
+android::telephony::gsm::SmsMessage::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::telephony::gsm::SmsMessage >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::telephony::gsm::SmsMessage::J2CPP_CLASS_NAME>(),
-			get_method_id<android::telephony::gsm::SmsMessage::J2CPP_CLASS_NAME, android::telephony::gsm::SmsMessage::J2CPP_METHOD_NAME(0), android::telephony::gsm::SmsMessage::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::telephony::gsm::SmsMessage::SmsMessage()
+: cpp_object<android::telephony::gsm::SmsMessage>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::telephony::gsm::SmsMessage::J2CPP_CLASS_NAME>(),
+		get_method_id<android::telephony::gsm::SmsMessage::J2CPP_CLASS_NAME, android::telephony::gsm::SmsMessage::J2CPP_METHOD_NAME(0), android::telephony::gsm::SmsMessage::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 local_ref< android::telephony::gsm::SmsMessage > android::telephony::gsm::SmsMessage::createFromPdu(local_ref< cpp_byte_array<1> > const &a0)
 {

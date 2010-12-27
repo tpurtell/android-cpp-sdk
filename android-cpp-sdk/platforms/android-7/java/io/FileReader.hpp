@@ -12,11 +12,13 @@
 
 namespace j2cpp { namespace java { namespace io { class File; } } }
 namespace j2cpp { namespace java { namespace io { class FileDescriptor; } } }
+namespace j2cpp { namespace java { namespace io { class InputStreamReader; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 
 
 #include <java/io/File.hpp>
 #include <java/io/FileDescriptor.hpp>
+#include <java/io/InputStreamReader.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -36,16 +38,21 @@ namespace java { namespace io {
 		J2CPP_DECLARE_METHOD(1)
 		J2CPP_DECLARE_METHOD(2)
 
-		FileReader(jobject jobj)
+		explicit FileReader(jobject jobj)
 		: cpp_object<FileReader>(jobj)
 		{
 		}
 
+		operator local_ref<java::io::InputStreamReader>() const;
+
+
+		FileReader(local_ref< java::io::File > const&);
+		FileReader(local_ref< java::io::FileDescriptor > const&);
+		FileReader(local_ref< java::lang::String > const&);
 	}; //class FileReader
 
 } //namespace io
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -59,41 +66,50 @@ namespace java { namespace io {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::io::FileReader > create< java::io::FileReader>(local_ref< java::io::File > const &a0)
+
+java::io::FileReader::operator local_ref<java::io::InputStreamReader>() const
 {
-	return local_ref< java::io::FileReader >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::io::FileReader::J2CPP_CLASS_NAME>(),
-			get_method_id<java::io::FileReader::J2CPP_CLASS_NAME, java::io::FileReader::J2CPP_METHOD_NAME(0), java::io::FileReader::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::io::InputStreamReader>(get_jtype());
 }
 
-template <>
-local_ref< java::io::FileReader > create< java::io::FileReader>(local_ref< java::io::FileDescriptor > const &a0)
+
+java::io::FileReader::FileReader(local_ref< java::io::File > const &a0)
+: cpp_object<java::io::FileReader>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::io::FileReader::J2CPP_CLASS_NAME>(),
+		get_method_id<java::io::FileReader::J2CPP_CLASS_NAME, java::io::FileReader::J2CPP_METHOD_NAME(0), java::io::FileReader::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< java::io::FileReader >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::io::FileReader::J2CPP_CLASS_NAME>(),
-			get_method_id<java::io::FileReader::J2CPP_CLASS_NAME, java::io::FileReader::J2CPP_METHOD_NAME(1), java::io::FileReader::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< java::io::FileReader > create< java::io::FileReader>(local_ref< java::lang::String > const &a0)
+
+
+java::io::FileReader::FileReader(local_ref< java::io::FileDescriptor > const &a0)
+: cpp_object<java::io::FileReader>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::io::FileReader::J2CPP_CLASS_NAME>(),
+		get_method_id<java::io::FileReader::J2CPP_CLASS_NAME, java::io::FileReader::J2CPP_METHOD_NAME(1), java::io::FileReader::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< java::io::FileReader >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::io::FileReader::J2CPP_CLASS_NAME>(),
-			get_method_id<java::io::FileReader::J2CPP_CLASS_NAME, java::io::FileReader::J2CPP_METHOD_NAME(2), java::io::FileReader::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype()
-		)
-	);
 }
+
+
+
+java::io::FileReader::FileReader(local_ref< java::lang::String > const &a0)
+: cpp_object<java::io::FileReader>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::io::FileReader::J2CPP_CLASS_NAME>(),
+		get_method_id<java::io::FileReader::J2CPP_CLASS_NAME, java::io::FileReader::J2CPP_METHOD_NAME(2), java::io::FileReader::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 
 J2CPP_DEFINE_CLASS(java::io::FileReader,"java/io/FileReader")

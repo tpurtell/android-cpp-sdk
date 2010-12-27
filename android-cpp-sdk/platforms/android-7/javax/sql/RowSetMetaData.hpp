@@ -10,10 +10,14 @@
 #define J2CPP_JAVAX_SQL_ROWSETMETADATA_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace sql { class ResultSetMetaData; } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
+#include <java/sql/ResultSetMetaData.hpp>
 
 
 namespace j2cpp {
@@ -46,10 +50,14 @@ namespace javax { namespace sql {
 		J2CPP_DECLARE_METHOD(15)
 		J2CPP_DECLARE_METHOD(16)
 
-		RowSetMetaData(jobject jobj)
+		explicit RowSetMetaData(jobject jobj)
 		: cpp_object<RowSetMetaData>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::sql::ResultSetMetaData>() const;
+
 
 		void setAutoIncrement(cpp_int const&, cpp_boolean const&);
 		void setCaseSensitive(cpp_int const&, cpp_boolean const&);
@@ -73,7 +81,6 @@ namespace javax { namespace sql {
 } //namespace sql
 } //namespace javax
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVAX_SQL_ROWSETMETADATA_HPP_DECL
@@ -85,6 +92,17 @@ namespace javax { namespace sql {
 
 namespace j2cpp {
 
+
+
+javax::sql::RowSetMetaData::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
+
+javax::sql::RowSetMetaData::operator local_ref<java::sql::ResultSetMetaData>() const
+{
+	return local_ref<java::sql::ResultSetMetaData>(get_jtype());
+}
 
 void javax::sql::RowSetMetaData::setAutoIncrement(cpp_int const &a0, cpp_boolean const &a1)
 {

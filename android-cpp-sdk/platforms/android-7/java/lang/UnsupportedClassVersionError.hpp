@@ -10,9 +10,11 @@
 #define J2CPP_JAVA_LANG_UNSUPPORTEDCLASSVERSIONERROR_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class ClassFormatError; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 
 
+#include <java/lang/ClassFormatError.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -31,16 +33,20 @@ namespace java { namespace lang {
 		J2CPP_DECLARE_METHOD(0)
 		J2CPP_DECLARE_METHOD(1)
 
-		UnsupportedClassVersionError(jobject jobj)
+		explicit UnsupportedClassVersionError(jobject jobj)
 		: cpp_object<UnsupportedClassVersionError>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::ClassFormatError>() const;
+
+
+		UnsupportedClassVersionError();
+		UnsupportedClassVersionError(local_ref< java::lang::String > const&);
 	}; //class UnsupportedClassVersionError
 
 } //namespace lang
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -54,28 +60,36 @@ namespace java { namespace lang {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::lang::UnsupportedClassVersionError > create< java::lang::UnsupportedClassVersionError>()
+
+java::lang::UnsupportedClassVersionError::operator local_ref<java::lang::ClassFormatError>() const
 {
-	return local_ref< java::lang::UnsupportedClassVersionError >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::lang::UnsupportedClassVersionError::J2CPP_CLASS_NAME>(),
-			get_method_id<java::lang::UnsupportedClassVersionError::J2CPP_CLASS_NAME, java::lang::UnsupportedClassVersionError::J2CPP_METHOD_NAME(0), java::lang::UnsupportedClassVersionError::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::ClassFormatError>(get_jtype());
 }
 
-template <>
-local_ref< java::lang::UnsupportedClassVersionError > create< java::lang::UnsupportedClassVersionError>(local_ref< java::lang::String > const &a0)
+
+java::lang::UnsupportedClassVersionError::UnsupportedClassVersionError()
+: cpp_object<java::lang::UnsupportedClassVersionError>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::lang::UnsupportedClassVersionError::J2CPP_CLASS_NAME>(),
+		get_method_id<java::lang::UnsupportedClassVersionError::J2CPP_CLASS_NAME, java::lang::UnsupportedClassVersionError::J2CPP_METHOD_NAME(0), java::lang::UnsupportedClassVersionError::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
 {
-	return local_ref< java::lang::UnsupportedClassVersionError >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::lang::UnsupportedClassVersionError::J2CPP_CLASS_NAME>(),
-			get_method_id<java::lang::UnsupportedClassVersionError::J2CPP_CLASS_NAME, java::lang::UnsupportedClassVersionError::J2CPP_METHOD_NAME(1), java::lang::UnsupportedClassVersionError::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
 }
+
+
+
+java::lang::UnsupportedClassVersionError::UnsupportedClassVersionError(local_ref< java::lang::String > const &a0)
+: cpp_object<java::lang::UnsupportedClassVersionError>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::lang::UnsupportedClassVersionError::J2CPP_CLASS_NAME>(),
+		get_method_id<java::lang::UnsupportedClassVersionError::J2CPP_CLASS_NAME, java::lang::UnsupportedClassVersionError::J2CPP_METHOD_NAME(1), java::lang::UnsupportedClassVersionError::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 
 J2CPP_DEFINE_CLASS(java::lang::UnsupportedClassVersionError,"java/lang/UnsupportedClassVersionError")

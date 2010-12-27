@@ -11,8 +11,10 @@
 
 
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace lang { class IllegalArgumentException; } } }
 
 
+#include <java/lang/IllegalArgumentException.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -34,11 +36,15 @@ namespace java { namespace util { namespace regex {
 		J2CPP_DECLARE_METHOD(3)
 		J2CPP_DECLARE_METHOD(4)
 
-		PatternSyntaxException(jobject jobj)
+		explicit PatternSyntaxException(jobject jobj)
 		: cpp_object<PatternSyntaxException>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::IllegalArgumentException>() const;
+
+
+		PatternSyntaxException(local_ref< java::lang::String > const&, local_ref< java::lang::String > const&, cpp_int const&);
 		local_ref< java::lang::String > getPattern();
 		local_ref< java::lang::String > getMessage();
 		local_ref< java::lang::String > getDescription();
@@ -48,7 +54,6 @@ namespace java { namespace util { namespace regex {
 } //namespace regex
 } //namespace util
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -62,17 +67,24 @@ namespace java { namespace util { namespace regex {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::util::regex::PatternSyntaxException > create< java::util::regex::PatternSyntaxException>(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1, cpp_int const &a2)
+
+java::util::regex::PatternSyntaxException::operator local_ref<java::lang::IllegalArgumentException>() const
 {
-	return local_ref< java::util::regex::PatternSyntaxException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::regex::PatternSyntaxException::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::regex::PatternSyntaxException::J2CPP_CLASS_NAME, java::util::regex::PatternSyntaxException::J2CPP_METHOD_NAME(0), java::util::regex::PatternSyntaxException::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
-		)
-	);
+	return local_ref<java::lang::IllegalArgumentException>(get_jtype());
 }
+
+
+java::util::regex::PatternSyntaxException::PatternSyntaxException(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1, cpp_int const &a2)
+: cpp_object<java::util::regex::PatternSyntaxException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::util::regex::PatternSyntaxException::J2CPP_CLASS_NAME>(),
+		get_method_id<java::util::regex::PatternSyntaxException::J2CPP_CLASS_NAME, java::util::regex::PatternSyntaxException::J2CPP_METHOD_NAME(0), java::util::regex::PatternSyntaxException::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
+	)
+)
+{
+}
+
 
 local_ref< java::lang::String > java::util::regex::PatternSyntaxException::getPattern()
 {

@@ -10,12 +10,14 @@
 #define J2CPP_JAVA_IO_DATAINPUTSTREAM_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class FilterInputStream; } } }
 namespace j2cpp { namespace java { namespace io { class DataInput; } } }
 namespace j2cpp { namespace java { namespace io { class InputStream; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 
 
 #include <java/io/DataInput.hpp>
+#include <java/io/FilterInputStream.hpp>
 #include <java/io/InputStream.hpp>
 #include <java/lang/String.hpp>
 
@@ -52,11 +54,16 @@ namespace java { namespace io {
 		J2CPP_DECLARE_METHOD(17)
 		J2CPP_DECLARE_METHOD(18)
 
-		DataInputStream(jobject jobj)
+		explicit DataInputStream(jobject jobj)
 		: cpp_object<DataInputStream>(jobj)
 		{
 		}
 
+		operator local_ref<java::io::FilterInputStream>() const;
+		operator local_ref<java::io::DataInput>() const;
+
+
+		DataInputStream(local_ref< java::io::InputStream > const&);
 		cpp_int read(local_ref< cpp_byte_array<1> > const&);
 		cpp_int read(local_ref< cpp_byte_array<1> > const&, cpp_int const&, cpp_int const&);
 		cpp_boolean readBoolean();
@@ -80,7 +87,6 @@ namespace java { namespace io {
 } //namespace io
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_IO_DATAINPUTSTREAM_HPP_DECL
@@ -93,17 +99,29 @@ namespace java { namespace io {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::io::DataInputStream > create< java::io::DataInputStream>(local_ref< java::io::InputStream > const &a0)
+
+java::io::DataInputStream::operator local_ref<java::io::FilterInputStream>() const
 {
-	return local_ref< java::io::DataInputStream >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::io::DataInputStream::J2CPP_CLASS_NAME>(),
-			get_method_id<java::io::DataInputStream::J2CPP_CLASS_NAME, java::io::DataInputStream::J2CPP_METHOD_NAME(0), java::io::DataInputStream::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::io::FilterInputStream>(get_jtype());
 }
+
+java::io::DataInputStream::operator local_ref<java::io::DataInput>() const
+{
+	return local_ref<java::io::DataInput>(get_jtype());
+}
+
+
+java::io::DataInputStream::DataInputStream(local_ref< java::io::InputStream > const &a0)
+: cpp_object<java::io::DataInputStream>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::io::DataInputStream::J2CPP_CLASS_NAME>(),
+		get_method_id<java::io::DataInputStream::J2CPP_CLASS_NAME, java::io::DataInputStream::J2CPP_METHOD_NAME(0), java::io::DataInputStream::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 cpp_int java::io::DataInputStream::read(local_ref< cpp_byte_array<1> > const &a0)
 {

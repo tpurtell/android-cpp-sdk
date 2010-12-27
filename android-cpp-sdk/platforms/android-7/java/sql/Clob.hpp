@@ -14,6 +14,7 @@ namespace j2cpp { namespace java { namespace io { class Reader; } } }
 namespace j2cpp { namespace java { namespace io { class InputStream; } } }
 namespace j2cpp { namespace java { namespace io { class OutputStream; } } }
 namespace j2cpp { namespace java { namespace io { class Writer; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 
 
@@ -21,6 +22,7 @@ namespace j2cpp { namespace java { namespace lang { class String; } } }
 #include <java/io/OutputStream.hpp>
 #include <java/io/Reader.hpp>
 #include <java/io/Writer.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -48,10 +50,13 @@ namespace java { namespace sql {
 		J2CPP_DECLARE_METHOD(9)
 		J2CPP_DECLARE_METHOD(10)
 
-		Clob(jobject jobj)
+		explicit Clob(jobject jobj)
 		: cpp_object<Clob>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		local_ref< java::io::InputStream > getAsciiStream();
 		local_ref< java::io::Reader > getCharacterStream();
@@ -69,7 +74,6 @@ namespace java { namespace sql {
 } //namespace sql
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_SQL_CLOB_HPP_DECL
@@ -81,6 +85,12 @@ namespace java { namespace sql {
 
 namespace j2cpp {
 
+
+
+java::sql::Clob::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 local_ref< java::io::InputStream > java::sql::Clob::getAsciiStream()
 {

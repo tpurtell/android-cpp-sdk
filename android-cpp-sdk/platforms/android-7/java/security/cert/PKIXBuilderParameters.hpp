@@ -13,12 +13,14 @@
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace security { class KeyStore; } } }
 namespace j2cpp { namespace java { namespace security { namespace cert { class CertSelector; } } } }
+namespace j2cpp { namespace java { namespace security { namespace cert { class PKIXParameters; } } } }
 namespace j2cpp { namespace java { namespace util { class Set; } } }
 
 
 #include <java/lang/String.hpp>
 #include <java/security/KeyStore.hpp>
 #include <java/security/cert/CertSelector.hpp>
+#include <java/security/cert/PKIXParameters.hpp>
 #include <java/util/Set.hpp>
 
 
@@ -40,11 +42,16 @@ namespace java { namespace security { namespace cert {
 		J2CPP_DECLARE_METHOD(3)
 		J2CPP_DECLARE_METHOD(4)
 
-		PKIXBuilderParameters(jobject jobj)
+		explicit PKIXBuilderParameters(jobject jobj)
 		: cpp_object<PKIXBuilderParameters>(jobj)
 		{
 		}
 
+		operator local_ref<java::security::cert::PKIXParameters>() const;
+
+
+		PKIXBuilderParameters(local_ref< java::util::Set > const&, local_ref< java::security::cert::CertSelector > const&);
+		PKIXBuilderParameters(local_ref< java::security::KeyStore > const&, local_ref< java::security::cert::CertSelector > const&);
 		cpp_int getMaxPathLength();
 		void setMaxPathLength(cpp_int const&);
 		local_ref< java::lang::String > toString();
@@ -53,7 +60,6 @@ namespace java { namespace security { namespace cert {
 } //namespace cert
 } //namespace security
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -67,29 +73,37 @@ namespace java { namespace security { namespace cert {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::security::cert::PKIXBuilderParameters > create< java::security::cert::PKIXBuilderParameters>(local_ref< java::util::Set > const &a0, local_ref< java::security::cert::CertSelector > const &a1)
+
+java::security::cert::PKIXBuilderParameters::operator local_ref<java::security::cert::PKIXParameters>() const
 {
-	return local_ref< java::security::cert::PKIXBuilderParameters >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::security::cert::PKIXBuilderParameters::J2CPP_CLASS_NAME>(),
-			get_method_id<java::security::cert::PKIXBuilderParameters::J2CPP_CLASS_NAME, java::security::cert::PKIXBuilderParameters::J2CPP_METHOD_NAME(0), java::security::cert::PKIXBuilderParameters::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<java::security::cert::PKIXParameters>(get_jtype());
 }
 
-template <>
-local_ref< java::security::cert::PKIXBuilderParameters > create< java::security::cert::PKIXBuilderParameters>(local_ref< java::security::KeyStore > const &a0, local_ref< java::security::cert::CertSelector > const &a1)
+
+java::security::cert::PKIXBuilderParameters::PKIXBuilderParameters(local_ref< java::util::Set > const &a0, local_ref< java::security::cert::CertSelector > const &a1)
+: cpp_object<java::security::cert::PKIXBuilderParameters>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::security::cert::PKIXBuilderParameters::J2CPP_CLASS_NAME>(),
+		get_method_id<java::security::cert::PKIXBuilderParameters::J2CPP_CLASS_NAME, java::security::cert::PKIXBuilderParameters::J2CPP_METHOD_NAME(0), java::security::cert::PKIXBuilderParameters::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
 {
-	return local_ref< java::security::cert::PKIXBuilderParameters >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::security::cert::PKIXBuilderParameters::J2CPP_CLASS_NAME>(),
-			get_method_id<java::security::cert::PKIXBuilderParameters::J2CPP_CLASS_NAME, java::security::cert::PKIXBuilderParameters::J2CPP_METHOD_NAME(1), java::security::cert::PKIXBuilderParameters::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
 }
+
+
+
+java::security::cert::PKIXBuilderParameters::PKIXBuilderParameters(local_ref< java::security::KeyStore > const &a0, local_ref< java::security::cert::CertSelector > const &a1)
+: cpp_object<java::security::cert::PKIXBuilderParameters>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::security::cert::PKIXBuilderParameters::J2CPP_CLASS_NAME>(),
+		get_method_id<java::security::cert::PKIXBuilderParameters::J2CPP_CLASS_NAME, java::security::cert::PKIXBuilderParameters::J2CPP_METHOD_NAME(1), java::security::cert::PKIXBuilderParameters::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
 
 cpp_int java::security::cert::PKIXBuilderParameters::getMaxPathLength()
 {

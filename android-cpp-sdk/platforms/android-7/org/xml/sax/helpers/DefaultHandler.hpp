@@ -10,15 +10,25 @@
 #define J2CPP_ORG_XML_SAX_HELPERS_DEFAULTHANDLER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace org { namespace xml { namespace sax { class ContentHandler; } } } }
+namespace j2cpp { namespace org { namespace xml { namespace sax { class EntityResolver; } } } }
+namespace j2cpp { namespace org { namespace xml { namespace sax { class ErrorHandler; } } } }
 namespace j2cpp { namespace org { namespace xml { namespace sax { class InputSource; } } } }
 namespace j2cpp { namespace org { namespace xml { namespace sax { class SAXParseException; } } } }
+namespace j2cpp { namespace org { namespace xml { namespace sax { class DTDHandler; } } } }
 namespace j2cpp { namespace org { namespace xml { namespace sax { class Attributes; } } } }
 namespace j2cpp { namespace org { namespace xml { namespace sax { class Locator; } } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <org/xml/sax/Attributes.hpp>
+#include <org/xml/sax/ContentHandler.hpp>
+#include <org/xml/sax/DTDHandler.hpp>
+#include <org/xml/sax/EntityResolver.hpp>
+#include <org/xml/sax/ErrorHandler.hpp>
 #include <org/xml/sax/InputSource.hpp>
 #include <org/xml/sax/Locator.hpp>
 #include <org/xml/sax/SAXParseException.hpp>
@@ -55,11 +65,19 @@ namespace org { namespace xml { namespace sax { namespace helpers {
 		J2CPP_DECLARE_METHOD(16)
 		J2CPP_DECLARE_METHOD(17)
 
-		DefaultHandler(jobject jobj)
+		explicit DefaultHandler(jobject jobj)
 		: cpp_object<DefaultHandler>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<org::xml::sax::EntityResolver>() const;
+		operator local_ref<org::xml::sax::DTDHandler>() const;
+		operator local_ref<org::xml::sax::ContentHandler>() const;
+		operator local_ref<org::xml::sax::ErrorHandler>() const;
+
+
+		DefaultHandler();
 		local_ref< org::xml::sax::InputSource > resolveEntity(local_ref< java::lang::String > const&, local_ref< java::lang::String > const&);
 		void notationDecl(local_ref< java::lang::String > const&, local_ref< java::lang::String > const&, local_ref< java::lang::String > const&);
 		void unparsedEntityDecl(local_ref< java::lang::String > const&, local_ref< java::lang::String > const&, local_ref< java::lang::String > const&, local_ref< java::lang::String > const&);
@@ -84,7 +102,6 @@ namespace org { namespace xml { namespace sax { namespace helpers {
 } //namespace xml
 } //namespace org
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ORG_XML_SAX_HELPERS_DEFAULTHANDLER_HPP_DECL
@@ -97,16 +114,43 @@ namespace org { namespace xml { namespace sax { namespace helpers {
 namespace j2cpp {
 
 
-template <>
-local_ref< org::xml::sax::helpers::DefaultHandler > create< org::xml::sax::helpers::DefaultHandler>()
+
+org::xml::sax::helpers::DefaultHandler::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< org::xml::sax::helpers::DefaultHandler >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::xml::sax::helpers::DefaultHandler::J2CPP_CLASS_NAME>(),
-			get_method_id<org::xml::sax::helpers::DefaultHandler::J2CPP_CLASS_NAME, org::xml::sax::helpers::DefaultHandler::J2CPP_METHOD_NAME(0), org::xml::sax::helpers::DefaultHandler::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+org::xml::sax::helpers::DefaultHandler::operator local_ref<org::xml::sax::EntityResolver>() const
+{
+	return local_ref<org::xml::sax::EntityResolver>(get_jtype());
+}
+
+org::xml::sax::helpers::DefaultHandler::operator local_ref<org::xml::sax::DTDHandler>() const
+{
+	return local_ref<org::xml::sax::DTDHandler>(get_jtype());
+}
+
+org::xml::sax::helpers::DefaultHandler::operator local_ref<org::xml::sax::ContentHandler>() const
+{
+	return local_ref<org::xml::sax::ContentHandler>(get_jtype());
+}
+
+org::xml::sax::helpers::DefaultHandler::operator local_ref<org::xml::sax::ErrorHandler>() const
+{
+	return local_ref<org::xml::sax::ErrorHandler>(get_jtype());
+}
+
+
+org::xml::sax::helpers::DefaultHandler::DefaultHandler()
+: cpp_object<org::xml::sax::helpers::DefaultHandler>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::xml::sax::helpers::DefaultHandler::J2CPP_CLASS_NAME>(),
+		get_method_id<org::xml::sax::helpers::DefaultHandler::J2CPP_CLASS_NAME, org::xml::sax::helpers::DefaultHandler::J2CPP_METHOD_NAME(0), org::xml::sax::helpers::DefaultHandler::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 local_ref< org::xml::sax::InputSource > org::xml::sax::helpers::DefaultHandler::resolveEntity(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
 {

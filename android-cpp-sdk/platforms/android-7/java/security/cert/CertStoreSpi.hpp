@@ -10,12 +10,14 @@
 #define J2CPP_JAVA_SECURITY_CERT_CERTSTORESPI_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace security { namespace cert { class CertStoreParameters; } } } }
 namespace j2cpp { namespace java { namespace security { namespace cert { class CertSelector; } } } }
 namespace j2cpp { namespace java { namespace security { namespace cert { class CRLSelector; } } } }
 namespace j2cpp { namespace java { namespace util { class Collection; } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/security/cert/CRLSelector.hpp>
 #include <java/security/cert/CertSelector.hpp>
 #include <java/security/cert/CertStoreParameters.hpp>
@@ -38,11 +40,15 @@ namespace java { namespace security { namespace cert {
 		J2CPP_DECLARE_METHOD(1)
 		J2CPP_DECLARE_METHOD(2)
 
-		CertStoreSpi(jobject jobj)
+		explicit CertStoreSpi(jobject jobj)
 		: cpp_object<CertStoreSpi>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		CertStoreSpi(local_ref< java::security::cert::CertStoreParameters > const&);
 		local_ref< java::util::Collection > engineGetCertificates(local_ref< java::security::cert::CertSelector > const&);
 		local_ref< java::util::Collection > engineGetCRLs(local_ref< java::security::cert::CRLSelector > const&);
 	}; //class CertStoreSpi
@@ -50,7 +56,6 @@ namespace java { namespace security { namespace cert {
 } //namespace cert
 } //namespace security
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -64,17 +69,24 @@ namespace java { namespace security { namespace cert {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::security::cert::CertStoreSpi > create< java::security::cert::CertStoreSpi>(local_ref< java::security::cert::CertStoreParameters > const &a0)
+
+java::security::cert::CertStoreSpi::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::security::cert::CertStoreSpi >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::security::cert::CertStoreSpi::J2CPP_CLASS_NAME>(),
-			get_method_id<java::security::cert::CertStoreSpi::J2CPP_CLASS_NAME, java::security::cert::CertStoreSpi::J2CPP_METHOD_NAME(0), java::security::cert::CertStoreSpi::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+java::security::cert::CertStoreSpi::CertStoreSpi(local_ref< java::security::cert::CertStoreParameters > const &a0)
+: cpp_object<java::security::cert::CertStoreSpi>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::security::cert::CertStoreSpi::J2CPP_CLASS_NAME>(),
+		get_method_id<java::security::cert::CertStoreSpi::J2CPP_CLASS_NAME, java::security::cert::CertStoreSpi::J2CPP_METHOD_NAME(0), java::security::cert::CertStoreSpi::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 local_ref< java::util::Collection > java::security::cert::CertStoreSpi::engineGetCertificates(local_ref< java::security::cert::CertSelector > const &a0)
 {

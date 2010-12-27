@@ -13,6 +13,7 @@
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace android { namespace os { class Parcel; } } }
+namespace j2cpp { namespace android { namespace os { class Parcelable; } } }
 namespace j2cpp { namespace android { namespace os { namespace Parcelable_ { class Creator; } } } }
 
 
@@ -46,13 +47,19 @@ namespace android { namespace accounts {
 		J2CPP_DECLARE_FIELD(1)
 		J2CPP_DECLARE_FIELD(2)
 
-		Account(jobject jobj)
+		explicit Account(jobject jobj)
 		: cpp_object<Account>(jobj)
-		, name(jobj)
-		, type(jobj)
+, name(jobj)
+, type(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<android::os::Parcelable>() const;
+
+
+		Account(local_ref< java::lang::String > const&, local_ref< java::lang::String > const&);
+		Account(local_ref< android::os::Parcel > const&);
 		cpp_boolean equals(local_ref< java::lang::Object > const&);
 		cpp_int hashCode();
 		cpp_int describeContents();
@@ -67,7 +74,6 @@ namespace android { namespace accounts {
 } //namespace accounts
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_ACCOUNTS_ACCOUNT_HPP_DECL
@@ -80,29 +86,46 @@ namespace android { namespace accounts {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::accounts::Account > create< android::accounts::Account>(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
+
+android::accounts::Account::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::accounts::Account >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::accounts::Account::J2CPP_CLASS_NAME>(),
-			get_method_id<android::accounts::Account::J2CPP_CLASS_NAME, android::accounts::Account::J2CPP_METHOD_NAME(0), android::accounts::Account::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
 
-template <>
-local_ref< android::accounts::Account > create< android::accounts::Account>(local_ref< android::os::Parcel > const &a0)
+android::accounts::Account::operator local_ref<android::os::Parcelable>() const
 {
-	return local_ref< android::accounts::Account >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::accounts::Account::J2CPP_CLASS_NAME>(),
-			get_method_id<android::accounts::Account::J2CPP_CLASS_NAME, android::accounts::Account::J2CPP_METHOD_NAME(1), android::accounts::Account::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<android::os::Parcelable>(get_jtype());
 }
+
+
+android::accounts::Account::Account(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
+: cpp_object<android::accounts::Account>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::accounts::Account::J2CPP_CLASS_NAME>(),
+		get_method_id<android::accounts::Account::J2CPP_CLASS_NAME, android::accounts::Account::J2CPP_METHOD_NAME(0), android::accounts::Account::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+, name(get_jtype())
+, type(get_jtype())
+{
+}
+
+
+
+android::accounts::Account::Account(local_ref< android::os::Parcel > const &a0)
+: cpp_object<android::accounts::Account>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::accounts::Account::J2CPP_CLASS_NAME>(),
+		get_method_id<android::accounts::Account::J2CPP_CLASS_NAME, android::accounts::Account::J2CPP_METHOD_NAME(1), android::accounts::Account::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
+, name(get_jtype())
+, type(get_jtype())
+{
+}
+
 
 cpp_boolean android::accounts::Account::equals(local_ref< java::lang::Object > const &a0)
 {
@@ -155,6 +178,7 @@ local_ref< java::lang::String > android::accounts::Account::toString()
 		)
 	);
 }
+
 
 
 static_field<

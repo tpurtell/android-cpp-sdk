@@ -10,11 +10,13 @@
 #define J2CPP_ANDROID_CONTENT_CONTENTURIS_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace android { namespace net { class Uri; } } }
 namespace j2cpp { namespace android { namespace net { namespace Uri_ { class Builder; } } } }
 
 
 #include <android/net/Uri.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -34,11 +36,15 @@ namespace android { namespace content {
 		J2CPP_DECLARE_METHOD(2)
 		J2CPP_DECLARE_METHOD(3)
 
-		ContentUris(jobject jobj)
+		explicit ContentUris(jobject jobj)
 		: cpp_object<ContentUris>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		ContentUris();
 		static cpp_long parseId(local_ref< android::net::Uri > const&);
 		static local_ref< android::net::Uri_::Builder > appendId(local_ref< android::net::Uri_::Builder > const&, cpp_long const&);
 		static local_ref< android::net::Uri > withAppendedId(local_ref< android::net::Uri > const&, cpp_long const&);
@@ -46,7 +52,6 @@ namespace android { namespace content {
 
 } //namespace content
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -60,16 +65,23 @@ namespace android { namespace content {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::content::ContentUris > create< android::content::ContentUris>()
+
+android::content::ContentUris::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::content::ContentUris >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::content::ContentUris::J2CPP_CLASS_NAME>(),
-			get_method_id<android::content::ContentUris::J2CPP_CLASS_NAME, android::content::ContentUris::J2CPP_METHOD_NAME(0), android::content::ContentUris::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::content::ContentUris::ContentUris()
+: cpp_object<android::content::ContentUris>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::content::ContentUris::J2CPP_CLASS_NAME>(),
+		get_method_id<android::content::ContentUris::J2CPP_CLASS_NAME, android::content::ContentUris::J2CPP_METHOD_NAME(0), android::content::ContentUris::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 cpp_long android::content::ContentUris::parseId(local_ref< android::net::Uri > const &a0)
 {

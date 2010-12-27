@@ -10,10 +10,16 @@
 #define J2CPP_JAVA_SQL_SQLPERMISSION_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace security { class BasicPermission; } } }
+namespace j2cpp { namespace java { namespace security { class Guard; } } }
 
 
+#include <java/io/Serializable.hpp>
 #include <java/lang/String.hpp>
+#include <java/security/BasicPermission.hpp>
+#include <java/security/Guard.hpp>
 
 
 namespace j2cpp {
@@ -31,16 +37,22 @@ namespace java { namespace sql {
 		J2CPP_DECLARE_METHOD(0)
 		J2CPP_DECLARE_METHOD(1)
 
-		SQLPermission(jobject jobj)
+		explicit SQLPermission(jobject jobj)
 		: cpp_object<SQLPermission>(jobj)
 		{
 		}
 
+		operator local_ref<java::security::BasicPermission>() const;
+		operator local_ref<java::security::Guard>() const;
+		operator local_ref<java::io::Serializable>() const;
+
+
+		SQLPermission(local_ref< java::lang::String > const&);
+		SQLPermission(local_ref< java::lang::String > const&, local_ref< java::lang::String > const&);
 	}; //class SQLPermission
 
 } //namespace sql
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -54,29 +66,47 @@ namespace java { namespace sql {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::sql::SQLPermission > create< java::sql::SQLPermission>(local_ref< java::lang::String > const &a0)
+
+java::sql::SQLPermission::operator local_ref<java::security::BasicPermission>() const
 {
-	return local_ref< java::sql::SQLPermission >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::sql::SQLPermission::J2CPP_CLASS_NAME>(),
-			get_method_id<java::sql::SQLPermission::J2CPP_CLASS_NAME, java::sql::SQLPermission::J2CPP_METHOD_NAME(0), java::sql::SQLPermission::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::security::BasicPermission>(get_jtype());
 }
 
-template <>
-local_ref< java::sql::SQLPermission > create< java::sql::SQLPermission>(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
+java::sql::SQLPermission::operator local_ref<java::security::Guard>() const
 {
-	return local_ref< java::sql::SQLPermission >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::sql::SQLPermission::J2CPP_CLASS_NAME>(),
-			get_method_id<java::sql::SQLPermission::J2CPP_CLASS_NAME, java::sql::SQLPermission::J2CPP_METHOD_NAME(1), java::sql::SQLPermission::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<java::security::Guard>(get_jtype());
 }
+
+java::sql::SQLPermission::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jtype());
+}
+
+
+java::sql::SQLPermission::SQLPermission(local_ref< java::lang::String > const &a0)
+: cpp_object<java::sql::SQLPermission>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::sql::SQLPermission::J2CPP_CLASS_NAME>(),
+		get_method_id<java::sql::SQLPermission::J2CPP_CLASS_NAME, java::sql::SQLPermission::J2CPP_METHOD_NAME(0), java::sql::SQLPermission::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
+
+
+java::sql::SQLPermission::SQLPermission(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
+: cpp_object<java::sql::SQLPermission>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::sql::SQLPermission::J2CPP_CLASS_NAME>(),
+		get_method_id<java::sql::SQLPermission::J2CPP_CLASS_NAME, java::sql::SQLPermission::J2CPP_METHOD_NAME(1), java::sql::SQLPermission::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
 
 
 J2CPP_DEFINE_CLASS(java::sql::SQLPermission,"java/sql/SQLPermission")

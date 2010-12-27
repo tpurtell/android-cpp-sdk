@@ -10,8 +10,12 @@
 #define J2CPP_JAVA_UTIL_CONCURRENT_LOCKS_ABSTRACTOWNABLESYNCHRONIZER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
+#include <java/io/Serializable.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -30,10 +34,14 @@ namespace java { namespace util { namespace concurrent { namespace locks {
 		J2CPP_DECLARE_METHOD(1)
 		J2CPP_DECLARE_METHOD(2)
 
-		AbstractOwnableSynchronizer(jobject jobj)
+		explicit AbstractOwnableSynchronizer(jobject jobj)
 		: cpp_object<AbstractOwnableSynchronizer>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::io::Serializable>() const;
+
 
 	}; //class AbstractOwnableSynchronizer
 
@@ -41,7 +49,6 @@ namespace java { namespace util { namespace concurrent { namespace locks {
 } //namespace concurrent
 } //namespace util
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -55,16 +62,17 @@ namespace java { namespace util { namespace concurrent { namespace locks {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::util::concurrent::locks::AbstractOwnableSynchronizer > create< java::util::concurrent::locks::AbstractOwnableSynchronizer>()
+
+java::util::concurrent::locks::AbstractOwnableSynchronizer::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::util::concurrent::locks::AbstractOwnableSynchronizer >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::concurrent::locks::AbstractOwnableSynchronizer::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::concurrent::locks::AbstractOwnableSynchronizer::J2CPP_CLASS_NAME, java::util::concurrent::locks::AbstractOwnableSynchronizer::J2CPP_METHOD_NAME(0), java::util::concurrent::locks::AbstractOwnableSynchronizer::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+java::util::concurrent::locks::AbstractOwnableSynchronizer::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jtype());
+}
+
 
 
 

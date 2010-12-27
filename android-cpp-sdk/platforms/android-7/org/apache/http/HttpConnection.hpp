@@ -10,9 +10,11 @@
 #define J2CPP_ORG_APACHE_HTTP_HTTPCONNECTION_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { class HttpConnectionMetrics; } } } }
 
 
+#include <java/lang/Object.hpp>
 #include <org/apache/http/HttpConnectionMetrics.hpp>
 
 
@@ -36,10 +38,13 @@ namespace org { namespace apache { namespace http {
 		J2CPP_DECLARE_METHOD(5)
 		J2CPP_DECLARE_METHOD(6)
 
-		HttpConnection(jobject jobj)
+		explicit HttpConnection(jobject jobj)
 		: cpp_object<HttpConnection>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		void close();
 		cpp_boolean isOpen();
@@ -54,7 +59,6 @@ namespace org { namespace apache { namespace http {
 } //namespace apache
 } //namespace org
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ORG_APACHE_HTTP_HTTPCONNECTION_HPP_DECL
@@ -66,6 +70,12 @@ namespace org { namespace apache { namespace http {
 
 namespace j2cpp {
 
+
+
+org::apache::http::HttpConnection::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 void org::apache::http::HttpConnection::close()
 {

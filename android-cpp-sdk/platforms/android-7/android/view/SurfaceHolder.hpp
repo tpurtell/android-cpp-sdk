@@ -10,6 +10,8 @@
 #define J2CPP_ANDROID_VIEW_SURFACEHOLDER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace lang { class RuntimeException; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace android { namespace graphics { class Canvas; } } }
 namespace j2cpp { namespace android { namespace graphics { class Rect; } } }
@@ -21,6 +23,8 @@ namespace j2cpp { namespace android { namespace view { class Surface; } } }
 #include <android/graphics/Rect.hpp>
 #include <android/view/Surface.hpp>
 #include <android/view/SurfaceHolder.hpp>
+#include <java/lang/Object.hpp>
+#include <java/lang/RuntimeException.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -43,10 +47,13 @@ namespace android { namespace view {
 			J2CPP_DECLARE_METHOD(1)
 			J2CPP_DECLARE_METHOD(2)
 
-			Callback(jobject jobj)
+			explicit Callback(jobject jobj)
 			: cpp_object<Callback>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+
 
 			void surfaceCreated(local_ref< android::view::SurfaceHolder > const&);
 			void surfaceChanged(local_ref< android::view::SurfaceHolder > const&, cpp_int const&, cpp_int const&, cpp_int const&);
@@ -64,11 +71,16 @@ namespace android { namespace view {
 			J2CPP_DECLARE_METHOD(0)
 			J2CPP_DECLARE_METHOD(1)
 
-			BadSurfaceTypeException(jobject jobj)
+			explicit BadSurfaceTypeException(jobject jobj)
 			: cpp_object<BadSurfaceTypeException>(jobj)
 			{
 			}
 
+			operator local_ref<java::lang::RuntimeException>() const;
+
+
+			BadSurfaceTypeException();
+			BadSurfaceTypeException(local_ref< java::lang::String > const&);
 		}; //class BadSurfaceTypeException
 
 	} //namespace SurfaceHolder_
@@ -101,10 +113,13 @@ namespace android { namespace view {
 		typedef SurfaceHolder_::Callback Callback;
 		typedef SurfaceHolder_::BadSurfaceTypeException BadSurfaceTypeException;
 
-		SurfaceHolder(jobject jobj)
+		explicit SurfaceHolder(jobject jobj)
 		: cpp_object<SurfaceHolder>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		void addCallback(local_ref< android::view::SurfaceHolder_::Callback > const&);
 		void removeCallback(local_ref< android::view::SurfaceHolder_::Callback > const&);
@@ -129,7 +144,6 @@ namespace android { namespace view {
 } //namespace view
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_VIEW_SURFACEHOLDER_HPP_DECL
@@ -142,6 +156,12 @@ namespace android { namespace view {
 namespace j2cpp {
 
 
+
+
+android::view::SurfaceHolder_::Callback::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 void android::view::SurfaceHolder_::Callback::surfaceCreated(local_ref< android::view::SurfaceHolder > const &a0)
 {
@@ -182,34 +202,48 @@ J2CPP_DEFINE_METHOD(android::view::SurfaceHolder_::Callback,0,"surfaceCreated","
 J2CPP_DEFINE_METHOD(android::view::SurfaceHolder_::Callback,1,"surfaceChanged","(Landroid/view/SurfaceHolder;III)V")
 J2CPP_DEFINE_METHOD(android::view::SurfaceHolder_::Callback,2,"surfaceDestroyed","(Landroid/view/SurfaceHolder;)V")
 
-template <>
-local_ref< android::view::SurfaceHolder_::BadSurfaceTypeException > create< android::view::SurfaceHolder_::BadSurfaceTypeException>()
+
+android::view::SurfaceHolder_::BadSurfaceTypeException::operator local_ref<java::lang::RuntimeException>() const
 {
-	return local_ref< android::view::SurfaceHolder_::BadSurfaceTypeException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::view::SurfaceHolder_::BadSurfaceTypeException::J2CPP_CLASS_NAME>(),
-			get_method_id<android::view::SurfaceHolder_::BadSurfaceTypeException::J2CPP_CLASS_NAME, android::view::SurfaceHolder_::BadSurfaceTypeException::J2CPP_METHOD_NAME(0), android::view::SurfaceHolder_::BadSurfaceTypeException::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::RuntimeException>(get_jtype());
 }
 
-template <>
-local_ref< android::view::SurfaceHolder_::BadSurfaceTypeException > create< android::view::SurfaceHolder_::BadSurfaceTypeException>(local_ref< java::lang::String > const &a0)
+
+android::view::SurfaceHolder_::BadSurfaceTypeException::BadSurfaceTypeException()
+: cpp_object<android::view::SurfaceHolder_::BadSurfaceTypeException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::view::SurfaceHolder_::BadSurfaceTypeException::J2CPP_CLASS_NAME>(),
+		get_method_id<android::view::SurfaceHolder_::BadSurfaceTypeException::J2CPP_CLASS_NAME, android::view::SurfaceHolder_::BadSurfaceTypeException::J2CPP_METHOD_NAME(0), android::view::SurfaceHolder_::BadSurfaceTypeException::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
 {
-	return local_ref< android::view::SurfaceHolder_::BadSurfaceTypeException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::view::SurfaceHolder_::BadSurfaceTypeException::J2CPP_CLASS_NAME>(),
-			get_method_id<android::view::SurfaceHolder_::BadSurfaceTypeException::J2CPP_CLASS_NAME, android::view::SurfaceHolder_::BadSurfaceTypeException::J2CPP_METHOD_NAME(1), android::view::SurfaceHolder_::BadSurfaceTypeException::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
 }
+
+
+
+android::view::SurfaceHolder_::BadSurfaceTypeException::BadSurfaceTypeException(local_ref< java::lang::String > const &a0)
+: cpp_object<android::view::SurfaceHolder_::BadSurfaceTypeException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::view::SurfaceHolder_::BadSurfaceTypeException::J2CPP_CLASS_NAME>(),
+		get_method_id<android::view::SurfaceHolder_::BadSurfaceTypeException::J2CPP_CLASS_NAME, android::view::SurfaceHolder_::BadSurfaceTypeException::J2CPP_METHOD_NAME(1), android::view::SurfaceHolder_::BadSurfaceTypeException::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 
 J2CPP_DEFINE_CLASS(android::view::SurfaceHolder_::BadSurfaceTypeException,"android/view/SurfaceHolder$BadSurfaceTypeException")
 J2CPP_DEFINE_METHOD(android::view::SurfaceHolder_::BadSurfaceTypeException,0,"<init>","()V")
 J2CPP_DEFINE_METHOD(android::view::SurfaceHolder_::BadSurfaceTypeException,1,"<init>","(Ljava/lang/String;)V")
 
+
+
+android::view::SurfaceHolder::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 void android::view::SurfaceHolder::addCallback(local_ref< android::view::SurfaceHolder_::Callback > const &a0)
 {

@@ -10,10 +10,12 @@
 #define J2CPP_JAVA_LANG_VOID_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class Class; } } }
 
 
 #include <java/lang/Class.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -32,10 +34,13 @@ namespace java { namespace lang {
 		J2CPP_DECLARE_METHOD(1)
 		J2CPP_DECLARE_FIELD(0)
 
-		Void(jobject jobj)
+		explicit Void(jobject jobj)
 		: cpp_object<Void>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 
 		static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(0), J2CPP_FIELD_SIGNATURE(0), local_ref< java::lang::Class > > TYPE;
@@ -43,7 +48,6 @@ namespace java { namespace lang {
 
 } //namespace lang
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -57,16 +61,13 @@ namespace java { namespace lang {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::lang::Void > create< java::lang::Void>()
+
+java::lang::Void::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::lang::Void >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::lang::Void::J2CPP_CLASS_NAME>(),
-			get_method_id<java::lang::Void::J2CPP_CLASS_NAME, java::lang::Void::J2CPP_METHOD_NAME(0), java::lang::Void::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
 
 
 static_field<

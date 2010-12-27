@@ -10,10 +10,14 @@
 #define J2CPP_JAVA_UTIL_CONCURRENT_SEMAPHORE_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace util { namespace concurrent { class TimeUnit; } } } }
 
 
+#include <java/io/Serializable.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/util/concurrent/TimeUnit.hpp>
 
@@ -51,11 +55,17 @@ namespace java { namespace util { namespace concurrent {
 		J2CPP_DECLARE_METHOD(18)
 		J2CPP_DECLARE_METHOD(19)
 
-		Semaphore(jobject jobj)
+		explicit Semaphore(jobject jobj)
 		: cpp_object<Semaphore>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::io::Serializable>() const;
+
+
+		Semaphore(cpp_int const&);
+		Semaphore(cpp_int const&, cpp_boolean const&);
 		void acquire();
 		void acquireUninterruptibly();
 		cpp_boolean tryAcquire();
@@ -78,7 +88,6 @@ namespace java { namespace util { namespace concurrent {
 } //namespace util
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_UTIL_CONCURRENT_SEMAPHORE_HPP_DECL
@@ -91,29 +100,42 @@ namespace java { namespace util { namespace concurrent {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::util::concurrent::Semaphore > create< java::util::concurrent::Semaphore>(cpp_int const &a0)
+
+java::util::concurrent::Semaphore::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::util::concurrent::Semaphore >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::concurrent::Semaphore::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::concurrent::Semaphore::J2CPP_CLASS_NAME, java::util::concurrent::Semaphore::J2CPP_METHOD_NAME(0), java::util::concurrent::Semaphore::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
 
-template <>
-local_ref< java::util::concurrent::Semaphore > create< java::util::concurrent::Semaphore>(cpp_int const &a0, cpp_boolean const &a1)
+java::util::concurrent::Semaphore::operator local_ref<java::io::Serializable>() const
 {
-	return local_ref< java::util::concurrent::Semaphore >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::concurrent::Semaphore::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::concurrent::Semaphore::J2CPP_CLASS_NAME, java::util::concurrent::Semaphore::J2CPP_METHOD_NAME(1), java::util::concurrent::Semaphore::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<java::io::Serializable>(get_jtype());
 }
+
+
+java::util::concurrent::Semaphore::Semaphore(cpp_int const &a0)
+: cpp_object<java::util::concurrent::Semaphore>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::util::concurrent::Semaphore::J2CPP_CLASS_NAME>(),
+		get_method_id<java::util::concurrent::Semaphore::J2CPP_CLASS_NAME, java::util::concurrent::Semaphore::J2CPP_METHOD_NAME(0), java::util::concurrent::Semaphore::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
+
+
+java::util::concurrent::Semaphore::Semaphore(cpp_int const &a0, cpp_boolean const &a1)
+: cpp_object<java::util::concurrent::Semaphore>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::util::concurrent::Semaphore::J2CPP_CLASS_NAME>(),
+		get_method_id<java::util::concurrent::Semaphore::J2CPP_CLASS_NAME, java::util::concurrent::Semaphore::J2CPP_METHOD_NAME(1), java::util::concurrent::Semaphore::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
 
 void java::util::concurrent::Semaphore::acquire()
 {

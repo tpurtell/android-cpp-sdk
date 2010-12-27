@@ -10,8 +10,10 @@
 #define J2CPP_JAVA_NIO_CHANNELS_OVERLAPPINGFILELOCKEXCEPTION_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class IllegalStateException; } } }
 
 
+#include <java/lang/IllegalStateException.hpp>
 
 
 namespace j2cpp {
@@ -28,17 +30,20 @@ namespace java { namespace nio { namespace channels {
 
 		J2CPP_DECLARE_METHOD(0)
 
-		OverlappingFileLockException(jobject jobj)
+		explicit OverlappingFileLockException(jobject jobj)
 		: cpp_object<OverlappingFileLockException>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::IllegalStateException>() const;
+
+
+		OverlappingFileLockException();
 	}; //class OverlappingFileLockException
 
 } //namespace channels
 } //namespace nio
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -52,16 +57,23 @@ namespace java { namespace nio { namespace channels {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::nio::channels::OverlappingFileLockException > create< java::nio::channels::OverlappingFileLockException>()
+
+java::nio::channels::OverlappingFileLockException::operator local_ref<java::lang::IllegalStateException>() const
 {
-	return local_ref< java::nio::channels::OverlappingFileLockException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::nio::channels::OverlappingFileLockException::J2CPP_CLASS_NAME>(),
-			get_method_id<java::nio::channels::OverlappingFileLockException::J2CPP_CLASS_NAME, java::nio::channels::OverlappingFileLockException::J2CPP_METHOD_NAME(0), java::nio::channels::OverlappingFileLockException::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::IllegalStateException>(get_jtype());
 }
+
+
+java::nio::channels::OverlappingFileLockException::OverlappingFileLockException()
+: cpp_object<java::nio::channels::OverlappingFileLockException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::nio::channels::OverlappingFileLockException::J2CPP_CLASS_NAME>(),
+		get_method_id<java::nio::channels::OverlappingFileLockException::J2CPP_CLASS_NAME, java::nio::channels::OverlappingFileLockException::J2CPP_METHOD_NAME(0), java::nio::channels::OverlappingFileLockException::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 
 J2CPP_DEFINE_CLASS(java::nio::channels::OverlappingFileLockException,"java/nio/channels/OverlappingFileLockException")

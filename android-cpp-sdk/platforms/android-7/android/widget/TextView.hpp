@@ -10,6 +10,8 @@
 #define J2CPP_ANDROID_WIDGET_TEXTVIEW_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace lang { class Enum; } } }
 namespace j2cpp { namespace java { namespace lang { class CharSequence; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace android { namespace graphics { class Typeface; } } }
@@ -18,12 +20,15 @@ namespace j2cpp { namespace android { namespace graphics { class Rect; } } }
 namespace j2cpp { namespace android { namespace content { namespace res { class TypedArray; } } } }
 namespace j2cpp { namespace android { namespace content { namespace res { class ColorStateList; } } } }
 namespace j2cpp { namespace android { namespace content { class Context; } } }
+namespace j2cpp { namespace android { namespace view { class View; } } }
 namespace j2cpp { namespace android { namespace view { namespace inputmethod { class ExtractedText; } } } }
 namespace j2cpp { namespace android { namespace view { namespace inputmethod { class CompletionInfo; } } } }
 namespace j2cpp { namespace android { namespace view { namespace inputmethod { class InputConnection; } } } }
 namespace j2cpp { namespace android { namespace view { namespace inputmethod { class ExtractedTextRequest; } } } }
 namespace j2cpp { namespace android { namespace view { namespace inputmethod { class EditorInfo; } } } }
+namespace j2cpp { namespace android { namespace view { namespace View_ { class BaseSavedState; } } } }
 namespace j2cpp { namespace android { namespace view { class KeyEvent; } } }
+namespace j2cpp { namespace android { namespace view { namespace ViewTreeObserver_ { class OnPreDrawListener; } } } }
 namespace j2cpp { namespace android { namespace view { class MotionEvent; } } }
 namespace j2cpp { namespace android { namespace view { namespace accessibility { class AccessibilityEvent; } } } }
 namespace j2cpp { namespace android { namespace text { namespace Spannable_ { class Factory; } } } }
@@ -71,6 +76,8 @@ namespace j2cpp { namespace android { namespace os { namespace Parcelable_ { cla
 #include <android/util/AttributeSet.hpp>
 #include <android/view/KeyEvent.hpp>
 #include <android/view/MotionEvent.hpp>
+#include <android/view/View.hpp>
+#include <android/view/ViewTreeObserver.hpp>
 #include <android/view/accessibility/AccessibilityEvent.hpp>
 #include <android/view/inputmethod/CompletionInfo.hpp>
 #include <android/view/inputmethod/EditorInfo.hpp>
@@ -80,6 +87,8 @@ namespace j2cpp { namespace android { namespace os { namespace Parcelable_ { cla
 #include <android/widget/Scroller.hpp>
 #include <android/widget/TextView.hpp>
 #include <java/lang/CharSequence.hpp>
+#include <java/lang/Enum.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -104,10 +113,13 @@ namespace android { namespace widget {
 			J2CPP_DECLARE_METHOD(3)
 			J2CPP_DECLARE_FIELD(0)
 
-			SavedState(jobject jobj)
+			explicit SavedState(jobject jobj)
 			: cpp_object<SavedState>(jobj)
 			{
 			}
+
+			operator local_ref<android::view::View_::BaseSavedState>() const;
+
 
 			void writeToParcel(local_ref< android::os::Parcel > const&, cpp_int const&);
 			local_ref< java::lang::String > toString();
@@ -125,10 +137,13 @@ namespace android { namespace widget {
 
 			J2CPP_DECLARE_METHOD(0)
 
-			OnEditorActionListener(jobject jobj)
+			explicit OnEditorActionListener(jobject jobj)
 			: cpp_object<OnEditorActionListener>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+
 
 			cpp_boolean onEditorAction(local_ref< android::widget::TextView > const&, cpp_int const&, local_ref< android::view::KeyEvent > const&);
 		}; //class OnEditorActionListener
@@ -150,10 +165,13 @@ namespace android { namespace widget {
 			J2CPP_DECLARE_FIELD(2)
 			J2CPP_DECLARE_FIELD(3)
 
-			BufferType(jobject jobj)
+			explicit BufferType(jobject jobj)
 			: cpp_object<BufferType>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Enum>() const;
+
 
 			static local_ref< cpp_object_array<android::widget::TextView_::BufferType, 1> > values();
 			static local_ref< android::widget::TextView_::BufferType > valueOf(local_ref< java::lang::String > const&);
@@ -367,11 +385,18 @@ namespace android { namespace widget {
 		typedef TextView_::OnEditorActionListener OnEditorActionListener;
 		typedef TextView_::BufferType BufferType;
 
-		TextView(jobject jobj)
+		explicit TextView(jobject jobj)
 		: cpp_object<TextView>(jobj)
 		{
 		}
 
+		operator local_ref<android::view::View>() const;
+		operator local_ref<android::view::ViewTreeObserver_::OnPreDrawListener>() const;
+
+
+		TextView(local_ref< android::content::Context > const&);
+		TextView(local_ref< android::content::Context > const&, local_ref< android::util::AttributeSet > const&);
+		TextView(local_ref< android::content::Context > const&, local_ref< android::util::AttributeSet > const&, cpp_int const&);
 		void setTypeface(local_ref< android::graphics::Typeface > const&, cpp_int const&);
 		local_ref< java::lang::CharSequence > getText();
 		cpp_int length();
@@ -541,7 +566,6 @@ namespace android { namespace widget {
 } //namespace widget
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_WIDGET_TEXTVIEW_HPP_DECL
@@ -555,16 +579,12 @@ namespace j2cpp {
 
 
 
-template <>
-local_ref< android::widget::TextView_::SavedState > create< android::widget::TextView_::SavedState>()
+
+android::widget::TextView_::SavedState::operator local_ref<android::view::View_::BaseSavedState>() const
 {
-	return local_ref< android::widget::TextView_::SavedState >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::widget::TextView_::SavedState::J2CPP_CLASS_NAME>(),
-			get_method_id<android::widget::TextView_::SavedState::J2CPP_CLASS_NAME, android::widget::TextView_::SavedState::J2CPP_METHOD_NAME(0), android::widget::TextView_::SavedState::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<android::view::View_::BaseSavedState>(get_jtype());
 }
+
 
 void android::widget::TextView_::SavedState::writeToParcel(local_ref< android::os::Parcel > const &a0, cpp_int const &a1)
 {
@@ -588,6 +608,7 @@ local_ref< java::lang::String > android::widget::TextView_::SavedState::toString
 }
 
 
+
 static_field<
 	android::widget::TextView_::SavedState::J2CPP_CLASS_NAME,
 	android::widget::TextView_::SavedState::J2CPP_FIELD_NAME(0),
@@ -603,6 +624,12 @@ J2CPP_DEFINE_METHOD(android::widget::TextView_::SavedState,2,"toString","()Ljava
 J2CPP_DEFINE_METHOD(android::widget::TextView_::SavedState,3,"<clinit>","()V")
 J2CPP_DEFINE_FIELD(android::widget::TextView_::SavedState,0,"CREATOR","Landroid/os/Parcelable$Creator;")
 
+
+android::widget::TextView_::OnEditorActionListener::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
+
 cpp_boolean android::widget::TextView_::OnEditorActionListener::onEditorAction(local_ref< android::widget::TextView > const &a0, cpp_int const &a1, local_ref< android::view::KeyEvent > const &a2)
 {
 	return cpp_boolean(
@@ -617,6 +644,12 @@ cpp_boolean android::widget::TextView_::OnEditorActionListener::onEditorAction(l
 
 J2CPP_DEFINE_CLASS(android::widget::TextView_::OnEditorActionListener,"android/widget/TextView$OnEditorActionListener")
 J2CPP_DEFINE_METHOD(android::widget::TextView_::OnEditorActionListener,0,"onEditorAction","(Landroid/widget/TextView;ILandroid/view/KeyEvent;)Z")
+
+
+android::widget::TextView_::BufferType::operator local_ref<java::lang::Enum>() const
+{
+	return local_ref<java::lang::Enum>(get_jtype());
+}
 
 local_ref< cpp_object_array<android::widget::TextView_::BufferType, 1> > android::widget::TextView_::BufferType::values()
 {
@@ -639,17 +672,7 @@ local_ref< android::widget::TextView_::BufferType > android::widget::TextView_::
 	);
 }
 
-template <>
-local_ref< android::widget::TextView_::BufferType > create< android::widget::TextView_::BufferType>(local_ref< java::lang::String > const &a0, cpp_int const &a1)
-{
-	return local_ref< android::widget::TextView_::BufferType >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::widget::TextView_::BufferType::J2CPP_CLASS_NAME>(),
-			get_method_id<android::widget::TextView_::BufferType::J2CPP_CLASS_NAME, android::widget::TextView_::BufferType::J2CPP_METHOD_NAME(2), android::widget::TextView_::BufferType::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
-}
+
 
 
 static_field<
@@ -685,41 +708,55 @@ J2CPP_DEFINE_FIELD(android::widget::TextView_::BufferType,2,"SPANNABLE","Landroi
 J2CPP_DEFINE_FIELD(android::widget::TextView_::BufferType,3,"$VALUES","[android.widget.TextView.BufferType")
 
 
-template <>
-local_ref< android::widget::TextView > create< android::widget::TextView>(local_ref< android::content::Context > const &a0)
+
+android::widget::TextView::operator local_ref<android::view::View>() const
 {
-	return local_ref< android::widget::TextView >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::widget::TextView::J2CPP_CLASS_NAME>(),
-			get_method_id<android::widget::TextView::J2CPP_CLASS_NAME, android::widget::TextView::J2CPP_METHOD_NAME(0), android::widget::TextView::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<android::view::View>(get_jtype());
 }
 
-template <>
-local_ref< android::widget::TextView > create< android::widget::TextView>(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1)
+android::widget::TextView::operator local_ref<android::view::ViewTreeObserver_::OnPreDrawListener>() const
 {
-	return local_ref< android::widget::TextView >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::widget::TextView::J2CPP_CLASS_NAME>(),
-			get_method_id<android::widget::TextView::J2CPP_CLASS_NAME, android::widget::TextView::J2CPP_METHOD_NAME(1), android::widget::TextView::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<android::view::ViewTreeObserver_::OnPreDrawListener>(get_jtype());
 }
 
-template <>
-local_ref< android::widget::TextView > create< android::widget::TextView>(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1, cpp_int const &a2)
+
+android::widget::TextView::TextView(local_ref< android::content::Context > const &a0)
+: cpp_object<android::widget::TextView>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::widget::TextView::J2CPP_CLASS_NAME>(),
+		get_method_id<android::widget::TextView::J2CPP_CLASS_NAME, android::widget::TextView::J2CPP_METHOD_NAME(0), android::widget::TextView::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< android::widget::TextView >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::widget::TextView::J2CPP_CLASS_NAME>(),
-			get_method_id<android::widget::TextView::J2CPP_CLASS_NAME, android::widget::TextView::J2CPP_METHOD_NAME(2), android::widget::TextView::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
-		)
-	);
 }
+
+
+
+android::widget::TextView::TextView(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1)
+: cpp_object<android::widget::TextView>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::widget::TextView::J2CPP_CLASS_NAME>(),
+		get_method_id<android::widget::TextView::J2CPP_CLASS_NAME, android::widget::TextView::J2CPP_METHOD_NAME(1), android::widget::TextView::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
+
+
+android::widget::TextView::TextView(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1, cpp_int const &a2)
+: cpp_object<android::widget::TextView>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::widget::TextView::J2CPP_CLASS_NAME>(),
+		get_method_id<android::widget::TextView::J2CPP_CLASS_NAME, android::widget::TextView::J2CPP_METHOD_NAME(2), android::widget::TextView::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
+	)
+)
+{
+}
+
 
 void android::widget::TextView::setTypeface(local_ref< android::graphics::Typeface > const &a0, cpp_int const &a1)
 {

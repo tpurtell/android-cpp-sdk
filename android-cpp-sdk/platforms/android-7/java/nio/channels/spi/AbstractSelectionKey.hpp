@@ -10,8 +10,10 @@
 #define J2CPP_JAVA_NIO_CHANNELS_SPI_ABSTRACTSELECTIONKEY_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace nio { namespace channels { class SelectionKey; } } } }
 
 
+#include <java/nio/channels/SelectionKey.hpp>
 
 
 namespace j2cpp {
@@ -30,10 +32,13 @@ namespace java { namespace nio { namespace channels { namespace spi {
 		J2CPP_DECLARE_METHOD(1)
 		J2CPP_DECLARE_METHOD(2)
 
-		AbstractSelectionKey(jobject jobj)
+		explicit AbstractSelectionKey(jobject jobj)
 		: cpp_object<AbstractSelectionKey>(jobj)
 		{
 		}
+
+		operator local_ref<java::nio::channels::SelectionKey>() const;
+
 
 		cpp_boolean isValid();
 		void cancel();
@@ -43,7 +48,6 @@ namespace java { namespace nio { namespace channels { namespace spi {
 } //namespace channels
 } //namespace nio
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -57,16 +61,12 @@ namespace java { namespace nio { namespace channels { namespace spi {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::nio::channels::spi::AbstractSelectionKey > create< java::nio::channels::spi::AbstractSelectionKey>()
+
+java::nio::channels::spi::AbstractSelectionKey::operator local_ref<java::nio::channels::SelectionKey>() const
 {
-	return local_ref< java::nio::channels::spi::AbstractSelectionKey >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::nio::channels::spi::AbstractSelectionKey::J2CPP_CLASS_NAME>(),
-			get_method_id<java::nio::channels::spi::AbstractSelectionKey::J2CPP_CLASS_NAME, java::nio::channels::spi::AbstractSelectionKey::J2CPP_METHOD_NAME(0), java::nio::channels::spi::AbstractSelectionKey::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::nio::channels::SelectionKey>(get_jtype());
 }
+
 
 cpp_boolean java::nio::channels::spi::AbstractSelectionKey::isValid()
 {

@@ -12,10 +12,12 @@
 
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace cookie { class CookieOrigin; } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace cookie { class Cookie; } } } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { namespace impl { namespace cookie { class BasicDomainHandler; } } } } } }
 
 
 #include <org/apache/http/cookie/Cookie.hpp>
 #include <org/apache/http/cookie/CookieOrigin.hpp>
+#include <org/apache/http/impl/cookie/BasicDomainHandler.hpp>
 
 
 namespace j2cpp {
@@ -34,11 +36,15 @@ namespace org { namespace apache { namespace http { namespace impl { namespace c
 		J2CPP_DECLARE_METHOD(1)
 		J2CPP_DECLARE_METHOD(2)
 
-		NetscapeDomainHandler(jobject jobj)
+		explicit NetscapeDomainHandler(jobject jobj)
 		: cpp_object<NetscapeDomainHandler>(jobj)
 		{
 		}
 
+		operator local_ref<org::apache::http::impl::cookie::BasicDomainHandler>() const;
+
+
+		NetscapeDomainHandler();
 		void validate(local_ref< org::apache::http::cookie::Cookie > const&, local_ref< org::apache::http::cookie::CookieOrigin > const&);
 		cpp_boolean match(local_ref< org::apache::http::cookie::Cookie > const&, local_ref< org::apache::http::cookie::CookieOrigin > const&);
 	}; //class NetscapeDomainHandler
@@ -48,7 +54,6 @@ namespace org { namespace apache { namespace http { namespace impl { namespace c
 } //namespace http
 } //namespace apache
 } //namespace org
-
 
 } //namespace j2cpp
 
@@ -62,16 +67,23 @@ namespace org { namespace apache { namespace http { namespace impl { namespace c
 namespace j2cpp {
 
 
-template <>
-local_ref< org::apache::http::impl::cookie::NetscapeDomainHandler > create< org::apache::http::impl::cookie::NetscapeDomainHandler>()
+
+org::apache::http::impl::cookie::NetscapeDomainHandler::operator local_ref<org::apache::http::impl::cookie::BasicDomainHandler>() const
 {
-	return local_ref< org::apache::http::impl::cookie::NetscapeDomainHandler >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::apache::http::impl::cookie::NetscapeDomainHandler::J2CPP_CLASS_NAME>(),
-			get_method_id<org::apache::http::impl::cookie::NetscapeDomainHandler::J2CPP_CLASS_NAME, org::apache::http::impl::cookie::NetscapeDomainHandler::J2CPP_METHOD_NAME(0), org::apache::http::impl::cookie::NetscapeDomainHandler::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<org::apache::http::impl::cookie::BasicDomainHandler>(get_jtype());
 }
+
+
+org::apache::http::impl::cookie::NetscapeDomainHandler::NetscapeDomainHandler()
+: cpp_object<org::apache::http::impl::cookie::NetscapeDomainHandler>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::apache::http::impl::cookie::NetscapeDomainHandler::J2CPP_CLASS_NAME>(),
+		get_method_id<org::apache::http::impl::cookie::NetscapeDomainHandler::J2CPP_CLASS_NAME, org::apache::http::impl::cookie::NetscapeDomainHandler::J2CPP_METHOD_NAME(0), org::apache::http::impl::cookie::NetscapeDomainHandler::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 void org::apache::http::impl::cookie::NetscapeDomainHandler::validate(local_ref< org::apache::http::cookie::Cookie > const &a0, local_ref< org::apache::http::cookie::CookieOrigin > const &a1)
 {

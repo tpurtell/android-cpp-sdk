@@ -10,11 +10,13 @@
 #define J2CPP_ANDROID_MEDIA_RINGTONE_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace android { namespace content { class Context; } } }
 
 
 #include <android/content/Context.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -38,10 +40,13 @@ namespace android { namespace media {
 		J2CPP_DECLARE_METHOD(5)
 		J2CPP_DECLARE_METHOD(6)
 
-		Ringtone(jobject jobj)
+		explicit Ringtone(jobject jobj)
 		: cpp_object<Ringtone>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		void setStreamType(cpp_int const&);
 		cpp_int getStreamType();
@@ -53,7 +58,6 @@ namespace android { namespace media {
 
 } //namespace media
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -67,16 +71,12 @@ namespace android { namespace media {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::media::Ringtone > create< android::media::Ringtone>()
+
+android::media::Ringtone::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::media::Ringtone >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::media::Ringtone::J2CPP_CLASS_NAME>(),
-			get_method_id<android::media::Ringtone::J2CPP_CLASS_NAME, android::media::Ringtone::J2CPP_METHOD_NAME(0), android::media::Ringtone::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
 
 void android::media::Ringtone::setStreamType(cpp_int const &a0)
 {

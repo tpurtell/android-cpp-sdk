@@ -10,8 +10,10 @@
 #define J2CPP_ANDROID_GRAPHICS_EMBOSSMASKFILTER_HPP_DECL
 
 
+namespace j2cpp { namespace android { namespace graphics { class MaskFilter; } } }
 
 
+#include <android/graphics/MaskFilter.hpp>
 
 
 namespace j2cpp {
@@ -28,16 +30,19 @@ namespace android { namespace graphics {
 
 		J2CPP_DECLARE_METHOD(0)
 
-		EmbossMaskFilter(jobject jobj)
+		explicit EmbossMaskFilter(jobject jobj)
 		: cpp_object<EmbossMaskFilter>(jobj)
 		{
 		}
 
+		operator local_ref<android::graphics::MaskFilter>() const;
+
+
+		EmbossMaskFilter(local_ref< cpp_float_array<1> > const&, cpp_float const&, cpp_float const&, cpp_float const&);
 	}; //class EmbossMaskFilter
 
 } //namespace graphics
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -51,17 +56,24 @@ namespace android { namespace graphics {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::graphics::EmbossMaskFilter > create< android::graphics::EmbossMaskFilter>(local_ref< cpp_float_array<1> > const &a0, cpp_float const &a1, cpp_float const &a2, cpp_float const &a3)
+
+android::graphics::EmbossMaskFilter::operator local_ref<android::graphics::MaskFilter>() const
 {
-	return local_ref< android::graphics::EmbossMaskFilter >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::graphics::EmbossMaskFilter::J2CPP_CLASS_NAME>(),
-			get_method_id<android::graphics::EmbossMaskFilter::J2CPP_CLASS_NAME, android::graphics::EmbossMaskFilter::J2CPP_METHOD_NAME(0), android::graphics::EmbossMaskFilter::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype()
-		)
-	);
+	return local_ref<android::graphics::MaskFilter>(get_jtype());
 }
+
+
+android::graphics::EmbossMaskFilter::EmbossMaskFilter(local_ref< cpp_float_array<1> > const &a0, cpp_float const &a1, cpp_float const &a2, cpp_float const &a3)
+: cpp_object<android::graphics::EmbossMaskFilter>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::graphics::EmbossMaskFilter::J2CPP_CLASS_NAME>(),
+		get_method_id<android::graphics::EmbossMaskFilter::J2CPP_CLASS_NAME, android::graphics::EmbossMaskFilter::J2CPP_METHOD_NAME(0), android::graphics::EmbossMaskFilter::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype()
+	)
+)
+{
+}
+
 
 
 J2CPP_DEFINE_CLASS(android::graphics::EmbossMaskFilter,"android/graphics/EmbossMaskFilter")

@@ -10,16 +10,22 @@
 #define J2CPP_ANDROID_TEXT_METHOD_PASSWORDTRANSFORMATIONMETHOD_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class CharSequence; } } }
 namespace j2cpp { namespace android { namespace graphics { class Rect; } } }
 namespace j2cpp { namespace android { namespace view { class View; } } }
+namespace j2cpp { namespace android { namespace text { namespace method { class TransformationMethod; } } } }
 namespace j2cpp { namespace android { namespace text { class Editable; } } }
+namespace j2cpp { namespace android { namespace text { class TextWatcher; } } }
 
 
 #include <android/graphics/Rect.hpp>
 #include <android/text/Editable.hpp>
+#include <android/text/TextWatcher.hpp>
+#include <android/text/method/TransformationMethod.hpp>
 #include <android/view/View.hpp>
 #include <java/lang/CharSequence.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -42,11 +48,17 @@ namespace android { namespace text { namespace method {
 		J2CPP_DECLARE_METHOD(5)
 		J2CPP_DECLARE_METHOD(6)
 
-		PasswordTransformationMethod(jobject jobj)
+		explicit PasswordTransformationMethod(jobject jobj)
 		: cpp_object<PasswordTransformationMethod>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<android::text::method::TransformationMethod>() const;
+		operator local_ref<android::text::TextWatcher>() const;
+
+
+		PasswordTransformationMethod();
 		local_ref< java::lang::CharSequence > getTransformation(local_ref< java::lang::CharSequence > const&, local_ref< android::view::View > const&);
 		static local_ref< android::text::method::PasswordTransformationMethod > getInstance();
 		void beforeTextChanged(local_ref< java::lang::CharSequence > const&, cpp_int const&, cpp_int const&, cpp_int const&);
@@ -58,7 +70,6 @@ namespace android { namespace text { namespace method {
 } //namespace method
 } //namespace text
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -72,16 +83,33 @@ namespace android { namespace text { namespace method {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::text::method::PasswordTransformationMethod > create< android::text::method::PasswordTransformationMethod>()
+
+android::text::method::PasswordTransformationMethod::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::text::method::PasswordTransformationMethod >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::text::method::PasswordTransformationMethod::J2CPP_CLASS_NAME>(),
-			get_method_id<android::text::method::PasswordTransformationMethod::J2CPP_CLASS_NAME, android::text::method::PasswordTransformationMethod::J2CPP_METHOD_NAME(0), android::text::method::PasswordTransformationMethod::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+android::text::method::PasswordTransformationMethod::operator local_ref<android::text::method::TransformationMethod>() const
+{
+	return local_ref<android::text::method::TransformationMethod>(get_jtype());
+}
+
+android::text::method::PasswordTransformationMethod::operator local_ref<android::text::TextWatcher>() const
+{
+	return local_ref<android::text::TextWatcher>(get_jtype());
+}
+
+
+android::text::method::PasswordTransformationMethod::PasswordTransformationMethod()
+: cpp_object<android::text::method::PasswordTransformationMethod>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::text::method::PasswordTransformationMethod::J2CPP_CLASS_NAME>(),
+		get_method_id<android::text::method::PasswordTransformationMethod::J2CPP_CLASS_NAME, android::text::method::PasswordTransformationMethod::J2CPP_METHOD_NAME(0), android::text::method::PasswordTransformationMethod::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 local_ref< java::lang::CharSequence > android::text::method::PasswordTransformationMethod::getTransformation(local_ref< java::lang::CharSequence > const &a0, local_ref< android::view::View > const &a1)
 {

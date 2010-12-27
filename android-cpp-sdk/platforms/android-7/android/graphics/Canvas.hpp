@@ -11,6 +11,8 @@
 
 
 namespace j2cpp { namespace javax { namespace microedition { namespace khronos { namespace opengles { class GL; } } } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace lang { class Enum; } } }
 namespace j2cpp { namespace java { namespace lang { class CharSequence; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace android { namespace graphics { class Picture; } } }
@@ -40,6 +42,8 @@ namespace j2cpp { namespace android { namespace graphics { namespace Region_ { c
 #include <android/graphics/RectF.hpp>
 #include <android/graphics/Region.hpp>
 #include <java/lang/CharSequence.hpp>
+#include <java/lang/Enum.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <javax/microedition/khronos/opengles/GL.hpp>
 
@@ -67,10 +71,13 @@ namespace android { namespace graphics {
 			J2CPP_DECLARE_FIELD(1)
 			J2CPP_DECLARE_FIELD(2)
 
-			EdgeType(jobject jobj)
+			explicit EdgeType(jobject jobj)
 			: cpp_object<EdgeType>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Enum>() const;
+
 
 			static local_ref< cpp_object_array<android::graphics::Canvas_::EdgeType, 1> > values();
 			static local_ref< android::graphics::Canvas_::EdgeType > valueOf(local_ref< java::lang::String > const&);
@@ -96,10 +103,13 @@ namespace android { namespace graphics {
 			J2CPP_DECLARE_FIELD(2)
 			J2CPP_DECLARE_FIELD(3)
 
-			VertexMode(jobject jobj)
+			explicit VertexMode(jobject jobj)
 			: cpp_object<VertexMode>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Enum>() const;
+
 
 			static local_ref< cpp_object_array<android::graphics::Canvas_::VertexMode, 1> > values();
 			static local_ref< android::graphics::Canvas_::VertexMode > valueOf(local_ref< java::lang::String > const&);
@@ -216,11 +226,17 @@ namespace android { namespace graphics {
 		typedef Canvas_::EdgeType EdgeType;
 		typedef Canvas_::VertexMode VertexMode;
 
-		Canvas(jobject jobj)
+		explicit Canvas(jobject jobj)
 		: cpp_object<Canvas>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		Canvas();
+		Canvas(local_ref< android::graphics::Bitmap > const&);
+		Canvas(local_ref< javax::microedition::khronos::opengles::GL > const&);
 		local_ref< javax::microedition::khronos::opengles::GL > getGL();
 		static void freeGlCaches();
 		void setBitmap(local_ref< android::graphics::Bitmap > const&);
@@ -317,7 +333,6 @@ namespace android { namespace graphics {
 } //namespace graphics
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_GRAPHICS_CANVAS_HPP_DECL
@@ -330,6 +345,12 @@ namespace android { namespace graphics {
 namespace j2cpp {
 
 
+
+
+android::graphics::Canvas_::EdgeType::operator local_ref<java::lang::Enum>() const
+{
+	return local_ref<java::lang::Enum>(get_jtype());
+}
 
 local_ref< cpp_object_array<android::graphics::Canvas_::EdgeType, 1> > android::graphics::Canvas_::EdgeType::values()
 {
@@ -352,17 +373,7 @@ local_ref< android::graphics::Canvas_::EdgeType > android::graphics::Canvas_::Ed
 	);
 }
 
-template <>
-local_ref< android::graphics::Canvas_::EdgeType > create< android::graphics::Canvas_::EdgeType>(local_ref< java::lang::String > const &a0, cpp_int const &a1)
-{
-	return local_ref< android::graphics::Canvas_::EdgeType >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::graphics::Canvas_::EdgeType::J2CPP_CLASS_NAME>(),
-			get_method_id<android::graphics::Canvas_::EdgeType::J2CPP_CLASS_NAME, android::graphics::Canvas_::EdgeType::J2CPP_METHOD_NAME(2), android::graphics::Canvas_::EdgeType::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
-}
+
 
 
 static_field<
@@ -389,6 +400,12 @@ J2CPP_DEFINE_FIELD(android::graphics::Canvas_::EdgeType,0,"AA","Landroid/graphic
 J2CPP_DEFINE_FIELD(android::graphics::Canvas_::EdgeType,1,"BW","Landroid/graphics/Canvas$EdgeType;")
 J2CPP_DEFINE_FIELD(android::graphics::Canvas_::EdgeType,2,"$VALUES","[android.graphics.Canvas.EdgeType")
 
+
+android::graphics::Canvas_::VertexMode::operator local_ref<java::lang::Enum>() const
+{
+	return local_ref<java::lang::Enum>(get_jtype());
+}
+
 local_ref< cpp_object_array<android::graphics::Canvas_::VertexMode, 1> > android::graphics::Canvas_::VertexMode::values()
 {
 	return local_ref< cpp_object_array<android::graphics::Canvas_::VertexMode, 1> >(
@@ -410,17 +427,7 @@ local_ref< android::graphics::Canvas_::VertexMode > android::graphics::Canvas_::
 	);
 }
 
-template <>
-local_ref< android::graphics::Canvas_::VertexMode > create< android::graphics::Canvas_::VertexMode>(local_ref< java::lang::String > const &a0, cpp_int const &a1)
-{
-	return local_ref< android::graphics::Canvas_::VertexMode >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::graphics::Canvas_::VertexMode::J2CPP_CLASS_NAME>(),
-			get_method_id<android::graphics::Canvas_::VertexMode::J2CPP_CLASS_NAME, android::graphics::Canvas_::VertexMode::J2CPP_METHOD_NAME(2), android::graphics::Canvas_::VertexMode::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
-}
+
 
 
 static_field<
@@ -456,40 +463,49 @@ J2CPP_DEFINE_FIELD(android::graphics::Canvas_::VertexMode,2,"TRIANGLE_STRIP","La
 J2CPP_DEFINE_FIELD(android::graphics::Canvas_::VertexMode,3,"$VALUES","[android.graphics.Canvas.VertexMode")
 
 
-template <>
-local_ref< android::graphics::Canvas > create< android::graphics::Canvas>()
+
+android::graphics::Canvas::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::graphics::Canvas >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::graphics::Canvas::J2CPP_CLASS_NAME>(),
-			get_method_id<android::graphics::Canvas::J2CPP_CLASS_NAME, android::graphics::Canvas::J2CPP_METHOD_NAME(0), android::graphics::Canvas::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
 
-template <>
-local_ref< android::graphics::Canvas > create< android::graphics::Canvas>(local_ref< android::graphics::Bitmap > const &a0)
+
+android::graphics::Canvas::Canvas()
+: cpp_object<android::graphics::Canvas>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::graphics::Canvas::J2CPP_CLASS_NAME>(),
+		get_method_id<android::graphics::Canvas::J2CPP_CLASS_NAME, android::graphics::Canvas::J2CPP_METHOD_NAME(0), android::graphics::Canvas::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
 {
-	return local_ref< android::graphics::Canvas >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::graphics::Canvas::J2CPP_CLASS_NAME>(),
-			get_method_id<android::graphics::Canvas::J2CPP_CLASS_NAME, android::graphics::Canvas::J2CPP_METHOD_NAME(1), android::graphics::Canvas::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< android::graphics::Canvas > create< android::graphics::Canvas>(local_ref< javax::microedition::khronos::opengles::GL > const &a0)
+
+
+android::graphics::Canvas::Canvas(local_ref< android::graphics::Bitmap > const &a0)
+: cpp_object<android::graphics::Canvas>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::graphics::Canvas::J2CPP_CLASS_NAME>(),
+		get_method_id<android::graphics::Canvas::J2CPP_CLASS_NAME, android::graphics::Canvas::J2CPP_METHOD_NAME(1), android::graphics::Canvas::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< android::graphics::Canvas >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::graphics::Canvas::J2CPP_CLASS_NAME>(),
-			get_method_id<android::graphics::Canvas::J2CPP_CLASS_NAME, android::graphics::Canvas::J2CPP_METHOD_NAME(2), android::graphics::Canvas::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype()
-		)
-	);
 }
+
+
+
+android::graphics::Canvas::Canvas(local_ref< javax::microedition::khronos::opengles::GL > const &a0)
+: cpp_object<android::graphics::Canvas>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::graphics::Canvas::J2CPP_CLASS_NAME>(),
+		get_method_id<android::graphics::Canvas::J2CPP_CLASS_NAME, android::graphics::Canvas::J2CPP_METHOD_NAME(2), android::graphics::Canvas::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 local_ref< javax::microedition::khronos::opengles::GL > android::graphics::Canvas::getGL()
 {

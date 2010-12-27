@@ -10,8 +10,10 @@
 #define J2CPP_ANDROID_TEXT_METHOD_DIALERKEYLISTENER_HPP_DECL
 
 
+namespace j2cpp { namespace android { namespace text { namespace method { class NumberKeyListener; } } } }
 
 
+#include <android/text/method/NumberKeyListener.hpp>
 
 
 namespace j2cpp {
@@ -34,11 +36,15 @@ namespace android { namespace text { namespace method {
 		J2CPP_DECLARE_METHOD(5)
 		J2CPP_DECLARE_FIELD(0)
 
-		DialerKeyListener(jobject jobj)
+		explicit DialerKeyListener(jobject jobj)
 		: cpp_object<DialerKeyListener>(jobj)
 		{
 		}
 
+		operator local_ref<android::text::method::NumberKeyListener>() const;
+
+
+		DialerKeyListener();
 		static local_ref< android::text::method::DialerKeyListener > getInstance();
 		cpp_int getInputType();
 
@@ -48,7 +54,6 @@ namespace android { namespace text { namespace method {
 } //namespace method
 } //namespace text
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -62,16 +67,23 @@ namespace android { namespace text { namespace method {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::text::method::DialerKeyListener > create< android::text::method::DialerKeyListener>()
+
+android::text::method::DialerKeyListener::operator local_ref<android::text::method::NumberKeyListener>() const
 {
-	return local_ref< android::text::method::DialerKeyListener >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::text::method::DialerKeyListener::J2CPP_CLASS_NAME>(),
-			get_method_id<android::text::method::DialerKeyListener::J2CPP_CLASS_NAME, android::text::method::DialerKeyListener::J2CPP_METHOD_NAME(0), android::text::method::DialerKeyListener::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<android::text::method::NumberKeyListener>(get_jtype());
 }
+
+
+android::text::method::DialerKeyListener::DialerKeyListener()
+: cpp_object<android::text::method::DialerKeyListener>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::text::method::DialerKeyListener::J2CPP_CLASS_NAME>(),
+		get_method_id<android::text::method::DialerKeyListener::J2CPP_CLASS_NAME, android::text::method::DialerKeyListener::J2CPP_METHOD_NAME(0), android::text::method::DialerKeyListener::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 
 local_ref< android::text::method::DialerKeyListener > android::text::method::DialerKeyListener::getInstance()
@@ -93,6 +105,7 @@ cpp_int android::text::method::DialerKeyListener::getInputType()
 		)
 	);
 }
+
 
 
 

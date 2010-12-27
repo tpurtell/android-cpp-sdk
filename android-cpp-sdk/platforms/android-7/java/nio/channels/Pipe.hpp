@@ -10,11 +10,23 @@
 #define J2CPP_JAVA_NIO_CHANNELS_PIPE_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace nio { namespace channels { class GatheringByteChannel; } } } }
+namespace j2cpp { namespace java { namespace nio { namespace channels { class ReadableByteChannel; } } } }
+namespace j2cpp { namespace java { namespace nio { namespace channels { namespace spi { class AbstractSelectableChannel; } } } } }
+namespace j2cpp { namespace java { namespace nio { namespace channels { class WritableByteChannel; } } } }
 namespace j2cpp { namespace java { namespace nio { namespace channels { namespace Pipe_ { class SourceChannel; } } } } }
 namespace j2cpp { namespace java { namespace nio { namespace channels { namespace Pipe_ { class SinkChannel; } } } } }
+namespace j2cpp { namespace java { namespace nio { namespace channels { class ScatteringByteChannel; } } } }
 
 
+#include <java/lang/Object.hpp>
+#include <java/nio/channels/GatheringByteChannel.hpp>
 #include <java/nio/channels/Pipe.hpp>
+#include <java/nio/channels/ReadableByteChannel.hpp>
+#include <java/nio/channels/ScatteringByteChannel.hpp>
+#include <java/nio/channels/WritableByteChannel.hpp>
+#include <java/nio/channels/spi/AbstractSelectableChannel.hpp>
 
 
 namespace j2cpp {
@@ -35,10 +47,15 @@ namespace java { namespace nio { namespace channels {
 			J2CPP_DECLARE_METHOD(0)
 			J2CPP_DECLARE_METHOD(1)
 
-			SourceChannel(jobject jobj)
+			explicit SourceChannel(jobject jobj)
 			: cpp_object<SourceChannel>(jobj)
 			{
 			}
+
+			operator local_ref<java::nio::channels::spi::AbstractSelectableChannel>() const;
+			operator local_ref<java::nio::channels::ReadableByteChannel>() const;
+			operator local_ref<java::nio::channels::ScatteringByteChannel>() const;
+
 
 			cpp_int validOps();
 		}; //class SourceChannel
@@ -54,10 +71,15 @@ namespace java { namespace nio { namespace channels {
 			J2CPP_DECLARE_METHOD(0)
 			J2CPP_DECLARE_METHOD(1)
 
-			SinkChannel(jobject jobj)
+			explicit SinkChannel(jobject jobj)
 			: cpp_object<SinkChannel>(jobj)
 			{
 			}
+
+			operator local_ref<java::nio::channels::spi::AbstractSelectableChannel>() const;
+			operator local_ref<java::nio::channels::WritableByteChannel>() const;
+			operator local_ref<java::nio::channels::GatheringByteChannel>() const;
+
 
 			cpp_int validOps();
 		}; //class SinkChannel
@@ -79,10 +101,13 @@ namespace java { namespace nio { namespace channels {
 		typedef Pipe_::SourceChannel SourceChannel;
 		typedef Pipe_::SinkChannel SinkChannel;
 
-		Pipe(jobject jobj)
+		explicit Pipe(jobject jobj)
 		: cpp_object<Pipe>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		static local_ref< java::nio::channels::Pipe > open();
 		local_ref< java::nio::channels::Pipe_::SinkChannel > sink();
@@ -92,7 +117,6 @@ namespace java { namespace nio { namespace channels {
 } //namespace channels
 } //namespace nio
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -107,17 +131,22 @@ namespace j2cpp {
 
 
 
-template <>
-local_ref< java::nio::channels::Pipe_::SourceChannel > create< java::nio::channels::Pipe_::SourceChannel>(local_ref< java::nio::channels::spi::SelectorProvider > const &a0)
+
+java::nio::channels::Pipe_::SourceChannel::operator local_ref<java::nio::channels::spi::AbstractSelectableChannel>() const
 {
-	return local_ref< java::nio::channels::Pipe_::SourceChannel >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::nio::channels::Pipe_::SourceChannel::J2CPP_CLASS_NAME>(),
-			get_method_id<java::nio::channels::Pipe_::SourceChannel::J2CPP_CLASS_NAME, java::nio::channels::Pipe_::SourceChannel::J2CPP_METHOD_NAME(0), java::nio::channels::Pipe_::SourceChannel::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::nio::channels::spi::AbstractSelectableChannel>(get_jtype());
 }
+
+java::nio::channels::Pipe_::SourceChannel::operator local_ref<java::nio::channels::ReadableByteChannel>() const
+{
+	return local_ref<java::nio::channels::ReadableByteChannel>(get_jtype());
+}
+
+java::nio::channels::Pipe_::SourceChannel::operator local_ref<java::nio::channels::ScatteringByteChannel>() const
+{
+	return local_ref<java::nio::channels::ScatteringByteChannel>(get_jtype());
+}
+
 
 cpp_int java::nio::channels::Pipe_::SourceChannel::validOps()
 {
@@ -134,17 +163,22 @@ J2CPP_DEFINE_CLASS(java::nio::channels::Pipe_::SourceChannel,"java/nio/channels/
 J2CPP_DEFINE_METHOD(java::nio::channels::Pipe_::SourceChannel,0,"<init>","(Ljava/nio/channels/spi/SelectorProvider;)V")
 J2CPP_DEFINE_METHOD(java::nio::channels::Pipe_::SourceChannel,1,"validOps","()I")
 
-template <>
-local_ref< java::nio::channels::Pipe_::SinkChannel > create< java::nio::channels::Pipe_::SinkChannel>(local_ref< java::nio::channels::spi::SelectorProvider > const &a0)
+
+java::nio::channels::Pipe_::SinkChannel::operator local_ref<java::nio::channels::spi::AbstractSelectableChannel>() const
 {
-	return local_ref< java::nio::channels::Pipe_::SinkChannel >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::nio::channels::Pipe_::SinkChannel::J2CPP_CLASS_NAME>(),
-			get_method_id<java::nio::channels::Pipe_::SinkChannel::J2CPP_CLASS_NAME, java::nio::channels::Pipe_::SinkChannel::J2CPP_METHOD_NAME(0), java::nio::channels::Pipe_::SinkChannel::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::nio::channels::spi::AbstractSelectableChannel>(get_jtype());
 }
+
+java::nio::channels::Pipe_::SinkChannel::operator local_ref<java::nio::channels::WritableByteChannel>() const
+{
+	return local_ref<java::nio::channels::WritableByteChannel>(get_jtype());
+}
+
+java::nio::channels::Pipe_::SinkChannel::operator local_ref<java::nio::channels::GatheringByteChannel>() const
+{
+	return local_ref<java::nio::channels::GatheringByteChannel>(get_jtype());
+}
+
 
 cpp_int java::nio::channels::Pipe_::SinkChannel::validOps()
 {
@@ -162,16 +196,12 @@ J2CPP_DEFINE_METHOD(java::nio::channels::Pipe_::SinkChannel,0,"<init>","(Ljava/n
 J2CPP_DEFINE_METHOD(java::nio::channels::Pipe_::SinkChannel,1,"validOps","()I")
 
 
-template <>
-local_ref< java::nio::channels::Pipe > create< java::nio::channels::Pipe>()
+
+java::nio::channels::Pipe::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::nio::channels::Pipe >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::nio::channels::Pipe::J2CPP_CLASS_NAME>(),
-			get_method_id<java::nio::channels::Pipe::J2CPP_CLASS_NAME, java::nio::channels::Pipe::J2CPP_METHOD_NAME(0), java::nio::channels::Pipe::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
 
 local_ref< java::nio::channels::Pipe > java::nio::channels::Pipe::open()
 {

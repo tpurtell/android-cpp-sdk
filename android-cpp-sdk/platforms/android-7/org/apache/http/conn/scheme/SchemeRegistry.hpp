@@ -10,6 +10,7 @@
 #define J2CPP_ORG_APACHE_HTTP_CONN_SCHEME_SCHEMEREGISTRY_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace util { class Map; } } }
 namespace j2cpp { namespace java { namespace util { class List; } } }
@@ -17,6 +18,7 @@ namespace j2cpp { namespace org { namespace apache { namespace http { namespace 
 namespace j2cpp { namespace org { namespace apache { namespace http { class HttpHost; } } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/util/List.hpp>
 #include <java/util/Map.hpp>
@@ -45,15 +47,19 @@ namespace org { namespace apache { namespace http { namespace conn { namespace s
 		J2CPP_DECLARE_METHOD(6)
 		J2CPP_DECLARE_METHOD(7)
 
-		SchemeRegistry(jobject jobj)
+		explicit SchemeRegistry(jobject jobj)
 		: cpp_object<SchemeRegistry>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		SchemeRegistry();
 		local_ref< org::apache::http::conn::scheme::Scheme > getScheme(local_ref< java::lang::String > const&);
 		local_ref< org::apache::http::conn::scheme::Scheme > getScheme(local_ref< org::apache::http::HttpHost > const&);
 		local_ref< org::apache::http::conn::scheme::Scheme > get(local_ref< java::lang::String > const&);
-		local_ref< org::apache::http::conn::scheme::Scheme > register(local_ref< org::apache::http::conn::scheme::Scheme > const&);
+		local_ref< org::apache::http::conn::scheme::Scheme > Register(local_ref< org::apache::http::conn::scheme::Scheme > const&);
 		local_ref< org::apache::http::conn::scheme::Scheme > unregister(local_ref< java::lang::String > const&);
 		local_ref< java::util::List > getSchemeNames();
 		void setItems(local_ref< java::util::Map > const&);
@@ -64,7 +70,6 @@ namespace org { namespace apache { namespace http { namespace conn { namespace s
 } //namespace http
 } //namespace apache
 } //namespace org
-
 
 } //namespace j2cpp
 
@@ -78,16 +83,23 @@ namespace org { namespace apache { namespace http { namespace conn { namespace s
 namespace j2cpp {
 
 
-template <>
-local_ref< org::apache::http::conn::scheme::SchemeRegistry > create< org::apache::http::conn::scheme::SchemeRegistry>()
+
+org::apache::http::conn::scheme::SchemeRegistry::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< org::apache::http::conn::scheme::SchemeRegistry >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::apache::http::conn::scheme::SchemeRegistry::J2CPP_CLASS_NAME>(),
-			get_method_id<org::apache::http::conn::scheme::SchemeRegistry::J2CPP_CLASS_NAME, org::apache::http::conn::scheme::SchemeRegistry::J2CPP_METHOD_NAME(0), org::apache::http::conn::scheme::SchemeRegistry::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+org::apache::http::conn::scheme::SchemeRegistry::SchemeRegistry()
+: cpp_object<org::apache::http::conn::scheme::SchemeRegistry>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::apache::http::conn::scheme::SchemeRegistry::J2CPP_CLASS_NAME>(),
+		get_method_id<org::apache::http::conn::scheme::SchemeRegistry::J2CPP_CLASS_NAME, org::apache::http::conn::scheme::SchemeRegistry::J2CPP_METHOD_NAME(0), org::apache::http::conn::scheme::SchemeRegistry::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 local_ref< org::apache::http::conn::scheme::Scheme > org::apache::http::conn::scheme::SchemeRegistry::getScheme(local_ref< java::lang::String > const &a0)
 {
@@ -122,7 +134,7 @@ local_ref< org::apache::http::conn::scheme::Scheme > org::apache::http::conn::sc
 	);
 }
 
-local_ref< org::apache::http::conn::scheme::Scheme > org::apache::http::conn::scheme::SchemeRegistry::register(local_ref< org::apache::http::conn::scheme::Scheme > const &a0)
+local_ref< org::apache::http::conn::scheme::Scheme > org::apache::http::conn::scheme::SchemeRegistry::Register(local_ref< org::apache::http::conn::scheme::Scheme > const &a0)
 {
 	return local_ref< org::apache::http::conn::scheme::Scheme >(
 		environment::get().get_jenv()->CallObjectMethod(

@@ -10,10 +10,12 @@
 #define J2CPP_JAVA_SECURITY_PROVIDEREXCEPTION_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class RuntimeException; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace lang { class Throwable; } } }
 
 
+#include <java/lang/RuntimeException.hpp>
 #include <java/lang/String.hpp>
 #include <java/lang/Throwable.hpp>
 
@@ -35,16 +37,22 @@ namespace java { namespace security {
 		J2CPP_DECLARE_METHOD(2)
 		J2CPP_DECLARE_METHOD(3)
 
-		ProviderException(jobject jobj)
+		explicit ProviderException(jobject jobj)
 		: cpp_object<ProviderException>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::RuntimeException>() const;
+
+
+		ProviderException(local_ref< java::lang::String > const&);
+		ProviderException();
+		ProviderException(local_ref< java::lang::String > const&, local_ref< java::lang::Throwable > const&);
+		ProviderException(local_ref< java::lang::Throwable > const&);
 	}; //class ProviderException
 
 } //namespace security
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -58,52 +66,62 @@ namespace java { namespace security {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::security::ProviderException > create< java::security::ProviderException>(local_ref< java::lang::String > const &a0)
+
+java::security::ProviderException::operator local_ref<java::lang::RuntimeException>() const
 {
-	return local_ref< java::security::ProviderException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::security::ProviderException::J2CPP_CLASS_NAME>(),
-			get_method_id<java::security::ProviderException::J2CPP_CLASS_NAME, java::security::ProviderException::J2CPP_METHOD_NAME(0), java::security::ProviderException::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::lang::RuntimeException>(get_jtype());
 }
 
-template <>
-local_ref< java::security::ProviderException > create< java::security::ProviderException>()
+
+java::security::ProviderException::ProviderException(local_ref< java::lang::String > const &a0)
+: cpp_object<java::security::ProviderException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::security::ProviderException::J2CPP_CLASS_NAME>(),
+		get_method_id<java::security::ProviderException::J2CPP_CLASS_NAME, java::security::ProviderException::J2CPP_METHOD_NAME(0), java::security::ProviderException::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< java::security::ProviderException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::security::ProviderException::J2CPP_CLASS_NAME>(),
-			get_method_id<java::security::ProviderException::J2CPP_CLASS_NAME, java::security::ProviderException::J2CPP_METHOD_NAME(1), java::security::ProviderException::J2CPP_METHOD_SIGNATURE(1), false>()
-		)
-	);
 }
 
-template <>
-local_ref< java::security::ProviderException > create< java::security::ProviderException>(local_ref< java::lang::String > const &a0, local_ref< java::lang::Throwable > const &a1)
+
+
+java::security::ProviderException::ProviderException()
+: cpp_object<java::security::ProviderException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::security::ProviderException::J2CPP_CLASS_NAME>(),
+		get_method_id<java::security::ProviderException::J2CPP_CLASS_NAME, java::security::ProviderException::J2CPP_METHOD_NAME(1), java::security::ProviderException::J2CPP_METHOD_SIGNATURE(1), false>()
+	)
+)
 {
-	return local_ref< java::security::ProviderException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::security::ProviderException::J2CPP_CLASS_NAME>(),
-			get_method_id<java::security::ProviderException::J2CPP_CLASS_NAME, java::security::ProviderException::J2CPP_METHOD_NAME(2), java::security::ProviderException::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< java::security::ProviderException > create< java::security::ProviderException>(local_ref< java::lang::Throwable > const &a0)
+
+
+java::security::ProviderException::ProviderException(local_ref< java::lang::String > const &a0, local_ref< java::lang::Throwable > const &a1)
+: cpp_object<java::security::ProviderException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::security::ProviderException::J2CPP_CLASS_NAME>(),
+		get_method_id<java::security::ProviderException::J2CPP_CLASS_NAME, java::security::ProviderException::J2CPP_METHOD_NAME(2), java::security::ProviderException::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
 {
-	return local_ref< java::security::ProviderException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::security::ProviderException::J2CPP_CLASS_NAME>(),
-			get_method_id<java::security::ProviderException::J2CPP_CLASS_NAME, java::security::ProviderException::J2CPP_METHOD_NAME(3), java::security::ProviderException::J2CPP_METHOD_SIGNATURE(3), false>(),
-			a0.get_jtype()
-		)
-	);
 }
+
+
+
+java::security::ProviderException::ProviderException(local_ref< java::lang::Throwable > const &a0)
+: cpp_object<java::security::ProviderException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::security::ProviderException::J2CPP_CLASS_NAME>(),
+		get_method_id<java::security::ProviderException::J2CPP_CLASS_NAME, java::security::ProviderException::J2CPP_METHOD_NAME(3), java::security::ProviderException::J2CPP_METHOD_SIGNATURE(3), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 
 J2CPP_DEFINE_CLASS(java::security::ProviderException,"java/security/ProviderException")

@@ -11,9 +11,11 @@
 
 
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace util { class Map; } } }
 
 
 #include <java/lang/Object.hpp>
+#include <java/util/Map.hpp>
 
 
 namespace j2cpp {
@@ -33,10 +35,14 @@ namespace java { namespace util { namespace concurrent {
 		J2CPP_DECLARE_METHOD(2)
 		J2CPP_DECLARE_METHOD(3)
 
-		ConcurrentMap(jobject jobj)
+		explicit ConcurrentMap(jobject jobj)
 		: cpp_object<ConcurrentMap>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::util::Map>() const;
+
 
 		local_ref< java::lang::Object > putIfAbsent(local_ref< java::lang::Object > const&, local_ref< java::lang::Object > const&);
 		cpp_boolean remove(local_ref< java::lang::Object > const&, local_ref< java::lang::Object > const&);
@@ -47,7 +53,6 @@ namespace java { namespace util { namespace concurrent {
 } //namespace concurrent
 } //namespace util
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -60,6 +65,17 @@ namespace java { namespace util { namespace concurrent {
 
 namespace j2cpp {
 
+
+
+java::util::concurrent::ConcurrentMap::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
+
+java::util::concurrent::ConcurrentMap::operator local_ref<java::util::Map>() const
+{
+	return local_ref<java::util::Map>(get_jtype());
+}
 
 local_ref< java::lang::Object > java::util::concurrent::ConcurrentMap::putIfAbsent(local_ref< java::lang::Object > const &a0, local_ref< java::lang::Object > const &a1)
 {

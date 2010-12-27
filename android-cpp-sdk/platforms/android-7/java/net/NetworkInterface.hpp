@@ -45,10 +45,13 @@ namespace java { namespace net {
 		J2CPP_DECLARE_METHOD(8)
 		J2CPP_DECLARE_METHOD(9)
 
-		NetworkInterface(jobject jobj)
+		explicit NetworkInterface(jobject jobj)
 		: cpp_object<NetworkInterface>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		local_ref< java::lang::String > getName();
 		local_ref< java::util::Enumeration > getInetAddresses();
@@ -64,7 +67,6 @@ namespace java { namespace net {
 } //namespace net
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_NET_NETWORKINTERFACE_HPP_DECL
@@ -77,16 +79,12 @@ namespace java { namespace net {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::net::NetworkInterface > create< java::net::NetworkInterface>()
+
+java::net::NetworkInterface::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::net::NetworkInterface >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::net::NetworkInterface::J2CPP_CLASS_NAME>(),
-			get_method_id<java::net::NetworkInterface::J2CPP_CLASS_NAME, java::net::NetworkInterface::J2CPP_METHOD_NAME(0), java::net::NetworkInterface::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
 
 local_ref< java::lang::String > java::net::NetworkInterface::getName()
 {

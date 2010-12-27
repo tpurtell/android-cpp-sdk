@@ -10,9 +10,11 @@
 #define J2CPP_JAVA_IO_STRINGBUFFERINPUTSTREAM_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class InputStream; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 
 
+#include <java/io/InputStream.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -38,11 +40,15 @@ namespace java { namespace io {
 		J2CPP_DECLARE_FIELD(1)
 		J2CPP_DECLARE_FIELD(2)
 
-		StringBufferInputStream(jobject jobj)
+		explicit StringBufferInputStream(jobject jobj)
 		: cpp_object<StringBufferInputStream>(jobj)
 		{
 		}
 
+		operator local_ref<java::io::InputStream>() const;
+
+
+		StringBufferInputStream(local_ref< java::lang::String > const&);
 		cpp_int available();
 		cpp_int read();
 		cpp_int read(local_ref< cpp_byte_array<1> > const&, cpp_int const&, cpp_int const&);
@@ -53,7 +59,6 @@ namespace java { namespace io {
 
 } //namespace io
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -67,17 +72,24 @@ namespace java { namespace io {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::io::StringBufferInputStream > create< java::io::StringBufferInputStream>(local_ref< java::lang::String > const &a0)
+
+java::io::StringBufferInputStream::operator local_ref<java::io::InputStream>() const
 {
-	return local_ref< java::io::StringBufferInputStream >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::io::StringBufferInputStream::J2CPP_CLASS_NAME>(),
-			get_method_id<java::io::StringBufferInputStream::J2CPP_CLASS_NAME, java::io::StringBufferInputStream::J2CPP_METHOD_NAME(0), java::io::StringBufferInputStream::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::io::InputStream>(get_jtype());
 }
+
+
+java::io::StringBufferInputStream::StringBufferInputStream(local_ref< java::lang::String > const &a0)
+: cpp_object<java::io::StringBufferInputStream>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::io::StringBufferInputStream::J2CPP_CLASS_NAME>(),
+		get_method_id<java::io::StringBufferInputStream::J2CPP_CLASS_NAME, java::io::StringBufferInputStream::J2CPP_METHOD_NAME(0), java::io::StringBufferInputStream::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 cpp_int java::io::StringBufferInputStream::available()
 {

@@ -10,10 +10,12 @@
 #define J2CPP_JAVA_UTIL_EVENTOBJECT_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 
 
+#include <java/io/Serializable.hpp>
 #include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
@@ -35,11 +37,16 @@ namespace java { namespace util {
 		J2CPP_DECLARE_METHOD(2)
 		J2CPP_DECLARE_FIELD(0)
 
-		EventObject(jobject jobj)
+		explicit EventObject(jobject jobj)
 		: cpp_object<EventObject>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::io::Serializable>() const;
+
+
+		EventObject(local_ref< java::lang::Object > const&);
 		local_ref< java::lang::Object > getSource();
 		local_ref< java::lang::String > toString();
 
@@ -47,7 +54,6 @@ namespace java { namespace util {
 
 } //namespace util
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -61,17 +67,29 @@ namespace java { namespace util {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::util::EventObject > create< java::util::EventObject>(local_ref< java::lang::Object > const &a0)
+
+java::util::EventObject::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::util::EventObject >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::EventObject::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::EventObject::J2CPP_CLASS_NAME, java::util::EventObject::J2CPP_METHOD_NAME(0), java::util::EventObject::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+java::util::EventObject::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jtype());
+}
+
+
+java::util::EventObject::EventObject(local_ref< java::lang::Object > const &a0)
+: cpp_object<java::util::EventObject>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::util::EventObject::J2CPP_CLASS_NAME>(),
+		get_method_id<java::util::EventObject::J2CPP_CLASS_NAME, java::util::EventObject::J2CPP_METHOD_NAME(0), java::util::EventObject::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 local_ref< java::lang::Object > java::util::EventObject::getSource()
 {

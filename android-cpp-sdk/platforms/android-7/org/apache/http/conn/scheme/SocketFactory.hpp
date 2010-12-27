@@ -12,10 +12,12 @@
 
 namespace j2cpp { namespace java { namespace net { class Socket; } } }
 namespace j2cpp { namespace java { namespace net { class InetAddress; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace params { class HttpParams; } } } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/net/InetAddress.hpp>
 #include <java/net/Socket.hpp>
@@ -38,10 +40,13 @@ namespace org { namespace apache { namespace http { namespace conn { namespace s
 		J2CPP_DECLARE_METHOD(1)
 		J2CPP_DECLARE_METHOD(2)
 
-		SocketFactory(jobject jobj)
+		explicit SocketFactory(jobject jobj)
 		: cpp_object<SocketFactory>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		local_ref< java::net::Socket > createSocket();
 		local_ref< java::net::Socket > connectSocket(local_ref< java::net::Socket > const&, local_ref< java::lang::String > const&, cpp_int const&, local_ref< java::net::InetAddress > const&, cpp_int const&, local_ref< org::apache::http::params::HttpParams > const&);
@@ -54,7 +59,6 @@ namespace org { namespace apache { namespace http { namespace conn { namespace s
 } //namespace apache
 } //namespace org
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ORG_APACHE_HTTP_CONN_SCHEME_SOCKETFACTORY_HPP_DECL
@@ -66,6 +70,12 @@ namespace org { namespace apache { namespace http { namespace conn { namespace s
 
 namespace j2cpp {
 
+
+
+org::apache::http::conn::scheme::SocketFactory::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 local_ref< java::net::Socket > org::apache::http::conn::scheme::SocketFactory::createSocket()
 {

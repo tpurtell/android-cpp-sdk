@@ -14,12 +14,14 @@ namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace android { namespace view { class View; } } }
 namespace j2cpp { namespace android { namespace view { class KeyEvent; } } }
 namespace j2cpp { namespace android { namespace text { class Spannable; } } }
+namespace j2cpp { namespace android { namespace text { namespace method { class BaseKeyListener; } } } }
 namespace j2cpp { namespace android { namespace text { namespace method { namespace TextKeyListener_ { class Capitalize; } } } } }
 namespace j2cpp { namespace android { namespace text { class Editable; } } }
 
 
 #include <android/text/Editable.hpp>
 #include <android/text/Spannable.hpp>
+#include <android/text/method/BaseKeyListener.hpp>
 #include <android/text/method/TextKeyListener.hpp>
 #include <android/view/KeyEvent.hpp>
 #include <android/view/View.hpp>
@@ -44,11 +46,15 @@ namespace android { namespace text { namespace method {
 		J2CPP_DECLARE_METHOD(3)
 		J2CPP_DECLARE_METHOD(4)
 
-		QwertyKeyListener(jobject jobj)
+		explicit QwertyKeyListener(jobject jobj)
 		: cpp_object<QwertyKeyListener>(jobj)
 		{
 		}
 
+		operator local_ref<android::text::method::BaseKeyListener>() const;
+
+
+		QwertyKeyListener(local_ref< android::text::method::TextKeyListener_::Capitalize > const&, cpp_boolean const&);
 		static local_ref< android::text::method::QwertyKeyListener > getInstance(cpp_boolean const&, local_ref< android::text::method::TextKeyListener_::Capitalize > const&);
 		cpp_int getInputType();
 		cpp_boolean onKeyDown(local_ref< android::view::View > const&, local_ref< android::text::Editable > const&, cpp_int const&, local_ref< android::view::KeyEvent > const&);
@@ -58,7 +64,6 @@ namespace android { namespace text { namespace method {
 } //namespace method
 } //namespace text
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -72,17 +77,24 @@ namespace android { namespace text { namespace method {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::text::method::QwertyKeyListener > create< android::text::method::QwertyKeyListener>(local_ref< android::text::method::TextKeyListener_::Capitalize > const &a0, cpp_boolean const &a1)
+
+android::text::method::QwertyKeyListener::operator local_ref<android::text::method::BaseKeyListener>() const
 {
-	return local_ref< android::text::method::QwertyKeyListener >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::text::method::QwertyKeyListener::J2CPP_CLASS_NAME>(),
-			get_method_id<android::text::method::QwertyKeyListener::J2CPP_CLASS_NAME, android::text::method::QwertyKeyListener::J2CPP_METHOD_NAME(0), android::text::method::QwertyKeyListener::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<android::text::method::BaseKeyListener>(get_jtype());
 }
+
+
+android::text::method::QwertyKeyListener::QwertyKeyListener(local_ref< android::text::method::TextKeyListener_::Capitalize > const &a0, cpp_boolean const &a1)
+: cpp_object<android::text::method::QwertyKeyListener>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::text::method::QwertyKeyListener::J2CPP_CLASS_NAME>(),
+		get_method_id<android::text::method::QwertyKeyListener::J2CPP_CLASS_NAME, android::text::method::QwertyKeyListener::J2CPP_METHOD_NAME(0), android::text::method::QwertyKeyListener::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
 
 local_ref< android::text::method::QwertyKeyListener > android::text::method::QwertyKeyListener::getInstance(cpp_boolean const &a0, local_ref< android::text::method::TextKeyListener_::Capitalize > const &a1)
 {

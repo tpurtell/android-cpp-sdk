@@ -10,10 +10,12 @@
 #define J2CPP_JAVA_SECURITY_CERT_X509EXTENSION_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace util { class Set; } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/util/Set.hpp>
 
@@ -35,10 +37,13 @@ namespace java { namespace security { namespace cert {
 		J2CPP_DECLARE_METHOD(2)
 		J2CPP_DECLARE_METHOD(3)
 
-		X509Extension(jobject jobj)
+		explicit X509Extension(jobject jobj)
 		: cpp_object<X509Extension>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		local_ref< java::util::Set > getCriticalExtensionOIDs();
 		local_ref< cpp_byte_array<1> > getExtensionValue(local_ref< java::lang::String > const&);
@@ -49,7 +54,6 @@ namespace java { namespace security { namespace cert {
 } //namespace cert
 } //namespace security
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -62,6 +66,12 @@ namespace java { namespace security { namespace cert {
 
 namespace j2cpp {
 
+
+
+java::security::cert::X509Extension::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 local_ref< java::util::Set > java::security::cert::X509Extension::getCriticalExtensionOIDs()
 {

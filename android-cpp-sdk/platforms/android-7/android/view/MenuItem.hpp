@@ -10,6 +10,7 @@
 #define J2CPP_ANDROID_VIEW_MENUITEM_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class CharSequence; } } }
 namespace j2cpp { namespace android { namespace graphics { namespace drawable { class Drawable; } } } }
 namespace j2cpp { namespace android { namespace content { class Intent; } } }
@@ -24,6 +25,7 @@ namespace j2cpp { namespace android { namespace view { namespace MenuItem_ { cla
 #include <android/view/MenuItem.hpp>
 #include <android/view/SubMenu.hpp>
 #include <java/lang/CharSequence.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -43,10 +45,13 @@ namespace android { namespace view {
 
 			J2CPP_DECLARE_METHOD(0)
 
-			OnMenuItemClickListener(jobject jobj)
+			explicit OnMenuItemClickListener(jobject jobj)
 			: cpp_object<OnMenuItemClickListener>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+
 
 			cpp_boolean onMenuItemClick(local_ref< android::view::MenuItem > const&);
 		}; //class OnMenuItemClickListener
@@ -93,10 +98,13 @@ namespace android { namespace view {
 
 		typedef MenuItem_::OnMenuItemClickListener OnMenuItemClickListener;
 
-		MenuItem(jobject jobj)
+		explicit MenuItem(jobject jobj)
 		: cpp_object<MenuItem>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		cpp_int getItemId();
 		cpp_int getGroupId();
@@ -133,7 +141,6 @@ namespace android { namespace view {
 } //namespace view
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_VIEW_MENUITEM_HPP_DECL
@@ -146,6 +153,12 @@ namespace android { namespace view {
 namespace j2cpp {
 
 
+
+
+android::view::MenuItem_::OnMenuItemClickListener::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 cpp_boolean android::view::MenuItem_::OnMenuItemClickListener::onMenuItemClick(local_ref< android::view::MenuItem > const &a0)
 {
@@ -162,6 +175,12 @@ cpp_boolean android::view::MenuItem_::OnMenuItemClickListener::onMenuItemClick(l
 J2CPP_DEFINE_CLASS(android::view::MenuItem_::OnMenuItemClickListener,"android/view/MenuItem$OnMenuItemClickListener")
 J2CPP_DEFINE_METHOD(android::view::MenuItem_::OnMenuItemClickListener,0,"onMenuItemClick","(Landroid/view/MenuItem;)Z")
 
+
+
+android::view::MenuItem::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 cpp_int android::view::MenuItem::getItemId()
 {

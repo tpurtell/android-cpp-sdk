@@ -10,10 +10,12 @@
 #define J2CPP_ORG_XML_SAX_HELPERS_NAMESPACESUPPORT_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace util { class Enumeration; } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/util/Enumeration.hpp>
 
@@ -46,11 +48,15 @@ namespace org { namespace xml { namespace sax { namespace helpers {
 		J2CPP_DECLARE_FIELD(0)
 		J2CPP_DECLARE_FIELD(1)
 
-		NamespaceSupport(jobject jobj)
+		explicit NamespaceSupport(jobject jobj)
 		: cpp_object<NamespaceSupport>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		NamespaceSupport();
 		void reset();
 		void pushContext();
 		void popContext();
@@ -73,7 +79,6 @@ namespace org { namespace xml { namespace sax { namespace helpers {
 } //namespace xml
 } //namespace org
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ORG_XML_SAX_HELPERS_NAMESPACESUPPORT_HPP_DECL
@@ -86,16 +91,23 @@ namespace org { namespace xml { namespace sax { namespace helpers {
 namespace j2cpp {
 
 
-template <>
-local_ref< org::xml::sax::helpers::NamespaceSupport > create< org::xml::sax::helpers::NamespaceSupport>()
+
+org::xml::sax::helpers::NamespaceSupport::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< org::xml::sax::helpers::NamespaceSupport >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::xml::sax::helpers::NamespaceSupport::J2CPP_CLASS_NAME>(),
-			get_method_id<org::xml::sax::helpers::NamespaceSupport::J2CPP_CLASS_NAME, org::xml::sax::helpers::NamespaceSupport::J2CPP_METHOD_NAME(0), org::xml::sax::helpers::NamespaceSupport::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+org::xml::sax::helpers::NamespaceSupport::NamespaceSupport()
+: cpp_object<org::xml::sax::helpers::NamespaceSupport>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::xml::sax::helpers::NamespaceSupport::J2CPP_CLASS_NAME>(),
+		get_method_id<org::xml::sax::helpers::NamespaceSupport::J2CPP_CLASS_NAME, org::xml::sax::helpers::NamespaceSupport::J2CPP_METHOD_NAME(0), org::xml::sax::helpers::NamespaceSupport::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 void org::xml::sax::helpers::NamespaceSupport::reset()
 {

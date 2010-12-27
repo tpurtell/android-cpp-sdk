@@ -10,9 +10,11 @@
 #define J2CPP_JAVA_LANG_ANNOTATION_ELEMENTTYPE_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Enum; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 
 
+#include <java/lang/Enum.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -42,10 +44,13 @@ namespace java { namespace lang { namespace annotation {
 		J2CPP_DECLARE_FIELD(7)
 		J2CPP_DECLARE_FIELD(8)
 
-		ElementType(jobject jobj)
+		explicit ElementType(jobject jobj)
 		: cpp_object<ElementType>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Enum>() const;
+
 
 		static local_ref< cpp_object_array<java::lang::annotation::ElementType, 1> > values();
 		static local_ref< java::lang::annotation::ElementType > valueOf(local_ref< java::lang::String > const&);
@@ -64,7 +69,6 @@ namespace java { namespace lang { namespace annotation {
 } //namespace lang
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_LANG_ANNOTATION_ELEMENTTYPE_HPP_DECL
@@ -76,6 +80,12 @@ namespace java { namespace lang { namespace annotation {
 
 namespace j2cpp {
 
+
+
+java::lang::annotation::ElementType::operator local_ref<java::lang::Enum>() const
+{
+	return local_ref<java::lang::Enum>(get_jtype());
+}
 
 local_ref< cpp_object_array<java::lang::annotation::ElementType, 1> > java::lang::annotation::ElementType::values()
 {
@@ -98,17 +108,7 @@ local_ref< java::lang::annotation::ElementType > java::lang::annotation::Element
 	);
 }
 
-template <>
-local_ref< java::lang::annotation::ElementType > create< java::lang::annotation::ElementType>(local_ref< java::lang::String > const &a0, cpp_int const &a1)
-{
-	return local_ref< java::lang::annotation::ElementType >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::lang::annotation::ElementType::J2CPP_CLASS_NAME>(),
-			get_method_id<java::lang::annotation::ElementType::J2CPP_CLASS_NAME, java::lang::annotation::ElementType::J2CPP_METHOD_NAME(2), java::lang::annotation::ElementType::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
-}
+
 
 
 static_field<

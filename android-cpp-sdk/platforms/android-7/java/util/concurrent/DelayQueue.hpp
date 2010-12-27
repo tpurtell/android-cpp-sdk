@@ -11,15 +11,19 @@
 
 
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace util { class AbstractQueue; } } }
 namespace j2cpp { namespace java { namespace util { class Iterator; } } }
+namespace j2cpp { namespace java { namespace util { namespace concurrent { class BlockingQueue; } } } }
 namespace j2cpp { namespace java { namespace util { namespace concurrent { class Delayed; } } } }
 namespace j2cpp { namespace java { namespace util { namespace concurrent { class TimeUnit; } } } }
 namespace j2cpp { namespace java { namespace util { class Collection; } } }
 
 
 #include <java/lang/Object.hpp>
+#include <java/util/AbstractQueue.hpp>
 #include <java/util/Collection.hpp>
 #include <java/util/Iterator.hpp>
+#include <java/util/concurrent/BlockingQueue.hpp>
 #include <java/util/concurrent/Delayed.hpp>
 #include <java/util/concurrent/TimeUnit.hpp>
 
@@ -64,11 +68,17 @@ namespace java { namespace util { namespace concurrent {
 		J2CPP_DECLARE_METHOD(25)
 		J2CPP_DECLARE_METHOD(26)
 
-		DelayQueue(jobject jobj)
+		explicit DelayQueue(jobject jobj)
 		: cpp_object<DelayQueue>(jobj)
 		{
 		}
 
+		operator local_ref<java::util::AbstractQueue>() const;
+		operator local_ref<java::util::concurrent::BlockingQueue>() const;
+
+
+		DelayQueue();
+		DelayQueue(local_ref< java::util::Collection > const&);
 		cpp_boolean add(local_ref< java::util::concurrent::Delayed > const&);
 		cpp_boolean offer(local_ref< java::util::concurrent::Delayed > const&);
 		void put(local_ref< java::util::concurrent::Delayed > const&);
@@ -100,7 +110,6 @@ namespace java { namespace util { namespace concurrent {
 } //namespace util
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_UTIL_CONCURRENT_DELAYQUEUE_HPP_DECL
@@ -113,28 +122,41 @@ namespace java { namespace util { namespace concurrent {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::util::concurrent::DelayQueue > create< java::util::concurrent::DelayQueue>()
+
+java::util::concurrent::DelayQueue::operator local_ref<java::util::AbstractQueue>() const
 {
-	return local_ref< java::util::concurrent::DelayQueue >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::concurrent::DelayQueue::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::concurrent::DelayQueue::J2CPP_CLASS_NAME, java::util::concurrent::DelayQueue::J2CPP_METHOD_NAME(0), java::util::concurrent::DelayQueue::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::util::AbstractQueue>(get_jtype());
 }
 
-template <>
-local_ref< java::util::concurrent::DelayQueue > create< java::util::concurrent::DelayQueue>(local_ref< java::util::Collection > const &a0)
+java::util::concurrent::DelayQueue::operator local_ref<java::util::concurrent::BlockingQueue>() const
 {
-	return local_ref< java::util::concurrent::DelayQueue >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::concurrent::DelayQueue::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::concurrent::DelayQueue::J2CPP_CLASS_NAME, java::util::concurrent::DelayQueue::J2CPP_METHOD_NAME(1), java::util::concurrent::DelayQueue::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::util::concurrent::BlockingQueue>(get_jtype());
 }
+
+
+java::util::concurrent::DelayQueue::DelayQueue()
+: cpp_object<java::util::concurrent::DelayQueue>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::util::concurrent::DelayQueue::J2CPP_CLASS_NAME>(),
+		get_method_id<java::util::concurrent::DelayQueue::J2CPP_CLASS_NAME, java::util::concurrent::DelayQueue::J2CPP_METHOD_NAME(0), java::util::concurrent::DelayQueue::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
+
+
+java::util::concurrent::DelayQueue::DelayQueue(local_ref< java::util::Collection > const &a0)
+: cpp_object<java::util::concurrent::DelayQueue>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::util::concurrent::DelayQueue::J2CPP_CLASS_NAME>(),
+		get_method_id<java::util::concurrent::DelayQueue::J2CPP_CLASS_NAME, java::util::concurrent::DelayQueue::J2CPP_METHOD_NAME(1), java::util::concurrent::DelayQueue::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 cpp_boolean java::util::concurrent::DelayQueue::add(local_ref< java::util::concurrent::Delayed > const &a0)
 {

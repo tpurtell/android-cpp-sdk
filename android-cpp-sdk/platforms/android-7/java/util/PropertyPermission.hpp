@@ -12,12 +12,14 @@
 
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace security { class BasicPermission; } } }
 namespace j2cpp { namespace java { namespace security { class Permission; } } }
 namespace j2cpp { namespace java { namespace security { class PermissionCollection; } } }
 
 
 #include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
+#include <java/security/BasicPermission.hpp>
 #include <java/security/Permission.hpp>
 #include <java/security/PermissionCollection.hpp>
 
@@ -41,11 +43,15 @@ namespace java { namespace util {
 		J2CPP_DECLARE_METHOD(4)
 		J2CPP_DECLARE_METHOD(5)
 
-		PropertyPermission(jobject jobj)
+		explicit PropertyPermission(jobject jobj)
 		: cpp_object<PropertyPermission>(jobj)
 		{
 		}
 
+		operator local_ref<java::security::BasicPermission>() const;
+
+
+		PropertyPermission(local_ref< java::lang::String > const&, local_ref< java::lang::String > const&);
 		cpp_boolean equals(local_ref< java::lang::Object > const&);
 		local_ref< java::lang::String > getActions();
 		cpp_int hashCode();
@@ -55,7 +61,6 @@ namespace java { namespace util {
 
 } //namespace util
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -69,17 +74,24 @@ namespace java { namespace util {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::util::PropertyPermission > create< java::util::PropertyPermission>(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
+
+java::util::PropertyPermission::operator local_ref<java::security::BasicPermission>() const
 {
-	return local_ref< java::util::PropertyPermission >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::PropertyPermission::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::PropertyPermission::J2CPP_CLASS_NAME, java::util::PropertyPermission::J2CPP_METHOD_NAME(0), java::util::PropertyPermission::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<java::security::BasicPermission>(get_jtype());
 }
+
+
+java::util::PropertyPermission::PropertyPermission(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
+: cpp_object<java::util::PropertyPermission>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::util::PropertyPermission::J2CPP_CLASS_NAME>(),
+		get_method_id<java::util::PropertyPermission::J2CPP_CLASS_NAME, java::util::PropertyPermission::J2CPP_METHOD_NAME(0), java::util::PropertyPermission::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
 
 cpp_boolean java::util::PropertyPermission::equals(local_ref< java::lang::Object > const &a0)
 {

@@ -10,6 +10,7 @@
 #define J2CPP_ANDROID_VIEW_ANIMATION_ANIMATIONUTILS_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace android { namespace content { class Context; } } }
 namespace j2cpp { namespace android { namespace view { namespace animation { class Interpolator; } } } }
 namespace j2cpp { namespace android { namespace view { namespace animation { class LayoutAnimationController; } } } }
@@ -20,6 +21,7 @@ namespace j2cpp { namespace android { namespace view { namespace animation { cla
 #include <android/view/animation/Animation.hpp>
 #include <android/view/animation/Interpolator.hpp>
 #include <android/view/animation/LayoutAnimationController.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -43,11 +45,15 @@ namespace android { namespace view { namespace animation {
 		J2CPP_DECLARE_METHOD(6)
 		J2CPP_DECLARE_METHOD(7)
 
-		AnimationUtils(jobject jobj)
+		explicit AnimationUtils(jobject jobj)
 		: cpp_object<AnimationUtils>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		AnimationUtils();
 		static cpp_long currentAnimationTimeMillis();
 		static local_ref< android::view::animation::Animation > loadAnimation(local_ref< android::content::Context > const&, cpp_int const&);
 		static local_ref< android::view::animation::LayoutAnimationController > loadLayoutAnimation(local_ref< android::content::Context > const&, cpp_int const&);
@@ -61,7 +67,6 @@ namespace android { namespace view { namespace animation {
 } //namespace view
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_VIEW_ANIMATION_ANIMATIONUTILS_HPP_DECL
@@ -74,16 +79,23 @@ namespace android { namespace view { namespace animation {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::view::animation::AnimationUtils > create< android::view::animation::AnimationUtils>()
+
+android::view::animation::AnimationUtils::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::view::animation::AnimationUtils >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::view::animation::AnimationUtils::J2CPP_CLASS_NAME>(),
-			get_method_id<android::view::animation::AnimationUtils::J2CPP_CLASS_NAME, android::view::animation::AnimationUtils::J2CPP_METHOD_NAME(0), android::view::animation::AnimationUtils::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::view::animation::AnimationUtils::AnimationUtils()
+: cpp_object<android::view::animation::AnimationUtils>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::view::animation::AnimationUtils::J2CPP_CLASS_NAME>(),
+		get_method_id<android::view::animation::AnimationUtils::J2CPP_CLASS_NAME, android::view::animation::AnimationUtils::J2CPP_METHOD_NAME(0), android::view::animation::AnimationUtils::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 cpp_long android::view::animation::AnimationUtils::currentAnimationTimeMillis()
 {

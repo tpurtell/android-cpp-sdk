@@ -10,6 +10,7 @@
 #define J2CPP_ANDROID_TELEPHONY_PHONENUMBERUTILS_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace util { class Locale; } } }
 namespace j2cpp { namespace android { namespace content { class Intent; } } }
@@ -20,6 +21,7 @@ namespace j2cpp { namespace android { namespace text { class Editable; } } }
 #include <android/content/Context.hpp>
 #include <android/content/Intent.hpp>
 #include <android/text/Editable.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/util/Locale.hpp>
 
@@ -76,11 +78,15 @@ namespace android { namespace telephony {
 		J2CPP_DECLARE_FIELD(6)
 		J2CPP_DECLARE_FIELD(7)
 
-		PhoneNumberUtils(jobject jobj)
+		explicit PhoneNumberUtils(jobject jobj)
 		: cpp_object<PhoneNumberUtils>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		PhoneNumberUtils();
 		static cpp_boolean isISODigit(cpp_char const&);
 		static cpp_boolean is12Key(cpp_char const&);
 		static cpp_boolean isDialable(cpp_char const&);
@@ -125,7 +131,6 @@ namespace android { namespace telephony {
 } //namespace telephony
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_TELEPHONY_PHONENUMBERUTILS_HPP_DECL
@@ -138,16 +143,23 @@ namespace android { namespace telephony {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::telephony::PhoneNumberUtils > create< android::telephony::PhoneNumberUtils>()
+
+android::telephony::PhoneNumberUtils::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::telephony::PhoneNumberUtils >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::telephony::PhoneNumberUtils::J2CPP_CLASS_NAME>(),
-			get_method_id<android::telephony::PhoneNumberUtils::J2CPP_CLASS_NAME, android::telephony::PhoneNumberUtils::J2CPP_METHOD_NAME(0), android::telephony::PhoneNumberUtils::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::telephony::PhoneNumberUtils::PhoneNumberUtils()
+: cpp_object<android::telephony::PhoneNumberUtils>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::telephony::PhoneNumberUtils::J2CPP_CLASS_NAME>(),
+		get_method_id<android::telephony::PhoneNumberUtils::J2CPP_CLASS_NAME, android::telephony::PhoneNumberUtils::J2CPP_METHOD_NAME(0), android::telephony::PhoneNumberUtils::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 cpp_boolean android::telephony::PhoneNumberUtils::isISODigit(cpp_char const &a0)
 {

@@ -14,6 +14,8 @@ namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace android { namespace net { class Uri; } } }
 namespace j2cpp { namespace android { namespace content { class Context; } } }
 namespace j2cpp { namespace android { namespace view { class View; } } }
+namespace j2cpp { namespace android { namespace view { namespace View_ { class OnClickListener; } } } }
+namespace j2cpp { namespace android { namespace widget { class ImageView; } } }
 namespace j2cpp { namespace android { namespace util { class AttributeSet; } } }
 
 
@@ -21,6 +23,7 @@ namespace j2cpp { namespace android { namespace util { class AttributeSet; } } }
 #include <android/net/Uri.hpp>
 #include <android/util/AttributeSet.hpp>
 #include <android/view/View.hpp>
+#include <android/widget/ImageView.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -47,11 +50,18 @@ namespace android { namespace widget {
 		J2CPP_DECLARE_METHOD(8)
 		J2CPP_DECLARE_FIELD(0)
 
-		QuickContactBadge(jobject jobj)
+		explicit QuickContactBadge(jobject jobj)
 		: cpp_object<QuickContactBadge>(jobj)
 		{
 		}
 
+		operator local_ref<android::widget::ImageView>() const;
+		operator local_ref<android::view::View_::OnClickListener>() const;
+
+
+		QuickContactBadge(local_ref< android::content::Context > const&);
+		QuickContactBadge(local_ref< android::content::Context > const&, local_ref< android::util::AttributeSet > const&);
+		QuickContactBadge(local_ref< android::content::Context > const&, local_ref< android::util::AttributeSet > const&, cpp_int const&);
 		void setMode(cpp_int const&);
 		void assignContactUri(local_ref< android::net::Uri > const&);
 		void assignContactFromEmail(local_ref< java::lang::String > const&, cpp_boolean const&);
@@ -63,7 +73,6 @@ namespace android { namespace widget {
 
 } //namespace widget
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -77,41 +86,55 @@ namespace android { namespace widget {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::widget::QuickContactBadge > create< android::widget::QuickContactBadge>(local_ref< android::content::Context > const &a0)
+
+android::widget::QuickContactBadge::operator local_ref<android::widget::ImageView>() const
 {
-	return local_ref< android::widget::QuickContactBadge >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::widget::QuickContactBadge::J2CPP_CLASS_NAME>(),
-			get_method_id<android::widget::QuickContactBadge::J2CPP_CLASS_NAME, android::widget::QuickContactBadge::J2CPP_METHOD_NAME(0), android::widget::QuickContactBadge::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<android::widget::ImageView>(get_jtype());
 }
 
-template <>
-local_ref< android::widget::QuickContactBadge > create< android::widget::QuickContactBadge>(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1)
+android::widget::QuickContactBadge::operator local_ref<android::view::View_::OnClickListener>() const
 {
-	return local_ref< android::widget::QuickContactBadge >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::widget::QuickContactBadge::J2CPP_CLASS_NAME>(),
-			get_method_id<android::widget::QuickContactBadge::J2CPP_CLASS_NAME, android::widget::QuickContactBadge::J2CPP_METHOD_NAME(1), android::widget::QuickContactBadge::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<android::view::View_::OnClickListener>(get_jtype());
 }
 
-template <>
-local_ref< android::widget::QuickContactBadge > create< android::widget::QuickContactBadge>(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1, cpp_int const &a2)
+
+android::widget::QuickContactBadge::QuickContactBadge(local_ref< android::content::Context > const &a0)
+: cpp_object<android::widget::QuickContactBadge>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::widget::QuickContactBadge::J2CPP_CLASS_NAME>(),
+		get_method_id<android::widget::QuickContactBadge::J2CPP_CLASS_NAME, android::widget::QuickContactBadge::J2CPP_METHOD_NAME(0), android::widget::QuickContactBadge::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< android::widget::QuickContactBadge >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::widget::QuickContactBadge::J2CPP_CLASS_NAME>(),
-			get_method_id<android::widget::QuickContactBadge::J2CPP_CLASS_NAME, android::widget::QuickContactBadge::J2CPP_METHOD_NAME(2), android::widget::QuickContactBadge::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
-		)
-	);
 }
+
+
+
+android::widget::QuickContactBadge::QuickContactBadge(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1)
+: cpp_object<android::widget::QuickContactBadge>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::widget::QuickContactBadge::J2CPP_CLASS_NAME>(),
+		get_method_id<android::widget::QuickContactBadge::J2CPP_CLASS_NAME, android::widget::QuickContactBadge::J2CPP_METHOD_NAME(1), android::widget::QuickContactBadge::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
+
+
+android::widget::QuickContactBadge::QuickContactBadge(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1, cpp_int const &a2)
+: cpp_object<android::widget::QuickContactBadge>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::widget::QuickContactBadge::J2CPP_CLASS_NAME>(),
+		get_method_id<android::widget::QuickContactBadge::J2CPP_CLASS_NAME, android::widget::QuickContactBadge::J2CPP_METHOD_NAME(2), android::widget::QuickContactBadge::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
+	)
+)
+{
+}
+
 
 void android::widget::QuickContactBadge::setMode(cpp_int const &a0)
 {

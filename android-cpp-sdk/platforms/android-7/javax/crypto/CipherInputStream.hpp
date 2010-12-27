@@ -11,9 +11,11 @@
 
 
 namespace j2cpp { namespace javax { namespace crypto { class Cipher; } } }
+namespace j2cpp { namespace java { namespace io { class FilterInputStream; } } }
 namespace j2cpp { namespace java { namespace io { class InputStream; } } }
 
 
+#include <java/io/FilterInputStream.hpp>
 #include <java/io/InputStream.hpp>
 #include <javax/crypto/Cipher.hpp>
 
@@ -40,11 +42,15 @@ namespace javax { namespace crypto {
 		J2CPP_DECLARE_METHOD(7)
 		J2CPP_DECLARE_METHOD(8)
 
-		CipherInputStream(jobject jobj)
+		explicit CipherInputStream(jobject jobj)
 		: cpp_object<CipherInputStream>(jobj)
 		{
 		}
 
+		operator local_ref<java::io::FilterInputStream>() const;
+
+
+		CipherInputStream(local_ref< java::io::InputStream > const&, local_ref< javax::crypto::Cipher > const&);
 		cpp_int read();
 		cpp_int read(local_ref< cpp_byte_array<1> > const&);
 		cpp_int read(local_ref< cpp_byte_array<1> > const&, cpp_int const&, cpp_int const&);
@@ -56,7 +62,6 @@ namespace javax { namespace crypto {
 
 } //namespace crypto
 } //namespace javax
-
 
 } //namespace j2cpp
 
@@ -70,29 +75,25 @@ namespace javax { namespace crypto {
 namespace j2cpp {
 
 
-template <>
-local_ref< javax::crypto::CipherInputStream > create< javax::crypto::CipherInputStream>(local_ref< java::io::InputStream > const &a0, local_ref< javax::crypto::Cipher > const &a1)
+
+javax::crypto::CipherInputStream::operator local_ref<java::io::FilterInputStream>() const
 {
-	return local_ref< javax::crypto::CipherInputStream >(
-		environment::get().get_jenv()->NewObject(
-			get_class<javax::crypto::CipherInputStream::J2CPP_CLASS_NAME>(),
-			get_method_id<javax::crypto::CipherInputStream::J2CPP_CLASS_NAME, javax::crypto::CipherInputStream::J2CPP_METHOD_NAME(0), javax::crypto::CipherInputStream::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<java::io::FilterInputStream>(get_jtype());
 }
 
-template <>
-local_ref< javax::crypto::CipherInputStream > create< javax::crypto::CipherInputStream>(local_ref< java::io::InputStream > const &a0)
+
+javax::crypto::CipherInputStream::CipherInputStream(local_ref< java::io::InputStream > const &a0, local_ref< javax::crypto::Cipher > const &a1)
+: cpp_object<javax::crypto::CipherInputStream>(
+	environment::get().get_jenv()->NewObject(
+		get_class<javax::crypto::CipherInputStream::J2CPP_CLASS_NAME>(),
+		get_method_id<javax::crypto::CipherInputStream::J2CPP_CLASS_NAME, javax::crypto::CipherInputStream::J2CPP_METHOD_NAME(0), javax::crypto::CipherInputStream::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
 {
-	return local_ref< javax::crypto::CipherInputStream >(
-		environment::get().get_jenv()->NewObject(
-			get_class<javax::crypto::CipherInputStream::J2CPP_CLASS_NAME>(),
-			get_method_id<javax::crypto::CipherInputStream::J2CPP_CLASS_NAME, javax::crypto::CipherInputStream::J2CPP_METHOD_NAME(1), javax::crypto::CipherInputStream::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
 }
+
+
 
 cpp_int javax::crypto::CipherInputStream::read()
 {

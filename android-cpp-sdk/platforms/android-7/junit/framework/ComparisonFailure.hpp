@@ -10,10 +10,12 @@
 #define J2CPP_JUNIT_FRAMEWORK_COMPARISONFAILURE_HPP_DECL
 
 
+namespace j2cpp { namespace junit { namespace framework { class AssertionFailedError; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 
 
 #include <java/lang/String.hpp>
+#include <junit/framework/AssertionFailedError.hpp>
 
 
 namespace j2cpp {
@@ -31,17 +33,20 @@ namespace junit { namespace framework {
 		J2CPP_DECLARE_METHOD(0)
 		J2CPP_DECLARE_METHOD(1)
 
-		ComparisonFailure(jobject jobj)
+		explicit ComparisonFailure(jobject jobj)
 		: cpp_object<ComparisonFailure>(jobj)
 		{
 		}
 
+		operator local_ref<junit::framework::AssertionFailedError>() const;
+
+
+		ComparisonFailure(local_ref< java::lang::String > const&, local_ref< java::lang::String > const&, local_ref< java::lang::String > const&);
 		local_ref< java::lang::String > getMessage();
 	}; //class ComparisonFailure
 
 } //namespace framework
 } //namespace junit
-
 
 } //namespace j2cpp
 
@@ -55,17 +60,24 @@ namespace junit { namespace framework {
 namespace j2cpp {
 
 
-template <>
-local_ref< junit::framework::ComparisonFailure > create< junit::framework::ComparisonFailure>(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1, local_ref< java::lang::String > const &a2)
+
+junit::framework::ComparisonFailure::operator local_ref<junit::framework::AssertionFailedError>() const
 {
-	return local_ref< junit::framework::ComparisonFailure >(
-		environment::get().get_jenv()->NewObject(
-			get_class<junit::framework::ComparisonFailure::J2CPP_CLASS_NAME>(),
-			get_method_id<junit::framework::ComparisonFailure::J2CPP_CLASS_NAME, junit::framework::ComparisonFailure::J2CPP_METHOD_NAME(0), junit::framework::ComparisonFailure::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
-		)
-	);
+	return local_ref<junit::framework::AssertionFailedError>(get_jtype());
 }
+
+
+junit::framework::ComparisonFailure::ComparisonFailure(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1, local_ref< java::lang::String > const &a2)
+: cpp_object<junit::framework::ComparisonFailure>(
+	environment::get().get_jenv()->NewObject(
+		get_class<junit::framework::ComparisonFailure::J2CPP_CLASS_NAME>(),
+		get_method_id<junit::framework::ComparisonFailure::J2CPP_CLASS_NAME, junit::framework::ComparisonFailure::J2CPP_METHOD_NAME(0), junit::framework::ComparisonFailure::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
+	)
+)
+{
+}
+
 
 local_ref< java::lang::String > junit::framework::ComparisonFailure::getMessage()
 {

@@ -13,7 +13,9 @@
 namespace j2cpp { namespace android { namespace content { class Context; } } }
 namespace j2cpp { namespace android { namespace view { class View; } } }
 namespace j2cpp { namespace android { namespace view { class KeyEvent; } } }
+namespace j2cpp { namespace android { namespace view { namespace View_ { class OnLongClickListener; } } } }
 namespace j2cpp { namespace android { namespace view { class MotionEvent; } } }
+namespace j2cpp { namespace android { namespace widget { class ImageButton; } } }
 namespace j2cpp { namespace android { namespace util { class AttributeSet; } } }
 
 
@@ -22,6 +24,7 @@ namespace j2cpp { namespace android { namespace util { class AttributeSet; } } }
 #include <android/view/KeyEvent.hpp>
 #include <android/view/MotionEvent.hpp>
 #include <android/view/View.hpp>
+#include <android/widget/ImageButton.hpp>
 
 
 namespace j2cpp {
@@ -46,11 +49,18 @@ namespace android { namespace widget {
 		J2CPP_DECLARE_METHOD(7)
 		J2CPP_DECLARE_METHOD(8)
 
-		ZoomButton(jobject jobj)
+		explicit ZoomButton(jobject jobj)
 		: cpp_object<ZoomButton>(jobj)
 		{
 		}
 
+		operator local_ref<android::widget::ImageButton>() const;
+		operator local_ref<android::view::View_::OnLongClickListener>() const;
+
+
+		ZoomButton(local_ref< android::content::Context > const&);
+		ZoomButton(local_ref< android::content::Context > const&, local_ref< android::util::AttributeSet > const&);
+		ZoomButton(local_ref< android::content::Context > const&, local_ref< android::util::AttributeSet > const&, cpp_int const&);
 		cpp_boolean onTouchEvent(local_ref< android::view::MotionEvent > const&);
 		void setZoomSpeed(cpp_long const&);
 		cpp_boolean onLongClick(local_ref< android::view::View > const&);
@@ -61,7 +71,6 @@ namespace android { namespace widget {
 
 } //namespace widget
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -75,41 +84,55 @@ namespace android { namespace widget {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::widget::ZoomButton > create< android::widget::ZoomButton>(local_ref< android::content::Context > const &a0)
+
+android::widget::ZoomButton::operator local_ref<android::widget::ImageButton>() const
 {
-	return local_ref< android::widget::ZoomButton >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::widget::ZoomButton::J2CPP_CLASS_NAME>(),
-			get_method_id<android::widget::ZoomButton::J2CPP_CLASS_NAME, android::widget::ZoomButton::J2CPP_METHOD_NAME(0), android::widget::ZoomButton::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<android::widget::ImageButton>(get_jtype());
 }
 
-template <>
-local_ref< android::widget::ZoomButton > create< android::widget::ZoomButton>(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1)
+android::widget::ZoomButton::operator local_ref<android::view::View_::OnLongClickListener>() const
 {
-	return local_ref< android::widget::ZoomButton >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::widget::ZoomButton::J2CPP_CLASS_NAME>(),
-			get_method_id<android::widget::ZoomButton::J2CPP_CLASS_NAME, android::widget::ZoomButton::J2CPP_METHOD_NAME(1), android::widget::ZoomButton::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<android::view::View_::OnLongClickListener>(get_jtype());
 }
 
-template <>
-local_ref< android::widget::ZoomButton > create< android::widget::ZoomButton>(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1, cpp_int const &a2)
+
+android::widget::ZoomButton::ZoomButton(local_ref< android::content::Context > const &a0)
+: cpp_object<android::widget::ZoomButton>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::widget::ZoomButton::J2CPP_CLASS_NAME>(),
+		get_method_id<android::widget::ZoomButton::J2CPP_CLASS_NAME, android::widget::ZoomButton::J2CPP_METHOD_NAME(0), android::widget::ZoomButton::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< android::widget::ZoomButton >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::widget::ZoomButton::J2CPP_CLASS_NAME>(),
-			get_method_id<android::widget::ZoomButton::J2CPP_CLASS_NAME, android::widget::ZoomButton::J2CPP_METHOD_NAME(2), android::widget::ZoomButton::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
-		)
-	);
 }
+
+
+
+android::widget::ZoomButton::ZoomButton(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1)
+: cpp_object<android::widget::ZoomButton>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::widget::ZoomButton::J2CPP_CLASS_NAME>(),
+		get_method_id<android::widget::ZoomButton::J2CPP_CLASS_NAME, android::widget::ZoomButton::J2CPP_METHOD_NAME(1), android::widget::ZoomButton::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
+
+
+android::widget::ZoomButton::ZoomButton(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1, cpp_int const &a2)
+: cpp_object<android::widget::ZoomButton>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::widget::ZoomButton::J2CPP_CLASS_NAME>(),
+		get_method_id<android::widget::ZoomButton::J2CPP_CLASS_NAME, android::widget::ZoomButton::J2CPP_METHOD_NAME(2), android::widget::ZoomButton::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
+	)
+)
+{
+}
+
 
 cpp_boolean android::widget::ZoomButton::onTouchEvent(local_ref< android::view::MotionEvent > const &a0)
 {

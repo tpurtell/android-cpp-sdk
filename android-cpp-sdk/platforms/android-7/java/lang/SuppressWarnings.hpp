@@ -10,10 +10,14 @@
 #define J2CPP_JAVA_LANG_SUPPRESSWARNINGS_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace lang { namespace annotation { class Annotation; } } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
+#include <java/lang/annotation/Annotation.hpp>
 
 
 namespace j2cpp {
@@ -30,17 +34,20 @@ namespace java { namespace lang {
 
 		J2CPP_DECLARE_METHOD(0)
 
-		SuppressWarnings(jobject jobj)
+		explicit SuppressWarnings(jobject jobj)
 		: cpp_object<SuppressWarnings>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::lang::annotation::Annotation>() const;
+
 
 		local_ref< cpp_object_array<java::lang::String, 1> > value();
 	}; //class SuppressWarnings
 
 } //namespace lang
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -53,6 +60,17 @@ namespace java { namespace lang {
 
 namespace j2cpp {
 
+
+
+java::lang::SuppressWarnings::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
+
+java::lang::SuppressWarnings::operator local_ref<java::lang::annotation::Annotation>() const
+{
+	return local_ref<java::lang::annotation::Annotation>(get_jtype());
+}
 
 local_ref< cpp_object_array<java::lang::String, 1> > java::lang::SuppressWarnings::value()
 {

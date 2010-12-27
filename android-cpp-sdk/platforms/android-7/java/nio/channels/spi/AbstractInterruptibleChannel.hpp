@@ -10,8 +10,14 @@
 #define J2CPP_JAVA_NIO_CHANNELS_SPI_ABSTRACTINTERRUPTIBLECHANNEL_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace nio { namespace channels { class Channel; } } } }
+namespace j2cpp { namespace java { namespace nio { namespace channels { class InterruptibleChannel; } } } }
 
 
+#include <java/lang/Object.hpp>
+#include <java/nio/channels/Channel.hpp>
+#include <java/nio/channels/InterruptibleChannel.hpp>
 
 
 namespace j2cpp {
@@ -33,10 +39,15 @@ namespace java { namespace nio { namespace channels { namespace spi {
 		J2CPP_DECLARE_METHOD(4)
 		J2CPP_DECLARE_METHOD(5)
 
-		AbstractInterruptibleChannel(jobject jobj)
+		explicit AbstractInterruptibleChannel(jobject jobj)
 		: cpp_object<AbstractInterruptibleChannel>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::nio::channels::Channel>() const;
+		operator local_ref<java::nio::channels::InterruptibleChannel>() const;
+
 
 		cpp_boolean isOpen();
 		void close();
@@ -46,7 +57,6 @@ namespace java { namespace nio { namespace channels { namespace spi {
 } //namespace channels
 } //namespace nio
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -60,16 +70,22 @@ namespace java { namespace nio { namespace channels { namespace spi {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::nio::channels::spi::AbstractInterruptibleChannel > create< java::nio::channels::spi::AbstractInterruptibleChannel>()
+
+java::nio::channels::spi::AbstractInterruptibleChannel::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::nio::channels::spi::AbstractInterruptibleChannel >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::nio::channels::spi::AbstractInterruptibleChannel::J2CPP_CLASS_NAME>(),
-			get_method_id<java::nio::channels::spi::AbstractInterruptibleChannel::J2CPP_CLASS_NAME, java::nio::channels::spi::AbstractInterruptibleChannel::J2CPP_METHOD_NAME(0), java::nio::channels::spi::AbstractInterruptibleChannel::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+java::nio::channels::spi::AbstractInterruptibleChannel::operator local_ref<java::nio::channels::Channel>() const
+{
+	return local_ref<java::nio::channels::Channel>(get_jtype());
+}
+
+java::nio::channels::spi::AbstractInterruptibleChannel::operator local_ref<java::nio::channels::InterruptibleChannel>() const
+{
+	return local_ref<java::nio::channels::InterruptibleChannel>(get_jtype());
+}
+
 
 cpp_boolean java::nio::channels::spi::AbstractInterruptibleChannel::isOpen()
 {

@@ -10,9 +10,11 @@
 #define J2CPP_ANDROID_ACCOUNTS_ACCOUNTAUTHENTICATORACTIVITY_HPP_DECL
 
 
+namespace j2cpp { namespace android { namespace app { class Activity; } } }
 namespace j2cpp { namespace android { namespace os { class Bundle; } } }
 
 
+#include <android/app/Activity.hpp>
 #include <android/os/Bundle.hpp>
 
 
@@ -33,18 +35,21 @@ namespace android { namespace accounts {
 		J2CPP_DECLARE_METHOD(2)
 		J2CPP_DECLARE_METHOD(3)
 
-		AccountAuthenticatorActivity(jobject jobj)
+		explicit AccountAuthenticatorActivity(jobject jobj)
 		: cpp_object<AccountAuthenticatorActivity>(jobj)
 		{
 		}
 
+		operator local_ref<android::app::Activity>() const;
+
+
+		AccountAuthenticatorActivity();
 		void setAccountAuthenticatorResult(local_ref< android::os::Bundle > const&);
 		void finish();
 	}; //class AccountAuthenticatorActivity
 
 } //namespace accounts
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -58,16 +63,23 @@ namespace android { namespace accounts {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::accounts::AccountAuthenticatorActivity > create< android::accounts::AccountAuthenticatorActivity>()
+
+android::accounts::AccountAuthenticatorActivity::operator local_ref<android::app::Activity>() const
 {
-	return local_ref< android::accounts::AccountAuthenticatorActivity >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::accounts::AccountAuthenticatorActivity::J2CPP_CLASS_NAME>(),
-			get_method_id<android::accounts::AccountAuthenticatorActivity::J2CPP_CLASS_NAME, android::accounts::AccountAuthenticatorActivity::J2CPP_METHOD_NAME(0), android::accounts::AccountAuthenticatorActivity::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<android::app::Activity>(get_jtype());
 }
+
+
+android::accounts::AccountAuthenticatorActivity::AccountAuthenticatorActivity()
+: cpp_object<android::accounts::AccountAuthenticatorActivity>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::accounts::AccountAuthenticatorActivity::J2CPP_CLASS_NAME>(),
+		get_method_id<android::accounts::AccountAuthenticatorActivity::J2CPP_CLASS_NAME, android::accounts::AccountAuthenticatorActivity::J2CPP_METHOD_NAME(0), android::accounts::AccountAuthenticatorActivity::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 void android::accounts::AccountAuthenticatorActivity::setAccountAuthenticatorResult(local_ref< android::os::Bundle > const &a0)
 {

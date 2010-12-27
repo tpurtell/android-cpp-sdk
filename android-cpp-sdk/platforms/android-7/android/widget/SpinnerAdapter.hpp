@@ -10,12 +10,16 @@
 #define J2CPP_ANDROID_WIDGET_SPINNERADAPTER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace android { namespace view { class View; } } }
 namespace j2cpp { namespace android { namespace view { class ViewGroup; } } }
+namespace j2cpp { namespace android { namespace widget { class Adapter; } } }
 
 
 #include <android/view/View.hpp>
 #include <android/view/ViewGroup.hpp>
+#include <android/widget/Adapter.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -32,17 +36,20 @@ namespace android { namespace widget {
 
 		J2CPP_DECLARE_METHOD(0)
 
-		SpinnerAdapter(jobject jobj)
+		explicit SpinnerAdapter(jobject jobj)
 		: cpp_object<SpinnerAdapter>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<android::widget::Adapter>() const;
+
 
 		local_ref< android::view::View > getDropDownView(cpp_int const&, local_ref< android::view::View > const&, local_ref< android::view::ViewGroup > const&);
 	}; //class SpinnerAdapter
 
 } //namespace widget
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -55,6 +62,17 @@ namespace android { namespace widget {
 
 namespace j2cpp {
 
+
+
+android::widget::SpinnerAdapter::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
+
+android::widget::SpinnerAdapter::operator local_ref<android::widget::Adapter>() const
+{
+	return local_ref<android::widget::Adapter>(get_jtype());
+}
 
 local_ref< android::view::View > android::widget::SpinnerAdapter::getDropDownView(cpp_int const &a0, local_ref< android::view::View > const &a1, local_ref< android::view::ViewGroup > const &a2)
 {

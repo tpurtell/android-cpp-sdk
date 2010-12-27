@@ -10,11 +10,13 @@
 #define J2CPP_ANDROID_NET_PROXY_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace android { namespace content { class Context; } } }
 
 
 #include <android/content/Context.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -37,11 +39,15 @@ namespace android { namespace net {
 		J2CPP_DECLARE_METHOD(4)
 		J2CPP_DECLARE_FIELD(0)
 
-		Proxy(jobject jobj)
+		explicit Proxy(jobject jobj)
 		: cpp_object<Proxy>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		Proxy();
 		static local_ref< java::lang::String > getHost(local_ref< android::content::Context > const&);
 		static cpp_int getPort(local_ref< android::content::Context > const&);
 		static local_ref< java::lang::String > getDefaultHost();
@@ -52,7 +58,6 @@ namespace android { namespace net {
 
 } //namespace net
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -66,16 +71,23 @@ namespace android { namespace net {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::net::Proxy > create< android::net::Proxy>()
+
+android::net::Proxy::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::net::Proxy >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::net::Proxy::J2CPP_CLASS_NAME>(),
-			get_method_id<android::net::Proxy::J2CPP_CLASS_NAME, android::net::Proxy::J2CPP_METHOD_NAME(0), android::net::Proxy::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::net::Proxy::Proxy()
+: cpp_object<android::net::Proxy>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::net::Proxy::J2CPP_CLASS_NAME>(),
+		get_method_id<android::net::Proxy::J2CPP_CLASS_NAME, android::net::Proxy::J2CPP_METHOD_NAME(0), android::net::Proxy::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 local_ref< java::lang::String > android::net::Proxy::getHost(local_ref< android::content::Context > const &a0)
 {

@@ -10,6 +10,7 @@
 #define J2CPP_ANDROID_DATABASE_CURSOR_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace android { namespace net { class Uri; } } }
 namespace j2cpp { namespace android { namespace database { class CharArrayBuffer; } } }
@@ -25,6 +26,7 @@ namespace j2cpp { namespace android { namespace os { class Bundle; } } }
 #include <android/database/DataSetObserver.hpp>
 #include <android/net/Uri.hpp>
 #include <android/os/Bundle.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -79,10 +81,13 @@ namespace android { namespace database {
 		J2CPP_DECLARE_METHOD(36)
 		J2CPP_DECLARE_METHOD(37)
 
-		Cursor(jobject jobj)
+		explicit Cursor(jobject jobj)
 		: cpp_object<Cursor>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		cpp_int getCount();
 		cpp_int getPosition();
@@ -127,7 +132,6 @@ namespace android { namespace database {
 } //namespace database
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_DATABASE_CURSOR_HPP_DECL
@@ -139,6 +143,12 @@ namespace android { namespace database {
 
 namespace j2cpp {
 
+
+
+android::database::Cursor::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 cpp_int android::database::Cursor::getCount()
 {

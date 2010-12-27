@@ -30,17 +30,19 @@ namespace android { namespace webkit {
 
 		J2CPP_DECLARE_METHOD(0)
 
-		ValueCallback(jobject jobj)
+		explicit ValueCallback(jobject jobj)
 		: cpp_object<ValueCallback>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		void onReceiveValue(local_ref< java::lang::Object > const&);
 	}; //class ValueCallback
 
 } //namespace webkit
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -53,6 +55,12 @@ namespace android { namespace webkit {
 
 namespace j2cpp {
 
+
+
+android::webkit::ValueCallback::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 void android::webkit::ValueCallback::onReceiveValue(local_ref< java::lang::Object > const &a0)
 {

@@ -10,14 +10,18 @@
 #define J2CPP_JAVA_UTIL_CONCURRENT_SCHEDULEDEXECUTORSERVICE_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class Runnable; } } }
 namespace j2cpp { namespace java { namespace util { namespace concurrent { class Callable; } } } }
 namespace j2cpp { namespace java { namespace util { namespace concurrent { class ScheduledFuture; } } } }
+namespace j2cpp { namespace java { namespace util { namespace concurrent { class ExecutorService; } } } }
 namespace j2cpp { namespace java { namespace util { namespace concurrent { class TimeUnit; } } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/Runnable.hpp>
 #include <java/util/concurrent/Callable.hpp>
+#include <java/util/concurrent/ExecutorService.hpp>
 #include <java/util/concurrent/ScheduledFuture.hpp>
 #include <java/util/concurrent/TimeUnit.hpp>
 
@@ -39,10 +43,14 @@ namespace java { namespace util { namespace concurrent {
 		J2CPP_DECLARE_METHOD(2)
 		J2CPP_DECLARE_METHOD(3)
 
-		ScheduledExecutorService(jobject jobj)
+		explicit ScheduledExecutorService(jobject jobj)
 		: cpp_object<ScheduledExecutorService>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::util::concurrent::ExecutorService>() const;
+
 
 		local_ref< java::util::concurrent::ScheduledFuture > schedule(local_ref< java::lang::Runnable > const&, cpp_long const&, local_ref< java::util::concurrent::TimeUnit > const&);
 		local_ref< java::util::concurrent::ScheduledFuture > schedule(local_ref< java::util::concurrent::Callable > const&, cpp_long const&, local_ref< java::util::concurrent::TimeUnit > const&);
@@ -53,7 +61,6 @@ namespace java { namespace util { namespace concurrent {
 } //namespace concurrent
 } //namespace util
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -66,6 +73,17 @@ namespace java { namespace util { namespace concurrent {
 
 namespace j2cpp {
 
+
+
+java::util::concurrent::ScheduledExecutorService::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
+
+java::util::concurrent::ScheduledExecutorService::operator local_ref<java::util::concurrent::ExecutorService>() const
+{
+	return local_ref<java::util::concurrent::ExecutorService>(get_jtype());
+}
 
 local_ref< java::util::concurrent::ScheduledFuture > java::util::concurrent::ScheduledExecutorService::schedule(local_ref< java::lang::Runnable > const &a0, cpp_long const &a1, local_ref< java::util::concurrent::TimeUnit > const &a2)
 {

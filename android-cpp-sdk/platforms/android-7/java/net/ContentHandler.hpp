@@ -36,18 +36,21 @@ namespace java { namespace net {
 		J2CPP_DECLARE_METHOD(1)
 		J2CPP_DECLARE_METHOD(2)
 
-		ContentHandler(jobject jobj)
+		explicit ContentHandler(jobject jobj)
 		: cpp_object<ContentHandler>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		ContentHandler();
 		local_ref< java::lang::Object > getContent(local_ref< java::net::URLConnection > const&);
 		local_ref< java::lang::Object > getContent(local_ref< java::net::URLConnection > const&, local_ref< cpp_object_array<java::lang::Class, 1> > const&);
 	}; //class ContentHandler
 
 } //namespace net
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -61,16 +64,23 @@ namespace java { namespace net {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::net::ContentHandler > create< java::net::ContentHandler>()
+
+java::net::ContentHandler::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::net::ContentHandler >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::net::ContentHandler::J2CPP_CLASS_NAME>(),
-			get_method_id<java::net::ContentHandler::J2CPP_CLASS_NAME, java::net::ContentHandler::J2CPP_METHOD_NAME(0), java::net::ContentHandler::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+java::net::ContentHandler::ContentHandler()
+: cpp_object<java::net::ContentHandler>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::net::ContentHandler::J2CPP_CLASS_NAME>(),
+		get_method_id<java::net::ContentHandler::J2CPP_CLASS_NAME, java::net::ContentHandler::J2CPP_METHOD_NAME(0), java::net::ContentHandler::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 local_ref< java::lang::Object > java::net::ContentHandler::getContent(local_ref< java::net::URLConnection > const &a0)
 {

@@ -45,10 +45,13 @@ namespace java { namespace net {
 		J2CPP_DECLARE_FIELD(12)
 		J2CPP_DECLARE_FIELD(13)
 
-		SocketOptions(jobject jobj)
+		explicit SocketOptions(jobject jobj)
 		: cpp_object<SocketOptions>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		local_ref< java::lang::Object > getOption(cpp_int const&);
 		void setOption(cpp_int const&, local_ref< java::lang::Object > const&);
@@ -72,7 +75,6 @@ namespace java { namespace net {
 } //namespace net
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_NET_SOCKETOPTIONS_HPP_DECL
@@ -84,6 +86,12 @@ namespace java { namespace net {
 
 namespace j2cpp {
 
+
+
+java::net::SocketOptions::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 local_ref< java::lang::Object > java::net::SocketOptions::getOption(cpp_int const &a0)
 {

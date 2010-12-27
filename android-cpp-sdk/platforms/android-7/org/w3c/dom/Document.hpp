@@ -10,6 +10,7 @@
 #define J2CPP_ORG_W3C_DOM_DOCUMENT_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace org { namespace w3c { namespace dom { class CDATASection; } } } }
 namespace j2cpp { namespace org { namespace w3c { namespace dom { class ProcessingInstruction; } } } }
@@ -25,6 +26,7 @@ namespace j2cpp { namespace org { namespace w3c { namespace dom { class NodeList
 namespace j2cpp { namespace org { namespace w3c { namespace dom { class Element; } } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <org/w3c/dom/Attr.hpp>
 #include <org/w3c/dom/CDATASection.hpp>
@@ -70,10 +72,14 @@ namespace org { namespace w3c { namespace dom {
 		J2CPP_DECLARE_METHOD(15)
 		J2CPP_DECLARE_METHOD(16)
 
-		Document(jobject jobj)
+		explicit Document(jobject jobj)
 		: cpp_object<Document>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<org::w3c::dom::Node>() const;
+
 
 		local_ref< org::w3c::dom::DocumentType > getDoctype();
 		local_ref< org::w3c::dom::DOMImplementation > getImplementation();
@@ -98,7 +104,6 @@ namespace org { namespace w3c { namespace dom {
 } //namespace w3c
 } //namespace org
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ORG_W3C_DOM_DOCUMENT_HPP_DECL
@@ -110,6 +115,17 @@ namespace org { namespace w3c { namespace dom {
 
 namespace j2cpp {
 
+
+
+org::w3c::dom::Document::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
+
+org::w3c::dom::Document::operator local_ref<org::w3c::dom::Node>() const
+{
+	return local_ref<org::w3c::dom::Node>(get_jtype());
+}
 
 local_ref< org::w3c::dom::DocumentType > org::w3c::dom::Document::getDoctype()
 {

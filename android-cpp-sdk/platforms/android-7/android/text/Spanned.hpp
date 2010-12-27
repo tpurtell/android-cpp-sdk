@@ -12,8 +12,10 @@
 
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class Class; } } }
+namespace j2cpp { namespace java { namespace lang { class CharSequence; } } }
 
 
+#include <java/lang/CharSequence.hpp>
 #include <java/lang/Class.hpp>
 #include <java/lang/Object.hpp>
 
@@ -52,10 +54,14 @@ namespace android { namespace text {
 		J2CPP_DECLARE_FIELD(14)
 		J2CPP_DECLARE_FIELD(15)
 
-		Spanned(jobject jobj)
+		explicit Spanned(jobject jobj)
 		: cpp_object<Spanned>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::lang::CharSequence>() const;
+
 
 		local_ref< cpp_object_array<java::lang::Object, 1> > getSpans(cpp_int const&, cpp_int const&, local_ref< java::lang::Class > const&);
 		cpp_int getSpanStart(local_ref< java::lang::Object > const&);
@@ -84,7 +90,6 @@ namespace android { namespace text {
 } //namespace text
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_TEXT_SPANNED_HPP_DECL
@@ -96,6 +101,17 @@ namespace android { namespace text {
 
 namespace j2cpp {
 
+
+
+android::text::Spanned::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
+
+android::text::Spanned::operator local_ref<java::lang::CharSequence>() const
+{
+	return local_ref<java::lang::CharSequence>(get_jtype());
+}
 
 local_ref< cpp_object_array<java::lang::Object, 1> > android::text::Spanned::getSpans(cpp_int const &a0, cpp_int const &a1, local_ref< java::lang::Class > const &a2)
 {

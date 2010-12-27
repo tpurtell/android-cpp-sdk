@@ -10,10 +10,12 @@
 #define J2CPP_JAVA_UTIL_ZIP_CHECKEDINPUTSTREAM_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class FilterInputStream; } } }
 namespace j2cpp { namespace java { namespace io { class InputStream; } } }
 namespace j2cpp { namespace java { namespace util { namespace zip { class Checksum; } } } }
 
 
+#include <java/io/FilterInputStream.hpp>
 #include <java/io/InputStream.hpp>
 #include <java/util/zip/Checksum.hpp>
 
@@ -36,11 +38,15 @@ namespace java { namespace util { namespace zip {
 		J2CPP_DECLARE_METHOD(3)
 		J2CPP_DECLARE_METHOD(4)
 
-		CheckedInputStream(jobject jobj)
+		explicit CheckedInputStream(jobject jobj)
 		: cpp_object<CheckedInputStream>(jobj)
 		{
 		}
 
+		operator local_ref<java::io::FilterInputStream>() const;
+
+
+		CheckedInputStream(local_ref< java::io::InputStream > const&, local_ref< java::util::zip::Checksum > const&);
 		cpp_int read();
 		cpp_int read(local_ref< cpp_byte_array<1> > const&, cpp_int const&, cpp_int const&);
 		local_ref< java::util::zip::Checksum > getChecksum();
@@ -50,7 +56,6 @@ namespace java { namespace util { namespace zip {
 } //namespace zip
 } //namespace util
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -64,17 +69,24 @@ namespace java { namespace util { namespace zip {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::util::zip::CheckedInputStream > create< java::util::zip::CheckedInputStream>(local_ref< java::io::InputStream > const &a0, local_ref< java::util::zip::Checksum > const &a1)
+
+java::util::zip::CheckedInputStream::operator local_ref<java::io::FilterInputStream>() const
 {
-	return local_ref< java::util::zip::CheckedInputStream >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::zip::CheckedInputStream::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::zip::CheckedInputStream::J2CPP_CLASS_NAME, java::util::zip::CheckedInputStream::J2CPP_METHOD_NAME(0), java::util::zip::CheckedInputStream::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<java::io::FilterInputStream>(get_jtype());
 }
+
+
+java::util::zip::CheckedInputStream::CheckedInputStream(local_ref< java::io::InputStream > const &a0, local_ref< java::util::zip::Checksum > const &a1)
+: cpp_object<java::util::zip::CheckedInputStream>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::util::zip::CheckedInputStream::J2CPP_CLASS_NAME>(),
+		get_method_id<java::util::zip::CheckedInputStream::J2CPP_CLASS_NAME, java::util::zip::CheckedInputStream::J2CPP_METHOD_NAME(0), java::util::zip::CheckedInputStream::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
 
 cpp_int java::util::zip::CheckedInputStream::read()
 {

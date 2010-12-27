@@ -30,17 +30,19 @@ namespace java { namespace security {
 
 		J2CPP_DECLARE_METHOD(0)
 
-		PrivilegedAction(jobject jobj)
+		explicit PrivilegedAction(jobject jobj)
 		: cpp_object<PrivilegedAction>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		local_ref< java::lang::Object > run();
 	}; //class PrivilegedAction
 
 } //namespace security
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -53,6 +55,12 @@ namespace java { namespace security {
 
 namespace j2cpp {
 
+
+
+java::security::PrivilegedAction::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 local_ref< java::lang::Object > java::security::PrivilegedAction::run()
 {

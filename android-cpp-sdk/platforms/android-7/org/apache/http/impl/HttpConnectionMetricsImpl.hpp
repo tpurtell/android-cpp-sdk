@@ -12,11 +12,13 @@
 
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { class HttpConnectionMetrics; } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace io { class HttpTransportMetrics; } } } } }
 
 
 #include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
+#include <org/apache/http/HttpConnectionMetrics.hpp>
 #include <org/apache/http/io/HttpTransportMetrics.hpp>
 
 
@@ -47,11 +49,16 @@ namespace org { namespace apache { namespace http { namespace impl {
 		J2CPP_DECLARE_FIELD(2)
 		J2CPP_DECLARE_FIELD(3)
 
-		HttpConnectionMetricsImpl(jobject jobj)
+		explicit HttpConnectionMetricsImpl(jobject jobj)
 		: cpp_object<HttpConnectionMetricsImpl>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<org::apache::http::HttpConnectionMetrics>() const;
+
+
+		HttpConnectionMetricsImpl(local_ref< org::apache::http::io::HttpTransportMetrics > const&, local_ref< org::apache::http::io::HttpTransportMetrics > const&);
 		cpp_long getReceivedBytesCount();
 		cpp_long getSentBytesCount();
 		cpp_long getRequestCount();
@@ -73,7 +80,6 @@ namespace org { namespace apache { namespace http { namespace impl {
 } //namespace apache
 } //namespace org
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ORG_APACHE_HTTP_IMPL_HTTPCONNECTIONMETRICSIMPL_HPP_DECL
@@ -86,17 +92,29 @@ namespace org { namespace apache { namespace http { namespace impl {
 namespace j2cpp {
 
 
-template <>
-local_ref< org::apache::http::impl::HttpConnectionMetricsImpl > create< org::apache::http::impl::HttpConnectionMetricsImpl>(local_ref< org::apache::http::io::HttpTransportMetrics > const &a0, local_ref< org::apache::http::io::HttpTransportMetrics > const &a1)
+
+org::apache::http::impl::HttpConnectionMetricsImpl::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< org::apache::http::impl::HttpConnectionMetricsImpl >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::apache::http::impl::HttpConnectionMetricsImpl::J2CPP_CLASS_NAME>(),
-			get_method_id<org::apache::http::impl::HttpConnectionMetricsImpl::J2CPP_CLASS_NAME, org::apache::http::impl::HttpConnectionMetricsImpl::J2CPP_METHOD_NAME(0), org::apache::http::impl::HttpConnectionMetricsImpl::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+org::apache::http::impl::HttpConnectionMetricsImpl::operator local_ref<org::apache::http::HttpConnectionMetrics>() const
+{
+	return local_ref<org::apache::http::HttpConnectionMetrics>(get_jtype());
+}
+
+
+org::apache::http::impl::HttpConnectionMetricsImpl::HttpConnectionMetricsImpl(local_ref< org::apache::http::io::HttpTransportMetrics > const &a0, local_ref< org::apache::http::io::HttpTransportMetrics > const &a1)
+: cpp_object<org::apache::http::impl::HttpConnectionMetricsImpl>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::apache::http::impl::HttpConnectionMetricsImpl::J2CPP_CLASS_NAME>(),
+		get_method_id<org::apache::http::impl::HttpConnectionMetricsImpl::J2CPP_CLASS_NAME, org::apache::http::impl::HttpConnectionMetricsImpl::J2CPP_METHOD_NAME(0), org::apache::http::impl::HttpConnectionMetricsImpl::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
 
 cpp_long org::apache::http::impl::HttpConnectionMetricsImpl::getReceivedBytesCount()
 {

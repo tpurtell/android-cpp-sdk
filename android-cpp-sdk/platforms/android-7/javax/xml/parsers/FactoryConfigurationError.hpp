@@ -10,10 +10,12 @@
 #define J2CPP_JAVAX_XML_PARSERS_FACTORYCONFIGURATIONERROR_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Error; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace lang { class Exception; } } }
 
 
+#include <java/lang/Error.hpp>
 #include <java/lang/Exception.hpp>
 #include <java/lang/String.hpp>
 
@@ -37,11 +39,18 @@ namespace javax { namespace xml { namespace parsers {
 		J2CPP_DECLARE_METHOD(4)
 		J2CPP_DECLARE_METHOD(5)
 
-		FactoryConfigurationError(jobject jobj)
+		explicit FactoryConfigurationError(jobject jobj)
 		: cpp_object<FactoryConfigurationError>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Error>() const;
+
+
+		FactoryConfigurationError();
+		FactoryConfigurationError(local_ref< java::lang::Exception > const&);
+		FactoryConfigurationError(local_ref< java::lang::Exception > const&, local_ref< java::lang::String > const&);
+		FactoryConfigurationError(local_ref< java::lang::String > const&);
 		local_ref< java::lang::Exception > getException();
 		local_ref< java::lang::String > getMessage();
 	}; //class FactoryConfigurationError
@@ -49,7 +58,6 @@ namespace javax { namespace xml { namespace parsers {
 } //namespace parsers
 } //namespace xml
 } //namespace javax
-
 
 } //namespace j2cpp
 
@@ -63,52 +71,62 @@ namespace javax { namespace xml { namespace parsers {
 namespace j2cpp {
 
 
-template <>
-local_ref< javax::xml::parsers::FactoryConfigurationError > create< javax::xml::parsers::FactoryConfigurationError>()
+
+javax::xml::parsers::FactoryConfigurationError::operator local_ref<java::lang::Error>() const
 {
-	return local_ref< javax::xml::parsers::FactoryConfigurationError >(
-		environment::get().get_jenv()->NewObject(
-			get_class<javax::xml::parsers::FactoryConfigurationError::J2CPP_CLASS_NAME>(),
-			get_method_id<javax::xml::parsers::FactoryConfigurationError::J2CPP_CLASS_NAME, javax::xml::parsers::FactoryConfigurationError::J2CPP_METHOD_NAME(0), javax::xml::parsers::FactoryConfigurationError::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Error>(get_jtype());
 }
 
-template <>
-local_ref< javax::xml::parsers::FactoryConfigurationError > create< javax::xml::parsers::FactoryConfigurationError>(local_ref< java::lang::Exception > const &a0)
+
+javax::xml::parsers::FactoryConfigurationError::FactoryConfigurationError()
+: cpp_object<javax::xml::parsers::FactoryConfigurationError>(
+	environment::get().get_jenv()->NewObject(
+		get_class<javax::xml::parsers::FactoryConfigurationError::J2CPP_CLASS_NAME>(),
+		get_method_id<javax::xml::parsers::FactoryConfigurationError::J2CPP_CLASS_NAME, javax::xml::parsers::FactoryConfigurationError::J2CPP_METHOD_NAME(0), javax::xml::parsers::FactoryConfigurationError::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
 {
-	return local_ref< javax::xml::parsers::FactoryConfigurationError >(
-		environment::get().get_jenv()->NewObject(
-			get_class<javax::xml::parsers::FactoryConfigurationError::J2CPP_CLASS_NAME>(),
-			get_method_id<javax::xml::parsers::FactoryConfigurationError::J2CPP_CLASS_NAME, javax::xml::parsers::FactoryConfigurationError::J2CPP_METHOD_NAME(1), javax::xml::parsers::FactoryConfigurationError::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< javax::xml::parsers::FactoryConfigurationError > create< javax::xml::parsers::FactoryConfigurationError>(local_ref< java::lang::Exception > const &a0, local_ref< java::lang::String > const &a1)
+
+
+javax::xml::parsers::FactoryConfigurationError::FactoryConfigurationError(local_ref< java::lang::Exception > const &a0)
+: cpp_object<javax::xml::parsers::FactoryConfigurationError>(
+	environment::get().get_jenv()->NewObject(
+		get_class<javax::xml::parsers::FactoryConfigurationError::J2CPP_CLASS_NAME>(),
+		get_method_id<javax::xml::parsers::FactoryConfigurationError::J2CPP_CLASS_NAME, javax::xml::parsers::FactoryConfigurationError::J2CPP_METHOD_NAME(1), javax::xml::parsers::FactoryConfigurationError::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< javax::xml::parsers::FactoryConfigurationError >(
-		environment::get().get_jenv()->NewObject(
-			get_class<javax::xml::parsers::FactoryConfigurationError::J2CPP_CLASS_NAME>(),
-			get_method_id<javax::xml::parsers::FactoryConfigurationError::J2CPP_CLASS_NAME, javax::xml::parsers::FactoryConfigurationError::J2CPP_METHOD_NAME(2), javax::xml::parsers::FactoryConfigurationError::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< javax::xml::parsers::FactoryConfigurationError > create< javax::xml::parsers::FactoryConfigurationError>(local_ref< java::lang::String > const &a0)
+
+
+javax::xml::parsers::FactoryConfigurationError::FactoryConfigurationError(local_ref< java::lang::Exception > const &a0, local_ref< java::lang::String > const &a1)
+: cpp_object<javax::xml::parsers::FactoryConfigurationError>(
+	environment::get().get_jenv()->NewObject(
+		get_class<javax::xml::parsers::FactoryConfigurationError::J2CPP_CLASS_NAME>(),
+		get_method_id<javax::xml::parsers::FactoryConfigurationError::J2CPP_CLASS_NAME, javax::xml::parsers::FactoryConfigurationError::J2CPP_METHOD_NAME(2), javax::xml::parsers::FactoryConfigurationError::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
 {
-	return local_ref< javax::xml::parsers::FactoryConfigurationError >(
-		environment::get().get_jenv()->NewObject(
-			get_class<javax::xml::parsers::FactoryConfigurationError::J2CPP_CLASS_NAME>(),
-			get_method_id<javax::xml::parsers::FactoryConfigurationError::J2CPP_CLASS_NAME, javax::xml::parsers::FactoryConfigurationError::J2CPP_METHOD_NAME(3), javax::xml::parsers::FactoryConfigurationError::J2CPP_METHOD_SIGNATURE(3), false>(),
-			a0.get_jtype()
-		)
-	);
 }
+
+
+
+javax::xml::parsers::FactoryConfigurationError::FactoryConfigurationError(local_ref< java::lang::String > const &a0)
+: cpp_object<javax::xml::parsers::FactoryConfigurationError>(
+	environment::get().get_jenv()->NewObject(
+		get_class<javax::xml::parsers::FactoryConfigurationError::J2CPP_CLASS_NAME>(),
+		get_method_id<javax::xml::parsers::FactoryConfigurationError::J2CPP_CLASS_NAME, javax::xml::parsers::FactoryConfigurationError::J2CPP_METHOD_NAME(3), javax::xml::parsers::FactoryConfigurationError::J2CPP_METHOD_SIGNATURE(3), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 local_ref< java::lang::Exception > javax::xml::parsers::FactoryConfigurationError::getException()
 {

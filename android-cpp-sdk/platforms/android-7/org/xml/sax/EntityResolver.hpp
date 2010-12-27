@@ -10,10 +10,12 @@
 #define J2CPP_ORG_XML_SAX_ENTITYRESOLVER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace org { namespace xml { namespace sax { class InputSource; } } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <org/xml/sax/InputSource.hpp>
 
@@ -32,10 +34,13 @@ namespace org { namespace xml { namespace sax {
 
 		J2CPP_DECLARE_METHOD(0)
 
-		EntityResolver(jobject jobj)
+		explicit EntityResolver(jobject jobj)
 		: cpp_object<EntityResolver>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		local_ref< org::xml::sax::InputSource > resolveEntity(local_ref< java::lang::String > const&, local_ref< java::lang::String > const&);
 	}; //class EntityResolver
@@ -43,7 +48,6 @@ namespace org { namespace xml { namespace sax {
 } //namespace sax
 } //namespace xml
 } //namespace org
-
 
 } //namespace j2cpp
 
@@ -56,6 +60,12 @@ namespace org { namespace xml { namespace sax {
 
 namespace j2cpp {
 
+
+
+org::xml::sax::EntityResolver::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 local_ref< org::xml::sax::InputSource > org::xml::sax::EntityResolver::resolveEntity(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
 {

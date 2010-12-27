@@ -10,9 +10,11 @@
 #define J2CPP_JAVAX_XML_XMLCONSTANTS_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -42,11 +44,15 @@ namespace javax { namespace xml {
 		J2CPP_DECLARE_FIELD(10)
 		J2CPP_DECLARE_FIELD(11)
 
-		XMLConstants(jobject jobj)
+		explicit XMLConstants(jobject jobj)
 		: cpp_object<XMLConstants>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		XMLConstants();
 
 		static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(0), J2CPP_FIELD_SIGNATURE(0), local_ref< java::lang::String > > DEFAULT_NS_PREFIX;
 		static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(1), J2CPP_FIELD_SIGNATURE(1), local_ref< java::lang::String > > FEATURE_SECURE_PROCESSING;
@@ -65,7 +71,6 @@ namespace javax { namespace xml {
 } //namespace xml
 } //namespace javax
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVAX_XML_XMLCONSTANTS_HPP_DECL
@@ -78,16 +83,23 @@ namespace javax { namespace xml {
 namespace j2cpp {
 
 
-template <>
-local_ref< javax::xml::XMLConstants > create< javax::xml::XMLConstants>()
+
+javax::xml::XMLConstants::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< javax::xml::XMLConstants >(
-		environment::get().get_jenv()->NewObject(
-			get_class<javax::xml::XMLConstants::J2CPP_CLASS_NAME>(),
-			get_method_id<javax::xml::XMLConstants::J2CPP_CLASS_NAME, javax::xml::XMLConstants::J2CPP_METHOD_NAME(0), javax::xml::XMLConstants::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+javax::xml::XMLConstants::XMLConstants()
+: cpp_object<javax::xml::XMLConstants>(
+	environment::get().get_jenv()->NewObject(
+		get_class<javax::xml::XMLConstants::J2CPP_CLASS_NAME>(),
+		get_method_id<javax::xml::XMLConstants::J2CPP_CLASS_NAME, javax::xml::XMLConstants::J2CPP_METHOD_NAME(0), javax::xml::XMLConstants::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 
 static_field<

@@ -10,9 +10,11 @@
 #define J2CPP_DALVIK_SYSTEM_TOUCHDEX_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -32,18 +34,21 @@ namespace dalvik { namespace system {
 		J2CPP_DECLARE_METHOD(1)
 		J2CPP_DECLARE_METHOD(2)
 
-		TouchDex(jobject jobj)
+		explicit TouchDex(jobject jobj)
 		: cpp_object<TouchDex>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		TouchDex();
 		static cpp_int start(local_ref< java::lang::String > const&);
 		static void main(local_ref< cpp_object_array<java::lang::String, 1> > const&);
 	}; //class TouchDex
 
 } //namespace system
 } //namespace dalvik
-
 
 } //namespace j2cpp
 
@@ -57,16 +62,23 @@ namespace dalvik { namespace system {
 namespace j2cpp {
 
 
-template <>
-local_ref< dalvik::system::TouchDex > create< dalvik::system::TouchDex>()
+
+dalvik::system::TouchDex::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< dalvik::system::TouchDex >(
-		environment::get().get_jenv()->NewObject(
-			get_class<dalvik::system::TouchDex::J2CPP_CLASS_NAME>(),
-			get_method_id<dalvik::system::TouchDex::J2CPP_CLASS_NAME, dalvik::system::TouchDex::J2CPP_METHOD_NAME(0), dalvik::system::TouchDex::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+dalvik::system::TouchDex::TouchDex()
+: cpp_object<dalvik::system::TouchDex>(
+	environment::get().get_jenv()->NewObject(
+		get_class<dalvik::system::TouchDex::J2CPP_CLASS_NAME>(),
+		get_method_id<dalvik::system::TouchDex::J2CPP_CLASS_NAME, dalvik::system::TouchDex::J2CPP_METHOD_NAME(0), dalvik::system::TouchDex::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 cpp_int dalvik::system::TouchDex::start(local_ref< java::lang::String > const &a0)
 {

@@ -10,12 +10,16 @@
 #define J2CPP_JAVA_LANG_BOOLEAN_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class Class; } } }
+namespace j2cpp { namespace java { namespace lang { class Comparable; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 
 
+#include <java/io/Serializable.hpp>
 #include <java/lang/Class.hpp>
+#include <java/lang/Comparable.hpp>
 #include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
@@ -50,11 +54,18 @@ namespace java { namespace lang {
 		J2CPP_DECLARE_FIELD(1)
 		J2CPP_DECLARE_FIELD(2)
 
-		Boolean(jobject jobj)
+		explicit Boolean(jobject jobj)
 		: cpp_object<Boolean>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::io::Serializable>() const;
+		operator local_ref<java::lang::Comparable>() const;
+
+
+		Boolean(local_ref< java::lang::String > const&);
+		Boolean(cpp_boolean const&);
 		cpp_boolean booleanValue();
 		cpp_boolean equals(local_ref< java::lang::Object > const&);
 		cpp_int compareTo(local_ref< java::lang::Boolean > const&);
@@ -75,7 +86,6 @@ namespace java { namespace lang {
 } //namespace lang
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_LANG_BOOLEAN_HPP_DECL
@@ -88,29 +98,47 @@ namespace java { namespace lang {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::lang::Boolean > create< java::lang::Boolean>(local_ref< java::lang::String > const &a0)
+
+java::lang::Boolean::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::lang::Boolean >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::lang::Boolean::J2CPP_CLASS_NAME>(),
-			get_method_id<java::lang::Boolean::J2CPP_CLASS_NAME, java::lang::Boolean::J2CPP_METHOD_NAME(0), java::lang::Boolean::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
 
-template <>
-local_ref< java::lang::Boolean > create< java::lang::Boolean>(cpp_boolean const &a0)
+java::lang::Boolean::operator local_ref<java::io::Serializable>() const
 {
-	return local_ref< java::lang::Boolean >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::lang::Boolean::J2CPP_CLASS_NAME>(),
-			get_method_id<java::lang::Boolean::J2CPP_CLASS_NAME, java::lang::Boolean::J2CPP_METHOD_NAME(1), java::lang::Boolean::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::io::Serializable>(get_jtype());
 }
+
+java::lang::Boolean::operator local_ref<java::lang::Comparable>() const
+{
+	return local_ref<java::lang::Comparable>(get_jtype());
+}
+
+
+java::lang::Boolean::Boolean(local_ref< java::lang::String > const &a0)
+: cpp_object<java::lang::Boolean>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::lang::Boolean::J2CPP_CLASS_NAME>(),
+		get_method_id<java::lang::Boolean::J2CPP_CLASS_NAME, java::lang::Boolean::J2CPP_METHOD_NAME(0), java::lang::Boolean::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
+
+
+java::lang::Boolean::Boolean(cpp_boolean const &a0)
+: cpp_object<java::lang::Boolean>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::lang::Boolean::J2CPP_CLASS_NAME>(),
+		get_method_id<java::lang::Boolean::J2CPP_CLASS_NAME, java::lang::Boolean::J2CPP_METHOD_NAME(1), java::lang::Boolean::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 cpp_boolean java::lang::Boolean::booleanValue()
 {
@@ -229,6 +257,7 @@ cpp_int java::lang::Boolean::compareTo(local_ref< java::lang::Object > const &a0
 		)
 	);
 }
+
 
 
 static_field<

@@ -10,10 +10,14 @@
 #define J2CPP_ORG_APACHE_HTTP_IMPL_ENTITY_STRICTCONTENTLENGTHSTRATEGY_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { class HttpMessage; } } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { namespace entity { class ContentLengthStrategy; } } } } }
 
 
+#include <java/lang/Object.hpp>
 #include <org/apache/http/HttpMessage.hpp>
+#include <org/apache/http/entity/ContentLengthStrategy.hpp>
 
 
 namespace j2cpp {
@@ -31,11 +35,16 @@ namespace org { namespace apache { namespace http { namespace impl { namespace e
 		J2CPP_DECLARE_METHOD(0)
 		J2CPP_DECLARE_METHOD(1)
 
-		StrictContentLengthStrategy(jobject jobj)
+		explicit StrictContentLengthStrategy(jobject jobj)
 		: cpp_object<StrictContentLengthStrategy>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<org::apache::http::entity::ContentLengthStrategy>() const;
+
+
+		StrictContentLengthStrategy();
 		cpp_long determineLength(local_ref< org::apache::http::HttpMessage > const&);
 	}; //class StrictContentLengthStrategy
 
@@ -44,7 +53,6 @@ namespace org { namespace apache { namespace http { namespace impl { namespace e
 } //namespace http
 } //namespace apache
 } //namespace org
-
 
 } //namespace j2cpp
 
@@ -58,16 +66,28 @@ namespace org { namespace apache { namespace http { namespace impl { namespace e
 namespace j2cpp {
 
 
-template <>
-local_ref< org::apache::http::impl::entity::StrictContentLengthStrategy > create< org::apache::http::impl::entity::StrictContentLengthStrategy>()
+
+org::apache::http::impl::entity::StrictContentLengthStrategy::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< org::apache::http::impl::entity::StrictContentLengthStrategy >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::apache::http::impl::entity::StrictContentLengthStrategy::J2CPP_CLASS_NAME>(),
-			get_method_id<org::apache::http::impl::entity::StrictContentLengthStrategy::J2CPP_CLASS_NAME, org::apache::http::impl::entity::StrictContentLengthStrategy::J2CPP_METHOD_NAME(0), org::apache::http::impl::entity::StrictContentLengthStrategy::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+org::apache::http::impl::entity::StrictContentLengthStrategy::operator local_ref<org::apache::http::entity::ContentLengthStrategy>() const
+{
+	return local_ref<org::apache::http::entity::ContentLengthStrategy>(get_jtype());
+}
+
+
+org::apache::http::impl::entity::StrictContentLengthStrategy::StrictContentLengthStrategy()
+: cpp_object<org::apache::http::impl::entity::StrictContentLengthStrategy>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::apache::http::impl::entity::StrictContentLengthStrategy::J2CPP_CLASS_NAME>(),
+		get_method_id<org::apache::http::impl::entity::StrictContentLengthStrategy::J2CPP_CLASS_NAME, org::apache::http::impl::entity::StrictContentLengthStrategy::J2CPP_METHOD_NAME(0), org::apache::http::impl::entity::StrictContentLengthStrategy::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 cpp_long org::apache::http::impl::entity::StrictContentLengthStrategy::determineLength(local_ref< org::apache::http::HttpMessage > const &a0)
 {

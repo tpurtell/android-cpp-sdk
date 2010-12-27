@@ -10,6 +10,7 @@
 #define J2CPP_ANDROID_VIEW_LAYOUTINFLATER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class Class; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace org { namespace xmlpull { namespace v1 { class XmlPullParser; } } } }
@@ -27,6 +28,7 @@ namespace j2cpp { namespace android { namespace util { class AttributeSet; } } }
 #include <android/view/View.hpp>
 #include <android/view/ViewGroup.hpp>
 #include <java/lang/Class.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <org/xmlpull/v1/XmlPullParser.hpp>
 
@@ -48,10 +50,13 @@ namespace android { namespace view {
 
 			J2CPP_DECLARE_METHOD(0)
 
-			Factory(jobject jobj)
+			explicit Factory(jobject jobj)
 			: cpp_object<Factory>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+
 
 			local_ref< android::view::View > onCreateView(local_ref< java::lang::String > const&, local_ref< android::content::Context > const&, local_ref< android::util::AttributeSet > const&);
 		}; //class Factory
@@ -66,10 +71,13 @@ namespace android { namespace view {
 
 			J2CPP_DECLARE_METHOD(0)
 
-			Filter(jobject jobj)
+			explicit Filter(jobject jobj)
 			: cpp_object<Filter>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+
 
 			cpp_boolean onLoadClass(local_ref< java::lang::Class > const&);
 		}; //class Filter
@@ -102,10 +110,13 @@ namespace android { namespace view {
 		typedef LayoutInflater_::Factory Factory;
 		typedef LayoutInflater_::Filter Filter;
 
-		LayoutInflater(jobject jobj)
+		explicit LayoutInflater(jobject jobj)
 		: cpp_object<LayoutInflater>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		static local_ref< android::view::LayoutInflater > from(local_ref< android::content::Context > const&);
 		local_ref< android::view::LayoutInflater > cloneInContext(local_ref< android::content::Context > const&);
@@ -124,7 +135,6 @@ namespace android { namespace view {
 } //namespace view
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_VIEW_LAYOUTINFLATER_HPP_DECL
@@ -137,6 +147,12 @@ namespace android { namespace view {
 namespace j2cpp {
 
 
+
+
+android::view::LayoutInflater_::Factory::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 local_ref< android::view::View > android::view::LayoutInflater_::Factory::onCreateView(local_ref< java::lang::String > const &a0, local_ref< android::content::Context > const &a1, local_ref< android::util::AttributeSet > const &a2)
 {
@@ -152,6 +168,12 @@ local_ref< android::view::View > android::view::LayoutInflater_::Factory::onCrea
 
 J2CPP_DEFINE_CLASS(android::view::LayoutInflater_::Factory,"android/view/LayoutInflater$Factory")
 J2CPP_DEFINE_METHOD(android::view::LayoutInflater_::Factory,0,"onCreateView","(Ljava/lang/String;Landroid/content/Context;Landroid/util/AttributeSet;)Landroid/view/View;")
+
+
+android::view::LayoutInflater_::Filter::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 cpp_boolean android::view::LayoutInflater_::Filter::onLoadClass(local_ref< java::lang::Class > const &a0)
 {
@@ -169,29 +191,13 @@ J2CPP_DEFINE_CLASS(android::view::LayoutInflater_::Filter,"android/view/LayoutIn
 J2CPP_DEFINE_METHOD(android::view::LayoutInflater_::Filter,0,"onLoadClass","(Ljava/lang/Class;)Z")
 
 
-template <>
-local_ref< android::view::LayoutInflater > create< android::view::LayoutInflater>(local_ref< android::content::Context > const &a0)
+
+android::view::LayoutInflater::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::view::LayoutInflater >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::view::LayoutInflater::J2CPP_CLASS_NAME>(),
-			get_method_id<android::view::LayoutInflater::J2CPP_CLASS_NAME, android::view::LayoutInflater::J2CPP_METHOD_NAME(0), android::view::LayoutInflater::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
 
-template <>
-local_ref< android::view::LayoutInflater > create< android::view::LayoutInflater>(local_ref< android::view::LayoutInflater > const &a0, local_ref< android::content::Context > const &a1)
-{
-	return local_ref< android::view::LayoutInflater >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::view::LayoutInflater::J2CPP_CLASS_NAME>(),
-			get_method_id<android::view::LayoutInflater::J2CPP_CLASS_NAME, android::view::LayoutInflater::J2CPP_METHOD_NAME(1), android::view::LayoutInflater::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
-}
+
 
 local_ref< android::view::LayoutInflater > android::view::LayoutInflater::from(local_ref< android::content::Context > const &a0)
 {

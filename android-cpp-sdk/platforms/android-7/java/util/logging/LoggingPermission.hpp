@@ -10,10 +10,16 @@
 #define J2CPP_JAVA_UTIL_LOGGING_LOGGINGPERMISSION_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace security { class BasicPermission; } } }
+namespace j2cpp { namespace java { namespace security { class Guard; } } }
 
 
+#include <java/io/Serializable.hpp>
 #include <java/lang/String.hpp>
+#include <java/security/BasicPermission.hpp>
+#include <java/security/Guard.hpp>
 
 
 namespace j2cpp {
@@ -30,17 +36,22 @@ namespace java { namespace util { namespace logging {
 
 		J2CPP_DECLARE_METHOD(0)
 
-		LoggingPermission(jobject jobj)
+		explicit LoggingPermission(jobject jobj)
 		: cpp_object<LoggingPermission>(jobj)
 		{
 		}
 
+		operator local_ref<java::security::BasicPermission>() const;
+		operator local_ref<java::security::Guard>() const;
+		operator local_ref<java::io::Serializable>() const;
+
+
+		LoggingPermission(local_ref< java::lang::String > const&, local_ref< java::lang::String > const&);
 	}; //class LoggingPermission
 
 } //namespace logging
 } //namespace util
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -54,17 +65,34 @@ namespace java { namespace util { namespace logging {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::util::logging::LoggingPermission > create< java::util::logging::LoggingPermission>(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
+
+java::util::logging::LoggingPermission::operator local_ref<java::security::BasicPermission>() const
 {
-	return local_ref< java::util::logging::LoggingPermission >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::logging::LoggingPermission::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::logging::LoggingPermission::J2CPP_CLASS_NAME, java::util::logging::LoggingPermission::J2CPP_METHOD_NAME(0), java::util::logging::LoggingPermission::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<java::security::BasicPermission>(get_jtype());
 }
+
+java::util::logging::LoggingPermission::operator local_ref<java::security::Guard>() const
+{
+	return local_ref<java::security::Guard>(get_jtype());
+}
+
+java::util::logging::LoggingPermission::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jtype());
+}
+
+
+java::util::logging::LoggingPermission::LoggingPermission(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
+: cpp_object<java::util::logging::LoggingPermission>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::util::logging::LoggingPermission::J2CPP_CLASS_NAME>(),
+		get_method_id<java::util::logging::LoggingPermission::J2CPP_CLASS_NAME, java::util::logging::LoggingPermission::J2CPP_METHOD_NAME(0), java::util::logging::LoggingPermission::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
 
 
 J2CPP_DEFINE_CLASS(java::util::logging::LoggingPermission,"java/util/logging/LoggingPermission")

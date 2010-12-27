@@ -10,11 +10,13 @@
 #define J2CPP_JAVA_LANG_REFLECT_ANNOTATEDELEMENT_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class Class; } } }
 namespace j2cpp { namespace java { namespace lang { namespace annotation { class Annotation; } } } }
 
 
 #include <java/lang/Class.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/annotation/Annotation.hpp>
 
 
@@ -35,10 +37,13 @@ namespace java { namespace lang { namespace reflect {
 		J2CPP_DECLARE_METHOD(2)
 		J2CPP_DECLARE_METHOD(3)
 
-		AnnotatedElement(jobject jobj)
+		explicit AnnotatedElement(jobject jobj)
 		: cpp_object<AnnotatedElement>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		local_ref< java::lang::annotation::Annotation > getAnnotation(local_ref< java::lang::Class > const&);
 		local_ref< cpp_object_array<java::lang::annotation::Annotation, 1> > getAnnotations();
@@ -49,7 +54,6 @@ namespace java { namespace lang { namespace reflect {
 } //namespace reflect
 } //namespace lang
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -62,6 +66,12 @@ namespace java { namespace lang { namespace reflect {
 
 namespace j2cpp {
 
+
+
+java::lang::reflect::AnnotatedElement::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 local_ref< java::lang::annotation::Annotation > java::lang::reflect::AnnotatedElement::getAnnotation(local_ref< java::lang::Class > const &a0)
 {

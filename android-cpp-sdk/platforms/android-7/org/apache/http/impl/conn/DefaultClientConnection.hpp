@@ -12,6 +12,8 @@
 
 namespace j2cpp { namespace java { namespace net { class Socket; } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { class HttpRequest; } } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { namespace conn { class OperatedClientConnection; } } } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { namespace impl { class SocketHttpClientConnection; } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace params { class HttpParams; } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { class HttpHost; } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { class HttpResponse; } } } }
@@ -21,6 +23,8 @@ namespace j2cpp { namespace org { namespace apache { namespace http { class Http
 #include <org/apache/http/HttpHost.hpp>
 #include <org/apache/http/HttpRequest.hpp>
 #include <org/apache/http/HttpResponse.hpp>
+#include <org/apache/http/conn/OperatedClientConnection.hpp>
+#include <org/apache/http/impl/SocketHttpClientConnection.hpp>
 #include <org/apache/http/params/HttpParams.hpp>
 
 
@@ -51,11 +55,16 @@ namespace org { namespace apache { namespace http { namespace impl { namespace c
 		J2CPP_DECLARE_METHOD(12)
 		J2CPP_DECLARE_METHOD(13)
 
-		DefaultClientConnection(jobject jobj)
+		explicit DefaultClientConnection(jobject jobj)
 		: cpp_object<DefaultClientConnection>(jobj)
 		{
 		}
 
+		operator local_ref<org::apache::http::impl::SocketHttpClientConnection>() const;
+		operator local_ref<org::apache::http::conn::OperatedClientConnection>() const;
+
+
+		DefaultClientConnection();
 		local_ref< org::apache::http::HttpHost > getTargetHost();
 		cpp_boolean isSecure();
 		local_ref< java::net::Socket > getSocket();
@@ -74,7 +83,6 @@ namespace org { namespace apache { namespace http { namespace impl { namespace c
 } //namespace apache
 } //namespace org
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ORG_APACHE_HTTP_IMPL_CONN_DEFAULTCLIENTCONNECTION_HPP_DECL
@@ -87,16 +95,28 @@ namespace org { namespace apache { namespace http { namespace impl { namespace c
 namespace j2cpp {
 
 
-template <>
-local_ref< org::apache::http::impl::conn::DefaultClientConnection > create< org::apache::http::impl::conn::DefaultClientConnection>()
+
+org::apache::http::impl::conn::DefaultClientConnection::operator local_ref<org::apache::http::impl::SocketHttpClientConnection>() const
 {
-	return local_ref< org::apache::http::impl::conn::DefaultClientConnection >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::apache::http::impl::conn::DefaultClientConnection::J2CPP_CLASS_NAME>(),
-			get_method_id<org::apache::http::impl::conn::DefaultClientConnection::J2CPP_CLASS_NAME, org::apache::http::impl::conn::DefaultClientConnection::J2CPP_METHOD_NAME(0), org::apache::http::impl::conn::DefaultClientConnection::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<org::apache::http::impl::SocketHttpClientConnection>(get_jtype());
 }
+
+org::apache::http::impl::conn::DefaultClientConnection::operator local_ref<org::apache::http::conn::OperatedClientConnection>() const
+{
+	return local_ref<org::apache::http::conn::OperatedClientConnection>(get_jtype());
+}
+
+
+org::apache::http::impl::conn::DefaultClientConnection::DefaultClientConnection()
+: cpp_object<org::apache::http::impl::conn::DefaultClientConnection>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::apache::http::impl::conn::DefaultClientConnection::J2CPP_CLASS_NAME>(),
+		get_method_id<org::apache::http::impl::conn::DefaultClientConnection::J2CPP_CLASS_NAME, org::apache::http::impl::conn::DefaultClientConnection::J2CPP_METHOD_NAME(0), org::apache::http::impl::conn::DefaultClientConnection::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 local_ref< org::apache::http::HttpHost > org::apache::http::impl::conn::DefaultClientConnection::getTargetHost()
 {

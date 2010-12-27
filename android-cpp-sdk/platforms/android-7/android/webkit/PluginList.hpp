@@ -10,6 +10,7 @@
 #define J2CPP_ANDROID_WEBKIT_PLUGINLIST_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace util { class List; } } }
 namespace j2cpp { namespace android { namespace content { class Context; } } }
 namespace j2cpp { namespace android { namespace webkit { class Plugin; } } }
@@ -17,6 +18,7 @@ namespace j2cpp { namespace android { namespace webkit { class Plugin; } } }
 
 #include <android/content/Context.hpp>
 #include <android/webkit/Plugin.hpp>
+#include <java/lang/Object.hpp>
 #include <java/util/List.hpp>
 
 
@@ -39,11 +41,15 @@ namespace android { namespace webkit {
 		J2CPP_DECLARE_METHOD(4)
 		J2CPP_DECLARE_METHOD(5)
 
-		PluginList(jobject jobj)
+		explicit PluginList(jobject jobj)
 		: cpp_object<PluginList>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		PluginList();
 		local_ref< java::util::List > getList();
 		void addPlugin(local_ref< android::webkit::Plugin > const&);
 		void removePlugin(local_ref< android::webkit::Plugin > const&);
@@ -53,7 +59,6 @@ namespace android { namespace webkit {
 
 } //namespace webkit
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -67,16 +72,23 @@ namespace android { namespace webkit {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::webkit::PluginList > create< android::webkit::PluginList>()
+
+android::webkit::PluginList::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::webkit::PluginList >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::webkit::PluginList::J2CPP_CLASS_NAME>(),
-			get_method_id<android::webkit::PluginList::J2CPP_CLASS_NAME, android::webkit::PluginList::J2CPP_METHOD_NAME(0), android::webkit::PluginList::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::webkit::PluginList::PluginList()
+: cpp_object<android::webkit::PluginList>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::webkit::PluginList::J2CPP_CLASS_NAME>(),
+		get_method_id<android::webkit::PluginList::J2CPP_CLASS_NAME, android::webkit::PluginList::J2CPP_METHOD_NAME(0), android::webkit::PluginList::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 local_ref< java::util::List > android::webkit::PluginList::getList()
 {

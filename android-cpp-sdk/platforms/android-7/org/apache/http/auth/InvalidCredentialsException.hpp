@@ -12,10 +12,12 @@
 
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace lang { class Throwable; } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { namespace auth { class AuthenticationException; } } } } }
 
 
 #include <java/lang/String.hpp>
 #include <java/lang/Throwable.hpp>
+#include <org/apache/http/auth/AuthenticationException.hpp>
 
 
 namespace j2cpp {
@@ -34,18 +36,23 @@ namespace org { namespace apache { namespace http { namespace auth {
 		J2CPP_DECLARE_METHOD(1)
 		J2CPP_DECLARE_METHOD(2)
 
-		InvalidCredentialsException(jobject jobj)
+		explicit InvalidCredentialsException(jobject jobj)
 		: cpp_object<InvalidCredentialsException>(jobj)
 		{
 		}
 
+		operator local_ref<org::apache::http::auth::AuthenticationException>() const;
+
+
+		InvalidCredentialsException();
+		InvalidCredentialsException(local_ref< java::lang::String > const&);
+		InvalidCredentialsException(local_ref< java::lang::String > const&, local_ref< java::lang::Throwable > const&);
 	}; //class InvalidCredentialsException
 
 } //namespace auth
 } //namespace http
 } //namespace apache
 } //namespace org
-
 
 } //namespace j2cpp
 
@@ -59,40 +66,49 @@ namespace org { namespace apache { namespace http { namespace auth {
 namespace j2cpp {
 
 
-template <>
-local_ref< org::apache::http::auth::InvalidCredentialsException > create< org::apache::http::auth::InvalidCredentialsException>()
+
+org::apache::http::auth::InvalidCredentialsException::operator local_ref<org::apache::http::auth::AuthenticationException>() const
 {
-	return local_ref< org::apache::http::auth::InvalidCredentialsException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::apache::http::auth::InvalidCredentialsException::J2CPP_CLASS_NAME>(),
-			get_method_id<org::apache::http::auth::InvalidCredentialsException::J2CPP_CLASS_NAME, org::apache::http::auth::InvalidCredentialsException::J2CPP_METHOD_NAME(0), org::apache::http::auth::InvalidCredentialsException::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<org::apache::http::auth::AuthenticationException>(get_jtype());
 }
 
-template <>
-local_ref< org::apache::http::auth::InvalidCredentialsException > create< org::apache::http::auth::InvalidCredentialsException>(local_ref< java::lang::String > const &a0)
+
+org::apache::http::auth::InvalidCredentialsException::InvalidCredentialsException()
+: cpp_object<org::apache::http::auth::InvalidCredentialsException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::apache::http::auth::InvalidCredentialsException::J2CPP_CLASS_NAME>(),
+		get_method_id<org::apache::http::auth::InvalidCredentialsException::J2CPP_CLASS_NAME, org::apache::http::auth::InvalidCredentialsException::J2CPP_METHOD_NAME(0), org::apache::http::auth::InvalidCredentialsException::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
 {
-	return local_ref< org::apache::http::auth::InvalidCredentialsException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::apache::http::auth::InvalidCredentialsException::J2CPP_CLASS_NAME>(),
-			get_method_id<org::apache::http::auth::InvalidCredentialsException::J2CPP_CLASS_NAME, org::apache::http::auth::InvalidCredentialsException::J2CPP_METHOD_NAME(1), org::apache::http::auth::InvalidCredentialsException::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< org::apache::http::auth::InvalidCredentialsException > create< org::apache::http::auth::InvalidCredentialsException>(local_ref< java::lang::String > const &a0, local_ref< java::lang::Throwable > const &a1)
+
+
+org::apache::http::auth::InvalidCredentialsException::InvalidCredentialsException(local_ref< java::lang::String > const &a0)
+: cpp_object<org::apache::http::auth::InvalidCredentialsException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::apache::http::auth::InvalidCredentialsException::J2CPP_CLASS_NAME>(),
+		get_method_id<org::apache::http::auth::InvalidCredentialsException::J2CPP_CLASS_NAME, org::apache::http::auth::InvalidCredentialsException::J2CPP_METHOD_NAME(1), org::apache::http::auth::InvalidCredentialsException::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< org::apache::http::auth::InvalidCredentialsException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::apache::http::auth::InvalidCredentialsException::J2CPP_CLASS_NAME>(),
-			get_method_id<org::apache::http::auth::InvalidCredentialsException::J2CPP_CLASS_NAME, org::apache::http::auth::InvalidCredentialsException::J2CPP_METHOD_NAME(2), org::apache::http::auth::InvalidCredentialsException::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
 }
+
+
+
+org::apache::http::auth::InvalidCredentialsException::InvalidCredentialsException(local_ref< java::lang::String > const &a0, local_ref< java::lang::Throwable > const &a1)
+: cpp_object<org::apache::http::auth::InvalidCredentialsException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::apache::http::auth::InvalidCredentialsException::J2CPP_CLASS_NAME>(),
+		get_method_id<org::apache::http::auth::InvalidCredentialsException::J2CPP_CLASS_NAME, org::apache::http::auth::InvalidCredentialsException::J2CPP_METHOD_NAME(2), org::apache::http::auth::InvalidCredentialsException::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
 
 
 J2CPP_DEFINE_CLASS(org::apache::http::auth::InvalidCredentialsException,"org/apache/http/auth/InvalidCredentialsException")

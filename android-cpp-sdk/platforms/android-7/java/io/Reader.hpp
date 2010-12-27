@@ -10,9 +10,15 @@
 #define J2CPP_JAVA_IO_READER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class Closeable; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace lang { class Readable; } } }
 namespace j2cpp { namespace java { namespace nio { class CharBuffer; } } }
 
 
+#include <java/io/Closeable.hpp>
+#include <java/lang/Object.hpp>
+#include <java/lang/Readable.hpp>
 #include <java/nio/CharBuffer.hpp>
 
 
@@ -42,10 +48,15 @@ namespace java { namespace io {
 		J2CPP_DECLARE_METHOD(11)
 		J2CPP_DECLARE_FIELD(0)
 
-		Reader(jobject jobj)
+		explicit Reader(jobject jobj)
 		: cpp_object<Reader>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::lang::Readable>() const;
+		operator local_ref<java::io::Closeable>() const;
+
 
 		void close();
 		void mark(cpp_int const&);
@@ -63,7 +74,6 @@ namespace java { namespace io {
 } //namespace io
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_IO_READER_HPP_DECL
@@ -76,28 +86,23 @@ namespace java { namespace io {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::io::Reader > create< java::io::Reader>()
+
+java::io::Reader::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::io::Reader >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::io::Reader::J2CPP_CLASS_NAME>(),
-			get_method_id<java::io::Reader::J2CPP_CLASS_NAME, java::io::Reader::J2CPP_METHOD_NAME(0), java::io::Reader::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
 
-template <>
-local_ref< java::io::Reader > create< java::io::Reader>(local_ref< java::lang::Object > const &a0)
+java::io::Reader::operator local_ref<java::lang::Readable>() const
 {
-	return local_ref< java::io::Reader >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::io::Reader::J2CPP_CLASS_NAME>(),
-			get_method_id<java::io::Reader::J2CPP_CLASS_NAME, java::io::Reader::J2CPP_METHOD_NAME(1), java::io::Reader::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Readable>(get_jtype());
 }
+
+java::io::Reader::operator local_ref<java::io::Closeable>() const
+{
+	return local_ref<java::io::Closeable>(get_jtype());
+}
+
+
 
 void java::io::Reader::close()
 {

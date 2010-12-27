@@ -12,10 +12,12 @@
 
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace android { namespace database { class Cursor; } } }
+namespace j2cpp { namespace android { namespace database { class AbstractCursor; } } }
 namespace j2cpp { namespace android { namespace database { class DataSetObserver; } } }
 namespace j2cpp { namespace android { namespace database { class ContentObserver; } } }
 
 
+#include <android/database/AbstractCursor.hpp>
 #include <android/database/ContentObserver.hpp>
 #include <android/database/Cursor.hpp>
 #include <android/database/DataSetObserver.hpp>
@@ -54,11 +56,15 @@ namespace android { namespace database {
 		J2CPP_DECLARE_METHOD(17)
 		J2CPP_DECLARE_METHOD(18)
 
-		MergeCursor(jobject jobj)
+		explicit MergeCursor(jobject jobj)
 		: cpp_object<MergeCursor>(jobj)
 		{
 		}
 
+		operator local_ref<android::database::AbstractCursor>() const;
+
+
+		MergeCursor(local_ref< cpp_object_array<android::database::Cursor, 1> > const&);
 		cpp_int getCount();
 		cpp_boolean onMove(cpp_int const&, cpp_int const&);
 		local_ref< java::lang::String > getString(cpp_int const&);
@@ -82,7 +88,6 @@ namespace android { namespace database {
 } //namespace database
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_DATABASE_MERGECURSOR_HPP_DECL
@@ -95,17 +100,24 @@ namespace android { namespace database {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::database::MergeCursor > create< android::database::MergeCursor>(local_ref< cpp_object_array<android::database::Cursor, 1> > const &a0)
+
+android::database::MergeCursor::operator local_ref<android::database::AbstractCursor>() const
 {
-	return local_ref< android::database::MergeCursor >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::database::MergeCursor::J2CPP_CLASS_NAME>(),
-			get_method_id<android::database::MergeCursor::J2CPP_CLASS_NAME, android::database::MergeCursor::J2CPP_METHOD_NAME(0), android::database::MergeCursor::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<android::database::AbstractCursor>(get_jtype());
 }
+
+
+android::database::MergeCursor::MergeCursor(local_ref< cpp_object_array<android::database::Cursor, 1> > const &a0)
+: cpp_object<android::database::MergeCursor>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::database::MergeCursor::J2CPP_CLASS_NAME>(),
+		get_method_id<android::database::MergeCursor::J2CPP_CLASS_NAME, android::database::MergeCursor::J2CPP_METHOD_NAME(0), android::database::MergeCursor::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 cpp_int android::database::MergeCursor::getCount()
 {

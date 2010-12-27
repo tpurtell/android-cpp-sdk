@@ -11,9 +11,11 @@
 
 
 namespace j2cpp { namespace java { namespace net { class InetAddress; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/net/InetAddress.hpp>
 
@@ -32,10 +34,13 @@ namespace org { namespace apache { namespace http { namespace conn { namespace s
 
 		J2CPP_DECLARE_METHOD(0)
 
-		HostNameResolver(jobject jobj)
+		explicit HostNameResolver(jobject jobj)
 		: cpp_object<HostNameResolver>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		local_ref< java::net::InetAddress > resolve(local_ref< java::lang::String > const&);
 	}; //class HostNameResolver
@@ -45,7 +50,6 @@ namespace org { namespace apache { namespace http { namespace conn { namespace s
 } //namespace http
 } //namespace apache
 } //namespace org
-
 
 } //namespace j2cpp
 
@@ -58,6 +62,12 @@ namespace org { namespace apache { namespace http { namespace conn { namespace s
 
 namespace j2cpp {
 
+
+
+org::apache::http::conn::scheme::HostNameResolver::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 local_ref< java::net::InetAddress > org::apache::http::conn::scheme::HostNameResolver::resolve(local_ref< java::lang::String > const &a0)
 {

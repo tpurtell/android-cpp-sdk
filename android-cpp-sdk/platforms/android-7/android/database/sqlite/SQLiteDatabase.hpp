@@ -17,6 +17,7 @@ namespace j2cpp { namespace java { namespace util { class Locale; } } }
 namespace j2cpp { namespace java { namespace util { class Map; } } }
 namespace j2cpp { namespace android { namespace database { class Cursor; } } }
 namespace j2cpp { namespace android { namespace database { namespace sqlite { class SQLiteQuery; } } } }
+namespace j2cpp { namespace android { namespace database { namespace sqlite { class SQLiteClosable; } } } }
 namespace j2cpp { namespace android { namespace database { namespace sqlite { class SQLiteStatement; } } } }
 namespace j2cpp { namespace android { namespace database { namespace sqlite { class SQLiteCursorDriver; } } } }
 namespace j2cpp { namespace android { namespace database { namespace sqlite { namespace SQLiteDatabase_ { class CursorFactory; } } } } }
@@ -26,6 +27,7 @@ namespace j2cpp { namespace android { namespace content { class ContentValues; }
 
 #include <android/content/ContentValues.hpp>
 #include <android/database/Cursor.hpp>
+#include <android/database/sqlite/SQLiteClosable.hpp>
 #include <android/database/sqlite/SQLiteCursorDriver.hpp>
 #include <android/database/sqlite/SQLiteDatabase.hpp>
 #include <android/database/sqlite/SQLiteQuery.hpp>
@@ -55,10 +57,13 @@ namespace android { namespace database { namespace sqlite {
 
 			J2CPP_DECLARE_METHOD(0)
 
-			CursorFactory(jobject jobj)
+			explicit CursorFactory(jobject jobj)
 			: cpp_object<CursorFactory>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+
 
 			local_ref< android::database::Cursor > newCursor(local_ref< android::database::sqlite::SQLiteDatabase > const&, local_ref< android::database::sqlite::SQLiteCursorDriver > const&, local_ref< java::lang::String > const&, local_ref< android::database::sqlite::SQLiteQuery > const&);
 		}; //class CursorFactory
@@ -130,10 +135,13 @@ namespace android { namespace database { namespace sqlite {
 
 		typedef SQLiteDatabase_::CursorFactory CursorFactory;
 
-		SQLiteDatabase(jobject jobj)
+		explicit SQLiteDatabase(jobject jobj)
 		: cpp_object<SQLiteDatabase>(jobj)
 		{
 		}
+
+		operator local_ref<android::database::sqlite::SQLiteClosable>() const;
+
 
 		static cpp_int releaseMemory();
 		void setLockingEnabled(cpp_boolean const&);
@@ -194,7 +202,6 @@ namespace android { namespace database { namespace sqlite {
 } //namespace database
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_DATABASE_SQLITE_SQLITEDATABASE_HPP_DECL
@@ -207,6 +214,12 @@ namespace android { namespace database { namespace sqlite {
 namespace j2cpp {
 
 
+
+
+android::database::sqlite::SQLiteDatabase_::CursorFactory::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 local_ref< android::database::Cursor > android::database::sqlite::SQLiteDatabase_::CursorFactory::newCursor(local_ref< android::database::sqlite::SQLiteDatabase > const &a0, local_ref< android::database::sqlite::SQLiteCursorDriver > const &a1, local_ref< java::lang::String > const &a2, local_ref< android::database::sqlite::SQLiteQuery > const &a3)
 {
@@ -224,16 +237,12 @@ J2CPP_DEFINE_CLASS(android::database::sqlite::SQLiteDatabase_::CursorFactory,"an
 J2CPP_DEFINE_METHOD(android::database::sqlite::SQLiteDatabase_::CursorFactory,0,"newCursor","(Landroid/database/sqlite/SQLiteDatabase;Landroid/database/sqlite/SQLiteCursorDriver;Ljava/lang/String;Landroid/database/sqlite/SQLiteQuery;)Landroid/database/Cursor;")
 
 
-template <>
-local_ref< android::database::sqlite::SQLiteDatabase > create< android::database::sqlite::SQLiteDatabase>()
+
+android::database::sqlite::SQLiteDatabase::operator local_ref<android::database::sqlite::SQLiteClosable>() const
 {
-	return local_ref< android::database::sqlite::SQLiteDatabase >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::database::sqlite::SQLiteDatabase::J2CPP_CLASS_NAME>(),
-			get_method_id<android::database::sqlite::SQLiteDatabase::J2CPP_CLASS_NAME, android::database::sqlite::SQLiteDatabase::J2CPP_METHOD_NAME(0), android::database::sqlite::SQLiteDatabase::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<android::database::sqlite::SQLiteClosable>(get_jtype());
 }
+
 
 
 cpp_int android::database::sqlite::SQLiteDatabase::releaseMemory()

@@ -16,6 +16,7 @@ namespace j2cpp { namespace java { namespace util { namespace concurrent { class
 namespace j2cpp { namespace java { namespace util { namespace concurrent { class BlockingQueue; } } } }
 namespace j2cpp { namespace java { namespace util { namespace concurrent { class Callable; } } } }
 namespace j2cpp { namespace java { namespace util { namespace concurrent { class Future; } } } }
+namespace j2cpp { namespace java { namespace util { namespace concurrent { class CompletionService; } } } }
 namespace j2cpp { namespace java { namespace util { namespace concurrent { class TimeUnit; } } } }
 
 
@@ -23,6 +24,7 @@ namespace j2cpp { namespace java { namespace util { namespace concurrent { class
 #include <java/lang/Runnable.hpp>
 #include <java/util/concurrent/BlockingQueue.hpp>
 #include <java/util/concurrent/Callable.hpp>
+#include <java/util/concurrent/CompletionService.hpp>
 #include <java/util/concurrent/Executor.hpp>
 #include <java/util/concurrent/Future.hpp>
 #include <java/util/concurrent/TimeUnit.hpp>
@@ -48,11 +50,17 @@ namespace java { namespace util { namespace concurrent {
 		J2CPP_DECLARE_METHOD(5)
 		J2CPP_DECLARE_METHOD(6)
 
-		ExecutorCompletionService(jobject jobj)
+		explicit ExecutorCompletionService(jobject jobj)
 		: cpp_object<ExecutorCompletionService>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::util::concurrent::CompletionService>() const;
+
+
+		ExecutorCompletionService(local_ref< java::util::concurrent::Executor > const&);
+		ExecutorCompletionService(local_ref< java::util::concurrent::Executor > const&, local_ref< java::util::concurrent::BlockingQueue > const&);
 		local_ref< java::util::concurrent::Future > submit(local_ref< java::util::concurrent::Callable > const&);
 		local_ref< java::util::concurrent::Future > submit(local_ref< java::lang::Runnable > const&, local_ref< java::lang::Object > const&);
 		local_ref< java::util::concurrent::Future > take();
@@ -63,7 +71,6 @@ namespace java { namespace util { namespace concurrent {
 } //namespace concurrent
 } //namespace util
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -77,29 +84,42 @@ namespace java { namespace util { namespace concurrent {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::util::concurrent::ExecutorCompletionService > create< java::util::concurrent::ExecutorCompletionService>(local_ref< java::util::concurrent::Executor > const &a0)
+
+java::util::concurrent::ExecutorCompletionService::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::util::concurrent::ExecutorCompletionService >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::concurrent::ExecutorCompletionService::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::concurrent::ExecutorCompletionService::J2CPP_CLASS_NAME, java::util::concurrent::ExecutorCompletionService::J2CPP_METHOD_NAME(0), java::util::concurrent::ExecutorCompletionService::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
 
-template <>
-local_ref< java::util::concurrent::ExecutorCompletionService > create< java::util::concurrent::ExecutorCompletionService>(local_ref< java::util::concurrent::Executor > const &a0, local_ref< java::util::concurrent::BlockingQueue > const &a1)
+java::util::concurrent::ExecutorCompletionService::operator local_ref<java::util::concurrent::CompletionService>() const
 {
-	return local_ref< java::util::concurrent::ExecutorCompletionService >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::concurrent::ExecutorCompletionService::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::concurrent::ExecutorCompletionService::J2CPP_CLASS_NAME, java::util::concurrent::ExecutorCompletionService::J2CPP_METHOD_NAME(1), java::util::concurrent::ExecutorCompletionService::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<java::util::concurrent::CompletionService>(get_jtype());
 }
+
+
+java::util::concurrent::ExecutorCompletionService::ExecutorCompletionService(local_ref< java::util::concurrent::Executor > const &a0)
+: cpp_object<java::util::concurrent::ExecutorCompletionService>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::util::concurrent::ExecutorCompletionService::J2CPP_CLASS_NAME>(),
+		get_method_id<java::util::concurrent::ExecutorCompletionService::J2CPP_CLASS_NAME, java::util::concurrent::ExecutorCompletionService::J2CPP_METHOD_NAME(0), java::util::concurrent::ExecutorCompletionService::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
+
+
+java::util::concurrent::ExecutorCompletionService::ExecutorCompletionService(local_ref< java::util::concurrent::Executor > const &a0, local_ref< java::util::concurrent::BlockingQueue > const &a1)
+: cpp_object<java::util::concurrent::ExecutorCompletionService>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::util::concurrent::ExecutorCompletionService::J2CPP_CLASS_NAME>(),
+		get_method_id<java::util::concurrent::ExecutorCompletionService::J2CPP_CLASS_NAME, java::util::concurrent::ExecutorCompletionService::J2CPP_METHOD_NAME(1), java::util::concurrent::ExecutorCompletionService::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
 
 local_ref< java::util::concurrent::Future > java::util::concurrent::ExecutorCompletionService::submit(local_ref< java::util::concurrent::Callable > const &a0)
 {

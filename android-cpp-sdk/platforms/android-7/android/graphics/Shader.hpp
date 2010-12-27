@@ -10,6 +10,8 @@
 #define J2CPP_ANDROID_GRAPHICS_SHADER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace lang { class Enum; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace android { namespace graphics { namespace Shader_ { class TileMode; } } } }
 namespace j2cpp { namespace android { namespace graphics { class Matrix; } } }
@@ -17,6 +19,8 @@ namespace j2cpp { namespace android { namespace graphics { class Matrix; } } }
 
 #include <android/graphics/Matrix.hpp>
 #include <android/graphics/Shader.hpp>
+#include <java/lang/Enum.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -44,10 +48,13 @@ namespace android { namespace graphics {
 			J2CPP_DECLARE_FIELD(2)
 			J2CPP_DECLARE_FIELD(3)
 
-			TileMode(jobject jobj)
+			explicit TileMode(jobject jobj)
 			: cpp_object<TileMode>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Enum>() const;
+
 
 			static local_ref< cpp_object_array<android::graphics::Shader_::TileMode, 1> > values();
 			static local_ref< android::graphics::Shader_::TileMode > valueOf(local_ref< java::lang::String > const&);
@@ -73,18 +80,21 @@ namespace android { namespace graphics {
 
 		typedef Shader_::TileMode TileMode;
 
-		Shader(jobject jobj)
+		explicit Shader(jobject jobj)
 		: cpp_object<Shader>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		Shader();
 		cpp_boolean getLocalMatrix(local_ref< android::graphics::Matrix > const&);
 		void setLocalMatrix(local_ref< android::graphics::Matrix > const&);
 	}; //class Shader
 
 } //namespace graphics
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -98,6 +108,12 @@ namespace android { namespace graphics {
 namespace j2cpp {
 
 
+
+
+android::graphics::Shader_::TileMode::operator local_ref<java::lang::Enum>() const
+{
+	return local_ref<java::lang::Enum>(get_jtype());
+}
 
 local_ref< cpp_object_array<android::graphics::Shader_::TileMode, 1> > android::graphics::Shader_::TileMode::values()
 {
@@ -120,17 +136,7 @@ local_ref< android::graphics::Shader_::TileMode > android::graphics::Shader_::Ti
 	);
 }
 
-template <>
-local_ref< android::graphics::Shader_::TileMode > create< android::graphics::Shader_::TileMode>(local_ref< java::lang::String > const &a0, cpp_int const &a1)
-{
-	return local_ref< android::graphics::Shader_::TileMode >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::graphics::Shader_::TileMode::J2CPP_CLASS_NAME>(),
-			get_method_id<android::graphics::Shader_::TileMode::J2CPP_CLASS_NAME, android::graphics::Shader_::TileMode::J2CPP_METHOD_NAME(2), android::graphics::Shader_::TileMode::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
-}
+
 
 
 static_field<
@@ -166,16 +172,23 @@ J2CPP_DEFINE_FIELD(android::graphics::Shader_::TileMode,2,"REPEAT","Landroid/gra
 J2CPP_DEFINE_FIELD(android::graphics::Shader_::TileMode,3,"$VALUES","[android.graphics.Shader.TileMode")
 
 
-template <>
-local_ref< android::graphics::Shader > create< android::graphics::Shader>()
+
+android::graphics::Shader::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::graphics::Shader >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::graphics::Shader::J2CPP_CLASS_NAME>(),
-			get_method_id<android::graphics::Shader::J2CPP_CLASS_NAME, android::graphics::Shader::J2CPP_METHOD_NAME(0), android::graphics::Shader::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::graphics::Shader::Shader()
+: cpp_object<android::graphics::Shader>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::graphics::Shader::J2CPP_CLASS_NAME>(),
+		get_method_id<android::graphics::Shader::J2CPP_CLASS_NAME, android::graphics::Shader::J2CPP_METHOD_NAME(0), android::graphics::Shader::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 cpp_boolean android::graphics::Shader::getLocalMatrix(local_ref< android::graphics::Matrix > const &a0)
 {

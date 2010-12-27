@@ -10,12 +10,14 @@
 #define J2CPP_ORG_APACHE_HTTP_CLIENT_AUTHENTICATIONHANDLER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace util { class Map; } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace protocol { class HttpContext; } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { class HttpResponse; } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace auth { class AuthScheme; } } } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/util/Map.hpp>
 #include <org/apache/http/HttpResponse.hpp>
 #include <org/apache/http/auth/AuthScheme.hpp>
@@ -38,10 +40,13 @@ namespace org { namespace apache { namespace http { namespace client {
 		J2CPP_DECLARE_METHOD(1)
 		J2CPP_DECLARE_METHOD(2)
 
-		AuthenticationHandler(jobject jobj)
+		explicit AuthenticationHandler(jobject jobj)
 		: cpp_object<AuthenticationHandler>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		cpp_boolean isAuthenticationRequested(local_ref< org::apache::http::HttpResponse > const&, local_ref< org::apache::http::protocol::HttpContext > const&);
 		local_ref< java::util::Map > getChallenges(local_ref< org::apache::http::HttpResponse > const&, local_ref< org::apache::http::protocol::HttpContext > const&);
@@ -52,7 +57,6 @@ namespace org { namespace apache { namespace http { namespace client {
 } //namespace http
 } //namespace apache
 } //namespace org
-
 
 } //namespace j2cpp
 
@@ -65,6 +69,12 @@ namespace org { namespace apache { namespace http { namespace client {
 
 namespace j2cpp {
 
+
+
+org::apache::http::client::AuthenticationHandler::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 cpp_boolean org::apache::http::client::AuthenticationHandler::isAuthenticationRequested(local_ref< org::apache::http::HttpResponse > const &a0, local_ref< org::apache::http::protocol::HttpContext > const &a1)
 {

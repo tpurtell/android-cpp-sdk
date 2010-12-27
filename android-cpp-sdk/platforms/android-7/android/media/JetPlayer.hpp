@@ -44,10 +44,13 @@ namespace android { namespace media {
 			J2CPP_DECLARE_METHOD(2)
 			J2CPP_DECLARE_METHOD(3)
 
-			OnJetEventListener(jobject jobj)
+			explicit OnJetEventListener(jobject jobj)
 			: cpp_object<OnJetEventListener>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+
 
 			void onJetEvent(local_ref< android::media::JetPlayer > const&, cpp_short const&, cpp_byte const&, cpp_byte const&, cpp_byte const&, cpp_byte const&);
 			void onJetUserIdUpdate(local_ref< android::media::JetPlayer > const&, cpp_int const&, cpp_int const&);
@@ -87,10 +90,13 @@ namespace android { namespace media {
 
 		typedef JetPlayer_::OnJetEventListener OnJetEventListener;
 
-		JetPlayer(jobject jobj)
+		explicit JetPlayer(jobject jobj)
 		: cpp_object<JetPlayer>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		static local_ref< android::media::JetPlayer > getJetPlayer();
 		local_ref< java::lang::Object > clone();
@@ -115,7 +121,6 @@ namespace android { namespace media {
 } //namespace media
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_MEDIA_JETPLAYER_HPP_DECL
@@ -128,6 +133,12 @@ namespace android { namespace media {
 namespace j2cpp {
 
 
+
+
+android::media::JetPlayer_::OnJetEventListener::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 void android::media::JetPlayer_::OnJetEventListener::onJetEvent(local_ref< android::media::JetPlayer > const &a0, cpp_short const &a1, cpp_byte const &a2, cpp_byte const &a3, cpp_byte const &a4, cpp_byte const &a5)
 {
@@ -181,16 +192,12 @@ J2CPP_DEFINE_METHOD(android::media::JetPlayer_::OnJetEventListener,2,"onJetNumQu
 J2CPP_DEFINE_METHOD(android::media::JetPlayer_::OnJetEventListener,3,"onJetPauseUpdate","(Landroid/media/JetPlayer;I)V")
 
 
-template <>
-local_ref< android::media::JetPlayer > create< android::media::JetPlayer>()
+
+android::media::JetPlayer::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::media::JetPlayer >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::media::JetPlayer::J2CPP_CLASS_NAME>(),
-			get_method_id<android::media::JetPlayer::J2CPP_CLASS_NAME, android::media::JetPlayer::J2CPP_METHOD_NAME(0), android::media::JetPlayer::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
 
 local_ref< android::media::JetPlayer > android::media::JetPlayer::getJetPlayer()
 {

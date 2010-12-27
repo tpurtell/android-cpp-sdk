@@ -10,9 +10,11 @@
 #define J2CPP_JAVA_IO_PUSHBACKINPUTSTREAM_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class FilterInputStream; } } }
 namespace j2cpp { namespace java { namespace io { class InputStream; } } }
 
 
+#include <java/io/FilterInputStream.hpp>
 #include <java/io/InputStream.hpp>
 
 
@@ -44,11 +46,16 @@ namespace java { namespace io {
 		J2CPP_DECLARE_FIELD(0)
 		J2CPP_DECLARE_FIELD(1)
 
-		PushbackInputStream(jobject jobj)
+		explicit PushbackInputStream(jobject jobj)
 		: cpp_object<PushbackInputStream>(jobj)
 		{
 		}
 
+		operator local_ref<java::io::FilterInputStream>() const;
+
+
+		PushbackInputStream(local_ref< java::io::InputStream > const&);
+		PushbackInputStream(local_ref< java::io::InputStream > const&, cpp_int const&);
 		cpp_int available();
 		void close();
 		cpp_boolean markSupported();
@@ -66,7 +73,6 @@ namespace java { namespace io {
 } //namespace io
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_IO_PUSHBACKINPUTSTREAM_HPP_DECL
@@ -79,29 +85,37 @@ namespace java { namespace io {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::io::PushbackInputStream > create< java::io::PushbackInputStream>(local_ref< java::io::InputStream > const &a0)
+
+java::io::PushbackInputStream::operator local_ref<java::io::FilterInputStream>() const
 {
-	return local_ref< java::io::PushbackInputStream >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::io::PushbackInputStream::J2CPP_CLASS_NAME>(),
-			get_method_id<java::io::PushbackInputStream::J2CPP_CLASS_NAME, java::io::PushbackInputStream::J2CPP_METHOD_NAME(0), java::io::PushbackInputStream::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::io::FilterInputStream>(get_jtype());
 }
 
-template <>
-local_ref< java::io::PushbackInputStream > create< java::io::PushbackInputStream>(local_ref< java::io::InputStream > const &a0, cpp_int const &a1)
+
+java::io::PushbackInputStream::PushbackInputStream(local_ref< java::io::InputStream > const &a0)
+: cpp_object<java::io::PushbackInputStream>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::io::PushbackInputStream::J2CPP_CLASS_NAME>(),
+		get_method_id<java::io::PushbackInputStream::J2CPP_CLASS_NAME, java::io::PushbackInputStream::J2CPP_METHOD_NAME(0), java::io::PushbackInputStream::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< java::io::PushbackInputStream >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::io::PushbackInputStream::J2CPP_CLASS_NAME>(),
-			get_method_id<java::io::PushbackInputStream::J2CPP_CLASS_NAME, java::io::PushbackInputStream::J2CPP_METHOD_NAME(1), java::io::PushbackInputStream::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
 }
+
+
+
+java::io::PushbackInputStream::PushbackInputStream(local_ref< java::io::InputStream > const &a0, cpp_int const &a1)
+: cpp_object<java::io::PushbackInputStream>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::io::PushbackInputStream::J2CPP_CLASS_NAME>(),
+		get_method_id<java::io::PushbackInputStream::J2CPP_CLASS_NAME, java::io::PushbackInputStream::J2CPP_METHOD_NAME(1), java::io::PushbackInputStream::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
 
 cpp_int java::io::PushbackInputStream::available()
 {

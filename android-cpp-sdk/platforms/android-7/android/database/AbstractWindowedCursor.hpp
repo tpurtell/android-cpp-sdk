@@ -12,9 +12,11 @@
 
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace android { namespace database { class CharArrayBuffer; } } }
+namespace j2cpp { namespace android { namespace database { class AbstractCursor; } } }
 namespace j2cpp { namespace android { namespace database { class CursorWindow; } } }
 
 
+#include <android/database/AbstractCursor.hpp>
 #include <android/database/CharArrayBuffer.hpp>
 #include <android/database/CursorWindow.hpp>
 #include <java/lang/String.hpp>
@@ -52,11 +54,15 @@ namespace android { namespace database {
 		J2CPP_DECLARE_METHOD(17)
 		J2CPP_DECLARE_FIELD(0)
 
-		AbstractWindowedCursor(jobject jobj)
+		explicit AbstractWindowedCursor(jobject jobj)
 		: cpp_object<AbstractWindowedCursor>(jobj)
 		{
 		}
 
+		operator local_ref<android::database::AbstractCursor>() const;
+
+
+		AbstractWindowedCursor();
 		local_ref< cpp_byte_array<1> > getBlob(cpp_int const&);
 		local_ref< java::lang::String > getString(cpp_int const&);
 		void copyStringToBuffer(cpp_int const&, local_ref< android::database::CharArrayBuffer > const&);
@@ -79,7 +85,6 @@ namespace android { namespace database {
 } //namespace database
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_DATABASE_ABSTRACTWINDOWEDCURSOR_HPP_DECL
@@ -92,16 +97,23 @@ namespace android { namespace database {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::database::AbstractWindowedCursor > create< android::database::AbstractWindowedCursor>()
+
+android::database::AbstractWindowedCursor::operator local_ref<android::database::AbstractCursor>() const
 {
-	return local_ref< android::database::AbstractWindowedCursor >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::database::AbstractWindowedCursor::J2CPP_CLASS_NAME>(),
-			get_method_id<android::database::AbstractWindowedCursor::J2CPP_CLASS_NAME, android::database::AbstractWindowedCursor::J2CPP_METHOD_NAME(0), android::database::AbstractWindowedCursor::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<android::database::AbstractCursor>(get_jtype());
 }
+
+
+android::database::AbstractWindowedCursor::AbstractWindowedCursor()
+: cpp_object<android::database::AbstractWindowedCursor>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::database::AbstractWindowedCursor::J2CPP_CLASS_NAME>(),
+		get_method_id<android::database::AbstractWindowedCursor::J2CPP_CLASS_NAME, android::database::AbstractWindowedCursor::J2CPP_METHOD_NAME(0), android::database::AbstractWindowedCursor::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 local_ref< cpp_byte_array<1> > android::database::AbstractWindowedCursor::getBlob(cpp_int const &a0)
 {

@@ -10,10 +10,14 @@
 #define J2CPP_JAVA_SECURITY_SPEC_RSAPUBLICKEYSPEC_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace math { class BigInteger; } } }
+namespace j2cpp { namespace java { namespace security { namespace spec { class KeySpec; } } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/math/BigInteger.hpp>
+#include <java/security/spec/KeySpec.hpp>
 
 
 namespace j2cpp {
@@ -32,11 +36,16 @@ namespace java { namespace security { namespace spec {
 		J2CPP_DECLARE_METHOD(1)
 		J2CPP_DECLARE_METHOD(2)
 
-		RSAPublicKeySpec(jobject jobj)
+		explicit RSAPublicKeySpec(jobject jobj)
 		: cpp_object<RSAPublicKeySpec>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::security::spec::KeySpec>() const;
+
+
+		RSAPublicKeySpec(local_ref< java::math::BigInteger > const&, local_ref< java::math::BigInteger > const&);
 		local_ref< java::math::BigInteger > getModulus();
 		local_ref< java::math::BigInteger > getPublicExponent();
 	}; //class RSAPublicKeySpec
@@ -44,7 +53,6 @@ namespace java { namespace security { namespace spec {
 } //namespace spec
 } //namespace security
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -58,17 +66,29 @@ namespace java { namespace security { namespace spec {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::security::spec::RSAPublicKeySpec > create< java::security::spec::RSAPublicKeySpec>(local_ref< java::math::BigInteger > const &a0, local_ref< java::math::BigInteger > const &a1)
+
+java::security::spec::RSAPublicKeySpec::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::security::spec::RSAPublicKeySpec >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::security::spec::RSAPublicKeySpec::J2CPP_CLASS_NAME>(),
-			get_method_id<java::security::spec::RSAPublicKeySpec::J2CPP_CLASS_NAME, java::security::spec::RSAPublicKeySpec::J2CPP_METHOD_NAME(0), java::security::spec::RSAPublicKeySpec::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+java::security::spec::RSAPublicKeySpec::operator local_ref<java::security::spec::KeySpec>() const
+{
+	return local_ref<java::security::spec::KeySpec>(get_jtype());
+}
+
+
+java::security::spec::RSAPublicKeySpec::RSAPublicKeySpec(local_ref< java::math::BigInteger > const &a0, local_ref< java::math::BigInteger > const &a1)
+: cpp_object<java::security::spec::RSAPublicKeySpec>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::security::spec::RSAPublicKeySpec::J2CPP_CLASS_NAME>(),
+		get_method_id<java::security::spec::RSAPublicKeySpec::J2CPP_CLASS_NAME, java::security::spec::RSAPublicKeySpec::J2CPP_METHOD_NAME(0), java::security::spec::RSAPublicKeySpec::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
 
 local_ref< java::math::BigInteger > java::security::spec::RSAPublicKeySpec::getModulus()
 {

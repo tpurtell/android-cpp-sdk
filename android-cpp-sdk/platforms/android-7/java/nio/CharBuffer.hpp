@@ -11,16 +11,22 @@
 
 
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace lang { class Comparable; } } }
 namespace j2cpp { namespace java { namespace lang { class Appendable; } } }
 namespace j2cpp { namespace java { namespace lang { class CharSequence; } } }
+namespace j2cpp { namespace java { namespace lang { class Readable; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace nio { class Buffer; } } }
 namespace j2cpp { namespace java { namespace nio { class ByteOrder; } } }
 
 
 #include <java/lang/Appendable.hpp>
 #include <java/lang/CharSequence.hpp>
+#include <java/lang/Comparable.hpp>
 #include <java/lang/Object.hpp>
+#include <java/lang/Readable.hpp>
 #include <java/lang/String.hpp>
+#include <java/nio/Buffer.hpp>
 #include <java/nio/ByteOrder.hpp>
 
 
@@ -78,10 +84,17 @@ namespace java { namespace nio {
 		J2CPP_DECLARE_METHOD(39)
 		J2CPP_DECLARE_METHOD(40)
 
-		CharBuffer(jobject jobj)
+		explicit CharBuffer(jobject jobj)
 		: cpp_object<CharBuffer>(jobj)
 		{
 		}
+
+		operator local_ref<java::nio::Buffer>() const;
+		operator local_ref<java::lang::Comparable>() const;
+		operator local_ref<java::lang::CharSequence>() const;
+		operator local_ref<java::lang::Appendable>() const;
+		operator local_ref<java::lang::Readable>() const;
+
 
 		static local_ref< java::nio::CharBuffer > allocate(cpp_int const&);
 		static local_ref< java::nio::CharBuffer > wrap(local_ref< cpp_char_array<1> > const&);
@@ -128,7 +141,6 @@ namespace java { namespace nio {
 } //namespace nio
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_NIO_CHARBUFFER_HPP_DECL
@@ -141,16 +153,32 @@ namespace java { namespace nio {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::nio::CharBuffer > create< java::nio::CharBuffer>()
+
+java::nio::CharBuffer::operator local_ref<java::nio::Buffer>() const
 {
-	return local_ref< java::nio::CharBuffer >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::nio::CharBuffer::J2CPP_CLASS_NAME>(),
-			get_method_id<java::nio::CharBuffer::J2CPP_CLASS_NAME, java::nio::CharBuffer::J2CPP_METHOD_NAME(0), java::nio::CharBuffer::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::nio::Buffer>(get_jtype());
 }
+
+java::nio::CharBuffer::operator local_ref<java::lang::Comparable>() const
+{
+	return local_ref<java::lang::Comparable>(get_jtype());
+}
+
+java::nio::CharBuffer::operator local_ref<java::lang::CharSequence>() const
+{
+	return local_ref<java::lang::CharSequence>(get_jtype());
+}
+
+java::nio::CharBuffer::operator local_ref<java::lang::Appendable>() const
+{
+	return local_ref<java::lang::Appendable>(get_jtype());
+}
+
+java::nio::CharBuffer::operator local_ref<java::lang::Readable>() const
+{
+	return local_ref<java::lang::Readable>(get_jtype());
+}
+
 
 local_ref< java::nio::CharBuffer > java::nio::CharBuffer::allocate(cpp_int const &a0)
 {

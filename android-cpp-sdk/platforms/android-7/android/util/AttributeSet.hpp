@@ -10,9 +10,11 @@
 #define J2CPP_ANDROID_UTIL_ATTRIBUTESET_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -51,10 +53,13 @@ namespace android { namespace util {
 		J2CPP_DECLARE_METHOD(20)
 		J2CPP_DECLARE_METHOD(21)
 
-		AttributeSet(jobject jobj)
+		explicit AttributeSet(jobject jobj)
 		: cpp_object<AttributeSet>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		cpp_int getAttributeCount();
 		local_ref< java::lang::String > getAttributeName(cpp_int const&);
@@ -83,7 +88,6 @@ namespace android { namespace util {
 } //namespace util
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_UTIL_ATTRIBUTESET_HPP_DECL
@@ -95,6 +99,12 @@ namespace android { namespace util {
 
 namespace j2cpp {
 
+
+
+android::util::AttributeSet::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 cpp_int android::util::AttributeSet::getAttributeCount()
 {

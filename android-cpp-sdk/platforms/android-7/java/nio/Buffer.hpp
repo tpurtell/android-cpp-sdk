@@ -10,8 +10,10 @@
 #define J2CPP_JAVA_NIO_BUFFER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -41,10 +43,13 @@ namespace java { namespace nio {
 		J2CPP_DECLARE_METHOD(12)
 		J2CPP_DECLARE_METHOD(13)
 
-		Buffer(jobject jobj)
+		explicit Buffer(jobject jobj)
 		: cpp_object<Buffer>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		cpp_int capacity();
 		local_ref< java::nio::Buffer > clear();
@@ -64,7 +69,6 @@ namespace java { namespace nio {
 } //namespace nio
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_NIO_BUFFER_HPP_DECL
@@ -77,16 +81,12 @@ namespace java { namespace nio {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::nio::Buffer > create< java::nio::Buffer>()
+
+java::nio::Buffer::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::nio::Buffer >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::nio::Buffer::J2CPP_CLASS_NAME>(),
-			get_method_id<java::nio::Buffer::J2CPP_CLASS_NAME, java::nio::Buffer::J2CPP_METHOD_NAME(0), java::nio::Buffer::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
 
 cpp_int java::nio::Buffer::capacity()
 {

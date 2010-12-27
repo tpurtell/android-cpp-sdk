@@ -43,11 +43,15 @@ namespace javax { namespace security { namespace auth {
 		J2CPP_DECLARE_METHOD(6)
 		J2CPP_DECLARE_METHOD(7)
 
-		PrivateCredentialPermission(jobject jobj)
+		explicit PrivateCredentialPermission(jobject jobj)
 		: cpp_object<PrivateCredentialPermission>(jobj)
 		{
 		}
 
+		operator local_ref<java::security::Permission>() const;
+
+
+		PrivateCredentialPermission(local_ref< java::lang::String > const&, local_ref< java::lang::String > const&);
 		local_ref< cpp_object_array<java::lang::String, 2> > getPrincipals();
 		local_ref< java::lang::String > getActions();
 		local_ref< java::lang::String > getCredentialClass();
@@ -61,7 +65,6 @@ namespace javax { namespace security { namespace auth {
 } //namespace security
 } //namespace javax
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVAX_SECURITY_AUTH_PRIVATECREDENTIALPERMISSION_HPP_DECL
@@ -74,17 +77,24 @@ namespace javax { namespace security { namespace auth {
 namespace j2cpp {
 
 
-template <>
-local_ref< javax::security::auth::PrivateCredentialPermission > create< javax::security::auth::PrivateCredentialPermission>(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
+
+javax::security::auth::PrivateCredentialPermission::operator local_ref<java::security::Permission>() const
 {
-	return local_ref< javax::security::auth::PrivateCredentialPermission >(
-		environment::get().get_jenv()->NewObject(
-			get_class<javax::security::auth::PrivateCredentialPermission::J2CPP_CLASS_NAME>(),
-			get_method_id<javax::security::auth::PrivateCredentialPermission::J2CPP_CLASS_NAME, javax::security::auth::PrivateCredentialPermission::J2CPP_METHOD_NAME(0), javax::security::auth::PrivateCredentialPermission::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<java::security::Permission>(get_jtype());
 }
+
+
+javax::security::auth::PrivateCredentialPermission::PrivateCredentialPermission(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
+: cpp_object<javax::security::auth::PrivateCredentialPermission>(
+	environment::get().get_jenv()->NewObject(
+		get_class<javax::security::auth::PrivateCredentialPermission::J2CPP_CLASS_NAME>(),
+		get_method_id<javax::security::auth::PrivateCredentialPermission::J2CPP_CLASS_NAME, javax::security::auth::PrivateCredentialPermission::J2CPP_METHOD_NAME(0), javax::security::auth::PrivateCredentialPermission::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
 
 local_ref< cpp_object_array<java::lang::String, 2> > javax::security::auth::PrivateCredentialPermission::getPrincipals()
 {

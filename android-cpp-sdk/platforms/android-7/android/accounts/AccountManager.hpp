@@ -10,6 +10,7 @@
 #define J2CPP_ANDROID_ACCOUNTS_ACCOUNTMANAGER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace android { namespace app { class Activity; } } }
 namespace j2cpp { namespace android { namespace accounts { class AuthenticatorDescription; } } }
@@ -31,6 +32,7 @@ namespace j2cpp { namespace android { namespace os { class Handler; } } }
 #include <android/content/Context.hpp>
 #include <android/os/Bundle.hpp>
 #include <android/os/Handler.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -99,10 +101,13 @@ namespace android { namespace accounts {
 		J2CPP_DECLARE_FIELD(24)
 		J2CPP_DECLARE_FIELD(25)
 
-		AccountManager(jobject jobj)
+		explicit AccountManager(jobject jobj)
 		: cpp_object<AccountManager>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		static local_ref< android::accounts::AccountManager > get(local_ref< android::content::Context > const&);
 		local_ref< java::lang::String > getPassword(local_ref< android::accounts::Account > const&);
@@ -161,7 +166,6 @@ namespace android { namespace accounts {
 } //namespace accounts
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_ACCOUNTS_ACCOUNTMANAGER_HPP_DECL
@@ -174,16 +178,12 @@ namespace android { namespace accounts {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::accounts::AccountManager > create< android::accounts::AccountManager>()
+
+android::accounts::AccountManager::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::accounts::AccountManager >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::accounts::AccountManager::J2CPP_CLASS_NAME>(),
-			get_method_id<android::accounts::AccountManager::J2CPP_CLASS_NAME, android::accounts::AccountManager::J2CPP_METHOD_NAME(0), android::accounts::AccountManager::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
 
 local_ref< android::accounts::AccountManager > android::accounts::AccountManager::get(local_ref< android::content::Context > const &a0)
 {

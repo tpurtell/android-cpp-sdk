@@ -10,6 +10,7 @@
 #define J2CPP_ANDROID_DATABASE_SQLITE_SQLITEOPENHELPER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace android { namespace database { namespace sqlite { class SQLiteDatabase; } } } }
 namespace j2cpp { namespace android { namespace database { namespace sqlite { namespace SQLiteDatabase_ { class CursorFactory; } } } } }
@@ -18,6 +19,7 @@ namespace j2cpp { namespace android { namespace content { class Context; } } }
 
 #include <android/content/Context.hpp>
 #include <android/database/sqlite/SQLiteDatabase.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -41,11 +43,15 @@ namespace android { namespace database { namespace sqlite {
 		J2CPP_DECLARE_METHOD(5)
 		J2CPP_DECLARE_METHOD(6)
 
-		SQLiteOpenHelper(jobject jobj)
+		explicit SQLiteOpenHelper(jobject jobj)
 		: cpp_object<SQLiteOpenHelper>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		SQLiteOpenHelper(local_ref< android::content::Context > const&, local_ref< java::lang::String > const&, local_ref< android::database::sqlite::SQLiteDatabase_::CursorFactory > const&, cpp_int const&);
 		local_ref< android::database::sqlite::SQLiteDatabase > getWritableDatabase();
 		local_ref< android::database::sqlite::SQLiteDatabase > getReadableDatabase();
 		void close();
@@ -57,7 +63,6 @@ namespace android { namespace database { namespace sqlite {
 } //namespace sqlite
 } //namespace database
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -71,17 +76,24 @@ namespace android { namespace database { namespace sqlite {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::database::sqlite::SQLiteOpenHelper > create< android::database::sqlite::SQLiteOpenHelper>(local_ref< android::content::Context > const &a0, local_ref< java::lang::String > const &a1, local_ref< android::database::sqlite::SQLiteDatabase_::CursorFactory > const &a2, cpp_int const &a3)
+
+android::database::sqlite::SQLiteOpenHelper::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::database::sqlite::SQLiteOpenHelper >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::database::sqlite::SQLiteOpenHelper::J2CPP_CLASS_NAME>(),
-			get_method_id<android::database::sqlite::SQLiteOpenHelper::J2CPP_CLASS_NAME, android::database::sqlite::SQLiteOpenHelper::J2CPP_METHOD_NAME(0), android::database::sqlite::SQLiteOpenHelper::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::database::sqlite::SQLiteOpenHelper::SQLiteOpenHelper(local_ref< android::content::Context > const &a0, local_ref< java::lang::String > const &a1, local_ref< android::database::sqlite::SQLiteDatabase_::CursorFactory > const &a2, cpp_int const &a3)
+: cpp_object<android::database::sqlite::SQLiteOpenHelper>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::database::sqlite::SQLiteOpenHelper::J2CPP_CLASS_NAME>(),
+		get_method_id<android::database::sqlite::SQLiteOpenHelper::J2CPP_CLASS_NAME, android::database::sqlite::SQLiteOpenHelper::J2CPP_METHOD_NAME(0), android::database::sqlite::SQLiteOpenHelper::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype()
+	)
+)
+{
+}
+
 
 local_ref< android::database::sqlite::SQLiteDatabase > android::database::sqlite::SQLiteOpenHelper::getWritableDatabase()
 {

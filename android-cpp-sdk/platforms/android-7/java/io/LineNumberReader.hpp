@@ -11,9 +11,11 @@
 
 
 namespace j2cpp { namespace java { namespace io { class Reader; } } }
+namespace j2cpp { namespace java { namespace io { class BufferedReader; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 
 
+#include <java/io/BufferedReader.hpp>
 #include <java/io/Reader.hpp>
 #include <java/lang/String.hpp>
 
@@ -41,11 +43,16 @@ namespace java { namespace io {
 		J2CPP_DECLARE_METHOD(8)
 		J2CPP_DECLARE_METHOD(9)
 
-		LineNumberReader(jobject jobj)
+		explicit LineNumberReader(jobject jobj)
 		: cpp_object<LineNumberReader>(jobj)
 		{
 		}
 
+		operator local_ref<java::io::BufferedReader>() const;
+
+
+		LineNumberReader(local_ref< java::io::Reader > const&);
+		LineNumberReader(local_ref< java::io::Reader > const&, cpp_int const&);
 		cpp_int getLineNumber();
 		void mark(cpp_int const&);
 		cpp_int read();
@@ -59,7 +66,6 @@ namespace java { namespace io {
 } //namespace io
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_IO_LINENUMBERREADER_HPP_DECL
@@ -72,29 +78,37 @@ namespace java { namespace io {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::io::LineNumberReader > create< java::io::LineNumberReader>(local_ref< java::io::Reader > const &a0)
+
+java::io::LineNumberReader::operator local_ref<java::io::BufferedReader>() const
 {
-	return local_ref< java::io::LineNumberReader >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::io::LineNumberReader::J2CPP_CLASS_NAME>(),
-			get_method_id<java::io::LineNumberReader::J2CPP_CLASS_NAME, java::io::LineNumberReader::J2CPP_METHOD_NAME(0), java::io::LineNumberReader::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::io::BufferedReader>(get_jtype());
 }
 
-template <>
-local_ref< java::io::LineNumberReader > create< java::io::LineNumberReader>(local_ref< java::io::Reader > const &a0, cpp_int const &a1)
+
+java::io::LineNumberReader::LineNumberReader(local_ref< java::io::Reader > const &a0)
+: cpp_object<java::io::LineNumberReader>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::io::LineNumberReader::J2CPP_CLASS_NAME>(),
+		get_method_id<java::io::LineNumberReader::J2CPP_CLASS_NAME, java::io::LineNumberReader::J2CPP_METHOD_NAME(0), java::io::LineNumberReader::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< java::io::LineNumberReader >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::io::LineNumberReader::J2CPP_CLASS_NAME>(),
-			get_method_id<java::io::LineNumberReader::J2CPP_CLASS_NAME, java::io::LineNumberReader::J2CPP_METHOD_NAME(1), java::io::LineNumberReader::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
 }
+
+
+
+java::io::LineNumberReader::LineNumberReader(local_ref< java::io::Reader > const &a0, cpp_int const &a1)
+: cpp_object<java::io::LineNumberReader>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::io::LineNumberReader::J2CPP_CLASS_NAME>(),
+		get_method_id<java::io::LineNumberReader::J2CPP_CLASS_NAME, java::io::LineNumberReader::J2CPP_METHOD_NAME(1), java::io::LineNumberReader::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
 
 cpp_int java::io::LineNumberReader::getLineNumber()
 {

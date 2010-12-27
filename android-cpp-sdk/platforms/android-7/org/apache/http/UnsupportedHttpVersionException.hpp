@@ -11,9 +11,11 @@
 
 
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { class ProtocolException; } } } }
 
 
 #include <java/lang/String.hpp>
+#include <org/apache/http/ProtocolException.hpp>
 
 
 namespace j2cpp {
@@ -31,17 +33,21 @@ namespace org { namespace apache { namespace http {
 		J2CPP_DECLARE_METHOD(0)
 		J2CPP_DECLARE_METHOD(1)
 
-		UnsupportedHttpVersionException(jobject jobj)
+		explicit UnsupportedHttpVersionException(jobject jobj)
 		: cpp_object<UnsupportedHttpVersionException>(jobj)
 		{
 		}
 
+		operator local_ref<org::apache::http::ProtocolException>() const;
+
+
+		UnsupportedHttpVersionException();
+		UnsupportedHttpVersionException(local_ref< java::lang::String > const&);
 	}; //class UnsupportedHttpVersionException
 
 } //namespace http
 } //namespace apache
 } //namespace org
-
 
 } //namespace j2cpp
 
@@ -55,28 +61,36 @@ namespace org { namespace apache { namespace http {
 namespace j2cpp {
 
 
-template <>
-local_ref< org::apache::http::UnsupportedHttpVersionException > create< org::apache::http::UnsupportedHttpVersionException>()
+
+org::apache::http::UnsupportedHttpVersionException::operator local_ref<org::apache::http::ProtocolException>() const
 {
-	return local_ref< org::apache::http::UnsupportedHttpVersionException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::apache::http::UnsupportedHttpVersionException::J2CPP_CLASS_NAME>(),
-			get_method_id<org::apache::http::UnsupportedHttpVersionException::J2CPP_CLASS_NAME, org::apache::http::UnsupportedHttpVersionException::J2CPP_METHOD_NAME(0), org::apache::http::UnsupportedHttpVersionException::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<org::apache::http::ProtocolException>(get_jtype());
 }
 
-template <>
-local_ref< org::apache::http::UnsupportedHttpVersionException > create< org::apache::http::UnsupportedHttpVersionException>(local_ref< java::lang::String > const &a0)
+
+org::apache::http::UnsupportedHttpVersionException::UnsupportedHttpVersionException()
+: cpp_object<org::apache::http::UnsupportedHttpVersionException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::apache::http::UnsupportedHttpVersionException::J2CPP_CLASS_NAME>(),
+		get_method_id<org::apache::http::UnsupportedHttpVersionException::J2CPP_CLASS_NAME, org::apache::http::UnsupportedHttpVersionException::J2CPP_METHOD_NAME(0), org::apache::http::UnsupportedHttpVersionException::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
 {
-	return local_ref< org::apache::http::UnsupportedHttpVersionException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::apache::http::UnsupportedHttpVersionException::J2CPP_CLASS_NAME>(),
-			get_method_id<org::apache::http::UnsupportedHttpVersionException::J2CPP_CLASS_NAME, org::apache::http::UnsupportedHttpVersionException::J2CPP_METHOD_NAME(1), org::apache::http::UnsupportedHttpVersionException::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
 }
+
+
+
+org::apache::http::UnsupportedHttpVersionException::UnsupportedHttpVersionException(local_ref< java::lang::String > const &a0)
+: cpp_object<org::apache::http::UnsupportedHttpVersionException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::apache::http::UnsupportedHttpVersionException::J2CPP_CLASS_NAME>(),
+		get_method_id<org::apache::http::UnsupportedHttpVersionException::J2CPP_CLASS_NAME, org::apache::http::UnsupportedHttpVersionException::J2CPP_METHOD_NAME(1), org::apache::http::UnsupportedHttpVersionException::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 
 J2CPP_DEFINE_CLASS(org::apache::http::UnsupportedHttpVersionException,"org/apache/http/UnsupportedHttpVersionException")

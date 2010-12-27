@@ -10,11 +10,15 @@
 #define J2CPP_ORG_APACHE_HTTP_IMPL_COOKIE_BESTMATCHSPECFACTORY_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace cookie { class CookieSpec; } } } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { namespace cookie { class CookieSpecFactory; } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace params { class HttpParams; } } } } }
 
 
+#include <java/lang/Object.hpp>
 #include <org/apache/http/cookie/CookieSpec.hpp>
+#include <org/apache/http/cookie/CookieSpecFactory.hpp>
 #include <org/apache/http/params/HttpParams.hpp>
 
 
@@ -33,11 +37,16 @@ namespace org { namespace apache { namespace http { namespace impl { namespace c
 		J2CPP_DECLARE_METHOD(0)
 		J2CPP_DECLARE_METHOD(1)
 
-		BestMatchSpecFactory(jobject jobj)
+		explicit BestMatchSpecFactory(jobject jobj)
 		: cpp_object<BestMatchSpecFactory>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<org::apache::http::cookie::CookieSpecFactory>() const;
+
+
+		BestMatchSpecFactory();
 		local_ref< org::apache::http::cookie::CookieSpec > newInstance(local_ref< org::apache::http::params::HttpParams > const&);
 	}; //class BestMatchSpecFactory
 
@@ -46,7 +55,6 @@ namespace org { namespace apache { namespace http { namespace impl { namespace c
 } //namespace http
 } //namespace apache
 } //namespace org
-
 
 } //namespace j2cpp
 
@@ -60,16 +68,28 @@ namespace org { namespace apache { namespace http { namespace impl { namespace c
 namespace j2cpp {
 
 
-template <>
-local_ref< org::apache::http::impl::cookie::BestMatchSpecFactory > create< org::apache::http::impl::cookie::BestMatchSpecFactory>()
+
+org::apache::http::impl::cookie::BestMatchSpecFactory::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< org::apache::http::impl::cookie::BestMatchSpecFactory >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::apache::http::impl::cookie::BestMatchSpecFactory::J2CPP_CLASS_NAME>(),
-			get_method_id<org::apache::http::impl::cookie::BestMatchSpecFactory::J2CPP_CLASS_NAME, org::apache::http::impl::cookie::BestMatchSpecFactory::J2CPP_METHOD_NAME(0), org::apache::http::impl::cookie::BestMatchSpecFactory::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+org::apache::http::impl::cookie::BestMatchSpecFactory::operator local_ref<org::apache::http::cookie::CookieSpecFactory>() const
+{
+	return local_ref<org::apache::http::cookie::CookieSpecFactory>(get_jtype());
+}
+
+
+org::apache::http::impl::cookie::BestMatchSpecFactory::BestMatchSpecFactory()
+: cpp_object<org::apache::http::impl::cookie::BestMatchSpecFactory>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::apache::http::impl::cookie::BestMatchSpecFactory::J2CPP_CLASS_NAME>(),
+		get_method_id<org::apache::http::impl::cookie::BestMatchSpecFactory::J2CPP_CLASS_NAME, org::apache::http::impl::cookie::BestMatchSpecFactory::J2CPP_METHOD_NAME(0), org::apache::http::impl::cookie::BestMatchSpecFactory::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 local_ref< org::apache::http::cookie::CookieSpec > org::apache::http::impl::cookie::BestMatchSpecFactory::newInstance(local_ref< org::apache::http::params::HttpParams > const &a0)
 {

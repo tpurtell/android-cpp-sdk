@@ -10,19 +10,23 @@
 #define J2CPP_ANDROID_WIDGET_SIMPLECURSORTREEADAPTER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace android { namespace database { class Cursor; } } }
 namespace j2cpp { namespace android { namespace content { class Context; } } }
 namespace j2cpp { namespace android { namespace view { class View; } } }
 namespace j2cpp { namespace android { namespace widget { namespace SimpleCursorTreeAdapter_ { class ViewBinder; } } } }
 namespace j2cpp { namespace android { namespace widget { class TextView; } } }
+namespace j2cpp { namespace android { namespace widget { class ResourceCursorTreeAdapter; } } }
 
 
 #include <android/content/Context.hpp>
 #include <android/database/Cursor.hpp>
 #include <android/view/View.hpp>
+#include <android/widget/ResourceCursorTreeAdapter.hpp>
 #include <android/widget/SimpleCursorTreeAdapter.hpp>
 #include <android/widget/TextView.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -43,10 +47,13 @@ namespace android { namespace widget {
 
 			J2CPP_DECLARE_METHOD(0)
 
-			ViewBinder(jobject jobj)
+			explicit ViewBinder(jobject jobj)
 			: cpp_object<ViewBinder>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+
 
 			cpp_boolean setViewValue(local_ref< android::view::View > const&, local_ref< android::database::Cursor > const&, cpp_int const&);
 		}; //class ViewBinder
@@ -72,11 +79,17 @@ namespace android { namespace widget {
 
 		typedef SimpleCursorTreeAdapter_::ViewBinder ViewBinder;
 
-		SimpleCursorTreeAdapter(jobject jobj)
+		explicit SimpleCursorTreeAdapter(jobject jobj)
 		: cpp_object<SimpleCursorTreeAdapter>(jobj)
 		{
 		}
 
+		operator local_ref<android::widget::ResourceCursorTreeAdapter>() const;
+
+
+		SimpleCursorTreeAdapter(local_ref< android::content::Context > const&, local_ref< android::database::Cursor > const&, cpp_int const&, cpp_int const&, local_ref< cpp_object_array<java::lang::String, 1> > const&, local_ref< cpp_int_array<1> > const&, cpp_int const&, cpp_int const&, local_ref< cpp_object_array<java::lang::String, 1> > const&, local_ref< cpp_int_array<1> > const&);
+		SimpleCursorTreeAdapter(local_ref< android::content::Context > const&, local_ref< android::database::Cursor > const&, cpp_int const&, cpp_int const&, local_ref< cpp_object_array<java::lang::String, 1> > const&, local_ref< cpp_int_array<1> > const&, cpp_int const&, local_ref< cpp_object_array<java::lang::String, 1> > const&, local_ref< cpp_int_array<1> > const&);
+		SimpleCursorTreeAdapter(local_ref< android::content::Context > const&, local_ref< android::database::Cursor > const&, cpp_int const&, local_ref< cpp_object_array<java::lang::String, 1> > const&, local_ref< cpp_int_array<1> > const&, cpp_int const&, local_ref< cpp_object_array<java::lang::String, 1> > const&, local_ref< cpp_int_array<1> > const&);
 		local_ref< android::widget::SimpleCursorTreeAdapter_::ViewBinder > getViewBinder();
 		void setViewBinder(local_ref< android::widget::SimpleCursorTreeAdapter_::ViewBinder > const&);
 		void setViewText(local_ref< android::widget::TextView > const&, local_ref< java::lang::String > const&);
@@ -84,7 +97,6 @@ namespace android { namespace widget {
 
 } //namespace widget
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -98,6 +110,12 @@ namespace android { namespace widget {
 namespace j2cpp {
 
 
+
+
+android::widget::SimpleCursorTreeAdapter_::ViewBinder::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 cpp_boolean android::widget::SimpleCursorTreeAdapter_::ViewBinder::setViewValue(local_ref< android::view::View > const &a0, local_ref< android::database::Cursor > const &a1, cpp_int const &a2)
 {
@@ -115,41 +133,50 @@ J2CPP_DEFINE_CLASS(android::widget::SimpleCursorTreeAdapter_::ViewBinder,"androi
 J2CPP_DEFINE_METHOD(android::widget::SimpleCursorTreeAdapter_::ViewBinder,0,"setViewValue","(Landroid/view/View;Landroid/database/Cursor;I)Z")
 
 
-template <>
-local_ref< android::widget::SimpleCursorTreeAdapter > create< android::widget::SimpleCursorTreeAdapter>(local_ref< android::content::Context > const &a0, local_ref< android::database::Cursor > const &a1, cpp_int const &a2, cpp_int const &a3, local_ref< cpp_object_array<java::lang::String, 1> > const &a4, local_ref< cpp_int_array<1> > const &a5, cpp_int const &a6, cpp_int const &a7, local_ref< cpp_object_array<java::lang::String, 1> > const &a8, local_ref< cpp_int_array<1> > const &a9)
+
+android::widget::SimpleCursorTreeAdapter::operator local_ref<android::widget::ResourceCursorTreeAdapter>() const
 {
-	return local_ref< android::widget::SimpleCursorTreeAdapter >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::widget::SimpleCursorTreeAdapter::J2CPP_CLASS_NAME>(),
-			get_method_id<android::widget::SimpleCursorTreeAdapter::J2CPP_CLASS_NAME, android::widget::SimpleCursorTreeAdapter::J2CPP_METHOD_NAME(0), android::widget::SimpleCursorTreeAdapter::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype(), a4.get_jtype(), a5.get_jtype(), a6.get_jtype(), a7.get_jtype(), a8.get_jtype(), a9.get_jtype()
-		)
-	);
+	return local_ref<android::widget::ResourceCursorTreeAdapter>(get_jtype());
 }
 
-template <>
-local_ref< android::widget::SimpleCursorTreeAdapter > create< android::widget::SimpleCursorTreeAdapter>(local_ref< android::content::Context > const &a0, local_ref< android::database::Cursor > const &a1, cpp_int const &a2, cpp_int const &a3, local_ref< cpp_object_array<java::lang::String, 1> > const &a4, local_ref< cpp_int_array<1> > const &a5, cpp_int const &a6, local_ref< cpp_object_array<java::lang::String, 1> > const &a7, local_ref< cpp_int_array<1> > const &a8)
+
+android::widget::SimpleCursorTreeAdapter::SimpleCursorTreeAdapter(local_ref< android::content::Context > const &a0, local_ref< android::database::Cursor > const &a1, cpp_int const &a2, cpp_int const &a3, local_ref< cpp_object_array<java::lang::String, 1> > const &a4, local_ref< cpp_int_array<1> > const &a5, cpp_int const &a6, cpp_int const &a7, local_ref< cpp_object_array<java::lang::String, 1> > const &a8, local_ref< cpp_int_array<1> > const &a9)
+: cpp_object<android::widget::SimpleCursorTreeAdapter>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::widget::SimpleCursorTreeAdapter::J2CPP_CLASS_NAME>(),
+		get_method_id<android::widget::SimpleCursorTreeAdapter::J2CPP_CLASS_NAME, android::widget::SimpleCursorTreeAdapter::J2CPP_METHOD_NAME(0), android::widget::SimpleCursorTreeAdapter::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype(), a4.get_jtype(), a5.get_jtype(), a6.get_jtype(), a7.get_jtype(), a8.get_jtype(), a9.get_jtype()
+	)
+)
 {
-	return local_ref< android::widget::SimpleCursorTreeAdapter >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::widget::SimpleCursorTreeAdapter::J2CPP_CLASS_NAME>(),
-			get_method_id<android::widget::SimpleCursorTreeAdapter::J2CPP_CLASS_NAME, android::widget::SimpleCursorTreeAdapter::J2CPP_METHOD_NAME(1), android::widget::SimpleCursorTreeAdapter::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype(), a4.get_jtype(), a5.get_jtype(), a6.get_jtype(), a7.get_jtype(), a8.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< android::widget::SimpleCursorTreeAdapter > create< android::widget::SimpleCursorTreeAdapter>(local_ref< android::content::Context > const &a0, local_ref< android::database::Cursor > const &a1, cpp_int const &a2, local_ref< cpp_object_array<java::lang::String, 1> > const &a3, local_ref< cpp_int_array<1> > const &a4, cpp_int const &a5, local_ref< cpp_object_array<java::lang::String, 1> > const &a6, local_ref< cpp_int_array<1> > const &a7)
+
+
+android::widget::SimpleCursorTreeAdapter::SimpleCursorTreeAdapter(local_ref< android::content::Context > const &a0, local_ref< android::database::Cursor > const &a1, cpp_int const &a2, cpp_int const &a3, local_ref< cpp_object_array<java::lang::String, 1> > const &a4, local_ref< cpp_int_array<1> > const &a5, cpp_int const &a6, local_ref< cpp_object_array<java::lang::String, 1> > const &a7, local_ref< cpp_int_array<1> > const &a8)
+: cpp_object<android::widget::SimpleCursorTreeAdapter>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::widget::SimpleCursorTreeAdapter::J2CPP_CLASS_NAME>(),
+		get_method_id<android::widget::SimpleCursorTreeAdapter::J2CPP_CLASS_NAME, android::widget::SimpleCursorTreeAdapter::J2CPP_METHOD_NAME(1), android::widget::SimpleCursorTreeAdapter::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype(), a4.get_jtype(), a5.get_jtype(), a6.get_jtype(), a7.get_jtype(), a8.get_jtype()
+	)
+)
 {
-	return local_ref< android::widget::SimpleCursorTreeAdapter >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::widget::SimpleCursorTreeAdapter::J2CPP_CLASS_NAME>(),
-			get_method_id<android::widget::SimpleCursorTreeAdapter::J2CPP_CLASS_NAME, android::widget::SimpleCursorTreeAdapter::J2CPP_METHOD_NAME(2), android::widget::SimpleCursorTreeAdapter::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype(), a4.get_jtype(), a5.get_jtype(), a6.get_jtype(), a7.get_jtype()
-		)
-	);
 }
+
+
+
+android::widget::SimpleCursorTreeAdapter::SimpleCursorTreeAdapter(local_ref< android::content::Context > const &a0, local_ref< android::database::Cursor > const &a1, cpp_int const &a2, local_ref< cpp_object_array<java::lang::String, 1> > const &a3, local_ref< cpp_int_array<1> > const &a4, cpp_int const &a5, local_ref< cpp_object_array<java::lang::String, 1> > const &a6, local_ref< cpp_int_array<1> > const &a7)
+: cpp_object<android::widget::SimpleCursorTreeAdapter>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::widget::SimpleCursorTreeAdapter::J2CPP_CLASS_NAME>(),
+		get_method_id<android::widget::SimpleCursorTreeAdapter::J2CPP_CLASS_NAME, android::widget::SimpleCursorTreeAdapter::J2CPP_METHOD_NAME(2), android::widget::SimpleCursorTreeAdapter::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype(), a4.get_jtype(), a5.get_jtype(), a6.get_jtype(), a7.get_jtype()
+	)
+)
+{
+}
+
 
 local_ref< android::widget::SimpleCursorTreeAdapter_::ViewBinder > android::widget::SimpleCursorTreeAdapter::getViewBinder()
 {

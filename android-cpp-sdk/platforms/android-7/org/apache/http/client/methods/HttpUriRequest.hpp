@@ -11,11 +11,15 @@
 
 
 namespace j2cpp { namespace java { namespace net { class URI; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { class HttpRequest; } } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/net/URI.hpp>
+#include <org/apache/http/HttpRequest.hpp>
 
 
 namespace j2cpp {
@@ -35,10 +39,14 @@ namespace org { namespace apache { namespace http { namespace client { namespace
 		J2CPP_DECLARE_METHOD(2)
 		J2CPP_DECLARE_METHOD(3)
 
-		HttpUriRequest(jobject jobj)
+		explicit HttpUriRequest(jobject jobj)
 		: cpp_object<HttpUriRequest>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<org::apache::http::HttpRequest>() const;
+
 
 		local_ref< java::lang::String > getMethod();
 		local_ref< java::net::URI > getURI();
@@ -52,7 +60,6 @@ namespace org { namespace apache { namespace http { namespace client { namespace
 } //namespace apache
 } //namespace org
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ORG_APACHE_HTTP_CLIENT_METHODS_HTTPURIREQUEST_HPP_DECL
@@ -64,6 +71,17 @@ namespace org { namespace apache { namespace http { namespace client { namespace
 
 namespace j2cpp {
 
+
+
+org::apache::http::client::methods::HttpUriRequest::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
+
+org::apache::http::client::methods::HttpUriRequest::operator local_ref<org::apache::http::HttpRequest>() const
+{
+	return local_ref<org::apache::http::HttpRequest>(get_jtype());
+}
 
 local_ref< java::lang::String > org::apache::http::client::methods::HttpUriRequest::getMethod()
 {

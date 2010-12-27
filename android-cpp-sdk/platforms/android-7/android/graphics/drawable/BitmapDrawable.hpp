@@ -86,11 +86,22 @@ namespace android { namespace graphics { namespace drawable {
 		J2CPP_DECLARE_METHOD(32)
 		J2CPP_DECLARE_METHOD(33)
 
-		BitmapDrawable(jobject jobj)
+		explicit BitmapDrawable(jobject jobj)
 		: cpp_object<BitmapDrawable>(jobj)
 		{
 		}
 
+		operator local_ref<android::graphics::drawable::Drawable>() const;
+
+
+		BitmapDrawable();
+		BitmapDrawable(local_ref< android::content::res::Resources > const&);
+		BitmapDrawable(local_ref< android::graphics::Bitmap > const&);
+		BitmapDrawable(local_ref< android::content::res::Resources > const&, local_ref< android::graphics::Bitmap > const&);
+		BitmapDrawable(local_ref< java::lang::String > const&);
+		BitmapDrawable(local_ref< android::content::res::Resources > const&, local_ref< java::lang::String > const&);
+		BitmapDrawable(local_ref< java::io::InputStream > const&);
+		BitmapDrawable(local_ref< android::content::res::Resources > const&, local_ref< java::io::InputStream > const&);
 		local_ref< android::graphics::Paint > getPaint();
 		local_ref< android::graphics::Bitmap > getBitmap();
 		void setTargetDensity(local_ref< android::graphics::Canvas > const&);
@@ -122,7 +133,6 @@ namespace android { namespace graphics { namespace drawable {
 } //namespace graphics
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_GRAPHICS_DRAWABLE_BITMAPDRAWABLE_HPP_DECL
@@ -135,100 +145,114 @@ namespace android { namespace graphics { namespace drawable {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::graphics::drawable::BitmapDrawable > create< android::graphics::drawable::BitmapDrawable>()
+
+android::graphics::drawable::BitmapDrawable::operator local_ref<android::graphics::drawable::Drawable>() const
 {
-	return local_ref< android::graphics::drawable::BitmapDrawable >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::graphics::drawable::BitmapDrawable::J2CPP_CLASS_NAME>(),
-			get_method_id<android::graphics::drawable::BitmapDrawable::J2CPP_CLASS_NAME, android::graphics::drawable::BitmapDrawable::J2CPP_METHOD_NAME(0), android::graphics::drawable::BitmapDrawable::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<android::graphics::drawable::Drawable>(get_jtype());
 }
 
-template <>
-local_ref< android::graphics::drawable::BitmapDrawable > create< android::graphics::drawable::BitmapDrawable>(local_ref< android::content::res::Resources > const &a0)
+
+android::graphics::drawable::BitmapDrawable::BitmapDrawable()
+: cpp_object<android::graphics::drawable::BitmapDrawable>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::graphics::drawable::BitmapDrawable::J2CPP_CLASS_NAME>(),
+		get_method_id<android::graphics::drawable::BitmapDrawable::J2CPP_CLASS_NAME, android::graphics::drawable::BitmapDrawable::J2CPP_METHOD_NAME(0), android::graphics::drawable::BitmapDrawable::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
 {
-	return local_ref< android::graphics::drawable::BitmapDrawable >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::graphics::drawable::BitmapDrawable::J2CPP_CLASS_NAME>(),
-			get_method_id<android::graphics::drawable::BitmapDrawable::J2CPP_CLASS_NAME, android::graphics::drawable::BitmapDrawable::J2CPP_METHOD_NAME(1), android::graphics::drawable::BitmapDrawable::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< android::graphics::drawable::BitmapDrawable > create< android::graphics::drawable::BitmapDrawable>(local_ref< android::graphics::Bitmap > const &a0)
+
+
+android::graphics::drawable::BitmapDrawable::BitmapDrawable(local_ref< android::content::res::Resources > const &a0)
+: cpp_object<android::graphics::drawable::BitmapDrawable>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::graphics::drawable::BitmapDrawable::J2CPP_CLASS_NAME>(),
+		get_method_id<android::graphics::drawable::BitmapDrawable::J2CPP_CLASS_NAME, android::graphics::drawable::BitmapDrawable::J2CPP_METHOD_NAME(1), android::graphics::drawable::BitmapDrawable::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< android::graphics::drawable::BitmapDrawable >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::graphics::drawable::BitmapDrawable::J2CPP_CLASS_NAME>(),
-			get_method_id<android::graphics::drawable::BitmapDrawable::J2CPP_CLASS_NAME, android::graphics::drawable::BitmapDrawable::J2CPP_METHOD_NAME(2), android::graphics::drawable::BitmapDrawable::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< android::graphics::drawable::BitmapDrawable > create< android::graphics::drawable::BitmapDrawable>(local_ref< android::content::res::Resources > const &a0, local_ref< android::graphics::Bitmap > const &a1)
+
+
+android::graphics::drawable::BitmapDrawable::BitmapDrawable(local_ref< android::graphics::Bitmap > const &a0)
+: cpp_object<android::graphics::drawable::BitmapDrawable>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::graphics::drawable::BitmapDrawable::J2CPP_CLASS_NAME>(),
+		get_method_id<android::graphics::drawable::BitmapDrawable::J2CPP_CLASS_NAME, android::graphics::drawable::BitmapDrawable::J2CPP_METHOD_NAME(2), android::graphics::drawable::BitmapDrawable::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< android::graphics::drawable::BitmapDrawable >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::graphics::drawable::BitmapDrawable::J2CPP_CLASS_NAME>(),
-			get_method_id<android::graphics::drawable::BitmapDrawable::J2CPP_CLASS_NAME, android::graphics::drawable::BitmapDrawable::J2CPP_METHOD_NAME(3), android::graphics::drawable::BitmapDrawable::J2CPP_METHOD_SIGNATURE(3), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< android::graphics::drawable::BitmapDrawable > create< android::graphics::drawable::BitmapDrawable>(local_ref< java::lang::String > const &a0)
+
+
+android::graphics::drawable::BitmapDrawable::BitmapDrawable(local_ref< android::content::res::Resources > const &a0, local_ref< android::graphics::Bitmap > const &a1)
+: cpp_object<android::graphics::drawable::BitmapDrawable>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::graphics::drawable::BitmapDrawable::J2CPP_CLASS_NAME>(),
+		get_method_id<android::graphics::drawable::BitmapDrawable::J2CPP_CLASS_NAME, android::graphics::drawable::BitmapDrawable::J2CPP_METHOD_NAME(3), android::graphics::drawable::BitmapDrawable::J2CPP_METHOD_SIGNATURE(3), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
 {
-	return local_ref< android::graphics::drawable::BitmapDrawable >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::graphics::drawable::BitmapDrawable::J2CPP_CLASS_NAME>(),
-			get_method_id<android::graphics::drawable::BitmapDrawable::J2CPP_CLASS_NAME, android::graphics::drawable::BitmapDrawable::J2CPP_METHOD_NAME(4), android::graphics::drawable::BitmapDrawable::J2CPP_METHOD_SIGNATURE(4), false>(),
-			a0.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< android::graphics::drawable::BitmapDrawable > create< android::graphics::drawable::BitmapDrawable>(local_ref< android::content::res::Resources > const &a0, local_ref< java::lang::String > const &a1)
+
+
+android::graphics::drawable::BitmapDrawable::BitmapDrawable(local_ref< java::lang::String > const &a0)
+: cpp_object<android::graphics::drawable::BitmapDrawable>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::graphics::drawable::BitmapDrawable::J2CPP_CLASS_NAME>(),
+		get_method_id<android::graphics::drawable::BitmapDrawable::J2CPP_CLASS_NAME, android::graphics::drawable::BitmapDrawable::J2CPP_METHOD_NAME(4), android::graphics::drawable::BitmapDrawable::J2CPP_METHOD_SIGNATURE(4), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< android::graphics::drawable::BitmapDrawable >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::graphics::drawable::BitmapDrawable::J2CPP_CLASS_NAME>(),
-			get_method_id<android::graphics::drawable::BitmapDrawable::J2CPP_CLASS_NAME, android::graphics::drawable::BitmapDrawable::J2CPP_METHOD_NAME(5), android::graphics::drawable::BitmapDrawable::J2CPP_METHOD_SIGNATURE(5), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< android::graphics::drawable::BitmapDrawable > create< android::graphics::drawable::BitmapDrawable>(local_ref< java::io::InputStream > const &a0)
+
+
+android::graphics::drawable::BitmapDrawable::BitmapDrawable(local_ref< android::content::res::Resources > const &a0, local_ref< java::lang::String > const &a1)
+: cpp_object<android::graphics::drawable::BitmapDrawable>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::graphics::drawable::BitmapDrawable::J2CPP_CLASS_NAME>(),
+		get_method_id<android::graphics::drawable::BitmapDrawable::J2CPP_CLASS_NAME, android::graphics::drawable::BitmapDrawable::J2CPP_METHOD_NAME(5), android::graphics::drawable::BitmapDrawable::J2CPP_METHOD_SIGNATURE(5), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
 {
-	return local_ref< android::graphics::drawable::BitmapDrawable >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::graphics::drawable::BitmapDrawable::J2CPP_CLASS_NAME>(),
-			get_method_id<android::graphics::drawable::BitmapDrawable::J2CPP_CLASS_NAME, android::graphics::drawable::BitmapDrawable::J2CPP_METHOD_NAME(6), android::graphics::drawable::BitmapDrawable::J2CPP_METHOD_SIGNATURE(6), false>(),
-			a0.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< android::graphics::drawable::BitmapDrawable > create< android::graphics::drawable::BitmapDrawable>(local_ref< android::content::res::Resources > const &a0, local_ref< java::io::InputStream > const &a1)
+
+
+android::graphics::drawable::BitmapDrawable::BitmapDrawable(local_ref< java::io::InputStream > const &a0)
+: cpp_object<android::graphics::drawable::BitmapDrawable>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::graphics::drawable::BitmapDrawable::J2CPP_CLASS_NAME>(),
+		get_method_id<android::graphics::drawable::BitmapDrawable::J2CPP_CLASS_NAME, android::graphics::drawable::BitmapDrawable::J2CPP_METHOD_NAME(6), android::graphics::drawable::BitmapDrawable::J2CPP_METHOD_SIGNATURE(6), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< android::graphics::drawable::BitmapDrawable >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::graphics::drawable::BitmapDrawable::J2CPP_CLASS_NAME>(),
-			get_method_id<android::graphics::drawable::BitmapDrawable::J2CPP_CLASS_NAME, android::graphics::drawable::BitmapDrawable::J2CPP_METHOD_NAME(7), android::graphics::drawable::BitmapDrawable::J2CPP_METHOD_SIGNATURE(7), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
 }
+
+
+
+android::graphics::drawable::BitmapDrawable::BitmapDrawable(local_ref< android::content::res::Resources > const &a0, local_ref< java::io::InputStream > const &a1)
+: cpp_object<android::graphics::drawable::BitmapDrawable>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::graphics::drawable::BitmapDrawable::J2CPP_CLASS_NAME>(),
+		get_method_id<android::graphics::drawable::BitmapDrawable::J2CPP_CLASS_NAME, android::graphics::drawable::BitmapDrawable::J2CPP_METHOD_NAME(7), android::graphics::drawable::BitmapDrawable::J2CPP_METHOD_SIGNATURE(7), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
 
 local_ref< android::graphics::Paint > android::graphics::drawable::BitmapDrawable::getPaint()
 {

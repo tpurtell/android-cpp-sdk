@@ -10,11 +10,13 @@
 #define J2CPP_ANDROID_WEBKIT_DATESORTER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace android { namespace content { class Context; } } }
 
 
 #include <android/content/Context.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -36,11 +38,15 @@ namespace android { namespace webkit {
 		J2CPP_DECLARE_METHOD(3)
 		J2CPP_DECLARE_FIELD(0)
 
-		DateSorter(jobject jobj)
+		explicit DateSorter(jobject jobj)
 		: cpp_object<DateSorter>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		DateSorter(local_ref< android::content::Context > const&);
 		cpp_int getIndex(cpp_long const&);
 		local_ref< java::lang::String > getLabel(cpp_int const&);
 		cpp_long getBoundary(cpp_int const&);
@@ -50,7 +56,6 @@ namespace android { namespace webkit {
 
 } //namespace webkit
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -64,17 +69,24 @@ namespace android { namespace webkit {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::webkit::DateSorter > create< android::webkit::DateSorter>(local_ref< android::content::Context > const &a0)
+
+android::webkit::DateSorter::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::webkit::DateSorter >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::webkit::DateSorter::J2CPP_CLASS_NAME>(),
-			get_method_id<android::webkit::DateSorter::J2CPP_CLASS_NAME, android::webkit::DateSorter::J2CPP_METHOD_NAME(0), android::webkit::DateSorter::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::webkit::DateSorter::DateSorter(local_ref< android::content::Context > const &a0)
+: cpp_object<android::webkit::DateSorter>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::webkit::DateSorter::J2CPP_CLASS_NAME>(),
+		get_method_id<android::webkit::DateSorter::J2CPP_CLASS_NAME, android::webkit::DateSorter::J2CPP_METHOD_NAME(0), android::webkit::DateSorter::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 cpp_int android::webkit::DateSorter::getIndex(cpp_long const &a0)
 {

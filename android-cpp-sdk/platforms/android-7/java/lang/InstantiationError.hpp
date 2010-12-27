@@ -10,9 +10,11 @@
 #define J2CPP_JAVA_LANG_INSTANTIATIONERROR_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class IncompatibleClassChangeError; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 
 
+#include <java/lang/IncompatibleClassChangeError.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -31,16 +33,20 @@ namespace java { namespace lang {
 		J2CPP_DECLARE_METHOD(0)
 		J2CPP_DECLARE_METHOD(1)
 
-		InstantiationError(jobject jobj)
+		explicit InstantiationError(jobject jobj)
 		: cpp_object<InstantiationError>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::IncompatibleClassChangeError>() const;
+
+
+		InstantiationError();
+		InstantiationError(local_ref< java::lang::String > const&);
 	}; //class InstantiationError
 
 } //namespace lang
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -54,28 +60,36 @@ namespace java { namespace lang {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::lang::InstantiationError > create< java::lang::InstantiationError>()
+
+java::lang::InstantiationError::operator local_ref<java::lang::IncompatibleClassChangeError>() const
 {
-	return local_ref< java::lang::InstantiationError >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::lang::InstantiationError::J2CPP_CLASS_NAME>(),
-			get_method_id<java::lang::InstantiationError::J2CPP_CLASS_NAME, java::lang::InstantiationError::J2CPP_METHOD_NAME(0), java::lang::InstantiationError::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::IncompatibleClassChangeError>(get_jtype());
 }
 
-template <>
-local_ref< java::lang::InstantiationError > create< java::lang::InstantiationError>(local_ref< java::lang::String > const &a0)
+
+java::lang::InstantiationError::InstantiationError()
+: cpp_object<java::lang::InstantiationError>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::lang::InstantiationError::J2CPP_CLASS_NAME>(),
+		get_method_id<java::lang::InstantiationError::J2CPP_CLASS_NAME, java::lang::InstantiationError::J2CPP_METHOD_NAME(0), java::lang::InstantiationError::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
 {
-	return local_ref< java::lang::InstantiationError >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::lang::InstantiationError::J2CPP_CLASS_NAME>(),
-			get_method_id<java::lang::InstantiationError::J2CPP_CLASS_NAME, java::lang::InstantiationError::J2CPP_METHOD_NAME(1), java::lang::InstantiationError::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
 }
+
+
+
+java::lang::InstantiationError::InstantiationError(local_ref< java::lang::String > const &a0)
+: cpp_object<java::lang::InstantiationError>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::lang::InstantiationError::J2CPP_CLASS_NAME>(),
+		get_method_id<java::lang::InstantiationError::J2CPP_CLASS_NAME, java::lang::InstantiationError::J2CPP_METHOD_NAME(1), java::lang::InstantiationError::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 
 J2CPP_DEFINE_CLASS(java::lang::InstantiationError,"java/lang/InstantiationError")

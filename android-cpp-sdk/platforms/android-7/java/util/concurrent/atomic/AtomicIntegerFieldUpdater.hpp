@@ -46,10 +46,13 @@ namespace java { namespace util { namespace concurrent { namespace atomic {
 		J2CPP_DECLARE_METHOD(11)
 		J2CPP_DECLARE_METHOD(12)
 
-		AtomicIntegerFieldUpdater(jobject jobj)
+		explicit AtomicIntegerFieldUpdater(jobject jobj)
 		: cpp_object<AtomicIntegerFieldUpdater>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		static local_ref< java::util::concurrent::atomic::AtomicIntegerFieldUpdater > newUpdater(local_ref< java::lang::Class > const&, local_ref< java::lang::String > const&);
 		cpp_boolean compareAndSet(local_ref< java::lang::Object > const&, cpp_int const&, cpp_int const&);
@@ -70,7 +73,6 @@ namespace java { namespace util { namespace concurrent { namespace atomic {
 } //namespace util
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_UTIL_CONCURRENT_ATOMIC_ATOMICINTEGERFIELDUPDATER_HPP_DECL
@@ -83,16 +85,12 @@ namespace java { namespace util { namespace concurrent { namespace atomic {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::util::concurrent::atomic::AtomicIntegerFieldUpdater > create< java::util::concurrent::atomic::AtomicIntegerFieldUpdater>()
+
+java::util::concurrent::atomic::AtomicIntegerFieldUpdater::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::util::concurrent::atomic::AtomicIntegerFieldUpdater >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::concurrent::atomic::AtomicIntegerFieldUpdater::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::concurrent::atomic::AtomicIntegerFieldUpdater::J2CPP_CLASS_NAME, java::util::concurrent::atomic::AtomicIntegerFieldUpdater::J2CPP_METHOD_NAME(0), java::util::concurrent::atomic::AtomicIntegerFieldUpdater::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
 
 local_ref< java::util::concurrent::atomic::AtomicIntegerFieldUpdater > java::util::concurrent::atomic::AtomicIntegerFieldUpdater::newUpdater(local_ref< java::lang::Class > const &a0, local_ref< java::lang::String > const &a1)
 {

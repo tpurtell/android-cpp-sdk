@@ -10,8 +10,10 @@
 #define J2CPP_JAVAX_MICROEDITION_KHRONOS_EGL_EGL_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -27,17 +29,19 @@ namespace javax { namespace microedition { namespace khronos { namespace egl {
 		J2CPP_DECLARE_CLASS
 
 
-		EGL(jobject jobj)
+		explicit EGL(jobject jobj)
 		: cpp_object<EGL>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 	}; //class EGL
 
 } //namespace egl
 } //namespace khronos
 } //namespace microedition
 } //namespace javax
-
 
 } //namespace j2cpp
 
@@ -50,6 +54,12 @@ namespace javax { namespace microedition { namespace khronos { namespace egl {
 
 namespace j2cpp {
 
+
+
+javax::microedition::khronos::egl::EGL::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 J2CPP_DEFINE_CLASS(javax::microedition::khronos::egl::EGL,"javax/microedition/khronos/egl/EGL")
 

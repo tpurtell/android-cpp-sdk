@@ -13,12 +13,14 @@
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class Runnable; } } }
 namespace j2cpp { namespace java { namespace util { namespace concurrent { class Callable; } } } }
+namespace j2cpp { namespace java { namespace util { namespace concurrent { class Future; } } } }
 namespace j2cpp { namespace java { namespace util { namespace concurrent { class TimeUnit; } } } }
 
 
 #include <java/lang/Object.hpp>
 #include <java/lang/Runnable.hpp>
 #include <java/util/concurrent/Callable.hpp>
+#include <java/util/concurrent/Future.hpp>
 #include <java/util/concurrent/TimeUnit.hpp>
 
 
@@ -47,11 +49,18 @@ namespace java { namespace util { namespace concurrent {
 		J2CPP_DECLARE_METHOD(10)
 		J2CPP_DECLARE_METHOD(11)
 
-		FutureTask(jobject jobj)
+		explicit FutureTask(jobject jobj)
 		: cpp_object<FutureTask>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::util::concurrent::Future>() const;
+		operator local_ref<java::lang::Runnable>() const;
+
+
+		FutureTask(local_ref< java::util::concurrent::Callable > const&);
+		FutureTask(local_ref< java::lang::Runnable > const&, local_ref< java::lang::Object > const&);
 		cpp_boolean isCancelled();
 		cpp_boolean isDone();
 		cpp_boolean cancel(cpp_boolean const&);
@@ -63,7 +72,6 @@ namespace java { namespace util { namespace concurrent {
 } //namespace concurrent
 } //namespace util
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -77,29 +85,47 @@ namespace java { namespace util { namespace concurrent {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::util::concurrent::FutureTask > create< java::util::concurrent::FutureTask>(local_ref< java::util::concurrent::Callable > const &a0)
+
+java::util::concurrent::FutureTask::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::util::concurrent::FutureTask >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::concurrent::FutureTask::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::concurrent::FutureTask::J2CPP_CLASS_NAME, java::util::concurrent::FutureTask::J2CPP_METHOD_NAME(0), java::util::concurrent::FutureTask::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
 
-template <>
-local_ref< java::util::concurrent::FutureTask > create< java::util::concurrent::FutureTask>(local_ref< java::lang::Runnable > const &a0, local_ref< java::lang::Object > const &a1)
+java::util::concurrent::FutureTask::operator local_ref<java::util::concurrent::Future>() const
 {
-	return local_ref< java::util::concurrent::FutureTask >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::concurrent::FutureTask::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::concurrent::FutureTask::J2CPP_CLASS_NAME, java::util::concurrent::FutureTask::J2CPP_METHOD_NAME(1), java::util::concurrent::FutureTask::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<java::util::concurrent::Future>(get_jtype());
 }
+
+java::util::concurrent::FutureTask::operator local_ref<java::lang::Runnable>() const
+{
+	return local_ref<java::lang::Runnable>(get_jtype());
+}
+
+
+java::util::concurrent::FutureTask::FutureTask(local_ref< java::util::concurrent::Callable > const &a0)
+: cpp_object<java::util::concurrent::FutureTask>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::util::concurrent::FutureTask::J2CPP_CLASS_NAME>(),
+		get_method_id<java::util::concurrent::FutureTask::J2CPP_CLASS_NAME, java::util::concurrent::FutureTask::J2CPP_METHOD_NAME(0), java::util::concurrent::FutureTask::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
+
+
+java::util::concurrent::FutureTask::FutureTask(local_ref< java::lang::Runnable > const &a0, local_ref< java::lang::Object > const &a1)
+: cpp_object<java::util::concurrent::FutureTask>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::util::concurrent::FutureTask::J2CPP_CLASS_NAME>(),
+		get_method_id<java::util::concurrent::FutureTask::J2CPP_CLASS_NAME, java::util::concurrent::FutureTask::J2CPP_METHOD_NAME(1), java::util::concurrent::FutureTask::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
 
 cpp_boolean java::util::concurrent::FutureTask::isCancelled()
 {

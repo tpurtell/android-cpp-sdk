@@ -10,9 +10,11 @@
 #define J2CPP_ANDROID_UTIL_TIMINGLOGGER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -34,11 +36,15 @@ namespace android { namespace util {
 		J2CPP_DECLARE_METHOD(3)
 		J2CPP_DECLARE_METHOD(4)
 
-		TimingLogger(jobject jobj)
+		explicit TimingLogger(jobject jobj)
 		: cpp_object<TimingLogger>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		TimingLogger(local_ref< java::lang::String > const&, local_ref< java::lang::String > const&);
 		void reset(local_ref< java::lang::String > const&, local_ref< java::lang::String > const&);
 		void reset();
 		void addSplit(local_ref< java::lang::String > const&);
@@ -47,7 +53,6 @@ namespace android { namespace util {
 
 } //namespace util
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -61,17 +66,24 @@ namespace android { namespace util {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::util::TimingLogger > create< android::util::TimingLogger>(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
+
+android::util::TimingLogger::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::util::TimingLogger >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::util::TimingLogger::J2CPP_CLASS_NAME>(),
-			get_method_id<android::util::TimingLogger::J2CPP_CLASS_NAME, android::util::TimingLogger::J2CPP_METHOD_NAME(0), android::util::TimingLogger::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::util::TimingLogger::TimingLogger(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
+: cpp_object<android::util::TimingLogger>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::util::TimingLogger::J2CPP_CLASS_NAME>(),
+		get_method_id<android::util::TimingLogger::J2CPP_CLASS_NAME, android::util::TimingLogger::J2CPP_METHOD_NAME(0), android::util::TimingLogger::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
 
 void android::util::TimingLogger::reset(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
 {

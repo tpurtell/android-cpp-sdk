@@ -10,10 +10,12 @@
 #define J2CPP_ANDROID_ACCOUNTS_ONACCOUNTSUPDATELISTENER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace android { namespace accounts { class Account; } } }
 
 
 #include <android/accounts/Account.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -30,17 +32,19 @@ namespace android { namespace accounts {
 
 		J2CPP_DECLARE_METHOD(0)
 
-		OnAccountsUpdateListener(jobject jobj)
+		explicit OnAccountsUpdateListener(jobject jobj)
 		: cpp_object<OnAccountsUpdateListener>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		void onAccountsUpdated(local_ref< cpp_object_array<android::accounts::Account, 1> > const&);
 	}; //class OnAccountsUpdateListener
 
 } //namespace accounts
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -53,6 +57,12 @@ namespace android { namespace accounts {
 
 namespace j2cpp {
 
+
+
+android::accounts::OnAccountsUpdateListener::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 void android::accounts::OnAccountsUpdateListener::onAccountsUpdated(local_ref< cpp_object_array<android::accounts::Account, 1> > const &a0)
 {

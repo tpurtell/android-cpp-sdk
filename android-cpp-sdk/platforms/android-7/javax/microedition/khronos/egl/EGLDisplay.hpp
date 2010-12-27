@@ -10,8 +10,10 @@
 #define J2CPP_JAVAX_MICROEDITION_KHRONOS_EGL_EGLDISPLAY_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -28,18 +30,21 @@ namespace javax { namespace microedition { namespace khronos { namespace egl {
 
 		J2CPP_DECLARE_METHOD(0)
 
-		EGLDisplay(jobject jobj)
+		explicit EGLDisplay(jobject jobj)
 		: cpp_object<EGLDisplay>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		EGLDisplay();
 	}; //class EGLDisplay
 
 } //namespace egl
 } //namespace khronos
 } //namespace microedition
 } //namespace javax
-
 
 } //namespace j2cpp
 
@@ -53,16 +58,23 @@ namespace javax { namespace microedition { namespace khronos { namespace egl {
 namespace j2cpp {
 
 
-template <>
-local_ref< javax::microedition::khronos::egl::EGLDisplay > create< javax::microedition::khronos::egl::EGLDisplay>()
+
+javax::microedition::khronos::egl::EGLDisplay::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< javax::microedition::khronos::egl::EGLDisplay >(
-		environment::get().get_jenv()->NewObject(
-			get_class<javax::microedition::khronos::egl::EGLDisplay::J2CPP_CLASS_NAME>(),
-			get_method_id<javax::microedition::khronos::egl::EGLDisplay::J2CPP_CLASS_NAME, javax::microedition::khronos::egl::EGLDisplay::J2CPP_METHOD_NAME(0), javax::microedition::khronos::egl::EGLDisplay::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+javax::microedition::khronos::egl::EGLDisplay::EGLDisplay()
+: cpp_object<javax::microedition::khronos::egl::EGLDisplay>(
+	environment::get().get_jenv()->NewObject(
+		get_class<javax::microedition::khronos::egl::EGLDisplay::J2CPP_CLASS_NAME>(),
+		get_method_id<javax::microedition::khronos::egl::EGLDisplay::J2CPP_CLASS_NAME, javax::microedition::khronos::egl::EGLDisplay::J2CPP_METHOD_NAME(0), javax::microedition::khronos::egl::EGLDisplay::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 
 J2CPP_DEFINE_CLASS(javax::microedition::khronos::egl::EGLDisplay,"javax/microedition/khronos/egl/EGLDisplay")

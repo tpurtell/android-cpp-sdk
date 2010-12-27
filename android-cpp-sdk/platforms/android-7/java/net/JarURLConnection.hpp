@@ -11,6 +11,7 @@
 
 
 namespace j2cpp { namespace java { namespace net { class URL; } } }
+namespace j2cpp { namespace java { namespace net { class URLConnection; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace security { namespace cert { class Certificate; } } } }
 namespace j2cpp { namespace java { namespace util { namespace jar { class Manifest; } } } }
@@ -21,6 +22,7 @@ namespace j2cpp { namespace java { namespace util { namespace jar { class JarFil
 
 #include <java/lang/String.hpp>
 #include <java/net/URL.hpp>
+#include <java/net/URLConnection.hpp>
 #include <java/security/cert/Certificate.hpp>
 #include <java/util/jar/Attributes.hpp>
 #include <java/util/jar/JarEntry.hpp>
@@ -51,10 +53,13 @@ namespace java { namespace net {
 		J2CPP_DECLARE_METHOD(8)
 		J2CPP_DECLARE_FIELD(0)
 
-		JarURLConnection(jobject jobj)
+		explicit JarURLConnection(jobject jobj)
 		: cpp_object<JarURLConnection>(jobj)
 		{
 		}
+
+		operator local_ref<java::net::URLConnection>() const;
+
 
 		local_ref< java::util::jar::Attributes > getAttributes();
 		local_ref< cpp_object_array<java::security::cert::Certificate, 1> > getCertificates();
@@ -70,7 +75,6 @@ namespace java { namespace net {
 } //namespace net
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_NET_JARURLCONNECTION_HPP_DECL
@@ -83,17 +87,12 @@ namespace java { namespace net {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::net::JarURLConnection > create< java::net::JarURLConnection>(local_ref< java::net::URL > const &a0)
+
+java::net::JarURLConnection::operator local_ref<java::net::URLConnection>() const
 {
-	return local_ref< java::net::JarURLConnection >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::net::JarURLConnection::J2CPP_CLASS_NAME>(),
-			get_method_id<java::net::JarURLConnection::J2CPP_CLASS_NAME, java::net::JarURLConnection::J2CPP_METHOD_NAME(0), java::net::JarURLConnection::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::net::URLConnection>(get_jtype());
 }
+
 
 local_ref< java::util::jar::Attributes > java::net::JarURLConnection::getAttributes()
 {

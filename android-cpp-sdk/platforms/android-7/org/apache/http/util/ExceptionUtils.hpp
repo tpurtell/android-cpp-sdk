@@ -10,9 +10,11 @@
 #define J2CPP_ORG_APACHE_HTTP_UTIL_EXCEPTIONUTILS_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class Throwable; } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/Throwable.hpp>
 
 
@@ -31,10 +33,13 @@ namespace org { namespace apache { namespace http { namespace util {
 		J2CPP_DECLARE_METHOD(0)
 		J2CPP_DECLARE_METHOD(1)
 
-		ExceptionUtils(jobject jobj)
+		explicit ExceptionUtils(jobject jobj)
 		: cpp_object<ExceptionUtils>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		static void initCause(local_ref< java::lang::Throwable > const&, local_ref< java::lang::Throwable > const&);
 	}; //class ExceptionUtils
@@ -43,7 +48,6 @@ namespace org { namespace apache { namespace http { namespace util {
 } //namespace http
 } //namespace apache
 } //namespace org
-
 
 } //namespace j2cpp
 
@@ -57,16 +61,12 @@ namespace org { namespace apache { namespace http { namespace util {
 namespace j2cpp {
 
 
-template <>
-local_ref< org::apache::http::util::ExceptionUtils > create< org::apache::http::util::ExceptionUtils>()
+
+org::apache::http::util::ExceptionUtils::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< org::apache::http::util::ExceptionUtils >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::apache::http::util::ExceptionUtils::J2CPP_CLASS_NAME>(),
-			get_method_id<org::apache::http::util::ExceptionUtils::J2CPP_CLASS_NAME, org::apache::http::util::ExceptionUtils::J2CPP_METHOD_NAME(0), org::apache::http::util::ExceptionUtils::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
 
 void org::apache::http::util::ExceptionUtils::initCause(local_ref< java::lang::Throwable > const &a0, local_ref< java::lang::Throwable > const &a1)
 {

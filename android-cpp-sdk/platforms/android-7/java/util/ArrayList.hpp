@@ -10,12 +10,22 @@
 #define J2CPP_JAVA_UTIL_ARRAYLIST_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace lang { class Cloneable; } } }
+namespace j2cpp { namespace java { namespace util { class AbstractList; } } }
+namespace j2cpp { namespace java { namespace util { class RandomAccess; } } }
 namespace j2cpp { namespace java { namespace util { class Collection; } } }
+namespace j2cpp { namespace java { namespace util { class List; } } }
 
 
+#include <java/io/Serializable.hpp>
+#include <java/lang/Cloneable.hpp>
 #include <java/lang/Object.hpp>
+#include <java/util/AbstractList.hpp>
 #include <java/util/Collection.hpp>
+#include <java/util/List.hpp>
+#include <java/util/RandomAccess.hpp>
 
 
 namespace j2cpp {
@@ -54,11 +64,21 @@ namespace java { namespace util {
 		J2CPP_DECLARE_METHOD(21)
 		J2CPP_DECLARE_METHOD(22)
 
-		ArrayList(jobject jobj)
+		explicit ArrayList(jobject jobj)
 		: cpp_object<ArrayList>(jobj)
 		{
 		}
 
+		operator local_ref<java::util::AbstractList>() const;
+		operator local_ref<java::util::List>() const;
+		operator local_ref<java::lang::Cloneable>() const;
+		operator local_ref<java::io::Serializable>() const;
+		operator local_ref<java::util::RandomAccess>() const;
+
+
+		ArrayList();
+		ArrayList(cpp_int const&);
+		ArrayList(local_ref< java::util::Collection > const&);
 		void add(cpp_int const&, local_ref< java::lang::Object > const&);
 		cpp_boolean add(local_ref< java::lang::Object > const&);
 		cpp_boolean addAll(cpp_int const&, local_ref< java::util::Collection > const&);
@@ -83,7 +103,6 @@ namespace java { namespace util {
 } //namespace util
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_UTIL_ARRAYLIST_HPP_DECL
@@ -96,40 +115,69 @@ namespace java { namespace util {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::util::ArrayList > create< java::util::ArrayList>()
+
+java::util::ArrayList::operator local_ref<java::util::AbstractList>() const
 {
-	return local_ref< java::util::ArrayList >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::ArrayList::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::ArrayList::J2CPP_CLASS_NAME, java::util::ArrayList::J2CPP_METHOD_NAME(0), java::util::ArrayList::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::util::AbstractList>(get_jtype());
 }
 
-template <>
-local_ref< java::util::ArrayList > create< java::util::ArrayList>(cpp_int const &a0)
+java::util::ArrayList::operator local_ref<java::util::List>() const
 {
-	return local_ref< java::util::ArrayList >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::ArrayList::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::ArrayList::J2CPP_CLASS_NAME, java::util::ArrayList::J2CPP_METHOD_NAME(1), java::util::ArrayList::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::util::List>(get_jtype());
 }
 
-template <>
-local_ref< java::util::ArrayList > create< java::util::ArrayList>(local_ref< java::util::Collection > const &a0)
+java::util::ArrayList::operator local_ref<java::lang::Cloneable>() const
 {
-	return local_ref< java::util::ArrayList >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::ArrayList::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::ArrayList::J2CPP_CLASS_NAME, java::util::ArrayList::J2CPP_METHOD_NAME(2), java::util::ArrayList::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Cloneable>(get_jtype());
 }
+
+java::util::ArrayList::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jtype());
+}
+
+java::util::ArrayList::operator local_ref<java::util::RandomAccess>() const
+{
+	return local_ref<java::util::RandomAccess>(get_jtype());
+}
+
+
+java::util::ArrayList::ArrayList()
+: cpp_object<java::util::ArrayList>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::util::ArrayList::J2CPP_CLASS_NAME>(),
+		get_method_id<java::util::ArrayList::J2CPP_CLASS_NAME, java::util::ArrayList::J2CPP_METHOD_NAME(0), java::util::ArrayList::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
+
+
+java::util::ArrayList::ArrayList(cpp_int const &a0)
+: cpp_object<java::util::ArrayList>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::util::ArrayList::J2CPP_CLASS_NAME>(),
+		get_method_id<java::util::ArrayList::J2CPP_CLASS_NAME, java::util::ArrayList::J2CPP_METHOD_NAME(1), java::util::ArrayList::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
+
+
+java::util::ArrayList::ArrayList(local_ref< java::util::Collection > const &a0)
+: cpp_object<java::util::ArrayList>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::util::ArrayList::J2CPP_CLASS_NAME>(),
+		get_method_id<java::util::ArrayList::J2CPP_CLASS_NAME, java::util::ArrayList::J2CPP_METHOD_NAME(2), java::util::ArrayList::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 void java::util::ArrayList::add(cpp_int const &a0, local_ref< java::lang::Object > const &a1)
 {

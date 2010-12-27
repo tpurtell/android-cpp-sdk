@@ -10,10 +10,12 @@
 #define J2CPP_ORG_APACHE_HTTP_CLIENT_CREDENTIALSPROVIDER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace auth { class Credentials; } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace auth { class AuthScope; } } } } }
 
 
+#include <java/lang/Object.hpp>
 #include <org/apache/http/auth/AuthScope.hpp>
 #include <org/apache/http/auth/Credentials.hpp>
 
@@ -34,10 +36,13 @@ namespace org { namespace apache { namespace http { namespace client {
 		J2CPP_DECLARE_METHOD(1)
 		J2CPP_DECLARE_METHOD(2)
 
-		CredentialsProvider(jobject jobj)
+		explicit CredentialsProvider(jobject jobj)
 		: cpp_object<CredentialsProvider>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		void setCredentials(local_ref< org::apache::http::auth::AuthScope > const&, local_ref< org::apache::http::auth::Credentials > const&);
 		local_ref< org::apache::http::auth::Credentials > getCredentials(local_ref< org::apache::http::auth::AuthScope > const&);
@@ -48,7 +53,6 @@ namespace org { namespace apache { namespace http { namespace client {
 } //namespace http
 } //namespace apache
 } //namespace org
-
 
 } //namespace j2cpp
 
@@ -61,6 +65,12 @@ namespace org { namespace apache { namespace http { namespace client {
 
 namespace j2cpp {
 
+
+
+org::apache::http::client::CredentialsProvider::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 void org::apache::http::client::CredentialsProvider::setCredentials(local_ref< org::apache::http::auth::AuthScope > const &a0, local_ref< org::apache::http::auth::Credentials > const &a1)
 {

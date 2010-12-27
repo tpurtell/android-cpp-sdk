@@ -10,9 +10,11 @@
 #define J2CPP_JUNIT_FRAMEWORK_ASSERTIONFAILEDERROR_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Error; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 
 
+#include <java/lang/Error.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -31,16 +33,20 @@ namespace junit { namespace framework {
 		J2CPP_DECLARE_METHOD(0)
 		J2CPP_DECLARE_METHOD(1)
 
-		AssertionFailedError(jobject jobj)
+		explicit AssertionFailedError(jobject jobj)
 		: cpp_object<AssertionFailedError>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Error>() const;
+
+
+		AssertionFailedError();
+		AssertionFailedError(local_ref< java::lang::String > const&);
 	}; //class AssertionFailedError
 
 } //namespace framework
 } //namespace junit
-
 
 } //namespace j2cpp
 
@@ -54,28 +60,36 @@ namespace junit { namespace framework {
 namespace j2cpp {
 
 
-template <>
-local_ref< junit::framework::AssertionFailedError > create< junit::framework::AssertionFailedError>()
+
+junit::framework::AssertionFailedError::operator local_ref<java::lang::Error>() const
 {
-	return local_ref< junit::framework::AssertionFailedError >(
-		environment::get().get_jenv()->NewObject(
-			get_class<junit::framework::AssertionFailedError::J2CPP_CLASS_NAME>(),
-			get_method_id<junit::framework::AssertionFailedError::J2CPP_CLASS_NAME, junit::framework::AssertionFailedError::J2CPP_METHOD_NAME(0), junit::framework::AssertionFailedError::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Error>(get_jtype());
 }
 
-template <>
-local_ref< junit::framework::AssertionFailedError > create< junit::framework::AssertionFailedError>(local_ref< java::lang::String > const &a0)
+
+junit::framework::AssertionFailedError::AssertionFailedError()
+: cpp_object<junit::framework::AssertionFailedError>(
+	environment::get().get_jenv()->NewObject(
+		get_class<junit::framework::AssertionFailedError::J2CPP_CLASS_NAME>(),
+		get_method_id<junit::framework::AssertionFailedError::J2CPP_CLASS_NAME, junit::framework::AssertionFailedError::J2CPP_METHOD_NAME(0), junit::framework::AssertionFailedError::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
 {
-	return local_ref< junit::framework::AssertionFailedError >(
-		environment::get().get_jenv()->NewObject(
-			get_class<junit::framework::AssertionFailedError::J2CPP_CLASS_NAME>(),
-			get_method_id<junit::framework::AssertionFailedError::J2CPP_CLASS_NAME, junit::framework::AssertionFailedError::J2CPP_METHOD_NAME(1), junit::framework::AssertionFailedError::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
 }
+
+
+
+junit::framework::AssertionFailedError::AssertionFailedError(local_ref< java::lang::String > const &a0)
+: cpp_object<junit::framework::AssertionFailedError>(
+	environment::get().get_jenv()->NewObject(
+		get_class<junit::framework::AssertionFailedError::J2CPP_CLASS_NAME>(),
+		get_method_id<junit::framework::AssertionFailedError::J2CPP_CLASS_NAME, junit::framework::AssertionFailedError::J2CPP_METHOD_NAME(1), junit::framework::AssertionFailedError::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 
 J2CPP_DEFINE_CLASS(junit::framework::AssertionFailedError,"junit/framework/AssertionFailedError")

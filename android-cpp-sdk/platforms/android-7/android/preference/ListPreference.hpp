@@ -13,10 +13,12 @@
 namespace j2cpp { namespace java { namespace lang { class CharSequence; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace android { namespace content { class Context; } } }
+namespace j2cpp { namespace android { namespace preference { class DialogPreference; } } }
 namespace j2cpp { namespace android { namespace util { class AttributeSet; } } }
 
 
 #include <android/content/Context.hpp>
+#include <android/preference/DialogPreference.hpp>
 #include <android/util/AttributeSet.hpp>
 #include <java/lang/CharSequence.hpp>
 #include <java/lang/String.hpp>
@@ -54,11 +56,16 @@ namespace android { namespace preference {
 		J2CPP_DECLARE_METHOD(17)
 		J2CPP_DECLARE_METHOD(18)
 
-		ListPreference(jobject jobj)
+		explicit ListPreference(jobject jobj)
 		: cpp_object<ListPreference>(jobj)
 		{
 		}
 
+		operator local_ref<android::preference::DialogPreference>() const;
+
+
+		ListPreference(local_ref< android::content::Context > const&, local_ref< android::util::AttributeSet > const&);
+		ListPreference(local_ref< android::content::Context > const&);
 		void setEntries(local_ref< cpp_object_array<java::lang::CharSequence, 1> > const&);
 		void setEntries(cpp_int const&);
 		local_ref< cpp_object_array<java::lang::CharSequence, 1> > getEntries();
@@ -75,7 +82,6 @@ namespace android { namespace preference {
 } //namespace preference
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_PREFERENCE_LISTPREFERENCE_HPP_DECL
@@ -88,29 +94,37 @@ namespace android { namespace preference {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::preference::ListPreference > create< android::preference::ListPreference>(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1)
+
+android::preference::ListPreference::operator local_ref<android::preference::DialogPreference>() const
 {
-	return local_ref< android::preference::ListPreference >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::preference::ListPreference::J2CPP_CLASS_NAME>(),
-			get_method_id<android::preference::ListPreference::J2CPP_CLASS_NAME, android::preference::ListPreference::J2CPP_METHOD_NAME(0), android::preference::ListPreference::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<android::preference::DialogPreference>(get_jtype());
 }
 
-template <>
-local_ref< android::preference::ListPreference > create< android::preference::ListPreference>(local_ref< android::content::Context > const &a0)
+
+android::preference::ListPreference::ListPreference(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1)
+: cpp_object<android::preference::ListPreference>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::preference::ListPreference::J2CPP_CLASS_NAME>(),
+		get_method_id<android::preference::ListPreference::J2CPP_CLASS_NAME, android::preference::ListPreference::J2CPP_METHOD_NAME(0), android::preference::ListPreference::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
 {
-	return local_ref< android::preference::ListPreference >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::preference::ListPreference::J2CPP_CLASS_NAME>(),
-			get_method_id<android::preference::ListPreference::J2CPP_CLASS_NAME, android::preference::ListPreference::J2CPP_METHOD_NAME(1), android::preference::ListPreference::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
 }
+
+
+
+android::preference::ListPreference::ListPreference(local_ref< android::content::Context > const &a0)
+: cpp_object<android::preference::ListPreference>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::preference::ListPreference::J2CPP_CLASS_NAME>(),
+		get_method_id<android::preference::ListPreference::J2CPP_CLASS_NAME, android::preference::ListPreference::J2CPP_METHOD_NAME(1), android::preference::ListPreference::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 void android::preference::ListPreference::setEntries(local_ref< cpp_object_array<java::lang::CharSequence, 1> > const &a0)
 {

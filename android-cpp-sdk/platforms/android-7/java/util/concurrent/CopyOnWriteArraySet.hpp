@@ -10,12 +10,16 @@
 #define J2CPP_JAVA_UTIL_CONCURRENT_COPYONWRITEARRAYSET_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace util { class Iterator; } } }
+namespace j2cpp { namespace java { namespace util { class AbstractSet; } } }
 namespace j2cpp { namespace java { namespace util { class Collection; } } }
 
 
+#include <java/io/Serializable.hpp>
 #include <java/lang/Object.hpp>
+#include <java/util/AbstractSet.hpp>
 #include <java/util/Collection.hpp>
 #include <java/util/Iterator.hpp>
 
@@ -49,11 +53,17 @@ namespace java { namespace util { namespace concurrent {
 		J2CPP_DECLARE_METHOD(14)
 		J2CPP_DECLARE_METHOD(15)
 
-		CopyOnWriteArraySet(jobject jobj)
+		explicit CopyOnWriteArraySet(jobject jobj)
 		: cpp_object<CopyOnWriteArraySet>(jobj)
 		{
 		}
 
+		operator local_ref<java::util::AbstractSet>() const;
+		operator local_ref<java::io::Serializable>() const;
+
+
+		CopyOnWriteArraySet();
+		CopyOnWriteArraySet(local_ref< java::util::Collection > const&);
 		cpp_int size();
 		cpp_boolean isEmpty();
 		cpp_boolean contains(local_ref< java::lang::Object > const&);
@@ -74,7 +84,6 @@ namespace java { namespace util { namespace concurrent {
 } //namespace util
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_UTIL_CONCURRENT_COPYONWRITEARRAYSET_HPP_DECL
@@ -87,28 +96,41 @@ namespace java { namespace util { namespace concurrent {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::util::concurrent::CopyOnWriteArraySet > create< java::util::concurrent::CopyOnWriteArraySet>()
+
+java::util::concurrent::CopyOnWriteArraySet::operator local_ref<java::util::AbstractSet>() const
 {
-	return local_ref< java::util::concurrent::CopyOnWriteArraySet >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::concurrent::CopyOnWriteArraySet::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::concurrent::CopyOnWriteArraySet::J2CPP_CLASS_NAME, java::util::concurrent::CopyOnWriteArraySet::J2CPP_METHOD_NAME(0), java::util::concurrent::CopyOnWriteArraySet::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::util::AbstractSet>(get_jtype());
 }
 
-template <>
-local_ref< java::util::concurrent::CopyOnWriteArraySet > create< java::util::concurrent::CopyOnWriteArraySet>(local_ref< java::util::Collection > const &a0)
+java::util::concurrent::CopyOnWriteArraySet::operator local_ref<java::io::Serializable>() const
 {
-	return local_ref< java::util::concurrent::CopyOnWriteArraySet >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::concurrent::CopyOnWriteArraySet::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::concurrent::CopyOnWriteArraySet::J2CPP_CLASS_NAME, java::util::concurrent::CopyOnWriteArraySet::J2CPP_METHOD_NAME(1), java::util::concurrent::CopyOnWriteArraySet::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::io::Serializable>(get_jtype());
 }
+
+
+java::util::concurrent::CopyOnWriteArraySet::CopyOnWriteArraySet()
+: cpp_object<java::util::concurrent::CopyOnWriteArraySet>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::util::concurrent::CopyOnWriteArraySet::J2CPP_CLASS_NAME>(),
+		get_method_id<java::util::concurrent::CopyOnWriteArraySet::J2CPP_CLASS_NAME, java::util::concurrent::CopyOnWriteArraySet::J2CPP_METHOD_NAME(0), java::util::concurrent::CopyOnWriteArraySet::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
+
+
+java::util::concurrent::CopyOnWriteArraySet::CopyOnWriteArraySet(local_ref< java::util::Collection > const &a0)
+: cpp_object<java::util::concurrent::CopyOnWriteArraySet>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::util::concurrent::CopyOnWriteArraySet::J2CPP_CLASS_NAME>(),
+		get_method_id<java::util::concurrent::CopyOnWriteArraySet::J2CPP_CLASS_NAME, java::util::concurrent::CopyOnWriteArraySet::J2CPP_METHOD_NAME(1), java::util::concurrent::CopyOnWriteArraySet::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 cpp_int java::util::concurrent::CopyOnWriteArraySet::size()
 {

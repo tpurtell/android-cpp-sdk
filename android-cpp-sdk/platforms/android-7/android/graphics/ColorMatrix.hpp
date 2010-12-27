@@ -10,8 +10,10 @@
 #define J2CPP_ANDROID_GRAPHICS_COLORMATRIX_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -42,11 +44,17 @@ namespace android { namespace graphics {
 		J2CPP_DECLARE_METHOD(13)
 		J2CPP_DECLARE_METHOD(14)
 
-		ColorMatrix(jobject jobj)
+		explicit ColorMatrix(jobject jobj)
 		: cpp_object<ColorMatrix>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		ColorMatrix();
+		ColorMatrix(local_ref< cpp_float_array<1> > const&);
+		ColorMatrix(local_ref< android::graphics::ColorMatrix > const&);
 		local_ref< cpp_float_array<1> > getArray();
 		void reset();
 		void set(local_ref< android::graphics::ColorMatrix > const&);
@@ -64,7 +72,6 @@ namespace android { namespace graphics {
 } //namespace graphics
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_GRAPHICS_COLORMATRIX_HPP_DECL
@@ -77,40 +84,49 @@ namespace android { namespace graphics {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::graphics::ColorMatrix > create< android::graphics::ColorMatrix>()
+
+android::graphics::ColorMatrix::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::graphics::ColorMatrix >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::graphics::ColorMatrix::J2CPP_CLASS_NAME>(),
-			get_method_id<android::graphics::ColorMatrix::J2CPP_CLASS_NAME, android::graphics::ColorMatrix::J2CPP_METHOD_NAME(0), android::graphics::ColorMatrix::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
 
-template <>
-local_ref< android::graphics::ColorMatrix > create< android::graphics::ColorMatrix>(local_ref< cpp_float_array<1> > const &a0)
+
+android::graphics::ColorMatrix::ColorMatrix()
+: cpp_object<android::graphics::ColorMatrix>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::graphics::ColorMatrix::J2CPP_CLASS_NAME>(),
+		get_method_id<android::graphics::ColorMatrix::J2CPP_CLASS_NAME, android::graphics::ColorMatrix::J2CPP_METHOD_NAME(0), android::graphics::ColorMatrix::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
 {
-	return local_ref< android::graphics::ColorMatrix >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::graphics::ColorMatrix::J2CPP_CLASS_NAME>(),
-			get_method_id<android::graphics::ColorMatrix::J2CPP_CLASS_NAME, android::graphics::ColorMatrix::J2CPP_METHOD_NAME(1), android::graphics::ColorMatrix::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< android::graphics::ColorMatrix > create< android::graphics::ColorMatrix>(local_ref< android::graphics::ColorMatrix > const &a0)
+
+
+android::graphics::ColorMatrix::ColorMatrix(local_ref< cpp_float_array<1> > const &a0)
+: cpp_object<android::graphics::ColorMatrix>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::graphics::ColorMatrix::J2CPP_CLASS_NAME>(),
+		get_method_id<android::graphics::ColorMatrix::J2CPP_CLASS_NAME, android::graphics::ColorMatrix::J2CPP_METHOD_NAME(1), android::graphics::ColorMatrix::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< android::graphics::ColorMatrix >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::graphics::ColorMatrix::J2CPP_CLASS_NAME>(),
-			get_method_id<android::graphics::ColorMatrix::J2CPP_CLASS_NAME, android::graphics::ColorMatrix::J2CPP_METHOD_NAME(2), android::graphics::ColorMatrix::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype()
-		)
-	);
 }
+
+
+
+android::graphics::ColorMatrix::ColorMatrix(local_ref< android::graphics::ColorMatrix > const &a0)
+: cpp_object<android::graphics::ColorMatrix>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::graphics::ColorMatrix::J2CPP_CLASS_NAME>(),
+		get_method_id<android::graphics::ColorMatrix::J2CPP_CLASS_NAME, android::graphics::ColorMatrix::J2CPP_METHOD_NAME(2), android::graphics::ColorMatrix::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 local_ref< cpp_float_array<1> > android::graphics::ColorMatrix::getArray()
 {

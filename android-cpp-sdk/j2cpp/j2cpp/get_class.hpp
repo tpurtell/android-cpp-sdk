@@ -11,7 +11,7 @@ namespace j2cpp {
 	static jclass get_class()
 	{
 		static jobject_global_ref<jclass> clazz(environment::get().get_jenv()->FindClass(ClassName));
-		return clazz;
+		return clazz.get_jtype();
 	}
 
 } //namespace j2cpp

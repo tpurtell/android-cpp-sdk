@@ -34,16 +34,21 @@ namespace android { namespace util {
 		J2CPP_DECLARE_METHOD(1)
 		J2CPP_DECLARE_METHOD(2)
 
-		AndroidException(jobject jobj)
+		explicit AndroidException(jobject jobj)
 		: cpp_object<AndroidException>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Exception>() const;
+
+
+		AndroidException();
+		AndroidException(local_ref< java::lang::String > const&);
+		AndroidException(local_ref< java::lang::Exception > const&);
 	}; //class AndroidException
 
 } //namespace util
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -57,40 +62,49 @@ namespace android { namespace util {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::util::AndroidException > create< android::util::AndroidException>()
+
+android::util::AndroidException::operator local_ref<java::lang::Exception>() const
 {
-	return local_ref< android::util::AndroidException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::util::AndroidException::J2CPP_CLASS_NAME>(),
-			get_method_id<android::util::AndroidException::J2CPP_CLASS_NAME, android::util::AndroidException::J2CPP_METHOD_NAME(0), android::util::AndroidException::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Exception>(get_jtype());
 }
 
-template <>
-local_ref< android::util::AndroidException > create< android::util::AndroidException>(local_ref< java::lang::String > const &a0)
+
+android::util::AndroidException::AndroidException()
+: cpp_object<android::util::AndroidException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::util::AndroidException::J2CPP_CLASS_NAME>(),
+		get_method_id<android::util::AndroidException::J2CPP_CLASS_NAME, android::util::AndroidException::J2CPP_METHOD_NAME(0), android::util::AndroidException::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
 {
-	return local_ref< android::util::AndroidException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::util::AndroidException::J2CPP_CLASS_NAME>(),
-			get_method_id<android::util::AndroidException::J2CPP_CLASS_NAME, android::util::AndroidException::J2CPP_METHOD_NAME(1), android::util::AndroidException::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< android::util::AndroidException > create< android::util::AndroidException>(local_ref< java::lang::Exception > const &a0)
+
+
+android::util::AndroidException::AndroidException(local_ref< java::lang::String > const &a0)
+: cpp_object<android::util::AndroidException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::util::AndroidException::J2CPP_CLASS_NAME>(),
+		get_method_id<android::util::AndroidException::J2CPP_CLASS_NAME, android::util::AndroidException::J2CPP_METHOD_NAME(1), android::util::AndroidException::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< android::util::AndroidException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::util::AndroidException::J2CPP_CLASS_NAME>(),
-			get_method_id<android::util::AndroidException::J2CPP_CLASS_NAME, android::util::AndroidException::J2CPP_METHOD_NAME(2), android::util::AndroidException::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype()
-		)
-	);
 }
+
+
+
+android::util::AndroidException::AndroidException(local_ref< java::lang::Exception > const &a0)
+: cpp_object<android::util::AndroidException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::util::AndroidException::J2CPP_CLASS_NAME>(),
+		get_method_id<android::util::AndroidException::J2CPP_CLASS_NAME, android::util::AndroidException::J2CPP_METHOD_NAME(2), android::util::AndroidException::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 
 J2CPP_DEFINE_CLASS(android::util::AndroidException,"android/util/AndroidException")

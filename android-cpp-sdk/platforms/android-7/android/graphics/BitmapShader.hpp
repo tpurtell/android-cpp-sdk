@@ -10,6 +10,7 @@
 #define J2CPP_ANDROID_GRAPHICS_BITMAPSHADER_HPP_DECL
 
 
+namespace j2cpp { namespace android { namespace graphics { class Shader; } } }
 namespace j2cpp { namespace android { namespace graphics { namespace Shader_ { class TileMode; } } } }
 namespace j2cpp { namespace android { namespace graphics { class Bitmap; } } }
 
@@ -32,16 +33,19 @@ namespace android { namespace graphics {
 
 		J2CPP_DECLARE_METHOD(0)
 
-		BitmapShader(jobject jobj)
+		explicit BitmapShader(jobject jobj)
 		: cpp_object<BitmapShader>(jobj)
 		{
 		}
 
+		operator local_ref<android::graphics::Shader>() const;
+
+
+		BitmapShader(local_ref< android::graphics::Bitmap > const&, local_ref< android::graphics::Shader_::TileMode > const&, local_ref< android::graphics::Shader_::TileMode > const&);
 	}; //class BitmapShader
 
 } //namespace graphics
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -55,17 +59,24 @@ namespace android { namespace graphics {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::graphics::BitmapShader > create< android::graphics::BitmapShader>(local_ref< android::graphics::Bitmap > const &a0, local_ref< android::graphics::Shader_::TileMode > const &a1, local_ref< android::graphics::Shader_::TileMode > const &a2)
+
+android::graphics::BitmapShader::operator local_ref<android::graphics::Shader>() const
 {
-	return local_ref< android::graphics::BitmapShader >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::graphics::BitmapShader::J2CPP_CLASS_NAME>(),
-			get_method_id<android::graphics::BitmapShader::J2CPP_CLASS_NAME, android::graphics::BitmapShader::J2CPP_METHOD_NAME(0), android::graphics::BitmapShader::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
-		)
-	);
+	return local_ref<android::graphics::Shader>(get_jtype());
 }
+
+
+android::graphics::BitmapShader::BitmapShader(local_ref< android::graphics::Bitmap > const &a0, local_ref< android::graphics::Shader_::TileMode > const &a1, local_ref< android::graphics::Shader_::TileMode > const &a2)
+: cpp_object<android::graphics::BitmapShader>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::graphics::BitmapShader::J2CPP_CLASS_NAME>(),
+		get_method_id<android::graphics::BitmapShader::J2CPP_CLASS_NAME, android::graphics::BitmapShader::J2CPP_METHOD_NAME(0), android::graphics::BitmapShader::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
+	)
+)
+{
+}
+
 
 
 J2CPP_DEFINE_CLASS(android::graphics::BitmapShader,"android/graphics/BitmapShader")

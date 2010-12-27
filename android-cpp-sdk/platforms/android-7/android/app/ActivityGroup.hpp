@@ -41,18 +41,22 @@ namespace android { namespace app {
 		J2CPP_DECLARE_METHOD(8)
 		J2CPP_DECLARE_METHOD(9)
 
-		ActivityGroup(jobject jobj)
+		explicit ActivityGroup(jobject jobj)
 		: cpp_object<ActivityGroup>(jobj)
 		{
 		}
 
+		operator local_ref<android::app::Activity>() const;
+
+
+		ActivityGroup();
+		ActivityGroup(cpp_boolean const&);
 		local_ref< android::app::Activity > getCurrentActivity();
 		local_ref< android::app::LocalActivityManager > getLocalActivityManager();
 	}; //class ActivityGroup
 
 } //namespace app
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -66,28 +70,36 @@ namespace android { namespace app {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::app::ActivityGroup > create< android::app::ActivityGroup>()
+
+android::app::ActivityGroup::operator local_ref<android::app::Activity>() const
 {
-	return local_ref< android::app::ActivityGroup >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::app::ActivityGroup::J2CPP_CLASS_NAME>(),
-			get_method_id<android::app::ActivityGroup::J2CPP_CLASS_NAME, android::app::ActivityGroup::J2CPP_METHOD_NAME(0), android::app::ActivityGroup::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<android::app::Activity>(get_jtype());
 }
 
-template <>
-local_ref< android::app::ActivityGroup > create< android::app::ActivityGroup>(cpp_boolean const &a0)
+
+android::app::ActivityGroup::ActivityGroup()
+: cpp_object<android::app::ActivityGroup>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::app::ActivityGroup::J2CPP_CLASS_NAME>(),
+		get_method_id<android::app::ActivityGroup::J2CPP_CLASS_NAME, android::app::ActivityGroup::J2CPP_METHOD_NAME(0), android::app::ActivityGroup::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
 {
-	return local_ref< android::app::ActivityGroup >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::app::ActivityGroup::J2CPP_CLASS_NAME>(),
-			get_method_id<android::app::ActivityGroup::J2CPP_CLASS_NAME, android::app::ActivityGroup::J2CPP_METHOD_NAME(1), android::app::ActivityGroup::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
 }
+
+
+
+android::app::ActivityGroup::ActivityGroup(cpp_boolean const &a0)
+: cpp_object<android::app::ActivityGroup>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::app::ActivityGroup::J2CPP_CLASS_NAME>(),
+		get_method_id<android::app::ActivityGroup::J2CPP_CLASS_NAME, android::app::ActivityGroup::J2CPP_METHOD_NAME(1), android::app::ActivityGroup::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 
 

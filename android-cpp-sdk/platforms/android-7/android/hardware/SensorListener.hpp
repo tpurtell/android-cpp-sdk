@@ -10,8 +10,10 @@
 #define J2CPP_ANDROID_HARDWARE_SENSORLISTENER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -29,10 +31,13 @@ namespace android { namespace hardware {
 		J2CPP_DECLARE_METHOD(0)
 		J2CPP_DECLARE_METHOD(1)
 
-		SensorListener(jobject jobj)
+		explicit SensorListener(jobject jobj)
 		: cpp_object<SensorListener>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		void onSensorChanged(cpp_int const&, local_ref< cpp_float_array<1> > const&);
 		void onAccuracyChanged(cpp_int const&, cpp_int const&);
@@ -40,7 +45,6 @@ namespace android { namespace hardware {
 
 } //namespace hardware
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -53,6 +57,12 @@ namespace android { namespace hardware {
 
 namespace j2cpp {
 
+
+
+android::hardware::SensorListener::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 void android::hardware::SensorListener::onSensorChanged(cpp_int const &a0, local_ref< cpp_float_array<1> > const &a1)
 {

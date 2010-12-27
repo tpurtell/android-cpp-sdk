@@ -39,13 +39,17 @@ namespace android { namespace widget {
 			J2CPP_DECLARE_FIELD(0)
 			J2CPP_DECLARE_FIELD(1)
 
-			FilterResults(jobject jobj)
+			explicit FilterResults(jobject jobj)
 			: cpp_object<FilterResults>(jobj)
-			, values(jobj)
-			, count(jobj)
+, values(jobj)
+, count(jobj)
 			{
 			}
 
+			operator local_ref<java::lang::Object>() const;
+
+
+			FilterResults();
 
 			field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(0), J2CPP_FIELD_SIGNATURE(0), local_ref< java::lang::Object > > values;
 			field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(1), J2CPP_FIELD_SIGNATURE(1), cpp_int > count;
@@ -61,10 +65,13 @@ namespace android { namespace widget {
 
 			J2CPP_DECLARE_METHOD(0)
 
-			FilterListener(jobject jobj)
+			explicit FilterListener(jobject jobj)
 			: cpp_object<FilterListener>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+
 
 			void onFilterComplete(cpp_int const&);
 		}; //class FilterListener
@@ -88,11 +95,15 @@ namespace android { namespace widget {
 		typedef Filter_::FilterResults FilterResults;
 		typedef Filter_::FilterListener FilterListener;
 
-		Filter(jobject jobj)
+		explicit Filter(jobject jobj)
 		: cpp_object<Filter>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		Filter();
 		void filter(local_ref< java::lang::CharSequence > const&);
 		void filter(local_ref< java::lang::CharSequence > const&, local_ref< android::widget::Filter_::FilterListener > const&);
 		local_ref< java::lang::CharSequence > convertResultToString(local_ref< java::lang::Object > const&);
@@ -100,7 +111,6 @@ namespace android { namespace widget {
 
 } //namespace widget
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -115,16 +125,25 @@ namespace j2cpp {
 
 
 
-template <>
-local_ref< android::widget::Filter_::FilterResults > create< android::widget::Filter_::FilterResults>()
+
+android::widget::Filter_::FilterResults::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::widget::Filter_::FilterResults >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::widget::Filter_::FilterResults::J2CPP_CLASS_NAME>(),
-			get_method_id<android::widget::Filter_::FilterResults::J2CPP_CLASS_NAME, android::widget::Filter_::FilterResults::J2CPP_METHOD_NAME(0), android::widget::Filter_::FilterResults::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::widget::Filter_::FilterResults::FilterResults()
+: cpp_object<android::widget::Filter_::FilterResults>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::widget::Filter_::FilterResults::J2CPP_CLASS_NAME>(),
+		get_method_id<android::widget::Filter_::FilterResults::J2CPP_CLASS_NAME, android::widget::Filter_::FilterResults::J2CPP_METHOD_NAME(0), android::widget::Filter_::FilterResults::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+, values(get_jtype())
+, count(get_jtype())
+{
+}
+
 
 
 
@@ -132,6 +151,12 @@ J2CPP_DEFINE_CLASS(android::widget::Filter_::FilterResults,"android/widget/Filte
 J2CPP_DEFINE_METHOD(android::widget::Filter_::FilterResults,0,"<init>","()V")
 J2CPP_DEFINE_FIELD(android::widget::Filter_::FilterResults,0,"values","Ljava/lang/Object;")
 J2CPP_DEFINE_FIELD(android::widget::Filter_::FilterResults,1,"count","I")
+
+
+android::widget::Filter_::FilterListener::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 void android::widget::Filter_::FilterListener::onFilterComplete(cpp_int const &a0)
 {
@@ -149,16 +174,23 @@ J2CPP_DEFINE_CLASS(android::widget::Filter_::FilterListener,"android/widget/Filt
 J2CPP_DEFINE_METHOD(android::widget::Filter_::FilterListener,0,"onFilterComplete","(I)V")
 
 
-template <>
-local_ref< android::widget::Filter > create< android::widget::Filter>()
+
+android::widget::Filter::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::widget::Filter >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::widget::Filter::J2CPP_CLASS_NAME>(),
-			get_method_id<android::widget::Filter::J2CPP_CLASS_NAME, android::widget::Filter::J2CPP_METHOD_NAME(0), android::widget::Filter::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::widget::Filter::Filter()
+: cpp_object<android::widget::Filter>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::widget::Filter::J2CPP_CLASS_NAME>(),
+		get_method_id<android::widget::Filter::J2CPP_CLASS_NAME, android::widget::Filter::J2CPP_METHOD_NAME(0), android::widget::Filter::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 void android::widget::Filter::filter(local_ref< java::lang::CharSequence > const &a0)
 {

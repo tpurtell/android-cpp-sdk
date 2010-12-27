@@ -10,9 +10,11 @@
 #define J2CPP_JAVA_LANG_CLASSCIRCULARITYERROR_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class LinkageError; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 
 
+#include <java/lang/LinkageError.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -31,16 +33,20 @@ namespace java { namespace lang {
 		J2CPP_DECLARE_METHOD(0)
 		J2CPP_DECLARE_METHOD(1)
 
-		ClassCircularityError(jobject jobj)
+		explicit ClassCircularityError(jobject jobj)
 		: cpp_object<ClassCircularityError>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::LinkageError>() const;
+
+
+		ClassCircularityError();
+		ClassCircularityError(local_ref< java::lang::String > const&);
 	}; //class ClassCircularityError
 
 } //namespace lang
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -54,28 +60,36 @@ namespace java { namespace lang {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::lang::ClassCircularityError > create< java::lang::ClassCircularityError>()
+
+java::lang::ClassCircularityError::operator local_ref<java::lang::LinkageError>() const
 {
-	return local_ref< java::lang::ClassCircularityError >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::lang::ClassCircularityError::J2CPP_CLASS_NAME>(),
-			get_method_id<java::lang::ClassCircularityError::J2CPP_CLASS_NAME, java::lang::ClassCircularityError::J2CPP_METHOD_NAME(0), java::lang::ClassCircularityError::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::LinkageError>(get_jtype());
 }
 
-template <>
-local_ref< java::lang::ClassCircularityError > create< java::lang::ClassCircularityError>(local_ref< java::lang::String > const &a0)
+
+java::lang::ClassCircularityError::ClassCircularityError()
+: cpp_object<java::lang::ClassCircularityError>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::lang::ClassCircularityError::J2CPP_CLASS_NAME>(),
+		get_method_id<java::lang::ClassCircularityError::J2CPP_CLASS_NAME, java::lang::ClassCircularityError::J2CPP_METHOD_NAME(0), java::lang::ClassCircularityError::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
 {
-	return local_ref< java::lang::ClassCircularityError >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::lang::ClassCircularityError::J2CPP_CLASS_NAME>(),
-			get_method_id<java::lang::ClassCircularityError::J2CPP_CLASS_NAME, java::lang::ClassCircularityError::J2CPP_METHOD_NAME(1), java::lang::ClassCircularityError::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
 }
+
+
+
+java::lang::ClassCircularityError::ClassCircularityError(local_ref< java::lang::String > const &a0)
+: cpp_object<java::lang::ClassCircularityError>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::lang::ClassCircularityError::J2CPP_CLASS_NAME>(),
+		get_method_id<java::lang::ClassCircularityError::J2CPP_CLASS_NAME, java::lang::ClassCircularityError::J2CPP_METHOD_NAME(1), java::lang::ClassCircularityError::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 
 J2CPP_DEFINE_CLASS(java::lang::ClassCircularityError,"java/lang/ClassCircularityError")

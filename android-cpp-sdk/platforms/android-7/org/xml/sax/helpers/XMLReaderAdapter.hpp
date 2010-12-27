@@ -10,27 +10,33 @@
 #define J2CPP_ORG_XML_SAX_HELPERS_XMLREADERADAPTER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace util { class Locale; } } }
+namespace j2cpp { namespace org { namespace xml { namespace sax { class ContentHandler; } } } }
 namespace j2cpp { namespace org { namespace xml { namespace sax { class EntityResolver; } } } }
 namespace j2cpp { namespace org { namespace xml { namespace sax { class ErrorHandler; } } } }
 namespace j2cpp { namespace org { namespace xml { namespace sax { class InputSource; } } } }
 namespace j2cpp { namespace org { namespace xml { namespace sax { class DocumentHandler; } } } }
+namespace j2cpp { namespace org { namespace xml { namespace sax { class Parser; } } } }
 namespace j2cpp { namespace org { namespace xml { namespace sax { class DTDHandler; } } } }
 namespace j2cpp { namespace org { namespace xml { namespace sax { class Attributes; } } } }
 namespace j2cpp { namespace org { namespace xml { namespace sax { class Locator; } } } }
 namespace j2cpp { namespace org { namespace xml { namespace sax { class XMLReader; } } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/util/Locale.hpp>
 #include <org/xml/sax/Attributes.hpp>
+#include <org/xml/sax/ContentHandler.hpp>
 #include <org/xml/sax/DTDHandler.hpp>
 #include <org/xml/sax/DocumentHandler.hpp>
 #include <org/xml/sax/EntityResolver.hpp>
 #include <org/xml/sax/ErrorHandler.hpp>
 #include <org/xml/sax/InputSource.hpp>
 #include <org/xml/sax/Locator.hpp>
+#include <org/xml/sax/Parser.hpp>
 #include <org/xml/sax/XMLReader.hpp>
 
 
@@ -67,11 +73,18 @@ namespace org { namespace xml { namespace sax { namespace helpers {
 		J2CPP_DECLARE_METHOD(18)
 		J2CPP_DECLARE_METHOD(19)
 
-		XMLReaderAdapter(jobject jobj)
+		explicit XMLReaderAdapter(jobject jobj)
 		: cpp_object<XMLReaderAdapter>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<org::xml::sax::Parser>() const;
+		operator local_ref<org::xml::sax::ContentHandler>() const;
+
+
+		XMLReaderAdapter();
+		XMLReaderAdapter(local_ref< org::xml::sax::XMLReader > const&);
 		void setLocale(local_ref< java::util::Locale > const&);
 		void setEntityResolver(local_ref< org::xml::sax::EntityResolver > const&);
 		void setDTDHandler(local_ref< org::xml::sax::DTDHandler > const&);
@@ -97,7 +110,6 @@ namespace org { namespace xml { namespace sax { namespace helpers {
 } //namespace xml
 } //namespace org
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ORG_XML_SAX_HELPERS_XMLREADERADAPTER_HPP_DECL
@@ -110,28 +122,46 @@ namespace org { namespace xml { namespace sax { namespace helpers {
 namespace j2cpp {
 
 
-template <>
-local_ref< org::xml::sax::helpers::XMLReaderAdapter > create< org::xml::sax::helpers::XMLReaderAdapter>()
+
+org::xml::sax::helpers::XMLReaderAdapter::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< org::xml::sax::helpers::XMLReaderAdapter >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::xml::sax::helpers::XMLReaderAdapter::J2CPP_CLASS_NAME>(),
-			get_method_id<org::xml::sax::helpers::XMLReaderAdapter::J2CPP_CLASS_NAME, org::xml::sax::helpers::XMLReaderAdapter::J2CPP_METHOD_NAME(0), org::xml::sax::helpers::XMLReaderAdapter::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
 
-template <>
-local_ref< org::xml::sax::helpers::XMLReaderAdapter > create< org::xml::sax::helpers::XMLReaderAdapter>(local_ref< org::xml::sax::XMLReader > const &a0)
+org::xml::sax::helpers::XMLReaderAdapter::operator local_ref<org::xml::sax::Parser>() const
 {
-	return local_ref< org::xml::sax::helpers::XMLReaderAdapter >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::xml::sax::helpers::XMLReaderAdapter::J2CPP_CLASS_NAME>(),
-			get_method_id<org::xml::sax::helpers::XMLReaderAdapter::J2CPP_CLASS_NAME, org::xml::sax::helpers::XMLReaderAdapter::J2CPP_METHOD_NAME(1), org::xml::sax::helpers::XMLReaderAdapter::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<org::xml::sax::Parser>(get_jtype());
 }
+
+org::xml::sax::helpers::XMLReaderAdapter::operator local_ref<org::xml::sax::ContentHandler>() const
+{
+	return local_ref<org::xml::sax::ContentHandler>(get_jtype());
+}
+
+
+org::xml::sax::helpers::XMLReaderAdapter::XMLReaderAdapter()
+: cpp_object<org::xml::sax::helpers::XMLReaderAdapter>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::xml::sax::helpers::XMLReaderAdapter::J2CPP_CLASS_NAME>(),
+		get_method_id<org::xml::sax::helpers::XMLReaderAdapter::J2CPP_CLASS_NAME, org::xml::sax::helpers::XMLReaderAdapter::J2CPP_METHOD_NAME(0), org::xml::sax::helpers::XMLReaderAdapter::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
+
+
+org::xml::sax::helpers::XMLReaderAdapter::XMLReaderAdapter(local_ref< org::xml::sax::XMLReader > const &a0)
+: cpp_object<org::xml::sax::helpers::XMLReaderAdapter>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::xml::sax::helpers::XMLReaderAdapter::J2CPP_CLASS_NAME>(),
+		get_method_id<org::xml::sax::helpers::XMLReaderAdapter::J2CPP_CLASS_NAME, org::xml::sax::helpers::XMLReaderAdapter::J2CPP_METHOD_NAME(1), org::xml::sax::helpers::XMLReaderAdapter::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 void org::xml::sax::helpers::XMLReaderAdapter::setLocale(local_ref< java::util::Locale > const &a0)
 {

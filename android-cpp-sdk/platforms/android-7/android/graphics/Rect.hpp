@@ -13,6 +13,7 @@
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace android { namespace os { class Parcel; } } }
+namespace j2cpp { namespace android { namespace os { class Parcelable; } } }
 namespace j2cpp { namespace android { namespace os { namespace Parcelable_ { class Creator; } } } }
 
 
@@ -77,15 +78,22 @@ namespace android { namespace graphics {
 		J2CPP_DECLARE_FIELD(3)
 		J2CPP_DECLARE_FIELD(4)
 
-		Rect(jobject jobj)
+		explicit Rect(jobject jobj)
 		: cpp_object<Rect>(jobj)
-		, left(jobj)
-		, top(jobj)
-		, right(jobj)
-		, bottom(jobj)
+, left(jobj)
+, top(jobj)
+, right(jobj)
+, bottom(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<android::os::Parcelable>() const;
+
+
+		Rect();
+		Rect(cpp_int const&, cpp_int const&, cpp_int const&, cpp_int const&);
+		Rect(local_ref< android::graphics::Rect > const&);
 		cpp_boolean equals(local_ref< java::lang::Object > const&);
 		local_ref< java::lang::String > toString();
 		local_ref< java::lang::String > toShortString();
@@ -130,7 +138,6 @@ namespace android { namespace graphics {
 } //namespace graphics
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_GRAPHICS_RECT_HPP_DECL
@@ -143,40 +150,66 @@ namespace android { namespace graphics {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::graphics::Rect > create< android::graphics::Rect>()
+
+android::graphics::Rect::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::graphics::Rect >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::graphics::Rect::J2CPP_CLASS_NAME>(),
-			get_method_id<android::graphics::Rect::J2CPP_CLASS_NAME, android::graphics::Rect::J2CPP_METHOD_NAME(0), android::graphics::Rect::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
 
-template <>
-local_ref< android::graphics::Rect > create< android::graphics::Rect>(cpp_int const &a0, cpp_int const &a1, cpp_int const &a2, cpp_int const &a3)
+android::graphics::Rect::operator local_ref<android::os::Parcelable>() const
 {
-	return local_ref< android::graphics::Rect >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::graphics::Rect::J2CPP_CLASS_NAME>(),
-			get_method_id<android::graphics::Rect::J2CPP_CLASS_NAME, android::graphics::Rect::J2CPP_METHOD_NAME(1), android::graphics::Rect::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype()
-		)
-	);
+	return local_ref<android::os::Parcelable>(get_jtype());
 }
 
-template <>
-local_ref< android::graphics::Rect > create< android::graphics::Rect>(local_ref< android::graphics::Rect > const &a0)
+
+android::graphics::Rect::Rect()
+: cpp_object<android::graphics::Rect>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::graphics::Rect::J2CPP_CLASS_NAME>(),
+		get_method_id<android::graphics::Rect::J2CPP_CLASS_NAME, android::graphics::Rect::J2CPP_METHOD_NAME(0), android::graphics::Rect::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+, left(get_jtype())
+, top(get_jtype())
+, right(get_jtype())
+, bottom(get_jtype())
 {
-	return local_ref< android::graphics::Rect >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::graphics::Rect::J2CPP_CLASS_NAME>(),
-			get_method_id<android::graphics::Rect::J2CPP_CLASS_NAME, android::graphics::Rect::J2CPP_METHOD_NAME(2), android::graphics::Rect::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype()
-		)
-	);
 }
+
+
+
+android::graphics::Rect::Rect(cpp_int const &a0, cpp_int const &a1, cpp_int const &a2, cpp_int const &a3)
+: cpp_object<android::graphics::Rect>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::graphics::Rect::J2CPP_CLASS_NAME>(),
+		get_method_id<android::graphics::Rect::J2CPP_CLASS_NAME, android::graphics::Rect::J2CPP_METHOD_NAME(1), android::graphics::Rect::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype()
+	)
+)
+, left(get_jtype())
+, top(get_jtype())
+, right(get_jtype())
+, bottom(get_jtype())
+{
+}
+
+
+
+android::graphics::Rect::Rect(local_ref< android::graphics::Rect > const &a0)
+: cpp_object<android::graphics::Rect>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::graphics::Rect::J2CPP_CLASS_NAME>(),
+		get_method_id<android::graphics::Rect::J2CPP_CLASS_NAME, android::graphics::Rect::J2CPP_METHOD_NAME(2), android::graphics::Rect::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype()
+	)
+)
+, left(get_jtype())
+, top(get_jtype())
+, right(get_jtype())
+, bottom(get_jtype())
+{
+}
+
 
 cpp_boolean android::graphics::Rect::equals(local_ref< java::lang::Object > const &a0)
 {
@@ -527,6 +560,7 @@ void android::graphics::Rect::readFromParcel(local_ref< android::os::Parcel > co
 		)
 	);
 }
+
 
 
 static_field<

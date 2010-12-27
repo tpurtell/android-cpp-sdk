@@ -10,8 +10,12 @@
 #define J2CPP_JAVA_UTIL_FORMATTERCLOSEDEXCEPTION_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
+namespace j2cpp { namespace java { namespace lang { class IllegalStateException; } } }
 
 
+#include <java/io/Serializable.hpp>
+#include <java/lang/IllegalStateException.hpp>
 
 
 namespace j2cpp {
@@ -28,16 +32,20 @@ namespace java { namespace util {
 
 		J2CPP_DECLARE_METHOD(0)
 
-		FormatterClosedException(jobject jobj)
+		explicit FormatterClosedException(jobject jobj)
 		: cpp_object<FormatterClosedException>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::IllegalStateException>() const;
+		operator local_ref<java::io::Serializable>() const;
+
+
+		FormatterClosedException();
 	}; //class FormatterClosedException
 
 } //namespace util
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -51,16 +59,28 @@ namespace java { namespace util {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::util::FormatterClosedException > create< java::util::FormatterClosedException>()
+
+java::util::FormatterClosedException::operator local_ref<java::lang::IllegalStateException>() const
 {
-	return local_ref< java::util::FormatterClosedException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::FormatterClosedException::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::FormatterClosedException::J2CPP_CLASS_NAME, java::util::FormatterClosedException::J2CPP_METHOD_NAME(0), java::util::FormatterClosedException::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::IllegalStateException>(get_jtype());
 }
+
+java::util::FormatterClosedException::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jtype());
+}
+
+
+java::util::FormatterClosedException::FormatterClosedException()
+: cpp_object<java::util::FormatterClosedException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::util::FormatterClosedException::J2CPP_CLASS_NAME>(),
+		get_method_id<java::util::FormatterClosedException::J2CPP_CLASS_NAME, java::util::FormatterClosedException::J2CPP_METHOD_NAME(0), java::util::FormatterClosedException::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 
 J2CPP_DEFINE_CLASS(java::util::FormatterClosedException,"java/util/FormatterClosedException")

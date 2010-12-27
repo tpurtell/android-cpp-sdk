@@ -10,10 +10,12 @@
 #define J2CPP_ANDROID_LOCATION_LOCATION_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace android { namespace util { class Printer; } } }
 namespace j2cpp { namespace android { namespace os { class Parcel; } } }
 namespace j2cpp { namespace android { namespace os { class Bundle; } } }
+namespace j2cpp { namespace android { namespace os { class Parcelable; } } }
 namespace j2cpp { namespace android { namespace os { namespace Parcelable_ { class Creator; } } } }
 
 
@@ -21,6 +23,7 @@ namespace j2cpp { namespace android { namespace os { namespace Parcelable_ { cla
 #include <android/os/Parcel.hpp>
 #include <android/os/Parcelable.hpp>
 #include <android/util/Printer.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -81,11 +84,17 @@ namespace android { namespace location {
 		J2CPP_DECLARE_FIELD(2)
 		J2CPP_DECLARE_FIELD(3)
 
-		Location(jobject jobj)
+		explicit Location(jobject jobj)
 		: cpp_object<Location>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<android::os::Parcelable>() const;
+
+
+		Location(local_ref< java::lang::String > const&);
+		Location(local_ref< android::location::Location > const&);
 		void dump(local_ref< android::util::Printer > const&, local_ref< java::lang::String > const&);
 		void set(local_ref< android::location::Location > const&);
 		void reset();
@@ -133,7 +142,6 @@ namespace android { namespace location {
 } //namespace location
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_LOCATION_LOCATION_HPP_DECL
@@ -146,29 +154,42 @@ namespace android { namespace location {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::location::Location > create< android::location::Location>(local_ref< java::lang::String > const &a0)
+
+android::location::Location::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::location::Location >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::location::Location::J2CPP_CLASS_NAME>(),
-			get_method_id<android::location::Location::J2CPP_CLASS_NAME, android::location::Location::J2CPP_METHOD_NAME(0), android::location::Location::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
 
-template <>
-local_ref< android::location::Location > create< android::location::Location>(local_ref< android::location::Location > const &a0)
+android::location::Location::operator local_ref<android::os::Parcelable>() const
 {
-	return local_ref< android::location::Location >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::location::Location::J2CPP_CLASS_NAME>(),
-			get_method_id<android::location::Location::J2CPP_CLASS_NAME, android::location::Location::J2CPP_METHOD_NAME(1), android::location::Location::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<android::os::Parcelable>(get_jtype());
 }
+
+
+android::location::Location::Location(local_ref< java::lang::String > const &a0)
+: cpp_object<android::location::Location>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::location::Location::J2CPP_CLASS_NAME>(),
+		get_method_id<android::location::Location::J2CPP_CLASS_NAME, android::location::Location::J2CPP_METHOD_NAME(0), android::location::Location::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
+
+
+android::location::Location::Location(local_ref< android::location::Location > const &a0)
+: cpp_object<android::location::Location>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::location::Location::J2CPP_CLASS_NAME>(),
+		get_method_id<android::location::Location::J2CPP_CLASS_NAME, android::location::Location::J2CPP_METHOD_NAME(1), android::location::Location::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 void android::location::Location::dump(local_ref< android::util::Printer > const &a0, local_ref< java::lang::String > const &a1)
 {
@@ -556,6 +577,7 @@ void android::location::Location::writeToParcel(local_ref< android::os::Parcel >
 		)
 	);
 }
+
 
 
 static_field<

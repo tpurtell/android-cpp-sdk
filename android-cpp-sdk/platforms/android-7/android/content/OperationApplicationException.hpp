@@ -12,8 +12,10 @@
 
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace lang { class Throwable; } } }
+namespace j2cpp { namespace java { namespace lang { class Exception; } } }
 
 
+#include <java/lang/Exception.hpp>
 #include <java/lang/String.hpp>
 #include <java/lang/Throwable.hpp>
 
@@ -38,17 +40,25 @@ namespace android { namespace content {
 		J2CPP_DECLARE_METHOD(5)
 		J2CPP_DECLARE_METHOD(6)
 
-		OperationApplicationException(jobject jobj)
+		explicit OperationApplicationException(jobject jobj)
 		: cpp_object<OperationApplicationException>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Exception>() const;
+
+
+		OperationApplicationException();
+		OperationApplicationException(local_ref< java::lang::String > const&);
+		OperationApplicationException(local_ref< java::lang::String > const&, local_ref< java::lang::Throwable > const&);
+		OperationApplicationException(local_ref< java::lang::Throwable > const&);
+		OperationApplicationException(cpp_int const&);
+		OperationApplicationException(local_ref< java::lang::String > const&, cpp_int const&);
 		cpp_int getNumSuccessfulYieldPoints();
 	}; //class OperationApplicationException
 
 } //namespace content
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -62,76 +72,88 @@ namespace android { namespace content {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::content::OperationApplicationException > create< android::content::OperationApplicationException>()
+
+android::content::OperationApplicationException::operator local_ref<java::lang::Exception>() const
 {
-	return local_ref< android::content::OperationApplicationException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::content::OperationApplicationException::J2CPP_CLASS_NAME>(),
-			get_method_id<android::content::OperationApplicationException::J2CPP_CLASS_NAME, android::content::OperationApplicationException::J2CPP_METHOD_NAME(0), android::content::OperationApplicationException::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Exception>(get_jtype());
 }
 
-template <>
-local_ref< android::content::OperationApplicationException > create< android::content::OperationApplicationException>(local_ref< java::lang::String > const &a0)
+
+android::content::OperationApplicationException::OperationApplicationException()
+: cpp_object<android::content::OperationApplicationException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::content::OperationApplicationException::J2CPP_CLASS_NAME>(),
+		get_method_id<android::content::OperationApplicationException::J2CPP_CLASS_NAME, android::content::OperationApplicationException::J2CPP_METHOD_NAME(0), android::content::OperationApplicationException::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
 {
-	return local_ref< android::content::OperationApplicationException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::content::OperationApplicationException::J2CPP_CLASS_NAME>(),
-			get_method_id<android::content::OperationApplicationException::J2CPP_CLASS_NAME, android::content::OperationApplicationException::J2CPP_METHOD_NAME(1), android::content::OperationApplicationException::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< android::content::OperationApplicationException > create< android::content::OperationApplicationException>(local_ref< java::lang::String > const &a0, local_ref< java::lang::Throwable > const &a1)
+
+
+android::content::OperationApplicationException::OperationApplicationException(local_ref< java::lang::String > const &a0)
+: cpp_object<android::content::OperationApplicationException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::content::OperationApplicationException::J2CPP_CLASS_NAME>(),
+		get_method_id<android::content::OperationApplicationException::J2CPP_CLASS_NAME, android::content::OperationApplicationException::J2CPP_METHOD_NAME(1), android::content::OperationApplicationException::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< android::content::OperationApplicationException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::content::OperationApplicationException::J2CPP_CLASS_NAME>(),
-			get_method_id<android::content::OperationApplicationException::J2CPP_CLASS_NAME, android::content::OperationApplicationException::J2CPP_METHOD_NAME(2), android::content::OperationApplicationException::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< android::content::OperationApplicationException > create< android::content::OperationApplicationException>(local_ref< java::lang::Throwable > const &a0)
+
+
+android::content::OperationApplicationException::OperationApplicationException(local_ref< java::lang::String > const &a0, local_ref< java::lang::Throwable > const &a1)
+: cpp_object<android::content::OperationApplicationException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::content::OperationApplicationException::J2CPP_CLASS_NAME>(),
+		get_method_id<android::content::OperationApplicationException::J2CPP_CLASS_NAME, android::content::OperationApplicationException::J2CPP_METHOD_NAME(2), android::content::OperationApplicationException::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
 {
-	return local_ref< android::content::OperationApplicationException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::content::OperationApplicationException::J2CPP_CLASS_NAME>(),
-			get_method_id<android::content::OperationApplicationException::J2CPP_CLASS_NAME, android::content::OperationApplicationException::J2CPP_METHOD_NAME(3), android::content::OperationApplicationException::J2CPP_METHOD_SIGNATURE(3), false>(),
-			a0.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< android::content::OperationApplicationException > create< android::content::OperationApplicationException>(cpp_int const &a0)
+
+
+android::content::OperationApplicationException::OperationApplicationException(local_ref< java::lang::Throwable > const &a0)
+: cpp_object<android::content::OperationApplicationException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::content::OperationApplicationException::J2CPP_CLASS_NAME>(),
+		get_method_id<android::content::OperationApplicationException::J2CPP_CLASS_NAME, android::content::OperationApplicationException::J2CPP_METHOD_NAME(3), android::content::OperationApplicationException::J2CPP_METHOD_SIGNATURE(3), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< android::content::OperationApplicationException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::content::OperationApplicationException::J2CPP_CLASS_NAME>(),
-			get_method_id<android::content::OperationApplicationException::J2CPP_CLASS_NAME, android::content::OperationApplicationException::J2CPP_METHOD_NAME(4), android::content::OperationApplicationException::J2CPP_METHOD_SIGNATURE(4), false>(),
-			a0.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< android::content::OperationApplicationException > create< android::content::OperationApplicationException>(local_ref< java::lang::String > const &a0, cpp_int const &a1)
+
+
+android::content::OperationApplicationException::OperationApplicationException(cpp_int const &a0)
+: cpp_object<android::content::OperationApplicationException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::content::OperationApplicationException::J2CPP_CLASS_NAME>(),
+		get_method_id<android::content::OperationApplicationException::J2CPP_CLASS_NAME, android::content::OperationApplicationException::J2CPP_METHOD_NAME(4), android::content::OperationApplicationException::J2CPP_METHOD_SIGNATURE(4), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< android::content::OperationApplicationException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::content::OperationApplicationException::J2CPP_CLASS_NAME>(),
-			get_method_id<android::content::OperationApplicationException::J2CPP_CLASS_NAME, android::content::OperationApplicationException::J2CPP_METHOD_NAME(5), android::content::OperationApplicationException::J2CPP_METHOD_SIGNATURE(5), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
 }
+
+
+
+android::content::OperationApplicationException::OperationApplicationException(local_ref< java::lang::String > const &a0, cpp_int const &a1)
+: cpp_object<android::content::OperationApplicationException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::content::OperationApplicationException::J2CPP_CLASS_NAME>(),
+		get_method_id<android::content::OperationApplicationException::J2CPP_CLASS_NAME, android::content::OperationApplicationException::J2CPP_METHOD_NAME(5), android::content::OperationApplicationException::J2CPP_METHOD_SIGNATURE(5), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
 
 cpp_int android::content::OperationApplicationException::getNumSuccessfulYieldPoints()
 {

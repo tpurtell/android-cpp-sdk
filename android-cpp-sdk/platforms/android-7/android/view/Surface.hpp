@@ -10,11 +10,14 @@
 #define J2CPP_ANDROID_VIEW_SURFACE_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace lang { class Exception; } } }
 namespace j2cpp { namespace android { namespace graphics { class Canvas; } } }
 namespace j2cpp { namespace android { namespace graphics { class Region; } } }
 namespace j2cpp { namespace android { namespace graphics { class Rect; } } }
 namespace j2cpp { namespace android { namespace os { class Parcel; } } }
+namespace j2cpp { namespace android { namespace os { class Parcelable; } } }
 namespace j2cpp { namespace android { namespace os { namespace Parcelable_ { class Creator; } } } }
 
 
@@ -23,6 +26,8 @@ namespace j2cpp { namespace android { namespace os { namespace Parcelable_ { cla
 #include <android/graphics/Region.hpp>
 #include <android/os/Parcel.hpp>
 #include <android/os/Parcelable.hpp>
+#include <java/lang/Exception.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -44,11 +49,16 @@ namespace android { namespace view {
 			J2CPP_DECLARE_METHOD(0)
 			J2CPP_DECLARE_METHOD(1)
 
-			OutOfResourcesException(jobject jobj)
+			explicit OutOfResourcesException(jobject jobj)
 			: cpp_object<OutOfResourcesException>(jobj)
 			{
 			}
 
+			operator local_ref<java::lang::Exception>() const;
+
+
+			OutOfResourcesException();
+			OutOfResourcesException(local_ref< java::lang::String > const&);
 		}; //class OutOfResourcesException
 
 	} //namespace Surface_
@@ -107,10 +117,14 @@ namespace android { namespace view {
 
 		typedef Surface_::OutOfResourcesException OutOfResourcesException;
 
-		Surface(jobject jobj)
+		explicit Surface(jobject jobj)
 		: cpp_object<Surface>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<android::os::Parcelable>() const;
+
 
 		cpp_boolean isValid();
 		local_ref< android::graphics::Canvas > lockCanvas(local_ref< android::graphics::Rect > const&);
@@ -159,7 +173,6 @@ namespace android { namespace view {
 } //namespace view
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_VIEW_SURFACE_HPP_DECL
@@ -173,28 +186,36 @@ namespace j2cpp {
 
 
 
-template <>
-local_ref< android::view::Surface_::OutOfResourcesException > create< android::view::Surface_::OutOfResourcesException>()
+
+android::view::Surface_::OutOfResourcesException::operator local_ref<java::lang::Exception>() const
 {
-	return local_ref< android::view::Surface_::OutOfResourcesException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::view::Surface_::OutOfResourcesException::J2CPP_CLASS_NAME>(),
-			get_method_id<android::view::Surface_::OutOfResourcesException::J2CPP_CLASS_NAME, android::view::Surface_::OutOfResourcesException::J2CPP_METHOD_NAME(0), android::view::Surface_::OutOfResourcesException::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Exception>(get_jtype());
 }
 
-template <>
-local_ref< android::view::Surface_::OutOfResourcesException > create< android::view::Surface_::OutOfResourcesException>(local_ref< java::lang::String > const &a0)
+
+android::view::Surface_::OutOfResourcesException::OutOfResourcesException()
+: cpp_object<android::view::Surface_::OutOfResourcesException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::view::Surface_::OutOfResourcesException::J2CPP_CLASS_NAME>(),
+		get_method_id<android::view::Surface_::OutOfResourcesException::J2CPP_CLASS_NAME, android::view::Surface_::OutOfResourcesException::J2CPP_METHOD_NAME(0), android::view::Surface_::OutOfResourcesException::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
 {
-	return local_ref< android::view::Surface_::OutOfResourcesException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::view::Surface_::OutOfResourcesException::J2CPP_CLASS_NAME>(),
-			get_method_id<android::view::Surface_::OutOfResourcesException::J2CPP_CLASS_NAME, android::view::Surface_::OutOfResourcesException::J2CPP_METHOD_NAME(1), android::view::Surface_::OutOfResourcesException::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
 }
+
+
+
+android::view::Surface_::OutOfResourcesException::OutOfResourcesException(local_ref< java::lang::String > const &a0)
+: cpp_object<android::view::Surface_::OutOfResourcesException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::view::Surface_::OutOfResourcesException::J2CPP_CLASS_NAME>(),
+		get_method_id<android::view::Surface_::OutOfResourcesException::J2CPP_CLASS_NAME, android::view::Surface_::OutOfResourcesException::J2CPP_METHOD_NAME(1), android::view::Surface_::OutOfResourcesException::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 
 J2CPP_DEFINE_CLASS(android::view::Surface_::OutOfResourcesException,"android/view/Surface$OutOfResourcesException")
@@ -202,16 +223,17 @@ J2CPP_DEFINE_METHOD(android::view::Surface_::OutOfResourcesException,0,"<init>",
 J2CPP_DEFINE_METHOD(android::view::Surface_::OutOfResourcesException,1,"<init>","(Ljava/lang/String;)V")
 
 
-template <>
-local_ref< android::view::Surface > create< android::view::Surface>()
+
+android::view::Surface::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::view::Surface >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::view::Surface::J2CPP_CLASS_NAME>(),
-			get_method_id<android::view::Surface::J2CPP_CLASS_NAME, android::view::Surface::J2CPP_METHOD_NAME(0), android::view::Surface::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+android::view::Surface::operator local_ref<android::os::Parcelable>() const
+{
+	return local_ref<android::os::Parcelable>(get_jtype());
+}
+
 
 cpp_boolean android::view::Surface::isValid()
 {
@@ -436,6 +458,7 @@ void android::view::Surface::writeToParcel(local_ref< android::os::Parcel > cons
 		)
 	);
 }
+
 
 
 

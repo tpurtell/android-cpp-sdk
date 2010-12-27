@@ -10,10 +10,12 @@
 #define J2CPP_JAVA_SECURITY_GUARDEDOBJECT_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace security { class Guard; } } }
 
 
+#include <java/io/Serializable.hpp>
 #include <java/lang/Object.hpp>
 #include <java/security/Guard.hpp>
 
@@ -33,17 +35,21 @@ namespace java { namespace security {
 		J2CPP_DECLARE_METHOD(0)
 		J2CPP_DECLARE_METHOD(1)
 
-		GuardedObject(jobject jobj)
+		explicit GuardedObject(jobject jobj)
 		: cpp_object<GuardedObject>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::io::Serializable>() const;
+
+
+		GuardedObject(local_ref< java::lang::Object > const&, local_ref< java::security::Guard > const&);
 		local_ref< java::lang::Object > getObject();
 	}; //class GuardedObject
 
 } //namespace security
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -57,17 +63,29 @@ namespace java { namespace security {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::security::GuardedObject > create< java::security::GuardedObject>(local_ref< java::lang::Object > const &a0, local_ref< java::security::Guard > const &a1)
+
+java::security::GuardedObject::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::security::GuardedObject >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::security::GuardedObject::J2CPP_CLASS_NAME>(),
-			get_method_id<java::security::GuardedObject::J2CPP_CLASS_NAME, java::security::GuardedObject::J2CPP_METHOD_NAME(0), java::security::GuardedObject::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+java::security::GuardedObject::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jtype());
+}
+
+
+java::security::GuardedObject::GuardedObject(local_ref< java::lang::Object > const &a0, local_ref< java::security::Guard > const &a1)
+: cpp_object<java::security::GuardedObject>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::security::GuardedObject::J2CPP_CLASS_NAME>(),
+		get_method_id<java::security::GuardedObject::J2CPP_CLASS_NAME, java::security::GuardedObject::J2CPP_METHOD_NAME(0), java::security::GuardedObject::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
 
 local_ref< java::lang::Object > java::security::GuardedObject::getObject()
 {

@@ -10,15 +10,18 @@
 #define J2CPP_ANDROID_APPWIDGET_APPWIDGETPROVIDERINFO_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace android { namespace content { class ComponentName; } } }
 namespace j2cpp { namespace android { namespace os { class Parcel; } } }
+namespace j2cpp { namespace android { namespace os { class Parcelable; } } }
 namespace j2cpp { namespace android { namespace os { namespace Parcelable_ { class Creator; } } } }
 
 
 #include <android/content/ComponentName.hpp>
 #include <android/os/Parcel.hpp>
 #include <android/os/Parcelable.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -50,19 +53,25 @@ namespace android { namespace appwidget {
 		J2CPP_DECLARE_FIELD(7)
 		J2CPP_DECLARE_FIELD(8)
 
-		AppWidgetProviderInfo(jobject jobj)
+		explicit AppWidgetProviderInfo(jobject jobj)
 		: cpp_object<AppWidgetProviderInfo>(jobj)
-		, provider(jobj)
-		, minWidth(jobj)
-		, minHeight(jobj)
-		, updatePeriodMillis(jobj)
-		, initialLayout(jobj)
-		, configure(jobj)
-		, label(jobj)
-		, icon(jobj)
+, provider(jobj)
+, minWidth(jobj)
+, minHeight(jobj)
+, updatePeriodMillis(jobj)
+, initialLayout(jobj)
+, configure(jobj)
+, label(jobj)
+, icon(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<android::os::Parcelable>() const;
+
+
+		AppWidgetProviderInfo();
+		AppWidgetProviderInfo(local_ref< android::os::Parcel > const&);
 		void writeToParcel(local_ref< android::os::Parcel > const&, cpp_int const&);
 		cpp_int describeContents();
 		local_ref< java::lang::String > toString();
@@ -81,7 +90,6 @@ namespace android { namespace appwidget {
 } //namespace appwidget
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_APPWIDGET_APPWIDGETPROVIDERINFO_HPP_DECL
@@ -94,28 +102,57 @@ namespace android { namespace appwidget {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::appwidget::AppWidgetProviderInfo > create< android::appwidget::AppWidgetProviderInfo>()
+
+android::appwidget::AppWidgetProviderInfo::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::appwidget::AppWidgetProviderInfo >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::appwidget::AppWidgetProviderInfo::J2CPP_CLASS_NAME>(),
-			get_method_id<android::appwidget::AppWidgetProviderInfo::J2CPP_CLASS_NAME, android::appwidget::AppWidgetProviderInfo::J2CPP_METHOD_NAME(0), android::appwidget::AppWidgetProviderInfo::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
 
-template <>
-local_ref< android::appwidget::AppWidgetProviderInfo > create< android::appwidget::AppWidgetProviderInfo>(local_ref< android::os::Parcel > const &a0)
+android::appwidget::AppWidgetProviderInfo::operator local_ref<android::os::Parcelable>() const
 {
-	return local_ref< android::appwidget::AppWidgetProviderInfo >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::appwidget::AppWidgetProviderInfo::J2CPP_CLASS_NAME>(),
-			get_method_id<android::appwidget::AppWidgetProviderInfo::J2CPP_CLASS_NAME, android::appwidget::AppWidgetProviderInfo::J2CPP_METHOD_NAME(1), android::appwidget::AppWidgetProviderInfo::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<android::os::Parcelable>(get_jtype());
 }
+
+
+android::appwidget::AppWidgetProviderInfo::AppWidgetProviderInfo()
+: cpp_object<android::appwidget::AppWidgetProviderInfo>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::appwidget::AppWidgetProviderInfo::J2CPP_CLASS_NAME>(),
+		get_method_id<android::appwidget::AppWidgetProviderInfo::J2CPP_CLASS_NAME, android::appwidget::AppWidgetProviderInfo::J2CPP_METHOD_NAME(0), android::appwidget::AppWidgetProviderInfo::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+, provider(get_jtype())
+, minWidth(get_jtype())
+, minHeight(get_jtype())
+, updatePeriodMillis(get_jtype())
+, initialLayout(get_jtype())
+, configure(get_jtype())
+, label(get_jtype())
+, icon(get_jtype())
+{
+}
+
+
+
+android::appwidget::AppWidgetProviderInfo::AppWidgetProviderInfo(local_ref< android::os::Parcel > const &a0)
+: cpp_object<android::appwidget::AppWidgetProviderInfo>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::appwidget::AppWidgetProviderInfo::J2CPP_CLASS_NAME>(),
+		get_method_id<android::appwidget::AppWidgetProviderInfo::J2CPP_CLASS_NAME, android::appwidget::AppWidgetProviderInfo::J2CPP_METHOD_NAME(1), android::appwidget::AppWidgetProviderInfo::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
+, provider(get_jtype())
+, minWidth(get_jtype())
+, minHeight(get_jtype())
+, updatePeriodMillis(get_jtype())
+, initialLayout(get_jtype())
+, configure(get_jtype())
+, label(get_jtype())
+, icon(get_jtype())
+{
+}
+
 
 void android::appwidget::AppWidgetProviderInfo::writeToParcel(local_ref< android::os::Parcel > const &a0, cpp_int const &a1)
 {
@@ -147,6 +184,7 @@ local_ref< java::lang::String > android::appwidget::AppWidgetProviderInfo::toStr
 		)
 	);
 }
+
 
 
 static_field<

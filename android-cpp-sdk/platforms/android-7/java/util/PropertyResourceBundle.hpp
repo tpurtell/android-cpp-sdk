@@ -14,12 +14,14 @@ namespace j2cpp { namespace java { namespace io { class InputStream; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace util { class Enumeration; } } }
+namespace j2cpp { namespace java { namespace util { class ResourceBundle; } } }
 
 
 #include <java/io/InputStream.hpp>
 #include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/util/Enumeration.hpp>
+#include <java/util/ResourceBundle.hpp>
 
 
 namespace j2cpp {
@@ -38,18 +40,21 @@ namespace java { namespace util {
 		J2CPP_DECLARE_METHOD(1)
 		J2CPP_DECLARE_METHOD(2)
 
-		PropertyResourceBundle(jobject jobj)
+		explicit PropertyResourceBundle(jobject jobj)
 		: cpp_object<PropertyResourceBundle>(jobj)
 		{
 		}
 
+		operator local_ref<java::util::ResourceBundle>() const;
+
+
+		PropertyResourceBundle(local_ref< java::io::InputStream > const&);
 		local_ref< java::util::Enumeration > getKeys();
 		local_ref< java::lang::Object > handleGetObject(local_ref< java::lang::String > const&);
 	}; //class PropertyResourceBundle
 
 } //namespace util
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -63,17 +68,24 @@ namespace java { namespace util {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::util::PropertyResourceBundle > create< java::util::PropertyResourceBundle>(local_ref< java::io::InputStream > const &a0)
+
+java::util::PropertyResourceBundle::operator local_ref<java::util::ResourceBundle>() const
 {
-	return local_ref< java::util::PropertyResourceBundle >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::PropertyResourceBundle::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::PropertyResourceBundle::J2CPP_CLASS_NAME, java::util::PropertyResourceBundle::J2CPP_METHOD_NAME(0), java::util::PropertyResourceBundle::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::util::ResourceBundle>(get_jtype());
 }
+
+
+java::util::PropertyResourceBundle::PropertyResourceBundle(local_ref< java::io::InputStream > const &a0)
+: cpp_object<java::util::PropertyResourceBundle>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::util::PropertyResourceBundle::J2CPP_CLASS_NAME>(),
+		get_method_id<java::util::PropertyResourceBundle::J2CPP_CLASS_NAME, java::util::PropertyResourceBundle::J2CPP_METHOD_NAME(0), java::util::PropertyResourceBundle::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 local_ref< java::util::Enumeration > java::util::PropertyResourceBundle::getKeys()
 {

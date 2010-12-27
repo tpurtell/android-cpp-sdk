@@ -10,9 +10,13 @@
 #define J2CPP_JAVA_UTIL_CONCURRENT_DELAYED_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace lang { class Comparable; } } }
 namespace j2cpp { namespace java { namespace util { namespace concurrent { class TimeUnit; } } } }
 
 
+#include <java/lang/Comparable.hpp>
+#include <java/lang/Object.hpp>
 #include <java/util/concurrent/TimeUnit.hpp>
 
 
@@ -30,10 +34,14 @@ namespace java { namespace util { namespace concurrent {
 
 		J2CPP_DECLARE_METHOD(0)
 
-		Delayed(jobject jobj)
+		explicit Delayed(jobject jobj)
 		: cpp_object<Delayed>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::lang::Comparable>() const;
+
 
 		cpp_long getDelay(local_ref< java::util::concurrent::TimeUnit > const&);
 	}; //class Delayed
@@ -41,7 +49,6 @@ namespace java { namespace util { namespace concurrent {
 } //namespace concurrent
 } //namespace util
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -54,6 +61,17 @@ namespace java { namespace util { namespace concurrent {
 
 namespace j2cpp {
 
+
+
+java::util::concurrent::Delayed::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
+
+java::util::concurrent::Delayed::operator local_ref<java::lang::Comparable>() const
+{
+	return local_ref<java::lang::Comparable>(get_jtype());
+}
 
 cpp_long java::util::concurrent::Delayed::getDelay(local_ref< java::util::concurrent::TimeUnit > const &a0)
 {

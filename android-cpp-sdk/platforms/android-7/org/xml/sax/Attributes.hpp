@@ -10,9 +10,11 @@
 #define J2CPP_ORG_XML_SAX_ATTRIBUTES_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -41,10 +43,13 @@ namespace org { namespace xml { namespace sax {
 		J2CPP_DECLARE_METHOD(10)
 		J2CPP_DECLARE_METHOD(11)
 
-		Attributes(jobject jobj)
+		explicit Attributes(jobject jobj)
 		: cpp_object<Attributes>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		cpp_int getLength();
 		local_ref< java::lang::String > getURI(cpp_int const&);
@@ -64,7 +69,6 @@ namespace org { namespace xml { namespace sax {
 } //namespace xml
 } //namespace org
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ORG_XML_SAX_ATTRIBUTES_HPP_DECL
@@ -76,6 +80,12 @@ namespace org { namespace xml { namespace sax {
 
 namespace j2cpp {
 
+
+
+org::xml::sax::Attributes::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 cpp_int org::xml::sax::Attributes::getLength()
 {

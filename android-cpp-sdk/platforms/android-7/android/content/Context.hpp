@@ -191,11 +191,15 @@ namespace android { namespace content {
 		J2CPP_DECLARE_FIELD(27)
 		J2CPP_DECLARE_FIELD(28)
 
-		Context(jobject jobj)
+		explicit Context(jobject jobj)
 		: cpp_object<Context>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		Context();
 		local_ref< android::content::res::AssetManager > getAssets();
 		local_ref< android::content::res::Resources > getResources();
 		local_ref< android::content::pm::PackageManager > getPackageManager();
@@ -305,7 +309,6 @@ namespace android { namespace content {
 } //namespace content
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_CONTENT_CONTEXT_HPP_DECL
@@ -318,16 +321,23 @@ namespace android { namespace content {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::content::Context > create< android::content::Context>()
+
+android::content::Context::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::content::Context >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::content::Context::J2CPP_CLASS_NAME>(),
-			get_method_id<android::content::Context::J2CPP_CLASS_NAME, android::content::Context::J2CPP_METHOD_NAME(0), android::content::Context::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::content::Context::Context()
+: cpp_object<android::content::Context>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::content::Context::J2CPP_CLASS_NAME>(),
+		get_method_id<android::content::Context::J2CPP_CLASS_NAME, android::content::Context::J2CPP_METHOD_NAME(0), android::content::Context::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 local_ref< android::content::res::AssetManager > android::content::Context::getAssets()
 {

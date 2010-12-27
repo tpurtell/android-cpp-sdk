@@ -10,12 +10,14 @@
 #define J2CPP_JAVA_NET_SECURECACHERESPONSE_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace net { class CacheResponse; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace security { class Principal; } } }
 namespace j2cpp { namespace java { namespace util { class List; } } }
 
 
 #include <java/lang/String.hpp>
+#include <java/net/CacheResponse.hpp>
 #include <java/security/Principal.hpp>
 #include <java/util/List.hpp>
 
@@ -39,11 +41,15 @@ namespace java { namespace net {
 		J2CPP_DECLARE_METHOD(4)
 		J2CPP_DECLARE_METHOD(5)
 
-		SecureCacheResponse(jobject jobj)
+		explicit SecureCacheResponse(jobject jobj)
 		: cpp_object<SecureCacheResponse>(jobj)
 		{
 		}
 
+		operator local_ref<java::net::CacheResponse>() const;
+
+
+		SecureCacheResponse();
 		local_ref< java::lang::String > getCipherSuite();
 		local_ref< java::util::List > getLocalCertificateChain();
 		local_ref< java::util::List > getServerCertificateChain();
@@ -53,7 +59,6 @@ namespace java { namespace net {
 
 } //namespace net
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -67,16 +72,23 @@ namespace java { namespace net {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::net::SecureCacheResponse > create< java::net::SecureCacheResponse>()
+
+java::net::SecureCacheResponse::operator local_ref<java::net::CacheResponse>() const
 {
-	return local_ref< java::net::SecureCacheResponse >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::net::SecureCacheResponse::J2CPP_CLASS_NAME>(),
-			get_method_id<java::net::SecureCacheResponse::J2CPP_CLASS_NAME, java::net::SecureCacheResponse::J2CPP_METHOD_NAME(0), java::net::SecureCacheResponse::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::net::CacheResponse>(get_jtype());
 }
+
+
+java::net::SecureCacheResponse::SecureCacheResponse()
+: cpp_object<java::net::SecureCacheResponse>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::net::SecureCacheResponse::J2CPP_CLASS_NAME>(),
+		get_method_id<java::net::SecureCacheResponse::J2CPP_CLASS_NAME, java::net::SecureCacheResponse::J2CPP_METHOD_NAME(0), java::net::SecureCacheResponse::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 local_ref< java::lang::String > java::net::SecureCacheResponse::getCipherSuite()
 {

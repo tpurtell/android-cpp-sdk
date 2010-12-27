@@ -17,8 +17,10 @@ namespace j2cpp { namespace android { namespace app { namespace PendingIntent_ {
 namespace j2cpp { namespace android { namespace content { class IntentSender; } } }
 namespace j2cpp { namespace android { namespace content { class Intent; } } }
 namespace j2cpp { namespace android { namespace content { class Context; } } }
+namespace j2cpp { namespace android { namespace util { class AndroidException; } } }
 namespace j2cpp { namespace android { namespace os { class Parcel; } } }
 namespace j2cpp { namespace android { namespace os { class Bundle; } } }
+namespace j2cpp { namespace android { namespace os { class Parcelable; } } }
 namespace j2cpp { namespace android { namespace os { class Handler; } } }
 namespace j2cpp { namespace android { namespace os { namespace Parcelable_ { class Creator; } } } }
 
@@ -31,6 +33,7 @@ namespace j2cpp { namespace android { namespace os { namespace Parcelable_ { cla
 #include <android/os/Handler.hpp>
 #include <android/os/Parcel.hpp>
 #include <android/os/Parcelable.hpp>
+#include <android/util/AndroidException.hpp>
 #include <java/lang/Exception.hpp>
 #include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
@@ -53,10 +56,13 @@ namespace android { namespace app {
 
 			J2CPP_DECLARE_METHOD(0)
 
-			OnFinished(jobject jobj)
+			explicit OnFinished(jobject jobj)
 			: cpp_object<OnFinished>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+
 
 			void onSendFinished(local_ref< android::app::PendingIntent > const&, local_ref< android::content::Intent > const&, cpp_int const&, local_ref< java::lang::String > const&, local_ref< android::os::Bundle > const&);
 		}; //class OnFinished
@@ -73,11 +79,17 @@ namespace android { namespace app {
 			J2CPP_DECLARE_METHOD(1)
 			J2CPP_DECLARE_METHOD(2)
 
-			CanceledException(jobject jobj)
+			explicit CanceledException(jobject jobj)
 			: cpp_object<CanceledException>(jobj)
 			{
 			}
 
+			operator local_ref<android::util::AndroidException>() const;
+
+
+			CanceledException();
+			CanceledException(local_ref< java::lang::String > const&);
+			CanceledException(local_ref< java::lang::Exception > const&);
 		}; //class CanceledException
 
 	} //namespace PendingIntent_
@@ -118,10 +130,14 @@ namespace android { namespace app {
 		typedef PendingIntent_::OnFinished OnFinished;
 		typedef PendingIntent_::CanceledException CanceledException;
 
-		PendingIntent(jobject jobj)
+		explicit PendingIntent(jobject jobj)
 		: cpp_object<PendingIntent>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<android::os::Parcelable>() const;
+
 
 		static local_ref< android::app::PendingIntent > getActivity(local_ref< android::content::Context > const&, cpp_int const&, local_ref< android::content::Intent > const&, cpp_int const&);
 		static local_ref< android::app::PendingIntent > getBroadcast(local_ref< android::content::Context > const&, cpp_int const&, local_ref< android::content::Intent > const&, cpp_int const&);
@@ -152,7 +168,6 @@ namespace android { namespace app {
 } //namespace app
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_APP_PENDINGINTENT_HPP_DECL
@@ -165,6 +180,12 @@ namespace android { namespace app {
 namespace j2cpp {
 
 
+
+
+android::app::PendingIntent_::OnFinished::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 void android::app::PendingIntent_::OnFinished::onSendFinished(local_ref< android::app::PendingIntent > const &a0, local_ref< android::content::Intent > const &a1, cpp_int const &a2, local_ref< java::lang::String > const &a3, local_ref< android::os::Bundle > const &a4)
 {
@@ -181,40 +202,49 @@ void android::app::PendingIntent_::OnFinished::onSendFinished(local_ref< android
 J2CPP_DEFINE_CLASS(android::app::PendingIntent_::OnFinished,"android/app/PendingIntent$OnFinished")
 J2CPP_DEFINE_METHOD(android::app::PendingIntent_::OnFinished,0,"onSendFinished","(Landroid/app/PendingIntent;Landroid/content/Intent;ILjava/lang/String;Landroid/os/Bundle;)V")
 
-template <>
-local_ref< android::app::PendingIntent_::CanceledException > create< android::app::PendingIntent_::CanceledException>()
+
+android::app::PendingIntent_::CanceledException::operator local_ref<android::util::AndroidException>() const
 {
-	return local_ref< android::app::PendingIntent_::CanceledException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::app::PendingIntent_::CanceledException::J2CPP_CLASS_NAME>(),
-			get_method_id<android::app::PendingIntent_::CanceledException::J2CPP_CLASS_NAME, android::app::PendingIntent_::CanceledException::J2CPP_METHOD_NAME(0), android::app::PendingIntent_::CanceledException::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<android::util::AndroidException>(get_jtype());
 }
 
-template <>
-local_ref< android::app::PendingIntent_::CanceledException > create< android::app::PendingIntent_::CanceledException>(local_ref< java::lang::String > const &a0)
+
+android::app::PendingIntent_::CanceledException::CanceledException()
+: cpp_object<android::app::PendingIntent_::CanceledException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::app::PendingIntent_::CanceledException::J2CPP_CLASS_NAME>(),
+		get_method_id<android::app::PendingIntent_::CanceledException::J2CPP_CLASS_NAME, android::app::PendingIntent_::CanceledException::J2CPP_METHOD_NAME(0), android::app::PendingIntent_::CanceledException::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
 {
-	return local_ref< android::app::PendingIntent_::CanceledException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::app::PendingIntent_::CanceledException::J2CPP_CLASS_NAME>(),
-			get_method_id<android::app::PendingIntent_::CanceledException::J2CPP_CLASS_NAME, android::app::PendingIntent_::CanceledException::J2CPP_METHOD_NAME(1), android::app::PendingIntent_::CanceledException::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< android::app::PendingIntent_::CanceledException > create< android::app::PendingIntent_::CanceledException>(local_ref< java::lang::Exception > const &a0)
+
+
+android::app::PendingIntent_::CanceledException::CanceledException(local_ref< java::lang::String > const &a0)
+: cpp_object<android::app::PendingIntent_::CanceledException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::app::PendingIntent_::CanceledException::J2CPP_CLASS_NAME>(),
+		get_method_id<android::app::PendingIntent_::CanceledException::J2CPP_CLASS_NAME, android::app::PendingIntent_::CanceledException::J2CPP_METHOD_NAME(1), android::app::PendingIntent_::CanceledException::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< android::app::PendingIntent_::CanceledException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::app::PendingIntent_::CanceledException::J2CPP_CLASS_NAME>(),
-			get_method_id<android::app::PendingIntent_::CanceledException::J2CPP_CLASS_NAME, android::app::PendingIntent_::CanceledException::J2CPP_METHOD_NAME(2), android::app::PendingIntent_::CanceledException::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype()
-		)
-	);
 }
+
+
+
+android::app::PendingIntent_::CanceledException::CanceledException(local_ref< java::lang::Exception > const &a0)
+: cpp_object<android::app::PendingIntent_::CanceledException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::app::PendingIntent_::CanceledException::J2CPP_CLASS_NAME>(),
+		get_method_id<android::app::PendingIntent_::CanceledException::J2CPP_CLASS_NAME, android::app::PendingIntent_::CanceledException::J2CPP_METHOD_NAME(2), android::app::PendingIntent_::CanceledException::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 
 J2CPP_DEFINE_CLASS(android::app::PendingIntent_::CanceledException,"android/app/PendingIntent$CanceledException")
@@ -223,16 +253,17 @@ J2CPP_DEFINE_METHOD(android::app::PendingIntent_::CanceledException,1,"<init>","
 J2CPP_DEFINE_METHOD(android::app::PendingIntent_::CanceledException,2,"<init>","(Ljava/lang/Exception;)V")
 
 
-template <>
-local_ref< android::app::PendingIntent > create< android::app::PendingIntent>()
+
+android::app::PendingIntent::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::app::PendingIntent >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::app::PendingIntent::J2CPP_CLASS_NAME>(),
-			get_method_id<android::app::PendingIntent::J2CPP_CLASS_NAME, android::app::PendingIntent::J2CPP_METHOD_NAME(0), android::app::PendingIntent::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+android::app::PendingIntent::operator local_ref<android::os::Parcelable>() const
+{
+	return local_ref<android::os::Parcelable>(get_jtype());
+}
+
 
 local_ref< android::app::PendingIntent > android::app::PendingIntent::getActivity(local_ref< android::content::Context > const &a0, cpp_int const &a1, local_ref< android::content::Intent > const &a2, cpp_int const &a3)
 {
@@ -424,6 +455,7 @@ local_ref< android::app::PendingIntent > android::app::PendingIntent::readPendin
 		)
 	);
 }
+
 
 
 static_field<

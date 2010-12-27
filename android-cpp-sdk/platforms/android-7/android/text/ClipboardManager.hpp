@@ -10,10 +10,12 @@
 #define J2CPP_ANDROID_TEXT_CLIPBOARDMANAGER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class CharSequence; } } }
 
 
 #include <java/lang/CharSequence.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -33,10 +35,13 @@ namespace android { namespace text {
 		J2CPP_DECLARE_METHOD(2)
 		J2CPP_DECLARE_METHOD(3)
 
-		ClipboardManager(jobject jobj)
+		explicit ClipboardManager(jobject jobj)
 		: cpp_object<ClipboardManager>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		local_ref< java::lang::CharSequence > getText();
 		void setText(local_ref< java::lang::CharSequence > const&);
@@ -45,7 +50,6 @@ namespace android { namespace text {
 
 } //namespace text
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -59,16 +63,12 @@ namespace android { namespace text {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::text::ClipboardManager > create< android::text::ClipboardManager>()
+
+android::text::ClipboardManager::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::text::ClipboardManager >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::text::ClipboardManager::J2CPP_CLASS_NAME>(),
-			get_method_id<android::text::ClipboardManager::J2CPP_CLASS_NAME, android::text::ClipboardManager::J2CPP_METHOD_NAME(0), android::text::ClipboardManager::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
 
 local_ref< java::lang::CharSequence > android::text::ClipboardManager::getText()
 {

@@ -10,12 +10,16 @@
 #define J2CPP_JAVA_SECURITY_SPEC_ECPRIVATEKEYSPEC_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace math { class BigInteger; } } }
 namespace j2cpp { namespace java { namespace security { namespace spec { class ECParameterSpec; } } } }
+namespace j2cpp { namespace java { namespace security { namespace spec { class KeySpec; } } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/math/BigInteger.hpp>
 #include <java/security/spec/ECParameterSpec.hpp>
+#include <java/security/spec/KeySpec.hpp>
 
 
 namespace j2cpp {
@@ -34,11 +38,16 @@ namespace java { namespace security { namespace spec {
 		J2CPP_DECLARE_METHOD(1)
 		J2CPP_DECLARE_METHOD(2)
 
-		ECPrivateKeySpec(jobject jobj)
+		explicit ECPrivateKeySpec(jobject jobj)
 		: cpp_object<ECPrivateKeySpec>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::security::spec::KeySpec>() const;
+
+
+		ECPrivateKeySpec(local_ref< java::math::BigInteger > const&, local_ref< java::security::spec::ECParameterSpec > const&);
 		local_ref< java::security::spec::ECParameterSpec > getParams();
 		local_ref< java::math::BigInteger > getS();
 	}; //class ECPrivateKeySpec
@@ -46,7 +55,6 @@ namespace java { namespace security { namespace spec {
 } //namespace spec
 } //namespace security
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -60,17 +68,29 @@ namespace java { namespace security { namespace spec {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::security::spec::ECPrivateKeySpec > create< java::security::spec::ECPrivateKeySpec>(local_ref< java::math::BigInteger > const &a0, local_ref< java::security::spec::ECParameterSpec > const &a1)
+
+java::security::spec::ECPrivateKeySpec::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::security::spec::ECPrivateKeySpec >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::security::spec::ECPrivateKeySpec::J2CPP_CLASS_NAME>(),
-			get_method_id<java::security::spec::ECPrivateKeySpec::J2CPP_CLASS_NAME, java::security::spec::ECPrivateKeySpec::J2CPP_METHOD_NAME(0), java::security::spec::ECPrivateKeySpec::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+java::security::spec::ECPrivateKeySpec::operator local_ref<java::security::spec::KeySpec>() const
+{
+	return local_ref<java::security::spec::KeySpec>(get_jtype());
+}
+
+
+java::security::spec::ECPrivateKeySpec::ECPrivateKeySpec(local_ref< java::math::BigInteger > const &a0, local_ref< java::security::spec::ECParameterSpec > const &a1)
+: cpp_object<java::security::spec::ECPrivateKeySpec>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::security::spec::ECPrivateKeySpec::J2CPP_CLASS_NAME>(),
+		get_method_id<java::security::spec::ECPrivateKeySpec::J2CPP_CLASS_NAME, java::security::spec::ECPrivateKeySpec::J2CPP_METHOD_NAME(0), java::security::spec::ECPrivateKeySpec::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
 
 local_ref< java::security::spec::ECParameterSpec > java::security::spec::ECPrivateKeySpec::getParams()
 {

@@ -10,8 +10,10 @@
 #define J2CPP_JAVA_LANG_REFLECT_MALFORMEDPARAMETERIZEDTYPEEXCEPTION_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class RuntimeException; } } }
 
 
+#include <java/lang/RuntimeException.hpp>
 
 
 namespace j2cpp {
@@ -28,17 +30,20 @@ namespace java { namespace lang { namespace reflect {
 
 		J2CPP_DECLARE_METHOD(0)
 
-		MalformedParameterizedTypeException(jobject jobj)
+		explicit MalformedParameterizedTypeException(jobject jobj)
 		: cpp_object<MalformedParameterizedTypeException>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::RuntimeException>() const;
+
+
+		MalformedParameterizedTypeException();
 	}; //class MalformedParameterizedTypeException
 
 } //namespace reflect
 } //namespace lang
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -52,16 +57,23 @@ namespace java { namespace lang { namespace reflect {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::lang::reflect::MalformedParameterizedTypeException > create< java::lang::reflect::MalformedParameterizedTypeException>()
+
+java::lang::reflect::MalformedParameterizedTypeException::operator local_ref<java::lang::RuntimeException>() const
 {
-	return local_ref< java::lang::reflect::MalformedParameterizedTypeException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::lang::reflect::MalformedParameterizedTypeException::J2CPP_CLASS_NAME>(),
-			get_method_id<java::lang::reflect::MalformedParameterizedTypeException::J2CPP_CLASS_NAME, java::lang::reflect::MalformedParameterizedTypeException::J2CPP_METHOD_NAME(0), java::lang::reflect::MalformedParameterizedTypeException::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::RuntimeException>(get_jtype());
 }
+
+
+java::lang::reflect::MalformedParameterizedTypeException::MalformedParameterizedTypeException()
+: cpp_object<java::lang::reflect::MalformedParameterizedTypeException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::lang::reflect::MalformedParameterizedTypeException::J2CPP_CLASS_NAME>(),
+		get_method_id<java::lang::reflect::MalformedParameterizedTypeException::J2CPP_CLASS_NAME, java::lang::reflect::MalformedParameterizedTypeException::J2CPP_METHOD_NAME(0), java::lang::reflect::MalformedParameterizedTypeException::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 
 J2CPP_DEFINE_CLASS(java::lang::reflect::MalformedParameterizedTypeException,"java/lang/reflect/MalformedParameterizedTypeException")

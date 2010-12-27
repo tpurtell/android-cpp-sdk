@@ -10,12 +10,14 @@
 #define J2CPP_ANDROID_OPENGL_GLES11EXT_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace nio { class FloatBuffer; } } }
 namespace j2cpp { namespace java { namespace nio { class IntBuffer; } } }
 namespace j2cpp { namespace java { namespace nio { class Buffer; } } }
 namespace j2cpp { namespace java { namespace nio { class ShortBuffer; } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/nio/Buffer.hpp>
 #include <java/nio/FloatBuffer.hpp>
 #include <java/nio/IntBuffer.hpp>
@@ -259,11 +261,15 @@ namespace android { namespace opengl {
 		J2CPP_DECLARE_FIELD(101)
 		J2CPP_DECLARE_FIELD(102)
 
-		GLES11Ext(jobject jobj)
+		explicit GLES11Ext(jobject jobj)
 		: cpp_object<GLES11Ext>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		GLES11Ext();
 		static void glBlendEquationSeparateOES(cpp_int const&, cpp_int const&);
 		static void glBlendFuncSeparateOES(cpp_int const&, cpp_int const&, cpp_int const&, cpp_int const&);
 		static void glBlendEquationOES(cpp_int const&);
@@ -493,7 +499,6 @@ namespace android { namespace opengl {
 } //namespace opengl
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_OPENGL_GLES11EXT_HPP_DECL
@@ -506,16 +511,23 @@ namespace android { namespace opengl {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::opengl::GLES11Ext > create< android::opengl::GLES11Ext>()
+
+android::opengl::GLES11Ext::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::opengl::GLES11Ext >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::opengl::GLES11Ext::J2CPP_CLASS_NAME>(),
-			get_method_id<android::opengl::GLES11Ext::J2CPP_CLASS_NAME, android::opengl::GLES11Ext::J2CPP_METHOD_NAME(0), android::opengl::GLES11Ext::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::opengl::GLES11Ext::GLES11Ext()
+: cpp_object<android::opengl::GLES11Ext>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::opengl::GLES11Ext::J2CPP_CLASS_NAME>(),
+		get_method_id<android::opengl::GLES11Ext::J2CPP_CLASS_NAME, android::opengl::GLES11Ext::J2CPP_METHOD_NAME(0), android::opengl::GLES11Ext::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 void android::opengl::GLES11Ext::glBlendEquationSeparateOES(cpp_int const &a0, cpp_int const &a1)
 {

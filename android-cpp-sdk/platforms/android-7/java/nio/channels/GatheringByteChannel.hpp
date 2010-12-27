@@ -10,10 +10,14 @@
 #define J2CPP_JAVA_NIO_CHANNELS_GATHERINGBYTECHANNEL_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace nio { namespace channels { class WritableByteChannel; } } } }
 namespace j2cpp { namespace java { namespace nio { class ByteBuffer; } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/nio/ByteBuffer.hpp>
+#include <java/nio/channels/WritableByteChannel.hpp>
 
 
 namespace j2cpp {
@@ -31,10 +35,14 @@ namespace java { namespace nio { namespace channels {
 		J2CPP_DECLARE_METHOD(0)
 		J2CPP_DECLARE_METHOD(1)
 
-		GatheringByteChannel(jobject jobj)
+		explicit GatheringByteChannel(jobject jobj)
 		: cpp_object<GatheringByteChannel>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::nio::channels::WritableByteChannel>() const;
+
 
 		cpp_long write(local_ref< cpp_object_array<java::nio::ByteBuffer, 1> > const&);
 		cpp_long write(local_ref< cpp_object_array<java::nio::ByteBuffer, 1> > const&, cpp_int const&, cpp_int const&);
@@ -43,7 +51,6 @@ namespace java { namespace nio { namespace channels {
 } //namespace channels
 } //namespace nio
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -56,6 +63,17 @@ namespace java { namespace nio { namespace channels {
 
 namespace j2cpp {
 
+
+
+java::nio::channels::GatheringByteChannel::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
+
+java::nio::channels::GatheringByteChannel::operator local_ref<java::nio::channels::WritableByteChannel>() const
+{
+	return local_ref<java::nio::channels::WritableByteChannel>(get_jtype());
+}
 
 cpp_long java::nio::channels::GatheringByteChannel::write(local_ref< cpp_object_array<java::nio::ByteBuffer, 1> > const &a0)
 {

@@ -10,9 +10,13 @@
 #define J2CPP_ORG_APACHE_HTTP_PARAMS_HTTPCONNECTIONPARAMS_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace params { class HttpParams; } } } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { namespace params { class CoreConnectionPNames; } } } } }
 
 
+#include <java/lang/Object.hpp>
+#include <org/apache/http/params/CoreConnectionPNames.hpp>
 #include <org/apache/http/params/HttpParams.hpp>
 
 
@@ -42,10 +46,14 @@ namespace org { namespace apache { namespace http { namespace params {
 		J2CPP_DECLARE_METHOD(11)
 		J2CPP_DECLARE_METHOD(12)
 
-		HttpConnectionParams(jobject jobj)
+		explicit HttpConnectionParams(jobject jobj)
 		: cpp_object<HttpConnectionParams>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<org::apache::http::params::CoreConnectionPNames>() const;
+
 
 		static cpp_int getSoTimeout(local_ref< org::apache::http::params::HttpParams > const&);
 		static void setSoTimeout(local_ref< org::apache::http::params::HttpParams > const&, cpp_int const&);
@@ -66,7 +74,6 @@ namespace org { namespace apache { namespace http { namespace params {
 } //namespace apache
 } //namespace org
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ORG_APACHE_HTTP_PARAMS_HTTPCONNECTIONPARAMS_HPP_DECL
@@ -79,16 +86,17 @@ namespace org { namespace apache { namespace http { namespace params {
 namespace j2cpp {
 
 
-template <>
-local_ref< org::apache::http::params::HttpConnectionParams > create< org::apache::http::params::HttpConnectionParams>()
+
+org::apache::http::params::HttpConnectionParams::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< org::apache::http::params::HttpConnectionParams >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::apache::http::params::HttpConnectionParams::J2CPP_CLASS_NAME>(),
-			get_method_id<org::apache::http::params::HttpConnectionParams::J2CPP_CLASS_NAME, org::apache::http::params::HttpConnectionParams::J2CPP_METHOD_NAME(0), org::apache::http::params::HttpConnectionParams::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+org::apache::http::params::HttpConnectionParams::operator local_ref<org::apache::http::params::CoreConnectionPNames>() const
+{
+	return local_ref<org::apache::http::params::CoreConnectionPNames>(get_jtype());
+}
+
 
 cpp_int org::apache::http::params::HttpConnectionParams::getSoTimeout(local_ref< org::apache::http::params::HttpParams > const &a0)
 {

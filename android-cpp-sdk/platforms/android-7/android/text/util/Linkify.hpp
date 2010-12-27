@@ -10,6 +10,7 @@
 #define J2CPP_ANDROID_TEXT_UTIL_LINKIFY_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class CharSequence; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace util { namespace regex { class Pattern; } } } }
@@ -24,6 +25,7 @@ namespace j2cpp { namespace android { namespace widget { class TextView; } } }
 #include <android/text/util/Linkify.hpp>
 #include <android/widget/TextView.hpp>
 #include <java/lang/CharSequence.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/util/regex/Matcher.hpp>
 #include <java/util/regex/Pattern.hpp>
@@ -46,10 +48,13 @@ namespace android { namespace text { namespace util {
 
 			J2CPP_DECLARE_METHOD(0)
 
-			TransformFilter(jobject jobj)
+			explicit TransformFilter(jobject jobj)
 			: cpp_object<TransformFilter>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+
 
 			local_ref< java::lang::String > transformUrl(local_ref< java::util::regex::Matcher > const&, local_ref< java::lang::String > const&);
 		}; //class TransformFilter
@@ -64,10 +69,13 @@ namespace android { namespace text { namespace util {
 
 			J2CPP_DECLARE_METHOD(0)
 
-			MatchFilter(jobject jobj)
+			explicit MatchFilter(jobject jobj)
 			: cpp_object<MatchFilter>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+
 
 			cpp_boolean acceptMatch(local_ref< java::lang::CharSequence > const&, cpp_int const&, cpp_int const&);
 		}; //class MatchFilter
@@ -101,11 +109,15 @@ namespace android { namespace text { namespace util {
 		typedef Linkify_::TransformFilter TransformFilter;
 		typedef Linkify_::MatchFilter MatchFilter;
 
-		Linkify(jobject jobj)
+		explicit Linkify(jobject jobj)
 		: cpp_object<Linkify>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		Linkify();
 		static cpp_boolean addLinks(local_ref< android::text::Spannable > const&, cpp_int const&);
 		static cpp_boolean addLinks(local_ref< android::widget::TextView > const&, cpp_int const&);
 		static void addLinks(local_ref< android::widget::TextView > const&, local_ref< java::util::regex::Pattern > const&, local_ref< java::lang::String > const&);
@@ -127,7 +139,6 @@ namespace android { namespace text { namespace util {
 } //namespace text
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_TEXT_UTIL_LINKIFY_HPP_DECL
@@ -140,6 +151,12 @@ namespace android { namespace text { namespace util {
 namespace j2cpp {
 
 
+
+
+android::text::util::Linkify_::TransformFilter::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 local_ref< java::lang::String > android::text::util::Linkify_::TransformFilter::transformUrl(local_ref< java::util::regex::Matcher > const &a0, local_ref< java::lang::String > const &a1)
 {
@@ -155,6 +172,12 @@ local_ref< java::lang::String > android::text::util::Linkify_::TransformFilter::
 
 J2CPP_DEFINE_CLASS(android::text::util::Linkify_::TransformFilter,"android/text/util/Linkify$TransformFilter")
 J2CPP_DEFINE_METHOD(android::text::util::Linkify_::TransformFilter,0,"transformUrl","(Ljava/util/regex/Matcher;Ljava/lang/String;)Ljava/lang/String;")
+
+
+android::text::util::Linkify_::MatchFilter::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 cpp_boolean android::text::util::Linkify_::MatchFilter::acceptMatch(local_ref< java::lang::CharSequence > const &a0, cpp_int const &a1, cpp_int const &a2)
 {
@@ -172,16 +195,23 @@ J2CPP_DEFINE_CLASS(android::text::util::Linkify_::MatchFilter,"android/text/util
 J2CPP_DEFINE_METHOD(android::text::util::Linkify_::MatchFilter,0,"acceptMatch","(Ljava/lang/CharSequence;II)Z")
 
 
-template <>
-local_ref< android::text::util::Linkify > create< android::text::util::Linkify>()
+
+android::text::util::Linkify::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::text::util::Linkify >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::text::util::Linkify::J2CPP_CLASS_NAME>(),
-			get_method_id<android::text::util::Linkify::J2CPP_CLASS_NAME, android::text::util::Linkify::J2CPP_METHOD_NAME(0), android::text::util::Linkify::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::text::util::Linkify::Linkify()
+: cpp_object<android::text::util::Linkify>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::text::util::Linkify::J2CPP_CLASS_NAME>(),
+		get_method_id<android::text::util::Linkify::J2CPP_CLASS_NAME, android::text::util::Linkify::J2CPP_METHOD_NAME(0), android::text::util::Linkify::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 cpp_boolean android::text::util::Linkify::addLinks(local_ref< android::text::Spannable > const &a0, cpp_int const &a1)
 {
@@ -248,6 +278,7 @@ cpp_boolean android::text::util::Linkify::addLinks(local_ref< android::text::Spa
 		)
 	);
 }
+
 
 
 static_field<

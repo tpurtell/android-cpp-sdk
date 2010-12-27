@@ -10,12 +10,14 @@
 #define J2CPP_ANDROID_MEDIA_AUDIOTRACK_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace android { namespace os { class Handler; } } }
 namespace j2cpp { namespace android { namespace media { namespace AudioTrack_ { class OnPlaybackPositionUpdateListener; } } } }
 
 
 #include <android/media/AudioTrack.hpp>
 #include <android/os/Handler.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -36,10 +38,13 @@ namespace android { namespace media {
 			J2CPP_DECLARE_METHOD(0)
 			J2CPP_DECLARE_METHOD(1)
 
-			OnPlaybackPositionUpdateListener(jobject jobj)
+			explicit OnPlaybackPositionUpdateListener(jobject jobj)
 			: cpp_object<OnPlaybackPositionUpdateListener>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+
 
 			void onMarkerReached(local_ref< android::media::AudioTrack > const&);
 			void onPeriodicNotification(local_ref< android::media::AudioTrack > const&);
@@ -104,11 +109,15 @@ namespace android { namespace media {
 
 		typedef AudioTrack_::OnPlaybackPositionUpdateListener OnPlaybackPositionUpdateListener;
 
-		AudioTrack(jobject jobj)
+		explicit AudioTrack(jobject jobj)
 		: cpp_object<AudioTrack>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		AudioTrack(cpp_int const&, cpp_int const&, cpp_int const&, cpp_int const&, cpp_int const&, cpp_int const&);
 		void release();
 		static cpp_float getMinVolume();
 		static cpp_float getMaxVolume();
@@ -158,7 +167,6 @@ namespace android { namespace media {
 } //namespace media
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_MEDIA_AUDIOTRACK_HPP_DECL
@@ -171,6 +179,12 @@ namespace android { namespace media {
 namespace j2cpp {
 
 
+
+
+android::media::AudioTrack_::OnPlaybackPositionUpdateListener::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 void android::media::AudioTrack_::OnPlaybackPositionUpdateListener::onMarkerReached(local_ref< android::media::AudioTrack > const &a0)
 {
@@ -200,17 +214,24 @@ J2CPP_DEFINE_METHOD(android::media::AudioTrack_::OnPlaybackPositionUpdateListene
 J2CPP_DEFINE_METHOD(android::media::AudioTrack_::OnPlaybackPositionUpdateListener,1,"onPeriodicNotification","(Landroid/media/AudioTrack;)V")
 
 
-template <>
-local_ref< android::media::AudioTrack > create< android::media::AudioTrack>(cpp_int const &a0, cpp_int const &a1, cpp_int const &a2, cpp_int const &a3, cpp_int const &a4, cpp_int const &a5)
+
+android::media::AudioTrack::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::media::AudioTrack >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::media::AudioTrack::J2CPP_CLASS_NAME>(),
-			get_method_id<android::media::AudioTrack::J2CPP_CLASS_NAME, android::media::AudioTrack::J2CPP_METHOD_NAME(0), android::media::AudioTrack::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype(), a4.get_jtype(), a5.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::media::AudioTrack::AudioTrack(cpp_int const &a0, cpp_int const &a1, cpp_int const &a2, cpp_int const &a3, cpp_int const &a4, cpp_int const &a5)
+: cpp_object<android::media::AudioTrack>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::media::AudioTrack::J2CPP_CLASS_NAME>(),
+		get_method_id<android::media::AudioTrack::J2CPP_CLASS_NAME, android::media::AudioTrack::J2CPP_METHOD_NAME(0), android::media::AudioTrack::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype(), a4.get_jtype(), a5.get_jtype()
+	)
+)
+{
+}
+
 
 void android::media::AudioTrack::release()
 {

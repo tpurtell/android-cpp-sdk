@@ -10,14 +10,20 @@
 #define J2CPP_ANDROID_WIDGET_BASEADAPTER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace android { namespace database { class DataSetObserver; } } }
 namespace j2cpp { namespace android { namespace view { class View; } } }
 namespace j2cpp { namespace android { namespace view { class ViewGroup; } } }
+namespace j2cpp { namespace android { namespace widget { class ListAdapter; } } }
+namespace j2cpp { namespace android { namespace widget { class SpinnerAdapter; } } }
 
 
 #include <android/database/DataSetObserver.hpp>
 #include <android/view/View.hpp>
 #include <android/view/ViewGroup.hpp>
+#include <android/widget/ListAdapter.hpp>
+#include <android/widget/SpinnerAdapter.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -45,11 +51,17 @@ namespace android { namespace widget {
 		J2CPP_DECLARE_METHOD(10)
 		J2CPP_DECLARE_METHOD(11)
 
-		BaseAdapter(jobject jobj)
+		explicit BaseAdapter(jobject jobj)
 		: cpp_object<BaseAdapter>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<android::widget::ListAdapter>() const;
+		operator local_ref<android::widget::SpinnerAdapter>() const;
+
+
+		BaseAdapter();
 		cpp_boolean hasStableIds();
 		void registerDataSetObserver(local_ref< android::database::DataSetObserver > const&);
 		void unregisterDataSetObserver(local_ref< android::database::DataSetObserver > const&);
@@ -66,7 +78,6 @@ namespace android { namespace widget {
 } //namespace widget
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_WIDGET_BASEADAPTER_HPP_DECL
@@ -79,16 +90,33 @@ namespace android { namespace widget {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::widget::BaseAdapter > create< android::widget::BaseAdapter>()
+
+android::widget::BaseAdapter::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::widget::BaseAdapter >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::widget::BaseAdapter::J2CPP_CLASS_NAME>(),
-			get_method_id<android::widget::BaseAdapter::J2CPP_CLASS_NAME, android::widget::BaseAdapter::J2CPP_METHOD_NAME(0), android::widget::BaseAdapter::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+android::widget::BaseAdapter::operator local_ref<android::widget::ListAdapter>() const
+{
+	return local_ref<android::widget::ListAdapter>(get_jtype());
+}
+
+android::widget::BaseAdapter::operator local_ref<android::widget::SpinnerAdapter>() const
+{
+	return local_ref<android::widget::SpinnerAdapter>(get_jtype());
+}
+
+
+android::widget::BaseAdapter::BaseAdapter()
+: cpp_object<android::widget::BaseAdapter>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::widget::BaseAdapter::J2CPP_CLASS_NAME>(),
+		get_method_id<android::widget::BaseAdapter::J2CPP_CLASS_NAME, android::widget::BaseAdapter::J2CPP_METHOD_NAME(0), android::widget::BaseAdapter::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 cpp_boolean android::widget::BaseAdapter::hasStableIds()
 {

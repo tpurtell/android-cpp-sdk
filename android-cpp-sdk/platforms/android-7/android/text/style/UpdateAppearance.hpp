@@ -10,8 +10,10 @@
 #define J2CPP_ANDROID_TEXT_STYLE_UPDATEAPPEARANCE_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -27,16 +29,18 @@ namespace android { namespace text { namespace style {
 		J2CPP_DECLARE_CLASS
 
 
-		UpdateAppearance(jobject jobj)
+		explicit UpdateAppearance(jobject jobj)
 		: cpp_object<UpdateAppearance>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 	}; //class UpdateAppearance
 
 } //namespace style
 } //namespace text
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -49,6 +53,12 @@ namespace android { namespace text { namespace style {
 
 namespace j2cpp {
 
+
+
+android::text::style::UpdateAppearance::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 J2CPP_DEFINE_CLASS(android::text::style::UpdateAppearance,"android/text/style/UpdateAppearance")
 

@@ -10,6 +10,7 @@
 #define J2CPP_ORG_APACHE_HTTP_MESSAGE_BASICLINEFORMATTER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { class RequestLine; } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace message { class LineFormatter; } } } } }
@@ -19,6 +20,7 @@ namespace j2cpp { namespace org { namespace apache { namespace http { class Stat
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace util { class CharArrayBuffer; } } } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <org/apache/http/Header.hpp>
 #include <org/apache/http/ProtocolVersion.hpp>
@@ -57,11 +59,16 @@ namespace org { namespace apache { namespace http { namespace message {
 		J2CPP_DECLARE_METHOD(14)
 		J2CPP_DECLARE_FIELD(0)
 
-		BasicLineFormatter(jobject jobj)
+		explicit BasicLineFormatter(jobject jobj)
 		: cpp_object<BasicLineFormatter>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<org::apache::http::message::LineFormatter>() const;
+
+
+		BasicLineFormatter();
 		static local_ref< java::lang::String > formatProtocolVersion(local_ref< org::apache::http::ProtocolVersion > const&, local_ref< org::apache::http::message::LineFormatter > const&);
 		local_ref< org::apache::http::util::CharArrayBuffer > appendProtocolVersion(local_ref< org::apache::http::util::CharArrayBuffer > const&, local_ref< org::apache::http::ProtocolVersion > const&);
 		static local_ref< java::lang::String > formatRequestLine(local_ref< org::apache::http::RequestLine > const&, local_ref< org::apache::http::message::LineFormatter > const&);
@@ -79,7 +86,6 @@ namespace org { namespace apache { namespace http { namespace message {
 } //namespace apache
 } //namespace org
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ORG_APACHE_HTTP_MESSAGE_BASICLINEFORMATTER_HPP_DECL
@@ -92,16 +98,28 @@ namespace org { namespace apache { namespace http { namespace message {
 namespace j2cpp {
 
 
-template <>
-local_ref< org::apache::http::message::BasicLineFormatter > create< org::apache::http::message::BasicLineFormatter>()
+
+org::apache::http::message::BasicLineFormatter::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< org::apache::http::message::BasicLineFormatter >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::apache::http::message::BasicLineFormatter::J2CPP_CLASS_NAME>(),
-			get_method_id<org::apache::http::message::BasicLineFormatter::J2CPP_CLASS_NAME, org::apache::http::message::BasicLineFormatter::J2CPP_METHOD_NAME(0), org::apache::http::message::BasicLineFormatter::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+org::apache::http::message::BasicLineFormatter::operator local_ref<org::apache::http::message::LineFormatter>() const
+{
+	return local_ref<org::apache::http::message::LineFormatter>(get_jtype());
+}
+
+
+org::apache::http::message::BasicLineFormatter::BasicLineFormatter()
+: cpp_object<org::apache::http::message::BasicLineFormatter>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::apache::http::message::BasicLineFormatter::J2CPP_CLASS_NAME>(),
+		get_method_id<org::apache::http::message::BasicLineFormatter::J2CPP_CLASS_NAME, org::apache::http::message::BasicLineFormatter::J2CPP_METHOD_NAME(0), org::apache::http::message::BasicLineFormatter::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 
 local_ref< java::lang::String > org::apache::http::message::BasicLineFormatter::formatProtocolVersion(local_ref< org::apache::http::ProtocolVersion > const &a0, local_ref< org::apache::http::message::LineFormatter > const &a1)
@@ -194,6 +212,7 @@ local_ref< org::apache::http::util::CharArrayBuffer > org::apache::http::message
 		)
 	);
 }
+
 
 
 

@@ -10,8 +10,12 @@
 #define J2CPP_JAVA_IO_INPUTSTREAM_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class Closeable; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
+#include <java/io/Closeable.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -37,11 +41,16 @@ namespace java { namespace io {
 		J2CPP_DECLARE_METHOD(8)
 		J2CPP_DECLARE_METHOD(9)
 
-		InputStream(jobject jobj)
+		explicit InputStream(jobject jobj)
 		: cpp_object<InputStream>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::io::Closeable>() const;
+
+
+		InputStream();
 		cpp_int available();
 		void close();
 		void mark(cpp_int const&);
@@ -56,7 +65,6 @@ namespace java { namespace io {
 } //namespace io
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_IO_INPUTSTREAM_HPP_DECL
@@ -69,16 +77,28 @@ namespace java { namespace io {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::io::InputStream > create< java::io::InputStream>()
+
+java::io::InputStream::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::io::InputStream >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::io::InputStream::J2CPP_CLASS_NAME>(),
-			get_method_id<java::io::InputStream::J2CPP_CLASS_NAME, java::io::InputStream::J2CPP_METHOD_NAME(0), java::io::InputStream::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+java::io::InputStream::operator local_ref<java::io::Closeable>() const
+{
+	return local_ref<java::io::Closeable>(get_jtype());
+}
+
+
+java::io::InputStream::InputStream()
+: cpp_object<java::io::InputStream>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::io::InputStream::J2CPP_CLASS_NAME>(),
+		get_method_id<java::io::InputStream::J2CPP_CLASS_NAME, java::io::InputStream::J2CPP_METHOD_NAME(0), java::io::InputStream::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 cpp_int java::io::InputStream::available()
 {

@@ -10,8 +10,10 @@
 #define J2CPP_JAVA_SECURITY_SPEC_ECFIELD_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -28,10 +30,13 @@ namespace java { namespace security { namespace spec {
 
 		J2CPP_DECLARE_METHOD(0)
 
-		ECField(jobject jobj)
+		explicit ECField(jobject jobj)
 		: cpp_object<ECField>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		cpp_int getFieldSize();
 	}; //class ECField
@@ -39,7 +44,6 @@ namespace java { namespace security { namespace spec {
 } //namespace spec
 } //namespace security
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -52,6 +56,12 @@ namespace java { namespace security { namespace spec {
 
 namespace j2cpp {
 
+
+
+java::security::spec::ECField::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 cpp_int java::security::spec::ECField::getFieldSize()
 {

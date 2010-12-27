@@ -10,8 +10,10 @@
 #define J2CPP_ANDROID_TEXT_METHOD_HIDERETURNSTRANSFORMATIONMETHOD_HPP_DECL
 
 
+namespace j2cpp { namespace android { namespace text { namespace method { class ReplacementTransformationMethod; } } } }
 
 
+#include <android/text/method/ReplacementTransformationMethod.hpp>
 
 
 namespace j2cpp {
@@ -31,18 +33,21 @@ namespace android { namespace text { namespace method {
 		J2CPP_DECLARE_METHOD(2)
 		J2CPP_DECLARE_METHOD(3)
 
-		HideReturnsTransformationMethod(jobject jobj)
+		explicit HideReturnsTransformationMethod(jobject jobj)
 		: cpp_object<HideReturnsTransformationMethod>(jobj)
 		{
 		}
 
+		operator local_ref<android::text::method::ReplacementTransformationMethod>() const;
+
+
+		HideReturnsTransformationMethod();
 		static local_ref< android::text::method::HideReturnsTransformationMethod > getInstance();
 	}; //class HideReturnsTransformationMethod
 
 } //namespace method
 } //namespace text
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -56,16 +61,23 @@ namespace android { namespace text { namespace method {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::text::method::HideReturnsTransformationMethod > create< android::text::method::HideReturnsTransformationMethod>()
+
+android::text::method::HideReturnsTransformationMethod::operator local_ref<android::text::method::ReplacementTransformationMethod>() const
 {
-	return local_ref< android::text::method::HideReturnsTransformationMethod >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::text::method::HideReturnsTransformationMethod::J2CPP_CLASS_NAME>(),
-			get_method_id<android::text::method::HideReturnsTransformationMethod::J2CPP_CLASS_NAME, android::text::method::HideReturnsTransformationMethod::J2CPP_METHOD_NAME(0), android::text::method::HideReturnsTransformationMethod::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<android::text::method::ReplacementTransformationMethod>(get_jtype());
 }
+
+
+android::text::method::HideReturnsTransformationMethod::HideReturnsTransformationMethod()
+: cpp_object<android::text::method::HideReturnsTransformationMethod>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::text::method::HideReturnsTransformationMethod::J2CPP_CLASS_NAME>(),
+		get_method_id<android::text::method::HideReturnsTransformationMethod::J2CPP_CLASS_NAME, android::text::method::HideReturnsTransformationMethod::J2CPP_METHOD_NAME(0), android::text::method::HideReturnsTransformationMethod::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 
 

@@ -10,6 +10,7 @@
 #define J2CPP_ANDROID_VIEW_TOUCHDELEGATE_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace android { namespace graphics { class Rect; } } }
 namespace j2cpp { namespace android { namespace view { class View; } } }
 namespace j2cpp { namespace android { namespace view { class MotionEvent; } } }
@@ -18,6 +19,7 @@ namespace j2cpp { namespace android { namespace view { class MotionEvent; } } }
 #include <android/graphics/Rect.hpp>
 #include <android/view/MotionEvent.hpp>
 #include <android/view/View.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -39,11 +41,15 @@ namespace android { namespace view {
 		J2CPP_DECLARE_FIELD(2)
 		J2CPP_DECLARE_FIELD(3)
 
-		TouchDelegate(jobject jobj)
+		explicit TouchDelegate(jobject jobj)
 		: cpp_object<TouchDelegate>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		TouchDelegate(local_ref< android::graphics::Rect > const&, local_ref< android::view::View > const&);
 		cpp_boolean onTouchEvent(local_ref< android::view::MotionEvent > const&);
 
 		static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(0), J2CPP_FIELD_SIGNATURE(0), cpp_int > ABOVE;
@@ -54,7 +60,6 @@ namespace android { namespace view {
 
 } //namespace view
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -68,17 +73,24 @@ namespace android { namespace view {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::view::TouchDelegate > create< android::view::TouchDelegate>(local_ref< android::graphics::Rect > const &a0, local_ref< android::view::View > const &a1)
+
+android::view::TouchDelegate::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::view::TouchDelegate >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::view::TouchDelegate::J2CPP_CLASS_NAME>(),
-			get_method_id<android::view::TouchDelegate::J2CPP_CLASS_NAME, android::view::TouchDelegate::J2CPP_METHOD_NAME(0), android::view::TouchDelegate::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::view::TouchDelegate::TouchDelegate(local_ref< android::graphics::Rect > const &a0, local_ref< android::view::View > const &a1)
+: cpp_object<android::view::TouchDelegate>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::view::TouchDelegate::J2CPP_CLASS_NAME>(),
+		get_method_id<android::view::TouchDelegate::J2CPP_CLASS_NAME, android::view::TouchDelegate::J2CPP_METHOD_NAME(0), android::view::TouchDelegate::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
 
 cpp_boolean android::view::TouchDelegate::onTouchEvent(local_ref< android::view::MotionEvent > const &a0)
 {

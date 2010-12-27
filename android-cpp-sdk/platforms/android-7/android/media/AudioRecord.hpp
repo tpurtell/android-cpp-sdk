@@ -10,6 +10,7 @@
 #define J2CPP_ANDROID_MEDIA_AUDIORECORD_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace nio { class ByteBuffer; } } }
 namespace j2cpp { namespace android { namespace os { class Handler; } } }
 namespace j2cpp { namespace android { namespace media { namespace AudioRecord_ { class OnRecordPositionUpdateListener; } } } }
@@ -17,6 +18,7 @@ namespace j2cpp { namespace android { namespace media { namespace AudioRecord_ {
 
 #include <android/media/AudioRecord.hpp>
 #include <android/os/Handler.hpp>
+#include <java/lang/Object.hpp>
 #include <java/nio/ByteBuffer.hpp>
 
 
@@ -38,10 +40,13 @@ namespace android { namespace media {
 			J2CPP_DECLARE_METHOD(0)
 			J2CPP_DECLARE_METHOD(1)
 
-			OnRecordPositionUpdateListener(jobject jobj)
+			explicit OnRecordPositionUpdateListener(jobject jobj)
 			: cpp_object<OnRecordPositionUpdateListener>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+
 
 			void onMarkerReached(local_ref< android::media::AudioRecord > const&);
 			void onPeriodicNotification(local_ref< android::media::AudioRecord > const&);
@@ -89,11 +94,15 @@ namespace android { namespace media {
 
 		typedef AudioRecord_::OnRecordPositionUpdateListener OnRecordPositionUpdateListener;
 
-		AudioRecord(jobject jobj)
+		explicit AudioRecord(jobject jobj)
 		: cpp_object<AudioRecord>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		AudioRecord(cpp_int const&, cpp_int const&, cpp_int const&, cpp_int const&, cpp_int const&);
 		void release();
 		cpp_int getSampleRate();
 		cpp_int getAudioSource();
@@ -128,7 +137,6 @@ namespace android { namespace media {
 } //namespace media
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_MEDIA_AUDIORECORD_HPP_DECL
@@ -141,6 +149,12 @@ namespace android { namespace media {
 namespace j2cpp {
 
 
+
+
+android::media::AudioRecord_::OnRecordPositionUpdateListener::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 void android::media::AudioRecord_::OnRecordPositionUpdateListener::onMarkerReached(local_ref< android::media::AudioRecord > const &a0)
 {
@@ -170,17 +184,24 @@ J2CPP_DEFINE_METHOD(android::media::AudioRecord_::OnRecordPositionUpdateListener
 J2CPP_DEFINE_METHOD(android::media::AudioRecord_::OnRecordPositionUpdateListener,1,"onPeriodicNotification","(Landroid/media/AudioRecord;)V")
 
 
-template <>
-local_ref< android::media::AudioRecord > create< android::media::AudioRecord>(cpp_int const &a0, cpp_int const &a1, cpp_int const &a2, cpp_int const &a3, cpp_int const &a4)
+
+android::media::AudioRecord::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::media::AudioRecord >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::media::AudioRecord::J2CPP_CLASS_NAME>(),
-			get_method_id<android::media::AudioRecord::J2CPP_CLASS_NAME, android::media::AudioRecord::J2CPP_METHOD_NAME(0), android::media::AudioRecord::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype(), a4.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::media::AudioRecord::AudioRecord(cpp_int const &a0, cpp_int const &a1, cpp_int const &a2, cpp_int const &a3, cpp_int const &a4)
+: cpp_object<android::media::AudioRecord>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::media::AudioRecord::J2CPP_CLASS_NAME>(),
+		get_method_id<android::media::AudioRecord::J2CPP_CLASS_NAME, android::media::AudioRecord::J2CPP_METHOD_NAME(0), android::media::AudioRecord::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype(), a4.get_jtype()
+	)
+)
+{
+}
+
 
 void android::media::AudioRecord::release()
 {

@@ -10,8 +10,14 @@
 #define J2CPP_JAVA_IO_OUTPUTSTREAM_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class Closeable; } } }
+namespace j2cpp { namespace java { namespace io { class Flushable; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
+#include <java/io/Closeable.hpp>
+#include <java/io/Flushable.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -33,11 +39,17 @@ namespace java { namespace io {
 		J2CPP_DECLARE_METHOD(4)
 		J2CPP_DECLARE_METHOD(5)
 
-		OutputStream(jobject jobj)
+		explicit OutputStream(jobject jobj)
 		: cpp_object<OutputStream>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::io::Closeable>() const;
+		operator local_ref<java::io::Flushable>() const;
+
+
+		OutputStream();
 		void close();
 		void flush();
 		void write(local_ref< cpp_byte_array<1> > const&);
@@ -47,7 +59,6 @@ namespace java { namespace io {
 
 } //namespace io
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -61,16 +72,33 @@ namespace java { namespace io {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::io::OutputStream > create< java::io::OutputStream>()
+
+java::io::OutputStream::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::io::OutputStream >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::io::OutputStream::J2CPP_CLASS_NAME>(),
-			get_method_id<java::io::OutputStream::J2CPP_CLASS_NAME, java::io::OutputStream::J2CPP_METHOD_NAME(0), java::io::OutputStream::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+java::io::OutputStream::operator local_ref<java::io::Closeable>() const
+{
+	return local_ref<java::io::Closeable>(get_jtype());
+}
+
+java::io::OutputStream::operator local_ref<java::io::Flushable>() const
+{
+	return local_ref<java::io::Flushable>(get_jtype());
+}
+
+
+java::io::OutputStream::OutputStream()
+: cpp_object<java::io::OutputStream>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::io::OutputStream::J2CPP_CLASS_NAME>(),
+		get_method_id<java::io::OutputStream::J2CPP_CLASS_NAME, java::io::OutputStream::J2CPP_METHOD_NAME(0), java::io::OutputStream::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 void java::io::OutputStream::close()
 {

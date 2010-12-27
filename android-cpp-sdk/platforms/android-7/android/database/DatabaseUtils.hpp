@@ -73,11 +73,15 @@ namespace android { namespace database {
 			J2CPP_DECLARE_METHOD(15)
 			J2CPP_DECLARE_FIELD(0)
 
-			InsertHelper(jobject jobj)
+			explicit InsertHelper(jobject jobj)
 			: cpp_object<InsertHelper>(jobj)
 			{
 			}
 
+			operator local_ref<java::lang::Object>() const;
+
+
+			InsertHelper(local_ref< android::database::sqlite::SQLiteDatabase > const&, local_ref< java::lang::String > const&);
 			cpp_int getColumnIndex(local_ref< java::lang::String > const&);
 			void bind(cpp_int const&, cpp_double const&);
 			void bind(cpp_int const&, cpp_float const&);
@@ -144,11 +148,15 @@ namespace android { namespace database {
 
 		typedef DatabaseUtils_::InsertHelper InsertHelper;
 
-		DatabaseUtils(jobject jobj)
+		explicit DatabaseUtils(jobject jobj)
 		: cpp_object<DatabaseUtils>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		DatabaseUtils();
 		static void writeExceptionToParcel(local_ref< android::os::Parcel > const&, local_ref< java::lang::Exception > const&);
 		static void readExceptionFromParcel(local_ref< android::os::Parcel > const&);
 		static void readExceptionWithFileNotFoundExceptionFromParcel(local_ref< android::os::Parcel > const&);
@@ -188,7 +196,6 @@ namespace android { namespace database {
 } //namespace database
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_DATABASE_DATABASEUTILS_HPP_DECL
@@ -202,17 +209,24 @@ namespace j2cpp {
 
 
 
-template <>
-local_ref< android::database::DatabaseUtils_::InsertHelper > create< android::database::DatabaseUtils_::InsertHelper>(local_ref< android::database::sqlite::SQLiteDatabase > const &a0, local_ref< java::lang::String > const &a1)
+
+android::database::DatabaseUtils_::InsertHelper::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::database::DatabaseUtils_::InsertHelper >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::database::DatabaseUtils_::InsertHelper::J2CPP_CLASS_NAME>(),
-			get_method_id<android::database::DatabaseUtils_::InsertHelper::J2CPP_CLASS_NAME, android::database::DatabaseUtils_::InsertHelper::J2CPP_METHOD_NAME(0), android::database::DatabaseUtils_::InsertHelper::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::database::DatabaseUtils_::InsertHelper::InsertHelper(local_ref< android::database::sqlite::SQLiteDatabase > const &a0, local_ref< java::lang::String > const &a1)
+: cpp_object<android::database::DatabaseUtils_::InsertHelper>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::database::DatabaseUtils_::InsertHelper::J2CPP_CLASS_NAME>(),
+		get_method_id<android::database::DatabaseUtils_::InsertHelper::J2CPP_CLASS_NAME, android::database::DatabaseUtils_::InsertHelper::J2CPP_METHOD_NAME(0), android::database::DatabaseUtils_::InsertHelper::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
 
 cpp_int android::database::DatabaseUtils_::InsertHelper::getColumnIndex(local_ref< java::lang::String > const &a0)
 {
@@ -404,16 +418,23 @@ J2CPP_DEFINE_METHOD(android::database::DatabaseUtils_::InsertHelper,15,"close","
 J2CPP_DEFINE_FIELD(android::database::DatabaseUtils_::InsertHelper,0,"TABLE_INFO_PRAGMA_DEFAULT_INDEX","I")
 
 
-template <>
-local_ref< android::database::DatabaseUtils > create< android::database::DatabaseUtils>()
+
+android::database::DatabaseUtils::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::database::DatabaseUtils >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::database::DatabaseUtils::J2CPP_CLASS_NAME>(),
-			get_method_id<android::database::DatabaseUtils::J2CPP_CLASS_NAME, android::database::DatabaseUtils::J2CPP_METHOD_NAME(0), android::database::DatabaseUtils::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::database::DatabaseUtils::DatabaseUtils()
+: cpp_object<android::database::DatabaseUtils>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::database::DatabaseUtils::J2CPP_CLASS_NAME>(),
+		get_method_id<android::database::DatabaseUtils::J2CPP_CLASS_NAME, android::database::DatabaseUtils::J2CPP_METHOD_NAME(0), android::database::DatabaseUtils::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 void android::database::DatabaseUtils::writeExceptionToParcel(local_ref< android::os::Parcel > const &a0, local_ref< java::lang::Exception > const &a1)
 {

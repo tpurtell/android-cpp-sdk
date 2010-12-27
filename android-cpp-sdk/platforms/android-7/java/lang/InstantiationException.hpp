@@ -11,8 +11,10 @@
 
 
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace lang { class Exception; } } }
 
 
+#include <java/lang/Exception.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -31,16 +33,20 @@ namespace java { namespace lang {
 		J2CPP_DECLARE_METHOD(0)
 		J2CPP_DECLARE_METHOD(1)
 
-		InstantiationException(jobject jobj)
+		explicit InstantiationException(jobject jobj)
 		: cpp_object<InstantiationException>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Exception>() const;
+
+
+		InstantiationException();
+		InstantiationException(local_ref< java::lang::String > const&);
 	}; //class InstantiationException
 
 } //namespace lang
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -54,28 +60,36 @@ namespace java { namespace lang {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::lang::InstantiationException > create< java::lang::InstantiationException>()
+
+java::lang::InstantiationException::operator local_ref<java::lang::Exception>() const
 {
-	return local_ref< java::lang::InstantiationException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::lang::InstantiationException::J2CPP_CLASS_NAME>(),
-			get_method_id<java::lang::InstantiationException::J2CPP_CLASS_NAME, java::lang::InstantiationException::J2CPP_METHOD_NAME(0), java::lang::InstantiationException::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Exception>(get_jtype());
 }
 
-template <>
-local_ref< java::lang::InstantiationException > create< java::lang::InstantiationException>(local_ref< java::lang::String > const &a0)
+
+java::lang::InstantiationException::InstantiationException()
+: cpp_object<java::lang::InstantiationException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::lang::InstantiationException::J2CPP_CLASS_NAME>(),
+		get_method_id<java::lang::InstantiationException::J2CPP_CLASS_NAME, java::lang::InstantiationException::J2CPP_METHOD_NAME(0), java::lang::InstantiationException::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
 {
-	return local_ref< java::lang::InstantiationException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::lang::InstantiationException::J2CPP_CLASS_NAME>(),
-			get_method_id<java::lang::InstantiationException::J2CPP_CLASS_NAME, java::lang::InstantiationException::J2CPP_METHOD_NAME(1), java::lang::InstantiationException::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
 }
+
+
+
+java::lang::InstantiationException::InstantiationException(local_ref< java::lang::String > const &a0)
+: cpp_object<java::lang::InstantiationException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::lang::InstantiationException::J2CPP_CLASS_NAME>(),
+		get_method_id<java::lang::InstantiationException::J2CPP_CLASS_NAME, java::lang::InstantiationException::J2CPP_METHOD_NAME(1), java::lang::InstantiationException::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 
 J2CPP_DEFINE_CLASS(java::lang::InstantiationException,"java/lang/InstantiationException")

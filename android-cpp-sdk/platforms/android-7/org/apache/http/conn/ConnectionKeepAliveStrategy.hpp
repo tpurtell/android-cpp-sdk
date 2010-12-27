@@ -10,10 +10,12 @@
 #define J2CPP_ORG_APACHE_HTTP_CONN_CONNECTIONKEEPALIVESTRATEGY_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace protocol { class HttpContext; } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { class HttpResponse; } } } }
 
 
+#include <java/lang/Object.hpp>
 #include <org/apache/http/HttpResponse.hpp>
 #include <org/apache/http/protocol/HttpContext.hpp>
 
@@ -32,10 +34,13 @@ namespace org { namespace apache { namespace http { namespace conn {
 
 		J2CPP_DECLARE_METHOD(0)
 
-		ConnectionKeepAliveStrategy(jobject jobj)
+		explicit ConnectionKeepAliveStrategy(jobject jobj)
 		: cpp_object<ConnectionKeepAliveStrategy>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		cpp_long getKeepAliveDuration(local_ref< org::apache::http::HttpResponse > const&, local_ref< org::apache::http::protocol::HttpContext > const&);
 	}; //class ConnectionKeepAliveStrategy
@@ -44,7 +49,6 @@ namespace org { namespace apache { namespace http { namespace conn {
 } //namespace http
 } //namespace apache
 } //namespace org
-
 
 } //namespace j2cpp
 
@@ -57,6 +61,12 @@ namespace org { namespace apache { namespace http { namespace conn {
 
 namespace j2cpp {
 
+
+
+org::apache::http::conn::ConnectionKeepAliveStrategy::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 cpp_long org::apache::http::conn::ConnectionKeepAliveStrategy::getKeepAliveDuration(local_ref< org::apache::http::HttpResponse > const &a0, local_ref< org::apache::http::protocol::HttpContext > const &a1)
 {

@@ -10,8 +10,12 @@
 #define J2CPP_JAVAX_CRYPTO_INTERFACES_PBEKEY_HPP_DECL
 
 
+namespace j2cpp { namespace javax { namespace crypto { class SecretKey; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
+#include <java/lang/Object.hpp>
+#include <javax/crypto/SecretKey.hpp>
 
 
 namespace j2cpp {
@@ -31,10 +35,14 @@ namespace javax { namespace crypto { namespace interfaces {
 		J2CPP_DECLARE_METHOD(2)
 		J2CPP_DECLARE_FIELD(0)
 
-		PBEKey(jobject jobj)
+		explicit PBEKey(jobject jobj)
 		: cpp_object<PBEKey>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<javax::crypto::SecretKey>() const;
+
 
 		cpp_int getIterationCount();
 		local_ref< cpp_byte_array<1> > getSalt();
@@ -47,7 +55,6 @@ namespace javax { namespace crypto { namespace interfaces {
 } //namespace crypto
 } //namespace javax
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVAX_CRYPTO_INTERFACES_PBEKEY_HPP_DECL
@@ -59,6 +66,17 @@ namespace javax { namespace crypto { namespace interfaces {
 
 namespace j2cpp {
 
+
+
+javax::crypto::interfaces::PBEKey::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
+
+javax::crypto::interfaces::PBEKey::operator local_ref<javax::crypto::SecretKey>() const
+{
+	return local_ref<javax::crypto::SecretKey>(get_jtype());
+}
 
 cpp_int javax::crypto::interfaces::PBEKey::getIterationCount()
 {

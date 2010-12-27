@@ -10,9 +10,11 @@
 #define J2CPP_ORG_W3C_DOM_DOMEXCEPTION_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class RuntimeException; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 
 
+#include <java/lang/RuntimeException.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -46,12 +48,16 @@ namespace org { namespace w3c { namespace dom {
 		J2CPP_DECLARE_FIELD(14)
 		J2CPP_DECLARE_FIELD(15)
 
-		DOMException(jobject jobj)
+		explicit DOMException(jobject jobj)
 		: cpp_object<DOMException>(jobj)
-		, code(jobj)
+, code(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::RuntimeException>() const;
+
+
+		DOMException(cpp_short const&, local_ref< java::lang::String > const&);
 
 		field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(0), J2CPP_FIELD_SIGNATURE(0), cpp_short > code;
 		static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(1), J2CPP_FIELD_SIGNATURE(1), cpp_short > INDEX_SIZE_ERR;
@@ -75,7 +81,6 @@ namespace org { namespace w3c { namespace dom {
 } //namespace w3c
 } //namespace org
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ORG_W3C_DOM_DOMEXCEPTION_HPP_DECL
@@ -88,17 +93,25 @@ namespace org { namespace w3c { namespace dom {
 namespace j2cpp {
 
 
-template <>
-local_ref< org::w3c::dom::DOMException > create< org::w3c::dom::DOMException>(cpp_short const &a0, local_ref< java::lang::String > const &a1)
+
+org::w3c::dom::DOMException::operator local_ref<java::lang::RuntimeException>() const
 {
-	return local_ref< org::w3c::dom::DOMException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::w3c::dom::DOMException::J2CPP_CLASS_NAME>(),
-			get_method_id<org::w3c::dom::DOMException::J2CPP_CLASS_NAME, org::w3c::dom::DOMException::J2CPP_METHOD_NAME(0), org::w3c::dom::DOMException::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<java::lang::RuntimeException>(get_jtype());
 }
+
+
+org::w3c::dom::DOMException::DOMException(cpp_short const &a0, local_ref< java::lang::String > const &a1)
+: cpp_object<org::w3c::dom::DOMException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::w3c::dom::DOMException::J2CPP_CLASS_NAME>(),
+		get_method_id<org::w3c::dom::DOMException::J2CPP_CLASS_NAME, org::w3c::dom::DOMException::J2CPP_METHOD_NAME(0), org::w3c::dom::DOMException::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+, code(get_jtype())
+{
+}
+
 
 
 static_field<

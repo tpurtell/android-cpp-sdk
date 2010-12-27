@@ -10,11 +10,13 @@
 #define J2CPP_ANDROID_LOCATION_GPSSTATUS_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class Iterable; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 
 
 #include <java/lang/Iterable.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -35,10 +37,13 @@ namespace android { namespace location {
 
 			J2CPP_DECLARE_METHOD(0)
 
-			Listener(jobject jobj)
+			explicit Listener(jobject jobj)
 			: cpp_object<Listener>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+
 
 			void onGpsStatusChanged(cpp_int const&);
 		}; //class Listener
@@ -53,10 +58,13 @@ namespace android { namespace location {
 
 			J2CPP_DECLARE_METHOD(0)
 
-			NmeaListener(jobject jobj)
+			explicit NmeaListener(jobject jobj)
 			: cpp_object<NmeaListener>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+
 
 			void onNmeaReceived(cpp_long const&, local_ref< java::lang::String > const&);
 		}; //class NmeaListener
@@ -82,10 +90,13 @@ namespace android { namespace location {
 		typedef GpsStatus_::Listener Listener;
 		typedef GpsStatus_::NmeaListener NmeaListener;
 
-		GpsStatus(jobject jobj)
+		explicit GpsStatus(jobject jobj)
 		: cpp_object<GpsStatus>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		cpp_int getTimeToFirstFix();
 		local_ref< java::lang::Iterable > getSatellites();
@@ -100,7 +111,6 @@ namespace android { namespace location {
 } //namespace location
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_LOCATION_GPSSTATUS_HPP_DECL
@@ -113,6 +123,12 @@ namespace android { namespace location {
 namespace j2cpp {
 
 
+
+
+android::location::GpsStatus_::Listener::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 void android::location::GpsStatus_::Listener::onGpsStatusChanged(cpp_int const &a0)
 {
@@ -128,6 +144,12 @@ void android::location::GpsStatus_::Listener::onGpsStatusChanged(cpp_int const &
 
 J2CPP_DEFINE_CLASS(android::location::GpsStatus_::Listener,"android/location/GpsStatus$Listener")
 J2CPP_DEFINE_METHOD(android::location::GpsStatus_::Listener,0,"onGpsStatusChanged","(I)V")
+
+
+android::location::GpsStatus_::NmeaListener::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 void android::location::GpsStatus_::NmeaListener::onNmeaReceived(cpp_long const &a0, local_ref< java::lang::String > const &a1)
 {
@@ -145,16 +167,12 @@ J2CPP_DEFINE_CLASS(android::location::GpsStatus_::NmeaListener,"android/location
 J2CPP_DEFINE_METHOD(android::location::GpsStatus_::NmeaListener,0,"onNmeaReceived","(JLjava/lang/String;)V")
 
 
-template <>
-local_ref< android::location::GpsStatus > create< android::location::GpsStatus>()
+
+android::location::GpsStatus::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::location::GpsStatus >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::location::GpsStatus::J2CPP_CLASS_NAME>(),
-			get_method_id<android::location::GpsStatus::J2CPP_CLASS_NAME, android::location::GpsStatus::J2CPP_METHOD_NAME(0), android::location::GpsStatus::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
 
 cpp_int android::location::GpsStatus::getTimeToFirstFix()
 {

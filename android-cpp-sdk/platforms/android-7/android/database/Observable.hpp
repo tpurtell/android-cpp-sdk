@@ -34,11 +34,15 @@ namespace android { namespace database {
 		J2CPP_DECLARE_METHOD(3)
 		J2CPP_DECLARE_FIELD(0)
 
-		Observable(jobject jobj)
+		explicit Observable(jobject jobj)
 		: cpp_object<Observable>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		Observable();
 		void registerObserver(local_ref< java::lang::Object > const&);
 		void unregisterObserver(local_ref< java::lang::Object > const&);
 		void unregisterAll();
@@ -47,7 +51,6 @@ namespace android { namespace database {
 
 } //namespace database
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -61,16 +64,23 @@ namespace android { namespace database {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::database::Observable > create< android::database::Observable>()
+
+android::database::Observable::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::database::Observable >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::database::Observable::J2CPP_CLASS_NAME>(),
-			get_method_id<android::database::Observable::J2CPP_CLASS_NAME, android::database::Observable::J2CPP_METHOD_NAME(0), android::database::Observable::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::database::Observable::Observable()
+: cpp_object<android::database::Observable>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::database::Observable::J2CPP_CLASS_NAME>(),
+		get_method_id<android::database::Observable::J2CPP_CLASS_NAME, android::database::Observable::J2CPP_METHOD_NAME(0), android::database::Observable::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 void android::database::Observable::registerObserver(local_ref< java::lang::Object > const &a0)
 {

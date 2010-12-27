@@ -10,8 +10,14 @@
 #define J2CPP_JAVA_UTIL_CONCURRENT_SCHEDULEDFUTURE_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace util { namespace concurrent { class Delayed; } } } }
+namespace j2cpp { namespace java { namespace util { namespace concurrent { class Future; } } } }
 
 
+#include <java/lang/Object.hpp>
+#include <java/util/concurrent/Delayed.hpp>
+#include <java/util/concurrent/Future.hpp>
 
 
 namespace j2cpp {
@@ -27,16 +33,20 @@ namespace java { namespace util { namespace concurrent {
 		J2CPP_DECLARE_CLASS
 
 
-		ScheduledFuture(jobject jobj)
+		explicit ScheduledFuture(jobject jobj)
 		: cpp_object<ScheduledFuture>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::util::concurrent::Delayed>() const;
+		operator local_ref<java::util::concurrent::Future>() const;
+
 	}; //class ScheduledFuture
 
 } //namespace concurrent
 } //namespace util
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -49,6 +59,22 @@ namespace java { namespace util { namespace concurrent {
 
 namespace j2cpp {
 
+
+
+java::util::concurrent::ScheduledFuture::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
+
+java::util::concurrent::ScheduledFuture::operator local_ref<java::util::concurrent::Delayed>() const
+{
+	return local_ref<java::util::concurrent::Delayed>(get_jtype());
+}
+
+java::util::concurrent::ScheduledFuture::operator local_ref<java::util::concurrent::Future>() const
+{
+	return local_ref<java::util::concurrent::Future>(get_jtype());
+}
 
 J2CPP_DEFINE_CLASS(java::util::concurrent::ScheduledFuture,"java/util/concurrent/ScheduledFuture")
 

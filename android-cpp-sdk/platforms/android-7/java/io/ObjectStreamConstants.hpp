@@ -11,9 +11,11 @@
 
 
 namespace j2cpp { namespace java { namespace io { class SerializablePermission; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
 #include <java/io/SerializablePermission.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -59,10 +61,13 @@ namespace java { namespace io {
 		J2CPP_DECLARE_FIELD(27)
 		J2CPP_DECLARE_FIELD(28)
 
-		ObjectStreamConstants(jobject jobj)
+		explicit ObjectStreamConstants(jobject jobj)
 		: cpp_object<ObjectStreamConstants>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 
 		static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(0), J2CPP_FIELD_SIGNATURE(0), cpp_short > STREAM_MAGIC;
@@ -99,7 +104,6 @@ namespace java { namespace io {
 } //namespace io
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_IO_OBJECTSTREAMCONSTANTS_HPP_DECL
@@ -110,6 +114,13 @@ namespace java { namespace io {
 #define J2CPP_JAVA_IO_OBJECTSTREAMCONSTANTS_HPP_IMPL
 
 namespace j2cpp {
+
+
+
+java::io::ObjectStreamConstants::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 
 

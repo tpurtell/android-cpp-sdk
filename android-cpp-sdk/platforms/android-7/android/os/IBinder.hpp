@@ -11,6 +11,7 @@
 
 
 namespace j2cpp { namespace java { namespace io { class FileDescriptor; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace android { namespace os { namespace IBinder_ { class DeathRecipient; } } } }
 namespace j2cpp { namespace android { namespace os { class Parcel; } } }
@@ -21,6 +22,7 @@ namespace j2cpp { namespace android { namespace os { class IInterface; } } }
 #include <android/os/IInterface.hpp>
 #include <android/os/Parcel.hpp>
 #include <java/io/FileDescriptor.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -41,10 +43,13 @@ namespace android { namespace os {
 
 			J2CPP_DECLARE_METHOD(0)
 
-			DeathRecipient(jobject jobj)
+			explicit DeathRecipient(jobject jobj)
 			: cpp_object<DeathRecipient>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+
 
 			void binderDied();
 		}; //class DeathRecipient
@@ -75,10 +80,13 @@ namespace android { namespace os {
 
 		typedef IBinder_::DeathRecipient DeathRecipient;
 
-		IBinder(jobject jobj)
+		explicit IBinder(jobject jobj)
 		: cpp_object<IBinder>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		local_ref< java::lang::String > getInterfaceDescriptor();
 		cpp_boolean pingBinder();
@@ -100,7 +108,6 @@ namespace android { namespace os {
 } //namespace os
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_OS_IBINDER_HPP_DECL
@@ -113,6 +120,12 @@ namespace android { namespace os {
 namespace j2cpp {
 
 
+
+
+android::os::IBinder_::DeathRecipient::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 void android::os::IBinder_::DeathRecipient::binderDied()
 {
@@ -128,6 +141,12 @@ void android::os::IBinder_::DeathRecipient::binderDied()
 J2CPP_DEFINE_CLASS(android::os::IBinder_::DeathRecipient,"android/os/IBinder$DeathRecipient")
 J2CPP_DEFINE_METHOD(android::os::IBinder_::DeathRecipient,0,"binderDied","()V")
 
+
+
+android::os::IBinder::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 local_ref< java::lang::String > android::os::IBinder::getInterfaceDescriptor()
 {

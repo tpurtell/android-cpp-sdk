@@ -10,11 +10,13 @@
 #define J2CPP_ANDROID_NET_CONNECTIVITYMANAGER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace android { namespace net { class NetworkInfo; } } }
 
 
 #include <android/net/NetworkInfo.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -53,10 +55,13 @@ namespace android { namespace net {
 		J2CPP_DECLARE_FIELD(9)
 		J2CPP_DECLARE_FIELD(10)
 
-		ConnectivityManager(jobject jobj)
+		explicit ConnectivityManager(jobject jobj)
 		: cpp_object<ConnectivityManager>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		static cpp_boolean isNetworkTypeValid(cpp_int const&);
 		void setNetworkPreference(cpp_int const&);
@@ -85,7 +90,6 @@ namespace android { namespace net {
 } //namespace net
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_NET_CONNECTIVITYMANAGER_HPP_DECL
@@ -98,16 +102,12 @@ namespace android { namespace net {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::net::ConnectivityManager > create< android::net::ConnectivityManager>()
+
+android::net::ConnectivityManager::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::net::ConnectivityManager >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::net::ConnectivityManager::J2CPP_CLASS_NAME>(),
-			get_method_id<android::net::ConnectivityManager::J2CPP_CLASS_NAME, android::net::ConnectivityManager::J2CPP_METHOD_NAME(0), android::net::ConnectivityManager::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
 
 cpp_boolean android::net::ConnectivityManager::isNetworkTypeValid(cpp_int const &a0)
 {

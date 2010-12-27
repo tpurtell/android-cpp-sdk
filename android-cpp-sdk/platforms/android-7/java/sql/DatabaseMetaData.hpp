@@ -10,11 +10,13 @@
 #define J2CPP_JAVA_SQL_DATABASEMETADATA_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace sql { class ResultSet; } } }
 namespace j2cpp { namespace java { namespace sql { class Connection; } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/sql/Connection.hpp>
 #include <java/sql/ResultSet.hpp>
@@ -246,10 +248,13 @@ namespace java { namespace sql {
 		J2CPP_DECLARE_FIELD(46)
 		J2CPP_DECLARE_FIELD(47)
 
-		DatabaseMetaData(jobject jobj)
+		explicit DatabaseMetaData(jobject jobj)
 		: cpp_object<DatabaseMetaData>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		cpp_boolean allProceduresAreCallable();
 		cpp_boolean allTablesAreSelectable();
@@ -470,7 +475,6 @@ namespace java { namespace sql {
 } //namespace sql
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_SQL_DATABASEMETADATA_HPP_DECL
@@ -482,6 +486,12 @@ namespace java { namespace sql {
 
 namespace j2cpp {
 
+
+
+java::sql::DatabaseMetaData::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 cpp_boolean java::sql::DatabaseMetaData::allProceduresAreCallable()
 {

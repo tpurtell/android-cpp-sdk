@@ -10,12 +10,16 @@
 #define J2CPP_ORG_APACHE_HTTP_IMPL_ENGLISHREASONPHRASECATALOG_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace util { class Locale; } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { class ReasonPhraseCatalog; } } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/util/Locale.hpp>
+#include <org/apache/http/ReasonPhraseCatalog.hpp>
 
 
 namespace j2cpp {
@@ -35,10 +39,14 @@ namespace org { namespace apache { namespace http { namespace impl {
 		J2CPP_DECLARE_METHOD(2)
 		J2CPP_DECLARE_FIELD(0)
 
-		EnglishReasonPhraseCatalog(jobject jobj)
+		explicit EnglishReasonPhraseCatalog(jobject jobj)
 		: cpp_object<EnglishReasonPhraseCatalog>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<org::apache::http::ReasonPhraseCatalog>() const;
+
 
 		local_ref< java::lang::String > getReason(cpp_int const&, local_ref< java::util::Locale > const&);
 
@@ -49,7 +57,6 @@ namespace org { namespace apache { namespace http { namespace impl {
 } //namespace http
 } //namespace apache
 } //namespace org
-
 
 } //namespace j2cpp
 
@@ -63,16 +70,17 @@ namespace org { namespace apache { namespace http { namespace impl {
 namespace j2cpp {
 
 
-template <>
-local_ref< org::apache::http::impl::EnglishReasonPhraseCatalog > create< org::apache::http::impl::EnglishReasonPhraseCatalog>()
+
+org::apache::http::impl::EnglishReasonPhraseCatalog::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< org::apache::http::impl::EnglishReasonPhraseCatalog >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::apache::http::impl::EnglishReasonPhraseCatalog::J2CPP_CLASS_NAME>(),
-			get_method_id<org::apache::http::impl::EnglishReasonPhraseCatalog::J2CPP_CLASS_NAME, org::apache::http::impl::EnglishReasonPhraseCatalog::J2CPP_METHOD_NAME(0), org::apache::http::impl::EnglishReasonPhraseCatalog::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+org::apache::http::impl::EnglishReasonPhraseCatalog::operator local_ref<org::apache::http::ReasonPhraseCatalog>() const
+{
+	return local_ref<org::apache::http::ReasonPhraseCatalog>(get_jtype());
+}
+
 
 local_ref< java::lang::String > org::apache::http::impl::EnglishReasonPhraseCatalog::getReason(cpp_int const &a0, local_ref< java::util::Locale > const &a1)
 {
@@ -84,6 +92,7 @@ local_ref< java::lang::String > org::apache::http::impl::EnglishReasonPhraseCata
 		)
 	);
 }
+
 
 
 static_field<

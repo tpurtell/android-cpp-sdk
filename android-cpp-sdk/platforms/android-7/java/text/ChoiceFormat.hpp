@@ -14,6 +14,7 @@ namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class StringBuffer; } } }
 namespace j2cpp { namespace java { namespace lang { class Number; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace text { class NumberFormat; } } }
 namespace j2cpp { namespace java { namespace text { class ParsePosition; } } }
 namespace j2cpp { namespace java { namespace text { class FieldPosition; } } }
 
@@ -23,6 +24,7 @@ namespace j2cpp { namespace java { namespace text { class FieldPosition; } } }
 #include <java/lang/String.hpp>
 #include <java/lang/StringBuffer.hpp>
 #include <java/text/FieldPosition.hpp>
+#include <java/text/NumberFormat.hpp>
 #include <java/text/ParsePosition.hpp>
 
 
@@ -55,11 +57,16 @@ namespace java { namespace text {
 		J2CPP_DECLARE_METHOD(14)
 		J2CPP_DECLARE_METHOD(15)
 
-		ChoiceFormat(jobject jobj)
+		explicit ChoiceFormat(jobject jobj)
 		: cpp_object<ChoiceFormat>(jobj)
 		{
 		}
 
+		operator local_ref<java::text::NumberFormat>() const;
+
+
+		ChoiceFormat(local_ref< cpp_double_array<1> > const&, local_ref< cpp_object_array<java::lang::String, 1> > const&);
+		ChoiceFormat(local_ref< java::lang::String > const&);
 		void applyPattern(local_ref< java::lang::String > const&);
 		local_ref< java::lang::Object > clone();
 		cpp_boolean equals(local_ref< java::lang::Object > const&);
@@ -79,7 +86,6 @@ namespace java { namespace text {
 } //namespace text
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_TEXT_CHOICEFORMAT_HPP_DECL
@@ -92,29 +98,37 @@ namespace java { namespace text {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::text::ChoiceFormat > create< java::text::ChoiceFormat>(local_ref< cpp_double_array<1> > const &a0, local_ref< cpp_object_array<java::lang::String, 1> > const &a1)
+
+java::text::ChoiceFormat::operator local_ref<java::text::NumberFormat>() const
 {
-	return local_ref< java::text::ChoiceFormat >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::text::ChoiceFormat::J2CPP_CLASS_NAME>(),
-			get_method_id<java::text::ChoiceFormat::J2CPP_CLASS_NAME, java::text::ChoiceFormat::J2CPP_METHOD_NAME(0), java::text::ChoiceFormat::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<java::text::NumberFormat>(get_jtype());
 }
 
-template <>
-local_ref< java::text::ChoiceFormat > create< java::text::ChoiceFormat>(local_ref< java::lang::String > const &a0)
+
+java::text::ChoiceFormat::ChoiceFormat(local_ref< cpp_double_array<1> > const &a0, local_ref< cpp_object_array<java::lang::String, 1> > const &a1)
+: cpp_object<java::text::ChoiceFormat>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::text::ChoiceFormat::J2CPP_CLASS_NAME>(),
+		get_method_id<java::text::ChoiceFormat::J2CPP_CLASS_NAME, java::text::ChoiceFormat::J2CPP_METHOD_NAME(0), java::text::ChoiceFormat::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
 {
-	return local_ref< java::text::ChoiceFormat >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::text::ChoiceFormat::J2CPP_CLASS_NAME>(),
-			get_method_id<java::text::ChoiceFormat::J2CPP_CLASS_NAME, java::text::ChoiceFormat::J2CPP_METHOD_NAME(1), java::text::ChoiceFormat::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
 }
+
+
+
+java::text::ChoiceFormat::ChoiceFormat(local_ref< java::lang::String > const &a0)
+: cpp_object<java::text::ChoiceFormat>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::text::ChoiceFormat::J2CPP_CLASS_NAME>(),
+		get_method_id<java::text::ChoiceFormat::J2CPP_CLASS_NAME, java::text::ChoiceFormat::J2CPP_METHOD_NAME(1), java::text::ChoiceFormat::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 void java::text::ChoiceFormat::applyPattern(local_ref< java::lang::String > const &a0)
 {

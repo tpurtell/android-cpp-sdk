@@ -14,7 +14,10 @@ namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class Class; } } }
 namespace j2cpp { namespace java { namespace lang { namespace annotation { class Annotation; } } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace lang { namespace reflect { class AccessibleObject; } } } }
+namespace j2cpp { namespace java { namespace lang { namespace reflect { class Member; } } } }
 namespace j2cpp { namespace java { namespace lang { namespace reflect { class Type; } } } }
+namespace j2cpp { namespace java { namespace lang { namespace reflect { class GenericDeclaration; } } } }
 namespace j2cpp { namespace java { namespace lang { namespace reflect { class TypeVariable; } } } }
 
 
@@ -22,6 +25,9 @@ namespace j2cpp { namespace java { namespace lang { namespace reflect { class Ty
 #include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/lang/annotation/Annotation.hpp>
+#include <java/lang/reflect/AccessibleObject.hpp>
+#include <java/lang/reflect/GenericDeclaration.hpp>
+#include <java/lang/reflect/Member.hpp>
 #include <java/lang/reflect/Type.hpp>
 #include <java/lang/reflect/TypeVariable.hpp>
 
@@ -57,10 +63,15 @@ namespace java { namespace lang { namespace reflect {
 		J2CPP_DECLARE_METHOD(16)
 		J2CPP_DECLARE_METHOD(17)
 
-		Constructor(jobject jobj)
+		explicit Constructor(jobject jobj)
 		: cpp_object<Constructor>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::reflect::AccessibleObject>() const;
+		operator local_ref<java::lang::reflect::GenericDeclaration>() const;
+		operator local_ref<java::lang::reflect::Member>() const;
+
 
 		local_ref< cpp_object_array<java::lang::reflect::TypeVariable, 1> > getTypeParameters();
 		local_ref< java::lang::String > toGenericString();
@@ -85,7 +96,6 @@ namespace java { namespace lang { namespace reflect {
 } //namespace lang
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_LANG_REFLECT_CONSTRUCTOR_HPP_DECL
@@ -98,16 +108,22 @@ namespace java { namespace lang { namespace reflect {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::lang::reflect::Constructor > create< java::lang::reflect::Constructor>()
+
+java::lang::reflect::Constructor::operator local_ref<java::lang::reflect::AccessibleObject>() const
 {
-	return local_ref< java::lang::reflect::Constructor >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::lang::reflect::Constructor::J2CPP_CLASS_NAME>(),
-			get_method_id<java::lang::reflect::Constructor::J2CPP_CLASS_NAME, java::lang::reflect::Constructor::J2CPP_METHOD_NAME(0), java::lang::reflect::Constructor::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::reflect::AccessibleObject>(get_jtype());
 }
+
+java::lang::reflect::Constructor::operator local_ref<java::lang::reflect::GenericDeclaration>() const
+{
+	return local_ref<java::lang::reflect::GenericDeclaration>(get_jtype());
+}
+
+java::lang::reflect::Constructor::operator local_ref<java::lang::reflect::Member>() const
+{
+	return local_ref<java::lang::reflect::Member>(get_jtype());
+}
+
 
 local_ref< cpp_object_array<java::lang::reflect::TypeVariable, 1> > java::lang::reflect::Constructor::getTypeParameters()
 {

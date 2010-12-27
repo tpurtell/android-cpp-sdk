@@ -15,6 +15,7 @@ namespace j2cpp { namespace java { namespace lang { class StringBuffer; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace text { namespace MessageFormat_ { class Field; } } } }
 namespace j2cpp { namespace java { namespace text { class Format; } } }
+namespace j2cpp { namespace java { namespace text { namespace Format_ { class Field; } } } }
 namespace j2cpp { namespace java { namespace text { class AttributedCharacterIterator; } } }
 namespace j2cpp { namespace java { namespace text { class ParsePosition; } } }
 namespace j2cpp { namespace java { namespace text { class FieldPosition; } } }
@@ -52,10 +53,13 @@ namespace java { namespace text {
 			J2CPP_DECLARE_METHOD(2)
 			J2CPP_DECLARE_FIELD(0)
 
-			Field(jobject jobj)
+			explicit Field(jobject jobj)
 			: cpp_object<Field>(jobj)
 			{
 			}
+
+			operator local_ref<java::text::Format_::Field>() const;
+
 
 
 			static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(0), J2CPP_FIELD_SIGNATURE(0), local_ref< java::text::MessageFormat_::Field > > ARGUMENT;
@@ -95,11 +99,16 @@ namespace java { namespace text {
 
 		typedef MessageFormat_::Field Field;
 
-		MessageFormat(jobject jobj)
+		explicit MessageFormat(jobject jobj)
 		: cpp_object<MessageFormat>(jobj)
 		{
 		}
 
+		operator local_ref<java::text::Format>() const;
+
+
+		MessageFormat(local_ref< java::lang::String > const&, local_ref< java::util::Locale > const&);
+		MessageFormat(local_ref< java::lang::String > const&);
 		void applyPattern(local_ref< java::lang::String > const&);
 		local_ref< java::lang::Object > clone();
 		cpp_boolean equals(local_ref< java::lang::Object > const&);
@@ -125,7 +134,6 @@ namespace java { namespace text {
 } //namespace text
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_TEXT_MESSAGEFORMAT_HPP_DECL
@@ -139,17 +147,13 @@ namespace j2cpp {
 
 
 
-template <>
-local_ref< java::text::MessageFormat_::Field > create< java::text::MessageFormat_::Field>(local_ref< java::lang::String > const &a0)
+
+java::text::MessageFormat_::Field::operator local_ref<java::text::Format_::Field>() const
 {
-	return local_ref< java::text::MessageFormat_::Field >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::text::MessageFormat_::Field::J2CPP_CLASS_NAME>(),
-			get_method_id<java::text::MessageFormat_::Field::J2CPP_CLASS_NAME, java::text::MessageFormat_::Field::J2CPP_METHOD_NAME(0), java::text::MessageFormat_::Field::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::text::Format_::Field>(get_jtype());
 }
+
+
 
 
 
@@ -168,29 +172,37 @@ J2CPP_DEFINE_METHOD(java::text::MessageFormat_::Field,2,"<clinit>","()V")
 J2CPP_DEFINE_FIELD(java::text::MessageFormat_::Field,0,"ARGUMENT","Ljava/text/MessageFormat$Field;")
 
 
-template <>
-local_ref< java::text::MessageFormat > create< java::text::MessageFormat>(local_ref< java::lang::String > const &a0, local_ref< java::util::Locale > const &a1)
+
+java::text::MessageFormat::operator local_ref<java::text::Format>() const
 {
-	return local_ref< java::text::MessageFormat >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::text::MessageFormat::J2CPP_CLASS_NAME>(),
-			get_method_id<java::text::MessageFormat::J2CPP_CLASS_NAME, java::text::MessageFormat::J2CPP_METHOD_NAME(0), java::text::MessageFormat::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<java::text::Format>(get_jtype());
 }
 
-template <>
-local_ref< java::text::MessageFormat > create< java::text::MessageFormat>(local_ref< java::lang::String > const &a0)
+
+java::text::MessageFormat::MessageFormat(local_ref< java::lang::String > const &a0, local_ref< java::util::Locale > const &a1)
+: cpp_object<java::text::MessageFormat>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::text::MessageFormat::J2CPP_CLASS_NAME>(),
+		get_method_id<java::text::MessageFormat::J2CPP_CLASS_NAME, java::text::MessageFormat::J2CPP_METHOD_NAME(0), java::text::MessageFormat::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
 {
-	return local_ref< java::text::MessageFormat >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::text::MessageFormat::J2CPP_CLASS_NAME>(),
-			get_method_id<java::text::MessageFormat::J2CPP_CLASS_NAME, java::text::MessageFormat::J2CPP_METHOD_NAME(1), java::text::MessageFormat::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
 }
+
+
+
+java::text::MessageFormat::MessageFormat(local_ref< java::lang::String > const &a0)
+: cpp_object<java::text::MessageFormat>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::text::MessageFormat::J2CPP_CLASS_NAME>(),
+		get_method_id<java::text::MessageFormat::J2CPP_CLASS_NAME, java::text::MessageFormat::J2CPP_METHOD_NAME(1), java::text::MessageFormat::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 void java::text::MessageFormat::applyPattern(local_ref< java::lang::String > const &a0)
 {

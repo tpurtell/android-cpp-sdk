@@ -13,17 +13,21 @@
 namespace j2cpp { namespace android { namespace content { class Context; } } }
 namespace j2cpp { namespace android { namespace view { class View; } } }
 namespace j2cpp { namespace android { namespace view { class KeyEvent; } } }
+namespace j2cpp { namespace android { namespace view { namespace GestureDetector_ { class OnGestureListener; } } } }
 namespace j2cpp { namespace android { namespace view { class MotionEvent; } } }
 namespace j2cpp { namespace android { namespace view { namespace ViewGroup_ { class LayoutParams; } } } }
+namespace j2cpp { namespace android { namespace widget { class AbsSpinner; } } }
 namespace j2cpp { namespace android { namespace util { class AttributeSet; } } }
 
 
 #include <android/content/Context.hpp>
 #include <android/util/AttributeSet.hpp>
+#include <android/view/GestureDetector.hpp>
 #include <android/view/KeyEvent.hpp>
 #include <android/view/MotionEvent.hpp>
 #include <android/view/View.hpp>
 #include <android/view/ViewGroup.hpp>
+#include <android/widget/AbsSpinner.hpp>
 
 
 namespace j2cpp {
@@ -45,11 +49,17 @@ namespace android { namespace widget {
 			J2CPP_DECLARE_METHOD(1)
 			J2CPP_DECLARE_METHOD(2)
 
-			LayoutParams(jobject jobj)
+			explicit LayoutParams(jobject jobj)
 			: cpp_object<LayoutParams>(jobj)
 			{
 			}
 
+			operator local_ref<android::view::ViewGroup_::LayoutParams>() const;
+
+
+			LayoutParams(local_ref< android::content::Context > const&, local_ref< android::util::AttributeSet > const&);
+			LayoutParams(cpp_int const&, cpp_int const&);
+			LayoutParams(local_ref< android::view::ViewGroup_::LayoutParams > const&);
 		}; //class LayoutParams
 
 	} //namespace Gallery_
@@ -98,11 +108,18 @@ namespace android { namespace widget {
 
 		typedef Gallery_::LayoutParams LayoutParams;
 
-		Gallery(jobject jobj)
+		explicit Gallery(jobject jobj)
 		: cpp_object<Gallery>(jobj)
 		{
 		}
 
+		operator local_ref<android::widget::AbsSpinner>() const;
+		operator local_ref<android::view::GestureDetector_::OnGestureListener>() const;
+
+
+		Gallery(local_ref< android::content::Context > const&);
+		Gallery(local_ref< android::content::Context > const&, local_ref< android::util::AttributeSet > const&);
+		Gallery(local_ref< android::content::Context > const&, local_ref< android::util::AttributeSet > const&, cpp_int const&);
 		void setCallbackDuringFling(cpp_boolean const&);
 		void setAnimationDuration(cpp_int const&);
 		void setSpacing(cpp_int const&);
@@ -127,7 +144,6 @@ namespace android { namespace widget {
 } //namespace widget
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_WIDGET_GALLERY_HPP_DECL
@@ -141,41 +157,50 @@ namespace j2cpp {
 
 
 
-template <>
-local_ref< android::widget::Gallery_::LayoutParams > create< android::widget::Gallery_::LayoutParams>(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1)
+
+android::widget::Gallery_::LayoutParams::operator local_ref<android::view::ViewGroup_::LayoutParams>() const
 {
-	return local_ref< android::widget::Gallery_::LayoutParams >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::widget::Gallery_::LayoutParams::J2CPP_CLASS_NAME>(),
-			get_method_id<android::widget::Gallery_::LayoutParams::J2CPP_CLASS_NAME, android::widget::Gallery_::LayoutParams::J2CPP_METHOD_NAME(0), android::widget::Gallery_::LayoutParams::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<android::view::ViewGroup_::LayoutParams>(get_jtype());
 }
 
-template <>
-local_ref< android::widget::Gallery_::LayoutParams > create< android::widget::Gallery_::LayoutParams>(cpp_int const &a0, cpp_int const &a1)
+
+android::widget::Gallery_::LayoutParams::LayoutParams(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1)
+: cpp_object<android::widget::Gallery_::LayoutParams>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::widget::Gallery_::LayoutParams::J2CPP_CLASS_NAME>(),
+		get_method_id<android::widget::Gallery_::LayoutParams::J2CPP_CLASS_NAME, android::widget::Gallery_::LayoutParams::J2CPP_METHOD_NAME(0), android::widget::Gallery_::LayoutParams::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
 {
-	return local_ref< android::widget::Gallery_::LayoutParams >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::widget::Gallery_::LayoutParams::J2CPP_CLASS_NAME>(),
-			get_method_id<android::widget::Gallery_::LayoutParams::J2CPP_CLASS_NAME, android::widget::Gallery_::LayoutParams::J2CPP_METHOD_NAME(1), android::widget::Gallery_::LayoutParams::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< android::widget::Gallery_::LayoutParams > create< android::widget::Gallery_::LayoutParams>(local_ref< android::view::ViewGroup_::LayoutParams > const &a0)
+
+
+android::widget::Gallery_::LayoutParams::LayoutParams(cpp_int const &a0, cpp_int const &a1)
+: cpp_object<android::widget::Gallery_::LayoutParams>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::widget::Gallery_::LayoutParams::J2CPP_CLASS_NAME>(),
+		get_method_id<android::widget::Gallery_::LayoutParams::J2CPP_CLASS_NAME, android::widget::Gallery_::LayoutParams::J2CPP_METHOD_NAME(1), android::widget::Gallery_::LayoutParams::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
 {
-	return local_ref< android::widget::Gallery_::LayoutParams >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::widget::Gallery_::LayoutParams::J2CPP_CLASS_NAME>(),
-			get_method_id<android::widget::Gallery_::LayoutParams::J2CPP_CLASS_NAME, android::widget::Gallery_::LayoutParams::J2CPP_METHOD_NAME(2), android::widget::Gallery_::LayoutParams::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype()
-		)
-	);
 }
+
+
+
+android::widget::Gallery_::LayoutParams::LayoutParams(local_ref< android::view::ViewGroup_::LayoutParams > const &a0)
+: cpp_object<android::widget::Gallery_::LayoutParams>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::widget::Gallery_::LayoutParams::J2CPP_CLASS_NAME>(),
+		get_method_id<android::widget::Gallery_::LayoutParams::J2CPP_CLASS_NAME, android::widget::Gallery_::LayoutParams::J2CPP_METHOD_NAME(2), android::widget::Gallery_::LayoutParams::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 
 J2CPP_DEFINE_CLASS(android::widget::Gallery_::LayoutParams,"android/widget/Gallery$LayoutParams")
@@ -184,41 +209,55 @@ J2CPP_DEFINE_METHOD(android::widget::Gallery_::LayoutParams,1,"<init>","(II)V")
 J2CPP_DEFINE_METHOD(android::widget::Gallery_::LayoutParams,2,"<init>","(Landroid/view/ViewGroup$LayoutParams;)V")
 
 
-template <>
-local_ref< android::widget::Gallery > create< android::widget::Gallery>(local_ref< android::content::Context > const &a0)
+
+android::widget::Gallery::operator local_ref<android::widget::AbsSpinner>() const
 {
-	return local_ref< android::widget::Gallery >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::widget::Gallery::J2CPP_CLASS_NAME>(),
-			get_method_id<android::widget::Gallery::J2CPP_CLASS_NAME, android::widget::Gallery::J2CPP_METHOD_NAME(0), android::widget::Gallery::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<android::widget::AbsSpinner>(get_jtype());
 }
 
-template <>
-local_ref< android::widget::Gallery > create< android::widget::Gallery>(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1)
+android::widget::Gallery::operator local_ref<android::view::GestureDetector_::OnGestureListener>() const
 {
-	return local_ref< android::widget::Gallery >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::widget::Gallery::J2CPP_CLASS_NAME>(),
-			get_method_id<android::widget::Gallery::J2CPP_CLASS_NAME, android::widget::Gallery::J2CPP_METHOD_NAME(1), android::widget::Gallery::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<android::view::GestureDetector_::OnGestureListener>(get_jtype());
 }
 
-template <>
-local_ref< android::widget::Gallery > create< android::widget::Gallery>(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1, cpp_int const &a2)
+
+android::widget::Gallery::Gallery(local_ref< android::content::Context > const &a0)
+: cpp_object<android::widget::Gallery>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::widget::Gallery::J2CPP_CLASS_NAME>(),
+		get_method_id<android::widget::Gallery::J2CPP_CLASS_NAME, android::widget::Gallery::J2CPP_METHOD_NAME(0), android::widget::Gallery::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< android::widget::Gallery >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::widget::Gallery::J2CPP_CLASS_NAME>(),
-			get_method_id<android::widget::Gallery::J2CPP_CLASS_NAME, android::widget::Gallery::J2CPP_METHOD_NAME(2), android::widget::Gallery::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
-		)
-	);
 }
+
+
+
+android::widget::Gallery::Gallery(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1)
+: cpp_object<android::widget::Gallery>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::widget::Gallery::J2CPP_CLASS_NAME>(),
+		get_method_id<android::widget::Gallery::J2CPP_CLASS_NAME, android::widget::Gallery::J2CPP_METHOD_NAME(1), android::widget::Gallery::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
+
+
+android::widget::Gallery::Gallery(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1, cpp_int const &a2)
+: cpp_object<android::widget::Gallery>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::widget::Gallery::J2CPP_CLASS_NAME>(),
+		get_method_id<android::widget::Gallery::J2CPP_CLASS_NAME, android::widget::Gallery::J2CPP_METHOD_NAME(2), android::widget::Gallery::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
+	)
+)
+{
+}
+
 
 void android::widget::Gallery::setCallbackDuringFling(cpp_boolean const &a0)
 {

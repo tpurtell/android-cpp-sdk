@@ -10,6 +10,7 @@
 #define J2CPP_ANDROID_GESTURE_GESTURELIBRARY_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace util { class Set; } } }
 namespace j2cpp { namespace java { namespace util { class ArrayList; } } }
@@ -17,6 +18,7 @@ namespace j2cpp { namespace android { namespace gesture { class Gesture; } } }
 
 
 #include <android/gesture/Gesture.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/util/ArrayList.hpp>
 #include <java/util/Set.hpp>
@@ -50,10 +52,13 @@ namespace android { namespace gesture {
 		J2CPP_DECLARE_METHOD(13)
 		J2CPP_DECLARE_FIELD(0)
 
-		GestureLibrary(jobject jobj)
+		explicit GestureLibrary(jobject jobj)
 		: cpp_object<GestureLibrary>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		cpp_boolean save();
 		cpp_boolean load();
@@ -74,7 +79,6 @@ namespace android { namespace gesture {
 } //namespace gesture
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_GESTURE_GESTURELIBRARY_HPP_DECL
@@ -87,16 +91,12 @@ namespace android { namespace gesture {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::gesture::GestureLibrary > create< android::gesture::GestureLibrary>()
+
+android::gesture::GestureLibrary::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::gesture::GestureLibrary >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::gesture::GestureLibrary::J2CPP_CLASS_NAME>(),
-			get_method_id<android::gesture::GestureLibrary::J2CPP_CLASS_NAME, android::gesture::GestureLibrary::J2CPP_METHOD_NAME(0), android::gesture::GestureLibrary::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
 
 cpp_boolean android::gesture::GestureLibrary::save()
 {

@@ -14,6 +14,7 @@ namespace j2cpp { namespace android { namespace appwidget { class AppWidgetProvi
 namespace j2cpp { namespace android { namespace content { class Context; } } }
 namespace j2cpp { namespace android { namespace view { namespace ViewGroup_ { class LayoutParams; } } } }
 namespace j2cpp { namespace android { namespace widget { class RemoteViews; } } }
+namespace j2cpp { namespace android { namespace widget { class FrameLayout; } } }
 namespace j2cpp { namespace android { namespace widget { namespace FrameLayout_ { class LayoutParams; } } } }
 namespace j2cpp { namespace android { namespace util { class AttributeSet; } } }
 
@@ -53,11 +54,16 @@ namespace android { namespace appwidget {
 		J2CPP_DECLARE_METHOD(12)
 		J2CPP_DECLARE_METHOD(13)
 
-		AppWidgetHostView(jobject jobj)
+		explicit AppWidgetHostView(jobject jobj)
 		: cpp_object<AppWidgetHostView>(jobj)
 		{
 		}
 
+		operator local_ref<android::widget::FrameLayout>() const;
+
+
+		AppWidgetHostView(local_ref< android::content::Context > const&);
+		AppWidgetHostView(local_ref< android::content::Context > const&, cpp_int const&, cpp_int const&);
 		void setAppWidget(cpp_int const&, local_ref< android::appwidget::AppWidgetProviderInfo > const&);
 		cpp_int getAppWidgetId();
 		local_ref< android::appwidget::AppWidgetProviderInfo > getAppWidgetInfo();
@@ -68,7 +74,6 @@ namespace android { namespace appwidget {
 
 } //namespace appwidget
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -82,29 +87,37 @@ namespace android { namespace appwidget {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::appwidget::AppWidgetHostView > create< android::appwidget::AppWidgetHostView>(local_ref< android::content::Context > const &a0)
+
+android::appwidget::AppWidgetHostView::operator local_ref<android::widget::FrameLayout>() const
 {
-	return local_ref< android::appwidget::AppWidgetHostView >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::appwidget::AppWidgetHostView::J2CPP_CLASS_NAME>(),
-			get_method_id<android::appwidget::AppWidgetHostView::J2CPP_CLASS_NAME, android::appwidget::AppWidgetHostView::J2CPP_METHOD_NAME(0), android::appwidget::AppWidgetHostView::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<android::widget::FrameLayout>(get_jtype());
 }
 
-template <>
-local_ref< android::appwidget::AppWidgetHostView > create< android::appwidget::AppWidgetHostView>(local_ref< android::content::Context > const &a0, cpp_int const &a1, cpp_int const &a2)
+
+android::appwidget::AppWidgetHostView::AppWidgetHostView(local_ref< android::content::Context > const &a0)
+: cpp_object<android::appwidget::AppWidgetHostView>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::appwidget::AppWidgetHostView::J2CPP_CLASS_NAME>(),
+		get_method_id<android::appwidget::AppWidgetHostView::J2CPP_CLASS_NAME, android::appwidget::AppWidgetHostView::J2CPP_METHOD_NAME(0), android::appwidget::AppWidgetHostView::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< android::appwidget::AppWidgetHostView >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::appwidget::AppWidgetHostView::J2CPP_CLASS_NAME>(),
-			get_method_id<android::appwidget::AppWidgetHostView::J2CPP_CLASS_NAME, android::appwidget::AppWidgetHostView::J2CPP_METHOD_NAME(1), android::appwidget::AppWidgetHostView::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
-		)
-	);
 }
+
+
+
+android::appwidget::AppWidgetHostView::AppWidgetHostView(local_ref< android::content::Context > const &a0, cpp_int const &a1, cpp_int const &a2)
+: cpp_object<android::appwidget::AppWidgetHostView>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::appwidget::AppWidgetHostView::J2CPP_CLASS_NAME>(),
+		get_method_id<android::appwidget::AppWidgetHostView::J2CPP_CLASS_NAME, android::appwidget::AppWidgetHostView::J2CPP_METHOD_NAME(1), android::appwidget::AppWidgetHostView::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
+	)
+)
+{
+}
+
 
 void android::appwidget::AppWidgetHostView::setAppWidget(cpp_int const &a0, local_ref< android::appwidget::AppWidgetProviderInfo > const &a1)
 {

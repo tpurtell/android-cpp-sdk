@@ -55,11 +55,17 @@ namespace java { namespace text {
 		J2CPP_DECLARE_FIELD(2)
 		J2CPP_DECLARE_FIELD(3)
 
-		Bidi(jobject jobj)
+		explicit Bidi(jobject jobj)
 		: cpp_object<Bidi>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		Bidi(local_ref< java::text::AttributedCharacterIterator > const&);
+		Bidi(local_ref< cpp_char_array<1> > const&, cpp_int const&, local_ref< cpp_byte_array<1> > const&, cpp_int const&, cpp_int const&, cpp_int const&);
+		Bidi(local_ref< java::lang::String > const&, cpp_int const&);
 		cpp_boolean baseIsLeftToRight();
 		local_ref< java::text::Bidi > createLineBidi(cpp_int const&, cpp_int const&);
 		cpp_int getBaseLevel();
@@ -85,7 +91,6 @@ namespace java { namespace text {
 } //namespace text
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_TEXT_BIDI_HPP_DECL
@@ -98,41 +103,50 @@ namespace java { namespace text {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::text::Bidi > create< java::text::Bidi>(local_ref< java::text::AttributedCharacterIterator > const &a0)
+
+java::text::Bidi::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::text::Bidi >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::text::Bidi::J2CPP_CLASS_NAME>(),
-			get_method_id<java::text::Bidi::J2CPP_CLASS_NAME, java::text::Bidi::J2CPP_METHOD_NAME(0), java::text::Bidi::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
 
-template <>
-local_ref< java::text::Bidi > create< java::text::Bidi>(local_ref< cpp_char_array<1> > const &a0, cpp_int const &a1, local_ref< cpp_byte_array<1> > const &a2, cpp_int const &a3, cpp_int const &a4, cpp_int const &a5)
+
+java::text::Bidi::Bidi(local_ref< java::text::AttributedCharacterIterator > const &a0)
+: cpp_object<java::text::Bidi>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::text::Bidi::J2CPP_CLASS_NAME>(),
+		get_method_id<java::text::Bidi::J2CPP_CLASS_NAME, java::text::Bidi::J2CPP_METHOD_NAME(0), java::text::Bidi::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< java::text::Bidi >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::text::Bidi::J2CPP_CLASS_NAME>(),
-			get_method_id<java::text::Bidi::J2CPP_CLASS_NAME, java::text::Bidi::J2CPP_METHOD_NAME(1), java::text::Bidi::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype(), a4.get_jtype(), a5.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< java::text::Bidi > create< java::text::Bidi>(local_ref< java::lang::String > const &a0, cpp_int const &a1)
+
+
+java::text::Bidi::Bidi(local_ref< cpp_char_array<1> > const &a0, cpp_int const &a1, local_ref< cpp_byte_array<1> > const &a2, cpp_int const &a3, cpp_int const &a4, cpp_int const &a5)
+: cpp_object<java::text::Bidi>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::text::Bidi::J2CPP_CLASS_NAME>(),
+		get_method_id<java::text::Bidi::J2CPP_CLASS_NAME, java::text::Bidi::J2CPP_METHOD_NAME(1), java::text::Bidi::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype(), a4.get_jtype(), a5.get_jtype()
+	)
+)
 {
-	return local_ref< java::text::Bidi >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::text::Bidi::J2CPP_CLASS_NAME>(),
-			get_method_id<java::text::Bidi::J2CPP_CLASS_NAME, java::text::Bidi::J2CPP_METHOD_NAME(2), java::text::Bidi::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
 }
+
+
+
+java::text::Bidi::Bidi(local_ref< java::lang::String > const &a0, cpp_int const &a1)
+: cpp_object<java::text::Bidi>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::text::Bidi::J2CPP_CLASS_NAME>(),
+		get_method_id<java::text::Bidi::J2CPP_CLASS_NAME, java::text::Bidi::J2CPP_METHOD_NAME(2), java::text::Bidi::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
 
 cpp_boolean java::text::Bidi::baseIsLeftToRight()
 {

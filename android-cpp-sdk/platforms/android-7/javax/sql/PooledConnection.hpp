@@ -11,9 +11,11 @@
 
 
 namespace j2cpp { namespace javax { namespace sql { class ConnectionEventListener; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace sql { class Connection; } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/sql/Connection.hpp>
 #include <javax/sql/ConnectionEventListener.hpp>
 
@@ -35,10 +37,13 @@ namespace javax { namespace sql {
 		J2CPP_DECLARE_METHOD(2)
 		J2CPP_DECLARE_METHOD(3)
 
-		PooledConnection(jobject jobj)
+		explicit PooledConnection(jobject jobj)
 		: cpp_object<PooledConnection>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		void addConnectionEventListener(local_ref< javax::sql::ConnectionEventListener > const&);
 		void close();
@@ -48,7 +53,6 @@ namespace javax { namespace sql {
 
 } //namespace sql
 } //namespace javax
-
 
 } //namespace j2cpp
 
@@ -61,6 +65,12 @@ namespace javax { namespace sql {
 
 namespace j2cpp {
 
+
+
+javax::sql::PooledConnection::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 void javax::sql::PooledConnection::addConnectionEventListener(local_ref< javax::sql::ConnectionEventListener > const &a0)
 {

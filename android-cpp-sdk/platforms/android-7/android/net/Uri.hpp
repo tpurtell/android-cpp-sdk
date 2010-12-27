@@ -12,10 +12,12 @@
 
 namespace j2cpp { namespace java { namespace io { class File; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace lang { class Comparable; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace util { class List; } } }
 namespace j2cpp { namespace android { namespace net { namespace Uri_ { class Builder; } } } }
 namespace j2cpp { namespace android { namespace os { class Parcel; } } }
+namespace j2cpp { namespace android { namespace os { class Parcelable; } } }
 namespace j2cpp { namespace android { namespace os { namespace Parcelable_ { class Creator; } } } }
 
 
@@ -23,6 +25,7 @@ namespace j2cpp { namespace android { namespace os { namespace Parcelable_ { cla
 #include <android/os/Parcel.hpp>
 #include <android/os/Parcelable.hpp>
 #include <java/io/File.hpp>
+#include <java/lang/Comparable.hpp>
 #include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/util/List.hpp>
@@ -61,11 +64,15 @@ namespace android { namespace net {
 			J2CPP_DECLARE_METHOD(15)
 			J2CPP_DECLARE_METHOD(16)
 
-			Builder(jobject jobj)
+			explicit Builder(jobject jobj)
 			: cpp_object<Builder>(jobj)
 			{
 			}
 
+			operator local_ref<java::lang::Object>() const;
+
+
+			Builder();
 			local_ref< android::net::Uri_::Builder > scheme(local_ref< java::lang::String > const&);
 			local_ref< android::net::Uri_::Builder > opaquePart(local_ref< java::lang::String > const&);
 			local_ref< android::net::Uri_::Builder > encodedOpaquePart(local_ref< java::lang::String > const&);
@@ -137,10 +144,15 @@ namespace android { namespace net {
 
 		typedef Uri_::Builder Builder;
 
-		Uri(jobject jobj)
+		explicit Uri(jobject jobj)
 		: cpp_object<Uri>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<android::os::Parcelable>() const;
+		operator local_ref<java::lang::Comparable>() const;
+
 
 		cpp_boolean isHierarchical();
 		cpp_boolean isOpaque();
@@ -187,7 +199,6 @@ namespace android { namespace net {
 } //namespace net
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_NET_URI_HPP_DECL
@@ -201,16 +212,23 @@ namespace j2cpp {
 
 
 
-template <>
-local_ref< android::net::Uri_::Builder > create< android::net::Uri_::Builder>()
+
+android::net::Uri_::Builder::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::net::Uri_::Builder >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::net::Uri_::Builder::J2CPP_CLASS_NAME>(),
-			get_method_id<android::net::Uri_::Builder::J2CPP_CLASS_NAME, android::net::Uri_::Builder::J2CPP_METHOD_NAME(0), android::net::Uri_::Builder::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::net::Uri_::Builder::Builder()
+: cpp_object<android::net::Uri_::Builder>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::net::Uri_::Builder::J2CPP_CLASS_NAME>(),
+		get_method_id<android::net::Uri_::Builder::J2CPP_CLASS_NAME, android::net::Uri_::Builder::J2CPP_METHOD_NAME(0), android::net::Uri_::Builder::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 local_ref< android::net::Uri_::Builder > android::net::Uri_::Builder::scheme(local_ref< java::lang::String > const &a0)
 {
@@ -407,16 +425,22 @@ J2CPP_DEFINE_METHOD(android::net::Uri_::Builder,15,"build","()Landroid/net/Uri;"
 J2CPP_DEFINE_METHOD(android::net::Uri_::Builder,16,"toString","()Ljava/lang/String;")
 
 
-template <>
-local_ref< android::net::Uri > create< android::net::Uri>()
+
+android::net::Uri::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::net::Uri >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::net::Uri::J2CPP_CLASS_NAME>(),
-			get_method_id<android::net::Uri::J2CPP_CLASS_NAME, android::net::Uri::J2CPP_METHOD_NAME(0), android::net::Uri::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+android::net::Uri::operator local_ref<android::os::Parcelable>() const
+{
+	return local_ref<android::os::Parcelable>(get_jtype());
+}
+
+android::net::Uri::operator local_ref<java::lang::Comparable>() const
+{
+	return local_ref<java::lang::Comparable>(get_jtype());
+}
+
 
 cpp_boolean android::net::Uri::isHierarchical()
 {
@@ -800,6 +824,7 @@ cpp_int android::net::Uri::compareTo(local_ref< java::lang::Object > const &a0)
 		)
 	);
 }
+
 
 
 static_field<

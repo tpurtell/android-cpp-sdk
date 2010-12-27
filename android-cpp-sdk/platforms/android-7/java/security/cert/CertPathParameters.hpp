@@ -11,8 +11,10 @@
 
 
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace lang { class Cloneable; } } }
 
 
+#include <java/lang/Cloneable.hpp>
 #include <java/lang/Object.hpp>
 
 
@@ -30,10 +32,14 @@ namespace java { namespace security { namespace cert {
 
 		J2CPP_DECLARE_METHOD(0)
 
-		CertPathParameters(jobject jobj)
+		explicit CertPathParameters(jobject jobj)
 		: cpp_object<CertPathParameters>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::lang::Cloneable>() const;
+
 
 		local_ref< java::lang::Object > clone();
 	}; //class CertPathParameters
@@ -41,7 +47,6 @@ namespace java { namespace security { namespace cert {
 } //namespace cert
 } //namespace security
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -54,6 +59,17 @@ namespace java { namespace security { namespace cert {
 
 namespace j2cpp {
 
+
+
+java::security::cert::CertPathParameters::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
+
+java::security::cert::CertPathParameters::operator local_ref<java::lang::Cloneable>() const
+{
+	return local_ref<java::lang::Cloneable>(get_jtype());
+}
 
 local_ref< java::lang::Object > java::security::cert::CertPathParameters::clone()
 {

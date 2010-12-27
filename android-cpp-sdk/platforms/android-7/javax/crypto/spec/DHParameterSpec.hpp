@@ -10,10 +10,14 @@
 #define J2CPP_JAVAX_CRYPTO_SPEC_DHPARAMETERSPEC_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace math { class BigInteger; } } }
+namespace j2cpp { namespace java { namespace security { namespace spec { class AlgorithmParameterSpec; } } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/math/BigInteger.hpp>
+#include <java/security/spec/AlgorithmParameterSpec.hpp>
 
 
 namespace j2cpp {
@@ -34,11 +38,17 @@ namespace javax { namespace crypto { namespace spec {
 		J2CPP_DECLARE_METHOD(3)
 		J2CPP_DECLARE_METHOD(4)
 
-		DHParameterSpec(jobject jobj)
+		explicit DHParameterSpec(jobject jobj)
 		: cpp_object<DHParameterSpec>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::security::spec::AlgorithmParameterSpec>() const;
+
+
+		DHParameterSpec(local_ref< java::math::BigInteger > const&, local_ref< java::math::BigInteger > const&);
+		DHParameterSpec(local_ref< java::math::BigInteger > const&, local_ref< java::math::BigInteger > const&, cpp_int const&);
 		local_ref< java::math::BigInteger > getP();
 		local_ref< java::math::BigInteger > getG();
 		cpp_int getL();
@@ -47,7 +57,6 @@ namespace javax { namespace crypto { namespace spec {
 } //namespace spec
 } //namespace crypto
 } //namespace javax
-
 
 } //namespace j2cpp
 
@@ -61,29 +70,42 @@ namespace javax { namespace crypto { namespace spec {
 namespace j2cpp {
 
 
-template <>
-local_ref< javax::crypto::spec::DHParameterSpec > create< javax::crypto::spec::DHParameterSpec>(local_ref< java::math::BigInteger > const &a0, local_ref< java::math::BigInteger > const &a1)
+
+javax::crypto::spec::DHParameterSpec::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< javax::crypto::spec::DHParameterSpec >(
-		environment::get().get_jenv()->NewObject(
-			get_class<javax::crypto::spec::DHParameterSpec::J2CPP_CLASS_NAME>(),
-			get_method_id<javax::crypto::spec::DHParameterSpec::J2CPP_CLASS_NAME, javax::crypto::spec::DHParameterSpec::J2CPP_METHOD_NAME(0), javax::crypto::spec::DHParameterSpec::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
 
-template <>
-local_ref< javax::crypto::spec::DHParameterSpec > create< javax::crypto::spec::DHParameterSpec>(local_ref< java::math::BigInteger > const &a0, local_ref< java::math::BigInteger > const &a1, cpp_int const &a2)
+javax::crypto::spec::DHParameterSpec::operator local_ref<java::security::spec::AlgorithmParameterSpec>() const
 {
-	return local_ref< javax::crypto::spec::DHParameterSpec >(
-		environment::get().get_jenv()->NewObject(
-			get_class<javax::crypto::spec::DHParameterSpec::J2CPP_CLASS_NAME>(),
-			get_method_id<javax::crypto::spec::DHParameterSpec::J2CPP_CLASS_NAME, javax::crypto::spec::DHParameterSpec::J2CPP_METHOD_NAME(1), javax::crypto::spec::DHParameterSpec::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
-		)
-	);
+	return local_ref<java::security::spec::AlgorithmParameterSpec>(get_jtype());
 }
+
+
+javax::crypto::spec::DHParameterSpec::DHParameterSpec(local_ref< java::math::BigInteger > const &a0, local_ref< java::math::BigInteger > const &a1)
+: cpp_object<javax::crypto::spec::DHParameterSpec>(
+	environment::get().get_jenv()->NewObject(
+		get_class<javax::crypto::spec::DHParameterSpec::J2CPP_CLASS_NAME>(),
+		get_method_id<javax::crypto::spec::DHParameterSpec::J2CPP_CLASS_NAME, javax::crypto::spec::DHParameterSpec::J2CPP_METHOD_NAME(0), javax::crypto::spec::DHParameterSpec::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
+
+
+javax::crypto::spec::DHParameterSpec::DHParameterSpec(local_ref< java::math::BigInteger > const &a0, local_ref< java::math::BigInteger > const &a1, cpp_int const &a2)
+: cpp_object<javax::crypto::spec::DHParameterSpec>(
+	environment::get().get_jenv()->NewObject(
+		get_class<javax::crypto::spec::DHParameterSpec::J2CPP_CLASS_NAME>(),
+		get_method_id<javax::crypto::spec::DHParameterSpec::J2CPP_CLASS_NAME, javax::crypto::spec::DHParameterSpec::J2CPP_METHOD_NAME(1), javax::crypto::spec::DHParameterSpec::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
+	)
+)
+{
+}
+
 
 local_ref< java::math::BigInteger > javax::crypto::spec::DHParameterSpec::getP()
 {

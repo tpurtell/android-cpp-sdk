@@ -10,8 +10,10 @@
 #define J2CPP_JAVAX_CRYPTO_NULLCIPHER_HPP_DECL
 
 
+namespace j2cpp { namespace javax { namespace crypto { class Cipher; } } }
 
 
+#include <javax/crypto/Cipher.hpp>
 
 
 namespace j2cpp {
@@ -28,16 +30,19 @@ namespace javax { namespace crypto {
 
 		J2CPP_DECLARE_METHOD(0)
 
-		NullCipher(jobject jobj)
+		explicit NullCipher(jobject jobj)
 		: cpp_object<NullCipher>(jobj)
 		{
 		}
 
+		operator local_ref<javax::crypto::Cipher>() const;
+
+
+		NullCipher();
 	}; //class NullCipher
 
 } //namespace crypto
 } //namespace javax
-
 
 } //namespace j2cpp
 
@@ -51,16 +56,23 @@ namespace javax { namespace crypto {
 namespace j2cpp {
 
 
-template <>
-local_ref< javax::crypto::NullCipher > create< javax::crypto::NullCipher>()
+
+javax::crypto::NullCipher::operator local_ref<javax::crypto::Cipher>() const
 {
-	return local_ref< javax::crypto::NullCipher >(
-		environment::get().get_jenv()->NewObject(
-			get_class<javax::crypto::NullCipher::J2CPP_CLASS_NAME>(),
-			get_method_id<javax::crypto::NullCipher::J2CPP_CLASS_NAME, javax::crypto::NullCipher::J2CPP_METHOD_NAME(0), javax::crypto::NullCipher::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<javax::crypto::Cipher>(get_jtype());
 }
+
+
+javax::crypto::NullCipher::NullCipher()
+: cpp_object<javax::crypto::NullCipher>(
+	environment::get().get_jenv()->NewObject(
+		get_class<javax::crypto::NullCipher::J2CPP_CLASS_NAME>(),
+		get_method_id<javax::crypto::NullCipher::J2CPP_CLASS_NAME, javax::crypto::NullCipher::J2CPP_METHOD_NAME(0), javax::crypto::NullCipher::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 
 J2CPP_DEFINE_CLASS(javax::crypto::NullCipher,"javax/crypto/NullCipher")

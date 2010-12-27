@@ -32,10 +32,13 @@ namespace org { namespace apache { namespace http { namespace client {
 
 		J2CPP_DECLARE_METHOD(0)
 
-		ResponseHandler(jobject jobj)
+		explicit ResponseHandler(jobject jobj)
 		: cpp_object<ResponseHandler>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		local_ref< java::lang::Object > handleResponse(local_ref< org::apache::http::HttpResponse > const&);
 	}; //class ResponseHandler
@@ -44,7 +47,6 @@ namespace org { namespace apache { namespace http { namespace client {
 } //namespace http
 } //namespace apache
 } //namespace org
-
 
 } //namespace j2cpp
 
@@ -57,6 +59,12 @@ namespace org { namespace apache { namespace http { namespace client {
 
 namespace j2cpp {
 
+
+
+org::apache::http::client::ResponseHandler::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 local_ref< java::lang::Object > org::apache::http::client::ResponseHandler::handleResponse(local_ref< org::apache::http::HttpResponse > const &a0)
 {

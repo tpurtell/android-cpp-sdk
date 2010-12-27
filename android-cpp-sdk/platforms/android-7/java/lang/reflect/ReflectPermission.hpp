@@ -11,9 +11,11 @@
 
 
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace security { class BasicPermission; } } }
 
 
 #include <java/lang/String.hpp>
+#include <java/security/BasicPermission.hpp>
 
 
 namespace j2cpp {
@@ -31,17 +33,21 @@ namespace java { namespace lang { namespace reflect {
 		J2CPP_DECLARE_METHOD(0)
 		J2CPP_DECLARE_METHOD(1)
 
-		ReflectPermission(jobject jobj)
+		explicit ReflectPermission(jobject jobj)
 		: cpp_object<ReflectPermission>(jobj)
 		{
 		}
 
+		operator local_ref<java::security::BasicPermission>() const;
+
+
+		ReflectPermission(local_ref< java::lang::String > const&);
+		ReflectPermission(local_ref< java::lang::String > const&, local_ref< java::lang::String > const&);
 	}; //class ReflectPermission
 
 } //namespace reflect
 } //namespace lang
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -55,29 +61,37 @@ namespace java { namespace lang { namespace reflect {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::lang::reflect::ReflectPermission > create< java::lang::reflect::ReflectPermission>(local_ref< java::lang::String > const &a0)
+
+java::lang::reflect::ReflectPermission::operator local_ref<java::security::BasicPermission>() const
 {
-	return local_ref< java::lang::reflect::ReflectPermission >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::lang::reflect::ReflectPermission::J2CPP_CLASS_NAME>(),
-			get_method_id<java::lang::reflect::ReflectPermission::J2CPP_CLASS_NAME, java::lang::reflect::ReflectPermission::J2CPP_METHOD_NAME(0), java::lang::reflect::ReflectPermission::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::security::BasicPermission>(get_jtype());
 }
 
-template <>
-local_ref< java::lang::reflect::ReflectPermission > create< java::lang::reflect::ReflectPermission>(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
+
+java::lang::reflect::ReflectPermission::ReflectPermission(local_ref< java::lang::String > const &a0)
+: cpp_object<java::lang::reflect::ReflectPermission>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::lang::reflect::ReflectPermission::J2CPP_CLASS_NAME>(),
+		get_method_id<java::lang::reflect::ReflectPermission::J2CPP_CLASS_NAME, java::lang::reflect::ReflectPermission::J2CPP_METHOD_NAME(0), java::lang::reflect::ReflectPermission::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< java::lang::reflect::ReflectPermission >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::lang::reflect::ReflectPermission::J2CPP_CLASS_NAME>(),
-			get_method_id<java::lang::reflect::ReflectPermission::J2CPP_CLASS_NAME, java::lang::reflect::ReflectPermission::J2CPP_METHOD_NAME(1), java::lang::reflect::ReflectPermission::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
 }
+
+
+
+java::lang::reflect::ReflectPermission::ReflectPermission(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
+: cpp_object<java::lang::reflect::ReflectPermission>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::lang::reflect::ReflectPermission::J2CPP_CLASS_NAME>(),
+		get_method_id<java::lang::reflect::ReflectPermission::J2CPP_CLASS_NAME, java::lang::reflect::ReflectPermission::J2CPP_METHOD_NAME(1), java::lang::reflect::ReflectPermission::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
 
 
 J2CPP_DEFINE_CLASS(java::lang::reflect::ReflectPermission,"java/lang/reflect/ReflectPermission")

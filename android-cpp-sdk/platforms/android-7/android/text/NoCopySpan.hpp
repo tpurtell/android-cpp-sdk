@@ -10,8 +10,10 @@
 #define J2CPP_ANDROID_TEXT_NOCOPYSPAN_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -31,11 +33,16 @@ namespace android { namespace text {
 
 			J2CPP_DECLARE_METHOD(0)
 
-			Concrete(jobject jobj)
+			explicit Concrete(jobject jobj)
 			: cpp_object<Concrete>(jobj)
 			{
 			}
 
+			operator local_ref<java::lang::Object>() const;
+			operator local_ref<android::text::NoCopySpan>() const;
+
+
+			Concrete();
 		}; //class Concrete
 
 	} //namespace NoCopySpan_
@@ -50,15 +57,17 @@ namespace android { namespace text {
 
 		typedef NoCopySpan_::Concrete Concrete;
 
-		NoCopySpan(jobject jobj)
+		explicit NoCopySpan(jobject jobj)
 		: cpp_object<NoCopySpan>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 	}; //class NoCopySpan
 
 } //namespace text
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -73,21 +82,39 @@ namespace j2cpp {
 
 
 
-template <>
-local_ref< android::text::NoCopySpan_::Concrete > create< android::text::NoCopySpan_::Concrete>()
+
+android::text::NoCopySpan_::Concrete::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::text::NoCopySpan_::Concrete >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::text::NoCopySpan_::Concrete::J2CPP_CLASS_NAME>(),
-			get_method_id<android::text::NoCopySpan_::Concrete::J2CPP_CLASS_NAME, android::text::NoCopySpan_::Concrete::J2CPP_METHOD_NAME(0), android::text::NoCopySpan_::Concrete::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+android::text::NoCopySpan_::Concrete::operator local_ref<android::text::NoCopySpan>() const
+{
+	return local_ref<android::text::NoCopySpan>(get_jtype());
+}
+
+
+android::text::NoCopySpan_::Concrete::Concrete()
+: cpp_object<android::text::NoCopySpan_::Concrete>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::text::NoCopySpan_::Concrete::J2CPP_CLASS_NAME>(),
+		get_method_id<android::text::NoCopySpan_::Concrete::J2CPP_CLASS_NAME, android::text::NoCopySpan_::Concrete::J2CPP_METHOD_NAME(0), android::text::NoCopySpan_::Concrete::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 
 J2CPP_DEFINE_CLASS(android::text::NoCopySpan_::Concrete,"android/text/NoCopySpan$Concrete")
 J2CPP_DEFINE_METHOD(android::text::NoCopySpan_::Concrete,0,"<init>","()V")
 
+
+
+android::text::NoCopySpan::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 J2CPP_DEFINE_CLASS(android::text::NoCopySpan,"android/text/NoCopySpan")
 

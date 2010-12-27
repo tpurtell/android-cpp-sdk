@@ -10,8 +10,10 @@
 #define J2CPP_JAVA_NIO_READONLYBUFFEREXCEPTION_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class UnsupportedOperationException; } } }
 
 
+#include <java/lang/UnsupportedOperationException.hpp>
 
 
 namespace j2cpp {
@@ -28,16 +30,19 @@ namespace java { namespace nio {
 
 		J2CPP_DECLARE_METHOD(0)
 
-		ReadOnlyBufferException(jobject jobj)
+		explicit ReadOnlyBufferException(jobject jobj)
 		: cpp_object<ReadOnlyBufferException>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::UnsupportedOperationException>() const;
+
+
+		ReadOnlyBufferException();
 	}; //class ReadOnlyBufferException
 
 } //namespace nio
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -51,16 +56,23 @@ namespace java { namespace nio {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::nio::ReadOnlyBufferException > create< java::nio::ReadOnlyBufferException>()
+
+java::nio::ReadOnlyBufferException::operator local_ref<java::lang::UnsupportedOperationException>() const
 {
-	return local_ref< java::nio::ReadOnlyBufferException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::nio::ReadOnlyBufferException::J2CPP_CLASS_NAME>(),
-			get_method_id<java::nio::ReadOnlyBufferException::J2CPP_CLASS_NAME, java::nio::ReadOnlyBufferException::J2CPP_METHOD_NAME(0), java::nio::ReadOnlyBufferException::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::UnsupportedOperationException>(get_jtype());
 }
+
+
+java::nio::ReadOnlyBufferException::ReadOnlyBufferException()
+: cpp_object<java::nio::ReadOnlyBufferException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::nio::ReadOnlyBufferException::J2CPP_CLASS_NAME>(),
+		get_method_id<java::nio::ReadOnlyBufferException::J2CPP_CLASS_NAME, java::nio::ReadOnlyBufferException::J2CPP_METHOD_NAME(0), java::nio::ReadOnlyBufferException::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 
 J2CPP_DEFINE_CLASS(java::nio::ReadOnlyBufferException,"java/nio/ReadOnlyBufferException")

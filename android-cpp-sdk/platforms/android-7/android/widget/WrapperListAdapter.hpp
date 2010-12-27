@@ -10,10 +10,12 @@
 #define J2CPP_ANDROID_WIDGET_WRAPPERLISTADAPTER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace android { namespace widget { class ListAdapter; } } }
 
 
 #include <android/widget/ListAdapter.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -30,17 +32,20 @@ namespace android { namespace widget {
 
 		J2CPP_DECLARE_METHOD(0)
 
-		WrapperListAdapter(jobject jobj)
+		explicit WrapperListAdapter(jobject jobj)
 		: cpp_object<WrapperListAdapter>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<android::widget::ListAdapter>() const;
+
 
 		local_ref< android::widget::ListAdapter > getWrappedAdapter();
 	}; //class WrapperListAdapter
 
 } //namespace widget
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -53,6 +58,17 @@ namespace android { namespace widget {
 
 namespace j2cpp {
 
+
+
+android::widget::WrapperListAdapter::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
+
+android::widget::WrapperListAdapter::operator local_ref<android::widget::ListAdapter>() const
+{
+	return local_ref<android::widget::ListAdapter>(get_jtype());
+}
 
 local_ref< android::widget::ListAdapter > android::widget::WrapperListAdapter::getWrappedAdapter()
 {

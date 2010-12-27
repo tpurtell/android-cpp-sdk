@@ -13,9 +13,11 @@
 namespace j2cpp { namespace java { namespace lang { class Class; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace android { namespace app { class Activity; } } }
+namespace j2cpp { namespace android { namespace test { class InstrumentationTestCase; } } }
 
 
 #include <android/app/Activity.hpp>
+#include <android/test/InstrumentationTestCase.hpp>
 #include <java/lang/Class.hpp>
 #include <java/lang/String.hpp>
 
@@ -38,18 +40,21 @@ namespace android { namespace test {
 		J2CPP_DECLARE_METHOD(3)
 		J2CPP_DECLARE_METHOD(4)
 
-		SingleLaunchActivityTestCase(jobject jobj)
+		explicit SingleLaunchActivityTestCase(jobject jobj)
 		: cpp_object<SingleLaunchActivityTestCase>(jobj)
 		{
 		}
 
+		operator local_ref<android::test::InstrumentationTestCase>() const;
+
+
+		SingleLaunchActivityTestCase(local_ref< java::lang::String > const&, local_ref< java::lang::Class > const&);
 		local_ref< android::app::Activity > getActivity();
 		void testActivityTestCaseSetUpProperly();
 	}; //class SingleLaunchActivityTestCase
 
 } //namespace test
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -63,17 +68,24 @@ namespace android { namespace test {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::test::SingleLaunchActivityTestCase > create< android::test::SingleLaunchActivityTestCase>(local_ref< java::lang::String > const &a0, local_ref< java::lang::Class > const &a1)
+
+android::test::SingleLaunchActivityTestCase::operator local_ref<android::test::InstrumentationTestCase>() const
 {
-	return local_ref< android::test::SingleLaunchActivityTestCase >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::test::SingleLaunchActivityTestCase::J2CPP_CLASS_NAME>(),
-			get_method_id<android::test::SingleLaunchActivityTestCase::J2CPP_CLASS_NAME, android::test::SingleLaunchActivityTestCase::J2CPP_METHOD_NAME(0), android::test::SingleLaunchActivityTestCase::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<android::test::InstrumentationTestCase>(get_jtype());
 }
+
+
+android::test::SingleLaunchActivityTestCase::SingleLaunchActivityTestCase(local_ref< java::lang::String > const &a0, local_ref< java::lang::Class > const &a1)
+: cpp_object<android::test::SingleLaunchActivityTestCase>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::test::SingleLaunchActivityTestCase::J2CPP_CLASS_NAME>(),
+		get_method_id<android::test::SingleLaunchActivityTestCase::J2CPP_CLASS_NAME, android::test::SingleLaunchActivityTestCase::J2CPP_METHOD_NAME(0), android::test::SingleLaunchActivityTestCase::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
 
 local_ref< android::app::Activity > android::test::SingleLaunchActivityTestCase::getActivity()
 {

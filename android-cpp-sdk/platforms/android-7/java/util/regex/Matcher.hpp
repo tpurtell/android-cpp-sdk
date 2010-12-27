@@ -10,6 +10,7 @@
 #define J2CPP_JAVA_UTIL_REGEX_MATCHER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class StringBuffer; } } }
 namespace j2cpp { namespace java { namespace lang { class CharSequence; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
@@ -18,6 +19,7 @@ namespace j2cpp { namespace java { namespace util { namespace regex { class Patt
 
 
 #include <java/lang/CharSequence.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/lang/StringBuffer.hpp>
 #include <java/util/regex/MatchResult.hpp>
@@ -69,10 +71,14 @@ namespace java { namespace util { namespace regex {
 		J2CPP_DECLARE_METHOD(30)
 		J2CPP_DECLARE_METHOD(31)
 
-		Matcher(jobject jobj)
+		explicit Matcher(jobject jobj)
 		: cpp_object<Matcher>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::util::regex::MatchResult>() const;
+
 
 		local_ref< java::util::regex::Matcher > reset();
 		local_ref< java::util::regex::Matcher > reset(local_ref< java::lang::CharSequence > const&);
@@ -110,7 +116,6 @@ namespace java { namespace util { namespace regex {
 } //namespace util
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_UTIL_REGEX_MATCHER_HPP_DECL
@@ -123,16 +128,17 @@ namespace java { namespace util { namespace regex {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::util::regex::Matcher > create< java::util::regex::Matcher>()
+
+java::util::regex::Matcher::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::util::regex::Matcher >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::regex::Matcher::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::regex::Matcher::J2CPP_CLASS_NAME, java::util::regex::Matcher::J2CPP_METHOD_NAME(0), java::util::regex::Matcher::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+java::util::regex::Matcher::operator local_ref<java::util::regex::MatchResult>() const
+{
+	return local_ref<java::util::regex::MatchResult>(get_jtype());
+}
+
 
 local_ref< java::util::regex::Matcher > java::util::regex::Matcher::reset()
 {

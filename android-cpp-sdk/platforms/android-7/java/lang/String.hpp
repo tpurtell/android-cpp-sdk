@@ -10,15 +10,19 @@
 #define J2CPP_JAVA_LANG_STRING_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class StringBuilder; } } }
+namespace j2cpp { namespace java { namespace lang { class Comparable; } } }
 namespace j2cpp { namespace java { namespace lang { class StringBuffer; } } }
 namespace j2cpp { namespace java { namespace lang { class CharSequence; } } }
 namespace j2cpp { namespace java { namespace util { class Locale; } } }
 namespace j2cpp { namespace java { namespace util { class Comparator; } } }
 
 
+#include <java/io/Serializable.hpp>
 #include <java/lang/CharSequence.hpp>
+#include <java/lang/Comparable.hpp>
 #include <java/lang/Object.hpp>
 #include <java/lang/StringBuffer.hpp>
 #include <java/lang/StringBuilder.hpp>
@@ -118,11 +122,30 @@ namespace java { namespace lang {
 		J2CPP_DECLARE_METHOD(77)
 		J2CPP_DECLARE_FIELD(0)
 
-		String(jobject jobj)
+		explicit String(jobject jobj)
 		: cpp_object<String>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::io::Serializable>() const;
+		operator local_ref<java::lang::Comparable>() const;
+		operator local_ref<java::lang::CharSequence>() const;
+
+
+		String();
+		String(local_ref< cpp_byte_array<1> > const&);
+		String(local_ref< cpp_byte_array<1> > const&, cpp_int const&);
+		String(local_ref< cpp_byte_array<1> > const&, cpp_int const&, cpp_int const&);
+		String(local_ref< cpp_byte_array<1> > const&, cpp_int const&, cpp_int const&, cpp_int const&);
+		String(local_ref< cpp_byte_array<1> > const&, cpp_int const&, cpp_int const&, local_ref< java::lang::String > const&);
+		String(local_ref< cpp_byte_array<1> > const&, local_ref< java::lang::String > const&);
+		String(local_ref< cpp_char_array<1> > const&);
+		String(local_ref< cpp_char_array<1> > const&, cpp_int const&, cpp_int const&);
+		String(local_ref< java::lang::String > const&);
+		String(local_ref< java::lang::StringBuffer > const&);
+		String(local_ref< cpp_int_array<1> > const&, cpp_int const&, cpp_int const&);
+		String(local_ref< java::lang::StringBuilder > const&);
 		cpp_char charAt(cpp_int const&);
 		cpp_int compareTo(local_ref< java::lang::String > const&);
 		cpp_int compareToIgnoreCase(local_ref< java::lang::String > const&);
@@ -194,7 +217,6 @@ namespace java { namespace lang {
 } //namespace lang
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_LANG_STRING_HPP_DECL
@@ -207,160 +229,194 @@ namespace java { namespace lang {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::lang::String > create< java::lang::String>()
+
+java::lang::String::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::lang::String >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::lang::String::J2CPP_CLASS_NAME>(),
-			get_method_id<java::lang::String::J2CPP_CLASS_NAME, java::lang::String::J2CPP_METHOD_NAME(0), java::lang::String::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
 
-template <>
-local_ref< java::lang::String > create< java::lang::String>(local_ref< cpp_byte_array<1> > const &a0)
+java::lang::String::operator local_ref<java::io::Serializable>() const
 {
-	return local_ref< java::lang::String >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::lang::String::J2CPP_CLASS_NAME>(),
-			get_method_id<java::lang::String::J2CPP_CLASS_NAME, java::lang::String::J2CPP_METHOD_NAME(1), java::lang::String::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::io::Serializable>(get_jtype());
 }
 
-template <>
-local_ref< java::lang::String > create< java::lang::String>(local_ref< cpp_byte_array<1> > const &a0, cpp_int const &a1)
+java::lang::String::operator local_ref<java::lang::Comparable>() const
 {
-	return local_ref< java::lang::String >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::lang::String::J2CPP_CLASS_NAME>(),
-			get_method_id<java::lang::String::J2CPP_CLASS_NAME, java::lang::String::J2CPP_METHOD_NAME(2), java::lang::String::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Comparable>(get_jtype());
 }
 
-template <>
-local_ref< java::lang::String > create< java::lang::String>(local_ref< cpp_byte_array<1> > const &a0, cpp_int const &a1, cpp_int const &a2)
+java::lang::String::operator local_ref<java::lang::CharSequence>() const
 {
-	return local_ref< java::lang::String >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::lang::String::J2CPP_CLASS_NAME>(),
-			get_method_id<java::lang::String::J2CPP_CLASS_NAME, java::lang::String::J2CPP_METHOD_NAME(3), java::lang::String::J2CPP_METHOD_SIGNATURE(3), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
-		)
-	);
+	return local_ref<java::lang::CharSequence>(get_jtype());
 }
 
-template <>
-local_ref< java::lang::String > create< java::lang::String>(local_ref< cpp_byte_array<1> > const &a0, cpp_int const &a1, cpp_int const &a2, cpp_int const &a3)
+
+java::lang::String::String()
+: cpp_object<java::lang::String>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::lang::String::J2CPP_CLASS_NAME>(),
+		get_method_id<java::lang::String::J2CPP_CLASS_NAME, java::lang::String::J2CPP_METHOD_NAME(0), java::lang::String::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
 {
-	return local_ref< java::lang::String >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::lang::String::J2CPP_CLASS_NAME>(),
-			get_method_id<java::lang::String::J2CPP_CLASS_NAME, java::lang::String::J2CPP_METHOD_NAME(4), java::lang::String::J2CPP_METHOD_SIGNATURE(4), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< java::lang::String > create< java::lang::String>(local_ref< cpp_byte_array<1> > const &a0, cpp_int const &a1, cpp_int const &a2, local_ref< java::lang::String > const &a3)
+
+
+java::lang::String::String(local_ref< cpp_byte_array<1> > const &a0)
+: cpp_object<java::lang::String>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::lang::String::J2CPP_CLASS_NAME>(),
+		get_method_id<java::lang::String::J2CPP_CLASS_NAME, java::lang::String::J2CPP_METHOD_NAME(1), java::lang::String::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< java::lang::String >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::lang::String::J2CPP_CLASS_NAME>(),
-			get_method_id<java::lang::String::J2CPP_CLASS_NAME, java::lang::String::J2CPP_METHOD_NAME(5), java::lang::String::J2CPP_METHOD_SIGNATURE(5), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< java::lang::String > create< java::lang::String>(local_ref< cpp_byte_array<1> > const &a0, local_ref< java::lang::String > const &a1)
+
+
+java::lang::String::String(local_ref< cpp_byte_array<1> > const &a0, cpp_int const &a1)
+: cpp_object<java::lang::String>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::lang::String::J2CPP_CLASS_NAME>(),
+		get_method_id<java::lang::String::J2CPP_CLASS_NAME, java::lang::String::J2CPP_METHOD_NAME(2), java::lang::String::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
 {
-	return local_ref< java::lang::String >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::lang::String::J2CPP_CLASS_NAME>(),
-			get_method_id<java::lang::String::J2CPP_CLASS_NAME, java::lang::String::J2CPP_METHOD_NAME(6), java::lang::String::J2CPP_METHOD_SIGNATURE(6), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< java::lang::String > create< java::lang::String>(local_ref< cpp_char_array<1> > const &a0)
+
+
+java::lang::String::String(local_ref< cpp_byte_array<1> > const &a0, cpp_int const &a1, cpp_int const &a2)
+: cpp_object<java::lang::String>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::lang::String::J2CPP_CLASS_NAME>(),
+		get_method_id<java::lang::String::J2CPP_CLASS_NAME, java::lang::String::J2CPP_METHOD_NAME(3), java::lang::String::J2CPP_METHOD_SIGNATURE(3), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
+	)
+)
 {
-	return local_ref< java::lang::String >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::lang::String::J2CPP_CLASS_NAME>(),
-			get_method_id<java::lang::String::J2CPP_CLASS_NAME, java::lang::String::J2CPP_METHOD_NAME(7), java::lang::String::J2CPP_METHOD_SIGNATURE(7), false>(),
-			a0.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< java::lang::String > create< java::lang::String>(local_ref< cpp_char_array<1> > const &a0, cpp_int const &a1, cpp_int const &a2)
+
+
+java::lang::String::String(local_ref< cpp_byte_array<1> > const &a0, cpp_int const &a1, cpp_int const &a2, cpp_int const &a3)
+: cpp_object<java::lang::String>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::lang::String::J2CPP_CLASS_NAME>(),
+		get_method_id<java::lang::String::J2CPP_CLASS_NAME, java::lang::String::J2CPP_METHOD_NAME(4), java::lang::String::J2CPP_METHOD_SIGNATURE(4), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype()
+	)
+)
 {
-	return local_ref< java::lang::String >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::lang::String::J2CPP_CLASS_NAME>(),
-			get_method_id<java::lang::String::J2CPP_CLASS_NAME, java::lang::String::J2CPP_METHOD_NAME(8), java::lang::String::J2CPP_METHOD_SIGNATURE(8), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< java::lang::String > create< java::lang::String>(local_ref< java::lang::String > const &a0)
+
+
+java::lang::String::String(local_ref< cpp_byte_array<1> > const &a0, cpp_int const &a1, cpp_int const &a2, local_ref< java::lang::String > const &a3)
+: cpp_object<java::lang::String>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::lang::String::J2CPP_CLASS_NAME>(),
+		get_method_id<java::lang::String::J2CPP_CLASS_NAME, java::lang::String::J2CPP_METHOD_NAME(5), java::lang::String::J2CPP_METHOD_SIGNATURE(5), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype()
+	)
+)
 {
-	return local_ref< java::lang::String >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::lang::String::J2CPP_CLASS_NAME>(),
-			get_method_id<java::lang::String::J2CPP_CLASS_NAME, java::lang::String::J2CPP_METHOD_NAME(9), java::lang::String::J2CPP_METHOD_SIGNATURE(9), false>(),
-			a0.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< java::lang::String > create< java::lang::String>(local_ref< java::lang::StringBuffer > const &a0)
+
+
+java::lang::String::String(local_ref< cpp_byte_array<1> > const &a0, local_ref< java::lang::String > const &a1)
+: cpp_object<java::lang::String>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::lang::String::J2CPP_CLASS_NAME>(),
+		get_method_id<java::lang::String::J2CPP_CLASS_NAME, java::lang::String::J2CPP_METHOD_NAME(6), java::lang::String::J2CPP_METHOD_SIGNATURE(6), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
 {
-	return local_ref< java::lang::String >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::lang::String::J2CPP_CLASS_NAME>(),
-			get_method_id<java::lang::String::J2CPP_CLASS_NAME, java::lang::String::J2CPP_METHOD_NAME(10), java::lang::String::J2CPP_METHOD_SIGNATURE(10), false>(),
-			a0.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< java::lang::String > create< java::lang::String>(local_ref< cpp_int_array<1> > const &a0, cpp_int const &a1, cpp_int const &a2)
+
+
+java::lang::String::String(local_ref< cpp_char_array<1> > const &a0)
+: cpp_object<java::lang::String>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::lang::String::J2CPP_CLASS_NAME>(),
+		get_method_id<java::lang::String::J2CPP_CLASS_NAME, java::lang::String::J2CPP_METHOD_NAME(7), java::lang::String::J2CPP_METHOD_SIGNATURE(7), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< java::lang::String >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::lang::String::J2CPP_CLASS_NAME>(),
-			get_method_id<java::lang::String::J2CPP_CLASS_NAME, java::lang::String::J2CPP_METHOD_NAME(11), java::lang::String::J2CPP_METHOD_SIGNATURE(11), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< java::lang::String > create< java::lang::String>(local_ref< java::lang::StringBuilder > const &a0)
+
+
+java::lang::String::String(local_ref< cpp_char_array<1> > const &a0, cpp_int const &a1, cpp_int const &a2)
+: cpp_object<java::lang::String>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::lang::String::J2CPP_CLASS_NAME>(),
+		get_method_id<java::lang::String::J2CPP_CLASS_NAME, java::lang::String::J2CPP_METHOD_NAME(8), java::lang::String::J2CPP_METHOD_SIGNATURE(8), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
+	)
+)
 {
-	return local_ref< java::lang::String >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::lang::String::J2CPP_CLASS_NAME>(),
-			get_method_id<java::lang::String::J2CPP_CLASS_NAME, java::lang::String::J2CPP_METHOD_NAME(12), java::lang::String::J2CPP_METHOD_SIGNATURE(12), false>(),
-			a0.get_jtype()
-		)
-	);
 }
+
+
+
+java::lang::String::String(local_ref< java::lang::String > const &a0)
+: cpp_object<java::lang::String>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::lang::String::J2CPP_CLASS_NAME>(),
+		get_method_id<java::lang::String::J2CPP_CLASS_NAME, java::lang::String::J2CPP_METHOD_NAME(9), java::lang::String::J2CPP_METHOD_SIGNATURE(9), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
+
+
+java::lang::String::String(local_ref< java::lang::StringBuffer > const &a0)
+: cpp_object<java::lang::String>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::lang::String::J2CPP_CLASS_NAME>(),
+		get_method_id<java::lang::String::J2CPP_CLASS_NAME, java::lang::String::J2CPP_METHOD_NAME(10), java::lang::String::J2CPP_METHOD_SIGNATURE(10), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
+
+
+java::lang::String::String(local_ref< cpp_int_array<1> > const &a0, cpp_int const &a1, cpp_int const &a2)
+: cpp_object<java::lang::String>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::lang::String::J2CPP_CLASS_NAME>(),
+		get_method_id<java::lang::String::J2CPP_CLASS_NAME, java::lang::String::J2CPP_METHOD_NAME(11), java::lang::String::J2CPP_METHOD_SIGNATURE(11), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
+	)
+)
+{
+}
+
+
+
+java::lang::String::String(local_ref< java::lang::StringBuilder > const &a0)
+: cpp_object<java::lang::String>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::lang::String::J2CPP_CLASS_NAME>(),
+		get_method_id<java::lang::String::J2CPP_CLASS_NAME, java::lang::String::J2CPP_METHOD_NAME(12), java::lang::String::J2CPP_METHOD_SIGNATURE(12), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 cpp_char java::lang::String::charAt(cpp_int const &a0)
 {
@@ -1056,6 +1112,7 @@ cpp_int java::lang::String::compareTo(local_ref< java::lang::Object > const &a0)
 		)
 	);
 }
+
 
 
 static_field<

@@ -10,8 +10,10 @@
 #define J2CPP_ANDROID_TEST_SUITEBUILDER_TESTSUITEBUILDER_HPP_DECL
 
 
+namespace j2cpp { namespace junit { namespace framework { class TestCase; } } }
 namespace j2cpp { namespace junit { namespace framework { class TestSuite; } } }
 namespace j2cpp { namespace java { namespace lang { class ClassLoader; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class Class; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace lang { class Exception; } } }
@@ -23,8 +25,10 @@ namespace j2cpp { namespace com { namespace android { namespace internal { names
 #include <java/lang/Class.hpp>
 #include <java/lang/ClassLoader.hpp>
 #include <java/lang/Exception.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/util/List.hpp>
+#include <junit/framework/TestCase.hpp>
 #include <junit/framework/TestSuite.hpp>
 
 
@@ -46,11 +50,15 @@ namespace android { namespace test { namespace suitebuilder {
 			J2CPP_DECLARE_METHOD(0)
 			J2CPP_DECLARE_METHOD(1)
 
-			FailedToCreateTests(jobject jobj)
+			explicit FailedToCreateTests(jobject jobj)
 			: cpp_object<FailedToCreateTests>(jobj)
 			{
 			}
 
+			operator local_ref<junit::framework::TestCase>() const;
+
+
+			FailedToCreateTests(local_ref< java::lang::Exception > const&);
 			void testSuiteConstructionFailed();
 		}; //class FailedToCreateTests
 
@@ -76,11 +84,16 @@ namespace android { namespace test { namespace suitebuilder {
 
 		typedef TestSuiteBuilder_::FailedToCreateTests FailedToCreateTests;
 
-		TestSuiteBuilder(jobject jobj)
+		explicit TestSuiteBuilder(jobject jobj)
 		: cpp_object<TestSuiteBuilder>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		TestSuiteBuilder(local_ref< java::lang::Class > const&);
+		TestSuiteBuilder(local_ref< java::lang::String > const&, local_ref< java::lang::ClassLoader > const&);
 		local_ref< android::test::suitebuilder::TestSuiteBuilder > includePackages(local_ref< cpp_object_array<java::lang::String, 1> > const&);
 		local_ref< android::test::suitebuilder::TestSuiteBuilder > excludePackages(local_ref< cpp_object_array<java::lang::String, 1> > const&);
 		local_ref< android::test::suitebuilder::TestSuiteBuilder > addRequirements(local_ref< java::util::List > const&);
@@ -93,7 +106,6 @@ namespace android { namespace test { namespace suitebuilder {
 } //namespace suitebuilder
 } //namespace test
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -108,17 +120,24 @@ namespace j2cpp {
 
 
 
-template <>
-local_ref< android::test::suitebuilder::TestSuiteBuilder_::FailedToCreateTests > create< android::test::suitebuilder::TestSuiteBuilder_::FailedToCreateTests>(local_ref< java::lang::Exception > const &a0)
+
+android::test::suitebuilder::TestSuiteBuilder_::FailedToCreateTests::operator local_ref<junit::framework::TestCase>() const
 {
-	return local_ref< android::test::suitebuilder::TestSuiteBuilder_::FailedToCreateTests >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::test::suitebuilder::TestSuiteBuilder_::FailedToCreateTests::J2CPP_CLASS_NAME>(),
-			get_method_id<android::test::suitebuilder::TestSuiteBuilder_::FailedToCreateTests::J2CPP_CLASS_NAME, android::test::suitebuilder::TestSuiteBuilder_::FailedToCreateTests::J2CPP_METHOD_NAME(0), android::test::suitebuilder::TestSuiteBuilder_::FailedToCreateTests::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<junit::framework::TestCase>(get_jtype());
 }
+
+
+android::test::suitebuilder::TestSuiteBuilder_::FailedToCreateTests::FailedToCreateTests(local_ref< java::lang::Exception > const &a0)
+: cpp_object<android::test::suitebuilder::TestSuiteBuilder_::FailedToCreateTests>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::test::suitebuilder::TestSuiteBuilder_::FailedToCreateTests::J2CPP_CLASS_NAME>(),
+		get_method_id<android::test::suitebuilder::TestSuiteBuilder_::FailedToCreateTests::J2CPP_CLASS_NAME, android::test::suitebuilder::TestSuiteBuilder_::FailedToCreateTests::J2CPP_METHOD_NAME(0), android::test::suitebuilder::TestSuiteBuilder_::FailedToCreateTests::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 void android::test::suitebuilder::TestSuiteBuilder_::FailedToCreateTests::testSuiteConstructionFailed()
 {
@@ -136,29 +155,37 @@ J2CPP_DEFINE_METHOD(android::test::suitebuilder::TestSuiteBuilder_::FailedToCrea
 J2CPP_DEFINE_METHOD(android::test::suitebuilder::TestSuiteBuilder_::FailedToCreateTests,1,"testSuiteConstructionFailed","()V")
 
 
-template <>
-local_ref< android::test::suitebuilder::TestSuiteBuilder > create< android::test::suitebuilder::TestSuiteBuilder>(local_ref< java::lang::Class > const &a0)
+
+android::test::suitebuilder::TestSuiteBuilder::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::test::suitebuilder::TestSuiteBuilder >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::test::suitebuilder::TestSuiteBuilder::J2CPP_CLASS_NAME>(),
-			get_method_id<android::test::suitebuilder::TestSuiteBuilder::J2CPP_CLASS_NAME, android::test::suitebuilder::TestSuiteBuilder::J2CPP_METHOD_NAME(0), android::test::suitebuilder::TestSuiteBuilder::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
 
-template <>
-local_ref< android::test::suitebuilder::TestSuiteBuilder > create< android::test::suitebuilder::TestSuiteBuilder>(local_ref< java::lang::String > const &a0, local_ref< java::lang::ClassLoader > const &a1)
+
+android::test::suitebuilder::TestSuiteBuilder::TestSuiteBuilder(local_ref< java::lang::Class > const &a0)
+: cpp_object<android::test::suitebuilder::TestSuiteBuilder>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::test::suitebuilder::TestSuiteBuilder::J2CPP_CLASS_NAME>(),
+		get_method_id<android::test::suitebuilder::TestSuiteBuilder::J2CPP_CLASS_NAME, android::test::suitebuilder::TestSuiteBuilder::J2CPP_METHOD_NAME(0), android::test::suitebuilder::TestSuiteBuilder::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< android::test::suitebuilder::TestSuiteBuilder >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::test::suitebuilder::TestSuiteBuilder::J2CPP_CLASS_NAME>(),
-			get_method_id<android::test::suitebuilder::TestSuiteBuilder::J2CPP_CLASS_NAME, android::test::suitebuilder::TestSuiteBuilder::J2CPP_METHOD_NAME(1), android::test::suitebuilder::TestSuiteBuilder::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
 }
+
+
+
+android::test::suitebuilder::TestSuiteBuilder::TestSuiteBuilder(local_ref< java::lang::String > const &a0, local_ref< java::lang::ClassLoader > const &a1)
+: cpp_object<android::test::suitebuilder::TestSuiteBuilder>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::test::suitebuilder::TestSuiteBuilder::J2CPP_CLASS_NAME>(),
+		get_method_id<android::test::suitebuilder::TestSuiteBuilder::J2CPP_CLASS_NAME, android::test::suitebuilder::TestSuiteBuilder::J2CPP_METHOD_NAME(1), android::test::suitebuilder::TestSuiteBuilder::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
 
 local_ref< android::test::suitebuilder::TestSuiteBuilder > android::test::suitebuilder::TestSuiteBuilder::includePackages(local_ref< cpp_object_array<java::lang::String, 1> > const &a0)
 {

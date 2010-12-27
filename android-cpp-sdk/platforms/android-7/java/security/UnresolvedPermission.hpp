@@ -10,6 +10,7 @@
 #define J2CPP_JAVA_SECURITY_UNRESOLVEDPERMISSION_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace security { class Permission; } } }
@@ -17,6 +18,7 @@ namespace j2cpp { namespace java { namespace security { class PermissionCollecti
 namespace j2cpp { namespace java { namespace security { namespace cert { class Certificate; } } } }
 
 
+#include <java/io/Serializable.hpp>
 #include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/security/Permission.hpp>
@@ -48,11 +50,16 @@ namespace java { namespace security {
 		J2CPP_DECLARE_METHOD(9)
 		J2CPP_DECLARE_METHOD(10)
 
-		UnresolvedPermission(jobject jobj)
+		explicit UnresolvedPermission(jobject jobj)
 		: cpp_object<UnresolvedPermission>(jobj)
 		{
 		}
 
+		operator local_ref<java::security::Permission>() const;
+		operator local_ref<java::io::Serializable>() const;
+
+
+		UnresolvedPermission(local_ref< java::lang::String > const&, local_ref< java::lang::String > const&, local_ref< java::lang::String > const&, local_ref< cpp_object_array<java::security::cert::Certificate, 1> > const&);
 		cpp_boolean equals(local_ref< java::lang::Object > const&);
 		cpp_int hashCode();
 		local_ref< java::lang::String > getActions();
@@ -68,7 +75,6 @@ namespace java { namespace security {
 } //namespace security
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_SECURITY_UNRESOLVEDPERMISSION_HPP_DECL
@@ -81,17 +87,29 @@ namespace java { namespace security {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::security::UnresolvedPermission > create< java::security::UnresolvedPermission>(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1, local_ref< java::lang::String > const &a2, local_ref< cpp_object_array<java::security::cert::Certificate, 1> > const &a3)
+
+java::security::UnresolvedPermission::operator local_ref<java::security::Permission>() const
 {
-	return local_ref< java::security::UnresolvedPermission >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::security::UnresolvedPermission::J2CPP_CLASS_NAME>(),
-			get_method_id<java::security::UnresolvedPermission::J2CPP_CLASS_NAME, java::security::UnresolvedPermission::J2CPP_METHOD_NAME(0), java::security::UnresolvedPermission::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype()
-		)
-	);
+	return local_ref<java::security::Permission>(get_jtype());
 }
+
+java::security::UnresolvedPermission::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jtype());
+}
+
+
+java::security::UnresolvedPermission::UnresolvedPermission(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1, local_ref< java::lang::String > const &a2, local_ref< cpp_object_array<java::security::cert::Certificate, 1> > const &a3)
+: cpp_object<java::security::UnresolvedPermission>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::security::UnresolvedPermission::J2CPP_CLASS_NAME>(),
+		get_method_id<java::security::UnresolvedPermission::J2CPP_CLASS_NAME, java::security::UnresolvedPermission::J2CPP_METHOD_NAME(0), java::security::UnresolvedPermission::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype()
+	)
+)
+{
+}
+
 
 cpp_boolean java::security::UnresolvedPermission::equals(local_ref< java::lang::Object > const &a0)
 {

@@ -11,11 +11,13 @@
 
 
 namespace j2cpp { namespace java { namespace io { class InputStream; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace org { namespace apache { namespace commons { namespace logging { class Log; } } } } }
 
 
 #include <java/io/InputStream.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <org/apache/commons/logging/Log.hpp>
 
@@ -45,11 +47,15 @@ namespace org { namespace apache { namespace http { namespace impl { namespace c
 		J2CPP_DECLARE_METHOD(10)
 		J2CPP_DECLARE_METHOD(11)
 
-		Wire(jobject jobj)
+		explicit Wire(jobject jobj)
 		: cpp_object<Wire>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		Wire(local_ref< org::apache::commons::logging::Log > const&);
 		cpp_boolean enabled();
 		void output(local_ref< java::io::InputStream > const&);
 		void input(local_ref< java::io::InputStream > const&);
@@ -69,7 +75,6 @@ namespace org { namespace apache { namespace http { namespace impl { namespace c
 } //namespace apache
 } //namespace org
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ORG_APACHE_HTTP_IMPL_CONN_WIRE_HPP_DECL
@@ -82,17 +87,24 @@ namespace org { namespace apache { namespace http { namespace impl { namespace c
 namespace j2cpp {
 
 
-template <>
-local_ref< org::apache::http::impl::conn::Wire > create< org::apache::http::impl::conn::Wire>(local_ref< org::apache::commons::logging::Log > const &a0)
+
+org::apache::http::impl::conn::Wire::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< org::apache::http::impl::conn::Wire >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::apache::http::impl::conn::Wire::J2CPP_CLASS_NAME>(),
-			get_method_id<org::apache::http::impl::conn::Wire::J2CPP_CLASS_NAME, org::apache::http::impl::conn::Wire::J2CPP_METHOD_NAME(0), org::apache::http::impl::conn::Wire::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+org::apache::http::impl::conn::Wire::Wire(local_ref< org::apache::commons::logging::Log > const &a0)
+: cpp_object<org::apache::http::impl::conn::Wire>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::apache::http::impl::conn::Wire::J2CPP_CLASS_NAME>(),
+		get_method_id<org::apache::http::impl::conn::Wire::J2CPP_CLASS_NAME, org::apache::http::impl::conn::Wire::J2CPP_METHOD_NAME(0), org::apache::http::impl::conn::Wire::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 cpp_boolean org::apache::http::impl::conn::Wire::enabled()
 {

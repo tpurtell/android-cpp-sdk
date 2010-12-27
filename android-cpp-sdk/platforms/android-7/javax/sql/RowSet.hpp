@@ -20,6 +20,7 @@ namespace j2cpp { namespace java { namespace sql { class Ref; } } }
 namespace j2cpp { namespace java { namespace sql { class Clob; } } }
 namespace j2cpp { namespace java { namespace sql { class Blob; } } }
 namespace j2cpp { namespace java { namespace sql { class Date; } } }
+namespace j2cpp { namespace java { namespace sql { class ResultSet; } } }
 namespace j2cpp { namespace java { namespace sql { class Time; } } }
 namespace j2cpp { namespace java { namespace sql { class Array; } } }
 namespace j2cpp { namespace java { namespace sql { class Timestamp; } } }
@@ -37,6 +38,7 @@ namespace j2cpp { namespace java { namespace util { class Calendar; } } }
 #include <java/sql/Clob.hpp>
 #include <java/sql/Date.hpp>
 #include <java/sql/Ref.hpp>
+#include <java/sql/ResultSet.hpp>
 #include <java/sql/Time.hpp>
 #include <java/sql/Timestamp.hpp>
 #include <java/util/Calendar.hpp>
@@ -115,10 +117,14 @@ namespace javax { namespace sql {
 		J2CPP_DECLARE_METHOD(56)
 		J2CPP_DECLARE_METHOD(57)
 
-		RowSet(jobject jobj)
+		explicit RowSet(jobject jobj)
 		: cpp_object<RowSet>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::sql::ResultSet>() const;
+
 
 		void addRowSetListener(local_ref< javax::sql::RowSetListener > const&);
 		void clearParameters();
@@ -183,7 +189,6 @@ namespace javax { namespace sql {
 } //namespace sql
 } //namespace javax
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVAX_SQL_ROWSET_HPP_DECL
@@ -195,6 +200,17 @@ namespace javax { namespace sql {
 
 namespace j2cpp {
 
+
+
+javax::sql::RowSet::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
+
+javax::sql::RowSet::operator local_ref<java::sql::ResultSet>() const
+{
+	return local_ref<java::sql::ResultSet>(get_jtype());
+}
 
 void javax::sql::RowSet::addRowSetListener(local_ref< javax::sql::RowSetListener > const &a0)
 {

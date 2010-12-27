@@ -10,11 +10,13 @@
 #define J2CPP_JAVA_NIO_CHARSET_SPI_CHARSETPROVIDER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace util { class Iterator; } } }
 namespace j2cpp { namespace java { namespace nio { namespace charset { class Charset; } } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/nio/charset/Charset.hpp>
 #include <java/util/Iterator.hpp>
@@ -36,10 +38,13 @@ namespace java { namespace nio { namespace charset { namespace spi {
 		J2CPP_DECLARE_METHOD(1)
 		J2CPP_DECLARE_METHOD(2)
 
-		CharsetProvider(jobject jobj)
+		explicit CharsetProvider(jobject jobj)
 		: cpp_object<CharsetProvider>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		local_ref< java::util::Iterator > charsets();
 		local_ref< java::nio::charset::Charset > charsetForName(local_ref< java::lang::String > const&);
@@ -49,7 +54,6 @@ namespace java { namespace nio { namespace charset { namespace spi {
 } //namespace charset
 } //namespace nio
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -63,16 +67,12 @@ namespace java { namespace nio { namespace charset { namespace spi {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::nio::charset::spi::CharsetProvider > create< java::nio::charset::spi::CharsetProvider>()
+
+java::nio::charset::spi::CharsetProvider::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::nio::charset::spi::CharsetProvider >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::nio::charset::spi::CharsetProvider::J2CPP_CLASS_NAME>(),
-			get_method_id<java::nio::charset::spi::CharsetProvider::J2CPP_CLASS_NAME, java::nio::charset::spi::CharsetProvider::J2CPP_METHOD_NAME(0), java::nio::charset::spi::CharsetProvider::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
 
 local_ref< java::util::Iterator > java::nio::charset::spi::CharsetProvider::charsets()
 {

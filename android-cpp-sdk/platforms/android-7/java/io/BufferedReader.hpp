@@ -42,11 +42,16 @@ namespace java { namespace io {
 		J2CPP_DECLARE_METHOD(9)
 		J2CPP_DECLARE_METHOD(10)
 
-		BufferedReader(jobject jobj)
+		explicit BufferedReader(jobject jobj)
 		: cpp_object<BufferedReader>(jobj)
 		{
 		}
 
+		operator local_ref<java::io::Reader>() const;
+
+
+		BufferedReader(local_ref< java::io::Reader > const&);
+		BufferedReader(local_ref< java::io::Reader > const&, cpp_int const&);
 		void close();
 		void mark(cpp_int const&);
 		cpp_boolean markSupported();
@@ -61,7 +66,6 @@ namespace java { namespace io {
 } //namespace io
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_IO_BUFFEREDREADER_HPP_DECL
@@ -74,29 +78,37 @@ namespace java { namespace io {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::io::BufferedReader > create< java::io::BufferedReader>(local_ref< java::io::Reader > const &a0)
+
+java::io::BufferedReader::operator local_ref<java::io::Reader>() const
 {
-	return local_ref< java::io::BufferedReader >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::io::BufferedReader::J2CPP_CLASS_NAME>(),
-			get_method_id<java::io::BufferedReader::J2CPP_CLASS_NAME, java::io::BufferedReader::J2CPP_METHOD_NAME(0), java::io::BufferedReader::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::io::Reader>(get_jtype());
 }
 
-template <>
-local_ref< java::io::BufferedReader > create< java::io::BufferedReader>(local_ref< java::io::Reader > const &a0, cpp_int const &a1)
+
+java::io::BufferedReader::BufferedReader(local_ref< java::io::Reader > const &a0)
+: cpp_object<java::io::BufferedReader>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::io::BufferedReader::J2CPP_CLASS_NAME>(),
+		get_method_id<java::io::BufferedReader::J2CPP_CLASS_NAME, java::io::BufferedReader::J2CPP_METHOD_NAME(0), java::io::BufferedReader::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< java::io::BufferedReader >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::io::BufferedReader::J2CPP_CLASS_NAME>(),
-			get_method_id<java::io::BufferedReader::J2CPP_CLASS_NAME, java::io::BufferedReader::J2CPP_METHOD_NAME(1), java::io::BufferedReader::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
 }
+
+
+
+java::io::BufferedReader::BufferedReader(local_ref< java::io::Reader > const &a0, cpp_int const &a1)
+: cpp_object<java::io::BufferedReader>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::io::BufferedReader::J2CPP_CLASS_NAME>(),
+		get_method_id<java::io::BufferedReader::J2CPP_CLASS_NAME, java::io::BufferedReader::J2CPP_METHOD_NAME(1), java::io::BufferedReader::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
 
 void java::io::BufferedReader::close()
 {

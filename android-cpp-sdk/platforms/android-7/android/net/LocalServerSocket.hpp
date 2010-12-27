@@ -11,6 +11,7 @@
 
 
 namespace j2cpp { namespace java { namespace io { class FileDescriptor; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace android { namespace net { class LocalSocketAddress; } } }
 namespace j2cpp { namespace android { namespace net { class LocalSocket; } } }
@@ -19,6 +20,7 @@ namespace j2cpp { namespace android { namespace net { class LocalSocket; } } }
 #include <android/net/LocalSocket.hpp>
 #include <android/net/LocalSocketAddress.hpp>
 #include <java/io/FileDescriptor.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -41,11 +43,16 @@ namespace android { namespace net {
 		J2CPP_DECLARE_METHOD(4)
 		J2CPP_DECLARE_METHOD(5)
 
-		LocalServerSocket(jobject jobj)
+		explicit LocalServerSocket(jobject jobj)
 		: cpp_object<LocalServerSocket>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		LocalServerSocket(local_ref< java::lang::String > const&);
+		LocalServerSocket(local_ref< java::io::FileDescriptor > const&);
 		local_ref< android::net::LocalSocketAddress > getLocalSocketAddress();
 		local_ref< android::net::LocalSocket > accept();
 		local_ref< java::io::FileDescriptor > getFileDescriptor();
@@ -54,7 +61,6 @@ namespace android { namespace net {
 
 } //namespace net
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -68,29 +74,37 @@ namespace android { namespace net {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::net::LocalServerSocket > create< android::net::LocalServerSocket>(local_ref< java::lang::String > const &a0)
+
+android::net::LocalServerSocket::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::net::LocalServerSocket >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::net::LocalServerSocket::J2CPP_CLASS_NAME>(),
-			get_method_id<android::net::LocalServerSocket::J2CPP_CLASS_NAME, android::net::LocalServerSocket::J2CPP_METHOD_NAME(0), android::net::LocalServerSocket::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
 
-template <>
-local_ref< android::net::LocalServerSocket > create< android::net::LocalServerSocket>(local_ref< java::io::FileDescriptor > const &a0)
+
+android::net::LocalServerSocket::LocalServerSocket(local_ref< java::lang::String > const &a0)
+: cpp_object<android::net::LocalServerSocket>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::net::LocalServerSocket::J2CPP_CLASS_NAME>(),
+		get_method_id<android::net::LocalServerSocket::J2CPP_CLASS_NAME, android::net::LocalServerSocket::J2CPP_METHOD_NAME(0), android::net::LocalServerSocket::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< android::net::LocalServerSocket >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::net::LocalServerSocket::J2CPP_CLASS_NAME>(),
-			get_method_id<android::net::LocalServerSocket::J2CPP_CLASS_NAME, android::net::LocalServerSocket::J2CPP_METHOD_NAME(1), android::net::LocalServerSocket::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
 }
+
+
+
+android::net::LocalServerSocket::LocalServerSocket(local_ref< java::io::FileDescriptor > const &a0)
+: cpp_object<android::net::LocalServerSocket>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::net::LocalServerSocket::J2CPP_CLASS_NAME>(),
+		get_method_id<android::net::LocalServerSocket::J2CPP_CLASS_NAME, android::net::LocalServerSocket::J2CPP_METHOD_NAME(1), android::net::LocalServerSocket::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 local_ref< android::net::LocalSocketAddress > android::net::LocalServerSocket::getLocalSocketAddress()
 {

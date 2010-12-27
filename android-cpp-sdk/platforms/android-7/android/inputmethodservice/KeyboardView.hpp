@@ -10,6 +10,7 @@
 #define J2CPP_ANDROID_INPUTMETHODSERVICE_KEYBOARDVIEW_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class CharSequence; } } }
 namespace j2cpp { namespace android { namespace inputmethodservice { class Keyboard; } } }
 namespace j2cpp { namespace android { namespace inputmethodservice { namespace KeyboardView_ { class OnKeyboardActionListener; } } } }
@@ -17,6 +18,7 @@ namespace j2cpp { namespace android { namespace graphics { class Canvas; } } }
 namespace j2cpp { namespace android { namespace content { class Context; } } }
 namespace j2cpp { namespace android { namespace view { class View; } } }
 namespace j2cpp { namespace android { namespace view { class MotionEvent; } } }
+namespace j2cpp { namespace android { namespace view { namespace View_ { class OnClickListener; } } } }
 namespace j2cpp { namespace android { namespace util { class AttributeSet; } } }
 
 
@@ -28,6 +30,7 @@ namespace j2cpp { namespace android { namespace util { class AttributeSet; } } }
 #include <android/view/MotionEvent.hpp>
 #include <android/view/View.hpp>
 #include <java/lang/CharSequence.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -54,10 +57,13 @@ namespace android { namespace inputmethodservice {
 			J2CPP_DECLARE_METHOD(6)
 			J2CPP_DECLARE_METHOD(7)
 
-			OnKeyboardActionListener(jobject jobj)
+			explicit OnKeyboardActionListener(jobject jobj)
 			: cpp_object<OnKeyboardActionListener>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+
 
 			void onPress(cpp_int const&);
 			void onRelease(cpp_int const&);
@@ -111,11 +117,17 @@ namespace android { namespace inputmethodservice {
 
 		typedef KeyboardView_::OnKeyboardActionListener OnKeyboardActionListener;
 
-		KeyboardView(jobject jobj)
+		explicit KeyboardView(jobject jobj)
 		: cpp_object<KeyboardView>(jobj)
 		{
 		}
 
+		operator local_ref<android::view::View>() const;
+		operator local_ref<android::view::View_::OnClickListener>() const;
+
+
+		KeyboardView(local_ref< android::content::Context > const&, local_ref< android::util::AttributeSet > const&);
+		KeyboardView(local_ref< android::content::Context > const&, local_ref< android::util::AttributeSet > const&, cpp_int const&);
 		void setOnKeyboardActionListener(local_ref< android::inputmethodservice::KeyboardView_::OnKeyboardActionListener > const&);
 		void setKeyboard(local_ref< android::inputmethodservice::Keyboard > const&);
 		local_ref< android::inputmethodservice::Keyboard > getKeyboard();
@@ -143,7 +155,6 @@ namespace android { namespace inputmethodservice {
 } //namespace inputmethodservice
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_INPUTMETHODSERVICE_KEYBOARDVIEW_HPP_DECL
@@ -156,6 +167,12 @@ namespace android { namespace inputmethodservice {
 namespace j2cpp {
 
 
+
+
+android::inputmethodservice::KeyboardView_::OnKeyboardActionListener::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 void android::inputmethodservice::KeyboardView_::OnKeyboardActionListener::onPress(cpp_int const &a0)
 {
@@ -253,29 +270,42 @@ J2CPP_DEFINE_METHOD(android::inputmethodservice::KeyboardView_::OnKeyboardAction
 J2CPP_DEFINE_METHOD(android::inputmethodservice::KeyboardView_::OnKeyboardActionListener,7,"swipeUp","()V")
 
 
-template <>
-local_ref< android::inputmethodservice::KeyboardView > create< android::inputmethodservice::KeyboardView>(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1)
+
+android::inputmethodservice::KeyboardView::operator local_ref<android::view::View>() const
 {
-	return local_ref< android::inputmethodservice::KeyboardView >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::inputmethodservice::KeyboardView::J2CPP_CLASS_NAME>(),
-			get_method_id<android::inputmethodservice::KeyboardView::J2CPP_CLASS_NAME, android::inputmethodservice::KeyboardView::J2CPP_METHOD_NAME(0), android::inputmethodservice::KeyboardView::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<android::view::View>(get_jtype());
 }
 
-template <>
-local_ref< android::inputmethodservice::KeyboardView > create< android::inputmethodservice::KeyboardView>(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1, cpp_int const &a2)
+android::inputmethodservice::KeyboardView::operator local_ref<android::view::View_::OnClickListener>() const
 {
-	return local_ref< android::inputmethodservice::KeyboardView >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::inputmethodservice::KeyboardView::J2CPP_CLASS_NAME>(),
-			get_method_id<android::inputmethodservice::KeyboardView::J2CPP_CLASS_NAME, android::inputmethodservice::KeyboardView::J2CPP_METHOD_NAME(1), android::inputmethodservice::KeyboardView::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
-		)
-	);
+	return local_ref<android::view::View_::OnClickListener>(get_jtype());
 }
+
+
+android::inputmethodservice::KeyboardView::KeyboardView(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1)
+: cpp_object<android::inputmethodservice::KeyboardView>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::inputmethodservice::KeyboardView::J2CPP_CLASS_NAME>(),
+		get_method_id<android::inputmethodservice::KeyboardView::J2CPP_CLASS_NAME, android::inputmethodservice::KeyboardView::J2CPP_METHOD_NAME(0), android::inputmethodservice::KeyboardView::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
+
+
+android::inputmethodservice::KeyboardView::KeyboardView(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1, cpp_int const &a2)
+: cpp_object<android::inputmethodservice::KeyboardView>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::inputmethodservice::KeyboardView::J2CPP_CLASS_NAME>(),
+		get_method_id<android::inputmethodservice::KeyboardView::J2CPP_CLASS_NAME, android::inputmethodservice::KeyboardView::J2CPP_METHOD_NAME(1), android::inputmethodservice::KeyboardView::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
+	)
+)
+{
+}
+
 
 void android::inputmethodservice::KeyboardView::setOnKeyboardActionListener(local_ref< android::inputmethodservice::KeyboardView_::OnKeyboardActionListener > const &a0)
 {

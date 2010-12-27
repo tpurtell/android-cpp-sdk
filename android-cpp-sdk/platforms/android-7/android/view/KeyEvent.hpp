@@ -16,6 +16,7 @@ namespace j2cpp { namespace android { namespace view { namespace KeyCharacterMap
 namespace j2cpp { namespace android { namespace view { namespace KeyEvent_ { class Callback; } } } }
 namespace j2cpp { namespace android { namespace view { namespace KeyEvent_ { class DispatcherState; } } } }
 namespace j2cpp { namespace android { namespace os { class Parcel; } } }
+namespace j2cpp { namespace android { namespace os { class Parcelable; } } }
 namespace j2cpp { namespace android { namespace os { namespace Parcelable_ { class Creator; } } } }
 
 
@@ -47,10 +48,13 @@ namespace android { namespace view {
 			J2CPP_DECLARE_METHOD(2)
 			J2CPP_DECLARE_METHOD(3)
 
-			Callback(jobject jobj)
+			explicit Callback(jobject jobj)
 			: cpp_object<Callback>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+
 
 			cpp_boolean onKeyDown(cpp_int const&, local_ref< android::view::KeyEvent > const&);
 			cpp_boolean onKeyLongPress(cpp_int const&, local_ref< android::view::KeyEvent > const&);
@@ -74,11 +78,15 @@ namespace android { namespace view {
 			J2CPP_DECLARE_METHOD(5)
 			J2CPP_DECLARE_METHOD(6)
 
-			DispatcherState(jobject jobj)
+			explicit DispatcherState(jobject jobj)
 			: cpp_object<DispatcherState>(jobj)
 			{
 			}
 
+			operator local_ref<java::lang::Object>() const;
+
+
+			DispatcherState();
 			void reset();
 			void reset(local_ref< java::lang::Object > const&);
 			void startTracking(local_ref< android::view::KeyEvent > const&, local_ref< java::lang::Object > const&);
@@ -261,11 +269,23 @@ namespace android { namespace view {
 		typedef KeyEvent_::Callback Callback;
 		typedef KeyEvent_::DispatcherState DispatcherState;
 
-		KeyEvent(jobject jobj)
+		explicit KeyEvent(jobject jobj)
 		: cpp_object<KeyEvent>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<android::os::Parcelable>() const;
+
+
+		KeyEvent(cpp_int const&, cpp_int const&);
+		KeyEvent(cpp_long const&, cpp_long const&, cpp_int const&, cpp_int const&, cpp_int const&);
+		KeyEvent(cpp_long const&, cpp_long const&, cpp_int const&, cpp_int const&, cpp_int const&, cpp_int const&);
+		KeyEvent(cpp_long const&, cpp_long const&, cpp_int const&, cpp_int const&, cpp_int const&, cpp_int const&, cpp_int const&, cpp_int const&);
+		KeyEvent(cpp_long const&, cpp_long const&, cpp_int const&, cpp_int const&, cpp_int const&, cpp_int const&, cpp_int const&, cpp_int const&, cpp_int const&);
+		KeyEvent(cpp_long const&, local_ref< java::lang::String > const&, cpp_int const&, cpp_int const&);
+		KeyEvent(local_ref< android::view::KeyEvent > const&);
+		KeyEvent(local_ref< android::view::KeyEvent > const&, cpp_long const&, cpp_int const&);
 		static cpp_int getMaxKeyCode();
 		static cpp_int getDeadChar(cpp_int const&, cpp_int const&);
 		static local_ref< android::view::KeyEvent > changeTimeRepeat(local_ref< android::view::KeyEvent > const&, cpp_long const&, cpp_int const&);
@@ -424,7 +444,6 @@ namespace android { namespace view {
 } //namespace view
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_VIEW_KEYEVENT_HPP_DECL
@@ -437,6 +456,12 @@ namespace android { namespace view {
 namespace j2cpp {
 
 
+
+
+android::view::KeyEvent_::Callback::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 cpp_boolean android::view::KeyEvent_::Callback::onKeyDown(cpp_int const &a0, local_ref< android::view::KeyEvent > const &a1)
 {
@@ -489,16 +514,23 @@ J2CPP_DEFINE_METHOD(android::view::KeyEvent_::Callback,1,"onKeyLongPress","(ILan
 J2CPP_DEFINE_METHOD(android::view::KeyEvent_::Callback,2,"onKeyUp","(ILandroid/view/KeyEvent;)Z")
 J2CPP_DEFINE_METHOD(android::view::KeyEvent_::Callback,3,"onKeyMultiple","(IILandroid/view/KeyEvent;)Z")
 
-template <>
-local_ref< android::view::KeyEvent_::DispatcherState > create< android::view::KeyEvent_::DispatcherState>()
+
+android::view::KeyEvent_::DispatcherState::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::view::KeyEvent_::DispatcherState >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::view::KeyEvent_::DispatcherState::J2CPP_CLASS_NAME>(),
-			get_method_id<android::view::KeyEvent_::DispatcherState::J2CPP_CLASS_NAME, android::view::KeyEvent_::DispatcherState::J2CPP_METHOD_NAME(0), android::view::KeyEvent_::DispatcherState::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::view::KeyEvent_::DispatcherState::DispatcherState()
+: cpp_object<android::view::KeyEvent_::DispatcherState>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::view::KeyEvent_::DispatcherState::J2CPP_CLASS_NAME>(),
+		get_method_id<android::view::KeyEvent_::DispatcherState::J2CPP_CLASS_NAME, android::view::KeyEvent_::DispatcherState::J2CPP_METHOD_NAME(0), android::view::KeyEvent_::DispatcherState::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 void android::view::KeyEvent_::DispatcherState::reset()
 {
@@ -576,101 +608,120 @@ J2CPP_DEFINE_METHOD(android::view::KeyEvent_::DispatcherState,5,"performedLongPr
 J2CPP_DEFINE_METHOD(android::view::KeyEvent_::DispatcherState,6,"handleUpEvent","(Landroid/view/KeyEvent;)V")
 
 
-template <>
-local_ref< android::view::KeyEvent > create< android::view::KeyEvent>(cpp_int const &a0, cpp_int const &a1)
+
+android::view::KeyEvent::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::view::KeyEvent >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::view::KeyEvent::J2CPP_CLASS_NAME>(),
-			get_method_id<android::view::KeyEvent::J2CPP_CLASS_NAME, android::view::KeyEvent::J2CPP_METHOD_NAME(0), android::view::KeyEvent::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
 
-template <>
-local_ref< android::view::KeyEvent > create< android::view::KeyEvent>(cpp_long const &a0, cpp_long const &a1, cpp_int const &a2, cpp_int const &a3, cpp_int const &a4)
+android::view::KeyEvent::operator local_ref<android::os::Parcelable>() const
 {
-	return local_ref< android::view::KeyEvent >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::view::KeyEvent::J2CPP_CLASS_NAME>(),
-			get_method_id<android::view::KeyEvent::J2CPP_CLASS_NAME, android::view::KeyEvent::J2CPP_METHOD_NAME(1), android::view::KeyEvent::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype(), a4.get_jtype()
-		)
-	);
+	return local_ref<android::os::Parcelable>(get_jtype());
 }
 
-template <>
-local_ref< android::view::KeyEvent > create< android::view::KeyEvent>(cpp_long const &a0, cpp_long const &a1, cpp_int const &a2, cpp_int const &a3, cpp_int const &a4, cpp_int const &a5)
+
+android::view::KeyEvent::KeyEvent(cpp_int const &a0, cpp_int const &a1)
+: cpp_object<android::view::KeyEvent>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::view::KeyEvent::J2CPP_CLASS_NAME>(),
+		get_method_id<android::view::KeyEvent::J2CPP_CLASS_NAME, android::view::KeyEvent::J2CPP_METHOD_NAME(0), android::view::KeyEvent::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
 {
-	return local_ref< android::view::KeyEvent >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::view::KeyEvent::J2CPP_CLASS_NAME>(),
-			get_method_id<android::view::KeyEvent::J2CPP_CLASS_NAME, android::view::KeyEvent::J2CPP_METHOD_NAME(2), android::view::KeyEvent::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype(), a4.get_jtype(), a5.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< android::view::KeyEvent > create< android::view::KeyEvent>(cpp_long const &a0, cpp_long const &a1, cpp_int const &a2, cpp_int const &a3, cpp_int const &a4, cpp_int const &a5, cpp_int const &a6, cpp_int const &a7)
+
+
+android::view::KeyEvent::KeyEvent(cpp_long const &a0, cpp_long const &a1, cpp_int const &a2, cpp_int const &a3, cpp_int const &a4)
+: cpp_object<android::view::KeyEvent>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::view::KeyEvent::J2CPP_CLASS_NAME>(),
+		get_method_id<android::view::KeyEvent::J2CPP_CLASS_NAME, android::view::KeyEvent::J2CPP_METHOD_NAME(1), android::view::KeyEvent::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype(), a4.get_jtype()
+	)
+)
 {
-	return local_ref< android::view::KeyEvent >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::view::KeyEvent::J2CPP_CLASS_NAME>(),
-			get_method_id<android::view::KeyEvent::J2CPP_CLASS_NAME, android::view::KeyEvent::J2CPP_METHOD_NAME(3), android::view::KeyEvent::J2CPP_METHOD_SIGNATURE(3), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype(), a4.get_jtype(), a5.get_jtype(), a6.get_jtype(), a7.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< android::view::KeyEvent > create< android::view::KeyEvent>(cpp_long const &a0, cpp_long const &a1, cpp_int const &a2, cpp_int const &a3, cpp_int const &a4, cpp_int const &a5, cpp_int const &a6, cpp_int const &a7, cpp_int const &a8)
+
+
+android::view::KeyEvent::KeyEvent(cpp_long const &a0, cpp_long const &a1, cpp_int const &a2, cpp_int const &a3, cpp_int const &a4, cpp_int const &a5)
+: cpp_object<android::view::KeyEvent>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::view::KeyEvent::J2CPP_CLASS_NAME>(),
+		get_method_id<android::view::KeyEvent::J2CPP_CLASS_NAME, android::view::KeyEvent::J2CPP_METHOD_NAME(2), android::view::KeyEvent::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype(), a4.get_jtype(), a5.get_jtype()
+	)
+)
 {
-	return local_ref< android::view::KeyEvent >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::view::KeyEvent::J2CPP_CLASS_NAME>(),
-			get_method_id<android::view::KeyEvent::J2CPP_CLASS_NAME, android::view::KeyEvent::J2CPP_METHOD_NAME(4), android::view::KeyEvent::J2CPP_METHOD_SIGNATURE(4), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype(), a4.get_jtype(), a5.get_jtype(), a6.get_jtype(), a7.get_jtype(), a8.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< android::view::KeyEvent > create< android::view::KeyEvent>(cpp_long const &a0, local_ref< java::lang::String > const &a1, cpp_int const &a2, cpp_int const &a3)
+
+
+android::view::KeyEvent::KeyEvent(cpp_long const &a0, cpp_long const &a1, cpp_int const &a2, cpp_int const &a3, cpp_int const &a4, cpp_int const &a5, cpp_int const &a6, cpp_int const &a7)
+: cpp_object<android::view::KeyEvent>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::view::KeyEvent::J2CPP_CLASS_NAME>(),
+		get_method_id<android::view::KeyEvent::J2CPP_CLASS_NAME, android::view::KeyEvent::J2CPP_METHOD_NAME(3), android::view::KeyEvent::J2CPP_METHOD_SIGNATURE(3), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype(), a4.get_jtype(), a5.get_jtype(), a6.get_jtype(), a7.get_jtype()
+	)
+)
 {
-	return local_ref< android::view::KeyEvent >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::view::KeyEvent::J2CPP_CLASS_NAME>(),
-			get_method_id<android::view::KeyEvent::J2CPP_CLASS_NAME, android::view::KeyEvent::J2CPP_METHOD_NAME(5), android::view::KeyEvent::J2CPP_METHOD_SIGNATURE(5), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< android::view::KeyEvent > create< android::view::KeyEvent>(local_ref< android::view::KeyEvent > const &a0)
+
+
+android::view::KeyEvent::KeyEvent(cpp_long const &a0, cpp_long const &a1, cpp_int const &a2, cpp_int const &a3, cpp_int const &a4, cpp_int const &a5, cpp_int const &a6, cpp_int const &a7, cpp_int const &a8)
+: cpp_object<android::view::KeyEvent>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::view::KeyEvent::J2CPP_CLASS_NAME>(),
+		get_method_id<android::view::KeyEvent::J2CPP_CLASS_NAME, android::view::KeyEvent::J2CPP_METHOD_NAME(4), android::view::KeyEvent::J2CPP_METHOD_SIGNATURE(4), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype(), a4.get_jtype(), a5.get_jtype(), a6.get_jtype(), a7.get_jtype(), a8.get_jtype()
+	)
+)
 {
-	return local_ref< android::view::KeyEvent >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::view::KeyEvent::J2CPP_CLASS_NAME>(),
-			get_method_id<android::view::KeyEvent::J2CPP_CLASS_NAME, android::view::KeyEvent::J2CPP_METHOD_NAME(6), android::view::KeyEvent::J2CPP_METHOD_SIGNATURE(6), false>(),
-			a0.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< android::view::KeyEvent > create< android::view::KeyEvent>(local_ref< android::view::KeyEvent > const &a0, cpp_long const &a1, cpp_int const &a2)
+
+
+android::view::KeyEvent::KeyEvent(cpp_long const &a0, local_ref< java::lang::String > const &a1, cpp_int const &a2, cpp_int const &a3)
+: cpp_object<android::view::KeyEvent>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::view::KeyEvent::J2CPP_CLASS_NAME>(),
+		get_method_id<android::view::KeyEvent::J2CPP_CLASS_NAME, android::view::KeyEvent::J2CPP_METHOD_NAME(5), android::view::KeyEvent::J2CPP_METHOD_SIGNATURE(5), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype()
+	)
+)
 {
-	return local_ref< android::view::KeyEvent >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::view::KeyEvent::J2CPP_CLASS_NAME>(),
-			get_method_id<android::view::KeyEvent::J2CPP_CLASS_NAME, android::view::KeyEvent::J2CPP_METHOD_NAME(7), android::view::KeyEvent::J2CPP_METHOD_SIGNATURE(7), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
-		)
-	);
 }
+
+
+
+android::view::KeyEvent::KeyEvent(local_ref< android::view::KeyEvent > const &a0)
+: cpp_object<android::view::KeyEvent>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::view::KeyEvent::J2CPP_CLASS_NAME>(),
+		get_method_id<android::view::KeyEvent::J2CPP_CLASS_NAME, android::view::KeyEvent::J2CPP_METHOD_NAME(6), android::view::KeyEvent::J2CPP_METHOD_SIGNATURE(6), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
+
+
+android::view::KeyEvent::KeyEvent(local_ref< android::view::KeyEvent > const &a0, cpp_long const &a1, cpp_int const &a2)
+: cpp_object<android::view::KeyEvent>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::view::KeyEvent::J2CPP_CLASS_NAME>(),
+		get_method_id<android::view::KeyEvent::J2CPP_CLASS_NAME, android::view::KeyEvent::J2CPP_METHOD_NAME(7), android::view::KeyEvent::J2CPP_METHOD_SIGNATURE(7), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
+	)
+)
+{
+}
+
 
 cpp_int android::view::KeyEvent::getMaxKeyCode()
 {
@@ -1064,6 +1115,7 @@ void android::view::KeyEvent::writeToParcel(local_ref< android::os::Parcel > con
 		)
 	);
 }
+
 
 
 static_field<

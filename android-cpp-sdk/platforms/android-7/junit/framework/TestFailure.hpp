@@ -11,10 +11,12 @@
 
 
 namespace j2cpp { namespace junit { namespace framework { class Test; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace lang { class Throwable; } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/lang/Throwable.hpp>
 #include <junit/framework/Test.hpp>
@@ -42,11 +44,15 @@ namespace junit { namespace framework {
 		J2CPP_DECLARE_FIELD(0)
 		J2CPP_DECLARE_FIELD(1)
 
-		TestFailure(jobject jobj)
+		explicit TestFailure(jobject jobj)
 		: cpp_object<TestFailure>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		TestFailure(local_ref< junit::framework::Test > const&, local_ref< java::lang::Throwable > const&);
 		local_ref< junit::framework::Test > failedTest();
 		local_ref< java::lang::Throwable > thrownException();
 		local_ref< java::lang::String > toString();
@@ -58,7 +64,6 @@ namespace junit { namespace framework {
 
 } //namespace framework
 } //namespace junit
-
 
 } //namespace j2cpp
 
@@ -72,17 +77,24 @@ namespace junit { namespace framework {
 namespace j2cpp {
 
 
-template <>
-local_ref< junit::framework::TestFailure > create< junit::framework::TestFailure>(local_ref< junit::framework::Test > const &a0, local_ref< java::lang::Throwable > const &a1)
+
+junit::framework::TestFailure::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< junit::framework::TestFailure >(
-		environment::get().get_jenv()->NewObject(
-			get_class<junit::framework::TestFailure::J2CPP_CLASS_NAME>(),
-			get_method_id<junit::framework::TestFailure::J2CPP_CLASS_NAME, junit::framework::TestFailure::J2CPP_METHOD_NAME(0), junit::framework::TestFailure::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+junit::framework::TestFailure::TestFailure(local_ref< junit::framework::Test > const &a0, local_ref< java::lang::Throwable > const &a1)
+: cpp_object<junit::framework::TestFailure>(
+	environment::get().get_jenv()->NewObject(
+		get_class<junit::framework::TestFailure::J2CPP_CLASS_NAME>(),
+		get_method_id<junit::framework::TestFailure::J2CPP_CLASS_NAME, junit::framework::TestFailure::J2CPP_METHOD_NAME(0), junit::framework::TestFailure::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
 
 local_ref< junit::framework::Test > junit::framework::TestFailure::failedTest()
 {

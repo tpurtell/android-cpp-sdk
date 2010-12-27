@@ -10,10 +10,14 @@
 #define J2CPP_JAVA_SQL_BATCHUPDATEEXCEPTION_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace sql { class SQLException; } } }
 
 
+#include <java/io/Serializable.hpp>
 #include <java/lang/String.hpp>
+#include <java/sql/SQLException.hpp>
 
 
 namespace j2cpp {
@@ -35,17 +39,25 @@ namespace java { namespace sql {
 		J2CPP_DECLARE_METHOD(4)
 		J2CPP_DECLARE_METHOD(5)
 
-		BatchUpdateException(jobject jobj)
+		explicit BatchUpdateException(jobject jobj)
 		: cpp_object<BatchUpdateException>(jobj)
 		{
 		}
 
+		operator local_ref<java::sql::SQLException>() const;
+		operator local_ref<java::io::Serializable>() const;
+
+
+		BatchUpdateException();
+		BatchUpdateException(local_ref< cpp_int_array<1> > const&);
+		BatchUpdateException(local_ref< java::lang::String > const&, local_ref< cpp_int_array<1> > const&);
+		BatchUpdateException(local_ref< java::lang::String > const&, local_ref< java::lang::String > const&, local_ref< cpp_int_array<1> > const&);
+		BatchUpdateException(local_ref< java::lang::String > const&, local_ref< java::lang::String > const&, cpp_int const&, local_ref< cpp_int_array<1> > const&);
 		local_ref< cpp_int_array<1> > getUpdateCounts();
 	}; //class BatchUpdateException
 
 } //namespace sql
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -59,64 +71,80 @@ namespace java { namespace sql {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::sql::BatchUpdateException > create< java::sql::BatchUpdateException>()
+
+java::sql::BatchUpdateException::operator local_ref<java::sql::SQLException>() const
 {
-	return local_ref< java::sql::BatchUpdateException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::sql::BatchUpdateException::J2CPP_CLASS_NAME>(),
-			get_method_id<java::sql::BatchUpdateException::J2CPP_CLASS_NAME, java::sql::BatchUpdateException::J2CPP_METHOD_NAME(0), java::sql::BatchUpdateException::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::sql::SQLException>(get_jtype());
 }
 
-template <>
-local_ref< java::sql::BatchUpdateException > create< java::sql::BatchUpdateException>(local_ref< cpp_int_array<1> > const &a0)
+java::sql::BatchUpdateException::operator local_ref<java::io::Serializable>() const
 {
-	return local_ref< java::sql::BatchUpdateException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::sql::BatchUpdateException::J2CPP_CLASS_NAME>(),
-			get_method_id<java::sql::BatchUpdateException::J2CPP_CLASS_NAME, java::sql::BatchUpdateException::J2CPP_METHOD_NAME(1), java::sql::BatchUpdateException::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::io::Serializable>(get_jtype());
 }
 
-template <>
-local_ref< java::sql::BatchUpdateException > create< java::sql::BatchUpdateException>(local_ref< java::lang::String > const &a0, local_ref< cpp_int_array<1> > const &a1)
+
+java::sql::BatchUpdateException::BatchUpdateException()
+: cpp_object<java::sql::BatchUpdateException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::sql::BatchUpdateException::J2CPP_CLASS_NAME>(),
+		get_method_id<java::sql::BatchUpdateException::J2CPP_CLASS_NAME, java::sql::BatchUpdateException::J2CPP_METHOD_NAME(0), java::sql::BatchUpdateException::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
 {
-	return local_ref< java::sql::BatchUpdateException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::sql::BatchUpdateException::J2CPP_CLASS_NAME>(),
-			get_method_id<java::sql::BatchUpdateException::J2CPP_CLASS_NAME, java::sql::BatchUpdateException::J2CPP_METHOD_NAME(2), java::sql::BatchUpdateException::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< java::sql::BatchUpdateException > create< java::sql::BatchUpdateException>(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1, local_ref< cpp_int_array<1> > const &a2)
+
+
+java::sql::BatchUpdateException::BatchUpdateException(local_ref< cpp_int_array<1> > const &a0)
+: cpp_object<java::sql::BatchUpdateException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::sql::BatchUpdateException::J2CPP_CLASS_NAME>(),
+		get_method_id<java::sql::BatchUpdateException::J2CPP_CLASS_NAME, java::sql::BatchUpdateException::J2CPP_METHOD_NAME(1), java::sql::BatchUpdateException::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< java::sql::BatchUpdateException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::sql::BatchUpdateException::J2CPP_CLASS_NAME>(),
-			get_method_id<java::sql::BatchUpdateException::J2CPP_CLASS_NAME, java::sql::BatchUpdateException::J2CPP_METHOD_NAME(3), java::sql::BatchUpdateException::J2CPP_METHOD_SIGNATURE(3), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< java::sql::BatchUpdateException > create< java::sql::BatchUpdateException>(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1, cpp_int const &a2, local_ref< cpp_int_array<1> > const &a3)
+
+
+java::sql::BatchUpdateException::BatchUpdateException(local_ref< java::lang::String > const &a0, local_ref< cpp_int_array<1> > const &a1)
+: cpp_object<java::sql::BatchUpdateException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::sql::BatchUpdateException::J2CPP_CLASS_NAME>(),
+		get_method_id<java::sql::BatchUpdateException::J2CPP_CLASS_NAME, java::sql::BatchUpdateException::J2CPP_METHOD_NAME(2), java::sql::BatchUpdateException::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
 {
-	return local_ref< java::sql::BatchUpdateException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::sql::BatchUpdateException::J2CPP_CLASS_NAME>(),
-			get_method_id<java::sql::BatchUpdateException::J2CPP_CLASS_NAME, java::sql::BatchUpdateException::J2CPP_METHOD_NAME(4), java::sql::BatchUpdateException::J2CPP_METHOD_SIGNATURE(4), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype()
-		)
-	);
 }
+
+
+
+java::sql::BatchUpdateException::BatchUpdateException(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1, local_ref< cpp_int_array<1> > const &a2)
+: cpp_object<java::sql::BatchUpdateException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::sql::BatchUpdateException::J2CPP_CLASS_NAME>(),
+		get_method_id<java::sql::BatchUpdateException::J2CPP_CLASS_NAME, java::sql::BatchUpdateException::J2CPP_METHOD_NAME(3), java::sql::BatchUpdateException::J2CPP_METHOD_SIGNATURE(3), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
+	)
+)
+{
+}
+
+
+
+java::sql::BatchUpdateException::BatchUpdateException(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1, cpp_int const &a2, local_ref< cpp_int_array<1> > const &a3)
+: cpp_object<java::sql::BatchUpdateException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::sql::BatchUpdateException::J2CPP_CLASS_NAME>(),
+		get_method_id<java::sql::BatchUpdateException::J2CPP_CLASS_NAME, java::sql::BatchUpdateException::J2CPP_METHOD_NAME(4), java::sql::BatchUpdateException::J2CPP_METHOD_SIGNATURE(4), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype()
+	)
+)
+{
+}
+
 
 local_ref< cpp_int_array<1> > java::sql::BatchUpdateException::getUpdateCounts()
 {

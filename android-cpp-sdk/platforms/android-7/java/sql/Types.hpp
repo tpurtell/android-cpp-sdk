@@ -10,8 +10,10 @@
 #define J2CPP_JAVA_SQL_TYPES_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -58,10 +60,13 @@ namespace java { namespace sql {
 		J2CPP_DECLARE_FIELD(28)
 		J2CPP_DECLARE_FIELD(29)
 
-		Types(jobject jobj)
+		explicit Types(jobject jobj)
 		: cpp_object<Types>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 
 		static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(0), J2CPP_FIELD_SIGNATURE(0), cpp_int > ARRAY;
@@ -99,7 +104,6 @@ namespace java { namespace sql {
 } //namespace sql
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_SQL_TYPES_HPP_DECL
@@ -112,16 +116,12 @@ namespace java { namespace sql {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::sql::Types > create< java::sql::Types>()
+
+java::sql::Types::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::sql::Types >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::sql::Types::J2CPP_CLASS_NAME>(),
-			get_method_id<java::sql::Types::J2CPP_CLASS_NAME, java::sql::Types::J2CPP_METHOD_NAME(0), java::sql::Types::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
 
 
 static_field<

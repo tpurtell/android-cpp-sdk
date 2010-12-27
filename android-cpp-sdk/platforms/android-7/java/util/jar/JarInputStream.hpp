@@ -12,6 +12,7 @@
 
 namespace j2cpp { namespace java { namespace io { class InputStream; } } }
 namespace j2cpp { namespace java { namespace util { namespace zip { class ZipEntry; } } } }
+namespace j2cpp { namespace java { namespace util { namespace zip { class ZipInputStream; } } } }
 namespace j2cpp { namespace java { namespace util { namespace jar { class Manifest; } } } }
 namespace j2cpp { namespace java { namespace util { namespace jar { class JarEntry; } } } }
 
@@ -20,6 +21,7 @@ namespace j2cpp { namespace java { namespace util { namespace jar { class JarEnt
 #include <java/util/jar/JarEntry.hpp>
 #include <java/util/jar/Manifest.hpp>
 #include <java/util/zip/ZipEntry.hpp>
+#include <java/util/zip/ZipInputStream.hpp>
 
 
 namespace j2cpp {
@@ -42,11 +44,16 @@ namespace java { namespace util { namespace jar {
 		J2CPP_DECLARE_METHOD(5)
 		J2CPP_DECLARE_METHOD(6)
 
-		JarInputStream(jobject jobj)
+		explicit JarInputStream(jobject jobj)
 		: cpp_object<JarInputStream>(jobj)
 		{
 		}
 
+		operator local_ref<java::util::zip::ZipInputStream>() const;
+
+
+		JarInputStream(local_ref< java::io::InputStream > const&, cpp_boolean const&);
+		JarInputStream(local_ref< java::io::InputStream > const&);
 		local_ref< java::util::jar::Manifest > getManifest();
 		local_ref< java::util::jar::JarEntry > getNextJarEntry();
 		cpp_int read(local_ref< cpp_byte_array<1> > const&, cpp_int const&, cpp_int const&);
@@ -56,7 +63,6 @@ namespace java { namespace util { namespace jar {
 } //namespace jar
 } //namespace util
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -70,29 +76,37 @@ namespace java { namespace util { namespace jar {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::util::jar::JarInputStream > create< java::util::jar::JarInputStream>(local_ref< java::io::InputStream > const &a0, cpp_boolean const &a1)
+
+java::util::jar::JarInputStream::operator local_ref<java::util::zip::ZipInputStream>() const
 {
-	return local_ref< java::util::jar::JarInputStream >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::jar::JarInputStream::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::jar::JarInputStream::J2CPP_CLASS_NAME, java::util::jar::JarInputStream::J2CPP_METHOD_NAME(0), java::util::jar::JarInputStream::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<java::util::zip::ZipInputStream>(get_jtype());
 }
 
-template <>
-local_ref< java::util::jar::JarInputStream > create< java::util::jar::JarInputStream>(local_ref< java::io::InputStream > const &a0)
+
+java::util::jar::JarInputStream::JarInputStream(local_ref< java::io::InputStream > const &a0, cpp_boolean const &a1)
+: cpp_object<java::util::jar::JarInputStream>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::util::jar::JarInputStream::J2CPP_CLASS_NAME>(),
+		get_method_id<java::util::jar::JarInputStream::J2CPP_CLASS_NAME, java::util::jar::JarInputStream::J2CPP_METHOD_NAME(0), java::util::jar::JarInputStream::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
 {
-	return local_ref< java::util::jar::JarInputStream >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::jar::JarInputStream::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::jar::JarInputStream::J2CPP_CLASS_NAME, java::util::jar::JarInputStream::J2CPP_METHOD_NAME(1), java::util::jar::JarInputStream::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
 }
+
+
+
+java::util::jar::JarInputStream::JarInputStream(local_ref< java::io::InputStream > const &a0)
+: cpp_object<java::util::jar::JarInputStream>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::util::jar::JarInputStream::J2CPP_CLASS_NAME>(),
+		get_method_id<java::util::jar::JarInputStream::J2CPP_CLASS_NAME, java::util::jar::JarInputStream::J2CPP_METHOD_NAME(1), java::util::jar::JarInputStream::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 local_ref< java::util::jar::Manifest > java::util::jar::JarInputStream::getManifest()
 {

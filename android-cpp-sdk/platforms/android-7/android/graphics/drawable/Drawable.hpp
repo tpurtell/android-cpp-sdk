@@ -11,6 +11,7 @@
 
 
 namespace j2cpp { namespace java { namespace io { class InputStream; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace lang { class Runnable; } } }
 namespace j2cpp { namespace org { namespace xmlpull { namespace v1 { class XmlPullParser; } } } }
@@ -38,6 +39,7 @@ namespace j2cpp { namespace android { namespace util { class TypedValue; } } }
 #include <android/util/AttributeSet.hpp>
 #include <android/util/TypedValue.hpp>
 #include <java/io/InputStream.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/Runnable.hpp>
 #include <java/lang/String.hpp>
 #include <org/xmlpull/v1/XmlPullParser.hpp>
@@ -63,11 +65,15 @@ namespace android { namespace graphics { namespace drawable {
 			J2CPP_DECLARE_METHOD(2)
 			J2CPP_DECLARE_METHOD(3)
 
-			ConstantState(jobject jobj)
+			explicit ConstantState(jobject jobj)
 			: cpp_object<ConstantState>(jobj)
 			{
 			}
 
+			operator local_ref<java::lang::Object>() const;
+
+
+			ConstantState();
 			local_ref< android::graphics::drawable::Drawable > newDrawable();
 			local_ref< android::graphics::drawable::Drawable > newDrawable(local_ref< android::content::res::Resources > const&);
 			cpp_int getChangingConfigurations();
@@ -85,10 +91,13 @@ namespace android { namespace graphics { namespace drawable {
 			J2CPP_DECLARE_METHOD(1)
 			J2CPP_DECLARE_METHOD(2)
 
-			Callback(jobject jobj)
+			explicit Callback(jobject jobj)
 			: cpp_object<Callback>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+
 
 			void invalidateDrawable(local_ref< android::graphics::drawable::Drawable > const&);
 			void scheduleDrawable(local_ref< android::graphics::drawable::Drawable > const&, local_ref< java::lang::Runnable > const&, cpp_long const&);
@@ -155,11 +164,15 @@ namespace android { namespace graphics { namespace drawable {
 		typedef Drawable_::ConstantState ConstantState;
 		typedef Drawable_::Callback Callback;
 
-		Drawable(jobject jobj)
+		explicit Drawable(jobject jobj)
 		: cpp_object<Drawable>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		Drawable();
 		void draw(local_ref< android::graphics::Canvas > const&);
 		void setBounds(cpp_int const&, cpp_int const&, cpp_int const&, cpp_int const&);
 		void setBounds(local_ref< android::graphics::Rect > const&);
@@ -209,7 +222,6 @@ namespace android { namespace graphics { namespace drawable {
 } //namespace graphics
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_GRAPHICS_DRAWABLE_DRAWABLE_HPP_DECL
@@ -223,16 +235,23 @@ namespace j2cpp {
 
 
 
-template <>
-local_ref< android::graphics::drawable::Drawable_::ConstantState > create< android::graphics::drawable::Drawable_::ConstantState>()
+
+android::graphics::drawable::Drawable_::ConstantState::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::graphics::drawable::Drawable_::ConstantState >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::graphics::drawable::Drawable_::ConstantState::J2CPP_CLASS_NAME>(),
-			get_method_id<android::graphics::drawable::Drawable_::ConstantState::J2CPP_CLASS_NAME, android::graphics::drawable::Drawable_::ConstantState::J2CPP_METHOD_NAME(0), android::graphics::drawable::Drawable_::ConstantState::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::graphics::drawable::Drawable_::ConstantState::ConstantState()
+: cpp_object<android::graphics::drawable::Drawable_::ConstantState>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::graphics::drawable::Drawable_::ConstantState::J2CPP_CLASS_NAME>(),
+		get_method_id<android::graphics::drawable::Drawable_::ConstantState::J2CPP_CLASS_NAME, android::graphics::drawable::Drawable_::ConstantState::J2CPP_METHOD_NAME(0), android::graphics::drawable::Drawable_::ConstantState::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 local_ref< android::graphics::drawable::Drawable > android::graphics::drawable::Drawable_::ConstantState::newDrawable()
 {
@@ -271,6 +290,12 @@ J2CPP_DEFINE_METHOD(android::graphics::drawable::Drawable_::ConstantState,0,"<in
 J2CPP_DEFINE_METHOD(android::graphics::drawable::Drawable_::ConstantState,1,"newDrawable","()Landroid/graphics/drawable/Drawable;")
 J2CPP_DEFINE_METHOD(android::graphics::drawable::Drawable_::ConstantState,2,"newDrawable","(Landroid/content/res/Resources;)Landroid/graphics/drawable/Drawable;")
 J2CPP_DEFINE_METHOD(android::graphics::drawable::Drawable_::ConstantState,3,"getChangingConfigurations","()I")
+
+
+android::graphics::drawable::Drawable_::Callback::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 void android::graphics::drawable::Drawable_::Callback::invalidateDrawable(local_ref< android::graphics::drawable::Drawable > const &a0)
 {
@@ -312,16 +337,23 @@ J2CPP_DEFINE_METHOD(android::graphics::drawable::Drawable_::Callback,1,"schedule
 J2CPP_DEFINE_METHOD(android::graphics::drawable::Drawable_::Callback,2,"unscheduleDrawable","(Landroid/graphics/drawable/Drawable;Ljava/lang/Runnable;)V")
 
 
-template <>
-local_ref< android::graphics::drawable::Drawable > create< android::graphics::drawable::Drawable>()
+
+android::graphics::drawable::Drawable::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::graphics::drawable::Drawable >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::graphics::drawable::Drawable::J2CPP_CLASS_NAME>(),
-			get_method_id<android::graphics::drawable::Drawable::J2CPP_CLASS_NAME, android::graphics::drawable::Drawable::J2CPP_METHOD_NAME(0), android::graphics::drawable::Drawable::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::graphics::drawable::Drawable::Drawable()
+: cpp_object<android::graphics::drawable::Drawable>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::graphics::drawable::Drawable::J2CPP_CLASS_NAME>(),
+		get_method_id<android::graphics::drawable::Drawable::J2CPP_CLASS_NAME, android::graphics::drawable::Drawable::J2CPP_METHOD_NAME(0), android::graphics::drawable::Drawable::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 void android::graphics::drawable::Drawable::draw(local_ref< android::graphics::Canvas > const &a0)
 {

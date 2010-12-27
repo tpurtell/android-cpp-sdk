@@ -11,10 +11,12 @@
 
 
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace util { namespace logging { class Formatter; } } } }
 namespace j2cpp { namespace java { namespace util { namespace logging { class LogRecord; } } } }
 
 
 #include <java/lang/String.hpp>
+#include <java/util/logging/Formatter.hpp>
 #include <java/util/logging/LogRecord.hpp>
 
 
@@ -33,18 +35,21 @@ namespace java { namespace util { namespace logging {
 		J2CPP_DECLARE_METHOD(0)
 		J2CPP_DECLARE_METHOD(1)
 
-		SimpleFormatter(jobject jobj)
+		explicit SimpleFormatter(jobject jobj)
 		: cpp_object<SimpleFormatter>(jobj)
 		{
 		}
 
+		operator local_ref<java::util::logging::Formatter>() const;
+
+
+		SimpleFormatter();
 		local_ref< java::lang::String > format(local_ref< java::util::logging::LogRecord > const&);
 	}; //class SimpleFormatter
 
 } //namespace logging
 } //namespace util
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -58,16 +63,23 @@ namespace java { namespace util { namespace logging {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::util::logging::SimpleFormatter > create< java::util::logging::SimpleFormatter>()
+
+java::util::logging::SimpleFormatter::operator local_ref<java::util::logging::Formatter>() const
 {
-	return local_ref< java::util::logging::SimpleFormatter >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::logging::SimpleFormatter::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::logging::SimpleFormatter::J2CPP_CLASS_NAME, java::util::logging::SimpleFormatter::J2CPP_METHOD_NAME(0), java::util::logging::SimpleFormatter::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::util::logging::Formatter>(get_jtype());
 }
+
+
+java::util::logging::SimpleFormatter::SimpleFormatter()
+: cpp_object<java::util::logging::SimpleFormatter>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::util::logging::SimpleFormatter::J2CPP_CLASS_NAME>(),
+		get_method_id<java::util::logging::SimpleFormatter::J2CPP_CLASS_NAME, java::util::logging::SimpleFormatter::J2CPP_METHOD_NAME(0), java::util::logging::SimpleFormatter::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 local_ref< java::lang::String > java::util::logging::SimpleFormatter::format(local_ref< java::util::logging::LogRecord > const &a0)
 {

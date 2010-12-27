@@ -14,9 +14,11 @@ namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace android { namespace content { namespace res { namespace Resources_ { class Theme; } } } } }
 namespace j2cpp { namespace android { namespace content { class Context; } } }
+namespace j2cpp { namespace android { namespace content { class ContextWrapper; } } }
 
 
 #include <android/content/Context.hpp>
+#include <android/content/ContextWrapper.hpp>
 #include <android/content/res/Resources.hpp>
 #include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
@@ -42,11 +44,16 @@ namespace android { namespace view {
 		J2CPP_DECLARE_METHOD(5)
 		J2CPP_DECLARE_METHOD(6)
 
-		ContextThemeWrapper(jobject jobj)
+		explicit ContextThemeWrapper(jobject jobj)
 		: cpp_object<ContextThemeWrapper>(jobj)
 		{
 		}
 
+		operator local_ref<android::content::ContextWrapper>() const;
+
+
+		ContextThemeWrapper();
+		ContextThemeWrapper(local_ref< android::content::Context > const&, cpp_int const&);
 		void setTheme(cpp_int const&);
 		local_ref< android::content::res::Resources_::Theme > getTheme();
 		local_ref< java::lang::Object > getSystemService(local_ref< java::lang::String > const&);
@@ -54,7 +61,6 @@ namespace android { namespace view {
 
 } //namespace view
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -68,28 +74,36 @@ namespace android { namespace view {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::view::ContextThemeWrapper > create< android::view::ContextThemeWrapper>()
+
+android::view::ContextThemeWrapper::operator local_ref<android::content::ContextWrapper>() const
 {
-	return local_ref< android::view::ContextThemeWrapper >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::view::ContextThemeWrapper::J2CPP_CLASS_NAME>(),
-			get_method_id<android::view::ContextThemeWrapper::J2CPP_CLASS_NAME, android::view::ContextThemeWrapper::J2CPP_METHOD_NAME(0), android::view::ContextThemeWrapper::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<android::content::ContextWrapper>(get_jtype());
 }
 
-template <>
-local_ref< android::view::ContextThemeWrapper > create< android::view::ContextThemeWrapper>(local_ref< android::content::Context > const &a0, cpp_int const &a1)
+
+android::view::ContextThemeWrapper::ContextThemeWrapper()
+: cpp_object<android::view::ContextThemeWrapper>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::view::ContextThemeWrapper::J2CPP_CLASS_NAME>(),
+		get_method_id<android::view::ContextThemeWrapper::J2CPP_CLASS_NAME, android::view::ContextThemeWrapper::J2CPP_METHOD_NAME(0), android::view::ContextThemeWrapper::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
 {
-	return local_ref< android::view::ContextThemeWrapper >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::view::ContextThemeWrapper::J2CPP_CLASS_NAME>(),
-			get_method_id<android::view::ContextThemeWrapper::J2CPP_CLASS_NAME, android::view::ContextThemeWrapper::J2CPP_METHOD_NAME(1), android::view::ContextThemeWrapper::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
 }
+
+
+
+android::view::ContextThemeWrapper::ContextThemeWrapper(local_ref< android::content::Context > const &a0, cpp_int const &a1)
+: cpp_object<android::view::ContextThemeWrapper>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::view::ContextThemeWrapper::J2CPP_CLASS_NAME>(),
+		get_method_id<android::view::ContextThemeWrapper::J2CPP_CLASS_NAME, android::view::ContextThemeWrapper::J2CPP_METHOD_NAME(1), android::view::ContextThemeWrapper::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
 
 
 void android::view::ContextThemeWrapper::setTheme(cpp_int const &a0)

@@ -10,9 +10,11 @@
 #define J2CPP_ANDROID_DATABASE_CURSORINDEXOUTOFBOUNDSEXCEPTION_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class IndexOutOfBoundsException; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 
 
+#include <java/lang/IndexOutOfBoundsException.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -31,16 +33,20 @@ namespace android { namespace database {
 		J2CPP_DECLARE_METHOD(0)
 		J2CPP_DECLARE_METHOD(1)
 
-		CursorIndexOutOfBoundsException(jobject jobj)
+		explicit CursorIndexOutOfBoundsException(jobject jobj)
 		: cpp_object<CursorIndexOutOfBoundsException>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::IndexOutOfBoundsException>() const;
+
+
+		CursorIndexOutOfBoundsException(cpp_int const&, cpp_int const&);
+		CursorIndexOutOfBoundsException(local_ref< java::lang::String > const&);
 	}; //class CursorIndexOutOfBoundsException
 
 } //namespace database
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -54,29 +60,37 @@ namespace android { namespace database {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::database::CursorIndexOutOfBoundsException > create< android::database::CursorIndexOutOfBoundsException>(cpp_int const &a0, cpp_int const &a1)
+
+android::database::CursorIndexOutOfBoundsException::operator local_ref<java::lang::IndexOutOfBoundsException>() const
 {
-	return local_ref< android::database::CursorIndexOutOfBoundsException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::database::CursorIndexOutOfBoundsException::J2CPP_CLASS_NAME>(),
-			get_method_id<android::database::CursorIndexOutOfBoundsException::J2CPP_CLASS_NAME, android::database::CursorIndexOutOfBoundsException::J2CPP_METHOD_NAME(0), android::database::CursorIndexOutOfBoundsException::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<java::lang::IndexOutOfBoundsException>(get_jtype());
 }
 
-template <>
-local_ref< android::database::CursorIndexOutOfBoundsException > create< android::database::CursorIndexOutOfBoundsException>(local_ref< java::lang::String > const &a0)
+
+android::database::CursorIndexOutOfBoundsException::CursorIndexOutOfBoundsException(cpp_int const &a0, cpp_int const &a1)
+: cpp_object<android::database::CursorIndexOutOfBoundsException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::database::CursorIndexOutOfBoundsException::J2CPP_CLASS_NAME>(),
+		get_method_id<android::database::CursorIndexOutOfBoundsException::J2CPP_CLASS_NAME, android::database::CursorIndexOutOfBoundsException::J2CPP_METHOD_NAME(0), android::database::CursorIndexOutOfBoundsException::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
 {
-	return local_ref< android::database::CursorIndexOutOfBoundsException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::database::CursorIndexOutOfBoundsException::J2CPP_CLASS_NAME>(),
-			get_method_id<android::database::CursorIndexOutOfBoundsException::J2CPP_CLASS_NAME, android::database::CursorIndexOutOfBoundsException::J2CPP_METHOD_NAME(1), android::database::CursorIndexOutOfBoundsException::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
 }
+
+
+
+android::database::CursorIndexOutOfBoundsException::CursorIndexOutOfBoundsException(local_ref< java::lang::String > const &a0)
+: cpp_object<android::database::CursorIndexOutOfBoundsException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::database::CursorIndexOutOfBoundsException::J2CPP_CLASS_NAME>(),
+		get_method_id<android::database::CursorIndexOutOfBoundsException::J2CPP_CLASS_NAME, android::database::CursorIndexOutOfBoundsException::J2CPP_METHOD_NAME(1), android::database::CursorIndexOutOfBoundsException::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 
 J2CPP_DEFINE_CLASS(android::database::CursorIndexOutOfBoundsException,"android/database/CursorIndexOutOfBoundsException")

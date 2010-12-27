@@ -10,10 +10,13 @@
 #define J2CPP_ANDROID_TEXT_STYLE_QUOTESPAN_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class CharSequence; } } }
 namespace j2cpp { namespace android { namespace graphics { class Paint; } } }
 namespace j2cpp { namespace android { namespace graphics { class Canvas; } } }
 namespace j2cpp { namespace android { namespace text { class Layout; } } }
+namespace j2cpp { namespace android { namespace text { namespace style { class LeadingMarginSpan; } } } }
+namespace j2cpp { namespace android { namespace text { class ParcelableSpan; } } }
 namespace j2cpp { namespace android { namespace os { class Parcel; } } }
 
 
@@ -21,7 +24,10 @@ namespace j2cpp { namespace android { namespace os { class Parcel; } } }
 #include <android/graphics/Paint.hpp>
 #include <android/os/Parcel.hpp>
 #include <android/text/Layout.hpp>
+#include <android/text/ParcelableSpan.hpp>
+#include <android/text/style/LeadingMarginSpan.hpp>
 #include <java/lang/CharSequence.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -46,11 +52,19 @@ namespace android { namespace text { namespace style {
 		J2CPP_DECLARE_METHOD(7)
 		J2CPP_DECLARE_METHOD(8)
 
-		QuoteSpan(jobject jobj)
+		explicit QuoteSpan(jobject jobj)
 		: cpp_object<QuoteSpan>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<android::text::style::LeadingMarginSpan>() const;
+		operator local_ref<android::text::ParcelableSpan>() const;
+
+
+		QuoteSpan();
+		QuoteSpan(cpp_int const&);
+		QuoteSpan(local_ref< android::os::Parcel > const&);
 		cpp_int getSpanTypeId();
 		cpp_int describeContents();
 		void writeToParcel(local_ref< android::os::Parcel > const&, cpp_int const&);
@@ -62,7 +76,6 @@ namespace android { namespace text { namespace style {
 } //namespace style
 } //namespace text
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -76,40 +89,59 @@ namespace android { namespace text { namespace style {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::text::style::QuoteSpan > create< android::text::style::QuoteSpan>()
+
+android::text::style::QuoteSpan::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::text::style::QuoteSpan >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::text::style::QuoteSpan::J2CPP_CLASS_NAME>(),
-			get_method_id<android::text::style::QuoteSpan::J2CPP_CLASS_NAME, android::text::style::QuoteSpan::J2CPP_METHOD_NAME(0), android::text::style::QuoteSpan::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
 
-template <>
-local_ref< android::text::style::QuoteSpan > create< android::text::style::QuoteSpan>(cpp_int const &a0)
+android::text::style::QuoteSpan::operator local_ref<android::text::style::LeadingMarginSpan>() const
 {
-	return local_ref< android::text::style::QuoteSpan >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::text::style::QuoteSpan::J2CPP_CLASS_NAME>(),
-			get_method_id<android::text::style::QuoteSpan::J2CPP_CLASS_NAME, android::text::style::QuoteSpan::J2CPP_METHOD_NAME(1), android::text::style::QuoteSpan::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<android::text::style::LeadingMarginSpan>(get_jtype());
 }
 
-template <>
-local_ref< android::text::style::QuoteSpan > create< android::text::style::QuoteSpan>(local_ref< android::os::Parcel > const &a0)
+android::text::style::QuoteSpan::operator local_ref<android::text::ParcelableSpan>() const
 {
-	return local_ref< android::text::style::QuoteSpan >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::text::style::QuoteSpan::J2CPP_CLASS_NAME>(),
-			get_method_id<android::text::style::QuoteSpan::J2CPP_CLASS_NAME, android::text::style::QuoteSpan::J2CPP_METHOD_NAME(2), android::text::style::QuoteSpan::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<android::text::ParcelableSpan>(get_jtype());
 }
+
+
+android::text::style::QuoteSpan::QuoteSpan()
+: cpp_object<android::text::style::QuoteSpan>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::text::style::QuoteSpan::J2CPP_CLASS_NAME>(),
+		get_method_id<android::text::style::QuoteSpan::J2CPP_CLASS_NAME, android::text::style::QuoteSpan::J2CPP_METHOD_NAME(0), android::text::style::QuoteSpan::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
+
+
+android::text::style::QuoteSpan::QuoteSpan(cpp_int const &a0)
+: cpp_object<android::text::style::QuoteSpan>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::text::style::QuoteSpan::J2CPP_CLASS_NAME>(),
+		get_method_id<android::text::style::QuoteSpan::J2CPP_CLASS_NAME, android::text::style::QuoteSpan::J2CPP_METHOD_NAME(1), android::text::style::QuoteSpan::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
+
+
+android::text::style::QuoteSpan::QuoteSpan(local_ref< android::os::Parcel > const &a0)
+: cpp_object<android::text::style::QuoteSpan>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::text::style::QuoteSpan::J2CPP_CLASS_NAME>(),
+		get_method_id<android::text::style::QuoteSpan::J2CPP_CLASS_NAME, android::text::style::QuoteSpan::J2CPP_METHOD_NAME(2), android::text::style::QuoteSpan::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 cpp_int android::text::style::QuoteSpan::getSpanTypeId()
 {

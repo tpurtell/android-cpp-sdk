@@ -10,9 +10,11 @@
 #define J2CPP_ORG_APACHE_HTTP_PROTOCOL_HTTP_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -61,10 +63,13 @@ namespace org { namespace apache { namespace http { namespace protocol {
 		J2CPP_DECLARE_FIELD(28)
 		J2CPP_DECLARE_FIELD(29)
 
-		HTTP(jobject jobj)
+		explicit HTTP(jobject jobj)
 		: cpp_object<HTTP>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		static cpp_boolean isWhitespace(cpp_char const&);
 
@@ -105,7 +110,6 @@ namespace org { namespace apache { namespace http { namespace protocol {
 } //namespace apache
 } //namespace org
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ORG_APACHE_HTTP_PROTOCOL_HTTP_HPP_DECL
@@ -118,16 +122,12 @@ namespace org { namespace apache { namespace http { namespace protocol {
 namespace j2cpp {
 
 
-template <>
-local_ref< org::apache::http::protocol::HTTP > create< org::apache::http::protocol::HTTP>()
+
+org::apache::http::protocol::HTTP::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< org::apache::http::protocol::HTTP >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::apache::http::protocol::HTTP::J2CPP_CLASS_NAME>(),
-			get_method_id<org::apache::http::protocol::HTTP::J2CPP_CLASS_NAME, org::apache::http::protocol::HTTP::J2CPP_METHOD_NAME(0), org::apache::http::protocol::HTTP::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
 
 cpp_boolean org::apache::http::protocol::HTTP::isWhitespace(cpp_char const &a0)
 {

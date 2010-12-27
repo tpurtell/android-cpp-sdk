@@ -12,9 +12,11 @@
 
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace lang { class Throwable; } } }
+namespace j2cpp { namespace java { namespace lang { class Exception; } } }
 namespace j2cpp { namespace org { namespace xmlpull { namespace v1 { class XmlPullParser; } } } }
 
 
+#include <java/lang/Exception.hpp>
 #include <java/lang/String.hpp>
 #include <java/lang/Throwable.hpp>
 #include <org/xmlpull/v1/XmlPullParser.hpp>
@@ -42,11 +44,16 @@ namespace org { namespace xmlpull { namespace v1 {
 		J2CPP_DECLARE_FIELD(1)
 		J2CPP_DECLARE_FIELD(2)
 
-		XmlPullParserException(jobject jobj)
+		explicit XmlPullParserException(jobject jobj)
 		: cpp_object<XmlPullParserException>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Exception>() const;
+
+
+		XmlPullParserException(local_ref< java::lang::String > const&);
+		XmlPullParserException(local_ref< java::lang::String > const&, local_ref< org::xmlpull::v1::XmlPullParser > const&, local_ref< java::lang::Throwable > const&);
 		local_ref< java::lang::Throwable > getDetail();
 		cpp_int getLineNumber();
 		cpp_int getColumnNumber();
@@ -57,7 +64,6 @@ namespace org { namespace xmlpull { namespace v1 {
 } //namespace v1
 } //namespace xmlpull
 } //namespace org
-
 
 } //namespace j2cpp
 
@@ -71,29 +77,37 @@ namespace org { namespace xmlpull { namespace v1 {
 namespace j2cpp {
 
 
-template <>
-local_ref< org::xmlpull::v1::XmlPullParserException > create< org::xmlpull::v1::XmlPullParserException>(local_ref< java::lang::String > const &a0)
+
+org::xmlpull::v1::XmlPullParserException::operator local_ref<java::lang::Exception>() const
 {
-	return local_ref< org::xmlpull::v1::XmlPullParserException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::xmlpull::v1::XmlPullParserException::J2CPP_CLASS_NAME>(),
-			get_method_id<org::xmlpull::v1::XmlPullParserException::J2CPP_CLASS_NAME, org::xmlpull::v1::XmlPullParserException::J2CPP_METHOD_NAME(0), org::xmlpull::v1::XmlPullParserException::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Exception>(get_jtype());
 }
 
-template <>
-local_ref< org::xmlpull::v1::XmlPullParserException > create< org::xmlpull::v1::XmlPullParserException>(local_ref< java::lang::String > const &a0, local_ref< org::xmlpull::v1::XmlPullParser > const &a1, local_ref< java::lang::Throwable > const &a2)
+
+org::xmlpull::v1::XmlPullParserException::XmlPullParserException(local_ref< java::lang::String > const &a0)
+: cpp_object<org::xmlpull::v1::XmlPullParserException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::xmlpull::v1::XmlPullParserException::J2CPP_CLASS_NAME>(),
+		get_method_id<org::xmlpull::v1::XmlPullParserException::J2CPP_CLASS_NAME, org::xmlpull::v1::XmlPullParserException::J2CPP_METHOD_NAME(0), org::xmlpull::v1::XmlPullParserException::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< org::xmlpull::v1::XmlPullParserException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::xmlpull::v1::XmlPullParserException::J2CPP_CLASS_NAME>(),
-			get_method_id<org::xmlpull::v1::XmlPullParserException::J2CPP_CLASS_NAME, org::xmlpull::v1::XmlPullParserException::J2CPP_METHOD_NAME(1), org::xmlpull::v1::XmlPullParserException::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
-		)
-	);
 }
+
+
+
+org::xmlpull::v1::XmlPullParserException::XmlPullParserException(local_ref< java::lang::String > const &a0, local_ref< org::xmlpull::v1::XmlPullParser > const &a1, local_ref< java::lang::Throwable > const &a2)
+: cpp_object<org::xmlpull::v1::XmlPullParserException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::xmlpull::v1::XmlPullParserException::J2CPP_CLASS_NAME>(),
+		get_method_id<org::xmlpull::v1::XmlPullParserException::J2CPP_CLASS_NAME, org::xmlpull::v1::XmlPullParserException::J2CPP_METHOD_NAME(1), org::xmlpull::v1::XmlPullParserException::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
+	)
+)
+{
+}
+
 
 local_ref< java::lang::Throwable > org::xmlpull::v1::XmlPullParserException::getDetail()
 {

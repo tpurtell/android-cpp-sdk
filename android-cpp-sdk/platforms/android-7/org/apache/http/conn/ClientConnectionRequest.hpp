@@ -10,10 +10,12 @@
 #define J2CPP_ORG_APACHE_HTTP_CONN_CLIENTCONNECTIONREQUEST_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace util { namespace concurrent { class TimeUnit; } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace conn { class ManagedClientConnection; } } } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/util/concurrent/TimeUnit.hpp>
 #include <org/apache/http/conn/ManagedClientConnection.hpp>
 
@@ -33,10 +35,13 @@ namespace org { namespace apache { namespace http { namespace conn {
 		J2CPP_DECLARE_METHOD(0)
 		J2CPP_DECLARE_METHOD(1)
 
-		ClientConnectionRequest(jobject jobj)
+		explicit ClientConnectionRequest(jobject jobj)
 		: cpp_object<ClientConnectionRequest>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		local_ref< org::apache::http::conn::ManagedClientConnection > getConnection(cpp_long const&, local_ref< java::util::concurrent::TimeUnit > const&);
 		void abortRequest();
@@ -46,7 +51,6 @@ namespace org { namespace apache { namespace http { namespace conn {
 } //namespace http
 } //namespace apache
 } //namespace org
-
 
 } //namespace j2cpp
 
@@ -59,6 +63,12 @@ namespace org { namespace apache { namespace http { namespace conn {
 
 namespace j2cpp {
 
+
+
+org::apache::http::conn::ClientConnectionRequest::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 local_ref< org::apache::http::conn::ManagedClientConnection > org::apache::http::conn::ClientConnectionRequest::getConnection(cpp_long const &a0, local_ref< java::util::concurrent::TimeUnit > const &a1)
 {

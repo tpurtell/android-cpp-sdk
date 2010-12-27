@@ -10,9 +10,11 @@
 #define J2CPP_JAVA_NIO_CHARSET_CODERRESULT_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -43,10 +45,13 @@ namespace java { namespace nio { namespace charset {
 		J2CPP_DECLARE_FIELD(0)
 		J2CPP_DECLARE_FIELD(1)
 
-		CoderResult(jobject jobj)
+		explicit CoderResult(jobject jobj)
 		: cpp_object<CoderResult>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		static local_ref< java::nio::charset::CoderResult > malformedForLength(cpp_int const&);
 		static local_ref< java::nio::charset::CoderResult > unmappableForLength(cpp_int const&);
@@ -67,7 +72,6 @@ namespace java { namespace nio { namespace charset {
 } //namespace nio
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_NIO_CHARSET_CODERRESULT_HPP_DECL
@@ -80,16 +84,12 @@ namespace java { namespace nio { namespace charset {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::nio::charset::CoderResult > create< java::nio::charset::CoderResult>()
+
+java::nio::charset::CoderResult::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::nio::charset::CoderResult >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::nio::charset::CoderResult::J2CPP_CLASS_NAME>(),
-			get_method_id<java::nio::charset::CoderResult::J2CPP_CLASS_NAME, java::nio::charset::CoderResult::J2CPP_METHOD_NAME(0), java::nio::charset::CoderResult::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
 
 local_ref< java::nio::charset::CoderResult > java::nio::charset::CoderResult::malformedForLength(cpp_int const &a0)
 {
@@ -192,6 +192,7 @@ local_ref< java::lang::String > java::nio::charset::CoderResult::toString()
 		)
 	);
 }
+
 
 
 static_field<

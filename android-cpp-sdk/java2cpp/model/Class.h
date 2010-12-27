@@ -29,7 +29,15 @@ namespace model {
 		std::string					get_java_signature() const;
 		std::string					get_cxx_class_name() const;
 		std::string					get_cxx_include_path() const;
+
+		void						set_super(shared_ptr<Class> const &s);
+		shared_ptr<Class>			get_super() const;
+
+		void						add_interface(shared_ptr<Class> const &i);
+		std::size_t					get_interfaces_count() const;
+		shared_ptr<Class>			get_interface(std::size_t i) const;
 		
+
 
 		bool						is_nested() const;
 		shared_ptr<Class>			get_parent_class() const;
@@ -43,7 +51,33 @@ namespace model {
 		shared_ptr<Field>			add_field(std::string const &n);
 		std::size_t					get_fields_count() const;
 		shared_ptr<Field>			get_field(std::size_t f) const;
-		
+
+		struct order_tag {};
+		struct identity_tag {};
+		struct name_tag {};
+		struct kind_tag {};
+
+		typedef multi_index_container
+		<
+			shared_ptr<Class>,
+			multi_index::indexed_by
+			<
+				multi_index::random_access
+				<
+					multi_index::tag<order_tag>
+				>,
+				multi_index::hashed_unique
+				<
+					multi_index::tag<identity_tag>,
+					multi_index::identity< shared_ptr<Class> >
+				>,
+				multi_index::hashed_unique
+				<
+					multi_index::tag<name_tag>,
+					BOOST_MULTI_INDEX_CONST_MEM_FUN(Entity, std::string const&, get_name)
+				>
+			>
+		> interfaces_t;
 
 		typedef multi_index_container
 		<
@@ -89,9 +123,13 @@ namespace model {
 			>
 		> fields_t;
 
+
+
 	private:
-		methods_t	m_methods;
-		fields_t	m_fields;
+		shared_ptr<Class>	m_super;
+		interfaces_t		m_interfaces;
+		methods_t			m_methods;
+		fields_t			m_fields;
 	};
 
 } //namespace model

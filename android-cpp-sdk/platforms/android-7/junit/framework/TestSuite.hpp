@@ -12,6 +12,7 @@
 
 namespace j2cpp { namespace junit { namespace framework { class TestResult; } } }
 namespace j2cpp { namespace junit { namespace framework { class Test; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class Class; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace lang { namespace reflect { class Constructor; } } } }
@@ -19,6 +20,7 @@ namespace j2cpp { namespace java { namespace util { class Enumeration; } } }
 
 
 #include <java/lang/Class.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/lang/reflect/Constructor.hpp>
 #include <java/util/Enumeration.hpp>
@@ -56,11 +58,19 @@ namespace junit { namespace framework {
 		J2CPP_DECLARE_METHOD(15)
 		J2CPP_DECLARE_METHOD(16)
 
-		TestSuite(jobject jobj)
+		explicit TestSuite(jobject jobj)
 		: cpp_object<TestSuite>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<junit::framework::Test>() const;
+
+
+		TestSuite();
+		TestSuite(local_ref< java::lang::Class > const&, local_ref< java::lang::String > const&);
+		TestSuite(local_ref< java::lang::Class > const&);
+		TestSuite(local_ref< java::lang::String > const&);
 		void addTest(local_ref< junit::framework::Test > const&);
 		void addTestSuite(local_ref< java::lang::Class > const&);
 		static local_ref< junit::framework::Test > createTest(local_ref< java::lang::Class > const&, local_ref< java::lang::String > const&);
@@ -79,7 +89,6 @@ namespace junit { namespace framework {
 } //namespace framework
 } //namespace junit
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JUNIT_FRAMEWORK_TESTSUITE_HPP_DECL
@@ -92,52 +101,67 @@ namespace junit { namespace framework {
 namespace j2cpp {
 
 
-template <>
-local_ref< junit::framework::TestSuite > create< junit::framework::TestSuite>()
+
+junit::framework::TestSuite::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< junit::framework::TestSuite >(
-		environment::get().get_jenv()->NewObject(
-			get_class<junit::framework::TestSuite::J2CPP_CLASS_NAME>(),
-			get_method_id<junit::framework::TestSuite::J2CPP_CLASS_NAME, junit::framework::TestSuite::J2CPP_METHOD_NAME(0), junit::framework::TestSuite::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
 
-template <>
-local_ref< junit::framework::TestSuite > create< junit::framework::TestSuite>(local_ref< java::lang::Class > const &a0, local_ref< java::lang::String > const &a1)
+junit::framework::TestSuite::operator local_ref<junit::framework::Test>() const
 {
-	return local_ref< junit::framework::TestSuite >(
-		environment::get().get_jenv()->NewObject(
-			get_class<junit::framework::TestSuite::J2CPP_CLASS_NAME>(),
-			get_method_id<junit::framework::TestSuite::J2CPP_CLASS_NAME, junit::framework::TestSuite::J2CPP_METHOD_NAME(1), junit::framework::TestSuite::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<junit::framework::Test>(get_jtype());
 }
 
-template <>
-local_ref< junit::framework::TestSuite > create< junit::framework::TestSuite>(local_ref< java::lang::Class > const &a0)
+
+junit::framework::TestSuite::TestSuite()
+: cpp_object<junit::framework::TestSuite>(
+	environment::get().get_jenv()->NewObject(
+		get_class<junit::framework::TestSuite::J2CPP_CLASS_NAME>(),
+		get_method_id<junit::framework::TestSuite::J2CPP_CLASS_NAME, junit::framework::TestSuite::J2CPP_METHOD_NAME(0), junit::framework::TestSuite::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
 {
-	return local_ref< junit::framework::TestSuite >(
-		environment::get().get_jenv()->NewObject(
-			get_class<junit::framework::TestSuite::J2CPP_CLASS_NAME>(),
-			get_method_id<junit::framework::TestSuite::J2CPP_CLASS_NAME, junit::framework::TestSuite::J2CPP_METHOD_NAME(2), junit::framework::TestSuite::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< junit::framework::TestSuite > create< junit::framework::TestSuite>(local_ref< java::lang::String > const &a0)
+
+
+junit::framework::TestSuite::TestSuite(local_ref< java::lang::Class > const &a0, local_ref< java::lang::String > const &a1)
+: cpp_object<junit::framework::TestSuite>(
+	environment::get().get_jenv()->NewObject(
+		get_class<junit::framework::TestSuite::J2CPP_CLASS_NAME>(),
+		get_method_id<junit::framework::TestSuite::J2CPP_CLASS_NAME, junit::framework::TestSuite::J2CPP_METHOD_NAME(1), junit::framework::TestSuite::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
 {
-	return local_ref< junit::framework::TestSuite >(
-		environment::get().get_jenv()->NewObject(
-			get_class<junit::framework::TestSuite::J2CPP_CLASS_NAME>(),
-			get_method_id<junit::framework::TestSuite::J2CPP_CLASS_NAME, junit::framework::TestSuite::J2CPP_METHOD_NAME(3), junit::framework::TestSuite::J2CPP_METHOD_SIGNATURE(3), false>(),
-			a0.get_jtype()
-		)
-	);
 }
+
+
+
+junit::framework::TestSuite::TestSuite(local_ref< java::lang::Class > const &a0)
+: cpp_object<junit::framework::TestSuite>(
+	environment::get().get_jenv()->NewObject(
+		get_class<junit::framework::TestSuite::J2CPP_CLASS_NAME>(),
+		get_method_id<junit::framework::TestSuite::J2CPP_CLASS_NAME, junit::framework::TestSuite::J2CPP_METHOD_NAME(2), junit::framework::TestSuite::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
+
+
+junit::framework::TestSuite::TestSuite(local_ref< java::lang::String > const &a0)
+: cpp_object<junit::framework::TestSuite>(
+	environment::get().get_jenv()->NewObject(
+		get_class<junit::framework::TestSuite::J2CPP_CLASS_NAME>(),
+		get_method_id<junit::framework::TestSuite::J2CPP_CLASS_NAME, junit::framework::TestSuite::J2CPP_METHOD_NAME(3), junit::framework::TestSuite::J2CPP_METHOD_SIGNATURE(3), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 void junit::framework::TestSuite::addTest(local_ref< junit::framework::Test > const &a0)
 {

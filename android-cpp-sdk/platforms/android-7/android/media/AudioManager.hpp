@@ -10,9 +10,11 @@
 #define J2CPP_ANDROID_MEDIA_AUDIOMANAGER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -116,10 +118,13 @@ namespace android { namespace media {
 		J2CPP_DECLARE_FIELD(50)
 		J2CPP_DECLARE_FIELD(51)
 
-		AudioManager(jobject jobj)
+		explicit AudioManager(jobject jobj)
 		: cpp_object<AudioManager>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		void adjustStreamVolume(cpp_int const&, cpp_int const&, cpp_int const&);
 		void adjustVolume(cpp_int const&, cpp_int const&);
@@ -213,7 +218,6 @@ namespace android { namespace media {
 } //namespace media
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_MEDIA_AUDIOMANAGER_HPP_DECL
@@ -226,16 +230,12 @@ namespace android { namespace media {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::media::AudioManager > create< android::media::AudioManager>()
+
+android::media::AudioManager::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::media::AudioManager >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::media::AudioManager::J2CPP_CLASS_NAME>(),
-			get_method_id<android::media::AudioManager::J2CPP_CLASS_NAME, android::media::AudioManager::J2CPP_METHOD_NAME(0), android::media::AudioManager::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
 
 void android::media::AudioManager::adjustStreamVolume(cpp_int const &a0, cpp_int const &a1, cpp_int const &a2)
 {

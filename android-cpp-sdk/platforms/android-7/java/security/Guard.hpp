@@ -30,17 +30,19 @@ namespace java { namespace security {
 
 		J2CPP_DECLARE_METHOD(0)
 
-		Guard(jobject jobj)
+		explicit Guard(jobject jobj)
 		: cpp_object<Guard>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		void checkGuard(local_ref< java::lang::Object > const&);
 	}; //class Guard
 
 } //namespace security
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -53,6 +55,12 @@ namespace java { namespace security {
 
 namespace j2cpp {
 
+
+
+java::security::Guard::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 void java::security::Guard::checkGuard(local_ref< java::lang::Object > const &a0)
 {

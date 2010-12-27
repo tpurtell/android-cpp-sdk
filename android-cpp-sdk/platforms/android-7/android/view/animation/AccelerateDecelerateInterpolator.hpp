@@ -10,12 +10,16 @@
 #define J2CPP_ANDROID_VIEW_ANIMATION_ACCELERATEDECELERATEINTERPOLATOR_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace android { namespace content { class Context; } } }
+namespace j2cpp { namespace android { namespace view { namespace animation { class Interpolator; } } } }
 namespace j2cpp { namespace android { namespace util { class AttributeSet; } } }
 
 
 #include <android/content/Context.hpp>
 #include <android/util/AttributeSet.hpp>
+#include <android/view/animation/Interpolator.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -34,18 +38,23 @@ namespace android { namespace view { namespace animation {
 		J2CPP_DECLARE_METHOD(1)
 		J2CPP_DECLARE_METHOD(2)
 
-		AccelerateDecelerateInterpolator(jobject jobj)
+		explicit AccelerateDecelerateInterpolator(jobject jobj)
 		: cpp_object<AccelerateDecelerateInterpolator>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<android::view::animation::Interpolator>() const;
+
+
+		AccelerateDecelerateInterpolator();
+		AccelerateDecelerateInterpolator(local_ref< android::content::Context > const&, local_ref< android::util::AttributeSet > const&);
 		cpp_float getInterpolation(cpp_float const&);
 	}; //class AccelerateDecelerateInterpolator
 
 } //namespace animation
 } //namespace view
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -59,28 +68,41 @@ namespace android { namespace view { namespace animation {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::view::animation::AccelerateDecelerateInterpolator > create< android::view::animation::AccelerateDecelerateInterpolator>()
+
+android::view::animation::AccelerateDecelerateInterpolator::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::view::animation::AccelerateDecelerateInterpolator >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::view::animation::AccelerateDecelerateInterpolator::J2CPP_CLASS_NAME>(),
-			get_method_id<android::view::animation::AccelerateDecelerateInterpolator::J2CPP_CLASS_NAME, android::view::animation::AccelerateDecelerateInterpolator::J2CPP_METHOD_NAME(0), android::view::animation::AccelerateDecelerateInterpolator::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
 
-template <>
-local_ref< android::view::animation::AccelerateDecelerateInterpolator > create< android::view::animation::AccelerateDecelerateInterpolator>(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1)
+android::view::animation::AccelerateDecelerateInterpolator::operator local_ref<android::view::animation::Interpolator>() const
 {
-	return local_ref< android::view::animation::AccelerateDecelerateInterpolator >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::view::animation::AccelerateDecelerateInterpolator::J2CPP_CLASS_NAME>(),
-			get_method_id<android::view::animation::AccelerateDecelerateInterpolator::J2CPP_CLASS_NAME, android::view::animation::AccelerateDecelerateInterpolator::J2CPP_METHOD_NAME(1), android::view::animation::AccelerateDecelerateInterpolator::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<android::view::animation::Interpolator>(get_jtype());
 }
+
+
+android::view::animation::AccelerateDecelerateInterpolator::AccelerateDecelerateInterpolator()
+: cpp_object<android::view::animation::AccelerateDecelerateInterpolator>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::view::animation::AccelerateDecelerateInterpolator::J2CPP_CLASS_NAME>(),
+		get_method_id<android::view::animation::AccelerateDecelerateInterpolator::J2CPP_CLASS_NAME, android::view::animation::AccelerateDecelerateInterpolator::J2CPP_METHOD_NAME(0), android::view::animation::AccelerateDecelerateInterpolator::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
+
+
+android::view::animation::AccelerateDecelerateInterpolator::AccelerateDecelerateInterpolator(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1)
+: cpp_object<android::view::animation::AccelerateDecelerateInterpolator>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::view::animation::AccelerateDecelerateInterpolator::J2CPP_CLASS_NAME>(),
+		get_method_id<android::view::animation::AccelerateDecelerateInterpolator::J2CPP_CLASS_NAME, android::view::animation::AccelerateDecelerateInterpolator::J2CPP_METHOD_NAME(1), android::view::animation::AccelerateDecelerateInterpolator::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
 
 cpp_float android::view::animation::AccelerateDecelerateInterpolator::getInterpolation(cpp_float const &a0)
 {

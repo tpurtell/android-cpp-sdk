@@ -11,11 +11,13 @@
 
 
 namespace j2cpp { namespace android { namespace content { class Context; } } }
+namespace j2cpp { namespace android { namespace widget { class ViewAnimator; } } }
 namespace j2cpp { namespace android { namespace util { class AttributeSet; } } }
 
 
 #include <android/content/Context.hpp>
 #include <android/util/AttributeSet.hpp>
+#include <android/widget/ViewAnimator.hpp>
 
 
 namespace j2cpp {
@@ -42,11 +44,16 @@ namespace android { namespace widget {
 		J2CPP_DECLARE_METHOD(9)
 		J2CPP_DECLARE_METHOD(10)
 
-		ViewFlipper(jobject jobj)
+		explicit ViewFlipper(jobject jobj)
 		: cpp_object<ViewFlipper>(jobj)
 		{
 		}
 
+		operator local_ref<android::widget::ViewAnimator>() const;
+
+
+		ViewFlipper(local_ref< android::content::Context > const&);
+		ViewFlipper(local_ref< android::content::Context > const&, local_ref< android::util::AttributeSet > const&);
 		void setFlipInterval(cpp_int const&);
 		void startFlipping();
 		void stopFlipping();
@@ -57,7 +64,6 @@ namespace android { namespace widget {
 
 } //namespace widget
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -71,29 +77,37 @@ namespace android { namespace widget {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::widget::ViewFlipper > create< android::widget::ViewFlipper>(local_ref< android::content::Context > const &a0)
+
+android::widget::ViewFlipper::operator local_ref<android::widget::ViewAnimator>() const
 {
-	return local_ref< android::widget::ViewFlipper >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::widget::ViewFlipper::J2CPP_CLASS_NAME>(),
-			get_method_id<android::widget::ViewFlipper::J2CPP_CLASS_NAME, android::widget::ViewFlipper::J2CPP_METHOD_NAME(0), android::widget::ViewFlipper::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<android::widget::ViewAnimator>(get_jtype());
 }
 
-template <>
-local_ref< android::widget::ViewFlipper > create< android::widget::ViewFlipper>(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1)
+
+android::widget::ViewFlipper::ViewFlipper(local_ref< android::content::Context > const &a0)
+: cpp_object<android::widget::ViewFlipper>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::widget::ViewFlipper::J2CPP_CLASS_NAME>(),
+		get_method_id<android::widget::ViewFlipper::J2CPP_CLASS_NAME, android::widget::ViewFlipper::J2CPP_METHOD_NAME(0), android::widget::ViewFlipper::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< android::widget::ViewFlipper >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::widget::ViewFlipper::J2CPP_CLASS_NAME>(),
-			get_method_id<android::widget::ViewFlipper::J2CPP_CLASS_NAME, android::widget::ViewFlipper::J2CPP_METHOD_NAME(1), android::widget::ViewFlipper::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
 }
+
+
+
+android::widget::ViewFlipper::ViewFlipper(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1)
+: cpp_object<android::widget::ViewFlipper>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::widget::ViewFlipper::J2CPP_CLASS_NAME>(),
+		get_method_id<android::widget::ViewFlipper::J2CPP_CLASS_NAME, android::widget::ViewFlipper::J2CPP_METHOD_NAME(1), android::widget::ViewFlipper::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
 
 
 

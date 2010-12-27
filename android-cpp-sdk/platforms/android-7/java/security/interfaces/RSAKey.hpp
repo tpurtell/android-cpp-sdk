@@ -10,9 +10,11 @@
 #define J2CPP_JAVA_SECURITY_INTERFACES_RSAKEY_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace math { class BigInteger; } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/math/BigInteger.hpp>
 
 
@@ -30,10 +32,13 @@ namespace java { namespace security { namespace interfaces {
 
 		J2CPP_DECLARE_METHOD(0)
 
-		RSAKey(jobject jobj)
+		explicit RSAKey(jobject jobj)
 		: cpp_object<RSAKey>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		local_ref< java::math::BigInteger > getModulus();
 	}; //class RSAKey
@@ -41,7 +46,6 @@ namespace java { namespace security { namespace interfaces {
 } //namespace interfaces
 } //namespace security
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -54,6 +58,12 @@ namespace java { namespace security { namespace interfaces {
 
 namespace j2cpp {
 
+
+
+java::security::interfaces::RSAKey::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 local_ref< java::math::BigInteger > java::security::interfaces::RSAKey::getModulus()
 {

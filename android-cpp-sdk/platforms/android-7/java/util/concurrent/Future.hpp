@@ -36,10 +36,13 @@ namespace java { namespace util { namespace concurrent {
 		J2CPP_DECLARE_METHOD(3)
 		J2CPP_DECLARE_METHOD(4)
 
-		Future(jobject jobj)
+		explicit Future(jobject jobj)
 		: cpp_object<Future>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		cpp_boolean cancel(cpp_boolean const&);
 		cpp_boolean isCancelled();
@@ -52,7 +55,6 @@ namespace java { namespace util { namespace concurrent {
 } //namespace util
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_UTIL_CONCURRENT_FUTURE_HPP_DECL
@@ -64,6 +66,12 @@ namespace java { namespace util { namespace concurrent {
 
 namespace j2cpp {
 
+
+
+java::util::concurrent::Future::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 cpp_boolean java::util::concurrent::Future::cancel(cpp_boolean const &a0)
 {

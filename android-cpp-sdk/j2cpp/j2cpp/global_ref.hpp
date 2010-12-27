@@ -19,19 +19,25 @@ namespace j2cpp {
 
 		global_ref(jobject obj)
 		: m_ref(obj)
-		, m_obj(m_ref)
+		, m_obj(m_ref.get_jtype())
 		{
 		}
 
-		explicit global_ref(global_ref const &that)
-		: m_ref(that.m_ref)
-		, m_obj(m_ref)
+		global_ref(object_type const &o)
+		: m_ref(o.get_jtype())
+		, m_obj(m_ref.get_jtype())
 		{
 		}
 
-		explicit global_ref(local_ref<object_type> const &that)
+		global_ref(global_ref const &that)
 		: m_ref(that.m_ref)
-		, m_obj(m_ref)
+		, m_obj(m_ref.get_jtype())
+		{
+		}
+
+		global_ref(local_ref<object_type> const &that)
+		: m_ref(that.m_ref)
+		, m_obj(m_ref.get_jtype())
 		{
 		}
 
@@ -40,8 +46,7 @@ namespace j2cpp {
 			return &m_obj;
 		}
 
-		operator jobject () const { return m_obj; }
-		jobject get_jtype() const { return m_obj; }
+		jobject get_jtype() const { return m_obj.get_jtype(); }
 
 	private:
 		ref_type			m_ref;

@@ -12,14 +12,18 @@
 
 namespace j2cpp { namespace java { namespace net { class URL; } } }
 namespace j2cpp { namespace java { namespace net { class URI; } } }
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 namespace j2cpp { namespace java { namespace io { class FileFilter; } } }
 namespace j2cpp { namespace java { namespace io { class FilenameFilter; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace lang { class Comparable; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 
 
 #include <java/io/FileFilter.hpp>
 #include <java/io/FilenameFilter.hpp>
+#include <java/io/Serializable.hpp>
+#include <java/lang/Comparable.hpp>
 #include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/net/URI.hpp>
@@ -88,11 +92,20 @@ namespace java { namespace io {
 		J2CPP_DECLARE_FIELD(2)
 		J2CPP_DECLARE_FIELD(3)
 
-		File(jobject jobj)
+		explicit File(jobject jobj)
 		: cpp_object<File>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::io::Serializable>() const;
+		operator local_ref<java::lang::Comparable>() const;
+
+
+		File(local_ref< java::io::File > const&, local_ref< java::lang::String > const&);
+		File(local_ref< java::lang::String > const&);
+		File(local_ref< java::lang::String > const&, local_ref< java::lang::String > const&);
+		File(local_ref< java::net::URI > const&);
 		static local_ref< cpp_object_array<java::io::File, 1> > listRoots();
 		cpp_boolean canRead();
 		cpp_boolean canWrite();
@@ -143,7 +156,6 @@ namespace java { namespace io {
 } //namespace io
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_IO_FILE_HPP_DECL
@@ -156,53 +168,73 @@ namespace java { namespace io {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::io::File > create< java::io::File>(local_ref< java::io::File > const &a0, local_ref< java::lang::String > const &a1)
+
+java::io::File::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::io::File >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::io::File::J2CPP_CLASS_NAME>(),
-			get_method_id<java::io::File::J2CPP_CLASS_NAME, java::io::File::J2CPP_METHOD_NAME(0), java::io::File::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
 
-template <>
-local_ref< java::io::File > create< java::io::File>(local_ref< java::lang::String > const &a0)
+java::io::File::operator local_ref<java::io::Serializable>() const
 {
-	return local_ref< java::io::File >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::io::File::J2CPP_CLASS_NAME>(),
-			get_method_id<java::io::File::J2CPP_CLASS_NAME, java::io::File::J2CPP_METHOD_NAME(1), java::io::File::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::io::Serializable>(get_jtype());
 }
 
-template <>
-local_ref< java::io::File > create< java::io::File>(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
+java::io::File::operator local_ref<java::lang::Comparable>() const
 {
-	return local_ref< java::io::File >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::io::File::J2CPP_CLASS_NAME>(),
-			get_method_id<java::io::File::J2CPP_CLASS_NAME, java::io::File::J2CPP_METHOD_NAME(2), java::io::File::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Comparable>(get_jtype());
 }
 
-template <>
-local_ref< java::io::File > create< java::io::File>(local_ref< java::net::URI > const &a0)
+
+java::io::File::File(local_ref< java::io::File > const &a0, local_ref< java::lang::String > const &a1)
+: cpp_object<java::io::File>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::io::File::J2CPP_CLASS_NAME>(),
+		get_method_id<java::io::File::J2CPP_CLASS_NAME, java::io::File::J2CPP_METHOD_NAME(0), java::io::File::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
 {
-	return local_ref< java::io::File >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::io::File::J2CPP_CLASS_NAME>(),
-			get_method_id<java::io::File::J2CPP_CLASS_NAME, java::io::File::J2CPP_METHOD_NAME(3), java::io::File::J2CPP_METHOD_SIGNATURE(3), false>(),
-			a0.get_jtype()
-		)
-	);
 }
+
+
+
+java::io::File::File(local_ref< java::lang::String > const &a0)
+: cpp_object<java::io::File>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::io::File::J2CPP_CLASS_NAME>(),
+		get_method_id<java::io::File::J2CPP_CLASS_NAME, java::io::File::J2CPP_METHOD_NAME(1), java::io::File::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
+
+
+java::io::File::File(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
+: cpp_object<java::io::File>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::io::File::J2CPP_CLASS_NAME>(),
+		get_method_id<java::io::File::J2CPP_CLASS_NAME, java::io::File::J2CPP_METHOD_NAME(2), java::io::File::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
+
+
+java::io::File::File(local_ref< java::net::URI > const &a0)
+: cpp_object<java::io::File>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::io::File::J2CPP_CLASS_NAME>(),
+		get_method_id<java::io::File::J2CPP_CLASS_NAME, java::io::File::J2CPP_METHOD_NAME(3), java::io::File::J2CPP_METHOD_SIGNATURE(3), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 local_ref< cpp_object_array<java::io::File, 1> > java::io::File::listRoots()
 {
@@ -613,6 +645,7 @@ cpp_int java::io::File::compareTo(local_ref< java::lang::Object > const &a0)
 		)
 	);
 }
+
 
 
 static_field<

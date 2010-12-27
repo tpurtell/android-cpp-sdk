@@ -10,6 +10,7 @@
 #define J2CPP_ANDROID_MEDIA_FACEDETECTOR_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace android { namespace graphics { class Bitmap; } } }
 namespace j2cpp { namespace android { namespace graphics { class PointF; } } }
 namespace j2cpp { namespace android { namespace media { namespace FaceDetector_ { class Face; } } } }
@@ -18,6 +19,7 @@ namespace j2cpp { namespace android { namespace media { namespace FaceDetector_ 
 #include <android/graphics/Bitmap.hpp>
 #include <android/graphics/PointF.hpp>
 #include <android/media/FaceDetector.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -46,10 +48,13 @@ namespace android { namespace media {
 			J2CPP_DECLARE_FIELD(3)
 			J2CPP_DECLARE_FIELD(4)
 
-			Face(jobject jobj)
+			explicit Face(jobject jobj)
 			: cpp_object<Face>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+
 
 			cpp_float confidence();
 			void getMidPoint(local_ref< android::graphics::PointF > const&);
@@ -77,17 +82,20 @@ namespace android { namespace media {
 
 		typedef FaceDetector_::Face Face;
 
-		FaceDetector(jobject jobj)
+		explicit FaceDetector(jobject jobj)
 		: cpp_object<FaceDetector>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		FaceDetector(cpp_int const&, cpp_int const&, cpp_int const&);
 		cpp_int findFaces(local_ref< android::graphics::Bitmap > const&, local_ref< cpp_object_array<android::media::FaceDetector_::Face, 1> > const&);
 	}; //class FaceDetector
 
 } //namespace media
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -102,17 +110,12 @@ namespace j2cpp {
 
 
 
-template <>
-local_ref< android::media::FaceDetector_::Face > create< android::media::FaceDetector_::Face>(local_ref< android::media::FaceDetector > const &a0)
+
+android::media::FaceDetector_::Face::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::media::FaceDetector_::Face >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::media::FaceDetector_::Face::J2CPP_CLASS_NAME>(),
-			get_method_id<android::media::FaceDetector_::Face::J2CPP_CLASS_NAME, android::media::FaceDetector_::Face::J2CPP_METHOD_NAME(0), android::media::FaceDetector_::Face::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
 
 cpp_float android::media::FaceDetector_::Face::confidence()
 {
@@ -199,17 +202,24 @@ J2CPP_DEFINE_FIELD(android::media::FaceDetector_::Face,3,"EULER_Z","I")
 J2CPP_DEFINE_FIELD(android::media::FaceDetector_::Face,4,"this$0","Landroid/media/FaceDetector;")
 
 
-template <>
-local_ref< android::media::FaceDetector > create< android::media::FaceDetector>(cpp_int const &a0, cpp_int const &a1, cpp_int const &a2)
+
+android::media::FaceDetector::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::media::FaceDetector >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::media::FaceDetector::J2CPP_CLASS_NAME>(),
-			get_method_id<android::media::FaceDetector::J2CPP_CLASS_NAME, android::media::FaceDetector::J2CPP_METHOD_NAME(0), android::media::FaceDetector::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::media::FaceDetector::FaceDetector(cpp_int const &a0, cpp_int const &a1, cpp_int const &a2)
+: cpp_object<android::media::FaceDetector>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::media::FaceDetector::J2CPP_CLASS_NAME>(),
+		get_method_id<android::media::FaceDetector::J2CPP_CLASS_NAME, android::media::FaceDetector::J2CPP_METHOD_NAME(0), android::media::FaceDetector::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
+	)
+)
+{
+}
+
 
 cpp_int android::media::FaceDetector::findFaces(local_ref< android::graphics::Bitmap > const &a0, local_ref< cpp_object_array<android::media::FaceDetector_::Face, 1> > const &a1)
 {

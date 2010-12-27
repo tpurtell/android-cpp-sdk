@@ -11,6 +11,7 @@
 
 
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace lang { class Comparable; } } }
 namespace j2cpp { namespace java { namespace lang { class CharSequence; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace android { namespace content { class Intent; } } }
@@ -19,6 +20,7 @@ namespace j2cpp { namespace android { namespace content { class Context; } } }
 namespace j2cpp { namespace android { namespace content { namespace SharedPreferences_ { class Editor; } } } }
 namespace j2cpp { namespace android { namespace view { class View; } } }
 namespace j2cpp { namespace android { namespace view { class ViewGroup; } } }
+namespace j2cpp { namespace android { namespace view { class AbsSavedState; } } }
 namespace j2cpp { namespace android { namespace preference { class PreferenceManager; } } }
 namespace j2cpp { namespace android { namespace preference { namespace Preference_ { class OnPreferenceChangeListener; } } } }
 namespace j2cpp { namespace android { namespace preference { namespace Preference_ { class OnPreferenceClickListener; } } } }
@@ -38,9 +40,11 @@ namespace j2cpp { namespace android { namespace os { namespace Parcelable_ { cla
 #include <android/preference/Preference.hpp>
 #include <android/preference/PreferenceManager.hpp>
 #include <android/util/AttributeSet.hpp>
+#include <android/view/AbsSavedState.hpp>
 #include <android/view/View.hpp>
 #include <android/view/ViewGroup.hpp>
 #include <java/lang/CharSequence.hpp>
+#include <java/lang/Comparable.hpp>
 #include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
@@ -65,11 +69,16 @@ namespace android { namespace preference {
 			J2CPP_DECLARE_METHOD(2)
 			J2CPP_DECLARE_FIELD(0)
 
-			BaseSavedState(jobject jobj)
+			explicit BaseSavedState(jobject jobj)
 			: cpp_object<BaseSavedState>(jobj)
 			{
 			}
 
+			operator local_ref<android::view::AbsSavedState>() const;
+
+
+			BaseSavedState(local_ref< android::os::Parcel > const&);
+			BaseSavedState(local_ref< android::os::Parcelable > const&);
 
 			static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(0), J2CPP_FIELD_SIGNATURE(0), local_ref< android::os::Parcelable_::Creator > > CREATOR;
 		}; //class BaseSavedState
@@ -84,10 +93,13 @@ namespace android { namespace preference {
 
 			J2CPP_DECLARE_METHOD(0)
 
-			OnPreferenceChangeListener(jobject jobj)
+			explicit OnPreferenceChangeListener(jobject jobj)
 			: cpp_object<OnPreferenceChangeListener>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+
 
 			cpp_boolean onPreferenceChange(local_ref< android::preference::Preference > const&, local_ref< java::lang::Object > const&);
 		}; //class OnPreferenceChangeListener
@@ -102,10 +114,13 @@ namespace android { namespace preference {
 
 			J2CPP_DECLARE_METHOD(0)
 
-			OnPreferenceClickListener(jobject jobj)
+			explicit OnPreferenceClickListener(jobject jobj)
 			: cpp_object<OnPreferenceClickListener>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+
 
 			cpp_boolean onPreferenceClick(local_ref< android::preference::Preference > const&);
 		}; //class OnPreferenceClickListener
@@ -199,11 +214,18 @@ namespace android { namespace preference {
 		typedef Preference_::OnPreferenceChangeListener OnPreferenceChangeListener;
 		typedef Preference_::OnPreferenceClickListener OnPreferenceClickListener;
 
-		Preference(jobject jobj)
+		explicit Preference(jobject jobj)
 		: cpp_object<Preference>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::lang::Comparable>() const;
+
+
+		Preference(local_ref< android::content::Context > const&, local_ref< android::util::AttributeSet > const&, cpp_int const&);
+		Preference(local_ref< android::content::Context > const&, local_ref< android::util::AttributeSet > const&);
+		Preference(local_ref< android::content::Context > const&);
 		void setIntent(local_ref< android::content::Intent > const&);
 		local_ref< android::content::Intent > getIntent();
 		void setLayoutResource(cpp_int const&);
@@ -257,7 +279,6 @@ namespace android { namespace preference {
 } //namespace preference
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_PREFERENCE_PREFERENCE_HPP_DECL
@@ -271,29 +292,38 @@ namespace j2cpp {
 
 
 
-template <>
-local_ref< android::preference::Preference_::BaseSavedState > create< android::preference::Preference_::BaseSavedState>(local_ref< android::os::Parcel > const &a0)
+
+android::preference::Preference_::BaseSavedState::operator local_ref<android::view::AbsSavedState>() const
 {
-	return local_ref< android::preference::Preference_::BaseSavedState >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::preference::Preference_::BaseSavedState::J2CPP_CLASS_NAME>(),
-			get_method_id<android::preference::Preference_::BaseSavedState::J2CPP_CLASS_NAME, android::preference::Preference_::BaseSavedState::J2CPP_METHOD_NAME(0), android::preference::Preference_::BaseSavedState::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<android::view::AbsSavedState>(get_jtype());
 }
 
-template <>
-local_ref< android::preference::Preference_::BaseSavedState > create< android::preference::Preference_::BaseSavedState>(local_ref< android::os::Parcelable > const &a0)
+
+android::preference::Preference_::BaseSavedState::BaseSavedState(local_ref< android::os::Parcel > const &a0)
+: cpp_object<android::preference::Preference_::BaseSavedState>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::preference::Preference_::BaseSavedState::J2CPP_CLASS_NAME>(),
+		get_method_id<android::preference::Preference_::BaseSavedState::J2CPP_CLASS_NAME, android::preference::Preference_::BaseSavedState::J2CPP_METHOD_NAME(0), android::preference::Preference_::BaseSavedState::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< android::preference::Preference_::BaseSavedState >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::preference::Preference_::BaseSavedState::J2CPP_CLASS_NAME>(),
-			get_method_id<android::preference::Preference_::BaseSavedState::J2CPP_CLASS_NAME, android::preference::Preference_::BaseSavedState::J2CPP_METHOD_NAME(1), android::preference::Preference_::BaseSavedState::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
 }
+
+
+
+android::preference::Preference_::BaseSavedState::BaseSavedState(local_ref< android::os::Parcelable > const &a0)
+: cpp_object<android::preference::Preference_::BaseSavedState>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::preference::Preference_::BaseSavedState::J2CPP_CLASS_NAME>(),
+		get_method_id<android::preference::Preference_::BaseSavedState::J2CPP_CLASS_NAME, android::preference::Preference_::BaseSavedState::J2CPP_METHOD_NAME(1), android::preference::Preference_::BaseSavedState::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
+
 
 
 static_field<
@@ -310,6 +340,12 @@ J2CPP_DEFINE_METHOD(android::preference::Preference_::BaseSavedState,1,"<init>",
 J2CPP_DEFINE_METHOD(android::preference::Preference_::BaseSavedState,2,"<clinit>","()V")
 J2CPP_DEFINE_FIELD(android::preference::Preference_::BaseSavedState,0,"CREATOR","Landroid/os/Parcelable$Creator;")
 
+
+android::preference::Preference_::OnPreferenceChangeListener::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
+
 cpp_boolean android::preference::Preference_::OnPreferenceChangeListener::onPreferenceChange(local_ref< android::preference::Preference > const &a0, local_ref< java::lang::Object > const &a1)
 {
 	return cpp_boolean(
@@ -324,6 +360,12 @@ cpp_boolean android::preference::Preference_::OnPreferenceChangeListener::onPref
 
 J2CPP_DEFINE_CLASS(android::preference::Preference_::OnPreferenceChangeListener,"android/preference/Preference$OnPreferenceChangeListener")
 J2CPP_DEFINE_METHOD(android::preference::Preference_::OnPreferenceChangeListener,0,"onPreferenceChange","(Landroid/preference/Preference;Ljava/lang/Object;)Z")
+
+
+android::preference::Preference_::OnPreferenceClickListener::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 cpp_boolean android::preference::Preference_::OnPreferenceClickListener::onPreferenceClick(local_ref< android::preference::Preference > const &a0)
 {
@@ -341,41 +383,55 @@ J2CPP_DEFINE_CLASS(android::preference::Preference_::OnPreferenceClickListener,"
 J2CPP_DEFINE_METHOD(android::preference::Preference_::OnPreferenceClickListener,0,"onPreferenceClick","(Landroid/preference/Preference;)Z")
 
 
-template <>
-local_ref< android::preference::Preference > create< android::preference::Preference>(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1, cpp_int const &a2)
+
+android::preference::Preference::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::preference::Preference >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::preference::Preference::J2CPP_CLASS_NAME>(),
-			get_method_id<android::preference::Preference::J2CPP_CLASS_NAME, android::preference::Preference::J2CPP_METHOD_NAME(0), android::preference::Preference::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
 
-template <>
-local_ref< android::preference::Preference > create< android::preference::Preference>(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1)
+android::preference::Preference::operator local_ref<java::lang::Comparable>() const
 {
-	return local_ref< android::preference::Preference >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::preference::Preference::J2CPP_CLASS_NAME>(),
-			get_method_id<android::preference::Preference::J2CPP_CLASS_NAME, android::preference::Preference::J2CPP_METHOD_NAME(1), android::preference::Preference::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Comparable>(get_jtype());
 }
 
-template <>
-local_ref< android::preference::Preference > create< android::preference::Preference>(local_ref< android::content::Context > const &a0)
+
+android::preference::Preference::Preference(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1, cpp_int const &a2)
+: cpp_object<android::preference::Preference>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::preference::Preference::J2CPP_CLASS_NAME>(),
+		get_method_id<android::preference::Preference::J2CPP_CLASS_NAME, android::preference::Preference::J2CPP_METHOD_NAME(0), android::preference::Preference::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
+	)
+)
 {
-	return local_ref< android::preference::Preference >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::preference::Preference::J2CPP_CLASS_NAME>(),
-			get_method_id<android::preference::Preference::J2CPP_CLASS_NAME, android::preference::Preference::J2CPP_METHOD_NAME(2), android::preference::Preference::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype()
-		)
-	);
 }
+
+
+
+android::preference::Preference::Preference(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1)
+: cpp_object<android::preference::Preference>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::preference::Preference::J2CPP_CLASS_NAME>(),
+		get_method_id<android::preference::Preference::J2CPP_CLASS_NAME, android::preference::Preference::J2CPP_METHOD_NAME(1), android::preference::Preference::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
+
+
+android::preference::Preference::Preference(local_ref< android::content::Context > const &a0)
+: cpp_object<android::preference::Preference>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::preference::Preference::J2CPP_CLASS_NAME>(),
+		get_method_id<android::preference::Preference::J2CPP_CLASS_NAME, android::preference::Preference::J2CPP_METHOD_NAME(2), android::preference::Preference::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 
 void android::preference::Preference::setIntent(local_ref< android::content::Intent > const &a0)

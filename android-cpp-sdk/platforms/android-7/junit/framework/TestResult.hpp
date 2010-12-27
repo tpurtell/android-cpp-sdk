@@ -11,13 +11,15 @@
 
 
 namespace j2cpp { namespace junit { namespace framework { class TestListener; } } }
-namespace j2cpp { namespace junit { namespace framework { class Test; } } }
 namespace j2cpp { namespace junit { namespace framework { class AssertionFailedError; } } }
+namespace j2cpp { namespace junit { namespace framework { class Test; } } }
 namespace j2cpp { namespace junit { namespace framework { class Protectable; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class Throwable; } } }
 namespace j2cpp { namespace java { namespace util { class Enumeration; } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/Throwable.hpp>
 #include <java/util/Enumeration.hpp>
 #include <junit/framework/AssertionFailedError.hpp>
@@ -60,11 +62,15 @@ namespace junit { namespace framework {
 		J2CPP_DECLARE_FIELD(2)
 		J2CPP_DECLARE_FIELD(3)
 
-		TestResult(jobject jobj)
+		explicit TestResult(jobject jobj)
 		: cpp_object<TestResult>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		TestResult();
 		void addError(local_ref< junit::framework::Test > const&, local_ref< java::lang::Throwable > const&);
 		void addFailure(local_ref< junit::framework::Test > const&, local_ref< junit::framework::AssertionFailedError > const&);
 		void addListener(local_ref< junit::framework::TestListener > const&);
@@ -86,7 +92,6 @@ namespace junit { namespace framework {
 } //namespace framework
 } //namespace junit
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JUNIT_FRAMEWORK_TESTRESULT_HPP_DECL
@@ -99,16 +104,23 @@ namespace junit { namespace framework {
 namespace j2cpp {
 
 
-template <>
-local_ref< junit::framework::TestResult > create< junit::framework::TestResult>()
+
+junit::framework::TestResult::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< junit::framework::TestResult >(
-		environment::get().get_jenv()->NewObject(
-			get_class<junit::framework::TestResult::J2CPP_CLASS_NAME>(),
-			get_method_id<junit::framework::TestResult::J2CPP_CLASS_NAME, junit::framework::TestResult::J2CPP_METHOD_NAME(0), junit::framework::TestResult::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+junit::framework::TestResult::TestResult()
+: cpp_object<junit::framework::TestResult>(
+	environment::get().get_jenv()->NewObject(
+		get_class<junit::framework::TestResult::J2CPP_CLASS_NAME>(),
+		get_method_id<junit::framework::TestResult::J2CPP_CLASS_NAME, junit::framework::TestResult::J2CPP_METHOD_NAME(0), junit::framework::TestResult::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 void junit::framework::TestResult::addError(local_ref< junit::framework::Test > const &a0, local_ref< java::lang::Throwable > const &a1)
 {

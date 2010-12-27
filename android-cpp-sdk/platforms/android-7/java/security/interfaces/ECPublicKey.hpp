@@ -10,9 +10,15 @@
 #define J2CPP_JAVA_SECURITY_INTERFACES_ECPUBLICKEY_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace security { class PublicKey; } } }
+namespace j2cpp { namespace java { namespace security { namespace interfaces { class ECKey; } } } }
 namespace j2cpp { namespace java { namespace security { namespace spec { class ECPoint; } } } }
 
 
+#include <java/lang/Object.hpp>
+#include <java/security/PublicKey.hpp>
+#include <java/security/interfaces/ECKey.hpp>
 #include <java/security/spec/ECPoint.hpp>
 
 
@@ -31,10 +37,15 @@ namespace java { namespace security { namespace interfaces {
 		J2CPP_DECLARE_METHOD(0)
 		J2CPP_DECLARE_FIELD(0)
 
-		ECPublicKey(jobject jobj)
+		explicit ECPublicKey(jobject jobj)
 		: cpp_object<ECPublicKey>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::security::PublicKey>() const;
+		operator local_ref<java::security::interfaces::ECKey>() const;
+
 
 		local_ref< java::security::spec::ECPoint > getW();
 
@@ -44,7 +55,6 @@ namespace java { namespace security { namespace interfaces {
 } //namespace interfaces
 } //namespace security
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -57,6 +67,22 @@ namespace java { namespace security { namespace interfaces {
 
 namespace j2cpp {
 
+
+
+java::security::interfaces::ECPublicKey::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
+
+java::security::interfaces::ECPublicKey::operator local_ref<java::security::PublicKey>() const
+{
+	return local_ref<java::security::PublicKey>(get_jtype());
+}
+
+java::security::interfaces::ECPublicKey::operator local_ref<java::security::interfaces::ECKey>() const
+{
+	return local_ref<java::security::interfaces::ECKey>(get_jtype());
+}
 
 local_ref< java::security::spec::ECPoint > java::security::interfaces::ECPublicKey::getW()
 {

@@ -19,6 +19,7 @@ namespace j2cpp { namespace android { namespace view { class KeyEvent; } } }
 namespace j2cpp { namespace android { namespace view { class MotionEvent; } } }
 namespace j2cpp { namespace android { namespace view { namespace accessibility { class AccessibilityEvent; } } } }
 namespace j2cpp { namespace android { namespace widget { class ListAdapter; } } }
+namespace j2cpp { namespace android { namespace widget { class AbsListView; } } }
 namespace j2cpp { namespace android { namespace widget { class Adapter; } } }
 namespace j2cpp { namespace android { namespace util { class AttributeSet; } } }
 namespace j2cpp { namespace android { namespace util { class SparseBooleanArray; } } }
@@ -35,6 +36,7 @@ namespace j2cpp { namespace android { namespace os { class Parcelable; } } }
 #include <android/view/MotionEvent.hpp>
 #include <android/view/View.hpp>
 #include <android/view/accessibility/AccessibilityEvent.hpp>
+#include <android/widget/AbsListView.hpp>
 #include <android/widget/Adapter.hpp>
 #include <android/widget/ListAdapter.hpp>
 #include <java/lang/Object.hpp>
@@ -61,14 +63,18 @@ namespace android { namespace widget {
 			J2CPP_DECLARE_FIELD(2)
 			J2CPP_DECLARE_FIELD(3)
 
-			FixedViewInfo(jobject jobj)
+			explicit FixedViewInfo(jobject jobj)
 			: cpp_object<FixedViewInfo>(jobj)
-			, view(jobj)
-			, data(jobj)
-			, isSelectable(jobj)
+, view(jobj)
+, data(jobj)
+, isSelectable(jobj)
 			{
 			}
 
+			operator local_ref<java::lang::Object>() const;
+
+
+			FixedViewInfo(local_ref< android::widget::ListView > const&);
 
 			field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(0), J2CPP_FIELD_SIGNATURE(0), local_ref< android::view::View > > view;
 			field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(1), J2CPP_FIELD_SIGNATURE(1), local_ref< java::lang::Object > > data;
@@ -144,11 +150,17 @@ namespace android { namespace widget {
 
 		typedef ListView_::FixedViewInfo FixedViewInfo;
 
-		ListView(jobject jobj)
+		explicit ListView(jobject jobj)
 		: cpp_object<ListView>(jobj)
 		{
 		}
 
+		operator local_ref<android::widget::AbsListView>() const;
+
+
+		ListView(local_ref< android::content::Context > const&);
+		ListView(local_ref< android::content::Context > const&, local_ref< android::util::AttributeSet > const&);
+		ListView(local_ref< android::content::Context > const&, local_ref< android::util::AttributeSet > const&, cpp_int const&);
 		cpp_int getMaxScrollAmount();
 		void addHeaderView(local_ref< android::view::View > const&, local_ref< java::lang::Object > const&, cpp_boolean const&);
 		void addHeaderView(local_ref< android::view::View > const&);
@@ -201,7 +213,6 @@ namespace android { namespace widget {
 } //namespace widget
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_WIDGET_LISTVIEW_HPP_DECL
@@ -215,17 +226,27 @@ namespace j2cpp {
 
 
 
-template <>
-local_ref< android::widget::ListView_::FixedViewInfo > create< android::widget::ListView_::FixedViewInfo>(local_ref< android::widget::ListView > const &a0)
+
+android::widget::ListView_::FixedViewInfo::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::widget::ListView_::FixedViewInfo >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::widget::ListView_::FixedViewInfo::J2CPP_CLASS_NAME>(),
-			get_method_id<android::widget::ListView_::FixedViewInfo::J2CPP_CLASS_NAME, android::widget::ListView_::FixedViewInfo::J2CPP_METHOD_NAME(0), android::widget::ListView_::FixedViewInfo::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::widget::ListView_::FixedViewInfo::FixedViewInfo(local_ref< android::widget::ListView > const &a0)
+: cpp_object<android::widget::ListView_::FixedViewInfo>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::widget::ListView_::FixedViewInfo::J2CPP_CLASS_NAME>(),
+		get_method_id<android::widget::ListView_::FixedViewInfo::J2CPP_CLASS_NAME, android::widget::ListView_::FixedViewInfo::J2CPP_METHOD_NAME(0), android::widget::ListView_::FixedViewInfo::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
+, view(get_jtype())
+, data(get_jtype())
+, isSelectable(get_jtype())
+{
+}
+
 
 
 
@@ -237,41 +258,50 @@ J2CPP_DEFINE_FIELD(android::widget::ListView_::FixedViewInfo,2,"isSelectable","Z
 J2CPP_DEFINE_FIELD(android::widget::ListView_::FixedViewInfo,3,"this$0","Landroid/widget/ListView;")
 
 
-template <>
-local_ref< android::widget::ListView > create< android::widget::ListView>(local_ref< android::content::Context > const &a0)
+
+android::widget::ListView::operator local_ref<android::widget::AbsListView>() const
 {
-	return local_ref< android::widget::ListView >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::widget::ListView::J2CPP_CLASS_NAME>(),
-			get_method_id<android::widget::ListView::J2CPP_CLASS_NAME, android::widget::ListView::J2CPP_METHOD_NAME(0), android::widget::ListView::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<android::widget::AbsListView>(get_jtype());
 }
 
-template <>
-local_ref< android::widget::ListView > create< android::widget::ListView>(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1)
+
+android::widget::ListView::ListView(local_ref< android::content::Context > const &a0)
+: cpp_object<android::widget::ListView>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::widget::ListView::J2CPP_CLASS_NAME>(),
+		get_method_id<android::widget::ListView::J2CPP_CLASS_NAME, android::widget::ListView::J2CPP_METHOD_NAME(0), android::widget::ListView::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< android::widget::ListView >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::widget::ListView::J2CPP_CLASS_NAME>(),
-			get_method_id<android::widget::ListView::J2CPP_CLASS_NAME, android::widget::ListView::J2CPP_METHOD_NAME(1), android::widget::ListView::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< android::widget::ListView > create< android::widget::ListView>(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1, cpp_int const &a2)
+
+
+android::widget::ListView::ListView(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1)
+: cpp_object<android::widget::ListView>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::widget::ListView::J2CPP_CLASS_NAME>(),
+		get_method_id<android::widget::ListView::J2CPP_CLASS_NAME, android::widget::ListView::J2CPP_METHOD_NAME(1), android::widget::ListView::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
 {
-	return local_ref< android::widget::ListView >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::widget::ListView::J2CPP_CLASS_NAME>(),
-			get_method_id<android::widget::ListView::J2CPP_CLASS_NAME, android::widget::ListView::J2CPP_METHOD_NAME(2), android::widget::ListView::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
-		)
-	);
 }
+
+
+
+android::widget::ListView::ListView(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1, cpp_int const &a2)
+: cpp_object<android::widget::ListView>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::widget::ListView::J2CPP_CLASS_NAME>(),
+		get_method_id<android::widget::ListView::J2CPP_CLASS_NAME, android::widget::ListView::J2CPP_METHOD_NAME(2), android::widget::ListView::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
+	)
+)
+{
+}
+
 
 cpp_int android::widget::ListView::getMaxScrollAmount()
 {

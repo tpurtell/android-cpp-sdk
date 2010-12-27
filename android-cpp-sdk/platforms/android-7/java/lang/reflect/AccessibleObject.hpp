@@ -10,12 +10,16 @@
 #define J2CPP_JAVA_LANG_REFLECT_ACCESSIBLEOBJECT_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class Class; } } }
 namespace j2cpp { namespace java { namespace lang { namespace annotation { class Annotation; } } } }
+namespace j2cpp { namespace java { namespace lang { namespace reflect { class AnnotatedElement; } } } }
 
 
 #include <java/lang/Class.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/annotation/Annotation.hpp>
+#include <java/lang/reflect/AnnotatedElement.hpp>
 
 
 namespace j2cpp {
@@ -39,10 +43,14 @@ namespace java { namespace lang { namespace reflect {
 		J2CPP_DECLARE_METHOD(6)
 		J2CPP_DECLARE_METHOD(7)
 
-		AccessibleObject(jobject jobj)
+		explicit AccessibleObject(jobject jobj)
 		: cpp_object<AccessibleObject>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::lang::reflect::AnnotatedElement>() const;
+
 
 		static void setAccessible(local_ref< cpp_object_array<java::lang::reflect::AccessibleObject, 1> > const&, cpp_boolean const&);
 		cpp_boolean isAccessible();
@@ -57,7 +65,6 @@ namespace java { namespace lang { namespace reflect {
 } //namespace lang
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_LANG_REFLECT_ACCESSIBLEOBJECT_HPP_DECL
@@ -70,16 +77,17 @@ namespace java { namespace lang { namespace reflect {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::lang::reflect::AccessibleObject > create< java::lang::reflect::AccessibleObject>()
+
+java::lang::reflect::AccessibleObject::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::lang::reflect::AccessibleObject >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::lang::reflect::AccessibleObject::J2CPP_CLASS_NAME>(),
-			get_method_id<java::lang::reflect::AccessibleObject::J2CPP_CLASS_NAME, java::lang::reflect::AccessibleObject::J2CPP_METHOD_NAME(0), java::lang::reflect::AccessibleObject::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+java::lang::reflect::AccessibleObject::operator local_ref<java::lang::reflect::AnnotatedElement>() const
+{
+	return local_ref<java::lang::reflect::AnnotatedElement>(get_jtype());
+}
+
 
 void java::lang::reflect::AccessibleObject::setAccessible(local_ref< cpp_object_array<java::lang::reflect::AccessibleObject, 1> > const &a0, cpp_boolean const &a1)
 {

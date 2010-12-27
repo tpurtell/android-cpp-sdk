@@ -45,11 +45,16 @@ namespace java { namespace io {
 		J2CPP_DECLARE_FIELD(0)
 		J2CPP_DECLARE_FIELD(1)
 
-		ByteArrayOutputStream(jobject jobj)
+		explicit ByteArrayOutputStream(jobject jobj)
 		: cpp_object<ByteArrayOutputStream>(jobj)
 		{
 		}
 
+		operator local_ref<java::io::OutputStream>() const;
+
+
+		ByteArrayOutputStream();
+		ByteArrayOutputStream(cpp_int const&);
 		void close();
 		void reset();
 		cpp_int size();
@@ -66,7 +71,6 @@ namespace java { namespace io {
 } //namespace io
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_IO_BYTEARRAYOUTPUTSTREAM_HPP_DECL
@@ -79,28 +83,36 @@ namespace java { namespace io {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::io::ByteArrayOutputStream > create< java::io::ByteArrayOutputStream>()
+
+java::io::ByteArrayOutputStream::operator local_ref<java::io::OutputStream>() const
 {
-	return local_ref< java::io::ByteArrayOutputStream >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::io::ByteArrayOutputStream::J2CPP_CLASS_NAME>(),
-			get_method_id<java::io::ByteArrayOutputStream::J2CPP_CLASS_NAME, java::io::ByteArrayOutputStream::J2CPP_METHOD_NAME(0), java::io::ByteArrayOutputStream::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::io::OutputStream>(get_jtype());
 }
 
-template <>
-local_ref< java::io::ByteArrayOutputStream > create< java::io::ByteArrayOutputStream>(cpp_int const &a0)
+
+java::io::ByteArrayOutputStream::ByteArrayOutputStream()
+: cpp_object<java::io::ByteArrayOutputStream>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::io::ByteArrayOutputStream::J2CPP_CLASS_NAME>(),
+		get_method_id<java::io::ByteArrayOutputStream::J2CPP_CLASS_NAME, java::io::ByteArrayOutputStream::J2CPP_METHOD_NAME(0), java::io::ByteArrayOutputStream::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
 {
-	return local_ref< java::io::ByteArrayOutputStream >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::io::ByteArrayOutputStream::J2CPP_CLASS_NAME>(),
-			get_method_id<java::io::ByteArrayOutputStream::J2CPP_CLASS_NAME, java::io::ByteArrayOutputStream::J2CPP_METHOD_NAME(1), java::io::ByteArrayOutputStream::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
 }
+
+
+
+java::io::ByteArrayOutputStream::ByteArrayOutputStream(cpp_int const &a0)
+: cpp_object<java::io::ByteArrayOutputStream>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::io::ByteArrayOutputStream::J2CPP_CLASS_NAME>(),
+		get_method_id<java::io::ByteArrayOutputStream::J2CPP_CLASS_NAME, java::io::ByteArrayOutputStream::J2CPP_METHOD_NAME(1), java::io::ByteArrayOutputStream::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 void java::io::ByteArrayOutputStream::close()
 {

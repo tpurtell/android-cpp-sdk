@@ -10,6 +10,8 @@
 #define J2CPP_ANDROID_TEXT_LAYOUT_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace lang { class Enum; } } }
 namespace j2cpp { namespace java { namespace lang { class CharSequence; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace android { namespace graphics { class Paint; } } }
@@ -28,6 +30,8 @@ namespace j2cpp { namespace android { namespace text { namespace Layout_ { class
 #include <android/text/Layout.hpp>
 #include <android/text/TextPaint.hpp>
 #include <java/lang/CharSequence.hpp>
+#include <java/lang/Enum.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -55,10 +59,13 @@ namespace android { namespace text {
 			J2CPP_DECLARE_FIELD(2)
 			J2CPP_DECLARE_FIELD(3)
 
-			Alignment(jobject jobj)
+			explicit Alignment(jobject jobj)
 			: cpp_object<Alignment>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Enum>() const;
+
 
 			static local_ref< cpp_object_array<android::text::Layout_::Alignment, 1> > values();
 			static local_ref< android::text::Layout_::Alignment > valueOf(local_ref< java::lang::String > const&);
@@ -78,10 +85,13 @@ namespace android { namespace text {
 
 			J2CPP_DECLARE_METHOD(0)
 
-			Directions(jobject jobj)
+			explicit Directions(jobject jobj)
 			: cpp_object<Directions>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+
 
 		}; //class Directions
 
@@ -148,10 +158,13 @@ namespace android { namespace text {
 		typedef Layout_::Alignment Alignment;
 		typedef Layout_::Directions Directions;
 
-		Layout(jobject jobj)
+		explicit Layout(jobject jobj)
 		: cpp_object<Layout>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		static cpp_float getDesiredWidth(local_ref< java::lang::CharSequence > const&, local_ref< android::text::TextPaint > const&);
 		static cpp_float getDesiredWidth(local_ref< java::lang::CharSequence > const&, cpp_int const&, cpp_int const&, local_ref< android::text::TextPaint > const&);
@@ -207,7 +220,6 @@ namespace android { namespace text {
 } //namespace text
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_TEXT_LAYOUT_HPP_DECL
@@ -220,6 +232,12 @@ namespace android { namespace text {
 namespace j2cpp {
 
 
+
+
+android::text::Layout_::Alignment::operator local_ref<java::lang::Enum>() const
+{
+	return local_ref<java::lang::Enum>(get_jtype());
+}
 
 local_ref< cpp_object_array<android::text::Layout_::Alignment, 1> > android::text::Layout_::Alignment::values()
 {
@@ -242,17 +260,7 @@ local_ref< android::text::Layout_::Alignment > android::text::Layout_::Alignment
 	);
 }
 
-template <>
-local_ref< android::text::Layout_::Alignment > create< android::text::Layout_::Alignment>(local_ref< java::lang::String > const &a0, cpp_int const &a1)
-{
-	return local_ref< android::text::Layout_::Alignment >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::text::Layout_::Alignment::J2CPP_CLASS_NAME>(),
-			get_method_id<android::text::Layout_::Alignment::J2CPP_CLASS_NAME, android::text::Layout_::Alignment::J2CPP_METHOD_NAME(2), android::text::Layout_::Alignment::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
-}
+
 
 
 static_field<
@@ -287,33 +295,24 @@ J2CPP_DEFINE_FIELD(android::text::Layout_::Alignment,1,"ALIGN_NORMAL","Landroid/
 J2CPP_DEFINE_FIELD(android::text::Layout_::Alignment,2,"ALIGN_OPPOSITE","Landroid/text/Layout$Alignment;")
 J2CPP_DEFINE_FIELD(android::text::Layout_::Alignment,3,"$VALUES","[android.text.Layout.Alignment")
 
-template <>
-local_ref< android::text::Layout_::Directions > create< android::text::Layout_::Directions>()
+
+android::text::Layout_::Directions::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::text::Layout_::Directions >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::text::Layout_::Directions::J2CPP_CLASS_NAME>(),
-			get_method_id<android::text::Layout_::Directions::J2CPP_CLASS_NAME, android::text::Layout_::Directions::J2CPP_METHOD_NAME(0), android::text::Layout_::Directions::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
 
 
 J2CPP_DEFINE_CLASS(android::text::Layout_::Directions,"android/text/Layout$Directions")
 J2CPP_DEFINE_METHOD(android::text::Layout_::Directions,0,"<init>","()V")
 
 
-template <>
-local_ref< android::text::Layout > create< android::text::Layout>(local_ref< java::lang::CharSequence > const &a0, local_ref< android::text::TextPaint > const &a1, cpp_int const &a2, local_ref< android::text::Layout_::Alignment > const &a3, cpp_float const &a4, cpp_float const &a5)
+
+android::text::Layout::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::text::Layout >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::text::Layout::J2CPP_CLASS_NAME>(),
-			get_method_id<android::text::Layout::J2CPP_CLASS_NAME, android::text::Layout::J2CPP_METHOD_NAME(0), android::text::Layout::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype(), a4.get_jtype(), a5.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
 
 cpp_float android::text::Layout::getDesiredWidth(local_ref< java::lang::CharSequence > const &a0, local_ref< android::text::TextPaint > const &a1)
 {

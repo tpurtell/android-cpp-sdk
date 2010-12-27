@@ -10,10 +10,14 @@
 #define J2CPP_JAVA_SECURITY_KEYPAIR_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace security { class PublicKey; } } }
 namespace j2cpp { namespace java { namespace security { class PrivateKey; } } }
 
 
+#include <java/io/Serializable.hpp>
+#include <java/lang/Object.hpp>
 #include <java/security/PrivateKey.hpp>
 #include <java/security/PublicKey.hpp>
 
@@ -34,18 +38,22 @@ namespace java { namespace security {
 		J2CPP_DECLARE_METHOD(1)
 		J2CPP_DECLARE_METHOD(2)
 
-		KeyPair(jobject jobj)
+		explicit KeyPair(jobject jobj)
 		: cpp_object<KeyPair>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::io::Serializable>() const;
+
+
+		KeyPair(local_ref< java::security::PublicKey > const&, local_ref< java::security::PrivateKey > const&);
 		local_ref< java::security::PrivateKey > getPrivate();
 		local_ref< java::security::PublicKey > getPublic();
 	}; //class KeyPair
 
 } //namespace security
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -59,17 +67,29 @@ namespace java { namespace security {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::security::KeyPair > create< java::security::KeyPair>(local_ref< java::security::PublicKey > const &a0, local_ref< java::security::PrivateKey > const &a1)
+
+java::security::KeyPair::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::security::KeyPair >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::security::KeyPair::J2CPP_CLASS_NAME>(),
-			get_method_id<java::security::KeyPair::J2CPP_CLASS_NAME, java::security::KeyPair::J2CPP_METHOD_NAME(0), java::security::KeyPair::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+java::security::KeyPair::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jtype());
+}
+
+
+java::security::KeyPair::KeyPair(local_ref< java::security::PublicKey > const &a0, local_ref< java::security::PrivateKey > const &a1)
+: cpp_object<java::security::KeyPair>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::security::KeyPair::J2CPP_CLASS_NAME>(),
+		get_method_id<java::security::KeyPair::J2CPP_CLASS_NAME, java::security::KeyPair::J2CPP_METHOD_NAME(0), java::security::KeyPair::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
 
 local_ref< java::security::PrivateKey > java::security::KeyPair::getPrivate()
 {

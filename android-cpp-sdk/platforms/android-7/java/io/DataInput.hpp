@@ -10,9 +10,11 @@
 #define J2CPP_JAVA_IO_DATAINPUT_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -44,10 +46,13 @@ namespace java { namespace io {
 		J2CPP_DECLARE_METHOD(13)
 		J2CPP_DECLARE_METHOD(14)
 
-		DataInput(jobject jobj)
+		explicit DataInput(jobject jobj)
 		: cpp_object<DataInput>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		cpp_boolean readBoolean();
 		cpp_byte readByte();
@@ -69,7 +74,6 @@ namespace java { namespace io {
 } //namespace io
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_IO_DATAINPUT_HPP_DECL
@@ -81,6 +85,12 @@ namespace java { namespace io {
 
 namespace j2cpp {
 
+
+
+java::io::DataInput::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 cpp_boolean java::io::DataInput::readBoolean()
 {

@@ -10,9 +10,11 @@
 #define J2CPP_ANDROID_GRAPHICS_COLOR_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -53,11 +55,15 @@ namespace android { namespace graphics {
 		J2CPP_DECLARE_FIELD(10)
 		J2CPP_DECLARE_FIELD(11)
 
-		Color(jobject jobj)
+		explicit Color(jobject jobj)
 		: cpp_object<Color>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		Color();
 		static cpp_int alpha(cpp_int const&);
 		static cpp_int red(cpp_int const&);
 		static cpp_int green(cpp_int const&);
@@ -87,7 +93,6 @@ namespace android { namespace graphics {
 } //namespace graphics
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_GRAPHICS_COLOR_HPP_DECL
@@ -100,16 +105,23 @@ namespace android { namespace graphics {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::graphics::Color > create< android::graphics::Color>()
+
+android::graphics::Color::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::graphics::Color >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::graphics::Color::J2CPP_CLASS_NAME>(),
-			get_method_id<android::graphics::Color::J2CPP_CLASS_NAME, android::graphics::Color::J2CPP_METHOD_NAME(0), android::graphics::Color::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::graphics::Color::Color()
+: cpp_object<android::graphics::Color>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::graphics::Color::J2CPP_CLASS_NAME>(),
+		get_method_id<android::graphics::Color::J2CPP_CLASS_NAME, android::graphics::Color::J2CPP_METHOD_NAME(0), android::graphics::Color::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 cpp_int android::graphics::Color::alpha(cpp_int const &a0)
 {

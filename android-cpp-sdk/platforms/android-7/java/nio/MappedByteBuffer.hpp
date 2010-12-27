@@ -10,8 +10,10 @@
 #define J2CPP_JAVA_NIO_MAPPEDBYTEBUFFER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace nio { class ByteBuffer; } } }
 
 
+#include <java/nio/ByteBuffer.hpp>
 
 
 namespace j2cpp {
@@ -31,10 +33,13 @@ namespace java { namespace nio {
 		J2CPP_DECLARE_METHOD(2)
 		J2CPP_DECLARE_METHOD(3)
 
-		MappedByteBuffer(jobject jobj)
+		explicit MappedByteBuffer(jobject jobj)
 		: cpp_object<MappedByteBuffer>(jobj)
 		{
 		}
+
+		operator local_ref<java::nio::ByteBuffer>() const;
+
 
 		cpp_boolean isLoaded();
 		local_ref< java::nio::MappedByteBuffer > load();
@@ -43,7 +48,6 @@ namespace java { namespace nio {
 
 } //namespace nio
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -57,16 +61,12 @@ namespace java { namespace nio {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::nio::MappedByteBuffer > create< java::nio::MappedByteBuffer>()
+
+java::nio::MappedByteBuffer::operator local_ref<java::nio::ByteBuffer>() const
 {
-	return local_ref< java::nio::MappedByteBuffer >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::nio::MappedByteBuffer::J2CPP_CLASS_NAME>(),
-			get_method_id<java::nio::MappedByteBuffer::J2CPP_CLASS_NAME, java::nio::MappedByteBuffer::J2CPP_METHOD_NAME(0), java::nio::MappedByteBuffer::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::nio::ByteBuffer>(get_jtype());
 }
+
 
 cpp_boolean java::nio::MappedByteBuffer::isLoaded()
 {

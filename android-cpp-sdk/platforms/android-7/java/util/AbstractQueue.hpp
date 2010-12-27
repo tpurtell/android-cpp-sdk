@@ -11,11 +11,15 @@
 
 
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace util { class AbstractCollection; } } }
+namespace j2cpp { namespace java { namespace util { class Queue; } } }
 namespace j2cpp { namespace java { namespace util { class Collection; } } }
 
 
 #include <java/lang/Object.hpp>
+#include <java/util/AbstractCollection.hpp>
 #include <java/util/Collection.hpp>
+#include <java/util/Queue.hpp>
 
 
 namespace j2cpp {
@@ -37,10 +41,14 @@ namespace java { namespace util {
 		J2CPP_DECLARE_METHOD(4)
 		J2CPP_DECLARE_METHOD(5)
 
-		AbstractQueue(jobject jobj)
+		explicit AbstractQueue(jobject jobj)
 		: cpp_object<AbstractQueue>(jobj)
 		{
 		}
+
+		operator local_ref<java::util::AbstractCollection>() const;
+		operator local_ref<java::util::Queue>() const;
+
 
 		cpp_boolean add(local_ref< java::lang::Object > const&);
 		cpp_boolean addAll(local_ref< java::util::Collection > const&);
@@ -51,7 +59,6 @@ namespace java { namespace util {
 
 } //namespace util
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -65,16 +72,17 @@ namespace java { namespace util {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::util::AbstractQueue > create< java::util::AbstractQueue>()
+
+java::util::AbstractQueue::operator local_ref<java::util::AbstractCollection>() const
 {
-	return local_ref< java::util::AbstractQueue >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::AbstractQueue::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::AbstractQueue::J2CPP_CLASS_NAME, java::util::AbstractQueue::J2CPP_METHOD_NAME(0), java::util::AbstractQueue::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::util::AbstractCollection>(get_jtype());
 }
+
+java::util::AbstractQueue::operator local_ref<java::util::Queue>() const
+{
+	return local_ref<java::util::Queue>(get_jtype());
+}
+
 
 cpp_boolean java::util::AbstractQueue::add(local_ref< java::lang::Object > const &a0)
 {

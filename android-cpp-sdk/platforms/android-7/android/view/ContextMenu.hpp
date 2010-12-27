@@ -10,14 +10,18 @@
 #define J2CPP_ANDROID_VIEW_CONTEXTMENU_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class CharSequence; } } }
 namespace j2cpp { namespace android { namespace graphics { namespace drawable { class Drawable; } } } }
 namespace j2cpp { namespace android { namespace view { class View; } } }
+namespace j2cpp { namespace android { namespace view { class Menu; } } }
 
 
 #include <android/graphics/drawable/Drawable.hpp>
+#include <android/view/Menu.hpp>
 #include <android/view/View.hpp>
 #include <java/lang/CharSequence.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -36,10 +40,13 @@ namespace android { namespace view {
 			J2CPP_DECLARE_CLASS
 
 
-			ContextMenuInfo(jobject jobj)
+			explicit ContextMenuInfo(jobject jobj)
 			: cpp_object<ContextMenuInfo>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+
 		}; //class ContextMenuInfo
 
 	} //namespace ContextMenu_
@@ -60,10 +67,14 @@ namespace android { namespace view {
 
 		typedef ContextMenu_::ContextMenuInfo ContextMenuInfo;
 
-		ContextMenu(jobject jobj)
+		explicit ContextMenu(jobject jobj)
 		: cpp_object<ContextMenu>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<android::view::Menu>() const;
+
 
 		local_ref< android::view::ContextMenu > setHeaderTitle(cpp_int const&);
 		local_ref< android::view::ContextMenu > setHeaderTitle(local_ref< java::lang::CharSequence > const&);
@@ -75,7 +86,6 @@ namespace android { namespace view {
 
 } //namespace view
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -90,8 +100,25 @@ namespace j2cpp {
 
 
 
+
+android::view::ContextMenu_::ContextMenuInfo::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
+
 J2CPP_DEFINE_CLASS(android::view::ContextMenu_::ContextMenuInfo,"android/view/ContextMenu$ContextMenuInfo")
 
+
+
+android::view::ContextMenu::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
+
+android::view::ContextMenu::operator local_ref<android::view::Menu>() const
+{
+	return local_ref<android::view::Menu>(get_jtype());
+}
 
 local_ref< android::view::ContextMenu > android::view::ContextMenu::setHeaderTitle(cpp_int const &a0)
 {

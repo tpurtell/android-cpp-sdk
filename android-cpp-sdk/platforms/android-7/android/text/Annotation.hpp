@@ -10,11 +10,15 @@
 #define J2CPP_ANDROID_TEXT_ANNOTATION_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace android { namespace text { class ParcelableSpan; } } }
 namespace j2cpp { namespace android { namespace os { class Parcel; } } }
 
 
 #include <android/os/Parcel.hpp>
+#include <android/text/ParcelableSpan.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -38,11 +42,17 @@ namespace android { namespace text {
 		J2CPP_DECLARE_METHOD(5)
 		J2CPP_DECLARE_METHOD(6)
 
-		Annotation(jobject jobj)
+		explicit Annotation(jobject jobj)
 		: cpp_object<Annotation>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<android::text::ParcelableSpan>() const;
+
+
+		Annotation(local_ref< java::lang::String > const&, local_ref< java::lang::String > const&);
+		Annotation(local_ref< android::os::Parcel > const&);
 		cpp_int getSpanTypeId();
 		cpp_int describeContents();
 		void writeToParcel(local_ref< android::os::Parcel > const&, cpp_int const&);
@@ -52,7 +62,6 @@ namespace android { namespace text {
 
 } //namespace text
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -66,29 +75,42 @@ namespace android { namespace text {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::text::Annotation > create< android::text::Annotation>(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
+
+android::text::Annotation::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::text::Annotation >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::text::Annotation::J2CPP_CLASS_NAME>(),
-			get_method_id<android::text::Annotation::J2CPP_CLASS_NAME, android::text::Annotation::J2CPP_METHOD_NAME(0), android::text::Annotation::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
 
-template <>
-local_ref< android::text::Annotation > create< android::text::Annotation>(local_ref< android::os::Parcel > const &a0)
+android::text::Annotation::operator local_ref<android::text::ParcelableSpan>() const
 {
-	return local_ref< android::text::Annotation >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::text::Annotation::J2CPP_CLASS_NAME>(),
-			get_method_id<android::text::Annotation::J2CPP_CLASS_NAME, android::text::Annotation::J2CPP_METHOD_NAME(1), android::text::Annotation::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<android::text::ParcelableSpan>(get_jtype());
 }
+
+
+android::text::Annotation::Annotation(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
+: cpp_object<android::text::Annotation>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::text::Annotation::J2CPP_CLASS_NAME>(),
+		get_method_id<android::text::Annotation::J2CPP_CLASS_NAME, android::text::Annotation::J2CPP_METHOD_NAME(0), android::text::Annotation::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
+
+
+android::text::Annotation::Annotation(local_ref< android::os::Parcel > const &a0)
+: cpp_object<android::text::Annotation>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::text::Annotation::J2CPP_CLASS_NAME>(),
+		get_method_id<android::text::Annotation::J2CPP_CLASS_NAME, android::text::Annotation::J2CPP_METHOD_NAME(1), android::text::Annotation::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 cpp_int android::text::Annotation::getSpanTypeId()
 {

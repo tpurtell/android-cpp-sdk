@@ -10,6 +10,7 @@
 #define J2CPP_JAVAX_SECURITY_CERT_X509CERTIFICATE_HPP_DECL
 
 
+namespace j2cpp { namespace javax { namespace security { namespace cert { class Certificate; } } } }
 namespace j2cpp { namespace java { namespace io { class InputStream; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace math { class BigInteger; } } }
@@ -22,6 +23,7 @@ namespace j2cpp { namespace java { namespace util { class Date; } } }
 #include <java/math/BigInteger.hpp>
 #include <java/security/Principal.hpp>
 #include <java/util/Date.hpp>
+#include <javax/security/cert/Certificate.hpp>
 
 
 namespace j2cpp {
@@ -51,11 +53,15 @@ namespace javax { namespace security { namespace cert {
 		J2CPP_DECLARE_METHOD(12)
 		J2CPP_DECLARE_METHOD(13)
 
-		X509Certificate(jobject jobj)
+		explicit X509Certificate(jobject jobj)
 		: cpp_object<X509Certificate>(jobj)
 		{
 		}
 
+		operator local_ref<javax::security::cert::Certificate>() const;
+
+
+		X509Certificate();
 		static local_ref< javax::security::cert::X509Certificate > getInstance(local_ref< java::io::InputStream > const&);
 		static local_ref< javax::security::cert::X509Certificate > getInstance(local_ref< cpp_byte_array<1> > const&);
 		void checkValidity();
@@ -75,7 +81,6 @@ namespace javax { namespace security { namespace cert {
 } //namespace security
 } //namespace javax
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVAX_SECURITY_CERT_X509CERTIFICATE_HPP_DECL
@@ -88,16 +93,23 @@ namespace javax { namespace security { namespace cert {
 namespace j2cpp {
 
 
-template <>
-local_ref< javax::security::cert::X509Certificate > create< javax::security::cert::X509Certificate>()
+
+javax::security::cert::X509Certificate::operator local_ref<javax::security::cert::Certificate>() const
 {
-	return local_ref< javax::security::cert::X509Certificate >(
-		environment::get().get_jenv()->NewObject(
-			get_class<javax::security::cert::X509Certificate::J2CPP_CLASS_NAME>(),
-			get_method_id<javax::security::cert::X509Certificate::J2CPP_CLASS_NAME, javax::security::cert::X509Certificate::J2CPP_METHOD_NAME(0), javax::security::cert::X509Certificate::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<javax::security::cert::Certificate>(get_jtype());
 }
+
+
+javax::security::cert::X509Certificate::X509Certificate()
+: cpp_object<javax::security::cert::X509Certificate>(
+	environment::get().get_jenv()->NewObject(
+		get_class<javax::security::cert::X509Certificate::J2CPP_CLASS_NAME>(),
+		get_method_id<javax::security::cert::X509Certificate::J2CPP_CLASS_NAME, javax::security::cert::X509Certificate::J2CPP_METHOD_NAME(0), javax::security::cert::X509Certificate::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 local_ref< javax::security::cert::X509Certificate > javax::security::cert::X509Certificate::getInstance(local_ref< java::io::InputStream > const &a0)
 {

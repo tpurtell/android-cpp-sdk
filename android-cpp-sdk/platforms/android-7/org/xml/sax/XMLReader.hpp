@@ -55,10 +55,13 @@ namespace org { namespace xml { namespace sax {
 		J2CPP_DECLARE_METHOD(12)
 		J2CPP_DECLARE_METHOD(13)
 
-		XMLReader(jobject jobj)
+		explicit XMLReader(jobject jobj)
 		: cpp_object<XMLReader>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		cpp_boolean getFeature(local_ref< java::lang::String > const&);
 		void setFeature(local_ref< java::lang::String > const&, cpp_boolean const&);
@@ -80,7 +83,6 @@ namespace org { namespace xml { namespace sax {
 } //namespace xml
 } //namespace org
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ORG_XML_SAX_XMLREADER_HPP_DECL
@@ -92,6 +94,12 @@ namespace org { namespace xml { namespace sax {
 
 namespace j2cpp {
 
+
+
+org::xml::sax::XMLReader::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 cpp_boolean org::xml::sax::XMLReader::getFeature(local_ref< java::lang::String > const &a0)
 {

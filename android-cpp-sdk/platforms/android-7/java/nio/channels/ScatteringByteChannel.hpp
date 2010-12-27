@@ -10,10 +10,14 @@
 #define J2CPP_JAVA_NIO_CHANNELS_SCATTERINGBYTECHANNEL_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace nio { namespace channels { class ReadableByteChannel; } } } }
 namespace j2cpp { namespace java { namespace nio { class ByteBuffer; } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/nio/ByteBuffer.hpp>
+#include <java/nio/channels/ReadableByteChannel.hpp>
 
 
 namespace j2cpp {
@@ -31,10 +35,14 @@ namespace java { namespace nio { namespace channels {
 		J2CPP_DECLARE_METHOD(0)
 		J2CPP_DECLARE_METHOD(1)
 
-		ScatteringByteChannel(jobject jobj)
+		explicit ScatteringByteChannel(jobject jobj)
 		: cpp_object<ScatteringByteChannel>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::nio::channels::ReadableByteChannel>() const;
+
 
 		cpp_long read(local_ref< cpp_object_array<java::nio::ByteBuffer, 1> > const&);
 		cpp_long read(local_ref< cpp_object_array<java::nio::ByteBuffer, 1> > const&, cpp_int const&, cpp_int const&);
@@ -43,7 +51,6 @@ namespace java { namespace nio { namespace channels {
 } //namespace channels
 } //namespace nio
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -56,6 +63,17 @@ namespace java { namespace nio { namespace channels {
 
 namespace j2cpp {
 
+
+
+java::nio::channels::ScatteringByteChannel::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
+
+java::nio::channels::ScatteringByteChannel::operator local_ref<java::nio::channels::ReadableByteChannel>() const
+{
+	return local_ref<java::nio::channels::ReadableByteChannel>(get_jtype());
+}
 
 cpp_long java::nio::channels::ScatteringByteChannel::read(local_ref< cpp_object_array<java::nio::ByteBuffer, 1> > const &a0)
 {

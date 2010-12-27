@@ -72,11 +72,15 @@ namespace android { namespace app {
 			J2CPP_DECLARE_METHOD(1)
 			J2CPP_DECLARE_METHOD(2)
 
-			ActivityResult(jobject jobj)
+			explicit ActivityResult(jobject jobj)
 			: cpp_object<ActivityResult>(jobj)
 			{
 			}
 
+			operator local_ref<java::lang::Object>() const;
+
+
+			ActivityResult(cpp_int const&, local_ref< android::content::Intent > const&);
 			cpp_int getResultCode();
 			local_ref< android::content::Intent > getResultData();
 		}; //class ActivityResult
@@ -99,11 +103,16 @@ namespace android { namespace app {
 			J2CPP_DECLARE_METHOD(7)
 			J2CPP_DECLARE_METHOD(8)
 
-			ActivityMonitor(jobject jobj)
+			explicit ActivityMonitor(jobject jobj)
 			: cpp_object<ActivityMonitor>(jobj)
 			{
 			}
 
+			operator local_ref<java::lang::Object>() const;
+
+
+			ActivityMonitor(local_ref< android::content::IntentFilter > const&, local_ref< android::app::Instrumentation_::ActivityResult > const&, cpp_boolean const&);
+			ActivityMonitor(local_ref< java::lang::String > const&, local_ref< android::app::Instrumentation_::ActivityResult > const&, cpp_boolean const&);
 			local_ref< android::content::IntentFilter > getFilter();
 			local_ref< android::app::Instrumentation_::ActivityResult > getResult();
 			cpp_boolean isBlocking();
@@ -186,11 +195,15 @@ namespace android { namespace app {
 		typedef Instrumentation_::ActivityResult ActivityResult;
 		typedef Instrumentation_::ActivityMonitor ActivityMonitor;
 
-		Instrumentation(jobject jobj)
+		explicit Instrumentation(jobject jobj)
 		: cpp_object<Instrumentation>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		Instrumentation();
 		void onCreate(local_ref< android::os::Bundle > const&);
 		void start();
 		void onStart();
@@ -256,7 +269,6 @@ namespace android { namespace app {
 } //namespace app
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_APP_INSTRUMENTATION_HPP_DECL
@@ -270,17 +282,24 @@ namespace j2cpp {
 
 
 
-template <>
-local_ref< android::app::Instrumentation_::ActivityResult > create< android::app::Instrumentation_::ActivityResult>(cpp_int const &a0, local_ref< android::content::Intent > const &a1)
+
+android::app::Instrumentation_::ActivityResult::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::app::Instrumentation_::ActivityResult >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::app::Instrumentation_::ActivityResult::J2CPP_CLASS_NAME>(),
-			get_method_id<android::app::Instrumentation_::ActivityResult::J2CPP_CLASS_NAME, android::app::Instrumentation_::ActivityResult::J2CPP_METHOD_NAME(0), android::app::Instrumentation_::ActivityResult::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::app::Instrumentation_::ActivityResult::ActivityResult(cpp_int const &a0, local_ref< android::content::Intent > const &a1)
+: cpp_object<android::app::Instrumentation_::ActivityResult>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::app::Instrumentation_::ActivityResult::J2CPP_CLASS_NAME>(),
+		get_method_id<android::app::Instrumentation_::ActivityResult::J2CPP_CLASS_NAME, android::app::Instrumentation_::ActivityResult::J2CPP_METHOD_NAME(0), android::app::Instrumentation_::ActivityResult::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
 
 cpp_int android::app::Instrumentation_::ActivityResult::getResultCode()
 {
@@ -308,29 +327,37 @@ J2CPP_DEFINE_METHOD(android::app::Instrumentation_::ActivityResult,0,"<init>","(
 J2CPP_DEFINE_METHOD(android::app::Instrumentation_::ActivityResult,1,"getResultCode","()I")
 J2CPP_DEFINE_METHOD(android::app::Instrumentation_::ActivityResult,2,"getResultData","()Landroid/content/Intent;")
 
-template <>
-local_ref< android::app::Instrumentation_::ActivityMonitor > create< android::app::Instrumentation_::ActivityMonitor>(local_ref< android::content::IntentFilter > const &a0, local_ref< android::app::Instrumentation_::ActivityResult > const &a1, cpp_boolean const &a2)
+
+android::app::Instrumentation_::ActivityMonitor::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::app::Instrumentation_::ActivityMonitor >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::app::Instrumentation_::ActivityMonitor::J2CPP_CLASS_NAME>(),
-			get_method_id<android::app::Instrumentation_::ActivityMonitor::J2CPP_CLASS_NAME, android::app::Instrumentation_::ActivityMonitor::J2CPP_METHOD_NAME(0), android::app::Instrumentation_::ActivityMonitor::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
 
-template <>
-local_ref< android::app::Instrumentation_::ActivityMonitor > create< android::app::Instrumentation_::ActivityMonitor>(local_ref< java::lang::String > const &a0, local_ref< android::app::Instrumentation_::ActivityResult > const &a1, cpp_boolean const &a2)
+
+android::app::Instrumentation_::ActivityMonitor::ActivityMonitor(local_ref< android::content::IntentFilter > const &a0, local_ref< android::app::Instrumentation_::ActivityResult > const &a1, cpp_boolean const &a2)
+: cpp_object<android::app::Instrumentation_::ActivityMonitor>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::app::Instrumentation_::ActivityMonitor::J2CPP_CLASS_NAME>(),
+		get_method_id<android::app::Instrumentation_::ActivityMonitor::J2CPP_CLASS_NAME, android::app::Instrumentation_::ActivityMonitor::J2CPP_METHOD_NAME(0), android::app::Instrumentation_::ActivityMonitor::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
+	)
+)
 {
-	return local_ref< android::app::Instrumentation_::ActivityMonitor >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::app::Instrumentation_::ActivityMonitor::J2CPP_CLASS_NAME>(),
-			get_method_id<android::app::Instrumentation_::ActivityMonitor::J2CPP_CLASS_NAME, android::app::Instrumentation_::ActivityMonitor::J2CPP_METHOD_NAME(1), android::app::Instrumentation_::ActivityMonitor::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
-		)
-	);
 }
+
+
+
+android::app::Instrumentation_::ActivityMonitor::ActivityMonitor(local_ref< java::lang::String > const &a0, local_ref< android::app::Instrumentation_::ActivityResult > const &a1, cpp_boolean const &a2)
+: cpp_object<android::app::Instrumentation_::ActivityMonitor>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::app::Instrumentation_::ActivityMonitor::J2CPP_CLASS_NAME>(),
+		get_method_id<android::app::Instrumentation_::ActivityMonitor::J2CPP_CLASS_NAME, android::app::Instrumentation_::ActivityMonitor::J2CPP_METHOD_NAME(1), android::app::Instrumentation_::ActivityMonitor::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
+	)
+)
+{
+}
+
 
 local_ref< android::content::IntentFilter > android::app::Instrumentation_::ActivityMonitor::getFilter()
 {
@@ -416,16 +443,23 @@ J2CPP_DEFINE_METHOD(android::app::Instrumentation_::ActivityMonitor,7,"waitForAc
 J2CPP_DEFINE_METHOD(android::app::Instrumentation_::ActivityMonitor,8,"waitForActivityWithTimeout","(J)Landroid/app/Activity;")
 
 
-template <>
-local_ref< android::app::Instrumentation > create< android::app::Instrumentation>()
+
+android::app::Instrumentation::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::app::Instrumentation >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::app::Instrumentation::J2CPP_CLASS_NAME>(),
-			get_method_id<android::app::Instrumentation::J2CPP_CLASS_NAME, android::app::Instrumentation::J2CPP_METHOD_NAME(0), android::app::Instrumentation::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::app::Instrumentation::Instrumentation()
+: cpp_object<android::app::Instrumentation>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::app::Instrumentation::J2CPP_CLASS_NAME>(),
+		get_method_id<android::app::Instrumentation::J2CPP_CLASS_NAME, android::app::Instrumentation::J2CPP_METHOD_NAME(0), android::app::Instrumentation::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 void android::app::Instrumentation::onCreate(local_ref< android::os::Bundle > const &a0)
 {

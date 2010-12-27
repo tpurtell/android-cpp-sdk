@@ -11,6 +11,7 @@
 
 
 namespace j2cpp { namespace java { namespace lang { class ClassLoader; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace security { class CodeSource; } } }
 namespace j2cpp { namespace java { namespace security { class Permission; } } }
@@ -19,6 +20,7 @@ namespace j2cpp { namespace java { namespace security { class PermissionCollecti
 
 
 #include <java/lang/ClassLoader.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/security/CodeSource.hpp>
 #include <java/security/Permission.hpp>
@@ -47,11 +49,16 @@ namespace java { namespace security {
 		J2CPP_DECLARE_METHOD(6)
 		J2CPP_DECLARE_METHOD(7)
 
-		ProtectionDomain(jobject jobj)
+		explicit ProtectionDomain(jobject jobj)
 		: cpp_object<ProtectionDomain>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		ProtectionDomain(local_ref< java::security::CodeSource > const&, local_ref< java::security::PermissionCollection > const&);
+		ProtectionDomain(local_ref< java::security::CodeSource > const&, local_ref< java::security::PermissionCollection > const&, local_ref< java::lang::ClassLoader > const&, local_ref< cpp_object_array<java::security::Principal, 1> > const&);
 		local_ref< java::lang::ClassLoader > getClassLoader();
 		local_ref< java::security::CodeSource > getCodeSource();
 		local_ref< java::security::PermissionCollection > getPermissions();
@@ -62,7 +69,6 @@ namespace java { namespace security {
 
 } //namespace security
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -76,29 +82,37 @@ namespace java { namespace security {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::security::ProtectionDomain > create< java::security::ProtectionDomain>(local_ref< java::security::CodeSource > const &a0, local_ref< java::security::PermissionCollection > const &a1)
+
+java::security::ProtectionDomain::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::security::ProtectionDomain >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::security::ProtectionDomain::J2CPP_CLASS_NAME>(),
-			get_method_id<java::security::ProtectionDomain::J2CPP_CLASS_NAME, java::security::ProtectionDomain::J2CPP_METHOD_NAME(0), java::security::ProtectionDomain::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
 
-template <>
-local_ref< java::security::ProtectionDomain > create< java::security::ProtectionDomain>(local_ref< java::security::CodeSource > const &a0, local_ref< java::security::PermissionCollection > const &a1, local_ref< java::lang::ClassLoader > const &a2, local_ref< cpp_object_array<java::security::Principal, 1> > const &a3)
+
+java::security::ProtectionDomain::ProtectionDomain(local_ref< java::security::CodeSource > const &a0, local_ref< java::security::PermissionCollection > const &a1)
+: cpp_object<java::security::ProtectionDomain>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::security::ProtectionDomain::J2CPP_CLASS_NAME>(),
+		get_method_id<java::security::ProtectionDomain::J2CPP_CLASS_NAME, java::security::ProtectionDomain::J2CPP_METHOD_NAME(0), java::security::ProtectionDomain::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
 {
-	return local_ref< java::security::ProtectionDomain >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::security::ProtectionDomain::J2CPP_CLASS_NAME>(),
-			get_method_id<java::security::ProtectionDomain::J2CPP_CLASS_NAME, java::security::ProtectionDomain::J2CPP_METHOD_NAME(1), java::security::ProtectionDomain::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype()
-		)
-	);
 }
+
+
+
+java::security::ProtectionDomain::ProtectionDomain(local_ref< java::security::CodeSource > const &a0, local_ref< java::security::PermissionCollection > const &a1, local_ref< java::lang::ClassLoader > const &a2, local_ref< cpp_object_array<java::security::Principal, 1> > const &a3)
+: cpp_object<java::security::ProtectionDomain>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::security::ProtectionDomain::J2CPP_CLASS_NAME>(),
+		get_method_id<java::security::ProtectionDomain::J2CPP_CLASS_NAME, java::security::ProtectionDomain::J2CPP_METHOD_NAME(1), java::security::ProtectionDomain::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype()
+	)
+)
+{
+}
+
 
 local_ref< java::lang::ClassLoader > java::security::ProtectionDomain::getClassLoader()
 {

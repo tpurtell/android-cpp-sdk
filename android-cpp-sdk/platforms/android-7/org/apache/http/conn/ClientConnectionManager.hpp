@@ -45,10 +45,13 @@ namespace org { namespace apache { namespace http { namespace conn {
 		J2CPP_DECLARE_METHOD(4)
 		J2CPP_DECLARE_METHOD(5)
 
-		ClientConnectionManager(jobject jobj)
+		explicit ClientConnectionManager(jobject jobj)
 		: cpp_object<ClientConnectionManager>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		local_ref< org::apache::http::conn::scheme::SchemeRegistry > getSchemeRegistry();
 		local_ref< org::apache::http::conn::ClientConnectionRequest > requestConnection(local_ref< org::apache::http::conn::routing::HttpRoute > const&, local_ref< java::lang::Object > const&);
@@ -63,7 +66,6 @@ namespace org { namespace apache { namespace http { namespace conn {
 } //namespace apache
 } //namespace org
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ORG_APACHE_HTTP_CONN_CLIENTCONNECTIONMANAGER_HPP_DECL
@@ -75,6 +77,12 @@ namespace org { namespace apache { namespace http { namespace conn {
 
 namespace j2cpp {
 
+
+
+org::apache::http::conn::ClientConnectionManager::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 local_ref< org::apache::http::conn::scheme::SchemeRegistry > org::apache::http::conn::ClientConnectionManager::getSchemeRegistry()
 {

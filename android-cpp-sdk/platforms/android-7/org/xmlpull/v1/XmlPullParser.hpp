@@ -90,10 +90,13 @@ namespace org { namespace xmlpull { namespace v1 {
 		J2CPP_DECLARE_FIELD(15)
 		J2CPP_DECLARE_FIELD(16)
 
-		XmlPullParser(jobject jobj)
+		explicit XmlPullParser(jobject jobj)
 		: cpp_object<XmlPullParser>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		void setFeature(local_ref< java::lang::String > const&, cpp_boolean const&);
 		cpp_boolean getFeature(local_ref< java::lang::String > const&);
@@ -156,7 +159,6 @@ namespace org { namespace xmlpull { namespace v1 {
 } //namespace xmlpull
 } //namespace org
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ORG_XMLPULL_V1_XMLPULLPARSER_HPP_DECL
@@ -168,6 +170,12 @@ namespace org { namespace xmlpull { namespace v1 {
 
 namespace j2cpp {
 
+
+
+org::xmlpull::v1::XmlPullParser::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 void org::xmlpull::v1::XmlPullParser::setFeature(local_ref< java::lang::String > const &a0, cpp_boolean const &a1)
 {
@@ -558,6 +566,7 @@ cpp_int org::xmlpull::v1::XmlPullParser::nextTag()
 		)
 	);
 }
+
 
 
 static_field<

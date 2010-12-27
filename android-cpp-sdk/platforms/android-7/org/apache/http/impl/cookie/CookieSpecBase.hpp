@@ -12,10 +12,12 @@
 
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace cookie { class CookieOrigin; } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace cookie { class Cookie; } } } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { namespace impl { namespace cookie { class AbstractCookieSpec; } } } } } }
 
 
 #include <org/apache/http/cookie/Cookie.hpp>
 #include <org/apache/http/cookie/CookieOrigin.hpp>
+#include <org/apache/http/impl/cookie/AbstractCookieSpec.hpp>
 
 
 namespace j2cpp {
@@ -37,11 +39,15 @@ namespace org { namespace apache { namespace http { namespace impl { namespace c
 		J2CPP_DECLARE_METHOD(4)
 		J2CPP_DECLARE_METHOD(5)
 
-		CookieSpecBase(jobject jobj)
+		explicit CookieSpecBase(jobject jobj)
 		: cpp_object<CookieSpecBase>(jobj)
 		{
 		}
 
+		operator local_ref<org::apache::http::impl::cookie::AbstractCookieSpec>() const;
+
+
+		CookieSpecBase();
 		void validate(local_ref< org::apache::http::cookie::Cookie > const&, local_ref< org::apache::http::cookie::CookieOrigin > const&);
 		cpp_boolean match(local_ref< org::apache::http::cookie::Cookie > const&, local_ref< org::apache::http::cookie::CookieOrigin > const&);
 	}; //class CookieSpecBase
@@ -51,7 +57,6 @@ namespace org { namespace apache { namespace http { namespace impl { namespace c
 } //namespace http
 } //namespace apache
 } //namespace org
-
 
 } //namespace j2cpp
 
@@ -65,16 +70,23 @@ namespace org { namespace apache { namespace http { namespace impl { namespace c
 namespace j2cpp {
 
 
-template <>
-local_ref< org::apache::http::impl::cookie::CookieSpecBase > create< org::apache::http::impl::cookie::CookieSpecBase>()
+
+org::apache::http::impl::cookie::CookieSpecBase::operator local_ref<org::apache::http::impl::cookie::AbstractCookieSpec>() const
 {
-	return local_ref< org::apache::http::impl::cookie::CookieSpecBase >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::apache::http::impl::cookie::CookieSpecBase::J2CPP_CLASS_NAME>(),
-			get_method_id<org::apache::http::impl::cookie::CookieSpecBase::J2CPP_CLASS_NAME, org::apache::http::impl::cookie::CookieSpecBase::J2CPP_METHOD_NAME(0), org::apache::http::impl::cookie::CookieSpecBase::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<org::apache::http::impl::cookie::AbstractCookieSpec>(get_jtype());
 }
+
+
+org::apache::http::impl::cookie::CookieSpecBase::CookieSpecBase()
+: cpp_object<org::apache::http::impl::cookie::CookieSpecBase>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::apache::http::impl::cookie::CookieSpecBase::J2CPP_CLASS_NAME>(),
+		get_method_id<org::apache::http::impl::cookie::CookieSpecBase::J2CPP_CLASS_NAME, org::apache::http::impl::cookie::CookieSpecBase::J2CPP_METHOD_NAME(0), org::apache::http::impl::cookie::CookieSpecBase::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 
 

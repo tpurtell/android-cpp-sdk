@@ -43,13 +43,19 @@ namespace android { namespace graphics {
 		J2CPP_DECLARE_FIELD(0)
 		J2CPP_DECLARE_FIELD(1)
 
-		Point(jobject jobj)
+		explicit Point(jobject jobj)
 		: cpp_object<Point>(jobj)
-		, x(jobj)
-		, y(jobj)
+, x(jobj)
+, y(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		Point();
+		Point(cpp_int const&, cpp_int const&);
+		Point(local_ref< android::graphics::Point > const&);
 		void set(cpp_int const&, cpp_int const&);
 		void negate();
 		void offset(cpp_int const&, cpp_int const&);
@@ -65,7 +71,6 @@ namespace android { namespace graphics {
 } //namespace graphics
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_GRAPHICS_POINT_HPP_DECL
@@ -78,40 +83,55 @@ namespace android { namespace graphics {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::graphics::Point > create< android::graphics::Point>()
+
+android::graphics::Point::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::graphics::Point >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::graphics::Point::J2CPP_CLASS_NAME>(),
-			get_method_id<android::graphics::Point::J2CPP_CLASS_NAME, android::graphics::Point::J2CPP_METHOD_NAME(0), android::graphics::Point::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
 
-template <>
-local_ref< android::graphics::Point > create< android::graphics::Point>(cpp_int const &a0, cpp_int const &a1)
+
+android::graphics::Point::Point()
+: cpp_object<android::graphics::Point>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::graphics::Point::J2CPP_CLASS_NAME>(),
+		get_method_id<android::graphics::Point::J2CPP_CLASS_NAME, android::graphics::Point::J2CPP_METHOD_NAME(0), android::graphics::Point::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+, x(get_jtype())
+, y(get_jtype())
 {
-	return local_ref< android::graphics::Point >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::graphics::Point::J2CPP_CLASS_NAME>(),
-			get_method_id<android::graphics::Point::J2CPP_CLASS_NAME, android::graphics::Point::J2CPP_METHOD_NAME(1), android::graphics::Point::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< android::graphics::Point > create< android::graphics::Point>(local_ref< android::graphics::Point > const &a0)
+
+
+android::graphics::Point::Point(cpp_int const &a0, cpp_int const &a1)
+: cpp_object<android::graphics::Point>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::graphics::Point::J2CPP_CLASS_NAME>(),
+		get_method_id<android::graphics::Point::J2CPP_CLASS_NAME, android::graphics::Point::J2CPP_METHOD_NAME(1), android::graphics::Point::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+, x(get_jtype())
+, y(get_jtype())
 {
-	return local_ref< android::graphics::Point >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::graphics::Point::J2CPP_CLASS_NAME>(),
-			get_method_id<android::graphics::Point::J2CPP_CLASS_NAME, android::graphics::Point::J2CPP_METHOD_NAME(2), android::graphics::Point::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype()
-		)
-	);
 }
+
+
+
+android::graphics::Point::Point(local_ref< android::graphics::Point > const &a0)
+: cpp_object<android::graphics::Point>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::graphics::Point::J2CPP_CLASS_NAME>(),
+		get_method_id<android::graphics::Point::J2CPP_CLASS_NAME, android::graphics::Point::J2CPP_METHOD_NAME(2), android::graphics::Point::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype()
+	)
+)
+, x(get_jtype())
+, y(get_jtype())
+{
+}
+
 
 void android::graphics::Point::set(cpp_int const &a0, cpp_int const &a1)
 {

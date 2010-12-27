@@ -13,8 +13,11 @@
 namespace j2cpp { namespace javax { namespace net { namespace ssl { class SSLSession; } } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace util { namespace concurrent { class TimeUnit; } } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { class HttpClientConnection; } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace protocol { class HttpContext; } } } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { namespace conn { class ConnectionReleaseTrigger; } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace conn { namespace routing { class HttpRoute; } } } } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { class HttpInetConnection; } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace params { class HttpParams; } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { class HttpHost; } } } }
 
@@ -22,7 +25,10 @@ namespace j2cpp { namespace org { namespace apache { namespace http { class Http
 #include <java/lang/Object.hpp>
 #include <java/util/concurrent/TimeUnit.hpp>
 #include <javax/net/ssl/SSLSession.hpp>
+#include <org/apache/http/HttpClientConnection.hpp>
 #include <org/apache/http/HttpHost.hpp>
+#include <org/apache/http/HttpInetConnection.hpp>
+#include <org/apache/http/conn/ConnectionReleaseTrigger.hpp>
 #include <org/apache/http/conn/routing/HttpRoute.hpp>
 #include <org/apache/http/params/HttpParams.hpp>
 #include <org/apache/http/protocol/HttpContext.hpp>
@@ -54,10 +60,16 @@ namespace org { namespace apache { namespace http { namespace conn {
 		J2CPP_DECLARE_METHOD(11)
 		J2CPP_DECLARE_METHOD(12)
 
-		ManagedClientConnection(jobject jobj)
+		explicit ManagedClientConnection(jobject jobj)
 		: cpp_object<ManagedClientConnection>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<org::apache::http::HttpClientConnection>() const;
+		operator local_ref<org::apache::http::HttpInetConnection>() const;
+		operator local_ref<org::apache::http::conn::ConnectionReleaseTrigger>() const;
+
 
 		cpp_boolean isSecure();
 		local_ref< org::apache::http::conn::routing::HttpRoute > getRoute();
@@ -79,7 +91,6 @@ namespace org { namespace apache { namespace http { namespace conn {
 } //namespace apache
 } //namespace org
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ORG_APACHE_HTTP_CONN_MANAGEDCLIENTCONNECTION_HPP_DECL
@@ -91,6 +102,27 @@ namespace org { namespace apache { namespace http { namespace conn {
 
 namespace j2cpp {
 
+
+
+org::apache::http::conn::ManagedClientConnection::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
+
+org::apache::http::conn::ManagedClientConnection::operator local_ref<org::apache::http::HttpClientConnection>() const
+{
+	return local_ref<org::apache::http::HttpClientConnection>(get_jtype());
+}
+
+org::apache::http::conn::ManagedClientConnection::operator local_ref<org::apache::http::HttpInetConnection>() const
+{
+	return local_ref<org::apache::http::HttpInetConnection>(get_jtype());
+}
+
+org::apache::http::conn::ManagedClientConnection::operator local_ref<org::apache::http::conn::ConnectionReleaseTrigger>() const
+{
+	return local_ref<org::apache::http::conn::ConnectionReleaseTrigger>(get_jtype());
+}
 
 cpp_boolean org::apache::http::conn::ManagedClientConnection::isSecure()
 {

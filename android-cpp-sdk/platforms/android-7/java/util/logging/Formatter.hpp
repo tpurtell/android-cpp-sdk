@@ -10,11 +10,13 @@
 #define J2CPP_JAVA_UTIL_LOGGING_FORMATTER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace util { namespace logging { class Handler; } } } }
 namespace j2cpp { namespace java { namespace util { namespace logging { class LogRecord; } } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/util/logging/Handler.hpp>
 #include <java/util/logging/LogRecord.hpp>
@@ -38,10 +40,13 @@ namespace java { namespace util { namespace logging {
 		J2CPP_DECLARE_METHOD(3)
 		J2CPP_DECLARE_METHOD(4)
 
-		Formatter(jobject jobj)
+		explicit Formatter(jobject jobj)
 		: cpp_object<Formatter>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		local_ref< java::lang::String > format(local_ref< java::util::logging::LogRecord > const&);
 		local_ref< java::lang::String > formatMessage(local_ref< java::util::logging::LogRecord > const&);
@@ -52,7 +57,6 @@ namespace java { namespace util { namespace logging {
 } //namespace logging
 } //namespace util
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -66,16 +70,12 @@ namespace java { namespace util { namespace logging {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::util::logging::Formatter > create< java::util::logging::Formatter>()
+
+java::util::logging::Formatter::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::util::logging::Formatter >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::logging::Formatter::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::logging::Formatter::J2CPP_CLASS_NAME, java::util::logging::Formatter::J2CPP_METHOD_NAME(0), java::util::logging::Formatter::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
 
 local_ref< java::lang::String > java::util::logging::Formatter::format(local_ref< java::util::logging::LogRecord > const &a0)
 {

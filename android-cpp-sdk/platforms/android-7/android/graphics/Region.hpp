@@ -11,11 +11,13 @@
 
 
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace lang { class Enum; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace android { namespace graphics { class Path; } } }
 namespace j2cpp { namespace android { namespace graphics { class Rect; } } }
 namespace j2cpp { namespace android { namespace graphics { namespace Region_ { class Op; } } } }
 namespace j2cpp { namespace android { namespace os { class Parcel; } } }
+namespace j2cpp { namespace android { namespace os { class Parcelable; } } }
 namespace j2cpp { namespace android { namespace os { namespace Parcelable_ { class Creator; } } } }
 
 
@@ -24,6 +26,7 @@ namespace j2cpp { namespace android { namespace os { namespace Parcelable_ { cla
 #include <android/graphics/Region.hpp>
 #include <android/os/Parcel.hpp>
 #include <android/os/Parcelable.hpp>
+#include <java/lang/Enum.hpp>
 #include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
@@ -55,10 +58,13 @@ namespace android { namespace graphics {
 			J2CPP_DECLARE_FIELD(5)
 			J2CPP_DECLARE_FIELD(6)
 
-			Op(jobject jobj)
+			explicit Op(jobject jobj)
 			: cpp_object<Op>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Enum>() const;
+
 
 			static local_ref< cpp_object_array<android::graphics::Region_::Op, 1> > values();
 			static local_ref< android::graphics::Region_::Op > valueOf(local_ref< java::lang::String > const&);
@@ -119,11 +125,19 @@ namespace android { namespace graphics {
 
 		typedef Region_::Op Op;
 
-		Region(jobject jobj)
+		explicit Region(jobject jobj)
 		: cpp_object<Region>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<android::os::Parcelable>() const;
+
+
+		Region();
+		Region(local_ref< android::graphics::Region > const&);
+		Region(local_ref< android::graphics::Rect > const&);
+		Region(cpp_int const&, cpp_int const&, cpp_int const&, cpp_int const&);
 		void setEmpty();
 		cpp_boolean set(local_ref< android::graphics::Region > const&);
 		cpp_boolean set(local_ref< android::graphics::Rect > const&);
@@ -160,7 +174,6 @@ namespace android { namespace graphics {
 } //namespace graphics
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_GRAPHICS_REGION_HPP_DECL
@@ -173,6 +186,12 @@ namespace android { namespace graphics {
 namespace j2cpp {
 
 
+
+
+android::graphics::Region_::Op::operator local_ref<java::lang::Enum>() const
+{
+	return local_ref<java::lang::Enum>(get_jtype());
+}
 
 local_ref< cpp_object_array<android::graphics::Region_::Op, 1> > android::graphics::Region_::Op::values()
 {
@@ -195,17 +214,7 @@ local_ref< android::graphics::Region_::Op > android::graphics::Region_::Op::valu
 	);
 }
 
-template <>
-local_ref< android::graphics::Region_::Op > create< android::graphics::Region_::Op>(local_ref< java::lang::String > const &a0, cpp_int const &a1)
-{
-	return local_ref< android::graphics::Region_::Op >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::graphics::Region_::Op::J2CPP_CLASS_NAME>(),
-			get_method_id<android::graphics::Region_::Op::J2CPP_CLASS_NAME, android::graphics::Region_::Op::J2CPP_METHOD_NAME(2), android::graphics::Region_::Op::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
-}
+
 
 
 static_field<
@@ -265,52 +274,67 @@ J2CPP_DEFINE_FIELD(android::graphics::Region_::Op,5,"XOR","Landroid/graphics/Reg
 J2CPP_DEFINE_FIELD(android::graphics::Region_::Op,6,"$VALUES","[android.graphics.Region.Op")
 
 
-template <>
-local_ref< android::graphics::Region > create< android::graphics::Region>()
+
+android::graphics::Region::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::graphics::Region >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::graphics::Region::J2CPP_CLASS_NAME>(),
-			get_method_id<android::graphics::Region::J2CPP_CLASS_NAME, android::graphics::Region::J2CPP_METHOD_NAME(0), android::graphics::Region::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
 
-template <>
-local_ref< android::graphics::Region > create< android::graphics::Region>(local_ref< android::graphics::Region > const &a0)
+android::graphics::Region::operator local_ref<android::os::Parcelable>() const
 {
-	return local_ref< android::graphics::Region >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::graphics::Region::J2CPP_CLASS_NAME>(),
-			get_method_id<android::graphics::Region::J2CPP_CLASS_NAME, android::graphics::Region::J2CPP_METHOD_NAME(1), android::graphics::Region::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<android::os::Parcelable>(get_jtype());
 }
 
-template <>
-local_ref< android::graphics::Region > create< android::graphics::Region>(local_ref< android::graphics::Rect > const &a0)
+
+android::graphics::Region::Region()
+: cpp_object<android::graphics::Region>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::graphics::Region::J2CPP_CLASS_NAME>(),
+		get_method_id<android::graphics::Region::J2CPP_CLASS_NAME, android::graphics::Region::J2CPP_METHOD_NAME(0), android::graphics::Region::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
 {
-	return local_ref< android::graphics::Region >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::graphics::Region::J2CPP_CLASS_NAME>(),
-			get_method_id<android::graphics::Region::J2CPP_CLASS_NAME, android::graphics::Region::J2CPP_METHOD_NAME(2), android::graphics::Region::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< android::graphics::Region > create< android::graphics::Region>(cpp_int const &a0, cpp_int const &a1, cpp_int const &a2, cpp_int const &a3)
+
+
+android::graphics::Region::Region(local_ref< android::graphics::Region > const &a0)
+: cpp_object<android::graphics::Region>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::graphics::Region::J2CPP_CLASS_NAME>(),
+		get_method_id<android::graphics::Region::J2CPP_CLASS_NAME, android::graphics::Region::J2CPP_METHOD_NAME(1), android::graphics::Region::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< android::graphics::Region >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::graphics::Region::J2CPP_CLASS_NAME>(),
-			get_method_id<android::graphics::Region::J2CPP_CLASS_NAME, android::graphics::Region::J2CPP_METHOD_NAME(3), android::graphics::Region::J2CPP_METHOD_SIGNATURE(3), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype()
-		)
-	);
 }
+
+
+
+android::graphics::Region::Region(local_ref< android::graphics::Rect > const &a0)
+: cpp_object<android::graphics::Region>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::graphics::Region::J2CPP_CLASS_NAME>(),
+		get_method_id<android::graphics::Region::J2CPP_CLASS_NAME, android::graphics::Region::J2CPP_METHOD_NAME(2), android::graphics::Region::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
+
+
+android::graphics::Region::Region(cpp_int const &a0, cpp_int const &a1, cpp_int const &a2, cpp_int const &a3)
+: cpp_object<android::graphics::Region>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::graphics::Region::J2CPP_CLASS_NAME>(),
+		get_method_id<android::graphics::Region::J2CPP_CLASS_NAME, android::graphics::Region::J2CPP_METHOD_NAME(3), android::graphics::Region::J2CPP_METHOD_SIGNATURE(3), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype()
+	)
+)
+{
+}
+
 
 void android::graphics::Region::setEmpty()
 {
@@ -623,6 +647,7 @@ cpp_boolean android::graphics::Region::equals(local_ref< java::lang::Object > co
 		)
 	);
 }
+
 
 
 

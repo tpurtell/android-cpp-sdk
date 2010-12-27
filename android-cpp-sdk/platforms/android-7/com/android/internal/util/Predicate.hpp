@@ -30,10 +30,13 @@ namespace com { namespace android { namespace internal { namespace util {
 
 		J2CPP_DECLARE_METHOD(0)
 
-		Predicate(jobject jobj)
+		explicit Predicate(jobject jobj)
 		: cpp_object<Predicate>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		cpp_boolean apply(local_ref< java::lang::Object > const&);
 	}; //class Predicate
@@ -42,7 +45,6 @@ namespace com { namespace android { namespace internal { namespace util {
 } //namespace internal
 } //namespace android
 } //namespace com
-
 
 } //namespace j2cpp
 
@@ -55,6 +57,12 @@ namespace com { namespace android { namespace internal { namespace util {
 
 namespace j2cpp {
 
+
+
+com::android::internal::util::Predicate::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 cpp_boolean com::android::internal::util::Predicate::apply(local_ref< java::lang::Object > const &a0)
 {

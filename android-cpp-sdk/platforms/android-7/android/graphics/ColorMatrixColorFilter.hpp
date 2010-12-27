@@ -11,8 +11,10 @@
 
 
 namespace j2cpp { namespace android { namespace graphics { class ColorMatrix; } } }
+namespace j2cpp { namespace android { namespace graphics { class ColorFilter; } } }
 
 
+#include <android/graphics/ColorFilter.hpp>
 #include <android/graphics/ColorMatrix.hpp>
 
 
@@ -31,16 +33,20 @@ namespace android { namespace graphics {
 		J2CPP_DECLARE_METHOD(0)
 		J2CPP_DECLARE_METHOD(1)
 
-		ColorMatrixColorFilter(jobject jobj)
+		explicit ColorMatrixColorFilter(jobject jobj)
 		: cpp_object<ColorMatrixColorFilter>(jobj)
 		{
 		}
 
+		operator local_ref<android::graphics::ColorFilter>() const;
+
+
+		ColorMatrixColorFilter(local_ref< android::graphics::ColorMatrix > const&);
+		ColorMatrixColorFilter(local_ref< cpp_float_array<1> > const&);
 	}; //class ColorMatrixColorFilter
 
 } //namespace graphics
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -54,29 +60,37 @@ namespace android { namespace graphics {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::graphics::ColorMatrixColorFilter > create< android::graphics::ColorMatrixColorFilter>(local_ref< android::graphics::ColorMatrix > const &a0)
+
+android::graphics::ColorMatrixColorFilter::operator local_ref<android::graphics::ColorFilter>() const
 {
-	return local_ref< android::graphics::ColorMatrixColorFilter >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::graphics::ColorMatrixColorFilter::J2CPP_CLASS_NAME>(),
-			get_method_id<android::graphics::ColorMatrixColorFilter::J2CPP_CLASS_NAME, android::graphics::ColorMatrixColorFilter::J2CPP_METHOD_NAME(0), android::graphics::ColorMatrixColorFilter::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<android::graphics::ColorFilter>(get_jtype());
 }
 
-template <>
-local_ref< android::graphics::ColorMatrixColorFilter > create< android::graphics::ColorMatrixColorFilter>(local_ref< cpp_float_array<1> > const &a0)
+
+android::graphics::ColorMatrixColorFilter::ColorMatrixColorFilter(local_ref< android::graphics::ColorMatrix > const &a0)
+: cpp_object<android::graphics::ColorMatrixColorFilter>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::graphics::ColorMatrixColorFilter::J2CPP_CLASS_NAME>(),
+		get_method_id<android::graphics::ColorMatrixColorFilter::J2CPP_CLASS_NAME, android::graphics::ColorMatrixColorFilter::J2CPP_METHOD_NAME(0), android::graphics::ColorMatrixColorFilter::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< android::graphics::ColorMatrixColorFilter >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::graphics::ColorMatrixColorFilter::J2CPP_CLASS_NAME>(),
-			get_method_id<android::graphics::ColorMatrixColorFilter::J2CPP_CLASS_NAME, android::graphics::ColorMatrixColorFilter::J2CPP_METHOD_NAME(1), android::graphics::ColorMatrixColorFilter::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
 }
+
+
+
+android::graphics::ColorMatrixColorFilter::ColorMatrixColorFilter(local_ref< cpp_float_array<1> > const &a0)
+: cpp_object<android::graphics::ColorMatrixColorFilter>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::graphics::ColorMatrixColorFilter::J2CPP_CLASS_NAME>(),
+		get_method_id<android::graphics::ColorMatrixColorFilter::J2CPP_CLASS_NAME, android::graphics::ColorMatrixColorFilter::J2CPP_METHOD_NAME(1), android::graphics::ColorMatrixColorFilter::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 
 J2CPP_DEFINE_CLASS(android::graphics::ColorMatrixColorFilter,"android/graphics/ColorMatrixColorFilter")

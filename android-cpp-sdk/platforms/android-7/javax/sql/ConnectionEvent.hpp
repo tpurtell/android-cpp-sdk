@@ -11,10 +11,14 @@
 
 
 namespace j2cpp { namespace javax { namespace sql { class PooledConnection; } } }
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 namespace j2cpp { namespace java { namespace sql { class SQLException; } } }
+namespace j2cpp { namespace java { namespace util { class EventObject; } } }
 
 
+#include <java/io/Serializable.hpp>
 #include <java/sql/SQLException.hpp>
+#include <java/util/EventObject.hpp>
 #include <javax/sql/PooledConnection.hpp>
 
 
@@ -34,17 +38,22 @@ namespace javax { namespace sql {
 		J2CPP_DECLARE_METHOD(1)
 		J2CPP_DECLARE_METHOD(2)
 
-		ConnectionEvent(jobject jobj)
+		explicit ConnectionEvent(jobject jobj)
 		: cpp_object<ConnectionEvent>(jobj)
 		{
 		}
 
+		operator local_ref<java::util::EventObject>() const;
+		operator local_ref<java::io::Serializable>() const;
+
+
+		ConnectionEvent(local_ref< javax::sql::PooledConnection > const&);
+		ConnectionEvent(local_ref< javax::sql::PooledConnection > const&, local_ref< java::sql::SQLException > const&);
 		local_ref< java::sql::SQLException > getSQLException();
 	}; //class ConnectionEvent
 
 } //namespace sql
 } //namespace javax
-
 
 } //namespace j2cpp
 
@@ -58,29 +67,42 @@ namespace javax { namespace sql {
 namespace j2cpp {
 
 
-template <>
-local_ref< javax::sql::ConnectionEvent > create< javax::sql::ConnectionEvent>(local_ref< javax::sql::PooledConnection > const &a0)
+
+javax::sql::ConnectionEvent::operator local_ref<java::util::EventObject>() const
 {
-	return local_ref< javax::sql::ConnectionEvent >(
-		environment::get().get_jenv()->NewObject(
-			get_class<javax::sql::ConnectionEvent::J2CPP_CLASS_NAME>(),
-			get_method_id<javax::sql::ConnectionEvent::J2CPP_CLASS_NAME, javax::sql::ConnectionEvent::J2CPP_METHOD_NAME(0), javax::sql::ConnectionEvent::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::util::EventObject>(get_jtype());
 }
 
-template <>
-local_ref< javax::sql::ConnectionEvent > create< javax::sql::ConnectionEvent>(local_ref< javax::sql::PooledConnection > const &a0, local_ref< java::sql::SQLException > const &a1)
+javax::sql::ConnectionEvent::operator local_ref<java::io::Serializable>() const
 {
-	return local_ref< javax::sql::ConnectionEvent >(
-		environment::get().get_jenv()->NewObject(
-			get_class<javax::sql::ConnectionEvent::J2CPP_CLASS_NAME>(),
-			get_method_id<javax::sql::ConnectionEvent::J2CPP_CLASS_NAME, javax::sql::ConnectionEvent::J2CPP_METHOD_NAME(1), javax::sql::ConnectionEvent::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<java::io::Serializable>(get_jtype());
 }
+
+
+javax::sql::ConnectionEvent::ConnectionEvent(local_ref< javax::sql::PooledConnection > const &a0)
+: cpp_object<javax::sql::ConnectionEvent>(
+	environment::get().get_jenv()->NewObject(
+		get_class<javax::sql::ConnectionEvent::J2CPP_CLASS_NAME>(),
+		get_method_id<javax::sql::ConnectionEvent::J2CPP_CLASS_NAME, javax::sql::ConnectionEvent::J2CPP_METHOD_NAME(0), javax::sql::ConnectionEvent::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
+
+
+javax::sql::ConnectionEvent::ConnectionEvent(local_ref< javax::sql::PooledConnection > const &a0, local_ref< java::sql::SQLException > const &a1)
+: cpp_object<javax::sql::ConnectionEvent>(
+	environment::get().get_jenv()->NewObject(
+		get_class<javax::sql::ConnectionEvent::J2CPP_CLASS_NAME>(),
+		get_method_id<javax::sql::ConnectionEvent::J2CPP_CLASS_NAME, javax::sql::ConnectionEvent::J2CPP_METHOD_NAME(1), javax::sql::ConnectionEvent::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
 
 local_ref< java::sql::SQLException > javax::sql::ConnectionEvent::getSQLException()
 {

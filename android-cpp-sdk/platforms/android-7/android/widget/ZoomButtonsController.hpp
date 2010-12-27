@@ -10,7 +10,9 @@
 #define J2CPP_ANDROID_WIDGET_ZOOMBUTTONSCONTROLLER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace android { namespace view { class View; } } }
+namespace j2cpp { namespace android { namespace view { namespace View_ { class OnTouchListener; } } } }
 namespace j2cpp { namespace android { namespace view { class ViewGroup; } } }
 namespace j2cpp { namespace android { namespace view { class MotionEvent; } } }
 namespace j2cpp { namespace android { namespace widget { namespace ZoomButtonsController_ { class OnZoomListener; } } } }
@@ -20,6 +22,7 @@ namespace j2cpp { namespace android { namespace widget { namespace ZoomButtonsCo
 #include <android/view/View.hpp>
 #include <android/view/ViewGroup.hpp>
 #include <android/widget/ZoomButtonsController.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -40,10 +43,13 @@ namespace android { namespace widget {
 			J2CPP_DECLARE_METHOD(0)
 			J2CPP_DECLARE_METHOD(1)
 
-			OnZoomListener(jobject jobj)
+			explicit OnZoomListener(jobject jobj)
 			: cpp_object<OnZoomListener>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+
 
 			void onVisibilityChanged(cpp_boolean const&);
 			void onZoom(cpp_boolean const&);
@@ -74,11 +80,16 @@ namespace android { namespace widget {
 
 		typedef ZoomButtonsController_::OnZoomListener OnZoomListener;
 
-		ZoomButtonsController(jobject jobj)
+		explicit ZoomButtonsController(jobject jobj)
 		: cpp_object<ZoomButtonsController>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<android::view::View_::OnTouchListener>() const;
+
+
+		ZoomButtonsController(local_ref< android::view::View > const&);
 		void setZoomInEnabled(cpp_boolean const&);
 		void setZoomOutEnabled(cpp_boolean const&);
 		void setZoomSpeed(cpp_long const&);
@@ -96,7 +107,6 @@ namespace android { namespace widget {
 } //namespace widget
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_WIDGET_ZOOMBUTTONSCONTROLLER_HPP_DECL
@@ -109,6 +119,12 @@ namespace android { namespace widget {
 namespace j2cpp {
 
 
+
+
+android::widget::ZoomButtonsController_::OnZoomListener::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 void android::widget::ZoomButtonsController_::OnZoomListener::onVisibilityChanged(cpp_boolean const &a0)
 {
@@ -138,17 +154,29 @@ J2CPP_DEFINE_METHOD(android::widget::ZoomButtonsController_::OnZoomListener,0,"o
 J2CPP_DEFINE_METHOD(android::widget::ZoomButtonsController_::OnZoomListener,1,"onZoom","(Z)V")
 
 
-template <>
-local_ref< android::widget::ZoomButtonsController > create< android::widget::ZoomButtonsController>(local_ref< android::view::View > const &a0)
+
+android::widget::ZoomButtonsController::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::widget::ZoomButtonsController >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::widget::ZoomButtonsController::J2CPP_CLASS_NAME>(),
-			get_method_id<android::widget::ZoomButtonsController::J2CPP_CLASS_NAME, android::widget::ZoomButtonsController::J2CPP_METHOD_NAME(0), android::widget::ZoomButtonsController::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+android::widget::ZoomButtonsController::operator local_ref<android::view::View_::OnTouchListener>() const
+{
+	return local_ref<android::view::View_::OnTouchListener>(get_jtype());
+}
+
+
+android::widget::ZoomButtonsController::ZoomButtonsController(local_ref< android::view::View > const &a0)
+: cpp_object<android::widget::ZoomButtonsController>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::widget::ZoomButtonsController::J2CPP_CLASS_NAME>(),
+		get_method_id<android::widget::ZoomButtonsController::J2CPP_CLASS_NAME, android::widget::ZoomButtonsController::J2CPP_METHOD_NAME(0), android::widget::ZoomButtonsController::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 void android::widget::ZoomButtonsController::setZoomInEnabled(cpp_boolean const &a0)
 {

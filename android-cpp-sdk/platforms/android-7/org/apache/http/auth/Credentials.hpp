@@ -10,10 +10,12 @@
 #define J2CPP_ORG_APACHE_HTTP_AUTH_CREDENTIALS_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace security { class Principal; } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/security/Principal.hpp>
 
@@ -33,10 +35,13 @@ namespace org { namespace apache { namespace http { namespace auth {
 		J2CPP_DECLARE_METHOD(0)
 		J2CPP_DECLARE_METHOD(1)
 
-		Credentials(jobject jobj)
+		explicit Credentials(jobject jobj)
 		: cpp_object<Credentials>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		local_ref< java::security::Principal > getUserPrincipal();
 		local_ref< java::lang::String > getPassword();
@@ -46,7 +51,6 @@ namespace org { namespace apache { namespace http { namespace auth {
 } //namespace http
 } //namespace apache
 } //namespace org
-
 
 } //namespace j2cpp
 
@@ -59,6 +63,12 @@ namespace org { namespace apache { namespace http { namespace auth {
 
 namespace j2cpp {
 
+
+
+org::apache::http::auth::Credentials::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 local_ref< java::security::Principal > org::apache::http::auth::Credentials::getUserPrincipal()
 {

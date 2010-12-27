@@ -10,16 +10,20 @@
 #define J2CPP_JAVAX_MICROEDITION_KHRONOS_OPENGLES_GL11EXT_HPP_DECL
 
 
+namespace j2cpp { namespace javax { namespace microedition { namespace khronos { namespace opengles { class GL; } } } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace nio { class FloatBuffer; } } }
 namespace j2cpp { namespace java { namespace nio { class IntBuffer; } } }
 namespace j2cpp { namespace java { namespace nio { class Buffer; } } }
 namespace j2cpp { namespace java { namespace nio { class ShortBuffer; } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/nio/Buffer.hpp>
 #include <java/nio/FloatBuffer.hpp>
 #include <java/nio/IntBuffer.hpp>
 #include <java/nio/ShortBuffer.hpp>
+#include <javax/microedition/khronos/opengles/GL.hpp>
 
 
 namespace j2cpp {
@@ -72,10 +76,14 @@ namespace javax { namespace microedition { namespace khronos { namespace opengle
 		J2CPP_DECLARE_FIELD(14)
 		J2CPP_DECLARE_FIELD(15)
 
-		GL11Ext(jobject jobj)
+		explicit GL11Ext(jobject jobj)
 		: cpp_object<GL11Ext>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<javax::microedition::khronos::opengles::GL>() const;
+
 
 		void glTexParameterfv(cpp_int const&, cpp_int const&, local_ref< cpp_float_array<1> > const&, cpp_int const&);
 		void glCurrentPaletteMatrixOES(cpp_int const&);
@@ -122,7 +130,6 @@ namespace javax { namespace microedition { namespace khronos { namespace opengle
 } //namespace microedition
 } //namespace javax
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVAX_MICROEDITION_KHRONOS_OPENGLES_GL11EXT_HPP_DECL
@@ -134,6 +141,17 @@ namespace javax { namespace microedition { namespace khronos { namespace opengle
 
 namespace j2cpp {
 
+
+
+javax::microedition::khronos::opengles::GL11Ext::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
+
+javax::microedition::khronos::opengles::GL11Ext::operator local_ref<javax::microedition::khronos::opengles::GL>() const
+{
+	return local_ref<javax::microedition::khronos::opengles::GL>(get_jtype());
+}
 
 void javax::microedition::khronos::opengles::GL11Ext::glTexParameterfv(cpp_int const &a0, cpp_int const &a1, local_ref< cpp_float_array<1> > const &a2, cpp_int const &a3)
 {

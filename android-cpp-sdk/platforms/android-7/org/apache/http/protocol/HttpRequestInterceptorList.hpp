@@ -10,12 +10,14 @@
 #define J2CPP_ORG_APACHE_HTTP_PROTOCOL_HTTPREQUESTINTERCEPTORLIST_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class Class; } } }
 namespace j2cpp { namespace java { namespace util { class List; } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { class HttpRequestInterceptor; } } } }
 
 
 #include <java/lang/Class.hpp>
+#include <java/lang/Object.hpp>
 #include <java/util/List.hpp>
 #include <org/apache/http/HttpRequestInterceptor.hpp>
 
@@ -40,10 +42,13 @@ namespace org { namespace apache { namespace http { namespace protocol {
 		J2CPP_DECLARE_METHOD(5)
 		J2CPP_DECLARE_METHOD(6)
 
-		HttpRequestInterceptorList(jobject jobj)
+		explicit HttpRequestInterceptorList(jobject jobj)
 		: cpp_object<HttpRequestInterceptorList>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		void addRequestInterceptor(local_ref< org::apache::http::HttpRequestInterceptor > const&);
 		void addRequestInterceptor(local_ref< org::apache::http::HttpRequestInterceptor > const&, cpp_int const&);
@@ -59,7 +64,6 @@ namespace org { namespace apache { namespace http { namespace protocol {
 } //namespace apache
 } //namespace org
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ORG_APACHE_HTTP_PROTOCOL_HTTPREQUESTINTERCEPTORLIST_HPP_DECL
@@ -71,6 +75,12 @@ namespace org { namespace apache { namespace http { namespace protocol {
 
 namespace j2cpp {
 
+
+
+org::apache::http::protocol::HttpRequestInterceptorList::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 void org::apache::http::protocol::HttpRequestInterceptorList::addRequestInterceptor(local_ref< org::apache::http::HttpRequestInterceptor > const &a0)
 {

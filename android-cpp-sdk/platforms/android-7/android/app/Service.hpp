@@ -14,11 +14,15 @@ namespace j2cpp { namespace android { namespace app { class Notification; } } }
 namespace j2cpp { namespace android { namespace app { class Application; } } }
 namespace j2cpp { namespace android { namespace content { namespace res { class Configuration; } } } }
 namespace j2cpp { namespace android { namespace content { class Intent; } } }
+namespace j2cpp { namespace android { namespace content { class ComponentCallbacks; } } }
+namespace j2cpp { namespace android { namespace content { class ContextWrapper; } } }
 namespace j2cpp { namespace android { namespace os { class IBinder; } } }
 
 
 #include <android/app/Application.hpp>
 #include <android/app/Notification.hpp>
+#include <android/content/ComponentCallbacks.hpp>
+#include <android/content/ContextWrapper.hpp>
 #include <android/content/Intent.hpp>
 #include <android/content/res/Configuration.hpp>
 #include <android/os/IBinder.hpp>
@@ -63,11 +67,16 @@ namespace android { namespace app {
 		J2CPP_DECLARE_FIELD(5)
 		J2CPP_DECLARE_FIELD(6)
 
-		Service(jobject jobj)
+		explicit Service(jobject jobj)
 		: cpp_object<Service>(jobj)
 		{
 		}
 
+		operator local_ref<android::content::ContextWrapper>() const;
+		operator local_ref<android::content::ComponentCallbacks>() const;
+
+
+		Service();
 		local_ref< android::app::Application > getApplication();
 		void onCreate();
 		void onStart(local_ref< android::content::Intent > const&, cpp_int const&);
@@ -97,7 +106,6 @@ namespace android { namespace app {
 } //namespace app
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_APP_SERVICE_HPP_DECL
@@ -110,16 +118,28 @@ namespace android { namespace app {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::app::Service > create< android::app::Service>()
+
+android::app::Service::operator local_ref<android::content::ContextWrapper>() const
 {
-	return local_ref< android::app::Service >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::app::Service::J2CPP_CLASS_NAME>(),
-			get_method_id<android::app::Service::J2CPP_CLASS_NAME, android::app::Service::J2CPP_METHOD_NAME(0), android::app::Service::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<android::content::ContextWrapper>(get_jtype());
 }
+
+android::app::Service::operator local_ref<android::content::ComponentCallbacks>() const
+{
+	return local_ref<android::content::ComponentCallbacks>(get_jtype());
+}
+
+
+android::app::Service::Service()
+: cpp_object<android::app::Service>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::app::Service::J2CPP_CLASS_NAME>(),
+		get_method_id<android::app::Service::J2CPP_CLASS_NAME, android::app::Service::J2CPP_METHOD_NAME(0), android::app::Service::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 local_ref< android::app::Application > android::app::Service::getApplication()
 {

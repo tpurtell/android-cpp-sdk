@@ -10,6 +10,7 @@
 #define J2CPP_ANDROID_WEBKIT_URLINTERCEPTHANDLER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace util { class Map; } } }
 namespace j2cpp { namespace android { namespace webkit { class PluginData; } } }
@@ -18,6 +19,7 @@ namespace j2cpp { namespace android { namespace webkit { namespace CacheManager_
 
 #include <android/webkit/CacheManager.hpp>
 #include <android/webkit/PluginData.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/util/Map.hpp>
 
@@ -37,10 +39,13 @@ namespace android { namespace webkit {
 		J2CPP_DECLARE_METHOD(0)
 		J2CPP_DECLARE_METHOD(1)
 
-		UrlInterceptHandler(jobject jobj)
+		explicit UrlInterceptHandler(jobject jobj)
 		: cpp_object<UrlInterceptHandler>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		local_ref< android::webkit::CacheManager_::CacheResult > service(local_ref< java::lang::String > const&, local_ref< java::util::Map > const&);
 		local_ref< android::webkit::PluginData > getPluginData(local_ref< java::lang::String > const&, local_ref< java::util::Map > const&);
@@ -48,7 +53,6 @@ namespace android { namespace webkit {
 
 } //namespace webkit
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -61,6 +65,12 @@ namespace android { namespace webkit {
 
 namespace j2cpp {
 
+
+
+android::webkit::UrlInterceptHandler::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 local_ref< android::webkit::CacheManager_::CacheResult > android::webkit::UrlInterceptHandler::service(local_ref< java::lang::String > const &a0, local_ref< java::util::Map > const &a1)
 {

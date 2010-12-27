@@ -12,11 +12,14 @@
 
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace android { namespace database { class CharArrayBuffer; } } }
+namespace j2cpp { namespace android { namespace database { namespace sqlite { class SQLiteClosable; } } } }
 namespace j2cpp { namespace android { namespace os { class Parcel; } } }
+namespace j2cpp { namespace android { namespace os { class Parcelable; } } }
 namespace j2cpp { namespace android { namespace os { namespace Parcelable_ { class Creator; } } } }
 
 
 #include <android/database/CharArrayBuffer.hpp>
+#include <android/database/sqlite/SQLiteClosable.hpp>
 #include <android/os/Parcel.hpp>
 #include <android/os/Parcelable.hpp>
 #include <java/lang/String.hpp>
@@ -69,11 +72,16 @@ namespace android { namespace database {
 		J2CPP_DECLARE_METHOD(32)
 		J2CPP_DECLARE_FIELD(0)
 
-		CursorWindow(jobject jobj)
+		explicit CursorWindow(jobject jobj)
 		: cpp_object<CursorWindow>(jobj)
 		{
 		}
 
+		operator local_ref<android::database::sqlite::SQLiteClosable>() const;
+		operator local_ref<android::os::Parcelable>() const;
+
+
+		CursorWindow(cpp_boolean const&);
 		cpp_int getStartPosition();
 		void setStartPosition(cpp_int const&);
 		cpp_int getNumRows();
@@ -110,7 +118,6 @@ namespace android { namespace database {
 } //namespace database
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_DATABASE_CURSORWINDOW_HPP_DECL
@@ -123,17 +130,29 @@ namespace android { namespace database {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::database::CursorWindow > create< android::database::CursorWindow>(cpp_boolean const &a0)
+
+android::database::CursorWindow::operator local_ref<android::database::sqlite::SQLiteClosable>() const
 {
-	return local_ref< android::database::CursorWindow >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::database::CursorWindow::J2CPP_CLASS_NAME>(),
-			get_method_id<android::database::CursorWindow::J2CPP_CLASS_NAME, android::database::CursorWindow::J2CPP_METHOD_NAME(0), android::database::CursorWindow::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<android::database::sqlite::SQLiteClosable>(get_jtype());
 }
+
+android::database::CursorWindow::operator local_ref<android::os::Parcelable>() const
+{
+	return local_ref<android::os::Parcelable>(get_jtype());
+}
+
+
+android::database::CursorWindow::CursorWindow(cpp_boolean const &a0)
+: cpp_object<android::database::CursorWindow>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::database::CursorWindow::J2CPP_CLASS_NAME>(),
+		get_method_id<android::database::CursorWindow::J2CPP_CLASS_NAME, android::database::CursorWindow::J2CPP_METHOD_NAME(0), android::database::CursorWindow::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 cpp_int android::database::CursorWindow::getStartPosition()
 {
@@ -447,6 +466,7 @@ void android::database::CursorWindow::writeToParcel(local_ref< android::os::Parc
 		)
 	);
 }
+
 
 
 

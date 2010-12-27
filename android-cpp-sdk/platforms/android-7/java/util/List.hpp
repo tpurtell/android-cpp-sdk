@@ -60,10 +60,14 @@ namespace java { namespace util {
 		J2CPP_DECLARE_METHOD(23)
 		J2CPP_DECLARE_METHOD(24)
 
-		List(jobject jobj)
+		explicit List(jobject jobj)
 		: cpp_object<List>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::util::Collection>() const;
+
 
 		void add(cpp_int const&, local_ref< java::lang::Object > const&);
 		cpp_boolean add(local_ref< java::lang::Object > const&);
@@ -95,7 +99,6 @@ namespace java { namespace util {
 } //namespace util
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_UTIL_LIST_HPP_DECL
@@ -107,6 +110,17 @@ namespace java { namespace util {
 
 namespace j2cpp {
 
+
+
+java::util::List::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
+
+java::util::List::operator local_ref<java::util::Collection>() const
+{
+	return local_ref<java::util::Collection>(get_jtype());
+}
 
 void java::util::List::add(cpp_int const &a0, local_ref< java::lang::Object > const &a1)
 {

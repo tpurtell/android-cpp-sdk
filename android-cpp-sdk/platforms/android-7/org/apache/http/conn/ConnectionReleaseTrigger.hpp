@@ -10,8 +10,10 @@
 #define J2CPP_ORG_APACHE_HTTP_CONN_CONNECTIONRELEASETRIGGER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -29,10 +31,13 @@ namespace org { namespace apache { namespace http { namespace conn {
 		J2CPP_DECLARE_METHOD(0)
 		J2CPP_DECLARE_METHOD(1)
 
-		ConnectionReleaseTrigger(jobject jobj)
+		explicit ConnectionReleaseTrigger(jobject jobj)
 		: cpp_object<ConnectionReleaseTrigger>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		void releaseConnection();
 		void abortConnection();
@@ -42,7 +47,6 @@ namespace org { namespace apache { namespace http { namespace conn {
 } //namespace http
 } //namespace apache
 } //namespace org
-
 
 } //namespace j2cpp
 
@@ -55,6 +59,12 @@ namespace org { namespace apache { namespace http { namespace conn {
 
 namespace j2cpp {
 
+
+
+org::apache::http::conn::ConnectionReleaseTrigger::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 void org::apache::http::conn::ConnectionReleaseTrigger::releaseConnection()
 {

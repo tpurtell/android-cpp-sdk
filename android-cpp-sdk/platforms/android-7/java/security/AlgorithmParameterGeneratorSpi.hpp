@@ -10,8 +10,10 @@
 #define J2CPP_JAVA_SECURITY_ALGORITHMPARAMETERGENERATORSPI_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -31,16 +33,19 @@ namespace java { namespace security {
 		J2CPP_DECLARE_METHOD(2)
 		J2CPP_DECLARE_METHOD(3)
 
-		AlgorithmParameterGeneratorSpi(jobject jobj)
+		explicit AlgorithmParameterGeneratorSpi(jobject jobj)
 		: cpp_object<AlgorithmParameterGeneratorSpi>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		AlgorithmParameterGeneratorSpi();
 	}; //class AlgorithmParameterGeneratorSpi
 
 } //namespace security
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -54,16 +59,23 @@ namespace java { namespace security {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::security::AlgorithmParameterGeneratorSpi > create< java::security::AlgorithmParameterGeneratorSpi>()
+
+java::security::AlgorithmParameterGeneratorSpi::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::security::AlgorithmParameterGeneratorSpi >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::security::AlgorithmParameterGeneratorSpi::J2CPP_CLASS_NAME>(),
-			get_method_id<java::security::AlgorithmParameterGeneratorSpi::J2CPP_CLASS_NAME, java::security::AlgorithmParameterGeneratorSpi::J2CPP_METHOD_NAME(0), java::security::AlgorithmParameterGeneratorSpi::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+java::security::AlgorithmParameterGeneratorSpi::AlgorithmParameterGeneratorSpi()
+: cpp_object<java::security::AlgorithmParameterGeneratorSpi>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::security::AlgorithmParameterGeneratorSpi::J2CPP_CLASS_NAME>(),
+		get_method_id<java::security::AlgorithmParameterGeneratorSpi::J2CPP_CLASS_NAME, java::security::AlgorithmParameterGeneratorSpi::J2CPP_METHOD_NAME(0), java::security::AlgorithmParameterGeneratorSpi::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 
 

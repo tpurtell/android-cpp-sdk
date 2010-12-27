@@ -11,9 +11,11 @@
 
 
 namespace j2cpp { namespace java { namespace io { class PipedWriter; } } }
+namespace j2cpp { namespace java { namespace io { class Reader; } } }
 
 
 #include <java/io/PipedWriter.hpp>
+#include <java/io/Reader.hpp>
 
 
 namespace j2cpp {
@@ -36,11 +38,16 @@ namespace java { namespace io {
 		J2CPP_DECLARE_METHOD(5)
 		J2CPP_DECLARE_METHOD(6)
 
-		PipedReader(jobject jobj)
+		explicit PipedReader(jobject jobj)
 		: cpp_object<PipedReader>(jobj)
 		{
 		}
 
+		operator local_ref<java::io::Reader>() const;
+
+
+		PipedReader();
+		PipedReader(local_ref< java::io::PipedWriter > const&);
 		void close();
 		void connect(local_ref< java::io::PipedWriter > const&);
 		cpp_int read();
@@ -50,7 +57,6 @@ namespace java { namespace io {
 
 } //namespace io
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -64,28 +70,36 @@ namespace java { namespace io {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::io::PipedReader > create< java::io::PipedReader>()
+
+java::io::PipedReader::operator local_ref<java::io::Reader>() const
 {
-	return local_ref< java::io::PipedReader >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::io::PipedReader::J2CPP_CLASS_NAME>(),
-			get_method_id<java::io::PipedReader::J2CPP_CLASS_NAME, java::io::PipedReader::J2CPP_METHOD_NAME(0), java::io::PipedReader::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::io::Reader>(get_jtype());
 }
 
-template <>
-local_ref< java::io::PipedReader > create< java::io::PipedReader>(local_ref< java::io::PipedWriter > const &a0)
+
+java::io::PipedReader::PipedReader()
+: cpp_object<java::io::PipedReader>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::io::PipedReader::J2CPP_CLASS_NAME>(),
+		get_method_id<java::io::PipedReader::J2CPP_CLASS_NAME, java::io::PipedReader::J2CPP_METHOD_NAME(0), java::io::PipedReader::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
 {
-	return local_ref< java::io::PipedReader >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::io::PipedReader::J2CPP_CLASS_NAME>(),
-			get_method_id<java::io::PipedReader::J2CPP_CLASS_NAME, java::io::PipedReader::J2CPP_METHOD_NAME(1), java::io::PipedReader::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
 }
+
+
+
+java::io::PipedReader::PipedReader(local_ref< java::io::PipedWriter > const &a0)
+: cpp_object<java::io::PipedReader>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::io::PipedReader::J2CPP_CLASS_NAME>(),
+		get_method_id<java::io::PipedReader::J2CPP_CLASS_NAME, java::io::PipedReader::J2CPP_METHOD_NAME(1), java::io::PipedReader::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 void java::io::PipedReader::close()
 {

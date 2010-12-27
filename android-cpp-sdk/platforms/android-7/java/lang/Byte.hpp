@@ -12,10 +12,14 @@
 
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class Class; } } }
+namespace j2cpp { namespace java { namespace lang { class Comparable; } } }
+namespace j2cpp { namespace java { namespace lang { class Number; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 
 
 #include <java/lang/Class.hpp>
+#include <java/lang/Comparable.hpp>
+#include <java/lang/Number.hpp>
 #include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
@@ -58,11 +62,17 @@ namespace java { namespace lang {
 		J2CPP_DECLARE_FIELD(2)
 		J2CPP_DECLARE_FIELD(3)
 
-		Byte(jobject jobj)
+		explicit Byte(jobject jobj)
 		: cpp_object<Byte>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Number>() const;
+		operator local_ref<java::lang::Comparable>() const;
+
+
+		Byte(cpp_byte const&);
+		Byte(local_ref< java::lang::String > const&);
 		cpp_byte byteValue();
 		cpp_int compareTo(local_ref< java::lang::Byte > const&);
 		static local_ref< java::lang::Byte > decode(local_ref< java::lang::String > const&);
@@ -91,7 +101,6 @@ namespace java { namespace lang {
 } //namespace lang
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_LANG_BYTE_HPP_DECL
@@ -104,29 +113,42 @@ namespace java { namespace lang {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::lang::Byte > create< java::lang::Byte>(cpp_byte const &a0)
+
+java::lang::Byte::operator local_ref<java::lang::Number>() const
 {
-	return local_ref< java::lang::Byte >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::lang::Byte::J2CPP_CLASS_NAME>(),
-			get_method_id<java::lang::Byte::J2CPP_CLASS_NAME, java::lang::Byte::J2CPP_METHOD_NAME(0), java::lang::Byte::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Number>(get_jtype());
 }
 
-template <>
-local_ref< java::lang::Byte > create< java::lang::Byte>(local_ref< java::lang::String > const &a0)
+java::lang::Byte::operator local_ref<java::lang::Comparable>() const
 {
-	return local_ref< java::lang::Byte >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::lang::Byte::J2CPP_CLASS_NAME>(),
-			get_method_id<java::lang::Byte::J2CPP_CLASS_NAME, java::lang::Byte::J2CPP_METHOD_NAME(1), java::lang::Byte::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Comparable>(get_jtype());
 }
+
+
+java::lang::Byte::Byte(cpp_byte const &a0)
+: cpp_object<java::lang::Byte>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::lang::Byte::J2CPP_CLASS_NAME>(),
+		get_method_id<java::lang::Byte::J2CPP_CLASS_NAME, java::lang::Byte::J2CPP_METHOD_NAME(0), java::lang::Byte::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
+
+
+java::lang::Byte::Byte(local_ref< java::lang::String > const &a0)
+: cpp_object<java::lang::Byte>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::lang::Byte::J2CPP_CLASS_NAME>(),
+		get_method_id<java::lang::Byte::J2CPP_CLASS_NAME, java::lang::Byte::J2CPP_METHOD_NAME(1), java::lang::Byte::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 cpp_byte java::lang::Byte::byteValue()
 {
@@ -317,6 +339,7 @@ cpp_int java::lang::Byte::compareTo(local_ref< java::lang::Object > const &a0)
 		)
 	);
 }
+
 
 
 static_field<

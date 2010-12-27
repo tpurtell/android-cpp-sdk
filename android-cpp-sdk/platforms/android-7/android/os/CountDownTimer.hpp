@@ -10,8 +10,10 @@
 #define J2CPP_ANDROID_OS_COUNTDOWNTIMER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -32,11 +34,15 @@ namespace android { namespace os {
 		J2CPP_DECLARE_METHOD(3)
 		J2CPP_DECLARE_METHOD(4)
 
-		CountDownTimer(jobject jobj)
+		explicit CountDownTimer(jobject jobj)
 		: cpp_object<CountDownTimer>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		CountDownTimer(cpp_long const&, cpp_long const&);
 		void cancel();
 		local_ref< android::os::CountDownTimer > start();
 		void onTick(cpp_long const&);
@@ -45,7 +51,6 @@ namespace android { namespace os {
 
 } //namespace os
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -59,17 +64,24 @@ namespace android { namespace os {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::os::CountDownTimer > create< android::os::CountDownTimer>(cpp_long const &a0, cpp_long const &a1)
+
+android::os::CountDownTimer::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::os::CountDownTimer >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::os::CountDownTimer::J2CPP_CLASS_NAME>(),
-			get_method_id<android::os::CountDownTimer::J2CPP_CLASS_NAME, android::os::CountDownTimer::J2CPP_METHOD_NAME(0), android::os::CountDownTimer::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::os::CountDownTimer::CountDownTimer(cpp_long const &a0, cpp_long const &a1)
+: cpp_object<android::os::CountDownTimer>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::os::CountDownTimer::J2CPP_CLASS_NAME>(),
+		get_method_id<android::os::CountDownTimer::J2CPP_CLASS_NAME, android::os::CountDownTimer::J2CPP_METHOD_NAME(0), android::os::CountDownTimer::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
 
 void android::os::CountDownTimer::cancel()
 {

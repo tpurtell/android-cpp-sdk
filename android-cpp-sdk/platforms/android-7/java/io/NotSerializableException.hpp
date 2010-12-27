@@ -10,9 +10,11 @@
 #define J2CPP_JAVA_IO_NOTSERIALIZABLEEXCEPTION_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class ObjectStreamException; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 
 
+#include <java/io/ObjectStreamException.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -31,16 +33,20 @@ namespace java { namespace io {
 		J2CPP_DECLARE_METHOD(0)
 		J2CPP_DECLARE_METHOD(1)
 
-		NotSerializableException(jobject jobj)
+		explicit NotSerializableException(jobject jobj)
 		: cpp_object<NotSerializableException>(jobj)
 		{
 		}
 
+		operator local_ref<java::io::ObjectStreamException>() const;
+
+
+		NotSerializableException();
+		NotSerializableException(local_ref< java::lang::String > const&);
 	}; //class NotSerializableException
 
 } //namespace io
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -54,28 +60,36 @@ namespace java { namespace io {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::io::NotSerializableException > create< java::io::NotSerializableException>()
+
+java::io::NotSerializableException::operator local_ref<java::io::ObjectStreamException>() const
 {
-	return local_ref< java::io::NotSerializableException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::io::NotSerializableException::J2CPP_CLASS_NAME>(),
-			get_method_id<java::io::NotSerializableException::J2CPP_CLASS_NAME, java::io::NotSerializableException::J2CPP_METHOD_NAME(0), java::io::NotSerializableException::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::io::ObjectStreamException>(get_jtype());
 }
 
-template <>
-local_ref< java::io::NotSerializableException > create< java::io::NotSerializableException>(local_ref< java::lang::String > const &a0)
+
+java::io::NotSerializableException::NotSerializableException()
+: cpp_object<java::io::NotSerializableException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::io::NotSerializableException::J2CPP_CLASS_NAME>(),
+		get_method_id<java::io::NotSerializableException::J2CPP_CLASS_NAME, java::io::NotSerializableException::J2CPP_METHOD_NAME(0), java::io::NotSerializableException::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
 {
-	return local_ref< java::io::NotSerializableException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::io::NotSerializableException::J2CPP_CLASS_NAME>(),
-			get_method_id<java::io::NotSerializableException::J2CPP_CLASS_NAME, java::io::NotSerializableException::J2CPP_METHOD_NAME(1), java::io::NotSerializableException::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
 }
+
+
+
+java::io::NotSerializableException::NotSerializableException(local_ref< java::lang::String > const &a0)
+: cpp_object<java::io::NotSerializableException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::io::NotSerializableException::J2CPP_CLASS_NAME>(),
+		get_method_id<java::io::NotSerializableException::J2CPP_CLASS_NAME, java::io::NotSerializableException::J2CPP_METHOD_NAME(1), java::io::NotSerializableException::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 
 J2CPP_DEFINE_CLASS(java::io::NotSerializableException,"java/io/NotSerializableException")

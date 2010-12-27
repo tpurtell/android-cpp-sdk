@@ -10,9 +10,11 @@
 #define J2CPP_JAVA_SECURITY_DOMAINCOMBINER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace security { class ProtectionDomain; } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/security/ProtectionDomain.hpp>
 
 
@@ -30,17 +32,19 @@ namespace java { namespace security {
 
 		J2CPP_DECLARE_METHOD(0)
 
-		DomainCombiner(jobject jobj)
+		explicit DomainCombiner(jobject jobj)
 		: cpp_object<DomainCombiner>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		local_ref< cpp_object_array<java::security::ProtectionDomain, 1> > combine(local_ref< cpp_object_array<java::security::ProtectionDomain, 1> > const&, local_ref< cpp_object_array<java::security::ProtectionDomain, 1> > const&);
 	}; //class DomainCombiner
 
 } //namespace security
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -53,6 +57,12 @@ namespace java { namespace security {
 
 namespace j2cpp {
 
+
+
+java::security::DomainCombiner::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 local_ref< cpp_object_array<java::security::ProtectionDomain, 1> > java::security::DomainCombiner::combine(local_ref< cpp_object_array<java::security::ProtectionDomain, 1> > const &a0, local_ref< cpp_object_array<java::security::ProtectionDomain, 1> > const &a1)
 {

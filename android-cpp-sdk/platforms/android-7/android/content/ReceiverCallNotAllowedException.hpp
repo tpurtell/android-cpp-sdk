@@ -11,8 +11,10 @@
 
 
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace android { namespace util { class AndroidRuntimeException; } } }
 
 
+#include <android/util/AndroidRuntimeException.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -30,16 +32,19 @@ namespace android { namespace content {
 
 		J2CPP_DECLARE_METHOD(0)
 
-		ReceiverCallNotAllowedException(jobject jobj)
+		explicit ReceiverCallNotAllowedException(jobject jobj)
 		: cpp_object<ReceiverCallNotAllowedException>(jobj)
 		{
 		}
 
+		operator local_ref<android::util::AndroidRuntimeException>() const;
+
+
+		ReceiverCallNotAllowedException(local_ref< java::lang::String > const&);
 	}; //class ReceiverCallNotAllowedException
 
 } //namespace content
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -53,17 +58,24 @@ namespace android { namespace content {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::content::ReceiverCallNotAllowedException > create< android::content::ReceiverCallNotAllowedException>(local_ref< java::lang::String > const &a0)
+
+android::content::ReceiverCallNotAllowedException::operator local_ref<android::util::AndroidRuntimeException>() const
 {
-	return local_ref< android::content::ReceiverCallNotAllowedException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::content::ReceiverCallNotAllowedException::J2CPP_CLASS_NAME>(),
-			get_method_id<android::content::ReceiverCallNotAllowedException::J2CPP_CLASS_NAME, android::content::ReceiverCallNotAllowedException::J2CPP_METHOD_NAME(0), android::content::ReceiverCallNotAllowedException::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<android::util::AndroidRuntimeException>(get_jtype());
 }
+
+
+android::content::ReceiverCallNotAllowedException::ReceiverCallNotAllowedException(local_ref< java::lang::String > const &a0)
+: cpp_object<android::content::ReceiverCallNotAllowedException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::content::ReceiverCallNotAllowedException::J2CPP_CLASS_NAME>(),
+		get_method_id<android::content::ReceiverCallNotAllowedException::J2CPP_CLASS_NAME, android::content::ReceiverCallNotAllowedException::J2CPP_METHOD_NAME(0), android::content::ReceiverCallNotAllowedException::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 
 J2CPP_DEFINE_CLASS(android::content::ReceiverCallNotAllowedException,"android/content/ReceiverCallNotAllowedException")

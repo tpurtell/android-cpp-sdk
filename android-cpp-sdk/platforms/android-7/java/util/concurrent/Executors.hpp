@@ -64,10 +64,13 @@ namespace java { namespace util { namespace concurrent {
 		J2CPP_DECLARE_METHOD(19)
 		J2CPP_DECLARE_METHOD(20)
 
-		Executors(jobject jobj)
+		explicit Executors(jobject jobj)
 		: cpp_object<Executors>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		static local_ref< java::util::concurrent::ExecutorService > newFixedThreadPool(cpp_int const&);
 		static local_ref< java::util::concurrent::ExecutorService > newFixedThreadPool(cpp_int const&, local_ref< java::util::concurrent::ThreadFactory > const&);
@@ -95,7 +98,6 @@ namespace java { namespace util { namespace concurrent {
 } //namespace util
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_UTIL_CONCURRENT_EXECUTORS_HPP_DECL
@@ -108,16 +110,12 @@ namespace java { namespace util { namespace concurrent {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::util::concurrent::Executors > create< java::util::concurrent::Executors>()
+
+java::util::concurrent::Executors::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::util::concurrent::Executors >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::concurrent::Executors::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::concurrent::Executors::J2CPP_CLASS_NAME, java::util::concurrent::Executors::J2CPP_METHOD_NAME(0), java::util::concurrent::Executors::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
 
 local_ref< java::util::concurrent::ExecutorService > java::util::concurrent::Executors::newFixedThreadPool(cpp_int const &a0)
 {

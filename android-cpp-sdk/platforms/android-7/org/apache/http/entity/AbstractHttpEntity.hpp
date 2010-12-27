@@ -10,12 +10,16 @@
 #define J2CPP_ORG_APACHE_HTTP_ENTITY_ABSTRACTHTTPENTITY_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { class Header; } } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { class HttpEntity; } } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <org/apache/http/Header.hpp>
+#include <org/apache/http/HttpEntity.hpp>
 
 
 namespace j2cpp {
@@ -44,10 +48,14 @@ namespace org { namespace apache { namespace http { namespace entity {
 		J2CPP_DECLARE_FIELD(1)
 		J2CPP_DECLARE_FIELD(2)
 
-		AbstractHttpEntity(jobject jobj)
+		explicit AbstractHttpEntity(jobject jobj)
 		: cpp_object<AbstractHttpEntity>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<org::apache::http::HttpEntity>() const;
+
 
 		local_ref< org::apache::http::Header > getContentType();
 		local_ref< org::apache::http::Header > getContentEncoding();
@@ -66,7 +74,6 @@ namespace org { namespace apache { namespace http { namespace entity {
 } //namespace apache
 } //namespace org
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ORG_APACHE_HTTP_ENTITY_ABSTRACTHTTPENTITY_HPP_DECL
@@ -79,16 +86,17 @@ namespace org { namespace apache { namespace http { namespace entity {
 namespace j2cpp {
 
 
-template <>
-local_ref< org::apache::http::entity::AbstractHttpEntity > create< org::apache::http::entity::AbstractHttpEntity>()
+
+org::apache::http::entity::AbstractHttpEntity::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< org::apache::http::entity::AbstractHttpEntity >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::apache::http::entity::AbstractHttpEntity::J2CPP_CLASS_NAME>(),
-			get_method_id<org::apache::http::entity::AbstractHttpEntity::J2CPP_CLASS_NAME, org::apache::http::entity::AbstractHttpEntity::J2CPP_METHOD_NAME(0), org::apache::http::entity::AbstractHttpEntity::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+org::apache::http::entity::AbstractHttpEntity::operator local_ref<org::apache::http::HttpEntity>() const
+{
+	return local_ref<org::apache::http::HttpEntity>(get_jtype());
+}
+
 
 local_ref< org::apache::http::Header > org::apache::http::entity::AbstractHttpEntity::getContentType()
 {

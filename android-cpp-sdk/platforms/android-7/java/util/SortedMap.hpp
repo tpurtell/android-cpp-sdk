@@ -12,10 +12,12 @@
 
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace util { class Comparator; } } }
+namespace j2cpp { namespace java { namespace util { class Map; } } }
 
 
 #include <java/lang/Object.hpp>
 #include <java/util/Comparator.hpp>
+#include <java/util/Map.hpp>
 
 
 namespace j2cpp {
@@ -37,10 +39,14 @@ namespace java { namespace util {
 		J2CPP_DECLARE_METHOD(4)
 		J2CPP_DECLARE_METHOD(5)
 
-		SortedMap(jobject jobj)
+		explicit SortedMap(jobject jobj)
 		: cpp_object<SortedMap>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::util::Map>() const;
+
 
 		local_ref< java::util::Comparator > comparator();
 		local_ref< java::lang::Object > firstKey();
@@ -53,7 +59,6 @@ namespace java { namespace util {
 } //namespace util
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_UTIL_SORTEDMAP_HPP_DECL
@@ -65,6 +70,17 @@ namespace java { namespace util {
 
 namespace j2cpp {
 
+
+
+java::util::SortedMap::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
+
+java::util::SortedMap::operator local_ref<java::util::Map>() const
+{
+	return local_ref<java::util::Map>(get_jtype());
+}
 
 local_ref< java::util::Comparator > java::util::SortedMap::comparator()
 {

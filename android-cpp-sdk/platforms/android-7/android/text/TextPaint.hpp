@@ -38,16 +38,22 @@ namespace android { namespace text {
 		J2CPP_DECLARE_FIELD(3)
 		J2CPP_DECLARE_FIELD(4)
 
-		TextPaint(jobject jobj)
+		explicit TextPaint(jobject jobj)
 		: cpp_object<TextPaint>(jobj)
-		, bgColor(jobj)
-		, baselineShift(jobj)
-		, linkColor(jobj)
-		, drawableState(jobj)
-		, density(jobj)
+, bgColor(jobj)
+, baselineShift(jobj)
+, linkColor(jobj)
+, drawableState(jobj)
+, density(jobj)
 		{
 		}
 
+		operator local_ref<android::graphics::Paint>() const;
+
+
+		TextPaint();
+		TextPaint(cpp_int const&);
+		TextPaint(local_ref< android::graphics::Paint > const&);
 		void set(local_ref< android::text::TextPaint > const&);
 
 		field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(0), J2CPP_FIELD_SIGNATURE(0), cpp_int > bgColor;
@@ -59,7 +65,6 @@ namespace android { namespace text {
 
 } //namespace text
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -73,40 +78,64 @@ namespace android { namespace text {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::text::TextPaint > create< android::text::TextPaint>()
+
+android::text::TextPaint::operator local_ref<android::graphics::Paint>() const
 {
-	return local_ref< android::text::TextPaint >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::text::TextPaint::J2CPP_CLASS_NAME>(),
-			get_method_id<android::text::TextPaint::J2CPP_CLASS_NAME, android::text::TextPaint::J2CPP_METHOD_NAME(0), android::text::TextPaint::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<android::graphics::Paint>(get_jtype());
 }
 
-template <>
-local_ref< android::text::TextPaint > create< android::text::TextPaint>(cpp_int const &a0)
+
+android::text::TextPaint::TextPaint()
+: cpp_object<android::text::TextPaint>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::text::TextPaint::J2CPP_CLASS_NAME>(),
+		get_method_id<android::text::TextPaint::J2CPP_CLASS_NAME, android::text::TextPaint::J2CPP_METHOD_NAME(0), android::text::TextPaint::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+, bgColor(get_jtype())
+, baselineShift(get_jtype())
+, linkColor(get_jtype())
+, drawableState(get_jtype())
+, density(get_jtype())
 {
-	return local_ref< android::text::TextPaint >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::text::TextPaint::J2CPP_CLASS_NAME>(),
-			get_method_id<android::text::TextPaint::J2CPP_CLASS_NAME, android::text::TextPaint::J2CPP_METHOD_NAME(1), android::text::TextPaint::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< android::text::TextPaint > create< android::text::TextPaint>(local_ref< android::graphics::Paint > const &a0)
+
+
+android::text::TextPaint::TextPaint(cpp_int const &a0)
+: cpp_object<android::text::TextPaint>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::text::TextPaint::J2CPP_CLASS_NAME>(),
+		get_method_id<android::text::TextPaint::J2CPP_CLASS_NAME, android::text::TextPaint::J2CPP_METHOD_NAME(1), android::text::TextPaint::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
+, bgColor(get_jtype())
+, baselineShift(get_jtype())
+, linkColor(get_jtype())
+, drawableState(get_jtype())
+, density(get_jtype())
 {
-	return local_ref< android::text::TextPaint >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::text::TextPaint::J2CPP_CLASS_NAME>(),
-			get_method_id<android::text::TextPaint::J2CPP_CLASS_NAME, android::text::TextPaint::J2CPP_METHOD_NAME(2), android::text::TextPaint::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype()
-		)
-	);
 }
+
+
+
+android::text::TextPaint::TextPaint(local_ref< android::graphics::Paint > const &a0)
+: cpp_object<android::text::TextPaint>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::text::TextPaint::J2CPP_CLASS_NAME>(),
+		get_method_id<android::text::TextPaint::J2CPP_CLASS_NAME, android::text::TextPaint::J2CPP_METHOD_NAME(2), android::text::TextPaint::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype()
+	)
+)
+, bgColor(get_jtype())
+, baselineShift(get_jtype())
+, linkColor(get_jtype())
+, drawableState(get_jtype())
+, density(get_jtype())
+{
+}
+
 
 void android::text::TextPaint::set(local_ref< android::text::TextPaint > const &a0)
 {

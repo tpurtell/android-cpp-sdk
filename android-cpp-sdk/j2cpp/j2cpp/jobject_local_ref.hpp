@@ -24,7 +24,7 @@ namespace j2cpp {
 		{
 		}
 
-		explicit jobject_local_ref(jobject_local_ref const &that)
+		jobject_local_ref(jobject_local_ref const &that)
 		: m_object(that.m_object?
 			environment::get().get_jenv()->NewLocalRef(that.m_object):
 			0
@@ -32,7 +32,7 @@ namespace j2cpp {
 		{
 		}
 
-		explicit jobject_local_ref(jobject_global_ref<jobject_type> const &that)
+		jobject_local_ref(jobject_global_ref<jobject_type> const &that)
 		: m_object(that.m_object?
 			environment::get().get_jenv()->NewLocalRef(that.m_object):
 			0
@@ -48,7 +48,7 @@ namespace j2cpp {
 		}
 
 		operator bool () const { return m_object?true:false; }
-		operator jobject_type () const { return  m_object; }
+		jobject_type get_jtype() const { return  m_object; }
 
 	private:
 		jobject_type	m_object;

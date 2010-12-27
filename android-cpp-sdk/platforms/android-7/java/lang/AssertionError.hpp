@@ -11,8 +11,10 @@
 
 
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace lang { class Error; } } }
 
 
+#include <java/lang/Error.hpp>
 #include <java/lang/Object.hpp>
 
 
@@ -37,16 +39,26 @@ namespace java { namespace lang {
 		J2CPP_DECLARE_METHOD(6)
 		J2CPP_DECLARE_METHOD(7)
 
-		AssertionError(jobject jobj)
+		explicit AssertionError(jobject jobj)
 		: cpp_object<AssertionError>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Error>() const;
+
+
+		AssertionError();
+		AssertionError(local_ref< java::lang::Object > const&);
+		AssertionError(cpp_boolean const&);
+		AssertionError(cpp_char const&);
+		AssertionError(cpp_int const&);
+		AssertionError(cpp_long const&);
+		AssertionError(cpp_float const&);
+		AssertionError(cpp_double const&);
 	}; //class AssertionError
 
 } //namespace lang
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -60,100 +72,114 @@ namespace java { namespace lang {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::lang::AssertionError > create< java::lang::AssertionError>()
+
+java::lang::AssertionError::operator local_ref<java::lang::Error>() const
 {
-	return local_ref< java::lang::AssertionError >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::lang::AssertionError::J2CPP_CLASS_NAME>(),
-			get_method_id<java::lang::AssertionError::J2CPP_CLASS_NAME, java::lang::AssertionError::J2CPP_METHOD_NAME(0), java::lang::AssertionError::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Error>(get_jtype());
 }
 
-template <>
-local_ref< java::lang::AssertionError > create< java::lang::AssertionError>(local_ref< java::lang::Object > const &a0)
+
+java::lang::AssertionError::AssertionError()
+: cpp_object<java::lang::AssertionError>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::lang::AssertionError::J2CPP_CLASS_NAME>(),
+		get_method_id<java::lang::AssertionError::J2CPP_CLASS_NAME, java::lang::AssertionError::J2CPP_METHOD_NAME(0), java::lang::AssertionError::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
 {
-	return local_ref< java::lang::AssertionError >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::lang::AssertionError::J2CPP_CLASS_NAME>(),
-			get_method_id<java::lang::AssertionError::J2CPP_CLASS_NAME, java::lang::AssertionError::J2CPP_METHOD_NAME(1), java::lang::AssertionError::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< java::lang::AssertionError > create< java::lang::AssertionError>(cpp_boolean const &a0)
+
+
+java::lang::AssertionError::AssertionError(local_ref< java::lang::Object > const &a0)
+: cpp_object<java::lang::AssertionError>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::lang::AssertionError::J2CPP_CLASS_NAME>(),
+		get_method_id<java::lang::AssertionError::J2CPP_CLASS_NAME, java::lang::AssertionError::J2CPP_METHOD_NAME(1), java::lang::AssertionError::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< java::lang::AssertionError >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::lang::AssertionError::J2CPP_CLASS_NAME>(),
-			get_method_id<java::lang::AssertionError::J2CPP_CLASS_NAME, java::lang::AssertionError::J2CPP_METHOD_NAME(2), java::lang::AssertionError::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< java::lang::AssertionError > create< java::lang::AssertionError>(cpp_char const &a0)
+
+
+java::lang::AssertionError::AssertionError(cpp_boolean const &a0)
+: cpp_object<java::lang::AssertionError>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::lang::AssertionError::J2CPP_CLASS_NAME>(),
+		get_method_id<java::lang::AssertionError::J2CPP_CLASS_NAME, java::lang::AssertionError::J2CPP_METHOD_NAME(2), java::lang::AssertionError::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< java::lang::AssertionError >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::lang::AssertionError::J2CPP_CLASS_NAME>(),
-			get_method_id<java::lang::AssertionError::J2CPP_CLASS_NAME, java::lang::AssertionError::J2CPP_METHOD_NAME(3), java::lang::AssertionError::J2CPP_METHOD_SIGNATURE(3), false>(),
-			a0.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< java::lang::AssertionError > create< java::lang::AssertionError>(cpp_int const &a0)
+
+
+java::lang::AssertionError::AssertionError(cpp_char const &a0)
+: cpp_object<java::lang::AssertionError>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::lang::AssertionError::J2CPP_CLASS_NAME>(),
+		get_method_id<java::lang::AssertionError::J2CPP_CLASS_NAME, java::lang::AssertionError::J2CPP_METHOD_NAME(3), java::lang::AssertionError::J2CPP_METHOD_SIGNATURE(3), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< java::lang::AssertionError >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::lang::AssertionError::J2CPP_CLASS_NAME>(),
-			get_method_id<java::lang::AssertionError::J2CPP_CLASS_NAME, java::lang::AssertionError::J2CPP_METHOD_NAME(4), java::lang::AssertionError::J2CPP_METHOD_SIGNATURE(4), false>(),
-			a0.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< java::lang::AssertionError > create< java::lang::AssertionError>(cpp_long const &a0)
+
+
+java::lang::AssertionError::AssertionError(cpp_int const &a0)
+: cpp_object<java::lang::AssertionError>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::lang::AssertionError::J2CPP_CLASS_NAME>(),
+		get_method_id<java::lang::AssertionError::J2CPP_CLASS_NAME, java::lang::AssertionError::J2CPP_METHOD_NAME(4), java::lang::AssertionError::J2CPP_METHOD_SIGNATURE(4), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< java::lang::AssertionError >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::lang::AssertionError::J2CPP_CLASS_NAME>(),
-			get_method_id<java::lang::AssertionError::J2CPP_CLASS_NAME, java::lang::AssertionError::J2CPP_METHOD_NAME(5), java::lang::AssertionError::J2CPP_METHOD_SIGNATURE(5), false>(),
-			a0.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< java::lang::AssertionError > create< java::lang::AssertionError>(cpp_float const &a0)
+
+
+java::lang::AssertionError::AssertionError(cpp_long const &a0)
+: cpp_object<java::lang::AssertionError>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::lang::AssertionError::J2CPP_CLASS_NAME>(),
+		get_method_id<java::lang::AssertionError::J2CPP_CLASS_NAME, java::lang::AssertionError::J2CPP_METHOD_NAME(5), java::lang::AssertionError::J2CPP_METHOD_SIGNATURE(5), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< java::lang::AssertionError >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::lang::AssertionError::J2CPP_CLASS_NAME>(),
-			get_method_id<java::lang::AssertionError::J2CPP_CLASS_NAME, java::lang::AssertionError::J2CPP_METHOD_NAME(6), java::lang::AssertionError::J2CPP_METHOD_SIGNATURE(6), false>(),
-			a0.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< java::lang::AssertionError > create< java::lang::AssertionError>(cpp_double const &a0)
+
+
+java::lang::AssertionError::AssertionError(cpp_float const &a0)
+: cpp_object<java::lang::AssertionError>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::lang::AssertionError::J2CPP_CLASS_NAME>(),
+		get_method_id<java::lang::AssertionError::J2CPP_CLASS_NAME, java::lang::AssertionError::J2CPP_METHOD_NAME(6), java::lang::AssertionError::J2CPP_METHOD_SIGNATURE(6), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< java::lang::AssertionError >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::lang::AssertionError::J2CPP_CLASS_NAME>(),
-			get_method_id<java::lang::AssertionError::J2CPP_CLASS_NAME, java::lang::AssertionError::J2CPP_METHOD_NAME(7), java::lang::AssertionError::J2CPP_METHOD_SIGNATURE(7), false>(),
-			a0.get_jtype()
-		)
-	);
 }
+
+
+
+java::lang::AssertionError::AssertionError(cpp_double const &a0)
+: cpp_object<java::lang::AssertionError>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::lang::AssertionError::J2CPP_CLASS_NAME>(),
+		get_method_id<java::lang::AssertionError::J2CPP_CLASS_NAME, java::lang::AssertionError::J2CPP_METHOD_NAME(7), java::lang::AssertionError::J2CPP_METHOD_SIGNATURE(7), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 
 J2CPP_DEFINE_CLASS(java::lang::AssertionError,"java/lang/AssertionError")

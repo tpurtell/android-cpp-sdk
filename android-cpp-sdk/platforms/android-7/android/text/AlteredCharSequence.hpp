@@ -10,11 +10,15 @@
 #define J2CPP_ANDROID_TEXT_ALTEREDCHARSEQUENCE_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class CharSequence; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace android { namespace text { class GetChars; } } }
 
 
+#include <android/text/GetChars.hpp>
 #include <java/lang/CharSequence.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -38,10 +42,15 @@ namespace android { namespace text {
 		J2CPP_DECLARE_METHOD(5)
 		J2CPP_DECLARE_METHOD(6)
 
-		AlteredCharSequence(jobject jobj)
+		explicit AlteredCharSequence(jobject jobj)
 		: cpp_object<AlteredCharSequence>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::lang::CharSequence>() const;
+		operator local_ref<android::text::GetChars>() const;
+
 
 		static local_ref< android::text::AlteredCharSequence > make(local_ref< java::lang::CharSequence > const&, local_ref< cpp_char_array<1> > const&, cpp_int const&, cpp_int const&);
 		cpp_char charAt(cpp_int const&);
@@ -53,7 +62,6 @@ namespace android { namespace text {
 
 } //namespace text
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -67,16 +75,22 @@ namespace android { namespace text {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::text::AlteredCharSequence > create< android::text::AlteredCharSequence>()
+
+android::text::AlteredCharSequence::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::text::AlteredCharSequence >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::text::AlteredCharSequence::J2CPP_CLASS_NAME>(),
-			get_method_id<android::text::AlteredCharSequence::J2CPP_CLASS_NAME, android::text::AlteredCharSequence::J2CPP_METHOD_NAME(0), android::text::AlteredCharSequence::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+android::text::AlteredCharSequence::operator local_ref<java::lang::CharSequence>() const
+{
+	return local_ref<java::lang::CharSequence>(get_jtype());
+}
+
+android::text::AlteredCharSequence::operator local_ref<android::text::GetChars>() const
+{
+	return local_ref<android::text::GetChars>(get_jtype());
+}
+
 
 local_ref< android::text::AlteredCharSequence > android::text::AlteredCharSequence::make(local_ref< java::lang::CharSequence > const &a0, local_ref< cpp_char_array<1> > const &a1, cpp_int const &a2, cpp_int const &a3)
 {

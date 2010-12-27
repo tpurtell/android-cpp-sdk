@@ -41,10 +41,13 @@ namespace java { namespace util {
 			J2CPP_DECLARE_METHOD(3)
 			J2CPP_DECLARE_METHOD(4)
 
-			Entry(jobject jobj)
+			explicit Entry(jobject jobj)
 			: cpp_object<Entry>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+
 
 			cpp_boolean equals(local_ref< java::lang::Object > const&);
 			local_ref< java::lang::Object > getKey();
@@ -79,10 +82,13 @@ namespace java { namespace util {
 
 		typedef Map_::Entry Entry;
 
-		Map(jobject jobj)
+		explicit Map(jobject jobj)
 		: cpp_object<Map>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		void clear();
 		cpp_boolean containsKey(local_ref< java::lang::Object > const&);
@@ -103,7 +109,6 @@ namespace java { namespace util {
 } //namespace util
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_UTIL_MAP_HPP_DECL
@@ -116,6 +121,12 @@ namespace java { namespace util {
 namespace j2cpp {
 
 
+
+
+java::util::Map_::Entry::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 cpp_boolean java::util::Map_::Entry::equals(local_ref< java::lang::Object > const &a0)
 {
@@ -177,6 +188,12 @@ J2CPP_DEFINE_METHOD(java::util::Map_::Entry,2,"getValue","()Ljava/lang/Object;")
 J2CPP_DEFINE_METHOD(java::util::Map_::Entry,3,"hashCode","()I")
 J2CPP_DEFINE_METHOD(java::util::Map_::Entry,4,"setValue","(Ljava/lang/Object;)Ljava/lang/Object;")
 
+
+
+java::util::Map::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 void java::util::Map::clear()
 {

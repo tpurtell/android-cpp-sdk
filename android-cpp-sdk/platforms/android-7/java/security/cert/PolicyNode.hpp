@@ -10,11 +10,13 @@
 #define J2CPP_JAVA_SECURITY_CERT_POLICYNODE_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace util { class Set; } } }
 namespace j2cpp { namespace java { namespace util { class Iterator; } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/util/Iterator.hpp>
 #include <java/util/Set.hpp>
@@ -40,10 +42,13 @@ namespace java { namespace security { namespace cert {
 		J2CPP_DECLARE_METHOD(5)
 		J2CPP_DECLARE_METHOD(6)
 
-		PolicyNode(jobject jobj)
+		explicit PolicyNode(jobject jobj)
 		: cpp_object<PolicyNode>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		local_ref< java::util::Iterator > getChildren();
 		cpp_int getDepth();
@@ -58,7 +63,6 @@ namespace java { namespace security { namespace cert {
 } //namespace security
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_SECURITY_CERT_POLICYNODE_HPP_DECL
@@ -70,6 +74,12 @@ namespace java { namespace security { namespace cert {
 
 namespace j2cpp {
 
+
+
+java::security::cert::PolicyNode::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 local_ref< java::util::Iterator > java::security::cert::PolicyNode::getChildren()
 {

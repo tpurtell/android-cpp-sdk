@@ -10,12 +10,14 @@
 #define J2CPP_ANDROID_APP_KEYGUARDMANAGER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace android { namespace app { namespace KeyguardManager_ { class OnKeyguardExitResult; } } } }
 namespace j2cpp { namespace android { namespace app { namespace KeyguardManager_ { class KeyguardLock; } } } }
 
 
 #include <android/app/KeyguardManager.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -36,10 +38,13 @@ namespace android { namespace app {
 
 			J2CPP_DECLARE_METHOD(0)
 
-			OnKeyguardExitResult(jobject jobj)
+			explicit OnKeyguardExitResult(jobject jobj)
 			: cpp_object<OnKeyguardExitResult>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+
 
 			void onKeyguardExitResult(cpp_boolean const&);
 		}; //class OnKeyguardExitResult
@@ -57,10 +62,13 @@ namespace android { namespace app {
 			J2CPP_DECLARE_METHOD(2)
 			J2CPP_DECLARE_FIELD(0)
 
-			KeyguardLock(jobject jobj)
+			explicit KeyguardLock(jobject jobj)
 			: cpp_object<KeyguardLock>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+
 
 			void disableKeyguard();
 			void reenableKeyguard();
@@ -84,10 +92,13 @@ namespace android { namespace app {
 		typedef KeyguardManager_::OnKeyguardExitResult OnKeyguardExitResult;
 		typedef KeyguardManager_::KeyguardLock KeyguardLock;
 
-		KeyguardManager(jobject jobj)
+		explicit KeyguardManager(jobject jobj)
 		: cpp_object<KeyguardManager>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		local_ref< android::app::KeyguardManager_::KeyguardLock > newKeyguardLock(local_ref< java::lang::String > const&);
 		cpp_boolean inKeyguardRestrictedInputMode();
@@ -96,7 +107,6 @@ namespace android { namespace app {
 
 } //namespace app
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -110,6 +120,12 @@ namespace android { namespace app {
 namespace j2cpp {
 
 
+
+
+android::app::KeyguardManager_::OnKeyguardExitResult::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 void android::app::KeyguardManager_::OnKeyguardExitResult::onKeyguardExitResult(cpp_boolean const &a0)
 {
@@ -126,17 +142,12 @@ void android::app::KeyguardManager_::OnKeyguardExitResult::onKeyguardExitResult(
 J2CPP_DEFINE_CLASS(android::app::KeyguardManager_::OnKeyguardExitResult,"android/app/KeyguardManager$OnKeyguardExitResult")
 J2CPP_DEFINE_METHOD(android::app::KeyguardManager_::OnKeyguardExitResult,0,"onKeyguardExitResult","(Z)V")
 
-template <>
-local_ref< android::app::KeyguardManager_::KeyguardLock > create< android::app::KeyguardManager_::KeyguardLock>(local_ref< android::app::KeyguardManager > const &a0)
+
+android::app::KeyguardManager_::KeyguardLock::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::app::KeyguardManager_::KeyguardLock >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::app::KeyguardManager_::KeyguardLock::J2CPP_CLASS_NAME>(),
-			get_method_id<android::app::KeyguardManager_::KeyguardLock::J2CPP_CLASS_NAME, android::app::KeyguardManager_::KeyguardLock::J2CPP_METHOD_NAME(0), android::app::KeyguardManager_::KeyguardLock::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
 
 void android::app::KeyguardManager_::KeyguardLock::disableKeyguard()
 {
@@ -167,16 +178,12 @@ J2CPP_DEFINE_METHOD(android::app::KeyguardManager_::KeyguardLock,2,"reenableKeyg
 J2CPP_DEFINE_FIELD(android::app::KeyguardManager_::KeyguardLock,0,"this$0","Landroid/app/KeyguardManager;")
 
 
-template <>
-local_ref< android::app::KeyguardManager > create< android::app::KeyguardManager>()
+
+android::app::KeyguardManager::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::app::KeyguardManager >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::app::KeyguardManager::J2CPP_CLASS_NAME>(),
-			get_method_id<android::app::KeyguardManager::J2CPP_CLASS_NAME, android::app::KeyguardManager::J2CPP_METHOD_NAME(0), android::app::KeyguardManager::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
 
 local_ref< android::app::KeyguardManager_::KeyguardLock > android::app::KeyguardManager::newKeyguardLock(local_ref< java::lang::String > const &a0)
 {

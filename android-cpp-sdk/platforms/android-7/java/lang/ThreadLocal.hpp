@@ -34,11 +34,15 @@ namespace java { namespace lang {
 		J2CPP_DECLARE_METHOD(3)
 		J2CPP_DECLARE_METHOD(4)
 
-		ThreadLocal(jobject jobj)
+		explicit ThreadLocal(jobject jobj)
 		: cpp_object<ThreadLocal>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		ThreadLocal();
 		local_ref< java::lang::Object > get();
 		void set(local_ref< java::lang::Object > const&);
 		void remove();
@@ -46,7 +50,6 @@ namespace java { namespace lang {
 
 } //namespace lang
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -60,16 +63,23 @@ namespace java { namespace lang {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::lang::ThreadLocal > create< java::lang::ThreadLocal>()
+
+java::lang::ThreadLocal::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::lang::ThreadLocal >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::lang::ThreadLocal::J2CPP_CLASS_NAME>(),
-			get_method_id<java::lang::ThreadLocal::J2CPP_CLASS_NAME, java::lang::ThreadLocal::J2CPP_METHOD_NAME(0), java::lang::ThreadLocal::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+java::lang::ThreadLocal::ThreadLocal()
+: cpp_object<java::lang::ThreadLocal>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::lang::ThreadLocal::J2CPP_CLASS_NAME>(),
+		get_method_id<java::lang::ThreadLocal::J2CPP_CLASS_NAME, java::lang::ThreadLocal::J2CPP_METHOD_NAME(0), java::lang::ThreadLocal::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 local_ref< java::lang::Object > java::lang::ThreadLocal::get()
 {

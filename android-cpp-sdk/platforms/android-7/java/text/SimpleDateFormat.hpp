@@ -14,6 +14,7 @@ namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class StringBuffer; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace text { class DateFormatSymbols; } } }
+namespace j2cpp { namespace java { namespace text { class DateFormat; } } }
 namespace j2cpp { namespace java { namespace text { class AttributedCharacterIterator; } } }
 namespace j2cpp { namespace java { namespace text { class ParsePosition; } } }
 namespace j2cpp { namespace java { namespace text { class FieldPosition; } } }
@@ -25,6 +26,7 @@ namespace j2cpp { namespace java { namespace util { class Date; } } }
 #include <java/lang/String.hpp>
 #include <java/lang/StringBuffer.hpp>
 #include <java/text/AttributedCharacterIterator.hpp>
+#include <java/text/DateFormat.hpp>
 #include <java/text/DateFormatSymbols.hpp>
 #include <java/text/FieldPosition.hpp>
 #include <java/text/ParsePosition.hpp>
@@ -63,11 +65,18 @@ namespace java { namespace text {
 		J2CPP_DECLARE_METHOD(16)
 		J2CPP_DECLARE_METHOD(17)
 
-		SimpleDateFormat(jobject jobj)
+		explicit SimpleDateFormat(jobject jobj)
 		: cpp_object<SimpleDateFormat>(jobj)
 		{
 		}
 
+		operator local_ref<java::text::DateFormat>() const;
+
+
+		SimpleDateFormat();
+		SimpleDateFormat(local_ref< java::lang::String > const&);
+		SimpleDateFormat(local_ref< java::lang::String > const&, local_ref< java::text::DateFormatSymbols > const&);
+		SimpleDateFormat(local_ref< java::lang::String > const&, local_ref< java::util::Locale > const&);
 		void applyLocalizedPattern(local_ref< java::lang::String > const&);
 		void applyPattern(local_ref< java::lang::String > const&);
 		local_ref< java::lang::Object > clone();
@@ -87,7 +96,6 @@ namespace java { namespace text {
 } //namespace text
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_TEXT_SIMPLEDATEFORMAT_HPP_DECL
@@ -100,52 +108,62 @@ namespace java { namespace text {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::text::SimpleDateFormat > create< java::text::SimpleDateFormat>()
+
+java::text::SimpleDateFormat::operator local_ref<java::text::DateFormat>() const
 {
-	return local_ref< java::text::SimpleDateFormat >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::text::SimpleDateFormat::J2CPP_CLASS_NAME>(),
-			get_method_id<java::text::SimpleDateFormat::J2CPP_CLASS_NAME, java::text::SimpleDateFormat::J2CPP_METHOD_NAME(0), java::text::SimpleDateFormat::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::text::DateFormat>(get_jtype());
 }
 
-template <>
-local_ref< java::text::SimpleDateFormat > create< java::text::SimpleDateFormat>(local_ref< java::lang::String > const &a0)
+
+java::text::SimpleDateFormat::SimpleDateFormat()
+: cpp_object<java::text::SimpleDateFormat>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::text::SimpleDateFormat::J2CPP_CLASS_NAME>(),
+		get_method_id<java::text::SimpleDateFormat::J2CPP_CLASS_NAME, java::text::SimpleDateFormat::J2CPP_METHOD_NAME(0), java::text::SimpleDateFormat::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
 {
-	return local_ref< java::text::SimpleDateFormat >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::text::SimpleDateFormat::J2CPP_CLASS_NAME>(),
-			get_method_id<java::text::SimpleDateFormat::J2CPP_CLASS_NAME, java::text::SimpleDateFormat::J2CPP_METHOD_NAME(1), java::text::SimpleDateFormat::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< java::text::SimpleDateFormat > create< java::text::SimpleDateFormat>(local_ref< java::lang::String > const &a0, local_ref< java::text::DateFormatSymbols > const &a1)
+
+
+java::text::SimpleDateFormat::SimpleDateFormat(local_ref< java::lang::String > const &a0)
+: cpp_object<java::text::SimpleDateFormat>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::text::SimpleDateFormat::J2CPP_CLASS_NAME>(),
+		get_method_id<java::text::SimpleDateFormat::J2CPP_CLASS_NAME, java::text::SimpleDateFormat::J2CPP_METHOD_NAME(1), java::text::SimpleDateFormat::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< java::text::SimpleDateFormat >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::text::SimpleDateFormat::J2CPP_CLASS_NAME>(),
-			get_method_id<java::text::SimpleDateFormat::J2CPP_CLASS_NAME, java::text::SimpleDateFormat::J2CPP_METHOD_NAME(2), java::text::SimpleDateFormat::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< java::text::SimpleDateFormat > create< java::text::SimpleDateFormat>(local_ref< java::lang::String > const &a0, local_ref< java::util::Locale > const &a1)
+
+
+java::text::SimpleDateFormat::SimpleDateFormat(local_ref< java::lang::String > const &a0, local_ref< java::text::DateFormatSymbols > const &a1)
+: cpp_object<java::text::SimpleDateFormat>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::text::SimpleDateFormat::J2CPP_CLASS_NAME>(),
+		get_method_id<java::text::SimpleDateFormat::J2CPP_CLASS_NAME, java::text::SimpleDateFormat::J2CPP_METHOD_NAME(2), java::text::SimpleDateFormat::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
 {
-	return local_ref< java::text::SimpleDateFormat >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::text::SimpleDateFormat::J2CPP_CLASS_NAME>(),
-			get_method_id<java::text::SimpleDateFormat::J2CPP_CLASS_NAME, java::text::SimpleDateFormat::J2CPP_METHOD_NAME(3), java::text::SimpleDateFormat::J2CPP_METHOD_SIGNATURE(3), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
 }
+
+
+
+java::text::SimpleDateFormat::SimpleDateFormat(local_ref< java::lang::String > const &a0, local_ref< java::util::Locale > const &a1)
+: cpp_object<java::text::SimpleDateFormat>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::text::SimpleDateFormat::J2CPP_CLASS_NAME>(),
+		get_method_id<java::text::SimpleDateFormat::J2CPP_CLASS_NAME, java::text::SimpleDateFormat::J2CPP_METHOD_NAME(3), java::text::SimpleDateFormat::J2CPP_METHOD_SIGNATURE(3), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
 
 void java::text::SimpleDateFormat::applyLocalizedPattern(local_ref< java::lang::String > const &a0)
 {

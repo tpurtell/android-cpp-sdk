@@ -39,11 +39,15 @@ namespace java { namespace util {
 		J2CPP_DECLARE_METHOD(6)
 		J2CPP_DECLARE_METHOD(7)
 
-		Dictionary(jobject jobj)
+		explicit Dictionary(jobject jobj)
 		: cpp_object<Dictionary>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		Dictionary();
 		local_ref< java::util::Enumeration > elements();
 		local_ref< java::lang::Object > get(local_ref< java::lang::Object > const&);
 		cpp_boolean isEmpty();
@@ -55,7 +59,6 @@ namespace java { namespace util {
 
 } //namespace util
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -69,16 +72,23 @@ namespace java { namespace util {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::util::Dictionary > create< java::util::Dictionary>()
+
+java::util::Dictionary::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::util::Dictionary >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::Dictionary::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::Dictionary::J2CPP_CLASS_NAME, java::util::Dictionary::J2CPP_METHOD_NAME(0), java::util::Dictionary::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+java::util::Dictionary::Dictionary()
+: cpp_object<java::util::Dictionary>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::util::Dictionary::J2CPP_CLASS_NAME>(),
+		get_method_id<java::util::Dictionary::J2CPP_CLASS_NAME, java::util::Dictionary::J2CPP_METHOD_NAME(0), java::util::Dictionary::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 local_ref< java::util::Enumeration > java::util::Dictionary::elements()
 {

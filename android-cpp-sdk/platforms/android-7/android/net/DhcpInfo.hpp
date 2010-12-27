@@ -10,11 +10,15 @@
 #define J2CPP_ANDROID_NET_DHCPINFO_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace android { namespace os { class Parcel; } } }
+namespace j2cpp { namespace android { namespace os { class Parcelable; } } }
 
 
 #include <android/os/Parcel.hpp>
+#include <android/os/Parcelable.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -42,18 +46,23 @@ namespace android { namespace net {
 		J2CPP_DECLARE_FIELD(5)
 		J2CPP_DECLARE_FIELD(6)
 
-		DhcpInfo(jobject jobj)
+		explicit DhcpInfo(jobject jobj)
 		: cpp_object<DhcpInfo>(jobj)
-		, ipAddress(jobj)
-		, gateway(jobj)
-		, netmask(jobj)
-		, dns1(jobj)
-		, dns2(jobj)
-		, serverAddress(jobj)
-		, leaseDuration(jobj)
+, ipAddress(jobj)
+, gateway(jobj)
+, netmask(jobj)
+, dns1(jobj)
+, dns2(jobj)
+, serverAddress(jobj)
+, leaseDuration(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<android::os::Parcelable>() const;
+
+
+		DhcpInfo();
 		local_ref< java::lang::String > toString();
 		cpp_int describeContents();
 		void writeToParcel(local_ref< android::os::Parcel > const&, cpp_int const&);
@@ -70,7 +79,6 @@ namespace android { namespace net {
 } //namespace net
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_NET_DHCPINFO_HPP_DECL
@@ -83,16 +91,35 @@ namespace android { namespace net {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::net::DhcpInfo > create< android::net::DhcpInfo>()
+
+android::net::DhcpInfo::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::net::DhcpInfo >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::net::DhcpInfo::J2CPP_CLASS_NAME>(),
-			get_method_id<android::net::DhcpInfo::J2CPP_CLASS_NAME, android::net::DhcpInfo::J2CPP_METHOD_NAME(0), android::net::DhcpInfo::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+android::net::DhcpInfo::operator local_ref<android::os::Parcelable>() const
+{
+	return local_ref<android::os::Parcelable>(get_jtype());
+}
+
+
+android::net::DhcpInfo::DhcpInfo()
+: cpp_object<android::net::DhcpInfo>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::net::DhcpInfo::J2CPP_CLASS_NAME>(),
+		get_method_id<android::net::DhcpInfo::J2CPP_CLASS_NAME, android::net::DhcpInfo::J2CPP_METHOD_NAME(0), android::net::DhcpInfo::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+, ipAddress(get_jtype())
+, gateway(get_jtype())
+, netmask(get_jtype())
+, dns1(get_jtype())
+, dns2(get_jtype())
+, serverAddress(get_jtype())
+, leaseDuration(get_jtype())
+{
+}
+
 
 local_ref< java::lang::String > android::net::DhcpInfo::toString()
 {

@@ -10,10 +10,12 @@
 #define J2CPP_JAVA_LANG_ILLEGALARGUMENTEXCEPTION_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class RuntimeException; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace lang { class Throwable; } } }
 
 
+#include <java/lang/RuntimeException.hpp>
 #include <java/lang/String.hpp>
 #include <java/lang/Throwable.hpp>
 
@@ -35,16 +37,22 @@ namespace java { namespace lang {
 		J2CPP_DECLARE_METHOD(2)
 		J2CPP_DECLARE_METHOD(3)
 
-		IllegalArgumentException(jobject jobj)
+		explicit IllegalArgumentException(jobject jobj)
 		: cpp_object<IllegalArgumentException>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::RuntimeException>() const;
+
+
+		IllegalArgumentException();
+		IllegalArgumentException(local_ref< java::lang::String > const&);
+		IllegalArgumentException(local_ref< java::lang::String > const&, local_ref< java::lang::Throwable > const&);
+		IllegalArgumentException(local_ref< java::lang::Throwable > const&);
 	}; //class IllegalArgumentException
 
 } //namespace lang
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -58,52 +66,62 @@ namespace java { namespace lang {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::lang::IllegalArgumentException > create< java::lang::IllegalArgumentException>()
+
+java::lang::IllegalArgumentException::operator local_ref<java::lang::RuntimeException>() const
 {
-	return local_ref< java::lang::IllegalArgumentException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::lang::IllegalArgumentException::J2CPP_CLASS_NAME>(),
-			get_method_id<java::lang::IllegalArgumentException::J2CPP_CLASS_NAME, java::lang::IllegalArgumentException::J2CPP_METHOD_NAME(0), java::lang::IllegalArgumentException::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::RuntimeException>(get_jtype());
 }
 
-template <>
-local_ref< java::lang::IllegalArgumentException > create< java::lang::IllegalArgumentException>(local_ref< java::lang::String > const &a0)
+
+java::lang::IllegalArgumentException::IllegalArgumentException()
+: cpp_object<java::lang::IllegalArgumentException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::lang::IllegalArgumentException::J2CPP_CLASS_NAME>(),
+		get_method_id<java::lang::IllegalArgumentException::J2CPP_CLASS_NAME, java::lang::IllegalArgumentException::J2CPP_METHOD_NAME(0), java::lang::IllegalArgumentException::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
 {
-	return local_ref< java::lang::IllegalArgumentException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::lang::IllegalArgumentException::J2CPP_CLASS_NAME>(),
-			get_method_id<java::lang::IllegalArgumentException::J2CPP_CLASS_NAME, java::lang::IllegalArgumentException::J2CPP_METHOD_NAME(1), java::lang::IllegalArgumentException::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< java::lang::IllegalArgumentException > create< java::lang::IllegalArgumentException>(local_ref< java::lang::String > const &a0, local_ref< java::lang::Throwable > const &a1)
+
+
+java::lang::IllegalArgumentException::IllegalArgumentException(local_ref< java::lang::String > const &a0)
+: cpp_object<java::lang::IllegalArgumentException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::lang::IllegalArgumentException::J2CPP_CLASS_NAME>(),
+		get_method_id<java::lang::IllegalArgumentException::J2CPP_CLASS_NAME, java::lang::IllegalArgumentException::J2CPP_METHOD_NAME(1), java::lang::IllegalArgumentException::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< java::lang::IllegalArgumentException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::lang::IllegalArgumentException::J2CPP_CLASS_NAME>(),
-			get_method_id<java::lang::IllegalArgumentException::J2CPP_CLASS_NAME, java::lang::IllegalArgumentException::J2CPP_METHOD_NAME(2), java::lang::IllegalArgumentException::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< java::lang::IllegalArgumentException > create< java::lang::IllegalArgumentException>(local_ref< java::lang::Throwable > const &a0)
+
+
+java::lang::IllegalArgumentException::IllegalArgumentException(local_ref< java::lang::String > const &a0, local_ref< java::lang::Throwable > const &a1)
+: cpp_object<java::lang::IllegalArgumentException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::lang::IllegalArgumentException::J2CPP_CLASS_NAME>(),
+		get_method_id<java::lang::IllegalArgumentException::J2CPP_CLASS_NAME, java::lang::IllegalArgumentException::J2CPP_METHOD_NAME(2), java::lang::IllegalArgumentException::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
 {
-	return local_ref< java::lang::IllegalArgumentException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::lang::IllegalArgumentException::J2CPP_CLASS_NAME>(),
-			get_method_id<java::lang::IllegalArgumentException::J2CPP_CLASS_NAME, java::lang::IllegalArgumentException::J2CPP_METHOD_NAME(3), java::lang::IllegalArgumentException::J2CPP_METHOD_SIGNATURE(3), false>(),
-			a0.get_jtype()
-		)
-	);
 }
+
+
+
+java::lang::IllegalArgumentException::IllegalArgumentException(local_ref< java::lang::Throwable > const &a0)
+: cpp_object<java::lang::IllegalArgumentException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::lang::IllegalArgumentException::J2CPP_CLASS_NAME>(),
+		get_method_id<java::lang::IllegalArgumentException::J2CPP_CLASS_NAME, java::lang::IllegalArgumentException::J2CPP_METHOD_NAME(3), java::lang::IllegalArgumentException::J2CPP_METHOD_SIGNATURE(3), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 
 J2CPP_DEFINE_CLASS(java::lang::IllegalArgumentException,"java/lang/IllegalArgumentException")

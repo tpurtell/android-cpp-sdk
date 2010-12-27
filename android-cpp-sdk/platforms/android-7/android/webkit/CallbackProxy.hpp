@@ -23,11 +23,13 @@ namespace j2cpp { namespace android { namespace webkit { class WebBackForwardLis
 namespace j2cpp { namespace android { namespace webkit { namespace WebStorage_ { class QuotaUpdater; } } } }
 namespace j2cpp { namespace android { namespace webkit { class HttpAuthHandler; } } }
 namespace j2cpp { namespace android { namespace webkit { class ValueCallback; } } }
+namespace j2cpp { namespace android { namespace os { class Handler; } } }
 namespace j2cpp { namespace android { namespace os { class Message; } } }
 
 
 #include <android/content/Context.hpp>
 #include <android/graphics/Bitmap.hpp>
+#include <android/os/Handler.hpp>
 #include <android/os/Message.hpp>
 #include <android/view/KeyEvent.hpp>
 #include <android/webkit/DownloadListener.hpp>
@@ -95,11 +97,15 @@ namespace android { namespace webkit {
 		J2CPP_DECLARE_METHOD(38)
 		J2CPP_DECLARE_METHOD(39)
 
-		CallbackProxy(jobject jobj)
+		explicit CallbackProxy(jobject jobj)
 		: cpp_object<CallbackProxy>(jobj)
 		{
 		}
 
+		operator local_ref<android::os::Handler>() const;
+
+
+		CallbackProxy(local_ref< android::content::Context > const&, local_ref< android::webkit::WebView > const&);
 		void setWebViewClient(local_ref< android::webkit::WebViewClient > const&);
 		void setWebChromeClient(local_ref< android::webkit::WebChromeClient > const&);
 		local_ref< android::webkit::WebChromeClient > getWebChromeClient();
@@ -144,7 +150,6 @@ namespace android { namespace webkit {
 } //namespace webkit
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_WEBKIT_CALLBACKPROXY_HPP_DECL
@@ -157,17 +162,24 @@ namespace android { namespace webkit {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::webkit::CallbackProxy > create< android::webkit::CallbackProxy>(local_ref< android::content::Context > const &a0, local_ref< android::webkit::WebView > const &a1)
+
+android::webkit::CallbackProxy::operator local_ref<android::os::Handler>() const
 {
-	return local_ref< android::webkit::CallbackProxy >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::webkit::CallbackProxy::J2CPP_CLASS_NAME>(),
-			get_method_id<android::webkit::CallbackProxy::J2CPP_CLASS_NAME, android::webkit::CallbackProxy::J2CPP_METHOD_NAME(0), android::webkit::CallbackProxy::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<android::os::Handler>(get_jtype());
 }
+
+
+android::webkit::CallbackProxy::CallbackProxy(local_ref< android::content::Context > const &a0, local_ref< android::webkit::WebView > const &a1)
+: cpp_object<android::webkit::CallbackProxy>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::webkit::CallbackProxy::J2CPP_CLASS_NAME>(),
+		get_method_id<android::webkit::CallbackProxy::J2CPP_CLASS_NAME, android::webkit::CallbackProxy::J2CPP_METHOD_NAME(0), android::webkit::CallbackProxy::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
 
 void android::webkit::CallbackProxy::setWebViewClient(local_ref< android::webkit::WebViewClient > const &a0)
 {

@@ -10,14 +10,24 @@
 #define J2CPP_JAVA_UTIL_LINKEDLIST_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace lang { class Cloneable; } } }
+namespace j2cpp { namespace java { namespace util { class AbstractSequentialList; } } }
 namespace j2cpp { namespace java { namespace util { class ListIterator; } } }
+namespace j2cpp { namespace java { namespace util { class Queue; } } }
 namespace j2cpp { namespace java { namespace util { class Collection; } } }
+namespace j2cpp { namespace java { namespace util { class List; } } }
 
 
+#include <java/io/Serializable.hpp>
+#include <java/lang/Cloneable.hpp>
 #include <java/lang/Object.hpp>
+#include <java/util/AbstractSequentialList.hpp>
 #include <java/util/Collection.hpp>
+#include <java/util/List.hpp>
 #include <java/util/ListIterator.hpp>
+#include <java/util/Queue.hpp>
 
 
 namespace j2cpp {
@@ -63,11 +73,20 @@ namespace java { namespace util {
 		J2CPP_DECLARE_METHOD(28)
 		J2CPP_DECLARE_METHOD(29)
 
-		LinkedList(jobject jobj)
+		explicit LinkedList(jobject jobj)
 		: cpp_object<LinkedList>(jobj)
 		{
 		}
 
+		operator local_ref<java::util::AbstractSequentialList>() const;
+		operator local_ref<java::util::List>() const;
+		operator local_ref<java::util::Queue>() const;
+		operator local_ref<java::lang::Cloneable>() const;
+		operator local_ref<java::io::Serializable>() const;
+
+
+		LinkedList();
+		LinkedList(local_ref< java::util::Collection > const&);
 		void add(cpp_int const&, local_ref< java::lang::Object > const&);
 		cpp_boolean add(local_ref< java::lang::Object > const&);
 		cpp_boolean addAll(cpp_int const&, local_ref< java::util::Collection > const&);
@@ -101,7 +120,6 @@ namespace java { namespace util {
 } //namespace util
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_UTIL_LINKEDLIST_HPP_DECL
@@ -114,28 +132,56 @@ namespace java { namespace util {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::util::LinkedList > create< java::util::LinkedList>()
+
+java::util::LinkedList::operator local_ref<java::util::AbstractSequentialList>() const
 {
-	return local_ref< java::util::LinkedList >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::LinkedList::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::LinkedList::J2CPP_CLASS_NAME, java::util::LinkedList::J2CPP_METHOD_NAME(0), java::util::LinkedList::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::util::AbstractSequentialList>(get_jtype());
 }
 
-template <>
-local_ref< java::util::LinkedList > create< java::util::LinkedList>(local_ref< java::util::Collection > const &a0)
+java::util::LinkedList::operator local_ref<java::util::List>() const
 {
-	return local_ref< java::util::LinkedList >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::LinkedList::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::LinkedList::J2CPP_CLASS_NAME, java::util::LinkedList::J2CPP_METHOD_NAME(1), java::util::LinkedList::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::util::List>(get_jtype());
 }
+
+java::util::LinkedList::operator local_ref<java::util::Queue>() const
+{
+	return local_ref<java::util::Queue>(get_jtype());
+}
+
+java::util::LinkedList::operator local_ref<java::lang::Cloneable>() const
+{
+	return local_ref<java::lang::Cloneable>(get_jtype());
+}
+
+java::util::LinkedList::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jtype());
+}
+
+
+java::util::LinkedList::LinkedList()
+: cpp_object<java::util::LinkedList>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::util::LinkedList::J2CPP_CLASS_NAME>(),
+		get_method_id<java::util::LinkedList::J2CPP_CLASS_NAME, java::util::LinkedList::J2CPP_METHOD_NAME(0), java::util::LinkedList::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
+
+
+java::util::LinkedList::LinkedList(local_ref< java::util::Collection > const &a0)
+: cpp_object<java::util::LinkedList>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::util::LinkedList::J2CPP_CLASS_NAME>(),
+		get_method_id<java::util::LinkedList::J2CPP_CLASS_NAME, java::util::LinkedList::J2CPP_METHOD_NAME(1), java::util::LinkedList::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 void java::util::LinkedList::add(cpp_int const &a0, local_ref< java::lang::Object > const &a1)
 {

@@ -10,6 +10,8 @@
 #define J2CPP_ANDROID_WEBKIT_WEBSETTINGS_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace lang { class Enum; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace android { namespace webkit { namespace WebSettings_ { class LayoutAlgorithm; } } } }
 namespace j2cpp { namespace android { namespace webkit { namespace WebSettings_ { class RenderPriority; } } } }
@@ -18,6 +20,8 @@ namespace j2cpp { namespace android { namespace webkit { namespace WebSettings_ 
 
 
 #include <android/webkit/WebSettings.hpp>
+#include <java/lang/Enum.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -45,10 +49,13 @@ namespace android { namespace webkit {
 			J2CPP_DECLARE_FIELD(2)
 			J2CPP_DECLARE_FIELD(3)
 
-			LayoutAlgorithm(jobject jobj)
+			explicit LayoutAlgorithm(jobject jobj)
 			: cpp_object<LayoutAlgorithm>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Enum>() const;
+
 
 			static local_ref< cpp_object_array<android::webkit::WebSettings_::LayoutAlgorithm, 1> > values();
 			static local_ref< android::webkit::WebSettings_::LayoutAlgorithm > valueOf(local_ref< java::lang::String > const&);
@@ -75,10 +82,13 @@ namespace android { namespace webkit {
 			J2CPP_DECLARE_FIELD(2)
 			J2CPP_DECLARE_FIELD(3)
 
-			RenderPriority(jobject jobj)
+			explicit RenderPriority(jobject jobj)
 			: cpp_object<RenderPriority>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Enum>() const;
+
 
 			static local_ref< cpp_object_array<android::webkit::WebSettings_::RenderPriority, 1> > values();
 			static local_ref< android::webkit::WebSettings_::RenderPriority > valueOf(local_ref< java::lang::String > const&);
@@ -105,10 +115,13 @@ namespace android { namespace webkit {
 			J2CPP_DECLARE_FIELD(2)
 			J2CPP_DECLARE_FIELD(3)
 
-			ZoomDensity(jobject jobj)
+			explicit ZoomDensity(jobject jobj)
 			: cpp_object<ZoomDensity>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Enum>() const;
+
 
 			static local_ref< cpp_object_array<android::webkit::WebSettings_::ZoomDensity, 1> > values();
 			static local_ref< android::webkit::WebSettings_::ZoomDensity > valueOf(local_ref< java::lang::String > const&);
@@ -137,10 +150,13 @@ namespace android { namespace webkit {
 			J2CPP_DECLARE_FIELD(4)
 			J2CPP_DECLARE_FIELD(5)
 
-			TextSize(jobject jobj)
+			explicit TextSize(jobject jobj)
 			: cpp_object<TextSize>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Enum>() const;
+
 
 			static local_ref< cpp_object_array<android::webkit::WebSettings_::TextSize, 1> > values();
 			static local_ref< android::webkit::WebSettings_::TextSize > valueOf(local_ref< java::lang::String > const&);
@@ -254,10 +270,13 @@ namespace android { namespace webkit {
 		typedef WebSettings_::ZoomDensity ZoomDensity;
 		typedef WebSettings_::TextSize TextSize;
 
-		WebSettings(jobject jobj)
+		explicit WebSettings(jobject jobj)
 		: cpp_object<WebSettings>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		void setNavDump(cpp_boolean const&);
 		cpp_boolean getNavDump();
@@ -351,7 +370,6 @@ namespace android { namespace webkit {
 } //namespace webkit
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_WEBKIT_WEBSETTINGS_HPP_DECL
@@ -364,6 +382,12 @@ namespace android { namespace webkit {
 namespace j2cpp {
 
 
+
+
+android::webkit::WebSettings_::LayoutAlgorithm::operator local_ref<java::lang::Enum>() const
+{
+	return local_ref<java::lang::Enum>(get_jtype());
+}
 
 local_ref< cpp_object_array<android::webkit::WebSettings_::LayoutAlgorithm, 1> > android::webkit::WebSettings_::LayoutAlgorithm::values()
 {
@@ -386,17 +410,7 @@ local_ref< android::webkit::WebSettings_::LayoutAlgorithm > android::webkit::Web
 	);
 }
 
-template <>
-local_ref< android::webkit::WebSettings_::LayoutAlgorithm > create< android::webkit::WebSettings_::LayoutAlgorithm>(local_ref< java::lang::String > const &a0, cpp_int const &a1)
-{
-	return local_ref< android::webkit::WebSettings_::LayoutAlgorithm >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::webkit::WebSettings_::LayoutAlgorithm::J2CPP_CLASS_NAME>(),
-			get_method_id<android::webkit::WebSettings_::LayoutAlgorithm::J2CPP_CLASS_NAME, android::webkit::WebSettings_::LayoutAlgorithm::J2CPP_METHOD_NAME(2), android::webkit::WebSettings_::LayoutAlgorithm::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
-}
+
 
 
 static_field<
@@ -431,6 +445,12 @@ J2CPP_DEFINE_FIELD(android::webkit::WebSettings_::LayoutAlgorithm,1,"NORMAL","La
 J2CPP_DEFINE_FIELD(android::webkit::WebSettings_::LayoutAlgorithm,2,"SINGLE_COLUMN","Landroid/webkit/WebSettings$LayoutAlgorithm;")
 J2CPP_DEFINE_FIELD(android::webkit::WebSettings_::LayoutAlgorithm,3,"$VALUES","[android.webkit.WebSettings.LayoutAlgorithm")
 
+
+android::webkit::WebSettings_::RenderPriority::operator local_ref<java::lang::Enum>() const
+{
+	return local_ref<java::lang::Enum>(get_jtype());
+}
+
 local_ref< cpp_object_array<android::webkit::WebSettings_::RenderPriority, 1> > android::webkit::WebSettings_::RenderPriority::values()
 {
 	return local_ref< cpp_object_array<android::webkit::WebSettings_::RenderPriority, 1> >(
@@ -452,17 +472,7 @@ local_ref< android::webkit::WebSettings_::RenderPriority > android::webkit::WebS
 	);
 }
 
-template <>
-local_ref< android::webkit::WebSettings_::RenderPriority > create< android::webkit::WebSettings_::RenderPriority>(local_ref< java::lang::String > const &a0, cpp_int const &a1)
-{
-	return local_ref< android::webkit::WebSettings_::RenderPriority >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::webkit::WebSettings_::RenderPriority::J2CPP_CLASS_NAME>(),
-			get_method_id<android::webkit::WebSettings_::RenderPriority::J2CPP_CLASS_NAME, android::webkit::WebSettings_::RenderPriority::J2CPP_METHOD_NAME(2), android::webkit::WebSettings_::RenderPriority::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
-}
+
 
 
 static_field<
@@ -497,6 +507,12 @@ J2CPP_DEFINE_FIELD(android::webkit::WebSettings_::RenderPriority,1,"LOW","Landro
 J2CPP_DEFINE_FIELD(android::webkit::WebSettings_::RenderPriority,2,"NORMAL","Landroid/webkit/WebSettings$RenderPriority;")
 J2CPP_DEFINE_FIELD(android::webkit::WebSettings_::RenderPriority,3,"$VALUES","[android.webkit.WebSettings.RenderPriority")
 
+
+android::webkit::WebSettings_::ZoomDensity::operator local_ref<java::lang::Enum>() const
+{
+	return local_ref<java::lang::Enum>(get_jtype());
+}
+
 local_ref< cpp_object_array<android::webkit::WebSettings_::ZoomDensity, 1> > android::webkit::WebSettings_::ZoomDensity::values()
 {
 	return local_ref< cpp_object_array<android::webkit::WebSettings_::ZoomDensity, 1> >(
@@ -518,17 +534,7 @@ local_ref< android::webkit::WebSettings_::ZoomDensity > android::webkit::WebSett
 	);
 }
 
-template <>
-local_ref< android::webkit::WebSettings_::ZoomDensity > create< android::webkit::WebSettings_::ZoomDensity>(local_ref< java::lang::String > const &a0, cpp_int const &a1)
-{
-	return local_ref< android::webkit::WebSettings_::ZoomDensity >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::webkit::WebSettings_::ZoomDensity::J2CPP_CLASS_NAME>(),
-			get_method_id<android::webkit::WebSettings_::ZoomDensity::J2CPP_CLASS_NAME, android::webkit::WebSettings_::ZoomDensity::J2CPP_METHOD_NAME(2), android::webkit::WebSettings_::ZoomDensity::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
-}
+
 
 
 static_field<
@@ -563,6 +569,12 @@ J2CPP_DEFINE_FIELD(android::webkit::WebSettings_::ZoomDensity,1,"FAR","Landroid/
 J2CPP_DEFINE_FIELD(android::webkit::WebSettings_::ZoomDensity,2,"MEDIUM","Landroid/webkit/WebSettings$ZoomDensity;")
 J2CPP_DEFINE_FIELD(android::webkit::WebSettings_::ZoomDensity,3,"$VALUES","[android.webkit.WebSettings.ZoomDensity")
 
+
+android::webkit::WebSettings_::TextSize::operator local_ref<java::lang::Enum>() const
+{
+	return local_ref<java::lang::Enum>(get_jtype());
+}
+
 local_ref< cpp_object_array<android::webkit::WebSettings_::TextSize, 1> > android::webkit::WebSettings_::TextSize::values()
 {
 	return local_ref< cpp_object_array<android::webkit::WebSettings_::TextSize, 1> >(
@@ -584,17 +596,7 @@ local_ref< android::webkit::WebSettings_::TextSize > android::webkit::WebSetting
 	);
 }
 
-template <>
-local_ref< android::webkit::WebSettings_::TextSize > create< android::webkit::WebSettings_::TextSize>(local_ref< java::lang::String > const &a0, cpp_int const &a1)
-{
-	return local_ref< android::webkit::WebSettings_::TextSize >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::webkit::WebSettings_::TextSize::J2CPP_CLASS_NAME>(),
-			get_method_id<android::webkit::WebSettings_::TextSize::J2CPP_CLASS_NAME, android::webkit::WebSettings_::TextSize::J2CPP_METHOD_NAME(2), android::webkit::WebSettings_::TextSize::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
-}
+
 
 
 static_field<
@@ -646,16 +648,12 @@ J2CPP_DEFINE_FIELD(android::webkit::WebSettings_::TextSize,4,"SMALLEST","Landroi
 J2CPP_DEFINE_FIELD(android::webkit::WebSettings_::TextSize,5,"$VALUES","[android.webkit.WebSettings.TextSize")
 
 
-template <>
-local_ref< android::webkit::WebSettings > create< android::webkit::WebSettings>()
+
+android::webkit::WebSettings::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::webkit::WebSettings >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::webkit::WebSettings::J2CPP_CLASS_NAME>(),
-			get_method_id<android::webkit::WebSettings::J2CPP_CLASS_NAME, android::webkit::WebSettings::J2CPP_METHOD_NAME(0), android::webkit::WebSettings::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
 
 void android::webkit::WebSettings::setNavDump(cpp_boolean const &a0)
 {

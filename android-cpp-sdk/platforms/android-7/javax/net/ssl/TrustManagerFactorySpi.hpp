@@ -10,8 +10,10 @@
 #define J2CPP_JAVAX_NET_SSL_TRUSTMANAGERFACTORYSPI_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -31,17 +33,20 @@ namespace javax { namespace net { namespace ssl {
 		J2CPP_DECLARE_METHOD(2)
 		J2CPP_DECLARE_METHOD(3)
 
-		TrustManagerFactorySpi(jobject jobj)
+		explicit TrustManagerFactorySpi(jobject jobj)
 		: cpp_object<TrustManagerFactorySpi>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		TrustManagerFactorySpi();
 	}; //class TrustManagerFactorySpi
 
 } //namespace ssl
 } //namespace net
 } //namespace javax
-
 
 } //namespace j2cpp
 
@@ -55,16 +60,23 @@ namespace javax { namespace net { namespace ssl {
 namespace j2cpp {
 
 
-template <>
-local_ref< javax::net::ssl::TrustManagerFactorySpi > create< javax::net::ssl::TrustManagerFactorySpi>()
+
+javax::net::ssl::TrustManagerFactorySpi::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< javax::net::ssl::TrustManagerFactorySpi >(
-		environment::get().get_jenv()->NewObject(
-			get_class<javax::net::ssl::TrustManagerFactorySpi::J2CPP_CLASS_NAME>(),
-			get_method_id<javax::net::ssl::TrustManagerFactorySpi::J2CPP_CLASS_NAME, javax::net::ssl::TrustManagerFactorySpi::J2CPP_METHOD_NAME(0), javax::net::ssl::TrustManagerFactorySpi::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+javax::net::ssl::TrustManagerFactorySpi::TrustManagerFactorySpi()
+: cpp_object<javax::net::ssl::TrustManagerFactorySpi>(
+	environment::get().get_jenv()->NewObject(
+		get_class<javax::net::ssl::TrustManagerFactorySpi::J2CPP_CLASS_NAME>(),
+		get_method_id<javax::net::ssl::TrustManagerFactorySpi::J2CPP_CLASS_NAME, javax::net::ssl::TrustManagerFactorySpi::J2CPP_METHOD_NAME(0), javax::net::ssl::TrustManagerFactorySpi::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 
 

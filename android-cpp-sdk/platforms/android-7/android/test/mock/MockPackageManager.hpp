@@ -15,6 +15,7 @@ namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace util { class List; } } }
 namespace j2cpp { namespace android { namespace graphics { namespace drawable { class Drawable; } } } }
 namespace j2cpp { namespace android { namespace content { namespace pm { class ActivityInfo; } } } }
+namespace j2cpp { namespace android { namespace content { namespace pm { class PackageManager; } } } }
 namespace j2cpp { namespace android { namespace content { namespace pm { class ResolveInfo; } } } }
 namespace j2cpp { namespace android { namespace content { namespace pm { class PermissionGroupInfo; } } } }
 namespace j2cpp { namespace android { namespace content { namespace pm { class PermissionInfo; } } } }
@@ -39,6 +40,7 @@ namespace j2cpp { namespace android { namespace content { class IntentFilter; } 
 #include <android/content/pm/FeatureInfo.hpp>
 #include <android/content/pm/InstrumentationInfo.hpp>
 #include <android/content/pm/PackageInfo.hpp>
+#include <android/content/pm/PackageManager.hpp>
 #include <android/content/pm/PermissionGroupInfo.hpp>
 #include <android/content/pm/PermissionInfo.hpp>
 #include <android/content/pm/ProviderInfo.hpp>
@@ -124,11 +126,15 @@ namespace android { namespace test { namespace mock {
 		J2CPP_DECLARE_METHOD(57)
 		J2CPP_DECLARE_METHOD(58)
 
-		MockPackageManager(jobject jobj)
+		explicit MockPackageManager(jobject jobj)
 		: cpp_object<MockPackageManager>(jobj)
 		{
 		}
 
+		operator local_ref<android::content::pm::PackageManager>() const;
+
+
+		MockPackageManager();
 		local_ref< android::content::pm::PackageInfo > getPackageInfo(local_ref< java::lang::String > const&, cpp_int const&);
 		local_ref< android::content::Intent > getLaunchIntentForPackage(local_ref< java::lang::String > const&);
 		local_ref< cpp_int_array<1> > getPackageGids(local_ref< java::lang::String > const&);
@@ -193,7 +199,6 @@ namespace android { namespace test { namespace mock {
 } //namespace test
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_TEST_MOCK_MOCKPACKAGEMANAGER_HPP_DECL
@@ -206,16 +211,23 @@ namespace android { namespace test { namespace mock {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::test::mock::MockPackageManager > create< android::test::mock::MockPackageManager>()
+
+android::test::mock::MockPackageManager::operator local_ref<android::content::pm::PackageManager>() const
 {
-	return local_ref< android::test::mock::MockPackageManager >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::test::mock::MockPackageManager::J2CPP_CLASS_NAME>(),
-			get_method_id<android::test::mock::MockPackageManager::J2CPP_CLASS_NAME, android::test::mock::MockPackageManager::J2CPP_METHOD_NAME(0), android::test::mock::MockPackageManager::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<android::content::pm::PackageManager>(get_jtype());
 }
+
+
+android::test::mock::MockPackageManager::MockPackageManager()
+: cpp_object<android::test::mock::MockPackageManager>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::test::mock::MockPackageManager::J2CPP_CLASS_NAME>(),
+		get_method_id<android::test::mock::MockPackageManager::J2CPP_CLASS_NAME, android::test::mock::MockPackageManager::J2CPP_METHOD_NAME(0), android::test::mock::MockPackageManager::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 local_ref< android::content::pm::PackageInfo > android::test::mock::MockPackageManager::getPackageInfo(local_ref< java::lang::String > const &a0, cpp_int const &a1)
 {

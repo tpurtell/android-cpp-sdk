@@ -10,6 +10,7 @@
 #define J2CPP_ANDROID_VIEW_FOCUSFINDER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace android { namespace graphics { class Rect; } } }
 namespace j2cpp { namespace android { namespace view { class View; } } }
 namespace j2cpp { namespace android { namespace view { class ViewGroup; } } }
@@ -18,6 +19,7 @@ namespace j2cpp { namespace android { namespace view { class ViewGroup; } } }
 #include <android/graphics/Rect.hpp>
 #include <android/view/View.hpp>
 #include <android/view/ViewGroup.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -38,10 +40,13 @@ namespace android { namespace view {
 		J2CPP_DECLARE_METHOD(3)
 		J2CPP_DECLARE_METHOD(4)
 
-		FocusFinder(jobject jobj)
+		explicit FocusFinder(jobject jobj)
 		: cpp_object<FocusFinder>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		static local_ref< android::view::FocusFinder > getInstance();
 		local_ref< android::view::View > findNextFocus(local_ref< android::view::ViewGroup > const&, local_ref< android::view::View > const&, cpp_int const&);
@@ -51,7 +56,6 @@ namespace android { namespace view {
 
 } //namespace view
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -65,16 +69,12 @@ namespace android { namespace view {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::view::FocusFinder > create< android::view::FocusFinder>()
+
+android::view::FocusFinder::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::view::FocusFinder >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::view::FocusFinder::J2CPP_CLASS_NAME>(),
-			get_method_id<android::view::FocusFinder::J2CPP_CLASS_NAME, android::view::FocusFinder::J2CPP_METHOD_NAME(0), android::view::FocusFinder::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
 
 local_ref< android::view::FocusFinder > android::view::FocusFinder::getInstance()
 {

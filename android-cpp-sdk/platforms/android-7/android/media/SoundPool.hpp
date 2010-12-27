@@ -11,6 +11,7 @@
 
 
 namespace j2cpp { namespace java { namespace io { class FileDescriptor; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace android { namespace content { namespace res { class AssetFileDescriptor; } } } }
 namespace j2cpp { namespace android { namespace content { class Context; } } }
@@ -19,6 +20,7 @@ namespace j2cpp { namespace android { namespace content { class Context; } } }
 #include <android/content/Context.hpp>
 #include <android/content/res/AssetFileDescriptor.hpp>
 #include <java/io/FileDescriptor.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -51,11 +53,15 @@ namespace android { namespace media {
 		J2CPP_DECLARE_METHOD(14)
 		J2CPP_DECLARE_METHOD(15)
 
-		SoundPool(jobject jobj)
+		explicit SoundPool(jobject jobj)
 		: cpp_object<SoundPool>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		SoundPool(cpp_int const&, cpp_int const&, cpp_int const&);
 		cpp_int load(local_ref< java::lang::String > const&, cpp_int const&);
 		cpp_int load(local_ref< android::content::Context > const&, cpp_int const&, cpp_int const&);
 		cpp_int load(local_ref< android::content::res::AssetFileDescriptor > const&, cpp_int const&);
@@ -75,7 +81,6 @@ namespace android { namespace media {
 } //namespace media
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_MEDIA_SOUNDPOOL_HPP_DECL
@@ -88,17 +93,24 @@ namespace android { namespace media {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::media::SoundPool > create< android::media::SoundPool>(cpp_int const &a0, cpp_int const &a1, cpp_int const &a2)
+
+android::media::SoundPool::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::media::SoundPool >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::media::SoundPool::J2CPP_CLASS_NAME>(),
-			get_method_id<android::media::SoundPool::J2CPP_CLASS_NAME, android::media::SoundPool::J2CPP_METHOD_NAME(0), android::media::SoundPool::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::media::SoundPool::SoundPool(cpp_int const &a0, cpp_int const &a1, cpp_int const &a2)
+: cpp_object<android::media::SoundPool>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::media::SoundPool::J2CPP_CLASS_NAME>(),
+		get_method_id<android::media::SoundPool::J2CPP_CLASS_NAME, android::media::SoundPool::J2CPP_METHOD_NAME(0), android::media::SoundPool::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
+	)
+)
+{
+}
+
 
 cpp_int android::media::SoundPool::load(local_ref< java::lang::String > const &a0, cpp_int const &a1)
 {

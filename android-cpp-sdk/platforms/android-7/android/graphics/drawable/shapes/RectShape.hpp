@@ -42,11 +42,15 @@ namespace android { namespace graphics { namespace drawable { namespace shapes {
 		J2CPP_DECLARE_METHOD(5)
 		J2CPP_DECLARE_METHOD(6)
 
-		RectShape(jobject jobj)
+		explicit RectShape(jobject jobj)
 		: cpp_object<RectShape>(jobj)
 		{
 		}
 
+		operator local_ref<android::graphics::drawable::shapes::Shape>() const;
+
+
+		RectShape();
 		void draw(local_ref< android::graphics::Canvas > const&, local_ref< android::graphics::Paint > const&);
 		local_ref< android::graphics::drawable::shapes::RectShape > clone();
 		local_ref< android::graphics::drawable::shapes::Shape > clone_1();
@@ -57,7 +61,6 @@ namespace android { namespace graphics { namespace drawable { namespace shapes {
 } //namespace drawable
 } //namespace graphics
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -71,16 +74,23 @@ namespace android { namespace graphics { namespace drawable { namespace shapes {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::graphics::drawable::shapes::RectShape > create< android::graphics::drawable::shapes::RectShape>()
+
+android::graphics::drawable::shapes::RectShape::operator local_ref<android::graphics::drawable::shapes::Shape>() const
 {
-	return local_ref< android::graphics::drawable::shapes::RectShape >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::graphics::drawable::shapes::RectShape::J2CPP_CLASS_NAME>(),
-			get_method_id<android::graphics::drawable::shapes::RectShape::J2CPP_CLASS_NAME, android::graphics::drawable::shapes::RectShape::J2CPP_METHOD_NAME(0), android::graphics::drawable::shapes::RectShape::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<android::graphics::drawable::shapes::Shape>(get_jtype());
 }
+
+
+android::graphics::drawable::shapes::RectShape::RectShape()
+: cpp_object<android::graphics::drawable::shapes::RectShape>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::graphics::drawable::shapes::RectShape::J2CPP_CLASS_NAME>(),
+		get_method_id<android::graphics::drawable::shapes::RectShape::J2CPP_CLASS_NAME, android::graphics::drawable::shapes::RectShape::J2CPP_METHOD_NAME(0), android::graphics::drawable::shapes::RectShape::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 void android::graphics::drawable::shapes::RectShape::draw(local_ref< android::graphics::Canvas > const &a0, local_ref< android::graphics::Paint > const &a1)
 {

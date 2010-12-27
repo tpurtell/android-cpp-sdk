@@ -10,10 +10,14 @@
 #define J2CPP_ORG_APACHE_HTTP_CONN_PARAMS_CONNMANAGERPARAMS_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace conn { namespace params { class ConnPerRoute; } } } } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { namespace conn { namespace params { class ConnManagerPNames; } } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace params { class HttpParams; } } } } }
 
 
+#include <java/lang/Object.hpp>
+#include <org/apache/http/conn/params/ConnManagerPNames.hpp>
 #include <org/apache/http/conn/params/ConnPerRoute.hpp>
 #include <org/apache/http/params/HttpParams.hpp>
 
@@ -39,11 +43,16 @@ namespace org { namespace apache { namespace http { namespace conn { namespace p
 		J2CPP_DECLARE_METHOD(6)
 		J2CPP_DECLARE_FIELD(0)
 
-		ConnManagerParams(jobject jobj)
+		explicit ConnManagerParams(jobject jobj)
 		: cpp_object<ConnManagerParams>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<org::apache::http::conn::params::ConnManagerPNames>() const;
+
+
+		ConnManagerParams();
 		static cpp_long getTimeout(local_ref< org::apache::http::params::HttpParams > const&);
 		static void setTimeout(local_ref< org::apache::http::params::HttpParams > const&, cpp_long const&);
 		static void setMaxConnectionsPerRoute(local_ref< org::apache::http::params::HttpParams > const&, local_ref< org::apache::http::conn::params::ConnPerRoute > const&);
@@ -60,7 +69,6 @@ namespace org { namespace apache { namespace http { namespace conn { namespace p
 } //namespace apache
 } //namespace org
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ORG_APACHE_HTTP_CONN_PARAMS_CONNMANAGERPARAMS_HPP_DECL
@@ -73,16 +81,28 @@ namespace org { namespace apache { namespace http { namespace conn { namespace p
 namespace j2cpp {
 
 
-template <>
-local_ref< org::apache::http::conn::params::ConnManagerParams > create< org::apache::http::conn::params::ConnManagerParams>()
+
+org::apache::http::conn::params::ConnManagerParams::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< org::apache::http::conn::params::ConnManagerParams >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::apache::http::conn::params::ConnManagerParams::J2CPP_CLASS_NAME>(),
-			get_method_id<org::apache::http::conn::params::ConnManagerParams::J2CPP_CLASS_NAME, org::apache::http::conn::params::ConnManagerParams::J2CPP_METHOD_NAME(0), org::apache::http::conn::params::ConnManagerParams::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+org::apache::http::conn::params::ConnManagerParams::operator local_ref<org::apache::http::conn::params::ConnManagerPNames>() const
+{
+	return local_ref<org::apache::http::conn::params::ConnManagerPNames>(get_jtype());
+}
+
+
+org::apache::http::conn::params::ConnManagerParams::ConnManagerParams()
+: cpp_object<org::apache::http::conn::params::ConnManagerParams>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::apache::http::conn::params::ConnManagerParams::J2CPP_CLASS_NAME>(),
+		get_method_id<org::apache::http::conn::params::ConnManagerParams::J2CPP_CLASS_NAME, org::apache::http::conn::params::ConnManagerParams::J2CPP_METHOD_NAME(0), org::apache::http::conn::params::ConnManagerParams::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 cpp_long org::apache::http::conn::params::ConnManagerParams::getTimeout(local_ref< org::apache::http::params::HttpParams > const &a0)
 {

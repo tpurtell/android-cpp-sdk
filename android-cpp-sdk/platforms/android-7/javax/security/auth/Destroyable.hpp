@@ -10,8 +10,10 @@
 #define J2CPP_JAVAX_SECURITY_AUTH_DESTROYABLE_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -29,10 +31,13 @@ namespace javax { namespace security { namespace auth {
 		J2CPP_DECLARE_METHOD(0)
 		J2CPP_DECLARE_METHOD(1)
 
-		Destroyable(jobject jobj)
+		explicit Destroyable(jobject jobj)
 		: cpp_object<Destroyable>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		void destroy();
 		cpp_boolean isDestroyed();
@@ -41,7 +46,6 @@ namespace javax { namespace security { namespace auth {
 } //namespace auth
 } //namespace security
 } //namespace javax
-
 
 } //namespace j2cpp
 
@@ -54,6 +58,12 @@ namespace javax { namespace security { namespace auth {
 
 namespace j2cpp {
 
+
+
+javax::security::auth::Destroyable::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 void javax::security::auth::Destroyable::destroy()
 {

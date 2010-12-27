@@ -10,10 +10,12 @@
 #define J2CPP_ANDROID_OS_IINTERFACE_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace android { namespace os { class IBinder; } } }
 
 
 #include <android/os/IBinder.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -30,17 +32,19 @@ namespace android { namespace os {
 
 		J2CPP_DECLARE_METHOD(0)
 
-		IInterface(jobject jobj)
+		explicit IInterface(jobject jobj)
 		: cpp_object<IInterface>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		local_ref< android::os::IBinder > asBinder();
 	}; //class IInterface
 
 } //namespace os
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -53,6 +57,12 @@ namespace android { namespace os {
 
 namespace j2cpp {
 
+
+
+android::os::IInterface::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 local_ref< android::os::IBinder > android::os::IInterface::asBinder()
 {

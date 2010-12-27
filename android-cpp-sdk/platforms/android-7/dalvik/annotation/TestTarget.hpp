@@ -10,12 +10,16 @@
 #define J2CPP_DALVIK_ANNOTATION_TESTTARGET_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class Class; } } }
+namespace j2cpp { namespace java { namespace lang { namespace annotation { class Annotation; } } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 
 
 #include <java/lang/Class.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
+#include <java/lang/annotation/Annotation.hpp>
 
 
 namespace j2cpp {
@@ -34,10 +38,14 @@ namespace dalvik { namespace annotation {
 		J2CPP_DECLARE_METHOD(1)
 		J2CPP_DECLARE_METHOD(2)
 
-		TestTarget(jobject jobj)
+		explicit TestTarget(jobject jobj)
 		: cpp_object<TestTarget>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::lang::annotation::Annotation>() const;
+
 
 		local_ref< java::lang::String > methodName();
 		local_ref< java::lang::String > conceptName();
@@ -46,7 +54,6 @@ namespace dalvik { namespace annotation {
 
 } //namespace annotation
 } //namespace dalvik
-
 
 } //namespace j2cpp
 
@@ -59,6 +66,17 @@ namespace dalvik { namespace annotation {
 
 namespace j2cpp {
 
+
+
+dalvik::annotation::TestTarget::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
+
+dalvik::annotation::TestTarget::operator local_ref<java::lang::annotation::Annotation>() const
+{
+	return local_ref<java::lang::annotation::Annotation>(get_jtype());
+}
 
 local_ref< java::lang::String > dalvik::annotation::TestTarget::methodName()
 {

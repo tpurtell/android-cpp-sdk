@@ -10,9 +10,11 @@
 #define J2CPP_JAVA_UTIL_NOSUCHELEMENTEXCEPTION_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class RuntimeException; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 
 
+#include <java/lang/RuntimeException.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -31,16 +33,20 @@ namespace java { namespace util {
 		J2CPP_DECLARE_METHOD(0)
 		J2CPP_DECLARE_METHOD(1)
 
-		NoSuchElementException(jobject jobj)
+		explicit NoSuchElementException(jobject jobj)
 		: cpp_object<NoSuchElementException>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::RuntimeException>() const;
+
+
+		NoSuchElementException();
+		NoSuchElementException(local_ref< java::lang::String > const&);
 	}; //class NoSuchElementException
 
 } //namespace util
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -54,28 +60,36 @@ namespace java { namespace util {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::util::NoSuchElementException > create< java::util::NoSuchElementException>()
+
+java::util::NoSuchElementException::operator local_ref<java::lang::RuntimeException>() const
 {
-	return local_ref< java::util::NoSuchElementException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::NoSuchElementException::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::NoSuchElementException::J2CPP_CLASS_NAME, java::util::NoSuchElementException::J2CPP_METHOD_NAME(0), java::util::NoSuchElementException::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::RuntimeException>(get_jtype());
 }
 
-template <>
-local_ref< java::util::NoSuchElementException > create< java::util::NoSuchElementException>(local_ref< java::lang::String > const &a0)
+
+java::util::NoSuchElementException::NoSuchElementException()
+: cpp_object<java::util::NoSuchElementException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::util::NoSuchElementException::J2CPP_CLASS_NAME>(),
+		get_method_id<java::util::NoSuchElementException::J2CPP_CLASS_NAME, java::util::NoSuchElementException::J2CPP_METHOD_NAME(0), java::util::NoSuchElementException::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
 {
-	return local_ref< java::util::NoSuchElementException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::NoSuchElementException::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::NoSuchElementException::J2CPP_CLASS_NAME, java::util::NoSuchElementException::J2CPP_METHOD_NAME(1), java::util::NoSuchElementException::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
 }
+
+
+
+java::util::NoSuchElementException::NoSuchElementException(local_ref< java::lang::String > const &a0)
+: cpp_object<java::util::NoSuchElementException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::util::NoSuchElementException::J2CPP_CLASS_NAME>(),
+		get_method_id<java::util::NoSuchElementException::J2CPP_CLASS_NAME, java::util::NoSuchElementException::J2CPP_METHOD_NAME(1), java::util::NoSuchElementException::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 
 J2CPP_DEFINE_CLASS(java::util::NoSuchElementException,"java/util/NoSuchElementException")

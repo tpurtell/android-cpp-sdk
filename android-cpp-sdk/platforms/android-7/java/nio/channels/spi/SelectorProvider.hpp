@@ -10,6 +10,7 @@
 #define J2CPP_JAVA_NIO_CHANNELS_SPI_SELECTORPROVIDER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace nio { namespace channels { class Pipe; } } } }
 namespace j2cpp { namespace java { namespace nio { namespace channels { namespace spi { class AbstractSelector; } } } } }
 namespace j2cpp { namespace java { namespace nio { namespace channels { class Channel; } } } }
@@ -18,6 +19,7 @@ namespace j2cpp { namespace java { namespace nio { namespace channels { class Se
 namespace j2cpp { namespace java { namespace nio { namespace channels { class DatagramChannel; } } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/nio/channels/Channel.hpp>
 #include <java/nio/channels/DatagramChannel.hpp>
 #include <java/nio/channels/Pipe.hpp>
@@ -47,10 +49,13 @@ namespace java { namespace nio { namespace channels { namespace spi {
 		J2CPP_DECLARE_METHOD(6)
 		J2CPP_DECLARE_METHOD(7)
 
-		SelectorProvider(jobject jobj)
+		explicit SelectorProvider(jobject jobj)
 		: cpp_object<SelectorProvider>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		static local_ref< java::nio::channels::spi::SelectorProvider > provider();
 		local_ref< java::nio::channels::DatagramChannel > openDatagramChannel();
@@ -66,7 +71,6 @@ namespace java { namespace nio { namespace channels { namespace spi {
 } //namespace nio
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_NIO_CHANNELS_SPI_SELECTORPROVIDER_HPP_DECL
@@ -79,16 +83,12 @@ namespace java { namespace nio { namespace channels { namespace spi {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::nio::channels::spi::SelectorProvider > create< java::nio::channels::spi::SelectorProvider>()
+
+java::nio::channels::spi::SelectorProvider::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::nio::channels::spi::SelectorProvider >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::nio::channels::spi::SelectorProvider::J2CPP_CLASS_NAME>(),
-			get_method_id<java::nio::channels::spi::SelectorProvider::J2CPP_CLASS_NAME, java::nio::channels::spi::SelectorProvider::J2CPP_METHOD_NAME(0), java::nio::channels::spi::SelectorProvider::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
 
 local_ref< java::nio::channels::spi::SelectorProvider > java::nio::channels::spi::SelectorProvider::provider()
 {

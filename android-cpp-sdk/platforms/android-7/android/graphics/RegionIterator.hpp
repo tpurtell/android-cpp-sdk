@@ -10,12 +10,14 @@
 #define J2CPP_ANDROID_GRAPHICS_REGIONITERATOR_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace android { namespace graphics { class Region; } } }
 namespace j2cpp { namespace android { namespace graphics { class Rect; } } }
 
 
 #include <android/graphics/Rect.hpp>
 #include <android/graphics/Region.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -34,17 +36,20 @@ namespace android { namespace graphics {
 		J2CPP_DECLARE_METHOD(1)
 		J2CPP_DECLARE_METHOD(2)
 
-		RegionIterator(jobject jobj)
+		explicit RegionIterator(jobject jobj)
 		: cpp_object<RegionIterator>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		RegionIterator(local_ref< android::graphics::Region > const&);
 		cpp_boolean next(local_ref< android::graphics::Rect > const&);
 	}; //class RegionIterator
 
 } //namespace graphics
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -58,17 +63,24 @@ namespace android { namespace graphics {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::graphics::RegionIterator > create< android::graphics::RegionIterator>(local_ref< android::graphics::Region > const &a0)
+
+android::graphics::RegionIterator::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::graphics::RegionIterator >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::graphics::RegionIterator::J2CPP_CLASS_NAME>(),
-			get_method_id<android::graphics::RegionIterator::J2CPP_CLASS_NAME, android::graphics::RegionIterator::J2CPP_METHOD_NAME(0), android::graphics::RegionIterator::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::graphics::RegionIterator::RegionIterator(local_ref< android::graphics::Region > const &a0)
+: cpp_object<android::graphics::RegionIterator>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::graphics::RegionIterator::J2CPP_CLASS_NAME>(),
+		get_method_id<android::graphics::RegionIterator::J2CPP_CLASS_NAME, android::graphics::RegionIterator::J2CPP_METHOD_NAME(0), android::graphics::RegionIterator::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 cpp_boolean android::graphics::RegionIterator::next(local_ref< android::graphics::Rect > const &a0)
 {

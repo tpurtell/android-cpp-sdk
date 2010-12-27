@@ -10,13 +10,17 @@
 #define J2CPP_ORG_APACHE_HTTP_IMPL_DEFAULTHTTPREQUESTFACTORY_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { class RequestLine; } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { class HttpRequest; } } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { class HttpRequestFactory; } } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <org/apache/http/HttpRequest.hpp>
+#include <org/apache/http/HttpRequestFactory.hpp>
 #include <org/apache/http/RequestLine.hpp>
 
 
@@ -36,11 +40,16 @@ namespace org { namespace apache { namespace http { namespace impl {
 		J2CPP_DECLARE_METHOD(1)
 		J2CPP_DECLARE_METHOD(2)
 
-		DefaultHttpRequestFactory(jobject jobj)
+		explicit DefaultHttpRequestFactory(jobject jobj)
 		: cpp_object<DefaultHttpRequestFactory>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<org::apache::http::HttpRequestFactory>() const;
+
+
+		DefaultHttpRequestFactory();
 		local_ref< org::apache::http::HttpRequest > newHttpRequest(local_ref< org::apache::http::RequestLine > const&);
 		local_ref< org::apache::http::HttpRequest > newHttpRequest(local_ref< java::lang::String > const&, local_ref< java::lang::String > const&);
 	}; //class DefaultHttpRequestFactory
@@ -49,7 +58,6 @@ namespace org { namespace apache { namespace http { namespace impl {
 } //namespace http
 } //namespace apache
 } //namespace org
-
 
 } //namespace j2cpp
 
@@ -63,16 +71,28 @@ namespace org { namespace apache { namespace http { namespace impl {
 namespace j2cpp {
 
 
-template <>
-local_ref< org::apache::http::impl::DefaultHttpRequestFactory > create< org::apache::http::impl::DefaultHttpRequestFactory>()
+
+org::apache::http::impl::DefaultHttpRequestFactory::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< org::apache::http::impl::DefaultHttpRequestFactory >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::apache::http::impl::DefaultHttpRequestFactory::J2CPP_CLASS_NAME>(),
-			get_method_id<org::apache::http::impl::DefaultHttpRequestFactory::J2CPP_CLASS_NAME, org::apache::http::impl::DefaultHttpRequestFactory::J2CPP_METHOD_NAME(0), org::apache::http::impl::DefaultHttpRequestFactory::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+org::apache::http::impl::DefaultHttpRequestFactory::operator local_ref<org::apache::http::HttpRequestFactory>() const
+{
+	return local_ref<org::apache::http::HttpRequestFactory>(get_jtype());
+}
+
+
+org::apache::http::impl::DefaultHttpRequestFactory::DefaultHttpRequestFactory()
+: cpp_object<org::apache::http::impl::DefaultHttpRequestFactory>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::apache::http::impl::DefaultHttpRequestFactory::J2CPP_CLASS_NAME>(),
+		get_method_id<org::apache::http::impl::DefaultHttpRequestFactory::J2CPP_CLASS_NAME, org::apache::http::impl::DefaultHttpRequestFactory::J2CPP_METHOD_NAME(0), org::apache::http::impl::DefaultHttpRequestFactory::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 local_ref< org::apache::http::HttpRequest > org::apache::http::impl::DefaultHttpRequestFactory::newHttpRequest(local_ref< org::apache::http::RequestLine > const &a0)
 {

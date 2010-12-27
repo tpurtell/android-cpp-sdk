@@ -10,9 +10,11 @@
 #define J2CPP_ANDROID_DATABASE_SQLEXCEPTION_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class RuntimeException; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 
 
+#include <java/lang/RuntimeException.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -31,16 +33,20 @@ namespace android { namespace database {
 		J2CPP_DECLARE_METHOD(0)
 		J2CPP_DECLARE_METHOD(1)
 
-		SQLException(jobject jobj)
+		explicit SQLException(jobject jobj)
 		: cpp_object<SQLException>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::RuntimeException>() const;
+
+
+		SQLException();
+		SQLException(local_ref< java::lang::String > const&);
 	}; //class SQLException
 
 } //namespace database
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -54,28 +60,36 @@ namespace android { namespace database {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::database::SQLException > create< android::database::SQLException>()
+
+android::database::SQLException::operator local_ref<java::lang::RuntimeException>() const
 {
-	return local_ref< android::database::SQLException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::database::SQLException::J2CPP_CLASS_NAME>(),
-			get_method_id<android::database::SQLException::J2CPP_CLASS_NAME, android::database::SQLException::J2CPP_METHOD_NAME(0), android::database::SQLException::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::RuntimeException>(get_jtype());
 }
 
-template <>
-local_ref< android::database::SQLException > create< android::database::SQLException>(local_ref< java::lang::String > const &a0)
+
+android::database::SQLException::SQLException()
+: cpp_object<android::database::SQLException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::database::SQLException::J2CPP_CLASS_NAME>(),
+		get_method_id<android::database::SQLException::J2CPP_CLASS_NAME, android::database::SQLException::J2CPP_METHOD_NAME(0), android::database::SQLException::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
 {
-	return local_ref< android::database::SQLException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::database::SQLException::J2CPP_CLASS_NAME>(),
-			get_method_id<android::database::SQLException::J2CPP_CLASS_NAME, android::database::SQLException::J2CPP_METHOD_NAME(1), android::database::SQLException::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
 }
+
+
+
+android::database::SQLException::SQLException(local_ref< java::lang::String > const &a0)
+: cpp_object<android::database::SQLException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::database::SQLException::J2CPP_CLASS_NAME>(),
+		get_method_id<android::database::SQLException::J2CPP_CLASS_NAME, android::database::SQLException::J2CPP_METHOD_NAME(1), android::database::SQLException::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 
 J2CPP_DEFINE_CLASS(android::database::SQLException,"android/database/SQLException")

@@ -10,8 +10,10 @@
 #define J2CPP_ANDROID_GRAPHICS_PIXELXORXFERMODE_HPP_DECL
 
 
+namespace j2cpp { namespace android { namespace graphics { class Xfermode; } } }
 
 
+#include <android/graphics/Xfermode.hpp>
 
 
 namespace j2cpp {
@@ -28,16 +30,19 @@ namespace android { namespace graphics {
 
 		J2CPP_DECLARE_METHOD(0)
 
-		PixelXorXfermode(jobject jobj)
+		explicit PixelXorXfermode(jobject jobj)
 		: cpp_object<PixelXorXfermode>(jobj)
 		{
 		}
 
+		operator local_ref<android::graphics::Xfermode>() const;
+
+
+		PixelXorXfermode(cpp_int const&);
 	}; //class PixelXorXfermode
 
 } //namespace graphics
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -51,17 +56,24 @@ namespace android { namespace graphics {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::graphics::PixelXorXfermode > create< android::graphics::PixelXorXfermode>(cpp_int const &a0)
+
+android::graphics::PixelXorXfermode::operator local_ref<android::graphics::Xfermode>() const
 {
-	return local_ref< android::graphics::PixelXorXfermode >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::graphics::PixelXorXfermode::J2CPP_CLASS_NAME>(),
-			get_method_id<android::graphics::PixelXorXfermode::J2CPP_CLASS_NAME, android::graphics::PixelXorXfermode::J2CPP_METHOD_NAME(0), android::graphics::PixelXorXfermode::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<android::graphics::Xfermode>(get_jtype());
 }
+
+
+android::graphics::PixelXorXfermode::PixelXorXfermode(cpp_int const &a0)
+: cpp_object<android::graphics::PixelXorXfermode>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::graphics::PixelXorXfermode::J2CPP_CLASS_NAME>(),
+		get_method_id<android::graphics::PixelXorXfermode::J2CPP_CLASS_NAME, android::graphics::PixelXorXfermode::J2CPP_METHOD_NAME(0), android::graphics::PixelXorXfermode::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 
 J2CPP_DEFINE_CLASS(android::graphics::PixelXorXfermode,"android/graphics/PixelXorXfermode")

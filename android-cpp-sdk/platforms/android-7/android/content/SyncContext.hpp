@@ -10,12 +10,14 @@
 #define J2CPP_ANDROID_CONTENT_SYNCCONTEXT_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace android { namespace content { class SyncResult; } } }
 namespace j2cpp { namespace android { namespace os { class IBinder; } } }
 
 
 #include <android/content/SyncResult.hpp>
 #include <android/os/IBinder.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -34,10 +36,13 @@ namespace android { namespace content {
 		J2CPP_DECLARE_METHOD(1)
 		J2CPP_DECLARE_METHOD(2)
 
-		SyncContext(jobject jobj)
+		explicit SyncContext(jobject jobj)
 		: cpp_object<SyncContext>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		void onFinished(local_ref< android::content::SyncResult > const&);
 		local_ref< android::os::IBinder > getSyncContextBinder();
@@ -45,7 +50,6 @@ namespace android { namespace content {
 
 } //namespace content
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -59,16 +63,12 @@ namespace android { namespace content {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::content::SyncContext > create< android::content::SyncContext>()
+
+android::content::SyncContext::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::content::SyncContext >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::content::SyncContext::J2CPP_CLASS_NAME>(),
-			get_method_id<android::content::SyncContext::J2CPP_CLASS_NAME, android::content::SyncContext::J2CPP_METHOD_NAME(0), android::content::SyncContext::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
 
 void android::content::SyncContext::onFinished(local_ref< android::content::SyncResult > const &a0)
 {

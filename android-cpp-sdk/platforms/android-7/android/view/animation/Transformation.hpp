@@ -10,11 +10,13 @@
 #define J2CPP_ANDROID_VIEW_ANIMATION_TRANSFORMATION_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace android { namespace graphics { class Matrix; } } }
 
 
 #include <android/graphics/Matrix.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -49,11 +51,15 @@ namespace android { namespace view { namespace animation {
 		J2CPP_DECLARE_FIELD(5)
 		J2CPP_DECLARE_FIELD(6)
 
-		Transformation(jobject jobj)
+		explicit Transformation(jobject jobj)
 		: cpp_object<Transformation>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		Transformation();
 		void clear();
 		cpp_int getTransformationType();
 		void setTransformationType(cpp_int const&);
@@ -75,7 +81,6 @@ namespace android { namespace view { namespace animation {
 } //namespace view
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_VIEW_ANIMATION_TRANSFORMATION_HPP_DECL
@@ -88,16 +93,23 @@ namespace android { namespace view { namespace animation {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::view::animation::Transformation > create< android::view::animation::Transformation>()
+
+android::view::animation::Transformation::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::view::animation::Transformation >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::view::animation::Transformation::J2CPP_CLASS_NAME>(),
-			get_method_id<android::view::animation::Transformation::J2CPP_CLASS_NAME, android::view::animation::Transformation::J2CPP_METHOD_NAME(0), android::view::animation::Transformation::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::view::animation::Transformation::Transformation()
+: cpp_object<android::view::animation::Transformation>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::view::animation::Transformation::J2CPP_CLASS_NAME>(),
+		get_method_id<android::view::animation::Transformation::J2CPP_CLASS_NAME, android::view::animation::Transformation::J2CPP_METHOD_NAME(0), android::view::animation::Transformation::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 void android::view::animation::Transformation::clear()
 {

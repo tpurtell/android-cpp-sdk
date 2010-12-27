@@ -12,8 +12,10 @@
 
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace android { namespace text { class Spannable; } } }
+namespace j2cpp { namespace android { namespace text { class NoCopySpan; } } }
 
 
+#include <android/text/NoCopySpan.hpp>
 #include <android/text/Spannable.hpp>
 #include <java/lang/Object.hpp>
 
@@ -34,10 +36,14 @@ namespace android { namespace text {
 		J2CPP_DECLARE_METHOD(1)
 		J2CPP_DECLARE_METHOD(2)
 
-		SpanWatcher(jobject jobj)
+		explicit SpanWatcher(jobject jobj)
 		: cpp_object<SpanWatcher>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<android::text::NoCopySpan>() const;
+
 
 		void onSpanAdded(local_ref< android::text::Spannable > const&, local_ref< java::lang::Object > const&, cpp_int const&, cpp_int const&);
 		void onSpanRemoved(local_ref< android::text::Spannable > const&, local_ref< java::lang::Object > const&, cpp_int const&, cpp_int const&);
@@ -46,7 +52,6 @@ namespace android { namespace text {
 
 } //namespace text
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -59,6 +64,17 @@ namespace android { namespace text {
 
 namespace j2cpp {
 
+
+
+android::text::SpanWatcher::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
+
+android::text::SpanWatcher::operator local_ref<android::text::NoCopySpan>() const
+{
+	return local_ref<android::text::NoCopySpan>(get_jtype());
+}
 
 void android::text::SpanWatcher::onSpanAdded(local_ref< android::text::Spannable > const &a0, local_ref< java::lang::Object > const &a1, cpp_int const &a2, cpp_int const &a3)
 {

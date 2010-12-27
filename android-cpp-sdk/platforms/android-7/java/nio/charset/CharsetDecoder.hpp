@@ -10,6 +10,7 @@
 #define J2CPP_JAVA_NIO_CHARSET_CHARSETDECODER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace nio { class CharBuffer; } } }
 namespace j2cpp { namespace java { namespace nio { class ByteBuffer; } } }
@@ -18,6 +19,7 @@ namespace j2cpp { namespace java { namespace nio { namespace charset { class Cha
 namespace j2cpp { namespace java { namespace nio { namespace charset { class CodingErrorAction; } } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/nio/ByteBuffer.hpp>
 #include <java/nio/CharBuffer.hpp>
@@ -62,10 +64,13 @@ namespace java { namespace nio { namespace charset {
 		J2CPP_DECLARE_METHOD(21)
 		J2CPP_DECLARE_METHOD(22)
 
-		CharsetDecoder(jobject jobj)
+		explicit CharsetDecoder(jobject jobj)
 		: cpp_object<CharsetDecoder>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		cpp_float averageCharsPerByte();
 		local_ref< java::nio::charset::Charset > charset();
@@ -89,7 +94,6 @@ namespace java { namespace nio { namespace charset {
 } //namespace nio
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_NIO_CHARSET_CHARSETDECODER_HPP_DECL
@@ -102,17 +106,12 @@ namespace java { namespace nio { namespace charset {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::nio::charset::CharsetDecoder > create< java::nio::charset::CharsetDecoder>(local_ref< java::nio::charset::Charset > const &a0, cpp_float const &a1, cpp_float const &a2)
+
+java::nio::charset::CharsetDecoder::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::nio::charset::CharsetDecoder >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::nio::charset::CharsetDecoder::J2CPP_CLASS_NAME>(),
-			get_method_id<java::nio::charset::CharsetDecoder::J2CPP_CLASS_NAME, java::nio::charset::CharsetDecoder::J2CPP_METHOD_NAME(0), java::nio::charset::CharsetDecoder::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
 
 cpp_float java::nio::charset::CharsetDecoder::averageCharsPerByte()
 {

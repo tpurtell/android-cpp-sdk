@@ -10,8 +10,10 @@
 #define J2CPP_DALVIK_SYSTEM_VMRUNTIME_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -36,10 +38,13 @@ namespace dalvik { namespace system {
 		J2CPP_DECLARE_METHOD(7)
 		J2CPP_DECLARE_METHOD(8)
 
-		VMRuntime(jobject jobj)
+		explicit VMRuntime(jobject jobj)
 		: cpp_object<VMRuntime>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		static local_ref< dalvik::system::VMRuntime > getRuntime();
 		cpp_float getTargetHeapUtilization();
@@ -54,7 +59,6 @@ namespace dalvik { namespace system {
 } //namespace system
 } //namespace dalvik
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_DALVIK_SYSTEM_VMRUNTIME_HPP_DECL
@@ -67,16 +71,12 @@ namespace dalvik { namespace system {
 namespace j2cpp {
 
 
-template <>
-local_ref< dalvik::system::VMRuntime > create< dalvik::system::VMRuntime>()
+
+dalvik::system::VMRuntime::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< dalvik::system::VMRuntime >(
-		environment::get().get_jenv()->NewObject(
-			get_class<dalvik::system::VMRuntime::J2CPP_CLASS_NAME>(),
-			get_method_id<dalvik::system::VMRuntime::J2CPP_CLASS_NAME, dalvik::system::VMRuntime::J2CPP_METHOD_NAME(0), dalvik::system::VMRuntime::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
 
 local_ref< dalvik::system::VMRuntime > dalvik::system::VMRuntime::getRuntime()
 {

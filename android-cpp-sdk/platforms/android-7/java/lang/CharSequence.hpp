@@ -10,9 +10,11 @@
 #define J2CPP_JAVA_LANG_CHARSEQUENCE_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -33,10 +35,13 @@ namespace java { namespace lang {
 		J2CPP_DECLARE_METHOD(2)
 		J2CPP_DECLARE_METHOD(3)
 
-		CharSequence(jobject jobj)
+		explicit CharSequence(jobject jobj)
 		: cpp_object<CharSequence>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		cpp_int length();
 		cpp_char charAt(cpp_int const&);
@@ -46,7 +51,6 @@ namespace java { namespace lang {
 
 } //namespace lang
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -59,6 +63,12 @@ namespace java { namespace lang {
 
 namespace j2cpp {
 
+
+
+java::lang::CharSequence::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 cpp_int java::lang::CharSequence::length()
 {

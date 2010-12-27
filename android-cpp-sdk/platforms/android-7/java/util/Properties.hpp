@@ -17,6 +17,7 @@ namespace j2cpp { namespace java { namespace io { class OutputStream; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace util { class Enumeration; } } }
+namespace j2cpp { namespace java { namespace util { class Hashtable; } } }
 
 
 #include <java/io/InputStream.hpp>
@@ -26,6 +27,7 @@ namespace j2cpp { namespace java { namespace util { class Enumeration; } } }
 #include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/util/Enumeration.hpp>
+#include <java/util/Hashtable.hpp>
 
 
 namespace j2cpp {
@@ -56,11 +58,16 @@ namespace java { namespace util {
 		J2CPP_DECLARE_METHOD(13)
 		J2CPP_DECLARE_FIELD(0)
 
-		Properties(jobject jobj)
+		explicit Properties(jobject jobj)
 		: cpp_object<Properties>(jobj)
 		{
 		}
 
+		operator local_ref<java::util::Hashtable>() const;
+
+
+		Properties();
+		Properties(local_ref< java::util::Properties > const&);
 		local_ref< java::lang::String > getProperty(local_ref< java::lang::String > const&);
 		local_ref< java::lang::String > getProperty(local_ref< java::lang::String > const&, local_ref< java::lang::String > const&);
 		void list(local_ref< java::io::PrintStream > const&);
@@ -79,7 +86,6 @@ namespace java { namespace util {
 } //namespace util
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_UTIL_PROPERTIES_HPP_DECL
@@ -92,28 +98,36 @@ namespace java { namespace util {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::util::Properties > create< java::util::Properties>()
+
+java::util::Properties::operator local_ref<java::util::Hashtable>() const
 {
-	return local_ref< java::util::Properties >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::Properties::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::Properties::J2CPP_CLASS_NAME, java::util::Properties::J2CPP_METHOD_NAME(0), java::util::Properties::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::util::Hashtable>(get_jtype());
 }
 
-template <>
-local_ref< java::util::Properties > create< java::util::Properties>(local_ref< java::util::Properties > const &a0)
+
+java::util::Properties::Properties()
+: cpp_object<java::util::Properties>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::util::Properties::J2CPP_CLASS_NAME>(),
+		get_method_id<java::util::Properties::J2CPP_CLASS_NAME, java::util::Properties::J2CPP_METHOD_NAME(0), java::util::Properties::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
 {
-	return local_ref< java::util::Properties >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::Properties::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::Properties::J2CPP_CLASS_NAME, java::util::Properties::J2CPP_METHOD_NAME(1), java::util::Properties::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
 }
+
+
+
+java::util::Properties::Properties(local_ref< java::util::Properties > const &a0)
+: cpp_object<java::util::Properties>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::util::Properties::J2CPP_CLASS_NAME>(),
+		get_method_id<java::util::Properties::J2CPP_CLASS_NAME, java::util::Properties::J2CPP_METHOD_NAME(1), java::util::Properties::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 local_ref< java::lang::String > java::util::Properties::getProperty(local_ref< java::lang::String > const &a0)
 {

@@ -11,12 +11,16 @@
 
 
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace lang { class Comparable; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace nio { class Buffer; } } }
 namespace j2cpp { namespace java { namespace nio { class ByteOrder; } } }
 
 
+#include <java/lang/Comparable.hpp>
 #include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
+#include <java/nio/Buffer.hpp>
 #include <java/nio/ByteOrder.hpp>
 
 
@@ -60,10 +64,14 @@ namespace java { namespace nio {
 		J2CPP_DECLARE_METHOD(25)
 		J2CPP_DECLARE_METHOD(26)
 
-		IntBuffer(jobject jobj)
+		explicit IntBuffer(jobject jobj)
 		: cpp_object<IntBuffer>(jobj)
 		{
 		}
+
+		operator local_ref<java::nio::Buffer>() const;
+		operator local_ref<java::lang::Comparable>() const;
+
 
 		static local_ref< java::nio::IntBuffer > allocate(cpp_int const&);
 		static local_ref< java::nio::IntBuffer > wrap(local_ref< cpp_int_array<1> > const&);
@@ -96,7 +104,6 @@ namespace java { namespace nio {
 } //namespace nio
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_NIO_INTBUFFER_HPP_DECL
@@ -109,16 +116,17 @@ namespace java { namespace nio {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::nio::IntBuffer > create< java::nio::IntBuffer>()
+
+java::nio::IntBuffer::operator local_ref<java::nio::Buffer>() const
 {
-	return local_ref< java::nio::IntBuffer >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::nio::IntBuffer::J2CPP_CLASS_NAME>(),
-			get_method_id<java::nio::IntBuffer::J2CPP_CLASS_NAME, java::nio::IntBuffer::J2CPP_METHOD_NAME(0), java::nio::IntBuffer::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::nio::Buffer>(get_jtype());
 }
+
+java::nio::IntBuffer::operator local_ref<java::lang::Comparable>() const
+{
+	return local_ref<java::lang::Comparable>(get_jtype());
+}
+
 
 local_ref< java::nio::IntBuffer > java::nio::IntBuffer::allocate(cpp_int const &a0)
 {

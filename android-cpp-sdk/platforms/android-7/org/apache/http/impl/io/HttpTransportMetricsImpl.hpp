@@ -10,8 +10,12 @@
 #define J2CPP_ORG_APACHE_HTTP_IMPL_IO_HTTPTRANSPORTMETRICSIMPL_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { namespace io { class HttpTransportMetrics; } } } } }
 
 
+#include <java/lang/Object.hpp>
+#include <org/apache/http/io/HttpTransportMetrics.hpp>
 
 
 namespace j2cpp {
@@ -32,11 +36,16 @@ namespace org { namespace apache { namespace http { namespace impl { namespace i
 		J2CPP_DECLARE_METHOD(3)
 		J2CPP_DECLARE_METHOD(4)
 
-		HttpTransportMetricsImpl(jobject jobj)
+		explicit HttpTransportMetricsImpl(jobject jobj)
 		: cpp_object<HttpTransportMetricsImpl>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<org::apache::http::io::HttpTransportMetrics>() const;
+
+
+		HttpTransportMetricsImpl();
 		cpp_long getBytesTransferred();
 		void setBytesTransferred(cpp_long const&);
 		void incrementBytesTransferred(cpp_long const&);
@@ -48,7 +57,6 @@ namespace org { namespace apache { namespace http { namespace impl { namespace i
 } //namespace http
 } //namespace apache
 } //namespace org
-
 
 } //namespace j2cpp
 
@@ -62,16 +70,28 @@ namespace org { namespace apache { namespace http { namespace impl { namespace i
 namespace j2cpp {
 
 
-template <>
-local_ref< org::apache::http::impl::io::HttpTransportMetricsImpl > create< org::apache::http::impl::io::HttpTransportMetricsImpl>()
+
+org::apache::http::impl::io::HttpTransportMetricsImpl::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< org::apache::http::impl::io::HttpTransportMetricsImpl >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::apache::http::impl::io::HttpTransportMetricsImpl::J2CPP_CLASS_NAME>(),
-			get_method_id<org::apache::http::impl::io::HttpTransportMetricsImpl::J2CPP_CLASS_NAME, org::apache::http::impl::io::HttpTransportMetricsImpl::J2CPP_METHOD_NAME(0), org::apache::http::impl::io::HttpTransportMetricsImpl::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+org::apache::http::impl::io::HttpTransportMetricsImpl::operator local_ref<org::apache::http::io::HttpTransportMetrics>() const
+{
+	return local_ref<org::apache::http::io::HttpTransportMetrics>(get_jtype());
+}
+
+
+org::apache::http::impl::io::HttpTransportMetricsImpl::HttpTransportMetricsImpl()
+: cpp_object<org::apache::http::impl::io::HttpTransportMetricsImpl>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::apache::http::impl::io::HttpTransportMetricsImpl::J2CPP_CLASS_NAME>(),
+		get_method_id<org::apache::http::impl::io::HttpTransportMetricsImpl::J2CPP_CLASS_NAME, org::apache::http::impl::io::HttpTransportMetricsImpl::J2CPP_METHOD_NAME(0), org::apache::http::impl::io::HttpTransportMetricsImpl::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 cpp_long org::apache::http::impl::io::HttpTransportMetricsImpl::getBytesTransferred()
 {

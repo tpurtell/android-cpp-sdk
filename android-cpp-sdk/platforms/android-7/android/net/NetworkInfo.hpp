@@ -10,14 +10,20 @@
 #define J2CPP_ANDROID_NET_NETWORKINFO_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace lang { class Enum; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace android { namespace net { namespace NetworkInfo_ { class State; } } } }
 namespace j2cpp { namespace android { namespace net { namespace NetworkInfo_ { class DetailedState; } } } }
 namespace j2cpp { namespace android { namespace os { class Parcel; } } }
+namespace j2cpp { namespace android { namespace os { class Parcelable; } } }
 
 
 #include <android/net/NetworkInfo.hpp>
 #include <android/os/Parcel.hpp>
+#include <android/os/Parcelable.hpp>
+#include <java/lang/Enum.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -48,10 +54,13 @@ namespace android { namespace net {
 			J2CPP_DECLARE_FIELD(5)
 			J2CPP_DECLARE_FIELD(6)
 
-			State(jobject jobj)
+			explicit State(jobject jobj)
 			: cpp_object<State>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Enum>() const;
+
 
 			static local_ref< cpp_object_array<android::net::NetworkInfo_::State, 1> > values();
 			static local_ref< android::net::NetworkInfo_::State > valueOf(local_ref< java::lang::String > const&);
@@ -88,10 +97,13 @@ namespace android { namespace net {
 			J2CPP_DECLARE_FIELD(9)
 			J2CPP_DECLARE_FIELD(10)
 
-			DetailedState(jobject jobj)
+			explicit DetailedState(jobject jobj)
 			: cpp_object<DetailedState>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Enum>() const;
+
 
 			static local_ref< cpp_object_array<android::net::NetworkInfo_::DetailedState, 1> > values();
 			static local_ref< android::net::NetworkInfo_::DetailedState > valueOf(local_ref< java::lang::String > const&);
@@ -138,10 +150,14 @@ namespace android { namespace net {
 		typedef NetworkInfo_::State State;
 		typedef NetworkInfo_::DetailedState DetailedState;
 
-		NetworkInfo(jobject jobj)
+		explicit NetworkInfo(jobject jobj)
 		: cpp_object<NetworkInfo>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<android::os::Parcelable>() const;
+
 
 		cpp_int getType();
 		cpp_int getSubtype();
@@ -164,7 +180,6 @@ namespace android { namespace net {
 } //namespace net
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_NET_NETWORKINFO_HPP_DECL
@@ -177,6 +192,12 @@ namespace android { namespace net {
 namespace j2cpp {
 
 
+
+
+android::net::NetworkInfo_::State::operator local_ref<java::lang::Enum>() const
+{
+	return local_ref<java::lang::Enum>(get_jtype());
+}
 
 local_ref< cpp_object_array<android::net::NetworkInfo_::State, 1> > android::net::NetworkInfo_::State::values()
 {
@@ -199,17 +220,7 @@ local_ref< android::net::NetworkInfo_::State > android::net::NetworkInfo_::State
 	);
 }
 
-template <>
-local_ref< android::net::NetworkInfo_::State > create< android::net::NetworkInfo_::State>(local_ref< java::lang::String > const &a0, cpp_int const &a1)
-{
-	return local_ref< android::net::NetworkInfo_::State >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::net::NetworkInfo_::State::J2CPP_CLASS_NAME>(),
-			get_method_id<android::net::NetworkInfo_::State::J2CPP_CLASS_NAME, android::net::NetworkInfo_::State::J2CPP_METHOD_NAME(2), android::net::NetworkInfo_::State::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
-}
+
 
 
 static_field<
@@ -268,6 +279,12 @@ J2CPP_DEFINE_FIELD(android::net::NetworkInfo_::State,4,"SUSPENDED","Landroid/net
 J2CPP_DEFINE_FIELD(android::net::NetworkInfo_::State,5,"UNKNOWN","Landroid/net/NetworkInfo$State;")
 J2CPP_DEFINE_FIELD(android::net::NetworkInfo_::State,6,"$VALUES","[android.net.NetworkInfo.State")
 
+
+android::net::NetworkInfo_::DetailedState::operator local_ref<java::lang::Enum>() const
+{
+	return local_ref<java::lang::Enum>(get_jtype());
+}
+
 local_ref< cpp_object_array<android::net::NetworkInfo_::DetailedState, 1> > android::net::NetworkInfo_::DetailedState::values()
 {
 	return local_ref< cpp_object_array<android::net::NetworkInfo_::DetailedState, 1> >(
@@ -289,17 +306,7 @@ local_ref< android::net::NetworkInfo_::DetailedState > android::net::NetworkInfo
 	);
 }
 
-template <>
-local_ref< android::net::NetworkInfo_::DetailedState > create< android::net::NetworkInfo_::DetailedState>(local_ref< java::lang::String > const &a0, cpp_int const &a1)
-{
-	return local_ref< android::net::NetworkInfo_::DetailedState >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::net::NetworkInfo_::DetailedState::J2CPP_CLASS_NAME>(),
-			get_method_id<android::net::NetworkInfo_::DetailedState::J2CPP_CLASS_NAME, android::net::NetworkInfo_::DetailedState::J2CPP_METHOD_NAME(2), android::net::NetworkInfo_::DetailedState::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
-}
+
 
 
 static_field<
@@ -391,16 +398,17 @@ J2CPP_DEFINE_FIELD(android::net::NetworkInfo_::DetailedState,9,"SUSPENDED","Land
 J2CPP_DEFINE_FIELD(android::net::NetworkInfo_::DetailedState,10,"$VALUES","[android.net.NetworkInfo.DetailedState")
 
 
-template <>
-local_ref< android::net::NetworkInfo > create< android::net::NetworkInfo>()
+
+android::net::NetworkInfo::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::net::NetworkInfo >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::net::NetworkInfo::J2CPP_CLASS_NAME>(),
-			get_method_id<android::net::NetworkInfo::J2CPP_CLASS_NAME, android::net::NetworkInfo::J2CPP_METHOD_NAME(0), android::net::NetworkInfo::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+android::net::NetworkInfo::operator local_ref<android::os::Parcelable>() const
+{
+	return local_ref<android::os::Parcelable>(get_jtype());
+}
+
 
 cpp_int android::net::NetworkInfo::getType()
 {

@@ -10,6 +10,7 @@
 #define J2CPP_ANDROID_VIEW_INPUTMETHOD_INPUTMETHODMANAGER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace util { class List; } } }
 namespace j2cpp { namespace android { namespace view { class View; } } }
@@ -26,6 +27,7 @@ namespace j2cpp { namespace android { namespace os { class ResultReceiver; } } }
 #include <android/view/View.hpp>
 #include <android/view/inputmethod/CompletionInfo.hpp>
 #include <android/view/inputmethod/ExtractedText.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/util/List.hpp>
 
@@ -77,10 +79,13 @@ namespace android { namespace view { namespace inputmethod {
 		J2CPP_DECLARE_FIELD(6)
 		J2CPP_DECLARE_FIELD(7)
 
-		InputMethodManager(jobject jobj)
+		explicit InputMethodManager(jobject jobj)
 		: cpp_object<InputMethodManager>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		local_ref< java::util::List > getInputMethodList();
 		local_ref< java::util::List > getEnabledInputMethodList();
@@ -122,7 +127,6 @@ namespace android { namespace view { namespace inputmethod {
 } //namespace view
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_VIEW_INPUTMETHOD_INPUTMETHODMANAGER_HPP_DECL
@@ -135,16 +139,12 @@ namespace android { namespace view { namespace inputmethod {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::view::inputmethod::InputMethodManager > create< android::view::inputmethod::InputMethodManager>()
+
+android::view::inputmethod::InputMethodManager::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::view::inputmethod::InputMethodManager >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::view::inputmethod::InputMethodManager::J2CPP_CLASS_NAME>(),
-			get_method_id<android::view::inputmethod::InputMethodManager::J2CPP_CLASS_NAME, android::view::inputmethod::InputMethodManager::J2CPP_METHOD_NAME(0), android::view::inputmethod::InputMethodManager::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
 
 local_ref< java::util::List > android::view::inputmethod::InputMethodManager::getInputMethodList()
 {

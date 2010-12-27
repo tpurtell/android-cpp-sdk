@@ -10,8 +10,10 @@
 #define J2CPP_JAVA_NET_URLSTREAMHANDLER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -40,16 +42,19 @@ namespace java { namespace net {
 		J2CPP_DECLARE_METHOD(11)
 		J2CPP_DECLARE_METHOD(12)
 
-		URLStreamHandler(jobject jobj)
+		explicit URLStreamHandler(jobject jobj)
 		: cpp_object<URLStreamHandler>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		URLStreamHandler();
 	}; //class URLStreamHandler
 
 } //namespace net
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -63,16 +68,23 @@ namespace java { namespace net {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::net::URLStreamHandler > create< java::net::URLStreamHandler>()
+
+java::net::URLStreamHandler::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::net::URLStreamHandler >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::net::URLStreamHandler::J2CPP_CLASS_NAME>(),
-			get_method_id<java::net::URLStreamHandler::J2CPP_CLASS_NAME, java::net::URLStreamHandler::J2CPP_METHOD_NAME(0), java::net::URLStreamHandler::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+java::net::URLStreamHandler::URLStreamHandler()
+: cpp_object<java::net::URLStreamHandler>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::net::URLStreamHandler::J2CPP_CLASS_NAME>(),
+		get_method_id<java::net::URLStreamHandler::J2CPP_CLASS_NAME, java::net::URLStreamHandler::J2CPP_METHOD_NAME(0), java::net::URLStreamHandler::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 
 

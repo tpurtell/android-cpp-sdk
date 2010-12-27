@@ -10,8 +10,10 @@
 #define J2CPP_DALVIK_SYSTEM_ZYGOTE_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -36,10 +38,13 @@ namespace dalvik { namespace system {
 		J2CPP_DECLARE_FIELD(1)
 		J2CPP_DECLARE_FIELD(2)
 
-		Zygote(jobject jobj)
+		explicit Zygote(jobject jobj)
 		: cpp_object<Zygote>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		static cpp_int fork();
 		static cpp_int forkAndSpecialize(cpp_int const&, cpp_int const&, local_ref< cpp_int_array<1> > const&, cpp_int const&, local_ref< cpp_int_array<2> > const&);
@@ -55,7 +60,6 @@ namespace dalvik { namespace system {
 } //namespace system
 } //namespace dalvik
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_DALVIK_SYSTEM_ZYGOTE_HPP_DECL
@@ -68,16 +72,12 @@ namespace dalvik { namespace system {
 namespace j2cpp {
 
 
-template <>
-local_ref< dalvik::system::Zygote > create< dalvik::system::Zygote>()
+
+dalvik::system::Zygote::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< dalvik::system::Zygote >(
-		environment::get().get_jenv()->NewObject(
-			get_class<dalvik::system::Zygote::J2CPP_CLASS_NAME>(),
-			get_method_id<dalvik::system::Zygote::J2CPP_CLASS_NAME, dalvik::system::Zygote::J2CPP_METHOD_NAME(0), dalvik::system::Zygote::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
 
 cpp_int dalvik::system::Zygote::fork()
 {

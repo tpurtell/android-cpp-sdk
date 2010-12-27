@@ -10,12 +10,14 @@
 #define J2CPP_JAVA_NET_SOCKETIMPL_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace net { class SocketOptions; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 
 
 #include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
+#include <java/net/SocketOptions.hpp>
 
 
 namespace j2cpp {
@@ -59,11 +61,16 @@ namespace java { namespace net {
 		J2CPP_DECLARE_FIELD(2)
 		J2CPP_DECLARE_FIELD(3)
 
-		SocketImpl(jobject jobj)
+		explicit SocketImpl(jobject jobj)
 		: cpp_object<SocketImpl>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::net::SocketOptions>() const;
+
+
+		SocketImpl();
 		local_ref< java::lang::Object > getOption(cpp_int const&);
 		void setOption(cpp_int const&, local_ref< java::lang::Object > const&);
 		local_ref< java::lang::String > toString();
@@ -72,7 +79,6 @@ namespace java { namespace net {
 
 } //namespace net
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -86,16 +92,28 @@ namespace java { namespace net {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::net::SocketImpl > create< java::net::SocketImpl>()
+
+java::net::SocketImpl::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::net::SocketImpl >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::net::SocketImpl::J2CPP_CLASS_NAME>(),
-			get_method_id<java::net::SocketImpl::J2CPP_CLASS_NAME, java::net::SocketImpl::J2CPP_METHOD_NAME(0), java::net::SocketImpl::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+java::net::SocketImpl::operator local_ref<java::net::SocketOptions>() const
+{
+	return local_ref<java::net::SocketOptions>(get_jtype());
+}
+
+
+java::net::SocketImpl::SocketImpl()
+: cpp_object<java::net::SocketImpl>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::net::SocketImpl::J2CPP_CLASS_NAME>(),
+		get_method_id<java::net::SocketImpl::J2CPP_CLASS_NAME, java::net::SocketImpl::J2CPP_METHOD_NAME(0), java::net::SocketImpl::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 
 

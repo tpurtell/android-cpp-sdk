@@ -16,6 +16,7 @@ namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace security { namespace Provider_ { class Service; } } } }
 namespace j2cpp { namespace java { namespace util { class Set; } } }
 namespace j2cpp { namespace java { namespace util { class Map; } } }
+namespace j2cpp { namespace java { namespace util { class Properties; } } }
 namespace j2cpp { namespace java { namespace util { class Collection; } } }
 namespace j2cpp { namespace java { namespace util { class List; } } }
 
@@ -27,6 +28,7 @@ namespace j2cpp { namespace java { namespace util { class List; } } }
 #include <java/util/Collection.hpp>
 #include <java/util/List.hpp>
 #include <java/util/Map.hpp>
+#include <java/util/Properties.hpp>
 #include <java/util/Set.hpp>
 
 
@@ -55,11 +57,15 @@ namespace java { namespace security {
 			J2CPP_DECLARE_METHOD(7)
 			J2CPP_DECLARE_METHOD(8)
 
-			Service(jobject jobj)
+			explicit Service(jobject jobj)
 			: cpp_object<Service>(jobj)
 			{
 			}
 
+			operator local_ref<java::lang::Object>() const;
+
+
+			Service(local_ref< java::security::Provider > const&, local_ref< java::lang::String > const&, local_ref< java::lang::String > const&, local_ref< java::lang::String > const&, local_ref< java::util::List > const&, local_ref< java::util::Map > const&);
 			local_ref< java::lang::String > getType();
 			local_ref< java::lang::String > getAlgorithm();
 			local_ref< java::security::Provider > getProvider();
@@ -99,10 +105,13 @@ namespace java { namespace security {
 
 		typedef Provider_::Service Service;
 
-		Provider(jobject jobj)
+		explicit Provider(jobject jobj)
 		: cpp_object<Provider>(jobj)
 		{
 		}
+
+		operator local_ref<java::util::Properties>() const;
+
 
 		local_ref< java::lang::String > getName();
 		cpp_double getVersion();
@@ -123,7 +132,6 @@ namespace java { namespace security {
 } //namespace security
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_SECURITY_PROVIDER_HPP_DECL
@@ -137,17 +145,24 @@ namespace j2cpp {
 
 
 
-template <>
-local_ref< java::security::Provider_::Service > create< java::security::Provider_::Service>(local_ref< java::security::Provider > const &a0, local_ref< java::lang::String > const &a1, local_ref< java::lang::String > const &a2, local_ref< java::lang::String > const &a3, local_ref< java::util::List > const &a4, local_ref< java::util::Map > const &a5)
+
+java::security::Provider_::Service::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::security::Provider_::Service >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::security::Provider_::Service::J2CPP_CLASS_NAME>(),
-			get_method_id<java::security::Provider_::Service::J2CPP_CLASS_NAME, java::security::Provider_::Service::J2CPP_METHOD_NAME(0), java::security::Provider_::Service::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype(), a4.get_jtype(), a5.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+java::security::Provider_::Service::Service(local_ref< java::security::Provider > const &a0, local_ref< java::lang::String > const &a1, local_ref< java::lang::String > const &a2, local_ref< java::lang::String > const &a3, local_ref< java::util::List > const &a4, local_ref< java::util::Map > const &a5)
+: cpp_object<java::security::Provider_::Service>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::security::Provider_::Service::J2CPP_CLASS_NAME>(),
+		get_method_id<java::security::Provider_::Service::J2CPP_CLASS_NAME, java::security::Provider_::Service::J2CPP_METHOD_NAME(0), java::security::Provider_::Service::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype(), a4.get_jtype(), a5.get_jtype()
+	)
+)
+{
+}
+
 
 local_ref< java::lang::String > java::security::Provider_::Service::getType()
 {
@@ -245,17 +260,12 @@ J2CPP_DEFINE_METHOD(java::security::Provider_::Service,7,"supportsParameter","(L
 J2CPP_DEFINE_METHOD(java::security::Provider_::Service,8,"toString","()Ljava/lang/String;")
 
 
-template <>
-local_ref< java::security::Provider > create< java::security::Provider>(local_ref< java::lang::String > const &a0, cpp_double const &a1, local_ref< java::lang::String > const &a2)
+
+java::security::Provider::operator local_ref<java::util::Properties>() const
 {
-	return local_ref< java::security::Provider >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::security::Provider::J2CPP_CLASS_NAME>(),
-			get_method_id<java::security::Provider::J2CPP_CLASS_NAME, java::security::Provider::J2CPP_METHOD_NAME(0), java::security::Provider::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
-		)
-	);
+	return local_ref<java::util::Properties>(get_jtype());
 }
+
 
 local_ref< java::lang::String > java::security::Provider::getName()
 {

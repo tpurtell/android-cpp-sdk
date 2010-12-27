@@ -10,10 +10,12 @@
 #define J2CPP_JAVA_NET_PORTUNREACHABLEEXCEPTION_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace net { class SocketException; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 
 
 #include <java/lang/String.hpp>
+#include <java/net/SocketException.hpp>
 
 
 namespace j2cpp {
@@ -31,16 +33,20 @@ namespace java { namespace net {
 		J2CPP_DECLARE_METHOD(0)
 		J2CPP_DECLARE_METHOD(1)
 
-		PortUnreachableException(jobject jobj)
+		explicit PortUnreachableException(jobject jobj)
 		: cpp_object<PortUnreachableException>(jobj)
 		{
 		}
 
+		operator local_ref<java::net::SocketException>() const;
+
+
+		PortUnreachableException();
+		PortUnreachableException(local_ref< java::lang::String > const&);
 	}; //class PortUnreachableException
 
 } //namespace net
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -54,28 +60,36 @@ namespace java { namespace net {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::net::PortUnreachableException > create< java::net::PortUnreachableException>()
+
+java::net::PortUnreachableException::operator local_ref<java::net::SocketException>() const
 {
-	return local_ref< java::net::PortUnreachableException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::net::PortUnreachableException::J2CPP_CLASS_NAME>(),
-			get_method_id<java::net::PortUnreachableException::J2CPP_CLASS_NAME, java::net::PortUnreachableException::J2CPP_METHOD_NAME(0), java::net::PortUnreachableException::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::net::SocketException>(get_jtype());
 }
 
-template <>
-local_ref< java::net::PortUnreachableException > create< java::net::PortUnreachableException>(local_ref< java::lang::String > const &a0)
+
+java::net::PortUnreachableException::PortUnreachableException()
+: cpp_object<java::net::PortUnreachableException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::net::PortUnreachableException::J2CPP_CLASS_NAME>(),
+		get_method_id<java::net::PortUnreachableException::J2CPP_CLASS_NAME, java::net::PortUnreachableException::J2CPP_METHOD_NAME(0), java::net::PortUnreachableException::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
 {
-	return local_ref< java::net::PortUnreachableException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::net::PortUnreachableException::J2CPP_CLASS_NAME>(),
-			get_method_id<java::net::PortUnreachableException::J2CPP_CLASS_NAME, java::net::PortUnreachableException::J2CPP_METHOD_NAME(1), java::net::PortUnreachableException::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
 }
+
+
+
+java::net::PortUnreachableException::PortUnreachableException(local_ref< java::lang::String > const &a0)
+: cpp_object<java::net::PortUnreachableException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::net::PortUnreachableException::J2CPP_CLASS_NAME>(),
+		get_method_id<java::net::PortUnreachableException::J2CPP_CLASS_NAME, java::net::PortUnreachableException::J2CPP_METHOD_NAME(1), java::net::PortUnreachableException::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 
 J2CPP_DEFINE_CLASS(java::net::PortUnreachableException,"java/net/PortUnreachableException")

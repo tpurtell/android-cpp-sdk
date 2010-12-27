@@ -11,10 +11,14 @@
 
 
 namespace j2cpp { namespace java { namespace io { class InputStream; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { namespace conn { class EofSensorWatcher; } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace conn { class ManagedClientConnection; } } } } }
 
 
 #include <java/io/InputStream.hpp>
+#include <java/lang/Object.hpp>
+#include <org/apache/http/conn/EofSensorWatcher.hpp>
 #include <org/apache/http/conn/ManagedClientConnection.hpp>
 
 
@@ -37,11 +41,16 @@ namespace org { namespace apache { namespace http { namespace conn {
 		J2CPP_DECLARE_FIELD(0)
 		J2CPP_DECLARE_FIELD(1)
 
-		BasicEofSensorWatcher(jobject jobj)
+		explicit BasicEofSensorWatcher(jobject jobj)
 		: cpp_object<BasicEofSensorWatcher>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<org::apache::http::conn::EofSensorWatcher>() const;
+
+
+		BasicEofSensorWatcher(local_ref< org::apache::http::conn::ManagedClientConnection > const&, cpp_boolean const&);
 		cpp_boolean eofDetected(local_ref< java::io::InputStream > const&);
 		cpp_boolean streamClosed(local_ref< java::io::InputStream > const&);
 		cpp_boolean streamAbort(local_ref< java::io::InputStream > const&);
@@ -52,7 +61,6 @@ namespace org { namespace apache { namespace http { namespace conn {
 } //namespace http
 } //namespace apache
 } //namespace org
-
 
 } //namespace j2cpp
 
@@ -66,17 +74,29 @@ namespace org { namespace apache { namespace http { namespace conn {
 namespace j2cpp {
 
 
-template <>
-local_ref< org::apache::http::conn::BasicEofSensorWatcher > create< org::apache::http::conn::BasicEofSensorWatcher>(local_ref< org::apache::http::conn::ManagedClientConnection > const &a0, cpp_boolean const &a1)
+
+org::apache::http::conn::BasicEofSensorWatcher::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< org::apache::http::conn::BasicEofSensorWatcher >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::apache::http::conn::BasicEofSensorWatcher::J2CPP_CLASS_NAME>(),
-			get_method_id<org::apache::http::conn::BasicEofSensorWatcher::J2CPP_CLASS_NAME, org::apache::http::conn::BasicEofSensorWatcher::J2CPP_METHOD_NAME(0), org::apache::http::conn::BasicEofSensorWatcher::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+org::apache::http::conn::BasicEofSensorWatcher::operator local_ref<org::apache::http::conn::EofSensorWatcher>() const
+{
+	return local_ref<org::apache::http::conn::EofSensorWatcher>(get_jtype());
+}
+
+
+org::apache::http::conn::BasicEofSensorWatcher::BasicEofSensorWatcher(local_ref< org::apache::http::conn::ManagedClientConnection > const &a0, cpp_boolean const &a1)
+: cpp_object<org::apache::http::conn::BasicEofSensorWatcher>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::apache::http::conn::BasicEofSensorWatcher::J2CPP_CLASS_NAME>(),
+		get_method_id<org::apache::http::conn::BasicEofSensorWatcher::J2CPP_CLASS_NAME, org::apache::http::conn::BasicEofSensorWatcher::J2CPP_METHOD_NAME(0), org::apache::http::conn::BasicEofSensorWatcher::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
 
 cpp_boolean org::apache::http::conn::BasicEofSensorWatcher::eofDetected(local_ref< java::io::InputStream > const &a0)
 {

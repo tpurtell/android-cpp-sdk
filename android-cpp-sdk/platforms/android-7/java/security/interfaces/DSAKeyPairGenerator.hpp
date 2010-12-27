@@ -10,10 +10,12 @@
 #define J2CPP_JAVA_SECURITY_INTERFACES_DSAKEYPAIRGENERATOR_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace security { namespace interfaces { class DSAParams; } } } }
 namespace j2cpp { namespace java { namespace security { class SecureRandom; } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/security/SecureRandom.hpp>
 #include <java/security/interfaces/DSAParams.hpp>
 
@@ -33,10 +35,13 @@ namespace java { namespace security { namespace interfaces {
 		J2CPP_DECLARE_METHOD(0)
 		J2CPP_DECLARE_METHOD(1)
 
-		DSAKeyPairGenerator(jobject jobj)
+		explicit DSAKeyPairGenerator(jobject jobj)
 		: cpp_object<DSAKeyPairGenerator>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		void initialize(local_ref< java::security::interfaces::DSAParams > const&, local_ref< java::security::SecureRandom > const&);
 		void initialize(cpp_int const&, cpp_boolean const&, local_ref< java::security::SecureRandom > const&);
@@ -45,7 +50,6 @@ namespace java { namespace security { namespace interfaces {
 } //namespace interfaces
 } //namespace security
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -58,6 +62,12 @@ namespace java { namespace security { namespace interfaces {
 
 namespace j2cpp {
 
+
+
+java::security::interfaces::DSAKeyPairGenerator::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 void java::security::interfaces::DSAKeyPairGenerator::initialize(local_ref< java::security::interfaces::DSAParams > const &a0, local_ref< java::security::SecureRandom > const &a1)
 {

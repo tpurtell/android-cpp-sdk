@@ -10,6 +10,7 @@
 #define J2CPP_ANDROID_WIDGET_TABHOST_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class CharSequence; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace android { namespace app { class LocalActivityManager; } } }
@@ -17,6 +18,7 @@ namespace j2cpp { namespace android { namespace graphics { namespace drawable { 
 namespace j2cpp { namespace android { namespace content { class Intent; } } }
 namespace j2cpp { namespace android { namespace content { class Context; } } }
 namespace j2cpp { namespace android { namespace view { class View; } } }
+namespace j2cpp { namespace android { namespace view { namespace ViewTreeObserver_ { class OnTouchModeChangeListener; } } } }
 namespace j2cpp { namespace android { namespace view { class KeyEvent; } } }
 namespace j2cpp { namespace android { namespace widget { namespace TabHost_ { class TabContentFactory; } } } }
 namespace j2cpp { namespace android { namespace widget { namespace TabHost_ { class TabSpec; } } } }
@@ -33,10 +35,12 @@ namespace j2cpp { namespace android { namespace util { class AttributeSet; } } }
 #include <android/util/AttributeSet.hpp>
 #include <android/view/KeyEvent.hpp>
 #include <android/view/View.hpp>
+#include <android/view/ViewTreeObserver.hpp>
 #include <android/widget/FrameLayout.hpp>
 #include <android/widget/TabHost.hpp>
 #include <android/widget/TabWidget.hpp>
 #include <java/lang/CharSequence.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -57,10 +61,13 @@ namespace android { namespace widget {
 
 			J2CPP_DECLARE_METHOD(0)
 
-			TabContentFactory(jobject jobj)
+			explicit TabContentFactory(jobject jobj)
 			: cpp_object<TabContentFactory>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+
 
 			local_ref< android::view::View > createTabContent(local_ref< java::lang::String > const&);
 		}; //class TabContentFactory
@@ -83,10 +90,13 @@ namespace android { namespace widget {
 			J2CPP_DECLARE_METHOD(7)
 			J2CPP_DECLARE_FIELD(0)
 
-			TabSpec(jobject jobj)
+			explicit TabSpec(jobject jobj)
 			: cpp_object<TabSpec>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+
 
 			local_ref< android::widget::TabHost_::TabSpec > setIndicator(local_ref< java::lang::CharSequence > const&);
 			local_ref< android::widget::TabHost_::TabSpec > setIndicator(local_ref< java::lang::CharSequence > const&, local_ref< android::graphics::drawable::Drawable > const&);
@@ -108,10 +118,13 @@ namespace android { namespace widget {
 
 			J2CPP_DECLARE_METHOD(0)
 
-			OnTabChangeListener(jobject jobj)
+			explicit OnTabChangeListener(jobject jobj)
 			: cpp_object<OnTabChangeListener>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+
 
 			void onTabChanged(local_ref< java::lang::String > const&);
 		}; //class OnTabChangeListener
@@ -151,11 +164,17 @@ namespace android { namespace widget {
 		typedef TabHost_::TabSpec TabSpec;
 		typedef TabHost_::OnTabChangeListener OnTabChangeListener;
 
-		TabHost(jobject jobj)
+		explicit TabHost(jobject jobj)
 		: cpp_object<TabHost>(jobj)
 		{
 		}
 
+		operator local_ref<android::widget::FrameLayout>() const;
+		operator local_ref<android::view::ViewTreeObserver_::OnTouchModeChangeListener>() const;
+
+
+		TabHost(local_ref< android::content::Context > const&);
+		TabHost(local_ref< android::content::Context > const&, local_ref< android::util::AttributeSet > const&);
 		local_ref< android::widget::TabHost_::TabSpec > newTabSpec(local_ref< java::lang::String > const&);
 		void setup();
 		void setup(local_ref< android::app::LocalActivityManager > const&);
@@ -178,7 +197,6 @@ namespace android { namespace widget {
 } //namespace widget
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_WIDGET_TABHOST_HPP_DECL
@@ -191,6 +209,12 @@ namespace android { namespace widget {
 namespace j2cpp {
 
 
+
+
+android::widget::TabHost_::TabContentFactory::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 local_ref< android::view::View > android::widget::TabHost_::TabContentFactory::createTabContent(local_ref< java::lang::String > const &a0)
 {
@@ -207,17 +231,12 @@ local_ref< android::view::View > android::widget::TabHost_::TabContentFactory::c
 J2CPP_DEFINE_CLASS(android::widget::TabHost_::TabContentFactory,"android/widget/TabHost$TabContentFactory")
 J2CPP_DEFINE_METHOD(android::widget::TabHost_::TabContentFactory,0,"createTabContent","(Ljava/lang/String;)Landroid/view/View;")
 
-template <>
-local_ref< android::widget::TabHost_::TabSpec > create< android::widget::TabHost_::TabSpec>(local_ref< android::widget::TabHost > const &a0)
+
+android::widget::TabHost_::TabSpec::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::widget::TabHost_::TabSpec >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::widget::TabHost_::TabSpec::J2CPP_CLASS_NAME>(),
-			get_method_id<android::widget::TabHost_::TabSpec::J2CPP_CLASS_NAME, android::widget::TabHost_::TabSpec::J2CPP_METHOD_NAME(0), android::widget::TabHost_::TabSpec::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
 
 local_ref< android::widget::TabHost_::TabSpec > android::widget::TabHost_::TabSpec::setIndicator(local_ref< java::lang::CharSequence > const &a0)
 {
@@ -308,6 +327,12 @@ J2CPP_DEFINE_METHOD(android::widget::TabHost_::TabSpec,6,"setContent","(Landroid
 J2CPP_DEFINE_METHOD(android::widget::TabHost_::TabSpec,7,"getTag","()Ljava/lang/String;")
 J2CPP_DEFINE_FIELD(android::widget::TabHost_::TabSpec,0,"this$0","Landroid/widget/TabHost;")
 
+
+android::widget::TabHost_::OnTabChangeListener::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
+
 void android::widget::TabHost_::OnTabChangeListener::onTabChanged(local_ref< java::lang::String > const &a0)
 {
 	return void(
@@ -324,29 +349,42 @@ J2CPP_DEFINE_CLASS(android::widget::TabHost_::OnTabChangeListener,"android/widge
 J2CPP_DEFINE_METHOD(android::widget::TabHost_::OnTabChangeListener,0,"onTabChanged","(Ljava/lang/String;)V")
 
 
-template <>
-local_ref< android::widget::TabHost > create< android::widget::TabHost>(local_ref< android::content::Context > const &a0)
+
+android::widget::TabHost::operator local_ref<android::widget::FrameLayout>() const
 {
-	return local_ref< android::widget::TabHost >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::widget::TabHost::J2CPP_CLASS_NAME>(),
-			get_method_id<android::widget::TabHost::J2CPP_CLASS_NAME, android::widget::TabHost::J2CPP_METHOD_NAME(0), android::widget::TabHost::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<android::widget::FrameLayout>(get_jtype());
 }
 
-template <>
-local_ref< android::widget::TabHost > create< android::widget::TabHost>(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1)
+android::widget::TabHost::operator local_ref<android::view::ViewTreeObserver_::OnTouchModeChangeListener>() const
 {
-	return local_ref< android::widget::TabHost >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::widget::TabHost::J2CPP_CLASS_NAME>(),
-			get_method_id<android::widget::TabHost::J2CPP_CLASS_NAME, android::widget::TabHost::J2CPP_METHOD_NAME(1), android::widget::TabHost::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<android::view::ViewTreeObserver_::OnTouchModeChangeListener>(get_jtype());
 }
+
+
+android::widget::TabHost::TabHost(local_ref< android::content::Context > const &a0)
+: cpp_object<android::widget::TabHost>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::widget::TabHost::J2CPP_CLASS_NAME>(),
+		get_method_id<android::widget::TabHost::J2CPP_CLASS_NAME, android::widget::TabHost::J2CPP_METHOD_NAME(0), android::widget::TabHost::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
+
+
+android::widget::TabHost::TabHost(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1)
+: cpp_object<android::widget::TabHost>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::widget::TabHost::J2CPP_CLASS_NAME>(),
+		get_method_id<android::widget::TabHost::J2CPP_CLASS_NAME, android::widget::TabHost::J2CPP_METHOD_NAME(1), android::widget::TabHost::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
 
 local_ref< android::widget::TabHost_::TabSpec > android::widget::TabHost::newTabSpec(local_ref< java::lang::String > const &a0)
 {

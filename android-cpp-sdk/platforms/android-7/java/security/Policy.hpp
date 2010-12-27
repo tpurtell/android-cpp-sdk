@@ -10,12 +10,14 @@
 #define J2CPP_JAVA_SECURITY_POLICY_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace security { class CodeSource; } } }
 namespace j2cpp { namespace java { namespace security { class ProtectionDomain; } } }
 namespace j2cpp { namespace java { namespace security { class Permission; } } }
 namespace j2cpp { namespace java { namespace security { class PermissionCollection; } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/security/CodeSource.hpp>
 #include <java/security/Permission.hpp>
 #include <java/security/PermissionCollection.hpp>
@@ -42,11 +44,15 @@ namespace java { namespace security {
 		J2CPP_DECLARE_METHOD(5)
 		J2CPP_DECLARE_METHOD(6)
 
-		Policy(jobject jobj)
+		explicit Policy(jobject jobj)
 		: cpp_object<Policy>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		Policy();
 		local_ref< java::security::PermissionCollection > getPermissions(local_ref< java::security::CodeSource > const&);
 		void refresh();
 		local_ref< java::security::PermissionCollection > getPermissions(local_ref< java::security::ProtectionDomain > const&);
@@ -57,7 +63,6 @@ namespace java { namespace security {
 
 } //namespace security
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -71,16 +76,23 @@ namespace java { namespace security {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::security::Policy > create< java::security::Policy>()
+
+java::security::Policy::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::security::Policy >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::security::Policy::J2CPP_CLASS_NAME>(),
-			get_method_id<java::security::Policy::J2CPP_CLASS_NAME, java::security::Policy::J2CPP_METHOD_NAME(0), java::security::Policy::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+java::security::Policy::Policy()
+: cpp_object<java::security::Policy>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::security::Policy::J2CPP_CLASS_NAME>(),
+		get_method_id<java::security::Policy::J2CPP_CLASS_NAME, java::security::Policy::J2CPP_METHOD_NAME(0), java::security::Policy::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 local_ref< java::security::PermissionCollection > java::security::Policy::getPermissions(local_ref< java::security::CodeSource > const &a0)
 {

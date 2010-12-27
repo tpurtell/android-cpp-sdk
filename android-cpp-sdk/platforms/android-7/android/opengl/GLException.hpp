@@ -10,9 +10,11 @@
 #define J2CPP_ANDROID_OPENGL_GLEXCEPTION_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class RuntimeException; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 
 
+#include <java/lang/RuntimeException.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -31,16 +33,20 @@ namespace android { namespace opengl {
 		J2CPP_DECLARE_METHOD(0)
 		J2CPP_DECLARE_METHOD(1)
 
-		GLException(jobject jobj)
+		explicit GLException(jobject jobj)
 		: cpp_object<GLException>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::RuntimeException>() const;
+
+
+		GLException(cpp_int const&);
+		GLException(cpp_int const&, local_ref< java::lang::String > const&);
 	}; //class GLException
 
 } //namespace opengl
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -54,29 +60,37 @@ namespace android { namespace opengl {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::opengl::GLException > create< android::opengl::GLException>(cpp_int const &a0)
+
+android::opengl::GLException::operator local_ref<java::lang::RuntimeException>() const
 {
-	return local_ref< android::opengl::GLException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::opengl::GLException::J2CPP_CLASS_NAME>(),
-			get_method_id<android::opengl::GLException::J2CPP_CLASS_NAME, android::opengl::GLException::J2CPP_METHOD_NAME(0), android::opengl::GLException::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::lang::RuntimeException>(get_jtype());
 }
 
-template <>
-local_ref< android::opengl::GLException > create< android::opengl::GLException>(cpp_int const &a0, local_ref< java::lang::String > const &a1)
+
+android::opengl::GLException::GLException(cpp_int const &a0)
+: cpp_object<android::opengl::GLException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::opengl::GLException::J2CPP_CLASS_NAME>(),
+		get_method_id<android::opengl::GLException::J2CPP_CLASS_NAME, android::opengl::GLException::J2CPP_METHOD_NAME(0), android::opengl::GLException::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< android::opengl::GLException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::opengl::GLException::J2CPP_CLASS_NAME>(),
-			get_method_id<android::opengl::GLException::J2CPP_CLASS_NAME, android::opengl::GLException::J2CPP_METHOD_NAME(1), android::opengl::GLException::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
 }
+
+
+
+android::opengl::GLException::GLException(cpp_int const &a0, local_ref< java::lang::String > const &a1)
+: cpp_object<android::opengl::GLException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::opengl::GLException::J2CPP_CLASS_NAME>(),
+		get_method_id<android::opengl::GLException::J2CPP_CLASS_NAME, android::opengl::GLException::J2CPP_METHOD_NAME(1), android::opengl::GLException::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
 
 
 J2CPP_DEFINE_CLASS(android::opengl::GLException,"android/opengl/GLException")

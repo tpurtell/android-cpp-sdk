@@ -10,6 +10,7 @@
 #define J2CPP_ANDROID_LOCATION_LOCATIONLISTENER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace android { namespace location { class Location; } } }
 namespace j2cpp { namespace android { namespace os { class Bundle; } } }
@@ -17,6 +18,7 @@ namespace j2cpp { namespace android { namespace os { class Bundle; } } }
 
 #include <android/location/Location.hpp>
 #include <android/os/Bundle.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -37,10 +39,13 @@ namespace android { namespace location {
 		J2CPP_DECLARE_METHOD(2)
 		J2CPP_DECLARE_METHOD(3)
 
-		LocationListener(jobject jobj)
+		explicit LocationListener(jobject jobj)
 		: cpp_object<LocationListener>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		void onLocationChanged(local_ref< android::location::Location > const&);
 		void onStatusChanged(local_ref< java::lang::String > const&, cpp_int const&, local_ref< android::os::Bundle > const&);
@@ -50,7 +55,6 @@ namespace android { namespace location {
 
 } //namespace location
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -63,6 +67,12 @@ namespace android { namespace location {
 
 namespace j2cpp {
 
+
+
+android::location::LocationListener::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 void android::location::LocationListener::onLocationChanged(local_ref< android::location::Location > const &a0)
 {

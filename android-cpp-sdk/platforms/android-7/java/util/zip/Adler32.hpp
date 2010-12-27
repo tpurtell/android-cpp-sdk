@@ -10,8 +10,12 @@
 #define J2CPP_JAVA_UTIL_ZIP_ADLER32_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace util { namespace zip { class Checksum; } } } }
 
 
+#include <java/lang/Object.hpp>
+#include <java/util/zip/Checksum.hpp>
 
 
 namespace j2cpp {
@@ -33,11 +37,16 @@ namespace java { namespace util { namespace zip {
 		J2CPP_DECLARE_METHOD(4)
 		J2CPP_DECLARE_METHOD(5)
 
-		Adler32(jobject jobj)
+		explicit Adler32(jobject jobj)
 		: cpp_object<Adler32>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::util::zip::Checksum>() const;
+
+
+		Adler32();
 		cpp_long getValue();
 		void reset();
 		void update(cpp_int const&);
@@ -48,7 +57,6 @@ namespace java { namespace util { namespace zip {
 } //namespace zip
 } //namespace util
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -62,16 +70,28 @@ namespace java { namespace util { namespace zip {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::util::zip::Adler32 > create< java::util::zip::Adler32>()
+
+java::util::zip::Adler32::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::util::zip::Adler32 >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::zip::Adler32::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::zip::Adler32::J2CPP_CLASS_NAME, java::util::zip::Adler32::J2CPP_METHOD_NAME(0), java::util::zip::Adler32::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+java::util::zip::Adler32::operator local_ref<java::util::zip::Checksum>() const
+{
+	return local_ref<java::util::zip::Checksum>(get_jtype());
+}
+
+
+java::util::zip::Adler32::Adler32()
+: cpp_object<java::util::zip::Adler32>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::util::zip::Adler32::J2CPP_CLASS_NAME>(),
+		get_method_id<java::util::zip::Adler32::J2CPP_CLASS_NAME, java::util::zip::Adler32::J2CPP_METHOD_NAME(0), java::util::zip::Adler32::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 cpp_long java::util::zip::Adler32::getValue()
 {

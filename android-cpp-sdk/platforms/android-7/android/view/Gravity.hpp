@@ -10,10 +10,12 @@
 #define J2CPP_ANDROID_VIEW_GRAVITY_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace android { namespace graphics { class Rect; } } }
 
 
 #include <android/graphics/Rect.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -58,11 +60,15 @@ namespace android { namespace view {
 		J2CPP_DECLARE_FIELD(21)
 		J2CPP_DECLARE_FIELD(22)
 
-		Gravity(jobject jobj)
+		explicit Gravity(jobject jobj)
 		: cpp_object<Gravity>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		Gravity();
 		static void apply(cpp_int const&, cpp_int const&, cpp_int const&, local_ref< android::graphics::Rect > const&, local_ref< android::graphics::Rect > const&);
 		static void apply(cpp_int const&, cpp_int const&, cpp_int const&, local_ref< android::graphics::Rect > const&, cpp_int const&, cpp_int const&, local_ref< android::graphics::Rect > const&);
 		static void applyDisplay(cpp_int const&, local_ref< android::graphics::Rect > const&, local_ref< android::graphics::Rect > const&);
@@ -97,7 +103,6 @@ namespace android { namespace view {
 } //namespace view
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_VIEW_GRAVITY_HPP_DECL
@@ -110,16 +115,23 @@ namespace android { namespace view {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::view::Gravity > create< android::view::Gravity>()
+
+android::view::Gravity::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::view::Gravity >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::view::Gravity::J2CPP_CLASS_NAME>(),
-			get_method_id<android::view::Gravity::J2CPP_CLASS_NAME, android::view::Gravity::J2CPP_METHOD_NAME(0), android::view::Gravity::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::view::Gravity::Gravity()
+: cpp_object<android::view::Gravity>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::view::Gravity::J2CPP_CLASS_NAME>(),
+		get_method_id<android::view::Gravity::J2CPP_CLASS_NAME, android::view::Gravity::J2CPP_METHOD_NAME(0), android::view::Gravity::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 void android::view::Gravity::apply(cpp_int const &a0, cpp_int const &a1, cpp_int const &a2, local_ref< android::graphics::Rect > const &a3, local_ref< android::graphics::Rect > const &a4)
 {

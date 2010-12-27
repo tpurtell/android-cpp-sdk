@@ -13,6 +13,8 @@
 namespace j2cpp { namespace java { namespace lang { class CharSequence; } } }
 namespace j2cpp { namespace android { namespace content { class DialogInterface; } } }
 namespace j2cpp { namespace android { namespace content { class Context; } } }
+namespace j2cpp { namespace android { namespace content { namespace DialogInterface_ { class OnClickListener; } } } }
+namespace j2cpp { namespace android { namespace widget { class AbsSpinner; } } }
 namespace j2cpp { namespace android { namespace widget { namespace AdapterView_ { class OnItemClickListener; } } } }
 namespace j2cpp { namespace android { namespace util { class AttributeSet; } } }
 
@@ -20,6 +22,7 @@ namespace j2cpp { namespace android { namespace util { class AttributeSet; } } }
 #include <android/content/Context.hpp>
 #include <android/content/DialogInterface.hpp>
 #include <android/util/AttributeSet.hpp>
+#include <android/widget/AbsSpinner.hpp>
 #include <android/widget/AdapterView.hpp>
 #include <java/lang/CharSequence.hpp>
 
@@ -49,11 +52,18 @@ namespace android { namespace widget {
 		J2CPP_DECLARE_METHOD(10)
 		J2CPP_DECLARE_METHOD(11)
 
-		Spinner(jobject jobj)
+		explicit Spinner(jobject jobj)
 		: cpp_object<Spinner>(jobj)
 		{
 		}
 
+		operator local_ref<android::widget::AbsSpinner>() const;
+		operator local_ref<android::content::DialogInterface_::OnClickListener>() const;
+
+
+		Spinner(local_ref< android::content::Context > const&);
+		Spinner(local_ref< android::content::Context > const&, local_ref< android::util::AttributeSet > const&);
+		Spinner(local_ref< android::content::Context > const&, local_ref< android::util::AttributeSet > const&, cpp_int const&);
 		cpp_int getBaseline();
 		void setOnItemClickListener(local_ref< android::widget::AdapterView_::OnItemClickListener > const&);
 		cpp_boolean performClick();
@@ -65,7 +75,6 @@ namespace android { namespace widget {
 
 } //namespace widget
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -79,41 +88,55 @@ namespace android { namespace widget {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::widget::Spinner > create< android::widget::Spinner>(local_ref< android::content::Context > const &a0)
+
+android::widget::Spinner::operator local_ref<android::widget::AbsSpinner>() const
 {
-	return local_ref< android::widget::Spinner >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::widget::Spinner::J2CPP_CLASS_NAME>(),
-			get_method_id<android::widget::Spinner::J2CPP_CLASS_NAME, android::widget::Spinner::J2CPP_METHOD_NAME(0), android::widget::Spinner::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<android::widget::AbsSpinner>(get_jtype());
 }
 
-template <>
-local_ref< android::widget::Spinner > create< android::widget::Spinner>(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1)
+android::widget::Spinner::operator local_ref<android::content::DialogInterface_::OnClickListener>() const
 {
-	return local_ref< android::widget::Spinner >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::widget::Spinner::J2CPP_CLASS_NAME>(),
-			get_method_id<android::widget::Spinner::J2CPP_CLASS_NAME, android::widget::Spinner::J2CPP_METHOD_NAME(1), android::widget::Spinner::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<android::content::DialogInterface_::OnClickListener>(get_jtype());
 }
 
-template <>
-local_ref< android::widget::Spinner > create< android::widget::Spinner>(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1, cpp_int const &a2)
+
+android::widget::Spinner::Spinner(local_ref< android::content::Context > const &a0)
+: cpp_object<android::widget::Spinner>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::widget::Spinner::J2CPP_CLASS_NAME>(),
+		get_method_id<android::widget::Spinner::J2CPP_CLASS_NAME, android::widget::Spinner::J2CPP_METHOD_NAME(0), android::widget::Spinner::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< android::widget::Spinner >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::widget::Spinner::J2CPP_CLASS_NAME>(),
-			get_method_id<android::widget::Spinner::J2CPP_CLASS_NAME, android::widget::Spinner::J2CPP_METHOD_NAME(2), android::widget::Spinner::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
-		)
-	);
 }
+
+
+
+android::widget::Spinner::Spinner(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1)
+: cpp_object<android::widget::Spinner>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::widget::Spinner::J2CPP_CLASS_NAME>(),
+		get_method_id<android::widget::Spinner::J2CPP_CLASS_NAME, android::widget::Spinner::J2CPP_METHOD_NAME(1), android::widget::Spinner::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
+
+
+android::widget::Spinner::Spinner(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1, cpp_int const &a2)
+: cpp_object<android::widget::Spinner>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::widget::Spinner::J2CPP_CLASS_NAME>(),
+		get_method_id<android::widget::Spinner::J2CPP_CLASS_NAME, android::widget::Spinner::J2CPP_METHOD_NAME(2), android::widget::Spinner::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
+	)
+)
+{
+}
+
 
 cpp_int android::widget::Spinner::getBaseline()
 {

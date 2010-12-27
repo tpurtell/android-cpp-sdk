@@ -11,6 +11,7 @@
 
 
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace util { class AbstractCollection; } } }
 namespace j2cpp { namespace java { namespace util { class Iterator; } } }
 namespace j2cpp { namespace java { namespace util { class ListIterator; } } }
 namespace j2cpp { namespace java { namespace util { class Collection; } } }
@@ -18,6 +19,7 @@ namespace j2cpp { namespace java { namespace util { class List; } } }
 
 
 #include <java/lang/Object.hpp>
+#include <java/util/AbstractCollection.hpp>
 #include <java/util/Collection.hpp>
 #include <java/util/Iterator.hpp>
 #include <java/util/List.hpp>
@@ -55,10 +57,14 @@ namespace java { namespace util {
 		J2CPP_DECLARE_METHOD(16)
 		J2CPP_DECLARE_FIELD(0)
 
-		AbstractList(jobject jobj)
+		explicit AbstractList(jobject jobj)
 		: cpp_object<AbstractList>(jobj)
 		{
 		}
+
+		operator local_ref<java::util::AbstractCollection>() const;
+		operator local_ref<java::util::List>() const;
+
 
 		void add(cpp_int const&, local_ref< java::lang::Object > const&);
 		cpp_boolean add(local_ref< java::lang::Object > const&);
@@ -81,7 +87,6 @@ namespace java { namespace util {
 } //namespace util
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_UTIL_ABSTRACTLIST_HPP_DECL
@@ -94,16 +99,17 @@ namespace java { namespace util {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::util::AbstractList > create< java::util::AbstractList>()
+
+java::util::AbstractList::operator local_ref<java::util::AbstractCollection>() const
 {
-	return local_ref< java::util::AbstractList >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::AbstractList::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::AbstractList::J2CPP_CLASS_NAME, java::util::AbstractList::J2CPP_METHOD_NAME(0), java::util::AbstractList::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::util::AbstractCollection>(get_jtype());
 }
+
+java::util::AbstractList::operator local_ref<java::util::List>() const
+{
+	return local_ref<java::util::List>(get_jtype());
+}
+
 
 void java::util::AbstractList::add(cpp_int const &a0, local_ref< java::lang::Object > const &a1)
 {

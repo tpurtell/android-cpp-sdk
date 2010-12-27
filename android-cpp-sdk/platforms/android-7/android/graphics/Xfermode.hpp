@@ -10,8 +10,10 @@
 #define J2CPP_ANDROID_GRAPHICS_XFERMODE_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -29,16 +31,19 @@ namespace android { namespace graphics {
 		J2CPP_DECLARE_METHOD(0)
 		J2CPP_DECLARE_METHOD(1)
 
-		Xfermode(jobject jobj)
+		explicit Xfermode(jobject jobj)
 		: cpp_object<Xfermode>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		Xfermode();
 	}; //class Xfermode
 
 } //namespace graphics
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -52,16 +57,23 @@ namespace android { namespace graphics {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::graphics::Xfermode > create< android::graphics::Xfermode>()
+
+android::graphics::Xfermode::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::graphics::Xfermode >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::graphics::Xfermode::J2CPP_CLASS_NAME>(),
-			get_method_id<android::graphics::Xfermode::J2CPP_CLASS_NAME, android::graphics::Xfermode::J2CPP_METHOD_NAME(0), android::graphics::Xfermode::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::graphics::Xfermode::Xfermode()
+: cpp_object<android::graphics::Xfermode>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::graphics::Xfermode::J2CPP_CLASS_NAME>(),
+		get_method_id<android::graphics::Xfermode::J2CPP_CLASS_NAME, android::graphics::Xfermode::J2CPP_METHOD_NAME(0), android::graphics::Xfermode::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 
 

@@ -11,11 +11,13 @@
 
 
 namespace j2cpp { namespace android { namespace content { class Context; } } }
+namespace j2cpp { namespace android { namespace widget { class CompoundButton; } } }
 namespace j2cpp { namespace android { namespace util { class AttributeSet; } } }
 
 
 #include <android/content/Context.hpp>
 #include <android/util/AttributeSet.hpp>
+#include <android/widget/CompoundButton.hpp>
 
 
 namespace j2cpp {
@@ -34,16 +36,21 @@ namespace android { namespace widget {
 		J2CPP_DECLARE_METHOD(1)
 		J2CPP_DECLARE_METHOD(2)
 
-		CheckBox(jobject jobj)
+		explicit CheckBox(jobject jobj)
 		: cpp_object<CheckBox>(jobj)
 		{
 		}
 
+		operator local_ref<android::widget::CompoundButton>() const;
+
+
+		CheckBox(local_ref< android::content::Context > const&);
+		CheckBox(local_ref< android::content::Context > const&, local_ref< android::util::AttributeSet > const&);
+		CheckBox(local_ref< android::content::Context > const&, local_ref< android::util::AttributeSet > const&, cpp_int const&);
 	}; //class CheckBox
 
 } //namespace widget
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -57,41 +64,50 @@ namespace android { namespace widget {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::widget::CheckBox > create< android::widget::CheckBox>(local_ref< android::content::Context > const &a0)
+
+android::widget::CheckBox::operator local_ref<android::widget::CompoundButton>() const
 {
-	return local_ref< android::widget::CheckBox >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::widget::CheckBox::J2CPP_CLASS_NAME>(),
-			get_method_id<android::widget::CheckBox::J2CPP_CLASS_NAME, android::widget::CheckBox::J2CPP_METHOD_NAME(0), android::widget::CheckBox::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<android::widget::CompoundButton>(get_jtype());
 }
 
-template <>
-local_ref< android::widget::CheckBox > create< android::widget::CheckBox>(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1)
+
+android::widget::CheckBox::CheckBox(local_ref< android::content::Context > const &a0)
+: cpp_object<android::widget::CheckBox>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::widget::CheckBox::J2CPP_CLASS_NAME>(),
+		get_method_id<android::widget::CheckBox::J2CPP_CLASS_NAME, android::widget::CheckBox::J2CPP_METHOD_NAME(0), android::widget::CheckBox::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< android::widget::CheckBox >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::widget::CheckBox::J2CPP_CLASS_NAME>(),
-			get_method_id<android::widget::CheckBox::J2CPP_CLASS_NAME, android::widget::CheckBox::J2CPP_METHOD_NAME(1), android::widget::CheckBox::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< android::widget::CheckBox > create< android::widget::CheckBox>(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1, cpp_int const &a2)
+
+
+android::widget::CheckBox::CheckBox(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1)
+: cpp_object<android::widget::CheckBox>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::widget::CheckBox::J2CPP_CLASS_NAME>(),
+		get_method_id<android::widget::CheckBox::J2CPP_CLASS_NAME, android::widget::CheckBox::J2CPP_METHOD_NAME(1), android::widget::CheckBox::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
 {
-	return local_ref< android::widget::CheckBox >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::widget::CheckBox::J2CPP_CLASS_NAME>(),
-			get_method_id<android::widget::CheckBox::J2CPP_CLASS_NAME, android::widget::CheckBox::J2CPP_METHOD_NAME(2), android::widget::CheckBox::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
-		)
-	);
 }
+
+
+
+android::widget::CheckBox::CheckBox(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1, cpp_int const &a2)
+: cpp_object<android::widget::CheckBox>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::widget::CheckBox::J2CPP_CLASS_NAME>(),
+		get_method_id<android::widget::CheckBox::J2CPP_CLASS_NAME, android::widget::CheckBox::J2CPP_METHOD_NAME(2), android::widget::CheckBox::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
+	)
+)
+{
+}
+
 
 
 J2CPP_DEFINE_CLASS(android::widget::CheckBox,"android/widget/CheckBox")

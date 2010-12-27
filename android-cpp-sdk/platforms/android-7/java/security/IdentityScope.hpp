@@ -50,11 +50,16 @@ namespace java { namespace security {
 		J2CPP_DECLARE_METHOD(11)
 		J2CPP_DECLARE_METHOD(12)
 
-		IdentityScope(jobject jobj)
+		explicit IdentityScope(jobject jobj)
 		: cpp_object<IdentityScope>(jobj)
 		{
 		}
 
+		operator local_ref<java::security::Identity>() const;
+
+
+		IdentityScope(local_ref< java::lang::String > const&);
+		IdentityScope(local_ref< java::lang::String > const&, local_ref< java::security::IdentityScope > const&);
 		static local_ref< java::security::IdentityScope > getSystemScope();
 		cpp_int size();
 		local_ref< java::security::Identity > getIdentity(local_ref< java::lang::String > const&);
@@ -69,7 +74,6 @@ namespace java { namespace security {
 } //namespace security
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_SECURITY_IDENTITYSCOPE_HPP_DECL
@@ -82,40 +86,38 @@ namespace java { namespace security {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::security::IdentityScope > create< java::security::IdentityScope>()
+
+java::security::IdentityScope::operator local_ref<java::security::Identity>() const
 {
-	return local_ref< java::security::IdentityScope >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::security::IdentityScope::J2CPP_CLASS_NAME>(),
-			get_method_id<java::security::IdentityScope::J2CPP_CLASS_NAME, java::security::IdentityScope::J2CPP_METHOD_NAME(0), java::security::IdentityScope::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::security::Identity>(get_jtype());
 }
 
-template <>
-local_ref< java::security::IdentityScope > create< java::security::IdentityScope>(local_ref< java::lang::String > const &a0)
+
+
+java::security::IdentityScope::IdentityScope(local_ref< java::lang::String > const &a0)
+: cpp_object<java::security::IdentityScope>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::security::IdentityScope::J2CPP_CLASS_NAME>(),
+		get_method_id<java::security::IdentityScope::J2CPP_CLASS_NAME, java::security::IdentityScope::J2CPP_METHOD_NAME(1), java::security::IdentityScope::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< java::security::IdentityScope >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::security::IdentityScope::J2CPP_CLASS_NAME>(),
-			get_method_id<java::security::IdentityScope::J2CPP_CLASS_NAME, java::security::IdentityScope::J2CPP_METHOD_NAME(1), java::security::IdentityScope::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< java::security::IdentityScope > create< java::security::IdentityScope>(local_ref< java::lang::String > const &a0, local_ref< java::security::IdentityScope > const &a1)
+
+
+java::security::IdentityScope::IdentityScope(local_ref< java::lang::String > const &a0, local_ref< java::security::IdentityScope > const &a1)
+: cpp_object<java::security::IdentityScope>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::security::IdentityScope::J2CPP_CLASS_NAME>(),
+		get_method_id<java::security::IdentityScope::J2CPP_CLASS_NAME, java::security::IdentityScope::J2CPP_METHOD_NAME(2), java::security::IdentityScope::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
 {
-	return local_ref< java::security::IdentityScope >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::security::IdentityScope::J2CPP_CLASS_NAME>(),
-			get_method_id<java::security::IdentityScope::J2CPP_CLASS_NAME, java::security::IdentityScope::J2CPP_METHOD_NAME(2), java::security::IdentityScope::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
 }
+
 
 local_ref< java::security::IdentityScope > java::security::IdentityScope::getSystemScope()
 {

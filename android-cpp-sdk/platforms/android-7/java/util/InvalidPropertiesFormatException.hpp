@@ -10,10 +10,12 @@
 #define J2CPP_JAVA_UTIL_INVALIDPROPERTIESFORMATEXCEPTION_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class IOException; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace lang { class Throwable; } } }
 
 
+#include <java/io/IOException.hpp>
 #include <java/lang/String.hpp>
 #include <java/lang/Throwable.hpp>
 
@@ -33,16 +35,20 @@ namespace java { namespace util {
 		J2CPP_DECLARE_METHOD(0)
 		J2CPP_DECLARE_METHOD(1)
 
-		InvalidPropertiesFormatException(jobject jobj)
+		explicit InvalidPropertiesFormatException(jobject jobj)
 		: cpp_object<InvalidPropertiesFormatException>(jobj)
 		{
 		}
 
+		operator local_ref<java::io::IOException>() const;
+
+
+		InvalidPropertiesFormatException(local_ref< java::lang::String > const&);
+		InvalidPropertiesFormatException(local_ref< java::lang::Throwable > const&);
 	}; //class InvalidPropertiesFormatException
 
 } //namespace util
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -56,29 +62,37 @@ namespace java { namespace util {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::util::InvalidPropertiesFormatException > create< java::util::InvalidPropertiesFormatException>(local_ref< java::lang::String > const &a0)
+
+java::util::InvalidPropertiesFormatException::operator local_ref<java::io::IOException>() const
 {
-	return local_ref< java::util::InvalidPropertiesFormatException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::InvalidPropertiesFormatException::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::InvalidPropertiesFormatException::J2CPP_CLASS_NAME, java::util::InvalidPropertiesFormatException::J2CPP_METHOD_NAME(0), java::util::InvalidPropertiesFormatException::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::io::IOException>(get_jtype());
 }
 
-template <>
-local_ref< java::util::InvalidPropertiesFormatException > create< java::util::InvalidPropertiesFormatException>(local_ref< java::lang::Throwable > const &a0)
+
+java::util::InvalidPropertiesFormatException::InvalidPropertiesFormatException(local_ref< java::lang::String > const &a0)
+: cpp_object<java::util::InvalidPropertiesFormatException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::util::InvalidPropertiesFormatException::J2CPP_CLASS_NAME>(),
+		get_method_id<java::util::InvalidPropertiesFormatException::J2CPP_CLASS_NAME, java::util::InvalidPropertiesFormatException::J2CPP_METHOD_NAME(0), java::util::InvalidPropertiesFormatException::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< java::util::InvalidPropertiesFormatException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::InvalidPropertiesFormatException::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::InvalidPropertiesFormatException::J2CPP_CLASS_NAME, java::util::InvalidPropertiesFormatException::J2CPP_METHOD_NAME(1), java::util::InvalidPropertiesFormatException::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
 }
+
+
+
+java::util::InvalidPropertiesFormatException::InvalidPropertiesFormatException(local_ref< java::lang::Throwable > const &a0)
+: cpp_object<java::util::InvalidPropertiesFormatException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::util::InvalidPropertiesFormatException::J2CPP_CLASS_NAME>(),
+		get_method_id<java::util::InvalidPropertiesFormatException::J2CPP_CLASS_NAME, java::util::InvalidPropertiesFormatException::J2CPP_METHOD_NAME(1), java::util::InvalidPropertiesFormatException::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 
 J2CPP_DEFINE_CLASS(java::util::InvalidPropertiesFormatException,"java/util/InvalidPropertiesFormatException")

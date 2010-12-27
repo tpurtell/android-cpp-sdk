@@ -10,14 +10,22 @@
 #define J2CPP_JAVA_NIO_CHANNELS_SOCKETCHANNEL_HPP_DECL
 
 
-namespace j2cpp { namespace java { namespace net { class Socket; } } }
 namespace j2cpp { namespace java { namespace net { class SocketAddress; } } }
+namespace j2cpp { namespace java { namespace net { class Socket; } } }
+namespace j2cpp { namespace java { namespace nio { namespace channels { class GatheringByteChannel; } } } }
+namespace j2cpp { namespace java { namespace nio { namespace channels { namespace spi { class AbstractSelectableChannel; } } } } }
+namespace j2cpp { namespace java { namespace nio { namespace channels { class ByteChannel; } } } }
+namespace j2cpp { namespace java { namespace nio { namespace channels { class ScatteringByteChannel; } } } }
 namespace j2cpp { namespace java { namespace nio { class ByteBuffer; } } }
 
 
 #include <java/net/Socket.hpp>
 #include <java/net/SocketAddress.hpp>
 #include <java/nio/ByteBuffer.hpp>
+#include <java/nio/channels/ByteChannel.hpp>
+#include <java/nio/channels/GatheringByteChannel.hpp>
+#include <java/nio/channels/ScatteringByteChannel.hpp>
+#include <java/nio/channels/spi/AbstractSelectableChannel.hpp>
 
 
 namespace j2cpp {
@@ -48,10 +56,16 @@ namespace java { namespace nio { namespace channels {
 		J2CPP_DECLARE_METHOD(13)
 		J2CPP_DECLARE_METHOD(14)
 
-		SocketChannel(jobject jobj)
+		explicit SocketChannel(jobject jobj)
 		: cpp_object<SocketChannel>(jobj)
 		{
 		}
+
+		operator local_ref<java::nio::channels::spi::AbstractSelectableChannel>() const;
+		operator local_ref<java::nio::channels::ByteChannel>() const;
+		operator local_ref<java::nio::channels::ScatteringByteChannel>() const;
+		operator local_ref<java::nio::channels::GatheringByteChannel>() const;
+
 
 		static local_ref< java::nio::channels::SocketChannel > open();
 		static local_ref< java::nio::channels::SocketChannel > open(local_ref< java::net::SocketAddress > const&);
@@ -73,7 +87,6 @@ namespace java { namespace nio { namespace channels {
 } //namespace nio
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_NIO_CHANNELS_SOCKETCHANNEL_HPP_DECL
@@ -86,17 +99,27 @@ namespace java { namespace nio { namespace channels {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::nio::channels::SocketChannel > create< java::nio::channels::SocketChannel>(local_ref< java::nio::channels::spi::SelectorProvider > const &a0)
+
+java::nio::channels::SocketChannel::operator local_ref<java::nio::channels::spi::AbstractSelectableChannel>() const
 {
-	return local_ref< java::nio::channels::SocketChannel >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::nio::channels::SocketChannel::J2CPP_CLASS_NAME>(),
-			get_method_id<java::nio::channels::SocketChannel::J2CPP_CLASS_NAME, java::nio::channels::SocketChannel::J2CPP_METHOD_NAME(0), java::nio::channels::SocketChannel::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::nio::channels::spi::AbstractSelectableChannel>(get_jtype());
 }
+
+java::nio::channels::SocketChannel::operator local_ref<java::nio::channels::ByteChannel>() const
+{
+	return local_ref<java::nio::channels::ByteChannel>(get_jtype());
+}
+
+java::nio::channels::SocketChannel::operator local_ref<java::nio::channels::ScatteringByteChannel>() const
+{
+	return local_ref<java::nio::channels::ScatteringByteChannel>(get_jtype());
+}
+
+java::nio::channels::SocketChannel::operator local_ref<java::nio::channels::GatheringByteChannel>() const
+{
+	return local_ref<java::nio::channels::GatheringByteChannel>(get_jtype());
+}
+
 
 local_ref< java::nio::channels::SocketChannel > java::nio::channels::SocketChannel::open()
 {

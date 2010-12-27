@@ -10,6 +10,7 @@
 #define J2CPP_ANDROID_APP_WALLPAPERINFO_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class CharSequence; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace android { namespace graphics { namespace drawable { class Drawable; } } } }
@@ -20,6 +21,7 @@ namespace j2cpp { namespace android { namespace content { class ComponentName; }
 namespace j2cpp { namespace android { namespace content { class Context; } } }
 namespace j2cpp { namespace android { namespace util { class Printer; } } }
 namespace j2cpp { namespace android { namespace os { class Parcel; } } }
+namespace j2cpp { namespace android { namespace os { class Parcelable; } } }
 namespace j2cpp { namespace android { namespace os { namespace Parcelable_ { class Creator; } } } }
 
 
@@ -33,6 +35,7 @@ namespace j2cpp { namespace android { namespace os { namespace Parcelable_ { cla
 #include <android/os/Parcelable.hpp>
 #include <android/util/Printer.hpp>
 #include <java/lang/CharSequence.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -66,11 +69,16 @@ namespace android { namespace app {
 		J2CPP_DECLARE_METHOD(15)
 		J2CPP_DECLARE_FIELD(0)
 
-		WallpaperInfo(jobject jobj)
+		explicit WallpaperInfo(jobject jobj)
 		: cpp_object<WallpaperInfo>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<android::os::Parcelable>() const;
+
+
+		WallpaperInfo(local_ref< android::content::Context > const&, local_ref< android::content::pm::ResolveInfo > const&);
 		local_ref< java::lang::String > getPackageName();
 		local_ref< java::lang::String > getServiceName();
 		local_ref< android::content::pm::ServiceInfo > getServiceInfo();
@@ -92,7 +100,6 @@ namespace android { namespace app {
 } //namespace app
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_APP_WALLPAPERINFO_HPP_DECL
@@ -105,17 +112,29 @@ namespace android { namespace app {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::app::WallpaperInfo > create< android::app::WallpaperInfo>(local_ref< android::content::Context > const &a0, local_ref< android::content::pm::ResolveInfo > const &a1)
+
+android::app::WallpaperInfo::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::app::WallpaperInfo >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::app::WallpaperInfo::J2CPP_CLASS_NAME>(),
-			get_method_id<android::app::WallpaperInfo::J2CPP_CLASS_NAME, android::app::WallpaperInfo::J2CPP_METHOD_NAME(0), android::app::WallpaperInfo::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+android::app::WallpaperInfo::operator local_ref<android::os::Parcelable>() const
+{
+	return local_ref<android::os::Parcelable>(get_jtype());
+}
+
+
+android::app::WallpaperInfo::WallpaperInfo(local_ref< android::content::Context > const &a0, local_ref< android::content::pm::ResolveInfo > const &a1)
+: cpp_object<android::app::WallpaperInfo>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::app::WallpaperInfo::J2CPP_CLASS_NAME>(),
+		get_method_id<android::app::WallpaperInfo::J2CPP_CLASS_NAME, android::app::WallpaperInfo::J2CPP_METHOD_NAME(0), android::app::WallpaperInfo::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
 
 local_ref< java::lang::String > android::app::WallpaperInfo::getPackageName()
 {
@@ -263,6 +282,7 @@ cpp_int android::app::WallpaperInfo::describeContents()
 		)
 	);
 }
+
 
 
 static_field<

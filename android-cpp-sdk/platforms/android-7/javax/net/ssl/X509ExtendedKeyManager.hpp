@@ -10,14 +10,18 @@
 #define J2CPP_JAVAX_NET_SSL_X509EXTENDEDKEYMANAGER_HPP_DECL
 
 
+namespace j2cpp { namespace javax { namespace net { namespace ssl { class X509KeyManager; } } } }
 namespace j2cpp { namespace javax { namespace net { namespace ssl { class SSLEngine; } } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace security { class Principal; } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/security/Principal.hpp>
 #include <javax/net/ssl/SSLEngine.hpp>
+#include <javax/net/ssl/X509KeyManager.hpp>
 
 
 namespace j2cpp {
@@ -36,10 +40,14 @@ namespace javax { namespace net { namespace ssl {
 		J2CPP_DECLARE_METHOD(1)
 		J2CPP_DECLARE_METHOD(2)
 
-		X509ExtendedKeyManager(jobject jobj)
+		explicit X509ExtendedKeyManager(jobject jobj)
 		: cpp_object<X509ExtendedKeyManager>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<javax::net::ssl::X509KeyManager>() const;
+
 
 		local_ref< java::lang::String > chooseEngineClientAlias(local_ref< cpp_object_array<java::lang::String, 1> > const&, local_ref< cpp_object_array<java::security::Principal, 1> > const&, local_ref< javax::net::ssl::SSLEngine > const&);
 		local_ref< java::lang::String > chooseEngineServerAlias(local_ref< java::lang::String > const&, local_ref< cpp_object_array<java::security::Principal, 1> > const&, local_ref< javax::net::ssl::SSLEngine > const&);
@@ -48,7 +56,6 @@ namespace javax { namespace net { namespace ssl {
 } //namespace ssl
 } //namespace net
 } //namespace javax
-
 
 } //namespace j2cpp
 
@@ -62,16 +69,17 @@ namespace javax { namespace net { namespace ssl {
 namespace j2cpp {
 
 
-template <>
-local_ref< javax::net::ssl::X509ExtendedKeyManager > create< javax::net::ssl::X509ExtendedKeyManager>()
+
+javax::net::ssl::X509ExtendedKeyManager::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< javax::net::ssl::X509ExtendedKeyManager >(
-		environment::get().get_jenv()->NewObject(
-			get_class<javax::net::ssl::X509ExtendedKeyManager::J2CPP_CLASS_NAME>(),
-			get_method_id<javax::net::ssl::X509ExtendedKeyManager::J2CPP_CLASS_NAME, javax::net::ssl::X509ExtendedKeyManager::J2CPP_METHOD_NAME(0), javax::net::ssl::X509ExtendedKeyManager::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+javax::net::ssl::X509ExtendedKeyManager::operator local_ref<javax::net::ssl::X509KeyManager>() const
+{
+	return local_ref<javax::net::ssl::X509KeyManager>(get_jtype());
+}
+
 
 local_ref< java::lang::String > javax::net::ssl::X509ExtendedKeyManager::chooseEngineClientAlias(local_ref< cpp_object_array<java::lang::String, 1> > const &a0, local_ref< cpp_object_array<java::security::Principal, 1> > const &a1, local_ref< javax::net::ssl::SSLEngine > const &a2)
 {

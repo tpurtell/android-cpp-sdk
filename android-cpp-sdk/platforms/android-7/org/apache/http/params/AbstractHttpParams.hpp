@@ -10,10 +10,12 @@
 #define J2CPP_ORG_APACHE_HTTP_PARAMS_ABSTRACTHTTPPARAMS_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace params { class HttpParams; } } } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <org/apache/http/params/HttpParams.hpp>
 
@@ -42,10 +44,14 @@ namespace org { namespace apache { namespace http { namespace params {
 		J2CPP_DECLARE_METHOD(9)
 		J2CPP_DECLARE_METHOD(10)
 
-		AbstractHttpParams(jobject jobj)
+		explicit AbstractHttpParams(jobject jobj)
 		: cpp_object<AbstractHttpParams>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<org::apache::http::params::HttpParams>() const;
+
 
 		cpp_long getLongParameter(local_ref< java::lang::String > const&, cpp_long const&);
 		local_ref< org::apache::http::params::HttpParams > setLongParameter(local_ref< java::lang::String > const&, cpp_long const&);
@@ -64,7 +70,6 @@ namespace org { namespace apache { namespace http { namespace params {
 } //namespace apache
 } //namespace org
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ORG_APACHE_HTTP_PARAMS_ABSTRACTHTTPPARAMS_HPP_DECL
@@ -77,16 +82,17 @@ namespace org { namespace apache { namespace http { namespace params {
 namespace j2cpp {
 
 
-template <>
-local_ref< org::apache::http::params::AbstractHttpParams > create< org::apache::http::params::AbstractHttpParams>()
+
+org::apache::http::params::AbstractHttpParams::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< org::apache::http::params::AbstractHttpParams >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::apache::http::params::AbstractHttpParams::J2CPP_CLASS_NAME>(),
-			get_method_id<org::apache::http::params::AbstractHttpParams::J2CPP_CLASS_NAME, org::apache::http::params::AbstractHttpParams::J2CPP_METHOD_NAME(0), org::apache::http::params::AbstractHttpParams::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+org::apache::http::params::AbstractHttpParams::operator local_ref<org::apache::http::params::HttpParams>() const
+{
+	return local_ref<org::apache::http::params::HttpParams>(get_jtype());
+}
+
 
 cpp_long org::apache::http::params::AbstractHttpParams::getLongParameter(local_ref< java::lang::String > const &a0, cpp_long const &a1)
 {

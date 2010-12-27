@@ -11,9 +11,11 @@
 
 
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace security { class GeneralSecurityException; } } }
 
 
 #include <java/lang/String.hpp>
+#include <java/security/GeneralSecurityException.hpp>
 
 
 namespace j2cpp {
@@ -31,16 +33,20 @@ namespace javax { namespace crypto {
 		J2CPP_DECLARE_METHOD(0)
 		J2CPP_DECLARE_METHOD(1)
 
-		ExemptionMechanismException(jobject jobj)
+		explicit ExemptionMechanismException(jobject jobj)
 		: cpp_object<ExemptionMechanismException>(jobj)
 		{
 		}
 
+		operator local_ref<java::security::GeneralSecurityException>() const;
+
+
+		ExemptionMechanismException(local_ref< java::lang::String > const&);
+		ExemptionMechanismException();
 	}; //class ExemptionMechanismException
 
 } //namespace crypto
 } //namespace javax
-
 
 } //namespace j2cpp
 
@@ -54,28 +60,36 @@ namespace javax { namespace crypto {
 namespace j2cpp {
 
 
-template <>
-local_ref< javax::crypto::ExemptionMechanismException > create< javax::crypto::ExemptionMechanismException>(local_ref< java::lang::String > const &a0)
+
+javax::crypto::ExemptionMechanismException::operator local_ref<java::security::GeneralSecurityException>() const
 {
-	return local_ref< javax::crypto::ExemptionMechanismException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<javax::crypto::ExemptionMechanismException::J2CPP_CLASS_NAME>(),
-			get_method_id<javax::crypto::ExemptionMechanismException::J2CPP_CLASS_NAME, javax::crypto::ExemptionMechanismException::J2CPP_METHOD_NAME(0), javax::crypto::ExemptionMechanismException::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::security::GeneralSecurityException>(get_jtype());
 }
 
-template <>
-local_ref< javax::crypto::ExemptionMechanismException > create< javax::crypto::ExemptionMechanismException>()
+
+javax::crypto::ExemptionMechanismException::ExemptionMechanismException(local_ref< java::lang::String > const &a0)
+: cpp_object<javax::crypto::ExemptionMechanismException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<javax::crypto::ExemptionMechanismException::J2CPP_CLASS_NAME>(),
+		get_method_id<javax::crypto::ExemptionMechanismException::J2CPP_CLASS_NAME, javax::crypto::ExemptionMechanismException::J2CPP_METHOD_NAME(0), javax::crypto::ExemptionMechanismException::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< javax::crypto::ExemptionMechanismException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<javax::crypto::ExemptionMechanismException::J2CPP_CLASS_NAME>(),
-			get_method_id<javax::crypto::ExemptionMechanismException::J2CPP_CLASS_NAME, javax::crypto::ExemptionMechanismException::J2CPP_METHOD_NAME(1), javax::crypto::ExemptionMechanismException::J2CPP_METHOD_SIGNATURE(1), false>()
-		)
-	);
 }
+
+
+
+javax::crypto::ExemptionMechanismException::ExemptionMechanismException()
+: cpp_object<javax::crypto::ExemptionMechanismException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<javax::crypto::ExemptionMechanismException::J2CPP_CLASS_NAME>(),
+		get_method_id<javax::crypto::ExemptionMechanismException::J2CPP_CLASS_NAME, javax::crypto::ExemptionMechanismException::J2CPP_METHOD_NAME(1), javax::crypto::ExemptionMechanismException::J2CPP_METHOD_SIGNATURE(1), false>()
+	)
+)
+{
+}
+
 
 
 J2CPP_DEFINE_CLASS(javax::crypto::ExemptionMechanismException,"javax/crypto/ExemptionMechanismException")

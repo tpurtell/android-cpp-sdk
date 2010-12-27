@@ -10,9 +10,11 @@
 #define J2CPP_ANDROID_UTIL_PRINTER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -30,17 +32,19 @@ namespace android { namespace util {
 
 		J2CPP_DECLARE_METHOD(0)
 
-		Printer(jobject jobj)
+		explicit Printer(jobject jobj)
 		: cpp_object<Printer>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		void println(local_ref< java::lang::String > const&);
 	}; //class Printer
 
 } //namespace util
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -53,6 +57,12 @@ namespace android { namespace util {
 
 namespace j2cpp {
 
+
+
+android::util::Printer::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 void android::util::Printer::println(local_ref< java::lang::String > const &a0)
 {

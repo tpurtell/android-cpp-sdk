@@ -53,10 +53,13 @@ namespace java { namespace lang { namespace reflect {
 		J2CPP_DECLARE_METHOD(20)
 		J2CPP_DECLARE_METHOD(21)
 
-		Array(jobject jobj)
+		explicit Array(jobject jobj)
 		: cpp_object<Array>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		static local_ref< java::lang::Object > get(local_ref< java::lang::Object > const&, cpp_int const&);
 		static cpp_boolean getBoolean(local_ref< java::lang::Object > const&, cpp_int const&);
@@ -85,7 +88,6 @@ namespace java { namespace lang { namespace reflect {
 } //namespace lang
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_LANG_REFLECT_ARRAY_HPP_DECL
@@ -98,16 +100,12 @@ namespace java { namespace lang { namespace reflect {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::lang::reflect::Array > create< java::lang::reflect::Array>()
+
+java::lang::reflect::Array::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::lang::reflect::Array >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::lang::reflect::Array::J2CPP_CLASS_NAME>(),
-			get_method_id<java::lang::reflect::Array::J2CPP_CLASS_NAME, java::lang::reflect::Array::J2CPP_METHOD_NAME(0), java::lang::reflect::Array::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
 
 local_ref< java::lang::Object > java::lang::reflect::Array::get(local_ref< java::lang::Object > const &a0, cpp_int const &a1)
 {

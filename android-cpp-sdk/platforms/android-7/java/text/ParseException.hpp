@@ -11,8 +11,10 @@
 
 
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace lang { class Exception; } } }
 
 
+#include <java/lang/Exception.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -31,17 +33,20 @@ namespace java { namespace text {
 		J2CPP_DECLARE_METHOD(0)
 		J2CPP_DECLARE_METHOD(1)
 
-		ParseException(jobject jobj)
+		explicit ParseException(jobject jobj)
 		: cpp_object<ParseException>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Exception>() const;
+
+
+		ParseException(local_ref< java::lang::String > const&, cpp_int const&);
 		cpp_int getErrorOffset();
 	}; //class ParseException
 
 } //namespace text
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -55,17 +60,24 @@ namespace java { namespace text {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::text::ParseException > create< java::text::ParseException>(local_ref< java::lang::String > const &a0, cpp_int const &a1)
+
+java::text::ParseException::operator local_ref<java::lang::Exception>() const
 {
-	return local_ref< java::text::ParseException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::text::ParseException::J2CPP_CLASS_NAME>(),
-			get_method_id<java::text::ParseException::J2CPP_CLASS_NAME, java::text::ParseException::J2CPP_METHOD_NAME(0), java::text::ParseException::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Exception>(get_jtype());
 }
+
+
+java::text::ParseException::ParseException(local_ref< java::lang::String > const &a0, cpp_int const &a1)
+: cpp_object<java::text::ParseException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::text::ParseException::J2CPP_CLASS_NAME>(),
+		get_method_id<java::text::ParseException::J2CPP_CLASS_NAME, java::text::ParseException::J2CPP_METHOD_NAME(0), java::text::ParseException::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
 
 cpp_int java::text::ParseException::getErrorOffset()
 {

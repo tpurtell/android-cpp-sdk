@@ -10,12 +10,14 @@
 #define J2CPP_JAVA_SQL_DRIVER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace sql { class Connection; } } }
 namespace j2cpp { namespace java { namespace sql { class DriverPropertyInfo; } } }
 namespace j2cpp { namespace java { namespace util { class Properties; } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/sql/Connection.hpp>
 #include <java/sql/DriverPropertyInfo.hpp>
@@ -41,10 +43,13 @@ namespace java { namespace sql {
 		J2CPP_DECLARE_METHOD(4)
 		J2CPP_DECLARE_METHOD(5)
 
-		Driver(jobject jobj)
+		explicit Driver(jobject jobj)
 		: cpp_object<Driver>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		cpp_boolean acceptsURL(local_ref< java::lang::String > const&);
 		local_ref< java::sql::Connection > connect(local_ref< java::lang::String > const&, local_ref< java::util::Properties > const&);
@@ -57,7 +62,6 @@ namespace java { namespace sql {
 } //namespace sql
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_SQL_DRIVER_HPP_DECL
@@ -69,6 +73,12 @@ namespace java { namespace sql {
 
 namespace j2cpp {
 
+
+
+java::sql::Driver::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 cpp_boolean java::sql::Driver::acceptsURL(local_ref< java::lang::String > const &a0)
 {

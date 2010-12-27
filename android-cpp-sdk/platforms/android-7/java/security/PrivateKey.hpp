@@ -10,8 +10,12 @@
 #define J2CPP_JAVA_SECURITY_PRIVATEKEY_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace security { class Key; } } }
 
 
+#include <java/lang/Object.hpp>
+#include <java/security/Key.hpp>
 
 
 namespace j2cpp {
@@ -28,17 +32,20 @@ namespace java { namespace security {
 
 		J2CPP_DECLARE_FIELD(0)
 
-		PrivateKey(jobject jobj)
+		explicit PrivateKey(jobject jobj)
 		: cpp_object<PrivateKey>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::security::Key>() const;
+
 
 		static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(0), J2CPP_FIELD_SIGNATURE(0), cpp_long > serialVersionUID;
 	}; //class PrivateKey
 
 } //namespace security
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -51,6 +58,17 @@ namespace java { namespace security {
 
 namespace j2cpp {
 
+
+
+java::security::PrivateKey::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
+
+java::security::PrivateKey::operator local_ref<java::security::Key>() const
+{
+	return local_ref<java::security::Key>(get_jtype());
+}
 
 static_field<
 	java::security::PrivateKey::J2CPP_CLASS_NAME,

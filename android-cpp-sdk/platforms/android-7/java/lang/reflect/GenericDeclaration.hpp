@@ -10,9 +10,11 @@
 #define J2CPP_JAVA_LANG_REFLECT_GENERICDECLARATION_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { namespace reflect { class TypeVariable; } } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/reflect/TypeVariable.hpp>
 
 
@@ -30,10 +32,13 @@ namespace java { namespace lang { namespace reflect {
 
 		J2CPP_DECLARE_METHOD(0)
 
-		GenericDeclaration(jobject jobj)
+		explicit GenericDeclaration(jobject jobj)
 		: cpp_object<GenericDeclaration>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		local_ref< cpp_object_array<java::lang::reflect::TypeVariable, 1> > getTypeParameters();
 	}; //class GenericDeclaration
@@ -41,7 +46,6 @@ namespace java { namespace lang { namespace reflect {
 } //namespace reflect
 } //namespace lang
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -54,6 +58,12 @@ namespace java { namespace lang { namespace reflect {
 
 namespace j2cpp {
 
+
+
+java::lang::reflect::GenericDeclaration::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 local_ref< cpp_object_array<java::lang::reflect::TypeVariable, 1> > java::lang::reflect::GenericDeclaration::getTypeParameters()
 {

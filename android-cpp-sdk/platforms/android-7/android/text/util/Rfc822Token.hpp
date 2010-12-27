@@ -44,11 +44,15 @@ namespace android { namespace text { namespace util {
 		J2CPP_DECLARE_METHOD(11)
 		J2CPP_DECLARE_METHOD(12)
 
-		Rfc822Token(jobject jobj)
+		explicit Rfc822Token(jobject jobj)
 		: cpp_object<Rfc822Token>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		Rfc822Token(local_ref< java::lang::String > const&, local_ref< java::lang::String > const&, local_ref< java::lang::String > const&);
 		local_ref< java::lang::String > getName();
 		local_ref< java::lang::String > getAddress();
 		local_ref< java::lang::String > getComment();
@@ -67,7 +71,6 @@ namespace android { namespace text { namespace util {
 } //namespace text
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_TEXT_UTIL_RFC822TOKEN_HPP_DECL
@@ -80,17 +83,24 @@ namespace android { namespace text { namespace util {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::text::util::Rfc822Token > create< android::text::util::Rfc822Token>(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1, local_ref< java::lang::String > const &a2)
+
+android::text::util::Rfc822Token::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::text::util::Rfc822Token >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::text::util::Rfc822Token::J2CPP_CLASS_NAME>(),
-			get_method_id<android::text::util::Rfc822Token::J2CPP_CLASS_NAME, android::text::util::Rfc822Token::J2CPP_METHOD_NAME(0), android::text::util::Rfc822Token::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::text::util::Rfc822Token::Rfc822Token(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1, local_ref< java::lang::String > const &a2)
+: cpp_object<android::text::util::Rfc822Token>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::text::util::Rfc822Token::J2CPP_CLASS_NAME>(),
+		get_method_id<android::text::util::Rfc822Token::J2CPP_CLASS_NAME, android::text::util::Rfc822Token::J2CPP_METHOD_NAME(0), android::text::util::Rfc822Token::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
+	)
+)
+{
+}
+
 
 local_ref< java::lang::String > android::text::util::Rfc822Token::getName()
 {

@@ -13,6 +13,7 @@
 namespace j2cpp { namespace android { namespace content { class Context; } } }
 namespace j2cpp { namespace android { namespace view { class KeyEvent; } } }
 namespace j2cpp { namespace android { namespace widget { class ListAdapter; } } }
+namespace j2cpp { namespace android { namespace widget { class AbsListView; } } }
 namespace j2cpp { namespace android { namespace widget { class Adapter; } } }
 namespace j2cpp { namespace android { namespace util { class AttributeSet; } } }
 
@@ -20,6 +21,7 @@ namespace j2cpp { namespace android { namespace util { class AttributeSet; } } }
 #include <android/content/Context.hpp>
 #include <android/util/AttributeSet.hpp>
 #include <android/view/KeyEvent.hpp>
+#include <android/widget/AbsListView.hpp>
 #include <android/widget/Adapter.hpp>
 #include <android/widget/ListAdapter.hpp>
 
@@ -67,11 +69,17 @@ namespace android { namespace widget {
 		J2CPP_DECLARE_FIELD(3)
 		J2CPP_DECLARE_FIELD(4)
 
-		GridView(jobject jobj)
+		explicit GridView(jobject jobj)
 		: cpp_object<GridView>(jobj)
 		{
 		}
 
+		operator local_ref<android::widget::AbsListView>() const;
+
+
+		GridView(local_ref< android::content::Context > const&);
+		GridView(local_ref< android::content::Context > const&, local_ref< android::util::AttributeSet > const&);
+		GridView(local_ref< android::content::Context > const&, local_ref< android::util::AttributeSet > const&, cpp_int const&);
 		local_ref< android::widget::ListAdapter > getAdapter();
 		void setAdapter(local_ref< android::widget::ListAdapter > const&);
 		void setSelection(cpp_int const&);
@@ -98,7 +106,6 @@ namespace android { namespace widget {
 } //namespace widget
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_WIDGET_GRIDVIEW_HPP_DECL
@@ -111,41 +118,50 @@ namespace android { namespace widget {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::widget::GridView > create< android::widget::GridView>(local_ref< android::content::Context > const &a0)
+
+android::widget::GridView::operator local_ref<android::widget::AbsListView>() const
 {
-	return local_ref< android::widget::GridView >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::widget::GridView::J2CPP_CLASS_NAME>(),
-			get_method_id<android::widget::GridView::J2CPP_CLASS_NAME, android::widget::GridView::J2CPP_METHOD_NAME(0), android::widget::GridView::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<android::widget::AbsListView>(get_jtype());
 }
 
-template <>
-local_ref< android::widget::GridView > create< android::widget::GridView>(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1)
+
+android::widget::GridView::GridView(local_ref< android::content::Context > const &a0)
+: cpp_object<android::widget::GridView>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::widget::GridView::J2CPP_CLASS_NAME>(),
+		get_method_id<android::widget::GridView::J2CPP_CLASS_NAME, android::widget::GridView::J2CPP_METHOD_NAME(0), android::widget::GridView::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< android::widget::GridView >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::widget::GridView::J2CPP_CLASS_NAME>(),
-			get_method_id<android::widget::GridView::J2CPP_CLASS_NAME, android::widget::GridView::J2CPP_METHOD_NAME(1), android::widget::GridView::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< android::widget::GridView > create< android::widget::GridView>(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1, cpp_int const &a2)
+
+
+android::widget::GridView::GridView(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1)
+: cpp_object<android::widget::GridView>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::widget::GridView::J2CPP_CLASS_NAME>(),
+		get_method_id<android::widget::GridView::J2CPP_CLASS_NAME, android::widget::GridView::J2CPP_METHOD_NAME(1), android::widget::GridView::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
 {
-	return local_ref< android::widget::GridView >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::widget::GridView::J2CPP_CLASS_NAME>(),
-			get_method_id<android::widget::GridView::J2CPP_CLASS_NAME, android::widget::GridView::J2CPP_METHOD_NAME(2), android::widget::GridView::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
-		)
-	);
 }
+
+
+
+android::widget::GridView::GridView(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1, cpp_int const &a2)
+: cpp_object<android::widget::GridView>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::widget::GridView::J2CPP_CLASS_NAME>(),
+		get_method_id<android::widget::GridView::J2CPP_CLASS_NAME, android::widget::GridView::J2CPP_METHOD_NAME(2), android::widget::GridView::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
+	)
+)
+{
+}
+
 
 local_ref< android::widget::ListAdapter > android::widget::GridView::getAdapter()
 {

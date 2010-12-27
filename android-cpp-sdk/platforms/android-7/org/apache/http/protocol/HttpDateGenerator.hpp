@@ -10,10 +10,12 @@
 #define J2CPP_ORG_APACHE_HTTP_PROTOCOL_HTTPDATEGENERATOR_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace util { class TimeZone; } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/util/TimeZone.hpp>
 
@@ -36,11 +38,15 @@ namespace org { namespace apache { namespace http { namespace protocol {
 		J2CPP_DECLARE_FIELD(0)
 		J2CPP_DECLARE_FIELD(1)
 
-		HttpDateGenerator(jobject jobj)
+		explicit HttpDateGenerator(jobject jobj)
 		: cpp_object<HttpDateGenerator>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		HttpDateGenerator();
 		local_ref< java::lang::String > getCurrentDate();
 
 		static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(0), J2CPP_FIELD_SIGNATURE(0), local_ref< java::lang::String > > PATTERN_RFC1123;
@@ -51,7 +57,6 @@ namespace org { namespace apache { namespace http { namespace protocol {
 } //namespace http
 } //namespace apache
 } //namespace org
-
 
 } //namespace j2cpp
 
@@ -65,16 +70,23 @@ namespace org { namespace apache { namespace http { namespace protocol {
 namespace j2cpp {
 
 
-template <>
-local_ref< org::apache::http::protocol::HttpDateGenerator > create< org::apache::http::protocol::HttpDateGenerator>()
+
+org::apache::http::protocol::HttpDateGenerator::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< org::apache::http::protocol::HttpDateGenerator >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::apache::http::protocol::HttpDateGenerator::J2CPP_CLASS_NAME>(),
-			get_method_id<org::apache::http::protocol::HttpDateGenerator::J2CPP_CLASS_NAME, org::apache::http::protocol::HttpDateGenerator::J2CPP_METHOD_NAME(0), org::apache::http::protocol::HttpDateGenerator::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+org::apache::http::protocol::HttpDateGenerator::HttpDateGenerator()
+: cpp_object<org::apache::http::protocol::HttpDateGenerator>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::apache::http::protocol::HttpDateGenerator::J2CPP_CLASS_NAME>(),
+		get_method_id<org::apache::http::protocol::HttpDateGenerator::J2CPP_CLASS_NAME, org::apache::http::protocol::HttpDateGenerator::J2CPP_METHOD_NAME(0), org::apache::http::protocol::HttpDateGenerator::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 local_ref< java::lang::String > org::apache::http::protocol::HttpDateGenerator::getCurrentDate()
 {
@@ -85,6 +97,7 @@ local_ref< java::lang::String > org::apache::http::protocol::HttpDateGenerator::
 		)
 	);
 }
+
 
 
 static_field<

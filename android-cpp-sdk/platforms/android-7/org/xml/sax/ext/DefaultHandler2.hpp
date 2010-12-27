@@ -12,10 +12,18 @@
 
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace org { namespace xml { namespace sax { class InputSource; } } } }
+namespace j2cpp { namespace org { namespace xml { namespace sax { namespace ext { class LexicalHandler; } } } } }
+namespace j2cpp { namespace org { namespace xml { namespace sax { namespace ext { class EntityResolver2; } } } } }
+namespace j2cpp { namespace org { namespace xml { namespace sax { namespace ext { class DeclHandler; } } } } }
+namespace j2cpp { namespace org { namespace xml { namespace sax { namespace helpers { class DefaultHandler; } } } } }
 
 
 #include <java/lang/String.hpp>
 #include <org/xml/sax/InputSource.hpp>
+#include <org/xml/sax/ext/DeclHandler.hpp>
+#include <org/xml/sax/ext/EntityResolver2.hpp>
+#include <org/xml/sax/ext/LexicalHandler.hpp>
+#include <org/xml/sax/helpers/DefaultHandler.hpp>
 
 
 namespace j2cpp {
@@ -46,11 +54,18 @@ namespace org { namespace xml { namespace sax { namespace ext {
 		J2CPP_DECLARE_METHOD(13)
 		J2CPP_DECLARE_METHOD(14)
 
-		DefaultHandler2(jobject jobj)
+		explicit DefaultHandler2(jobject jobj)
 		: cpp_object<DefaultHandler2>(jobj)
 		{
 		}
 
+		operator local_ref<org::xml::sax::helpers::DefaultHandler>() const;
+		operator local_ref<org::xml::sax::ext::LexicalHandler>() const;
+		operator local_ref<org::xml::sax::ext::DeclHandler>() const;
+		operator local_ref<org::xml::sax::ext::EntityResolver2>() const;
+
+
+		DefaultHandler2();
 		void startCDATA();
 		void endCDATA();
 		void startDTD(local_ref< java::lang::String > const&, local_ref< java::lang::String > const&, local_ref< java::lang::String > const&);
@@ -72,7 +87,6 @@ namespace org { namespace xml { namespace sax { namespace ext {
 } //namespace xml
 } //namespace org
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ORG_XML_SAX_EXT_DEFAULTHANDLER2_HPP_DECL
@@ -85,16 +99,38 @@ namespace org { namespace xml { namespace sax { namespace ext {
 namespace j2cpp {
 
 
-template <>
-local_ref< org::xml::sax::ext::DefaultHandler2 > create< org::xml::sax::ext::DefaultHandler2>()
+
+org::xml::sax::ext::DefaultHandler2::operator local_ref<org::xml::sax::helpers::DefaultHandler>() const
 {
-	return local_ref< org::xml::sax::ext::DefaultHandler2 >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::xml::sax::ext::DefaultHandler2::J2CPP_CLASS_NAME>(),
-			get_method_id<org::xml::sax::ext::DefaultHandler2::J2CPP_CLASS_NAME, org::xml::sax::ext::DefaultHandler2::J2CPP_METHOD_NAME(0), org::xml::sax::ext::DefaultHandler2::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<org::xml::sax::helpers::DefaultHandler>(get_jtype());
 }
+
+org::xml::sax::ext::DefaultHandler2::operator local_ref<org::xml::sax::ext::LexicalHandler>() const
+{
+	return local_ref<org::xml::sax::ext::LexicalHandler>(get_jtype());
+}
+
+org::xml::sax::ext::DefaultHandler2::operator local_ref<org::xml::sax::ext::DeclHandler>() const
+{
+	return local_ref<org::xml::sax::ext::DeclHandler>(get_jtype());
+}
+
+org::xml::sax::ext::DefaultHandler2::operator local_ref<org::xml::sax::ext::EntityResolver2>() const
+{
+	return local_ref<org::xml::sax::ext::EntityResolver2>(get_jtype());
+}
+
+
+org::xml::sax::ext::DefaultHandler2::DefaultHandler2()
+: cpp_object<org::xml::sax::ext::DefaultHandler2>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::xml::sax::ext::DefaultHandler2::J2CPP_CLASS_NAME>(),
+		get_method_id<org::xml::sax::ext::DefaultHandler2::J2CPP_CLASS_NAME, org::xml::sax::ext::DefaultHandler2::J2CPP_METHOD_NAME(0), org::xml::sax::ext::DefaultHandler2::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 void org::xml::sax::ext::DefaultHandler2::startCDATA()
 {

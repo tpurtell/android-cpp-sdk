@@ -10,12 +10,14 @@
 #define J2CPP_JAVA_SQL_STATEMENT_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace sql { class SQLWarning; } } }
 namespace j2cpp { namespace java { namespace sql { class ResultSet; } } }
 namespace j2cpp { namespace java { namespace sql { class Connection; } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/sql/Connection.hpp>
 #include <java/sql/ResultSet.hpp>
@@ -79,10 +81,13 @@ namespace java { namespace sql {
 		J2CPP_DECLARE_FIELD(5)
 		J2CPP_DECLARE_FIELD(6)
 
-		Statement(jobject jobj)
+		explicit Statement(jobject jobj)
 		: cpp_object<Statement>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		void addBatch(local_ref< java::lang::String > const&);
 		void cancel();
@@ -134,7 +139,6 @@ namespace java { namespace sql {
 } //namespace sql
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_SQL_STATEMENT_HPP_DECL
@@ -146,6 +150,12 @@ namespace java { namespace sql {
 
 namespace j2cpp {
 
+
+
+java::sql::Statement::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 void java::sql::Statement::addBatch(local_ref< java::lang::String > const &a0)
 {

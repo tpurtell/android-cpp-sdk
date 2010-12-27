@@ -31,10 +31,13 @@ namespace java { namespace util {
 		J2CPP_DECLARE_METHOD(0)
 		J2CPP_DECLARE_METHOD(1)
 
-		Enumeration(jobject jobj)
+		explicit Enumeration(jobject jobj)
 		: cpp_object<Enumeration>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		cpp_boolean hasMoreElements();
 		local_ref< java::lang::Object > nextElement();
@@ -42,7 +45,6 @@ namespace java { namespace util {
 
 } //namespace util
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -55,6 +57,12 @@ namespace java { namespace util {
 
 namespace j2cpp {
 
+
+
+java::util::Enumeration::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 cpp_boolean java::util::Enumeration::hasMoreElements()
 {

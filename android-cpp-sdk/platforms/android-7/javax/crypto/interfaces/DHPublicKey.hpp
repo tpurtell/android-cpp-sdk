@@ -10,10 +10,16 @@
 #define J2CPP_JAVAX_CRYPTO_INTERFACES_DHPUBLICKEY_HPP_DECL
 
 
+namespace j2cpp { namespace javax { namespace crypto { namespace interfaces { class DHKey; } } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace math { class BigInteger; } } }
+namespace j2cpp { namespace java { namespace security { class PublicKey; } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/math/BigInteger.hpp>
+#include <java/security/PublicKey.hpp>
+#include <javax/crypto/interfaces/DHKey.hpp>
 
 
 namespace j2cpp {
@@ -31,10 +37,15 @@ namespace javax { namespace crypto { namespace interfaces {
 		J2CPP_DECLARE_METHOD(0)
 		J2CPP_DECLARE_FIELD(0)
 
-		DHPublicKey(jobject jobj)
+		explicit DHPublicKey(jobject jobj)
 		: cpp_object<DHPublicKey>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<javax::crypto::interfaces::DHKey>() const;
+		operator local_ref<java::security::PublicKey>() const;
+
 
 		local_ref< java::math::BigInteger > getY();
 
@@ -44,7 +55,6 @@ namespace javax { namespace crypto { namespace interfaces {
 } //namespace interfaces
 } //namespace crypto
 } //namespace javax
-
 
 } //namespace j2cpp
 
@@ -57,6 +67,22 @@ namespace javax { namespace crypto { namespace interfaces {
 
 namespace j2cpp {
 
+
+
+javax::crypto::interfaces::DHPublicKey::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
+
+javax::crypto::interfaces::DHPublicKey::operator local_ref<javax::crypto::interfaces::DHKey>() const
+{
+	return local_ref<javax::crypto::interfaces::DHKey>(get_jtype());
+}
+
+javax::crypto::interfaces::DHPublicKey::operator local_ref<java::security::PublicKey>() const
+{
+	return local_ref<java::security::PublicKey>(get_jtype());
+}
 
 local_ref< java::math::BigInteger > javax::crypto::interfaces::DHPublicKey::getY()
 {

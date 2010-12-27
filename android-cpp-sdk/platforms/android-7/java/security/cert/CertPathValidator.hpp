@@ -10,6 +10,7 @@
 #define J2CPP_JAVA_SECURITY_CERT_CERTPATHVALIDATOR_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace security { class Provider; } } }
 namespace j2cpp { namespace java { namespace security { namespace cert { class CertPath; } } } }
@@ -17,6 +18,7 @@ namespace j2cpp { namespace java { namespace security { namespace cert { class C
 namespace j2cpp { namespace java { namespace security { namespace cert { class CertPathParameters; } } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/security/Provider.hpp>
 #include <java/security/cert/CertPath.hpp>
@@ -45,10 +47,13 @@ namespace java { namespace security { namespace cert {
 		J2CPP_DECLARE_METHOD(6)
 		J2CPP_DECLARE_METHOD(7)
 
-		CertPathValidator(jobject jobj)
+		explicit CertPathValidator(jobject jobj)
 		: cpp_object<CertPathValidator>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		local_ref< java::lang::String > getAlgorithm();
 		local_ref< java::security::Provider > getProvider();
@@ -63,7 +68,6 @@ namespace java { namespace security { namespace cert {
 } //namespace security
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_SECURITY_CERT_CERTPATHVALIDATOR_HPP_DECL
@@ -76,17 +80,12 @@ namespace java { namespace security { namespace cert {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::security::cert::CertPathValidator > create< java::security::cert::CertPathValidator>(local_ref< java::security::cert::CertPathValidatorSpi > const &a0, local_ref< java::security::Provider > const &a1, local_ref< java::lang::String > const &a2)
+
+java::security::cert::CertPathValidator::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::security::cert::CertPathValidator >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::security::cert::CertPathValidator::J2CPP_CLASS_NAME>(),
-			get_method_id<java::security::cert::CertPathValidator::J2CPP_CLASS_NAME, java::security::cert::CertPathValidator::J2CPP_METHOD_NAME(0), java::security::cert::CertPathValidator::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
 
 local_ref< java::lang::String > java::security::cert::CertPathValidator::getAlgorithm()
 {

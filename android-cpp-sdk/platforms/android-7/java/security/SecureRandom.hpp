@@ -12,10 +12,12 @@
 
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace security { class Provider; } } }
+namespace j2cpp { namespace java { namespace util { class Random; } } }
 
 
 #include <java/lang/String.hpp>
 #include <java/security/Provider.hpp>
+#include <java/util/Random.hpp>
 
 
 namespace j2cpp {
@@ -45,11 +47,16 @@ namespace java { namespace security {
 		J2CPP_DECLARE_METHOD(12)
 		J2CPP_DECLARE_METHOD(13)
 
-		SecureRandom(jobject jobj)
+		explicit SecureRandom(jobject jobj)
 		: cpp_object<SecureRandom>(jobj)
 		{
 		}
 
+		operator local_ref<java::util::Random>() const;
+
+
+		SecureRandom();
+		SecureRandom(local_ref< cpp_byte_array<1> > const&);
 		static local_ref< java::security::SecureRandom > getInstance(local_ref< java::lang::String > const&);
 		static local_ref< java::security::SecureRandom > getInstance(local_ref< java::lang::String > const&, local_ref< java::lang::String > const&);
 		static local_ref< java::security::SecureRandom > getInstance(local_ref< java::lang::String > const&, local_ref< java::security::Provider > const&);
@@ -65,7 +72,6 @@ namespace java { namespace security {
 } //namespace security
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_SECURITY_SECURERANDOM_HPP_DECL
@@ -78,40 +84,37 @@ namespace java { namespace security {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::security::SecureRandom > create< java::security::SecureRandom>()
+
+java::security::SecureRandom::operator local_ref<java::util::Random>() const
 {
-	return local_ref< java::security::SecureRandom >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::security::SecureRandom::J2CPP_CLASS_NAME>(),
-			get_method_id<java::security::SecureRandom::J2CPP_CLASS_NAME, java::security::SecureRandom::J2CPP_METHOD_NAME(0), java::security::SecureRandom::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::util::Random>(get_jtype());
 }
 
-template <>
-local_ref< java::security::SecureRandom > create< java::security::SecureRandom>(local_ref< cpp_byte_array<1> > const &a0)
+
+java::security::SecureRandom::SecureRandom()
+: cpp_object<java::security::SecureRandom>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::security::SecureRandom::J2CPP_CLASS_NAME>(),
+		get_method_id<java::security::SecureRandom::J2CPP_CLASS_NAME, java::security::SecureRandom::J2CPP_METHOD_NAME(0), java::security::SecureRandom::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
 {
-	return local_ref< java::security::SecureRandom >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::security::SecureRandom::J2CPP_CLASS_NAME>(),
-			get_method_id<java::security::SecureRandom::J2CPP_CLASS_NAME, java::security::SecureRandom::J2CPP_METHOD_NAME(1), java::security::SecureRandom::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< java::security::SecureRandom > create< java::security::SecureRandom>(local_ref< java::security::SecureRandomSpi > const &a0, local_ref< java::security::Provider > const &a1)
+
+
+java::security::SecureRandom::SecureRandom(local_ref< cpp_byte_array<1> > const &a0)
+: cpp_object<java::security::SecureRandom>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::security::SecureRandom::J2CPP_CLASS_NAME>(),
+		get_method_id<java::security::SecureRandom::J2CPP_CLASS_NAME, java::security::SecureRandom::J2CPP_METHOD_NAME(1), java::security::SecureRandom::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< java::security::SecureRandom >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::security::SecureRandom::J2CPP_CLASS_NAME>(),
-			get_method_id<java::security::SecureRandom::J2CPP_CLASS_NAME, java::security::SecureRandom::J2CPP_METHOD_NAME(2), java::security::SecureRandom::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
 }
+
+
 
 local_ref< java::security::SecureRandom > java::security::SecureRandom::getInstance(local_ref< java::lang::String > const &a0)
 {

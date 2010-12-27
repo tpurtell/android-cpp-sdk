@@ -12,14 +12,18 @@
 
 namespace j2cpp { namespace javax { namespace net { namespace ssl { class SSLSession; } } } }
 namespace j2cpp { namespace javax { namespace net { namespace ssl { class SSLSocket; } } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace security { namespace cert { class X509Certificate; } } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { namespace conn { namespace ssl { class X509HostnameVerifier; } } } } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/security/cert/X509Certificate.hpp>
 #include <javax/net/ssl/SSLSession.hpp>
 #include <javax/net/ssl/SSLSocket.hpp>
+#include <org/apache/http/conn/ssl/X509HostnameVerifier.hpp>
 
 
 namespace j2cpp {
@@ -44,11 +48,16 @@ namespace org { namespace apache { namespace http { namespace conn { namespace s
 		J2CPP_DECLARE_METHOD(7)
 		J2CPP_DECLARE_METHOD(8)
 
-		AbstractVerifier(jobject jobj)
+		explicit AbstractVerifier(jobject jobj)
 		: cpp_object<AbstractVerifier>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<org::apache::http::conn::ssl::X509HostnameVerifier>() const;
+
+
+		AbstractVerifier();
 		void verify(local_ref< java::lang::String > const&, local_ref< javax::net::ssl::SSLSocket > const&);
 		cpp_boolean verify(local_ref< java::lang::String > const&, local_ref< javax::net::ssl::SSLSession > const&);
 		void verify(local_ref< java::lang::String > const&, local_ref< java::security::cert::X509Certificate > const&);
@@ -65,7 +74,6 @@ namespace org { namespace apache { namespace http { namespace conn { namespace s
 } //namespace apache
 } //namespace org
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ORG_APACHE_HTTP_CONN_SSL_ABSTRACTVERIFIER_HPP_DECL
@@ -78,16 +86,28 @@ namespace org { namespace apache { namespace http { namespace conn { namespace s
 namespace j2cpp {
 
 
-template <>
-local_ref< org::apache::http::conn::ssl::AbstractVerifier > create< org::apache::http::conn::ssl::AbstractVerifier>()
+
+org::apache::http::conn::ssl::AbstractVerifier::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< org::apache::http::conn::ssl::AbstractVerifier >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::apache::http::conn::ssl::AbstractVerifier::J2CPP_CLASS_NAME>(),
-			get_method_id<org::apache::http::conn::ssl::AbstractVerifier::J2CPP_CLASS_NAME, org::apache::http::conn::ssl::AbstractVerifier::J2CPP_METHOD_NAME(0), org::apache::http::conn::ssl::AbstractVerifier::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+org::apache::http::conn::ssl::AbstractVerifier::operator local_ref<org::apache::http::conn::ssl::X509HostnameVerifier>() const
+{
+	return local_ref<org::apache::http::conn::ssl::X509HostnameVerifier>(get_jtype());
+}
+
+
+org::apache::http::conn::ssl::AbstractVerifier::AbstractVerifier()
+: cpp_object<org::apache::http::conn::ssl::AbstractVerifier>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::apache::http::conn::ssl::AbstractVerifier::J2CPP_CLASS_NAME>(),
+		get_method_id<org::apache::http::conn::ssl::AbstractVerifier::J2CPP_CLASS_NAME, org::apache::http::conn::ssl::AbstractVerifier::J2CPP_METHOD_NAME(0), org::apache::http::conn::ssl::AbstractVerifier::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 void org::apache::http::conn::ssl::AbstractVerifier::verify(local_ref< java::lang::String > const &a0, local_ref< javax::net::ssl::SSLSocket > const &a1)
 {

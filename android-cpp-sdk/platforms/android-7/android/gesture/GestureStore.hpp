@@ -12,6 +12,7 @@
 
 namespace j2cpp { namespace java { namespace io { class InputStream; } } }
 namespace j2cpp { namespace java { namespace io { class OutputStream; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace util { class Set; } } }
 namespace j2cpp { namespace java { namespace util { class ArrayList; } } }
@@ -21,6 +22,7 @@ namespace j2cpp { namespace android { namespace gesture { class Gesture; } } }
 #include <android/gesture/Gesture.hpp>
 #include <java/io/InputStream.hpp>
 #include <java/io/OutputStream.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/util/ArrayList.hpp>
 #include <java/util/Set.hpp>
@@ -59,11 +61,15 @@ namespace android { namespace gesture {
 		J2CPP_DECLARE_FIELD(2)
 		J2CPP_DECLARE_FIELD(3)
 
-		GestureStore(jobject jobj)
+		explicit GestureStore(jobject jobj)
 		: cpp_object<GestureStore>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		GestureStore();
 		void setOrientationStyle(cpp_int const&);
 		cpp_int getOrientationStyle();
 		void setSequenceType(cpp_int const&);
@@ -89,7 +95,6 @@ namespace android { namespace gesture {
 } //namespace gesture
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_GESTURE_GESTURESTORE_HPP_DECL
@@ -102,16 +107,23 @@ namespace android { namespace gesture {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::gesture::GestureStore > create< android::gesture::GestureStore>()
+
+android::gesture::GestureStore::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::gesture::GestureStore >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::gesture::GestureStore::J2CPP_CLASS_NAME>(),
-			get_method_id<android::gesture::GestureStore::J2CPP_CLASS_NAME, android::gesture::GestureStore::J2CPP_METHOD_NAME(0), android::gesture::GestureStore::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::gesture::GestureStore::GestureStore()
+: cpp_object<android::gesture::GestureStore>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::gesture::GestureStore::J2CPP_CLASS_NAME>(),
+		get_method_id<android::gesture::GestureStore::J2CPP_CLASS_NAME, android::gesture::GestureStore::J2CPP_METHOD_NAME(0), android::gesture::GestureStore::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 void android::gesture::GestureStore::setOrientationStyle(cpp_int const &a0)
 {

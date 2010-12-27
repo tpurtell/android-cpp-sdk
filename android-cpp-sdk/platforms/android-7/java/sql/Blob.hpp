@@ -12,10 +12,12 @@
 
 namespace j2cpp { namespace java { namespace io { class InputStream; } } }
 namespace j2cpp { namespace java { namespace io { class OutputStream; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
 #include <java/io/InputStream.hpp>
 #include <java/io/OutputStream.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -40,10 +42,13 @@ namespace java { namespace sql {
 		J2CPP_DECLARE_METHOD(7)
 		J2CPP_DECLARE_METHOD(8)
 
-		Blob(jobject jobj)
+		explicit Blob(jobject jobj)
 		: cpp_object<Blob>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		local_ref< java::io::InputStream > getBinaryStream();
 		local_ref< cpp_byte_array<1> > getBytes(cpp_long const&, cpp_int const&);
@@ -59,7 +64,6 @@ namespace java { namespace sql {
 } //namespace sql
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_SQL_BLOB_HPP_DECL
@@ -71,6 +75,12 @@ namespace java { namespace sql {
 
 namespace j2cpp {
 
+
+
+java::sql::Blob::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 local_ref< java::io::InputStream > java::sql::Blob::getBinaryStream()
 {

@@ -11,8 +11,10 @@
 
 
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace android { namespace database { namespace sqlite { class SQLiteProgram; } } } }
 
 
+#include <android/database/sqlite/SQLiteProgram.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -34,10 +36,13 @@ namespace android { namespace database { namespace sqlite {
 		J2CPP_DECLARE_METHOD(3)
 		J2CPP_DECLARE_METHOD(4)
 
-		SQLiteStatement(jobject jobj)
+		explicit SQLiteStatement(jobject jobj)
 		: cpp_object<SQLiteStatement>(jobj)
 		{
 		}
+
+		operator local_ref<android::database::sqlite::SQLiteProgram>() const;
+
 
 		void execute();
 		cpp_long executeInsert();
@@ -48,7 +53,6 @@ namespace android { namespace database { namespace sqlite {
 } //namespace sqlite
 } //namespace database
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -62,16 +66,12 @@ namespace android { namespace database { namespace sqlite {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::database::sqlite::SQLiteStatement > create< android::database::sqlite::SQLiteStatement>()
+
+android::database::sqlite::SQLiteStatement::operator local_ref<android::database::sqlite::SQLiteProgram>() const
 {
-	return local_ref< android::database::sqlite::SQLiteStatement >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::database::sqlite::SQLiteStatement::J2CPP_CLASS_NAME>(),
-			get_method_id<android::database::sqlite::SQLiteStatement::J2CPP_CLASS_NAME, android::database::sqlite::SQLiteStatement::J2CPP_METHOD_NAME(0), android::database::sqlite::SQLiteStatement::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<android::database::sqlite::SQLiteProgram>(get_jtype());
 }
+
 
 void android::database::sqlite::SQLiteStatement::execute()
 {

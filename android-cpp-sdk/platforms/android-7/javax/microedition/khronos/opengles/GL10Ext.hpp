@@ -10,10 +10,14 @@
 #define J2CPP_JAVAX_MICROEDITION_KHRONOS_OPENGLES_GL10EXT_HPP_DECL
 
 
+namespace j2cpp { namespace javax { namespace microedition { namespace khronos { namespace opengles { class GL; } } } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace nio { class IntBuffer; } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/nio/IntBuffer.hpp>
+#include <javax/microedition/khronos/opengles/GL.hpp>
 
 
 namespace j2cpp {
@@ -31,10 +35,14 @@ namespace javax { namespace microedition { namespace khronos { namespace opengle
 		J2CPP_DECLARE_METHOD(0)
 		J2CPP_DECLARE_METHOD(1)
 
-		GL10Ext(jobject jobj)
+		explicit GL10Ext(jobject jobj)
 		: cpp_object<GL10Ext>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<javax::microedition::khronos::opengles::GL>() const;
+
 
 		cpp_int glQueryMatrixxOES(local_ref< cpp_int_array<1> > const&, cpp_int const&, local_ref< cpp_int_array<1> > const&, cpp_int const&);
 		cpp_int glQueryMatrixxOES(local_ref< java::nio::IntBuffer > const&, local_ref< java::nio::IntBuffer > const&);
@@ -44,7 +52,6 @@ namespace javax { namespace microedition { namespace khronos { namespace opengle
 } //namespace khronos
 } //namespace microedition
 } //namespace javax
-
 
 } //namespace j2cpp
 
@@ -57,6 +64,17 @@ namespace javax { namespace microedition { namespace khronos { namespace opengle
 
 namespace j2cpp {
 
+
+
+javax::microedition::khronos::opengles::GL10Ext::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
+
+javax::microedition::khronos::opengles::GL10Ext::operator local_ref<javax::microedition::khronos::opengles::GL>() const
+{
+	return local_ref<javax::microedition::khronos::opengles::GL>(get_jtype());
+}
 
 cpp_int javax::microedition::khronos::opengles::GL10Ext::glQueryMatrixxOES(local_ref< cpp_int_array<1> > const &a0, cpp_int const &a1, local_ref< cpp_int_array<1> > const &a2, cpp_int const &a3)
 {

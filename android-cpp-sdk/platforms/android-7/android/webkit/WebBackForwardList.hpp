@@ -10,10 +10,16 @@
 #define J2CPP_ANDROID_WEBKIT_WEBBACKFORWARDLIST_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace lang { class Cloneable; } } }
 namespace j2cpp { namespace android { namespace webkit { class WebHistoryItem; } } }
 
 
 #include <android/webkit/WebHistoryItem.hpp>
+#include <java/io/Serializable.hpp>
+#include <java/lang/Cloneable.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -36,10 +42,15 @@ namespace android { namespace webkit {
 		J2CPP_DECLARE_METHOD(5)
 		J2CPP_DECLARE_METHOD(6)
 
-		WebBackForwardList(jobject jobj)
+		explicit WebBackForwardList(jobject jobj)
 		: cpp_object<WebBackForwardList>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::lang::Cloneable>() const;
+		operator local_ref<java::io::Serializable>() const;
+
 
 		local_ref< android::webkit::WebHistoryItem > getCurrentItem();
 		cpp_int getCurrentIndex();
@@ -49,7 +60,6 @@ namespace android { namespace webkit {
 
 } //namespace webkit
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -63,16 +73,22 @@ namespace android { namespace webkit {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::webkit::WebBackForwardList > create< android::webkit::WebBackForwardList>()
+
+android::webkit::WebBackForwardList::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::webkit::WebBackForwardList >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::webkit::WebBackForwardList::J2CPP_CLASS_NAME>(),
-			get_method_id<android::webkit::WebBackForwardList::J2CPP_CLASS_NAME, android::webkit::WebBackForwardList::J2CPP_METHOD_NAME(0), android::webkit::WebBackForwardList::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+android::webkit::WebBackForwardList::operator local_ref<java::lang::Cloneable>() const
+{
+	return local_ref<java::lang::Cloneable>(get_jtype());
+}
+
+android::webkit::WebBackForwardList::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jtype());
+}
+
 
 local_ref< android::webkit::WebHistoryItem > android::webkit::WebBackForwardList::getCurrentItem()
 {

@@ -10,10 +10,14 @@
 #define J2CPP_JAVA_UTIL_ILLEGALFORMATFLAGSEXCEPTION_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace util { class IllegalFormatException; } } }
 
 
+#include <java/io/Serializable.hpp>
 #include <java/lang/String.hpp>
+#include <java/util/IllegalFormatException.hpp>
 
 
 namespace j2cpp {
@@ -32,18 +36,22 @@ namespace java { namespace util {
 		J2CPP_DECLARE_METHOD(1)
 		J2CPP_DECLARE_METHOD(2)
 
-		IllegalFormatFlagsException(jobject jobj)
+		explicit IllegalFormatFlagsException(jobject jobj)
 		: cpp_object<IllegalFormatFlagsException>(jobj)
 		{
 		}
 
+		operator local_ref<java::util::IllegalFormatException>() const;
+		operator local_ref<java::io::Serializable>() const;
+
+
+		IllegalFormatFlagsException(local_ref< java::lang::String > const&);
 		local_ref< java::lang::String > getFlags();
 		local_ref< java::lang::String > getMessage();
 	}; //class IllegalFormatFlagsException
 
 } //namespace util
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -57,17 +65,29 @@ namespace java { namespace util {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::util::IllegalFormatFlagsException > create< java::util::IllegalFormatFlagsException>(local_ref< java::lang::String > const &a0)
+
+java::util::IllegalFormatFlagsException::operator local_ref<java::util::IllegalFormatException>() const
 {
-	return local_ref< java::util::IllegalFormatFlagsException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::IllegalFormatFlagsException::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::IllegalFormatFlagsException::J2CPP_CLASS_NAME, java::util::IllegalFormatFlagsException::J2CPP_METHOD_NAME(0), java::util::IllegalFormatFlagsException::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::util::IllegalFormatException>(get_jtype());
 }
+
+java::util::IllegalFormatFlagsException::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jtype());
+}
+
+
+java::util::IllegalFormatFlagsException::IllegalFormatFlagsException(local_ref< java::lang::String > const &a0)
+: cpp_object<java::util::IllegalFormatFlagsException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::util::IllegalFormatFlagsException::J2CPP_CLASS_NAME>(),
+		get_method_id<java::util::IllegalFormatFlagsException::J2CPP_CLASS_NAME, java::util::IllegalFormatFlagsException::J2CPP_METHOD_NAME(0), java::util::IllegalFormatFlagsException::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 local_ref< java::lang::String > java::util::IllegalFormatFlagsException::getFlags()
 {

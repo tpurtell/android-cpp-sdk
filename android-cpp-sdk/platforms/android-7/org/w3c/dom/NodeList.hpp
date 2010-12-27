@@ -10,9 +10,11 @@
 #define J2CPP_ORG_W3C_DOM_NODELIST_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace org { namespace w3c { namespace dom { class Node; } } } }
 
 
+#include <java/lang/Object.hpp>
 #include <org/w3c/dom/Node.hpp>
 
 
@@ -31,10 +33,13 @@ namespace org { namespace w3c { namespace dom {
 		J2CPP_DECLARE_METHOD(0)
 		J2CPP_DECLARE_METHOD(1)
 
-		NodeList(jobject jobj)
+		explicit NodeList(jobject jobj)
 		: cpp_object<NodeList>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		local_ref< org::w3c::dom::Node > item(cpp_int const&);
 		cpp_int getLength();
@@ -43,7 +48,6 @@ namespace org { namespace w3c { namespace dom {
 } //namespace dom
 } //namespace w3c
 } //namespace org
-
 
 } //namespace j2cpp
 
@@ -56,6 +60,12 @@ namespace org { namespace w3c { namespace dom {
 
 namespace j2cpp {
 
+
+
+org::w3c::dom::NodeList::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 local_ref< org::w3c::dom::Node > org::w3c::dom::NodeList::item(cpp_int const &a0)
 {

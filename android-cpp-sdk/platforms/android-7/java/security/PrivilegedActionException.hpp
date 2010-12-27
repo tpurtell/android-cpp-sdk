@@ -37,11 +37,15 @@ namespace java { namespace security {
 		J2CPP_DECLARE_METHOD(2)
 		J2CPP_DECLARE_METHOD(3)
 
-		PrivilegedActionException(jobject jobj)
+		explicit PrivilegedActionException(jobject jobj)
 		: cpp_object<PrivilegedActionException>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Exception>() const;
+
+
+		PrivilegedActionException(local_ref< java::lang::Exception > const&);
 		local_ref< java::lang::Exception > getException();
 		local_ref< java::lang::Throwable > getCause();
 		local_ref< java::lang::String > toString();
@@ -49,7 +53,6 @@ namespace java { namespace security {
 
 } //namespace security
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -63,17 +66,24 @@ namespace java { namespace security {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::security::PrivilegedActionException > create< java::security::PrivilegedActionException>(local_ref< java::lang::Exception > const &a0)
+
+java::security::PrivilegedActionException::operator local_ref<java::lang::Exception>() const
 {
-	return local_ref< java::security::PrivilegedActionException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::security::PrivilegedActionException::J2CPP_CLASS_NAME>(),
-			get_method_id<java::security::PrivilegedActionException::J2CPP_CLASS_NAME, java::security::PrivilegedActionException::J2CPP_METHOD_NAME(0), java::security::PrivilegedActionException::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Exception>(get_jtype());
 }
+
+
+java::security::PrivilegedActionException::PrivilegedActionException(local_ref< java::lang::Exception > const &a0)
+: cpp_object<java::security::PrivilegedActionException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::security::PrivilegedActionException::J2CPP_CLASS_NAME>(),
+		get_method_id<java::security::PrivilegedActionException::J2CPP_CLASS_NAME, java::security::PrivilegedActionException::J2CPP_METHOD_NAME(0), java::security::PrivilegedActionException::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 local_ref< java::lang::Exception > java::security::PrivilegedActionException::getException()
 {

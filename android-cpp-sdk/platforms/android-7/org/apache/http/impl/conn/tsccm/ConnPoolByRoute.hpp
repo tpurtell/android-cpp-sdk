@@ -15,6 +15,7 @@ namespace j2cpp { namespace java { namespace util { namespace concurrent { class
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace conn { class ClientConnectionOperator; } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace conn { namespace routing { class HttpRoute; } } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace impl { namespace conn { namespace tsccm { class BasicPoolEntry; } } } } } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { namespace impl { namespace conn { namespace tsccm { class AbstractConnPool; } } } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace impl { namespace conn { namespace tsccm { class PoolEntryRequest; } } } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace params { class HttpParams; } } } } }
 
@@ -23,6 +24,7 @@ namespace j2cpp { namespace org { namespace apache { namespace http { namespace 
 #include <java/util/concurrent/TimeUnit.hpp>
 #include <org/apache/http/conn/ClientConnectionOperator.hpp>
 #include <org/apache/http/conn/routing/HttpRoute.hpp>
+#include <org/apache/http/impl/conn/tsccm/AbstractConnPool.hpp>
 #include <org/apache/http/impl/conn/tsccm/BasicPoolEntry.hpp>
 #include <org/apache/http/impl/conn/tsccm/PoolEntryRequest.hpp>
 #include <org/apache/http/params/HttpParams.hpp>
@@ -65,11 +67,15 @@ namespace org { namespace apache { namespace http { namespace impl { namespace c
 		J2CPP_DECLARE_FIELD(3)
 		J2CPP_DECLARE_FIELD(4)
 
-		ConnPoolByRoute(jobject jobj)
+		explicit ConnPoolByRoute(jobject jobj)
 		: cpp_object<ConnPoolByRoute>(jobj)
 		{
 		}
 
+		operator local_ref<org::apache::http::impl::conn::tsccm::AbstractConnPool>() const;
+
+
+		ConnPoolByRoute(local_ref< org::apache::http::conn::ClientConnectionOperator > const&, local_ref< org::apache::http::params::HttpParams > const&);
 		cpp_int getConnectionsInPool(local_ref< org::apache::http::conn::routing::HttpRoute > const&);
 		local_ref< org::apache::http::impl::conn::tsccm::PoolEntryRequest > requestPoolEntry(local_ref< org::apache::http::conn::routing::HttpRoute > const&, local_ref< java::lang::Object > const&);
 		void freeEntry(local_ref< org::apache::http::impl::conn::tsccm::BasicPoolEntry > const&, cpp_boolean const&, cpp_long const&, local_ref< java::util::concurrent::TimeUnit > const&);
@@ -85,7 +91,6 @@ namespace org { namespace apache { namespace http { namespace impl { namespace c
 } //namespace apache
 } //namespace org
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ORG_APACHE_HTTP_IMPL_CONN_TSCCM_CONNPOOLBYROUTE_HPP_DECL
@@ -98,17 +103,24 @@ namespace org { namespace apache { namespace http { namespace impl { namespace c
 namespace j2cpp {
 
 
-template <>
-local_ref< org::apache::http::impl::conn::tsccm::ConnPoolByRoute > create< org::apache::http::impl::conn::tsccm::ConnPoolByRoute>(local_ref< org::apache::http::conn::ClientConnectionOperator > const &a0, local_ref< org::apache::http::params::HttpParams > const &a1)
+
+org::apache::http::impl::conn::tsccm::ConnPoolByRoute::operator local_ref<org::apache::http::impl::conn::tsccm::AbstractConnPool>() const
 {
-	return local_ref< org::apache::http::impl::conn::tsccm::ConnPoolByRoute >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::apache::http::impl::conn::tsccm::ConnPoolByRoute::J2CPP_CLASS_NAME>(),
-			get_method_id<org::apache::http::impl::conn::tsccm::ConnPoolByRoute::J2CPP_CLASS_NAME, org::apache::http::impl::conn::tsccm::ConnPoolByRoute::J2CPP_METHOD_NAME(0), org::apache::http::impl::conn::tsccm::ConnPoolByRoute::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<org::apache::http::impl::conn::tsccm::AbstractConnPool>(get_jtype());
 }
+
+
+org::apache::http::impl::conn::tsccm::ConnPoolByRoute::ConnPoolByRoute(local_ref< org::apache::http::conn::ClientConnectionOperator > const &a0, local_ref< org::apache::http::params::HttpParams > const &a1)
+: cpp_object<org::apache::http::impl::conn::tsccm::ConnPoolByRoute>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::apache::http::impl::conn::tsccm::ConnPoolByRoute::J2CPP_CLASS_NAME>(),
+		get_method_id<org::apache::http::impl::conn::tsccm::ConnPoolByRoute::J2CPP_CLASS_NAME, org::apache::http::impl::conn::tsccm::ConnPoolByRoute::J2CPP_METHOD_NAME(0), org::apache::http::impl::conn::tsccm::ConnPoolByRoute::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
 
 
 

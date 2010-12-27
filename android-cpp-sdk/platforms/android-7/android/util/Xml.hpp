@@ -12,6 +12,8 @@
 
 namespace j2cpp { namespace java { namespace io { class Reader; } } }
 namespace j2cpp { namespace java { namespace io { class InputStream; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace lang { class Enum; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace org { namespace xmlpull { namespace v1 { class XmlPullParser; } } } }
 namespace j2cpp { namespace org { namespace xmlpull { namespace v1 { class XmlSerializer; } } } }
@@ -24,6 +26,8 @@ namespace j2cpp { namespace android { namespace util { namespace Xml_ { class En
 #include <android/util/Xml.hpp>
 #include <java/io/InputStream.hpp>
 #include <java/io/Reader.hpp>
+#include <java/lang/Enum.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <org/xml/sax/ContentHandler.hpp>
 #include <org/xmlpull/v1/XmlPullParser.hpp>
@@ -55,10 +59,13 @@ namespace android { namespace util {
 			J2CPP_DECLARE_FIELD(3)
 			J2CPP_DECLARE_FIELD(4)
 
-			Encoding(jobject jobj)
+			explicit Encoding(jobject jobj)
 			: cpp_object<Encoding>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Enum>() const;
+
 
 			static local_ref< cpp_object_array<android::util::Xml_::Encoding, 1> > values();
 			static local_ref< android::util::Xml_::Encoding > valueOf(local_ref< java::lang::String > const&);
@@ -90,11 +97,15 @@ namespace android { namespace util {
 
 		typedef Xml_::Encoding Encoding;
 
-		Xml(jobject jobj)
+		explicit Xml(jobject jobj)
 		: cpp_object<Xml>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		Xml();
 		static void parse(local_ref< java::lang::String > const&, local_ref< org::xml::sax::ContentHandler > const&);
 		static void parse(local_ref< java::io::Reader > const&, local_ref< org::xml::sax::ContentHandler > const&);
 		static void parse(local_ref< java::io::InputStream > const&, local_ref< android::util::Xml_::Encoding > const&, local_ref< org::xml::sax::ContentHandler > const&);
@@ -109,7 +120,6 @@ namespace android { namespace util {
 } //namespace util
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_UTIL_XML_HPP_DECL
@@ -122,6 +132,12 @@ namespace android { namespace util {
 namespace j2cpp {
 
 
+
+
+android::util::Xml_::Encoding::operator local_ref<java::lang::Enum>() const
+{
+	return local_ref<java::lang::Enum>(get_jtype());
+}
 
 local_ref< cpp_object_array<android::util::Xml_::Encoding, 1> > android::util::Xml_::Encoding::values()
 {
@@ -144,17 +160,7 @@ local_ref< android::util::Xml_::Encoding > android::util::Xml_::Encoding::valueO
 	);
 }
 
-template <>
-local_ref< android::util::Xml_::Encoding > create< android::util::Xml_::Encoding>(local_ref< java::lang::String > const &a0, cpp_int const &a1)
-{
-	return local_ref< android::util::Xml_::Encoding >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::util::Xml_::Encoding::J2CPP_CLASS_NAME>(),
-			get_method_id<android::util::Xml_::Encoding::J2CPP_CLASS_NAME, android::util::Xml_::Encoding::J2CPP_METHOD_NAME(2), android::util::Xml_::Encoding::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
-}
+
 
 
 static_field<
@@ -198,16 +204,23 @@ J2CPP_DEFINE_FIELD(android::util::Xml_::Encoding,3,"UTF_8","Landroid/util/Xml$En
 J2CPP_DEFINE_FIELD(android::util::Xml_::Encoding,4,"$VALUES","[android.util.Xml.Encoding")
 
 
-template <>
-local_ref< android::util::Xml > create< android::util::Xml>()
+
+android::util::Xml::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::util::Xml >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::util::Xml::J2CPP_CLASS_NAME>(),
-			get_method_id<android::util::Xml::J2CPP_CLASS_NAME, android::util::Xml::J2CPP_METHOD_NAME(0), android::util::Xml::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::util::Xml::Xml()
+: cpp_object<android::util::Xml>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::util::Xml::J2CPP_CLASS_NAME>(),
+		get_method_id<android::util::Xml::J2CPP_CLASS_NAME, android::util::Xml::J2CPP_METHOD_NAME(0), android::util::Xml::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 void android::util::Xml::parse(local_ref< java::lang::String > const &a0, local_ref< org::xml::sax::ContentHandler > const &a1)
 {

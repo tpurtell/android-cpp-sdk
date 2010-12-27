@@ -19,6 +19,7 @@ namespace j2cpp { namespace org { namespace xml { namespace sax { class InputSou
 namespace j2cpp { namespace org { namespace xml { namespace sax { class SAXParseException; } } } }
 namespace j2cpp { namespace org { namespace xml { namespace sax { class DTDHandler; } } } }
 namespace j2cpp { namespace org { namespace xml { namespace sax { class Attributes; } } } }
+namespace j2cpp { namespace org { namespace xml { namespace sax { class XMLFilter; } } } }
 namespace j2cpp { namespace org { namespace xml { namespace sax { class Locator; } } } }
 namespace j2cpp { namespace org { namespace xml { namespace sax { class XMLReader; } } } }
 
@@ -33,6 +34,7 @@ namespace j2cpp { namespace org { namespace xml { namespace sax { class XMLReade
 #include <org/xml/sax/InputSource.hpp>
 #include <org/xml/sax/Locator.hpp>
 #include <org/xml/sax/SAXParseException.hpp>
+#include <org/xml/sax/XMLFilter.hpp>
 #include <org/xml/sax/XMLReader.hpp>
 
 
@@ -84,11 +86,21 @@ namespace org { namespace xml { namespace sax { namespace helpers {
 		J2CPP_DECLARE_METHOD(33)
 		J2CPP_DECLARE_METHOD(34)
 
-		XMLFilterImpl(jobject jobj)
+		explicit XMLFilterImpl(jobject jobj)
 		: cpp_object<XMLFilterImpl>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<org::xml::sax::XMLFilter>() const;
+		operator local_ref<org::xml::sax::EntityResolver>() const;
+		operator local_ref<org::xml::sax::DTDHandler>() const;
+		operator local_ref<org::xml::sax::ContentHandler>() const;
+		operator local_ref<org::xml::sax::ErrorHandler>() const;
+
+
+		XMLFilterImpl();
+		XMLFilterImpl(local_ref< org::xml::sax::XMLReader > const&);
 		void setParent(local_ref< org::xml::sax::XMLReader > const&);
 		local_ref< org::xml::sax::XMLReader > getParent();
 		void setFeature(local_ref< java::lang::String > const&, cpp_boolean const&);
@@ -129,7 +141,6 @@ namespace org { namespace xml { namespace sax { namespace helpers {
 } //namespace xml
 } //namespace org
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ORG_XML_SAX_HELPERS_XMLFILTERIMPL_HPP_DECL
@@ -142,28 +153,61 @@ namespace org { namespace xml { namespace sax { namespace helpers {
 namespace j2cpp {
 
 
-template <>
-local_ref< org::xml::sax::helpers::XMLFilterImpl > create< org::xml::sax::helpers::XMLFilterImpl>()
+
+org::xml::sax::helpers::XMLFilterImpl::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< org::xml::sax::helpers::XMLFilterImpl >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::xml::sax::helpers::XMLFilterImpl::J2CPP_CLASS_NAME>(),
-			get_method_id<org::xml::sax::helpers::XMLFilterImpl::J2CPP_CLASS_NAME, org::xml::sax::helpers::XMLFilterImpl::J2CPP_METHOD_NAME(0), org::xml::sax::helpers::XMLFilterImpl::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
 
-template <>
-local_ref< org::xml::sax::helpers::XMLFilterImpl > create< org::xml::sax::helpers::XMLFilterImpl>(local_ref< org::xml::sax::XMLReader > const &a0)
+org::xml::sax::helpers::XMLFilterImpl::operator local_ref<org::xml::sax::XMLFilter>() const
 {
-	return local_ref< org::xml::sax::helpers::XMLFilterImpl >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::xml::sax::helpers::XMLFilterImpl::J2CPP_CLASS_NAME>(),
-			get_method_id<org::xml::sax::helpers::XMLFilterImpl::J2CPP_CLASS_NAME, org::xml::sax::helpers::XMLFilterImpl::J2CPP_METHOD_NAME(1), org::xml::sax::helpers::XMLFilterImpl::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<org::xml::sax::XMLFilter>(get_jtype());
 }
+
+org::xml::sax::helpers::XMLFilterImpl::operator local_ref<org::xml::sax::EntityResolver>() const
+{
+	return local_ref<org::xml::sax::EntityResolver>(get_jtype());
+}
+
+org::xml::sax::helpers::XMLFilterImpl::operator local_ref<org::xml::sax::DTDHandler>() const
+{
+	return local_ref<org::xml::sax::DTDHandler>(get_jtype());
+}
+
+org::xml::sax::helpers::XMLFilterImpl::operator local_ref<org::xml::sax::ContentHandler>() const
+{
+	return local_ref<org::xml::sax::ContentHandler>(get_jtype());
+}
+
+org::xml::sax::helpers::XMLFilterImpl::operator local_ref<org::xml::sax::ErrorHandler>() const
+{
+	return local_ref<org::xml::sax::ErrorHandler>(get_jtype());
+}
+
+
+org::xml::sax::helpers::XMLFilterImpl::XMLFilterImpl()
+: cpp_object<org::xml::sax::helpers::XMLFilterImpl>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::xml::sax::helpers::XMLFilterImpl::J2CPP_CLASS_NAME>(),
+		get_method_id<org::xml::sax::helpers::XMLFilterImpl::J2CPP_CLASS_NAME, org::xml::sax::helpers::XMLFilterImpl::J2CPP_METHOD_NAME(0), org::xml::sax::helpers::XMLFilterImpl::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
+
+
+org::xml::sax::helpers::XMLFilterImpl::XMLFilterImpl(local_ref< org::xml::sax::XMLReader > const &a0)
+: cpp_object<org::xml::sax::helpers::XMLFilterImpl>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::xml::sax::helpers::XMLFilterImpl::J2CPP_CLASS_NAME>(),
+		get_method_id<org::xml::sax::helpers::XMLFilterImpl::J2CPP_CLASS_NAME, org::xml::sax::helpers::XMLFilterImpl::J2CPP_METHOD_NAME(1), org::xml::sax::helpers::XMLFilterImpl::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 void org::xml::sax::helpers::XMLFilterImpl::setParent(local_ref< org::xml::sax::XMLReader > const &a0)
 {

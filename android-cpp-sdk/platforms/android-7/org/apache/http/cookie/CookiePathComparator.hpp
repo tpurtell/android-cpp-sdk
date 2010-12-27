@@ -10,11 +10,15 @@
 #define J2CPP_ORG_APACHE_HTTP_COOKIE_COOKIEPATHCOMPARATOR_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace util { class Comparator; } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace cookie { class Cookie; } } } } }
 
 
+#include <java/io/Serializable.hpp>
 #include <java/lang/Object.hpp>
+#include <java/util/Comparator.hpp>
 #include <org/apache/http/cookie/Cookie.hpp>
 
 
@@ -34,11 +38,17 @@ namespace org { namespace apache { namespace http { namespace cookie {
 		J2CPP_DECLARE_METHOD(1)
 		J2CPP_DECLARE_METHOD(2)
 
-		CookiePathComparator(jobject jobj)
+		explicit CookiePathComparator(jobject jobj)
 		: cpp_object<CookiePathComparator>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::io::Serializable>() const;
+		operator local_ref<java::util::Comparator>() const;
+
+
+		CookiePathComparator();
 		cpp_int compare(local_ref< org::apache::http::cookie::Cookie > const&, local_ref< org::apache::http::cookie::Cookie > const&);
 		cpp_int compare(local_ref< java::lang::Object > const&, local_ref< java::lang::Object > const&);
 	}; //class CookiePathComparator
@@ -47,7 +57,6 @@ namespace org { namespace apache { namespace http { namespace cookie {
 } //namespace http
 } //namespace apache
 } //namespace org
-
 
 } //namespace j2cpp
 
@@ -61,16 +70,33 @@ namespace org { namespace apache { namespace http { namespace cookie {
 namespace j2cpp {
 
 
-template <>
-local_ref< org::apache::http::cookie::CookiePathComparator > create< org::apache::http::cookie::CookiePathComparator>()
+
+org::apache::http::cookie::CookiePathComparator::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< org::apache::http::cookie::CookiePathComparator >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::apache::http::cookie::CookiePathComparator::J2CPP_CLASS_NAME>(),
-			get_method_id<org::apache::http::cookie::CookiePathComparator::J2CPP_CLASS_NAME, org::apache::http::cookie::CookiePathComparator::J2CPP_METHOD_NAME(0), org::apache::http::cookie::CookiePathComparator::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+org::apache::http::cookie::CookiePathComparator::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jtype());
+}
+
+org::apache::http::cookie::CookiePathComparator::operator local_ref<java::util::Comparator>() const
+{
+	return local_ref<java::util::Comparator>(get_jtype());
+}
+
+
+org::apache::http::cookie::CookiePathComparator::CookiePathComparator()
+: cpp_object<org::apache::http::cookie::CookiePathComparator>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::apache::http::cookie::CookiePathComparator::J2CPP_CLASS_NAME>(),
+		get_method_id<org::apache::http::cookie::CookiePathComparator::J2CPP_CLASS_NAME, org::apache::http::cookie::CookiePathComparator::J2CPP_METHOD_NAME(0), org::apache::http::cookie::CookiePathComparator::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 cpp_int org::apache::http::cookie::CookiePathComparator::compare(local_ref< org::apache::http::cookie::Cookie > const &a0, local_ref< org::apache::http::cookie::Cookie > const &a1)
 {

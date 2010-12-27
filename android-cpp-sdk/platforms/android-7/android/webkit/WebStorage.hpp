@@ -10,11 +10,13 @@
 #define J2CPP_ANDROID_WEBKIT_WEBSTORAGE_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace android { namespace webkit { class ValueCallback; } } }
 
 
 #include <android/webkit/ValueCallback.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -35,10 +37,13 @@ namespace android { namespace webkit {
 
 			J2CPP_DECLARE_METHOD(0)
 
-			QuotaUpdater(jobject jobj)
+			explicit QuotaUpdater(jobject jobj)
 			: cpp_object<QuotaUpdater>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+
 
 			void updateQuota(cpp_long const&);
 		}; //class QuotaUpdater
@@ -63,11 +68,15 @@ namespace android { namespace webkit {
 
 		typedef WebStorage_::QuotaUpdater QuotaUpdater;
 
-		WebStorage(jobject jobj)
+		explicit WebStorage(jobject jobj)
 		: cpp_object<WebStorage>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		WebStorage();
 		void getOrigins(local_ref< android::webkit::ValueCallback > const&);
 		void getUsageForOrigin(local_ref< java::lang::String > const&, local_ref< android::webkit::ValueCallback > const&);
 		void getQuotaForOrigin(local_ref< java::lang::String > const&, local_ref< android::webkit::ValueCallback > const&);
@@ -79,7 +88,6 @@ namespace android { namespace webkit {
 
 } //namespace webkit
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -93,6 +101,12 @@ namespace android { namespace webkit {
 namespace j2cpp {
 
 
+
+
+android::webkit::WebStorage_::QuotaUpdater::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 void android::webkit::WebStorage_::QuotaUpdater::updateQuota(cpp_long const &a0)
 {
@@ -110,16 +124,23 @@ J2CPP_DEFINE_CLASS(android::webkit::WebStorage_::QuotaUpdater,"android/webkit/We
 J2CPP_DEFINE_METHOD(android::webkit::WebStorage_::QuotaUpdater,0,"updateQuota","(J)V")
 
 
-template <>
-local_ref< android::webkit::WebStorage > create< android::webkit::WebStorage>()
+
+android::webkit::WebStorage::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::webkit::WebStorage >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::webkit::WebStorage::J2CPP_CLASS_NAME>(),
-			get_method_id<android::webkit::WebStorage::J2CPP_CLASS_NAME, android::webkit::WebStorage::J2CPP_METHOD_NAME(0), android::webkit::WebStorage::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::webkit::WebStorage::WebStorage()
+: cpp_object<android::webkit::WebStorage>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::webkit::WebStorage::J2CPP_CLASS_NAME>(),
+		get_method_id<android::webkit::WebStorage::J2CPP_CLASS_NAME, android::webkit::WebStorage::J2CPP_METHOD_NAME(0), android::webkit::WebStorage::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 void android::webkit::WebStorage::getOrigins(local_ref< android::webkit::ValueCallback > const &a0)
 {

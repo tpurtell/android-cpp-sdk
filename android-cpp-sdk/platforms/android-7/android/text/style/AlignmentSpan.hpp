@@ -10,12 +10,18 @@
 #define J2CPP_ANDROID_TEXT_STYLE_ALIGNMENTSPAN_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace android { namespace text { namespace Layout_ { class Alignment; } } } }
+namespace j2cpp { namespace android { namespace text { namespace style { class ParagraphStyle; } } } }
+namespace j2cpp { namespace android { namespace text { class ParcelableSpan; } } }
 namespace j2cpp { namespace android { namespace os { class Parcel; } } }
 
 
 #include <android/os/Parcel.hpp>
 #include <android/text/Layout.hpp>
+#include <android/text/ParcelableSpan.hpp>
+#include <android/text/style/ParagraphStyle.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -40,11 +46,18 @@ namespace android { namespace text { namespace style {
 			J2CPP_DECLARE_METHOD(4)
 			J2CPP_DECLARE_METHOD(5)
 
-			Standard(jobject jobj)
+			explicit Standard(jobject jobj)
 			: cpp_object<Standard>(jobj)
 			{
 			}
 
+			operator local_ref<java::lang::Object>() const;
+			operator local_ref<android::text::style::AlignmentSpan>() const;
+			operator local_ref<android::text::ParcelableSpan>() const;
+
+
+			Standard(local_ref< android::text::Layout_::Alignment > const&);
+			Standard(local_ref< android::os::Parcel > const&);
 			cpp_int getSpanTypeId();
 			cpp_int describeContents();
 			void writeToParcel(local_ref< android::os::Parcel > const&, cpp_int const&);
@@ -64,10 +77,14 @@ namespace android { namespace text { namespace style {
 
 		typedef AlignmentSpan_::Standard Standard;
 
-		AlignmentSpan(jobject jobj)
+		explicit AlignmentSpan(jobject jobj)
 		: cpp_object<AlignmentSpan>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<android::text::style::ParagraphStyle>() const;
+
 
 		local_ref< android::text::Layout_::Alignment > getAlignment();
 	}; //class AlignmentSpan
@@ -75,7 +92,6 @@ namespace android { namespace text { namespace style {
 } //namespace style
 } //namespace text
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -90,29 +106,47 @@ namespace j2cpp {
 
 
 
-template <>
-local_ref< android::text::style::AlignmentSpan_::Standard > create< android::text::style::AlignmentSpan_::Standard>(local_ref< android::text::Layout_::Alignment > const &a0)
+
+android::text::style::AlignmentSpan_::Standard::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::text::style::AlignmentSpan_::Standard >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::text::style::AlignmentSpan_::Standard::J2CPP_CLASS_NAME>(),
-			get_method_id<android::text::style::AlignmentSpan_::Standard::J2CPP_CLASS_NAME, android::text::style::AlignmentSpan_::Standard::J2CPP_METHOD_NAME(0), android::text::style::AlignmentSpan_::Standard::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
 
-template <>
-local_ref< android::text::style::AlignmentSpan_::Standard > create< android::text::style::AlignmentSpan_::Standard>(local_ref< android::os::Parcel > const &a0)
+android::text::style::AlignmentSpan_::Standard::operator local_ref<android::text::style::AlignmentSpan>() const
 {
-	return local_ref< android::text::style::AlignmentSpan_::Standard >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::text::style::AlignmentSpan_::Standard::J2CPP_CLASS_NAME>(),
-			get_method_id<android::text::style::AlignmentSpan_::Standard::J2CPP_CLASS_NAME, android::text::style::AlignmentSpan_::Standard::J2CPP_METHOD_NAME(1), android::text::style::AlignmentSpan_::Standard::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<android::text::style::AlignmentSpan>(get_jtype());
 }
+
+android::text::style::AlignmentSpan_::Standard::operator local_ref<android::text::ParcelableSpan>() const
+{
+	return local_ref<android::text::ParcelableSpan>(get_jtype());
+}
+
+
+android::text::style::AlignmentSpan_::Standard::Standard(local_ref< android::text::Layout_::Alignment > const &a0)
+: cpp_object<android::text::style::AlignmentSpan_::Standard>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::text::style::AlignmentSpan_::Standard::J2CPP_CLASS_NAME>(),
+		get_method_id<android::text::style::AlignmentSpan_::Standard::J2CPP_CLASS_NAME, android::text::style::AlignmentSpan_::Standard::J2CPP_METHOD_NAME(0), android::text::style::AlignmentSpan_::Standard::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
+
+
+android::text::style::AlignmentSpan_::Standard::Standard(local_ref< android::os::Parcel > const &a0)
+: cpp_object<android::text::style::AlignmentSpan_::Standard>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::text::style::AlignmentSpan_::Standard::J2CPP_CLASS_NAME>(),
+		get_method_id<android::text::style::AlignmentSpan_::Standard::J2CPP_CLASS_NAME, android::text::style::AlignmentSpan_::Standard::J2CPP_METHOD_NAME(1), android::text::style::AlignmentSpan_::Standard::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 cpp_int android::text::style::AlignmentSpan_::Standard::getSpanTypeId()
 {
@@ -164,6 +198,17 @@ J2CPP_DEFINE_METHOD(android::text::style::AlignmentSpan_::Standard,3,"describeCo
 J2CPP_DEFINE_METHOD(android::text::style::AlignmentSpan_::Standard,4,"writeToParcel","(Landroid/os/Parcel;I)V")
 J2CPP_DEFINE_METHOD(android::text::style::AlignmentSpan_::Standard,5,"getAlignment","()Landroid/text/Layout$Alignment;")
 
+
+
+android::text::style::AlignmentSpan::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
+
+android::text::style::AlignmentSpan::operator local_ref<android::text::style::ParagraphStyle>() const
+{
+	return local_ref<android::text::style::ParagraphStyle>(get_jtype());
+}
 
 local_ref< android::text::Layout_::Alignment > android::text::style::AlignmentSpan::getAlignment()
 {

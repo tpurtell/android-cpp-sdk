@@ -10,8 +10,10 @@
 #define J2CPP_ANDROID_OS_DEADOBJECTEXCEPTION_HPP_DECL
 
 
+namespace j2cpp { namespace android { namespace os { class RemoteException; } } }
 
 
+#include <android/os/RemoteException.hpp>
 
 
 namespace j2cpp {
@@ -28,16 +30,19 @@ namespace android { namespace os {
 
 		J2CPP_DECLARE_METHOD(0)
 
-		DeadObjectException(jobject jobj)
+		explicit DeadObjectException(jobject jobj)
 		: cpp_object<DeadObjectException>(jobj)
 		{
 		}
 
+		operator local_ref<android::os::RemoteException>() const;
+
+
+		DeadObjectException();
 	}; //class DeadObjectException
 
 } //namespace os
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -51,16 +56,23 @@ namespace android { namespace os {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::os::DeadObjectException > create< android::os::DeadObjectException>()
+
+android::os::DeadObjectException::operator local_ref<android::os::RemoteException>() const
 {
-	return local_ref< android::os::DeadObjectException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::os::DeadObjectException::J2CPP_CLASS_NAME>(),
-			get_method_id<android::os::DeadObjectException::J2CPP_CLASS_NAME, android::os::DeadObjectException::J2CPP_METHOD_NAME(0), android::os::DeadObjectException::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<android::os::RemoteException>(get_jtype());
 }
+
+
+android::os::DeadObjectException::DeadObjectException()
+: cpp_object<android::os::DeadObjectException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::os::DeadObjectException::J2CPP_CLASS_NAME>(),
+		get_method_id<android::os::DeadObjectException::J2CPP_CLASS_NAME, android::os::DeadObjectException::J2CPP_METHOD_NAME(0), android::os::DeadObjectException::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 
 J2CPP_DEFINE_CLASS(android::os::DeadObjectException,"android/os/DeadObjectException")

@@ -11,8 +11,10 @@
 
 
 namespace j2cpp { namespace javax { namespace security { namespace auth { namespace callback { class Callback; } } } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
+#include <java/lang/Object.hpp>
 #include <javax/security/auth/callback/Callback.hpp>
 
 
@@ -30,10 +32,13 @@ namespace javax { namespace security { namespace auth { namespace callback {
 
 		J2CPP_DECLARE_METHOD(0)
 
-		CallbackHandler(jobject jobj)
+		explicit CallbackHandler(jobject jobj)
 		: cpp_object<CallbackHandler>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		void handle(local_ref< cpp_object_array<javax::security::auth::callback::Callback, 1> > const&);
 	}; //class CallbackHandler
@@ -42,7 +47,6 @@ namespace javax { namespace security { namespace auth { namespace callback {
 } //namespace auth
 } //namespace security
 } //namespace javax
-
 
 } //namespace j2cpp
 
@@ -55,6 +59,12 @@ namespace javax { namespace security { namespace auth { namespace callback {
 
 namespace j2cpp {
 
+
+
+javax::security::auth::callback::CallbackHandler::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 void javax::security::auth::callback::CallbackHandler::handle(local_ref< cpp_object_array<javax::security::auth::callback::Callback, 1> > const &a0)
 {

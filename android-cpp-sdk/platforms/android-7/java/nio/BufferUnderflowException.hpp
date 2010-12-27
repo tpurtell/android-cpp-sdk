@@ -10,8 +10,10 @@
 #define J2CPP_JAVA_NIO_BUFFERUNDERFLOWEXCEPTION_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class RuntimeException; } } }
 
 
+#include <java/lang/RuntimeException.hpp>
 
 
 namespace j2cpp {
@@ -28,16 +30,19 @@ namespace java { namespace nio {
 
 		J2CPP_DECLARE_METHOD(0)
 
-		BufferUnderflowException(jobject jobj)
+		explicit BufferUnderflowException(jobject jobj)
 		: cpp_object<BufferUnderflowException>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::RuntimeException>() const;
+
+
+		BufferUnderflowException();
 	}; //class BufferUnderflowException
 
 } //namespace nio
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -51,16 +56,23 @@ namespace java { namespace nio {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::nio::BufferUnderflowException > create< java::nio::BufferUnderflowException>()
+
+java::nio::BufferUnderflowException::operator local_ref<java::lang::RuntimeException>() const
 {
-	return local_ref< java::nio::BufferUnderflowException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::nio::BufferUnderflowException::J2CPP_CLASS_NAME>(),
-			get_method_id<java::nio::BufferUnderflowException::J2CPP_CLASS_NAME, java::nio::BufferUnderflowException::J2CPP_METHOD_NAME(0), java::nio::BufferUnderflowException::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::RuntimeException>(get_jtype());
 }
+
+
+java::nio::BufferUnderflowException::BufferUnderflowException()
+: cpp_object<java::nio::BufferUnderflowException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::nio::BufferUnderflowException::J2CPP_CLASS_NAME>(),
+		get_method_id<java::nio::BufferUnderflowException::J2CPP_CLASS_NAME, java::nio::BufferUnderflowException::J2CPP_METHOD_NAME(0), java::nio::BufferUnderflowException::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 
 J2CPP_DEFINE_CLASS(java::nio::BufferUnderflowException,"java/nio/BufferUnderflowException")

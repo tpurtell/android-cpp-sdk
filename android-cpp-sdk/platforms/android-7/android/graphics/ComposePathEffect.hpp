@@ -30,16 +30,19 @@ namespace android { namespace graphics {
 
 		J2CPP_DECLARE_METHOD(0)
 
-		ComposePathEffect(jobject jobj)
+		explicit ComposePathEffect(jobject jobj)
 		: cpp_object<ComposePathEffect>(jobj)
 		{
 		}
 
+		operator local_ref<android::graphics::PathEffect>() const;
+
+
+		ComposePathEffect(local_ref< android::graphics::PathEffect > const&, local_ref< android::graphics::PathEffect > const&);
 	}; //class ComposePathEffect
 
 } //namespace graphics
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -53,17 +56,24 @@ namespace android { namespace graphics {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::graphics::ComposePathEffect > create< android::graphics::ComposePathEffect>(local_ref< android::graphics::PathEffect > const &a0, local_ref< android::graphics::PathEffect > const &a1)
+
+android::graphics::ComposePathEffect::operator local_ref<android::graphics::PathEffect>() const
 {
-	return local_ref< android::graphics::ComposePathEffect >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::graphics::ComposePathEffect::J2CPP_CLASS_NAME>(),
-			get_method_id<android::graphics::ComposePathEffect::J2CPP_CLASS_NAME, android::graphics::ComposePathEffect::J2CPP_METHOD_NAME(0), android::graphics::ComposePathEffect::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<android::graphics::PathEffect>(get_jtype());
 }
+
+
+android::graphics::ComposePathEffect::ComposePathEffect(local_ref< android::graphics::PathEffect > const &a0, local_ref< android::graphics::PathEffect > const &a1)
+: cpp_object<android::graphics::ComposePathEffect>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::graphics::ComposePathEffect::J2CPP_CLASS_NAME>(),
+		get_method_id<android::graphics::ComposePathEffect::J2CPP_CLASS_NAME, android::graphics::ComposePathEffect::J2CPP_METHOD_NAME(0), android::graphics::ComposePathEffect::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
 
 
 J2CPP_DEFINE_CLASS(android::graphics::ComposePathEffect,"android/graphics/ComposePathEffect")

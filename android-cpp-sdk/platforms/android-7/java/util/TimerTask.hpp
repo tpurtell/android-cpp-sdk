@@ -10,8 +10,12 @@
 #define J2CPP_JAVA_UTIL_TIMERTASK_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace lang { class Runnable; } } }
 
 
+#include <java/lang/Object.hpp>
+#include <java/lang/Runnable.hpp>
 
 
 namespace j2cpp {
@@ -31,10 +35,14 @@ namespace java { namespace util {
 		J2CPP_DECLARE_METHOD(2)
 		J2CPP_DECLARE_METHOD(3)
 
-		TimerTask(jobject jobj)
+		explicit TimerTask(jobject jobj)
 		: cpp_object<TimerTask>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::lang::Runnable>() const;
+
 
 		cpp_boolean cancel();
 		cpp_long scheduledExecutionTime();
@@ -43,7 +51,6 @@ namespace java { namespace util {
 
 } //namespace util
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -57,16 +64,17 @@ namespace java { namespace util {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::util::TimerTask > create< java::util::TimerTask>()
+
+java::util::TimerTask::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::util::TimerTask >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::TimerTask::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::TimerTask::J2CPP_CLASS_NAME, java::util::TimerTask::J2CPP_METHOD_NAME(0), java::util::TimerTask::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+java::util::TimerTask::operator local_ref<java::lang::Runnable>() const
+{
+	return local_ref<java::lang::Runnable>(get_jtype());
+}
+
 
 cpp_boolean java::util::TimerTask::cancel()
 {

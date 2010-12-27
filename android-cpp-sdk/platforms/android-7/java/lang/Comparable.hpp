@@ -30,17 +30,19 @@ namespace java { namespace lang {
 
 		J2CPP_DECLARE_METHOD(0)
 
-		Comparable(jobject jobj)
+		explicit Comparable(jobject jobj)
 		: cpp_object<Comparable>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		cpp_int compareTo(local_ref< java::lang::Object > const&);
 	}; //class Comparable
 
 } //namespace lang
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -53,6 +55,12 @@ namespace java { namespace lang {
 
 namespace j2cpp {
 
+
+
+java::lang::Comparable::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 cpp_int java::lang::Comparable::compareTo(local_ref< java::lang::Object > const &a0)
 {

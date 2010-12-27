@@ -14,6 +14,7 @@ namespace j2cpp { namespace android { namespace content { class Context; } } }
 namespace j2cpp { namespace android { namespace view { class View; } } }
 namespace j2cpp { namespace android { namespace view { namespace ViewGroup_ { class LayoutParams; } } } }
 namespace j2cpp { namespace android { namespace view { namespace animation { class Animation; } } } }
+namespace j2cpp { namespace android { namespace widget { class FrameLayout; } } }
 namespace j2cpp { namespace android { namespace util { class AttributeSet; } } }
 
 
@@ -22,6 +23,7 @@ namespace j2cpp { namespace android { namespace util { class AttributeSet; } } }
 #include <android/view/View.hpp>
 #include <android/view/ViewGroup.hpp>
 #include <android/view/animation/Animation.hpp>
+#include <android/widget/FrameLayout.hpp>
 
 
 namespace j2cpp {
@@ -59,11 +61,16 @@ namespace android { namespace widget {
 		J2CPP_DECLARE_METHOD(20)
 		J2CPP_DECLARE_METHOD(21)
 
-		ViewAnimator(jobject jobj)
+		explicit ViewAnimator(jobject jobj)
 		: cpp_object<ViewAnimator>(jobj)
 		{
 		}
 
+		operator local_ref<android::widget::FrameLayout>() const;
+
+
+		ViewAnimator(local_ref< android::content::Context > const&);
+		ViewAnimator(local_ref< android::content::Context > const&, local_ref< android::util::AttributeSet > const&);
 		void setDisplayedChild(cpp_int const&);
 		cpp_int getDisplayedChild();
 		void showNext();
@@ -89,7 +96,6 @@ namespace android { namespace widget {
 } //namespace widget
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_WIDGET_VIEWANIMATOR_HPP_DECL
@@ -102,29 +108,37 @@ namespace android { namespace widget {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::widget::ViewAnimator > create< android::widget::ViewAnimator>(local_ref< android::content::Context > const &a0)
+
+android::widget::ViewAnimator::operator local_ref<android::widget::FrameLayout>() const
 {
-	return local_ref< android::widget::ViewAnimator >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::widget::ViewAnimator::J2CPP_CLASS_NAME>(),
-			get_method_id<android::widget::ViewAnimator::J2CPP_CLASS_NAME, android::widget::ViewAnimator::J2CPP_METHOD_NAME(0), android::widget::ViewAnimator::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<android::widget::FrameLayout>(get_jtype());
 }
 
-template <>
-local_ref< android::widget::ViewAnimator > create< android::widget::ViewAnimator>(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1)
+
+android::widget::ViewAnimator::ViewAnimator(local_ref< android::content::Context > const &a0)
+: cpp_object<android::widget::ViewAnimator>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::widget::ViewAnimator::J2CPP_CLASS_NAME>(),
+		get_method_id<android::widget::ViewAnimator::J2CPP_CLASS_NAME, android::widget::ViewAnimator::J2CPP_METHOD_NAME(0), android::widget::ViewAnimator::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< android::widget::ViewAnimator >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::widget::ViewAnimator::J2CPP_CLASS_NAME>(),
-			get_method_id<android::widget::ViewAnimator::J2CPP_CLASS_NAME, android::widget::ViewAnimator::J2CPP_METHOD_NAME(1), android::widget::ViewAnimator::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
 }
+
+
+
+android::widget::ViewAnimator::ViewAnimator(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1)
+: cpp_object<android::widget::ViewAnimator>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::widget::ViewAnimator::J2CPP_CLASS_NAME>(),
+		get_method_id<android::widget::ViewAnimator::J2CPP_CLASS_NAME, android::widget::ViewAnimator::J2CPP_METHOD_NAME(1), android::widget::ViewAnimator::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
 
 void android::widget::ViewAnimator::setDisplayedChild(cpp_int const &a0)
 {

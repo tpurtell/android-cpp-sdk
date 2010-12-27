@@ -12,11 +12,13 @@
 
 namespace j2cpp { namespace java { namespace io { class InputStream; } } }
 namespace j2cpp { namespace java { namespace io { class OutputStream; } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { namespace entity { class AbstractHttpEntity; } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace entity { class ContentProducer; } } } } }
 
 
 #include <java/io/InputStream.hpp>
 #include <java/io/OutputStream.hpp>
+#include <org/apache/http/entity/AbstractHttpEntity.hpp>
 #include <org/apache/http/entity/ContentProducer.hpp>
 
 
@@ -40,11 +42,15 @@ namespace org { namespace apache { namespace http { namespace entity {
 		J2CPP_DECLARE_METHOD(5)
 		J2CPP_DECLARE_METHOD(6)
 
-		EntityTemplate(jobject jobj)
+		explicit EntityTemplate(jobject jobj)
 		: cpp_object<EntityTemplate>(jobj)
 		{
 		}
 
+		operator local_ref<org::apache::http::entity::AbstractHttpEntity>() const;
+
+
+		EntityTemplate(local_ref< org::apache::http::entity::ContentProducer > const&);
 		cpp_long getContentLength();
 		local_ref< java::io::InputStream > getContent();
 		cpp_boolean isRepeatable();
@@ -58,7 +64,6 @@ namespace org { namespace apache { namespace http { namespace entity {
 } //namespace apache
 } //namespace org
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ORG_APACHE_HTTP_ENTITY_ENTITYTEMPLATE_HPP_DECL
@@ -71,17 +76,24 @@ namespace org { namespace apache { namespace http { namespace entity {
 namespace j2cpp {
 
 
-template <>
-local_ref< org::apache::http::entity::EntityTemplate > create< org::apache::http::entity::EntityTemplate>(local_ref< org::apache::http::entity::ContentProducer > const &a0)
+
+org::apache::http::entity::EntityTemplate::operator local_ref<org::apache::http::entity::AbstractHttpEntity>() const
 {
-	return local_ref< org::apache::http::entity::EntityTemplate >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::apache::http::entity::EntityTemplate::J2CPP_CLASS_NAME>(),
-			get_method_id<org::apache::http::entity::EntityTemplate::J2CPP_CLASS_NAME, org::apache::http::entity::EntityTemplate::J2CPP_METHOD_NAME(0), org::apache::http::entity::EntityTemplate::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<org::apache::http::entity::AbstractHttpEntity>(get_jtype());
 }
+
+
+org::apache::http::entity::EntityTemplate::EntityTemplate(local_ref< org::apache::http::entity::ContentProducer > const &a0)
+: cpp_object<org::apache::http::entity::EntityTemplate>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::apache::http::entity::EntityTemplate::J2CPP_CLASS_NAME>(),
+		get_method_id<org::apache::http::entity::EntityTemplate::J2CPP_CLASS_NAME, org::apache::http::entity::EntityTemplate::J2CPP_METHOD_NAME(0), org::apache::http::entity::EntityTemplate::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 cpp_long org::apache::http::entity::EntityTemplate::getContentLength()
 {

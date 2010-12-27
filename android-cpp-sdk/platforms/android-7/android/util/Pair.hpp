@@ -35,13 +35,17 @@ namespace android { namespace util {
 		J2CPP_DECLARE_FIELD(0)
 		J2CPP_DECLARE_FIELD(1)
 
-		Pair(jobject jobj)
+		explicit Pair(jobject jobj)
 		: cpp_object<Pair>(jobj)
-		, first(jobj)
-		, second(jobj)
+, first(jobj)
+, second(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		Pair(local_ref< java::lang::Object > const&, local_ref< java::lang::Object > const&);
 		cpp_boolean equals(local_ref< java::lang::Object > const&);
 		cpp_int hashCode();
 		static local_ref< android::util::Pair > create(local_ref< java::lang::Object > const&, local_ref< java::lang::Object > const&);
@@ -52,7 +56,6 @@ namespace android { namespace util {
 
 } //namespace util
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -66,17 +69,26 @@ namespace android { namespace util {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::util::Pair > create< android::util::Pair>(local_ref< java::lang::Object > const &a0, local_ref< java::lang::Object > const &a1)
+
+android::util::Pair::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::util::Pair >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::util::Pair::J2CPP_CLASS_NAME>(),
-			get_method_id<android::util::Pair::J2CPP_CLASS_NAME, android::util::Pair::J2CPP_METHOD_NAME(0), android::util::Pair::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::util::Pair::Pair(local_ref< java::lang::Object > const &a0, local_ref< java::lang::Object > const &a1)
+: cpp_object<android::util::Pair>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::util::Pair::J2CPP_CLASS_NAME>(),
+		get_method_id<android::util::Pair::J2CPP_CLASS_NAME, android::util::Pair::J2CPP_METHOD_NAME(0), android::util::Pair::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+, first(get_jtype())
+, second(get_jtype())
+{
+}
+
 
 cpp_boolean android::util::Pair::equals(local_ref< java::lang::Object > const &a0)
 {

@@ -10,6 +10,7 @@
 #define J2CPP_ANDROID_WEBKIT_WEBVIEWCLIENT_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace android { namespace graphics { class Bitmap; } } }
 namespace j2cpp { namespace android { namespace view { class KeyEvent; } } }
@@ -23,6 +24,7 @@ namespace j2cpp { namespace android { namespace os { class Message; } } }
 #include <android/view/KeyEvent.hpp>
 #include <android/webkit/HttpAuthHandler.hpp>
 #include <android/webkit/WebView.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -67,11 +69,15 @@ namespace android { namespace webkit {
 		J2CPP_DECLARE_FIELD(13)
 		J2CPP_DECLARE_FIELD(14)
 
-		WebViewClient(jobject jobj)
+		explicit WebViewClient(jobject jobj)
 		: cpp_object<WebViewClient>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		WebViewClient();
 		cpp_boolean shouldOverrideUrlLoading(local_ref< android::webkit::WebView > const&, local_ref< java::lang::String > const&);
 		void onPageStarted(local_ref< android::webkit::WebView > const&, local_ref< java::lang::String > const&, local_ref< android::graphics::Bitmap > const&);
 		void onPageFinished(local_ref< android::webkit::WebView > const&, local_ref< java::lang::String > const&);
@@ -105,7 +111,6 @@ namespace android { namespace webkit {
 } //namespace webkit
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_WEBKIT_WEBVIEWCLIENT_HPP_DECL
@@ -118,16 +123,23 @@ namespace android { namespace webkit {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::webkit::WebViewClient > create< android::webkit::WebViewClient>()
+
+android::webkit::WebViewClient::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::webkit::WebViewClient >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::webkit::WebViewClient::J2CPP_CLASS_NAME>(),
-			get_method_id<android::webkit::WebViewClient::J2CPP_CLASS_NAME, android::webkit::WebViewClient::J2CPP_METHOD_NAME(0), android::webkit::WebViewClient::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::webkit::WebViewClient::WebViewClient()
+: cpp_object<android::webkit::WebViewClient>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::webkit::WebViewClient::J2CPP_CLASS_NAME>(),
+		get_method_id<android::webkit::WebViewClient::J2CPP_CLASS_NAME, android::webkit::WebViewClient::J2CPP_METHOD_NAME(0), android::webkit::WebViewClient::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 cpp_boolean android::webkit::WebViewClient::shouldOverrideUrlLoading(local_ref< android::webkit::WebView > const &a0, local_ref< java::lang::String > const &a1)
 {

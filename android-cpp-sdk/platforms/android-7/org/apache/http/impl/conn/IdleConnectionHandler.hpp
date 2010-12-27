@@ -10,10 +10,12 @@
 #define J2CPP_ORG_APACHE_HTTP_IMPL_CONN_IDLECONNECTIONHANDLER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace util { namespace concurrent { class TimeUnit; } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { class HttpConnection; } } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/util/concurrent/TimeUnit.hpp>
 #include <org/apache/http/HttpConnection.hpp>
 
@@ -37,11 +39,15 @@ namespace org { namespace apache { namespace http { namespace impl { namespace c
 		J2CPP_DECLARE_METHOD(4)
 		J2CPP_DECLARE_METHOD(5)
 
-		IdleConnectionHandler(jobject jobj)
+		explicit IdleConnectionHandler(jobject jobj)
 		: cpp_object<IdleConnectionHandler>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		IdleConnectionHandler();
 		void add(local_ref< org::apache::http::HttpConnection > const&, cpp_long const&, local_ref< java::util::concurrent::TimeUnit > const&);
 		cpp_boolean remove(local_ref< org::apache::http::HttpConnection > const&);
 		void removeAll();
@@ -55,7 +61,6 @@ namespace org { namespace apache { namespace http { namespace impl { namespace c
 } //namespace apache
 } //namespace org
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ORG_APACHE_HTTP_IMPL_CONN_IDLECONNECTIONHANDLER_HPP_DECL
@@ -68,16 +73,23 @@ namespace org { namespace apache { namespace http { namespace impl { namespace c
 namespace j2cpp {
 
 
-template <>
-local_ref< org::apache::http::impl::conn::IdleConnectionHandler > create< org::apache::http::impl::conn::IdleConnectionHandler>()
+
+org::apache::http::impl::conn::IdleConnectionHandler::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< org::apache::http::impl::conn::IdleConnectionHandler >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::apache::http::impl::conn::IdleConnectionHandler::J2CPP_CLASS_NAME>(),
-			get_method_id<org::apache::http::impl::conn::IdleConnectionHandler::J2CPP_CLASS_NAME, org::apache::http::impl::conn::IdleConnectionHandler::J2CPP_METHOD_NAME(0), org::apache::http::impl::conn::IdleConnectionHandler::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+org::apache::http::impl::conn::IdleConnectionHandler::IdleConnectionHandler()
+: cpp_object<org::apache::http::impl::conn::IdleConnectionHandler>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::apache::http::impl::conn::IdleConnectionHandler::J2CPP_CLASS_NAME>(),
+		get_method_id<org::apache::http::impl::conn::IdleConnectionHandler::J2CPP_CLASS_NAME, org::apache::http::impl::conn::IdleConnectionHandler::J2CPP_METHOD_NAME(0), org::apache::http::impl::conn::IdleConnectionHandler::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 void org::apache::http::impl::conn::IdleConnectionHandler::add(local_ref< org::apache::http::HttpConnection > const &a0, cpp_long const &a1, local_ref< java::util::concurrent::TimeUnit > const &a2)
 {

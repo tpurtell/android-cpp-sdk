@@ -19,8 +19,10 @@ namespace j2cpp { namespace android { namespace graphics { class Bitmap; } } }
 namespace j2cpp { namespace android { namespace graphics { class Rect; } } }
 namespace j2cpp { namespace android { namespace content { class Context; } } }
 namespace j2cpp { namespace android { namespace view { class View; } } }
+namespace j2cpp { namespace android { namespace view { namespace ViewGroup_ { class OnHierarchyChangeListener; } } } }
 namespace j2cpp { namespace android { namespace view { class KeyEvent; } } }
 namespace j2cpp { namespace android { namespace view { class MotionEvent; } } }
+namespace j2cpp { namespace android { namespace view { namespace ViewTreeObserver_ { class OnGlobalFocusChangeListener; } } } }
 namespace j2cpp { namespace android { namespace view { namespace ViewGroup_ { class LayoutParams; } } } }
 namespace j2cpp { namespace android { namespace webkit { class WebViewClient; } } }
 namespace j2cpp { namespace android { namespace webkit { namespace WebView_ { class HitTestResult; } } } }
@@ -30,6 +32,7 @@ namespace j2cpp { namespace android { namespace webkit { class DownloadListener;
 namespace j2cpp { namespace android { namespace webkit { class PluginList; } } }
 namespace j2cpp { namespace android { namespace webkit { class WebBackForwardList; } } }
 namespace j2cpp { namespace android { namespace webkit { namespace WebView_ { class PictureListener; } } } }
+namespace j2cpp { namespace android { namespace widget { class AbsoluteLayout; } } }
 namespace j2cpp { namespace android { namespace util { class AttributeSet; } } }
 namespace j2cpp { namespace android { namespace os { class Bundle; } } }
 namespace j2cpp { namespace android { namespace os { class Message; } } }
@@ -47,6 +50,7 @@ namespace j2cpp { namespace android { namespace os { class Message; } } }
 #include <android/view/MotionEvent.hpp>
 #include <android/view/View.hpp>
 #include <android/view/ViewGroup.hpp>
+#include <android/view/ViewTreeObserver.hpp>
 #include <android/webkit/DownloadListener.hpp>
 #include <android/webkit/PluginList.hpp>
 #include <android/webkit/WebBackForwardList.hpp>
@@ -54,6 +58,7 @@ namespace j2cpp { namespace android { namespace os { class Message; } } }
 #include <android/webkit/WebSettings.hpp>
 #include <android/webkit/WebView.hpp>
 #include <android/webkit/WebViewClient.hpp>
+#include <android/widget/AbsoluteLayout.hpp>
 #include <java/io/File.hpp>
 #include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
@@ -89,10 +94,13 @@ namespace android { namespace webkit {
 			J2CPP_DECLARE_FIELD(9)
 			J2CPP_DECLARE_FIELD(10)
 
-			HitTestResult(jobject jobj)
+			explicit HitTestResult(jobject jobj)
 			: cpp_object<HitTestResult>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+
 
 			cpp_int getType();
 			local_ref< java::lang::String > getExtra();
@@ -122,11 +130,15 @@ namespace android { namespace webkit {
 			J2CPP_DECLARE_METHOD(2)
 			J2CPP_DECLARE_FIELD(0)
 
-			WebViewTransport(jobject jobj)
+			explicit WebViewTransport(jobject jobj)
 			: cpp_object<WebViewTransport>(jobj)
 			{
 			}
 
+			operator local_ref<java::lang::Object>() const;
+
+
+			WebViewTransport(local_ref< android::webkit::WebView > const&);
 			void setWebView(local_ref< android::webkit::WebView > const&);
 			local_ref< android::webkit::WebView > getWebView();
 
@@ -142,10 +154,13 @@ namespace android { namespace webkit {
 
 			J2CPP_DECLARE_METHOD(0)
 
-			PictureListener(jobject jobj)
+			explicit PictureListener(jobject jobj)
 			: cpp_object<PictureListener>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+
 
 			void onNewPicture(local_ref< android::webkit::WebView > const&, local_ref< android::graphics::Picture > const&);
 		}; //class PictureListener
@@ -271,11 +286,19 @@ namespace android { namespace webkit {
 		typedef WebView_::WebViewTransport WebViewTransport;
 		typedef WebView_::PictureListener PictureListener;
 
-		WebView(jobject jobj)
+		explicit WebView(jobject jobj)
 		: cpp_object<WebView>(jobj)
 		{
 		}
 
+		operator local_ref<android::widget::AbsoluteLayout>() const;
+		operator local_ref<android::view::ViewTreeObserver_::OnGlobalFocusChangeListener>() const;
+		operator local_ref<android::view::ViewGroup_::OnHierarchyChangeListener>() const;
+
+
+		WebView(local_ref< android::content::Context > const&);
+		WebView(local_ref< android::content::Context > const&, local_ref< android::util::AttributeSet > const&);
+		WebView(local_ref< android::content::Context > const&, local_ref< android::util::AttributeSet > const&, cpp_int const&);
 		void setScrollBarStyle(cpp_int const&);
 		void setHorizontalScrollbarOverlay(cpp_boolean const&);
 		void setVerticalScrollbarOverlay(cpp_boolean const&);
@@ -373,7 +396,6 @@ namespace android { namespace webkit {
 } //namespace webkit
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_WEBKIT_WEBVIEW_HPP_DECL
@@ -387,17 +409,12 @@ namespace j2cpp {
 
 
 
-template <>
-local_ref< android::webkit::WebView_::HitTestResult > create< android::webkit::WebView_::HitTestResult>(local_ref< android::webkit::WebView > const &a0)
+
+android::webkit::WebView_::HitTestResult::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::webkit::WebView_::HitTestResult >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::webkit::WebView_::HitTestResult::J2CPP_CLASS_NAME>(),
-			get_method_id<android::webkit::WebView_::HitTestResult::J2CPP_CLASS_NAME, android::webkit::WebView_::HitTestResult::J2CPP_METHOD_NAME(0), android::webkit::WebView_::HitTestResult::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
 
 cpp_int android::webkit::WebView_::HitTestResult::getType()
 {
@@ -507,17 +524,24 @@ J2CPP_DEFINE_FIELD(android::webkit::WebView_::HitTestResult,8,"SRC_IMAGE_ANCHOR_
 J2CPP_DEFINE_FIELD(android::webkit::WebView_::HitTestResult,9,"EDIT_TEXT_TYPE","I")
 J2CPP_DEFINE_FIELD(android::webkit::WebView_::HitTestResult,10,"this$0","Landroid/webkit/WebView;")
 
-template <>
-local_ref< android::webkit::WebView_::WebViewTransport > create< android::webkit::WebView_::WebViewTransport>(local_ref< android::webkit::WebView > const &a0)
+
+android::webkit::WebView_::WebViewTransport::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::webkit::WebView_::WebViewTransport >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::webkit::WebView_::WebViewTransport::J2CPP_CLASS_NAME>(),
-			get_method_id<android::webkit::WebView_::WebViewTransport::J2CPP_CLASS_NAME, android::webkit::WebView_::WebViewTransport::J2CPP_METHOD_NAME(0), android::webkit::WebView_::WebViewTransport::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::webkit::WebView_::WebViewTransport::WebViewTransport(local_ref< android::webkit::WebView > const &a0)
+: cpp_object<android::webkit::WebView_::WebViewTransport>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::webkit::WebView_::WebViewTransport::J2CPP_CLASS_NAME>(),
+		get_method_id<android::webkit::WebView_::WebViewTransport::J2CPP_CLASS_NAME, android::webkit::WebView_::WebViewTransport::J2CPP_METHOD_NAME(0), android::webkit::WebView_::WebViewTransport::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 void android::webkit::WebView_::WebViewTransport::setWebView(local_ref< android::webkit::WebView > const &a0)
 {
@@ -548,6 +572,12 @@ J2CPP_DEFINE_METHOD(android::webkit::WebView_::WebViewTransport,1,"setWebView","
 J2CPP_DEFINE_METHOD(android::webkit::WebView_::WebViewTransport,2,"getWebView","()Landroid/webkit/WebView;")
 J2CPP_DEFINE_FIELD(android::webkit::WebView_::WebViewTransport,0,"this$0","Landroid/webkit/WebView;")
 
+
+android::webkit::WebView_::PictureListener::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
+
 void android::webkit::WebView_::PictureListener::onNewPicture(local_ref< android::webkit::WebView > const &a0, local_ref< android::graphics::Picture > const &a1)
 {
 	return void(
@@ -564,41 +594,60 @@ J2CPP_DEFINE_CLASS(android::webkit::WebView_::PictureListener,"android/webkit/We
 J2CPP_DEFINE_METHOD(android::webkit::WebView_::PictureListener,0,"onNewPicture","(Landroid/webkit/WebView;Landroid/graphics/Picture;)V")
 
 
-template <>
-local_ref< android::webkit::WebView > create< android::webkit::WebView>(local_ref< android::content::Context > const &a0)
+
+android::webkit::WebView::operator local_ref<android::widget::AbsoluteLayout>() const
 {
-	return local_ref< android::webkit::WebView >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::webkit::WebView::J2CPP_CLASS_NAME>(),
-			get_method_id<android::webkit::WebView::J2CPP_CLASS_NAME, android::webkit::WebView::J2CPP_METHOD_NAME(0), android::webkit::WebView::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<android::widget::AbsoluteLayout>(get_jtype());
 }
 
-template <>
-local_ref< android::webkit::WebView > create< android::webkit::WebView>(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1)
+android::webkit::WebView::operator local_ref<android::view::ViewTreeObserver_::OnGlobalFocusChangeListener>() const
 {
-	return local_ref< android::webkit::WebView >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::webkit::WebView::J2CPP_CLASS_NAME>(),
-			get_method_id<android::webkit::WebView::J2CPP_CLASS_NAME, android::webkit::WebView::J2CPP_METHOD_NAME(1), android::webkit::WebView::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<android::view::ViewTreeObserver_::OnGlobalFocusChangeListener>(get_jtype());
 }
 
-template <>
-local_ref< android::webkit::WebView > create< android::webkit::WebView>(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1, cpp_int const &a2)
+android::webkit::WebView::operator local_ref<android::view::ViewGroup_::OnHierarchyChangeListener>() const
 {
-	return local_ref< android::webkit::WebView >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::webkit::WebView::J2CPP_CLASS_NAME>(),
-			get_method_id<android::webkit::WebView::J2CPP_CLASS_NAME, android::webkit::WebView::J2CPP_METHOD_NAME(2), android::webkit::WebView::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
-		)
-	);
+	return local_ref<android::view::ViewGroup_::OnHierarchyChangeListener>(get_jtype());
 }
+
+
+android::webkit::WebView::WebView(local_ref< android::content::Context > const &a0)
+: cpp_object<android::webkit::WebView>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::webkit::WebView::J2CPP_CLASS_NAME>(),
+		get_method_id<android::webkit::WebView::J2CPP_CLASS_NAME, android::webkit::WebView::J2CPP_METHOD_NAME(0), android::webkit::WebView::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
+
+
+android::webkit::WebView::WebView(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1)
+: cpp_object<android::webkit::WebView>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::webkit::WebView::J2CPP_CLASS_NAME>(),
+		get_method_id<android::webkit::WebView::J2CPP_CLASS_NAME, android::webkit::WebView::J2CPP_METHOD_NAME(1), android::webkit::WebView::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
+
+
+android::webkit::WebView::WebView(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1, cpp_int const &a2)
+: cpp_object<android::webkit::WebView>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::webkit::WebView::J2CPP_CLASS_NAME>(),
+		get_method_id<android::webkit::WebView::J2CPP_CLASS_NAME, android::webkit::WebView::J2CPP_METHOD_NAME(2), android::webkit::WebView::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
+	)
+)
+{
+}
+
 
 void android::webkit::WebView::setScrollBarStyle(cpp_int const &a0)
 {

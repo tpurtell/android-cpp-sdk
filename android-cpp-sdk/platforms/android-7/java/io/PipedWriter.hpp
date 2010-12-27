@@ -11,9 +11,11 @@
 
 
 namespace j2cpp { namespace java { namespace io { class PipedReader; } } }
+namespace j2cpp { namespace java { namespace io { class Writer; } } }
 
 
 #include <java/io/PipedReader.hpp>
+#include <java/io/Writer.hpp>
 
 
 namespace j2cpp {
@@ -36,11 +38,16 @@ namespace java { namespace io {
 		J2CPP_DECLARE_METHOD(5)
 		J2CPP_DECLARE_METHOD(6)
 
-		PipedWriter(jobject jobj)
+		explicit PipedWriter(jobject jobj)
 		: cpp_object<PipedWriter>(jobj)
 		{
 		}
 
+		operator local_ref<java::io::Writer>() const;
+
+
+		PipedWriter();
+		PipedWriter(local_ref< java::io::PipedReader > const&);
 		void close();
 		void connect(local_ref< java::io::PipedReader > const&);
 		void flush();
@@ -50,7 +57,6 @@ namespace java { namespace io {
 
 } //namespace io
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -64,28 +70,36 @@ namespace java { namespace io {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::io::PipedWriter > create< java::io::PipedWriter>()
+
+java::io::PipedWriter::operator local_ref<java::io::Writer>() const
 {
-	return local_ref< java::io::PipedWriter >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::io::PipedWriter::J2CPP_CLASS_NAME>(),
-			get_method_id<java::io::PipedWriter::J2CPP_CLASS_NAME, java::io::PipedWriter::J2CPP_METHOD_NAME(0), java::io::PipedWriter::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::io::Writer>(get_jtype());
 }
 
-template <>
-local_ref< java::io::PipedWriter > create< java::io::PipedWriter>(local_ref< java::io::PipedReader > const &a0)
+
+java::io::PipedWriter::PipedWriter()
+: cpp_object<java::io::PipedWriter>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::io::PipedWriter::J2CPP_CLASS_NAME>(),
+		get_method_id<java::io::PipedWriter::J2CPP_CLASS_NAME, java::io::PipedWriter::J2CPP_METHOD_NAME(0), java::io::PipedWriter::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
 {
-	return local_ref< java::io::PipedWriter >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::io::PipedWriter::J2CPP_CLASS_NAME>(),
-			get_method_id<java::io::PipedWriter::J2CPP_CLASS_NAME, java::io::PipedWriter::J2CPP_METHOD_NAME(1), java::io::PipedWriter::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
 }
+
+
+
+java::io::PipedWriter::PipedWriter(local_ref< java::io::PipedReader > const &a0)
+: cpp_object<java::io::PipedWriter>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::io::PipedWriter::J2CPP_CLASS_NAME>(),
+		get_method_id<java::io::PipedWriter::J2CPP_CLASS_NAME, java::io::PipedWriter::J2CPP_METHOD_NAME(1), java::io::PipedWriter::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 void java::io::PipedWriter::close()
 {

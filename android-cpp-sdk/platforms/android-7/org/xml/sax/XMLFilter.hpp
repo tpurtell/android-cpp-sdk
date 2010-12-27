@@ -10,9 +10,11 @@
 #define J2CPP_ORG_XML_SAX_XMLFILTER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace org { namespace xml { namespace sax { class XMLReader; } } } }
 
 
+#include <java/lang/Object.hpp>
 #include <org/xml/sax/XMLReader.hpp>
 
 
@@ -31,10 +33,14 @@ namespace org { namespace xml { namespace sax {
 		J2CPP_DECLARE_METHOD(0)
 		J2CPP_DECLARE_METHOD(1)
 
-		XMLFilter(jobject jobj)
+		explicit XMLFilter(jobject jobj)
 		: cpp_object<XMLFilter>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<org::xml::sax::XMLReader>() const;
+
 
 		void setParent(local_ref< org::xml::sax::XMLReader > const&);
 		local_ref< org::xml::sax::XMLReader > getParent();
@@ -43,7 +49,6 @@ namespace org { namespace xml { namespace sax {
 } //namespace sax
 } //namespace xml
 } //namespace org
-
 
 } //namespace j2cpp
 
@@ -56,6 +61,17 @@ namespace org { namespace xml { namespace sax {
 
 namespace j2cpp {
 
+
+
+org::xml::sax::XMLFilter::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
+
+org::xml::sax::XMLFilter::operator local_ref<org::xml::sax::XMLReader>() const
+{
+	return local_ref<org::xml::sax::XMLReader>(get_jtype());
+}
 
 void org::xml::sax::XMLFilter::setParent(local_ref< org::xml::sax::XMLReader > const &a0)
 {

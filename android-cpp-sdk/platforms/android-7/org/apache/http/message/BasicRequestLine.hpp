@@ -11,13 +11,17 @@
 
 
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace lang { class Cloneable; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { class RequestLine; } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { class ProtocolVersion; } } } }
 
 
+#include <java/lang/Cloneable.hpp>
 #include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <org/apache/http/ProtocolVersion.hpp>
+#include <org/apache/http/RequestLine.hpp>
 
 
 namespace j2cpp {
@@ -39,11 +43,17 @@ namespace org { namespace apache { namespace http { namespace message {
 		J2CPP_DECLARE_METHOD(4)
 		J2CPP_DECLARE_METHOD(5)
 
-		BasicRequestLine(jobject jobj)
+		explicit BasicRequestLine(jobject jobj)
 		: cpp_object<BasicRequestLine>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<org::apache::http::RequestLine>() const;
+		operator local_ref<java::lang::Cloneable>() const;
+
+
+		BasicRequestLine(local_ref< java::lang::String > const&, local_ref< java::lang::String > const&, local_ref< org::apache::http::ProtocolVersion > const&);
 		local_ref< java::lang::String > getMethod();
 		local_ref< org::apache::http::ProtocolVersion > getProtocolVersion();
 		local_ref< java::lang::String > getUri();
@@ -55,7 +65,6 @@ namespace org { namespace apache { namespace http { namespace message {
 } //namespace http
 } //namespace apache
 } //namespace org
-
 
 } //namespace j2cpp
 
@@ -69,17 +78,34 @@ namespace org { namespace apache { namespace http { namespace message {
 namespace j2cpp {
 
 
-template <>
-local_ref< org::apache::http::message::BasicRequestLine > create< org::apache::http::message::BasicRequestLine>(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1, local_ref< org::apache::http::ProtocolVersion > const &a2)
+
+org::apache::http::message::BasicRequestLine::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< org::apache::http::message::BasicRequestLine >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::apache::http::message::BasicRequestLine::J2CPP_CLASS_NAME>(),
-			get_method_id<org::apache::http::message::BasicRequestLine::J2CPP_CLASS_NAME, org::apache::http::message::BasicRequestLine::J2CPP_METHOD_NAME(0), org::apache::http::message::BasicRequestLine::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+org::apache::http::message::BasicRequestLine::operator local_ref<org::apache::http::RequestLine>() const
+{
+	return local_ref<org::apache::http::RequestLine>(get_jtype());
+}
+
+org::apache::http::message::BasicRequestLine::operator local_ref<java::lang::Cloneable>() const
+{
+	return local_ref<java::lang::Cloneable>(get_jtype());
+}
+
+
+org::apache::http::message::BasicRequestLine::BasicRequestLine(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1, local_ref< org::apache::http::ProtocolVersion > const &a2)
+: cpp_object<org::apache::http::message::BasicRequestLine>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::apache::http::message::BasicRequestLine::J2CPP_CLASS_NAME>(),
+		get_method_id<org::apache::http::message::BasicRequestLine::J2CPP_CLASS_NAME, org::apache::http::message::BasicRequestLine::J2CPP_METHOD_NAME(0), org::apache::http::message::BasicRequestLine::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
+	)
+)
+{
+}
+
 
 local_ref< java::lang::String > org::apache::http::message::BasicRequestLine::getMethod()
 {

@@ -10,11 +10,13 @@
 #define J2CPP_JAVA_LANG_ABSTRACTSTRINGBUILDER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class CharSequence; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 
 
 #include <java/lang/CharSequence.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -52,10 +54,13 @@ namespace java { namespace lang {
 		J2CPP_DECLARE_METHOD(19)
 		J2CPP_DECLARE_METHOD(20)
 
-		AbstractStringBuilder(jobject jobj)
+		explicit AbstractStringBuilder(jobject jobj)
 		: cpp_object<AbstractStringBuilder>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		cpp_int capacity();
 		cpp_char charAt(cpp_int const&);
@@ -82,7 +87,6 @@ namespace java { namespace lang {
 } //namespace lang
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_LANG_ABSTRACTSTRINGBUILDER_HPP_DECL
@@ -95,16 +99,12 @@ namespace java { namespace lang {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::lang::AbstractStringBuilder > create< java::lang::AbstractStringBuilder>()
+
+java::lang::AbstractStringBuilder::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::lang::AbstractStringBuilder >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::lang::AbstractStringBuilder::J2CPP_CLASS_NAME>(),
-			get_method_id<java::lang::AbstractStringBuilder::J2CPP_CLASS_NAME, java::lang::AbstractStringBuilder::J2CPP_METHOD_NAME(0), java::lang::AbstractStringBuilder::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
 
 cpp_int java::lang::AbstractStringBuilder::capacity()
 {

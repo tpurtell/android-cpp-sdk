@@ -10,14 +10,22 @@
 #define J2CPP_ANDROID_TEXT_EDITABLE_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace lang { class Appendable; } } }
 namespace j2cpp { namespace java { namespace lang { class CharSequence; } } }
+namespace j2cpp { namespace android { namespace text { class Spannable; } } }
 namespace j2cpp { namespace android { namespace text { class InputFilter; } } }
 namespace j2cpp { namespace android { namespace text { namespace Editable_ { class Factory; } } } }
+namespace j2cpp { namespace android { namespace text { class GetChars; } } }
 
 
 #include <android/text/Editable.hpp>
+#include <android/text/GetChars.hpp>
 #include <android/text/InputFilter.hpp>
+#include <android/text/Spannable.hpp>
+#include <java/lang/Appendable.hpp>
 #include <java/lang/CharSequence.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -39,11 +47,15 @@ namespace android { namespace text {
 			J2CPP_DECLARE_METHOD(1)
 			J2CPP_DECLARE_METHOD(2)
 
-			Factory(jobject jobj)
+			explicit Factory(jobject jobj)
 			: cpp_object<Factory>(jobj)
 			{
 			}
 
+			operator local_ref<java::lang::Object>() const;
+
+
+			Factory();
 			static local_ref< android::text::Editable_::Factory > getInstance();
 			local_ref< android::text::Editable > newEditable(local_ref< java::lang::CharSequence > const&);
 		}; //class Factory
@@ -72,10 +84,17 @@ namespace android { namespace text {
 
 		typedef Editable_::Factory Factory;
 
-		Editable(jobject jobj)
+		explicit Editable(jobject jobj)
 		: cpp_object<Editable>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::lang::CharSequence>() const;
+		operator local_ref<android::text::GetChars>() const;
+		operator local_ref<android::text::Spannable>() const;
+		operator local_ref<java::lang::Appendable>() const;
+
 
 		local_ref< android::text::Editable > replace(cpp_int const&, cpp_int const&, local_ref< java::lang::CharSequence > const&, cpp_int const&, cpp_int const&);
 		local_ref< android::text::Editable > replace(cpp_int const&, cpp_int const&, local_ref< java::lang::CharSequence > const&);
@@ -94,7 +113,6 @@ namespace android { namespace text {
 } //namespace text
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_TEXT_EDITABLE_HPP_DECL
@@ -108,16 +126,23 @@ namespace j2cpp {
 
 
 
-template <>
-local_ref< android::text::Editable_::Factory > create< android::text::Editable_::Factory>()
+
+android::text::Editable_::Factory::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::text::Editable_::Factory >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::text::Editable_::Factory::J2CPP_CLASS_NAME>(),
-			get_method_id<android::text::Editable_::Factory::J2CPP_CLASS_NAME, android::text::Editable_::Factory::J2CPP_METHOD_NAME(0), android::text::Editable_::Factory::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::text::Editable_::Factory::Factory()
+: cpp_object<android::text::Editable_::Factory>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::text::Editable_::Factory::J2CPP_CLASS_NAME>(),
+		get_method_id<android::text::Editable_::Factory::J2CPP_CLASS_NAME, android::text::Editable_::Factory::J2CPP_METHOD_NAME(0), android::text::Editable_::Factory::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 local_ref< android::text::Editable_::Factory > android::text::Editable_::Factory::getInstance()
 {
@@ -146,6 +171,32 @@ J2CPP_DEFINE_METHOD(android::text::Editable_::Factory,0,"<init>","()V")
 J2CPP_DEFINE_METHOD(android::text::Editable_::Factory,1,"getInstance","()Landroid/text/Editable$Factory;")
 J2CPP_DEFINE_METHOD(android::text::Editable_::Factory,2,"newEditable","(Ljava/lang/CharSequence;)Landroid/text/Editable;")
 
+
+
+android::text::Editable::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
+
+android::text::Editable::operator local_ref<java::lang::CharSequence>() const
+{
+	return local_ref<java::lang::CharSequence>(get_jtype());
+}
+
+android::text::Editable::operator local_ref<android::text::GetChars>() const
+{
+	return local_ref<android::text::GetChars>(get_jtype());
+}
+
+android::text::Editable::operator local_ref<android::text::Spannable>() const
+{
+	return local_ref<android::text::Spannable>(get_jtype());
+}
+
+android::text::Editable::operator local_ref<java::lang::Appendable>() const
+{
+	return local_ref<java::lang::Appendable>(get_jtype());
+}
 
 local_ref< android::text::Editable > android::text::Editable::replace(cpp_int const &a0, cpp_int const &a1, local_ref< java::lang::CharSequence > const &a2, cpp_int const &a3, cpp_int const &a4)
 {

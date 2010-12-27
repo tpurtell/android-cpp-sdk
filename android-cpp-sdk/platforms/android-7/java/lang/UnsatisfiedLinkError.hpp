@@ -10,9 +10,11 @@
 #define J2CPP_JAVA_LANG_UNSATISFIEDLINKERROR_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class LinkageError; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 
 
+#include <java/lang/LinkageError.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -31,16 +33,20 @@ namespace java { namespace lang {
 		J2CPP_DECLARE_METHOD(0)
 		J2CPP_DECLARE_METHOD(1)
 
-		UnsatisfiedLinkError(jobject jobj)
+		explicit UnsatisfiedLinkError(jobject jobj)
 		: cpp_object<UnsatisfiedLinkError>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::LinkageError>() const;
+
+
+		UnsatisfiedLinkError();
+		UnsatisfiedLinkError(local_ref< java::lang::String > const&);
 	}; //class UnsatisfiedLinkError
 
 } //namespace lang
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -54,28 +60,36 @@ namespace java { namespace lang {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::lang::UnsatisfiedLinkError > create< java::lang::UnsatisfiedLinkError>()
+
+java::lang::UnsatisfiedLinkError::operator local_ref<java::lang::LinkageError>() const
 {
-	return local_ref< java::lang::UnsatisfiedLinkError >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::lang::UnsatisfiedLinkError::J2CPP_CLASS_NAME>(),
-			get_method_id<java::lang::UnsatisfiedLinkError::J2CPP_CLASS_NAME, java::lang::UnsatisfiedLinkError::J2CPP_METHOD_NAME(0), java::lang::UnsatisfiedLinkError::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::LinkageError>(get_jtype());
 }
 
-template <>
-local_ref< java::lang::UnsatisfiedLinkError > create< java::lang::UnsatisfiedLinkError>(local_ref< java::lang::String > const &a0)
+
+java::lang::UnsatisfiedLinkError::UnsatisfiedLinkError()
+: cpp_object<java::lang::UnsatisfiedLinkError>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::lang::UnsatisfiedLinkError::J2CPP_CLASS_NAME>(),
+		get_method_id<java::lang::UnsatisfiedLinkError::J2CPP_CLASS_NAME, java::lang::UnsatisfiedLinkError::J2CPP_METHOD_NAME(0), java::lang::UnsatisfiedLinkError::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
 {
-	return local_ref< java::lang::UnsatisfiedLinkError >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::lang::UnsatisfiedLinkError::J2CPP_CLASS_NAME>(),
-			get_method_id<java::lang::UnsatisfiedLinkError::J2CPP_CLASS_NAME, java::lang::UnsatisfiedLinkError::J2CPP_METHOD_NAME(1), java::lang::UnsatisfiedLinkError::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
 }
+
+
+
+java::lang::UnsatisfiedLinkError::UnsatisfiedLinkError(local_ref< java::lang::String > const &a0)
+: cpp_object<java::lang::UnsatisfiedLinkError>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::lang::UnsatisfiedLinkError::J2CPP_CLASS_NAME>(),
+		get_method_id<java::lang::UnsatisfiedLinkError::J2CPP_CLASS_NAME, java::lang::UnsatisfiedLinkError::J2CPP_METHOD_NAME(1), java::lang::UnsatisfiedLinkError::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 
 J2CPP_DEFINE_CLASS(java::lang::UnsatisfiedLinkError,"java/lang/UnsatisfiedLinkError")

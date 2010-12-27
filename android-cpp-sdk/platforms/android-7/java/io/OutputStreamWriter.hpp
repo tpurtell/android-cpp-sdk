@@ -11,12 +11,14 @@
 
 
 namespace j2cpp { namespace java { namespace io { class OutputStream; } } }
+namespace j2cpp { namespace java { namespace io { class Writer; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace nio { namespace charset { class CharsetEncoder; } } } }
 namespace j2cpp { namespace java { namespace nio { namespace charset { class Charset; } } } }
 
 
 #include <java/io/OutputStream.hpp>
+#include <java/io/Writer.hpp>
 #include <java/lang/String.hpp>
 #include <java/nio/charset/Charset.hpp>
 #include <java/nio/charset/CharsetEncoder.hpp>
@@ -45,11 +47,18 @@ namespace java { namespace io {
 		J2CPP_DECLARE_METHOD(8)
 		J2CPP_DECLARE_METHOD(9)
 
-		OutputStreamWriter(jobject jobj)
+		explicit OutputStreamWriter(jobject jobj)
 		: cpp_object<OutputStreamWriter>(jobj)
 		{
 		}
 
+		operator local_ref<java::io::Writer>() const;
+
+
+		OutputStreamWriter(local_ref< java::io::OutputStream > const&);
+		OutputStreamWriter(local_ref< java::io::OutputStream > const&, local_ref< java::lang::String > const&);
+		OutputStreamWriter(local_ref< java::io::OutputStream > const&, local_ref< java::nio::charset::Charset > const&);
+		OutputStreamWriter(local_ref< java::io::OutputStream > const&, local_ref< java::nio::charset::CharsetEncoder > const&);
 		void close();
 		void flush();
 		local_ref< java::lang::String > getEncoding();
@@ -60,7 +69,6 @@ namespace java { namespace io {
 
 } //namespace io
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -74,53 +82,63 @@ namespace java { namespace io {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::io::OutputStreamWriter > create< java::io::OutputStreamWriter>(local_ref< java::io::OutputStream > const &a0)
+
+java::io::OutputStreamWriter::operator local_ref<java::io::Writer>() const
 {
-	return local_ref< java::io::OutputStreamWriter >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::io::OutputStreamWriter::J2CPP_CLASS_NAME>(),
-			get_method_id<java::io::OutputStreamWriter::J2CPP_CLASS_NAME, java::io::OutputStreamWriter::J2CPP_METHOD_NAME(0), java::io::OutputStreamWriter::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::io::Writer>(get_jtype());
 }
 
-template <>
-local_ref< java::io::OutputStreamWriter > create< java::io::OutputStreamWriter>(local_ref< java::io::OutputStream > const &a0, local_ref< java::lang::String > const &a1)
+
+java::io::OutputStreamWriter::OutputStreamWriter(local_ref< java::io::OutputStream > const &a0)
+: cpp_object<java::io::OutputStreamWriter>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::io::OutputStreamWriter::J2CPP_CLASS_NAME>(),
+		get_method_id<java::io::OutputStreamWriter::J2CPP_CLASS_NAME, java::io::OutputStreamWriter::J2CPP_METHOD_NAME(0), java::io::OutputStreamWriter::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< java::io::OutputStreamWriter >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::io::OutputStreamWriter::J2CPP_CLASS_NAME>(),
-			get_method_id<java::io::OutputStreamWriter::J2CPP_CLASS_NAME, java::io::OutputStreamWriter::J2CPP_METHOD_NAME(1), java::io::OutputStreamWriter::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< java::io::OutputStreamWriter > create< java::io::OutputStreamWriter>(local_ref< java::io::OutputStream > const &a0, local_ref< java::nio::charset::Charset > const &a1)
+
+
+java::io::OutputStreamWriter::OutputStreamWriter(local_ref< java::io::OutputStream > const &a0, local_ref< java::lang::String > const &a1)
+: cpp_object<java::io::OutputStreamWriter>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::io::OutputStreamWriter::J2CPP_CLASS_NAME>(),
+		get_method_id<java::io::OutputStreamWriter::J2CPP_CLASS_NAME, java::io::OutputStreamWriter::J2CPP_METHOD_NAME(1), java::io::OutputStreamWriter::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
 {
-	return local_ref< java::io::OutputStreamWriter >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::io::OutputStreamWriter::J2CPP_CLASS_NAME>(),
-			get_method_id<java::io::OutputStreamWriter::J2CPP_CLASS_NAME, java::io::OutputStreamWriter::J2CPP_METHOD_NAME(2), java::io::OutputStreamWriter::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< java::io::OutputStreamWriter > create< java::io::OutputStreamWriter>(local_ref< java::io::OutputStream > const &a0, local_ref< java::nio::charset::CharsetEncoder > const &a1)
+
+
+java::io::OutputStreamWriter::OutputStreamWriter(local_ref< java::io::OutputStream > const &a0, local_ref< java::nio::charset::Charset > const &a1)
+: cpp_object<java::io::OutputStreamWriter>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::io::OutputStreamWriter::J2CPP_CLASS_NAME>(),
+		get_method_id<java::io::OutputStreamWriter::J2CPP_CLASS_NAME, java::io::OutputStreamWriter::J2CPP_METHOD_NAME(2), java::io::OutputStreamWriter::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
 {
-	return local_ref< java::io::OutputStreamWriter >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::io::OutputStreamWriter::J2CPP_CLASS_NAME>(),
-			get_method_id<java::io::OutputStreamWriter::J2CPP_CLASS_NAME, java::io::OutputStreamWriter::J2CPP_METHOD_NAME(3), java::io::OutputStreamWriter::J2CPP_METHOD_SIGNATURE(3), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
 }
+
+
+
+java::io::OutputStreamWriter::OutputStreamWriter(local_ref< java::io::OutputStream > const &a0, local_ref< java::nio::charset::CharsetEncoder > const &a1)
+: cpp_object<java::io::OutputStreamWriter>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::io::OutputStreamWriter::J2CPP_CLASS_NAME>(),
+		get_method_id<java::io::OutputStreamWriter::J2CPP_CLASS_NAME, java::io::OutputStreamWriter::J2CPP_METHOD_NAME(3), java::io::OutputStreamWriter::J2CPP_METHOD_SIGNATURE(3), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
 
 void java::io::OutputStreamWriter::close()
 {

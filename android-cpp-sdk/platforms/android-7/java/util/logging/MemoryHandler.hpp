@@ -42,11 +42,16 @@ namespace java { namespace util { namespace logging {
 		J2CPP_DECLARE_METHOD(7)
 		J2CPP_DECLARE_METHOD(8)
 
-		MemoryHandler(jobject jobj)
+		explicit MemoryHandler(jobject jobj)
 		: cpp_object<MemoryHandler>(jobj)
 		{
 		}
 
+		operator local_ref<java::util::logging::Handler>() const;
+
+
+		MemoryHandler();
+		MemoryHandler(local_ref< java::util::logging::Handler > const&, cpp_int const&, local_ref< java::util::logging::Level > const&);
 		void close();
 		void flush();
 		void publish(local_ref< java::util::logging::LogRecord > const&);
@@ -60,7 +65,6 @@ namespace java { namespace util { namespace logging {
 } //namespace util
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_UTIL_LOGGING_MEMORYHANDLER_HPP_DECL
@@ -73,28 +77,36 @@ namespace java { namespace util { namespace logging {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::util::logging::MemoryHandler > create< java::util::logging::MemoryHandler>()
+
+java::util::logging::MemoryHandler::operator local_ref<java::util::logging::Handler>() const
 {
-	return local_ref< java::util::logging::MemoryHandler >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::logging::MemoryHandler::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::logging::MemoryHandler::J2CPP_CLASS_NAME, java::util::logging::MemoryHandler::J2CPP_METHOD_NAME(0), java::util::logging::MemoryHandler::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::util::logging::Handler>(get_jtype());
 }
 
-template <>
-local_ref< java::util::logging::MemoryHandler > create< java::util::logging::MemoryHandler>(local_ref< java::util::logging::Handler > const &a0, cpp_int const &a1, local_ref< java::util::logging::Level > const &a2)
+
+java::util::logging::MemoryHandler::MemoryHandler()
+: cpp_object<java::util::logging::MemoryHandler>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::util::logging::MemoryHandler::J2CPP_CLASS_NAME>(),
+		get_method_id<java::util::logging::MemoryHandler::J2CPP_CLASS_NAME, java::util::logging::MemoryHandler::J2CPP_METHOD_NAME(0), java::util::logging::MemoryHandler::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
 {
-	return local_ref< java::util::logging::MemoryHandler >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::logging::MemoryHandler::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::logging::MemoryHandler::J2CPP_CLASS_NAME, java::util::logging::MemoryHandler::J2CPP_METHOD_NAME(1), java::util::logging::MemoryHandler::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
-		)
-	);
 }
+
+
+
+java::util::logging::MemoryHandler::MemoryHandler(local_ref< java::util::logging::Handler > const &a0, cpp_int const &a1, local_ref< java::util::logging::Level > const &a2)
+: cpp_object<java::util::logging::MemoryHandler>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::util::logging::MemoryHandler::J2CPP_CLASS_NAME>(),
+		get_method_id<java::util::logging::MemoryHandler::J2CPP_CLASS_NAME, java::util::logging::MemoryHandler::J2CPP_METHOD_NAME(1), java::util::logging::MemoryHandler::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
+	)
+)
+{
+}
+
 
 void java::util::logging::MemoryHandler::close()
 {

@@ -12,10 +12,12 @@
 
 namespace j2cpp { namespace java { namespace io { class InputStream; } } }
 namespace j2cpp { namespace java { namespace io { class OutputStream; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
 #include <java/io/InputStream.hpp>
 #include <java/io/OutputStream.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -38,11 +40,15 @@ namespace java { namespace lang {
 		J2CPP_DECLARE_METHOD(5)
 		J2CPP_DECLARE_METHOD(6)
 
-		Process(jobject jobj)
+		explicit Process(jobject jobj)
 		: cpp_object<Process>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		Process();
 		void destroy();
 		cpp_int exitValue();
 		local_ref< java::io::InputStream > getErrorStream();
@@ -53,7 +59,6 @@ namespace java { namespace lang {
 
 } //namespace lang
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -67,16 +72,23 @@ namespace java { namespace lang {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::lang::Process > create< java::lang::Process>()
+
+java::lang::Process::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::lang::Process >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::lang::Process::J2CPP_CLASS_NAME>(),
-			get_method_id<java::lang::Process::J2CPP_CLASS_NAME, java::lang::Process::J2CPP_METHOD_NAME(0), java::lang::Process::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+java::lang::Process::Process()
+: cpp_object<java::lang::Process>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::lang::Process::J2CPP_CLASS_NAME>(),
+		get_method_id<java::lang::Process::J2CPP_CLASS_NAME, java::lang::Process::J2CPP_METHOD_NAME(0), java::lang::Process::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 void java::lang::Process::destroy()
 {

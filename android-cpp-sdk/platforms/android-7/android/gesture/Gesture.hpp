@@ -10,12 +10,14 @@
 #define J2CPP_ANDROID_GESTURE_GESTURE_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace util { class ArrayList; } } }
 namespace j2cpp { namespace android { namespace graphics { class Bitmap; } } }
 namespace j2cpp { namespace android { namespace graphics { class Path; } } }
 namespace j2cpp { namespace android { namespace graphics { class RectF; } } }
 namespace j2cpp { namespace android { namespace gesture { class GestureStroke; } } }
 namespace j2cpp { namespace android { namespace os { class Parcel; } } }
+namespace j2cpp { namespace android { namespace os { class Parcelable; } } }
 namespace j2cpp { namespace android { namespace os { namespace Parcelable_ { class Creator; } } } }
 
 
@@ -25,6 +27,7 @@ namespace j2cpp { namespace android { namespace os { namespace Parcelable_ { cla
 #include <android/graphics/RectF.hpp>
 #include <android/os/Parcel.hpp>
 #include <android/os/Parcelable.hpp>
+#include <java/lang/Object.hpp>
 #include <java/util/ArrayList.hpp>
 
 
@@ -58,11 +61,16 @@ namespace android { namespace gesture {
 		J2CPP_DECLARE_METHOD(15)
 		J2CPP_DECLARE_FIELD(0)
 
-		Gesture(jobject jobj)
+		explicit Gesture(jobject jobj)
 		: cpp_object<Gesture>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<android::os::Parcelable>() const;
+
+
+		Gesture();
 		local_ref< java::util::ArrayList > getStrokes();
 		cpp_int getStrokesCount();
 		void addStroke(local_ref< android::gesture::GestureStroke > const&);
@@ -84,7 +92,6 @@ namespace android { namespace gesture {
 } //namespace gesture
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_GESTURE_GESTURE_HPP_DECL
@@ -97,16 +104,28 @@ namespace android { namespace gesture {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::gesture::Gesture > create< android::gesture::Gesture>()
+
+android::gesture::Gesture::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::gesture::Gesture >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::gesture::Gesture::J2CPP_CLASS_NAME>(),
-			get_method_id<android::gesture::Gesture::J2CPP_CLASS_NAME, android::gesture::Gesture::J2CPP_METHOD_NAME(0), android::gesture::Gesture::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+android::gesture::Gesture::operator local_ref<android::os::Parcelable>() const
+{
+	return local_ref<android::os::Parcelable>(get_jtype());
+}
+
+
+android::gesture::Gesture::Gesture()
+: cpp_object<android::gesture::Gesture>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::gesture::Gesture::J2CPP_CLASS_NAME>(),
+		get_method_id<android::gesture::Gesture::J2CPP_CLASS_NAME, android::gesture::Gesture::J2CPP_METHOD_NAME(0), android::gesture::Gesture::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 local_ref< java::util::ArrayList > android::gesture::Gesture::getStrokes()
 {
@@ -254,6 +273,7 @@ cpp_int android::gesture::Gesture::describeContents()
 		)
 	);
 }
+
 
 
 static_field<

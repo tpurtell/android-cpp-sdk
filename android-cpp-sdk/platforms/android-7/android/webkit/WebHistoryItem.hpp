@@ -10,11 +10,15 @@
 #define J2CPP_ANDROID_WEBKIT_WEBHISTORYITEM_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace lang { class Cloneable; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace android { namespace graphics { class Bitmap; } } }
 
 
 #include <android/graphics/Bitmap.hpp>
+#include <java/lang/Cloneable.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -39,10 +43,14 @@ namespace android { namespace webkit {
 		J2CPP_DECLARE_METHOD(6)
 		J2CPP_DECLARE_METHOD(7)
 
-		WebHistoryItem(jobject jobj)
+		explicit WebHistoryItem(jobject jobj)
 		: cpp_object<WebHistoryItem>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::lang::Cloneable>() const;
+
 
 		cpp_int getId();
 		local_ref< java::lang::String > getUrl();
@@ -53,7 +61,6 @@ namespace android { namespace webkit {
 
 } //namespace webkit
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -67,16 +74,17 @@ namespace android { namespace webkit {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::webkit::WebHistoryItem > create< android::webkit::WebHistoryItem>()
+
+android::webkit::WebHistoryItem::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::webkit::WebHistoryItem >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::webkit::WebHistoryItem::J2CPP_CLASS_NAME>(),
-			get_method_id<android::webkit::WebHistoryItem::J2CPP_CLASS_NAME, android::webkit::WebHistoryItem::J2CPP_METHOD_NAME(0), android::webkit::WebHistoryItem::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+android::webkit::WebHistoryItem::operator local_ref<java::lang::Cloneable>() const
+{
+	return local_ref<java::lang::Cloneable>(get_jtype());
+}
+
 
 cpp_int android::webkit::WebHistoryItem::getId()
 {

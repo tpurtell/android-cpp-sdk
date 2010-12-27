@@ -10,8 +10,12 @@
 #define J2CPP_JAVA_SQL_DATATRUNCATION_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
+namespace j2cpp { namespace java { namespace sql { class SQLWarning; } } }
 
 
+#include <java/io/Serializable.hpp>
+#include <java/sql/SQLWarning.hpp>
 
 
 namespace j2cpp {
@@ -33,11 +37,16 @@ namespace java { namespace sql {
 		J2CPP_DECLARE_METHOD(4)
 		J2CPP_DECLARE_METHOD(5)
 
-		DataTruncation(jobject jobj)
+		explicit DataTruncation(jobject jobj)
 		: cpp_object<DataTruncation>(jobj)
 		{
 		}
 
+		operator local_ref<java::sql::SQLWarning>() const;
+		operator local_ref<java::io::Serializable>() const;
+
+
+		DataTruncation(cpp_int const&, cpp_boolean const&, cpp_boolean const&, cpp_int const&, cpp_int const&);
 		cpp_int getDataSize();
 		cpp_int getIndex();
 		cpp_boolean getParameter();
@@ -47,7 +56,6 @@ namespace java { namespace sql {
 
 } //namespace sql
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -61,17 +69,29 @@ namespace java { namespace sql {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::sql::DataTruncation > create< java::sql::DataTruncation>(cpp_int const &a0, cpp_boolean const &a1, cpp_boolean const &a2, cpp_int const &a3, cpp_int const &a4)
+
+java::sql::DataTruncation::operator local_ref<java::sql::SQLWarning>() const
 {
-	return local_ref< java::sql::DataTruncation >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::sql::DataTruncation::J2CPP_CLASS_NAME>(),
-			get_method_id<java::sql::DataTruncation::J2CPP_CLASS_NAME, java::sql::DataTruncation::J2CPP_METHOD_NAME(0), java::sql::DataTruncation::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype(), a4.get_jtype()
-		)
-	);
+	return local_ref<java::sql::SQLWarning>(get_jtype());
 }
+
+java::sql::DataTruncation::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jtype());
+}
+
+
+java::sql::DataTruncation::DataTruncation(cpp_int const &a0, cpp_boolean const &a1, cpp_boolean const &a2, cpp_int const &a3, cpp_int const &a4)
+: cpp_object<java::sql::DataTruncation>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::sql::DataTruncation::J2CPP_CLASS_NAME>(),
+		get_method_id<java::sql::DataTruncation::J2CPP_CLASS_NAME, java::sql::DataTruncation::J2CPP_METHOD_NAME(0), java::sql::DataTruncation::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype(), a4.get_jtype()
+	)
+)
+{
+}
+
 
 cpp_int java::sql::DataTruncation::getDataSize()
 {

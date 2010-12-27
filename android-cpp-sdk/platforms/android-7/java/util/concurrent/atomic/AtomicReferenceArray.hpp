@@ -10,10 +10,12 @@
 #define J2CPP_JAVA_UTIL_CONCURRENT_ATOMIC_ATOMICREFERENCEARRAY_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 
 
+#include <java/io/Serializable.hpp>
 #include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
@@ -40,11 +42,17 @@ namespace java { namespace util { namespace concurrent { namespace atomic {
 		J2CPP_DECLARE_METHOD(7)
 		J2CPP_DECLARE_METHOD(8)
 
-		AtomicReferenceArray(jobject jobj)
+		explicit AtomicReferenceArray(jobject jobj)
 		: cpp_object<AtomicReferenceArray>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::io::Serializable>() const;
+
+
+		AtomicReferenceArray(cpp_int const&);
+		AtomicReferenceArray(local_ref< cpp_object_array<java::lang::Object, 1> > const&);
 		cpp_int length();
 		local_ref< java::lang::Object > get(cpp_int const&);
 		void set(cpp_int const&, local_ref< java::lang::Object > const&);
@@ -59,7 +67,6 @@ namespace java { namespace util { namespace concurrent { namespace atomic {
 } //namespace util
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_UTIL_CONCURRENT_ATOMIC_ATOMICREFERENCEARRAY_HPP_DECL
@@ -72,29 +79,42 @@ namespace java { namespace util { namespace concurrent { namespace atomic {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::util::concurrent::atomic::AtomicReferenceArray > create< java::util::concurrent::atomic::AtomicReferenceArray>(cpp_int const &a0)
+
+java::util::concurrent::atomic::AtomicReferenceArray::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::util::concurrent::atomic::AtomicReferenceArray >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::concurrent::atomic::AtomicReferenceArray::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::concurrent::atomic::AtomicReferenceArray::J2CPP_CLASS_NAME, java::util::concurrent::atomic::AtomicReferenceArray::J2CPP_METHOD_NAME(0), java::util::concurrent::atomic::AtomicReferenceArray::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
 
-template <>
-local_ref< java::util::concurrent::atomic::AtomicReferenceArray > create< java::util::concurrent::atomic::AtomicReferenceArray>(local_ref< cpp_object_array<java::lang::Object, 1> > const &a0)
+java::util::concurrent::atomic::AtomicReferenceArray::operator local_ref<java::io::Serializable>() const
 {
-	return local_ref< java::util::concurrent::atomic::AtomicReferenceArray >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::concurrent::atomic::AtomicReferenceArray::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::concurrent::atomic::AtomicReferenceArray::J2CPP_CLASS_NAME, java::util::concurrent::atomic::AtomicReferenceArray::J2CPP_METHOD_NAME(1), java::util::concurrent::atomic::AtomicReferenceArray::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::io::Serializable>(get_jtype());
 }
+
+
+java::util::concurrent::atomic::AtomicReferenceArray::AtomicReferenceArray(cpp_int const &a0)
+: cpp_object<java::util::concurrent::atomic::AtomicReferenceArray>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::util::concurrent::atomic::AtomicReferenceArray::J2CPP_CLASS_NAME>(),
+		get_method_id<java::util::concurrent::atomic::AtomicReferenceArray::J2CPP_CLASS_NAME, java::util::concurrent::atomic::AtomicReferenceArray::J2CPP_METHOD_NAME(0), java::util::concurrent::atomic::AtomicReferenceArray::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
+
+
+java::util::concurrent::atomic::AtomicReferenceArray::AtomicReferenceArray(local_ref< cpp_object_array<java::lang::Object, 1> > const &a0)
+: cpp_object<java::util::concurrent::atomic::AtomicReferenceArray>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::util::concurrent::atomic::AtomicReferenceArray::J2CPP_CLASS_NAME>(),
+		get_method_id<java::util::concurrent::atomic::AtomicReferenceArray::J2CPP_CLASS_NAME, java::util::concurrent::atomic::AtomicReferenceArray::J2CPP_METHOD_NAME(1), java::util::concurrent::atomic::AtomicReferenceArray::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 cpp_int java::util::concurrent::atomic::AtomicReferenceArray::length()
 {

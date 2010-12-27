@@ -10,8 +10,10 @@
 #define J2CPP_ANDROID_UTIL_SPARSEINTARRAY_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -41,11 +43,16 @@ namespace android { namespace util {
 		J2CPP_DECLARE_METHOD(12)
 		J2CPP_DECLARE_METHOD(13)
 
-		SparseIntArray(jobject jobj)
+		explicit SparseIntArray(jobject jobj)
 		: cpp_object<SparseIntArray>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		SparseIntArray();
+		SparseIntArray(cpp_int const&);
 		cpp_int get(cpp_int const&);
 		cpp_int get(cpp_int const&, cpp_int const&);
 		void deleteThe(cpp_int const&);
@@ -63,7 +70,6 @@ namespace android { namespace util {
 } //namespace util
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_UTIL_SPARSEINTARRAY_HPP_DECL
@@ -76,28 +82,36 @@ namespace android { namespace util {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::util::SparseIntArray > create< android::util::SparseIntArray>()
+
+android::util::SparseIntArray::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::util::SparseIntArray >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::util::SparseIntArray::J2CPP_CLASS_NAME>(),
-			get_method_id<android::util::SparseIntArray::J2CPP_CLASS_NAME, android::util::SparseIntArray::J2CPP_METHOD_NAME(0), android::util::SparseIntArray::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
 
-template <>
-local_ref< android::util::SparseIntArray > create< android::util::SparseIntArray>(cpp_int const &a0)
+
+android::util::SparseIntArray::SparseIntArray()
+: cpp_object<android::util::SparseIntArray>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::util::SparseIntArray::J2CPP_CLASS_NAME>(),
+		get_method_id<android::util::SparseIntArray::J2CPP_CLASS_NAME, android::util::SparseIntArray::J2CPP_METHOD_NAME(0), android::util::SparseIntArray::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
 {
-	return local_ref< android::util::SparseIntArray >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::util::SparseIntArray::J2CPP_CLASS_NAME>(),
-			get_method_id<android::util::SparseIntArray::J2CPP_CLASS_NAME, android::util::SparseIntArray::J2CPP_METHOD_NAME(1), android::util::SparseIntArray::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
 }
+
+
+
+android::util::SparseIntArray::SparseIntArray(cpp_int const &a0)
+: cpp_object<android::util::SparseIntArray>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::util::SparseIntArray::J2CPP_CLASS_NAME>(),
+		get_method_id<android::util::SparseIntArray::J2CPP_CLASS_NAME, android::util::SparseIntArray::J2CPP_METHOD_NAME(1), android::util::SparseIntArray::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 cpp_int android::util::SparseIntArray::get(cpp_int const &a0)
 {

@@ -10,12 +10,14 @@
 #define J2CPP_ANDROID_VIEW_VIEWMANAGER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace android { namespace view { class View; } } }
 namespace j2cpp { namespace android { namespace view { namespace ViewGroup_ { class LayoutParams; } } } }
 
 
 #include <android/view/View.hpp>
 #include <android/view/ViewGroup.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -34,10 +36,13 @@ namespace android { namespace view {
 		J2CPP_DECLARE_METHOD(1)
 		J2CPP_DECLARE_METHOD(2)
 
-		ViewManager(jobject jobj)
+		explicit ViewManager(jobject jobj)
 		: cpp_object<ViewManager>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		void addView(local_ref< android::view::View > const&, local_ref< android::view::ViewGroup_::LayoutParams > const&);
 		void updateViewLayout(local_ref< android::view::View > const&, local_ref< android::view::ViewGroup_::LayoutParams > const&);
@@ -46,7 +51,6 @@ namespace android { namespace view {
 
 } //namespace view
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -59,6 +63,12 @@ namespace android { namespace view {
 
 namespace j2cpp {
 
+
+
+android::view::ViewManager::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 void android::view::ViewManager::addView(local_ref< android::view::View > const &a0, local_ref< android::view::ViewGroup_::LayoutParams > const &a1)
 {

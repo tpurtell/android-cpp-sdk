@@ -13,6 +13,7 @@
 namespace j2cpp { namespace java { namespace io { class InputStream; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class CharSequence; } } }
+namespace j2cpp { namespace java { namespace lang { class RuntimeException; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace android { namespace graphics { class Movie; } } }
 namespace j2cpp { namespace android { namespace graphics { namespace drawable { class Drawable; } } } }
@@ -45,6 +46,7 @@ namespace j2cpp { namespace android { namespace os { class Bundle; } } }
 #include <java/io/InputStream.hpp>
 #include <java/lang/CharSequence.hpp>
 #include <java/lang/Object.hpp>
+#include <java/lang/RuntimeException.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -66,11 +68,16 @@ namespace android { namespace content { namespace res {
 			J2CPP_DECLARE_METHOD(0)
 			J2CPP_DECLARE_METHOD(1)
 
-			NotFoundException(jobject jobj)
+			explicit NotFoundException(jobject jobj)
 			: cpp_object<NotFoundException>(jobj)
 			{
 			}
 
+			operator local_ref<java::lang::RuntimeException>() const;
+
+
+			NotFoundException();
+			NotFoundException(local_ref< java::lang::String > const&);
 		}; //class NotFoundException
 
 		class Theme;
@@ -92,10 +99,13 @@ namespace android { namespace content { namespace res {
 			J2CPP_DECLARE_METHOD(8)
 			J2CPP_DECLARE_FIELD(0)
 
-			Theme(jobject jobj)
+			explicit Theme(jobject jobj)
 			: cpp_object<Theme>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+
 
 			void applyStyle(cpp_int const&, cpp_boolean const&);
 			void setTo(local_ref< android::content::res::Resources_::Theme > const&);
@@ -166,11 +176,15 @@ namespace android { namespace content { namespace res {
 		typedef Resources_::NotFoundException NotFoundException;
 		typedef Resources_::Theme Theme;
 
-		Resources(jobject jobj)
+		explicit Resources(jobject jobj)
 		: cpp_object<Resources>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		Resources(local_ref< android::content::res::AssetManager > const&, local_ref< android::util::DisplayMetrics > const&, local_ref< android::content::res::Configuration > const&);
 		static local_ref< android::content::res::Resources > getSystem();
 		local_ref< java::lang::CharSequence > getText(cpp_int const&);
 		local_ref< java::lang::CharSequence > getQuantityText(cpp_int const&, cpp_int const&);
@@ -222,7 +236,6 @@ namespace android { namespace content { namespace res {
 } //namespace content
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_CONTENT_RES_RESOURCES_HPP_DECL
@@ -236,45 +249,48 @@ namespace j2cpp {
 
 
 
-template <>
-local_ref< android::content::res::Resources_::NotFoundException > create< android::content::res::Resources_::NotFoundException>()
+
+android::content::res::Resources_::NotFoundException::operator local_ref<java::lang::RuntimeException>() const
 {
-	return local_ref< android::content::res::Resources_::NotFoundException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::content::res::Resources_::NotFoundException::J2CPP_CLASS_NAME>(),
-			get_method_id<android::content::res::Resources_::NotFoundException::J2CPP_CLASS_NAME, android::content::res::Resources_::NotFoundException::J2CPP_METHOD_NAME(0), android::content::res::Resources_::NotFoundException::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::RuntimeException>(get_jtype());
 }
 
-template <>
-local_ref< android::content::res::Resources_::NotFoundException > create< android::content::res::Resources_::NotFoundException>(local_ref< java::lang::String > const &a0)
+
+android::content::res::Resources_::NotFoundException::NotFoundException()
+: cpp_object<android::content::res::Resources_::NotFoundException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::content::res::Resources_::NotFoundException::J2CPP_CLASS_NAME>(),
+		get_method_id<android::content::res::Resources_::NotFoundException::J2CPP_CLASS_NAME, android::content::res::Resources_::NotFoundException::J2CPP_METHOD_NAME(0), android::content::res::Resources_::NotFoundException::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
 {
-	return local_ref< android::content::res::Resources_::NotFoundException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::content::res::Resources_::NotFoundException::J2CPP_CLASS_NAME>(),
-			get_method_id<android::content::res::Resources_::NotFoundException::J2CPP_CLASS_NAME, android::content::res::Resources_::NotFoundException::J2CPP_METHOD_NAME(1), android::content::res::Resources_::NotFoundException::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
 }
+
+
+
+android::content::res::Resources_::NotFoundException::NotFoundException(local_ref< java::lang::String > const &a0)
+: cpp_object<android::content::res::Resources_::NotFoundException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::content::res::Resources_::NotFoundException::J2CPP_CLASS_NAME>(),
+		get_method_id<android::content::res::Resources_::NotFoundException::J2CPP_CLASS_NAME, android::content::res::Resources_::NotFoundException::J2CPP_METHOD_NAME(1), android::content::res::Resources_::NotFoundException::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 
 J2CPP_DEFINE_CLASS(android::content::res::Resources_::NotFoundException,"android/content/res/Resources$NotFoundException")
 J2CPP_DEFINE_METHOD(android::content::res::Resources_::NotFoundException,0,"<init>","()V")
 J2CPP_DEFINE_METHOD(android::content::res::Resources_::NotFoundException,1,"<init>","(Ljava/lang/String;)V")
 
-template <>
-local_ref< android::content::res::Resources_::Theme > create< android::content::res::Resources_::Theme>(local_ref< android::content::res::Resources > const &a0)
+
+android::content::res::Resources_::Theme::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::content::res::Resources_::Theme >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::content::res::Resources_::Theme::J2CPP_CLASS_NAME>(),
-			get_method_id<android::content::res::Resources_::Theme::J2CPP_CLASS_NAME, android::content::res::Resources_::Theme::J2CPP_METHOD_NAME(0), android::content::res::Resources_::Theme::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
 
 void android::content::res::Resources_::Theme::applyStyle(cpp_int const &a0, cpp_boolean const &a1)
 {
@@ -369,17 +385,24 @@ J2CPP_DEFINE_METHOD(android::content::res::Resources_::Theme,8,"finalize","()V")
 J2CPP_DEFINE_FIELD(android::content::res::Resources_::Theme,0,"this$0","Landroid/content/res/Resources;")
 
 
-template <>
-local_ref< android::content::res::Resources > create< android::content::res::Resources>(local_ref< android::content::res::AssetManager > const &a0, local_ref< android::util::DisplayMetrics > const &a1, local_ref< android::content::res::Configuration > const &a2)
+
+android::content::res::Resources::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::content::res::Resources >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::content::res::Resources::J2CPP_CLASS_NAME>(),
-			get_method_id<android::content::res::Resources::J2CPP_CLASS_NAME, android::content::res::Resources::J2CPP_METHOD_NAME(0), android::content::res::Resources::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::content::res::Resources::Resources(local_ref< android::content::res::AssetManager > const &a0, local_ref< android::util::DisplayMetrics > const &a1, local_ref< android::content::res::Configuration > const &a2)
+: cpp_object<android::content::res::Resources>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::content::res::Resources::J2CPP_CLASS_NAME>(),
+		get_method_id<android::content::res::Resources::J2CPP_CLASS_NAME, android::content::res::Resources::J2CPP_METHOD_NAME(0), android::content::res::Resources::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
+	)
+)
+{
+}
+
 
 local_ref< android::content::res::Resources > android::content::res::Resources::getSystem()
 {

@@ -10,9 +10,11 @@
 #define J2CPP_JAVA_LANG_NOSUCHFIELDERROR_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class IncompatibleClassChangeError; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 
 
+#include <java/lang/IncompatibleClassChangeError.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -31,16 +33,20 @@ namespace java { namespace lang {
 		J2CPP_DECLARE_METHOD(0)
 		J2CPP_DECLARE_METHOD(1)
 
-		NoSuchFieldError(jobject jobj)
+		explicit NoSuchFieldError(jobject jobj)
 		: cpp_object<NoSuchFieldError>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::IncompatibleClassChangeError>() const;
+
+
+		NoSuchFieldError();
+		NoSuchFieldError(local_ref< java::lang::String > const&);
 	}; //class NoSuchFieldError
 
 } //namespace lang
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -54,28 +60,36 @@ namespace java { namespace lang {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::lang::NoSuchFieldError > create< java::lang::NoSuchFieldError>()
+
+java::lang::NoSuchFieldError::operator local_ref<java::lang::IncompatibleClassChangeError>() const
 {
-	return local_ref< java::lang::NoSuchFieldError >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::lang::NoSuchFieldError::J2CPP_CLASS_NAME>(),
-			get_method_id<java::lang::NoSuchFieldError::J2CPP_CLASS_NAME, java::lang::NoSuchFieldError::J2CPP_METHOD_NAME(0), java::lang::NoSuchFieldError::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::IncompatibleClassChangeError>(get_jtype());
 }
 
-template <>
-local_ref< java::lang::NoSuchFieldError > create< java::lang::NoSuchFieldError>(local_ref< java::lang::String > const &a0)
+
+java::lang::NoSuchFieldError::NoSuchFieldError()
+: cpp_object<java::lang::NoSuchFieldError>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::lang::NoSuchFieldError::J2CPP_CLASS_NAME>(),
+		get_method_id<java::lang::NoSuchFieldError::J2CPP_CLASS_NAME, java::lang::NoSuchFieldError::J2CPP_METHOD_NAME(0), java::lang::NoSuchFieldError::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
 {
-	return local_ref< java::lang::NoSuchFieldError >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::lang::NoSuchFieldError::J2CPP_CLASS_NAME>(),
-			get_method_id<java::lang::NoSuchFieldError::J2CPP_CLASS_NAME, java::lang::NoSuchFieldError::J2CPP_METHOD_NAME(1), java::lang::NoSuchFieldError::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
 }
+
+
+
+java::lang::NoSuchFieldError::NoSuchFieldError(local_ref< java::lang::String > const &a0)
+: cpp_object<java::lang::NoSuchFieldError>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::lang::NoSuchFieldError::J2CPP_CLASS_NAME>(),
+		get_method_id<java::lang::NoSuchFieldError::J2CPP_CLASS_NAME, java::lang::NoSuchFieldError::J2CPP_METHOD_NAME(1), java::lang::NoSuchFieldError::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 
 J2CPP_DEFINE_CLASS(java::lang::NoSuchFieldError,"java/lang/NoSuchFieldError")

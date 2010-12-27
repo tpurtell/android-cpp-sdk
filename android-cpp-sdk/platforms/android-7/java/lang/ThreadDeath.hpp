@@ -10,8 +10,10 @@
 #define J2CPP_JAVA_LANG_THREADDEATH_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Error; } } }
 
 
+#include <java/lang/Error.hpp>
 
 
 namespace j2cpp {
@@ -28,16 +30,19 @@ namespace java { namespace lang {
 
 		J2CPP_DECLARE_METHOD(0)
 
-		ThreadDeath(jobject jobj)
+		explicit ThreadDeath(jobject jobj)
 		: cpp_object<ThreadDeath>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Error>() const;
+
+
+		ThreadDeath();
 	}; //class ThreadDeath
 
 } //namespace lang
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -51,16 +56,23 @@ namespace java { namespace lang {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::lang::ThreadDeath > create< java::lang::ThreadDeath>()
+
+java::lang::ThreadDeath::operator local_ref<java::lang::Error>() const
 {
-	return local_ref< java::lang::ThreadDeath >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::lang::ThreadDeath::J2CPP_CLASS_NAME>(),
-			get_method_id<java::lang::ThreadDeath::J2CPP_CLASS_NAME, java::lang::ThreadDeath::J2CPP_METHOD_NAME(0), java::lang::ThreadDeath::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Error>(get_jtype());
 }
+
+
+java::lang::ThreadDeath::ThreadDeath()
+: cpp_object<java::lang::ThreadDeath>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::lang::ThreadDeath::J2CPP_CLASS_NAME>(),
+		get_method_id<java::lang::ThreadDeath::J2CPP_CLASS_NAME, java::lang::ThreadDeath::J2CPP_METHOD_NAME(0), java::lang::ThreadDeath::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 
 J2CPP_DEFINE_CLASS(java::lang::ThreadDeath,"java/lang/ThreadDeath")

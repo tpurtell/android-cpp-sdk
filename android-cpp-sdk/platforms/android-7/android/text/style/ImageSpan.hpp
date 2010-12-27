@@ -15,12 +15,14 @@ namespace j2cpp { namespace android { namespace net { class Uri; } } }
 namespace j2cpp { namespace android { namespace graphics { class Bitmap; } } }
 namespace j2cpp { namespace android { namespace graphics { namespace drawable { class Drawable; } } } }
 namespace j2cpp { namespace android { namespace content { class Context; } } }
+namespace j2cpp { namespace android { namespace text { namespace style { class DynamicDrawableSpan; } } } }
 
 
 #include <android/content/Context.hpp>
 #include <android/graphics/Bitmap.hpp>
 #include <android/graphics/drawable/Drawable.hpp>
 #include <android/net/Uri.hpp>
+#include <android/text/style/DynamicDrawableSpan.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -51,11 +53,26 @@ namespace android { namespace text { namespace style {
 		J2CPP_DECLARE_METHOD(12)
 		J2CPP_DECLARE_METHOD(13)
 
-		ImageSpan(jobject jobj)
+		explicit ImageSpan(jobject jobj)
 		: cpp_object<ImageSpan>(jobj)
 		{
 		}
 
+		operator local_ref<android::text::style::DynamicDrawableSpan>() const;
+
+
+		ImageSpan(local_ref< android::graphics::Bitmap > const&);
+		ImageSpan(local_ref< android::graphics::Bitmap > const&, cpp_int const&);
+		ImageSpan(local_ref< android::content::Context > const&, local_ref< android::graphics::Bitmap > const&);
+		ImageSpan(local_ref< android::content::Context > const&, local_ref< android::graphics::Bitmap > const&, cpp_int const&);
+		ImageSpan(local_ref< android::graphics::drawable::Drawable > const&);
+		ImageSpan(local_ref< android::graphics::drawable::Drawable > const&, cpp_int const&);
+		ImageSpan(local_ref< android::graphics::drawable::Drawable > const&, local_ref< java::lang::String > const&);
+		ImageSpan(local_ref< android::graphics::drawable::Drawable > const&, local_ref< java::lang::String > const&, cpp_int const&);
+		ImageSpan(local_ref< android::content::Context > const&, local_ref< android::net::Uri > const&);
+		ImageSpan(local_ref< android::content::Context > const&, local_ref< android::net::Uri > const&, cpp_int const&);
+		ImageSpan(local_ref< android::content::Context > const&, cpp_int const&);
+		ImageSpan(local_ref< android::content::Context > const&, cpp_int const&, cpp_int const&);
 		local_ref< android::graphics::drawable::Drawable > getDrawable();
 		local_ref< java::lang::String > getSource();
 	}; //class ImageSpan
@@ -63,7 +80,6 @@ namespace android { namespace text { namespace style {
 } //namespace style
 } //namespace text
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -77,149 +93,167 @@ namespace android { namespace text { namespace style {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::text::style::ImageSpan > create< android::text::style::ImageSpan>(local_ref< android::graphics::Bitmap > const &a0)
+
+android::text::style::ImageSpan::operator local_ref<android::text::style::DynamicDrawableSpan>() const
 {
-	return local_ref< android::text::style::ImageSpan >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::text::style::ImageSpan::J2CPP_CLASS_NAME>(),
-			get_method_id<android::text::style::ImageSpan::J2CPP_CLASS_NAME, android::text::style::ImageSpan::J2CPP_METHOD_NAME(0), android::text::style::ImageSpan::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<android::text::style::DynamicDrawableSpan>(get_jtype());
 }
 
-template <>
-local_ref< android::text::style::ImageSpan > create< android::text::style::ImageSpan>(local_ref< android::graphics::Bitmap > const &a0, cpp_int const &a1)
+
+android::text::style::ImageSpan::ImageSpan(local_ref< android::graphics::Bitmap > const &a0)
+: cpp_object<android::text::style::ImageSpan>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::text::style::ImageSpan::J2CPP_CLASS_NAME>(),
+		get_method_id<android::text::style::ImageSpan::J2CPP_CLASS_NAME, android::text::style::ImageSpan::J2CPP_METHOD_NAME(0), android::text::style::ImageSpan::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< android::text::style::ImageSpan >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::text::style::ImageSpan::J2CPP_CLASS_NAME>(),
-			get_method_id<android::text::style::ImageSpan::J2CPP_CLASS_NAME, android::text::style::ImageSpan::J2CPP_METHOD_NAME(1), android::text::style::ImageSpan::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< android::text::style::ImageSpan > create< android::text::style::ImageSpan>(local_ref< android::content::Context > const &a0, local_ref< android::graphics::Bitmap > const &a1)
+
+
+android::text::style::ImageSpan::ImageSpan(local_ref< android::graphics::Bitmap > const &a0, cpp_int const &a1)
+: cpp_object<android::text::style::ImageSpan>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::text::style::ImageSpan::J2CPP_CLASS_NAME>(),
+		get_method_id<android::text::style::ImageSpan::J2CPP_CLASS_NAME, android::text::style::ImageSpan::J2CPP_METHOD_NAME(1), android::text::style::ImageSpan::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
 {
-	return local_ref< android::text::style::ImageSpan >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::text::style::ImageSpan::J2CPP_CLASS_NAME>(),
-			get_method_id<android::text::style::ImageSpan::J2CPP_CLASS_NAME, android::text::style::ImageSpan::J2CPP_METHOD_NAME(2), android::text::style::ImageSpan::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< android::text::style::ImageSpan > create< android::text::style::ImageSpan>(local_ref< android::content::Context > const &a0, local_ref< android::graphics::Bitmap > const &a1, cpp_int const &a2)
+
+
+android::text::style::ImageSpan::ImageSpan(local_ref< android::content::Context > const &a0, local_ref< android::graphics::Bitmap > const &a1)
+: cpp_object<android::text::style::ImageSpan>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::text::style::ImageSpan::J2CPP_CLASS_NAME>(),
+		get_method_id<android::text::style::ImageSpan::J2CPP_CLASS_NAME, android::text::style::ImageSpan::J2CPP_METHOD_NAME(2), android::text::style::ImageSpan::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
 {
-	return local_ref< android::text::style::ImageSpan >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::text::style::ImageSpan::J2CPP_CLASS_NAME>(),
-			get_method_id<android::text::style::ImageSpan::J2CPP_CLASS_NAME, android::text::style::ImageSpan::J2CPP_METHOD_NAME(3), android::text::style::ImageSpan::J2CPP_METHOD_SIGNATURE(3), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< android::text::style::ImageSpan > create< android::text::style::ImageSpan>(local_ref< android::graphics::drawable::Drawable > const &a0)
+
+
+android::text::style::ImageSpan::ImageSpan(local_ref< android::content::Context > const &a0, local_ref< android::graphics::Bitmap > const &a1, cpp_int const &a2)
+: cpp_object<android::text::style::ImageSpan>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::text::style::ImageSpan::J2CPP_CLASS_NAME>(),
+		get_method_id<android::text::style::ImageSpan::J2CPP_CLASS_NAME, android::text::style::ImageSpan::J2CPP_METHOD_NAME(3), android::text::style::ImageSpan::J2CPP_METHOD_SIGNATURE(3), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
+	)
+)
 {
-	return local_ref< android::text::style::ImageSpan >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::text::style::ImageSpan::J2CPP_CLASS_NAME>(),
-			get_method_id<android::text::style::ImageSpan::J2CPP_CLASS_NAME, android::text::style::ImageSpan::J2CPP_METHOD_NAME(4), android::text::style::ImageSpan::J2CPP_METHOD_SIGNATURE(4), false>(),
-			a0.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< android::text::style::ImageSpan > create< android::text::style::ImageSpan>(local_ref< android::graphics::drawable::Drawable > const &a0, cpp_int const &a1)
+
+
+android::text::style::ImageSpan::ImageSpan(local_ref< android::graphics::drawable::Drawable > const &a0)
+: cpp_object<android::text::style::ImageSpan>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::text::style::ImageSpan::J2CPP_CLASS_NAME>(),
+		get_method_id<android::text::style::ImageSpan::J2CPP_CLASS_NAME, android::text::style::ImageSpan::J2CPP_METHOD_NAME(4), android::text::style::ImageSpan::J2CPP_METHOD_SIGNATURE(4), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< android::text::style::ImageSpan >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::text::style::ImageSpan::J2CPP_CLASS_NAME>(),
-			get_method_id<android::text::style::ImageSpan::J2CPP_CLASS_NAME, android::text::style::ImageSpan::J2CPP_METHOD_NAME(5), android::text::style::ImageSpan::J2CPP_METHOD_SIGNATURE(5), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< android::text::style::ImageSpan > create< android::text::style::ImageSpan>(local_ref< android::graphics::drawable::Drawable > const &a0, local_ref< java::lang::String > const &a1)
+
+
+android::text::style::ImageSpan::ImageSpan(local_ref< android::graphics::drawable::Drawable > const &a0, cpp_int const &a1)
+: cpp_object<android::text::style::ImageSpan>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::text::style::ImageSpan::J2CPP_CLASS_NAME>(),
+		get_method_id<android::text::style::ImageSpan::J2CPP_CLASS_NAME, android::text::style::ImageSpan::J2CPP_METHOD_NAME(5), android::text::style::ImageSpan::J2CPP_METHOD_SIGNATURE(5), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
 {
-	return local_ref< android::text::style::ImageSpan >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::text::style::ImageSpan::J2CPP_CLASS_NAME>(),
-			get_method_id<android::text::style::ImageSpan::J2CPP_CLASS_NAME, android::text::style::ImageSpan::J2CPP_METHOD_NAME(6), android::text::style::ImageSpan::J2CPP_METHOD_SIGNATURE(6), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< android::text::style::ImageSpan > create< android::text::style::ImageSpan>(local_ref< android::graphics::drawable::Drawable > const &a0, local_ref< java::lang::String > const &a1, cpp_int const &a2)
+
+
+android::text::style::ImageSpan::ImageSpan(local_ref< android::graphics::drawable::Drawable > const &a0, local_ref< java::lang::String > const &a1)
+: cpp_object<android::text::style::ImageSpan>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::text::style::ImageSpan::J2CPP_CLASS_NAME>(),
+		get_method_id<android::text::style::ImageSpan::J2CPP_CLASS_NAME, android::text::style::ImageSpan::J2CPP_METHOD_NAME(6), android::text::style::ImageSpan::J2CPP_METHOD_SIGNATURE(6), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
 {
-	return local_ref< android::text::style::ImageSpan >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::text::style::ImageSpan::J2CPP_CLASS_NAME>(),
-			get_method_id<android::text::style::ImageSpan::J2CPP_CLASS_NAME, android::text::style::ImageSpan::J2CPP_METHOD_NAME(7), android::text::style::ImageSpan::J2CPP_METHOD_SIGNATURE(7), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< android::text::style::ImageSpan > create< android::text::style::ImageSpan>(local_ref< android::content::Context > const &a0, local_ref< android::net::Uri > const &a1)
+
+
+android::text::style::ImageSpan::ImageSpan(local_ref< android::graphics::drawable::Drawable > const &a0, local_ref< java::lang::String > const &a1, cpp_int const &a2)
+: cpp_object<android::text::style::ImageSpan>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::text::style::ImageSpan::J2CPP_CLASS_NAME>(),
+		get_method_id<android::text::style::ImageSpan::J2CPP_CLASS_NAME, android::text::style::ImageSpan::J2CPP_METHOD_NAME(7), android::text::style::ImageSpan::J2CPP_METHOD_SIGNATURE(7), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
+	)
+)
 {
-	return local_ref< android::text::style::ImageSpan >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::text::style::ImageSpan::J2CPP_CLASS_NAME>(),
-			get_method_id<android::text::style::ImageSpan::J2CPP_CLASS_NAME, android::text::style::ImageSpan::J2CPP_METHOD_NAME(8), android::text::style::ImageSpan::J2CPP_METHOD_SIGNATURE(8), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< android::text::style::ImageSpan > create< android::text::style::ImageSpan>(local_ref< android::content::Context > const &a0, local_ref< android::net::Uri > const &a1, cpp_int const &a2)
+
+
+android::text::style::ImageSpan::ImageSpan(local_ref< android::content::Context > const &a0, local_ref< android::net::Uri > const &a1)
+: cpp_object<android::text::style::ImageSpan>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::text::style::ImageSpan::J2CPP_CLASS_NAME>(),
+		get_method_id<android::text::style::ImageSpan::J2CPP_CLASS_NAME, android::text::style::ImageSpan::J2CPP_METHOD_NAME(8), android::text::style::ImageSpan::J2CPP_METHOD_SIGNATURE(8), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
 {
-	return local_ref< android::text::style::ImageSpan >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::text::style::ImageSpan::J2CPP_CLASS_NAME>(),
-			get_method_id<android::text::style::ImageSpan::J2CPP_CLASS_NAME, android::text::style::ImageSpan::J2CPP_METHOD_NAME(9), android::text::style::ImageSpan::J2CPP_METHOD_SIGNATURE(9), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< android::text::style::ImageSpan > create< android::text::style::ImageSpan>(local_ref< android::content::Context > const &a0, cpp_int const &a1)
+
+
+android::text::style::ImageSpan::ImageSpan(local_ref< android::content::Context > const &a0, local_ref< android::net::Uri > const &a1, cpp_int const &a2)
+: cpp_object<android::text::style::ImageSpan>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::text::style::ImageSpan::J2CPP_CLASS_NAME>(),
+		get_method_id<android::text::style::ImageSpan::J2CPP_CLASS_NAME, android::text::style::ImageSpan::J2CPP_METHOD_NAME(9), android::text::style::ImageSpan::J2CPP_METHOD_SIGNATURE(9), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
+	)
+)
 {
-	return local_ref< android::text::style::ImageSpan >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::text::style::ImageSpan::J2CPP_CLASS_NAME>(),
-			get_method_id<android::text::style::ImageSpan::J2CPP_CLASS_NAME, android::text::style::ImageSpan::J2CPP_METHOD_NAME(10), android::text::style::ImageSpan::J2CPP_METHOD_SIGNATURE(10), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< android::text::style::ImageSpan > create< android::text::style::ImageSpan>(local_ref< android::content::Context > const &a0, cpp_int const &a1, cpp_int const &a2)
+
+
+android::text::style::ImageSpan::ImageSpan(local_ref< android::content::Context > const &a0, cpp_int const &a1)
+: cpp_object<android::text::style::ImageSpan>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::text::style::ImageSpan::J2CPP_CLASS_NAME>(),
+		get_method_id<android::text::style::ImageSpan::J2CPP_CLASS_NAME, android::text::style::ImageSpan::J2CPP_METHOD_NAME(10), android::text::style::ImageSpan::J2CPP_METHOD_SIGNATURE(10), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
 {
-	return local_ref< android::text::style::ImageSpan >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::text::style::ImageSpan::J2CPP_CLASS_NAME>(),
-			get_method_id<android::text::style::ImageSpan::J2CPP_CLASS_NAME, android::text::style::ImageSpan::J2CPP_METHOD_NAME(11), android::text::style::ImageSpan::J2CPP_METHOD_SIGNATURE(11), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
-		)
-	);
 }
+
+
+
+android::text::style::ImageSpan::ImageSpan(local_ref< android::content::Context > const &a0, cpp_int const &a1, cpp_int const &a2)
+: cpp_object<android::text::style::ImageSpan>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::text::style::ImageSpan::J2CPP_CLASS_NAME>(),
+		get_method_id<android::text::style::ImageSpan::J2CPP_CLASS_NAME, android::text::style::ImageSpan::J2CPP_METHOD_NAME(11), android::text::style::ImageSpan::J2CPP_METHOD_SIGNATURE(11), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
+	)
+)
+{
+}
+
 
 local_ref< android::graphics::drawable::Drawable > android::text::style::ImageSpan::getDrawable()
 {

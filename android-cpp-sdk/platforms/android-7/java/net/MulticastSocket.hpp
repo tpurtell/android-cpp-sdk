@@ -10,6 +10,7 @@
 #define J2CPP_JAVA_NET_MULTICASTSOCKET_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace net { class DatagramSocket; } } }
 namespace j2cpp { namespace java { namespace net { class SocketAddress; } } }
 namespace j2cpp { namespace java { namespace net { class NetworkInterface; } } }
 namespace j2cpp { namespace java { namespace net { class InetAddress; } } }
@@ -17,6 +18,7 @@ namespace j2cpp { namespace java { namespace net { class DatagramPacket; } } }
 
 
 #include <java/net/DatagramPacket.hpp>
+#include <java/net/DatagramSocket.hpp>
 #include <java/net/InetAddress.hpp>
 #include <java/net/NetworkInterface.hpp>
 #include <java/net/SocketAddress.hpp>
@@ -53,11 +55,17 @@ namespace java { namespace net {
 		J2CPP_DECLARE_METHOD(16)
 		J2CPP_DECLARE_METHOD(17)
 
-		MulticastSocket(jobject jobj)
+		explicit MulticastSocket(jobject jobj)
 		: cpp_object<MulticastSocket>(jobj)
 		{
 		}
 
+		operator local_ref<java::net::DatagramSocket>() const;
+
+
+		MulticastSocket();
+		MulticastSocket(cpp_int const&);
+		MulticastSocket(local_ref< java::net::SocketAddress > const&);
 		local_ref< java::net::InetAddress > getInterface();
 		local_ref< java::net::NetworkInterface > getNetworkInterface();
 		cpp_int getTimeToLive();
@@ -78,7 +86,6 @@ namespace java { namespace net {
 } //namespace net
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_NET_MULTICASTSOCKET_HPP_DECL
@@ -91,40 +98,49 @@ namespace java { namespace net {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::net::MulticastSocket > create< java::net::MulticastSocket>()
+
+java::net::MulticastSocket::operator local_ref<java::net::DatagramSocket>() const
 {
-	return local_ref< java::net::MulticastSocket >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::net::MulticastSocket::J2CPP_CLASS_NAME>(),
-			get_method_id<java::net::MulticastSocket::J2CPP_CLASS_NAME, java::net::MulticastSocket::J2CPP_METHOD_NAME(0), java::net::MulticastSocket::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::net::DatagramSocket>(get_jtype());
 }
 
-template <>
-local_ref< java::net::MulticastSocket > create< java::net::MulticastSocket>(cpp_int const &a0)
+
+java::net::MulticastSocket::MulticastSocket()
+: cpp_object<java::net::MulticastSocket>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::net::MulticastSocket::J2CPP_CLASS_NAME>(),
+		get_method_id<java::net::MulticastSocket::J2CPP_CLASS_NAME, java::net::MulticastSocket::J2CPP_METHOD_NAME(0), java::net::MulticastSocket::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
 {
-	return local_ref< java::net::MulticastSocket >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::net::MulticastSocket::J2CPP_CLASS_NAME>(),
-			get_method_id<java::net::MulticastSocket::J2CPP_CLASS_NAME, java::net::MulticastSocket::J2CPP_METHOD_NAME(1), java::net::MulticastSocket::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< java::net::MulticastSocket > create< java::net::MulticastSocket>(local_ref< java::net::SocketAddress > const &a0)
+
+
+java::net::MulticastSocket::MulticastSocket(cpp_int const &a0)
+: cpp_object<java::net::MulticastSocket>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::net::MulticastSocket::J2CPP_CLASS_NAME>(),
+		get_method_id<java::net::MulticastSocket::J2CPP_CLASS_NAME, java::net::MulticastSocket::J2CPP_METHOD_NAME(1), java::net::MulticastSocket::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< java::net::MulticastSocket >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::net::MulticastSocket::J2CPP_CLASS_NAME>(),
-			get_method_id<java::net::MulticastSocket::J2CPP_CLASS_NAME, java::net::MulticastSocket::J2CPP_METHOD_NAME(2), java::net::MulticastSocket::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype()
-		)
-	);
 }
+
+
+
+java::net::MulticastSocket::MulticastSocket(local_ref< java::net::SocketAddress > const &a0)
+: cpp_object<java::net::MulticastSocket>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::net::MulticastSocket::J2CPP_CLASS_NAME>(),
+		get_method_id<java::net::MulticastSocket::J2CPP_CLASS_NAME, java::net::MulticastSocket::J2CPP_METHOD_NAME(2), java::net::MulticastSocket::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 local_ref< java::net::InetAddress > java::net::MulticastSocket::getInterface()
 {

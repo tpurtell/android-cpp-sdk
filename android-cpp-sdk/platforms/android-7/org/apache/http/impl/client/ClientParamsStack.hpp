@@ -12,11 +12,13 @@
 
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { namespace params { class AbstractHttpParams; } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace params { class HttpParams; } } } } }
 
 
 #include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
+#include <org/apache/http/params/AbstractHttpParams.hpp>
 #include <org/apache/http/params/HttpParams.hpp>
 
 
@@ -48,11 +50,17 @@ namespace org { namespace apache { namespace http { namespace impl { namespace c
 		J2CPP_DECLARE_FIELD(2)
 		J2CPP_DECLARE_FIELD(3)
 
-		ClientParamsStack(jobject jobj)
+		explicit ClientParamsStack(jobject jobj)
 		: cpp_object<ClientParamsStack>(jobj)
 		{
 		}
 
+		operator local_ref<org::apache::http::params::AbstractHttpParams>() const;
+
+
+		ClientParamsStack(local_ref< org::apache::http::params::HttpParams > const&, local_ref< org::apache::http::params::HttpParams > const&, local_ref< org::apache::http::params::HttpParams > const&, local_ref< org::apache::http::params::HttpParams > const&);
+		ClientParamsStack(local_ref< org::apache::http::impl::client::ClientParamsStack > const&);
+		ClientParamsStack(local_ref< org::apache::http::impl::client::ClientParamsStack > const&, local_ref< org::apache::http::params::HttpParams > const&, local_ref< org::apache::http::params::HttpParams > const&, local_ref< org::apache::http::params::HttpParams > const&, local_ref< org::apache::http::params::HttpParams > const&);
 		local_ref< org::apache::http::params::HttpParams > getApplicationParams();
 		local_ref< org::apache::http::params::HttpParams > getClientParams();
 		local_ref< org::apache::http::params::HttpParams > getRequestParams();
@@ -70,7 +78,6 @@ namespace org { namespace apache { namespace http { namespace impl { namespace c
 } //namespace apache
 } //namespace org
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ORG_APACHE_HTTP_IMPL_CLIENT_CLIENTPARAMSSTACK_HPP_DECL
@@ -83,41 +90,50 @@ namespace org { namespace apache { namespace http { namespace impl { namespace c
 namespace j2cpp {
 
 
-template <>
-local_ref< org::apache::http::impl::client::ClientParamsStack > create< org::apache::http::impl::client::ClientParamsStack>(local_ref< org::apache::http::params::HttpParams > const &a0, local_ref< org::apache::http::params::HttpParams > const &a1, local_ref< org::apache::http::params::HttpParams > const &a2, local_ref< org::apache::http::params::HttpParams > const &a3)
+
+org::apache::http::impl::client::ClientParamsStack::operator local_ref<org::apache::http::params::AbstractHttpParams>() const
 {
-	return local_ref< org::apache::http::impl::client::ClientParamsStack >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::apache::http::impl::client::ClientParamsStack::J2CPP_CLASS_NAME>(),
-			get_method_id<org::apache::http::impl::client::ClientParamsStack::J2CPP_CLASS_NAME, org::apache::http::impl::client::ClientParamsStack::J2CPP_METHOD_NAME(0), org::apache::http::impl::client::ClientParamsStack::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype()
-		)
-	);
+	return local_ref<org::apache::http::params::AbstractHttpParams>(get_jtype());
 }
 
-template <>
-local_ref< org::apache::http::impl::client::ClientParamsStack > create< org::apache::http::impl::client::ClientParamsStack>(local_ref< org::apache::http::impl::client::ClientParamsStack > const &a0)
+
+org::apache::http::impl::client::ClientParamsStack::ClientParamsStack(local_ref< org::apache::http::params::HttpParams > const &a0, local_ref< org::apache::http::params::HttpParams > const &a1, local_ref< org::apache::http::params::HttpParams > const &a2, local_ref< org::apache::http::params::HttpParams > const &a3)
+: cpp_object<org::apache::http::impl::client::ClientParamsStack>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::apache::http::impl::client::ClientParamsStack::J2CPP_CLASS_NAME>(),
+		get_method_id<org::apache::http::impl::client::ClientParamsStack::J2CPP_CLASS_NAME, org::apache::http::impl::client::ClientParamsStack::J2CPP_METHOD_NAME(0), org::apache::http::impl::client::ClientParamsStack::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype()
+	)
+)
 {
-	return local_ref< org::apache::http::impl::client::ClientParamsStack >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::apache::http::impl::client::ClientParamsStack::J2CPP_CLASS_NAME>(),
-			get_method_id<org::apache::http::impl::client::ClientParamsStack::J2CPP_CLASS_NAME, org::apache::http::impl::client::ClientParamsStack::J2CPP_METHOD_NAME(1), org::apache::http::impl::client::ClientParamsStack::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< org::apache::http::impl::client::ClientParamsStack > create< org::apache::http::impl::client::ClientParamsStack>(local_ref< org::apache::http::impl::client::ClientParamsStack > const &a0, local_ref< org::apache::http::params::HttpParams > const &a1, local_ref< org::apache::http::params::HttpParams > const &a2, local_ref< org::apache::http::params::HttpParams > const &a3, local_ref< org::apache::http::params::HttpParams > const &a4)
+
+
+org::apache::http::impl::client::ClientParamsStack::ClientParamsStack(local_ref< org::apache::http::impl::client::ClientParamsStack > const &a0)
+: cpp_object<org::apache::http::impl::client::ClientParamsStack>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::apache::http::impl::client::ClientParamsStack::J2CPP_CLASS_NAME>(),
+		get_method_id<org::apache::http::impl::client::ClientParamsStack::J2CPP_CLASS_NAME, org::apache::http::impl::client::ClientParamsStack::J2CPP_METHOD_NAME(1), org::apache::http::impl::client::ClientParamsStack::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< org::apache::http::impl::client::ClientParamsStack >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::apache::http::impl::client::ClientParamsStack::J2CPP_CLASS_NAME>(),
-			get_method_id<org::apache::http::impl::client::ClientParamsStack::J2CPP_CLASS_NAME, org::apache::http::impl::client::ClientParamsStack::J2CPP_METHOD_NAME(2), org::apache::http::impl::client::ClientParamsStack::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype(), a4.get_jtype()
-		)
-	);
 }
+
+
+
+org::apache::http::impl::client::ClientParamsStack::ClientParamsStack(local_ref< org::apache::http::impl::client::ClientParamsStack > const &a0, local_ref< org::apache::http::params::HttpParams > const &a1, local_ref< org::apache::http::params::HttpParams > const &a2, local_ref< org::apache::http::params::HttpParams > const &a3, local_ref< org::apache::http::params::HttpParams > const &a4)
+: cpp_object<org::apache::http::impl::client::ClientParamsStack>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::apache::http::impl::client::ClientParamsStack::J2CPP_CLASS_NAME>(),
+		get_method_id<org::apache::http::impl::client::ClientParamsStack::J2CPP_CLASS_NAME, org::apache::http::impl::client::ClientParamsStack::J2CPP_METHOD_NAME(2), org::apache::http::impl::client::ClientParamsStack::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype(), a4.get_jtype()
+	)
+)
+{
+}
+
 
 local_ref< org::apache::http::params::HttpParams > org::apache::http::impl::client::ClientParamsStack::getApplicationParams()
 {

@@ -13,6 +13,7 @@
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { class HttpRequest; } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { class Header; } } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { namespace impl { namespace auth { class RFC2617Scheme; } } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace auth { class Credentials; } } } } }
 
 
@@ -20,6 +21,7 @@ namespace j2cpp { namespace org { namespace apache { namespace http { namespace 
 #include <org/apache/http/Header.hpp>
 #include <org/apache/http/HttpRequest.hpp>
 #include <org/apache/http/auth/Credentials.hpp>
+#include <org/apache/http/impl/auth/RFC2617Scheme.hpp>
 
 
 namespace j2cpp {
@@ -43,11 +45,15 @@ namespace org { namespace apache { namespace http { namespace impl { namespace a
 		J2CPP_DECLARE_METHOD(6)
 		J2CPP_DECLARE_METHOD(7)
 
-		DigestScheme(jobject jobj)
+		explicit DigestScheme(jobject jobj)
 		: cpp_object<DigestScheme>(jobj)
 		{
 		}
 
+		operator local_ref<org::apache::http::impl::auth::RFC2617Scheme>() const;
+
+
+		DigestScheme();
 		void processChallenge(local_ref< org::apache::http::Header > const&);
 		cpp_boolean isComplete();
 		local_ref< java::lang::String > getSchemeName();
@@ -63,7 +69,6 @@ namespace org { namespace apache { namespace http { namespace impl { namespace a
 } //namespace apache
 } //namespace org
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ORG_APACHE_HTTP_IMPL_AUTH_DIGESTSCHEME_HPP_DECL
@@ -76,16 +81,23 @@ namespace org { namespace apache { namespace http { namespace impl { namespace a
 namespace j2cpp {
 
 
-template <>
-local_ref< org::apache::http::impl::auth::DigestScheme > create< org::apache::http::impl::auth::DigestScheme>()
+
+org::apache::http::impl::auth::DigestScheme::operator local_ref<org::apache::http::impl::auth::RFC2617Scheme>() const
 {
-	return local_ref< org::apache::http::impl::auth::DigestScheme >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::apache::http::impl::auth::DigestScheme::J2CPP_CLASS_NAME>(),
-			get_method_id<org::apache::http::impl::auth::DigestScheme::J2CPP_CLASS_NAME, org::apache::http::impl::auth::DigestScheme::J2CPP_METHOD_NAME(0), org::apache::http::impl::auth::DigestScheme::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<org::apache::http::impl::auth::RFC2617Scheme>(get_jtype());
 }
+
+
+org::apache::http::impl::auth::DigestScheme::DigestScheme()
+: cpp_object<org::apache::http::impl::auth::DigestScheme>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::apache::http::impl::auth::DigestScheme::J2CPP_CLASS_NAME>(),
+		get_method_id<org::apache::http::impl::auth::DigestScheme::J2CPP_CLASS_NAME, org::apache::http::impl::auth::DigestScheme::J2CPP_METHOD_NAME(0), org::apache::http::impl::auth::DigestScheme::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 void org::apache::http::impl::auth::DigestScheme::processChallenge(local_ref< org::apache::http::Header > const &a0)
 {

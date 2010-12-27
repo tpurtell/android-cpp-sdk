@@ -10,8 +10,10 @@
 #define J2CPP_ANDROID_DATABASE_DATASETOBSERVER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -30,18 +32,21 @@ namespace android { namespace database {
 		J2CPP_DECLARE_METHOD(1)
 		J2CPP_DECLARE_METHOD(2)
 
-		DataSetObserver(jobject jobj)
+		explicit DataSetObserver(jobject jobj)
 		: cpp_object<DataSetObserver>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		DataSetObserver();
 		void onChanged();
 		void onInvalidated();
 	}; //class DataSetObserver
 
 } //namespace database
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -55,16 +60,23 @@ namespace android { namespace database {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::database::DataSetObserver > create< android::database::DataSetObserver>()
+
+android::database::DataSetObserver::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::database::DataSetObserver >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::database::DataSetObserver::J2CPP_CLASS_NAME>(),
-			get_method_id<android::database::DataSetObserver::J2CPP_CLASS_NAME, android::database::DataSetObserver::J2CPP_METHOD_NAME(0), android::database::DataSetObserver::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::database::DataSetObserver::DataSetObserver()
+: cpp_object<android::database::DataSetObserver>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::database::DataSetObserver::J2CPP_CLASS_NAME>(),
+		get_method_id<android::database::DataSetObserver::J2CPP_CLASS_NAME, android::database::DataSetObserver::J2CPP_METHOD_NAME(0), android::database::DataSetObserver::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 void android::database::DataSetObserver::onChanged()
 {

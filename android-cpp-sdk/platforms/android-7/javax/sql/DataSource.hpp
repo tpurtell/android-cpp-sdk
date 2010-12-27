@@ -11,11 +11,13 @@
 
 
 namespace j2cpp { namespace java { namespace io { class PrintWriter; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace sql { class Connection; } } }
 
 
 #include <java/io/PrintWriter.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/sql/Connection.hpp>
 
@@ -39,10 +41,13 @@ namespace javax { namespace sql {
 		J2CPP_DECLARE_METHOD(4)
 		J2CPP_DECLARE_METHOD(5)
 
-		DataSource(jobject jobj)
+		explicit DataSource(jobject jobj)
 		: cpp_object<DataSource>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		local_ref< java::sql::Connection > getConnection();
 		local_ref< java::sql::Connection > getConnection(local_ref< java::lang::String > const&, local_ref< java::lang::String > const&);
@@ -55,7 +60,6 @@ namespace javax { namespace sql {
 } //namespace sql
 } //namespace javax
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVAX_SQL_DATASOURCE_HPP_DECL
@@ -67,6 +71,12 @@ namespace javax { namespace sql {
 
 namespace j2cpp {
 
+
+
+javax::sql::DataSource::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 local_ref< java::sql::Connection > javax::sql::DataSource::getConnection()
 {

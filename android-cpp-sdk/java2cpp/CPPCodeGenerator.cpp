@@ -127,9 +127,12 @@ std::ostream& CPPCodeGenerator::operator ()(std::ostream &os) const
 	for(std::size_t ns=0;ns<enclosingNamespaces.size();++ns)
 		os << "} //namespace " << enclosingNamespaces[ns]->get_name() << std::endl;
 
-	os << std::endl << std::endl;
-
+	os << std::endl;
+	
 	os << "} //namespace j2cpp" << std::endl << std::endl;
+
+	
+
 
 	os << "#endif //J2CPP_" << strIFNDEF << "_HPP_DECL" << std::endl << std::endl;
 	
@@ -255,9 +258,8 @@ std::ostream& CPPCodeGenerator::write_class(std::ostream &os, std::size_t indent
 	}
 	
 	os << std::endl;
-	indent(os,indent_pos+1) << clazz->get_name() << "(jobject jobj)" <<std::endl;
+	indent(os,indent_pos+1) << "explicit " << clazz->get_name() << "(jobject jobj)" << std::endl;
 	indent(os,indent_pos+1) << ": cpp_object<" << clazz->get_name() << ">(jobj)" << std::endl;
-
 	if(clazz->get_fields_count())
 	{
 		for(std::size_t f=0;f<clazz->get_fields_count();++f)
@@ -268,17 +270,32 @@ std::ostream& CPPCodeGenerator::write_class(std::ostream &os, std::size_t indent
 			{
 				if(!pField->test_access_flag(model::ClassMember::kStatic))
 				{
-					indent(os,indent_pos+1);
+					indent(os,0);
 					os << ", " << pField->get_name() << "(jobj)" << std::endl;
 				}
 			}
 		}
 	}
-
-
 	indent(os,indent_pos+1) << "{" << std::endl;
 	indent(os,indent_pos+1) << "}" << std::endl;
 
+	os << std::endl;
+
+	if(shared_ptr<model::Class> pSuper=clazz->get_super())
+	{
+		indent(os,indent_pos+1) << "operator local_ref<" << pSuper->get_cxx_class_name() << ">() const;" << std::endl;
+	}
+
+	for(std::size_t iface=0;iface<clazz->get_interfaces_count();++iface)
+	{
+		shared_ptr<model::Class> pInterface=clazz->get_interface(iface);
+		BOOST_ASSERT(pInterface);
+		indent(os,indent_pos+1) << "operator local_ref<" << pInterface->get_cxx_class_name() << ">() const;" << std::endl;
+	}
+
+	os << std::endl;
+
+	
 	model::ProperClassMethods properMethods(clazz);
 	
 	if(properMethods.get_methods_count())
@@ -289,40 +306,64 @@ std::ostream& CPPCodeGenerator::write_class(std::ostream &os, std::size_t indent
 		{
 			model::ProperClassMethods::proper_method pm=properMethods.get_method(m);
 
-			shared_ptr<model::Method> pMethod=pm.m_method;//clazz->get_method(m);
+			shared_ptr<model::Method> pMethod=pm.m_method;
 			BOOST_ASSERT(pMethod);
-			if(pMethod->is_constructor())
-				continue;
-			
 			if(pMethod->test_access_flag(model::ClassMember::kPublic))
 			{
-				indent(os,indent_pos+1);
-				if(pMethod->test_access_flag(model::ClassMember::kStatic))
-					os << "static ";
-
-				//return type
-				if(pMethod->get_return_type()->is_intrinsic())
-					os << pMethod->get_return_type()->get_cxx_type();
-				else
-					os << "local_ref< " << pMethod->get_return_type()->get_cxx_type() << " >";
-				
-				//method name
-				os << " " << transform_method_name(pm.m_proper_name) << "(";
-				
-				//method arguments
-				for(std::size_t arg=0;arg<pMethod->get_argument_types().size();++arg)
+				if(pMethod->is_constructor())
 				{
-					if(arg) os << ", ";
-					shared_ptr<model::Type> methodArgType=pMethod->get_argument_types()[arg];
-					BOOST_ASSERT(methodArgType);
-					if(methodArgType->is_intrinsic())
-						os << methodArgType->get_cxx_type();						
-					else
-						os << "local_ref< " << methodArgType->get_cxx_type() << " >";
-						
-					os << " const&";
+					if(pMethod->test_access_flag(model::ClassMember::kStatic))
+						continue;
+
+					indent(os,indent_pos+1);
+
+					os << clazz->get_name() << "(";
+					
+					//method arguments
+					for(std::size_t arg=0;arg<pMethod->get_argument_types().size();++arg)
+					{
+						if(arg) os << ", ";
+						shared_ptr<model::Type> methodArgType=pMethod->get_argument_types()[arg];
+						BOOST_ASSERT(methodArgType);
+						if(methodArgType->is_intrinsic())
+							os << methodArgType->get_cxx_type();						
+						else
+							os << "local_ref< " << methodArgType->get_cxx_type() << " >";
+						os << " const&";
+					}
+					os << ");" << std::endl;
 				}
-				os << ");" << std::endl;
+				else
+				{
+					indent(os,indent_pos+1);
+				
+					if(pMethod->test_access_flag(model::ClassMember::kStatic))
+						os << "static ";
+
+					//return type
+					if(pMethod->get_return_type()->is_intrinsic())
+						os << pMethod->get_return_type()->get_cxx_type();
+					else
+						os << "local_ref< " << pMethod->get_return_type()->get_cxx_type() << " >";
+					
+					//method name
+					os << " " << transform_method_name(pm.m_proper_name) << "(";
+					
+					//method arguments
+					for(std::size_t arg=0;arg<pMethod->get_argument_types().size();++arg)
+					{
+						if(arg) os << ", ";
+						shared_ptr<model::Type> methodArgType=pMethod->get_argument_types()[arg];
+						BOOST_ASSERT(methodArgType);
+						if(methodArgType->is_intrinsic())
+							os << methodArgType->get_cxx_type();						
+						else
+							os << "local_ref< " << methodArgType->get_cxx_type() << " >";
+							
+						os << " const&";
+					}
+					os << ");" << std::endl;
+				}
 			}
 		}
 	}
@@ -371,8 +412,6 @@ std::ostream& CPPCodeGenerator::write_class_definitions(std::ostream &os, shared
 	iterator_range<model::Entity::children_by_kind_t::const_iterator>
 		embeddedClasses=clazz->get_children_of_kind(model::Entity::kClass);
 
-
-
 	if(!embeddedClasses.empty())
 	{
 		os << std::endl;
@@ -385,15 +424,30 @@ std::ostream& CPPCodeGenerator::write_class_definitions(std::ostream &os, shared
 		os << std::endl;
 	}
 
-	model::ProperClassMethods properMethods(clazz);
+	os << std::endl;
 
-	//os << std::endl;
-	//os << clazz->get_cxx_class_name() << "::" << clazz->get_name() << "(jobject jobj)" << std::endl;
-	//os << ": cpp_object<" << clazz->get_cxx_class_name() << ">(jobj)" << std::endl;
-	//os << "{" << std::endl;
-	//os << "}" << std::endl;
+	if(shared_ptr<model::Class> pSuper=clazz->get_super())
+	{
+		os << std::endl;
+		indent(os,0) << clazz->get_cxx_class_name() << "::operator local_ref<" << pSuper->get_cxx_class_name() << ">() const" << std::endl;
+		indent(os,0) << "{" << std::endl;
+		indent(os,1) << "return local_ref<" << pSuper->get_cxx_class_name() << ">(get_jtype());" << std::endl;
+		indent(os,0) << "}" << std::endl;
+	}
+
+	for(std::size_t iface=0;iface<clazz->get_interfaces_count();++iface)
+	{
+		os << std::endl;
+		shared_ptr<model::Class> pInterface=clazz->get_interface(iface);
+		BOOST_ASSERT(pInterface);
+		indent(os,0) << clazz->get_cxx_class_name() << "::operator local_ref<" << pInterface->get_cxx_class_name() << ">() const" << std::endl;
+		indent(os,0) << "{" << std::endl;
+		indent(os,1) << "return local_ref<" << pInterface->get_cxx_class_name() << ">(get_jtype());" << std::endl;
+		indent(os,0) << "}" << std::endl;
+	}
 	
-
+	model::ProperClassMethods properMethods(clazz);
+	
 	if(properMethods.get_methods_count())
 	{
 		os << std::endl;
@@ -403,143 +457,162 @@ std::ostream& CPPCodeGenerator::write_class_definitions(std::ostream &os, shared
 
 			shared_ptr<model::Method> pMethod=pm.m_method;//clazz->get_method(m);
 			BOOST_ASSERT(pMethod);
-			if(pMethod->is_constructor())
-			{
-				if(pMethod->test_access_flag(model::ClassMember::kStatic))
-					continue;
-
-				indent(os,0) << "template <>" << std::endl;
-				indent(os,0) << "local_ref< " << clazz->get_cxx_class_name() << " > create< " << clazz->get_cxx_class_name() << ">(";
-				
-				//method arguments
-				for(std::size_t arg=0;arg<pMethod->get_argument_types().size();++arg)
-				{
-					if(arg) os << ", ";
-					shared_ptr<model::Type> methodArgType=pMethod->get_argument_types()[arg];
-					BOOST_ASSERT(methodArgType);
-					if(methodArgType->is_intrinsic())
-						os << methodArgType->get_cxx_type();						
-					else
-						os << "local_ref< " << methodArgType->get_cxx_type() << " >";
-
-					format argNameFmt(" const &a%1%");
-					argNameFmt % arg;
-					os << argNameFmt.str();
-				}
-				os << ")" << std::endl;
-				os << "{" << std::endl;
-				
-				indent(os,1);
-				os << "return local_ref< " << clazz->get_cxx_class_name() << " >(" << std::endl;
-				indent(os,2) << "environment::get().get_jenv()->NewObject(" << std::endl;
-				indent(os,3) << "get_class<" << clazz->get_cxx_class_name() << "::J2CPP_CLASS_NAME>()," << std::endl;
-				indent(os,3) << "get_method_id<"
-					<< clazz->get_cxx_class_name() << "::J2CPP_CLASS_NAME, "
-					<< clazz->get_cxx_class_name() << "::J2CPP_METHOD_NAME(" << m << "), "
-					<< clazz->get_cxx_class_name() << "::J2CPP_METHOD_SIGNATURE(" << m << "), false>()";
-				
-				if(!pMethod->get_argument_types().empty())
-				{
-					os << "," << std::endl;
-					indent(os,3);
-
-					//method arguments
-					for(std::size_t arg=0;arg<pMethod->get_argument_types().size();++arg)
-					{
-						if(arg) os << ", ";
-						os << "a" << arg << ".get_jtype()";
-					}
-				}
-
-				os << std::endl;
-				indent(os,2) << ")" << std::endl;
-				indent(os,1) << ");" << std::endl;
-				
-				os << "}" << std::endl;
-				
-				os << std::endl;
-				continue;
-			}
 
 			if(pMethod->test_access_flag(model::ClassMember::kPublic))
 			{
-				indent(os,0);
-				
-				//return type
-				if(pMethod->get_return_type()->is_intrinsic())
-					os << pMethod->get_return_type()->get_cxx_type();
-				else
-					os << "local_ref< " << pMethod->get_return_type()->get_cxx_type() << " >";
-
-				os << " " << clazz->get_cxx_class_name() << "::" << transform_method_name(pm.m_proper_name) << "(";
-				
-				//method arguments
-				for(std::size_t arg=0;arg<pMethod->get_argument_types().size();++arg)
+				if(pMethod->is_constructor())
 				{
-					if(arg) os << ", ";
-					shared_ptr<model::Type> methodArgType=pMethod->get_argument_types()[arg];
-					BOOST_ASSERT(methodArgType);
-					if(methodArgType->is_intrinsic())
-						os << methodArgType->get_cxx_type();						
-					else
-						os << "local_ref< " << methodArgType->get_cxx_type() << " >";
+					if(pMethod->test_access_flag(model::ClassMember::kStatic))
+						continue;
 
+					if(!pMethod->test_access_flag(model::ClassMember::kPublic))
+						continue;
 
-					format argNameFmt(" const &a%1%");
-					argNameFmt % arg;
-					os << argNameFmt.str();
-				}
-				os << ")" << std::endl;
-
-
-				//begin method implementation
-				indent(os,0) << "{" << std::endl;
-
-				//actual implementation
-				indent(os,1);
-
-				os << "return ";
-
-				if(pMethod->get_return_type()->is_intrinsic())
-					os << pMethod->get_return_type()->get_cxx_type();
-				else
-					os << "local_ref< " << pMethod->get_return_type()->get_cxx_type() << " >";
-
-				os << "(" << std::endl;
-
-				indent(os,2) << "environment::get().get_jenv()->Call";
-
-				if(pMethod->test_access_flag(model::ClassMember::kStatic))
-					os << "Static";
-
-				os << pMethod->get_return_type()->get_jni_call_type() << "Method(" << std::endl;
-
-				if(pMethod->test_access_flag(model::ClassMember::kStatic))
-					indent(os,3) << "get_class<J2CPP_CLASS_NAME>()," << std::endl;
-				else
-					indent(os,3) << "get_jtype(),"  << std::endl;
-				
-				indent(os,3) << "get_method_id<J2CPP_CLASS_NAME, J2CPP_METHOD_NAME(" << m << "), J2CPP_METHOD_SIGNATURE(" << m << "), " << (pMethod->test_access_flag(model::ClassMember::kStatic)?"true":"false") << ">()";
-
-				if(!pMethod->get_argument_types().empty())
-				{
-					os << "," << std::endl;
-					indent(os,3);
+					os << std::endl;
+					
+					indent(os,0) << clazz->get_cxx_class_name() << "::" << clazz->get_name() << "(";
 
 					//method arguments
 					for(std::size_t arg=0;arg<pMethod->get_argument_types().size();++arg)
 					{
 						if(arg) os << ", ";
-						os << "a" << arg << ".get_jtype()";
+						shared_ptr<model::Type> methodArgType=pMethod->get_argument_types()[arg];
+						BOOST_ASSERT(methodArgType);
+						if(methodArgType->is_intrinsic())
+							os << methodArgType->get_cxx_type();						
+						else
+							os << "local_ref< " << methodArgType->get_cxx_type() << " >";
+
+						format argNameFmt(" const &a%1%");
+						argNameFmt % arg;
+						os << argNameFmt.str();
 					}
+					os << ")" << std::endl;
+
+					indent(os,0) << ": cpp_object<" << clazz->get_cxx_class_name() << ">(" << std::endl;
+					indent(os,1) << "environment::get().get_jenv()->NewObject(" << std::endl;
+					indent(os,2) << "get_class<" << clazz->get_cxx_class_name() << "::J2CPP_CLASS_NAME>()," << std::endl;
+					indent(os,2) << "get_method_id<"
+						<< clazz->get_cxx_class_name() << "::J2CPP_CLASS_NAME, "
+						<< clazz->get_cxx_class_name() << "::J2CPP_METHOD_NAME(" << m << "), "
+						<< clazz->get_cxx_class_name() << "::J2CPP_METHOD_SIGNATURE(" << m << "), false>()";
+					
+					if(!pMethod->get_argument_types().empty())
+					{
+						os << "," << std::endl;
+						indent(os,2);
+
+						//method arguments
+						for(std::size_t arg=0;arg<pMethod->get_argument_types().size();++arg)
+						{
+							if(arg) os << ", ";
+							os << "a" << arg << ".get_jtype()";
+						}
+					}
+					
+					os << std::endl;
+					indent(os,1) << ")" << std::endl;
+					indent(os,0) << ")" << std::endl;
+					
+					if(clazz->get_fields_count())
+					{
+						for(std::size_t f=0;f<clazz->get_fields_count();++f)
+						{
+							shared_ptr<model::Field> pField=clazz->get_field(f);
+							BOOST_ASSERT(pField);
+							if(pField->test_access_flag(model::ClassMember::kPublic))
+							{
+								if(!pField->test_access_flag(model::ClassMember::kStatic))
+								{
+									indent(os,0) << ", " << pField->get_name() << "(get_jtype())" << std::endl;
+								}
+							}
+						}
+					}
+					indent(os,0) << "{" << std::endl;
+					indent(os,0) << "}" << std::endl;
+					os << std::endl;
 				}
+				else
+				{
+					indent(os,0);
+					
+					//return type
+					if(pMethod->get_return_type()->is_intrinsic())
+						os << pMethod->get_return_type()->get_cxx_type();
+					else
+						os << "local_ref< " << pMethod->get_return_type()->get_cxx_type() << " >";
 
-				os << std::endl;
-				indent(os,2) << ")" << std::endl;
-				indent(os,1) << ");" << std::endl;
+					os << " " << clazz->get_cxx_class_name() << "::" << transform_method_name(pm.m_proper_name) << "(";
+					
+					//method arguments
+					for(std::size_t arg=0;arg<pMethod->get_argument_types().size();++arg)
+					{
+						if(arg) os << ", ";
+						shared_ptr<model::Type> methodArgType=pMethod->get_argument_types()[arg];
+						BOOST_ASSERT(methodArgType);
+						if(methodArgType->is_intrinsic())
+							os << methodArgType->get_cxx_type();						
+						else
+							os << "local_ref< " << methodArgType->get_cxx_type() << " >";
 
-				//end method implementation
-				indent(os,0) << "}" << std::endl;
+
+						format argNameFmt(" const &a%1%");
+						argNameFmt % arg;
+						os << argNameFmt.str();
+					}
+					os << ")" << std::endl;
+
+
+					//begin method implementation
+					indent(os,0) << "{" << std::endl;
+
+					//actual implementation
+					indent(os,1);
+
+					os << "return ";
+
+					if(pMethod->get_return_type()->is_intrinsic())
+						os << pMethod->get_return_type()->get_cxx_type();
+					else
+						os << "local_ref< " << pMethod->get_return_type()->get_cxx_type() << " >";
+
+					os << "(" << std::endl;
+
+					indent(os,2) << "environment::get().get_jenv()->Call";
+
+					if(pMethod->test_access_flag(model::ClassMember::kStatic))
+						os << "Static";
+
+					os << pMethod->get_return_type()->get_jni_call_type() << "Method(" << std::endl;
+
+					if(pMethod->test_access_flag(model::ClassMember::kStatic))
+						indent(os,3) << "get_class<J2CPP_CLASS_NAME>()," << std::endl;
+					else
+						indent(os,3) << "get_jtype(),"  << std::endl;
+					
+					indent(os,3) << "get_method_id<J2CPP_CLASS_NAME, J2CPP_METHOD_NAME(" << m << "), J2CPP_METHOD_SIGNATURE(" << m << "), " << (pMethod->test_access_flag(model::ClassMember::kStatic)?"true":"false") << ">()";
+
+					if(!pMethod->get_argument_types().empty())
+					{
+						os << "," << std::endl;
+						indent(os,3);
+
+						//method arguments
+						for(std::size_t arg=0;arg<pMethod->get_argument_types().size();++arg)
+						{
+							if(arg) os << ", ";
+							os << "a" << arg << ".get_jtype()";
+						}
+					}
+
+					os << std::endl;
+					indent(os,2) << ")" << std::endl;
+					indent(os,1) << ");" << std::endl;
+
+					//end method implementation
+					indent(os,0) << "}" << std::endl;
+				}
 			}
 			os << std::endl;
 		}
@@ -608,6 +681,16 @@ void CPPCodeGenerator::collect_class_dependencies(shared_ptr<model::Entity> enti
 {
 	if(shared_ptr<model::Class> clazz=shared_ptr<model::Class>(entity,detail::dynamic_cast_tag()))
 	{
+		if(shared_ptr<model::Class> pSuper=clazz->get_super())
+			dependencies.insert(pSuper);
+
+		for(std::size_t ifs=0;ifs<clazz->get_interfaces_count();++ifs)
+		{
+			if(shared_ptr<model::Class> pInterface=clazz->get_interface(ifs))
+				dependencies.insert(pInterface);
+
+		}
+
 		for(std::size_t m=0;m<clazz->get_methods_count();++m)
 		{
 			if(shared_ptr<model::Method> classMethod=clazz->get_method(m))
@@ -738,5 +821,7 @@ std::string CPPCodeGenerator::transform_method_name(std::string const &original)
 		return std::string("Xor");
 	if(algorithm::is_equal()(original,"union"))
 		return std::string("Union");
+	if(algorithm::is_equal()(original,"register"))
+		return std::string("Register");
 	return original;
 }

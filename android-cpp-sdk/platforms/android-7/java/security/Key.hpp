@@ -10,9 +10,13 @@
 #define J2CPP_JAVA_SECURITY_KEY_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 
 
+#include <java/io/Serializable.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -33,10 +37,14 @@ namespace java { namespace security {
 		J2CPP_DECLARE_METHOD(2)
 		J2CPP_DECLARE_FIELD(0)
 
-		Key(jobject jobj)
+		explicit Key(jobject jobj)
 		: cpp_object<Key>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::io::Serializable>() const;
+
 
 		local_ref< java::lang::String > getAlgorithm();
 		local_ref< java::lang::String > getFormat();
@@ -47,7 +55,6 @@ namespace java { namespace security {
 
 } //namespace security
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -60,6 +67,17 @@ namespace java { namespace security {
 
 namespace j2cpp {
 
+
+
+java::security::Key::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
+
+java::security::Key::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jtype());
+}
 
 local_ref< java::lang::String > java::security::Key::getAlgorithm()
 {

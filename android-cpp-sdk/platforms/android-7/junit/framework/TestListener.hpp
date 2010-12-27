@@ -10,11 +10,13 @@
 #define J2CPP_JUNIT_FRAMEWORK_TESTLISTENER_HPP_DECL
 
 
-namespace j2cpp { namespace junit { namespace framework { class Test; } } }
 namespace j2cpp { namespace junit { namespace framework { class AssertionFailedError; } } }
+namespace j2cpp { namespace junit { namespace framework { class Test; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class Throwable; } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/Throwable.hpp>
 #include <junit/framework/AssertionFailedError.hpp>
 #include <junit/framework/Test.hpp>
@@ -37,10 +39,13 @@ namespace junit { namespace framework {
 		J2CPP_DECLARE_METHOD(2)
 		J2CPP_DECLARE_METHOD(3)
 
-		TestListener(jobject jobj)
+		explicit TestListener(jobject jobj)
 		: cpp_object<TestListener>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		void addError(local_ref< junit::framework::Test > const&, local_ref< java::lang::Throwable > const&);
 		void addFailure(local_ref< junit::framework::Test > const&, local_ref< junit::framework::AssertionFailedError > const&);
@@ -50,7 +55,6 @@ namespace junit { namespace framework {
 
 } //namespace framework
 } //namespace junit
-
 
 } //namespace j2cpp
 
@@ -63,6 +67,12 @@ namespace junit { namespace framework {
 
 namespace j2cpp {
 
+
+
+junit::framework::TestListener::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 void junit::framework::TestListener::addError(local_ref< junit::framework::Test > const &a0, local_ref< java::lang::Throwable > const &a1)
 {

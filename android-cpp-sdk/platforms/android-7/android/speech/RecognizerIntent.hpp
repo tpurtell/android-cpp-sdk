@@ -10,9 +10,11 @@
 #define J2CPP_ANDROID_SPEECH_RECOGNIZERINTENT_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -46,10 +48,13 @@ namespace android { namespace speech {
 		J2CPP_DECLARE_FIELD(14)
 		J2CPP_DECLARE_FIELD(15)
 
-		RecognizerIntent(jobject jobj)
+		explicit RecognizerIntent(jobject jobj)
 		: cpp_object<RecognizerIntent>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 
 		static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(0), J2CPP_FIELD_SIGNATURE(0), local_ref< java::lang::String > > ACTION_RECOGNIZE_SPEECH;
@@ -73,7 +78,6 @@ namespace android { namespace speech {
 } //namespace speech
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_SPEECH_RECOGNIZERINTENT_HPP_DECL
@@ -86,16 +90,12 @@ namespace android { namespace speech {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::speech::RecognizerIntent > create< android::speech::RecognizerIntent>()
+
+android::speech::RecognizerIntent::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::speech::RecognizerIntent >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::speech::RecognizerIntent::J2CPP_CLASS_NAME>(),
-			get_method_id<android::speech::RecognizerIntent::J2CPP_CLASS_NAME, android::speech::RecognizerIntent::J2CPP_METHOD_NAME(0), android::speech::RecognizerIntent::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
 
 
 static_field<

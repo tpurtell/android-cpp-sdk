@@ -111,11 +111,15 @@ namespace android { namespace content {
 		J2CPP_DECLARE_FIELD(11)
 		J2CPP_DECLARE_FIELD(12)
 
-		ContentResolver(jobject jobj)
+		explicit ContentResolver(jobject jobj)
 		: cpp_object<ContentResolver>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		ContentResolver(local_ref< android::content::Context > const&);
 		local_ref< java::lang::String > getType(local_ref< android::net::Uri > const&);
 		local_ref< android::database::Cursor > query(local_ref< android::net::Uri > const&, local_ref< cpp_object_array<java::lang::String, 1> > const&, local_ref< java::lang::String > const&, local_ref< cpp_object_array<java::lang::String, 1> > const&, local_ref< java::lang::String > const&);
 		local_ref< java::io::InputStream > openInputStream(local_ref< android::net::Uri > const&);
@@ -169,7 +173,6 @@ namespace android { namespace content {
 } //namespace content
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_CONTENT_CONTENTRESOLVER_HPP_DECL
@@ -182,17 +185,24 @@ namespace android { namespace content {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::content::ContentResolver > create< android::content::ContentResolver>(local_ref< android::content::Context > const &a0)
+
+android::content::ContentResolver::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::content::ContentResolver >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::content::ContentResolver::J2CPP_CLASS_NAME>(),
-			get_method_id<android::content::ContentResolver::J2CPP_CLASS_NAME, android::content::ContentResolver::J2CPP_METHOD_NAME(0), android::content::ContentResolver::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::content::ContentResolver::ContentResolver(local_ref< android::content::Context > const &a0)
+: cpp_object<android::content::ContentResolver>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::content::ContentResolver::J2CPP_CLASS_NAME>(),
+		get_method_id<android::content::ContentResolver::J2CPP_CLASS_NAME, android::content::ContentResolver::J2CPP_METHOD_NAME(0), android::content::ContentResolver::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 local_ref< java::lang::String > android::content::ContentResolver::getType(local_ref< android::net::Uri > const &a0)
 {

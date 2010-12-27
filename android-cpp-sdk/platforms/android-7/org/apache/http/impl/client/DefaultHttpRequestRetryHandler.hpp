@@ -11,10 +11,14 @@
 
 
 namespace j2cpp { namespace java { namespace io { class IOException; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { namespace client { class HttpRequestRetryHandler; } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace protocol { class HttpContext; } } } } }
 
 
 #include <java/io/IOException.hpp>
+#include <java/lang/Object.hpp>
+#include <org/apache/http/client/HttpRequestRetryHandler.hpp>
 #include <org/apache/http/protocol/HttpContext.hpp>
 
 
@@ -36,11 +40,17 @@ namespace org { namespace apache { namespace http { namespace impl { namespace c
 		J2CPP_DECLARE_METHOD(3)
 		J2CPP_DECLARE_METHOD(4)
 
-		DefaultHttpRequestRetryHandler(jobject jobj)
+		explicit DefaultHttpRequestRetryHandler(jobject jobj)
 		: cpp_object<DefaultHttpRequestRetryHandler>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<org::apache::http::client::HttpRequestRetryHandler>() const;
+
+
+		DefaultHttpRequestRetryHandler(cpp_int const&, cpp_boolean const&);
+		DefaultHttpRequestRetryHandler();
 		cpp_boolean retryRequest(local_ref< java::io::IOException > const&, cpp_int const&, local_ref< org::apache::http::protocol::HttpContext > const&);
 		cpp_boolean isRequestSentRetryEnabled();
 		cpp_int getRetryCount();
@@ -51,7 +61,6 @@ namespace org { namespace apache { namespace http { namespace impl { namespace c
 } //namespace http
 } //namespace apache
 } //namespace org
-
 
 } //namespace j2cpp
 
@@ -65,28 +74,41 @@ namespace org { namespace apache { namespace http { namespace impl { namespace c
 namespace j2cpp {
 
 
-template <>
-local_ref< org::apache::http::impl::client::DefaultHttpRequestRetryHandler > create< org::apache::http::impl::client::DefaultHttpRequestRetryHandler>(cpp_int const &a0, cpp_boolean const &a1)
+
+org::apache::http::impl::client::DefaultHttpRequestRetryHandler::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< org::apache::http::impl::client::DefaultHttpRequestRetryHandler >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::apache::http::impl::client::DefaultHttpRequestRetryHandler::J2CPP_CLASS_NAME>(),
-			get_method_id<org::apache::http::impl::client::DefaultHttpRequestRetryHandler::J2CPP_CLASS_NAME, org::apache::http::impl::client::DefaultHttpRequestRetryHandler::J2CPP_METHOD_NAME(0), org::apache::http::impl::client::DefaultHttpRequestRetryHandler::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
 
-template <>
-local_ref< org::apache::http::impl::client::DefaultHttpRequestRetryHandler > create< org::apache::http::impl::client::DefaultHttpRequestRetryHandler>()
+org::apache::http::impl::client::DefaultHttpRequestRetryHandler::operator local_ref<org::apache::http::client::HttpRequestRetryHandler>() const
 {
-	return local_ref< org::apache::http::impl::client::DefaultHttpRequestRetryHandler >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::apache::http::impl::client::DefaultHttpRequestRetryHandler::J2CPP_CLASS_NAME>(),
-			get_method_id<org::apache::http::impl::client::DefaultHttpRequestRetryHandler::J2CPP_CLASS_NAME, org::apache::http::impl::client::DefaultHttpRequestRetryHandler::J2CPP_METHOD_NAME(1), org::apache::http::impl::client::DefaultHttpRequestRetryHandler::J2CPP_METHOD_SIGNATURE(1), false>()
-		)
-	);
+	return local_ref<org::apache::http::client::HttpRequestRetryHandler>(get_jtype());
 }
+
+
+org::apache::http::impl::client::DefaultHttpRequestRetryHandler::DefaultHttpRequestRetryHandler(cpp_int const &a0, cpp_boolean const &a1)
+: cpp_object<org::apache::http::impl::client::DefaultHttpRequestRetryHandler>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::apache::http::impl::client::DefaultHttpRequestRetryHandler::J2CPP_CLASS_NAME>(),
+		get_method_id<org::apache::http::impl::client::DefaultHttpRequestRetryHandler::J2CPP_CLASS_NAME, org::apache::http::impl::client::DefaultHttpRequestRetryHandler::J2CPP_METHOD_NAME(0), org::apache::http::impl::client::DefaultHttpRequestRetryHandler::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
+
+
+org::apache::http::impl::client::DefaultHttpRequestRetryHandler::DefaultHttpRequestRetryHandler()
+: cpp_object<org::apache::http::impl::client::DefaultHttpRequestRetryHandler>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::apache::http::impl::client::DefaultHttpRequestRetryHandler::J2CPP_CLASS_NAME>(),
+		get_method_id<org::apache::http::impl::client::DefaultHttpRequestRetryHandler::J2CPP_CLASS_NAME, org::apache::http::impl::client::DefaultHttpRequestRetryHandler::J2CPP_METHOD_NAME(1), org::apache::http::impl::client::DefaultHttpRequestRetryHandler::J2CPP_METHOD_SIGNATURE(1), false>()
+	)
+)
+{
+}
+
 
 cpp_boolean org::apache::http::impl::client::DefaultHttpRequestRetryHandler::retryRequest(local_ref< java::io::IOException > const &a0, cpp_int const &a1, local_ref< org::apache::http::protocol::HttpContext > const &a2)
 {

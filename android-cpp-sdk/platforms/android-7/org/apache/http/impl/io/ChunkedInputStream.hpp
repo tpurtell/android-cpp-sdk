@@ -10,10 +10,12 @@
 #define J2CPP_ORG_APACHE_HTTP_IMPL_IO_CHUNKEDINPUTSTREAM_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class InputStream; } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace io { class SessionInputBuffer; } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { class Header; } } } }
 
 
+#include <java/io/InputStream.hpp>
 #include <org/apache/http/Header.hpp>
 #include <org/apache/http/io/SessionInputBuffer.hpp>
 
@@ -37,11 +39,15 @@ namespace org { namespace apache { namespace http { namespace impl { namespace i
 		J2CPP_DECLARE_METHOD(4)
 		J2CPP_DECLARE_METHOD(5)
 
-		ChunkedInputStream(jobject jobj)
+		explicit ChunkedInputStream(jobject jobj)
 		: cpp_object<ChunkedInputStream>(jobj)
 		{
 		}
 
+		operator local_ref<java::io::InputStream>() const;
+
+
+		ChunkedInputStream(local_ref< org::apache::http::io::SessionInputBuffer > const&);
 		cpp_int read();
 		cpp_int read(local_ref< cpp_byte_array<1> > const&, cpp_int const&, cpp_int const&);
 		cpp_int read(local_ref< cpp_byte_array<1> > const&);
@@ -55,7 +61,6 @@ namespace org { namespace apache { namespace http { namespace impl { namespace i
 } //namespace apache
 } //namespace org
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ORG_APACHE_HTTP_IMPL_IO_CHUNKEDINPUTSTREAM_HPP_DECL
@@ -68,17 +73,24 @@ namespace org { namespace apache { namespace http { namespace impl { namespace i
 namespace j2cpp {
 
 
-template <>
-local_ref< org::apache::http::impl::io::ChunkedInputStream > create< org::apache::http::impl::io::ChunkedInputStream>(local_ref< org::apache::http::io::SessionInputBuffer > const &a0)
+
+org::apache::http::impl::io::ChunkedInputStream::operator local_ref<java::io::InputStream>() const
 {
-	return local_ref< org::apache::http::impl::io::ChunkedInputStream >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::apache::http::impl::io::ChunkedInputStream::J2CPP_CLASS_NAME>(),
-			get_method_id<org::apache::http::impl::io::ChunkedInputStream::J2CPP_CLASS_NAME, org::apache::http::impl::io::ChunkedInputStream::J2CPP_METHOD_NAME(0), org::apache::http::impl::io::ChunkedInputStream::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::io::InputStream>(get_jtype());
 }
+
+
+org::apache::http::impl::io::ChunkedInputStream::ChunkedInputStream(local_ref< org::apache::http::io::SessionInputBuffer > const &a0)
+: cpp_object<org::apache::http::impl::io::ChunkedInputStream>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::apache::http::impl::io::ChunkedInputStream::J2CPP_CLASS_NAME>(),
+		get_method_id<org::apache::http::impl::io::ChunkedInputStream::J2CPP_CLASS_NAME, org::apache::http::impl::io::ChunkedInputStream::J2CPP_METHOD_NAME(0), org::apache::http::impl::io::ChunkedInputStream::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 cpp_int org::apache::http::impl::io::ChunkedInputStream::read()
 {

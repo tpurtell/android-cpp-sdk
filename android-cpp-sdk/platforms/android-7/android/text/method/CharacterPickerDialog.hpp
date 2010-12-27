@@ -11,12 +11,16 @@
 
 
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace android { namespace app { class Dialog; } } }
 namespace j2cpp { namespace android { namespace content { class Context; } } }
 namespace j2cpp { namespace android { namespace view { class View; } } }
+namespace j2cpp { namespace android { namespace view { namespace View_ { class OnClickListener; } } } }
 namespace j2cpp { namespace android { namespace text { class Editable; } } }
 namespace j2cpp { namespace android { namespace widget { class AdapterView; } } }
+namespace j2cpp { namespace android { namespace widget { namespace AdapterView_ { class OnItemClickListener; } } } }
 
 
+#include <android/app/Dialog.hpp>
 #include <android/content/Context.hpp>
 #include <android/text/Editable.hpp>
 #include <android/view/View.hpp>
@@ -41,11 +45,17 @@ namespace android { namespace text { namespace method {
 		J2CPP_DECLARE_METHOD(2)
 		J2CPP_DECLARE_METHOD(3)
 
-		CharacterPickerDialog(jobject jobj)
+		explicit CharacterPickerDialog(jobject jobj)
 		: cpp_object<CharacterPickerDialog>(jobj)
 		{
 		}
 
+		operator local_ref<android::app::Dialog>() const;
+		operator local_ref<android::widget::AdapterView_::OnItemClickListener>() const;
+		operator local_ref<android::view::View_::OnClickListener>() const;
+
+
+		CharacterPickerDialog(local_ref< android::content::Context > const&, local_ref< android::view::View > const&, local_ref< android::text::Editable > const&, local_ref< java::lang::String > const&, cpp_boolean const&);
 		void onItemClick(local_ref< android::widget::AdapterView > const&, local_ref< android::view::View > const&, cpp_int const&, cpp_long const&);
 		void onClick(local_ref< android::view::View > const&);
 	}; //class CharacterPickerDialog
@@ -53,7 +63,6 @@ namespace android { namespace text { namespace method {
 } //namespace method
 } //namespace text
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -67,17 +76,34 @@ namespace android { namespace text { namespace method {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::text::method::CharacterPickerDialog > create< android::text::method::CharacterPickerDialog>(local_ref< android::content::Context > const &a0, local_ref< android::view::View > const &a1, local_ref< android::text::Editable > const &a2, local_ref< java::lang::String > const &a3, cpp_boolean const &a4)
+
+android::text::method::CharacterPickerDialog::operator local_ref<android::app::Dialog>() const
 {
-	return local_ref< android::text::method::CharacterPickerDialog >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::text::method::CharacterPickerDialog::J2CPP_CLASS_NAME>(),
-			get_method_id<android::text::method::CharacterPickerDialog::J2CPP_CLASS_NAME, android::text::method::CharacterPickerDialog::J2CPP_METHOD_NAME(0), android::text::method::CharacterPickerDialog::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype(), a4.get_jtype()
-		)
-	);
+	return local_ref<android::app::Dialog>(get_jtype());
 }
+
+android::text::method::CharacterPickerDialog::operator local_ref<android::widget::AdapterView_::OnItemClickListener>() const
+{
+	return local_ref<android::widget::AdapterView_::OnItemClickListener>(get_jtype());
+}
+
+android::text::method::CharacterPickerDialog::operator local_ref<android::view::View_::OnClickListener>() const
+{
+	return local_ref<android::view::View_::OnClickListener>(get_jtype());
+}
+
+
+android::text::method::CharacterPickerDialog::CharacterPickerDialog(local_ref< android::content::Context > const &a0, local_ref< android::view::View > const &a1, local_ref< android::text::Editable > const &a2, local_ref< java::lang::String > const &a3, cpp_boolean const &a4)
+: cpp_object<android::text::method::CharacterPickerDialog>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::text::method::CharacterPickerDialog::J2CPP_CLASS_NAME>(),
+		get_method_id<android::text::method::CharacterPickerDialog::J2CPP_CLASS_NAME, android::text::method::CharacterPickerDialog::J2CPP_METHOD_NAME(0), android::text::method::CharacterPickerDialog::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype(), a4.get_jtype()
+	)
+)
+{
+}
+
 
 
 void android::text::method::CharacterPickerDialog::onItemClick(local_ref< android::widget::AdapterView > const &a0, local_ref< android::view::View > const &a1, cpp_int const &a2, cpp_long const &a3)

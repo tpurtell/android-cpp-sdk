@@ -10,9 +10,11 @@
 #define J2CPP_ANDROID_DATABASE_STALEDATAEXCEPTION_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class RuntimeException; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 
 
+#include <java/lang/RuntimeException.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -31,16 +33,20 @@ namespace android { namespace database {
 		J2CPP_DECLARE_METHOD(0)
 		J2CPP_DECLARE_METHOD(1)
 
-		StaleDataException(jobject jobj)
+		explicit StaleDataException(jobject jobj)
 		: cpp_object<StaleDataException>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::RuntimeException>() const;
+
+
+		StaleDataException();
+		StaleDataException(local_ref< java::lang::String > const&);
 	}; //class StaleDataException
 
 } //namespace database
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -54,28 +60,36 @@ namespace android { namespace database {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::database::StaleDataException > create< android::database::StaleDataException>()
+
+android::database::StaleDataException::operator local_ref<java::lang::RuntimeException>() const
 {
-	return local_ref< android::database::StaleDataException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::database::StaleDataException::J2CPP_CLASS_NAME>(),
-			get_method_id<android::database::StaleDataException::J2CPP_CLASS_NAME, android::database::StaleDataException::J2CPP_METHOD_NAME(0), android::database::StaleDataException::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::RuntimeException>(get_jtype());
 }
 
-template <>
-local_ref< android::database::StaleDataException > create< android::database::StaleDataException>(local_ref< java::lang::String > const &a0)
+
+android::database::StaleDataException::StaleDataException()
+: cpp_object<android::database::StaleDataException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::database::StaleDataException::J2CPP_CLASS_NAME>(),
+		get_method_id<android::database::StaleDataException::J2CPP_CLASS_NAME, android::database::StaleDataException::J2CPP_METHOD_NAME(0), android::database::StaleDataException::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
 {
-	return local_ref< android::database::StaleDataException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::database::StaleDataException::J2CPP_CLASS_NAME>(),
-			get_method_id<android::database::StaleDataException::J2CPP_CLASS_NAME, android::database::StaleDataException::J2CPP_METHOD_NAME(1), android::database::StaleDataException::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
 }
+
+
+
+android::database::StaleDataException::StaleDataException(local_ref< java::lang::String > const &a0)
+: cpp_object<android::database::StaleDataException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::database::StaleDataException::J2CPP_CLASS_NAME>(),
+		get_method_id<android::database::StaleDataException::J2CPP_CLASS_NAME, android::database::StaleDataException::J2CPP_METHOD_NAME(1), android::database::StaleDataException::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 
 J2CPP_DEFINE_CLASS(android::database::StaleDataException,"android/database/StaleDataException")

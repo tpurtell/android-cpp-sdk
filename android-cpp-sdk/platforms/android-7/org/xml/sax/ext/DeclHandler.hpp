@@ -10,9 +10,11 @@
 #define J2CPP_ORG_XML_SAX_EXT_DECLHANDLER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -33,10 +35,13 @@ namespace org { namespace xml { namespace sax { namespace ext {
 		J2CPP_DECLARE_METHOD(2)
 		J2CPP_DECLARE_METHOD(3)
 
-		DeclHandler(jobject jobj)
+		explicit DeclHandler(jobject jobj)
 		: cpp_object<DeclHandler>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		void elementDecl(local_ref< java::lang::String > const&, local_ref< java::lang::String > const&);
 		void attributeDecl(local_ref< java::lang::String > const&, local_ref< java::lang::String > const&, local_ref< java::lang::String > const&, local_ref< java::lang::String > const&, local_ref< java::lang::String > const&);
@@ -49,7 +54,6 @@ namespace org { namespace xml { namespace sax { namespace ext {
 } //namespace xml
 } //namespace org
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ORG_XML_SAX_EXT_DECLHANDLER_HPP_DECL
@@ -61,6 +65,12 @@ namespace org { namespace xml { namespace sax { namespace ext {
 
 namespace j2cpp {
 
+
+
+org::xml::sax::ext::DeclHandler::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 void org::xml::sax::ext::DeclHandler::elementDecl(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
 {

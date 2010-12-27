@@ -10,6 +10,7 @@
 #define J2CPP_ANDROID_WIDGET_ABSLISTVIEW_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class CharSequence; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace util { class ArrayList; } } }
@@ -19,14 +20,19 @@ namespace j2cpp { namespace android { namespace graphics { namespace drawable { 
 namespace j2cpp { namespace android { namespace graphics { class Rect; } } }
 namespace j2cpp { namespace android { namespace content { class Context; } } }
 namespace j2cpp { namespace android { namespace view { class View; } } }
+namespace j2cpp { namespace android { namespace view { namespace ViewTreeObserver_ { class OnTouchModeChangeListener; } } } }
 namespace j2cpp { namespace android { namespace view { namespace inputmethod { class InputConnection; } } } }
 namespace j2cpp { namespace android { namespace view { namespace inputmethod { class EditorInfo; } } } }
 namespace j2cpp { namespace android { namespace view { class KeyEvent; } } }
 namespace j2cpp { namespace android { namespace view { class MotionEvent; } } }
 namespace j2cpp { namespace android { namespace view { namespace ViewGroup_ { class LayoutParams; } } } }
+namespace j2cpp { namespace android { namespace view { namespace ViewTreeObserver_ { class OnGlobalLayoutListener; } } } }
 namespace j2cpp { namespace android { namespace text { class Editable; } } }
+namespace j2cpp { namespace android { namespace text { class TextWatcher; } } }
+namespace j2cpp { namespace android { namespace widget { class AdapterView; } } }
 namespace j2cpp { namespace android { namespace widget { namespace AbsListView_ { class LayoutParams; } } } }
 namespace j2cpp { namespace android { namespace widget { namespace AbsListView_ { class RecyclerListener; } } } }
+namespace j2cpp { namespace android { namespace widget { namespace Filter_ { class FilterListener; } } } }
 namespace j2cpp { namespace android { namespace widget { namespace AbsListView_ { class OnScrollListener; } } } }
 namespace j2cpp { namespace android { namespace util { class AttributeSet; } } }
 namespace j2cpp { namespace android { namespace os { class Parcelable; } } }
@@ -38,15 +44,20 @@ namespace j2cpp { namespace android { namespace os { class Parcelable; } } }
 #include <android/graphics/drawable/Drawable.hpp>
 #include <android/os/Parcelable.hpp>
 #include <android/text/Editable.hpp>
+#include <android/text/TextWatcher.hpp>
 #include <android/util/AttributeSet.hpp>
 #include <android/view/KeyEvent.hpp>
 #include <android/view/MotionEvent.hpp>
 #include <android/view/View.hpp>
 #include <android/view/ViewGroup.hpp>
+#include <android/view/ViewTreeObserver.hpp>
 #include <android/view/inputmethod/EditorInfo.hpp>
 #include <android/view/inputmethod/InputConnection.hpp>
 #include <android/widget/AbsListView.hpp>
+#include <android/widget/AdapterView.hpp>
+#include <android/widget/Filter.hpp>
 #include <java/lang/CharSequence.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/util/ArrayList.hpp>
 #include <java/util/List.hpp>
@@ -72,11 +83,18 @@ namespace android { namespace widget {
 			J2CPP_DECLARE_METHOD(2)
 			J2CPP_DECLARE_METHOD(3)
 
-			LayoutParams(jobject jobj)
+			explicit LayoutParams(jobject jobj)
 			: cpp_object<LayoutParams>(jobj)
 			{
 			}
 
+			operator local_ref<android::view::ViewGroup_::LayoutParams>() const;
+
+
+			LayoutParams(local_ref< android::content::Context > const&, local_ref< android::util::AttributeSet > const&);
+			LayoutParams(cpp_int const&, cpp_int const&);
+			LayoutParams(cpp_int const&, cpp_int const&, cpp_int const&);
+			LayoutParams(local_ref< android::view::ViewGroup_::LayoutParams > const&);
 		}; //class LayoutParams
 
 		class RecyclerListener;
@@ -89,10 +107,13 @@ namespace android { namespace widget {
 
 			J2CPP_DECLARE_METHOD(0)
 
-			RecyclerListener(jobject jobj)
+			explicit RecyclerListener(jobject jobj)
 			: cpp_object<RecyclerListener>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+
 
 			void onMovedToScrapHeap(local_ref< android::view::View > const&);
 		}; //class RecyclerListener
@@ -111,10 +132,13 @@ namespace android { namespace widget {
 			J2CPP_DECLARE_FIELD(1)
 			J2CPP_DECLARE_FIELD(2)
 
-			OnScrollListener(jobject jobj)
+			explicit OnScrollListener(jobject jobj)
 			: cpp_object<OnScrollListener>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+
 
 			void onScrollStateChanged(local_ref< android::widget::AbsListView > const&, cpp_int const&);
 			void onScroll(local_ref< android::widget::AbsListView > const&, cpp_int const&, cpp_int const&, cpp_int const&);
@@ -223,11 +247,21 @@ namespace android { namespace widget {
 		typedef AbsListView_::RecyclerListener RecyclerListener;
 		typedef AbsListView_::OnScrollListener OnScrollListener;
 
-		AbsListView(jobject jobj)
+		explicit AbsListView(jobject jobj)
 		: cpp_object<AbsListView>(jobj)
 		{
 		}
 
+		operator local_ref<android::widget::AdapterView>() const;
+		operator local_ref<android::text::TextWatcher>() const;
+		operator local_ref<android::view::ViewTreeObserver_::OnGlobalLayoutListener>() const;
+		operator local_ref<android::widget::Filter_::FilterListener>() const;
+		operator local_ref<android::view::ViewTreeObserver_::OnTouchModeChangeListener>() const;
+
+
+		AbsListView(local_ref< android::content::Context > const&);
+		AbsListView(local_ref< android::content::Context > const&, local_ref< android::util::AttributeSet > const&);
+		AbsListView(local_ref< android::content::Context > const&, local_ref< android::util::AttributeSet > const&, cpp_int const&);
 		void setFastScrollEnabled(cpp_boolean const&);
 		cpp_boolean isFastScrollEnabled();
 		void setSmoothScrollbarEnabled(cpp_boolean const&);
@@ -295,7 +329,6 @@ namespace android { namespace widget {
 } //namespace widget
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_WIDGET_ABSLISTVIEW_HPP_DECL
@@ -309,53 +342,63 @@ namespace j2cpp {
 
 
 
-template <>
-local_ref< android::widget::AbsListView_::LayoutParams > create< android::widget::AbsListView_::LayoutParams>(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1)
+
+android::widget::AbsListView_::LayoutParams::operator local_ref<android::view::ViewGroup_::LayoutParams>() const
 {
-	return local_ref< android::widget::AbsListView_::LayoutParams >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::widget::AbsListView_::LayoutParams::J2CPP_CLASS_NAME>(),
-			get_method_id<android::widget::AbsListView_::LayoutParams::J2CPP_CLASS_NAME, android::widget::AbsListView_::LayoutParams::J2CPP_METHOD_NAME(0), android::widget::AbsListView_::LayoutParams::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<android::view::ViewGroup_::LayoutParams>(get_jtype());
 }
 
-template <>
-local_ref< android::widget::AbsListView_::LayoutParams > create< android::widget::AbsListView_::LayoutParams>(cpp_int const &a0, cpp_int const &a1)
+
+android::widget::AbsListView_::LayoutParams::LayoutParams(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1)
+: cpp_object<android::widget::AbsListView_::LayoutParams>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::widget::AbsListView_::LayoutParams::J2CPP_CLASS_NAME>(),
+		get_method_id<android::widget::AbsListView_::LayoutParams::J2CPP_CLASS_NAME, android::widget::AbsListView_::LayoutParams::J2CPP_METHOD_NAME(0), android::widget::AbsListView_::LayoutParams::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
 {
-	return local_ref< android::widget::AbsListView_::LayoutParams >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::widget::AbsListView_::LayoutParams::J2CPP_CLASS_NAME>(),
-			get_method_id<android::widget::AbsListView_::LayoutParams::J2CPP_CLASS_NAME, android::widget::AbsListView_::LayoutParams::J2CPP_METHOD_NAME(1), android::widget::AbsListView_::LayoutParams::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< android::widget::AbsListView_::LayoutParams > create< android::widget::AbsListView_::LayoutParams>(cpp_int const &a0, cpp_int const &a1, cpp_int const &a2)
+
+
+android::widget::AbsListView_::LayoutParams::LayoutParams(cpp_int const &a0, cpp_int const &a1)
+: cpp_object<android::widget::AbsListView_::LayoutParams>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::widget::AbsListView_::LayoutParams::J2CPP_CLASS_NAME>(),
+		get_method_id<android::widget::AbsListView_::LayoutParams::J2CPP_CLASS_NAME, android::widget::AbsListView_::LayoutParams::J2CPP_METHOD_NAME(1), android::widget::AbsListView_::LayoutParams::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
 {
-	return local_ref< android::widget::AbsListView_::LayoutParams >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::widget::AbsListView_::LayoutParams::J2CPP_CLASS_NAME>(),
-			get_method_id<android::widget::AbsListView_::LayoutParams::J2CPP_CLASS_NAME, android::widget::AbsListView_::LayoutParams::J2CPP_METHOD_NAME(2), android::widget::AbsListView_::LayoutParams::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< android::widget::AbsListView_::LayoutParams > create< android::widget::AbsListView_::LayoutParams>(local_ref< android::view::ViewGroup_::LayoutParams > const &a0)
+
+
+android::widget::AbsListView_::LayoutParams::LayoutParams(cpp_int const &a0, cpp_int const &a1, cpp_int const &a2)
+: cpp_object<android::widget::AbsListView_::LayoutParams>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::widget::AbsListView_::LayoutParams::J2CPP_CLASS_NAME>(),
+		get_method_id<android::widget::AbsListView_::LayoutParams::J2CPP_CLASS_NAME, android::widget::AbsListView_::LayoutParams::J2CPP_METHOD_NAME(2), android::widget::AbsListView_::LayoutParams::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
+	)
+)
 {
-	return local_ref< android::widget::AbsListView_::LayoutParams >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::widget::AbsListView_::LayoutParams::J2CPP_CLASS_NAME>(),
-			get_method_id<android::widget::AbsListView_::LayoutParams::J2CPP_CLASS_NAME, android::widget::AbsListView_::LayoutParams::J2CPP_METHOD_NAME(3), android::widget::AbsListView_::LayoutParams::J2CPP_METHOD_SIGNATURE(3), false>(),
-			a0.get_jtype()
-		)
-	);
 }
+
+
+
+android::widget::AbsListView_::LayoutParams::LayoutParams(local_ref< android::view::ViewGroup_::LayoutParams > const &a0)
+: cpp_object<android::widget::AbsListView_::LayoutParams>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::widget::AbsListView_::LayoutParams::J2CPP_CLASS_NAME>(),
+		get_method_id<android::widget::AbsListView_::LayoutParams::J2CPP_CLASS_NAME, android::widget::AbsListView_::LayoutParams::J2CPP_METHOD_NAME(3), android::widget::AbsListView_::LayoutParams::J2CPP_METHOD_SIGNATURE(3), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 
 J2CPP_DEFINE_CLASS(android::widget::AbsListView_::LayoutParams,"android/widget/AbsListView$LayoutParams")
@@ -363,6 +406,12 @@ J2CPP_DEFINE_METHOD(android::widget::AbsListView_::LayoutParams,0,"<init>","(Lan
 J2CPP_DEFINE_METHOD(android::widget::AbsListView_::LayoutParams,1,"<init>","(II)V")
 J2CPP_DEFINE_METHOD(android::widget::AbsListView_::LayoutParams,2,"<init>","(III)V")
 J2CPP_DEFINE_METHOD(android::widget::AbsListView_::LayoutParams,3,"<init>","(Landroid/view/ViewGroup$LayoutParams;)V")
+
+
+android::widget::AbsListView_::RecyclerListener::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 void android::widget::AbsListView_::RecyclerListener::onMovedToScrapHeap(local_ref< android::view::View > const &a0)
 {
@@ -378,6 +427,12 @@ void android::widget::AbsListView_::RecyclerListener::onMovedToScrapHeap(local_r
 
 J2CPP_DEFINE_CLASS(android::widget::AbsListView_::RecyclerListener,"android/widget/AbsListView$RecyclerListener")
 J2CPP_DEFINE_METHOD(android::widget::AbsListView_::RecyclerListener,0,"onMovedToScrapHeap","(Landroid/view/View;)V")
+
+
+android::widget::AbsListView_::OnScrollListener::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 void android::widget::AbsListView_::OnScrollListener::onScrollStateChanged(local_ref< android::widget::AbsListView > const &a0, cpp_int const &a1)
 {
@@ -432,41 +487,70 @@ J2CPP_DEFINE_FIELD(android::widget::AbsListView_::OnScrollListener,1,"SCROLL_STA
 J2CPP_DEFINE_FIELD(android::widget::AbsListView_::OnScrollListener,2,"SCROLL_STATE_FLING","I")
 
 
-template <>
-local_ref< android::widget::AbsListView > create< android::widget::AbsListView>(local_ref< android::content::Context > const &a0)
+
+android::widget::AbsListView::operator local_ref<android::widget::AdapterView>() const
 {
-	return local_ref< android::widget::AbsListView >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::widget::AbsListView::J2CPP_CLASS_NAME>(),
-			get_method_id<android::widget::AbsListView::J2CPP_CLASS_NAME, android::widget::AbsListView::J2CPP_METHOD_NAME(0), android::widget::AbsListView::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<android::widget::AdapterView>(get_jtype());
 }
 
-template <>
-local_ref< android::widget::AbsListView > create< android::widget::AbsListView>(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1)
+android::widget::AbsListView::operator local_ref<android::text::TextWatcher>() const
 {
-	return local_ref< android::widget::AbsListView >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::widget::AbsListView::J2CPP_CLASS_NAME>(),
-			get_method_id<android::widget::AbsListView::J2CPP_CLASS_NAME, android::widget::AbsListView::J2CPP_METHOD_NAME(1), android::widget::AbsListView::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<android::text::TextWatcher>(get_jtype());
 }
 
-template <>
-local_ref< android::widget::AbsListView > create< android::widget::AbsListView>(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1, cpp_int const &a2)
+android::widget::AbsListView::operator local_ref<android::view::ViewTreeObserver_::OnGlobalLayoutListener>() const
 {
-	return local_ref< android::widget::AbsListView >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::widget::AbsListView::J2CPP_CLASS_NAME>(),
-			get_method_id<android::widget::AbsListView::J2CPP_CLASS_NAME, android::widget::AbsListView::J2CPP_METHOD_NAME(2), android::widget::AbsListView::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
-		)
-	);
+	return local_ref<android::view::ViewTreeObserver_::OnGlobalLayoutListener>(get_jtype());
 }
+
+android::widget::AbsListView::operator local_ref<android::widget::Filter_::FilterListener>() const
+{
+	return local_ref<android::widget::Filter_::FilterListener>(get_jtype());
+}
+
+android::widget::AbsListView::operator local_ref<android::view::ViewTreeObserver_::OnTouchModeChangeListener>() const
+{
+	return local_ref<android::view::ViewTreeObserver_::OnTouchModeChangeListener>(get_jtype());
+}
+
+
+android::widget::AbsListView::AbsListView(local_ref< android::content::Context > const &a0)
+: cpp_object<android::widget::AbsListView>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::widget::AbsListView::J2CPP_CLASS_NAME>(),
+		get_method_id<android::widget::AbsListView::J2CPP_CLASS_NAME, android::widget::AbsListView::J2CPP_METHOD_NAME(0), android::widget::AbsListView::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
+
+
+android::widget::AbsListView::AbsListView(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1)
+: cpp_object<android::widget::AbsListView>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::widget::AbsListView::J2CPP_CLASS_NAME>(),
+		get_method_id<android::widget::AbsListView::J2CPP_CLASS_NAME, android::widget::AbsListView::J2CPP_METHOD_NAME(1), android::widget::AbsListView::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
+
+
+android::widget::AbsListView::AbsListView(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1, cpp_int const &a2)
+: cpp_object<android::widget::AbsListView>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::widget::AbsListView::J2CPP_CLASS_NAME>(),
+		get_method_id<android::widget::AbsListView::J2CPP_CLASS_NAME, android::widget::AbsListView::J2CPP_METHOD_NAME(2), android::widget::AbsListView::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
+	)
+)
+{
+}
+
 
 void android::widget::AbsListView::setFastScrollEnabled(cpp_boolean const &a0)
 {

@@ -10,19 +10,25 @@
 #define J2CPP_JAVA_UTIL_CONCURRENT_PRIORITYBLOCKINGQUEUE_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace util { class Comparator; } } }
+namespace j2cpp { namespace java { namespace util { class AbstractQueue; } } }
 namespace j2cpp { namespace java { namespace util { class Iterator; } } }
+namespace j2cpp { namespace java { namespace util { namespace concurrent { class BlockingQueue; } } } }
 namespace j2cpp { namespace java { namespace util { namespace concurrent { class TimeUnit; } } } }
 namespace j2cpp { namespace java { namespace util { class Collection; } } }
 
 
+#include <java/io/Serializable.hpp>
 #include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
+#include <java/util/AbstractQueue.hpp>
 #include <java/util/Collection.hpp>
 #include <java/util/Comparator.hpp>
 #include <java/util/Iterator.hpp>
+#include <java/util/concurrent/BlockingQueue.hpp>
 #include <java/util/concurrent/TimeUnit.hpp>
 
 
@@ -63,11 +69,20 @@ namespace java { namespace util { namespace concurrent {
 		J2CPP_DECLARE_METHOD(22)
 		J2CPP_DECLARE_METHOD(23)
 
-		PriorityBlockingQueue(jobject jobj)
+		explicit PriorityBlockingQueue(jobject jobj)
 		: cpp_object<PriorityBlockingQueue>(jobj)
 		{
 		}
 
+		operator local_ref<java::util::AbstractQueue>() const;
+		operator local_ref<java::util::concurrent::BlockingQueue>() const;
+		operator local_ref<java::io::Serializable>() const;
+
+
+		PriorityBlockingQueue();
+		PriorityBlockingQueue(cpp_int const&);
+		PriorityBlockingQueue(cpp_int const&, local_ref< java::util::Comparator > const&);
+		PriorityBlockingQueue(local_ref< java::util::Collection > const&);
 		cpp_boolean add(local_ref< java::lang::Object > const&);
 		cpp_boolean offer(local_ref< java::lang::Object > const&);
 		void put(local_ref< java::lang::Object > const&);
@@ -94,7 +109,6 @@ namespace java { namespace util { namespace concurrent {
 } //namespace util
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_UTIL_CONCURRENT_PRIORITYBLOCKINGQUEUE_HPP_DECL
@@ -107,52 +121,72 @@ namespace java { namespace util { namespace concurrent {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::util::concurrent::PriorityBlockingQueue > create< java::util::concurrent::PriorityBlockingQueue>()
+
+java::util::concurrent::PriorityBlockingQueue::operator local_ref<java::util::AbstractQueue>() const
 {
-	return local_ref< java::util::concurrent::PriorityBlockingQueue >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::concurrent::PriorityBlockingQueue::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::concurrent::PriorityBlockingQueue::J2CPP_CLASS_NAME, java::util::concurrent::PriorityBlockingQueue::J2CPP_METHOD_NAME(0), java::util::concurrent::PriorityBlockingQueue::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::util::AbstractQueue>(get_jtype());
 }
 
-template <>
-local_ref< java::util::concurrent::PriorityBlockingQueue > create< java::util::concurrent::PriorityBlockingQueue>(cpp_int const &a0)
+java::util::concurrent::PriorityBlockingQueue::operator local_ref<java::util::concurrent::BlockingQueue>() const
 {
-	return local_ref< java::util::concurrent::PriorityBlockingQueue >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::concurrent::PriorityBlockingQueue::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::concurrent::PriorityBlockingQueue::J2CPP_CLASS_NAME, java::util::concurrent::PriorityBlockingQueue::J2CPP_METHOD_NAME(1), java::util::concurrent::PriorityBlockingQueue::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::util::concurrent::BlockingQueue>(get_jtype());
 }
 
-template <>
-local_ref< java::util::concurrent::PriorityBlockingQueue > create< java::util::concurrent::PriorityBlockingQueue>(cpp_int const &a0, local_ref< java::util::Comparator > const &a1)
+java::util::concurrent::PriorityBlockingQueue::operator local_ref<java::io::Serializable>() const
 {
-	return local_ref< java::util::concurrent::PriorityBlockingQueue >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::concurrent::PriorityBlockingQueue::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::concurrent::PriorityBlockingQueue::J2CPP_CLASS_NAME, java::util::concurrent::PriorityBlockingQueue::J2CPP_METHOD_NAME(2), java::util::concurrent::PriorityBlockingQueue::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<java::io::Serializable>(get_jtype());
 }
 
-template <>
-local_ref< java::util::concurrent::PriorityBlockingQueue > create< java::util::concurrent::PriorityBlockingQueue>(local_ref< java::util::Collection > const &a0)
+
+java::util::concurrent::PriorityBlockingQueue::PriorityBlockingQueue()
+: cpp_object<java::util::concurrent::PriorityBlockingQueue>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::util::concurrent::PriorityBlockingQueue::J2CPP_CLASS_NAME>(),
+		get_method_id<java::util::concurrent::PriorityBlockingQueue::J2CPP_CLASS_NAME, java::util::concurrent::PriorityBlockingQueue::J2CPP_METHOD_NAME(0), java::util::concurrent::PriorityBlockingQueue::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
 {
-	return local_ref< java::util::concurrent::PriorityBlockingQueue >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::concurrent::PriorityBlockingQueue::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::concurrent::PriorityBlockingQueue::J2CPP_CLASS_NAME, java::util::concurrent::PriorityBlockingQueue::J2CPP_METHOD_NAME(3), java::util::concurrent::PriorityBlockingQueue::J2CPP_METHOD_SIGNATURE(3), false>(),
-			a0.get_jtype()
-		)
-	);
 }
+
+
+
+java::util::concurrent::PriorityBlockingQueue::PriorityBlockingQueue(cpp_int const &a0)
+: cpp_object<java::util::concurrent::PriorityBlockingQueue>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::util::concurrent::PriorityBlockingQueue::J2CPP_CLASS_NAME>(),
+		get_method_id<java::util::concurrent::PriorityBlockingQueue::J2CPP_CLASS_NAME, java::util::concurrent::PriorityBlockingQueue::J2CPP_METHOD_NAME(1), java::util::concurrent::PriorityBlockingQueue::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
+
+
+java::util::concurrent::PriorityBlockingQueue::PriorityBlockingQueue(cpp_int const &a0, local_ref< java::util::Comparator > const &a1)
+: cpp_object<java::util::concurrent::PriorityBlockingQueue>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::util::concurrent::PriorityBlockingQueue::J2CPP_CLASS_NAME>(),
+		get_method_id<java::util::concurrent::PriorityBlockingQueue::J2CPP_CLASS_NAME, java::util::concurrent::PriorityBlockingQueue::J2CPP_METHOD_NAME(2), java::util::concurrent::PriorityBlockingQueue::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
+
+
+java::util::concurrent::PriorityBlockingQueue::PriorityBlockingQueue(local_ref< java::util::Collection > const &a0)
+: cpp_object<java::util::concurrent::PriorityBlockingQueue>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::util::concurrent::PriorityBlockingQueue::J2CPP_CLASS_NAME>(),
+		get_method_id<java::util::concurrent::PriorityBlockingQueue::J2CPP_CLASS_NAME, java::util::concurrent::PriorityBlockingQueue::J2CPP_METHOD_NAME(3), java::util::concurrent::PriorityBlockingQueue::J2CPP_METHOD_SIGNATURE(3), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 cpp_boolean java::util::concurrent::PriorityBlockingQueue::add(local_ref< java::lang::Object > const &a0)
 {

@@ -36,10 +36,13 @@ namespace java { namespace sql {
 		J2CPP_DECLARE_METHOD(1)
 		J2CPP_DECLARE_METHOD(2)
 
-		Struct(jobject jobj)
+		explicit Struct(jobject jobj)
 		: cpp_object<Struct>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		local_ref< java::lang::String > getSQLTypeName();
 		local_ref< cpp_object_array<java::lang::Object, 1> > getAttributes();
@@ -48,7 +51,6 @@ namespace java { namespace sql {
 
 } //namespace sql
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -61,6 +63,12 @@ namespace java { namespace sql {
 
 namespace j2cpp {
 
+
+
+java::sql::Struct::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 local_ref< java::lang::String > java::sql::Struct::getSQLTypeName()
 {

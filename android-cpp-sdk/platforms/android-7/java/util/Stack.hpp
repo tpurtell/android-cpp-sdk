@@ -11,9 +11,11 @@
 
 
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace util { class Vector; } } }
 
 
 #include <java/lang/Object.hpp>
+#include <java/util/Vector.hpp>
 
 
 namespace j2cpp {
@@ -35,11 +37,15 @@ namespace java { namespace util {
 		J2CPP_DECLARE_METHOD(4)
 		J2CPP_DECLARE_METHOD(5)
 
-		Stack(jobject jobj)
+		explicit Stack(jobject jobj)
 		: cpp_object<Stack>(jobj)
 		{
 		}
 
+		operator local_ref<java::util::Vector>() const;
+
+
+		Stack();
 		cpp_boolean empty();
 		local_ref< java::lang::Object > peek();
 		local_ref< java::lang::Object > pop();
@@ -49,7 +55,6 @@ namespace java { namespace util {
 
 } //namespace util
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -63,16 +68,23 @@ namespace java { namespace util {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::util::Stack > create< java::util::Stack>()
+
+java::util::Stack::operator local_ref<java::util::Vector>() const
 {
-	return local_ref< java::util::Stack >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::Stack::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::Stack::J2CPP_CLASS_NAME, java::util::Stack::J2CPP_METHOD_NAME(0), java::util::Stack::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::util::Vector>(get_jtype());
 }
+
+
+java::util::Stack::Stack()
+: cpp_object<java::util::Stack>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::util::Stack::J2CPP_CLASS_NAME>(),
+		get_method_id<java::util::Stack::J2CPP_CLASS_NAME, java::util::Stack::J2CPP_METHOD_NAME(0), java::util::Stack::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 cpp_boolean java::util::Stack::empty()
 {

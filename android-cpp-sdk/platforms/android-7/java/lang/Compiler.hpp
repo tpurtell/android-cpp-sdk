@@ -39,10 +39,13 @@ namespace java { namespace lang {
 		J2CPP_DECLARE_METHOD(4)
 		J2CPP_DECLARE_METHOD(5)
 
-		Compiler(jobject jobj)
+		explicit Compiler(jobject jobj)
 		: cpp_object<Compiler>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		static local_ref< java::lang::Object > command(local_ref< java::lang::Object > const&);
 		static cpp_boolean compileClass(local_ref< java::lang::Class > const&);
@@ -53,7 +56,6 @@ namespace java { namespace lang {
 
 } //namespace lang
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -67,16 +69,12 @@ namespace java { namespace lang {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::lang::Compiler > create< java::lang::Compiler>()
+
+java::lang::Compiler::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::lang::Compiler >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::lang::Compiler::J2CPP_CLASS_NAME>(),
-			get_method_id<java::lang::Compiler::J2CPP_CLASS_NAME, java::lang::Compiler::J2CPP_METHOD_NAME(0), java::lang::Compiler::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
 
 local_ref< java::lang::Object > java::lang::Compiler::command(local_ref< java::lang::Object > const &a0)
 {

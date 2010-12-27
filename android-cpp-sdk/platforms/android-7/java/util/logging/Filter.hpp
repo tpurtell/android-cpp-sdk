@@ -10,9 +10,11 @@
 #define J2CPP_JAVA_UTIL_LOGGING_FILTER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace util { namespace logging { class LogRecord; } } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/util/logging/LogRecord.hpp>
 
 
@@ -30,10 +32,13 @@ namespace java { namespace util { namespace logging {
 
 		J2CPP_DECLARE_METHOD(0)
 
-		Filter(jobject jobj)
+		explicit Filter(jobject jobj)
 		: cpp_object<Filter>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		cpp_boolean isLoggable(local_ref< java::util::logging::LogRecord > const&);
 	}; //class Filter
@@ -41,7 +46,6 @@ namespace java { namespace util { namespace logging {
 } //namespace logging
 } //namespace util
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -54,6 +58,12 @@ namespace java { namespace util { namespace logging {
 
 namespace j2cpp {
 
+
+
+java::util::logging::Filter::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 cpp_boolean java::util::logging::Filter::isLoggable(local_ref< java::util::logging::LogRecord > const &a0)
 {

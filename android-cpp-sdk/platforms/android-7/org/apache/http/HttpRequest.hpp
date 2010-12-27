@@ -10,9 +10,13 @@
 #define J2CPP_ORG_APACHE_HTTP_HTTPREQUEST_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { class RequestLine; } } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { class HttpMessage; } } } }
 
 
+#include <java/lang/Object.hpp>
+#include <org/apache/http/HttpMessage.hpp>
 #include <org/apache/http/RequestLine.hpp>
 
 
@@ -30,10 +34,14 @@ namespace org { namespace apache { namespace http {
 
 		J2CPP_DECLARE_METHOD(0)
 
-		HttpRequest(jobject jobj)
+		explicit HttpRequest(jobject jobj)
 		: cpp_object<HttpRequest>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<org::apache::http::HttpMessage>() const;
+
 
 		local_ref< org::apache::http::RequestLine > getRequestLine();
 	}; //class HttpRequest
@@ -41,7 +49,6 @@ namespace org { namespace apache { namespace http {
 } //namespace http
 } //namespace apache
 } //namespace org
-
 
 } //namespace j2cpp
 
@@ -54,6 +61,17 @@ namespace org { namespace apache { namespace http {
 
 namespace j2cpp {
 
+
+
+org::apache::http::HttpRequest::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
+
+org::apache::http::HttpRequest::operator local_ref<org::apache::http::HttpMessage>() const
+{
+	return local_ref<org::apache::http::HttpMessage>(get_jtype());
+}
 
 local_ref< org::apache::http::RequestLine > org::apache::http::HttpRequest::getRequestLine()
 {

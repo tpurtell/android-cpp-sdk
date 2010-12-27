@@ -10,6 +10,7 @@
 #define J2CPP_ANDROID_CONTENT_ABSTRACTTHREADEDSYNCADAPTER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace android { namespace accounts { class Account; } } }
 namespace j2cpp { namespace android { namespace content { class ContentProviderClient; } } }
@@ -25,6 +26,7 @@ namespace j2cpp { namespace android { namespace os { class Bundle; } } }
 #include <android/content/SyncResult.hpp>
 #include <android/os/Bundle.hpp>
 #include <android/os/IBinder.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -46,11 +48,15 @@ namespace android { namespace content {
 		J2CPP_DECLARE_METHOD(3)
 		J2CPP_DECLARE_FIELD(0)
 
-		AbstractThreadedSyncAdapter(jobject jobj)
+		explicit AbstractThreadedSyncAdapter(jobject jobj)
 		: cpp_object<AbstractThreadedSyncAdapter>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		AbstractThreadedSyncAdapter(local_ref< android::content::Context > const&, cpp_boolean const&);
 		local_ref< android::content::Context > getContext();
 		local_ref< android::os::IBinder > getSyncAdapterBinder();
 		void onPerformSync(local_ref< android::accounts::Account > const&, local_ref< android::os::Bundle > const&, local_ref< java::lang::String > const&, local_ref< android::content::ContentProviderClient > const&, local_ref< android::content::SyncResult > const&);
@@ -60,7 +66,6 @@ namespace android { namespace content {
 
 } //namespace content
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -74,17 +79,24 @@ namespace android { namespace content {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::content::AbstractThreadedSyncAdapter > create< android::content::AbstractThreadedSyncAdapter>(local_ref< android::content::Context > const &a0, cpp_boolean const &a1)
+
+android::content::AbstractThreadedSyncAdapter::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::content::AbstractThreadedSyncAdapter >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::content::AbstractThreadedSyncAdapter::J2CPP_CLASS_NAME>(),
-			get_method_id<android::content::AbstractThreadedSyncAdapter::J2CPP_CLASS_NAME, android::content::AbstractThreadedSyncAdapter::J2CPP_METHOD_NAME(0), android::content::AbstractThreadedSyncAdapter::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::content::AbstractThreadedSyncAdapter::AbstractThreadedSyncAdapter(local_ref< android::content::Context > const &a0, cpp_boolean const &a1)
+: cpp_object<android::content::AbstractThreadedSyncAdapter>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::content::AbstractThreadedSyncAdapter::J2CPP_CLASS_NAME>(),
+		get_method_id<android::content::AbstractThreadedSyncAdapter::J2CPP_CLASS_NAME, android::content::AbstractThreadedSyncAdapter::J2CPP_METHOD_NAME(0), android::content::AbstractThreadedSyncAdapter::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
 
 local_ref< android::content::Context > android::content::AbstractThreadedSyncAdapter::getContext()
 {

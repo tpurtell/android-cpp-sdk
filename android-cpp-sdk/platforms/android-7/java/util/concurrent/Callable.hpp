@@ -30,10 +30,13 @@ namespace java { namespace util { namespace concurrent {
 
 		J2CPP_DECLARE_METHOD(0)
 
-		Callable(jobject jobj)
+		explicit Callable(jobject jobj)
 		: cpp_object<Callable>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		local_ref< java::lang::Object > call();
 	}; //class Callable
@@ -41,7 +44,6 @@ namespace java { namespace util { namespace concurrent {
 } //namespace concurrent
 } //namespace util
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -54,6 +56,12 @@ namespace java { namespace util { namespace concurrent {
 
 namespace j2cpp {
 
+
+
+java::util::concurrent::Callable::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 local_ref< java::lang::Object > java::util::concurrent::Callable::call()
 {

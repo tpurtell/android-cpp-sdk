@@ -10,13 +10,17 @@
 #define J2CPP_JAVA_NET_AUTHENTICATOR_HPP_DECL
 
 
-namespace j2cpp { namespace java { namespace net { class PasswordAuthentication; } } }
-namespace j2cpp { namespace java { namespace net { class URL; } } }
 namespace j2cpp { namespace java { namespace net { namespace Authenticator_ { class RequestorType; } } } }
+namespace j2cpp { namespace java { namespace net { class URL; } } }
+namespace j2cpp { namespace java { namespace net { class PasswordAuthentication; } } }
 namespace j2cpp { namespace java { namespace net { class InetAddress; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace lang { class Enum; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 
 
+#include <java/lang/Enum.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/net/Authenticator.hpp>
 #include <java/net/InetAddress.hpp>
@@ -47,10 +51,13 @@ namespace java { namespace net {
 			J2CPP_DECLARE_FIELD(1)
 			J2CPP_DECLARE_FIELD(2)
 
-			RequestorType(jobject jobj)
+			explicit RequestorType(jobject jobj)
 			: cpp_object<RequestorType>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Enum>() const;
+
 
 			static local_ref< cpp_object_array<java::net::Authenticator_::RequestorType, 1> > values();
 			static local_ref< java::net::Authenticator_::RequestorType > valueOf(local_ref< java::lang::String > const&);
@@ -85,11 +92,15 @@ namespace java { namespace net {
 
 		typedef Authenticator_::RequestorType RequestorType;
 
-		Authenticator(jobject jobj)
+		explicit Authenticator(jobject jobj)
 		: cpp_object<Authenticator>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		Authenticator();
 		static local_ref< java::net::PasswordAuthentication > requestPasswordAuthentication(local_ref< java::net::InetAddress > const&, cpp_int const&, local_ref< java::lang::String > const&, local_ref< java::lang::String > const&, local_ref< java::lang::String > const&);
 		static void setDefault(local_ref< java::net::Authenticator > const&);
 		static local_ref< java::net::PasswordAuthentication > requestPasswordAuthentication(local_ref< java::lang::String > const&, local_ref< java::net::InetAddress > const&, cpp_int const&, local_ref< java::lang::String > const&, local_ref< java::lang::String > const&, local_ref< java::lang::String > const&);
@@ -98,7 +109,6 @@ namespace java { namespace net {
 
 } //namespace net
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -112,6 +122,12 @@ namespace java { namespace net {
 namespace j2cpp {
 
 
+
+
+java::net::Authenticator_::RequestorType::operator local_ref<java::lang::Enum>() const
+{
+	return local_ref<java::lang::Enum>(get_jtype());
+}
 
 local_ref< cpp_object_array<java::net::Authenticator_::RequestorType, 1> > java::net::Authenticator_::RequestorType::values()
 {
@@ -134,17 +150,7 @@ local_ref< java::net::Authenticator_::RequestorType > java::net::Authenticator_:
 	);
 }
 
-template <>
-local_ref< java::net::Authenticator_::RequestorType > create< java::net::Authenticator_::RequestorType>(local_ref< java::lang::String > const &a0, cpp_int const &a1)
-{
-	return local_ref< java::net::Authenticator_::RequestorType >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::net::Authenticator_::RequestorType::J2CPP_CLASS_NAME>(),
-			get_method_id<java::net::Authenticator_::RequestorType::J2CPP_CLASS_NAME, java::net::Authenticator_::RequestorType::J2CPP_METHOD_NAME(2), java::net::Authenticator_::RequestorType::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
-}
+
 
 
 static_field<
@@ -172,16 +178,23 @@ J2CPP_DEFINE_FIELD(java::net::Authenticator_::RequestorType,1,"SERVER","Ljava/ne
 J2CPP_DEFINE_FIELD(java::net::Authenticator_::RequestorType,2,"$VALUES","[java.net.Authenticator.RequestorType")
 
 
-template <>
-local_ref< java::net::Authenticator > create< java::net::Authenticator>()
+
+java::net::Authenticator::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::net::Authenticator >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::net::Authenticator::J2CPP_CLASS_NAME>(),
-			get_method_id<java::net::Authenticator::J2CPP_CLASS_NAME, java::net::Authenticator::J2CPP_METHOD_NAME(0), java::net::Authenticator::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+java::net::Authenticator::Authenticator()
+: cpp_object<java::net::Authenticator>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::net::Authenticator::J2CPP_CLASS_NAME>(),
+		get_method_id<java::net::Authenticator::J2CPP_CLASS_NAME, java::net::Authenticator::J2CPP_METHOD_NAME(0), java::net::Authenticator::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 
 

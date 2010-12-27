@@ -10,8 +10,8 @@
 #define J2CPP_JAVAX_NET_SSL_SSLSOCKETFACTORY_HPP_DECL
 
 
-namespace j2cpp { namespace java { namespace net { class Socket; } } }
 namespace j2cpp { namespace javax { namespace net { class SocketFactory; } } }
+namespace j2cpp { namespace java { namespace net { class Socket; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 
 
@@ -38,11 +38,15 @@ namespace javax { namespace net { namespace ssl {
 		J2CPP_DECLARE_METHOD(3)
 		J2CPP_DECLARE_METHOD(4)
 
-		SSLSocketFactory(jobject jobj)
+		explicit SSLSocketFactory(jobject jobj)
 		: cpp_object<SSLSocketFactory>(jobj)
 		{
 		}
 
+		operator local_ref<javax::net::SocketFactory>() const;
+
+
+		SSLSocketFactory();
 		static local_ref< javax::net::SocketFactory > getDefault();
 		local_ref< cpp_object_array<java::lang::String, 1> > getDefaultCipherSuites();
 		local_ref< cpp_object_array<java::lang::String, 1> > getSupportedCipherSuites();
@@ -52,7 +56,6 @@ namespace javax { namespace net { namespace ssl {
 } //namespace ssl
 } //namespace net
 } //namespace javax
-
 
 } //namespace j2cpp
 
@@ -66,16 +69,23 @@ namespace javax { namespace net { namespace ssl {
 namespace j2cpp {
 
 
-template <>
-local_ref< javax::net::ssl::SSLSocketFactory > create< javax::net::ssl::SSLSocketFactory>()
+
+javax::net::ssl::SSLSocketFactory::operator local_ref<javax::net::SocketFactory>() const
 {
-	return local_ref< javax::net::ssl::SSLSocketFactory >(
-		environment::get().get_jenv()->NewObject(
-			get_class<javax::net::ssl::SSLSocketFactory::J2CPP_CLASS_NAME>(),
-			get_method_id<javax::net::ssl::SSLSocketFactory::J2CPP_CLASS_NAME, javax::net::ssl::SSLSocketFactory::J2CPP_METHOD_NAME(0), javax::net::ssl::SSLSocketFactory::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<javax::net::SocketFactory>(get_jtype());
 }
+
+
+javax::net::ssl::SSLSocketFactory::SSLSocketFactory()
+: cpp_object<javax::net::ssl::SSLSocketFactory>(
+	environment::get().get_jenv()->NewObject(
+		get_class<javax::net::ssl::SSLSocketFactory::J2CPP_CLASS_NAME>(),
+		get_method_id<javax::net::ssl::SSLSocketFactory::J2CPP_CLASS_NAME, javax::net::ssl::SSLSocketFactory::J2CPP_METHOD_NAME(0), javax::net::ssl::SSLSocketFactory::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 local_ref< javax::net::SocketFactory > javax::net::ssl::SSLSocketFactory::getDefault()
 {

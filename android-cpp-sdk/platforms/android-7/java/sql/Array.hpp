@@ -45,10 +45,13 @@ namespace java { namespace sql {
 		J2CPP_DECLARE_METHOD(8)
 		J2CPP_DECLARE_METHOD(9)
 
-		Array(jobject jobj)
+		explicit Array(jobject jobj)
 		: cpp_object<Array>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		local_ref< java::lang::Object > getArray();
 		local_ref< java::lang::Object > getArray(cpp_long const&, cpp_int const&);
@@ -65,7 +68,6 @@ namespace java { namespace sql {
 } //namespace sql
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_SQL_ARRAY_HPP_DECL
@@ -77,6 +79,12 @@ namespace java { namespace sql {
 
 namespace j2cpp {
 
+
+
+java::sql::Array::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 local_ref< java::lang::Object > java::sql::Array::getArray()
 {

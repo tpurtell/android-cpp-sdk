@@ -10,6 +10,7 @@
 #define J2CPP_ORG_APACHE_HTTP_MESSAGE_BASICLINEPARSER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { class RequestLine; } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace message { class ParserCursor; } } } } }
@@ -20,6 +21,7 @@ namespace j2cpp { namespace org { namespace apache { namespace http { class Stat
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace util { class CharArrayBuffer; } } } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <org/apache/http/Header.hpp>
 #include <org/apache/http/ProtocolVersion.hpp>
@@ -61,11 +63,17 @@ namespace org { namespace apache { namespace http { namespace message {
 		J2CPP_DECLARE_FIELD(0)
 		J2CPP_DECLARE_FIELD(1)
 
-		BasicLineParser(jobject jobj)
+		explicit BasicLineParser(jobject jobj)
 		: cpp_object<BasicLineParser>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<org::apache::http::message::LineParser>() const;
+
+
+		BasicLineParser(local_ref< org::apache::http::ProtocolVersion > const&);
+		BasicLineParser();
 		static local_ref< org::apache::http::ProtocolVersion > parseProtocolVersion(local_ref< java::lang::String > const&, local_ref< org::apache::http::message::LineParser > const&);
 		local_ref< org::apache::http::ProtocolVersion > parseProtocolVersion(local_ref< org::apache::http::util::CharArrayBuffer > const&, local_ref< org::apache::http::message::ParserCursor > const&);
 		cpp_boolean hasProtocolVersion(local_ref< org::apache::http::util::CharArrayBuffer > const&, local_ref< org::apache::http::message::ParserCursor > const&);
@@ -84,7 +92,6 @@ namespace org { namespace apache { namespace http { namespace message {
 } //namespace apache
 } //namespace org
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ORG_APACHE_HTTP_MESSAGE_BASICLINEPARSER_HPP_DECL
@@ -97,28 +104,41 @@ namespace org { namespace apache { namespace http { namespace message {
 namespace j2cpp {
 
 
-template <>
-local_ref< org::apache::http::message::BasicLineParser > create< org::apache::http::message::BasicLineParser>(local_ref< org::apache::http::ProtocolVersion > const &a0)
+
+org::apache::http::message::BasicLineParser::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< org::apache::http::message::BasicLineParser >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::apache::http::message::BasicLineParser::J2CPP_CLASS_NAME>(),
-			get_method_id<org::apache::http::message::BasicLineParser::J2CPP_CLASS_NAME, org::apache::http::message::BasicLineParser::J2CPP_METHOD_NAME(0), org::apache::http::message::BasicLineParser::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
 
-template <>
-local_ref< org::apache::http::message::BasicLineParser > create< org::apache::http::message::BasicLineParser>()
+org::apache::http::message::BasicLineParser::operator local_ref<org::apache::http::message::LineParser>() const
 {
-	return local_ref< org::apache::http::message::BasicLineParser >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::apache::http::message::BasicLineParser::J2CPP_CLASS_NAME>(),
-			get_method_id<org::apache::http::message::BasicLineParser::J2CPP_CLASS_NAME, org::apache::http::message::BasicLineParser::J2CPP_METHOD_NAME(1), org::apache::http::message::BasicLineParser::J2CPP_METHOD_SIGNATURE(1), false>()
-		)
-	);
+	return local_ref<org::apache::http::message::LineParser>(get_jtype());
 }
+
+
+org::apache::http::message::BasicLineParser::BasicLineParser(local_ref< org::apache::http::ProtocolVersion > const &a0)
+: cpp_object<org::apache::http::message::BasicLineParser>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::apache::http::message::BasicLineParser::J2CPP_CLASS_NAME>(),
+		get_method_id<org::apache::http::message::BasicLineParser::J2CPP_CLASS_NAME, org::apache::http::message::BasicLineParser::J2CPP_METHOD_NAME(0), org::apache::http::message::BasicLineParser::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
+
+
+org::apache::http::message::BasicLineParser::BasicLineParser()
+: cpp_object<org::apache::http::message::BasicLineParser>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::apache::http::message::BasicLineParser::J2CPP_CLASS_NAME>(),
+		get_method_id<org::apache::http::message::BasicLineParser::J2CPP_CLASS_NAME, org::apache::http::message::BasicLineParser::J2CPP_METHOD_NAME(1), org::apache::http::message::BasicLineParser::J2CPP_METHOD_SIGNATURE(1), false>()
+	)
+)
+{
+}
+
 
 local_ref< org::apache::http::ProtocolVersion > org::apache::http::message::BasicLineParser::parseProtocolVersion(local_ref< java::lang::String > const &a0, local_ref< org::apache::http::message::LineParser > const &a1)
 {
@@ -221,6 +241,7 @@ local_ref< org::apache::http::Header > org::apache::http::message::BasicLinePars
 		)
 	);
 }
+
 
 
 

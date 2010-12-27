@@ -10,10 +10,16 @@
 #define J2CPP_JAVA_UTIL_DATE_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace lang { class Comparable; } } }
+namespace j2cpp { namespace java { namespace lang { class Cloneable; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 
 
+#include <java/io/Serializable.hpp>
+#include <java/lang/Cloneable.hpp>
+#include <java/lang/Comparable.hpp>
 #include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
@@ -65,11 +71,23 @@ namespace java { namespace util {
 		J2CPP_DECLARE_METHOD(32)
 		J2CPP_DECLARE_METHOD(33)
 
-		Date(jobject jobj)
+		explicit Date(jobject jobj)
 		: cpp_object<Date>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::io::Serializable>() const;
+		operator local_ref<java::lang::Cloneable>() const;
+		operator local_ref<java::lang::Comparable>() const;
+
+
+		Date();
+		Date(cpp_int const&, cpp_int const&, cpp_int const&);
+		Date(cpp_int const&, cpp_int const&, cpp_int const&, cpp_int const&, cpp_int const&);
+		Date(cpp_int const&, cpp_int const&, cpp_int const&, cpp_int const&, cpp_int const&, cpp_int const&);
+		Date(cpp_long const&);
+		Date(local_ref< java::lang::String > const&);
 		cpp_boolean after(local_ref< java::util::Date > const&);
 		cpp_boolean before(local_ref< java::util::Date > const&);
 		local_ref< java::lang::Object > clone();
@@ -103,7 +121,6 @@ namespace java { namespace util {
 } //namespace util
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_UTIL_DATE_HPP_DECL
@@ -116,76 +133,103 @@ namespace java { namespace util {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::util::Date > create< java::util::Date>()
+
+java::util::Date::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::util::Date >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::Date::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::Date::J2CPP_CLASS_NAME, java::util::Date::J2CPP_METHOD_NAME(0), java::util::Date::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
 
-template <>
-local_ref< java::util::Date > create< java::util::Date>(cpp_int const &a0, cpp_int const &a1, cpp_int const &a2)
+java::util::Date::operator local_ref<java::io::Serializable>() const
 {
-	return local_ref< java::util::Date >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::Date::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::Date::J2CPP_CLASS_NAME, java::util::Date::J2CPP_METHOD_NAME(1), java::util::Date::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
-		)
-	);
+	return local_ref<java::io::Serializable>(get_jtype());
 }
 
-template <>
-local_ref< java::util::Date > create< java::util::Date>(cpp_int const &a0, cpp_int const &a1, cpp_int const &a2, cpp_int const &a3, cpp_int const &a4)
+java::util::Date::operator local_ref<java::lang::Cloneable>() const
 {
-	return local_ref< java::util::Date >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::Date::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::Date::J2CPP_CLASS_NAME, java::util::Date::J2CPP_METHOD_NAME(2), java::util::Date::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype(), a4.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Cloneable>(get_jtype());
 }
 
-template <>
-local_ref< java::util::Date > create< java::util::Date>(cpp_int const &a0, cpp_int const &a1, cpp_int const &a2, cpp_int const &a3, cpp_int const &a4, cpp_int const &a5)
+java::util::Date::operator local_ref<java::lang::Comparable>() const
 {
-	return local_ref< java::util::Date >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::Date::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::Date::J2CPP_CLASS_NAME, java::util::Date::J2CPP_METHOD_NAME(3), java::util::Date::J2CPP_METHOD_SIGNATURE(3), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype(), a4.get_jtype(), a5.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Comparable>(get_jtype());
 }
 
-template <>
-local_ref< java::util::Date > create< java::util::Date>(cpp_long const &a0)
+
+java::util::Date::Date()
+: cpp_object<java::util::Date>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::util::Date::J2CPP_CLASS_NAME>(),
+		get_method_id<java::util::Date::J2CPP_CLASS_NAME, java::util::Date::J2CPP_METHOD_NAME(0), java::util::Date::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
 {
-	return local_ref< java::util::Date >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::Date::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::Date::J2CPP_CLASS_NAME, java::util::Date::J2CPP_METHOD_NAME(4), java::util::Date::J2CPP_METHOD_SIGNATURE(4), false>(),
-			a0.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< java::util::Date > create< java::util::Date>(local_ref< java::lang::String > const &a0)
+
+
+java::util::Date::Date(cpp_int const &a0, cpp_int const &a1, cpp_int const &a2)
+: cpp_object<java::util::Date>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::util::Date::J2CPP_CLASS_NAME>(),
+		get_method_id<java::util::Date::J2CPP_CLASS_NAME, java::util::Date::J2CPP_METHOD_NAME(1), java::util::Date::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
+	)
+)
 {
-	return local_ref< java::util::Date >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::Date::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::Date::J2CPP_CLASS_NAME, java::util::Date::J2CPP_METHOD_NAME(5), java::util::Date::J2CPP_METHOD_SIGNATURE(5), false>(),
-			a0.get_jtype()
-		)
-	);
 }
+
+
+
+java::util::Date::Date(cpp_int const &a0, cpp_int const &a1, cpp_int const &a2, cpp_int const &a3, cpp_int const &a4)
+: cpp_object<java::util::Date>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::util::Date::J2CPP_CLASS_NAME>(),
+		get_method_id<java::util::Date::J2CPP_CLASS_NAME, java::util::Date::J2CPP_METHOD_NAME(2), java::util::Date::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype(), a4.get_jtype()
+	)
+)
+{
+}
+
+
+
+java::util::Date::Date(cpp_int const &a0, cpp_int const &a1, cpp_int const &a2, cpp_int const &a3, cpp_int const &a4, cpp_int const &a5)
+: cpp_object<java::util::Date>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::util::Date::J2CPP_CLASS_NAME>(),
+		get_method_id<java::util::Date::J2CPP_CLASS_NAME, java::util::Date::J2CPP_METHOD_NAME(3), java::util::Date::J2CPP_METHOD_SIGNATURE(3), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype(), a4.get_jtype(), a5.get_jtype()
+	)
+)
+{
+}
+
+
+
+java::util::Date::Date(cpp_long const &a0)
+: cpp_object<java::util::Date>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::util::Date::J2CPP_CLASS_NAME>(),
+		get_method_id<java::util::Date::J2CPP_CLASS_NAME, java::util::Date::J2CPP_METHOD_NAME(4), java::util::Date::J2CPP_METHOD_SIGNATURE(4), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
+
+
+java::util::Date::Date(local_ref< java::lang::String > const &a0)
+: cpp_object<java::util::Date>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::util::Date::J2CPP_CLASS_NAME>(),
+		get_method_id<java::util::Date::J2CPP_CLASS_NAME, java::util::Date::J2CPP_METHOD_NAME(5), java::util::Date::J2CPP_METHOD_SIGNATURE(5), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 cpp_boolean java::util::Date::after(local_ref< java::util::Date > const &a0)
 {

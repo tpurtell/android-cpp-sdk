@@ -13,11 +13,13 @@
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace util { class Enumeration; } } }
+namespace j2cpp { namespace java { namespace util { class ResourceBundle; } } }
 
 
 #include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/util/Enumeration.hpp>
+#include <java/util/ResourceBundle.hpp>
 
 
 namespace j2cpp {
@@ -37,18 +39,21 @@ namespace java { namespace util {
 		J2CPP_DECLARE_METHOD(2)
 		J2CPP_DECLARE_METHOD(3)
 
-		ListResourceBundle(jobject jobj)
+		explicit ListResourceBundle(jobject jobj)
 		: cpp_object<ListResourceBundle>(jobj)
 		{
 		}
 
+		operator local_ref<java::util::ResourceBundle>() const;
+
+
+		ListResourceBundle();
 		local_ref< java::util::Enumeration > getKeys();
 		local_ref< java::lang::Object > handleGetObject(local_ref< java::lang::String > const&);
 	}; //class ListResourceBundle
 
 } //namespace util
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -62,16 +67,23 @@ namespace java { namespace util {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::util::ListResourceBundle > create< java::util::ListResourceBundle>()
+
+java::util::ListResourceBundle::operator local_ref<java::util::ResourceBundle>() const
 {
-	return local_ref< java::util::ListResourceBundle >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::ListResourceBundle::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::ListResourceBundle::J2CPP_CLASS_NAME, java::util::ListResourceBundle::J2CPP_METHOD_NAME(0), java::util::ListResourceBundle::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::util::ResourceBundle>(get_jtype());
 }
+
+
+java::util::ListResourceBundle::ListResourceBundle()
+: cpp_object<java::util::ListResourceBundle>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::util::ListResourceBundle::J2CPP_CLASS_NAME>(),
+		get_method_id<java::util::ListResourceBundle::J2CPP_CLASS_NAME, java::util::ListResourceBundle::J2CPP_METHOD_NAME(0), java::util::ListResourceBundle::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 
 local_ref< java::util::Enumeration > java::util::ListResourceBundle::getKeys()

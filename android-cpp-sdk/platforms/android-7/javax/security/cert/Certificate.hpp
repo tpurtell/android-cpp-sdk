@@ -41,11 +41,15 @@ namespace javax { namespace security { namespace cert {
 		J2CPP_DECLARE_METHOD(6)
 		J2CPP_DECLARE_METHOD(7)
 
-		Certificate(jobject jobj)
+		explicit Certificate(jobject jobj)
 		: cpp_object<Certificate>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		Certificate();
 		cpp_boolean equals(local_ref< java::lang::Object > const&);
 		cpp_int hashCode();
 		local_ref< cpp_byte_array<1> > getEncoded();
@@ -59,7 +63,6 @@ namespace javax { namespace security { namespace cert {
 } //namespace security
 } //namespace javax
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVAX_SECURITY_CERT_CERTIFICATE_HPP_DECL
@@ -72,16 +75,23 @@ namespace javax { namespace security { namespace cert {
 namespace j2cpp {
 
 
-template <>
-local_ref< javax::security::cert::Certificate > create< javax::security::cert::Certificate>()
+
+javax::security::cert::Certificate::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< javax::security::cert::Certificate >(
-		environment::get().get_jenv()->NewObject(
-			get_class<javax::security::cert::Certificate::J2CPP_CLASS_NAME>(),
-			get_method_id<javax::security::cert::Certificate::J2CPP_CLASS_NAME, javax::security::cert::Certificate::J2CPP_METHOD_NAME(0), javax::security::cert::Certificate::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+javax::security::cert::Certificate::Certificate()
+: cpp_object<javax::security::cert::Certificate>(
+	environment::get().get_jenv()->NewObject(
+		get_class<javax::security::cert::Certificate::J2CPP_CLASS_NAME>(),
+		get_method_id<javax::security::cert::Certificate::J2CPP_CLASS_NAME, javax::security::cert::Certificate::J2CPP_METHOD_NAME(0), javax::security::cert::Certificate::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 cpp_boolean javax::security::cert::Certificate::equals(local_ref< java::lang::Object > const &a0)
 {

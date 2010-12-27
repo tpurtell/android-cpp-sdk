@@ -12,6 +12,7 @@
 
 namespace j2cpp { namespace java { namespace io { class File; } } }
 namespace j2cpp { namespace java { namespace lang { class ClassLoader; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class Class; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace util { class Enumeration; } } }
@@ -20,6 +21,7 @@ namespace j2cpp { namespace java { namespace util { class Enumeration; } } }
 #include <java/io/File.hpp>
 #include <java/lang/Class.hpp>
 #include <java/lang/ClassLoader.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/util/Enumeration.hpp>
 
@@ -46,11 +48,16 @@ namespace dalvik { namespace system {
 		J2CPP_DECLARE_METHOD(7)
 		J2CPP_DECLARE_METHOD(8)
 
-		DexFile(jobject jobj)
+		explicit DexFile(jobject jobj)
 		: cpp_object<DexFile>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		DexFile(local_ref< java::io::File > const&);
+		DexFile(local_ref< java::lang::String > const&);
 		static local_ref< dalvik::system::DexFile > loadDex(local_ref< java::lang::String > const&, local_ref< java::lang::String > const&, cpp_int const&);
 		local_ref< java::lang::String > getName();
 		void close();
@@ -61,7 +68,6 @@ namespace dalvik { namespace system {
 
 } //namespace system
 } //namespace dalvik
-
 
 } //namespace j2cpp
 
@@ -75,29 +81,37 @@ namespace dalvik { namespace system {
 namespace j2cpp {
 
 
-template <>
-local_ref< dalvik::system::DexFile > create< dalvik::system::DexFile>(local_ref< java::io::File > const &a0)
+
+dalvik::system::DexFile::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< dalvik::system::DexFile >(
-		environment::get().get_jenv()->NewObject(
-			get_class<dalvik::system::DexFile::J2CPP_CLASS_NAME>(),
-			get_method_id<dalvik::system::DexFile::J2CPP_CLASS_NAME, dalvik::system::DexFile::J2CPP_METHOD_NAME(0), dalvik::system::DexFile::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
 
-template <>
-local_ref< dalvik::system::DexFile > create< dalvik::system::DexFile>(local_ref< java::lang::String > const &a0)
+
+dalvik::system::DexFile::DexFile(local_ref< java::io::File > const &a0)
+: cpp_object<dalvik::system::DexFile>(
+	environment::get().get_jenv()->NewObject(
+		get_class<dalvik::system::DexFile::J2CPP_CLASS_NAME>(),
+		get_method_id<dalvik::system::DexFile::J2CPP_CLASS_NAME, dalvik::system::DexFile::J2CPP_METHOD_NAME(0), dalvik::system::DexFile::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< dalvik::system::DexFile >(
-		environment::get().get_jenv()->NewObject(
-			get_class<dalvik::system::DexFile::J2CPP_CLASS_NAME>(),
-			get_method_id<dalvik::system::DexFile::J2CPP_CLASS_NAME, dalvik::system::DexFile::J2CPP_METHOD_NAME(1), dalvik::system::DexFile::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
 }
+
+
+
+dalvik::system::DexFile::DexFile(local_ref< java::lang::String > const &a0)
+: cpp_object<dalvik::system::DexFile>(
+	environment::get().get_jenv()->NewObject(
+		get_class<dalvik::system::DexFile::J2CPP_CLASS_NAME>(),
+		get_method_id<dalvik::system::DexFile::J2CPP_CLASS_NAME, dalvik::system::DexFile::J2CPP_METHOD_NAME(1), dalvik::system::DexFile::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 local_ref< dalvik::system::DexFile > dalvik::system::DexFile::loadDex(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1, cpp_int const &a2)
 {

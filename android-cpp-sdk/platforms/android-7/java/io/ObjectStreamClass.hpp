@@ -10,13 +10,17 @@
 #define J2CPP_JAVA_IO_OBJECTSTREAMCLASS_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 namespace j2cpp { namespace java { namespace io { class ObjectStreamField; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class Class; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 
 
 #include <java/io/ObjectStreamField.hpp>
+#include <java/io/Serializable.hpp>
 #include <java/lang/Class.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -43,10 +47,14 @@ namespace java { namespace io {
 		J2CPP_DECLARE_METHOD(8)
 		J2CPP_DECLARE_FIELD(0)
 
-		ObjectStreamClass(jobject jobj)
+		explicit ObjectStreamClass(jobject jobj)
 		: cpp_object<ObjectStreamClass>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::io::Serializable>() const;
+
 
 		local_ref< java::lang::Class > forClass();
 		local_ref< java::io::ObjectStreamField > getField(local_ref< java::lang::String > const&);
@@ -62,7 +70,6 @@ namespace java { namespace io {
 } //namespace io
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_IO_OBJECTSTREAMCLASS_HPP_DECL
@@ -75,16 +82,17 @@ namespace java { namespace io {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::io::ObjectStreamClass > create< java::io::ObjectStreamClass>()
+
+java::io::ObjectStreamClass::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::io::ObjectStreamClass >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::io::ObjectStreamClass::J2CPP_CLASS_NAME>(),
-			get_method_id<java::io::ObjectStreamClass::J2CPP_CLASS_NAME, java::io::ObjectStreamClass::J2CPP_METHOD_NAME(0), java::io::ObjectStreamClass::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+java::io::ObjectStreamClass::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jtype());
+}
+
 
 local_ref< java::lang::Class > java::io::ObjectStreamClass::forClass()
 {
@@ -157,6 +165,7 @@ local_ref< java::lang::String > java::io::ObjectStreamClass::toString()
 		)
 	);
 }
+
 
 
 static_field<

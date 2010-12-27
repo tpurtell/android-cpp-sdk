@@ -10,10 +10,14 @@
 #define J2CPP_ORG_XML_SAX_EXT_ATTRIBUTES2_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace org { namespace xml { namespace sax { class Attributes; } } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
+#include <org/xml/sax/Attributes.hpp>
 
 
 namespace j2cpp {
@@ -35,10 +39,14 @@ namespace org { namespace xml { namespace sax { namespace ext {
 		J2CPP_DECLARE_METHOD(4)
 		J2CPP_DECLARE_METHOD(5)
 
-		Attributes2(jobject jobj)
+		explicit Attributes2(jobject jobj)
 		: cpp_object<Attributes2>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<org::xml::sax::Attributes>() const;
+
 
 		cpp_boolean isDeclared(cpp_int const&);
 		cpp_boolean isDeclared(local_ref< java::lang::String > const&);
@@ -53,7 +61,6 @@ namespace org { namespace xml { namespace sax { namespace ext {
 } //namespace xml
 } //namespace org
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ORG_XML_SAX_EXT_ATTRIBUTES2_HPP_DECL
@@ -65,6 +72,17 @@ namespace org { namespace xml { namespace sax { namespace ext {
 
 namespace j2cpp {
 
+
+
+org::xml::sax::ext::Attributes2::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
+
+org::xml::sax::ext::Attributes2::operator local_ref<org::xml::sax::Attributes>() const
+{
+	return local_ref<org::xml::sax::Attributes>(get_jtype());
+}
 
 cpp_boolean org::xml::sax::ext::Attributes2::isDeclared(cpp_int const &a0)
 {

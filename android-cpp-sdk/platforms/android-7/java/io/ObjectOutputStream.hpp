@@ -12,6 +12,7 @@
 
 namespace j2cpp { namespace java { namespace io { class ObjectOutput; } } }
 namespace j2cpp { namespace java { namespace io { namespace ObjectOutputStream_ { class PutField; } } } }
+namespace j2cpp { namespace java { namespace io { class ObjectStreamConstants; } } }
 namespace j2cpp { namespace java { namespace io { class OutputStream; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
@@ -19,6 +20,7 @@ namespace j2cpp { namespace java { namespace lang { class String; } } }
 
 #include <java/io/ObjectOutput.hpp>
 #include <java/io/ObjectOutputStream.hpp>
+#include <java/io/ObjectStreamConstants.hpp>
 #include <java/io/OutputStream.hpp>
 #include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
@@ -51,11 +53,15 @@ namespace java { namespace io {
 			J2CPP_DECLARE_METHOD(9)
 			J2CPP_DECLARE_METHOD(10)
 
-			PutField(jobject jobj)
+			explicit PutField(jobject jobj)
 			: cpp_object<PutField>(jobj)
 			{
 			}
 
+			operator local_ref<java::lang::Object>() const;
+
+
+			PutField();
 			void put(local_ref< java::lang::String > const&, cpp_boolean const&);
 			void put(local_ref< java::lang::String > const&, cpp_char const&);
 			void put(local_ref< java::lang::String > const&, cpp_byte const&);
@@ -113,11 +119,17 @@ namespace java { namespace io {
 
 		typedef ObjectOutputStream_::PutField PutField;
 
-		ObjectOutputStream(jobject jobj)
+		explicit ObjectOutputStream(jobject jobj)
 		: cpp_object<ObjectOutputStream>(jobj)
 		{
 		}
 
+		operator local_ref<java::io::OutputStream>() const;
+		operator local_ref<java::io::ObjectOutput>() const;
+		operator local_ref<java::io::ObjectStreamConstants>() const;
+
+
+		ObjectOutputStream(local_ref< java::io::OutputStream > const&);
 		void close();
 		void defaultWriteObject();
 		void flush();
@@ -146,7 +158,6 @@ namespace java { namespace io {
 } //namespace io
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_IO_OBJECTOUTPUTSTREAM_HPP_DECL
@@ -160,16 +171,23 @@ namespace j2cpp {
 
 
 
-template <>
-local_ref< java::io::ObjectOutputStream_::PutField > create< java::io::ObjectOutputStream_::PutField>()
+
+java::io::ObjectOutputStream_::PutField::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::io::ObjectOutputStream_::PutField >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::io::ObjectOutputStream_::PutField::J2CPP_CLASS_NAME>(),
-			get_method_id<java::io::ObjectOutputStream_::PutField::J2CPP_CLASS_NAME, java::io::ObjectOutputStream_::PutField::J2CPP_METHOD_NAME(0), java::io::ObjectOutputStream_::PutField::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+java::io::ObjectOutputStream_::PutField::PutField()
+: cpp_object<java::io::ObjectOutputStream_::PutField>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::io::ObjectOutputStream_::PutField::J2CPP_CLASS_NAME>(),
+		get_method_id<java::io::ObjectOutputStream_::PutField::J2CPP_CLASS_NAME, java::io::ObjectOutputStream_::PutField::J2CPP_METHOD_NAME(0), java::io::ObjectOutputStream_::PutField::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 void java::io::ObjectOutputStream_::PutField::put(local_ref< java::lang::String > const &a0, cpp_boolean const &a1)
 {
@@ -296,28 +314,35 @@ J2CPP_DEFINE_METHOD(java::io::ObjectOutputStream_::PutField,9,"put","(Ljava/lang
 J2CPP_DEFINE_METHOD(java::io::ObjectOutputStream_::PutField,10,"write","(Ljava/io/ObjectOutput;)V")
 
 
-template <>
-local_ref< java::io::ObjectOutputStream > create< java::io::ObjectOutputStream>()
+
+java::io::ObjectOutputStream::operator local_ref<java::io::OutputStream>() const
 {
-	return local_ref< java::io::ObjectOutputStream >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::io::ObjectOutputStream::J2CPP_CLASS_NAME>(),
-			get_method_id<java::io::ObjectOutputStream::J2CPP_CLASS_NAME, java::io::ObjectOutputStream::J2CPP_METHOD_NAME(0), java::io::ObjectOutputStream::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::io::OutputStream>(get_jtype());
 }
 
-template <>
-local_ref< java::io::ObjectOutputStream > create< java::io::ObjectOutputStream>(local_ref< java::io::OutputStream > const &a0)
+java::io::ObjectOutputStream::operator local_ref<java::io::ObjectOutput>() const
 {
-	return local_ref< java::io::ObjectOutputStream >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::io::ObjectOutputStream::J2CPP_CLASS_NAME>(),
-			get_method_id<java::io::ObjectOutputStream::J2CPP_CLASS_NAME, java::io::ObjectOutputStream::J2CPP_METHOD_NAME(1), java::io::ObjectOutputStream::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::io::ObjectOutput>(get_jtype());
 }
+
+java::io::ObjectOutputStream::operator local_ref<java::io::ObjectStreamConstants>() const
+{
+	return local_ref<java::io::ObjectStreamConstants>(get_jtype());
+}
+
+
+
+java::io::ObjectOutputStream::ObjectOutputStream(local_ref< java::io::OutputStream > const &a0)
+: cpp_object<java::io::ObjectOutputStream>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::io::ObjectOutputStream::J2CPP_CLASS_NAME>(),
+		get_method_id<java::io::ObjectOutputStream::J2CPP_CLASS_NAME, java::io::ObjectOutputStream::J2CPP_METHOD_NAME(1), java::io::ObjectOutputStream::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 
 

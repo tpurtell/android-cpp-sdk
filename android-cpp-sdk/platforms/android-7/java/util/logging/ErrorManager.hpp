@@ -10,11 +10,13 @@
 #define J2CPP_JAVA_UTIL_LOGGING_ERRORMANAGER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace lang { class Exception; } } }
 
 
 #include <java/lang/Exception.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -39,11 +41,15 @@ namespace java { namespace util { namespace logging {
 		J2CPP_DECLARE_FIELD(4)
 		J2CPP_DECLARE_FIELD(5)
 
-		ErrorManager(jobject jobj)
+		explicit ErrorManager(jobject jobj)
 		: cpp_object<ErrorManager>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		ErrorManager();
 		void error(local_ref< java::lang::String > const&, local_ref< java::lang::Exception > const&, cpp_int const&);
 
 		static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(0), J2CPP_FIELD_SIGNATURE(0), cpp_int > GENERIC_FAILURE;
@@ -58,7 +64,6 @@ namespace java { namespace util { namespace logging {
 } //namespace util
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_UTIL_LOGGING_ERRORMANAGER_HPP_DECL
@@ -71,16 +76,23 @@ namespace java { namespace util { namespace logging {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::util::logging::ErrorManager > create< java::util::logging::ErrorManager>()
+
+java::util::logging::ErrorManager::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::util::logging::ErrorManager >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::logging::ErrorManager::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::logging::ErrorManager::J2CPP_CLASS_NAME, java::util::logging::ErrorManager::J2CPP_METHOD_NAME(0), java::util::logging::ErrorManager::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+java::util::logging::ErrorManager::ErrorManager()
+: cpp_object<java::util::logging::ErrorManager>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::util::logging::ErrorManager::J2CPP_CLASS_NAME>(),
+		get_method_id<java::util::logging::ErrorManager::J2CPP_CLASS_NAME, java::util::logging::ErrorManager::J2CPP_METHOD_NAME(0), java::util::logging::ErrorManager::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 void java::util::logging::ErrorManager::error(local_ref< java::lang::String > const &a0, local_ref< java::lang::Exception > const &a1, cpp_int const &a2)
 {

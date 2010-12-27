@@ -11,15 +11,19 @@
 
 
 namespace j2cpp { namespace java { namespace net { class InetAddress; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace protocol { class HttpContext; } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace conn { class OperatedClientConnection; } } } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { namespace conn { class ClientConnectionOperator; } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace conn { namespace scheme { class SchemeRegistry; } } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace params { class HttpParams; } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { class HttpHost; } } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/net/InetAddress.hpp>
 #include <org/apache/http/HttpHost.hpp>
+#include <org/apache/http/conn/ClientConnectionOperator.hpp>
 #include <org/apache/http/conn/OperatedClientConnection.hpp>
 #include <org/apache/http/conn/scheme/SchemeRegistry.hpp>
 #include <org/apache/http/params/HttpParams.hpp>
@@ -45,11 +49,16 @@ namespace org { namespace apache { namespace http { namespace impl { namespace c
 		J2CPP_DECLARE_METHOD(4)
 		J2CPP_DECLARE_FIELD(0)
 
-		DefaultClientConnectionOperator(jobject jobj)
+		explicit DefaultClientConnectionOperator(jobject jobj)
 		: cpp_object<DefaultClientConnectionOperator>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<org::apache::http::conn::ClientConnectionOperator>() const;
+
+
+		DefaultClientConnectionOperator(local_ref< org::apache::http::conn::scheme::SchemeRegistry > const&);
 		local_ref< org::apache::http::conn::OperatedClientConnection > createConnection();
 		void openConnection(local_ref< org::apache::http::conn::OperatedClientConnection > const&, local_ref< org::apache::http::HttpHost > const&, local_ref< java::net::InetAddress > const&, local_ref< org::apache::http::protocol::HttpContext > const&, local_ref< org::apache::http::params::HttpParams > const&);
 		void updateSecureConnection(local_ref< org::apache::http::conn::OperatedClientConnection > const&, local_ref< org::apache::http::HttpHost > const&, local_ref< org::apache::http::protocol::HttpContext > const&, local_ref< org::apache::http::params::HttpParams > const&);
@@ -61,7 +70,6 @@ namespace org { namespace apache { namespace http { namespace impl { namespace c
 } //namespace http
 } //namespace apache
 } //namespace org
-
 
 } //namespace j2cpp
 
@@ -75,17 +83,29 @@ namespace org { namespace apache { namespace http { namespace impl { namespace c
 namespace j2cpp {
 
 
-template <>
-local_ref< org::apache::http::impl::conn::DefaultClientConnectionOperator > create< org::apache::http::impl::conn::DefaultClientConnectionOperator>(local_ref< org::apache::http::conn::scheme::SchemeRegistry > const &a0)
+
+org::apache::http::impl::conn::DefaultClientConnectionOperator::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< org::apache::http::impl::conn::DefaultClientConnectionOperator >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::apache::http::impl::conn::DefaultClientConnectionOperator::J2CPP_CLASS_NAME>(),
-			get_method_id<org::apache::http::impl::conn::DefaultClientConnectionOperator::J2CPP_CLASS_NAME, org::apache::http::impl::conn::DefaultClientConnectionOperator::J2CPP_METHOD_NAME(0), org::apache::http::impl::conn::DefaultClientConnectionOperator::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+org::apache::http::impl::conn::DefaultClientConnectionOperator::operator local_ref<org::apache::http::conn::ClientConnectionOperator>() const
+{
+	return local_ref<org::apache::http::conn::ClientConnectionOperator>(get_jtype());
+}
+
+
+org::apache::http::impl::conn::DefaultClientConnectionOperator::DefaultClientConnectionOperator(local_ref< org::apache::http::conn::scheme::SchemeRegistry > const &a0)
+: cpp_object<org::apache::http::impl::conn::DefaultClientConnectionOperator>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::apache::http::impl::conn::DefaultClientConnectionOperator::J2CPP_CLASS_NAME>(),
+		get_method_id<org::apache::http::impl::conn::DefaultClientConnectionOperator::J2CPP_CLASS_NAME, org::apache::http::impl::conn::DefaultClientConnectionOperator::J2CPP_METHOD_NAME(0), org::apache::http::impl::conn::DefaultClientConnectionOperator::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 local_ref< org::apache::http::conn::OperatedClientConnection > org::apache::http::impl::conn::DefaultClientConnectionOperator::createConnection()
 {

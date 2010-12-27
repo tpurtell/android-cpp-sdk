@@ -45,11 +45,17 @@ namespace java { namespace text {
 		J2CPP_DECLARE_METHOD(10)
 		J2CPP_DECLARE_METHOD(11)
 
-		FieldPosition(jobject jobj)
+		explicit FieldPosition(jobject jobj)
 		: cpp_object<FieldPosition>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		FieldPosition(cpp_int const&);
+		FieldPosition(local_ref< java::text::Format_::Field > const&);
+		FieldPosition(local_ref< java::text::Format_::Field > const&, cpp_int const&);
 		cpp_boolean equals(local_ref< java::lang::Object > const&);
 		cpp_int getBeginIndex();
 		cpp_int getEndIndex();
@@ -64,7 +70,6 @@ namespace java { namespace text {
 } //namespace text
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_TEXT_FIELDPOSITION_HPP_DECL
@@ -77,41 +82,50 @@ namespace java { namespace text {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::text::FieldPosition > create< java::text::FieldPosition>(cpp_int const &a0)
+
+java::text::FieldPosition::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::text::FieldPosition >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::text::FieldPosition::J2CPP_CLASS_NAME>(),
-			get_method_id<java::text::FieldPosition::J2CPP_CLASS_NAME, java::text::FieldPosition::J2CPP_METHOD_NAME(0), java::text::FieldPosition::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
 
-template <>
-local_ref< java::text::FieldPosition > create< java::text::FieldPosition>(local_ref< java::text::Format_::Field > const &a0)
+
+java::text::FieldPosition::FieldPosition(cpp_int const &a0)
+: cpp_object<java::text::FieldPosition>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::text::FieldPosition::J2CPP_CLASS_NAME>(),
+		get_method_id<java::text::FieldPosition::J2CPP_CLASS_NAME, java::text::FieldPosition::J2CPP_METHOD_NAME(0), java::text::FieldPosition::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< java::text::FieldPosition >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::text::FieldPosition::J2CPP_CLASS_NAME>(),
-			get_method_id<java::text::FieldPosition::J2CPP_CLASS_NAME, java::text::FieldPosition::J2CPP_METHOD_NAME(1), java::text::FieldPosition::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< java::text::FieldPosition > create< java::text::FieldPosition>(local_ref< java::text::Format_::Field > const &a0, cpp_int const &a1)
+
+
+java::text::FieldPosition::FieldPosition(local_ref< java::text::Format_::Field > const &a0)
+: cpp_object<java::text::FieldPosition>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::text::FieldPosition::J2CPP_CLASS_NAME>(),
+		get_method_id<java::text::FieldPosition::J2CPP_CLASS_NAME, java::text::FieldPosition::J2CPP_METHOD_NAME(1), java::text::FieldPosition::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< java::text::FieldPosition >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::text::FieldPosition::J2CPP_CLASS_NAME>(),
-			get_method_id<java::text::FieldPosition::J2CPP_CLASS_NAME, java::text::FieldPosition::J2CPP_METHOD_NAME(2), java::text::FieldPosition::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
 }
+
+
+
+java::text::FieldPosition::FieldPosition(local_ref< java::text::Format_::Field > const &a0, cpp_int const &a1)
+: cpp_object<java::text::FieldPosition>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::text::FieldPosition::J2CPP_CLASS_NAME>(),
+		get_method_id<java::text::FieldPosition::J2CPP_CLASS_NAME, java::text::FieldPosition::J2CPP_METHOD_NAME(2), java::text::FieldPosition::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
 
 cpp_boolean java::text::FieldPosition::equals(local_ref< java::lang::Object > const &a0)
 {

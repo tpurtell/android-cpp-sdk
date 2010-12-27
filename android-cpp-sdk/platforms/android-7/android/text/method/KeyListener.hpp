@@ -10,6 +10,7 @@
 #define J2CPP_ANDROID_TEXT_METHOD_KEYLISTENER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace android { namespace view { class View; } } }
 namespace j2cpp { namespace android { namespace view { class KeyEvent; } } }
 namespace j2cpp { namespace android { namespace text { class Editable; } } }
@@ -18,6 +19,7 @@ namespace j2cpp { namespace android { namespace text { class Editable; } } }
 #include <android/text/Editable.hpp>
 #include <android/view/KeyEvent.hpp>
 #include <android/view/View.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -38,10 +40,13 @@ namespace android { namespace text { namespace method {
 		J2CPP_DECLARE_METHOD(3)
 		J2CPP_DECLARE_METHOD(4)
 
-		KeyListener(jobject jobj)
+		explicit KeyListener(jobject jobj)
 		: cpp_object<KeyListener>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		cpp_int getInputType();
 		cpp_boolean onKeyDown(local_ref< android::view::View > const&, local_ref< android::text::Editable > const&, cpp_int const&, local_ref< android::view::KeyEvent > const&);
@@ -54,7 +59,6 @@ namespace android { namespace text { namespace method {
 } //namespace text
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_TEXT_METHOD_KEYLISTENER_HPP_DECL
@@ -66,6 +70,12 @@ namespace android { namespace text { namespace method {
 
 namespace j2cpp {
 
+
+
+android::text::method::KeyListener::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 cpp_int android::text::method::KeyListener::getInputType()
 {

@@ -12,8 +12,10 @@
 
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace lang { class Exception; } } }
+namespace j2cpp { namespace android { namespace util { class AndroidRuntimeException; } } }
 
 
+#include <android/util/AndroidRuntimeException.hpp>
 #include <java/lang/Exception.hpp>
 #include <java/lang/String.hpp>
 
@@ -33,16 +35,20 @@ namespace android { namespace os {
 		J2CPP_DECLARE_METHOD(0)
 		J2CPP_DECLARE_METHOD(1)
 
-		BadParcelableException(jobject jobj)
+		explicit BadParcelableException(jobject jobj)
 		: cpp_object<BadParcelableException>(jobj)
 		{
 		}
 
+		operator local_ref<android::util::AndroidRuntimeException>() const;
+
+
+		BadParcelableException(local_ref< java::lang::String > const&);
+		BadParcelableException(local_ref< java::lang::Exception > const&);
 	}; //class BadParcelableException
 
 } //namespace os
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -56,29 +62,37 @@ namespace android { namespace os {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::os::BadParcelableException > create< android::os::BadParcelableException>(local_ref< java::lang::String > const &a0)
+
+android::os::BadParcelableException::operator local_ref<android::util::AndroidRuntimeException>() const
 {
-	return local_ref< android::os::BadParcelableException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::os::BadParcelableException::J2CPP_CLASS_NAME>(),
-			get_method_id<android::os::BadParcelableException::J2CPP_CLASS_NAME, android::os::BadParcelableException::J2CPP_METHOD_NAME(0), android::os::BadParcelableException::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<android::util::AndroidRuntimeException>(get_jtype());
 }
 
-template <>
-local_ref< android::os::BadParcelableException > create< android::os::BadParcelableException>(local_ref< java::lang::Exception > const &a0)
+
+android::os::BadParcelableException::BadParcelableException(local_ref< java::lang::String > const &a0)
+: cpp_object<android::os::BadParcelableException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::os::BadParcelableException::J2CPP_CLASS_NAME>(),
+		get_method_id<android::os::BadParcelableException::J2CPP_CLASS_NAME, android::os::BadParcelableException::J2CPP_METHOD_NAME(0), android::os::BadParcelableException::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< android::os::BadParcelableException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::os::BadParcelableException::J2CPP_CLASS_NAME>(),
-			get_method_id<android::os::BadParcelableException::J2CPP_CLASS_NAME, android::os::BadParcelableException::J2CPP_METHOD_NAME(1), android::os::BadParcelableException::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
 }
+
+
+
+android::os::BadParcelableException::BadParcelableException(local_ref< java::lang::Exception > const &a0)
+: cpp_object<android::os::BadParcelableException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::os::BadParcelableException::J2CPP_CLASS_NAME>(),
+		get_method_id<android::os::BadParcelableException::J2CPP_CLASS_NAME, android::os::BadParcelableException::J2CPP_METHOD_NAME(1), android::os::BadParcelableException::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 
 J2CPP_DEFINE_CLASS(android::os::BadParcelableException,"android/os/BadParcelableException")

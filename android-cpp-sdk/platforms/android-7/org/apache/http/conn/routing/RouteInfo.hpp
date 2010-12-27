@@ -11,12 +11,16 @@
 
 
 namespace j2cpp { namespace java { namespace net { class InetAddress; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace lang { class Enum; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace conn { namespace routing { namespace RouteInfo_ { class TunnelType; } } } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace conn { namespace routing { namespace RouteInfo_ { class LayerType; } } } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { class HttpHost; } } } }
 
 
+#include <java/lang/Enum.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/net/InetAddress.hpp>
 #include <org/apache/http/HttpHost.hpp>
@@ -46,10 +50,13 @@ namespace org { namespace apache { namespace http { namespace conn { namespace r
 			J2CPP_DECLARE_FIELD(1)
 			J2CPP_DECLARE_FIELD(2)
 
-			TunnelType(jobject jobj)
+			explicit TunnelType(jobject jobj)
 			: cpp_object<TunnelType>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Enum>() const;
+
 
 			static local_ref< cpp_object_array<org::apache::http::conn::routing::RouteInfo_::TunnelType, 1> > values();
 			static local_ref< org::apache::http::conn::routing::RouteInfo_::TunnelType > valueOf(local_ref< java::lang::String > const&);
@@ -74,10 +81,13 @@ namespace org { namespace apache { namespace http { namespace conn { namespace r
 			J2CPP_DECLARE_FIELD(1)
 			J2CPP_DECLARE_FIELD(2)
 
-			LayerType(jobject jobj)
+			explicit LayerType(jobject jobj)
 			: cpp_object<LayerType>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Enum>() const;
+
 
 			static local_ref< cpp_object_array<org::apache::http::conn::routing::RouteInfo_::LayerType, 1> > values();
 			static local_ref< org::apache::http::conn::routing::RouteInfo_::LayerType > valueOf(local_ref< java::lang::String > const&);
@@ -109,10 +119,13 @@ namespace org { namespace apache { namespace http { namespace conn { namespace r
 		typedef RouteInfo_::TunnelType TunnelType;
 		typedef RouteInfo_::LayerType LayerType;
 
-		RouteInfo(jobject jobj)
+		explicit RouteInfo(jobject jobj)
 		: cpp_object<RouteInfo>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		local_ref< org::apache::http::HttpHost > getTargetHost();
 		local_ref< java::net::InetAddress > getLocalAddress();
@@ -132,7 +145,6 @@ namespace org { namespace apache { namespace http { namespace conn { namespace r
 } //namespace apache
 } //namespace org
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ORG_APACHE_HTTP_CONN_ROUTING_ROUTEINFO_HPP_DECL
@@ -145,6 +157,12 @@ namespace org { namespace apache { namespace http { namespace conn { namespace r
 namespace j2cpp {
 
 
+
+
+org::apache::http::conn::routing::RouteInfo_::TunnelType::operator local_ref<java::lang::Enum>() const
+{
+	return local_ref<java::lang::Enum>(get_jtype());
+}
 
 local_ref< cpp_object_array<org::apache::http::conn::routing::RouteInfo_::TunnelType, 1> > org::apache::http::conn::routing::RouteInfo_::TunnelType::values()
 {
@@ -167,17 +185,7 @@ local_ref< org::apache::http::conn::routing::RouteInfo_::TunnelType > org::apach
 	);
 }
 
-template <>
-local_ref< org::apache::http::conn::routing::RouteInfo_::TunnelType > create< org::apache::http::conn::routing::RouteInfo_::TunnelType>(local_ref< java::lang::String > const &a0, cpp_int const &a1)
-{
-	return local_ref< org::apache::http::conn::routing::RouteInfo_::TunnelType >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::apache::http::conn::routing::RouteInfo_::TunnelType::J2CPP_CLASS_NAME>(),
-			get_method_id<org::apache::http::conn::routing::RouteInfo_::TunnelType::J2CPP_CLASS_NAME, org::apache::http::conn::routing::RouteInfo_::TunnelType::J2CPP_METHOD_NAME(2), org::apache::http::conn::routing::RouteInfo_::TunnelType::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
-}
+
 
 
 static_field<
@@ -204,6 +212,12 @@ J2CPP_DEFINE_FIELD(org::apache::http::conn::routing::RouteInfo_::TunnelType,0,"P
 J2CPP_DEFINE_FIELD(org::apache::http::conn::routing::RouteInfo_::TunnelType,1,"TUNNELLED","Lorg/apache/http/conn/routing/RouteInfo$TunnelType;")
 J2CPP_DEFINE_FIELD(org::apache::http::conn::routing::RouteInfo_::TunnelType,2,"$VALUES","[org.apache.http.conn.routing.RouteInfo.TunnelType")
 
+
+org::apache::http::conn::routing::RouteInfo_::LayerType::operator local_ref<java::lang::Enum>() const
+{
+	return local_ref<java::lang::Enum>(get_jtype());
+}
+
 local_ref< cpp_object_array<org::apache::http::conn::routing::RouteInfo_::LayerType, 1> > org::apache::http::conn::routing::RouteInfo_::LayerType::values()
 {
 	return local_ref< cpp_object_array<org::apache::http::conn::routing::RouteInfo_::LayerType, 1> >(
@@ -225,17 +239,7 @@ local_ref< org::apache::http::conn::routing::RouteInfo_::LayerType > org::apache
 	);
 }
 
-template <>
-local_ref< org::apache::http::conn::routing::RouteInfo_::LayerType > create< org::apache::http::conn::routing::RouteInfo_::LayerType>(local_ref< java::lang::String > const &a0, cpp_int const &a1)
-{
-	return local_ref< org::apache::http::conn::routing::RouteInfo_::LayerType >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::apache::http::conn::routing::RouteInfo_::LayerType::J2CPP_CLASS_NAME>(),
-			get_method_id<org::apache::http::conn::routing::RouteInfo_::LayerType::J2CPP_CLASS_NAME, org::apache::http::conn::routing::RouteInfo_::LayerType::J2CPP_METHOD_NAME(2), org::apache::http::conn::routing::RouteInfo_::LayerType::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
-}
+
 
 
 static_field<
@@ -262,6 +266,12 @@ J2CPP_DEFINE_FIELD(org::apache::http::conn::routing::RouteInfo_::LayerType,0,"LA
 J2CPP_DEFINE_FIELD(org::apache::http::conn::routing::RouteInfo_::LayerType,1,"PLAIN","Lorg/apache/http/conn/routing/RouteInfo$LayerType;")
 J2CPP_DEFINE_FIELD(org::apache::http::conn::routing::RouteInfo_::LayerType,2,"$VALUES","[org.apache.http.conn.routing.RouteInfo.LayerType")
 
+
+
+org::apache::http::conn::routing::RouteInfo::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 local_ref< org::apache::http::HttpHost > org::apache::http::conn::routing::RouteInfo::getTargetHost()
 {

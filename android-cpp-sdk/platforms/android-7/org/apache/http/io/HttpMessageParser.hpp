@@ -10,9 +10,11 @@
 #define J2CPP_ORG_APACHE_HTTP_IO_HTTPMESSAGEPARSER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { class HttpMessage; } } } }
 
 
+#include <java/lang/Object.hpp>
 #include <org/apache/http/HttpMessage.hpp>
 
 
@@ -30,10 +32,13 @@ namespace org { namespace apache { namespace http { namespace io {
 
 		J2CPP_DECLARE_METHOD(0)
 
-		HttpMessageParser(jobject jobj)
+		explicit HttpMessageParser(jobject jobj)
 		: cpp_object<HttpMessageParser>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		local_ref< org::apache::http::HttpMessage > parse();
 	}; //class HttpMessageParser
@@ -42,7 +47,6 @@ namespace org { namespace apache { namespace http { namespace io {
 } //namespace http
 } //namespace apache
 } //namespace org
-
 
 } //namespace j2cpp
 
@@ -55,6 +59,12 @@ namespace org { namespace apache { namespace http { namespace io {
 
 namespace j2cpp {
 
+
+
+org::apache::http::io::HttpMessageParser::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 local_ref< org::apache::http::HttpMessage > org::apache::http::io::HttpMessageParser::parse()
 {

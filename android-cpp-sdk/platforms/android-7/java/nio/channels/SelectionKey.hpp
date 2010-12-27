@@ -51,10 +51,13 @@ namespace java { namespace nio { namespace channels {
 		J2CPP_DECLARE_FIELD(2)
 		J2CPP_DECLARE_FIELD(3)
 
-		SelectionKey(jobject jobj)
+		explicit SelectionKey(jobject jobj)
 		: cpp_object<SelectionKey>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		local_ref< java::lang::Object > attach(local_ref< java::lang::Object > const&);
 		local_ref< java::lang::Object > attachment();
@@ -80,7 +83,6 @@ namespace java { namespace nio { namespace channels {
 } //namespace nio
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_NIO_CHANNELS_SELECTIONKEY_HPP_DECL
@@ -93,16 +95,12 @@ namespace java { namespace nio { namespace channels {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::nio::channels::SelectionKey > create< java::nio::channels::SelectionKey>()
+
+java::nio::channels::SelectionKey::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::nio::channels::SelectionKey >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::nio::channels::SelectionKey::J2CPP_CLASS_NAME>(),
-			get_method_id<java::nio::channels::SelectionKey::J2CPP_CLASS_NAME, java::nio::channels::SelectionKey::J2CPP_METHOD_NAME(0), java::nio::channels::SelectionKey::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
 
 local_ref< java::lang::Object > java::nio::channels::SelectionKey::attach(local_ref< java::lang::Object > const &a0)
 {

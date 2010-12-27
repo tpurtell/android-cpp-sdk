@@ -12,11 +12,13 @@
 
 namespace j2cpp { namespace java { namespace net { class Socket; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { namespace impl { class SocketHttpServerConnection; } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace params { class HttpParams; } } } } }
 
 
 #include <java/lang/String.hpp>
 #include <java/net/Socket.hpp>
+#include <org/apache/http/impl/SocketHttpServerConnection.hpp>
 #include <org/apache/http/params/HttpParams.hpp>
 
 
@@ -36,11 +38,15 @@ namespace org { namespace apache { namespace http { namespace impl {
 		J2CPP_DECLARE_METHOD(1)
 		J2CPP_DECLARE_METHOD(2)
 
-		DefaultHttpServerConnection(jobject jobj)
+		explicit DefaultHttpServerConnection(jobject jobj)
 		: cpp_object<DefaultHttpServerConnection>(jobj)
 		{
 		}
 
+		operator local_ref<org::apache::http::impl::SocketHttpServerConnection>() const;
+
+
+		DefaultHttpServerConnection();
 		void bind(local_ref< java::net::Socket > const&, local_ref< org::apache::http::params::HttpParams > const&);
 		local_ref< java::lang::String > toString();
 	}; //class DefaultHttpServerConnection
@@ -49,7 +55,6 @@ namespace org { namespace apache { namespace http { namespace impl {
 } //namespace http
 } //namespace apache
 } //namespace org
-
 
 } //namespace j2cpp
 
@@ -63,16 +68,23 @@ namespace org { namespace apache { namespace http { namespace impl {
 namespace j2cpp {
 
 
-template <>
-local_ref< org::apache::http::impl::DefaultHttpServerConnection > create< org::apache::http::impl::DefaultHttpServerConnection>()
+
+org::apache::http::impl::DefaultHttpServerConnection::operator local_ref<org::apache::http::impl::SocketHttpServerConnection>() const
 {
-	return local_ref< org::apache::http::impl::DefaultHttpServerConnection >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::apache::http::impl::DefaultHttpServerConnection::J2CPP_CLASS_NAME>(),
-			get_method_id<org::apache::http::impl::DefaultHttpServerConnection::J2CPP_CLASS_NAME, org::apache::http::impl::DefaultHttpServerConnection::J2CPP_METHOD_NAME(0), org::apache::http::impl::DefaultHttpServerConnection::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<org::apache::http::impl::SocketHttpServerConnection>(get_jtype());
 }
+
+
+org::apache::http::impl::DefaultHttpServerConnection::DefaultHttpServerConnection()
+: cpp_object<org::apache::http::impl::DefaultHttpServerConnection>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::apache::http::impl::DefaultHttpServerConnection::J2CPP_CLASS_NAME>(),
+		get_method_id<org::apache::http::impl::DefaultHttpServerConnection::J2CPP_CLASS_NAME, org::apache::http::impl::DefaultHttpServerConnection::J2CPP_METHOD_NAME(0), org::apache::http::impl::DefaultHttpServerConnection::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 void org::apache::http::impl::DefaultHttpServerConnection::bind(local_ref< java::net::Socket > const &a0, local_ref< org::apache::http::params::HttpParams > const &a1)
 {

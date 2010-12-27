@@ -10,6 +10,7 @@
 #define J2CPP_ANDROID_SPEECH_TTS_TEXTTOSPEECH_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace util { class HashMap; } } }
 namespace j2cpp { namespace java { namespace util { class Locale; } } }
@@ -20,6 +21,7 @@ namespace j2cpp { namespace android { namespace speech { namespace tts { namespa
 
 #include <android/content/Context.hpp>
 #include <android/speech/tts/TextToSpeech.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/util/HashMap.hpp>
 #include <java/util/Locale.hpp>
@@ -58,11 +60,15 @@ namespace android { namespace speech { namespace tts {
 			J2CPP_DECLARE_FIELD(14)
 			J2CPP_DECLARE_FIELD(15)
 
-			Engine(jobject jobj)
+			explicit Engine(jobject jobj)
 			: cpp_object<Engine>(jobj)
 			{
 			}
 
+			operator local_ref<java::lang::Object>() const;
+
+
+			Engine(local_ref< android::speech::tts::TextToSpeech > const&);
 
 			static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(0), J2CPP_FIELD_SIGNATURE(0), cpp_int > DEFAULT_STREAM;
 			static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(1), J2CPP_FIELD_SIGNATURE(1), cpp_int > CHECK_VOICE_DATA_PASS;
@@ -91,10 +97,13 @@ namespace android { namespace speech { namespace tts {
 
 			J2CPP_DECLARE_METHOD(0)
 
-			OnInitListener(jobject jobj)
+			explicit OnInitListener(jobject jobj)
 			: cpp_object<OnInitListener>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+
 
 			void onInit(cpp_int const&);
 		}; //class OnInitListener
@@ -109,10 +118,13 @@ namespace android { namespace speech { namespace tts {
 
 			J2CPP_DECLARE_METHOD(0)
 
-			OnUtteranceCompletedListener(jobject jobj)
+			explicit OnUtteranceCompletedListener(jobject jobj)
 			: cpp_object<OnUtteranceCompletedListener>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+
 
 			void onUtteranceCompleted(local_ref< java::lang::String > const&);
 		}; //class OnUtteranceCompletedListener
@@ -159,11 +171,15 @@ namespace android { namespace speech { namespace tts {
 		typedef TextToSpeech_::OnInitListener OnInitListener;
 		typedef TextToSpeech_::OnUtteranceCompletedListener OnUtteranceCompletedListener;
 
-		TextToSpeech(jobject jobj)
+		explicit TextToSpeech(jobject jobj)
 		: cpp_object<TextToSpeech>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		TextToSpeech(local_ref< android::content::Context > const&, local_ref< android::speech::tts::TextToSpeech_::OnInitListener > const&);
 		void shutdown();
 		cpp_int addSpeech(local_ref< java::lang::String > const&, local_ref< java::lang::String > const&, cpp_int const&);
 		cpp_int addSpeech(local_ref< java::lang::String > const&, local_ref< java::lang::String > const&);
@@ -198,7 +214,6 @@ namespace android { namespace speech { namespace tts {
 } //namespace speech
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_SPEECH_TTS_TEXTTOSPEECH_HPP_DECL
@@ -212,17 +227,24 @@ namespace j2cpp {
 
 
 
-template <>
-local_ref< android::speech::tts::TextToSpeech_::Engine > create< android::speech::tts::TextToSpeech_::Engine>(local_ref< android::speech::tts::TextToSpeech > const &a0)
+
+android::speech::tts::TextToSpeech_::Engine::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::speech::tts::TextToSpeech_::Engine >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::speech::tts::TextToSpeech_::Engine::J2CPP_CLASS_NAME>(),
-			get_method_id<android::speech::tts::TextToSpeech_::Engine::J2CPP_CLASS_NAME, android::speech::tts::TextToSpeech_::Engine::J2CPP_METHOD_NAME(0), android::speech::tts::TextToSpeech_::Engine::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::speech::tts::TextToSpeech_::Engine::Engine(local_ref< android::speech::tts::TextToSpeech > const &a0)
+: cpp_object<android::speech::tts::TextToSpeech_::Engine>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::speech::tts::TextToSpeech_::Engine::J2CPP_CLASS_NAME>(),
+		get_method_id<android::speech::tts::TextToSpeech_::Engine::J2CPP_CLASS_NAME, android::speech::tts::TextToSpeech_::Engine::J2CPP_METHOD_NAME(0), android::speech::tts::TextToSpeech_::Engine::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 
 static_field<
@@ -350,6 +372,12 @@ J2CPP_DEFINE_FIELD(android::speech::tts::TextToSpeech_::Engine,13,"KEY_PARAM_STR
 J2CPP_DEFINE_FIELD(android::speech::tts::TextToSpeech_::Engine,14,"KEY_PARAM_UTTERANCE_ID","Ljava/lang/String;")
 J2CPP_DEFINE_FIELD(android::speech::tts::TextToSpeech_::Engine,15,"this$0","Landroid/speech/tts/TextToSpeech;")
 
+
+android::speech::tts::TextToSpeech_::OnInitListener::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
+
 void android::speech::tts::TextToSpeech_::OnInitListener::onInit(cpp_int const &a0)
 {
 	return void(
@@ -364,6 +392,12 @@ void android::speech::tts::TextToSpeech_::OnInitListener::onInit(cpp_int const &
 
 J2CPP_DEFINE_CLASS(android::speech::tts::TextToSpeech_::OnInitListener,"android/speech/tts/TextToSpeech$OnInitListener")
 J2CPP_DEFINE_METHOD(android::speech::tts::TextToSpeech_::OnInitListener,0,"onInit","(I)V")
+
+
+android::speech::tts::TextToSpeech_::OnUtteranceCompletedListener::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 void android::speech::tts::TextToSpeech_::OnUtteranceCompletedListener::onUtteranceCompleted(local_ref< java::lang::String > const &a0)
 {
@@ -381,17 +415,24 @@ J2CPP_DEFINE_CLASS(android::speech::tts::TextToSpeech_::OnUtteranceCompletedList
 J2CPP_DEFINE_METHOD(android::speech::tts::TextToSpeech_::OnUtteranceCompletedListener,0,"onUtteranceCompleted","(Ljava/lang/String;)V")
 
 
-template <>
-local_ref< android::speech::tts::TextToSpeech > create< android::speech::tts::TextToSpeech>(local_ref< android::content::Context > const &a0, local_ref< android::speech::tts::TextToSpeech_::OnInitListener > const &a1)
+
+android::speech::tts::TextToSpeech::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::speech::tts::TextToSpeech >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::speech::tts::TextToSpeech::J2CPP_CLASS_NAME>(),
-			get_method_id<android::speech::tts::TextToSpeech::J2CPP_CLASS_NAME, android::speech::tts::TextToSpeech::J2CPP_METHOD_NAME(0), android::speech::tts::TextToSpeech::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::speech::tts::TextToSpeech::TextToSpeech(local_ref< android::content::Context > const &a0, local_ref< android::speech::tts::TextToSpeech_::OnInitListener > const &a1)
+: cpp_object<android::speech::tts::TextToSpeech>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::speech::tts::TextToSpeech::J2CPP_CLASS_NAME>(),
+		get_method_id<android::speech::tts::TextToSpeech::J2CPP_CLASS_NAME, android::speech::tts::TextToSpeech::J2CPP_METHOD_NAME(0), android::speech::tts::TextToSpeech::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
 
 void android::speech::tts::TextToSpeech::shutdown()
 {

@@ -10,9 +10,11 @@
 #define J2CPP_JAVA_SECURITY_SPEC_RSAOTHERPRIMEINFO_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace math { class BigInteger; } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/math/BigInteger.hpp>
 
 
@@ -33,11 +35,15 @@ namespace java { namespace security { namespace spec {
 		J2CPP_DECLARE_METHOD(2)
 		J2CPP_DECLARE_METHOD(3)
 
-		RSAOtherPrimeInfo(jobject jobj)
+		explicit RSAOtherPrimeInfo(jobject jobj)
 		: cpp_object<RSAOtherPrimeInfo>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		RSAOtherPrimeInfo(local_ref< java::math::BigInteger > const&, local_ref< java::math::BigInteger > const&, local_ref< java::math::BigInteger > const&);
 		local_ref< java::math::BigInteger > getCrtCoefficient();
 		local_ref< java::math::BigInteger > getPrime();
 		local_ref< java::math::BigInteger > getExponent();
@@ -46,7 +52,6 @@ namespace java { namespace security { namespace spec {
 } //namespace spec
 } //namespace security
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -60,17 +65,24 @@ namespace java { namespace security { namespace spec {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::security::spec::RSAOtherPrimeInfo > create< java::security::spec::RSAOtherPrimeInfo>(local_ref< java::math::BigInteger > const &a0, local_ref< java::math::BigInteger > const &a1, local_ref< java::math::BigInteger > const &a2)
+
+java::security::spec::RSAOtherPrimeInfo::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::security::spec::RSAOtherPrimeInfo >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::security::spec::RSAOtherPrimeInfo::J2CPP_CLASS_NAME>(),
-			get_method_id<java::security::spec::RSAOtherPrimeInfo::J2CPP_CLASS_NAME, java::security::spec::RSAOtherPrimeInfo::J2CPP_METHOD_NAME(0), java::security::spec::RSAOtherPrimeInfo::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+java::security::spec::RSAOtherPrimeInfo::RSAOtherPrimeInfo(local_ref< java::math::BigInteger > const &a0, local_ref< java::math::BigInteger > const &a1, local_ref< java::math::BigInteger > const &a2)
+: cpp_object<java::security::spec::RSAOtherPrimeInfo>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::security::spec::RSAOtherPrimeInfo::J2CPP_CLASS_NAME>(),
+		get_method_id<java::security::spec::RSAOtherPrimeInfo::J2CPP_CLASS_NAME, java::security::spec::RSAOtherPrimeInfo::J2CPP_METHOD_NAME(0), java::security::spec::RSAOtherPrimeInfo::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
+	)
+)
+{
+}
+
 
 local_ref< java::math::BigInteger > java::security::spec::RSAOtherPrimeInfo::getCrtCoefficient()
 {

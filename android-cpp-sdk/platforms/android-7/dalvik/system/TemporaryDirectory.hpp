@@ -11,10 +11,12 @@
 
 
 namespace j2cpp { namespace java { namespace io { class File; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 
 
 #include <java/io/File.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -34,18 +36,21 @@ namespace dalvik { namespace system {
 		J2CPP_DECLARE_METHOD(1)
 		J2CPP_DECLARE_METHOD(2)
 
-		TemporaryDirectory(jobject jobj)
+		explicit TemporaryDirectory(jobject jobj)
 		: cpp_object<TemporaryDirectory>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		TemporaryDirectory();
 		static void setUpDirectory(local_ref< java::lang::String > const&);
 		static void setUpDirectory(local_ref< java::io::File > const&);
 	}; //class TemporaryDirectory
 
 } //namespace system
 } //namespace dalvik
-
 
 } //namespace j2cpp
 
@@ -59,16 +64,23 @@ namespace dalvik { namespace system {
 namespace j2cpp {
 
 
-template <>
-local_ref< dalvik::system::TemporaryDirectory > create< dalvik::system::TemporaryDirectory>()
+
+dalvik::system::TemporaryDirectory::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< dalvik::system::TemporaryDirectory >(
-		environment::get().get_jenv()->NewObject(
-			get_class<dalvik::system::TemporaryDirectory::J2CPP_CLASS_NAME>(),
-			get_method_id<dalvik::system::TemporaryDirectory::J2CPP_CLASS_NAME, dalvik::system::TemporaryDirectory::J2CPP_METHOD_NAME(0), dalvik::system::TemporaryDirectory::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+dalvik::system::TemporaryDirectory::TemporaryDirectory()
+: cpp_object<dalvik::system::TemporaryDirectory>(
+	environment::get().get_jenv()->NewObject(
+		get_class<dalvik::system::TemporaryDirectory::J2CPP_CLASS_NAME>(),
+		get_method_id<dalvik::system::TemporaryDirectory::J2CPP_CLASS_NAME, dalvik::system::TemporaryDirectory::J2CPP_METHOD_NAME(0), dalvik::system::TemporaryDirectory::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 void dalvik::system::TemporaryDirectory::setUpDirectory(local_ref< java::lang::String > const &a0)
 {

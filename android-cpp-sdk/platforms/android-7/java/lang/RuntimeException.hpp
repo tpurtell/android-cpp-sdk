@@ -12,8 +12,10 @@
 
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace lang { class Throwable; } } }
+namespace j2cpp { namespace java { namespace lang { class Exception; } } }
 
 
+#include <java/lang/Exception.hpp>
 #include <java/lang/String.hpp>
 #include <java/lang/Throwable.hpp>
 
@@ -35,16 +37,22 @@ namespace java { namespace lang {
 		J2CPP_DECLARE_METHOD(2)
 		J2CPP_DECLARE_METHOD(3)
 
-		RuntimeException(jobject jobj)
+		explicit RuntimeException(jobject jobj)
 		: cpp_object<RuntimeException>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Exception>() const;
+
+
+		RuntimeException();
+		RuntimeException(local_ref< java::lang::String > const&);
+		RuntimeException(local_ref< java::lang::String > const&, local_ref< java::lang::Throwable > const&);
+		RuntimeException(local_ref< java::lang::Throwable > const&);
 	}; //class RuntimeException
 
 } //namespace lang
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -58,52 +66,62 @@ namespace java { namespace lang {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::lang::RuntimeException > create< java::lang::RuntimeException>()
+
+java::lang::RuntimeException::operator local_ref<java::lang::Exception>() const
 {
-	return local_ref< java::lang::RuntimeException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::lang::RuntimeException::J2CPP_CLASS_NAME>(),
-			get_method_id<java::lang::RuntimeException::J2CPP_CLASS_NAME, java::lang::RuntimeException::J2CPP_METHOD_NAME(0), java::lang::RuntimeException::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Exception>(get_jtype());
 }
 
-template <>
-local_ref< java::lang::RuntimeException > create< java::lang::RuntimeException>(local_ref< java::lang::String > const &a0)
+
+java::lang::RuntimeException::RuntimeException()
+: cpp_object<java::lang::RuntimeException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::lang::RuntimeException::J2CPP_CLASS_NAME>(),
+		get_method_id<java::lang::RuntimeException::J2CPP_CLASS_NAME, java::lang::RuntimeException::J2CPP_METHOD_NAME(0), java::lang::RuntimeException::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
 {
-	return local_ref< java::lang::RuntimeException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::lang::RuntimeException::J2CPP_CLASS_NAME>(),
-			get_method_id<java::lang::RuntimeException::J2CPP_CLASS_NAME, java::lang::RuntimeException::J2CPP_METHOD_NAME(1), java::lang::RuntimeException::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< java::lang::RuntimeException > create< java::lang::RuntimeException>(local_ref< java::lang::String > const &a0, local_ref< java::lang::Throwable > const &a1)
+
+
+java::lang::RuntimeException::RuntimeException(local_ref< java::lang::String > const &a0)
+: cpp_object<java::lang::RuntimeException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::lang::RuntimeException::J2CPP_CLASS_NAME>(),
+		get_method_id<java::lang::RuntimeException::J2CPP_CLASS_NAME, java::lang::RuntimeException::J2CPP_METHOD_NAME(1), java::lang::RuntimeException::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< java::lang::RuntimeException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::lang::RuntimeException::J2CPP_CLASS_NAME>(),
-			get_method_id<java::lang::RuntimeException::J2CPP_CLASS_NAME, java::lang::RuntimeException::J2CPP_METHOD_NAME(2), java::lang::RuntimeException::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< java::lang::RuntimeException > create< java::lang::RuntimeException>(local_ref< java::lang::Throwable > const &a0)
+
+
+java::lang::RuntimeException::RuntimeException(local_ref< java::lang::String > const &a0, local_ref< java::lang::Throwable > const &a1)
+: cpp_object<java::lang::RuntimeException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::lang::RuntimeException::J2CPP_CLASS_NAME>(),
+		get_method_id<java::lang::RuntimeException::J2CPP_CLASS_NAME, java::lang::RuntimeException::J2CPP_METHOD_NAME(2), java::lang::RuntimeException::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
 {
-	return local_ref< java::lang::RuntimeException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::lang::RuntimeException::J2CPP_CLASS_NAME>(),
-			get_method_id<java::lang::RuntimeException::J2CPP_CLASS_NAME, java::lang::RuntimeException::J2CPP_METHOD_NAME(3), java::lang::RuntimeException::J2CPP_METHOD_SIGNATURE(3), false>(),
-			a0.get_jtype()
-		)
-	);
 }
+
+
+
+java::lang::RuntimeException::RuntimeException(local_ref< java::lang::Throwable > const &a0)
+: cpp_object<java::lang::RuntimeException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::lang::RuntimeException::J2CPP_CLASS_NAME>(),
+		get_method_id<java::lang::RuntimeException::J2CPP_CLASS_NAME, java::lang::RuntimeException::J2CPP_METHOD_NAME(3), java::lang::RuntimeException::J2CPP_METHOD_SIGNATURE(3), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 
 J2CPP_DEFINE_CLASS(java::lang::RuntimeException,"java/lang/RuntimeException")

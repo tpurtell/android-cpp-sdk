@@ -10,9 +10,11 @@
 #define J2CPP_ANDROID_OS_FILEOBSERVER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -48,11 +50,16 @@ namespace android { namespace os {
 		J2CPP_DECLARE_FIELD(11)
 		J2CPP_DECLARE_FIELD(12)
 
-		FileObserver(jobject jobj)
+		explicit FileObserver(jobject jobj)
 		: cpp_object<FileObserver>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		FileObserver(local_ref< java::lang::String > const&);
+		FileObserver(local_ref< java::lang::String > const&, cpp_int const&);
 		void startWatching();
 		void stopWatching();
 		void onEvent(cpp_int const&, local_ref< java::lang::String > const&);
@@ -75,7 +82,6 @@ namespace android { namespace os {
 } //namespace os
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_OS_FILEOBSERVER_HPP_DECL
@@ -88,29 +94,37 @@ namespace android { namespace os {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::os::FileObserver > create< android::os::FileObserver>(local_ref< java::lang::String > const &a0)
+
+android::os::FileObserver::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::os::FileObserver >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::os::FileObserver::J2CPP_CLASS_NAME>(),
-			get_method_id<android::os::FileObserver::J2CPP_CLASS_NAME, android::os::FileObserver::J2CPP_METHOD_NAME(0), android::os::FileObserver::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
 
-template <>
-local_ref< android::os::FileObserver > create< android::os::FileObserver>(local_ref< java::lang::String > const &a0, cpp_int const &a1)
+
+android::os::FileObserver::FileObserver(local_ref< java::lang::String > const &a0)
+: cpp_object<android::os::FileObserver>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::os::FileObserver::J2CPP_CLASS_NAME>(),
+		get_method_id<android::os::FileObserver::J2CPP_CLASS_NAME, android::os::FileObserver::J2CPP_METHOD_NAME(0), android::os::FileObserver::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< android::os::FileObserver >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::os::FileObserver::J2CPP_CLASS_NAME>(),
-			get_method_id<android::os::FileObserver::J2CPP_CLASS_NAME, android::os::FileObserver::J2CPP_METHOD_NAME(1), android::os::FileObserver::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
 }
+
+
+
+android::os::FileObserver::FileObserver(local_ref< java::lang::String > const &a0, cpp_int const &a1)
+: cpp_object<android::os::FileObserver>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::os::FileObserver::J2CPP_CLASS_NAME>(),
+		get_method_id<android::os::FileObserver::J2CPP_CLASS_NAME, android::os::FileObserver::J2CPP_METHOD_NAME(1), android::os::FileObserver::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
 
 
 void android::os::FileObserver::startWatching()

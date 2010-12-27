@@ -48,10 +48,14 @@ namespace java { namespace util {
 		J2CPP_DECLARE_METHOD(13)
 		J2CPP_DECLARE_METHOD(14)
 
-		Set(jobject jobj)
+		explicit Set(jobject jobj)
 		: cpp_object<Set>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::util::Collection>() const;
+
 
 		cpp_boolean add(local_ref< java::lang::Object > const&);
 		cpp_boolean addAll(local_ref< java::util::Collection > const&);
@@ -73,7 +77,6 @@ namespace java { namespace util {
 } //namespace util
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_UTIL_SET_HPP_DECL
@@ -85,6 +88,17 @@ namespace java { namespace util {
 
 namespace j2cpp {
 
+
+
+java::util::Set::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
+
+java::util::Set::operator local_ref<java::util::Collection>() const
+{
+	return local_ref<java::util::Collection>(get_jtype());
+}
 
 cpp_boolean java::util::Set::add(local_ref< java::lang::Object > const &a0)
 {

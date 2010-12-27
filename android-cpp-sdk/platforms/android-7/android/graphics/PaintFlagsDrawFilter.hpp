@@ -10,8 +10,10 @@
 #define J2CPP_ANDROID_GRAPHICS_PAINTFLAGSDRAWFILTER_HPP_DECL
 
 
+namespace j2cpp { namespace android { namespace graphics { class DrawFilter; } } }
 
 
+#include <android/graphics/DrawFilter.hpp>
 
 
 namespace j2cpp {
@@ -28,16 +30,19 @@ namespace android { namespace graphics {
 
 		J2CPP_DECLARE_METHOD(0)
 
-		PaintFlagsDrawFilter(jobject jobj)
+		explicit PaintFlagsDrawFilter(jobject jobj)
 		: cpp_object<PaintFlagsDrawFilter>(jobj)
 		{
 		}
 
+		operator local_ref<android::graphics::DrawFilter>() const;
+
+
+		PaintFlagsDrawFilter(cpp_int const&, cpp_int const&);
 	}; //class PaintFlagsDrawFilter
 
 } //namespace graphics
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -51,17 +56,24 @@ namespace android { namespace graphics {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::graphics::PaintFlagsDrawFilter > create< android::graphics::PaintFlagsDrawFilter>(cpp_int const &a0, cpp_int const &a1)
+
+android::graphics::PaintFlagsDrawFilter::operator local_ref<android::graphics::DrawFilter>() const
 {
-	return local_ref< android::graphics::PaintFlagsDrawFilter >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::graphics::PaintFlagsDrawFilter::J2CPP_CLASS_NAME>(),
-			get_method_id<android::graphics::PaintFlagsDrawFilter::J2CPP_CLASS_NAME, android::graphics::PaintFlagsDrawFilter::J2CPP_METHOD_NAME(0), android::graphics::PaintFlagsDrawFilter::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<android::graphics::DrawFilter>(get_jtype());
 }
+
+
+android::graphics::PaintFlagsDrawFilter::PaintFlagsDrawFilter(cpp_int const &a0, cpp_int const &a1)
+: cpp_object<android::graphics::PaintFlagsDrawFilter>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::graphics::PaintFlagsDrawFilter::J2CPP_CLASS_NAME>(),
+		get_method_id<android::graphics::PaintFlagsDrawFilter::J2CPP_CLASS_NAME, android::graphics::PaintFlagsDrawFilter::J2CPP_METHOD_NAME(0), android::graphics::PaintFlagsDrawFilter::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
 
 
 J2CPP_DEFINE_CLASS(android::graphics::PaintFlagsDrawFilter,"android/graphics/PaintFlagsDrawFilter")

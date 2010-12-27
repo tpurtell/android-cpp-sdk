@@ -31,10 +31,13 @@ namespace java { namespace util {
 		J2CPP_DECLARE_METHOD(0)
 		J2CPP_DECLARE_METHOD(1)
 
-		Comparator(jobject jobj)
+		explicit Comparator(jobject jobj)
 		: cpp_object<Comparator>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		cpp_int compare(local_ref< java::lang::Object > const&, local_ref< java::lang::Object > const&);
 		cpp_boolean equals(local_ref< java::lang::Object > const&);
@@ -42,7 +45,6 @@ namespace java { namespace util {
 
 } //namespace util
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -55,6 +57,12 @@ namespace java { namespace util {
 
 namespace j2cpp {
 
+
+
+java::util::Comparator::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 cpp_int java::util::Comparator::compare(local_ref< java::lang::Object > const &a0, local_ref< java::lang::Object > const &a1)
 {

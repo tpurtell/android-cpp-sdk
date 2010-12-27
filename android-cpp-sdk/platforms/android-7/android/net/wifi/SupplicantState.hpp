@@ -10,11 +10,15 @@
 #define J2CPP_ANDROID_NET_WIFI_SUPPLICANTSTATE_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Enum; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace android { namespace os { class Parcel; } } }
+namespace j2cpp { namespace android { namespace os { class Parcelable; } } }
 
 
 #include <android/os/Parcel.hpp>
+#include <android/os/Parcelable.hpp>
+#include <java/lang/Enum.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -50,10 +54,14 @@ namespace android { namespace net { namespace wifi {
 		J2CPP_DECLARE_FIELD(10)
 		J2CPP_DECLARE_FIELD(11)
 
-		SupplicantState(jobject jobj)
+		explicit SupplicantState(jobject jobj)
 		: cpp_object<SupplicantState>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Enum>() const;
+		operator local_ref<android::os::Parcelable>() const;
+
 
 		static local_ref< cpp_object_array<android::net::wifi::SupplicantState, 1> > values();
 		static local_ref< android::net::wifi::SupplicantState > valueOf(local_ref< java::lang::String > const&);
@@ -78,7 +86,6 @@ namespace android { namespace net { namespace wifi {
 } //namespace net
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_NET_WIFI_SUPPLICANTSTATE_HPP_DECL
@@ -90,6 +97,17 @@ namespace android { namespace net { namespace wifi {
 
 namespace j2cpp {
 
+
+
+android::net::wifi::SupplicantState::operator local_ref<java::lang::Enum>() const
+{
+	return local_ref<java::lang::Enum>(get_jtype());
+}
+
+android::net::wifi::SupplicantState::operator local_ref<android::os::Parcelable>() const
+{
+	return local_ref<android::os::Parcelable>(get_jtype());
+}
 
 local_ref< cpp_object_array<android::net::wifi::SupplicantState, 1> > android::net::wifi::SupplicantState::values()
 {
@@ -112,17 +130,6 @@ local_ref< android::net::wifi::SupplicantState > android::net::wifi::SupplicantS
 	);
 }
 
-template <>
-local_ref< android::net::wifi::SupplicantState > create< android::net::wifi::SupplicantState>(local_ref< java::lang::String > const &a0, cpp_int const &a1)
-{
-	return local_ref< android::net::wifi::SupplicantState >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::net::wifi::SupplicantState::J2CPP_CLASS_NAME>(),
-			get_method_id<android::net::wifi::SupplicantState::J2CPP_CLASS_NAME, android::net::wifi::SupplicantState::J2CPP_METHOD_NAME(2), android::net::wifi::SupplicantState::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
-}
 
 cpp_boolean android::net::wifi::SupplicantState::isValidState(local_ref< android::net::wifi::SupplicantState > const &a0)
 {
@@ -155,6 +162,7 @@ void android::net::wifi::SupplicantState::writeToParcel(local_ref< android::os::
 		)
 	);
 }
+
 
 
 static_field<

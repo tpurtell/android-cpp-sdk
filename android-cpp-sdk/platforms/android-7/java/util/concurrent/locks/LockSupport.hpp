@@ -10,9 +10,11 @@
 #define J2CPP_JAVA_UTIL_CONCURRENT_LOCKS_LOCKSUPPORT_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class Thread; } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/Thread.hpp>
 
 
@@ -34,10 +36,13 @@ namespace java { namespace util { namespace concurrent { namespace locks {
 		J2CPP_DECLARE_METHOD(3)
 		J2CPP_DECLARE_METHOD(4)
 
-		LockSupport(jobject jobj)
+		explicit LockSupport(jobject jobj)
 		: cpp_object<LockSupport>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		static void unpark(local_ref< java::lang::Thread > const&);
 		static void park();
@@ -49,7 +54,6 @@ namespace java { namespace util { namespace concurrent { namespace locks {
 } //namespace concurrent
 } //namespace util
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -63,16 +67,12 @@ namespace java { namespace util { namespace concurrent { namespace locks {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::util::concurrent::locks::LockSupport > create< java::util::concurrent::locks::LockSupport>()
+
+java::util::concurrent::locks::LockSupport::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::util::concurrent::locks::LockSupport >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::concurrent::locks::LockSupport::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::concurrent::locks::LockSupport::J2CPP_CLASS_NAME, java::util::concurrent::locks::LockSupport::J2CPP_METHOD_NAME(0), java::util::concurrent::locks::LockSupport::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
 
 void java::util::concurrent::locks::LockSupport::unpark(local_ref< java::lang::Thread > const &a0)
 {

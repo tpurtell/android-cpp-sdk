@@ -10,8 +10,10 @@
 #define J2CPP_ANDROID_TELEPHONY_CELLLOCATION_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -30,18 +32,21 @@ namespace android { namespace telephony {
 		J2CPP_DECLARE_METHOD(1)
 		J2CPP_DECLARE_METHOD(2)
 
-		CellLocation(jobject jobj)
+		explicit CellLocation(jobject jobj)
 		: cpp_object<CellLocation>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		CellLocation();
 		static void requestLocationUpdate();
 		static local_ref< android::telephony::CellLocation > getEmpty();
 	}; //class CellLocation
 
 } //namespace telephony
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -55,16 +60,23 @@ namespace android { namespace telephony {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::telephony::CellLocation > create< android::telephony::CellLocation>()
+
+android::telephony::CellLocation::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::telephony::CellLocation >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::telephony::CellLocation::J2CPP_CLASS_NAME>(),
-			get_method_id<android::telephony::CellLocation::J2CPP_CLASS_NAME, android::telephony::CellLocation::J2CPP_METHOD_NAME(0), android::telephony::CellLocation::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::telephony::CellLocation::CellLocation()
+: cpp_object<android::telephony::CellLocation>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::telephony::CellLocation::J2CPP_CLASS_NAME>(),
+		get_method_id<android::telephony::CellLocation::J2CPP_CLASS_NAME, android::telephony::CellLocation::J2CPP_METHOD_NAME(0), android::telephony::CellLocation::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 void android::telephony::CellLocation::requestLocationUpdate()
 {

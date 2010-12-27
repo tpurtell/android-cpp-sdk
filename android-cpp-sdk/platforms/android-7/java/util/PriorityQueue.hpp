@@ -10,14 +10,18 @@
 #define J2CPP_JAVA_UTIL_PRIORITYQUEUE_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace util { class Comparator; } } }
+namespace j2cpp { namespace java { namespace util { class AbstractQueue; } } }
 namespace j2cpp { namespace java { namespace util { class SortedSet; } } }
 namespace j2cpp { namespace java { namespace util { class Iterator; } } }
 namespace j2cpp { namespace java { namespace util { class Collection; } } }
 
 
+#include <java/io/Serializable.hpp>
 #include <java/lang/Object.hpp>
+#include <java/util/AbstractQueue.hpp>
 #include <java/util/Collection.hpp>
 #include <java/util/Comparator.hpp>
 #include <java/util/Iterator.hpp>
@@ -52,11 +56,21 @@ namespace java { namespace util {
 		J2CPP_DECLARE_METHOD(13)
 		J2CPP_DECLARE_METHOD(14)
 
-		PriorityQueue(jobject jobj)
+		explicit PriorityQueue(jobject jobj)
 		: cpp_object<PriorityQueue>(jobj)
 		{
 		}
 
+		operator local_ref<java::util::AbstractQueue>() const;
+		operator local_ref<java::io::Serializable>() const;
+
+
+		PriorityQueue();
+		PriorityQueue(cpp_int const&);
+		PriorityQueue(cpp_int const&, local_ref< java::util::Comparator > const&);
+		PriorityQueue(local_ref< java::util::Collection > const&);
+		PriorityQueue(local_ref< java::util::PriorityQueue > const&);
+		PriorityQueue(local_ref< java::util::SortedSet > const&);
 		local_ref< java::util::Iterator > iterator();
 		cpp_int size();
 		void clear();
@@ -71,7 +85,6 @@ namespace java { namespace util {
 } //namespace util
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_UTIL_PRIORITYQUEUE_HPP_DECL
@@ -84,76 +97,93 @@ namespace java { namespace util {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::util::PriorityQueue > create< java::util::PriorityQueue>()
+
+java::util::PriorityQueue::operator local_ref<java::util::AbstractQueue>() const
 {
-	return local_ref< java::util::PriorityQueue >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::PriorityQueue::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::PriorityQueue::J2CPP_CLASS_NAME, java::util::PriorityQueue::J2CPP_METHOD_NAME(0), java::util::PriorityQueue::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::util::AbstractQueue>(get_jtype());
 }
 
-template <>
-local_ref< java::util::PriorityQueue > create< java::util::PriorityQueue>(cpp_int const &a0)
+java::util::PriorityQueue::operator local_ref<java::io::Serializable>() const
 {
-	return local_ref< java::util::PriorityQueue >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::PriorityQueue::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::PriorityQueue::J2CPP_CLASS_NAME, java::util::PriorityQueue::J2CPP_METHOD_NAME(1), java::util::PriorityQueue::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::io::Serializable>(get_jtype());
 }
 
-template <>
-local_ref< java::util::PriorityQueue > create< java::util::PriorityQueue>(cpp_int const &a0, local_ref< java::util::Comparator > const &a1)
+
+java::util::PriorityQueue::PriorityQueue()
+: cpp_object<java::util::PriorityQueue>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::util::PriorityQueue::J2CPP_CLASS_NAME>(),
+		get_method_id<java::util::PriorityQueue::J2CPP_CLASS_NAME, java::util::PriorityQueue::J2CPP_METHOD_NAME(0), java::util::PriorityQueue::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
 {
-	return local_ref< java::util::PriorityQueue >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::PriorityQueue::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::PriorityQueue::J2CPP_CLASS_NAME, java::util::PriorityQueue::J2CPP_METHOD_NAME(2), java::util::PriorityQueue::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< java::util::PriorityQueue > create< java::util::PriorityQueue>(local_ref< java::util::Collection > const &a0)
+
+
+java::util::PriorityQueue::PriorityQueue(cpp_int const &a0)
+: cpp_object<java::util::PriorityQueue>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::util::PriorityQueue::J2CPP_CLASS_NAME>(),
+		get_method_id<java::util::PriorityQueue::J2CPP_CLASS_NAME, java::util::PriorityQueue::J2CPP_METHOD_NAME(1), java::util::PriorityQueue::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< java::util::PriorityQueue >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::PriorityQueue::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::PriorityQueue::J2CPP_CLASS_NAME, java::util::PriorityQueue::J2CPP_METHOD_NAME(3), java::util::PriorityQueue::J2CPP_METHOD_SIGNATURE(3), false>(),
-			a0.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< java::util::PriorityQueue > create< java::util::PriorityQueue>(local_ref< java::util::PriorityQueue > const &a0)
+
+
+java::util::PriorityQueue::PriorityQueue(cpp_int const &a0, local_ref< java::util::Comparator > const &a1)
+: cpp_object<java::util::PriorityQueue>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::util::PriorityQueue::J2CPP_CLASS_NAME>(),
+		get_method_id<java::util::PriorityQueue::J2CPP_CLASS_NAME, java::util::PriorityQueue::J2CPP_METHOD_NAME(2), java::util::PriorityQueue::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
 {
-	return local_ref< java::util::PriorityQueue >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::PriorityQueue::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::PriorityQueue::J2CPP_CLASS_NAME, java::util::PriorityQueue::J2CPP_METHOD_NAME(4), java::util::PriorityQueue::J2CPP_METHOD_SIGNATURE(4), false>(),
-			a0.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< java::util::PriorityQueue > create< java::util::PriorityQueue>(local_ref< java::util::SortedSet > const &a0)
+
+
+java::util::PriorityQueue::PriorityQueue(local_ref< java::util::Collection > const &a0)
+: cpp_object<java::util::PriorityQueue>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::util::PriorityQueue::J2CPP_CLASS_NAME>(),
+		get_method_id<java::util::PriorityQueue::J2CPP_CLASS_NAME, java::util::PriorityQueue::J2CPP_METHOD_NAME(3), java::util::PriorityQueue::J2CPP_METHOD_SIGNATURE(3), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< java::util::PriorityQueue >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::PriorityQueue::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::PriorityQueue::J2CPP_CLASS_NAME, java::util::PriorityQueue::J2CPP_METHOD_NAME(5), java::util::PriorityQueue::J2CPP_METHOD_SIGNATURE(5), false>(),
-			a0.get_jtype()
-		)
-	);
 }
+
+
+
+java::util::PriorityQueue::PriorityQueue(local_ref< java::util::PriorityQueue > const &a0)
+: cpp_object<java::util::PriorityQueue>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::util::PriorityQueue::J2CPP_CLASS_NAME>(),
+		get_method_id<java::util::PriorityQueue::J2CPP_CLASS_NAME, java::util::PriorityQueue::J2CPP_METHOD_NAME(4), java::util::PriorityQueue::J2CPP_METHOD_SIGNATURE(4), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
+
+
+java::util::PriorityQueue::PriorityQueue(local_ref< java::util::SortedSet > const &a0)
+: cpp_object<java::util::PriorityQueue>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::util::PriorityQueue::J2CPP_CLASS_NAME>(),
+		get_method_id<java::util::PriorityQueue::J2CPP_CLASS_NAME, java::util::PriorityQueue::J2CPP_METHOD_NAME(5), java::util::PriorityQueue::J2CPP_METHOD_SIGNATURE(5), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 local_ref< java::util::Iterator > java::util::PriorityQueue::iterator()
 {

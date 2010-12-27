@@ -10,10 +10,12 @@
 #define J2CPP_ANDROID_UTIL_TIMEUTILS_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace util { class TimeZone; } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/util/TimeZone.hpp>
 
@@ -34,18 +36,21 @@ namespace android { namespace util {
 		J2CPP_DECLARE_METHOD(1)
 		J2CPP_DECLARE_METHOD(2)
 
-		TimeUtils(jobject jobj)
+		explicit TimeUtils(jobject jobj)
 		: cpp_object<TimeUtils>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		TimeUtils();
 		static local_ref< java::util::TimeZone > getTimeZone(cpp_int const&, cpp_boolean const&, cpp_long const&, local_ref< java::lang::String > const&);
 		static local_ref< java::lang::String > getTimeZoneDatabaseVersion();
 	}; //class TimeUtils
 
 } //namespace util
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -59,16 +64,23 @@ namespace android { namespace util {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::util::TimeUtils > create< android::util::TimeUtils>()
+
+android::util::TimeUtils::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::util::TimeUtils >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::util::TimeUtils::J2CPP_CLASS_NAME>(),
-			get_method_id<android::util::TimeUtils::J2CPP_CLASS_NAME, android::util::TimeUtils::J2CPP_METHOD_NAME(0), android::util::TimeUtils::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::util::TimeUtils::TimeUtils()
+: cpp_object<android::util::TimeUtils>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::util::TimeUtils::J2CPP_CLASS_NAME>(),
+		get_method_id<android::util::TimeUtils::J2CPP_CLASS_NAME, android::util::TimeUtils::J2CPP_METHOD_NAME(0), android::util::TimeUtils::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 local_ref< java::util::TimeZone > android::util::TimeUtils::getTimeZone(cpp_int const &a0, cpp_boolean const &a1, cpp_long const &a2, local_ref< java::lang::String > const &a3)
 {

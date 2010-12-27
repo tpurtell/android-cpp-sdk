@@ -10,9 +10,11 @@
 #define J2CPP_JAVA_NIO_BYTEORDER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -35,10 +37,13 @@ namespace java { namespace nio {
 		J2CPP_DECLARE_FIELD(0)
 		J2CPP_DECLARE_FIELD(1)
 
-		ByteOrder(jobject jobj)
+		explicit ByteOrder(jobject jobj)
 		: cpp_object<ByteOrder>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		static local_ref< java::nio::ByteOrder > nativeOrder();
 		local_ref< java::lang::String > toString();
@@ -49,7 +54,6 @@ namespace java { namespace nio {
 
 } //namespace nio
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -63,16 +67,12 @@ namespace java { namespace nio {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::nio::ByteOrder > create< java::nio::ByteOrder>()
+
+java::nio::ByteOrder::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::nio::ByteOrder >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::nio::ByteOrder::J2CPP_CLASS_NAME>(),
-			get_method_id<java::nio::ByteOrder::J2CPP_CLASS_NAME, java::nio::ByteOrder::J2CPP_METHOD_NAME(0), java::nio::ByteOrder::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
 
 local_ref< java::nio::ByteOrder > java::nio::ByteOrder::nativeOrder()
 {
@@ -93,6 +93,7 @@ local_ref< java::lang::String > java::nio::ByteOrder::toString()
 		)
 	);
 }
+
 
 
 static_field<

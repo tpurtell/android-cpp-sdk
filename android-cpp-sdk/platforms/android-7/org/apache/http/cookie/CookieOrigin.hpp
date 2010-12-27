@@ -10,9 +10,11 @@
 #define J2CPP_ORG_APACHE_HTTP_COOKIE_COOKIEORIGIN_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -35,11 +37,15 @@ namespace org { namespace apache { namespace http { namespace cookie {
 		J2CPP_DECLARE_METHOD(4)
 		J2CPP_DECLARE_METHOD(5)
 
-		CookieOrigin(jobject jobj)
+		explicit CookieOrigin(jobject jobj)
 		: cpp_object<CookieOrigin>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		CookieOrigin(local_ref< java::lang::String > const&, cpp_int const&, local_ref< java::lang::String > const&, cpp_boolean const&);
 		local_ref< java::lang::String > getHost();
 		local_ref< java::lang::String > getPath();
 		cpp_int getPort();
@@ -51,7 +57,6 @@ namespace org { namespace apache { namespace http { namespace cookie {
 } //namespace http
 } //namespace apache
 } //namespace org
-
 
 } //namespace j2cpp
 
@@ -65,17 +70,24 @@ namespace org { namespace apache { namespace http { namespace cookie {
 namespace j2cpp {
 
 
-template <>
-local_ref< org::apache::http::cookie::CookieOrigin > create< org::apache::http::cookie::CookieOrigin>(local_ref< java::lang::String > const &a0, cpp_int const &a1, local_ref< java::lang::String > const &a2, cpp_boolean const &a3)
+
+org::apache::http::cookie::CookieOrigin::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< org::apache::http::cookie::CookieOrigin >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::apache::http::cookie::CookieOrigin::J2CPP_CLASS_NAME>(),
-			get_method_id<org::apache::http::cookie::CookieOrigin::J2CPP_CLASS_NAME, org::apache::http::cookie::CookieOrigin::J2CPP_METHOD_NAME(0), org::apache::http::cookie::CookieOrigin::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+org::apache::http::cookie::CookieOrigin::CookieOrigin(local_ref< java::lang::String > const &a0, cpp_int const &a1, local_ref< java::lang::String > const &a2, cpp_boolean const &a3)
+: cpp_object<org::apache::http::cookie::CookieOrigin>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::apache::http::cookie::CookieOrigin::J2CPP_CLASS_NAME>(),
+		get_method_id<org::apache::http::cookie::CookieOrigin::J2CPP_CLASS_NAME, org::apache::http::cookie::CookieOrigin::J2CPP_METHOD_NAME(0), org::apache::http::cookie::CookieOrigin::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype()
+	)
+)
+{
+}
+
 
 local_ref< java::lang::String > org::apache::http::cookie::CookieOrigin::getHost()
 {

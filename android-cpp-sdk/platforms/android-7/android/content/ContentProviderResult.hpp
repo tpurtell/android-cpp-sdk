@@ -11,9 +11,11 @@
 
 
 namespace j2cpp { namespace java { namespace lang { class Integer; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace android { namespace net { class Uri; } } }
 namespace j2cpp { namespace android { namespace os { class Parcel; } } }
+namespace j2cpp { namespace android { namespace os { class Parcelable; } } }
 namespace j2cpp { namespace android { namespace os { namespace Parcelable_ { class Creator; } } } }
 
 
@@ -21,6 +23,7 @@ namespace j2cpp { namespace android { namespace os { namespace Parcelable_ { cla
 #include <android/os/Parcel.hpp>
 #include <android/os/Parcelable.hpp>
 #include <java/lang/Integer.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -47,13 +50,20 @@ namespace android { namespace content {
 		J2CPP_DECLARE_FIELD(1)
 		J2CPP_DECLARE_FIELD(2)
 
-		ContentProviderResult(jobject jobj)
+		explicit ContentProviderResult(jobject jobj)
 		: cpp_object<ContentProviderResult>(jobj)
-		, uri(jobj)
-		, count(jobj)
+, uri(jobj)
+, count(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<android::os::Parcelable>() const;
+
+
+		ContentProviderResult(local_ref< android::net::Uri > const&);
+		ContentProviderResult(cpp_int const&);
+		ContentProviderResult(local_ref< android::os::Parcel > const&);
 		void writeToParcel(local_ref< android::os::Parcel > const&, cpp_int const&);
 		cpp_int describeContents();
 		local_ref< java::lang::String > toString();
@@ -65,7 +75,6 @@ namespace android { namespace content {
 
 } //namespace content
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -79,41 +88,61 @@ namespace android { namespace content {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::content::ContentProviderResult > create< android::content::ContentProviderResult>(local_ref< android::net::Uri > const &a0)
+
+android::content::ContentProviderResult::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::content::ContentProviderResult >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::content::ContentProviderResult::J2CPP_CLASS_NAME>(),
-			get_method_id<android::content::ContentProviderResult::J2CPP_CLASS_NAME, android::content::ContentProviderResult::J2CPP_METHOD_NAME(0), android::content::ContentProviderResult::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
 
-template <>
-local_ref< android::content::ContentProviderResult > create< android::content::ContentProviderResult>(cpp_int const &a0)
+android::content::ContentProviderResult::operator local_ref<android::os::Parcelable>() const
 {
-	return local_ref< android::content::ContentProviderResult >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::content::ContentProviderResult::J2CPP_CLASS_NAME>(),
-			get_method_id<android::content::ContentProviderResult::J2CPP_CLASS_NAME, android::content::ContentProviderResult::J2CPP_METHOD_NAME(1), android::content::ContentProviderResult::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<android::os::Parcelable>(get_jtype());
 }
 
-template <>
-local_ref< android::content::ContentProviderResult > create< android::content::ContentProviderResult>(local_ref< android::os::Parcel > const &a0)
+
+android::content::ContentProviderResult::ContentProviderResult(local_ref< android::net::Uri > const &a0)
+: cpp_object<android::content::ContentProviderResult>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::content::ContentProviderResult::J2CPP_CLASS_NAME>(),
+		get_method_id<android::content::ContentProviderResult::J2CPP_CLASS_NAME, android::content::ContentProviderResult::J2CPP_METHOD_NAME(0), android::content::ContentProviderResult::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
+, uri(get_jtype())
+, count(get_jtype())
 {
-	return local_ref< android::content::ContentProviderResult >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::content::ContentProviderResult::J2CPP_CLASS_NAME>(),
-			get_method_id<android::content::ContentProviderResult::J2CPP_CLASS_NAME, android::content::ContentProviderResult::J2CPP_METHOD_NAME(2), android::content::ContentProviderResult::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype()
-		)
-	);
 }
+
+
+
+android::content::ContentProviderResult::ContentProviderResult(cpp_int const &a0)
+: cpp_object<android::content::ContentProviderResult>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::content::ContentProviderResult::J2CPP_CLASS_NAME>(),
+		get_method_id<android::content::ContentProviderResult::J2CPP_CLASS_NAME, android::content::ContentProviderResult::J2CPP_METHOD_NAME(1), android::content::ContentProviderResult::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
+, uri(get_jtype())
+, count(get_jtype())
+{
+}
+
+
+
+android::content::ContentProviderResult::ContentProviderResult(local_ref< android::os::Parcel > const &a0)
+: cpp_object<android::content::ContentProviderResult>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::content::ContentProviderResult::J2CPP_CLASS_NAME>(),
+		get_method_id<android::content::ContentProviderResult::J2CPP_CLASS_NAME, android::content::ContentProviderResult::J2CPP_METHOD_NAME(2), android::content::ContentProviderResult::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype()
+	)
+)
+, uri(get_jtype())
+, count(get_jtype())
+{
+}
+
 
 void android::content::ContentProviderResult::writeToParcel(local_ref< android::os::Parcel > const &a0, cpp_int const &a1)
 {
@@ -145,6 +174,7 @@ local_ref< java::lang::String > android::content::ContentProviderResult::toStrin
 		)
 	);
 }
+
 
 
 static_field<

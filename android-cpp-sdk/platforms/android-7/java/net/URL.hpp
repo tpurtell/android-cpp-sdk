@@ -10,11 +10,12 @@
 #define J2CPP_JAVA_NET_URL_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace net { class Proxy; } } }
 namespace j2cpp { namespace java { namespace net { class URLStreamHandlerFactory; } } }
 namespace j2cpp { namespace java { namespace net { class URLConnection; } } }
-namespace j2cpp { namespace java { namespace net { class Proxy; } } }
 namespace j2cpp { namespace java { namespace net { class URI; } } }
 namespace j2cpp { namespace java { namespace net { class URLStreamHandler; } } }
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 namespace j2cpp { namespace java { namespace io { class InputStream; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class Class; } } }
@@ -22,6 +23,7 @@ namespace j2cpp { namespace java { namespace lang { class String; } } }
 
 
 #include <java/io/InputStream.hpp>
+#include <java/io/Serializable.hpp>
 #include <java/lang/Class.hpp>
 #include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
@@ -75,11 +77,21 @@ namespace java { namespace net {
 		J2CPP_DECLARE_METHOD(28)
 		J2CPP_DECLARE_METHOD(29)
 
-		URL(jobject jobj)
+		explicit URL(jobject jobj)
 		: cpp_object<URL>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::io::Serializable>() const;
+
+
+		URL(local_ref< java::lang::String > const&);
+		URL(local_ref< java::net::URL > const&, local_ref< java::lang::String > const&);
+		URL(local_ref< java::net::URL > const&, local_ref< java::lang::String > const&, local_ref< java::net::URLStreamHandler > const&);
+		URL(local_ref< java::lang::String > const&, local_ref< java::lang::String > const&, local_ref< java::lang::String > const&);
+		URL(local_ref< java::lang::String > const&, local_ref< java::lang::String > const&, cpp_int const&, local_ref< java::lang::String > const&);
+		URL(local_ref< java::lang::String > const&, local_ref< java::lang::String > const&, cpp_int const&, local_ref< java::lang::String > const&, local_ref< java::net::URLStreamHandler > const&);
 		static void setURLStreamHandlerFactory(local_ref< java::net::URLStreamHandlerFactory > const&);
 		cpp_boolean equals(local_ref< java::lang::Object > const&);
 		cpp_boolean sameFile(local_ref< java::net::URL > const&);
@@ -107,7 +119,6 @@ namespace java { namespace net {
 } //namespace net
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_NET_URL_HPP_DECL
@@ -120,77 +131,94 @@ namespace java { namespace net {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::net::URL > create< java::net::URL>(local_ref< java::lang::String > const &a0)
+
+java::net::URL::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::net::URL >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::net::URL::J2CPP_CLASS_NAME>(),
-			get_method_id<java::net::URL::J2CPP_CLASS_NAME, java::net::URL::J2CPP_METHOD_NAME(0), java::net::URL::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
 
-template <>
-local_ref< java::net::URL > create< java::net::URL>(local_ref< java::net::URL > const &a0, local_ref< java::lang::String > const &a1)
+java::net::URL::operator local_ref<java::io::Serializable>() const
 {
-	return local_ref< java::net::URL >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::net::URL::J2CPP_CLASS_NAME>(),
-			get_method_id<java::net::URL::J2CPP_CLASS_NAME, java::net::URL::J2CPP_METHOD_NAME(1), java::net::URL::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<java::io::Serializable>(get_jtype());
 }
 
-template <>
-local_ref< java::net::URL > create< java::net::URL>(local_ref< java::net::URL > const &a0, local_ref< java::lang::String > const &a1, local_ref< java::net::URLStreamHandler > const &a2)
+
+java::net::URL::URL(local_ref< java::lang::String > const &a0)
+: cpp_object<java::net::URL>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::net::URL::J2CPP_CLASS_NAME>(),
+		get_method_id<java::net::URL::J2CPP_CLASS_NAME, java::net::URL::J2CPP_METHOD_NAME(0), java::net::URL::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< java::net::URL >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::net::URL::J2CPP_CLASS_NAME>(),
-			get_method_id<java::net::URL::J2CPP_CLASS_NAME, java::net::URL::J2CPP_METHOD_NAME(2), java::net::URL::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< java::net::URL > create< java::net::URL>(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1, local_ref< java::lang::String > const &a2)
+
+
+java::net::URL::URL(local_ref< java::net::URL > const &a0, local_ref< java::lang::String > const &a1)
+: cpp_object<java::net::URL>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::net::URL::J2CPP_CLASS_NAME>(),
+		get_method_id<java::net::URL::J2CPP_CLASS_NAME, java::net::URL::J2CPP_METHOD_NAME(1), java::net::URL::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
 {
-	return local_ref< java::net::URL >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::net::URL::J2CPP_CLASS_NAME>(),
-			get_method_id<java::net::URL::J2CPP_CLASS_NAME, java::net::URL::J2CPP_METHOD_NAME(3), java::net::URL::J2CPP_METHOD_SIGNATURE(3), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< java::net::URL > create< java::net::URL>(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1, cpp_int const &a2, local_ref< java::lang::String > const &a3)
+
+
+java::net::URL::URL(local_ref< java::net::URL > const &a0, local_ref< java::lang::String > const &a1, local_ref< java::net::URLStreamHandler > const &a2)
+: cpp_object<java::net::URL>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::net::URL::J2CPP_CLASS_NAME>(),
+		get_method_id<java::net::URL::J2CPP_CLASS_NAME, java::net::URL::J2CPP_METHOD_NAME(2), java::net::URL::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
+	)
+)
 {
-	return local_ref< java::net::URL >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::net::URL::J2CPP_CLASS_NAME>(),
-			get_method_id<java::net::URL::J2CPP_CLASS_NAME, java::net::URL::J2CPP_METHOD_NAME(4), java::net::URL::J2CPP_METHOD_SIGNATURE(4), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< java::net::URL > create< java::net::URL>(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1, cpp_int const &a2, local_ref< java::lang::String > const &a3, local_ref< java::net::URLStreamHandler > const &a4)
+
+
+java::net::URL::URL(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1, local_ref< java::lang::String > const &a2)
+: cpp_object<java::net::URL>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::net::URL::J2CPP_CLASS_NAME>(),
+		get_method_id<java::net::URL::J2CPP_CLASS_NAME, java::net::URL::J2CPP_METHOD_NAME(3), java::net::URL::J2CPP_METHOD_SIGNATURE(3), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
+	)
+)
 {
-	return local_ref< java::net::URL >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::net::URL::J2CPP_CLASS_NAME>(),
-			get_method_id<java::net::URL::J2CPP_CLASS_NAME, java::net::URL::J2CPP_METHOD_NAME(5), java::net::URL::J2CPP_METHOD_SIGNATURE(5), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype(), a4.get_jtype()
-		)
-	);
 }
+
+
+
+java::net::URL::URL(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1, cpp_int const &a2, local_ref< java::lang::String > const &a3)
+: cpp_object<java::net::URL>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::net::URL::J2CPP_CLASS_NAME>(),
+		get_method_id<java::net::URL::J2CPP_CLASS_NAME, java::net::URL::J2CPP_METHOD_NAME(4), java::net::URL::J2CPP_METHOD_SIGNATURE(4), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype()
+	)
+)
+{
+}
+
+
+
+java::net::URL::URL(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1, cpp_int const &a2, local_ref< java::lang::String > const &a3, local_ref< java::net::URLStreamHandler > const &a4)
+: cpp_object<java::net::URL>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::net::URL::J2CPP_CLASS_NAME>(),
+		get_method_id<java::net::URL::J2CPP_CLASS_NAME, java::net::URL::J2CPP_METHOD_NAME(5), java::net::URL::J2CPP_METHOD_SIGNATURE(5), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype(), a4.get_jtype()
+	)
+)
+{
+}
+
 
 void java::net::URL::setURLStreamHandlerFactory(local_ref< java::net::URLStreamHandlerFactory > const &a0)
 {

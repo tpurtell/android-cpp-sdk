@@ -10,13 +10,17 @@
 #define J2CPP_ORG_APACHE_HTTP_IMPL_IO_ABSTRACTMESSAGEWRITER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { namespace io { class HttpMessageWriter; } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace io { class SessionOutputBuffer; } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace message { class LineFormatter; } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace params { class HttpParams; } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { class HttpMessage; } } } }
 
 
+#include <java/lang/Object.hpp>
 #include <org/apache/http/HttpMessage.hpp>
+#include <org/apache/http/io/HttpMessageWriter.hpp>
 #include <org/apache/http/io/SessionOutputBuffer.hpp>
 #include <org/apache/http/message/LineFormatter.hpp>
 #include <org/apache/http/params/HttpParams.hpp>
@@ -41,11 +45,16 @@ namespace org { namespace apache { namespace http { namespace impl { namespace i
 		J2CPP_DECLARE_FIELD(1)
 		J2CPP_DECLARE_FIELD(2)
 
-		AbstractMessageWriter(jobject jobj)
+		explicit AbstractMessageWriter(jobject jobj)
 		: cpp_object<AbstractMessageWriter>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<org::apache::http::io::HttpMessageWriter>() const;
+
+
+		AbstractMessageWriter(local_ref< org::apache::http::io::SessionOutputBuffer > const&, local_ref< org::apache::http::message::LineFormatter > const&, local_ref< org::apache::http::params::HttpParams > const&);
 		void write(local_ref< org::apache::http::HttpMessage > const&);
 
 	}; //class AbstractMessageWriter
@@ -55,7 +64,6 @@ namespace org { namespace apache { namespace http { namespace impl { namespace i
 } //namespace http
 } //namespace apache
 } //namespace org
-
 
 } //namespace j2cpp
 
@@ -69,17 +77,29 @@ namespace org { namespace apache { namespace http { namespace impl { namespace i
 namespace j2cpp {
 
 
-template <>
-local_ref< org::apache::http::impl::io::AbstractMessageWriter > create< org::apache::http::impl::io::AbstractMessageWriter>(local_ref< org::apache::http::io::SessionOutputBuffer > const &a0, local_ref< org::apache::http::message::LineFormatter > const &a1, local_ref< org::apache::http::params::HttpParams > const &a2)
+
+org::apache::http::impl::io::AbstractMessageWriter::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< org::apache::http::impl::io::AbstractMessageWriter >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::apache::http::impl::io::AbstractMessageWriter::J2CPP_CLASS_NAME>(),
-			get_method_id<org::apache::http::impl::io::AbstractMessageWriter::J2CPP_CLASS_NAME, org::apache::http::impl::io::AbstractMessageWriter::J2CPP_METHOD_NAME(0), org::apache::http::impl::io::AbstractMessageWriter::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+org::apache::http::impl::io::AbstractMessageWriter::operator local_ref<org::apache::http::io::HttpMessageWriter>() const
+{
+	return local_ref<org::apache::http::io::HttpMessageWriter>(get_jtype());
+}
+
+
+org::apache::http::impl::io::AbstractMessageWriter::AbstractMessageWriter(local_ref< org::apache::http::io::SessionOutputBuffer > const &a0, local_ref< org::apache::http::message::LineFormatter > const &a1, local_ref< org::apache::http::params::HttpParams > const &a2)
+: cpp_object<org::apache::http::impl::io::AbstractMessageWriter>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::apache::http::impl::io::AbstractMessageWriter::J2CPP_CLASS_NAME>(),
+		get_method_id<org::apache::http::impl::io::AbstractMessageWriter::J2CPP_CLASS_NAME, org::apache::http::impl::io::AbstractMessageWriter::J2CPP_METHOD_NAME(0), org::apache::http::impl::io::AbstractMessageWriter::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
+	)
+)
+{
+}
+
 
 
 void org::apache::http::impl::io::AbstractMessageWriter::write(local_ref< org::apache::http::HttpMessage > const &a0)

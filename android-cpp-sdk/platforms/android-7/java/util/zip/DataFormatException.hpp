@@ -11,8 +11,10 @@
 
 
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace lang { class Exception; } } }
 
 
+#include <java/lang/Exception.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -31,17 +33,21 @@ namespace java { namespace util { namespace zip {
 		J2CPP_DECLARE_METHOD(0)
 		J2CPP_DECLARE_METHOD(1)
 
-		DataFormatException(jobject jobj)
+		explicit DataFormatException(jobject jobj)
 		: cpp_object<DataFormatException>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Exception>() const;
+
+
+		DataFormatException();
+		DataFormatException(local_ref< java::lang::String > const&);
 	}; //class DataFormatException
 
 } //namespace zip
 } //namespace util
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -55,28 +61,36 @@ namespace java { namespace util { namespace zip {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::util::zip::DataFormatException > create< java::util::zip::DataFormatException>()
+
+java::util::zip::DataFormatException::operator local_ref<java::lang::Exception>() const
 {
-	return local_ref< java::util::zip::DataFormatException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::zip::DataFormatException::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::zip::DataFormatException::J2CPP_CLASS_NAME, java::util::zip::DataFormatException::J2CPP_METHOD_NAME(0), java::util::zip::DataFormatException::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Exception>(get_jtype());
 }
 
-template <>
-local_ref< java::util::zip::DataFormatException > create< java::util::zip::DataFormatException>(local_ref< java::lang::String > const &a0)
+
+java::util::zip::DataFormatException::DataFormatException()
+: cpp_object<java::util::zip::DataFormatException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::util::zip::DataFormatException::J2CPP_CLASS_NAME>(),
+		get_method_id<java::util::zip::DataFormatException::J2CPP_CLASS_NAME, java::util::zip::DataFormatException::J2CPP_METHOD_NAME(0), java::util::zip::DataFormatException::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
 {
-	return local_ref< java::util::zip::DataFormatException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::zip::DataFormatException::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::zip::DataFormatException::J2CPP_CLASS_NAME, java::util::zip::DataFormatException::J2CPP_METHOD_NAME(1), java::util::zip::DataFormatException::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
 }
+
+
+
+java::util::zip::DataFormatException::DataFormatException(local_ref< java::lang::String > const &a0)
+: cpp_object<java::util::zip::DataFormatException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::util::zip::DataFormatException::J2CPP_CLASS_NAME>(),
+		get_method_id<java::util::zip::DataFormatException::J2CPP_CLASS_NAME, java::util::zip::DataFormatException::J2CPP_METHOD_NAME(1), java::util::zip::DataFormatException::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 
 J2CPP_DEFINE_CLASS(java::util::zip::DataFormatException,"java/util/zip/DataFormatException")

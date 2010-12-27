@@ -10,6 +10,7 @@
 #define J2CPP_ORG_XML_SAX_PARSER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace util { class Locale; } } }
 namespace j2cpp { namespace org { namespace xml { namespace sax { class EntityResolver; } } } }
@@ -19,6 +20,7 @@ namespace j2cpp { namespace org { namespace xml { namespace sax { class Document
 namespace j2cpp { namespace org { namespace xml { namespace sax { class DTDHandler; } } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/util/Locale.hpp>
 #include <org/xml/sax/DTDHandler.hpp>
@@ -48,10 +50,13 @@ namespace org { namespace xml { namespace sax {
 		J2CPP_DECLARE_METHOD(5)
 		J2CPP_DECLARE_METHOD(6)
 
-		Parser(jobject jobj)
+		explicit Parser(jobject jobj)
 		: cpp_object<Parser>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		void setLocale(local_ref< java::util::Locale > const&);
 		void setEntityResolver(local_ref< org::xml::sax::EntityResolver > const&);
@@ -66,7 +71,6 @@ namespace org { namespace xml { namespace sax {
 } //namespace xml
 } //namespace org
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ORG_XML_SAX_PARSER_HPP_DECL
@@ -78,6 +82,12 @@ namespace org { namespace xml { namespace sax {
 
 namespace j2cpp {
 
+
+
+org::xml::sax::Parser::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 void org::xml::sax::Parser::setLocale(local_ref< java::util::Locale > const &a0)
 {

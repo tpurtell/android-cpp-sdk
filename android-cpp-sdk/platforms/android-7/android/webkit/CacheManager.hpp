@@ -13,6 +13,7 @@
 namespace j2cpp { namespace java { namespace io { class File; } } }
 namespace j2cpp { namespace java { namespace io { class InputStream; } } }
 namespace j2cpp { namespace java { namespace io { class OutputStream; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace util { class Map; } } }
 namespace j2cpp { namespace android { namespace webkit { namespace CacheManager_ { class CacheResult; } } } }
@@ -22,6 +23,7 @@ namespace j2cpp { namespace android { namespace webkit { namespace CacheManager_
 #include <java/io/File.hpp>
 #include <java/io/InputStream.hpp>
 #include <java/io/OutputStream.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/util/Map.hpp>
 
@@ -58,11 +60,15 @@ namespace android { namespace webkit {
 			J2CPP_DECLARE_METHOD(14)
 			J2CPP_DECLARE_METHOD(15)
 
-			CacheResult(jobject jobj)
+			explicit CacheResult(jobject jobj)
 			: cpp_object<CacheResult>(jobj)
 			{
 			}
 
+			operator local_ref<java::lang::Object>() const;
+
+
+			CacheResult();
 			cpp_int getHttpStatusCode();
 			cpp_long getContentLength();
 			local_ref< java::lang::String > getLocalPath();
@@ -99,11 +105,15 @@ namespace android { namespace webkit {
 
 		typedef CacheManager_::CacheResult CacheResult;
 
-		CacheManager(jobject jobj)
+		explicit CacheManager(jobject jobj)
 		: cpp_object<CacheManager>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		CacheManager();
 		static local_ref< java::io::File > getCacheFileBaseDir();
 		static cpp_boolean cacheDisabled();
 		static cpp_boolean startCacheTransaction();
@@ -114,7 +124,6 @@ namespace android { namespace webkit {
 
 } //namespace webkit
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -129,16 +138,23 @@ namespace j2cpp {
 
 
 
-template <>
-local_ref< android::webkit::CacheManager_::CacheResult > create< android::webkit::CacheManager_::CacheResult>()
+
+android::webkit::CacheManager_::CacheResult::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::webkit::CacheManager_::CacheResult >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::webkit::CacheManager_::CacheResult::J2CPP_CLASS_NAME>(),
-			get_method_id<android::webkit::CacheManager_::CacheResult::J2CPP_CLASS_NAME, android::webkit::CacheManager_::CacheResult::J2CPP_METHOD_NAME(0), android::webkit::CacheManager_::CacheResult::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::webkit::CacheManager_::CacheResult::CacheResult()
+: cpp_object<android::webkit::CacheManager_::CacheResult>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::webkit::CacheManager_::CacheResult::J2CPP_CLASS_NAME>(),
+		get_method_id<android::webkit::CacheManager_::CacheResult::J2CPP_CLASS_NAME, android::webkit::CacheManager_::CacheResult::J2CPP_METHOD_NAME(0), android::webkit::CacheManager_::CacheResult::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 cpp_int android::webkit::CacheManager_::CacheResult::getHttpStatusCode()
 {
@@ -312,16 +328,23 @@ J2CPP_DEFINE_METHOD(android::webkit::CacheManager_::CacheResult,14,"setInputStre
 J2CPP_DEFINE_METHOD(android::webkit::CacheManager_::CacheResult,15,"setEncoding","(Ljava/lang/String;)V")
 
 
-template <>
-local_ref< android::webkit::CacheManager > create< android::webkit::CacheManager>()
+
+android::webkit::CacheManager::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::webkit::CacheManager >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::webkit::CacheManager::J2CPP_CLASS_NAME>(),
-			get_method_id<android::webkit::CacheManager::J2CPP_CLASS_NAME, android::webkit::CacheManager::J2CPP_METHOD_NAME(0), android::webkit::CacheManager::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::webkit::CacheManager::CacheManager()
+: cpp_object<android::webkit::CacheManager>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::webkit::CacheManager::J2CPP_CLASS_NAME>(),
+		get_method_id<android::webkit::CacheManager::J2CPP_CLASS_NAME, android::webkit::CacheManager::J2CPP_METHOD_NAME(0), android::webkit::CacheManager::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 local_ref< java::io::File > android::webkit::CacheManager::getCacheFileBaseDir()
 {

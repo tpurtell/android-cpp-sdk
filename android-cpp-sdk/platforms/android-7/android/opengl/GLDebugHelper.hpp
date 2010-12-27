@@ -13,9 +13,11 @@
 namespace j2cpp { namespace javax { namespace microedition { namespace khronos { namespace egl { class EGL; } } } } }
 namespace j2cpp { namespace javax { namespace microedition { namespace khronos { namespace opengles { class GL; } } } } }
 namespace j2cpp { namespace java { namespace io { class Writer; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
 #include <java/io/Writer.hpp>
+#include <java/lang/Object.hpp>
 #include <javax/microedition/khronos/egl/EGL.hpp>
 #include <javax/microedition/khronos/opengles/GL.hpp>
 
@@ -40,11 +42,15 @@ namespace android { namespace opengl {
 		J2CPP_DECLARE_FIELD(2)
 		J2CPP_DECLARE_FIELD(3)
 
-		GLDebugHelper(jobject jobj)
+		explicit GLDebugHelper(jobject jobj)
 		: cpp_object<GLDebugHelper>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		GLDebugHelper();
 		static local_ref< javax::microedition::khronos::opengles::GL > wrap(local_ref< javax::microedition::khronos::opengles::GL > const&, cpp_int const&, local_ref< java::io::Writer > const&);
 		static local_ref< javax::microedition::khronos::egl::EGL > wrap(local_ref< javax::microedition::khronos::egl::EGL > const&, cpp_int const&, local_ref< java::io::Writer > const&);
 
@@ -56,7 +62,6 @@ namespace android { namespace opengl {
 
 } //namespace opengl
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -70,16 +75,23 @@ namespace android { namespace opengl {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::opengl::GLDebugHelper > create< android::opengl::GLDebugHelper>()
+
+android::opengl::GLDebugHelper::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::opengl::GLDebugHelper >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::opengl::GLDebugHelper::J2CPP_CLASS_NAME>(),
-			get_method_id<android::opengl::GLDebugHelper::J2CPP_CLASS_NAME, android::opengl::GLDebugHelper::J2CPP_METHOD_NAME(0), android::opengl::GLDebugHelper::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::opengl::GLDebugHelper::GLDebugHelper()
+: cpp_object<android::opengl::GLDebugHelper>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::opengl::GLDebugHelper::J2CPP_CLASS_NAME>(),
+		get_method_id<android::opengl::GLDebugHelper::J2CPP_CLASS_NAME, android::opengl::GLDebugHelper::J2CPP_METHOD_NAME(0), android::opengl::GLDebugHelper::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 local_ref< javax::microedition::khronos::opengles::GL > android::opengl::GLDebugHelper::wrap(local_ref< javax::microedition::khronos::opengles::GL > const &a0, cpp_int const &a1, local_ref< java::io::Writer > const &a2)
 {

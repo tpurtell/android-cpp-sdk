@@ -50,11 +50,17 @@ namespace android { namespace test { namespace suitebuilder {
 		J2CPP_DECLARE_METHOD(9)
 		J2CPP_DECLARE_METHOD(10)
 
-		TestMethod(jobject jobj)
+		explicit TestMethod(jobject jobj)
 		: cpp_object<TestMethod>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		TestMethod(local_ref< java::lang::reflect::Method > const&, local_ref< java::lang::Class > const&);
+		TestMethod(local_ref< java::lang::String > const&, local_ref< java::lang::Class > const&);
+		TestMethod(local_ref< junit::framework::TestCase > const&);
 		local_ref< java::lang::String > getName();
 		local_ref< java::lang::String > getEnclosingClassname();
 		local_ref< java::lang::annotation::Annotation > getAnnotation(local_ref< java::lang::Class > const&);
@@ -69,7 +75,6 @@ namespace android { namespace test { namespace suitebuilder {
 } //namespace test
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_TEST_SUITEBUILDER_TESTMETHOD_HPP_DECL
@@ -82,41 +87,50 @@ namespace android { namespace test { namespace suitebuilder {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::test::suitebuilder::TestMethod > create< android::test::suitebuilder::TestMethod>(local_ref< java::lang::reflect::Method > const &a0, local_ref< java::lang::Class > const &a1)
+
+android::test::suitebuilder::TestMethod::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::test::suitebuilder::TestMethod >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::test::suitebuilder::TestMethod::J2CPP_CLASS_NAME>(),
-			get_method_id<android::test::suitebuilder::TestMethod::J2CPP_CLASS_NAME, android::test::suitebuilder::TestMethod::J2CPP_METHOD_NAME(0), android::test::suitebuilder::TestMethod::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
 
-template <>
-local_ref< android::test::suitebuilder::TestMethod > create< android::test::suitebuilder::TestMethod>(local_ref< java::lang::String > const &a0, local_ref< java::lang::Class > const &a1)
+
+android::test::suitebuilder::TestMethod::TestMethod(local_ref< java::lang::reflect::Method > const &a0, local_ref< java::lang::Class > const &a1)
+: cpp_object<android::test::suitebuilder::TestMethod>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::test::suitebuilder::TestMethod::J2CPP_CLASS_NAME>(),
+		get_method_id<android::test::suitebuilder::TestMethod::J2CPP_CLASS_NAME, android::test::suitebuilder::TestMethod::J2CPP_METHOD_NAME(0), android::test::suitebuilder::TestMethod::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
 {
-	return local_ref< android::test::suitebuilder::TestMethod >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::test::suitebuilder::TestMethod::J2CPP_CLASS_NAME>(),
-			get_method_id<android::test::suitebuilder::TestMethod::J2CPP_CLASS_NAME, android::test::suitebuilder::TestMethod::J2CPP_METHOD_NAME(1), android::test::suitebuilder::TestMethod::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< android::test::suitebuilder::TestMethod > create< android::test::suitebuilder::TestMethod>(local_ref< junit::framework::TestCase > const &a0)
+
+
+android::test::suitebuilder::TestMethod::TestMethod(local_ref< java::lang::String > const &a0, local_ref< java::lang::Class > const &a1)
+: cpp_object<android::test::suitebuilder::TestMethod>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::test::suitebuilder::TestMethod::J2CPP_CLASS_NAME>(),
+		get_method_id<android::test::suitebuilder::TestMethod::J2CPP_CLASS_NAME, android::test::suitebuilder::TestMethod::J2CPP_METHOD_NAME(1), android::test::suitebuilder::TestMethod::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
 {
-	return local_ref< android::test::suitebuilder::TestMethod >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::test::suitebuilder::TestMethod::J2CPP_CLASS_NAME>(),
-			get_method_id<android::test::suitebuilder::TestMethod::J2CPP_CLASS_NAME, android::test::suitebuilder::TestMethod::J2CPP_METHOD_NAME(2), android::test::suitebuilder::TestMethod::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype()
-		)
-	);
 }
+
+
+
+android::test::suitebuilder::TestMethod::TestMethod(local_ref< junit::framework::TestCase > const &a0)
+: cpp_object<android::test::suitebuilder::TestMethod>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::test::suitebuilder::TestMethod::J2CPP_CLASS_NAME>(),
+		get_method_id<android::test::suitebuilder::TestMethod::J2CPP_CLASS_NAME, android::test::suitebuilder::TestMethod::J2CPP_METHOD_NAME(2), android::test::suitebuilder::TestMethod::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 local_ref< java::lang::String > android::test::suitebuilder::TestMethod::getName()
 {

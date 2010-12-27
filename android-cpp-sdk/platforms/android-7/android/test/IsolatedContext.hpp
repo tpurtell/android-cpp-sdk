@@ -21,11 +21,13 @@ namespace j2cpp { namespace android { namespace content { class BroadcastReceive
 namespace j2cpp { namespace android { namespace content { class Context; } } }
 namespace j2cpp { namespace android { namespace content { class IntentFilter; } } }
 namespace j2cpp { namespace android { namespace content { class ServiceConnection; } } }
+namespace j2cpp { namespace android { namespace content { class ContextWrapper; } } }
 
 
 #include <android/content/BroadcastReceiver.hpp>
 #include <android/content/ContentResolver.hpp>
 #include <android/content/Context.hpp>
+#include <android/content/ContextWrapper.hpp>
 #include <android/content/Intent.hpp>
 #include <android/content/IntentFilter.hpp>
 #include <android/content/ServiceConnection.hpp>
@@ -60,11 +62,15 @@ namespace android { namespace test {
 		J2CPP_DECLARE_METHOD(9)
 		J2CPP_DECLARE_METHOD(10)
 
-		IsolatedContext(jobject jobj)
+		explicit IsolatedContext(jobject jobj)
 		: cpp_object<IsolatedContext>(jobj)
 		{
 		}
 
+		operator local_ref<android::content::ContextWrapper>() const;
+
+
+		IsolatedContext(local_ref< android::content::ContentResolver > const&, local_ref< android::content::Context > const&);
 		local_ref< java::util::List > getAndClearBroadcastIntents();
 		local_ref< android::content::ContentResolver > getContentResolver();
 		cpp_boolean bindService(local_ref< android::content::Intent > const&, local_ref< android::content::ServiceConnection > const&, cpp_int const&);
@@ -80,7 +86,6 @@ namespace android { namespace test {
 } //namespace test
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_TEST_ISOLATEDCONTEXT_HPP_DECL
@@ -93,17 +98,24 @@ namespace android { namespace test {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::test::IsolatedContext > create< android::test::IsolatedContext>(local_ref< android::content::ContentResolver > const &a0, local_ref< android::content::Context > const &a1)
+
+android::test::IsolatedContext::operator local_ref<android::content::ContextWrapper>() const
 {
-	return local_ref< android::test::IsolatedContext >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::test::IsolatedContext::J2CPP_CLASS_NAME>(),
-			get_method_id<android::test::IsolatedContext::J2CPP_CLASS_NAME, android::test::IsolatedContext::J2CPP_METHOD_NAME(0), android::test::IsolatedContext::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<android::content::ContextWrapper>(get_jtype());
 }
+
+
+android::test::IsolatedContext::IsolatedContext(local_ref< android::content::ContentResolver > const &a0, local_ref< android::content::Context > const &a1)
+: cpp_object<android::test::IsolatedContext>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::test::IsolatedContext::J2CPP_CLASS_NAME>(),
+		get_method_id<android::test::IsolatedContext::J2CPP_CLASS_NAME, android::test::IsolatedContext::J2CPP_METHOD_NAME(0), android::test::IsolatedContext::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
 
 local_ref< java::util::List > android::test::IsolatedContext::getAndClearBroadcastIntents()
 {

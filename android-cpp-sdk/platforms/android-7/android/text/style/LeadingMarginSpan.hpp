@@ -10,10 +10,13 @@
 #define J2CPP_ANDROID_TEXT_STYLE_LEADINGMARGINSPAN_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class CharSequence; } } }
 namespace j2cpp { namespace android { namespace graphics { class Paint; } } }
 namespace j2cpp { namespace android { namespace graphics { class Canvas; } } }
 namespace j2cpp { namespace android { namespace text { class Layout; } } }
+namespace j2cpp { namespace android { namespace text { namespace style { class ParagraphStyle; } } } }
+namespace j2cpp { namespace android { namespace text { class ParcelableSpan; } } }
 namespace j2cpp { namespace android { namespace os { class Parcel; } } }
 
 
@@ -21,7 +24,10 @@ namespace j2cpp { namespace android { namespace os { class Parcel; } } }
 #include <android/graphics/Paint.hpp>
 #include <android/os/Parcel.hpp>
 #include <android/text/Layout.hpp>
+#include <android/text/ParcelableSpan.hpp>
+#include <android/text/style/ParagraphStyle.hpp>
 #include <java/lang/CharSequence.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -48,11 +54,19 @@ namespace android { namespace text { namespace style {
 			J2CPP_DECLARE_METHOD(6)
 			J2CPP_DECLARE_METHOD(7)
 
-			Standard(jobject jobj)
+			explicit Standard(jobject jobj)
 			: cpp_object<Standard>(jobj)
 			{
 			}
 
+			operator local_ref<java::lang::Object>() const;
+			operator local_ref<android::text::style::LeadingMarginSpan>() const;
+			operator local_ref<android::text::ParcelableSpan>() const;
+
+
+			Standard(cpp_int const&, cpp_int const&);
+			Standard(cpp_int const&);
+			Standard(local_ref< android::os::Parcel > const&);
 			cpp_int getSpanTypeId();
 			cpp_int describeContents();
 			void writeToParcel(local_ref< android::os::Parcel > const&, cpp_int const&);
@@ -74,10 +88,14 @@ namespace android { namespace text { namespace style {
 
 		typedef LeadingMarginSpan_::Standard Standard;
 
-		LeadingMarginSpan(jobject jobj)
+		explicit LeadingMarginSpan(jobject jobj)
 		: cpp_object<LeadingMarginSpan>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<android::text::style::ParagraphStyle>() const;
+
 
 		cpp_int getLeadingMargin(cpp_boolean const&);
 		void drawLeadingMargin(local_ref< android::graphics::Canvas > const&, local_ref< android::graphics::Paint > const&, cpp_int const&, cpp_int const&, cpp_int const&, cpp_int const&, cpp_int const&, local_ref< java::lang::CharSequence > const&, cpp_int const&, cpp_int const&, cpp_boolean const&, local_ref< android::text::Layout > const&);
@@ -86,7 +104,6 @@ namespace android { namespace text { namespace style {
 } //namespace style
 } //namespace text
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -101,41 +118,60 @@ namespace j2cpp {
 
 
 
-template <>
-local_ref< android::text::style::LeadingMarginSpan_::Standard > create< android::text::style::LeadingMarginSpan_::Standard>(cpp_int const &a0, cpp_int const &a1)
+
+android::text::style::LeadingMarginSpan_::Standard::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::text::style::LeadingMarginSpan_::Standard >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::text::style::LeadingMarginSpan_::Standard::J2CPP_CLASS_NAME>(),
-			get_method_id<android::text::style::LeadingMarginSpan_::Standard::J2CPP_CLASS_NAME, android::text::style::LeadingMarginSpan_::Standard::J2CPP_METHOD_NAME(0), android::text::style::LeadingMarginSpan_::Standard::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
 
-template <>
-local_ref< android::text::style::LeadingMarginSpan_::Standard > create< android::text::style::LeadingMarginSpan_::Standard>(cpp_int const &a0)
+android::text::style::LeadingMarginSpan_::Standard::operator local_ref<android::text::style::LeadingMarginSpan>() const
 {
-	return local_ref< android::text::style::LeadingMarginSpan_::Standard >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::text::style::LeadingMarginSpan_::Standard::J2CPP_CLASS_NAME>(),
-			get_method_id<android::text::style::LeadingMarginSpan_::Standard::J2CPP_CLASS_NAME, android::text::style::LeadingMarginSpan_::Standard::J2CPP_METHOD_NAME(1), android::text::style::LeadingMarginSpan_::Standard::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<android::text::style::LeadingMarginSpan>(get_jtype());
 }
 
-template <>
-local_ref< android::text::style::LeadingMarginSpan_::Standard > create< android::text::style::LeadingMarginSpan_::Standard>(local_ref< android::os::Parcel > const &a0)
+android::text::style::LeadingMarginSpan_::Standard::operator local_ref<android::text::ParcelableSpan>() const
 {
-	return local_ref< android::text::style::LeadingMarginSpan_::Standard >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::text::style::LeadingMarginSpan_::Standard::J2CPP_CLASS_NAME>(),
-			get_method_id<android::text::style::LeadingMarginSpan_::Standard::J2CPP_CLASS_NAME, android::text::style::LeadingMarginSpan_::Standard::J2CPP_METHOD_NAME(2), android::text::style::LeadingMarginSpan_::Standard::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<android::text::ParcelableSpan>(get_jtype());
 }
+
+
+android::text::style::LeadingMarginSpan_::Standard::Standard(cpp_int const &a0, cpp_int const &a1)
+: cpp_object<android::text::style::LeadingMarginSpan_::Standard>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::text::style::LeadingMarginSpan_::Standard::J2CPP_CLASS_NAME>(),
+		get_method_id<android::text::style::LeadingMarginSpan_::Standard::J2CPP_CLASS_NAME, android::text::style::LeadingMarginSpan_::Standard::J2CPP_METHOD_NAME(0), android::text::style::LeadingMarginSpan_::Standard::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
+
+
+android::text::style::LeadingMarginSpan_::Standard::Standard(cpp_int const &a0)
+: cpp_object<android::text::style::LeadingMarginSpan_::Standard>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::text::style::LeadingMarginSpan_::Standard::J2CPP_CLASS_NAME>(),
+		get_method_id<android::text::style::LeadingMarginSpan_::Standard::J2CPP_CLASS_NAME, android::text::style::LeadingMarginSpan_::Standard::J2CPP_METHOD_NAME(1), android::text::style::LeadingMarginSpan_::Standard::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
+
+
+android::text::style::LeadingMarginSpan_::Standard::Standard(local_ref< android::os::Parcel > const &a0)
+: cpp_object<android::text::style::LeadingMarginSpan_::Standard>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::text::style::LeadingMarginSpan_::Standard::J2CPP_CLASS_NAME>(),
+		get_method_id<android::text::style::LeadingMarginSpan_::Standard::J2CPP_CLASS_NAME, android::text::style::LeadingMarginSpan_::Standard::J2CPP_METHOD_NAME(2), android::text::style::LeadingMarginSpan_::Standard::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 cpp_int android::text::style::LeadingMarginSpan_::Standard::getSpanTypeId()
 {
@@ -201,6 +237,17 @@ J2CPP_DEFINE_METHOD(android::text::style::LeadingMarginSpan_::Standard,5,"writeT
 J2CPP_DEFINE_METHOD(android::text::style::LeadingMarginSpan_::Standard,6,"getLeadingMargin","(Z)I")
 J2CPP_DEFINE_METHOD(android::text::style::LeadingMarginSpan_::Standard,7,"drawLeadingMargin","(Landroid/graphics/Canvas;Landroid/graphics/Paint;IIIIILjava/lang/CharSequence;IIZLandroid/text/Layout;)V")
 
+
+
+android::text::style::LeadingMarginSpan::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
+
+android::text::style::LeadingMarginSpan::operator local_ref<android::text::style::ParagraphStyle>() const
+{
+	return local_ref<android::text::style::ParagraphStyle>(get_jtype());
+}
 
 cpp_int android::text::style::LeadingMarginSpan::getLeadingMargin(cpp_boolean const &a0)
 {

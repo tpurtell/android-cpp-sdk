@@ -11,18 +11,22 @@
 
 
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace lang { class Comparable; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace nio { class FloatBuffer; } } }
 namespace j2cpp { namespace java { namespace nio { class CharBuffer; } } }
 namespace j2cpp { namespace java { namespace nio { class IntBuffer; } } }
+namespace j2cpp { namespace java { namespace nio { class Buffer; } } }
 namespace j2cpp { namespace java { namespace nio { class ByteOrder; } } }
 namespace j2cpp { namespace java { namespace nio { class ShortBuffer; } } }
 namespace j2cpp { namespace java { namespace nio { class LongBuffer; } } }
 namespace j2cpp { namespace java { namespace nio { class DoubleBuffer; } } }
 
 
+#include <java/lang/Comparable.hpp>
 #include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
+#include <java/nio/Buffer.hpp>
 #include <java/nio/ByteOrder.hpp>
 #include <java/nio/CharBuffer.hpp>
 #include <java/nio/DoubleBuffer.hpp>
@@ -104,10 +108,14 @@ namespace java { namespace nio {
 		J2CPP_DECLARE_METHOD(57)
 		J2CPP_DECLARE_METHOD(58)
 
-		ByteBuffer(jobject jobj)
+		explicit ByteBuffer(jobject jobj)
 		: cpp_object<ByteBuffer>(jobj)
 		{
 		}
+
+		operator local_ref<java::nio::Buffer>() const;
+		operator local_ref<java::lang::Comparable>() const;
+
 
 		static local_ref< java::nio::ByteBuffer > allocate(cpp_int const&);
 		static local_ref< java::nio::ByteBuffer > allocateDirect(cpp_int const&);
@@ -172,7 +180,6 @@ namespace java { namespace nio {
 } //namespace nio
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_NIO_BYTEBUFFER_HPP_DECL
@@ -185,16 +192,17 @@ namespace java { namespace nio {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::nio::ByteBuffer > create< java::nio::ByteBuffer>()
+
+java::nio::ByteBuffer::operator local_ref<java::nio::Buffer>() const
 {
-	return local_ref< java::nio::ByteBuffer >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::nio::ByteBuffer::J2CPP_CLASS_NAME>(),
-			get_method_id<java::nio::ByteBuffer::J2CPP_CLASS_NAME, java::nio::ByteBuffer::J2CPP_METHOD_NAME(0), java::nio::ByteBuffer::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::nio::Buffer>(get_jtype());
 }
+
+java::nio::ByteBuffer::operator local_ref<java::lang::Comparable>() const
+{
+	return local_ref<java::lang::Comparable>(get_jtype());
+}
+
 
 local_ref< java::nio::ByteBuffer > java::nio::ByteBuffer::allocate(cpp_int const &a0)
 {

@@ -73,10 +73,13 @@ namespace java { namespace lang {
 		J2CPP_DECLARE_FIELD(1)
 		J2CPP_DECLARE_FIELD(2)
 
-		System(jobject jobj)
+		explicit System(jobject jobj)
 		: cpp_object<System>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		static void setIn(local_ref< java::io::InputStream > const&);
 		static void setOut(local_ref< java::io::PrintStream > const&);
@@ -112,7 +115,6 @@ namespace java { namespace lang {
 } //namespace lang
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_LANG_SYSTEM_HPP_DECL
@@ -125,16 +127,12 @@ namespace java { namespace lang {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::lang::System > create< java::lang::System>()
+
+java::lang::System::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::lang::System >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::lang::System::J2CPP_CLASS_NAME>(),
-			get_method_id<java::lang::System::J2CPP_CLASS_NAME, java::lang::System::J2CPP_METHOD_NAME(0), java::lang::System::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
 
 void java::lang::System::setIn(local_ref< java::io::InputStream > const &a0)
 {
@@ -402,6 +400,7 @@ local_ref< java::lang::String > java::lang::System::mapLibraryName(local_ref< ja
 		)
 	);
 }
+
 
 
 static_field<

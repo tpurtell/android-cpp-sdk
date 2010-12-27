@@ -11,10 +11,12 @@
 
 
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace android { namespace app { class Service; } } }
 namespace j2cpp { namespace android { namespace content { class Intent; } } }
 namespace j2cpp { namespace android { namespace os { class IBinder; } } }
 
 
+#include <android/app/Service.hpp>
 #include <android/content/Intent.hpp>
 #include <android/os/IBinder.hpp>
 #include <java/lang/String.hpp>
@@ -41,11 +43,15 @@ namespace android { namespace app {
 		J2CPP_DECLARE_METHOD(6)
 		J2CPP_DECLARE_METHOD(7)
 
-		IntentService(jobject jobj)
+		explicit IntentService(jobject jobj)
 		: cpp_object<IntentService>(jobj)
 		{
 		}
 
+		operator local_ref<android::app::Service>() const;
+
+
+		IntentService(local_ref< java::lang::String > const&);
 		void setIntentRedelivery(cpp_boolean const&);
 		void onCreate();
 		void onStart(local_ref< android::content::Intent > const&, cpp_int const&);
@@ -56,7 +62,6 @@ namespace android { namespace app {
 
 } //namespace app
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -70,17 +75,24 @@ namespace android { namespace app {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::app::IntentService > create< android::app::IntentService>(local_ref< java::lang::String > const &a0)
+
+android::app::IntentService::operator local_ref<android::app::Service>() const
 {
-	return local_ref< android::app::IntentService >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::app::IntentService::J2CPP_CLASS_NAME>(),
-			get_method_id<android::app::IntentService::J2CPP_CLASS_NAME, android::app::IntentService::J2CPP_METHOD_NAME(0), android::app::IntentService::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<android::app::Service>(get_jtype());
 }
+
+
+android::app::IntentService::IntentService(local_ref< java::lang::String > const &a0)
+: cpp_object<android::app::IntentService>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::app::IntentService::J2CPP_CLASS_NAME>(),
+		get_method_id<android::app::IntentService::J2CPP_CLASS_NAME, android::app::IntentService::J2CPP_METHOD_NAME(0), android::app::IntentService::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 void android::app::IntentService::setIntentRedelivery(cpp_boolean const &a0)
 {

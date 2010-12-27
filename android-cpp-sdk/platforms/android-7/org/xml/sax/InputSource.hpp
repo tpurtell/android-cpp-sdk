@@ -12,11 +12,13 @@
 
 namespace j2cpp { namespace java { namespace io { class Reader; } } }
 namespace j2cpp { namespace java { namespace io { class InputStream; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 
 
 #include <java/io/InputStream.hpp>
 #include <java/io/Reader.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -47,11 +49,18 @@ namespace org { namespace xml { namespace sax {
 		J2CPP_DECLARE_METHOD(12)
 		J2CPP_DECLARE_METHOD(13)
 
-		InputSource(jobject jobj)
+		explicit InputSource(jobject jobj)
 		: cpp_object<InputSource>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		InputSource();
+		InputSource(local_ref< java::lang::String > const&);
+		InputSource(local_ref< java::io::InputStream > const&);
+		InputSource(local_ref< java::io::Reader > const&);
 		void setPublicId(local_ref< java::lang::String > const&);
 		local_ref< java::lang::String > getPublicId();
 		void setSystemId(local_ref< java::lang::String > const&);
@@ -68,7 +77,6 @@ namespace org { namespace xml { namespace sax {
 } //namespace xml
 } //namespace org
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ORG_XML_SAX_INPUTSOURCE_HPP_DECL
@@ -81,52 +89,62 @@ namespace org { namespace xml { namespace sax {
 namespace j2cpp {
 
 
-template <>
-local_ref< org::xml::sax::InputSource > create< org::xml::sax::InputSource>()
+
+org::xml::sax::InputSource::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< org::xml::sax::InputSource >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::xml::sax::InputSource::J2CPP_CLASS_NAME>(),
-			get_method_id<org::xml::sax::InputSource::J2CPP_CLASS_NAME, org::xml::sax::InputSource::J2CPP_METHOD_NAME(0), org::xml::sax::InputSource::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
 
-template <>
-local_ref< org::xml::sax::InputSource > create< org::xml::sax::InputSource>(local_ref< java::lang::String > const &a0)
+
+org::xml::sax::InputSource::InputSource()
+: cpp_object<org::xml::sax::InputSource>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::xml::sax::InputSource::J2CPP_CLASS_NAME>(),
+		get_method_id<org::xml::sax::InputSource::J2CPP_CLASS_NAME, org::xml::sax::InputSource::J2CPP_METHOD_NAME(0), org::xml::sax::InputSource::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
 {
-	return local_ref< org::xml::sax::InputSource >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::xml::sax::InputSource::J2CPP_CLASS_NAME>(),
-			get_method_id<org::xml::sax::InputSource::J2CPP_CLASS_NAME, org::xml::sax::InputSource::J2CPP_METHOD_NAME(1), org::xml::sax::InputSource::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< org::xml::sax::InputSource > create< org::xml::sax::InputSource>(local_ref< java::io::InputStream > const &a0)
+
+
+org::xml::sax::InputSource::InputSource(local_ref< java::lang::String > const &a0)
+: cpp_object<org::xml::sax::InputSource>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::xml::sax::InputSource::J2CPP_CLASS_NAME>(),
+		get_method_id<org::xml::sax::InputSource::J2CPP_CLASS_NAME, org::xml::sax::InputSource::J2CPP_METHOD_NAME(1), org::xml::sax::InputSource::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< org::xml::sax::InputSource >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::xml::sax::InputSource::J2CPP_CLASS_NAME>(),
-			get_method_id<org::xml::sax::InputSource::J2CPP_CLASS_NAME, org::xml::sax::InputSource::J2CPP_METHOD_NAME(2), org::xml::sax::InputSource::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< org::xml::sax::InputSource > create< org::xml::sax::InputSource>(local_ref< java::io::Reader > const &a0)
+
+
+org::xml::sax::InputSource::InputSource(local_ref< java::io::InputStream > const &a0)
+: cpp_object<org::xml::sax::InputSource>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::xml::sax::InputSource::J2CPP_CLASS_NAME>(),
+		get_method_id<org::xml::sax::InputSource::J2CPP_CLASS_NAME, org::xml::sax::InputSource::J2CPP_METHOD_NAME(2), org::xml::sax::InputSource::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< org::xml::sax::InputSource >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::xml::sax::InputSource::J2CPP_CLASS_NAME>(),
-			get_method_id<org::xml::sax::InputSource::J2CPP_CLASS_NAME, org::xml::sax::InputSource::J2CPP_METHOD_NAME(3), org::xml::sax::InputSource::J2CPP_METHOD_SIGNATURE(3), false>(),
-			a0.get_jtype()
-		)
-	);
 }
+
+
+
+org::xml::sax::InputSource::InputSource(local_ref< java::io::Reader > const &a0)
+: cpp_object<org::xml::sax::InputSource>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::xml::sax::InputSource::J2CPP_CLASS_NAME>(),
+		get_method_id<org::xml::sax::InputSource::J2CPP_CLASS_NAME, org::xml::sax::InputSource::J2CPP_METHOD_NAME(3), org::xml::sax::InputSource::J2CPP_METHOD_SIGNATURE(3), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 void org::xml::sax::InputSource::setPublicId(local_ref< java::lang::String > const &a0)
 {

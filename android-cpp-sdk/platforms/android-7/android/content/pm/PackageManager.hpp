@@ -10,6 +10,7 @@
 #define J2CPP_ANDROID_CONTENT_PM_PACKAGEMANAGER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class CharSequence; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace util { class List; } } }
@@ -29,6 +30,7 @@ namespace j2cpp { namespace android { namespace content { namespace res { class 
 namespace j2cpp { namespace android { namespace content { class ComponentName; } } }
 namespace j2cpp { namespace android { namespace content { class Intent; } } }
 namespace j2cpp { namespace android { namespace content { class IntentFilter; } } }
+namespace j2cpp { namespace android { namespace util { class AndroidException; } } }
 
 
 #include <android/content/ComponentName.hpp>
@@ -47,7 +49,9 @@ namespace j2cpp { namespace android { namespace content { class IntentFilter; } 
 #include <android/content/res/Resources.hpp>
 #include <android/content/res/XmlResourceParser.hpp>
 #include <android/graphics/drawable/Drawable.hpp>
+#include <android/util/AndroidException.hpp>
 #include <java/lang/CharSequence.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/util/List.hpp>
 
@@ -70,11 +74,16 @@ namespace android { namespace content { namespace pm {
 			J2CPP_DECLARE_METHOD(0)
 			J2CPP_DECLARE_METHOD(1)
 
-			NameNotFoundException(jobject jobj)
+			explicit NameNotFoundException(jobject jobj)
 			: cpp_object<NameNotFoundException>(jobj)
 			{
 			}
 
+			operator local_ref<android::util::AndroidException>() const;
+
+
+			NameNotFoundException();
+			NameNotFoundException(local_ref< java::lang::String > const&);
 		}; //class NameNotFoundException
 
 	} //namespace PackageManager_
@@ -189,11 +198,15 @@ namespace android { namespace content { namespace pm {
 
 		typedef PackageManager_::NameNotFoundException NameNotFoundException;
 
-		PackageManager(jobject jobj)
+		explicit PackageManager(jobject jobj)
 		: cpp_object<PackageManager>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		PackageManager();
 		local_ref< android::content::pm::PackageInfo > getPackageInfo(local_ref< java::lang::String > const&, cpp_int const&);
 		local_ref< android::content::Intent > getLaunchIntentForPackage(local_ref< java::lang::String > const&);
 		local_ref< cpp_int_array<1> > getPackageGids(local_ref< java::lang::String > const&);
@@ -300,7 +313,6 @@ namespace android { namespace content { namespace pm {
 } //namespace content
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_CONTENT_PM_PACKAGEMANAGER_HPP_DECL
@@ -314,28 +326,36 @@ namespace j2cpp {
 
 
 
-template <>
-local_ref< android::content::pm::PackageManager_::NameNotFoundException > create< android::content::pm::PackageManager_::NameNotFoundException>()
+
+android::content::pm::PackageManager_::NameNotFoundException::operator local_ref<android::util::AndroidException>() const
 {
-	return local_ref< android::content::pm::PackageManager_::NameNotFoundException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::content::pm::PackageManager_::NameNotFoundException::J2CPP_CLASS_NAME>(),
-			get_method_id<android::content::pm::PackageManager_::NameNotFoundException::J2CPP_CLASS_NAME, android::content::pm::PackageManager_::NameNotFoundException::J2CPP_METHOD_NAME(0), android::content::pm::PackageManager_::NameNotFoundException::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<android::util::AndroidException>(get_jtype());
 }
 
-template <>
-local_ref< android::content::pm::PackageManager_::NameNotFoundException > create< android::content::pm::PackageManager_::NameNotFoundException>(local_ref< java::lang::String > const &a0)
+
+android::content::pm::PackageManager_::NameNotFoundException::NameNotFoundException()
+: cpp_object<android::content::pm::PackageManager_::NameNotFoundException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::content::pm::PackageManager_::NameNotFoundException::J2CPP_CLASS_NAME>(),
+		get_method_id<android::content::pm::PackageManager_::NameNotFoundException::J2CPP_CLASS_NAME, android::content::pm::PackageManager_::NameNotFoundException::J2CPP_METHOD_NAME(0), android::content::pm::PackageManager_::NameNotFoundException::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
 {
-	return local_ref< android::content::pm::PackageManager_::NameNotFoundException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::content::pm::PackageManager_::NameNotFoundException::J2CPP_CLASS_NAME>(),
-			get_method_id<android::content::pm::PackageManager_::NameNotFoundException::J2CPP_CLASS_NAME, android::content::pm::PackageManager_::NameNotFoundException::J2CPP_METHOD_NAME(1), android::content::pm::PackageManager_::NameNotFoundException::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
 }
+
+
+
+android::content::pm::PackageManager_::NameNotFoundException::NameNotFoundException(local_ref< java::lang::String > const &a0)
+: cpp_object<android::content::pm::PackageManager_::NameNotFoundException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::content::pm::PackageManager_::NameNotFoundException::J2CPP_CLASS_NAME>(),
+		get_method_id<android::content::pm::PackageManager_::NameNotFoundException::J2CPP_CLASS_NAME, android::content::pm::PackageManager_::NameNotFoundException::J2CPP_METHOD_NAME(1), android::content::pm::PackageManager_::NameNotFoundException::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 
 J2CPP_DEFINE_CLASS(android::content::pm::PackageManager_::NameNotFoundException,"android/content/pm/PackageManager$NameNotFoundException")
@@ -343,16 +363,23 @@ J2CPP_DEFINE_METHOD(android::content::pm::PackageManager_::NameNotFoundException
 J2CPP_DEFINE_METHOD(android::content::pm::PackageManager_::NameNotFoundException,1,"<init>","(Ljava/lang/String;)V")
 
 
-template <>
-local_ref< android::content::pm::PackageManager > create< android::content::pm::PackageManager>()
+
+android::content::pm::PackageManager::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::content::pm::PackageManager >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::content::pm::PackageManager::J2CPP_CLASS_NAME>(),
-			get_method_id<android::content::pm::PackageManager::J2CPP_CLASS_NAME, android::content::pm::PackageManager::J2CPP_METHOD_NAME(0), android::content::pm::PackageManager::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::content::pm::PackageManager::PackageManager()
+: cpp_object<android::content::pm::PackageManager>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::content::pm::PackageManager::J2CPP_CLASS_NAME>(),
+		get_method_id<android::content::pm::PackageManager::J2CPP_CLASS_NAME, android::content::pm::PackageManager::J2CPP_METHOD_NAME(0), android::content::pm::PackageManager::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 local_ref< android::content::pm::PackageInfo > android::content::pm::PackageManager::getPackageInfo(local_ref< java::lang::String > const &a0, cpp_int const &a1)
 {

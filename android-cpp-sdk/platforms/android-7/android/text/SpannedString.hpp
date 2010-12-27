@@ -11,8 +11,14 @@
 
 
 namespace j2cpp { namespace java { namespace lang { class CharSequence; } } }
+namespace j2cpp { namespace android { namespace text { class Spanned; } } }
+namespace j2cpp { namespace android { namespace text { class GetChars; } } }
+namespace j2cpp { namespace android { namespace text { class SpannableStringInternal; } } }
 
 
+#include <android/text/GetChars.hpp>
+#include <android/text/SpannableStringInternal.hpp>
+#include <android/text/Spanned.hpp>
 #include <java/lang/CharSequence.hpp>
 
 
@@ -32,18 +38,24 @@ namespace android { namespace text {
 		J2CPP_DECLARE_METHOD(1)
 		J2CPP_DECLARE_METHOD(2)
 
-		SpannedString(jobject jobj)
+		explicit SpannedString(jobject jobj)
 		: cpp_object<SpannedString>(jobj)
 		{
 		}
 
+		operator local_ref<android::text::SpannableStringInternal>() const;
+		operator local_ref<java::lang::CharSequence>() const;
+		operator local_ref<android::text::GetChars>() const;
+		operator local_ref<android::text::Spanned>() const;
+
+
+		SpannedString(local_ref< java::lang::CharSequence > const&);
 		local_ref< java::lang::CharSequence > subSequence(cpp_int const&, cpp_int const&);
 		static local_ref< android::text::SpannedString > valueOf(local_ref< java::lang::CharSequence > const&);
 	}; //class SpannedString
 
 } //namespace text
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -57,17 +69,39 @@ namespace android { namespace text {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::text::SpannedString > create< android::text::SpannedString>(local_ref< java::lang::CharSequence > const &a0)
+
+android::text::SpannedString::operator local_ref<android::text::SpannableStringInternal>() const
 {
-	return local_ref< android::text::SpannedString >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::text::SpannedString::J2CPP_CLASS_NAME>(),
-			get_method_id<android::text::SpannedString::J2CPP_CLASS_NAME, android::text::SpannedString::J2CPP_METHOD_NAME(0), android::text::SpannedString::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<android::text::SpannableStringInternal>(get_jtype());
 }
+
+android::text::SpannedString::operator local_ref<java::lang::CharSequence>() const
+{
+	return local_ref<java::lang::CharSequence>(get_jtype());
+}
+
+android::text::SpannedString::operator local_ref<android::text::GetChars>() const
+{
+	return local_ref<android::text::GetChars>(get_jtype());
+}
+
+android::text::SpannedString::operator local_ref<android::text::Spanned>() const
+{
+	return local_ref<android::text::Spanned>(get_jtype());
+}
+
+
+android::text::SpannedString::SpannedString(local_ref< java::lang::CharSequence > const &a0)
+: cpp_object<android::text::SpannedString>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::text::SpannedString::J2CPP_CLASS_NAME>(),
+		get_method_id<android::text::SpannedString::J2CPP_CLASS_NAME, android::text::SpannedString::J2CPP_METHOD_NAME(0), android::text::SpannedString::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 local_ref< java::lang::CharSequence > android::text::SpannedString::subSequence(cpp_int const &a0, cpp_int const &a1)
 {

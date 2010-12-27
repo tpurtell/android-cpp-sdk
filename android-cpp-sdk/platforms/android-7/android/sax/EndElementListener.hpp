@@ -10,8 +10,10 @@
 #define J2CPP_ANDROID_SAX_ENDELEMENTLISTENER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -28,17 +30,19 @@ namespace android { namespace sax {
 
 		J2CPP_DECLARE_METHOD(0)
 
-		EndElementListener(jobject jobj)
+		explicit EndElementListener(jobject jobj)
 		: cpp_object<EndElementListener>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		void end();
 	}; //class EndElementListener
 
 } //namespace sax
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -51,6 +55,12 @@ namespace android { namespace sax {
 
 namespace j2cpp {
 
+
+
+android::sax::EndElementListener::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 void android::sax::EndElementListener::end()
 {

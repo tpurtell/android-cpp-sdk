@@ -55,11 +55,18 @@ namespace android { namespace content { namespace pm {
 		J2CPP_DECLARE_METHOD(12)
 		J2CPP_DECLARE_FIELD(0)
 
-		LabeledIntent(jobject jobj)
+		explicit LabeledIntent(jobject jobj)
 		: cpp_object<LabeledIntent>(jobj)
 		{
 		}
 
+		operator local_ref<android::content::Intent>() const;
+
+
+		LabeledIntent(local_ref< android::content::Intent > const&, local_ref< java::lang::String > const&, cpp_int const&, cpp_int const&);
+		LabeledIntent(local_ref< android::content::Intent > const&, local_ref< java::lang::String > const&, local_ref< java::lang::CharSequence > const&, cpp_int const&);
+		LabeledIntent(local_ref< java::lang::String > const&, cpp_int const&, cpp_int const&);
+		LabeledIntent(local_ref< java::lang::String > const&, local_ref< java::lang::CharSequence > const&, cpp_int const&);
 		local_ref< java::lang::String > getSourcePackage();
 		cpp_int getLabelResource();
 		local_ref< java::lang::CharSequence > getNonLocalizedLabel();
@@ -76,7 +83,6 @@ namespace android { namespace content { namespace pm {
 } //namespace content
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_CONTENT_PM_LABELEDINTENT_HPP_DECL
@@ -89,53 +95,63 @@ namespace android { namespace content { namespace pm {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::content::pm::LabeledIntent > create< android::content::pm::LabeledIntent>(local_ref< android::content::Intent > const &a0, local_ref< java::lang::String > const &a1, cpp_int const &a2, cpp_int const &a3)
+
+android::content::pm::LabeledIntent::operator local_ref<android::content::Intent>() const
 {
-	return local_ref< android::content::pm::LabeledIntent >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::content::pm::LabeledIntent::J2CPP_CLASS_NAME>(),
-			get_method_id<android::content::pm::LabeledIntent::J2CPP_CLASS_NAME, android::content::pm::LabeledIntent::J2CPP_METHOD_NAME(0), android::content::pm::LabeledIntent::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype()
-		)
-	);
+	return local_ref<android::content::Intent>(get_jtype());
 }
 
-template <>
-local_ref< android::content::pm::LabeledIntent > create< android::content::pm::LabeledIntent>(local_ref< android::content::Intent > const &a0, local_ref< java::lang::String > const &a1, local_ref< java::lang::CharSequence > const &a2, cpp_int const &a3)
+
+android::content::pm::LabeledIntent::LabeledIntent(local_ref< android::content::Intent > const &a0, local_ref< java::lang::String > const &a1, cpp_int const &a2, cpp_int const &a3)
+: cpp_object<android::content::pm::LabeledIntent>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::content::pm::LabeledIntent::J2CPP_CLASS_NAME>(),
+		get_method_id<android::content::pm::LabeledIntent::J2CPP_CLASS_NAME, android::content::pm::LabeledIntent::J2CPP_METHOD_NAME(0), android::content::pm::LabeledIntent::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype()
+	)
+)
 {
-	return local_ref< android::content::pm::LabeledIntent >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::content::pm::LabeledIntent::J2CPP_CLASS_NAME>(),
-			get_method_id<android::content::pm::LabeledIntent::J2CPP_CLASS_NAME, android::content::pm::LabeledIntent::J2CPP_METHOD_NAME(1), android::content::pm::LabeledIntent::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< android::content::pm::LabeledIntent > create< android::content::pm::LabeledIntent>(local_ref< java::lang::String > const &a0, cpp_int const &a1, cpp_int const &a2)
+
+
+android::content::pm::LabeledIntent::LabeledIntent(local_ref< android::content::Intent > const &a0, local_ref< java::lang::String > const &a1, local_ref< java::lang::CharSequence > const &a2, cpp_int const &a3)
+: cpp_object<android::content::pm::LabeledIntent>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::content::pm::LabeledIntent::J2CPP_CLASS_NAME>(),
+		get_method_id<android::content::pm::LabeledIntent::J2CPP_CLASS_NAME, android::content::pm::LabeledIntent::J2CPP_METHOD_NAME(1), android::content::pm::LabeledIntent::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype()
+	)
+)
 {
-	return local_ref< android::content::pm::LabeledIntent >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::content::pm::LabeledIntent::J2CPP_CLASS_NAME>(),
-			get_method_id<android::content::pm::LabeledIntent::J2CPP_CLASS_NAME, android::content::pm::LabeledIntent::J2CPP_METHOD_NAME(2), android::content::pm::LabeledIntent::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< android::content::pm::LabeledIntent > create< android::content::pm::LabeledIntent>(local_ref< java::lang::String > const &a0, local_ref< java::lang::CharSequence > const &a1, cpp_int const &a2)
+
+
+android::content::pm::LabeledIntent::LabeledIntent(local_ref< java::lang::String > const &a0, cpp_int const &a1, cpp_int const &a2)
+: cpp_object<android::content::pm::LabeledIntent>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::content::pm::LabeledIntent::J2CPP_CLASS_NAME>(),
+		get_method_id<android::content::pm::LabeledIntent::J2CPP_CLASS_NAME, android::content::pm::LabeledIntent::J2CPP_METHOD_NAME(2), android::content::pm::LabeledIntent::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
+	)
+)
 {
-	return local_ref< android::content::pm::LabeledIntent >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::content::pm::LabeledIntent::J2CPP_CLASS_NAME>(),
-			get_method_id<android::content::pm::LabeledIntent::J2CPP_CLASS_NAME, android::content::pm::LabeledIntent::J2CPP_METHOD_NAME(3), android::content::pm::LabeledIntent::J2CPP_METHOD_SIGNATURE(3), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
-		)
-	);
 }
+
+
+
+android::content::pm::LabeledIntent::LabeledIntent(local_ref< java::lang::String > const &a0, local_ref< java::lang::CharSequence > const &a1, cpp_int const &a2)
+: cpp_object<android::content::pm::LabeledIntent>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::content::pm::LabeledIntent::J2CPP_CLASS_NAME>(),
+		get_method_id<android::content::pm::LabeledIntent::J2CPP_CLASS_NAME, android::content::pm::LabeledIntent::J2CPP_METHOD_NAME(3), android::content::pm::LabeledIntent::J2CPP_METHOD_SIGNATURE(3), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
+	)
+)
+{
+}
+
 
 local_ref< java::lang::String > android::content::pm::LabeledIntent::getSourcePackage()
 {
@@ -220,6 +236,7 @@ void android::content::pm::LabeledIntent::readFromParcel(local_ref< android::os:
 		)
 	);
 }
+
 
 
 static_field<

@@ -10,8 +10,10 @@
 #define J2CPP_ANDROID_DATABASE_SQLITE_SQLITECLOSABLE_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -33,11 +35,15 @@ namespace android { namespace database { namespace sqlite {
 		J2CPP_DECLARE_METHOD(4)
 		J2CPP_DECLARE_METHOD(5)
 
-		SQLiteClosable(jobject jobj)
+		explicit SQLiteClosable(jobject jobj)
 		: cpp_object<SQLiteClosable>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		SQLiteClosable();
 		void acquireReference();
 		void releaseReference();
 		void releaseReferenceFromContainer();
@@ -46,7 +52,6 @@ namespace android { namespace database { namespace sqlite {
 } //namespace sqlite
 } //namespace database
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -60,16 +65,23 @@ namespace android { namespace database { namespace sqlite {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::database::sqlite::SQLiteClosable > create< android::database::sqlite::SQLiteClosable>()
+
+android::database::sqlite::SQLiteClosable::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::database::sqlite::SQLiteClosable >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::database::sqlite::SQLiteClosable::J2CPP_CLASS_NAME>(),
-			get_method_id<android::database::sqlite::SQLiteClosable::J2CPP_CLASS_NAME, android::database::sqlite::SQLiteClosable::J2CPP_METHOD_NAME(0), android::database::sqlite::SQLiteClosable::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::database::sqlite::SQLiteClosable::SQLiteClosable()
+: cpp_object<android::database::sqlite::SQLiteClosable>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::database::sqlite::SQLiteClosable::J2CPP_CLASS_NAME>(),
+		get_method_id<android::database::sqlite::SQLiteClosable::J2CPP_CLASS_NAME, android::database::sqlite::SQLiteClosable::J2CPP_METHOD_NAME(0), android::database::sqlite::SQLiteClosable::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 
 

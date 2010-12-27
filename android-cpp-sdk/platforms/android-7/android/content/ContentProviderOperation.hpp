@@ -18,6 +18,7 @@ namespace j2cpp { namespace android { namespace content { namespace ContentProvi
 namespace j2cpp { namespace android { namespace content { class ContentValues; } } }
 namespace j2cpp { namespace android { namespace content { class ContentProvider; } } }
 namespace j2cpp { namespace android { namespace os { class Parcel; } } }
+namespace j2cpp { namespace android { namespace os { class Parcelable; } } }
 namespace j2cpp { namespace android { namespace os { namespace Parcelable_ { class Creator; } } } }
 
 
@@ -58,10 +59,13 @@ namespace android { namespace content {
 			J2CPP_DECLARE_METHOD(8)
 			J2CPP_DECLARE_METHOD(9)
 
-			Builder(jobject jobj)
+			explicit Builder(jobject jobj)
 			: cpp_object<Builder>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+
 
 			local_ref< android::content::ContentProviderOperation > build();
 			local_ref< android::content::ContentProviderOperation_::Builder > withValueBackReferences(local_ref< android::content::ContentValues > const&);
@@ -102,10 +106,14 @@ namespace android { namespace content {
 
 		typedef ContentProviderOperation_::Builder Builder;
 
-		ContentProviderOperation(jobject jobj)
+		explicit ContentProviderOperation(jobject jobj)
 		: cpp_object<ContentProviderOperation>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<android::os::Parcelable>() const;
+
 
 		void writeToParcel(local_ref< android::os::Parcel > const&, cpp_int const&);
 		static local_ref< android::content::ContentProviderOperation_::Builder > newInsert(local_ref< android::net::Uri > const&);
@@ -127,7 +135,6 @@ namespace android { namespace content {
 } //namespace content
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_CONTENT_CONTENTPROVIDEROPERATION_HPP_DECL
@@ -141,16 +148,12 @@ namespace j2cpp {
 
 
 
-template <>
-local_ref< android::content::ContentProviderOperation_::Builder > create< android::content::ContentProviderOperation_::Builder>()
+
+android::content::ContentProviderOperation_::Builder::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::content::ContentProviderOperation_::Builder >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::content::ContentProviderOperation_::Builder::J2CPP_CLASS_NAME>(),
-			get_method_id<android::content::ContentProviderOperation_::Builder::J2CPP_CLASS_NAME, android::content::ContentProviderOperation_::Builder::J2CPP_METHOD_NAME(0), android::content::ContentProviderOperation_::Builder::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
 
 local_ref< android::content::ContentProviderOperation > android::content::ContentProviderOperation_::Builder::build()
 {
@@ -264,16 +267,17 @@ J2CPP_DEFINE_METHOD(android::content::ContentProviderOperation_::Builder,8,"with
 J2CPP_DEFINE_METHOD(android::content::ContentProviderOperation_::Builder,9,"withYieldAllowed","(Z)Landroid/content/ContentProviderOperation$Builder;")
 
 
-template <>
-local_ref< android::content::ContentProviderOperation > create< android::content::ContentProviderOperation>()
+
+android::content::ContentProviderOperation::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::content::ContentProviderOperation >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::content::ContentProviderOperation::J2CPP_CLASS_NAME>(),
-			get_method_id<android::content::ContentProviderOperation::J2CPP_CLASS_NAME, android::content::ContentProviderOperation::J2CPP_METHOD_NAME(0), android::content::ContentProviderOperation::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+android::content::ContentProviderOperation::operator local_ref<android::os::Parcelable>() const
+{
+	return local_ref<android::os::Parcelable>(get_jtype());
+}
+
 
 void android::content::ContentProviderOperation::writeToParcel(local_ref< android::os::Parcel > const &a0, cpp_int const &a1)
 {
@@ -412,6 +416,7 @@ cpp_int android::content::ContentProviderOperation::describeContents()
 		)
 	);
 }
+
 
 
 static_field<

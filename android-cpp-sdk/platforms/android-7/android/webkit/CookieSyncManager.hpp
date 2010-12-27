@@ -11,9 +11,11 @@
 
 
 namespace j2cpp { namespace android { namespace content { class Context; } } }
+namespace j2cpp { namespace android { namespace webkit { class WebSyncManager; } } }
 
 
 #include <android/content/Context.hpp>
+#include <android/webkit/WebSyncManager.hpp>
 
 
 namespace j2cpp {
@@ -33,10 +35,13 @@ namespace android { namespace webkit {
 		J2CPP_DECLARE_METHOD(2)
 		J2CPP_DECLARE_METHOD(3)
 
-		CookieSyncManager(jobject jobj)
+		explicit CookieSyncManager(jobject jobj)
 		: cpp_object<CookieSyncManager>(jobj)
 		{
 		}
+
+		operator local_ref<android::webkit::WebSyncManager>() const;
+
 
 		static local_ref< android::webkit::CookieSyncManager > getInstance();
 		static local_ref< android::webkit::CookieSyncManager > createInstance(local_ref< android::content::Context > const&);
@@ -44,7 +49,6 @@ namespace android { namespace webkit {
 
 } //namespace webkit
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -58,16 +62,12 @@ namespace android { namespace webkit {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::webkit::CookieSyncManager > create< android::webkit::CookieSyncManager>()
+
+android::webkit::CookieSyncManager::operator local_ref<android::webkit::WebSyncManager>() const
 {
-	return local_ref< android::webkit::CookieSyncManager >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::webkit::CookieSyncManager::J2CPP_CLASS_NAME>(),
-			get_method_id<android::webkit::CookieSyncManager::J2CPP_CLASS_NAME, android::webkit::CookieSyncManager::J2CPP_METHOD_NAME(0), android::webkit::CookieSyncManager::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<android::webkit::WebSyncManager>(get_jtype());
 }
+
 
 local_ref< android::webkit::CookieSyncManager > android::webkit::CookieSyncManager::getInstance()
 {

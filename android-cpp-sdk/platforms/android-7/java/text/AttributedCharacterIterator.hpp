@@ -10,16 +10,20 @@
 #define J2CPP_JAVA_TEXT_ATTRIBUTEDCHARACTERITERATOR_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace text { namespace AttributedCharacterIterator_ { class Attribute; } } } }
+namespace j2cpp { namespace java { namespace text { class CharacterIterator; } } }
 namespace j2cpp { namespace java { namespace util { class Set; } } }
 namespace j2cpp { namespace java { namespace util { class Map; } } }
 
 
+#include <java/io/Serializable.hpp>
 #include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/text/AttributedCharacterIterator.hpp>
+#include <java/text/CharacterIterator.hpp>
 #include <java/util/Map.hpp>
 #include <java/util/Set.hpp>
 
@@ -50,10 +54,14 @@ namespace java { namespace text {
 			J2CPP_DECLARE_FIELD(1)
 			J2CPP_DECLARE_FIELD(2)
 
-			Attribute(jobject jobj)
+			explicit Attribute(jobject jobj)
 			: cpp_object<Attribute>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+			operator local_ref<java::io::Serializable>() const;
+
 
 			cpp_boolean equals(local_ref< java::lang::Object > const&);
 			cpp_int hashCode();
@@ -85,10 +93,14 @@ namespace java { namespace text {
 
 		typedef AttributedCharacterIterator_::Attribute Attribute;
 
-		AttributedCharacterIterator(jobject jobj)
+		explicit AttributedCharacterIterator(jobject jobj)
 		: cpp_object<AttributedCharacterIterator>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::text::CharacterIterator>() const;
+
 
 		local_ref< java::util::Set > getAllAttributeKeys();
 		local_ref< java::lang::Object > getAttribute(local_ref< java::text::AttributedCharacterIterator_::Attribute > const&);
@@ -104,7 +116,6 @@ namespace java { namespace text {
 } //namespace text
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_TEXT_ATTRIBUTEDCHARACTERITERATOR_HPP_DECL
@@ -118,17 +129,17 @@ namespace j2cpp {
 
 
 
-template <>
-local_ref< java::text::AttributedCharacterIterator_::Attribute > create< java::text::AttributedCharacterIterator_::Attribute>(local_ref< java::lang::String > const &a0)
+
+java::text::AttributedCharacterIterator_::Attribute::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::text::AttributedCharacterIterator_::Attribute >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::text::AttributedCharacterIterator_::Attribute::J2CPP_CLASS_NAME>(),
-			get_method_id<java::text::AttributedCharacterIterator_::Attribute::J2CPP_CLASS_NAME, java::text::AttributedCharacterIterator_::Attribute::J2CPP_METHOD_NAME(0), java::text::AttributedCharacterIterator_::Attribute::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+java::text::AttributedCharacterIterator_::Attribute::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jtype());
+}
+
 
 cpp_boolean java::text::AttributedCharacterIterator_::Attribute::equals(local_ref< java::lang::Object > const &a0)
 {
@@ -162,6 +173,7 @@ local_ref< java::lang::String > java::text::AttributedCharacterIterator_::Attrib
 		)
 	);
 }
+
 
 
 static_field<
@@ -198,6 +210,17 @@ J2CPP_DEFINE_FIELD(java::text::AttributedCharacterIterator_::Attribute,0,"INPUT_
 J2CPP_DEFINE_FIELD(java::text::AttributedCharacterIterator_::Attribute,1,"LANGUAGE","Ljava/text/AttributedCharacterIterator$Attribute;")
 J2CPP_DEFINE_FIELD(java::text::AttributedCharacterIterator_::Attribute,2,"READING","Ljava/text/AttributedCharacterIterator$Attribute;")
 
+
+
+java::text::AttributedCharacterIterator::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
+
+java::text::AttributedCharacterIterator::operator local_ref<java::text::CharacterIterator>() const
+{
+	return local_ref<java::text::CharacterIterator>(get_jtype());
+}
 
 local_ref< java::util::Set > java::text::AttributedCharacterIterator::getAllAttributeKeys()
 {

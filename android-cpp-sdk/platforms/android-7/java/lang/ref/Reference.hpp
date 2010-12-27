@@ -34,10 +34,13 @@ namespace java { namespace lang { namespace ref {
 		J2CPP_DECLARE_METHOD(3)
 		J2CPP_DECLARE_METHOD(4)
 
-		Reference(jobject jobj)
+		explicit Reference(jobject jobj)
 		: cpp_object<Reference>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		void clear();
 		cpp_boolean enqueue();
@@ -48,7 +51,6 @@ namespace java { namespace lang { namespace ref {
 } //namespace ref
 } //namespace lang
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -62,16 +64,12 @@ namespace java { namespace lang { namespace ref {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::lang::ref::Reference > create< java::lang::ref::Reference>()
+
+java::lang::ref::Reference::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::lang::ref::Reference >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::lang::ref::Reference::J2CPP_CLASS_NAME>(),
-			get_method_id<java::lang::ref::Reference::J2CPP_CLASS_NAME, java::lang::ref::Reference::J2CPP_METHOD_NAME(0), java::lang::ref::Reference::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
 
 void java::lang::ref::Reference::clear()
 {

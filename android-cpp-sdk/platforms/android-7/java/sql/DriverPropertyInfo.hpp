@@ -10,9 +10,11 @@
 #define J2CPP_JAVA_SQL_DRIVERPROPERTYINFO_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -35,16 +37,20 @@ namespace java { namespace sql {
 		J2CPP_DECLARE_FIELD(3)
 		J2CPP_DECLARE_FIELD(4)
 
-		DriverPropertyInfo(jobject jobj)
+		explicit DriverPropertyInfo(jobject jobj)
 		: cpp_object<DriverPropertyInfo>(jobj)
-		, choices(jobj)
-		, description(jobj)
-		, name(jobj)
-		, required(jobj)
-		, value(jobj)
+, choices(jobj)
+, description(jobj)
+, name(jobj)
+, required(jobj)
+, value(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		DriverPropertyInfo(local_ref< java::lang::String > const&, local_ref< java::lang::String > const&);
 
 		field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(0), J2CPP_FIELD_SIGNATURE(0), local_ref< cpp_object_array<java::lang::String, 1> > > choices;
 		field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(1), J2CPP_FIELD_SIGNATURE(1), local_ref< java::lang::String > > description;
@@ -55,7 +61,6 @@ namespace java { namespace sql {
 
 } //namespace sql
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -69,17 +74,29 @@ namespace java { namespace sql {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::sql::DriverPropertyInfo > create< java::sql::DriverPropertyInfo>(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
+
+java::sql::DriverPropertyInfo::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::sql::DriverPropertyInfo >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::sql::DriverPropertyInfo::J2CPP_CLASS_NAME>(),
-			get_method_id<java::sql::DriverPropertyInfo::J2CPP_CLASS_NAME, java::sql::DriverPropertyInfo::J2CPP_METHOD_NAME(0), java::sql::DriverPropertyInfo::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+java::sql::DriverPropertyInfo::DriverPropertyInfo(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
+: cpp_object<java::sql::DriverPropertyInfo>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::sql::DriverPropertyInfo::J2CPP_CLASS_NAME>(),
+		get_method_id<java::sql::DriverPropertyInfo::J2CPP_CLASS_NAME, java::sql::DriverPropertyInfo::J2CPP_METHOD_NAME(0), java::sql::DriverPropertyInfo::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+, choices(get_jtype())
+, description(get_jtype())
+, name(get_jtype())
+, required(get_jtype())
+, value(get_jtype())
+{
+}
+
 
 
 

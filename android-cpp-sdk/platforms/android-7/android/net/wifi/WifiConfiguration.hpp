@@ -10,12 +10,16 @@
 #define J2CPP_ANDROID_NET_WIFI_WIFICONFIGURATION_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace util { class BitSet; } } }
 namespace j2cpp { namespace android { namespace os { class Parcel; } } }
+namespace j2cpp { namespace android { namespace os { class Parcelable; } } }
 
 
 #include <android/os/Parcel.hpp>
+#include <android/os/Parcelable.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/util/BitSet.hpp>
 
@@ -42,10 +46,13 @@ namespace android { namespace net { namespace wifi {
 			J2CPP_DECLARE_FIELD(2)
 			J2CPP_DECLARE_FIELD(3)
 
-			Protocol(jobject jobj)
+			explicit Protocol(jobject jobj)
 			: cpp_object<Protocol>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+
 
 
 			static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(0), J2CPP_FIELD_SIGNATURE(0), cpp_int > WPA;
@@ -71,10 +78,13 @@ namespace android { namespace net { namespace wifi {
 			J2CPP_DECLARE_FIELD(4)
 			J2CPP_DECLARE_FIELD(5)
 
-			GroupCipher(jobject jobj)
+			explicit GroupCipher(jobject jobj)
 			: cpp_object<GroupCipher>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+
 
 
 			static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(0), J2CPP_FIELD_SIGNATURE(0), cpp_int > WEP40;
@@ -101,10 +111,13 @@ namespace android { namespace net { namespace wifi {
 			J2CPP_DECLARE_FIELD(3)
 			J2CPP_DECLARE_FIELD(4)
 
-			PairwiseCipher(jobject jobj)
+			explicit PairwiseCipher(jobject jobj)
 			: cpp_object<PairwiseCipher>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+
 
 
 			static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(0), J2CPP_FIELD_SIGNATURE(0), cpp_int > NONE;
@@ -131,10 +144,13 @@ namespace android { namespace net { namespace wifi {
 			J2CPP_DECLARE_FIELD(4)
 			J2CPP_DECLARE_FIELD(5)
 
-			KeyMgmt(jobject jobj)
+			explicit KeyMgmt(jobject jobj)
 			: cpp_object<KeyMgmt>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+
 
 
 			static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(0), J2CPP_FIELD_SIGNATURE(0), cpp_int > NONE;
@@ -160,10 +176,13 @@ namespace android { namespace net { namespace wifi {
 			J2CPP_DECLARE_FIELD(2)
 			J2CPP_DECLARE_FIELD(3)
 
-			Status(jobject jobj)
+			explicit Status(jobject jobj)
 			: cpp_object<Status>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+
 
 
 			static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(0), J2CPP_FIELD_SIGNATURE(0), cpp_int > CURRENT;
@@ -188,10 +207,13 @@ namespace android { namespace net { namespace wifi {
 			J2CPP_DECLARE_FIELD(3)
 			J2CPP_DECLARE_FIELD(4)
 
-			AuthAlgorithm(jobject jobj)
+			explicit AuthAlgorithm(jobject jobj)
 			: cpp_object<AuthAlgorithm>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+
 
 
 			static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(0), J2CPP_FIELD_SIGNATURE(0), cpp_int > OPEN;
@@ -236,25 +258,30 @@ namespace android { namespace net { namespace wifi {
 		typedef WifiConfiguration_::Status Status;
 		typedef WifiConfiguration_::AuthAlgorithm AuthAlgorithm;
 
-		WifiConfiguration(jobject jobj)
+		explicit WifiConfiguration(jobject jobj)
 		: cpp_object<WifiConfiguration>(jobj)
-		, networkId(jobj)
-		, status(jobj)
-		, SSID(jobj)
-		, BSSID(jobj)
-		, preSharedKey(jobj)
-		, wepKeys(jobj)
-		, wepTxKeyIndex(jobj)
-		, priority(jobj)
-		, hiddenSSID(jobj)
-		, allowedKeyManagement(jobj)
-		, allowedProtocols(jobj)
-		, allowedAuthAlgorithms(jobj)
-		, allowedPairwiseCiphers(jobj)
-		, allowedGroupCiphers(jobj)
+, networkId(jobj)
+, status(jobj)
+, SSID(jobj)
+, BSSID(jobj)
+, preSharedKey(jobj)
+, wepKeys(jobj)
+, wepTxKeyIndex(jobj)
+, priority(jobj)
+, hiddenSSID(jobj)
+, allowedKeyManagement(jobj)
+, allowedProtocols(jobj)
+, allowedAuthAlgorithms(jobj)
+, allowedPairwiseCiphers(jobj)
+, allowedGroupCiphers(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<android::os::Parcelable>() const;
+
+
+		WifiConfiguration();
 		local_ref< java::lang::String > toString();
 		cpp_int describeContents();
 		void writeToParcel(local_ref< android::os::Parcel > const&, cpp_int const&);
@@ -279,7 +306,6 @@ namespace android { namespace net { namespace wifi {
 } //namespace net
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_NET_WIFI_WIFICONFIGURATION_HPP_DECL
@@ -293,16 +319,13 @@ namespace j2cpp {
 
 
 
-template <>
-local_ref< android::net::wifi::WifiConfiguration_::Protocol > create< android::net::wifi::WifiConfiguration_::Protocol>()
+
+android::net::wifi::WifiConfiguration_::Protocol::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::net::wifi::WifiConfiguration_::Protocol >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::net::wifi::WifiConfiguration_::Protocol::J2CPP_CLASS_NAME>(),
-			get_method_id<android::net::wifi::WifiConfiguration_::Protocol::J2CPP_CLASS_NAME, android::net::wifi::WifiConfiguration_::Protocol::J2CPP_METHOD_NAME(0), android::net::wifi::WifiConfiguration_::Protocol::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
 
 
 static_field<
@@ -342,16 +365,13 @@ J2CPP_DEFINE_FIELD(android::net::wifi::WifiConfiguration_::Protocol,1,"RSN","I")
 J2CPP_DEFINE_FIELD(android::net::wifi::WifiConfiguration_::Protocol,2,"varName","Ljava/lang/String;")
 J2CPP_DEFINE_FIELD(android::net::wifi::WifiConfiguration_::Protocol,3,"strings","[java.lang.String")
 
-template <>
-local_ref< android::net::wifi::WifiConfiguration_::GroupCipher > create< android::net::wifi::WifiConfiguration_::GroupCipher>()
+
+android::net::wifi::WifiConfiguration_::GroupCipher::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::net::wifi::WifiConfiguration_::GroupCipher >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::net::wifi::WifiConfiguration_::GroupCipher::J2CPP_CLASS_NAME>(),
-			get_method_id<android::net::wifi::WifiConfiguration_::GroupCipher::J2CPP_CLASS_NAME, android::net::wifi::WifiConfiguration_::GroupCipher::J2CPP_METHOD_NAME(0), android::net::wifi::WifiConfiguration_::GroupCipher::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
 
 
 static_field<
@@ -407,16 +427,13 @@ J2CPP_DEFINE_FIELD(android::net::wifi::WifiConfiguration_::GroupCipher,3,"CCMP",
 J2CPP_DEFINE_FIELD(android::net::wifi::WifiConfiguration_::GroupCipher,4,"varName","Ljava/lang/String;")
 J2CPP_DEFINE_FIELD(android::net::wifi::WifiConfiguration_::GroupCipher,5,"strings","[java.lang.String")
 
-template <>
-local_ref< android::net::wifi::WifiConfiguration_::PairwiseCipher > create< android::net::wifi::WifiConfiguration_::PairwiseCipher>()
+
+android::net::wifi::WifiConfiguration_::PairwiseCipher::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::net::wifi::WifiConfiguration_::PairwiseCipher >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::net::wifi::WifiConfiguration_::PairwiseCipher::J2CPP_CLASS_NAME>(),
-			get_method_id<android::net::wifi::WifiConfiguration_::PairwiseCipher::J2CPP_CLASS_NAME, android::net::wifi::WifiConfiguration_::PairwiseCipher::J2CPP_METHOD_NAME(0), android::net::wifi::WifiConfiguration_::PairwiseCipher::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
 
 
 static_field<
@@ -464,16 +481,13 @@ J2CPP_DEFINE_FIELD(android::net::wifi::WifiConfiguration_::PairwiseCipher,2,"CCM
 J2CPP_DEFINE_FIELD(android::net::wifi::WifiConfiguration_::PairwiseCipher,3,"varName","Ljava/lang/String;")
 J2CPP_DEFINE_FIELD(android::net::wifi::WifiConfiguration_::PairwiseCipher,4,"strings","[java.lang.String")
 
-template <>
-local_ref< android::net::wifi::WifiConfiguration_::KeyMgmt > create< android::net::wifi::WifiConfiguration_::KeyMgmt>()
+
+android::net::wifi::WifiConfiguration_::KeyMgmt::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::net::wifi::WifiConfiguration_::KeyMgmt >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::net::wifi::WifiConfiguration_::KeyMgmt::J2CPP_CLASS_NAME>(),
-			get_method_id<android::net::wifi::WifiConfiguration_::KeyMgmt::J2CPP_CLASS_NAME, android::net::wifi::WifiConfiguration_::KeyMgmt::J2CPP_METHOD_NAME(0), android::net::wifi::WifiConfiguration_::KeyMgmt::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
 
 
 static_field<
@@ -529,16 +543,13 @@ J2CPP_DEFINE_FIELD(android::net::wifi::WifiConfiguration_::KeyMgmt,3,"IEEE8021X"
 J2CPP_DEFINE_FIELD(android::net::wifi::WifiConfiguration_::KeyMgmt,4,"varName","Ljava/lang/String;")
 J2CPP_DEFINE_FIELD(android::net::wifi::WifiConfiguration_::KeyMgmt,5,"strings","[java.lang.String")
 
-template <>
-local_ref< android::net::wifi::WifiConfiguration_::Status > create< android::net::wifi::WifiConfiguration_::Status>()
+
+android::net::wifi::WifiConfiguration_::Status::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::net::wifi::WifiConfiguration_::Status >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::net::wifi::WifiConfiguration_::Status::J2CPP_CLASS_NAME>(),
-			get_method_id<android::net::wifi::WifiConfiguration_::Status::J2CPP_CLASS_NAME, android::net::wifi::WifiConfiguration_::Status::J2CPP_METHOD_NAME(0), android::net::wifi::WifiConfiguration_::Status::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
 
 
 static_field<
@@ -578,16 +589,13 @@ J2CPP_DEFINE_FIELD(android::net::wifi::WifiConfiguration_::Status,1,"DISABLED","
 J2CPP_DEFINE_FIELD(android::net::wifi::WifiConfiguration_::Status,2,"ENABLED","I")
 J2CPP_DEFINE_FIELD(android::net::wifi::WifiConfiguration_::Status,3,"strings","[java.lang.String")
 
-template <>
-local_ref< android::net::wifi::WifiConfiguration_::AuthAlgorithm > create< android::net::wifi::WifiConfiguration_::AuthAlgorithm>()
+
+android::net::wifi::WifiConfiguration_::AuthAlgorithm::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::net::wifi::WifiConfiguration_::AuthAlgorithm >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::net::wifi::WifiConfiguration_::AuthAlgorithm::J2CPP_CLASS_NAME>(),
-			get_method_id<android::net::wifi::WifiConfiguration_::AuthAlgorithm::J2CPP_CLASS_NAME, android::net::wifi::WifiConfiguration_::AuthAlgorithm::J2CPP_METHOD_NAME(0), android::net::wifi::WifiConfiguration_::AuthAlgorithm::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
 
 
 static_field<
@@ -636,16 +644,42 @@ J2CPP_DEFINE_FIELD(android::net::wifi::WifiConfiguration_::AuthAlgorithm,3,"varN
 J2CPP_DEFINE_FIELD(android::net::wifi::WifiConfiguration_::AuthAlgorithm,4,"strings","[java.lang.String")
 
 
-template <>
-local_ref< android::net::wifi::WifiConfiguration > create< android::net::wifi::WifiConfiguration>()
+
+android::net::wifi::WifiConfiguration::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::net::wifi::WifiConfiguration >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::net::wifi::WifiConfiguration::J2CPP_CLASS_NAME>(),
-			get_method_id<android::net::wifi::WifiConfiguration::J2CPP_CLASS_NAME, android::net::wifi::WifiConfiguration::J2CPP_METHOD_NAME(0), android::net::wifi::WifiConfiguration::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+android::net::wifi::WifiConfiguration::operator local_ref<android::os::Parcelable>() const
+{
+	return local_ref<android::os::Parcelable>(get_jtype());
+}
+
+
+android::net::wifi::WifiConfiguration::WifiConfiguration()
+: cpp_object<android::net::wifi::WifiConfiguration>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::net::wifi::WifiConfiguration::J2CPP_CLASS_NAME>(),
+		get_method_id<android::net::wifi::WifiConfiguration::J2CPP_CLASS_NAME, android::net::wifi::WifiConfiguration::J2CPP_METHOD_NAME(0), android::net::wifi::WifiConfiguration::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+, networkId(get_jtype())
+, status(get_jtype())
+, SSID(get_jtype())
+, BSSID(get_jtype())
+, preSharedKey(get_jtype())
+, wepKeys(get_jtype())
+, wepTxKeyIndex(get_jtype())
+, priority(get_jtype())
+, hiddenSSID(get_jtype())
+, allowedKeyManagement(get_jtype())
+, allowedProtocols(get_jtype())
+, allowedAuthAlgorithms(get_jtype())
+, allowedPairwiseCiphers(get_jtype())
+, allowedGroupCiphers(get_jtype())
+{
+}
+
 
 local_ref< java::lang::String > android::net::wifi::WifiConfiguration::toString()
 {

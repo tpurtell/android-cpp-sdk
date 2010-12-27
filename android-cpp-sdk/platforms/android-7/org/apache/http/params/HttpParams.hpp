@@ -45,10 +45,13 @@ namespace org { namespace apache { namespace http { namespace params {
 		J2CPP_DECLARE_METHOD(12)
 		J2CPP_DECLARE_METHOD(13)
 
-		HttpParams(jobject jobj)
+		explicit HttpParams(jobject jobj)
 		: cpp_object<HttpParams>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		local_ref< java::lang::Object > getParameter(local_ref< java::lang::String > const&);
 		local_ref< org::apache::http::params::HttpParams > setParameter(local_ref< java::lang::String > const&, local_ref< java::lang::Object > const&);
@@ -71,7 +74,6 @@ namespace org { namespace apache { namespace http { namespace params {
 } //namespace apache
 } //namespace org
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ORG_APACHE_HTTP_PARAMS_HTTPPARAMS_HPP_DECL
@@ -83,6 +85,12 @@ namespace org { namespace apache { namespace http { namespace params {
 
 namespace j2cpp {
 
+
+
+org::apache::http::params::HttpParams::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 local_ref< java::lang::Object > org::apache::http::params::HttpParams::getParameter(local_ref< java::lang::String > const &a0)
 {

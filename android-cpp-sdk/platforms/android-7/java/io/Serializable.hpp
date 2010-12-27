@@ -10,8 +10,10 @@
 #define J2CPP_JAVA_IO_SERIALIZABLE_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -27,15 +29,17 @@ namespace java { namespace io {
 		J2CPP_DECLARE_CLASS
 
 
-		Serializable(jobject jobj)
+		explicit Serializable(jobject jobj)
 		: cpp_object<Serializable>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 	}; //class Serializable
 
 } //namespace io
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -48,6 +52,12 @@ namespace java { namespace io {
 
 namespace j2cpp {
 
+
+
+java::io::Serializable::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 J2CPP_DEFINE_CLASS(java::io::Serializable,"java/io/Serializable")
 

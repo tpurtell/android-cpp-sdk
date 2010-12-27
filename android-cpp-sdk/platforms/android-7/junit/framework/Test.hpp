@@ -11,8 +11,10 @@
 
 
 namespace j2cpp { namespace junit { namespace framework { class TestResult; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
+#include <java/lang/Object.hpp>
 #include <junit/framework/TestResult.hpp>
 
 
@@ -31,10 +33,13 @@ namespace junit { namespace framework {
 		J2CPP_DECLARE_METHOD(0)
 		J2CPP_DECLARE_METHOD(1)
 
-		Test(jobject jobj)
+		explicit Test(jobject jobj)
 		: cpp_object<Test>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		cpp_int countTestCases();
 		void run(local_ref< junit::framework::TestResult > const&);
@@ -42,7 +47,6 @@ namespace junit { namespace framework {
 
 } //namespace framework
 } //namespace junit
-
 
 } //namespace j2cpp
 
@@ -55,6 +59,12 @@ namespace junit { namespace framework {
 
 namespace j2cpp {
 
+
+
+junit::framework::Test::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 cpp_int junit::framework::Test::countTestCases()
 {

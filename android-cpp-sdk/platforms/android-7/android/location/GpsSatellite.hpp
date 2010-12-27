@@ -10,8 +10,10 @@
 #define J2CPP_ANDROID_LOCATION_GPSSATELLITE_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -35,10 +37,13 @@ namespace android { namespace location {
 		J2CPP_DECLARE_METHOD(6)
 		J2CPP_DECLARE_METHOD(7)
 
-		GpsSatellite(jobject jobj)
+		explicit GpsSatellite(jobject jobj)
 		: cpp_object<GpsSatellite>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		cpp_int getPrn();
 		cpp_float getSnr();
@@ -52,7 +57,6 @@ namespace android { namespace location {
 } //namespace location
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_LOCATION_GPSSATELLITE_HPP_DECL
@@ -65,16 +69,12 @@ namespace android { namespace location {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::location::GpsSatellite > create< android::location::GpsSatellite>()
+
+android::location::GpsSatellite::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::location::GpsSatellite >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::location::GpsSatellite::J2CPP_CLASS_NAME>(),
-			get_method_id<android::location::GpsSatellite::J2CPP_CLASS_NAME, android::location::GpsSatellite::J2CPP_METHOD_NAME(0), android::location::GpsSatellite::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
 
 cpp_int android::location::GpsSatellite::getPrn()
 {

@@ -12,6 +12,7 @@
 
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace util { class Map; } } }
+namespace j2cpp { namespace java { namespace util { class Observable; } } }
 namespace j2cpp { namespace android { namespace database { class Cursor; } } }
 namespace j2cpp { namespace android { namespace content { class ContentValues; } } }
 namespace j2cpp { namespace android { namespace os { class Handler; } } }
@@ -22,6 +23,7 @@ namespace j2cpp { namespace android { namespace os { class Handler; } } }
 #include <android/os/Handler.hpp>
 #include <java/lang/String.hpp>
 #include <java/util/Map.hpp>
+#include <java/util/Observable.hpp>
 
 
 namespace j2cpp {
@@ -44,11 +46,15 @@ namespace android { namespace content {
 		J2CPP_DECLARE_METHOD(5)
 		J2CPP_DECLARE_METHOD(6)
 
-		ContentQueryMap(jobject jobj)
+		explicit ContentQueryMap(jobject jobj)
 		: cpp_object<ContentQueryMap>(jobj)
 		{
 		}
 
+		operator local_ref<java::util::Observable>() const;
+
+
+		ContentQueryMap(local_ref< android::database::Cursor > const&, local_ref< java::lang::String > const&, cpp_boolean const&, local_ref< android::os::Handler > const&);
 		void setKeepUpdated(cpp_boolean const&);
 		local_ref< android::content::ContentValues > getValues(local_ref< java::lang::String > const&);
 		void requery();
@@ -58,7 +64,6 @@ namespace android { namespace content {
 
 } //namespace content
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -72,17 +77,24 @@ namespace android { namespace content {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::content::ContentQueryMap > create< android::content::ContentQueryMap>(local_ref< android::database::Cursor > const &a0, local_ref< java::lang::String > const &a1, cpp_boolean const &a2, local_ref< android::os::Handler > const &a3)
+
+android::content::ContentQueryMap::operator local_ref<java::util::Observable>() const
 {
-	return local_ref< android::content::ContentQueryMap >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::content::ContentQueryMap::J2CPP_CLASS_NAME>(),
-			get_method_id<android::content::ContentQueryMap::J2CPP_CLASS_NAME, android::content::ContentQueryMap::J2CPP_METHOD_NAME(0), android::content::ContentQueryMap::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype()
-		)
-	);
+	return local_ref<java::util::Observable>(get_jtype());
 }
+
+
+android::content::ContentQueryMap::ContentQueryMap(local_ref< android::database::Cursor > const &a0, local_ref< java::lang::String > const &a1, cpp_boolean const &a2, local_ref< android::os::Handler > const &a3)
+: cpp_object<android::content::ContentQueryMap>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::content::ContentQueryMap::J2CPP_CLASS_NAME>(),
+		get_method_id<android::content::ContentQueryMap::J2CPP_CLASS_NAME, android::content::ContentQueryMap::J2CPP_METHOD_NAME(0), android::content::ContentQueryMap::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype()
+	)
+)
+{
+}
+
 
 void android::content::ContentQueryMap::setKeepUpdated(cpp_boolean const &a0)
 {

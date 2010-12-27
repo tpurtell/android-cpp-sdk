@@ -10,10 +10,12 @@
 #define J2CPP_JAVA_SECURITY_SPEC_PSSPARAMETERSPEC_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace security { namespace spec { class AlgorithmParameterSpec; } } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/security/spec/AlgorithmParameterSpec.hpp>
 
@@ -40,11 +42,17 @@ namespace java { namespace security { namespace spec {
 		J2CPP_DECLARE_METHOD(7)
 		J2CPP_DECLARE_FIELD(0)
 
-		PSSParameterSpec(jobject jobj)
+		explicit PSSParameterSpec(jobject jobj)
 		: cpp_object<PSSParameterSpec>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::security::spec::AlgorithmParameterSpec>() const;
+
+
+		PSSParameterSpec(cpp_int const&);
+		PSSParameterSpec(local_ref< java::lang::String > const&, local_ref< java::lang::String > const&, local_ref< java::security::spec::AlgorithmParameterSpec > const&, cpp_int const&, cpp_int const&);
 		cpp_int getSaltLength();
 		local_ref< java::lang::String > getDigestAlgorithm();
 		local_ref< java::lang::String > getMGFAlgorithm();
@@ -58,7 +66,6 @@ namespace java { namespace security { namespace spec {
 } //namespace security
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_SECURITY_SPEC_PSSPARAMETERSPEC_HPP_DECL
@@ -71,29 +78,42 @@ namespace java { namespace security { namespace spec {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::security::spec::PSSParameterSpec > create< java::security::spec::PSSParameterSpec>(cpp_int const &a0)
+
+java::security::spec::PSSParameterSpec::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::security::spec::PSSParameterSpec >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::security::spec::PSSParameterSpec::J2CPP_CLASS_NAME>(),
-			get_method_id<java::security::spec::PSSParameterSpec::J2CPP_CLASS_NAME, java::security::spec::PSSParameterSpec::J2CPP_METHOD_NAME(0), java::security::spec::PSSParameterSpec::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
 
-template <>
-local_ref< java::security::spec::PSSParameterSpec > create< java::security::spec::PSSParameterSpec>(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1, local_ref< java::security::spec::AlgorithmParameterSpec > const &a2, cpp_int const &a3, cpp_int const &a4)
+java::security::spec::PSSParameterSpec::operator local_ref<java::security::spec::AlgorithmParameterSpec>() const
 {
-	return local_ref< java::security::spec::PSSParameterSpec >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::security::spec::PSSParameterSpec::J2CPP_CLASS_NAME>(),
-			get_method_id<java::security::spec::PSSParameterSpec::J2CPP_CLASS_NAME, java::security::spec::PSSParameterSpec::J2CPP_METHOD_NAME(1), java::security::spec::PSSParameterSpec::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype(), a4.get_jtype()
-		)
-	);
+	return local_ref<java::security::spec::AlgorithmParameterSpec>(get_jtype());
 }
+
+
+java::security::spec::PSSParameterSpec::PSSParameterSpec(cpp_int const &a0)
+: cpp_object<java::security::spec::PSSParameterSpec>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::security::spec::PSSParameterSpec::J2CPP_CLASS_NAME>(),
+		get_method_id<java::security::spec::PSSParameterSpec::J2CPP_CLASS_NAME, java::security::spec::PSSParameterSpec::J2CPP_METHOD_NAME(0), java::security::spec::PSSParameterSpec::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
+
+
+java::security::spec::PSSParameterSpec::PSSParameterSpec(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1, local_ref< java::security::spec::AlgorithmParameterSpec > const &a2, cpp_int const &a3, cpp_int const &a4)
+: cpp_object<java::security::spec::PSSParameterSpec>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::security::spec::PSSParameterSpec::J2CPP_CLASS_NAME>(),
+		get_method_id<java::security::spec::PSSParameterSpec::J2CPP_CLASS_NAME, java::security::spec::PSSParameterSpec::J2CPP_METHOD_NAME(1), java::security::spec::PSSParameterSpec::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype(), a4.get_jtype()
+	)
+)
+{
+}
+
 
 cpp_int java::security::spec::PSSParameterSpec::getSaltLength()
 {
@@ -144,6 +164,7 @@ cpp_int java::security::spec::PSSParameterSpec::getTrailerField()
 		)
 	);
 }
+
 
 
 static_field<

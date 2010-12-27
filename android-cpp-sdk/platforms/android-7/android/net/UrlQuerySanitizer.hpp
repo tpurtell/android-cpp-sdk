@@ -10,6 +10,7 @@
 #define J2CPP_ANDROID_NET_URLQUERYSANITIZER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace util { class Set; } } }
 namespace j2cpp { namespace java { namespace util { class List; } } }
@@ -17,6 +18,7 @@ namespace j2cpp { namespace android { namespace net { namespace UrlQuerySanitize
 
 
 #include <android/net/UrlQuerySanitizer.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/util/List.hpp>
 #include <java/util/Set.hpp>
@@ -39,10 +41,13 @@ namespace android { namespace net {
 
 			J2CPP_DECLARE_METHOD(0)
 
-			ValueSanitizer(jobject jobj)
+			explicit ValueSanitizer(jobject jobj)
 			: cpp_object<ValueSanitizer>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+
 
 			local_ref< java::lang::String > sanitize(local_ref< java::lang::String > const&);
 		}; //class ValueSanitizer
@@ -80,11 +85,16 @@ namespace android { namespace net {
 			J2CPP_DECLARE_FIELD(20)
 			J2CPP_DECLARE_FIELD(21)
 
-			IllegalCharacterValueSanitizer(jobject jobj)
+			explicit IllegalCharacterValueSanitizer(jobject jobj)
 			: cpp_object<IllegalCharacterValueSanitizer>(jobj)
 			{
 			}
 
+			operator local_ref<java::lang::Object>() const;
+			operator local_ref<android::net::UrlQuerySanitizer_::ValueSanitizer>() const;
+
+
+			IllegalCharacterValueSanitizer(cpp_int const&);
 			local_ref< java::lang::String > sanitize(local_ref< java::lang::String > const&);
 
 			static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(0), J2CPP_FIELD_SIGNATURE(0), cpp_int > SPACE_OK;
@@ -124,13 +134,17 @@ namespace android { namespace net {
 			J2CPP_DECLARE_FIELD(1)
 			J2CPP_DECLARE_FIELD(2)
 
-			ParameterValuePair(jobject jobj)
+			explicit ParameterValuePair(jobject jobj)
 			: cpp_object<ParameterValuePair>(jobj)
-			, mParameter(jobj)
-			, mValue(jobj)
+, mParameter(jobj)
+, mValue(jobj)
 			{
 			}
 
+			operator local_ref<java::lang::Object>() const;
+
+
+			ParameterValuePair(local_ref< android::net::UrlQuerySanitizer > const&, local_ref< java::lang::String > const&, local_ref< java::lang::String > const&);
 
 			field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(0), J2CPP_FIELD_SIGNATURE(0), local_ref< java::lang::String > > mParameter;
 			field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(1), J2CPP_FIELD_SIGNATURE(1), local_ref< java::lang::String > > mValue;
@@ -183,11 +197,16 @@ namespace android { namespace net {
 		typedef UrlQuerySanitizer_::IllegalCharacterValueSanitizer IllegalCharacterValueSanitizer;
 		typedef UrlQuerySanitizer_::ParameterValuePair ParameterValuePair;
 
-		UrlQuerySanitizer(jobject jobj)
+		explicit UrlQuerySanitizer(jobject jobj)
 		: cpp_object<UrlQuerySanitizer>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		UrlQuerySanitizer();
+		UrlQuerySanitizer(local_ref< java::lang::String > const&);
 		local_ref< android::net::UrlQuerySanitizer_::ValueSanitizer > getUnregisteredParameterValueSanitizer();
 		void setUnregisteredParameterValueSanitizer(local_ref< android::net::UrlQuerySanitizer_::ValueSanitizer > const&);
 		static local_ref< android::net::UrlQuerySanitizer_::ValueSanitizer > getAllIllegal();
@@ -219,7 +238,6 @@ namespace android { namespace net {
 } //namespace net
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_NET_URLQUERYSANITIZER_HPP_DECL
@@ -232,6 +250,12 @@ namespace android { namespace net {
 namespace j2cpp {
 
 
+
+
+android::net::UrlQuerySanitizer_::ValueSanitizer::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 local_ref< java::lang::String > android::net::UrlQuerySanitizer_::ValueSanitizer::sanitize(local_ref< java::lang::String > const &a0)
 {
@@ -248,17 +272,29 @@ local_ref< java::lang::String > android::net::UrlQuerySanitizer_::ValueSanitizer
 J2CPP_DEFINE_CLASS(android::net::UrlQuerySanitizer_::ValueSanitizer,"android/net/UrlQuerySanitizer$ValueSanitizer")
 J2CPP_DEFINE_METHOD(android::net::UrlQuerySanitizer_::ValueSanitizer,0,"sanitize","(Ljava/lang/String;)Ljava/lang/String;")
 
-template <>
-local_ref< android::net::UrlQuerySanitizer_::IllegalCharacterValueSanitizer > create< android::net::UrlQuerySanitizer_::IllegalCharacterValueSanitizer>(cpp_int const &a0)
+
+android::net::UrlQuerySanitizer_::IllegalCharacterValueSanitizer::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::net::UrlQuerySanitizer_::IllegalCharacterValueSanitizer >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::net::UrlQuerySanitizer_::IllegalCharacterValueSanitizer::J2CPP_CLASS_NAME>(),
-			get_method_id<android::net::UrlQuerySanitizer_::IllegalCharacterValueSanitizer::J2CPP_CLASS_NAME, android::net::UrlQuerySanitizer_::IllegalCharacterValueSanitizer::J2CPP_METHOD_NAME(0), android::net::UrlQuerySanitizer_::IllegalCharacterValueSanitizer::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+android::net::UrlQuerySanitizer_::IllegalCharacterValueSanitizer::operator local_ref<android::net::UrlQuerySanitizer_::ValueSanitizer>() const
+{
+	return local_ref<android::net::UrlQuerySanitizer_::ValueSanitizer>(get_jtype());
+}
+
+
+android::net::UrlQuerySanitizer_::IllegalCharacterValueSanitizer::IllegalCharacterValueSanitizer(cpp_int const &a0)
+: cpp_object<android::net::UrlQuerySanitizer_::IllegalCharacterValueSanitizer>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::net::UrlQuerySanitizer_::IllegalCharacterValueSanitizer::J2CPP_CLASS_NAME>(),
+		get_method_id<android::net::UrlQuerySanitizer_::IllegalCharacterValueSanitizer::J2CPP_CLASS_NAME, android::net::UrlQuerySanitizer_::IllegalCharacterValueSanitizer::J2CPP_METHOD_NAME(0), android::net::UrlQuerySanitizer_::IllegalCharacterValueSanitizer::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 local_ref< java::lang::String > android::net::UrlQuerySanitizer_::IllegalCharacterValueSanitizer::sanitize(local_ref< java::lang::String > const &a0)
 {
@@ -453,17 +489,26 @@ J2CPP_DEFINE_FIELD(android::net::UrlQuerySanitizer_::IllegalCharacterValueSaniti
 J2CPP_DEFINE_FIELD(android::net::UrlQuerySanitizer_::IllegalCharacterValueSanitizer,20,"SPACE_LEGAL","I")
 J2CPP_DEFINE_FIELD(android::net::UrlQuerySanitizer_::IllegalCharacterValueSanitizer,21,"ALL_BUT_NUL_AND_ANGLE_BRACKETS_LEGAL","I")
 
-template <>
-local_ref< android::net::UrlQuerySanitizer_::ParameterValuePair > create< android::net::UrlQuerySanitizer_::ParameterValuePair>(local_ref< android::net::UrlQuerySanitizer > const &a0, local_ref< java::lang::String > const &a1, local_ref< java::lang::String > const &a2)
+
+android::net::UrlQuerySanitizer_::ParameterValuePair::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::net::UrlQuerySanitizer_::ParameterValuePair >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::net::UrlQuerySanitizer_::ParameterValuePair::J2CPP_CLASS_NAME>(),
-			get_method_id<android::net::UrlQuerySanitizer_::ParameterValuePair::J2CPP_CLASS_NAME, android::net::UrlQuerySanitizer_::ParameterValuePair::J2CPP_METHOD_NAME(0), android::net::UrlQuerySanitizer_::ParameterValuePair::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::net::UrlQuerySanitizer_::ParameterValuePair::ParameterValuePair(local_ref< android::net::UrlQuerySanitizer > const &a0, local_ref< java::lang::String > const &a1, local_ref< java::lang::String > const &a2)
+: cpp_object<android::net::UrlQuerySanitizer_::ParameterValuePair>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::net::UrlQuerySanitizer_::ParameterValuePair::J2CPP_CLASS_NAME>(),
+		get_method_id<android::net::UrlQuerySanitizer_::ParameterValuePair::J2CPP_CLASS_NAME, android::net::UrlQuerySanitizer_::ParameterValuePair::J2CPP_METHOD_NAME(0), android::net::UrlQuerySanitizer_::ParameterValuePair::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
+	)
+)
+, mParameter(get_jtype())
+, mValue(get_jtype())
+{
+}
+
 
 
 
@@ -474,28 +519,36 @@ J2CPP_DEFINE_FIELD(android::net::UrlQuerySanitizer_::ParameterValuePair,1,"mValu
 J2CPP_DEFINE_FIELD(android::net::UrlQuerySanitizer_::ParameterValuePair,2,"this$0","Landroid/net/UrlQuerySanitizer;")
 
 
-template <>
-local_ref< android::net::UrlQuerySanitizer > create< android::net::UrlQuerySanitizer>()
+
+android::net::UrlQuerySanitizer::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::net::UrlQuerySanitizer >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::net::UrlQuerySanitizer::J2CPP_CLASS_NAME>(),
-			get_method_id<android::net::UrlQuerySanitizer::J2CPP_CLASS_NAME, android::net::UrlQuerySanitizer::J2CPP_METHOD_NAME(0), android::net::UrlQuerySanitizer::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
 
-template <>
-local_ref< android::net::UrlQuerySanitizer > create< android::net::UrlQuerySanitizer>(local_ref< java::lang::String > const &a0)
+
+android::net::UrlQuerySanitizer::UrlQuerySanitizer()
+: cpp_object<android::net::UrlQuerySanitizer>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::net::UrlQuerySanitizer::J2CPP_CLASS_NAME>(),
+		get_method_id<android::net::UrlQuerySanitizer::J2CPP_CLASS_NAME, android::net::UrlQuerySanitizer::J2CPP_METHOD_NAME(0), android::net::UrlQuerySanitizer::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
 {
-	return local_ref< android::net::UrlQuerySanitizer >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::net::UrlQuerySanitizer::J2CPP_CLASS_NAME>(),
-			get_method_id<android::net::UrlQuerySanitizer::J2CPP_CLASS_NAME, android::net::UrlQuerySanitizer::J2CPP_METHOD_NAME(1), android::net::UrlQuerySanitizer::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
 }
+
+
+
+android::net::UrlQuerySanitizer::UrlQuerySanitizer(local_ref< java::lang::String > const &a0)
+: cpp_object<android::net::UrlQuerySanitizer>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::net::UrlQuerySanitizer::J2CPP_CLASS_NAME>(),
+		get_method_id<android::net::UrlQuerySanitizer::J2CPP_CLASS_NAME, android::net::UrlQuerySanitizer::J2CPP_METHOD_NAME(1), android::net::UrlQuerySanitizer::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 local_ref< android::net::UrlQuerySanitizer_::ValueSanitizer > android::net::UrlQuerySanitizer::getUnregisteredParameterValueSanitizer()
 {

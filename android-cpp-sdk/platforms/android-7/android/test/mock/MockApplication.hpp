@@ -10,9 +10,11 @@
 #define J2CPP_ANDROID_TEST_MOCK_MOCKAPPLICATION_HPP_DECL
 
 
+namespace j2cpp { namespace android { namespace app { class Application; } } }
 namespace j2cpp { namespace android { namespace content { namespace res { class Configuration; } } } }
 
 
+#include <android/app/Application.hpp>
 #include <android/content/res/Configuration.hpp>
 
 
@@ -33,11 +35,15 @@ namespace android { namespace test { namespace mock {
 		J2CPP_DECLARE_METHOD(2)
 		J2CPP_DECLARE_METHOD(3)
 
-		MockApplication(jobject jobj)
+		explicit MockApplication(jobject jobj)
 		: cpp_object<MockApplication>(jobj)
 		{
 		}
 
+		operator local_ref<android::app::Application>() const;
+
+
+		MockApplication();
 		void onCreate();
 		void onTerminate();
 		void onConfigurationChanged(local_ref< android::content::res::Configuration > const&);
@@ -46,7 +52,6 @@ namespace android { namespace test { namespace mock {
 } //namespace mock
 } //namespace test
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -60,16 +65,23 @@ namespace android { namespace test { namespace mock {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::test::mock::MockApplication > create< android::test::mock::MockApplication>()
+
+android::test::mock::MockApplication::operator local_ref<android::app::Application>() const
 {
-	return local_ref< android::test::mock::MockApplication >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::test::mock::MockApplication::J2CPP_CLASS_NAME>(),
-			get_method_id<android::test::mock::MockApplication::J2CPP_CLASS_NAME, android::test::mock::MockApplication::J2CPP_METHOD_NAME(0), android::test::mock::MockApplication::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<android::app::Application>(get_jtype());
 }
+
+
+android::test::mock::MockApplication::MockApplication()
+: cpp_object<android::test::mock::MockApplication>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::test::mock::MockApplication::J2CPP_CLASS_NAME>(),
+		get_method_id<android::test::mock::MockApplication::J2CPP_CLASS_NAME, android::test::mock::MockApplication::J2CPP_METHOD_NAME(0), android::test::mock::MockApplication::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 void android::test::mock::MockApplication::onCreate()
 {

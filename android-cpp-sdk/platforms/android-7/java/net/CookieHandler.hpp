@@ -11,9 +11,11 @@
 
 
 namespace j2cpp { namespace java { namespace net { class URI; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace util { class Map; } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/net/URI.hpp>
 #include <java/util/Map.hpp>
 
@@ -36,11 +38,15 @@ namespace java { namespace net {
 		J2CPP_DECLARE_METHOD(3)
 		J2CPP_DECLARE_METHOD(4)
 
-		CookieHandler(jobject jobj)
+		explicit CookieHandler(jobject jobj)
 		: cpp_object<CookieHandler>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		CookieHandler();
 		static local_ref< java::net::CookieHandler > getDefault();
 		static void setDefault(local_ref< java::net::CookieHandler > const&);
 		local_ref< java::util::Map > get(local_ref< java::net::URI > const&, local_ref< java::util::Map > const&);
@@ -49,7 +55,6 @@ namespace java { namespace net {
 
 } //namespace net
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -63,16 +68,23 @@ namespace java { namespace net {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::net::CookieHandler > create< java::net::CookieHandler>()
+
+java::net::CookieHandler::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::net::CookieHandler >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::net::CookieHandler::J2CPP_CLASS_NAME>(),
-			get_method_id<java::net::CookieHandler::J2CPP_CLASS_NAME, java::net::CookieHandler::J2CPP_METHOD_NAME(0), java::net::CookieHandler::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+java::net::CookieHandler::CookieHandler()
+: cpp_object<java::net::CookieHandler>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::net::CookieHandler::J2CPP_CLASS_NAME>(),
+		get_method_id<java::net::CookieHandler::J2CPP_CLASS_NAME, java::net::CookieHandler::J2CPP_METHOD_NAME(0), java::net::CookieHandler::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 local_ref< java::net::CookieHandler > java::net::CookieHandler::getDefault()
 {

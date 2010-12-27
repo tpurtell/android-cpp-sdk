@@ -13,6 +13,7 @@
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace android { namespace os { class Parcel; } } }
+namespace j2cpp { namespace android { namespace os { class Parcelable; } } }
 namespace j2cpp { namespace android { namespace os { namespace Parcelable_ { class Creator; } } } }
 
 
@@ -62,11 +63,18 @@ namespace android { namespace telephony {
 		J2CPP_DECLARE_FIELD(3)
 		J2CPP_DECLARE_FIELD(4)
 
-		ServiceState(jobject jobj)
+		explicit ServiceState(jobject jobj)
 		: cpp_object<ServiceState>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<android::os::Parcelable>() const;
+
+
+		ServiceState();
+		ServiceState(local_ref< android::telephony::ServiceState > const&);
+		ServiceState(local_ref< android::os::Parcel > const&);
 		void writeToParcel(local_ref< android::os::Parcel > const&, cpp_int const&);
 		cpp_int describeContents();
 		cpp_int getState();
@@ -95,7 +103,6 @@ namespace android { namespace telephony {
 } //namespace telephony
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_TELEPHONY_SERVICESTATE_HPP_DECL
@@ -108,40 +115,54 @@ namespace android { namespace telephony {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::telephony::ServiceState > create< android::telephony::ServiceState>()
+
+android::telephony::ServiceState::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::telephony::ServiceState >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::telephony::ServiceState::J2CPP_CLASS_NAME>(),
-			get_method_id<android::telephony::ServiceState::J2CPP_CLASS_NAME, android::telephony::ServiceState::J2CPP_METHOD_NAME(0), android::telephony::ServiceState::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
 
-template <>
-local_ref< android::telephony::ServiceState > create< android::telephony::ServiceState>(local_ref< android::telephony::ServiceState > const &a0)
+android::telephony::ServiceState::operator local_ref<android::os::Parcelable>() const
 {
-	return local_ref< android::telephony::ServiceState >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::telephony::ServiceState::J2CPP_CLASS_NAME>(),
-			get_method_id<android::telephony::ServiceState::J2CPP_CLASS_NAME, android::telephony::ServiceState::J2CPP_METHOD_NAME(1), android::telephony::ServiceState::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<android::os::Parcelable>(get_jtype());
 }
 
-template <>
-local_ref< android::telephony::ServiceState > create< android::telephony::ServiceState>(local_ref< android::os::Parcel > const &a0)
+
+android::telephony::ServiceState::ServiceState()
+: cpp_object<android::telephony::ServiceState>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::telephony::ServiceState::J2CPP_CLASS_NAME>(),
+		get_method_id<android::telephony::ServiceState::J2CPP_CLASS_NAME, android::telephony::ServiceState::J2CPP_METHOD_NAME(0), android::telephony::ServiceState::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
 {
-	return local_ref< android::telephony::ServiceState >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::telephony::ServiceState::J2CPP_CLASS_NAME>(),
-			get_method_id<android::telephony::ServiceState::J2CPP_CLASS_NAME, android::telephony::ServiceState::J2CPP_METHOD_NAME(2), android::telephony::ServiceState::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype()
-		)
-	);
 }
+
+
+
+android::telephony::ServiceState::ServiceState(local_ref< android::telephony::ServiceState > const &a0)
+: cpp_object<android::telephony::ServiceState>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::telephony::ServiceState::J2CPP_CLASS_NAME>(),
+		get_method_id<android::telephony::ServiceState::J2CPP_CLASS_NAME, android::telephony::ServiceState::J2CPP_METHOD_NAME(1), android::telephony::ServiceState::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
+
+
+android::telephony::ServiceState::ServiceState(local_ref< android::os::Parcel > const &a0)
+: cpp_object<android::telephony::ServiceState>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::telephony::ServiceState::J2CPP_CLASS_NAME>(),
+		get_method_id<android::telephony::ServiceState::J2CPP_CLASS_NAME, android::telephony::ServiceState::J2CPP_METHOD_NAME(2), android::telephony::ServiceState::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 
 void android::telephony::ServiceState::writeToParcel(local_ref< android::os::Parcel > const &a0, cpp_int const &a1)
@@ -319,6 +340,7 @@ void android::telephony::ServiceState::setIsManualSelection(cpp_boolean const &a
 		)
 	);
 }
+
 
 
 static_field<

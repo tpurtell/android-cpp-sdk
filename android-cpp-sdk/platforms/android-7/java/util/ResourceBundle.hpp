@@ -49,11 +49,15 @@ namespace java { namespace util {
 		J2CPP_DECLARE_METHOD(10)
 		J2CPP_DECLARE_FIELD(0)
 
-		ResourceBundle(jobject jobj)
+		explicit ResourceBundle(jobject jobj)
 		: cpp_object<ResourceBundle>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		ResourceBundle();
 		static local_ref< java::util::ResourceBundle > getBundle(local_ref< java::lang::String > const&);
 		static local_ref< java::util::ResourceBundle > getBundle(local_ref< java::lang::String > const&, local_ref< java::util::Locale > const&);
 		static local_ref< java::util::ResourceBundle > getBundle(local_ref< java::lang::String > const&, local_ref< java::util::Locale > const&, local_ref< java::lang::ClassLoader > const&);
@@ -68,7 +72,6 @@ namespace java { namespace util {
 } //namespace util
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_UTIL_RESOURCEBUNDLE_HPP_DECL
@@ -81,16 +84,23 @@ namespace java { namespace util {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::util::ResourceBundle > create< java::util::ResourceBundle>()
+
+java::util::ResourceBundle::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::util::ResourceBundle >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::ResourceBundle::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::ResourceBundle::J2CPP_CLASS_NAME, java::util::ResourceBundle::J2CPP_METHOD_NAME(0), java::util::ResourceBundle::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+java::util::ResourceBundle::ResourceBundle()
+: cpp_object<java::util::ResourceBundle>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::util::ResourceBundle::J2CPP_CLASS_NAME>(),
+		get_method_id<java::util::ResourceBundle::J2CPP_CLASS_NAME, java::util::ResourceBundle::J2CPP_METHOD_NAME(0), java::util::ResourceBundle::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 local_ref< java::util::ResourceBundle > java::util::ResourceBundle::getBundle(local_ref< java::lang::String > const &a0)
 {

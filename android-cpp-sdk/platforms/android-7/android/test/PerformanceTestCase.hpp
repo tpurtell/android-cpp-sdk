@@ -10,11 +10,13 @@
 #define J2CPP_ANDROID_TEST_PERFORMANCETESTCASE_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace android { namespace test { namespace PerformanceTestCase_ { class Intermediates; } } } }
 
 
 #include <android/test/PerformanceTestCase.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -39,10 +41,13 @@ namespace android { namespace test {
 			J2CPP_DECLARE_METHOD(3)
 			J2CPP_DECLARE_METHOD(4)
 
-			Intermediates(jobject jobj)
+			explicit Intermediates(jobject jobj)
 			: cpp_object<Intermediates>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+
 
 			void setInternalIterations(cpp_int const&);
 			void startTiming(cpp_boolean const&);
@@ -65,10 +70,13 @@ namespace android { namespace test {
 
 		typedef PerformanceTestCase_::Intermediates Intermediates;
 
-		PerformanceTestCase(jobject jobj)
+		explicit PerformanceTestCase(jobject jobj)
 		: cpp_object<PerformanceTestCase>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		cpp_int startPerformance(local_ref< android::test::PerformanceTestCase_::Intermediates > const&);
 		cpp_boolean isPerformanceOnly();
@@ -76,7 +84,6 @@ namespace android { namespace test {
 
 } //namespace test
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -90,6 +97,12 @@ namespace android { namespace test {
 namespace j2cpp {
 
 
+
+
+android::test::PerformanceTestCase_::Intermediates::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 void android::test::PerformanceTestCase_::Intermediates::setInternalIterations(cpp_int const &a0)
 {
@@ -154,6 +167,12 @@ J2CPP_DEFINE_METHOD(android::test::PerformanceTestCase_::Intermediates,2,"addInt
 J2CPP_DEFINE_METHOD(android::test::PerformanceTestCase_::Intermediates,3,"addIntermediate","(Ljava/lang/String;J)V")
 J2CPP_DEFINE_METHOD(android::test::PerformanceTestCase_::Intermediates,4,"finishTiming","(Z)V")
 
+
+
+android::test::PerformanceTestCase::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 cpp_int android::test::PerformanceTestCase::startPerformance(local_ref< android::test::PerformanceTestCase_::Intermediates > const &a0)
 {

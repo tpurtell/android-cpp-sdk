@@ -11,11 +11,13 @@
 
 
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace util { class Set; } } }
 namespace j2cpp { namespace java { namespace util { class Comparator; } } }
 
 
 #include <java/lang/Object.hpp>
 #include <java/util/Comparator.hpp>
+#include <java/util/Set.hpp>
 
 
 namespace j2cpp {
@@ -37,10 +39,14 @@ namespace java { namespace util {
 		J2CPP_DECLARE_METHOD(4)
 		J2CPP_DECLARE_METHOD(5)
 
-		SortedSet(jobject jobj)
+		explicit SortedSet(jobject jobj)
 		: cpp_object<SortedSet>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::util::Set>() const;
+
 
 		local_ref< java::util::Comparator > comparator();
 		local_ref< java::lang::Object > first();
@@ -53,7 +59,6 @@ namespace java { namespace util {
 } //namespace util
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_UTIL_SORTEDSET_HPP_DECL
@@ -65,6 +70,17 @@ namespace java { namespace util {
 
 namespace j2cpp {
 
+
+
+java::util::SortedSet::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
+
+java::util::SortedSet::operator local_ref<java::util::Set>() const
+{
+	return local_ref<java::util::Set>(get_jtype());
+}
 
 local_ref< java::util::Comparator > java::util::SortedSet::comparator()
 {

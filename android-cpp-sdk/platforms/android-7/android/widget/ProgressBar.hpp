@@ -12,6 +12,7 @@
 
 namespace j2cpp { namespace android { namespace graphics { namespace drawable { class Drawable; } } } }
 namespace j2cpp { namespace android { namespace content { class Context; } } }
+namespace j2cpp { namespace android { namespace view { class View; } } }
 namespace j2cpp { namespace android { namespace view { namespace animation { class Interpolator; } } } }
 namespace j2cpp { namespace android { namespace util { class AttributeSet; } } }
 namespace j2cpp { namespace android { namespace os { class Parcelable; } } }
@@ -21,6 +22,7 @@ namespace j2cpp { namespace android { namespace os { class Parcelable; } } }
 #include <android/graphics/drawable/Drawable.hpp>
 #include <android/os/Parcelable.hpp>
 #include <android/util/AttributeSet.hpp>
+#include <android/view/View.hpp>
 #include <android/view/animation/Interpolator.hpp>
 
 
@@ -67,11 +69,17 @@ namespace android { namespace widget {
 		J2CPP_DECLARE_METHOD(28)
 		J2CPP_DECLARE_METHOD(29)
 
-		ProgressBar(jobject jobj)
+		explicit ProgressBar(jobject jobj)
 		: cpp_object<ProgressBar>(jobj)
 		{
 		}
 
+		operator local_ref<android::view::View>() const;
+
+
+		ProgressBar(local_ref< android::content::Context > const&);
+		ProgressBar(local_ref< android::content::Context > const&, local_ref< android::util::AttributeSet > const&);
+		ProgressBar(local_ref< android::content::Context > const&, local_ref< android::util::AttributeSet > const&, cpp_int const&);
 		cpp_boolean isIndeterminate();
 		void setIndeterminate(cpp_boolean const&);
 		local_ref< android::graphics::drawable::Drawable > getIndeterminateDrawable();
@@ -99,7 +107,6 @@ namespace android { namespace widget {
 } //namespace widget
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_WIDGET_PROGRESSBAR_HPP_DECL
@@ -112,41 +119,50 @@ namespace android { namespace widget {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::widget::ProgressBar > create< android::widget::ProgressBar>(local_ref< android::content::Context > const &a0)
+
+android::widget::ProgressBar::operator local_ref<android::view::View>() const
 {
-	return local_ref< android::widget::ProgressBar >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::widget::ProgressBar::J2CPP_CLASS_NAME>(),
-			get_method_id<android::widget::ProgressBar::J2CPP_CLASS_NAME, android::widget::ProgressBar::J2CPP_METHOD_NAME(0), android::widget::ProgressBar::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<android::view::View>(get_jtype());
 }
 
-template <>
-local_ref< android::widget::ProgressBar > create< android::widget::ProgressBar>(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1)
+
+android::widget::ProgressBar::ProgressBar(local_ref< android::content::Context > const &a0)
+: cpp_object<android::widget::ProgressBar>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::widget::ProgressBar::J2CPP_CLASS_NAME>(),
+		get_method_id<android::widget::ProgressBar::J2CPP_CLASS_NAME, android::widget::ProgressBar::J2CPP_METHOD_NAME(0), android::widget::ProgressBar::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< android::widget::ProgressBar >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::widget::ProgressBar::J2CPP_CLASS_NAME>(),
-			get_method_id<android::widget::ProgressBar::J2CPP_CLASS_NAME, android::widget::ProgressBar::J2CPP_METHOD_NAME(1), android::widget::ProgressBar::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< android::widget::ProgressBar > create< android::widget::ProgressBar>(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1, cpp_int const &a2)
+
+
+android::widget::ProgressBar::ProgressBar(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1)
+: cpp_object<android::widget::ProgressBar>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::widget::ProgressBar::J2CPP_CLASS_NAME>(),
+		get_method_id<android::widget::ProgressBar::J2CPP_CLASS_NAME, android::widget::ProgressBar::J2CPP_METHOD_NAME(1), android::widget::ProgressBar::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
 {
-	return local_ref< android::widget::ProgressBar >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::widget::ProgressBar::J2CPP_CLASS_NAME>(),
-			get_method_id<android::widget::ProgressBar::J2CPP_CLASS_NAME, android::widget::ProgressBar::J2CPP_METHOD_NAME(2), android::widget::ProgressBar::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
-		)
-	);
 }
+
+
+
+android::widget::ProgressBar::ProgressBar(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1, cpp_int const &a2)
+: cpp_object<android::widget::ProgressBar>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::widget::ProgressBar::J2CPP_CLASS_NAME>(),
+		get_method_id<android::widget::ProgressBar::J2CPP_CLASS_NAME, android::widget::ProgressBar::J2CPP_METHOD_NAME(2), android::widget::ProgressBar::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
+	)
+)
+{
+}
+
 
 cpp_boolean android::widget::ProgressBar::isIndeterminate()
 {

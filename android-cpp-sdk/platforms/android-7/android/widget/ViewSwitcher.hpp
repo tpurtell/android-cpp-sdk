@@ -10,10 +10,12 @@
 #define J2CPP_ANDROID_WIDGET_VIEWSWITCHER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace android { namespace content { class Context; } } }
 namespace j2cpp { namespace android { namespace view { class View; } } }
 namespace j2cpp { namespace android { namespace view { namespace ViewGroup_ { class LayoutParams; } } } }
 namespace j2cpp { namespace android { namespace widget { namespace ViewSwitcher_ { class ViewFactory; } } } }
+namespace j2cpp { namespace android { namespace widget { class ViewAnimator; } } }
 namespace j2cpp { namespace android { namespace util { class AttributeSet; } } }
 
 
@@ -21,7 +23,9 @@ namespace j2cpp { namespace android { namespace util { class AttributeSet; } } }
 #include <android/util/AttributeSet.hpp>
 #include <android/view/View.hpp>
 #include <android/view/ViewGroup.hpp>
+#include <android/widget/ViewAnimator.hpp>
 #include <android/widget/ViewSwitcher.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -41,10 +45,13 @@ namespace android { namespace widget {
 
 			J2CPP_DECLARE_METHOD(0)
 
-			ViewFactory(jobject jobj)
+			explicit ViewFactory(jobject jobj)
 			: cpp_object<ViewFactory>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+
 
 			local_ref< android::view::View > makeView();
 		}; //class ViewFactory
@@ -67,11 +74,16 @@ namespace android { namespace widget {
 
 		typedef ViewSwitcher_::ViewFactory ViewFactory;
 
-		ViewSwitcher(jobject jobj)
+		explicit ViewSwitcher(jobject jobj)
 		: cpp_object<ViewSwitcher>(jobj)
 		{
 		}
 
+		operator local_ref<android::widget::ViewAnimator>() const;
+
+
+		ViewSwitcher(local_ref< android::content::Context > const&);
+		ViewSwitcher(local_ref< android::content::Context > const&, local_ref< android::util::AttributeSet > const&);
 		void addView(local_ref< android::view::View > const&, cpp_int const&, local_ref< android::view::ViewGroup_::LayoutParams > const&);
 		local_ref< android::view::View > getNextView();
 		void setFactory(local_ref< android::widget::ViewSwitcher_::ViewFactory > const&);
@@ -80,7 +92,6 @@ namespace android { namespace widget {
 
 } //namespace widget
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -94,6 +105,12 @@ namespace android { namespace widget {
 namespace j2cpp {
 
 
+
+
+android::widget::ViewSwitcher_::ViewFactory::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 local_ref< android::view::View > android::widget::ViewSwitcher_::ViewFactory::makeView()
 {
@@ -110,29 +127,37 @@ J2CPP_DEFINE_CLASS(android::widget::ViewSwitcher_::ViewFactory,"android/widget/V
 J2CPP_DEFINE_METHOD(android::widget::ViewSwitcher_::ViewFactory,0,"makeView","()Landroid/view/View;")
 
 
-template <>
-local_ref< android::widget::ViewSwitcher > create< android::widget::ViewSwitcher>(local_ref< android::content::Context > const &a0)
+
+android::widget::ViewSwitcher::operator local_ref<android::widget::ViewAnimator>() const
 {
-	return local_ref< android::widget::ViewSwitcher >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::widget::ViewSwitcher::J2CPP_CLASS_NAME>(),
-			get_method_id<android::widget::ViewSwitcher::J2CPP_CLASS_NAME, android::widget::ViewSwitcher::J2CPP_METHOD_NAME(0), android::widget::ViewSwitcher::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<android::widget::ViewAnimator>(get_jtype());
 }
 
-template <>
-local_ref< android::widget::ViewSwitcher > create< android::widget::ViewSwitcher>(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1)
+
+android::widget::ViewSwitcher::ViewSwitcher(local_ref< android::content::Context > const &a0)
+: cpp_object<android::widget::ViewSwitcher>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::widget::ViewSwitcher::J2CPP_CLASS_NAME>(),
+		get_method_id<android::widget::ViewSwitcher::J2CPP_CLASS_NAME, android::widget::ViewSwitcher::J2CPP_METHOD_NAME(0), android::widget::ViewSwitcher::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< android::widget::ViewSwitcher >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::widget::ViewSwitcher::J2CPP_CLASS_NAME>(),
-			get_method_id<android::widget::ViewSwitcher::J2CPP_CLASS_NAME, android::widget::ViewSwitcher::J2CPP_METHOD_NAME(1), android::widget::ViewSwitcher::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
 }
+
+
+
+android::widget::ViewSwitcher::ViewSwitcher(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1)
+: cpp_object<android::widget::ViewSwitcher>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::widget::ViewSwitcher::J2CPP_CLASS_NAME>(),
+		get_method_id<android::widget::ViewSwitcher::J2CPP_CLASS_NAME, android::widget::ViewSwitcher::J2CPP_METHOD_NAME(1), android::widget::ViewSwitcher::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
 
 void android::widget::ViewSwitcher::addView(local_ref< android::view::View > const &a0, cpp_int const &a1, local_ref< android::view::ViewGroup_::LayoutParams > const &a2)
 {

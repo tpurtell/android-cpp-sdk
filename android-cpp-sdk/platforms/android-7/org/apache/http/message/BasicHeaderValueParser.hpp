@@ -10,6 +10,7 @@
 #define J2CPP_ORG_APACHE_HTTP_MESSAGE_BASICHEADERVALUEPARSER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace message { class ParserCursor; } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace message { class HeaderValueParser; } } } } }
@@ -18,6 +19,7 @@ namespace j2cpp { namespace org { namespace apache { namespace http { class Head
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace util { class CharArrayBuffer; } } } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <org/apache/http/HeaderElement.hpp>
 #include <org/apache/http/NameValuePair.hpp>
@@ -53,11 +55,16 @@ namespace org { namespace apache { namespace http { namespace message {
 		J2CPP_DECLARE_METHOD(12)
 		J2CPP_DECLARE_FIELD(0)
 
-		BasicHeaderValueParser(jobject jobj)
+		explicit BasicHeaderValueParser(jobject jobj)
 		: cpp_object<BasicHeaderValueParser>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<org::apache::http::message::HeaderValueParser>() const;
+
+
+		BasicHeaderValueParser();
 		static local_ref< cpp_object_array<org::apache::http::HeaderElement, 1> > parseElements(local_ref< java::lang::String > const&, local_ref< org::apache::http::message::HeaderValueParser > const&);
 		local_ref< cpp_object_array<org::apache::http::HeaderElement, 1> > parseElements(local_ref< org::apache::http::util::CharArrayBuffer > const&, local_ref< org::apache::http::message::ParserCursor > const&);
 		static local_ref< org::apache::http::HeaderElement > parseHeaderElement(local_ref< java::lang::String > const&, local_ref< org::apache::http::message::HeaderValueParser > const&);
@@ -76,7 +83,6 @@ namespace org { namespace apache { namespace http { namespace message {
 } //namespace apache
 } //namespace org
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ORG_APACHE_HTTP_MESSAGE_BASICHEADERVALUEPARSER_HPP_DECL
@@ -89,16 +95,28 @@ namespace org { namespace apache { namespace http { namespace message {
 namespace j2cpp {
 
 
-template <>
-local_ref< org::apache::http::message::BasicHeaderValueParser > create< org::apache::http::message::BasicHeaderValueParser>()
+
+org::apache::http::message::BasicHeaderValueParser::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< org::apache::http::message::BasicHeaderValueParser >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::apache::http::message::BasicHeaderValueParser::J2CPP_CLASS_NAME>(),
-			get_method_id<org::apache::http::message::BasicHeaderValueParser::J2CPP_CLASS_NAME, org::apache::http::message::BasicHeaderValueParser::J2CPP_METHOD_NAME(0), org::apache::http::message::BasicHeaderValueParser::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+org::apache::http::message::BasicHeaderValueParser::operator local_ref<org::apache::http::message::HeaderValueParser>() const
+{
+	return local_ref<org::apache::http::message::HeaderValueParser>(get_jtype());
+}
+
+
+org::apache::http::message::BasicHeaderValueParser::BasicHeaderValueParser()
+: cpp_object<org::apache::http::message::BasicHeaderValueParser>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::apache::http::message::BasicHeaderValueParser::J2CPP_CLASS_NAME>(),
+		get_method_id<org::apache::http::message::BasicHeaderValueParser::J2CPP_CLASS_NAME, org::apache::http::message::BasicHeaderValueParser::J2CPP_METHOD_NAME(0), org::apache::http::message::BasicHeaderValueParser::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 local_ref< cpp_object_array<org::apache::http::HeaderElement, 1> > org::apache::http::message::BasicHeaderValueParser::parseElements(local_ref< java::lang::String > const &a0, local_ref< org::apache::http::message::HeaderValueParser > const &a1)
 {
@@ -199,6 +217,7 @@ local_ref< org::apache::http::NameValuePair > org::apache::http::message::BasicH
 		)
 	);
 }
+
 
 
 

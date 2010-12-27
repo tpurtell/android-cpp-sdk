@@ -10,6 +10,7 @@
 #define J2CPP_JAVA_IO_INPUTSTREAMREADER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class Reader; } } }
 namespace j2cpp { namespace java { namespace io { class InputStream; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace nio { namespace charset { class CharsetDecoder; } } } }
@@ -17,6 +18,7 @@ namespace j2cpp { namespace java { namespace nio { namespace charset { class Cha
 
 
 #include <java/io/InputStream.hpp>
+#include <java/io/Reader.hpp>
 #include <java/lang/String.hpp>
 #include <java/nio/charset/Charset.hpp>
 #include <java/nio/charset/CharsetDecoder.hpp>
@@ -44,11 +46,18 @@ namespace java { namespace io {
 		J2CPP_DECLARE_METHOD(7)
 		J2CPP_DECLARE_METHOD(8)
 
-		InputStreamReader(jobject jobj)
+		explicit InputStreamReader(jobject jobj)
 		: cpp_object<InputStreamReader>(jobj)
 		{
 		}
 
+		operator local_ref<java::io::Reader>() const;
+
+
+		InputStreamReader(local_ref< java::io::InputStream > const&);
+		InputStreamReader(local_ref< java::io::InputStream > const&, local_ref< java::lang::String > const&);
+		InputStreamReader(local_ref< java::io::InputStream > const&, local_ref< java::nio::charset::CharsetDecoder > const&);
+		InputStreamReader(local_ref< java::io::InputStream > const&, local_ref< java::nio::charset::Charset > const&);
 		void close();
 		local_ref< java::lang::String > getEncoding();
 		cpp_int read();
@@ -58,7 +67,6 @@ namespace java { namespace io {
 
 } //namespace io
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -72,53 +80,63 @@ namespace java { namespace io {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::io::InputStreamReader > create< java::io::InputStreamReader>(local_ref< java::io::InputStream > const &a0)
+
+java::io::InputStreamReader::operator local_ref<java::io::Reader>() const
 {
-	return local_ref< java::io::InputStreamReader >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::io::InputStreamReader::J2CPP_CLASS_NAME>(),
-			get_method_id<java::io::InputStreamReader::J2CPP_CLASS_NAME, java::io::InputStreamReader::J2CPP_METHOD_NAME(0), java::io::InputStreamReader::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::io::Reader>(get_jtype());
 }
 
-template <>
-local_ref< java::io::InputStreamReader > create< java::io::InputStreamReader>(local_ref< java::io::InputStream > const &a0, local_ref< java::lang::String > const &a1)
+
+java::io::InputStreamReader::InputStreamReader(local_ref< java::io::InputStream > const &a0)
+: cpp_object<java::io::InputStreamReader>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::io::InputStreamReader::J2CPP_CLASS_NAME>(),
+		get_method_id<java::io::InputStreamReader::J2CPP_CLASS_NAME, java::io::InputStreamReader::J2CPP_METHOD_NAME(0), java::io::InputStreamReader::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< java::io::InputStreamReader >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::io::InputStreamReader::J2CPP_CLASS_NAME>(),
-			get_method_id<java::io::InputStreamReader::J2CPP_CLASS_NAME, java::io::InputStreamReader::J2CPP_METHOD_NAME(1), java::io::InputStreamReader::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< java::io::InputStreamReader > create< java::io::InputStreamReader>(local_ref< java::io::InputStream > const &a0, local_ref< java::nio::charset::CharsetDecoder > const &a1)
+
+
+java::io::InputStreamReader::InputStreamReader(local_ref< java::io::InputStream > const &a0, local_ref< java::lang::String > const &a1)
+: cpp_object<java::io::InputStreamReader>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::io::InputStreamReader::J2CPP_CLASS_NAME>(),
+		get_method_id<java::io::InputStreamReader::J2CPP_CLASS_NAME, java::io::InputStreamReader::J2CPP_METHOD_NAME(1), java::io::InputStreamReader::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
 {
-	return local_ref< java::io::InputStreamReader >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::io::InputStreamReader::J2CPP_CLASS_NAME>(),
-			get_method_id<java::io::InputStreamReader::J2CPP_CLASS_NAME, java::io::InputStreamReader::J2CPP_METHOD_NAME(2), java::io::InputStreamReader::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< java::io::InputStreamReader > create< java::io::InputStreamReader>(local_ref< java::io::InputStream > const &a0, local_ref< java::nio::charset::Charset > const &a1)
+
+
+java::io::InputStreamReader::InputStreamReader(local_ref< java::io::InputStream > const &a0, local_ref< java::nio::charset::CharsetDecoder > const &a1)
+: cpp_object<java::io::InputStreamReader>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::io::InputStreamReader::J2CPP_CLASS_NAME>(),
+		get_method_id<java::io::InputStreamReader::J2CPP_CLASS_NAME, java::io::InputStreamReader::J2CPP_METHOD_NAME(2), java::io::InputStreamReader::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
 {
-	return local_ref< java::io::InputStreamReader >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::io::InputStreamReader::J2CPP_CLASS_NAME>(),
-			get_method_id<java::io::InputStreamReader::J2CPP_CLASS_NAME, java::io::InputStreamReader::J2CPP_METHOD_NAME(3), java::io::InputStreamReader::J2CPP_METHOD_SIGNATURE(3), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
 }
+
+
+
+java::io::InputStreamReader::InputStreamReader(local_ref< java::io::InputStream > const &a0, local_ref< java::nio::charset::Charset > const &a1)
+: cpp_object<java::io::InputStreamReader>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::io::InputStreamReader::J2CPP_CLASS_NAME>(),
+		get_method_id<java::io::InputStreamReader::J2CPP_CLASS_NAME, java::io::InputStreamReader::J2CPP_METHOD_NAME(3), java::io::InputStreamReader::J2CPP_METHOD_SIGNATURE(3), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
 
 void java::io::InputStreamReader::close()
 {

@@ -10,11 +10,13 @@
 #define J2CPP_ORG_XML_SAX_CONTENTHANDLER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace org { namespace xml { namespace sax { class Attributes; } } } }
 namespace j2cpp { namespace org { namespace xml { namespace sax { class Locator; } } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <org/xml/sax/Attributes.hpp>
 #include <org/xml/sax/Locator.hpp>
@@ -44,10 +46,13 @@ namespace org { namespace xml { namespace sax {
 		J2CPP_DECLARE_METHOD(9)
 		J2CPP_DECLARE_METHOD(10)
 
-		ContentHandler(jobject jobj)
+		explicit ContentHandler(jobject jobj)
 		: cpp_object<ContentHandler>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		void setDocumentLocator(local_ref< org::xml::sax::Locator > const&);
 		void startDocument();
@@ -66,7 +71,6 @@ namespace org { namespace xml { namespace sax {
 } //namespace xml
 } //namespace org
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ORG_XML_SAX_CONTENTHANDLER_HPP_DECL
@@ -78,6 +82,12 @@ namespace org { namespace xml { namespace sax {
 
 namespace j2cpp {
 
+
+
+org::xml::sax::ContentHandler::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 void org::xml::sax::ContentHandler::setDocumentLocator(local_ref< org::xml::sax::Locator > const &a0)
 {

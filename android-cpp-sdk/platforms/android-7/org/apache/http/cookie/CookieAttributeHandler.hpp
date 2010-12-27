@@ -10,12 +10,14 @@
 #define J2CPP_ORG_APACHE_HTTP_COOKIE_COOKIEATTRIBUTEHANDLER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace cookie { class CookieOrigin; } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace cookie { class Cookie; } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace cookie { class SetCookie; } } } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <org/apache/http/cookie/Cookie.hpp>
 #include <org/apache/http/cookie/CookieOrigin.hpp>
@@ -38,10 +40,13 @@ namespace org { namespace apache { namespace http { namespace cookie {
 		J2CPP_DECLARE_METHOD(1)
 		J2CPP_DECLARE_METHOD(2)
 
-		CookieAttributeHandler(jobject jobj)
+		explicit CookieAttributeHandler(jobject jobj)
 		: cpp_object<CookieAttributeHandler>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		void parse(local_ref< org::apache::http::cookie::SetCookie > const&, local_ref< java::lang::String > const&);
 		void validate(local_ref< org::apache::http::cookie::Cookie > const&, local_ref< org::apache::http::cookie::CookieOrigin > const&);
@@ -52,7 +57,6 @@ namespace org { namespace apache { namespace http { namespace cookie {
 } //namespace http
 } //namespace apache
 } //namespace org
-
 
 } //namespace j2cpp
 
@@ -65,6 +69,12 @@ namespace org { namespace apache { namespace http { namespace cookie {
 
 namespace j2cpp {
 
+
+
+org::apache::http::cookie::CookieAttributeHandler::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 void org::apache::http::cookie::CookieAttributeHandler::parse(local_ref< org::apache::http::cookie::SetCookie > const &a0, local_ref< java::lang::String > const &a1)
 {

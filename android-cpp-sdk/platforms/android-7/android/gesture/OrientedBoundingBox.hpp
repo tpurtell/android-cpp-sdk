@@ -10,8 +10,10 @@
 #define J2CPP_ANDROID_GESTURE_ORIENTEDBOUNDINGBOX_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -34,16 +36,19 @@ namespace android { namespace gesture {
 		J2CPP_DECLARE_FIELD(4)
 		J2CPP_DECLARE_FIELD(5)
 
-		OrientedBoundingBox(jobject jobj)
+		explicit OrientedBoundingBox(jobject jobj)
 		: cpp_object<OrientedBoundingBox>(jobj)
-		, squareness(jobj)
-		, width(jobj)
-		, height(jobj)
-		, orientation(jobj)
-		, centerX(jobj)
-		, centerY(jobj)
+, squareness(jobj)
+, width(jobj)
+, height(jobj)
+, orientation(jobj)
+, centerX(jobj)
+, centerY(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 
 		field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(0), J2CPP_FIELD_SIGNATURE(0), cpp_float > squareness;
@@ -57,7 +62,6 @@ namespace android { namespace gesture {
 } //namespace gesture
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_GESTURE_ORIENTEDBOUNDINGBOX_HPP_DECL
@@ -70,16 +74,12 @@ namespace android { namespace gesture {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::gesture::OrientedBoundingBox > create< android::gesture::OrientedBoundingBox>()
+
+android::gesture::OrientedBoundingBox::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::gesture::OrientedBoundingBox >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::gesture::OrientedBoundingBox::J2CPP_CLASS_NAME>(),
-			get_method_id<android::gesture::OrientedBoundingBox::J2CPP_CLASS_NAME, android::gesture::OrientedBoundingBox::J2CPP_METHOD_NAME(0), android::gesture::OrientedBoundingBox::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
 
 
 

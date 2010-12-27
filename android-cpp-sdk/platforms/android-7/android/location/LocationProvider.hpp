@@ -10,11 +10,13 @@
 #define J2CPP_ANDROID_LOCATION_LOCATIONPROVIDER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace android { namespace location { class Criteria; } } }
 
 
 #include <android/location/Criteria.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -46,10 +48,13 @@ namespace android { namespace location {
 		J2CPP_DECLARE_FIELD(1)
 		J2CPP_DECLARE_FIELD(2)
 
-		LocationProvider(jobject jobj)
+		explicit LocationProvider(jobject jobj)
 		: cpp_object<LocationProvider>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		local_ref< java::lang::String > getName();
 		cpp_boolean meetsCriteria(local_ref< android::location::Criteria > const&);
@@ -71,7 +76,6 @@ namespace android { namespace location {
 } //namespace location
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_LOCATION_LOCATIONPROVIDER_HPP_DECL
@@ -84,16 +88,12 @@ namespace android { namespace location {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::location::LocationProvider > create< android::location::LocationProvider>()
+
+android::location::LocationProvider::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::location::LocationProvider >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::location::LocationProvider::J2CPP_CLASS_NAME>(),
-			get_method_id<android::location::LocationProvider::J2CPP_CLASS_NAME, android::location::LocationProvider::J2CPP_METHOD_NAME(0), android::location::LocationProvider::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
 
 local_ref< java::lang::String > android::location::LocationProvider::getName()
 {

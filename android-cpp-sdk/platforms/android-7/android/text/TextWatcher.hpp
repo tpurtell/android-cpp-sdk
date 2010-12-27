@@ -10,12 +10,16 @@
 #define J2CPP_ANDROID_TEXT_TEXTWATCHER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class CharSequence; } } }
+namespace j2cpp { namespace android { namespace text { class NoCopySpan; } } }
 namespace j2cpp { namespace android { namespace text { class Editable; } } }
 
 
 #include <android/text/Editable.hpp>
+#include <android/text/NoCopySpan.hpp>
 #include <java/lang/CharSequence.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -34,10 +38,14 @@ namespace android { namespace text {
 		J2CPP_DECLARE_METHOD(1)
 		J2CPP_DECLARE_METHOD(2)
 
-		TextWatcher(jobject jobj)
+		explicit TextWatcher(jobject jobj)
 		: cpp_object<TextWatcher>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<android::text::NoCopySpan>() const;
+
 
 		void beforeTextChanged(local_ref< java::lang::CharSequence > const&, cpp_int const&, cpp_int const&, cpp_int const&);
 		void onTextChanged(local_ref< java::lang::CharSequence > const&, cpp_int const&, cpp_int const&, cpp_int const&);
@@ -46,7 +54,6 @@ namespace android { namespace text {
 
 } //namespace text
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -59,6 +66,17 @@ namespace android { namespace text {
 
 namespace j2cpp {
 
+
+
+android::text::TextWatcher::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
+
+android::text::TextWatcher::operator local_ref<android::text::NoCopySpan>() const
+{
+	return local_ref<android::text::NoCopySpan>(get_jtype());
+}
 
 void android::text::TextWatcher::beforeTextChanged(local_ref< java::lang::CharSequence > const &a0, cpp_int const &a1, cpp_int const &a2, cpp_int const &a3)
 {

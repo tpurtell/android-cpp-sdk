@@ -12,6 +12,7 @@
 
 namespace j2cpp { namespace java { namespace io { class InputStream; } } }
 namespace j2cpp { namespace java { namespace io { class OutputStream; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class Class; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace security { namespace KeyStore_ { class LoadStoreParameter; } } } }
@@ -26,6 +27,7 @@ namespace j2cpp { namespace java { namespace util { class Enumeration; } } }
 #include <java/io/InputStream.hpp>
 #include <java/io/OutputStream.hpp>
 #include <java/lang/Class.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/security/Key.hpp>
 #include <java/security/KeyStore.hpp>
@@ -69,11 +71,15 @@ namespace java { namespace security {
 		J2CPP_DECLARE_METHOD(20)
 		J2CPP_DECLARE_METHOD(21)
 
-		KeyStoreSpi(jobject jobj)
+		explicit KeyStoreSpi(jobject jobj)
 		: cpp_object<KeyStoreSpi>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		KeyStoreSpi();
 		local_ref< java::security::Key > engineGetKey(local_ref< java::lang::String > const&, local_ref< cpp_char_array<1> > const&);
 		local_ref< cpp_object_array<java::security::cert::Certificate, 1> > engineGetCertificateChain(local_ref< java::lang::String > const&);
 		local_ref< java::security::cert::Certificate > engineGetCertificate(local_ref< java::lang::String > const&);
@@ -100,7 +106,6 @@ namespace java { namespace security {
 } //namespace security
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_SECURITY_KEYSTORESPI_HPP_DECL
@@ -113,16 +118,23 @@ namespace java { namespace security {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::security::KeyStoreSpi > create< java::security::KeyStoreSpi>()
+
+java::security::KeyStoreSpi::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::security::KeyStoreSpi >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::security::KeyStoreSpi::J2CPP_CLASS_NAME>(),
-			get_method_id<java::security::KeyStoreSpi::J2CPP_CLASS_NAME, java::security::KeyStoreSpi::J2CPP_METHOD_NAME(0), java::security::KeyStoreSpi::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+java::security::KeyStoreSpi::KeyStoreSpi()
+: cpp_object<java::security::KeyStoreSpi>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::security::KeyStoreSpi::J2CPP_CLASS_NAME>(),
+		get_method_id<java::security::KeyStoreSpi::J2CPP_CLASS_NAME, java::security::KeyStoreSpi::J2CPP_METHOD_NAME(0), java::security::KeyStoreSpi::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 local_ref< java::security::Key > java::security::KeyStoreSpi::engineGetKey(local_ref< java::lang::String > const &a0, local_ref< cpp_char_array<1> > const &a1)
 {

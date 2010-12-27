@@ -91,10 +91,13 @@ namespace java { namespace util { namespace logging {
 		J2CPP_DECLARE_METHOD(46)
 		J2CPP_DECLARE_FIELD(0)
 
-		Logger(jobject jobj)
+		explicit Logger(jobject jobj)
 		: cpp_object<Logger>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		static local_ref< java::util::logging::Logger > getAnonymousLogger();
 		static local_ref< java::util::logging::Logger > getAnonymousLogger(local_ref< java::lang::String > const&);
@@ -149,7 +152,6 @@ namespace java { namespace util { namespace logging {
 } //namespace util
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_UTIL_LOGGING_LOGGER_HPP_DECL
@@ -162,17 +164,12 @@ namespace java { namespace util { namespace logging {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::util::logging::Logger > create< java::util::logging::Logger>(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
+
+java::util::logging::Logger::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::util::logging::Logger >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::logging::Logger::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::logging::Logger::J2CPP_CLASS_NAME, java::util::logging::Logger::J2CPP_METHOD_NAME(0), java::util::logging::Logger::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
 
 local_ref< java::util::logging::Logger > java::util::logging::Logger::getAnonymousLogger()
 {
@@ -659,6 +656,7 @@ void java::util::logging::Logger::logrb(local_ref< java::util::logging::Level > 
 		)
 	);
 }
+
 
 
 static_field<

@@ -10,10 +10,14 @@
 #define J2CPP_ANDROID_BLUETOOTH_BLUETOOTHSERVERSOCKET_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class Closeable; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace android { namespace bluetooth { class BluetoothSocket; } } }
 
 
 #include <android/bluetooth/BluetoothSocket.hpp>
+#include <java/io/Closeable.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -33,10 +37,14 @@ namespace android { namespace bluetooth {
 		J2CPP_DECLARE_METHOD(2)
 		J2CPP_DECLARE_METHOD(3)
 
-		BluetoothServerSocket(jobject jobj)
+		explicit BluetoothServerSocket(jobject jobj)
 		: cpp_object<BluetoothServerSocket>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::io::Closeable>() const;
+
 
 		local_ref< android::bluetooth::BluetoothSocket > accept();
 		local_ref< android::bluetooth::BluetoothSocket > accept(cpp_int const&);
@@ -45,7 +53,6 @@ namespace android { namespace bluetooth {
 
 } //namespace bluetooth
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -59,16 +66,17 @@ namespace android { namespace bluetooth {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::bluetooth::BluetoothServerSocket > create< android::bluetooth::BluetoothServerSocket>()
+
+android::bluetooth::BluetoothServerSocket::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::bluetooth::BluetoothServerSocket >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::bluetooth::BluetoothServerSocket::J2CPP_CLASS_NAME>(),
-			get_method_id<android::bluetooth::BluetoothServerSocket::J2CPP_CLASS_NAME, android::bluetooth::BluetoothServerSocket::J2CPP_METHOD_NAME(0), android::bluetooth::BluetoothServerSocket::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+android::bluetooth::BluetoothServerSocket::operator local_ref<java::io::Closeable>() const
+{
+	return local_ref<java::io::Closeable>(get_jtype());
+}
+
 
 local_ref< android::bluetooth::BluetoothSocket > android::bluetooth::BluetoothServerSocket::accept()
 {

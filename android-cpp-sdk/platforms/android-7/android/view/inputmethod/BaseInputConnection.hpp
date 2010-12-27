@@ -10,11 +10,13 @@
 #define J2CPP_ANDROID_VIEW_INPUTMETHOD_BASEINPUTCONNECTION_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class CharSequence; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace android { namespace view { class View; } } }
 namespace j2cpp { namespace android { namespace view { namespace inputmethod { class ExtractedText; } } } }
 namespace j2cpp { namespace android { namespace view { namespace inputmethod { class CompletionInfo; } } } }
+namespace j2cpp { namespace android { namespace view { namespace inputmethod { class InputConnection; } } } }
 namespace j2cpp { namespace android { namespace view { namespace inputmethod { class ExtractedTextRequest; } } } }
 namespace j2cpp { namespace android { namespace view { class KeyEvent; } } }
 namespace j2cpp { namespace android { namespace text { class Spannable; } } }
@@ -30,7 +32,9 @@ namespace j2cpp { namespace android { namespace os { class Bundle; } } }
 #include <android/view/inputmethod/CompletionInfo.hpp>
 #include <android/view/inputmethod/ExtractedText.hpp>
 #include <android/view/inputmethod/ExtractedTextRequest.hpp>
+#include <android/view/inputmethod/InputConnection.hpp>
 #include <java/lang/CharSequence.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -71,11 +75,16 @@ namespace android { namespace view { namespace inputmethod {
 		J2CPP_DECLARE_METHOD(22)
 		J2CPP_DECLARE_METHOD(23)
 
-		BaseInputConnection(jobject jobj)
+		explicit BaseInputConnection(jobject jobj)
 		: cpp_object<BaseInputConnection>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<android::view::inputmethod::InputConnection>() const;
+
+
+		BaseInputConnection(local_ref< android::view::View > const&, cpp_boolean const&);
 		static void removeComposingSpans(local_ref< android::text::Spannable > const&);
 		static void setComposingSpans(local_ref< android::text::Spannable > const&);
 		static cpp_int getComposingSpanStart(local_ref< android::text::Spannable > const&);
@@ -105,7 +114,6 @@ namespace android { namespace view { namespace inputmethod {
 } //namespace view
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_VIEW_INPUTMETHOD_BASEINPUTCONNECTION_HPP_DECL
@@ -118,17 +126,29 @@ namespace android { namespace view { namespace inputmethod {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::view::inputmethod::BaseInputConnection > create< android::view::inputmethod::BaseInputConnection>(local_ref< android::view::View > const &a0, cpp_boolean const &a1)
+
+android::view::inputmethod::BaseInputConnection::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::view::inputmethod::BaseInputConnection >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::view::inputmethod::BaseInputConnection::J2CPP_CLASS_NAME>(),
-			get_method_id<android::view::inputmethod::BaseInputConnection::J2CPP_CLASS_NAME, android::view::inputmethod::BaseInputConnection::J2CPP_METHOD_NAME(0), android::view::inputmethod::BaseInputConnection::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+android::view::inputmethod::BaseInputConnection::operator local_ref<android::view::inputmethod::InputConnection>() const
+{
+	return local_ref<android::view::inputmethod::InputConnection>(get_jtype());
+}
+
+
+android::view::inputmethod::BaseInputConnection::BaseInputConnection(local_ref< android::view::View > const &a0, cpp_boolean const &a1)
+: cpp_object<android::view::inputmethod::BaseInputConnection>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::view::inputmethod::BaseInputConnection::J2CPP_CLASS_NAME>(),
+		get_method_id<android::view::inputmethod::BaseInputConnection::J2CPP_CLASS_NAME, android::view::inputmethod::BaseInputConnection::J2CPP_METHOD_NAME(0), android::view::inputmethod::BaseInputConnection::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
 
 void android::view::inputmethod::BaseInputConnection::removeComposingSpans(local_ref< android::text::Spannable > const &a0)
 {

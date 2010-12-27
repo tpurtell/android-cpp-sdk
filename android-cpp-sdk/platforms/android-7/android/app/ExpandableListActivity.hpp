@@ -10,13 +10,19 @@
 #define J2CPP_ANDROID_APP_EXPANDABLELISTACTIVITY_HPP_DECL
 
 
+namespace j2cpp { namespace android { namespace app { class Activity; } } }
 namespace j2cpp { namespace android { namespace view { class View; } } }
 namespace j2cpp { namespace android { namespace view { class ContextMenu; } } }
+namespace j2cpp { namespace android { namespace view { namespace View_ { class OnCreateContextMenuListener; } } } }
 namespace j2cpp { namespace android { namespace view { namespace ContextMenu_ { class ContextMenuInfo; } } } }
 namespace j2cpp { namespace android { namespace widget { class ExpandableListView; } } }
+namespace j2cpp { namespace android { namespace widget { namespace ExpandableListView_ { class OnGroupCollapseListener; } } } }
+namespace j2cpp { namespace android { namespace widget { namespace ExpandableListView_ { class OnChildClickListener; } } } }
+namespace j2cpp { namespace android { namespace widget { namespace ExpandableListView_ { class OnGroupExpandListener; } } } }
 namespace j2cpp { namespace android { namespace widget { class ExpandableListAdapter; } } }
 
 
+#include <android/app/Activity.hpp>
 #include <android/view/ContextMenu.hpp>
 #include <android/view/View.hpp>
 #include <android/widget/ExpandableListAdapter.hpp>
@@ -50,11 +56,19 @@ namespace android { namespace app {
 		J2CPP_DECLARE_METHOD(12)
 		J2CPP_DECLARE_METHOD(13)
 
-		ExpandableListActivity(jobject jobj)
+		explicit ExpandableListActivity(jobject jobj)
 		: cpp_object<ExpandableListActivity>(jobj)
 		{
 		}
 
+		operator local_ref<android::app::Activity>() const;
+		operator local_ref<android::view::View_::OnCreateContextMenuListener>() const;
+		operator local_ref<android::widget::ExpandableListView_::OnChildClickListener>() const;
+		operator local_ref<android::widget::ExpandableListView_::OnGroupCollapseListener>() const;
+		operator local_ref<android::widget::ExpandableListView_::OnGroupExpandListener>() const;
+
+
+		ExpandableListActivity();
 		void onCreateContextMenu(local_ref< android::view::ContextMenu > const&, local_ref< android::view::View > const&, local_ref< android::view::ContextMenu_::ContextMenuInfo > const&);
 		cpp_boolean onChildClick(local_ref< android::widget::ExpandableListView > const&, local_ref< android::view::View > const&, cpp_int const&, cpp_int const&, cpp_long const&);
 		void onGroupCollapse(cpp_int const&);
@@ -72,7 +86,6 @@ namespace android { namespace app {
 } //namespace app
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_APP_EXPANDABLELISTACTIVITY_HPP_DECL
@@ -85,16 +98,43 @@ namespace android { namespace app {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::app::ExpandableListActivity > create< android::app::ExpandableListActivity>()
+
+android::app::ExpandableListActivity::operator local_ref<android::app::Activity>() const
 {
-	return local_ref< android::app::ExpandableListActivity >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::app::ExpandableListActivity::J2CPP_CLASS_NAME>(),
-			get_method_id<android::app::ExpandableListActivity::J2CPP_CLASS_NAME, android::app::ExpandableListActivity::J2CPP_METHOD_NAME(0), android::app::ExpandableListActivity::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<android::app::Activity>(get_jtype());
 }
+
+android::app::ExpandableListActivity::operator local_ref<android::view::View_::OnCreateContextMenuListener>() const
+{
+	return local_ref<android::view::View_::OnCreateContextMenuListener>(get_jtype());
+}
+
+android::app::ExpandableListActivity::operator local_ref<android::widget::ExpandableListView_::OnChildClickListener>() const
+{
+	return local_ref<android::widget::ExpandableListView_::OnChildClickListener>(get_jtype());
+}
+
+android::app::ExpandableListActivity::operator local_ref<android::widget::ExpandableListView_::OnGroupCollapseListener>() const
+{
+	return local_ref<android::widget::ExpandableListView_::OnGroupCollapseListener>(get_jtype());
+}
+
+android::app::ExpandableListActivity::operator local_ref<android::widget::ExpandableListView_::OnGroupExpandListener>() const
+{
+	return local_ref<android::widget::ExpandableListView_::OnGroupExpandListener>(get_jtype());
+}
+
+
+android::app::ExpandableListActivity::ExpandableListActivity()
+: cpp_object<android::app::ExpandableListActivity>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::app::ExpandableListActivity::J2CPP_CLASS_NAME>(),
+		get_method_id<android::app::ExpandableListActivity::J2CPP_CLASS_NAME, android::app::ExpandableListActivity::J2CPP_METHOD_NAME(0), android::app::ExpandableListActivity::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 void android::app::ExpandableListActivity::onCreateContextMenu(local_ref< android::view::ContextMenu > const &a0, local_ref< android::view::View > const &a1, local_ref< android::view::ContextMenu_::ContextMenuInfo > const &a2)
 {

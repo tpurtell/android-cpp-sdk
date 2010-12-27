@@ -12,6 +12,7 @@
 
 namespace j2cpp { namespace java { namespace lang { class CharSequence; } } }
 namespace j2cpp { namespace android { namespace text { namespace TextUtils_ { class TruncateAt; } } } }
+namespace j2cpp { namespace android { namespace text { class Layout; } } }
 namespace j2cpp { namespace android { namespace text { class TextPaint; } } }
 namespace j2cpp { namespace android { namespace text { namespace Layout_ { class Alignment; } } } }
 namespace j2cpp { namespace android { namespace text { namespace Layout_ { class Directions; } } } }
@@ -51,11 +52,17 @@ namespace android { namespace text {
 		J2CPP_DECLARE_METHOD(13)
 		J2CPP_DECLARE_METHOD(14)
 
-		DynamicLayout(jobject jobj)
+		explicit DynamicLayout(jobject jobj)
 		: cpp_object<DynamicLayout>(jobj)
 		{
 		}
 
+		operator local_ref<android::text::Layout>() const;
+
+
+		DynamicLayout(local_ref< java::lang::CharSequence > const&, local_ref< android::text::TextPaint > const&, cpp_int const&, local_ref< android::text::Layout_::Alignment > const&, cpp_float const&, cpp_float const&, cpp_boolean const&);
+		DynamicLayout(local_ref< java::lang::CharSequence > const&, local_ref< java::lang::CharSequence > const&, local_ref< android::text::TextPaint > const&, cpp_int const&, local_ref< android::text::Layout_::Alignment > const&, cpp_float const&, cpp_float const&, cpp_boolean const&);
+		DynamicLayout(local_ref< java::lang::CharSequence > const&, local_ref< java::lang::CharSequence > const&, local_ref< android::text::TextPaint > const&, cpp_int const&, local_ref< android::text::Layout_::Alignment > const&, cpp_float const&, cpp_float const&, cpp_boolean const&, local_ref< android::text::TextUtils_::TruncateAt > const&, cpp_int const&);
 		cpp_int getLineCount();
 		cpp_int getLineTop(cpp_int const&);
 		cpp_int getLineDescent(cpp_int const&);
@@ -73,7 +80,6 @@ namespace android { namespace text {
 } //namespace text
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_TEXT_DYNAMICLAYOUT_HPP_DECL
@@ -86,41 +92,50 @@ namespace android { namespace text {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::text::DynamicLayout > create< android::text::DynamicLayout>(local_ref< java::lang::CharSequence > const &a0, local_ref< android::text::TextPaint > const &a1, cpp_int const &a2, local_ref< android::text::Layout_::Alignment > const &a3, cpp_float const &a4, cpp_float const &a5, cpp_boolean const &a6)
+
+android::text::DynamicLayout::operator local_ref<android::text::Layout>() const
 {
-	return local_ref< android::text::DynamicLayout >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::text::DynamicLayout::J2CPP_CLASS_NAME>(),
-			get_method_id<android::text::DynamicLayout::J2CPP_CLASS_NAME, android::text::DynamicLayout::J2CPP_METHOD_NAME(0), android::text::DynamicLayout::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype(), a4.get_jtype(), a5.get_jtype(), a6.get_jtype()
-		)
-	);
+	return local_ref<android::text::Layout>(get_jtype());
 }
 
-template <>
-local_ref< android::text::DynamicLayout > create< android::text::DynamicLayout>(local_ref< java::lang::CharSequence > const &a0, local_ref< java::lang::CharSequence > const &a1, local_ref< android::text::TextPaint > const &a2, cpp_int const &a3, local_ref< android::text::Layout_::Alignment > const &a4, cpp_float const &a5, cpp_float const &a6, cpp_boolean const &a7)
+
+android::text::DynamicLayout::DynamicLayout(local_ref< java::lang::CharSequence > const &a0, local_ref< android::text::TextPaint > const &a1, cpp_int const &a2, local_ref< android::text::Layout_::Alignment > const &a3, cpp_float const &a4, cpp_float const &a5, cpp_boolean const &a6)
+: cpp_object<android::text::DynamicLayout>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::text::DynamicLayout::J2CPP_CLASS_NAME>(),
+		get_method_id<android::text::DynamicLayout::J2CPP_CLASS_NAME, android::text::DynamicLayout::J2CPP_METHOD_NAME(0), android::text::DynamicLayout::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype(), a4.get_jtype(), a5.get_jtype(), a6.get_jtype()
+	)
+)
 {
-	return local_ref< android::text::DynamicLayout >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::text::DynamicLayout::J2CPP_CLASS_NAME>(),
-			get_method_id<android::text::DynamicLayout::J2CPP_CLASS_NAME, android::text::DynamicLayout::J2CPP_METHOD_NAME(1), android::text::DynamicLayout::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype(), a4.get_jtype(), a5.get_jtype(), a6.get_jtype(), a7.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< android::text::DynamicLayout > create< android::text::DynamicLayout>(local_ref< java::lang::CharSequence > const &a0, local_ref< java::lang::CharSequence > const &a1, local_ref< android::text::TextPaint > const &a2, cpp_int const &a3, local_ref< android::text::Layout_::Alignment > const &a4, cpp_float const &a5, cpp_float const &a6, cpp_boolean const &a7, local_ref< android::text::TextUtils_::TruncateAt > const &a8, cpp_int const &a9)
+
+
+android::text::DynamicLayout::DynamicLayout(local_ref< java::lang::CharSequence > const &a0, local_ref< java::lang::CharSequence > const &a1, local_ref< android::text::TextPaint > const &a2, cpp_int const &a3, local_ref< android::text::Layout_::Alignment > const &a4, cpp_float const &a5, cpp_float const &a6, cpp_boolean const &a7)
+: cpp_object<android::text::DynamicLayout>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::text::DynamicLayout::J2CPP_CLASS_NAME>(),
+		get_method_id<android::text::DynamicLayout::J2CPP_CLASS_NAME, android::text::DynamicLayout::J2CPP_METHOD_NAME(1), android::text::DynamicLayout::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype(), a4.get_jtype(), a5.get_jtype(), a6.get_jtype(), a7.get_jtype()
+	)
+)
 {
-	return local_ref< android::text::DynamicLayout >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::text::DynamicLayout::J2CPP_CLASS_NAME>(),
-			get_method_id<android::text::DynamicLayout::J2CPP_CLASS_NAME, android::text::DynamicLayout::J2CPP_METHOD_NAME(2), android::text::DynamicLayout::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype(), a4.get_jtype(), a5.get_jtype(), a6.get_jtype(), a7.get_jtype(), a8.get_jtype(), a9.get_jtype()
-		)
-	);
 }
+
+
+
+android::text::DynamicLayout::DynamicLayout(local_ref< java::lang::CharSequence > const &a0, local_ref< java::lang::CharSequence > const &a1, local_ref< android::text::TextPaint > const &a2, cpp_int const &a3, local_ref< android::text::Layout_::Alignment > const &a4, cpp_float const &a5, cpp_float const &a6, cpp_boolean const &a7, local_ref< android::text::TextUtils_::TruncateAt > const &a8, cpp_int const &a9)
+: cpp_object<android::text::DynamicLayout>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::text::DynamicLayout::J2CPP_CLASS_NAME>(),
+		get_method_id<android::text::DynamicLayout::J2CPP_CLASS_NAME, android::text::DynamicLayout::J2CPP_METHOD_NAME(2), android::text::DynamicLayout::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype(), a4.get_jtype(), a5.get_jtype(), a6.get_jtype(), a7.get_jtype(), a8.get_jtype(), a9.get_jtype()
+	)
+)
+{
+}
+
 
 cpp_int android::text::DynamicLayout::getLineCount()
 {

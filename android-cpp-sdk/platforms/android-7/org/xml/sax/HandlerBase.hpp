@@ -10,15 +10,25 @@
 #define J2CPP_ORG_XML_SAX_HANDLERBASE_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace org { namespace xml { namespace sax { class AttributeList; } } } }
+namespace j2cpp { namespace org { namespace xml { namespace sax { class EntityResolver; } } } }
+namespace j2cpp { namespace org { namespace xml { namespace sax { class ErrorHandler; } } } }
 namespace j2cpp { namespace org { namespace xml { namespace sax { class InputSource; } } } }
+namespace j2cpp { namespace org { namespace xml { namespace sax { class DocumentHandler; } } } }
 namespace j2cpp { namespace org { namespace xml { namespace sax { class SAXParseException; } } } }
+namespace j2cpp { namespace org { namespace xml { namespace sax { class DTDHandler; } } } }
 namespace j2cpp { namespace org { namespace xml { namespace sax { class Locator; } } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <org/xml/sax/AttributeList.hpp>
+#include <org/xml/sax/DTDHandler.hpp>
+#include <org/xml/sax/DocumentHandler.hpp>
+#include <org/xml/sax/EntityResolver.hpp>
+#include <org/xml/sax/ErrorHandler.hpp>
 #include <org/xml/sax/InputSource.hpp>
 #include <org/xml/sax/Locator.hpp>
 #include <org/xml/sax/SAXParseException.hpp>
@@ -52,11 +62,19 @@ namespace org { namespace xml { namespace sax {
 		J2CPP_DECLARE_METHOD(13)
 		J2CPP_DECLARE_METHOD(14)
 
-		HandlerBase(jobject jobj)
+		explicit HandlerBase(jobject jobj)
 		: cpp_object<HandlerBase>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<org::xml::sax::EntityResolver>() const;
+		operator local_ref<org::xml::sax::DTDHandler>() const;
+		operator local_ref<org::xml::sax::DocumentHandler>() const;
+		operator local_ref<org::xml::sax::ErrorHandler>() const;
+
+
+		HandlerBase();
 		local_ref< org::xml::sax::InputSource > resolveEntity(local_ref< java::lang::String > const&, local_ref< java::lang::String > const&);
 		void notationDecl(local_ref< java::lang::String > const&, local_ref< java::lang::String > const&, local_ref< java::lang::String > const&);
 		void unparsedEntityDecl(local_ref< java::lang::String > const&, local_ref< java::lang::String > const&, local_ref< java::lang::String > const&, local_ref< java::lang::String > const&);
@@ -77,7 +95,6 @@ namespace org { namespace xml { namespace sax {
 } //namespace xml
 } //namespace org
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ORG_XML_SAX_HANDLERBASE_HPP_DECL
@@ -90,16 +107,43 @@ namespace org { namespace xml { namespace sax {
 namespace j2cpp {
 
 
-template <>
-local_ref< org::xml::sax::HandlerBase > create< org::xml::sax::HandlerBase>()
+
+org::xml::sax::HandlerBase::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< org::xml::sax::HandlerBase >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::xml::sax::HandlerBase::J2CPP_CLASS_NAME>(),
-			get_method_id<org::xml::sax::HandlerBase::J2CPP_CLASS_NAME, org::xml::sax::HandlerBase::J2CPP_METHOD_NAME(0), org::xml::sax::HandlerBase::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+org::xml::sax::HandlerBase::operator local_ref<org::xml::sax::EntityResolver>() const
+{
+	return local_ref<org::xml::sax::EntityResolver>(get_jtype());
+}
+
+org::xml::sax::HandlerBase::operator local_ref<org::xml::sax::DTDHandler>() const
+{
+	return local_ref<org::xml::sax::DTDHandler>(get_jtype());
+}
+
+org::xml::sax::HandlerBase::operator local_ref<org::xml::sax::DocumentHandler>() const
+{
+	return local_ref<org::xml::sax::DocumentHandler>(get_jtype());
+}
+
+org::xml::sax::HandlerBase::operator local_ref<org::xml::sax::ErrorHandler>() const
+{
+	return local_ref<org::xml::sax::ErrorHandler>(get_jtype());
+}
+
+
+org::xml::sax::HandlerBase::HandlerBase()
+: cpp_object<org::xml::sax::HandlerBase>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::xml::sax::HandlerBase::J2CPP_CLASS_NAME>(),
+		get_method_id<org::xml::sax::HandlerBase::J2CPP_CLASS_NAME, org::xml::sax::HandlerBase::J2CPP_METHOD_NAME(0), org::xml::sax::HandlerBase::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 local_ref< org::xml::sax::InputSource > org::xml::sax::HandlerBase::resolveEntity(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
 {

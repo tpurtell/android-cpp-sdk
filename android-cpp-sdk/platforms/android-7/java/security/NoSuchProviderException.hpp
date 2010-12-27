@@ -11,9 +11,11 @@
 
 
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace security { class GeneralSecurityException; } } }
 
 
 #include <java/lang/String.hpp>
+#include <java/security/GeneralSecurityException.hpp>
 
 
 namespace j2cpp {
@@ -31,16 +33,20 @@ namespace java { namespace security {
 		J2CPP_DECLARE_METHOD(0)
 		J2CPP_DECLARE_METHOD(1)
 
-		NoSuchProviderException(jobject jobj)
+		explicit NoSuchProviderException(jobject jobj)
 		: cpp_object<NoSuchProviderException>(jobj)
 		{
 		}
 
+		operator local_ref<java::security::GeneralSecurityException>() const;
+
+
+		NoSuchProviderException(local_ref< java::lang::String > const&);
+		NoSuchProviderException();
 	}; //class NoSuchProviderException
 
 } //namespace security
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -54,28 +60,36 @@ namespace java { namespace security {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::security::NoSuchProviderException > create< java::security::NoSuchProviderException>(local_ref< java::lang::String > const &a0)
+
+java::security::NoSuchProviderException::operator local_ref<java::security::GeneralSecurityException>() const
 {
-	return local_ref< java::security::NoSuchProviderException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::security::NoSuchProviderException::J2CPP_CLASS_NAME>(),
-			get_method_id<java::security::NoSuchProviderException::J2CPP_CLASS_NAME, java::security::NoSuchProviderException::J2CPP_METHOD_NAME(0), java::security::NoSuchProviderException::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::security::GeneralSecurityException>(get_jtype());
 }
 
-template <>
-local_ref< java::security::NoSuchProviderException > create< java::security::NoSuchProviderException>()
+
+java::security::NoSuchProviderException::NoSuchProviderException(local_ref< java::lang::String > const &a0)
+: cpp_object<java::security::NoSuchProviderException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::security::NoSuchProviderException::J2CPP_CLASS_NAME>(),
+		get_method_id<java::security::NoSuchProviderException::J2CPP_CLASS_NAME, java::security::NoSuchProviderException::J2CPP_METHOD_NAME(0), java::security::NoSuchProviderException::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< java::security::NoSuchProviderException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::security::NoSuchProviderException::J2CPP_CLASS_NAME>(),
-			get_method_id<java::security::NoSuchProviderException::J2CPP_CLASS_NAME, java::security::NoSuchProviderException::J2CPP_METHOD_NAME(1), java::security::NoSuchProviderException::J2CPP_METHOD_SIGNATURE(1), false>()
-		)
-	);
 }
+
+
+
+java::security::NoSuchProviderException::NoSuchProviderException()
+: cpp_object<java::security::NoSuchProviderException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::security::NoSuchProviderException::J2CPP_CLASS_NAME>(),
+		get_method_id<java::security::NoSuchProviderException::J2CPP_CLASS_NAME, java::security::NoSuchProviderException::J2CPP_METHOD_NAME(1), java::security::NoSuchProviderException::J2CPP_METHOD_SIGNATURE(1), false>()
+	)
+)
+{
+}
+
 
 
 J2CPP_DEFINE_CLASS(java::security::NoSuchProviderException,"java/security/NoSuchProviderException")

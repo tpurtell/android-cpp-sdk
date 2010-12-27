@@ -10,8 +10,12 @@
 #define J2CPP_JAVA_UTIL_RANDOM_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
+#include <java/io/Serializable.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -39,11 +43,17 @@ namespace java { namespace util {
 		J2CPP_DECLARE_METHOD(10)
 		J2CPP_DECLARE_METHOD(11)
 
-		Random(jobject jobj)
+		explicit Random(jobject jobj)
 		: cpp_object<Random>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::io::Serializable>() const;
+
+
+		Random();
+		Random(cpp_long const&);
 		cpp_boolean nextBoolean();
 		void nextBytes(local_ref< cpp_byte_array<1> > const&);
 		cpp_double nextDouble();
@@ -58,7 +68,6 @@ namespace java { namespace util {
 } //namespace util
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_UTIL_RANDOM_HPP_DECL
@@ -71,28 +80,41 @@ namespace java { namespace util {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::util::Random > create< java::util::Random>()
+
+java::util::Random::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::util::Random >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::Random::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::Random::J2CPP_CLASS_NAME, java::util::Random::J2CPP_METHOD_NAME(0), java::util::Random::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
 
-template <>
-local_ref< java::util::Random > create< java::util::Random>(cpp_long const &a0)
+java::util::Random::operator local_ref<java::io::Serializable>() const
 {
-	return local_ref< java::util::Random >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::Random::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::Random::J2CPP_CLASS_NAME, java::util::Random::J2CPP_METHOD_NAME(1), java::util::Random::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::io::Serializable>(get_jtype());
 }
+
+
+java::util::Random::Random()
+: cpp_object<java::util::Random>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::util::Random::J2CPP_CLASS_NAME>(),
+		get_method_id<java::util::Random::J2CPP_CLASS_NAME, java::util::Random::J2CPP_METHOD_NAME(0), java::util::Random::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
+
+
+java::util::Random::Random(cpp_long const &a0)
+: cpp_object<java::util::Random>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::util::Random::J2CPP_CLASS_NAME>(),
+		get_method_id<java::util::Random::J2CPP_CLASS_NAME, java::util::Random::J2CPP_METHOD_NAME(1), java::util::Random::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 
 cpp_boolean java::util::Random::nextBoolean()

@@ -12,12 +12,14 @@
 
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace lang { class Exception; } } }
+namespace j2cpp { namespace org { namespace xml { namespace sax { class SAXException; } } } }
 namespace j2cpp { namespace org { namespace xml { namespace sax { class Locator; } } } }
 
 
 #include <java/lang/Exception.hpp>
 #include <java/lang/String.hpp>
 #include <org/xml/sax/Locator.hpp>
+#include <org/xml/sax/SAXException.hpp>
 
 
 namespace j2cpp {
@@ -41,11 +43,18 @@ namespace org { namespace xml { namespace sax {
 		J2CPP_DECLARE_METHOD(6)
 		J2CPP_DECLARE_METHOD(7)
 
-		SAXParseException(jobject jobj)
+		explicit SAXParseException(jobject jobj)
 		: cpp_object<SAXParseException>(jobj)
 		{
 		}
 
+		operator local_ref<org::xml::sax::SAXException>() const;
+
+
+		SAXParseException(local_ref< java::lang::String > const&, local_ref< org::xml::sax::Locator > const&);
+		SAXParseException(local_ref< java::lang::String > const&, local_ref< org::xml::sax::Locator > const&, local_ref< java::lang::Exception > const&);
+		SAXParseException(local_ref< java::lang::String > const&, local_ref< java::lang::String > const&, local_ref< java::lang::String > const&, cpp_int const&, cpp_int const&);
+		SAXParseException(local_ref< java::lang::String > const&, local_ref< java::lang::String > const&, local_ref< java::lang::String > const&, cpp_int const&, cpp_int const&, local_ref< java::lang::Exception > const&);
 		local_ref< java::lang::String > getPublicId();
 		local_ref< java::lang::String > getSystemId();
 		cpp_int getLineNumber();
@@ -55,7 +64,6 @@ namespace org { namespace xml { namespace sax {
 } //namespace sax
 } //namespace xml
 } //namespace org
-
 
 } //namespace j2cpp
 
@@ -69,53 +77,63 @@ namespace org { namespace xml { namespace sax {
 namespace j2cpp {
 
 
-template <>
-local_ref< org::xml::sax::SAXParseException > create< org::xml::sax::SAXParseException>(local_ref< java::lang::String > const &a0, local_ref< org::xml::sax::Locator > const &a1)
+
+org::xml::sax::SAXParseException::operator local_ref<org::xml::sax::SAXException>() const
 {
-	return local_ref< org::xml::sax::SAXParseException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::xml::sax::SAXParseException::J2CPP_CLASS_NAME>(),
-			get_method_id<org::xml::sax::SAXParseException::J2CPP_CLASS_NAME, org::xml::sax::SAXParseException::J2CPP_METHOD_NAME(0), org::xml::sax::SAXParseException::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<org::xml::sax::SAXException>(get_jtype());
 }
 
-template <>
-local_ref< org::xml::sax::SAXParseException > create< org::xml::sax::SAXParseException>(local_ref< java::lang::String > const &a0, local_ref< org::xml::sax::Locator > const &a1, local_ref< java::lang::Exception > const &a2)
+
+org::xml::sax::SAXParseException::SAXParseException(local_ref< java::lang::String > const &a0, local_ref< org::xml::sax::Locator > const &a1)
+: cpp_object<org::xml::sax::SAXParseException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::xml::sax::SAXParseException::J2CPP_CLASS_NAME>(),
+		get_method_id<org::xml::sax::SAXParseException::J2CPP_CLASS_NAME, org::xml::sax::SAXParseException::J2CPP_METHOD_NAME(0), org::xml::sax::SAXParseException::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
 {
-	return local_ref< org::xml::sax::SAXParseException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::xml::sax::SAXParseException::J2CPP_CLASS_NAME>(),
-			get_method_id<org::xml::sax::SAXParseException::J2CPP_CLASS_NAME, org::xml::sax::SAXParseException::J2CPP_METHOD_NAME(1), org::xml::sax::SAXParseException::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< org::xml::sax::SAXParseException > create< org::xml::sax::SAXParseException>(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1, local_ref< java::lang::String > const &a2, cpp_int const &a3, cpp_int const &a4)
+
+
+org::xml::sax::SAXParseException::SAXParseException(local_ref< java::lang::String > const &a0, local_ref< org::xml::sax::Locator > const &a1, local_ref< java::lang::Exception > const &a2)
+: cpp_object<org::xml::sax::SAXParseException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::xml::sax::SAXParseException::J2CPP_CLASS_NAME>(),
+		get_method_id<org::xml::sax::SAXParseException::J2CPP_CLASS_NAME, org::xml::sax::SAXParseException::J2CPP_METHOD_NAME(1), org::xml::sax::SAXParseException::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
+	)
+)
 {
-	return local_ref< org::xml::sax::SAXParseException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::xml::sax::SAXParseException::J2CPP_CLASS_NAME>(),
-			get_method_id<org::xml::sax::SAXParseException::J2CPP_CLASS_NAME, org::xml::sax::SAXParseException::J2CPP_METHOD_NAME(2), org::xml::sax::SAXParseException::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype(), a4.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< org::xml::sax::SAXParseException > create< org::xml::sax::SAXParseException>(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1, local_ref< java::lang::String > const &a2, cpp_int const &a3, cpp_int const &a4, local_ref< java::lang::Exception > const &a5)
+
+
+org::xml::sax::SAXParseException::SAXParseException(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1, local_ref< java::lang::String > const &a2, cpp_int const &a3, cpp_int const &a4)
+: cpp_object<org::xml::sax::SAXParseException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::xml::sax::SAXParseException::J2CPP_CLASS_NAME>(),
+		get_method_id<org::xml::sax::SAXParseException::J2CPP_CLASS_NAME, org::xml::sax::SAXParseException::J2CPP_METHOD_NAME(2), org::xml::sax::SAXParseException::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype(), a4.get_jtype()
+	)
+)
 {
-	return local_ref< org::xml::sax::SAXParseException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::xml::sax::SAXParseException::J2CPP_CLASS_NAME>(),
-			get_method_id<org::xml::sax::SAXParseException::J2CPP_CLASS_NAME, org::xml::sax::SAXParseException::J2CPP_METHOD_NAME(3), org::xml::sax::SAXParseException::J2CPP_METHOD_SIGNATURE(3), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype(), a4.get_jtype(), a5.get_jtype()
-		)
-	);
 }
+
+
+
+org::xml::sax::SAXParseException::SAXParseException(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1, local_ref< java::lang::String > const &a2, cpp_int const &a3, cpp_int const &a4, local_ref< java::lang::Exception > const &a5)
+: cpp_object<org::xml::sax::SAXParseException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::xml::sax::SAXParseException::J2CPP_CLASS_NAME>(),
+		get_method_id<org::xml::sax::SAXParseException::J2CPP_CLASS_NAME, org::xml::sax::SAXParseException::J2CPP_METHOD_NAME(3), org::xml::sax::SAXParseException::J2CPP_METHOD_SIGNATURE(3), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype(), a4.get_jtype(), a5.get_jtype()
+	)
+)
+{
+}
+
 
 local_ref< java::lang::String > org::xml::sax::SAXParseException::getPublicId()
 {

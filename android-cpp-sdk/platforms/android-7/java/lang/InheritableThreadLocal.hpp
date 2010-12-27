@@ -10,8 +10,10 @@
 #define J2CPP_JAVA_LANG_INHERITABLETHREADLOCAL_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class ThreadLocal; } } }
 
 
+#include <java/lang/ThreadLocal.hpp>
 
 
 namespace j2cpp {
@@ -29,16 +31,19 @@ namespace java { namespace lang {
 		J2CPP_DECLARE_METHOD(0)
 		J2CPP_DECLARE_METHOD(1)
 
-		InheritableThreadLocal(jobject jobj)
+		explicit InheritableThreadLocal(jobject jobj)
 		: cpp_object<InheritableThreadLocal>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::ThreadLocal>() const;
+
+
+		InheritableThreadLocal();
 	}; //class InheritableThreadLocal
 
 } //namespace lang
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -52,16 +57,23 @@ namespace java { namespace lang {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::lang::InheritableThreadLocal > create< java::lang::InheritableThreadLocal>()
+
+java::lang::InheritableThreadLocal::operator local_ref<java::lang::ThreadLocal>() const
 {
-	return local_ref< java::lang::InheritableThreadLocal >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::lang::InheritableThreadLocal::J2CPP_CLASS_NAME>(),
-			get_method_id<java::lang::InheritableThreadLocal::J2CPP_CLASS_NAME, java::lang::InheritableThreadLocal::J2CPP_METHOD_NAME(0), java::lang::InheritableThreadLocal::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::ThreadLocal>(get_jtype());
 }
+
+
+java::lang::InheritableThreadLocal::InheritableThreadLocal()
+: cpp_object<java::lang::InheritableThreadLocal>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::lang::InheritableThreadLocal::J2CPP_CLASS_NAME>(),
+		get_method_id<java::lang::InheritableThreadLocal::J2CPP_CLASS_NAME, java::lang::InheritableThreadLocal::J2CPP_METHOD_NAME(0), java::lang::InheritableThreadLocal::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 
 

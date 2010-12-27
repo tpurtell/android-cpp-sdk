@@ -14,10 +14,12 @@ namespace j2cpp { namespace java { namespace lang { class Class; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace android { namespace app { class Activity; } } }
 namespace j2cpp { namespace android { namespace content { class Intent; } } }
+namespace j2cpp { namespace android { namespace test { class ActivityTestCase; } } }
 
 
 #include <android/app/Activity.hpp>
 #include <android/content/Intent.hpp>
+#include <android/test/ActivityTestCase.hpp>
 #include <java/lang/Class.hpp>
 #include <java/lang/String.hpp>
 
@@ -42,11 +44,15 @@ namespace android { namespace test {
 		J2CPP_DECLARE_METHOD(5)
 		J2CPP_DECLARE_METHOD(6)
 
-		ActivityInstrumentationTestCase2(jobject jobj)
+		explicit ActivityInstrumentationTestCase2(jobject jobj)
 		: cpp_object<ActivityInstrumentationTestCase2>(jobj)
 		{
 		}
 
+		operator local_ref<android::test::ActivityTestCase>() const;
+
+
+		ActivityInstrumentationTestCase2(local_ref< java::lang::String > const&, local_ref< java::lang::Class > const&);
 		local_ref< android::app::Activity > getActivity();
 		void setActivityIntent(local_ref< android::content::Intent > const&);
 		void setActivityInitialTouchMode(cpp_boolean const&);
@@ -54,7 +60,6 @@ namespace android { namespace test {
 
 } //namespace test
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -68,17 +73,24 @@ namespace android { namespace test {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::test::ActivityInstrumentationTestCase2 > create< android::test::ActivityInstrumentationTestCase2>(local_ref< java::lang::String > const &a0, local_ref< java::lang::Class > const &a1)
+
+android::test::ActivityInstrumentationTestCase2::operator local_ref<android::test::ActivityTestCase>() const
 {
-	return local_ref< android::test::ActivityInstrumentationTestCase2 >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::test::ActivityInstrumentationTestCase2::J2CPP_CLASS_NAME>(),
-			get_method_id<android::test::ActivityInstrumentationTestCase2::J2CPP_CLASS_NAME, android::test::ActivityInstrumentationTestCase2::J2CPP_METHOD_NAME(0), android::test::ActivityInstrumentationTestCase2::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<android::test::ActivityTestCase>(get_jtype());
 }
+
+
+android::test::ActivityInstrumentationTestCase2::ActivityInstrumentationTestCase2(local_ref< java::lang::String > const &a0, local_ref< java::lang::Class > const &a1)
+: cpp_object<android::test::ActivityInstrumentationTestCase2>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::test::ActivityInstrumentationTestCase2::J2CPP_CLASS_NAME>(),
+		get_method_id<android::test::ActivityInstrumentationTestCase2::J2CPP_CLASS_NAME, android::test::ActivityInstrumentationTestCase2::J2CPP_METHOD_NAME(0), android::test::ActivityInstrumentationTestCase2::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
 
 local_ref< android::app::Activity > android::test::ActivityInstrumentationTestCase2::getActivity()
 {

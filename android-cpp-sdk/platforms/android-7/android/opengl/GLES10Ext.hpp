@@ -10,9 +10,11 @@
 #define J2CPP_ANDROID_OPENGL_GLES10EXT_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace nio { class IntBuffer; } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/nio/IntBuffer.hpp>
 
 
@@ -32,18 +34,21 @@ namespace android { namespace opengl {
 		J2CPP_DECLARE_METHOD(1)
 		J2CPP_DECLARE_METHOD(2)
 
-		GLES10Ext(jobject jobj)
+		explicit GLES10Ext(jobject jobj)
 		: cpp_object<GLES10Ext>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		GLES10Ext();
 		static cpp_int glQueryMatrixxOES(local_ref< cpp_int_array<1> > const&, cpp_int const&, local_ref< cpp_int_array<1> > const&, cpp_int const&);
 		static cpp_int glQueryMatrixxOES(local_ref< java::nio::IntBuffer > const&, local_ref< java::nio::IntBuffer > const&);
 	}; //class GLES10Ext
 
 } //namespace opengl
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -57,16 +62,23 @@ namespace android { namespace opengl {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::opengl::GLES10Ext > create< android::opengl::GLES10Ext>()
+
+android::opengl::GLES10Ext::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::opengl::GLES10Ext >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::opengl::GLES10Ext::J2CPP_CLASS_NAME>(),
-			get_method_id<android::opengl::GLES10Ext::J2CPP_CLASS_NAME, android::opengl::GLES10Ext::J2CPP_METHOD_NAME(0), android::opengl::GLES10Ext::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::opengl::GLES10Ext::GLES10Ext()
+: cpp_object<android::opengl::GLES10Ext>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::opengl::GLES10Ext::J2CPP_CLASS_NAME>(),
+		get_method_id<android::opengl::GLES10Ext::J2CPP_CLASS_NAME, android::opengl::GLES10Ext::J2CPP_METHOD_NAME(0), android::opengl::GLES10Ext::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 cpp_int android::opengl::GLES10Ext::glQueryMatrixxOES(local_ref< cpp_int_array<1> > const &a0, cpp_int const &a1, local_ref< cpp_int_array<1> > const &a2, cpp_int const &a3)
 {

@@ -10,9 +10,13 @@
 #define J2CPP_JAVA_UTIL_CONCURRENT_ATOMIC_ATOMICBOOLEAN_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 
 
+#include <java/io/Serializable.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -37,11 +41,17 @@ namespace java { namespace util { namespace concurrent { namespace atomic {
 		J2CPP_DECLARE_METHOD(6)
 		J2CPP_DECLARE_METHOD(7)
 
-		AtomicBoolean(jobject jobj)
+		explicit AtomicBoolean(jobject jobj)
 		: cpp_object<AtomicBoolean>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::io::Serializable>() const;
+
+
+		AtomicBoolean(cpp_boolean const&);
+		AtomicBoolean();
 		cpp_boolean get();
 		cpp_boolean compareAndSet(cpp_boolean const&, cpp_boolean const&);
 		cpp_boolean weakCompareAndSet(cpp_boolean const&, cpp_boolean const&);
@@ -55,7 +65,6 @@ namespace java { namespace util { namespace concurrent { namespace atomic {
 } //namespace util
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_UTIL_CONCURRENT_ATOMIC_ATOMICBOOLEAN_HPP_DECL
@@ -68,28 +77,41 @@ namespace java { namespace util { namespace concurrent { namespace atomic {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::util::concurrent::atomic::AtomicBoolean > create< java::util::concurrent::atomic::AtomicBoolean>(cpp_boolean const &a0)
+
+java::util::concurrent::atomic::AtomicBoolean::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::util::concurrent::atomic::AtomicBoolean >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::concurrent::atomic::AtomicBoolean::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::concurrent::atomic::AtomicBoolean::J2CPP_CLASS_NAME, java::util::concurrent::atomic::AtomicBoolean::J2CPP_METHOD_NAME(0), java::util::concurrent::atomic::AtomicBoolean::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
 
-template <>
-local_ref< java::util::concurrent::atomic::AtomicBoolean > create< java::util::concurrent::atomic::AtomicBoolean>()
+java::util::concurrent::atomic::AtomicBoolean::operator local_ref<java::io::Serializable>() const
 {
-	return local_ref< java::util::concurrent::atomic::AtomicBoolean >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::concurrent::atomic::AtomicBoolean::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::concurrent::atomic::AtomicBoolean::J2CPP_CLASS_NAME, java::util::concurrent::atomic::AtomicBoolean::J2CPP_METHOD_NAME(1), java::util::concurrent::atomic::AtomicBoolean::J2CPP_METHOD_SIGNATURE(1), false>()
-		)
-	);
+	return local_ref<java::io::Serializable>(get_jtype());
 }
+
+
+java::util::concurrent::atomic::AtomicBoolean::AtomicBoolean(cpp_boolean const &a0)
+: cpp_object<java::util::concurrent::atomic::AtomicBoolean>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::util::concurrent::atomic::AtomicBoolean::J2CPP_CLASS_NAME>(),
+		get_method_id<java::util::concurrent::atomic::AtomicBoolean::J2CPP_CLASS_NAME, java::util::concurrent::atomic::AtomicBoolean::J2CPP_METHOD_NAME(0), java::util::concurrent::atomic::AtomicBoolean::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
+
+
+java::util::concurrent::atomic::AtomicBoolean::AtomicBoolean()
+: cpp_object<java::util::concurrent::atomic::AtomicBoolean>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::util::concurrent::atomic::AtomicBoolean::J2CPP_CLASS_NAME>(),
+		get_method_id<java::util::concurrent::atomic::AtomicBoolean::J2CPP_CLASS_NAME, java::util::concurrent::atomic::AtomicBoolean::J2CPP_METHOD_NAME(1), java::util::concurrent::atomic::AtomicBoolean::J2CPP_METHOD_SIGNATURE(1), false>()
+	)
+)
+{
+}
+
 
 cpp_boolean java::util::concurrent::atomic::AtomicBoolean::get()
 {

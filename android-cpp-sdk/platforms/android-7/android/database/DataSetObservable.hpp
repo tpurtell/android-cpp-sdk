@@ -10,8 +10,10 @@
 #define J2CPP_ANDROID_DATABASE_DATASETOBSERVABLE_HPP_DECL
 
 
+namespace j2cpp { namespace android { namespace database { class Observable; } } }
 
 
+#include <android/database/Observable.hpp>
 
 
 namespace j2cpp {
@@ -30,18 +32,21 @@ namespace android { namespace database {
 		J2CPP_DECLARE_METHOD(1)
 		J2CPP_DECLARE_METHOD(2)
 
-		DataSetObservable(jobject jobj)
+		explicit DataSetObservable(jobject jobj)
 		: cpp_object<DataSetObservable>(jobj)
 		{
 		}
 
+		operator local_ref<android::database::Observable>() const;
+
+
+		DataSetObservable();
 		void notifyChanged();
 		void notifyInvalidated();
 	}; //class DataSetObservable
 
 } //namespace database
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -55,16 +60,23 @@ namespace android { namespace database {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::database::DataSetObservable > create< android::database::DataSetObservable>()
+
+android::database::DataSetObservable::operator local_ref<android::database::Observable>() const
 {
-	return local_ref< android::database::DataSetObservable >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::database::DataSetObservable::J2CPP_CLASS_NAME>(),
-			get_method_id<android::database::DataSetObservable::J2CPP_CLASS_NAME, android::database::DataSetObservable::J2CPP_METHOD_NAME(0), android::database::DataSetObservable::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<android::database::Observable>(get_jtype());
 }
+
+
+android::database::DataSetObservable::DataSetObservable()
+: cpp_object<android::database::DataSetObservable>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::database::DataSetObservable::J2CPP_CLASS_NAME>(),
+		get_method_id<android::database::DataSetObservable::J2CPP_CLASS_NAME, android::database::DataSetObservable::J2CPP_METHOD_NAME(0), android::database::DataSetObservable::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 void android::database::DataSetObservable::notifyChanged()
 {

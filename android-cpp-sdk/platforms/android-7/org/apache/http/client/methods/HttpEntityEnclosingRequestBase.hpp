@@ -11,11 +11,15 @@
 
 
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { class HttpEntityEnclosingRequest; } } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { namespace client { namespace methods { class HttpRequestBase; } } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { class HttpEntity; } } } }
 
 
 #include <java/lang/Object.hpp>
 #include <org/apache/http/HttpEntity.hpp>
+#include <org/apache/http/HttpEntityEnclosingRequest.hpp>
+#include <org/apache/http/client/methods/HttpRequestBase.hpp>
 
 
 namespace j2cpp {
@@ -36,11 +40,16 @@ namespace org { namespace apache { namespace http { namespace client { namespace
 		J2CPP_DECLARE_METHOD(3)
 		J2CPP_DECLARE_METHOD(4)
 
-		HttpEntityEnclosingRequestBase(jobject jobj)
+		explicit HttpEntityEnclosingRequestBase(jobject jobj)
 		: cpp_object<HttpEntityEnclosingRequestBase>(jobj)
 		{
 		}
 
+		operator local_ref<org::apache::http::client::methods::HttpRequestBase>() const;
+		operator local_ref<org::apache::http::HttpEntityEnclosingRequest>() const;
+
+
+		HttpEntityEnclosingRequestBase();
 		local_ref< org::apache::http::HttpEntity > getEntity();
 		void setEntity(local_ref< org::apache::http::HttpEntity > const&);
 		cpp_boolean expectContinue();
@@ -52,7 +61,6 @@ namespace org { namespace apache { namespace http { namespace client { namespace
 } //namespace http
 } //namespace apache
 } //namespace org
-
 
 } //namespace j2cpp
 
@@ -66,16 +74,28 @@ namespace org { namespace apache { namespace http { namespace client { namespace
 namespace j2cpp {
 
 
-template <>
-local_ref< org::apache::http::client::methods::HttpEntityEnclosingRequestBase > create< org::apache::http::client::methods::HttpEntityEnclosingRequestBase>()
+
+org::apache::http::client::methods::HttpEntityEnclosingRequestBase::operator local_ref<org::apache::http::client::methods::HttpRequestBase>() const
 {
-	return local_ref< org::apache::http::client::methods::HttpEntityEnclosingRequestBase >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::apache::http::client::methods::HttpEntityEnclosingRequestBase::J2CPP_CLASS_NAME>(),
-			get_method_id<org::apache::http::client::methods::HttpEntityEnclosingRequestBase::J2CPP_CLASS_NAME, org::apache::http::client::methods::HttpEntityEnclosingRequestBase::J2CPP_METHOD_NAME(0), org::apache::http::client::methods::HttpEntityEnclosingRequestBase::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<org::apache::http::client::methods::HttpRequestBase>(get_jtype());
 }
+
+org::apache::http::client::methods::HttpEntityEnclosingRequestBase::operator local_ref<org::apache::http::HttpEntityEnclosingRequest>() const
+{
+	return local_ref<org::apache::http::HttpEntityEnclosingRequest>(get_jtype());
+}
+
+
+org::apache::http::client::methods::HttpEntityEnclosingRequestBase::HttpEntityEnclosingRequestBase()
+: cpp_object<org::apache::http::client::methods::HttpEntityEnclosingRequestBase>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::apache::http::client::methods::HttpEntityEnclosingRequestBase::J2CPP_CLASS_NAME>(),
+		get_method_id<org::apache::http::client::methods::HttpEntityEnclosingRequestBase::J2CPP_CLASS_NAME, org::apache::http::client::methods::HttpEntityEnclosingRequestBase::J2CPP_METHOD_NAME(0), org::apache::http::client::methods::HttpEntityEnclosingRequestBase::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 local_ref< org::apache::http::HttpEntity > org::apache::http::client::methods::HttpEntityEnclosingRequestBase::getEntity()
 {

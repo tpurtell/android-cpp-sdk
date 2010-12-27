@@ -33,10 +33,13 @@ namespace java { namespace security { namespace acl {
 		J2CPP_DECLARE_METHOD(0)
 		J2CPP_DECLARE_METHOD(1)
 
-		Permission(jobject jobj)
+		explicit Permission(jobject jobj)
 		: cpp_object<Permission>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		cpp_boolean equals(local_ref< java::lang::Object > const&);
 		local_ref< java::lang::String > toString();
@@ -45,7 +48,6 @@ namespace java { namespace security { namespace acl {
 } //namespace acl
 } //namespace security
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -58,6 +60,12 @@ namespace java { namespace security { namespace acl {
 
 namespace j2cpp {
 
+
+
+java::security::acl::Permission::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 cpp_boolean java::security::acl::Permission::equals(local_ref< java::lang::Object > const &a0)
 {

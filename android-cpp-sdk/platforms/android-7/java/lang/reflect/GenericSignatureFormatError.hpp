@@ -10,8 +10,10 @@
 #define J2CPP_JAVA_LANG_REFLECT_GENERICSIGNATUREFORMATERROR_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class ClassFormatError; } } }
 
 
+#include <java/lang/ClassFormatError.hpp>
 
 
 namespace j2cpp {
@@ -28,17 +30,20 @@ namespace java { namespace lang { namespace reflect {
 
 		J2CPP_DECLARE_METHOD(0)
 
-		GenericSignatureFormatError(jobject jobj)
+		explicit GenericSignatureFormatError(jobject jobj)
 		: cpp_object<GenericSignatureFormatError>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::ClassFormatError>() const;
+
+
+		GenericSignatureFormatError();
 	}; //class GenericSignatureFormatError
 
 } //namespace reflect
 } //namespace lang
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -52,16 +57,23 @@ namespace java { namespace lang { namespace reflect {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::lang::reflect::GenericSignatureFormatError > create< java::lang::reflect::GenericSignatureFormatError>()
+
+java::lang::reflect::GenericSignatureFormatError::operator local_ref<java::lang::ClassFormatError>() const
 {
-	return local_ref< java::lang::reflect::GenericSignatureFormatError >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::lang::reflect::GenericSignatureFormatError::J2CPP_CLASS_NAME>(),
-			get_method_id<java::lang::reflect::GenericSignatureFormatError::J2CPP_CLASS_NAME, java::lang::reflect::GenericSignatureFormatError::J2CPP_METHOD_NAME(0), java::lang::reflect::GenericSignatureFormatError::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::ClassFormatError>(get_jtype());
 }
+
+
+java::lang::reflect::GenericSignatureFormatError::GenericSignatureFormatError()
+: cpp_object<java::lang::reflect::GenericSignatureFormatError>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::lang::reflect::GenericSignatureFormatError::J2CPP_CLASS_NAME>(),
+		get_method_id<java::lang::reflect::GenericSignatureFormatError::J2CPP_CLASS_NAME, java::lang::reflect::GenericSignatureFormatError::J2CPP_METHOD_NAME(0), java::lang::reflect::GenericSignatureFormatError::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 
 J2CPP_DEFINE_CLASS(java::lang::reflect::GenericSignatureFormatError,"java/lang/reflect/GenericSignatureFormatError")

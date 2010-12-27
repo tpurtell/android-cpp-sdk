@@ -11,9 +11,11 @@
 
 
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace security { class BasicPermission; } } }
 
 
 #include <java/lang/String.hpp>
+#include <java/security/BasicPermission.hpp>
 
 
 namespace j2cpp {
@@ -31,16 +33,20 @@ namespace java { namespace net {
 		J2CPP_DECLARE_METHOD(0)
 		J2CPP_DECLARE_METHOD(1)
 
-		NetPermission(jobject jobj)
+		explicit NetPermission(jobject jobj)
 		: cpp_object<NetPermission>(jobj)
 		{
 		}
 
+		operator local_ref<java::security::BasicPermission>() const;
+
+
+		NetPermission(local_ref< java::lang::String > const&);
+		NetPermission(local_ref< java::lang::String > const&, local_ref< java::lang::String > const&);
 	}; //class NetPermission
 
 } //namespace net
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -54,29 +60,37 @@ namespace java { namespace net {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::net::NetPermission > create< java::net::NetPermission>(local_ref< java::lang::String > const &a0)
+
+java::net::NetPermission::operator local_ref<java::security::BasicPermission>() const
 {
-	return local_ref< java::net::NetPermission >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::net::NetPermission::J2CPP_CLASS_NAME>(),
-			get_method_id<java::net::NetPermission::J2CPP_CLASS_NAME, java::net::NetPermission::J2CPP_METHOD_NAME(0), java::net::NetPermission::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::security::BasicPermission>(get_jtype());
 }
 
-template <>
-local_ref< java::net::NetPermission > create< java::net::NetPermission>(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
+
+java::net::NetPermission::NetPermission(local_ref< java::lang::String > const &a0)
+: cpp_object<java::net::NetPermission>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::net::NetPermission::J2CPP_CLASS_NAME>(),
+		get_method_id<java::net::NetPermission::J2CPP_CLASS_NAME, java::net::NetPermission::J2CPP_METHOD_NAME(0), java::net::NetPermission::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< java::net::NetPermission >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::net::NetPermission::J2CPP_CLASS_NAME>(),
-			get_method_id<java::net::NetPermission::J2CPP_CLASS_NAME, java::net::NetPermission::J2CPP_METHOD_NAME(1), java::net::NetPermission::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
 }
+
+
+
+java::net::NetPermission::NetPermission(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
+: cpp_object<java::net::NetPermission>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::net::NetPermission::J2CPP_CLASS_NAME>(),
+		get_method_id<java::net::NetPermission::J2CPP_CLASS_NAME, java::net::NetPermission::J2CPP_METHOD_NAME(1), java::net::NetPermission::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
 
 
 J2CPP_DEFINE_CLASS(java::net::NetPermission,"java/net/NetPermission")

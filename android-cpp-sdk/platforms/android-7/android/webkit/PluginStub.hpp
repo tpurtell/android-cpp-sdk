@@ -10,12 +10,14 @@
 #define J2CPP_ANDROID_WEBKIT_PLUGINSTUB_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace android { namespace content { class Context; } } }
 namespace j2cpp { namespace android { namespace view { class View; } } }
 
 
 #include <android/content/Context.hpp>
 #include <android/view/View.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -33,10 +35,13 @@ namespace android { namespace webkit {
 		J2CPP_DECLARE_METHOD(0)
 		J2CPP_DECLARE_METHOD(1)
 
-		PluginStub(jobject jobj)
+		explicit PluginStub(jobject jobj)
 		: cpp_object<PluginStub>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		local_ref< android::view::View > getEmbeddedView(cpp_int const&, local_ref< android::content::Context > const&);
 		local_ref< android::view::View > getFullScreenView(cpp_int const&, local_ref< android::content::Context > const&);
@@ -44,7 +49,6 @@ namespace android { namespace webkit {
 
 } //namespace webkit
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -57,6 +61,12 @@ namespace android { namespace webkit {
 
 namespace j2cpp {
 
+
+
+android::webkit::PluginStub::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 local_ref< android::view::View > android::webkit::PluginStub::getEmbeddedView(cpp_int const &a0, local_ref< android::content::Context > const &a1)
 {

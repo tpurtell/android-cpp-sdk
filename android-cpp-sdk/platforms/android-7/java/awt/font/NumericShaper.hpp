@@ -10,10 +10,12 @@
 #define J2CPP_JAVA_AWT_FONT_NUMERICSHAPER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 
 
+#include <java/io/Serializable.hpp>
 #include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
@@ -62,10 +64,14 @@ namespace java { namespace awt { namespace font {
 		J2CPP_DECLARE_FIELD(18)
 		J2CPP_DECLARE_FIELD(19)
 
-		NumericShaper(jobject jobj)
+		explicit NumericShaper(jobject jobj)
 		: cpp_object<NumericShaper>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::io::Serializable>() const;
+
 
 		cpp_int hashCode();
 		cpp_boolean equals(local_ref< java::lang::Object > const&);
@@ -104,7 +110,6 @@ namespace java { namespace awt { namespace font {
 } //namespace awt
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_AWT_FONT_NUMERICSHAPER_HPP_DECL
@@ -117,16 +122,17 @@ namespace java { namespace awt { namespace font {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::awt::font::NumericShaper > create< java::awt::font::NumericShaper>()
+
+java::awt::font::NumericShaper::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::awt::font::NumericShaper >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::awt::font::NumericShaper::J2CPP_CLASS_NAME>(),
-			get_method_id<java::awt::font::NumericShaper::J2CPP_CLASS_NAME, java::awt::font::NumericShaper::J2CPP_METHOD_NAME(0), java::awt::font::NumericShaper::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+java::awt::font::NumericShaper::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jtype());
+}
+
 
 cpp_int java::awt::font::NumericShaper::hashCode()
 {

@@ -76,10 +76,13 @@ namespace java { namespace sql {
 		J2CPP_DECLARE_METHOD(21)
 		J2CPP_DECLARE_METHOD(22)
 
-		SQLInput(jobject jobj)
+		explicit SQLInput(jobject jobj)
 		: cpp_object<SQLInput>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		local_ref< java::lang::String > readString();
 		cpp_boolean readBoolean();
@@ -109,7 +112,6 @@ namespace java { namespace sql {
 } //namespace sql
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_SQL_SQLINPUT_HPP_DECL
@@ -121,6 +123,12 @@ namespace java { namespace sql {
 
 namespace j2cpp {
 
+
+
+java::sql::SQLInput::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 local_ref< java::lang::String > java::sql::SQLInput::readString()
 {

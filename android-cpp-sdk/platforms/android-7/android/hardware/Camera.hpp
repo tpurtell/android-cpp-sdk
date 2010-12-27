@@ -10,6 +10,7 @@
 #define J2CPP_ANDROID_HARDWARE_CAMERA_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace util { class List; } } }
 namespace j2cpp { namespace android { namespace hardware { namespace Camera_ { class ShutterCallback; } } } }
@@ -24,6 +25,7 @@ namespace j2cpp { namespace android { namespace view { class SurfaceHolder; } } 
 
 #include <android/hardware/Camera.hpp>
 #include <android/view/SurfaceHolder.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/util/List.hpp>
 
@@ -45,10 +47,13 @@ namespace android { namespace hardware {
 
 			J2CPP_DECLARE_METHOD(0)
 
-			ShutterCallback(jobject jobj)
+			explicit ShutterCallback(jobject jobj)
 			: cpp_object<ShutterCallback>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+
 
 			void onShutter();
 		}; //class ShutterCallback
@@ -63,10 +68,13 @@ namespace android { namespace hardware {
 
 			J2CPP_DECLARE_METHOD(0)
 
-			AutoFocusCallback(jobject jobj)
+			explicit AutoFocusCallback(jobject jobj)
 			: cpp_object<AutoFocusCallback>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+
 
 			void onAutoFocus(cpp_boolean const&, local_ref< android::hardware::Camera > const&);
 		}; //class AutoFocusCallback
@@ -81,10 +89,13 @@ namespace android { namespace hardware {
 
 			J2CPP_DECLARE_METHOD(0)
 
-			PreviewCallback(jobject jobj)
+			explicit PreviewCallback(jobject jobj)
 			: cpp_object<PreviewCallback>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+
 
 			void onPreviewFrame(local_ref< cpp_byte_array<1> > const&, local_ref< android::hardware::Camera > const&);
 		}; //class PreviewCallback
@@ -99,10 +110,13 @@ namespace android { namespace hardware {
 
 			J2CPP_DECLARE_METHOD(0)
 
-			PictureCallback(jobject jobj)
+			explicit PictureCallback(jobject jobj)
 			: cpp_object<PictureCallback>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+
 
 			void onPictureTaken(local_ref< cpp_byte_array<1> > const&, local_ref< android::hardware::Camera > const&);
 		}; //class PictureCallback
@@ -215,10 +229,13 @@ namespace android { namespace hardware {
 			J2CPP_DECLARE_FIELD(44)
 			J2CPP_DECLARE_FIELD(45)
 
-			Parameters(jobject jobj)
+			explicit Parameters(jobject jobj)
 			: cpp_object<Parameters>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+
 
 			local_ref< java::lang::String > flatten();
 			void unflatten(local_ref< java::lang::String > const&);
@@ -333,13 +350,17 @@ namespace android { namespace hardware {
 			J2CPP_DECLARE_FIELD(1)
 			J2CPP_DECLARE_FIELD(2)
 
-			Size(jobject jobj)
+			explicit Size(jobject jobj)
 			: cpp_object<Size>(jobj)
-			, width(jobj)
-			, height(jobj)
+, width(jobj)
+, height(jobj)
 			{
 			}
 
+			operator local_ref<java::lang::Object>() const;
+
+
+			Size(local_ref< android::hardware::Camera > const&, cpp_int const&, cpp_int const&);
 
 			field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(0), J2CPP_FIELD_SIGNATURE(0), cpp_int > width;
 			field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(1), J2CPP_FIELD_SIGNATURE(1), cpp_int > height;
@@ -355,10 +376,13 @@ namespace android { namespace hardware {
 
 			J2CPP_DECLARE_METHOD(0)
 
-			ErrorCallback(jobject jobj)
+			explicit ErrorCallback(jobject jobj)
 			: cpp_object<ErrorCallback>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+
 
 			void onError(cpp_int const&, local_ref< android::hardware::Camera > const&);
 		}; //class ErrorCallback
@@ -401,10 +425,13 @@ namespace android { namespace hardware {
 		typedef Camera_::Size Size;
 		typedef Camera_::ErrorCallback ErrorCallback;
 
-		Camera(jobject jobj)
+		explicit Camera(jobject jobj)
 		: cpp_object<Camera>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		static local_ref< android::hardware::Camera > open();
 		void release();
@@ -430,7 +457,6 @@ namespace android { namespace hardware {
 } //namespace hardware
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_HARDWARE_CAMERA_HPP_DECL
@@ -443,6 +469,12 @@ namespace android { namespace hardware {
 namespace j2cpp {
 
 
+
+
+android::hardware::Camera_::ShutterCallback::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 void android::hardware::Camera_::ShutterCallback::onShutter()
 {
@@ -457,6 +489,12 @@ void android::hardware::Camera_::ShutterCallback::onShutter()
 
 J2CPP_DEFINE_CLASS(android::hardware::Camera_::ShutterCallback,"android/hardware/Camera$ShutterCallback")
 J2CPP_DEFINE_METHOD(android::hardware::Camera_::ShutterCallback,0,"onShutter","()V")
+
+
+android::hardware::Camera_::AutoFocusCallback::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 void android::hardware::Camera_::AutoFocusCallback::onAutoFocus(cpp_boolean const &a0, local_ref< android::hardware::Camera > const &a1)
 {
@@ -473,6 +511,12 @@ void android::hardware::Camera_::AutoFocusCallback::onAutoFocus(cpp_boolean cons
 J2CPP_DEFINE_CLASS(android::hardware::Camera_::AutoFocusCallback,"android/hardware/Camera$AutoFocusCallback")
 J2CPP_DEFINE_METHOD(android::hardware::Camera_::AutoFocusCallback,0,"onAutoFocus","(ZLandroid/hardware/Camera;)V")
 
+
+android::hardware::Camera_::PreviewCallback::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
+
 void android::hardware::Camera_::PreviewCallback::onPreviewFrame(local_ref< cpp_byte_array<1> > const &a0, local_ref< android::hardware::Camera > const &a1)
 {
 	return void(
@@ -487,6 +531,12 @@ void android::hardware::Camera_::PreviewCallback::onPreviewFrame(local_ref< cpp_
 
 J2CPP_DEFINE_CLASS(android::hardware::Camera_::PreviewCallback,"android/hardware/Camera$PreviewCallback")
 J2CPP_DEFINE_METHOD(android::hardware::Camera_::PreviewCallback,0,"onPreviewFrame","([BLandroid/hardware/Camera;)V")
+
+
+android::hardware::Camera_::PictureCallback::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 void android::hardware::Camera_::PictureCallback::onPictureTaken(local_ref< cpp_byte_array<1> > const &a0, local_ref< android::hardware::Camera > const &a1)
 {
@@ -503,17 +553,12 @@ void android::hardware::Camera_::PictureCallback::onPictureTaken(local_ref< cpp_
 J2CPP_DEFINE_CLASS(android::hardware::Camera_::PictureCallback,"android/hardware/Camera$PictureCallback")
 J2CPP_DEFINE_METHOD(android::hardware::Camera_::PictureCallback,0,"onPictureTaken","([BLandroid/hardware/Camera;)V")
 
-template <>
-local_ref< android::hardware::Camera_::Parameters > create< android::hardware::Camera_::Parameters>(local_ref< android::hardware::Camera > const &a0)
+
+android::hardware::Camera_::Parameters::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::hardware::Camera_::Parameters >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::hardware::Camera_::Parameters::J2CPP_CLASS_NAME>(),
-			get_method_id<android::hardware::Camera_::Parameters::J2CPP_CLASS_NAME, android::hardware::Camera_::Parameters::J2CPP_METHOD_NAME(0), android::hardware::Camera_::Parameters::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
 
 local_ref< java::lang::String > android::hardware::Camera_::Parameters::flatten()
 {
@@ -1478,17 +1523,26 @@ J2CPP_DEFINE_FIELD(android::hardware::Camera_::Parameters,43,"FOCUS_MODE_MACRO",
 J2CPP_DEFINE_FIELD(android::hardware::Camera_::Parameters,44,"FOCUS_MODE_FIXED","Ljava/lang/String;")
 J2CPP_DEFINE_FIELD(android::hardware::Camera_::Parameters,45,"this$0","Landroid/hardware/Camera;")
 
-template <>
-local_ref< android::hardware::Camera_::Size > create< android::hardware::Camera_::Size>(local_ref< android::hardware::Camera > const &a0, cpp_int const &a1, cpp_int const &a2)
+
+android::hardware::Camera_::Size::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::hardware::Camera_::Size >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::hardware::Camera_::Size::J2CPP_CLASS_NAME>(),
-			get_method_id<android::hardware::Camera_::Size::J2CPP_CLASS_NAME, android::hardware::Camera_::Size::J2CPP_METHOD_NAME(0), android::hardware::Camera_::Size::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::hardware::Camera_::Size::Size(local_ref< android::hardware::Camera > const &a0, cpp_int const &a1, cpp_int const &a2)
+: cpp_object<android::hardware::Camera_::Size>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::hardware::Camera_::Size::J2CPP_CLASS_NAME>(),
+		get_method_id<android::hardware::Camera_::Size::J2CPP_CLASS_NAME, android::hardware::Camera_::Size::J2CPP_METHOD_NAME(0), android::hardware::Camera_::Size::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
+	)
+)
+, width(get_jtype())
+, height(get_jtype())
+{
+}
+
 
 
 
@@ -1497,6 +1551,12 @@ J2CPP_DEFINE_METHOD(android::hardware::Camera_::Size,0,"<init>","(Landroid/hardw
 J2CPP_DEFINE_FIELD(android::hardware::Camera_::Size,0,"width","I")
 J2CPP_DEFINE_FIELD(android::hardware::Camera_::Size,1,"height","I")
 J2CPP_DEFINE_FIELD(android::hardware::Camera_::Size,2,"this$0","Landroid/hardware/Camera;")
+
+
+android::hardware::Camera_::ErrorCallback::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 void android::hardware::Camera_::ErrorCallback::onError(cpp_int const &a0, local_ref< android::hardware::Camera > const &a1)
 {
@@ -1514,16 +1574,12 @@ J2CPP_DEFINE_CLASS(android::hardware::Camera_::ErrorCallback,"android/hardware/C
 J2CPP_DEFINE_METHOD(android::hardware::Camera_::ErrorCallback,0,"onError","(ILandroid/hardware/Camera;)V")
 
 
-template <>
-local_ref< android::hardware::Camera > create< android::hardware::Camera>()
+
+android::hardware::Camera::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::hardware::Camera >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::hardware::Camera::J2CPP_CLASS_NAME>(),
-			get_method_id<android::hardware::Camera::J2CPP_CLASS_NAME, android::hardware::Camera::J2CPP_METHOD_NAME(0), android::hardware::Camera::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
 
 local_ref< android::hardware::Camera > android::hardware::Camera::open()
 {

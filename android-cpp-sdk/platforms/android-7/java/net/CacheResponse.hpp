@@ -11,10 +11,12 @@
 
 
 namespace j2cpp { namespace java { namespace io { class InputStream; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace util { class Map; } } }
 
 
 #include <java/io/InputStream.hpp>
+#include <java/lang/Object.hpp>
 #include <java/util/Map.hpp>
 
 
@@ -34,18 +36,21 @@ namespace java { namespace net {
 		J2CPP_DECLARE_METHOD(1)
 		J2CPP_DECLARE_METHOD(2)
 
-		CacheResponse(jobject jobj)
+		explicit CacheResponse(jobject jobj)
 		: cpp_object<CacheResponse>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		CacheResponse();
 		local_ref< java::io::InputStream > getBody();
 		local_ref< java::util::Map > getHeaders();
 	}; //class CacheResponse
 
 } //namespace net
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -59,16 +64,23 @@ namespace java { namespace net {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::net::CacheResponse > create< java::net::CacheResponse>()
+
+java::net::CacheResponse::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::net::CacheResponse >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::net::CacheResponse::J2CPP_CLASS_NAME>(),
-			get_method_id<java::net::CacheResponse::J2CPP_CLASS_NAME, java::net::CacheResponse::J2CPP_METHOD_NAME(0), java::net::CacheResponse::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+java::net::CacheResponse::CacheResponse()
+: cpp_object<java::net::CacheResponse>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::net::CacheResponse::J2CPP_CLASS_NAME>(),
+		get_method_id<java::net::CacheResponse::J2CPP_CLASS_NAME, java::net::CacheResponse::J2CPP_METHOD_NAME(0), java::net::CacheResponse::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 local_ref< java::io::InputStream > java::net::CacheResponse::getBody()
 {

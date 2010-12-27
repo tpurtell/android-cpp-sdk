@@ -10,8 +10,10 @@
 #define J2CPP_JAVA_NIO_INVALIDMARKEXCEPTION_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class IllegalStateException; } } }
 
 
+#include <java/lang/IllegalStateException.hpp>
 
 
 namespace j2cpp {
@@ -28,16 +30,19 @@ namespace java { namespace nio {
 
 		J2CPP_DECLARE_METHOD(0)
 
-		InvalidMarkException(jobject jobj)
+		explicit InvalidMarkException(jobject jobj)
 		: cpp_object<InvalidMarkException>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::IllegalStateException>() const;
+
+
+		InvalidMarkException();
 	}; //class InvalidMarkException
 
 } //namespace nio
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -51,16 +56,23 @@ namespace java { namespace nio {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::nio::InvalidMarkException > create< java::nio::InvalidMarkException>()
+
+java::nio::InvalidMarkException::operator local_ref<java::lang::IllegalStateException>() const
 {
-	return local_ref< java::nio::InvalidMarkException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::nio::InvalidMarkException::J2CPP_CLASS_NAME>(),
-			get_method_id<java::nio::InvalidMarkException::J2CPP_CLASS_NAME, java::nio::InvalidMarkException::J2CPP_METHOD_NAME(0), java::nio::InvalidMarkException::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::IllegalStateException>(get_jtype());
 }
+
+
+java::nio::InvalidMarkException::InvalidMarkException()
+: cpp_object<java::nio::InvalidMarkException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::nio::InvalidMarkException::J2CPP_CLASS_NAME>(),
+		get_method_id<java::nio::InvalidMarkException::J2CPP_CLASS_NAME, java::nio::InvalidMarkException::J2CPP_METHOD_NAME(0), java::nio::InvalidMarkException::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 
 J2CPP_DEFINE_CLASS(java::nio::InvalidMarkException,"java/nio/InvalidMarkException")

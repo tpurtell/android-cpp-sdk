@@ -41,11 +41,16 @@ namespace java { namespace security {
 		J2CPP_DECLARE_METHOD(4)
 		J2CPP_DECLARE_METHOD(5)
 
-		AccessControlContext(jobject jobj)
+		explicit AccessControlContext(jobject jobj)
 		: cpp_object<AccessControlContext>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		AccessControlContext(local_ref< java::security::AccessControlContext > const&, local_ref< java::security::DomainCombiner > const&);
+		AccessControlContext(local_ref< cpp_object_array<java::security::ProtectionDomain, 1> > const&);
 		void checkPermission(local_ref< java::security::Permission > const&);
 		cpp_boolean equals(local_ref< java::lang::Object > const&);
 		local_ref< java::security::DomainCombiner > getDomainCombiner();
@@ -54,7 +59,6 @@ namespace java { namespace security {
 
 } //namespace security
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -68,29 +72,37 @@ namespace java { namespace security {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::security::AccessControlContext > create< java::security::AccessControlContext>(local_ref< java::security::AccessControlContext > const &a0, local_ref< java::security::DomainCombiner > const &a1)
+
+java::security::AccessControlContext::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::security::AccessControlContext >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::security::AccessControlContext::J2CPP_CLASS_NAME>(),
-			get_method_id<java::security::AccessControlContext::J2CPP_CLASS_NAME, java::security::AccessControlContext::J2CPP_METHOD_NAME(0), java::security::AccessControlContext::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
 
-template <>
-local_ref< java::security::AccessControlContext > create< java::security::AccessControlContext>(local_ref< cpp_object_array<java::security::ProtectionDomain, 1> > const &a0)
+
+java::security::AccessControlContext::AccessControlContext(local_ref< java::security::AccessControlContext > const &a0, local_ref< java::security::DomainCombiner > const &a1)
+: cpp_object<java::security::AccessControlContext>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::security::AccessControlContext::J2CPP_CLASS_NAME>(),
+		get_method_id<java::security::AccessControlContext::J2CPP_CLASS_NAME, java::security::AccessControlContext::J2CPP_METHOD_NAME(0), java::security::AccessControlContext::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
 {
-	return local_ref< java::security::AccessControlContext >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::security::AccessControlContext::J2CPP_CLASS_NAME>(),
-			get_method_id<java::security::AccessControlContext::J2CPP_CLASS_NAME, java::security::AccessControlContext::J2CPP_METHOD_NAME(1), java::security::AccessControlContext::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
 }
+
+
+
+java::security::AccessControlContext::AccessControlContext(local_ref< cpp_object_array<java::security::ProtectionDomain, 1> > const &a0)
+: cpp_object<java::security::AccessControlContext>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::security::AccessControlContext::J2CPP_CLASS_NAME>(),
+		get_method_id<java::security::AccessControlContext::J2CPP_CLASS_NAME, java::security::AccessControlContext::J2CPP_METHOD_NAME(1), java::security::AccessControlContext::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 void java::security::AccessControlContext::checkPermission(local_ref< java::security::Permission > const &a0)
 {

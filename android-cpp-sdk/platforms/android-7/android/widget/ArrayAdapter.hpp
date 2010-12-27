@@ -17,12 +17,16 @@ namespace j2cpp { namespace android { namespace content { class Context; } } }
 namespace j2cpp { namespace android { namespace view { class View; } } }
 namespace j2cpp { namespace android { namespace view { class ViewGroup; } } }
 namespace j2cpp { namespace android { namespace widget { class Filter; } } }
+namespace j2cpp { namespace android { namespace widget { class BaseAdapter; } } }
+namespace j2cpp { namespace android { namespace widget { class Filterable; } } }
 
 
 #include <android/content/Context.hpp>
 #include <android/view/View.hpp>
 #include <android/view/ViewGroup.hpp>
+#include <android/widget/BaseAdapter.hpp>
 #include <android/widget/Filter.hpp>
+#include <android/widget/Filterable.hpp>
 #include <java/lang/Object.hpp>
 #include <java/util/Comparator.hpp>
 #include <java/util/List.hpp>
@@ -64,11 +68,21 @@ namespace android { namespace widget {
 		J2CPP_DECLARE_METHOD(21)
 		J2CPP_DECLARE_METHOD(22)
 
-		ArrayAdapter(jobject jobj)
+		explicit ArrayAdapter(jobject jobj)
 		: cpp_object<ArrayAdapter>(jobj)
 		{
 		}
 
+		operator local_ref<android::widget::BaseAdapter>() const;
+		operator local_ref<android::widget::Filterable>() const;
+
+
+		ArrayAdapter(local_ref< android::content::Context > const&, cpp_int const&);
+		ArrayAdapter(local_ref< android::content::Context > const&, cpp_int const&, cpp_int const&);
+		ArrayAdapter(local_ref< android::content::Context > const&, cpp_int const&, local_ref< cpp_object_array<java::lang::Object, 1> > const&);
+		ArrayAdapter(local_ref< android::content::Context > const&, cpp_int const&, cpp_int const&, local_ref< cpp_object_array<java::lang::Object, 1> > const&);
+		ArrayAdapter(local_ref< android::content::Context > const&, cpp_int const&, local_ref< java::util::List > const&);
+		ArrayAdapter(local_ref< android::content::Context > const&, cpp_int const&, cpp_int const&, local_ref< java::util::List > const&);
 		void add(local_ref< java::lang::Object > const&);
 		void insert(local_ref< java::lang::Object > const&, cpp_int const&);
 		void remove(local_ref< java::lang::Object > const&);
@@ -91,7 +105,6 @@ namespace android { namespace widget {
 } //namespace widget
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_WIDGET_ARRAYADAPTER_HPP_DECL
@@ -104,77 +117,94 @@ namespace android { namespace widget {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::widget::ArrayAdapter > create< android::widget::ArrayAdapter>(local_ref< android::content::Context > const &a0, cpp_int const &a1)
+
+android::widget::ArrayAdapter::operator local_ref<android::widget::BaseAdapter>() const
 {
-	return local_ref< android::widget::ArrayAdapter >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::widget::ArrayAdapter::J2CPP_CLASS_NAME>(),
-			get_method_id<android::widget::ArrayAdapter::J2CPP_CLASS_NAME, android::widget::ArrayAdapter::J2CPP_METHOD_NAME(0), android::widget::ArrayAdapter::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<android::widget::BaseAdapter>(get_jtype());
 }
 
-template <>
-local_ref< android::widget::ArrayAdapter > create< android::widget::ArrayAdapter>(local_ref< android::content::Context > const &a0, cpp_int const &a1, cpp_int const &a2)
+android::widget::ArrayAdapter::operator local_ref<android::widget::Filterable>() const
 {
-	return local_ref< android::widget::ArrayAdapter >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::widget::ArrayAdapter::J2CPP_CLASS_NAME>(),
-			get_method_id<android::widget::ArrayAdapter::J2CPP_CLASS_NAME, android::widget::ArrayAdapter::J2CPP_METHOD_NAME(1), android::widget::ArrayAdapter::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
-		)
-	);
+	return local_ref<android::widget::Filterable>(get_jtype());
 }
 
-template <>
-local_ref< android::widget::ArrayAdapter > create< android::widget::ArrayAdapter>(local_ref< android::content::Context > const &a0, cpp_int const &a1, local_ref< cpp_object_array<java::lang::Object, 1> > const &a2)
+
+android::widget::ArrayAdapter::ArrayAdapter(local_ref< android::content::Context > const &a0, cpp_int const &a1)
+: cpp_object<android::widget::ArrayAdapter>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::widget::ArrayAdapter::J2CPP_CLASS_NAME>(),
+		get_method_id<android::widget::ArrayAdapter::J2CPP_CLASS_NAME, android::widget::ArrayAdapter::J2CPP_METHOD_NAME(0), android::widget::ArrayAdapter::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
 {
-	return local_ref< android::widget::ArrayAdapter >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::widget::ArrayAdapter::J2CPP_CLASS_NAME>(),
-			get_method_id<android::widget::ArrayAdapter::J2CPP_CLASS_NAME, android::widget::ArrayAdapter::J2CPP_METHOD_NAME(2), android::widget::ArrayAdapter::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< android::widget::ArrayAdapter > create< android::widget::ArrayAdapter>(local_ref< android::content::Context > const &a0, cpp_int const &a1, cpp_int const &a2, local_ref< cpp_object_array<java::lang::Object, 1> > const &a3)
+
+
+android::widget::ArrayAdapter::ArrayAdapter(local_ref< android::content::Context > const &a0, cpp_int const &a1, cpp_int const &a2)
+: cpp_object<android::widget::ArrayAdapter>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::widget::ArrayAdapter::J2CPP_CLASS_NAME>(),
+		get_method_id<android::widget::ArrayAdapter::J2CPP_CLASS_NAME, android::widget::ArrayAdapter::J2CPP_METHOD_NAME(1), android::widget::ArrayAdapter::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
+	)
+)
 {
-	return local_ref< android::widget::ArrayAdapter >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::widget::ArrayAdapter::J2CPP_CLASS_NAME>(),
-			get_method_id<android::widget::ArrayAdapter::J2CPP_CLASS_NAME, android::widget::ArrayAdapter::J2CPP_METHOD_NAME(3), android::widget::ArrayAdapter::J2CPP_METHOD_SIGNATURE(3), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< android::widget::ArrayAdapter > create< android::widget::ArrayAdapter>(local_ref< android::content::Context > const &a0, cpp_int const &a1, local_ref< java::util::List > const &a2)
+
+
+android::widget::ArrayAdapter::ArrayAdapter(local_ref< android::content::Context > const &a0, cpp_int const &a1, local_ref< cpp_object_array<java::lang::Object, 1> > const &a2)
+: cpp_object<android::widget::ArrayAdapter>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::widget::ArrayAdapter::J2CPP_CLASS_NAME>(),
+		get_method_id<android::widget::ArrayAdapter::J2CPP_CLASS_NAME, android::widget::ArrayAdapter::J2CPP_METHOD_NAME(2), android::widget::ArrayAdapter::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
+	)
+)
 {
-	return local_ref< android::widget::ArrayAdapter >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::widget::ArrayAdapter::J2CPP_CLASS_NAME>(),
-			get_method_id<android::widget::ArrayAdapter::J2CPP_CLASS_NAME, android::widget::ArrayAdapter::J2CPP_METHOD_NAME(4), android::widget::ArrayAdapter::J2CPP_METHOD_SIGNATURE(4), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< android::widget::ArrayAdapter > create< android::widget::ArrayAdapter>(local_ref< android::content::Context > const &a0, cpp_int const &a1, cpp_int const &a2, local_ref< java::util::List > const &a3)
+
+
+android::widget::ArrayAdapter::ArrayAdapter(local_ref< android::content::Context > const &a0, cpp_int const &a1, cpp_int const &a2, local_ref< cpp_object_array<java::lang::Object, 1> > const &a3)
+: cpp_object<android::widget::ArrayAdapter>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::widget::ArrayAdapter::J2CPP_CLASS_NAME>(),
+		get_method_id<android::widget::ArrayAdapter::J2CPP_CLASS_NAME, android::widget::ArrayAdapter::J2CPP_METHOD_NAME(3), android::widget::ArrayAdapter::J2CPP_METHOD_SIGNATURE(3), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype()
+	)
+)
 {
-	return local_ref< android::widget::ArrayAdapter >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::widget::ArrayAdapter::J2CPP_CLASS_NAME>(),
-			get_method_id<android::widget::ArrayAdapter::J2CPP_CLASS_NAME, android::widget::ArrayAdapter::J2CPP_METHOD_NAME(5), android::widget::ArrayAdapter::J2CPP_METHOD_SIGNATURE(5), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype()
-		)
-	);
 }
+
+
+
+android::widget::ArrayAdapter::ArrayAdapter(local_ref< android::content::Context > const &a0, cpp_int const &a1, local_ref< java::util::List > const &a2)
+: cpp_object<android::widget::ArrayAdapter>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::widget::ArrayAdapter::J2CPP_CLASS_NAME>(),
+		get_method_id<android::widget::ArrayAdapter::J2CPP_CLASS_NAME, android::widget::ArrayAdapter::J2CPP_METHOD_NAME(4), android::widget::ArrayAdapter::J2CPP_METHOD_SIGNATURE(4), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
+	)
+)
+{
+}
+
+
+
+android::widget::ArrayAdapter::ArrayAdapter(local_ref< android::content::Context > const &a0, cpp_int const &a1, cpp_int const &a2, local_ref< java::util::List > const &a3)
+: cpp_object<android::widget::ArrayAdapter>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::widget::ArrayAdapter::J2CPP_CLASS_NAME>(),
+		get_method_id<android::widget::ArrayAdapter::J2CPP_CLASS_NAME, android::widget::ArrayAdapter::J2CPP_METHOD_NAME(5), android::widget::ArrayAdapter::J2CPP_METHOD_SIGNATURE(5), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype()
+	)
+)
+{
+}
+
 
 void android::widget::ArrayAdapter::add(local_ref< java::lang::Object > const &a0)
 {

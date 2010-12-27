@@ -10,6 +10,7 @@
 #define J2CPP_ANDROID_GRAPHICS_RADIALGRADIENT_HPP_DECL
 
 
+namespace j2cpp { namespace android { namespace graphics { class Shader; } } }
 namespace j2cpp { namespace android { namespace graphics { namespace Shader_ { class TileMode; } } } }
 
 
@@ -31,16 +32,20 @@ namespace android { namespace graphics {
 		J2CPP_DECLARE_METHOD(0)
 		J2CPP_DECLARE_METHOD(1)
 
-		RadialGradient(jobject jobj)
+		explicit RadialGradient(jobject jobj)
 		: cpp_object<RadialGradient>(jobj)
 		{
 		}
 
+		operator local_ref<android::graphics::Shader>() const;
+
+
+		RadialGradient(cpp_float const&, cpp_float const&, cpp_float const&, local_ref< cpp_int_array<1> > const&, local_ref< cpp_float_array<1> > const&, local_ref< android::graphics::Shader_::TileMode > const&);
+		RadialGradient(cpp_float const&, cpp_float const&, cpp_float const&, cpp_int const&, cpp_int const&, local_ref< android::graphics::Shader_::TileMode > const&);
 	}; //class RadialGradient
 
 } //namespace graphics
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -54,29 +59,37 @@ namespace android { namespace graphics {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::graphics::RadialGradient > create< android::graphics::RadialGradient>(cpp_float const &a0, cpp_float const &a1, cpp_float const &a2, local_ref< cpp_int_array<1> > const &a3, local_ref< cpp_float_array<1> > const &a4, local_ref< android::graphics::Shader_::TileMode > const &a5)
+
+android::graphics::RadialGradient::operator local_ref<android::graphics::Shader>() const
 {
-	return local_ref< android::graphics::RadialGradient >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::graphics::RadialGradient::J2CPP_CLASS_NAME>(),
-			get_method_id<android::graphics::RadialGradient::J2CPP_CLASS_NAME, android::graphics::RadialGradient::J2CPP_METHOD_NAME(0), android::graphics::RadialGradient::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype(), a4.get_jtype(), a5.get_jtype()
-		)
-	);
+	return local_ref<android::graphics::Shader>(get_jtype());
 }
 
-template <>
-local_ref< android::graphics::RadialGradient > create< android::graphics::RadialGradient>(cpp_float const &a0, cpp_float const &a1, cpp_float const &a2, cpp_int const &a3, cpp_int const &a4, local_ref< android::graphics::Shader_::TileMode > const &a5)
+
+android::graphics::RadialGradient::RadialGradient(cpp_float const &a0, cpp_float const &a1, cpp_float const &a2, local_ref< cpp_int_array<1> > const &a3, local_ref< cpp_float_array<1> > const &a4, local_ref< android::graphics::Shader_::TileMode > const &a5)
+: cpp_object<android::graphics::RadialGradient>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::graphics::RadialGradient::J2CPP_CLASS_NAME>(),
+		get_method_id<android::graphics::RadialGradient::J2CPP_CLASS_NAME, android::graphics::RadialGradient::J2CPP_METHOD_NAME(0), android::graphics::RadialGradient::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype(), a4.get_jtype(), a5.get_jtype()
+	)
+)
 {
-	return local_ref< android::graphics::RadialGradient >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::graphics::RadialGradient::J2CPP_CLASS_NAME>(),
-			get_method_id<android::graphics::RadialGradient::J2CPP_CLASS_NAME, android::graphics::RadialGradient::J2CPP_METHOD_NAME(1), android::graphics::RadialGradient::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype(), a4.get_jtype(), a5.get_jtype()
-		)
-	);
 }
+
+
+
+android::graphics::RadialGradient::RadialGradient(cpp_float const &a0, cpp_float const &a1, cpp_float const &a2, cpp_int const &a3, cpp_int const &a4, local_ref< android::graphics::Shader_::TileMode > const &a5)
+: cpp_object<android::graphics::RadialGradient>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::graphics::RadialGradient::J2CPP_CLASS_NAME>(),
+		get_method_id<android::graphics::RadialGradient::J2CPP_CLASS_NAME, android::graphics::RadialGradient::J2CPP_METHOD_NAME(1), android::graphics::RadialGradient::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype(), a4.get_jtype(), a5.get_jtype()
+	)
+)
+{
+}
+
 
 
 J2CPP_DEFINE_CLASS(android::graphics::RadialGradient,"android/graphics/RadialGradient")

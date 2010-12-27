@@ -10,10 +10,12 @@
 #define J2CPP_ORG_APACHE_HTTP_HTTPVERSION_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { class ProtocolVersion; } } } }
 
 
+#include <java/io/Serializable.hpp>
 #include <java/lang/String.hpp>
 #include <org/apache/http/ProtocolVersion.hpp>
 
@@ -38,11 +40,16 @@ namespace org { namespace apache { namespace http {
 		J2CPP_DECLARE_FIELD(2)
 		J2CPP_DECLARE_FIELD(3)
 
-		HttpVersion(jobject jobj)
+		explicit HttpVersion(jobject jobj)
 		: cpp_object<HttpVersion>(jobj)
 		{
 		}
 
+		operator local_ref<org::apache::http::ProtocolVersion>() const;
+		operator local_ref<java::io::Serializable>() const;
+
+
+		HttpVersion(cpp_int const&, cpp_int const&);
 		local_ref< org::apache::http::ProtocolVersion > forVersion(cpp_int const&, cpp_int const&);
 
 		static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(0), J2CPP_FIELD_SIGNATURE(0), local_ref< java::lang::String > > HTTP;
@@ -54,7 +61,6 @@ namespace org { namespace apache { namespace http {
 } //namespace http
 } //namespace apache
 } //namespace org
-
 
 } //namespace j2cpp
 
@@ -68,17 +74,29 @@ namespace org { namespace apache { namespace http {
 namespace j2cpp {
 
 
-template <>
-local_ref< org::apache::http::HttpVersion > create< org::apache::http::HttpVersion>(cpp_int const &a0, cpp_int const &a1)
+
+org::apache::http::HttpVersion::operator local_ref<org::apache::http::ProtocolVersion>() const
 {
-	return local_ref< org::apache::http::HttpVersion >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::apache::http::HttpVersion::J2CPP_CLASS_NAME>(),
-			get_method_id<org::apache::http::HttpVersion::J2CPP_CLASS_NAME, org::apache::http::HttpVersion::J2CPP_METHOD_NAME(0), org::apache::http::HttpVersion::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<org::apache::http::ProtocolVersion>(get_jtype());
 }
+
+org::apache::http::HttpVersion::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jtype());
+}
+
+
+org::apache::http::HttpVersion::HttpVersion(cpp_int const &a0, cpp_int const &a1)
+: cpp_object<org::apache::http::HttpVersion>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::apache::http::HttpVersion::J2CPP_CLASS_NAME>(),
+		get_method_id<org::apache::http::HttpVersion::J2CPP_CLASS_NAME, org::apache::http::HttpVersion::J2CPP_METHOD_NAME(0), org::apache::http::HttpVersion::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
 
 local_ref< org::apache::http::ProtocolVersion > org::apache::http::HttpVersion::forVersion(cpp_int const &a0, cpp_int const &a1)
 {
@@ -90,6 +108,7 @@ local_ref< org::apache::http::ProtocolVersion > org::apache::http::HttpVersion::
 		)
 	);
 }
+
 
 
 static_field<

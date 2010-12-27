@@ -40,10 +40,13 @@ namespace javax { namespace sql {
 		J2CPP_DECLARE_METHOD(3)
 		J2CPP_DECLARE_METHOD(4)
 
-		RowSetInternal(jobject jobj)
+		explicit RowSetInternal(jobject jobj)
 		: cpp_object<RowSetInternal>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		local_ref< java::sql::Connection > getConnection();
 		local_ref< java::sql::ResultSet > getOriginal();
@@ -54,7 +57,6 @@ namespace javax { namespace sql {
 
 } //namespace sql
 } //namespace javax
-
 
 } //namespace j2cpp
 
@@ -67,6 +69,12 @@ namespace javax { namespace sql {
 
 namespace j2cpp {
 
+
+
+javax::sql::RowSetInternal::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 local_ref< java::sql::Connection > javax::sql::RowSetInternal::getConnection()
 {

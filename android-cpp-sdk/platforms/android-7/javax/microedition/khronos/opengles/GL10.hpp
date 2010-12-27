@@ -10,16 +10,20 @@
 #define J2CPP_JAVAX_MICROEDITION_KHRONOS_OPENGLES_GL10_HPP_DECL
 
 
+namespace j2cpp { namespace javax { namespace microedition { namespace khronos { namespace opengles { class GL; } } } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace nio { class FloatBuffer; } } }
 namespace j2cpp { namespace java { namespace nio { class IntBuffer; } } }
 namespace j2cpp { namespace java { namespace nio { class Buffer; } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/nio/Buffer.hpp>
 #include <java/nio/FloatBuffer.hpp>
 #include <java/nio/IntBuffer.hpp>
+#include <javax/microedition/khronos/opengles/GL.hpp>
 
 
 namespace j2cpp {
@@ -395,10 +399,14 @@ namespace javax { namespace microedition { namespace khronos { namespace opengle
 		J2CPP_DECLARE_FIELD(235)
 		J2CPP_DECLARE_FIELD(236)
 
-		GL10(jobject jobj)
+		explicit GL10(jobject jobj)
 		: cpp_object<GL10>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<javax::microedition::khronos::opengles::GL>() const;
+
 
 		void glActiveTexture(cpp_int const&);
 		void glAlphaFunc(cpp_int const&, cpp_float const&);
@@ -768,7 +776,6 @@ namespace javax { namespace microedition { namespace khronos { namespace opengle
 } //namespace microedition
 } //namespace javax
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVAX_MICROEDITION_KHRONOS_OPENGLES_GL10_HPP_DECL
@@ -780,6 +787,17 @@ namespace javax { namespace microedition { namespace khronos { namespace opengle
 
 namespace j2cpp {
 
+
+
+javax::microedition::khronos::opengles::GL10::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
+
+javax::microedition::khronos::opengles::GL10::operator local_ref<javax::microedition::khronos::opengles::GL>() const
+{
+	return local_ref<javax::microedition::khronos::opengles::GL>(get_jtype());
+}
 
 void javax::microedition::khronos::opengles::GL10::glActiveTexture(cpp_int const &a0)
 {

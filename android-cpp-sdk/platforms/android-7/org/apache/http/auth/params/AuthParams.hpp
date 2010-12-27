@@ -10,10 +10,12 @@
 #define J2CPP_ORG_APACHE_HTTP_AUTH_PARAMS_AUTHPARAMS_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace params { class HttpParams; } } } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <org/apache/http/params/HttpParams.hpp>
 
@@ -34,10 +36,13 @@ namespace org { namespace apache { namespace http { namespace auth { namespace p
 		J2CPP_DECLARE_METHOD(1)
 		J2CPP_DECLARE_METHOD(2)
 
-		AuthParams(jobject jobj)
+		explicit AuthParams(jobject jobj)
 		: cpp_object<AuthParams>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		static local_ref< java::lang::String > getCredentialCharset(local_ref< org::apache::http::params::HttpParams > const&);
 		static void setCredentialCharset(local_ref< org::apache::http::params::HttpParams > const&, local_ref< java::lang::String > const&);
@@ -48,7 +53,6 @@ namespace org { namespace apache { namespace http { namespace auth { namespace p
 } //namespace http
 } //namespace apache
 } //namespace org
-
 
 } //namespace j2cpp
 
@@ -62,16 +66,12 @@ namespace org { namespace apache { namespace http { namespace auth { namespace p
 namespace j2cpp {
 
 
-template <>
-local_ref< org::apache::http::auth::params::AuthParams > create< org::apache::http::auth::params::AuthParams>()
+
+org::apache::http::auth::params::AuthParams::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< org::apache::http::auth::params::AuthParams >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::apache::http::auth::params::AuthParams::J2CPP_CLASS_NAME>(),
-			get_method_id<org::apache::http::auth::params::AuthParams::J2CPP_CLASS_NAME, org::apache::http::auth::params::AuthParams::J2CPP_METHOD_NAME(0), org::apache::http::auth::params::AuthParams::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
 
 local_ref< java::lang::String > org::apache::http::auth::params::AuthParams::getCredentialCharset(local_ref< org::apache::http::params::HttpParams > const &a0)
 {

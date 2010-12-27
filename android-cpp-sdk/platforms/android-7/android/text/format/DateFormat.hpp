@@ -10,6 +10,7 @@
 #define J2CPP_ANDROID_TEXT_FORMAT_DATEFORMAT_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class CharSequence; } } }
 namespace j2cpp { namespace java { namespace text { class DateFormat; } } }
 namespace j2cpp { namespace java { namespace util { class Date; } } }
@@ -19,6 +20,7 @@ namespace j2cpp { namespace android { namespace content { class Context; } } }
 
 #include <android/content/Context.hpp>
 #include <java/lang/CharSequence.hpp>
+#include <java/lang/Object.hpp>
 #include <java/text/DateFormat.hpp>
 #include <java/util/Calendar.hpp>
 #include <java/util/Date.hpp>
@@ -59,11 +61,15 @@ namespace android { namespace text { namespace format {
 		J2CPP_DECLARE_FIELD(10)
 		J2CPP_DECLARE_FIELD(11)
 
-		DateFormat(jobject jobj)
+		explicit DateFormat(jobject jobj)
 		: cpp_object<DateFormat>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		DateFormat();
 		static cpp_boolean is24HourFormat(local_ref< android::content::Context > const&);
 		static local_ref< java::text::DateFormat > getTimeFormat(local_ref< android::content::Context > const&);
 		static local_ref< java::text::DateFormat > getDateFormat(local_ref< android::content::Context > const&);
@@ -92,7 +98,6 @@ namespace android { namespace text { namespace format {
 } //namespace text
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_TEXT_FORMAT_DATEFORMAT_HPP_DECL
@@ -105,16 +110,23 @@ namespace android { namespace text { namespace format {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::text::format::DateFormat > create< android::text::format::DateFormat>()
+
+android::text::format::DateFormat::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::text::format::DateFormat >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::text::format::DateFormat::J2CPP_CLASS_NAME>(),
-			get_method_id<android::text::format::DateFormat::J2CPP_CLASS_NAME, android::text::format::DateFormat::J2CPP_METHOD_NAME(0), android::text::format::DateFormat::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::text::format::DateFormat::DateFormat()
+: cpp_object<android::text::format::DateFormat>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::text::format::DateFormat::J2CPP_CLASS_NAME>(),
+		get_method_id<android::text::format::DateFormat::J2CPP_CLASS_NAME, android::text::format::DateFormat::J2CPP_METHOD_NAME(0), android::text::format::DateFormat::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 cpp_boolean android::text::format::DateFormat::is24HourFormat(local_ref< android::content::Context > const &a0)
 {

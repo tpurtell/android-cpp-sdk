@@ -10,10 +10,14 @@
 #define J2CPP_ANDROID_DATABASE_CROSSPROCESSCURSOR_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace android { namespace database { class Cursor; } } }
 namespace j2cpp { namespace android { namespace database { class CursorWindow; } } }
 
 
+#include <android/database/Cursor.hpp>
 #include <android/database/CursorWindow.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -32,10 +36,14 @@ namespace android { namespace database {
 		J2CPP_DECLARE_METHOD(1)
 		J2CPP_DECLARE_METHOD(2)
 
-		CrossProcessCursor(jobject jobj)
+		explicit CrossProcessCursor(jobject jobj)
 		: cpp_object<CrossProcessCursor>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<android::database::Cursor>() const;
+
 
 		local_ref< android::database::CursorWindow > getWindow();
 		void fillWindow(cpp_int const&, local_ref< android::database::CursorWindow > const&);
@@ -44,7 +52,6 @@ namespace android { namespace database {
 
 } //namespace database
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -57,6 +64,17 @@ namespace android { namespace database {
 
 namespace j2cpp {
 
+
+
+android::database::CrossProcessCursor::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
+
+android::database::CrossProcessCursor::operator local_ref<android::database::Cursor>() const
+{
+	return local_ref<android::database::Cursor>(get_jtype());
+}
 
 local_ref< android::database::CursorWindow > android::database::CrossProcessCursor::getWindow()
 {

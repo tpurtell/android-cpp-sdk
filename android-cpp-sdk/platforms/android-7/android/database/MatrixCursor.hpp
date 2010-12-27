@@ -14,8 +14,10 @@ namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class Iterable; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace android { namespace database { namespace MatrixCursor_ { class RowBuilder; } } } }
+namespace j2cpp { namespace android { namespace database { class AbstractCursor; } } }
 
 
+#include <android/database/AbstractCursor.hpp>
 #include <android/database/MatrixCursor.hpp>
 #include <java/lang/Iterable.hpp>
 #include <java/lang/Object.hpp>
@@ -41,10 +43,13 @@ namespace android { namespace database {
 			J2CPP_DECLARE_METHOD(1)
 			J2CPP_DECLARE_FIELD(0)
 
-			RowBuilder(jobject jobj)
+			explicit RowBuilder(jobject jobj)
 			: cpp_object<RowBuilder>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+
 
 			local_ref< android::database::MatrixCursor_::RowBuilder > add(local_ref< java::lang::Object > const&);
 
@@ -76,11 +81,16 @@ namespace android { namespace database {
 
 		typedef MatrixCursor_::RowBuilder RowBuilder;
 
-		MatrixCursor(jobject jobj)
+		explicit MatrixCursor(jobject jobj)
 		: cpp_object<MatrixCursor>(jobj)
 		{
 		}
 
+		operator local_ref<android::database::AbstractCursor>() const;
+
+
+		MatrixCursor(local_ref< cpp_object_array<java::lang::String, 1> > const&, cpp_int const&);
+		MatrixCursor(local_ref< cpp_object_array<java::lang::String, 1> > const&);
 		local_ref< android::database::MatrixCursor_::RowBuilder > newRow();
 		void addRow(local_ref< cpp_object_array<java::lang::Object, 1> > const&);
 		void addRow(local_ref< java::lang::Iterable > const&);
@@ -98,7 +108,6 @@ namespace android { namespace database {
 } //namespace database
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_DATABASE_MATRIXCURSOR_HPP_DECL
@@ -112,17 +121,12 @@ namespace j2cpp {
 
 
 
-template <>
-local_ref< android::database::MatrixCursor_::RowBuilder > create< android::database::MatrixCursor_::RowBuilder>(local_ref< android::database::MatrixCursor > const &a0)
+
+android::database::MatrixCursor_::RowBuilder::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::database::MatrixCursor_::RowBuilder >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::database::MatrixCursor_::RowBuilder::J2CPP_CLASS_NAME>(),
-			get_method_id<android::database::MatrixCursor_::RowBuilder::J2CPP_CLASS_NAME, android::database::MatrixCursor_::RowBuilder::J2CPP_METHOD_NAME(0), android::database::MatrixCursor_::RowBuilder::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
 
 local_ref< android::database::MatrixCursor_::RowBuilder > android::database::MatrixCursor_::RowBuilder::add(local_ref< java::lang::Object > const &a0)
 {
@@ -143,29 +147,37 @@ J2CPP_DEFINE_METHOD(android::database::MatrixCursor_::RowBuilder,1,"add","(Ljava
 J2CPP_DEFINE_FIELD(android::database::MatrixCursor_::RowBuilder,0,"this$0","Landroid/database/MatrixCursor;")
 
 
-template <>
-local_ref< android::database::MatrixCursor > create< android::database::MatrixCursor>(local_ref< cpp_object_array<java::lang::String, 1> > const &a0, cpp_int const &a1)
+
+android::database::MatrixCursor::operator local_ref<android::database::AbstractCursor>() const
 {
-	return local_ref< android::database::MatrixCursor >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::database::MatrixCursor::J2CPP_CLASS_NAME>(),
-			get_method_id<android::database::MatrixCursor::J2CPP_CLASS_NAME, android::database::MatrixCursor::J2CPP_METHOD_NAME(0), android::database::MatrixCursor::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<android::database::AbstractCursor>(get_jtype());
 }
 
-template <>
-local_ref< android::database::MatrixCursor > create< android::database::MatrixCursor>(local_ref< cpp_object_array<java::lang::String, 1> > const &a0)
+
+android::database::MatrixCursor::MatrixCursor(local_ref< cpp_object_array<java::lang::String, 1> > const &a0, cpp_int const &a1)
+: cpp_object<android::database::MatrixCursor>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::database::MatrixCursor::J2CPP_CLASS_NAME>(),
+		get_method_id<android::database::MatrixCursor::J2CPP_CLASS_NAME, android::database::MatrixCursor::J2CPP_METHOD_NAME(0), android::database::MatrixCursor::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
 {
-	return local_ref< android::database::MatrixCursor >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::database::MatrixCursor::J2CPP_CLASS_NAME>(),
-			get_method_id<android::database::MatrixCursor::J2CPP_CLASS_NAME, android::database::MatrixCursor::J2CPP_METHOD_NAME(1), android::database::MatrixCursor::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
 }
+
+
+
+android::database::MatrixCursor::MatrixCursor(local_ref< cpp_object_array<java::lang::String, 1> > const &a0)
+: cpp_object<android::database::MatrixCursor>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::database::MatrixCursor::J2CPP_CLASS_NAME>(),
+		get_method_id<android::database::MatrixCursor::J2CPP_CLASS_NAME, android::database::MatrixCursor::J2CPP_METHOD_NAME(1), android::database::MatrixCursor::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 local_ref< android::database::MatrixCursor_::RowBuilder > android::database::MatrixCursor::newRow()
 {

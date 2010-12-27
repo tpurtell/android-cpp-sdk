@@ -10,6 +10,7 @@
 #define J2CPP_ANDROID_DATABASE_SQLITE_SQLITECURSORDRIVER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace android { namespace database { class Cursor; } } }
 namespace j2cpp { namespace android { namespace database { namespace sqlite { namespace SQLiteDatabase_ { class CursorFactory; } } } } }
@@ -17,6 +18,7 @@ namespace j2cpp { namespace android { namespace database { namespace sqlite { na
 
 #include <android/database/Cursor.hpp>
 #include <android/database/sqlite/SQLiteDatabase.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -38,10 +40,13 @@ namespace android { namespace database { namespace sqlite {
 		J2CPP_DECLARE_METHOD(3)
 		J2CPP_DECLARE_METHOD(4)
 
-		SQLiteCursorDriver(jobject jobj)
+		explicit SQLiteCursorDriver(jobject jobj)
 		: cpp_object<SQLiteCursorDriver>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		local_ref< android::database::Cursor > query(local_ref< android::database::sqlite::SQLiteDatabase_::CursorFactory > const&, local_ref< cpp_object_array<java::lang::String, 1> > const&);
 		void cursorDeactivated();
@@ -54,7 +59,6 @@ namespace android { namespace database { namespace sqlite {
 } //namespace database
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_DATABASE_SQLITE_SQLITECURSORDRIVER_HPP_DECL
@@ -66,6 +70,12 @@ namespace android { namespace database { namespace sqlite {
 
 namespace j2cpp {
 
+
+
+android::database::sqlite::SQLiteCursorDriver::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 local_ref< android::database::Cursor > android::database::sqlite::SQLiteCursorDriver::query(local_ref< android::database::sqlite::SQLiteDatabase_::CursorFactory > const &a0, local_ref< cpp_object_array<java::lang::String, 1> > const &a1)
 {

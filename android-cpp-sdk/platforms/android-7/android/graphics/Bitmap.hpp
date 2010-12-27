@@ -11,6 +11,8 @@
 
 
 namespace j2cpp { namespace java { namespace io { class OutputStream; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace lang { class Enum; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace nio { class Buffer; } } }
 namespace j2cpp { namespace android { namespace graphics { class Paint; } } }
@@ -20,6 +22,7 @@ namespace j2cpp { namespace android { namespace graphics { class Matrix; } } }
 namespace j2cpp { namespace android { namespace graphics { namespace Bitmap_ { class Config; } } } }
 namespace j2cpp { namespace android { namespace util { class DisplayMetrics; } } }
 namespace j2cpp { namespace android { namespace os { class Parcel; } } }
+namespace j2cpp { namespace android { namespace os { class Parcelable; } } }
 namespace j2cpp { namespace android { namespace os { namespace Parcelable_ { class Creator; } } } }
 
 
@@ -31,6 +34,8 @@ namespace j2cpp { namespace android { namespace os { namespace Parcelable_ { cla
 #include <android/os/Parcelable.hpp>
 #include <android/util/DisplayMetrics.hpp>
 #include <java/io/OutputStream.hpp>
+#include <java/lang/Enum.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/nio/Buffer.hpp>
 
@@ -58,10 +63,13 @@ namespace android { namespace graphics {
 			J2CPP_DECLARE_FIELD(1)
 			J2CPP_DECLARE_FIELD(2)
 
-			CompressFormat(jobject jobj)
+			explicit CompressFormat(jobject jobj)
 			: cpp_object<CompressFormat>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Enum>() const;
+
 
 			static local_ref< cpp_object_array<android::graphics::Bitmap_::CompressFormat, 1> > values();
 			static local_ref< android::graphics::Bitmap_::CompressFormat > valueOf(local_ref< java::lang::String > const&);
@@ -88,10 +96,13 @@ namespace android { namespace graphics {
 			J2CPP_DECLARE_FIELD(3)
 			J2CPP_DECLARE_FIELD(4)
 
-			Config(jobject jobj)
+			explicit Config(jobject jobj)
 			: cpp_object<Config>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Enum>() const;
+
 
 			static local_ref< cpp_object_array<android::graphics::Bitmap_::Config, 1> > values();
 			static local_ref< android::graphics::Bitmap_::Config > valueOf(local_ref< java::lang::String > const&);
@@ -158,10 +169,14 @@ namespace android { namespace graphics {
 		typedef Bitmap_::CompressFormat CompressFormat;
 		typedef Bitmap_::Config Config;
 
-		Bitmap(jobject jobj)
+		explicit Bitmap(jobject jobj)
 		: cpp_object<Bitmap>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<android::os::Parcelable>() const;
+
 
 		cpp_int getDensity();
 		void setDensity(cpp_int const&);
@@ -209,7 +224,6 @@ namespace android { namespace graphics {
 } //namespace graphics
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_GRAPHICS_BITMAP_HPP_DECL
@@ -222,6 +236,12 @@ namespace android { namespace graphics {
 namespace j2cpp {
 
 
+
+
+android::graphics::Bitmap_::CompressFormat::operator local_ref<java::lang::Enum>() const
+{
+	return local_ref<java::lang::Enum>(get_jtype());
+}
 
 local_ref< cpp_object_array<android::graphics::Bitmap_::CompressFormat, 1> > android::graphics::Bitmap_::CompressFormat::values()
 {
@@ -244,17 +264,7 @@ local_ref< android::graphics::Bitmap_::CompressFormat > android::graphics::Bitma
 	);
 }
 
-template <>
-local_ref< android::graphics::Bitmap_::CompressFormat > create< android::graphics::Bitmap_::CompressFormat>(local_ref< java::lang::String > const &a0, cpp_int const &a1)
-{
-	return local_ref< android::graphics::Bitmap_::CompressFormat >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::graphics::Bitmap_::CompressFormat::J2CPP_CLASS_NAME>(),
-			get_method_id<android::graphics::Bitmap_::CompressFormat::J2CPP_CLASS_NAME, android::graphics::Bitmap_::CompressFormat::J2CPP_METHOD_NAME(2), android::graphics::Bitmap_::CompressFormat::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
-}
+
 
 
 static_field<
@@ -281,6 +291,12 @@ J2CPP_DEFINE_FIELD(android::graphics::Bitmap_::CompressFormat,0,"JPEG","Landroid
 J2CPP_DEFINE_FIELD(android::graphics::Bitmap_::CompressFormat,1,"PNG","Landroid/graphics/Bitmap$CompressFormat;")
 J2CPP_DEFINE_FIELD(android::graphics::Bitmap_::CompressFormat,2,"$VALUES","[android.graphics.Bitmap.CompressFormat")
 
+
+android::graphics::Bitmap_::Config::operator local_ref<java::lang::Enum>() const
+{
+	return local_ref<java::lang::Enum>(get_jtype());
+}
+
 local_ref< cpp_object_array<android::graphics::Bitmap_::Config, 1> > android::graphics::Bitmap_::Config::values()
 {
 	return local_ref< cpp_object_array<android::graphics::Bitmap_::Config, 1> >(
@@ -302,17 +318,7 @@ local_ref< android::graphics::Bitmap_::Config > android::graphics::Bitmap_::Conf
 	);
 }
 
-template <>
-local_ref< android::graphics::Bitmap_::Config > create< android::graphics::Bitmap_::Config>(local_ref< java::lang::String > const &a0, cpp_int const &a1)
-{
-	return local_ref< android::graphics::Bitmap_::Config >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::graphics::Bitmap_::Config::J2CPP_CLASS_NAME>(),
-			get_method_id<android::graphics::Bitmap_::Config::J2CPP_CLASS_NAME, android::graphics::Bitmap_::Config::J2CPP_METHOD_NAME(2), android::graphics::Bitmap_::Config::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
-}
+
 
 
 static_field<
@@ -356,16 +362,17 @@ J2CPP_DEFINE_FIELD(android::graphics::Bitmap_::Config,3,"RGB_565","Landroid/grap
 J2CPP_DEFINE_FIELD(android::graphics::Bitmap_::Config,4,"$VALUES","[android.graphics.Bitmap.Config")
 
 
-template <>
-local_ref< android::graphics::Bitmap > create< android::graphics::Bitmap>()
+
+android::graphics::Bitmap::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::graphics::Bitmap >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::graphics::Bitmap::J2CPP_CLASS_NAME>(),
-			get_method_id<android::graphics::Bitmap::J2CPP_CLASS_NAME, android::graphics::Bitmap::J2CPP_METHOD_NAME(0), android::graphics::Bitmap::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+android::graphics::Bitmap::operator local_ref<android::os::Parcelable>() const
+{
+	return local_ref<android::os::Parcelable>(get_jtype());
+}
+
 
 cpp_int android::graphics::Bitmap::getDensity()
 {
@@ -771,6 +778,7 @@ void android::graphics::Bitmap::prepareToDraw()
 		)
 	);
 }
+
 
 
 

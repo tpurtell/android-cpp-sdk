@@ -11,9 +11,11 @@
 
 
 namespace j2cpp { namespace java { namespace io { class InputStream; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
 #include <java/io/InputStream.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -32,10 +34,13 @@ namespace org { namespace apache { namespace http { namespace conn {
 		J2CPP_DECLARE_METHOD(1)
 		J2CPP_DECLARE_METHOD(2)
 
-		EofSensorWatcher(jobject jobj)
+		explicit EofSensorWatcher(jobject jobj)
 		: cpp_object<EofSensorWatcher>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		cpp_boolean eofDetected(local_ref< java::io::InputStream > const&);
 		cpp_boolean streamClosed(local_ref< java::io::InputStream > const&);
@@ -46,7 +51,6 @@ namespace org { namespace apache { namespace http { namespace conn {
 } //namespace http
 } //namespace apache
 } //namespace org
-
 
 } //namespace j2cpp
 
@@ -59,6 +63,12 @@ namespace org { namespace apache { namespace http { namespace conn {
 
 namespace j2cpp {
 
+
+
+org::apache::http::conn::EofSensorWatcher::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 cpp_boolean org::apache::http::conn::EofSensorWatcher::eofDetected(local_ref< java::io::InputStream > const &a0)
 {

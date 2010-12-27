@@ -10,9 +10,13 @@
 #define J2CPP_JAVA_LANG_ANNOTATION_RETENTION_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace lang { namespace annotation { class Annotation; } } } }
 namespace j2cpp { namespace java { namespace lang { namespace annotation { class RetentionPolicy; } } } }
 
 
+#include <java/lang/Object.hpp>
+#include <java/lang/annotation/Annotation.hpp>
 #include <java/lang/annotation/RetentionPolicy.hpp>
 
 
@@ -30,10 +34,14 @@ namespace java { namespace lang { namespace annotation {
 
 		J2CPP_DECLARE_METHOD(0)
 
-		Retention(jobject jobj)
+		explicit Retention(jobject jobj)
 		: cpp_object<Retention>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::lang::annotation::Annotation>() const;
+
 
 		local_ref< java::lang::annotation::RetentionPolicy > value();
 	}; //class Retention
@@ -41,7 +49,6 @@ namespace java { namespace lang { namespace annotation {
 } //namespace annotation
 } //namespace lang
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -54,6 +61,17 @@ namespace java { namespace lang { namespace annotation {
 
 namespace j2cpp {
 
+
+
+java::lang::annotation::Retention::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
+
+java::lang::annotation::Retention::operator local_ref<java::lang::annotation::Annotation>() const
+{
+	return local_ref<java::lang::annotation::Annotation>(get_jtype());
+}
 
 local_ref< java::lang::annotation::RetentionPolicy > java::lang::annotation::Retention::value()
 {

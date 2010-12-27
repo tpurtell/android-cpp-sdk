@@ -10,6 +10,7 @@
 #define J2CPP_ORG_XMLPULL_V1_XMLPULLPARSERFACTORY_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class Class; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace org { namespace xmlpull { namespace v1 { class XmlPullParser; } } } }
@@ -17,6 +18,7 @@ namespace j2cpp { namespace org { namespace xmlpull { namespace v1 { class XmlSe
 
 
 #include <java/lang/Class.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <org/xmlpull/v1/XmlPullParser.hpp>
 #include <org/xmlpull/v1/XmlSerializer.hpp>
@@ -51,10 +53,13 @@ namespace org { namespace xmlpull { namespace v1 {
 		J2CPP_DECLARE_FIELD(3)
 		J2CPP_DECLARE_FIELD(4)
 
-		XmlPullParserFactory(jobject jobj)
+		explicit XmlPullParserFactory(jobject jobj)
 		: cpp_object<XmlPullParserFactory>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		void setFeature(local_ref< java::lang::String > const&, cpp_boolean const&);
 		cpp_boolean getFeature(local_ref< java::lang::String > const&);
@@ -74,7 +79,6 @@ namespace org { namespace xmlpull { namespace v1 {
 } //namespace xmlpull
 } //namespace org
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ORG_XMLPULL_V1_XMLPULLPARSERFACTORY_HPP_DECL
@@ -87,16 +91,12 @@ namespace org { namespace xmlpull { namespace v1 {
 namespace j2cpp {
 
 
-template <>
-local_ref< org::xmlpull::v1::XmlPullParserFactory > create< org::xmlpull::v1::XmlPullParserFactory>()
+
+org::xmlpull::v1::XmlPullParserFactory::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< org::xmlpull::v1::XmlPullParserFactory >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::xmlpull::v1::XmlPullParserFactory::J2CPP_CLASS_NAME>(),
-			get_method_id<org::xmlpull::v1::XmlPullParserFactory::J2CPP_CLASS_NAME, org::xmlpull::v1::XmlPullParserFactory::J2CPP_METHOD_NAME(0), org::xmlpull::v1::XmlPullParserFactory::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
 
 void org::xmlpull::v1::XmlPullParserFactory::setFeature(local_ref< java::lang::String > const &a0, cpp_boolean const &a1)
 {

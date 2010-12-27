@@ -12,10 +12,14 @@
 
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class Class; } } }
+namespace j2cpp { namespace java { namespace lang { class Comparable; } } }
+namespace j2cpp { namespace java { namespace lang { class Number; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 
 
 #include <java/lang/Class.hpp>
+#include <java/lang/Comparable.hpp>
+#include <java/lang/Number.hpp>
 #include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
@@ -67,11 +71,17 @@ namespace java { namespace lang {
 		J2CPP_DECLARE_FIELD(5)
 		J2CPP_DECLARE_FIELD(6)
 
-		Double(jobject jobj)
+		explicit Double(jobject jobj)
 		: cpp_object<Double>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Number>() const;
+		operator local_ref<java::lang::Comparable>() const;
+
+
+		Double(cpp_double const&);
+		Double(local_ref< java::lang::String > const&);
 		cpp_int compareTo(local_ref< java::lang::Double > const&);
 		cpp_byte byteValue();
 		static cpp_long doubleToLongBits(cpp_double const&);
@@ -109,7 +119,6 @@ namespace java { namespace lang {
 } //namespace lang
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_LANG_DOUBLE_HPP_DECL
@@ -122,29 +131,42 @@ namespace java { namespace lang {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::lang::Double > create< java::lang::Double>(cpp_double const &a0)
+
+java::lang::Double::operator local_ref<java::lang::Number>() const
 {
-	return local_ref< java::lang::Double >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::lang::Double::J2CPP_CLASS_NAME>(),
-			get_method_id<java::lang::Double::J2CPP_CLASS_NAME, java::lang::Double::J2CPP_METHOD_NAME(0), java::lang::Double::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Number>(get_jtype());
 }
 
-template <>
-local_ref< java::lang::Double > create< java::lang::Double>(local_ref< java::lang::String > const &a0)
+java::lang::Double::operator local_ref<java::lang::Comparable>() const
 {
-	return local_ref< java::lang::Double >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::lang::Double::J2CPP_CLASS_NAME>(),
-			get_method_id<java::lang::Double::J2CPP_CLASS_NAME, java::lang::Double::J2CPP_METHOD_NAME(1), java::lang::Double::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Comparable>(get_jtype());
 }
+
+
+java::lang::Double::Double(cpp_double const &a0)
+: cpp_object<java::lang::Double>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::lang::Double::J2CPP_CLASS_NAME>(),
+		get_method_id<java::lang::Double::J2CPP_CLASS_NAME, java::lang::Double::J2CPP_METHOD_NAME(0), java::lang::Double::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
+
+
+java::lang::Double::Double(local_ref< java::lang::String > const &a0)
+: cpp_object<java::lang::Double>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::lang::Double::J2CPP_CLASS_NAME>(),
+		get_method_id<java::lang::Double::J2CPP_CLASS_NAME, java::lang::Double::J2CPP_METHOD_NAME(1), java::lang::Double::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 cpp_int java::lang::Double::compareTo(local_ref< java::lang::Double > const &a0)
 {
@@ -399,6 +421,7 @@ cpp_int java::lang::Double::compareTo(local_ref< java::lang::Object > const &a0)
 		)
 	);
 }
+
 
 
 static_field<

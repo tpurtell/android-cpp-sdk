@@ -10,11 +10,13 @@
 #define J2CPP_ANDROID_APP_ALARMMANAGER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace android { namespace app { class PendingIntent; } } }
 
 
 #include <android/app/PendingIntent.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -46,10 +48,13 @@ namespace android { namespace app {
 		J2CPP_DECLARE_FIELD(7)
 		J2CPP_DECLARE_FIELD(8)
 
-		AlarmManager(jobject jobj)
+		explicit AlarmManager(jobject jobj)
 		: cpp_object<AlarmManager>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		void set(cpp_int const&, cpp_long const&, local_ref< android::app::PendingIntent > const&);
 		void setRepeating(cpp_int const&, cpp_long const&, cpp_long const&, local_ref< android::app::PendingIntent > const&);
@@ -71,7 +76,6 @@ namespace android { namespace app {
 } //namespace app
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_APP_ALARMMANAGER_HPP_DECL
@@ -84,16 +88,12 @@ namespace android { namespace app {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::app::AlarmManager > create< android::app::AlarmManager>()
+
+android::app::AlarmManager::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::app::AlarmManager >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::app::AlarmManager::J2CPP_CLASS_NAME>(),
-			get_method_id<android::app::AlarmManager::J2CPP_CLASS_NAME, android::app::AlarmManager::J2CPP_METHOD_NAME(0), android::app::AlarmManager::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
 
 void android::app::AlarmManager::set(cpp_int const &a0, cpp_long const &a1, local_ref< android::app::PendingIntent > const &a2)
 {

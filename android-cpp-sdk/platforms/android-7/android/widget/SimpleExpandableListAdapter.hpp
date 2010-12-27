@@ -16,11 +16,13 @@ namespace j2cpp { namespace java { namespace util { class List; } } }
 namespace j2cpp { namespace android { namespace content { class Context; } } }
 namespace j2cpp { namespace android { namespace view { class View; } } }
 namespace j2cpp { namespace android { namespace view { class ViewGroup; } } }
+namespace j2cpp { namespace android { namespace widget { class BaseExpandableListAdapter; } } }
 
 
 #include <android/content/Context.hpp>
 #include <android/view/View.hpp>
 #include <android/view/ViewGroup.hpp>
+#include <android/widget/BaseExpandableListAdapter.hpp>
 #include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/util/List.hpp>
@@ -54,11 +56,17 @@ namespace android { namespace widget {
 		J2CPP_DECLARE_METHOD(13)
 		J2CPP_DECLARE_METHOD(14)
 
-		SimpleExpandableListAdapter(jobject jobj)
+		explicit SimpleExpandableListAdapter(jobject jobj)
 		: cpp_object<SimpleExpandableListAdapter>(jobj)
 		{
 		}
 
+		operator local_ref<android::widget::BaseExpandableListAdapter>() const;
+
+
+		SimpleExpandableListAdapter(local_ref< android::content::Context > const&, local_ref< java::util::List > const&, cpp_int const&, local_ref< cpp_object_array<java::lang::String, 1> > const&, local_ref< cpp_int_array<1> > const&, local_ref< java::util::List > const&, cpp_int const&, local_ref< cpp_object_array<java::lang::String, 1> > const&, local_ref< cpp_int_array<1> > const&);
+		SimpleExpandableListAdapter(local_ref< android::content::Context > const&, local_ref< java::util::List > const&, cpp_int const&, cpp_int const&, local_ref< cpp_object_array<java::lang::String, 1> > const&, local_ref< cpp_int_array<1> > const&, local_ref< java::util::List > const&, cpp_int const&, local_ref< cpp_object_array<java::lang::String, 1> > const&, local_ref< cpp_int_array<1> > const&);
+		SimpleExpandableListAdapter(local_ref< android::content::Context > const&, local_ref< java::util::List > const&, cpp_int const&, cpp_int const&, local_ref< cpp_object_array<java::lang::String, 1> > const&, local_ref< cpp_int_array<1> > const&, local_ref< java::util::List > const&, cpp_int const&, cpp_int const&, local_ref< cpp_object_array<java::lang::String, 1> > const&, local_ref< cpp_int_array<1> > const&);
 		local_ref< java::lang::Object > getChild(cpp_int const&, cpp_int const&);
 		cpp_long getChildId(cpp_int const&, cpp_int const&);
 		local_ref< android::view::View > getChildView(cpp_int const&, cpp_int const&, cpp_boolean const&, local_ref< android::view::View > const&, local_ref< android::view::ViewGroup > const&);
@@ -76,7 +84,6 @@ namespace android { namespace widget {
 } //namespace widget
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_WIDGET_SIMPLEEXPANDABLELISTADAPTER_HPP_DECL
@@ -89,41 +96,50 @@ namespace android { namespace widget {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::widget::SimpleExpandableListAdapter > create< android::widget::SimpleExpandableListAdapter>(local_ref< android::content::Context > const &a0, local_ref< java::util::List > const &a1, cpp_int const &a2, local_ref< cpp_object_array<java::lang::String, 1> > const &a3, local_ref< cpp_int_array<1> > const &a4, local_ref< java::util::List > const &a5, cpp_int const &a6, local_ref< cpp_object_array<java::lang::String, 1> > const &a7, local_ref< cpp_int_array<1> > const &a8)
+
+android::widget::SimpleExpandableListAdapter::operator local_ref<android::widget::BaseExpandableListAdapter>() const
 {
-	return local_ref< android::widget::SimpleExpandableListAdapter >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::widget::SimpleExpandableListAdapter::J2CPP_CLASS_NAME>(),
-			get_method_id<android::widget::SimpleExpandableListAdapter::J2CPP_CLASS_NAME, android::widget::SimpleExpandableListAdapter::J2CPP_METHOD_NAME(0), android::widget::SimpleExpandableListAdapter::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype(), a4.get_jtype(), a5.get_jtype(), a6.get_jtype(), a7.get_jtype(), a8.get_jtype()
-		)
-	);
+	return local_ref<android::widget::BaseExpandableListAdapter>(get_jtype());
 }
 
-template <>
-local_ref< android::widget::SimpleExpandableListAdapter > create< android::widget::SimpleExpandableListAdapter>(local_ref< android::content::Context > const &a0, local_ref< java::util::List > const &a1, cpp_int const &a2, cpp_int const &a3, local_ref< cpp_object_array<java::lang::String, 1> > const &a4, local_ref< cpp_int_array<1> > const &a5, local_ref< java::util::List > const &a6, cpp_int const &a7, local_ref< cpp_object_array<java::lang::String, 1> > const &a8, local_ref< cpp_int_array<1> > const &a9)
+
+android::widget::SimpleExpandableListAdapter::SimpleExpandableListAdapter(local_ref< android::content::Context > const &a0, local_ref< java::util::List > const &a1, cpp_int const &a2, local_ref< cpp_object_array<java::lang::String, 1> > const &a3, local_ref< cpp_int_array<1> > const &a4, local_ref< java::util::List > const &a5, cpp_int const &a6, local_ref< cpp_object_array<java::lang::String, 1> > const &a7, local_ref< cpp_int_array<1> > const &a8)
+: cpp_object<android::widget::SimpleExpandableListAdapter>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::widget::SimpleExpandableListAdapter::J2CPP_CLASS_NAME>(),
+		get_method_id<android::widget::SimpleExpandableListAdapter::J2CPP_CLASS_NAME, android::widget::SimpleExpandableListAdapter::J2CPP_METHOD_NAME(0), android::widget::SimpleExpandableListAdapter::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype(), a4.get_jtype(), a5.get_jtype(), a6.get_jtype(), a7.get_jtype(), a8.get_jtype()
+	)
+)
 {
-	return local_ref< android::widget::SimpleExpandableListAdapter >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::widget::SimpleExpandableListAdapter::J2CPP_CLASS_NAME>(),
-			get_method_id<android::widget::SimpleExpandableListAdapter::J2CPP_CLASS_NAME, android::widget::SimpleExpandableListAdapter::J2CPP_METHOD_NAME(1), android::widget::SimpleExpandableListAdapter::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype(), a4.get_jtype(), a5.get_jtype(), a6.get_jtype(), a7.get_jtype(), a8.get_jtype(), a9.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< android::widget::SimpleExpandableListAdapter > create< android::widget::SimpleExpandableListAdapter>(local_ref< android::content::Context > const &a0, local_ref< java::util::List > const &a1, cpp_int const &a2, cpp_int const &a3, local_ref< cpp_object_array<java::lang::String, 1> > const &a4, local_ref< cpp_int_array<1> > const &a5, local_ref< java::util::List > const &a6, cpp_int const &a7, cpp_int const &a8, local_ref< cpp_object_array<java::lang::String, 1> > const &a9, local_ref< cpp_int_array<1> > const &a10)
+
+
+android::widget::SimpleExpandableListAdapter::SimpleExpandableListAdapter(local_ref< android::content::Context > const &a0, local_ref< java::util::List > const &a1, cpp_int const &a2, cpp_int const &a3, local_ref< cpp_object_array<java::lang::String, 1> > const &a4, local_ref< cpp_int_array<1> > const &a5, local_ref< java::util::List > const &a6, cpp_int const &a7, local_ref< cpp_object_array<java::lang::String, 1> > const &a8, local_ref< cpp_int_array<1> > const &a9)
+: cpp_object<android::widget::SimpleExpandableListAdapter>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::widget::SimpleExpandableListAdapter::J2CPP_CLASS_NAME>(),
+		get_method_id<android::widget::SimpleExpandableListAdapter::J2CPP_CLASS_NAME, android::widget::SimpleExpandableListAdapter::J2CPP_METHOD_NAME(1), android::widget::SimpleExpandableListAdapter::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype(), a4.get_jtype(), a5.get_jtype(), a6.get_jtype(), a7.get_jtype(), a8.get_jtype(), a9.get_jtype()
+	)
+)
 {
-	return local_ref< android::widget::SimpleExpandableListAdapter >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::widget::SimpleExpandableListAdapter::J2CPP_CLASS_NAME>(),
-			get_method_id<android::widget::SimpleExpandableListAdapter::J2CPP_CLASS_NAME, android::widget::SimpleExpandableListAdapter::J2CPP_METHOD_NAME(2), android::widget::SimpleExpandableListAdapter::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype(), a4.get_jtype(), a5.get_jtype(), a6.get_jtype(), a7.get_jtype(), a8.get_jtype(), a9.get_jtype(), a10.get_jtype()
-		)
-	);
 }
+
+
+
+android::widget::SimpleExpandableListAdapter::SimpleExpandableListAdapter(local_ref< android::content::Context > const &a0, local_ref< java::util::List > const &a1, cpp_int const &a2, cpp_int const &a3, local_ref< cpp_object_array<java::lang::String, 1> > const &a4, local_ref< cpp_int_array<1> > const &a5, local_ref< java::util::List > const &a6, cpp_int const &a7, cpp_int const &a8, local_ref< cpp_object_array<java::lang::String, 1> > const &a9, local_ref< cpp_int_array<1> > const &a10)
+: cpp_object<android::widget::SimpleExpandableListAdapter>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::widget::SimpleExpandableListAdapter::J2CPP_CLASS_NAME>(),
+		get_method_id<android::widget::SimpleExpandableListAdapter::J2CPP_CLASS_NAME, android::widget::SimpleExpandableListAdapter::J2CPP_METHOD_NAME(2), android::widget::SimpleExpandableListAdapter::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype(), a4.get_jtype(), a5.get_jtype(), a6.get_jtype(), a7.get_jtype(), a8.get_jtype(), a9.get_jtype(), a10.get_jtype()
+	)
+)
+{
+}
+
 
 local_ref< java::lang::Object > android::widget::SimpleExpandableListAdapter::getChild(cpp_int const &a0, cpp_int const &a1)
 {

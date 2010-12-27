@@ -78,10 +78,13 @@ namespace android { namespace test {
 		J2CPP_DECLARE_METHOD(35)
 		J2CPP_DECLARE_METHOD(36)
 
-		MoreAsserts(jobject jobj)
+		explicit MoreAsserts(jobject jobj)
 		: cpp_object<MoreAsserts>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		static void assertAssignableFrom(local_ref< java::lang::Class > const&, local_ref< java::lang::Object > const&);
 		static void assertAssignableFrom(local_ref< java::lang::Class > const&, local_ref< java::lang::Class > const&);
@@ -124,7 +127,6 @@ namespace android { namespace test {
 } //namespace test
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_TEST_MOREASSERTS_HPP_DECL
@@ -137,16 +139,12 @@ namespace android { namespace test {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::test::MoreAsserts > create< android::test::MoreAsserts>()
+
+android::test::MoreAsserts::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::test::MoreAsserts >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::test::MoreAsserts::J2CPP_CLASS_NAME>(),
-			get_method_id<android::test::MoreAsserts::J2CPP_CLASS_NAME, android::test::MoreAsserts::J2CPP_METHOD_NAME(0), android::test::MoreAsserts::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
 
 void android::test::MoreAsserts::assertAssignableFrom(local_ref< java::lang::Class > const &a0, local_ref< java::lang::Object > const &a1)
 {

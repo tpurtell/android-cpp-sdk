@@ -10,16 +10,21 @@
 #define J2CPP_JAVA_LANG_CHARACTER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class Class; } } }
 namespace j2cpp { namespace java { namespace lang { namespace Character_ { class UnicodeBlock; } } } }
+namespace j2cpp { namespace java { namespace lang { namespace Character_ { class Subset; } } } }
+namespace j2cpp { namespace java { namespace lang { class Comparable; } } }
 namespace j2cpp { namespace java { namespace lang { class CharSequence; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 
 
+#include <java/io/Serializable.hpp>
 #include <java/lang/CharSequence.hpp>
 #include <java/lang/Character.hpp>
 #include <java/lang/Class.hpp>
+#include <java/lang/Comparable.hpp>
 #include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
@@ -171,10 +176,13 @@ namespace java { namespace lang {
 			J2CPP_DECLARE_FIELD(124)
 			J2CPP_DECLARE_FIELD(125)
 
-			UnicodeBlock(jobject jobj)
+			explicit UnicodeBlock(jobject jobj)
 			: cpp_object<UnicodeBlock>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Character_::Subset>() const;
+
 
 			static local_ref< java::lang::Character_::UnicodeBlock > forName(local_ref< java::lang::String > const&);
 			static local_ref< java::lang::Character_::UnicodeBlock > of(cpp_char const&);
@@ -321,10 +329,13 @@ namespace java { namespace lang {
 			J2CPP_DECLARE_METHOD(2)
 			J2CPP_DECLARE_METHOD(3)
 
-			Subset(jobject jobj)
+			explicit Subset(jobject jobj)
 			: cpp_object<Subset>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+
 
 			cpp_boolean equals(local_ref< java::lang::Object > const&);
 			cpp_int hashCode();
@@ -489,11 +500,17 @@ namespace java { namespace lang {
 		typedef Character_::UnicodeBlock UnicodeBlock;
 		typedef Character_::Subset Subset;
 
-		Character(jobject jobj)
+		explicit Character(jobject jobj)
 		: cpp_object<Character>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::io::Serializable>() const;
+		operator local_ref<java::lang::Comparable>() const;
+
+
+		Character(cpp_char const&);
 		cpp_char charValue();
 		cpp_int compareTo(local_ref< java::lang::Character > const&);
 		static local_ref< java::lang::Character > valueOf(cpp_char const&);
@@ -643,7 +660,6 @@ namespace java { namespace lang {
 } //namespace lang
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_LANG_CHARACTER_HPP_DECL
@@ -657,16 +673,12 @@ namespace j2cpp {
 
 
 
-template <>
-local_ref< java::lang::Character_::UnicodeBlock > create< java::lang::Character_::UnicodeBlock>()
+
+java::lang::Character_::UnicodeBlock::operator local_ref<java::lang::Character_::Subset>() const
 {
-	return local_ref< java::lang::Character_::UnicodeBlock >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::lang::Character_::UnicodeBlock::J2CPP_CLASS_NAME>(),
-			get_method_id<java::lang::Character_::UnicodeBlock::J2CPP_CLASS_NAME, java::lang::Character_::UnicodeBlock::J2CPP_METHOD_NAME(0), java::lang::Character_::UnicodeBlock::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Character_::Subset>(get_jtype());
 }
+
 
 local_ref< java::lang::Character_::UnicodeBlock > java::lang::Character_::UnicodeBlock::forName(local_ref< java::lang::String > const &a0)
 {
@@ -700,6 +712,7 @@ local_ref< java::lang::Character_::UnicodeBlock > java::lang::Character_::Unicod
 		)
 	);
 }
+
 
 
 static_field<
@@ -1718,17 +1731,12 @@ J2CPP_DEFINE_FIELD(java::lang::Character_::UnicodeBlock,123,"VARIATION_SELECTORS
 J2CPP_DEFINE_FIELD(java::lang::Character_::UnicodeBlock,124,"SUPPLEMENTARY_PRIVATE_USE_AREA_A","Ljava/lang/Character$UnicodeBlock;")
 J2CPP_DEFINE_FIELD(java::lang::Character_::UnicodeBlock,125,"SUPPLEMENTARY_PRIVATE_USE_AREA_B","Ljava/lang/Character$UnicodeBlock;")
 
-template <>
-local_ref< java::lang::Character_::Subset > create< java::lang::Character_::Subset>(local_ref< java::lang::String > const &a0)
+
+java::lang::Character_::Subset::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::lang::Character_::Subset >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::lang::Character_::Subset::J2CPP_CLASS_NAME>(),
-			get_method_id<java::lang::Character_::Subset::J2CPP_CLASS_NAME, java::lang::Character_::Subset::J2CPP_METHOD_NAME(0), java::lang::Character_::Subset::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
 
 cpp_boolean java::lang::Character_::Subset::equals(local_ref< java::lang::Object > const &a0)
 {
@@ -1769,17 +1777,34 @@ J2CPP_DEFINE_METHOD(java::lang::Character_::Subset,2,"hashCode","()I")
 J2CPP_DEFINE_METHOD(java::lang::Character_::Subset,3,"toString","()Ljava/lang/String;")
 
 
-template <>
-local_ref< java::lang::Character > create< java::lang::Character>(cpp_char const &a0)
+
+java::lang::Character::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::lang::Character >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::lang::Character::J2CPP_CLASS_NAME>(),
-			get_method_id<java::lang::Character::J2CPP_CLASS_NAME, java::lang::Character::J2CPP_METHOD_NAME(0), java::lang::Character::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+java::lang::Character::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jtype());
+}
+
+java::lang::Character::operator local_ref<java::lang::Comparable>() const
+{
+	return local_ref<java::lang::Comparable>(get_jtype());
+}
+
+
+java::lang::Character::Character(cpp_char const &a0)
+: cpp_object<java::lang::Character>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::lang::Character::J2CPP_CLASS_NAME>(),
+		get_method_id<java::lang::Character::J2CPP_CLASS_NAME, java::lang::Character::J2CPP_METHOD_NAME(0), java::lang::Character::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 cpp_char java::lang::Character::charValue()
 {
@@ -2635,6 +2660,7 @@ cpp_int java::lang::Character::compareTo(local_ref< java::lang::Object > const &
 		)
 	);
 }
+
 
 
 static_field<

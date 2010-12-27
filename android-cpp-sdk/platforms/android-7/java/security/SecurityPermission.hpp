@@ -11,9 +11,11 @@
 
 
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace security { class BasicPermission; } } }
 
 
 #include <java/lang/String.hpp>
+#include <java/security/BasicPermission.hpp>
 
 
 namespace j2cpp {
@@ -31,16 +33,20 @@ namespace java { namespace security {
 		J2CPP_DECLARE_METHOD(0)
 		J2CPP_DECLARE_METHOD(1)
 
-		SecurityPermission(jobject jobj)
+		explicit SecurityPermission(jobject jobj)
 		: cpp_object<SecurityPermission>(jobj)
 		{
 		}
 
+		operator local_ref<java::security::BasicPermission>() const;
+
+
+		SecurityPermission(local_ref< java::lang::String > const&);
+		SecurityPermission(local_ref< java::lang::String > const&, local_ref< java::lang::String > const&);
 	}; //class SecurityPermission
 
 } //namespace security
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -54,29 +60,37 @@ namespace java { namespace security {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::security::SecurityPermission > create< java::security::SecurityPermission>(local_ref< java::lang::String > const &a0)
+
+java::security::SecurityPermission::operator local_ref<java::security::BasicPermission>() const
 {
-	return local_ref< java::security::SecurityPermission >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::security::SecurityPermission::J2CPP_CLASS_NAME>(),
-			get_method_id<java::security::SecurityPermission::J2CPP_CLASS_NAME, java::security::SecurityPermission::J2CPP_METHOD_NAME(0), java::security::SecurityPermission::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::security::BasicPermission>(get_jtype());
 }
 
-template <>
-local_ref< java::security::SecurityPermission > create< java::security::SecurityPermission>(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
+
+java::security::SecurityPermission::SecurityPermission(local_ref< java::lang::String > const &a0)
+: cpp_object<java::security::SecurityPermission>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::security::SecurityPermission::J2CPP_CLASS_NAME>(),
+		get_method_id<java::security::SecurityPermission::J2CPP_CLASS_NAME, java::security::SecurityPermission::J2CPP_METHOD_NAME(0), java::security::SecurityPermission::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< java::security::SecurityPermission >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::security::SecurityPermission::J2CPP_CLASS_NAME>(),
-			get_method_id<java::security::SecurityPermission::J2CPP_CLASS_NAME, java::security::SecurityPermission::J2CPP_METHOD_NAME(1), java::security::SecurityPermission::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
 }
+
+
+
+java::security::SecurityPermission::SecurityPermission(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
+: cpp_object<java::security::SecurityPermission>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::security::SecurityPermission::J2CPP_CLASS_NAME>(),
+		get_method_id<java::security::SecurityPermission::J2CPP_CLASS_NAME, java::security::SecurityPermission::J2CPP_METHOD_NAME(1), java::security::SecurityPermission::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
 
 
 J2CPP_DEFINE_CLASS(java::security::SecurityPermission,"java/security/SecurityPermission")

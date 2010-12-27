@@ -42,13 +42,17 @@ namespace android { namespace os {
 		J2CPP_DECLARE_METHOD(9)
 		J2CPP_DECLARE_METHOD(10)
 
-		RemoteCallbackList(jobject jobj)
+		explicit RemoteCallbackList(jobject jobj)
 		: cpp_object<RemoteCallbackList>(jobj)
 		{
 		}
 
-		cpp_boolean register(local_ref< android::os::IInterface > const&);
-		cpp_boolean register(local_ref< android::os::IInterface > const&, local_ref< java::lang::Object > const&);
+		operator local_ref<java::lang::Object>() const;
+
+
+		RemoteCallbackList();
+		cpp_boolean Register(local_ref< android::os::IInterface > const&);
+		cpp_boolean Register(local_ref< android::os::IInterface > const&, local_ref< java::lang::Object > const&);
 		cpp_boolean unregister(local_ref< android::os::IInterface > const&);
 		void kill();
 		void onCallbackDied(local_ref< android::os::IInterface > const&);
@@ -62,7 +66,6 @@ namespace android { namespace os {
 } //namespace os
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_OS_REMOTECALLBACKLIST_HPP_DECL
@@ -75,18 +78,25 @@ namespace android { namespace os {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::os::RemoteCallbackList > create< android::os::RemoteCallbackList>()
+
+android::os::RemoteCallbackList::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::os::RemoteCallbackList >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::os::RemoteCallbackList::J2CPP_CLASS_NAME>(),
-			get_method_id<android::os::RemoteCallbackList::J2CPP_CLASS_NAME, android::os::RemoteCallbackList::J2CPP_METHOD_NAME(0), android::os::RemoteCallbackList::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
 
-cpp_boolean android::os::RemoteCallbackList::register(local_ref< android::os::IInterface > const &a0)
+
+android::os::RemoteCallbackList::RemoteCallbackList()
+: cpp_object<android::os::RemoteCallbackList>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::os::RemoteCallbackList::J2CPP_CLASS_NAME>(),
+		get_method_id<android::os::RemoteCallbackList::J2CPP_CLASS_NAME, android::os::RemoteCallbackList::J2CPP_METHOD_NAME(0), android::os::RemoteCallbackList::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
+
+cpp_boolean android::os::RemoteCallbackList::Register(local_ref< android::os::IInterface > const &a0)
 {
 	return cpp_boolean(
 		environment::get().get_jenv()->CallBooleanMethod(
@@ -97,7 +107,7 @@ cpp_boolean android::os::RemoteCallbackList::register(local_ref< android::os::II
 	);
 }
 
-cpp_boolean android::os::RemoteCallbackList::register(local_ref< android::os::IInterface > const &a0, local_ref< java::lang::Object > const &a1)
+cpp_boolean android::os::RemoteCallbackList::Register(local_ref< android::os::IInterface > const &a0, local_ref< java::lang::Object > const &a1)
 {
 	return cpp_boolean(
 		environment::get().get_jenv()->CallBooleanMethod(

@@ -32,10 +32,13 @@ namespace org { namespace apache { namespace http { namespace client {
 
 		J2CPP_DECLARE_METHOD(0)
 
-		UserTokenHandler(jobject jobj)
+		explicit UserTokenHandler(jobject jobj)
 		: cpp_object<UserTokenHandler>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		local_ref< java::lang::Object > getUserToken(local_ref< org::apache::http::protocol::HttpContext > const&);
 	}; //class UserTokenHandler
@@ -44,7 +47,6 @@ namespace org { namespace apache { namespace http { namespace client {
 } //namespace http
 } //namespace apache
 } //namespace org
-
 
 } //namespace j2cpp
 
@@ -57,6 +59,12 @@ namespace org { namespace apache { namespace http { namespace client {
 
 namespace j2cpp {
 
+
+
+org::apache::http::client::UserTokenHandler::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 local_ref< java::lang::Object > org::apache::http::client::UserTokenHandler::getUserToken(local_ref< org::apache::http::protocol::HttpContext > const &a0)
 {

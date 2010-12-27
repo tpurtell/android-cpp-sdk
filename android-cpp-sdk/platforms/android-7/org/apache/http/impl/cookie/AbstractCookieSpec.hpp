@@ -10,12 +10,16 @@
 #define J2CPP_ORG_APACHE_HTTP_IMPL_COOKIE_ABSTRACTCOOKIESPEC_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace cookie { class CookieAttributeHandler; } } } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { namespace cookie { class CookieSpec; } } } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <org/apache/http/cookie/CookieAttributeHandler.hpp>
+#include <org/apache/http/cookie/CookieSpec.hpp>
 
 
 namespace j2cpp {
@@ -36,11 +40,16 @@ namespace org { namespace apache { namespace http { namespace impl { namespace c
 		J2CPP_DECLARE_METHOD(3)
 		J2CPP_DECLARE_METHOD(4)
 
-		AbstractCookieSpec(jobject jobj)
+		explicit AbstractCookieSpec(jobject jobj)
 		: cpp_object<AbstractCookieSpec>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<org::apache::http::cookie::CookieSpec>() const;
+
+
+		AbstractCookieSpec();
 		void registerAttribHandler(local_ref< java::lang::String > const&, local_ref< org::apache::http::cookie::CookieAttributeHandler > const&);
 	}; //class AbstractCookieSpec
 
@@ -49,7 +58,6 @@ namespace org { namespace apache { namespace http { namespace impl { namespace c
 } //namespace http
 } //namespace apache
 } //namespace org
-
 
 } //namespace j2cpp
 
@@ -63,16 +71,28 @@ namespace org { namespace apache { namespace http { namespace impl { namespace c
 namespace j2cpp {
 
 
-template <>
-local_ref< org::apache::http::impl::cookie::AbstractCookieSpec > create< org::apache::http::impl::cookie::AbstractCookieSpec>()
+
+org::apache::http::impl::cookie::AbstractCookieSpec::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< org::apache::http::impl::cookie::AbstractCookieSpec >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::apache::http::impl::cookie::AbstractCookieSpec::J2CPP_CLASS_NAME>(),
-			get_method_id<org::apache::http::impl::cookie::AbstractCookieSpec::J2CPP_CLASS_NAME, org::apache::http::impl::cookie::AbstractCookieSpec::J2CPP_METHOD_NAME(0), org::apache::http::impl::cookie::AbstractCookieSpec::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+org::apache::http::impl::cookie::AbstractCookieSpec::operator local_ref<org::apache::http::cookie::CookieSpec>() const
+{
+	return local_ref<org::apache::http::cookie::CookieSpec>(get_jtype());
+}
+
+
+org::apache::http::impl::cookie::AbstractCookieSpec::AbstractCookieSpec()
+: cpp_object<org::apache::http::impl::cookie::AbstractCookieSpec>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::apache::http::impl::cookie::AbstractCookieSpec::J2CPP_CLASS_NAME>(),
+		get_method_id<org::apache::http::impl::cookie::AbstractCookieSpec::J2CPP_CLASS_NAME, org::apache::http::impl::cookie::AbstractCookieSpec::J2CPP_METHOD_NAME(0), org::apache::http::impl::cookie::AbstractCookieSpec::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 void org::apache::http::impl::cookie::AbstractCookieSpec::registerAttribHandler(local_ref< java::lang::String > const &a0, local_ref< org::apache::http::cookie::CookieAttributeHandler > const &a1)
 {

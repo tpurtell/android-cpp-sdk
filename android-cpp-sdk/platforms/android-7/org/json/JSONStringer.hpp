@@ -42,11 +42,15 @@ namespace org { namespace json {
 		J2CPP_DECLARE_METHOD(9)
 		J2CPP_DECLARE_METHOD(10)
 
-		JSONStringer(jobject jobj)
+		explicit JSONStringer(jobject jobj)
 		: cpp_object<JSONStringer>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		JSONStringer();
 		local_ref< org::json::JSONStringer > array();
 		local_ref< org::json::JSONStringer > endArray();
 		local_ref< org::json::JSONStringer > endObject();
@@ -62,7 +66,6 @@ namespace org { namespace json {
 } //namespace json
 } //namespace org
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ORG_JSON_JSONSTRINGER_HPP_DECL
@@ -75,16 +78,23 @@ namespace org { namespace json {
 namespace j2cpp {
 
 
-template <>
-local_ref< org::json::JSONStringer > create< org::json::JSONStringer>()
+
+org::json::JSONStringer::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< org::json::JSONStringer >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::json::JSONStringer::J2CPP_CLASS_NAME>(),
-			get_method_id<org::json::JSONStringer::J2CPP_CLASS_NAME, org::json::JSONStringer::J2CPP_METHOD_NAME(0), org::json::JSONStringer::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+org::json::JSONStringer::JSONStringer()
+: cpp_object<org::json::JSONStringer>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::json::JSONStringer::J2CPP_CLASS_NAME>(),
+		get_method_id<org::json::JSONStringer::J2CPP_CLASS_NAME, org::json::JSONStringer::J2CPP_METHOD_NAME(0), org::json::JSONStringer::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 local_ref< org::json::JSONStringer > org::json::JSONStringer::array()
 {

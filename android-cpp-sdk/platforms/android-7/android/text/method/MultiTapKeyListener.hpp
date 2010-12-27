@@ -14,12 +14,16 @@ namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace android { namespace view { class View; } } }
 namespace j2cpp { namespace android { namespace view { class KeyEvent; } } }
 namespace j2cpp { namespace android { namespace text { class Spannable; } } }
+namespace j2cpp { namespace android { namespace text { namespace method { class BaseKeyListener; } } } }
 namespace j2cpp { namespace android { namespace text { namespace method { namespace TextKeyListener_ { class Capitalize; } } } } }
 namespace j2cpp { namespace android { namespace text { class Editable; } } }
+namespace j2cpp { namespace android { namespace text { class SpanWatcher; } } }
 
 
 #include <android/text/Editable.hpp>
+#include <android/text/SpanWatcher.hpp>
 #include <android/text/Spannable.hpp>
+#include <android/text/method/BaseKeyListener.hpp>
 #include <android/text/method/TextKeyListener.hpp>
 #include <android/view/KeyEvent.hpp>
 #include <android/view/View.hpp>
@@ -46,11 +50,16 @@ namespace android { namespace text { namespace method {
 		J2CPP_DECLARE_METHOD(5)
 		J2CPP_DECLARE_METHOD(6)
 
-		MultiTapKeyListener(jobject jobj)
+		explicit MultiTapKeyListener(jobject jobj)
 		: cpp_object<MultiTapKeyListener>(jobj)
 		{
 		}
 
+		operator local_ref<android::text::method::BaseKeyListener>() const;
+		operator local_ref<android::text::SpanWatcher>() const;
+
+
+		MultiTapKeyListener(local_ref< android::text::method::TextKeyListener_::Capitalize > const&, cpp_boolean const&);
 		static local_ref< android::text::method::MultiTapKeyListener > getInstance(cpp_boolean const&, local_ref< android::text::method::TextKeyListener_::Capitalize > const&);
 		cpp_int getInputType();
 		cpp_boolean onKeyDown(local_ref< android::view::View > const&, local_ref< android::text::Editable > const&, cpp_int const&, local_ref< android::view::KeyEvent > const&);
@@ -62,7 +71,6 @@ namespace android { namespace text { namespace method {
 } //namespace method
 } //namespace text
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -76,17 +84,29 @@ namespace android { namespace text { namespace method {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::text::method::MultiTapKeyListener > create< android::text::method::MultiTapKeyListener>(local_ref< android::text::method::TextKeyListener_::Capitalize > const &a0, cpp_boolean const &a1)
+
+android::text::method::MultiTapKeyListener::operator local_ref<android::text::method::BaseKeyListener>() const
 {
-	return local_ref< android::text::method::MultiTapKeyListener >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::text::method::MultiTapKeyListener::J2CPP_CLASS_NAME>(),
-			get_method_id<android::text::method::MultiTapKeyListener::J2CPP_CLASS_NAME, android::text::method::MultiTapKeyListener::J2CPP_METHOD_NAME(0), android::text::method::MultiTapKeyListener::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<android::text::method::BaseKeyListener>(get_jtype());
 }
+
+android::text::method::MultiTapKeyListener::operator local_ref<android::text::SpanWatcher>() const
+{
+	return local_ref<android::text::SpanWatcher>(get_jtype());
+}
+
+
+android::text::method::MultiTapKeyListener::MultiTapKeyListener(local_ref< android::text::method::TextKeyListener_::Capitalize > const &a0, cpp_boolean const &a1)
+: cpp_object<android::text::method::MultiTapKeyListener>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::text::method::MultiTapKeyListener::J2CPP_CLASS_NAME>(),
+		get_method_id<android::text::method::MultiTapKeyListener::J2CPP_CLASS_NAME, android::text::method::MultiTapKeyListener::J2CPP_METHOD_NAME(0), android::text::method::MultiTapKeyListener::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
 
 local_ref< android::text::method::MultiTapKeyListener > android::text::method::MultiTapKeyListener::getInstance(cpp_boolean const &a0, local_ref< android::text::method::TextKeyListener_::Capitalize > const &a1)
 {

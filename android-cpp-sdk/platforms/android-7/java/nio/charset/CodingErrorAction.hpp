@@ -10,9 +10,11 @@
 #define J2CPP_JAVA_NIO_CHARSET_CODINGERRORACTION_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -35,10 +37,13 @@ namespace java { namespace nio { namespace charset {
 		J2CPP_DECLARE_FIELD(1)
 		J2CPP_DECLARE_FIELD(2)
 
-		CodingErrorAction(jobject jobj)
+		explicit CodingErrorAction(jobject jobj)
 		: cpp_object<CodingErrorAction>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		local_ref< java::lang::String > toString();
 
@@ -50,7 +55,6 @@ namespace java { namespace nio { namespace charset {
 } //namespace charset
 } //namespace nio
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -64,16 +68,12 @@ namespace java { namespace nio { namespace charset {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::nio::charset::CodingErrorAction > create< java::nio::charset::CodingErrorAction>()
+
+java::nio::charset::CodingErrorAction::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::nio::charset::CodingErrorAction >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::nio::charset::CodingErrorAction::J2CPP_CLASS_NAME>(),
-			get_method_id<java::nio::charset::CodingErrorAction::J2CPP_CLASS_NAME, java::nio::charset::CodingErrorAction::J2CPP_METHOD_NAME(0), java::nio::charset::CodingErrorAction::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
 
 local_ref< java::lang::String > java::nio::charset::CodingErrorAction::toString()
 {
@@ -84,6 +84,7 @@ local_ref< java::lang::String > java::nio::charset::CodingErrorAction::toString(
 		)
 	);
 }
+
 
 
 static_field<

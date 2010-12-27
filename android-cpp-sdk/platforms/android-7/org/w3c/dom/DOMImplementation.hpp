@@ -10,11 +10,13 @@
 #define J2CPP_ORG_W3C_DOM_DOMIMPLEMENTATION_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace org { namespace w3c { namespace dom { class Document; } } } }
 namespace j2cpp { namespace org { namespace w3c { namespace dom { class DocumentType; } } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <org/w3c/dom/Document.hpp>
 #include <org/w3c/dom/DocumentType.hpp>
@@ -36,10 +38,13 @@ namespace org { namespace w3c { namespace dom {
 		J2CPP_DECLARE_METHOD(1)
 		J2CPP_DECLARE_METHOD(2)
 
-		DOMImplementation(jobject jobj)
+		explicit DOMImplementation(jobject jobj)
 		: cpp_object<DOMImplementation>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		cpp_boolean hasFeature(local_ref< java::lang::String > const&, local_ref< java::lang::String > const&);
 		local_ref< org::w3c::dom::DocumentType > createDocumentType(local_ref< java::lang::String > const&, local_ref< java::lang::String > const&, local_ref< java::lang::String > const&);
@@ -49,7 +54,6 @@ namespace org { namespace w3c { namespace dom {
 } //namespace dom
 } //namespace w3c
 } //namespace org
-
 
 } //namespace j2cpp
 
@@ -62,6 +66,12 @@ namespace org { namespace w3c { namespace dom {
 
 namespace j2cpp {
 
+
+
+org::w3c::dom::DOMImplementation::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 cpp_boolean org::w3c::dom::DOMImplementation::hasFeature(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
 {

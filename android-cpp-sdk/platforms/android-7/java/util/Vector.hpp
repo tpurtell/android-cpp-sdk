@@ -10,18 +10,26 @@
 #define J2CPP_JAVA_UTIL_VECTOR_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace lang { class Cloneable; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace util { class AbstractList; } } }
 namespace j2cpp { namespace java { namespace util { class Enumeration; } } }
+namespace j2cpp { namespace java { namespace util { class RandomAccess; } } }
 namespace j2cpp { namespace java { namespace util { class Collection; } } }
 namespace j2cpp { namespace java { namespace util { class List; } } }
 
 
+#include <java/io/Serializable.hpp>
+#include <java/lang/Cloneable.hpp>
 #include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
+#include <java/util/AbstractList.hpp>
 #include <java/util/Collection.hpp>
 #include <java/util/Enumeration.hpp>
 #include <java/util/List.hpp>
+#include <java/util/RandomAccess.hpp>
 
 
 namespace j2cpp {
@@ -86,11 +94,22 @@ namespace java { namespace util {
 		J2CPP_DECLARE_FIELD(1)
 		J2CPP_DECLARE_FIELD(2)
 
-		Vector(jobject jobj)
+		explicit Vector(jobject jobj)
 		: cpp_object<Vector>(jobj)
 		{
 		}
 
+		operator local_ref<java::util::AbstractList>() const;
+		operator local_ref<java::util::List>() const;
+		operator local_ref<java::util::RandomAccess>() const;
+		operator local_ref<java::lang::Cloneable>() const;
+		operator local_ref<java::io::Serializable>() const;
+
+
+		Vector();
+		Vector(cpp_int const&);
+		Vector(cpp_int const&, cpp_int const&);
+		Vector(local_ref< java::util::Collection > const&);
 		void add(cpp_int const&, local_ref< java::lang::Object > const&);
 		cpp_boolean add(local_ref< java::lang::Object > const&);
 		cpp_boolean addAll(cpp_int const&, local_ref< java::util::Collection > const&);
@@ -138,7 +157,6 @@ namespace java { namespace util {
 } //namespace util
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_UTIL_VECTOR_HPP_DECL
@@ -151,52 +169,82 @@ namespace java { namespace util {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::util::Vector > create< java::util::Vector>()
+
+java::util::Vector::operator local_ref<java::util::AbstractList>() const
 {
-	return local_ref< java::util::Vector >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::Vector::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::Vector::J2CPP_CLASS_NAME, java::util::Vector::J2CPP_METHOD_NAME(0), java::util::Vector::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::util::AbstractList>(get_jtype());
 }
 
-template <>
-local_ref< java::util::Vector > create< java::util::Vector>(cpp_int const &a0)
+java::util::Vector::operator local_ref<java::util::List>() const
 {
-	return local_ref< java::util::Vector >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::Vector::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::Vector::J2CPP_CLASS_NAME, java::util::Vector::J2CPP_METHOD_NAME(1), java::util::Vector::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::util::List>(get_jtype());
 }
 
-template <>
-local_ref< java::util::Vector > create< java::util::Vector>(cpp_int const &a0, cpp_int const &a1)
+java::util::Vector::operator local_ref<java::util::RandomAccess>() const
 {
-	return local_ref< java::util::Vector >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::Vector::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::Vector::J2CPP_CLASS_NAME, java::util::Vector::J2CPP_METHOD_NAME(2), java::util::Vector::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<java::util::RandomAccess>(get_jtype());
 }
 
-template <>
-local_ref< java::util::Vector > create< java::util::Vector>(local_ref< java::util::Collection > const &a0)
+java::util::Vector::operator local_ref<java::lang::Cloneable>() const
 {
-	return local_ref< java::util::Vector >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::Vector::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::Vector::J2CPP_CLASS_NAME, java::util::Vector::J2CPP_METHOD_NAME(3), java::util::Vector::J2CPP_METHOD_SIGNATURE(3), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Cloneable>(get_jtype());
 }
+
+java::util::Vector::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jtype());
+}
+
+
+java::util::Vector::Vector()
+: cpp_object<java::util::Vector>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::util::Vector::J2CPP_CLASS_NAME>(),
+		get_method_id<java::util::Vector::J2CPP_CLASS_NAME, java::util::Vector::J2CPP_METHOD_NAME(0), java::util::Vector::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
+
+
+java::util::Vector::Vector(cpp_int const &a0)
+: cpp_object<java::util::Vector>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::util::Vector::J2CPP_CLASS_NAME>(),
+		get_method_id<java::util::Vector::J2CPP_CLASS_NAME, java::util::Vector::J2CPP_METHOD_NAME(1), java::util::Vector::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
+
+
+java::util::Vector::Vector(cpp_int const &a0, cpp_int const &a1)
+: cpp_object<java::util::Vector>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::util::Vector::J2CPP_CLASS_NAME>(),
+		get_method_id<java::util::Vector::J2CPP_CLASS_NAME, java::util::Vector::J2CPP_METHOD_NAME(2), java::util::Vector::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
+
+
+java::util::Vector::Vector(local_ref< java::util::Collection > const &a0)
+: cpp_object<java::util::Vector>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::util::Vector::J2CPP_CLASS_NAME>(),
+		get_method_id<java::util::Vector::J2CPP_CLASS_NAME, java::util::Vector::J2CPP_METHOD_NAME(3), java::util::Vector::J2CPP_METHOD_SIGNATURE(3), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 void java::util::Vector::add(cpp_int const &a0, local_ref< java::lang::Object > const &a1)
 {

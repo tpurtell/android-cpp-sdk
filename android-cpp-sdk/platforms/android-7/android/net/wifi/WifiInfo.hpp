@@ -10,15 +10,19 @@
 #define J2CPP_ANDROID_NET_WIFI_WIFIINFO_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace android { namespace net { namespace wifi { class SupplicantState; } } } }
 namespace j2cpp { namespace android { namespace net { namespace NetworkInfo_ { class DetailedState; } } } }
 namespace j2cpp { namespace android { namespace os { class Parcel; } } }
+namespace j2cpp { namespace android { namespace os { class Parcelable; } } }
 
 
 #include <android/net/NetworkInfo.hpp>
 #include <android/net/wifi/SupplicantState.hpp>
 #include <android/os/Parcel.hpp>
+#include <android/os/Parcelable.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -50,10 +54,14 @@ namespace android { namespace net { namespace wifi {
 		J2CPP_DECLARE_METHOD(13)
 		J2CPP_DECLARE_FIELD(0)
 
-		WifiInfo(jobject jobj)
+		explicit WifiInfo(jobject jobj)
 		: cpp_object<WifiInfo>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<android::os::Parcelable>() const;
+
 
 		local_ref< java::lang::String > getSSID();
 		local_ref< java::lang::String > getBSSID();
@@ -76,7 +84,6 @@ namespace android { namespace net { namespace wifi {
 } //namespace net
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_NET_WIFI_WIFIINFO_HPP_DECL
@@ -89,16 +96,17 @@ namespace android { namespace net { namespace wifi {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::net::wifi::WifiInfo > create< android::net::wifi::WifiInfo>()
+
+android::net::wifi::WifiInfo::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::net::wifi::WifiInfo >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::net::wifi::WifiInfo::J2CPP_CLASS_NAME>(),
-			get_method_id<android::net::wifi::WifiInfo::J2CPP_CLASS_NAME, android::net::wifi::WifiInfo::J2CPP_METHOD_NAME(0), android::net::wifi::WifiInfo::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+android::net::wifi::WifiInfo::operator local_ref<android::os::Parcelable>() const
+{
+	return local_ref<android::os::Parcelable>(get_jtype());
+}
+
 
 local_ref< java::lang::String > android::net::wifi::WifiInfo::getSSID()
 {

@@ -10,11 +10,15 @@
 #define J2CPP_ANDROID_GRAPHICS_INTERPOLATOR_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace lang { class Enum; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace android { namespace graphics { namespace Interpolator_ { class Result; } } } }
 
 
 #include <android/graphics/Interpolator.hpp>
+#include <java/lang/Enum.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -42,10 +46,13 @@ namespace android { namespace graphics {
 			J2CPP_DECLARE_FIELD(2)
 			J2CPP_DECLARE_FIELD(3)
 
-			Result(jobject jobj)
+			explicit Result(jobject jobj)
 			: cpp_object<Result>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Enum>() const;
+
 
 			static local_ref< cpp_object_array<android::graphics::Interpolator_::Result, 1> > values();
 			static local_ref< android::graphics::Interpolator_::Result > valueOf(local_ref< java::lang::String > const&);
@@ -79,11 +86,16 @@ namespace android { namespace graphics {
 
 		typedef Interpolator_::Result Result;
 
-		Interpolator(jobject jobj)
+		explicit Interpolator(jobject jobj)
 		: cpp_object<Interpolator>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		Interpolator(cpp_int const&);
+		Interpolator(cpp_int const&, cpp_int const&);
 		void reset(cpp_int const&);
 		void reset(cpp_int const&, cpp_int const&);
 		cpp_int getKeyFrameCount();
@@ -98,7 +110,6 @@ namespace android { namespace graphics {
 } //namespace graphics
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_GRAPHICS_INTERPOLATOR_HPP_DECL
@@ -111,6 +122,12 @@ namespace android { namespace graphics {
 namespace j2cpp {
 
 
+
+
+android::graphics::Interpolator_::Result::operator local_ref<java::lang::Enum>() const
+{
+	return local_ref<java::lang::Enum>(get_jtype());
+}
 
 local_ref< cpp_object_array<android::graphics::Interpolator_::Result, 1> > android::graphics::Interpolator_::Result::values()
 {
@@ -133,17 +150,7 @@ local_ref< android::graphics::Interpolator_::Result > android::graphics::Interpo
 	);
 }
 
-template <>
-local_ref< android::graphics::Interpolator_::Result > create< android::graphics::Interpolator_::Result>(local_ref< java::lang::String > const &a0, cpp_int const &a1)
-{
-	return local_ref< android::graphics::Interpolator_::Result >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::graphics::Interpolator_::Result::J2CPP_CLASS_NAME>(),
-			get_method_id<android::graphics::Interpolator_::Result::J2CPP_CLASS_NAME, android::graphics::Interpolator_::Result::J2CPP_METHOD_NAME(2), android::graphics::Interpolator_::Result::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
-}
+
 
 
 static_field<
@@ -179,29 +186,37 @@ J2CPP_DEFINE_FIELD(android::graphics::Interpolator_::Result,2,"NORMAL","Landroid
 J2CPP_DEFINE_FIELD(android::graphics::Interpolator_::Result,3,"$VALUES","[android.graphics.Interpolator.Result")
 
 
-template <>
-local_ref< android::graphics::Interpolator > create< android::graphics::Interpolator>(cpp_int const &a0)
+
+android::graphics::Interpolator::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::graphics::Interpolator >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::graphics::Interpolator::J2CPP_CLASS_NAME>(),
-			get_method_id<android::graphics::Interpolator::J2CPP_CLASS_NAME, android::graphics::Interpolator::J2CPP_METHOD_NAME(0), android::graphics::Interpolator::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
 
-template <>
-local_ref< android::graphics::Interpolator > create< android::graphics::Interpolator>(cpp_int const &a0, cpp_int const &a1)
+
+android::graphics::Interpolator::Interpolator(cpp_int const &a0)
+: cpp_object<android::graphics::Interpolator>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::graphics::Interpolator::J2CPP_CLASS_NAME>(),
+		get_method_id<android::graphics::Interpolator::J2CPP_CLASS_NAME, android::graphics::Interpolator::J2CPP_METHOD_NAME(0), android::graphics::Interpolator::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< android::graphics::Interpolator >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::graphics::Interpolator::J2CPP_CLASS_NAME>(),
-			get_method_id<android::graphics::Interpolator::J2CPP_CLASS_NAME, android::graphics::Interpolator::J2CPP_METHOD_NAME(1), android::graphics::Interpolator::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
 }
+
+
+
+android::graphics::Interpolator::Interpolator(cpp_int const &a0, cpp_int const &a1)
+: cpp_object<android::graphics::Interpolator>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::graphics::Interpolator::J2CPP_CLASS_NAME>(),
+		get_method_id<android::graphics::Interpolator::J2CPP_CLASS_NAME, android::graphics::Interpolator::J2CPP_METHOD_NAME(1), android::graphics::Interpolator::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
 
 void android::graphics::Interpolator::reset(cpp_int const &a0)
 {

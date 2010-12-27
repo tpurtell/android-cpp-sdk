@@ -10,12 +10,14 @@
 #define J2CPP_JAVA_SECURITY_TIMESTAMP_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace security { namespace cert { class CertPath; } } } }
 namespace j2cpp { namespace java { namespace util { class Date; } } }
 
 
+#include <java/io/Serializable.hpp>
 #include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/security/cert/CertPath.hpp>
@@ -41,11 +43,16 @@ namespace java { namespace security {
 		J2CPP_DECLARE_METHOD(4)
 		J2CPP_DECLARE_METHOD(5)
 
-		Timestamp(jobject jobj)
+		explicit Timestamp(jobject jobj)
 		: cpp_object<Timestamp>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::io::Serializable>() const;
+
+
+		Timestamp(local_ref< java::util::Date > const&, local_ref< java::security::cert::CertPath > const&);
 		cpp_boolean equals(local_ref< java::lang::Object > const&);
 		local_ref< java::security::cert::CertPath > getSignerCertPath();
 		local_ref< java::util::Date > getTimestamp();
@@ -55,7 +62,6 @@ namespace java { namespace security {
 
 } //namespace security
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -69,17 +75,29 @@ namespace java { namespace security {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::security::Timestamp > create< java::security::Timestamp>(local_ref< java::util::Date > const &a0, local_ref< java::security::cert::CertPath > const &a1)
+
+java::security::Timestamp::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::security::Timestamp >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::security::Timestamp::J2CPP_CLASS_NAME>(),
-			get_method_id<java::security::Timestamp::J2CPP_CLASS_NAME, java::security::Timestamp::J2CPP_METHOD_NAME(0), java::security::Timestamp::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+java::security::Timestamp::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jtype());
+}
+
+
+java::security::Timestamp::Timestamp(local_ref< java::util::Date > const &a0, local_ref< java::security::cert::CertPath > const &a1)
+: cpp_object<java::security::Timestamp>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::security::Timestamp::J2CPP_CLASS_NAME>(),
+		get_method_id<java::security::Timestamp::J2CPP_CLASS_NAME, java::security::Timestamp::J2CPP_METHOD_NAME(0), java::security::Timestamp::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
 
 cpp_boolean java::security::Timestamp::equals(local_ref< java::lang::Object > const &a0)
 {

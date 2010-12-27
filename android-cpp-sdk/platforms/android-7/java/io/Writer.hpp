@@ -10,13 +10,19 @@
 #define J2CPP_JAVA_IO_WRITER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class Closeable; } } }
+namespace j2cpp { namespace java { namespace io { class Flushable; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class Appendable; } } }
 namespace j2cpp { namespace java { namespace lang { class CharSequence; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 
 
+#include <java/io/Closeable.hpp>
+#include <java/io/Flushable.hpp>
 #include <java/lang/Appendable.hpp>
 #include <java/lang/CharSequence.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -49,10 +55,16 @@ namespace java { namespace io {
 		J2CPP_DECLARE_METHOD(14)
 		J2CPP_DECLARE_FIELD(0)
 
-		Writer(jobject jobj)
+		explicit Writer(jobject jobj)
 		: cpp_object<Writer>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::lang::Appendable>() const;
+		operator local_ref<java::io::Closeable>() const;
+		operator local_ref<java::io::Flushable>() const;
+
 
 		void close();
 		void flush();
@@ -73,7 +85,6 @@ namespace java { namespace io {
 } //namespace io
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_IO_WRITER_HPP_DECL
@@ -86,28 +97,28 @@ namespace java { namespace io {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::io::Writer > create< java::io::Writer>()
+
+java::io::Writer::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::io::Writer >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::io::Writer::J2CPP_CLASS_NAME>(),
-			get_method_id<java::io::Writer::J2CPP_CLASS_NAME, java::io::Writer::J2CPP_METHOD_NAME(0), java::io::Writer::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
 
-template <>
-local_ref< java::io::Writer > create< java::io::Writer>(local_ref< java::lang::Object > const &a0)
+java::io::Writer::operator local_ref<java::lang::Appendable>() const
 {
-	return local_ref< java::io::Writer >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::io::Writer::J2CPP_CLASS_NAME>(),
-			get_method_id<java::io::Writer::J2CPP_CLASS_NAME, java::io::Writer::J2CPP_METHOD_NAME(1), java::io::Writer::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Appendable>(get_jtype());
 }
+
+java::io::Writer::operator local_ref<java::io::Closeable>() const
+{
+	return local_ref<java::io::Closeable>(get_jtype());
+}
+
+java::io::Writer::operator local_ref<java::io::Flushable>() const
+{
+	return local_ref<java::io::Flushable>(get_jtype());
+}
+
+
 
 void java::io::Writer::close()
 {

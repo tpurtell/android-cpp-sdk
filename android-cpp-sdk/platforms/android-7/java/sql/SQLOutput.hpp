@@ -13,6 +13,7 @@
 namespace j2cpp { namespace java { namespace net { class URL; } } }
 namespace j2cpp { namespace java { namespace io { class Reader; } } }
 namespace j2cpp { namespace java { namespace io { class InputStream; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace math { class BigDecimal; } } }
 namespace j2cpp { namespace java { namespace sql { class Ref; } } }
@@ -28,6 +29,7 @@ namespace j2cpp { namespace java { namespace sql { class Timestamp; } } }
 
 #include <java/io/InputStream.hpp>
 #include <java/io/Reader.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/math/BigDecimal.hpp>
 #include <java/net/URL.hpp>
@@ -78,10 +80,13 @@ namespace java { namespace sql {
 		J2CPP_DECLARE_METHOD(21)
 		J2CPP_DECLARE_METHOD(22)
 
-		SQLOutput(jobject jobj)
+		explicit SQLOutput(jobject jobj)
 		: cpp_object<SQLOutput>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		void writeString(local_ref< java::lang::String > const&);
 		void writeBoolean(cpp_boolean const&);
@@ -111,7 +116,6 @@ namespace java { namespace sql {
 } //namespace sql
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_SQL_SQLOUTPUT_HPP_DECL
@@ -123,6 +127,12 @@ namespace java { namespace sql {
 
 namespace j2cpp {
 
+
+
+java::sql::SQLOutput::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 void java::sql::SQLOutput::writeString(local_ref< java::lang::String > const &a0)
 {

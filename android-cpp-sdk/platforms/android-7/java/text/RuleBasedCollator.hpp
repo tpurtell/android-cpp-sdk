@@ -12,6 +12,7 @@
 
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace text { class Collator; } } }
 namespace j2cpp { namespace java { namespace text { class CollationKey; } } }
 namespace j2cpp { namespace java { namespace text { class CollationElementIterator; } } }
 namespace j2cpp { namespace java { namespace text { class CharacterIterator; } } }
@@ -22,6 +23,7 @@ namespace j2cpp { namespace java { namespace text { class CharacterIterator; } }
 #include <java/text/CharacterIterator.hpp>
 #include <java/text/CollationElementIterator.hpp>
 #include <java/text/CollationKey.hpp>
+#include <java/text/Collator.hpp>
 
 
 namespace j2cpp {
@@ -46,11 +48,15 @@ namespace java { namespace text {
 		J2CPP_DECLARE_METHOD(7)
 		J2CPP_DECLARE_METHOD(8)
 
-		RuleBasedCollator(jobject jobj)
+		explicit RuleBasedCollator(jobject jobj)
 		: cpp_object<RuleBasedCollator>(jobj)
 		{
 		}
 
+		operator local_ref<java::text::Collator>() const;
+
+
+		RuleBasedCollator(local_ref< java::lang::String > const&);
 		local_ref< java::text::CollationElementIterator > getCollationElementIterator(local_ref< java::text::CharacterIterator > const&);
 		local_ref< java::text::CollationElementIterator > getCollationElementIterator(local_ref< java::lang::String > const&);
 		local_ref< java::lang::String > getRules();
@@ -64,7 +70,6 @@ namespace java { namespace text {
 } //namespace text
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_TEXT_RULEBASEDCOLLATOR_HPP_DECL
@@ -77,17 +82,24 @@ namespace java { namespace text {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::text::RuleBasedCollator > create< java::text::RuleBasedCollator>(local_ref< java::lang::String > const &a0)
+
+java::text::RuleBasedCollator::operator local_ref<java::text::Collator>() const
 {
-	return local_ref< java::text::RuleBasedCollator >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::text::RuleBasedCollator::J2CPP_CLASS_NAME>(),
-			get_method_id<java::text::RuleBasedCollator::J2CPP_CLASS_NAME, java::text::RuleBasedCollator::J2CPP_METHOD_NAME(0), java::text::RuleBasedCollator::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::text::Collator>(get_jtype());
 }
+
+
+java::text::RuleBasedCollator::RuleBasedCollator(local_ref< java::lang::String > const &a0)
+: cpp_object<java::text::RuleBasedCollator>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::text::RuleBasedCollator::J2CPP_CLASS_NAME>(),
+		get_method_id<java::text::RuleBasedCollator::J2CPP_CLASS_NAME, java::text::RuleBasedCollator::J2CPP_METHOD_NAME(0), java::text::RuleBasedCollator::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 local_ref< java::text::CollationElementIterator > java::text::RuleBasedCollator::getCollationElementIterator(local_ref< java::text::CharacterIterator > const &a0)
 {

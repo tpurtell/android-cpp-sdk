@@ -12,10 +12,12 @@
 
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace util { class Enumeration; } } }
 
 
 #include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
+#include <java/util/Enumeration.hpp>
 
 
 namespace j2cpp {
@@ -40,11 +42,18 @@ namespace java { namespace util {
 		J2CPP_DECLARE_METHOD(7)
 		J2CPP_DECLARE_METHOD(8)
 
-		StringTokenizer(jobject jobj)
+		explicit StringTokenizer(jobject jobj)
 		: cpp_object<StringTokenizer>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::util::Enumeration>() const;
+
+
+		StringTokenizer(local_ref< java::lang::String > const&);
+		StringTokenizer(local_ref< java::lang::String > const&, local_ref< java::lang::String > const&);
+		StringTokenizer(local_ref< java::lang::String > const&, local_ref< java::lang::String > const&, cpp_boolean const&);
 		cpp_int countTokens();
 		cpp_boolean hasMoreElements();
 		cpp_boolean hasMoreTokens();
@@ -55,7 +64,6 @@ namespace java { namespace util {
 
 } //namespace util
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -69,41 +77,55 @@ namespace java { namespace util {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::util::StringTokenizer > create< java::util::StringTokenizer>(local_ref< java::lang::String > const &a0)
+
+java::util::StringTokenizer::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::util::StringTokenizer >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::StringTokenizer::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::StringTokenizer::J2CPP_CLASS_NAME, java::util::StringTokenizer::J2CPP_METHOD_NAME(0), java::util::StringTokenizer::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
 
-template <>
-local_ref< java::util::StringTokenizer > create< java::util::StringTokenizer>(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
+java::util::StringTokenizer::operator local_ref<java::util::Enumeration>() const
 {
-	return local_ref< java::util::StringTokenizer >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::StringTokenizer::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::StringTokenizer::J2CPP_CLASS_NAME, java::util::StringTokenizer::J2CPP_METHOD_NAME(1), java::util::StringTokenizer::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<java::util::Enumeration>(get_jtype());
 }
 
-template <>
-local_ref< java::util::StringTokenizer > create< java::util::StringTokenizer>(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1, cpp_boolean const &a2)
+
+java::util::StringTokenizer::StringTokenizer(local_ref< java::lang::String > const &a0)
+: cpp_object<java::util::StringTokenizer>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::util::StringTokenizer::J2CPP_CLASS_NAME>(),
+		get_method_id<java::util::StringTokenizer::J2CPP_CLASS_NAME, java::util::StringTokenizer::J2CPP_METHOD_NAME(0), java::util::StringTokenizer::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< java::util::StringTokenizer >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::StringTokenizer::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::StringTokenizer::J2CPP_CLASS_NAME, java::util::StringTokenizer::J2CPP_METHOD_NAME(2), java::util::StringTokenizer::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
-		)
-	);
 }
+
+
+
+java::util::StringTokenizer::StringTokenizer(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
+: cpp_object<java::util::StringTokenizer>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::util::StringTokenizer::J2CPP_CLASS_NAME>(),
+		get_method_id<java::util::StringTokenizer::J2CPP_CLASS_NAME, java::util::StringTokenizer::J2CPP_METHOD_NAME(1), java::util::StringTokenizer::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
+
+
+java::util::StringTokenizer::StringTokenizer(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1, cpp_boolean const &a2)
+: cpp_object<java::util::StringTokenizer>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::util::StringTokenizer::J2CPP_CLASS_NAME>(),
+		get_method_id<java::util::StringTokenizer::J2CPP_CLASS_NAME, java::util::StringTokenizer::J2CPP_METHOD_NAME(2), java::util::StringTokenizer::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
+	)
+)
+{
+}
+
 
 cpp_int java::util::StringTokenizer::countTokens()
 {

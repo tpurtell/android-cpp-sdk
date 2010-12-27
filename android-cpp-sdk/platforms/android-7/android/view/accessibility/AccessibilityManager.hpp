@@ -10,11 +10,13 @@
 #define J2CPP_ANDROID_VIEW_ACCESSIBILITY_ACCESSIBILITYMANAGER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace util { class List; } } }
 namespace j2cpp { namespace android { namespace view { namespace accessibility { class AccessibilityEvent; } } } }
 
 
 #include <android/view/accessibility/AccessibilityEvent.hpp>
+#include <java/lang/Object.hpp>
 #include <java/util/List.hpp>
 
 
@@ -36,10 +38,13 @@ namespace android { namespace view { namespace accessibility {
 		J2CPP_DECLARE_METHOD(3)
 		J2CPP_DECLARE_METHOD(4)
 
-		AccessibilityManager(jobject jobj)
+		explicit AccessibilityManager(jobject jobj)
 		: cpp_object<AccessibilityManager>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		cpp_boolean isEnabled();
 		void sendAccessibilityEvent(local_ref< android::view::accessibility::AccessibilityEvent > const&);
@@ -50,7 +55,6 @@ namespace android { namespace view { namespace accessibility {
 } //namespace accessibility
 } //namespace view
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -64,16 +68,12 @@ namespace android { namespace view { namespace accessibility {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::view::accessibility::AccessibilityManager > create< android::view::accessibility::AccessibilityManager>()
+
+android::view::accessibility::AccessibilityManager::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::view::accessibility::AccessibilityManager >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::view::accessibility::AccessibilityManager::J2CPP_CLASS_NAME>(),
-			get_method_id<android::view::accessibility::AccessibilityManager::J2CPP_CLASS_NAME, android::view::accessibility::AccessibilityManager::J2CPP_METHOD_NAME(0), android::view::accessibility::AccessibilityManager::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
 
 cpp_boolean android::view::accessibility::AccessibilityManager::isEnabled()
 {

@@ -12,10 +12,12 @@
 
 namespace j2cpp { namespace java { namespace net { class URI; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { namespace client { namespace methods { class HttpRequestBase; } } } } } }
 
 
 #include <java/lang/String.hpp>
 #include <java/net/URI.hpp>
+#include <org/apache/http/client/methods/HttpRequestBase.hpp>
 
 
 namespace j2cpp {
@@ -36,11 +38,17 @@ namespace org { namespace apache { namespace http { namespace client { namespace
 		J2CPP_DECLARE_METHOD(3)
 		J2CPP_DECLARE_FIELD(0)
 
-		HttpTrace(jobject jobj)
+		explicit HttpTrace(jobject jobj)
 		: cpp_object<HttpTrace>(jobj)
 		{
 		}
 
+		operator local_ref<org::apache::http::client::methods::HttpRequestBase>() const;
+
+
+		HttpTrace();
+		HttpTrace(local_ref< java::net::URI > const&);
+		HttpTrace(local_ref< java::lang::String > const&);
 		local_ref< java::lang::String > getMethod();
 
 		static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(0), J2CPP_FIELD_SIGNATURE(0), local_ref< java::lang::String > > METHOD_NAME;
@@ -51,7 +59,6 @@ namespace org { namespace apache { namespace http { namespace client { namespace
 } //namespace http
 } //namespace apache
 } //namespace org
-
 
 } //namespace j2cpp
 
@@ -65,40 +72,49 @@ namespace org { namespace apache { namespace http { namespace client { namespace
 namespace j2cpp {
 
 
-template <>
-local_ref< org::apache::http::client::methods::HttpTrace > create< org::apache::http::client::methods::HttpTrace>()
+
+org::apache::http::client::methods::HttpTrace::operator local_ref<org::apache::http::client::methods::HttpRequestBase>() const
 {
-	return local_ref< org::apache::http::client::methods::HttpTrace >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::apache::http::client::methods::HttpTrace::J2CPP_CLASS_NAME>(),
-			get_method_id<org::apache::http::client::methods::HttpTrace::J2CPP_CLASS_NAME, org::apache::http::client::methods::HttpTrace::J2CPP_METHOD_NAME(0), org::apache::http::client::methods::HttpTrace::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<org::apache::http::client::methods::HttpRequestBase>(get_jtype());
 }
 
-template <>
-local_ref< org::apache::http::client::methods::HttpTrace > create< org::apache::http::client::methods::HttpTrace>(local_ref< java::net::URI > const &a0)
+
+org::apache::http::client::methods::HttpTrace::HttpTrace()
+: cpp_object<org::apache::http::client::methods::HttpTrace>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::apache::http::client::methods::HttpTrace::J2CPP_CLASS_NAME>(),
+		get_method_id<org::apache::http::client::methods::HttpTrace::J2CPP_CLASS_NAME, org::apache::http::client::methods::HttpTrace::J2CPP_METHOD_NAME(0), org::apache::http::client::methods::HttpTrace::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
 {
-	return local_ref< org::apache::http::client::methods::HttpTrace >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::apache::http::client::methods::HttpTrace::J2CPP_CLASS_NAME>(),
-			get_method_id<org::apache::http::client::methods::HttpTrace::J2CPP_CLASS_NAME, org::apache::http::client::methods::HttpTrace::J2CPP_METHOD_NAME(1), org::apache::http::client::methods::HttpTrace::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< org::apache::http::client::methods::HttpTrace > create< org::apache::http::client::methods::HttpTrace>(local_ref< java::lang::String > const &a0)
+
+
+org::apache::http::client::methods::HttpTrace::HttpTrace(local_ref< java::net::URI > const &a0)
+: cpp_object<org::apache::http::client::methods::HttpTrace>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::apache::http::client::methods::HttpTrace::J2CPP_CLASS_NAME>(),
+		get_method_id<org::apache::http::client::methods::HttpTrace::J2CPP_CLASS_NAME, org::apache::http::client::methods::HttpTrace::J2CPP_METHOD_NAME(1), org::apache::http::client::methods::HttpTrace::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< org::apache::http::client::methods::HttpTrace >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::apache::http::client::methods::HttpTrace::J2CPP_CLASS_NAME>(),
-			get_method_id<org::apache::http::client::methods::HttpTrace::J2CPP_CLASS_NAME, org::apache::http::client::methods::HttpTrace::J2CPP_METHOD_NAME(2), org::apache::http::client::methods::HttpTrace::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype()
-		)
-	);
 }
+
+
+
+org::apache::http::client::methods::HttpTrace::HttpTrace(local_ref< java::lang::String > const &a0)
+: cpp_object<org::apache::http::client::methods::HttpTrace>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::apache::http::client::methods::HttpTrace::J2CPP_CLASS_NAME>(),
+		get_method_id<org::apache::http::client::methods::HttpTrace::J2CPP_CLASS_NAME, org::apache::http::client::methods::HttpTrace::J2CPP_METHOD_NAME(2), org::apache::http::client::methods::HttpTrace::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 local_ref< java::lang::String > org::apache::http::client::methods::HttpTrace::getMethod()
 {

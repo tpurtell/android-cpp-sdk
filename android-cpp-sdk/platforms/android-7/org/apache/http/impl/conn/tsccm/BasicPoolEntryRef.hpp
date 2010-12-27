@@ -10,12 +10,14 @@
 #define J2CPP_ORG_APACHE_HTTP_IMPL_CONN_TSCCM_BASICPOOLENTRYREF_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { namespace ref { class WeakReference; } } } }
 namespace j2cpp { namespace java { namespace lang { namespace ref { class ReferenceQueue; } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace conn { namespace routing { class HttpRoute; } } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace impl { namespace conn { namespace tsccm { class BasicPoolEntry; } } } } } } }
 
 
 #include <java/lang/ref/ReferenceQueue.hpp>
+#include <java/lang/ref/WeakReference.hpp>
 #include <org/apache/http/conn/routing/HttpRoute.hpp>
 #include <org/apache/http/impl/conn/tsccm/BasicPoolEntry.hpp>
 
@@ -35,11 +37,15 @@ namespace org { namespace apache { namespace http { namespace impl { namespace c
 		J2CPP_DECLARE_METHOD(0)
 		J2CPP_DECLARE_METHOD(1)
 
-		BasicPoolEntryRef(jobject jobj)
+		explicit BasicPoolEntryRef(jobject jobj)
 		: cpp_object<BasicPoolEntryRef>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::ref::WeakReference>() const;
+
+
+		BasicPoolEntryRef(local_ref< org::apache::http::impl::conn::tsccm::BasicPoolEntry > const&, local_ref< java::lang::ref::ReferenceQueue > const&);
 		local_ref< org::apache::http::conn::routing::HttpRoute > getRoute();
 	}; //class BasicPoolEntryRef
 
@@ -49,7 +55,6 @@ namespace org { namespace apache { namespace http { namespace impl { namespace c
 } //namespace http
 } //namespace apache
 } //namespace org
-
 
 } //namespace j2cpp
 
@@ -63,17 +68,24 @@ namespace org { namespace apache { namespace http { namespace impl { namespace c
 namespace j2cpp {
 
 
-template <>
-local_ref< org::apache::http::impl::conn::tsccm::BasicPoolEntryRef > create< org::apache::http::impl::conn::tsccm::BasicPoolEntryRef>(local_ref< org::apache::http::impl::conn::tsccm::BasicPoolEntry > const &a0, local_ref< java::lang::ref::ReferenceQueue > const &a1)
+
+org::apache::http::impl::conn::tsccm::BasicPoolEntryRef::operator local_ref<java::lang::ref::WeakReference>() const
 {
-	return local_ref< org::apache::http::impl::conn::tsccm::BasicPoolEntryRef >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::apache::http::impl::conn::tsccm::BasicPoolEntryRef::J2CPP_CLASS_NAME>(),
-			get_method_id<org::apache::http::impl::conn::tsccm::BasicPoolEntryRef::J2CPP_CLASS_NAME, org::apache::http::impl::conn::tsccm::BasicPoolEntryRef::J2CPP_METHOD_NAME(0), org::apache::http::impl::conn::tsccm::BasicPoolEntryRef::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<java::lang::ref::WeakReference>(get_jtype());
 }
+
+
+org::apache::http::impl::conn::tsccm::BasicPoolEntryRef::BasicPoolEntryRef(local_ref< org::apache::http::impl::conn::tsccm::BasicPoolEntry > const &a0, local_ref< java::lang::ref::ReferenceQueue > const &a1)
+: cpp_object<org::apache::http::impl::conn::tsccm::BasicPoolEntryRef>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::apache::http::impl::conn::tsccm::BasicPoolEntryRef::J2CPP_CLASS_NAME>(),
+		get_method_id<org::apache::http::impl::conn::tsccm::BasicPoolEntryRef::J2CPP_CLASS_NAME, org::apache::http::impl::conn::tsccm::BasicPoolEntryRef::J2CPP_METHOD_NAME(0), org::apache::http::impl::conn::tsccm::BasicPoolEntryRef::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
 
 local_ref< org::apache::http::conn::routing::HttpRoute > org::apache::http::impl::conn::tsccm::BasicPoolEntryRef::getRoute()
 {

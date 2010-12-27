@@ -10,6 +10,7 @@
 #define J2CPP_ANDROID_CONTENT_INTENTFILTER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace util { class Set; } } }
 namespace j2cpp { namespace java { namespace util { class Iterator; } } }
@@ -19,8 +20,10 @@ namespace j2cpp { namespace android { namespace net { class Uri; } } }
 namespace j2cpp { namespace android { namespace content { class ContentResolver; } } }
 namespace j2cpp { namespace android { namespace content { class Intent; } } }
 namespace j2cpp { namespace android { namespace content { namespace IntentFilter_ { class AuthorityEntry; } } } }
+namespace j2cpp { namespace android { namespace util { class AndroidException; } } }
 namespace j2cpp { namespace android { namespace util { class Printer; } } }
 namespace j2cpp { namespace android { namespace os { class Parcel; } } }
+namespace j2cpp { namespace android { namespace os { class Parcelable; } } }
 namespace j2cpp { namespace android { namespace os { namespace Parcelable_ { class Creator; } } } }
 namespace j2cpp { namespace android { namespace os { class PatternMatcher; } } }
 
@@ -32,7 +35,9 @@ namespace j2cpp { namespace android { namespace os { class PatternMatcher; } } }
 #include <android/os/Parcel.hpp>
 #include <android/os/Parcelable.hpp>
 #include <android/os/PatternMatcher.hpp>
+#include <android/util/AndroidException.hpp>
 #include <android/util/Printer.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/util/Iterator.hpp>
 #include <java/util/Set.hpp>
@@ -60,11 +65,15 @@ namespace android { namespace content {
 			J2CPP_DECLARE_METHOD(2)
 			J2CPP_DECLARE_METHOD(3)
 
-			AuthorityEntry(jobject jobj)
+			explicit AuthorityEntry(jobject jobj)
 			: cpp_object<AuthorityEntry>(jobj)
 			{
 			}
 
+			operator local_ref<java::lang::Object>() const;
+
+
+			AuthorityEntry(local_ref< java::lang::String > const&, local_ref< java::lang::String > const&);
 			local_ref< java::lang::String > getHost();
 			cpp_int getPort();
 			cpp_int match(local_ref< android::net::Uri > const&);
@@ -81,11 +90,16 @@ namespace android { namespace content {
 			J2CPP_DECLARE_METHOD(0)
 			J2CPP_DECLARE_METHOD(1)
 
-			MalformedMimeTypeException(jobject jobj)
+			explicit MalformedMimeTypeException(jobject jobj)
 			: cpp_object<MalformedMimeTypeException>(jobj)
 			{
 			}
 
+			operator local_ref<android::util::AndroidException>() const;
+
+
+			MalformedMimeTypeException();
+			MalformedMimeTypeException(local_ref< java::lang::String > const&);
 		}; //class MalformedMimeTypeException
 
 	} //namespace IntentFilter_
@@ -166,11 +180,19 @@ namespace android { namespace content {
 		typedef IntentFilter_::AuthorityEntry AuthorityEntry;
 		typedef IntentFilter_::MalformedMimeTypeException MalformedMimeTypeException;
 
-		IntentFilter(jobject jobj)
+		explicit IntentFilter(jobject jobj)
 		: cpp_object<IntentFilter>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<android::os::Parcelable>() const;
+
+
+		IntentFilter();
+		IntentFilter(local_ref< java::lang::String > const&);
+		IntentFilter(local_ref< java::lang::String > const&, local_ref< java::lang::String > const&);
+		IntentFilter(local_ref< android::content::IntentFilter > const&);
 		static local_ref< android::content::IntentFilter > create(local_ref< java::lang::String > const&, local_ref< java::lang::String > const&);
 		void setPriority(cpp_int const&);
 		cpp_int getPriority();
@@ -237,7 +259,6 @@ namespace android { namespace content {
 } //namespace content
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_CONTENT_INTENTFILTER_HPP_DECL
@@ -251,17 +272,24 @@ namespace j2cpp {
 
 
 
-template <>
-local_ref< android::content::IntentFilter_::AuthorityEntry > create< android::content::IntentFilter_::AuthorityEntry>(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
+
+android::content::IntentFilter_::AuthorityEntry::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::content::IntentFilter_::AuthorityEntry >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::content::IntentFilter_::AuthorityEntry::J2CPP_CLASS_NAME>(),
-			get_method_id<android::content::IntentFilter_::AuthorityEntry::J2CPP_CLASS_NAME, android::content::IntentFilter_::AuthorityEntry::J2CPP_METHOD_NAME(0), android::content::IntentFilter_::AuthorityEntry::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::content::IntentFilter_::AuthorityEntry::AuthorityEntry(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
+: cpp_object<android::content::IntentFilter_::AuthorityEntry>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::content::IntentFilter_::AuthorityEntry::J2CPP_CLASS_NAME>(),
+		get_method_id<android::content::IntentFilter_::AuthorityEntry::J2CPP_CLASS_NAME, android::content::IntentFilter_::AuthorityEntry::J2CPP_METHOD_NAME(0), android::content::IntentFilter_::AuthorityEntry::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
 
 local_ref< java::lang::String > android::content::IntentFilter_::AuthorityEntry::getHost()
 {
@@ -301,28 +329,36 @@ J2CPP_DEFINE_METHOD(android::content::IntentFilter_::AuthorityEntry,1,"getHost",
 J2CPP_DEFINE_METHOD(android::content::IntentFilter_::AuthorityEntry,2,"getPort","()I")
 J2CPP_DEFINE_METHOD(android::content::IntentFilter_::AuthorityEntry,3,"match","(Landroid/net/Uri;)I")
 
-template <>
-local_ref< android::content::IntentFilter_::MalformedMimeTypeException > create< android::content::IntentFilter_::MalformedMimeTypeException>()
+
+android::content::IntentFilter_::MalformedMimeTypeException::operator local_ref<android::util::AndroidException>() const
 {
-	return local_ref< android::content::IntentFilter_::MalformedMimeTypeException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::content::IntentFilter_::MalformedMimeTypeException::J2CPP_CLASS_NAME>(),
-			get_method_id<android::content::IntentFilter_::MalformedMimeTypeException::J2CPP_CLASS_NAME, android::content::IntentFilter_::MalformedMimeTypeException::J2CPP_METHOD_NAME(0), android::content::IntentFilter_::MalformedMimeTypeException::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<android::util::AndroidException>(get_jtype());
 }
 
-template <>
-local_ref< android::content::IntentFilter_::MalformedMimeTypeException > create< android::content::IntentFilter_::MalformedMimeTypeException>(local_ref< java::lang::String > const &a0)
+
+android::content::IntentFilter_::MalformedMimeTypeException::MalformedMimeTypeException()
+: cpp_object<android::content::IntentFilter_::MalformedMimeTypeException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::content::IntentFilter_::MalformedMimeTypeException::J2CPP_CLASS_NAME>(),
+		get_method_id<android::content::IntentFilter_::MalformedMimeTypeException::J2CPP_CLASS_NAME, android::content::IntentFilter_::MalformedMimeTypeException::J2CPP_METHOD_NAME(0), android::content::IntentFilter_::MalformedMimeTypeException::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
 {
-	return local_ref< android::content::IntentFilter_::MalformedMimeTypeException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::content::IntentFilter_::MalformedMimeTypeException::J2CPP_CLASS_NAME>(),
-			get_method_id<android::content::IntentFilter_::MalformedMimeTypeException::J2CPP_CLASS_NAME, android::content::IntentFilter_::MalformedMimeTypeException::J2CPP_METHOD_NAME(1), android::content::IntentFilter_::MalformedMimeTypeException::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
 }
+
+
+
+android::content::IntentFilter_::MalformedMimeTypeException::MalformedMimeTypeException(local_ref< java::lang::String > const &a0)
+: cpp_object<android::content::IntentFilter_::MalformedMimeTypeException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::content::IntentFilter_::MalformedMimeTypeException::J2CPP_CLASS_NAME>(),
+		get_method_id<android::content::IntentFilter_::MalformedMimeTypeException::J2CPP_CLASS_NAME, android::content::IntentFilter_::MalformedMimeTypeException::J2CPP_METHOD_NAME(1), android::content::IntentFilter_::MalformedMimeTypeException::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 
 J2CPP_DEFINE_CLASS(android::content::IntentFilter_::MalformedMimeTypeException,"android/content/IntentFilter$MalformedMimeTypeException")
@@ -330,52 +366,67 @@ J2CPP_DEFINE_METHOD(android::content::IntentFilter_::MalformedMimeTypeException,
 J2CPP_DEFINE_METHOD(android::content::IntentFilter_::MalformedMimeTypeException,1,"<init>","(Ljava/lang/String;)V")
 
 
-template <>
-local_ref< android::content::IntentFilter > create< android::content::IntentFilter>()
+
+android::content::IntentFilter::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::content::IntentFilter >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::content::IntentFilter::J2CPP_CLASS_NAME>(),
-			get_method_id<android::content::IntentFilter::J2CPP_CLASS_NAME, android::content::IntentFilter::J2CPP_METHOD_NAME(0), android::content::IntentFilter::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
 
-template <>
-local_ref< android::content::IntentFilter > create< android::content::IntentFilter>(local_ref< java::lang::String > const &a0)
+android::content::IntentFilter::operator local_ref<android::os::Parcelable>() const
 {
-	return local_ref< android::content::IntentFilter >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::content::IntentFilter::J2CPP_CLASS_NAME>(),
-			get_method_id<android::content::IntentFilter::J2CPP_CLASS_NAME, android::content::IntentFilter::J2CPP_METHOD_NAME(1), android::content::IntentFilter::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<android::os::Parcelable>(get_jtype());
 }
 
-template <>
-local_ref< android::content::IntentFilter > create< android::content::IntentFilter>(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
+
+android::content::IntentFilter::IntentFilter()
+: cpp_object<android::content::IntentFilter>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::content::IntentFilter::J2CPP_CLASS_NAME>(),
+		get_method_id<android::content::IntentFilter::J2CPP_CLASS_NAME, android::content::IntentFilter::J2CPP_METHOD_NAME(0), android::content::IntentFilter::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
 {
-	return local_ref< android::content::IntentFilter >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::content::IntentFilter::J2CPP_CLASS_NAME>(),
-			get_method_id<android::content::IntentFilter::J2CPP_CLASS_NAME, android::content::IntentFilter::J2CPP_METHOD_NAME(2), android::content::IntentFilter::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< android::content::IntentFilter > create< android::content::IntentFilter>(local_ref< android::content::IntentFilter > const &a0)
+
+
+android::content::IntentFilter::IntentFilter(local_ref< java::lang::String > const &a0)
+: cpp_object<android::content::IntentFilter>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::content::IntentFilter::J2CPP_CLASS_NAME>(),
+		get_method_id<android::content::IntentFilter::J2CPP_CLASS_NAME, android::content::IntentFilter::J2CPP_METHOD_NAME(1), android::content::IntentFilter::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< android::content::IntentFilter >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::content::IntentFilter::J2CPP_CLASS_NAME>(),
-			get_method_id<android::content::IntentFilter::J2CPP_CLASS_NAME, android::content::IntentFilter::J2CPP_METHOD_NAME(3), android::content::IntentFilter::J2CPP_METHOD_SIGNATURE(3), false>(),
-			a0.get_jtype()
-		)
-	);
 }
+
+
+
+android::content::IntentFilter::IntentFilter(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
+: cpp_object<android::content::IntentFilter>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::content::IntentFilter::J2CPP_CLASS_NAME>(),
+		get_method_id<android::content::IntentFilter::J2CPP_CLASS_NAME, android::content::IntentFilter::J2CPP_METHOD_NAME(2), android::content::IntentFilter::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
+
+
+android::content::IntentFilter::IntentFilter(local_ref< android::content::IntentFilter > const &a0)
+: cpp_object<android::content::IntentFilter>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::content::IntentFilter::J2CPP_CLASS_NAME>(),
+		get_method_id<android::content::IntentFilter::J2CPP_CLASS_NAME, android::content::IntentFilter::J2CPP_METHOD_NAME(3), android::content::IntentFilter::J2CPP_METHOD_SIGNATURE(3), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 local_ref< android::content::IntentFilter > android::content::IntentFilter::create(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
 {
@@ -846,6 +897,7 @@ void android::content::IntentFilter::writeToParcel(local_ref< android::os::Parce
 		)
 	);
 }
+
 
 
 static_field<

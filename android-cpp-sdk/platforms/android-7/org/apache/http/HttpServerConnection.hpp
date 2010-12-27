@@ -10,11 +10,15 @@
 #define J2CPP_ORG_APACHE_HTTP_HTTPSERVERCONNECTION_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { class HttpRequest; } } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { class HttpConnection; } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { class HttpEntityEnclosingRequest; } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { class HttpResponse; } } } }
 
 
+#include <java/lang/Object.hpp>
+#include <org/apache/http/HttpConnection.hpp>
 #include <org/apache/http/HttpEntityEnclosingRequest.hpp>
 #include <org/apache/http/HttpRequest.hpp>
 #include <org/apache/http/HttpResponse.hpp>
@@ -38,10 +42,14 @@ namespace org { namespace apache { namespace http {
 		J2CPP_DECLARE_METHOD(3)
 		J2CPP_DECLARE_METHOD(4)
 
-		HttpServerConnection(jobject jobj)
+		explicit HttpServerConnection(jobject jobj)
 		: cpp_object<HttpServerConnection>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<org::apache::http::HttpConnection>() const;
+
 
 		local_ref< org::apache::http::HttpRequest > receiveRequestHeader();
 		void receiveRequestEntity(local_ref< org::apache::http::HttpEntityEnclosingRequest > const&);
@@ -54,7 +62,6 @@ namespace org { namespace apache { namespace http {
 } //namespace apache
 } //namespace org
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ORG_APACHE_HTTP_HTTPSERVERCONNECTION_HPP_DECL
@@ -66,6 +73,17 @@ namespace org { namespace apache { namespace http {
 
 namespace j2cpp {
 
+
+
+org::apache::http::HttpServerConnection::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
+
+org::apache::http::HttpServerConnection::operator local_ref<org::apache::http::HttpConnection>() const
+{
+	return local_ref<org::apache::http::HttpConnection>(get_jtype());
+}
 
 local_ref< org::apache::http::HttpRequest > org::apache::http::HttpServerConnection::receiveRequestHeader()
 {

@@ -11,9 +11,11 @@
 
 
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace org { namespace xml { namespace sax { class SAXException; } } } }
 
 
 #include <java/lang/String.hpp>
+#include <org/xml/sax/SAXException.hpp>
 
 
 namespace j2cpp {
@@ -31,17 +33,21 @@ namespace org { namespace xml { namespace sax {
 		J2CPP_DECLARE_METHOD(0)
 		J2CPP_DECLARE_METHOD(1)
 
-		SAXNotSupportedException(jobject jobj)
+		explicit SAXNotSupportedException(jobject jobj)
 		: cpp_object<SAXNotSupportedException>(jobj)
 		{
 		}
 
+		operator local_ref<org::xml::sax::SAXException>() const;
+
+
+		SAXNotSupportedException();
+		SAXNotSupportedException(local_ref< java::lang::String > const&);
 	}; //class SAXNotSupportedException
 
 } //namespace sax
 } //namespace xml
 } //namespace org
-
 
 } //namespace j2cpp
 
@@ -55,28 +61,36 @@ namespace org { namespace xml { namespace sax {
 namespace j2cpp {
 
 
-template <>
-local_ref< org::xml::sax::SAXNotSupportedException > create< org::xml::sax::SAXNotSupportedException>()
+
+org::xml::sax::SAXNotSupportedException::operator local_ref<org::xml::sax::SAXException>() const
 {
-	return local_ref< org::xml::sax::SAXNotSupportedException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::xml::sax::SAXNotSupportedException::J2CPP_CLASS_NAME>(),
-			get_method_id<org::xml::sax::SAXNotSupportedException::J2CPP_CLASS_NAME, org::xml::sax::SAXNotSupportedException::J2CPP_METHOD_NAME(0), org::xml::sax::SAXNotSupportedException::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<org::xml::sax::SAXException>(get_jtype());
 }
 
-template <>
-local_ref< org::xml::sax::SAXNotSupportedException > create< org::xml::sax::SAXNotSupportedException>(local_ref< java::lang::String > const &a0)
+
+org::xml::sax::SAXNotSupportedException::SAXNotSupportedException()
+: cpp_object<org::xml::sax::SAXNotSupportedException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::xml::sax::SAXNotSupportedException::J2CPP_CLASS_NAME>(),
+		get_method_id<org::xml::sax::SAXNotSupportedException::J2CPP_CLASS_NAME, org::xml::sax::SAXNotSupportedException::J2CPP_METHOD_NAME(0), org::xml::sax::SAXNotSupportedException::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
 {
-	return local_ref< org::xml::sax::SAXNotSupportedException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::xml::sax::SAXNotSupportedException::J2CPP_CLASS_NAME>(),
-			get_method_id<org::xml::sax::SAXNotSupportedException::J2CPP_CLASS_NAME, org::xml::sax::SAXNotSupportedException::J2CPP_METHOD_NAME(1), org::xml::sax::SAXNotSupportedException::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
 }
+
+
+
+org::xml::sax::SAXNotSupportedException::SAXNotSupportedException(local_ref< java::lang::String > const &a0)
+: cpp_object<org::xml::sax::SAXNotSupportedException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::xml::sax::SAXNotSupportedException::J2CPP_CLASS_NAME>(),
+		get_method_id<org::xml::sax::SAXNotSupportedException::J2CPP_CLASS_NAME, org::xml::sax::SAXNotSupportedException::J2CPP_METHOD_NAME(1), org::xml::sax::SAXNotSupportedException::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 
 J2CPP_DEFINE_CLASS(org::xml::sax::SAXNotSupportedException,"org/xml/sax/SAXNotSupportedException")

@@ -10,8 +10,10 @@
 #define J2CPP_ANDROID_GRAPHICS_DRAWABLE_ANIMATABLE_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -30,10 +32,13 @@ namespace android { namespace graphics { namespace drawable {
 		J2CPP_DECLARE_METHOD(1)
 		J2CPP_DECLARE_METHOD(2)
 
-		Animatable(jobject jobj)
+		explicit Animatable(jobject jobj)
 		: cpp_object<Animatable>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		void start();
 		void stop();
@@ -43,7 +48,6 @@ namespace android { namespace graphics { namespace drawable {
 } //namespace drawable
 } //namespace graphics
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -56,6 +60,12 @@ namespace android { namespace graphics { namespace drawable {
 
 namespace j2cpp {
 
+
+
+android::graphics::drawable::Animatable::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 void android::graphics::drawable::Animatable::start()
 {

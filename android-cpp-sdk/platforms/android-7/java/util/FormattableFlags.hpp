@@ -10,8 +10,10 @@
 #define J2CPP_JAVA_UTIL_FORMATTABLEFLAGS_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -31,10 +33,13 @@ namespace java { namespace util {
 		J2CPP_DECLARE_FIELD(1)
 		J2CPP_DECLARE_FIELD(2)
 
-		FormattableFlags(jobject jobj)
+		explicit FormattableFlags(jobject jobj)
 		: cpp_object<FormattableFlags>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 
 		static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(0), J2CPP_FIELD_SIGNATURE(0), cpp_int > LEFT_JUSTIFY;
@@ -44,7 +49,6 @@ namespace java { namespace util {
 
 } //namespace util
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -58,16 +62,12 @@ namespace java { namespace util {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::util::FormattableFlags > create< java::util::FormattableFlags>()
+
+java::util::FormattableFlags::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::util::FormattableFlags >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::FormattableFlags::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::FormattableFlags::J2CPP_CLASS_NAME, java::util::FormattableFlags::J2CPP_METHOD_NAME(0), java::util::FormattableFlags::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
 
 
 static_field<

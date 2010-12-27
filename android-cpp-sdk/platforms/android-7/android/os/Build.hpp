@@ -10,9 +10,11 @@
 #define J2CPP_ANDROID_OS_BUILD_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -41,11 +43,15 @@ namespace android { namespace os {
 			J2CPP_DECLARE_FIELD(6)
 			J2CPP_DECLARE_FIELD(7)
 
-			VERSION_CODES(jobject jobj)
+			explicit VERSION_CODES(jobject jobj)
 			: cpp_object<VERSION_CODES>(jobj)
 			{
 			}
 
+			operator local_ref<java::lang::Object>() const;
+
+
+			VERSION_CODES();
 
 			static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(0), J2CPP_FIELD_SIGNATURE(0), cpp_int > CUR_DEVELOPMENT;
 			static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(1), J2CPP_FIELD_SIGNATURE(1), cpp_int > BASE;
@@ -73,11 +79,15 @@ namespace android { namespace os {
 			J2CPP_DECLARE_FIELD(3)
 			J2CPP_DECLARE_FIELD(4)
 
-			VERSION(jobject jobj)
+			explicit VERSION(jobject jobj)
 			: cpp_object<VERSION>(jobj)
 			{
 			}
 
+			operator local_ref<java::lang::Object>() const;
+
+
+			VERSION();
 
 			static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(0), J2CPP_FIELD_SIGNATURE(0), local_ref< java::lang::String > > INCREMENTAL;
 			static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(1), J2CPP_FIELD_SIGNATURE(1), local_ref< java::lang::String > > RELEASE;
@@ -116,11 +126,15 @@ namespace android { namespace os {
 		typedef Build_::VERSION_CODES VERSION_CODES;
 		typedef Build_::VERSION VERSION;
 
-		Build(jobject jobj)
+		explicit Build(jobject jobj)
 		: cpp_object<Build>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		Build();
 
 		static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(0), J2CPP_FIELD_SIGNATURE(0), local_ref< java::lang::String > > ID;
 		static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(1), J2CPP_FIELD_SIGNATURE(1), local_ref< java::lang::String > > DISPLAY;
@@ -142,7 +156,6 @@ namespace android { namespace os {
 } //namespace os
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_OS_BUILD_HPP_DECL
@@ -156,16 +169,23 @@ namespace j2cpp {
 
 
 
-template <>
-local_ref< android::os::Build_::VERSION_CODES > create< android::os::Build_::VERSION_CODES>()
+
+android::os::Build_::VERSION_CODES::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::os::Build_::VERSION_CODES >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::os::Build_::VERSION_CODES::J2CPP_CLASS_NAME>(),
-			get_method_id<android::os::Build_::VERSION_CODES::J2CPP_CLASS_NAME, android::os::Build_::VERSION_CODES::J2CPP_METHOD_NAME(0), android::os::Build_::VERSION_CODES::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::os::Build_::VERSION_CODES::VERSION_CODES()
+: cpp_object<android::os::Build_::VERSION_CODES>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::os::Build_::VERSION_CODES::J2CPP_CLASS_NAME>(),
+		get_method_id<android::os::Build_::VERSION_CODES::J2CPP_CLASS_NAME, android::os::Build_::VERSION_CODES::J2CPP_METHOD_NAME(0), android::os::Build_::VERSION_CODES::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 
 static_field<
@@ -236,16 +256,24 @@ J2CPP_DEFINE_FIELD(android::os::Build_::VERSION_CODES,5,"ECLAIR","I")
 J2CPP_DEFINE_FIELD(android::os::Build_::VERSION_CODES,6,"ECLAIR_0_1","I")
 J2CPP_DEFINE_FIELD(android::os::Build_::VERSION_CODES,7,"ECLAIR_MR1","I")
 
-template <>
-local_ref< android::os::Build_::VERSION > create< android::os::Build_::VERSION>()
+
+android::os::Build_::VERSION::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::os::Build_::VERSION >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::os::Build_::VERSION::J2CPP_CLASS_NAME>(),
-			get_method_id<android::os::Build_::VERSION::J2CPP_CLASS_NAME, android::os::Build_::VERSION::J2CPP_METHOD_NAME(0), android::os::Build_::VERSION::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::os::Build_::VERSION::VERSION()
+: cpp_object<android::os::Build_::VERSION>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::os::Build_::VERSION::J2CPP_CLASS_NAME>(),
+		get_method_id<android::os::Build_::VERSION::J2CPP_CLASS_NAME, android::os::Build_::VERSION::J2CPP_METHOD_NAME(0), android::os::Build_::VERSION::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
+
 
 
 static_field<
@@ -294,16 +322,24 @@ J2CPP_DEFINE_FIELD(android::os::Build_::VERSION,3,"SDK_INT","I")
 J2CPP_DEFINE_FIELD(android::os::Build_::VERSION,4,"CODENAME","Ljava/lang/String;")
 
 
-template <>
-local_ref< android::os::Build > create< android::os::Build>()
+
+android::os::Build::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::os::Build >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::os::Build::J2CPP_CLASS_NAME>(),
-			get_method_id<android::os::Build::J2CPP_CLASS_NAME, android::os::Build::J2CPP_METHOD_NAME(0), android::os::Build::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::os::Build::Build()
+: cpp_object<android::os::Build>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::os::Build::J2CPP_CLASS_NAME>(),
+		get_method_id<android::os::Build::J2CPP_CLASS_NAME, android::os::Build::J2CPP_METHOD_NAME(0), android::os::Build::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
+
 
 
 static_field<

@@ -11,12 +11,14 @@
 
 
 namespace j2cpp { namespace javax { namespace crypto { class SecretKey; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace security { class Provider; } } }
 namespace j2cpp { namespace java { namespace security { class SecureRandom; } } }
 namespace j2cpp { namespace java { namespace security { namespace spec { class AlgorithmParameterSpec; } } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/security/Provider.hpp>
 #include <java/security/SecureRandom.hpp>
@@ -49,10 +51,13 @@ namespace javax { namespace crypto {
 		J2CPP_DECLARE_METHOD(10)
 		J2CPP_DECLARE_METHOD(11)
 
-		KeyGenerator(jobject jobj)
+		explicit KeyGenerator(jobject jobj)
 		: cpp_object<KeyGenerator>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		local_ref< java::lang::String > getAlgorithm();
 		local_ref< java::security::Provider > getProvider();
@@ -70,7 +75,6 @@ namespace javax { namespace crypto {
 } //namespace crypto
 } //namespace javax
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVAX_CRYPTO_KEYGENERATOR_HPP_DECL
@@ -83,17 +87,12 @@ namespace javax { namespace crypto {
 namespace j2cpp {
 
 
-template <>
-local_ref< javax::crypto::KeyGenerator > create< javax::crypto::KeyGenerator>(local_ref< javax::crypto::KeyGeneratorSpi > const &a0, local_ref< java::security::Provider > const &a1, local_ref< java::lang::String > const &a2)
+
+javax::crypto::KeyGenerator::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< javax::crypto::KeyGenerator >(
-		environment::get().get_jenv()->NewObject(
-			get_class<javax::crypto::KeyGenerator::J2CPP_CLASS_NAME>(),
-			get_method_id<javax::crypto::KeyGenerator::J2CPP_CLASS_NAME, javax::crypto::KeyGenerator::J2CPP_METHOD_NAME(0), javax::crypto::KeyGenerator::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
 
 local_ref< java::lang::String > javax::crypto::KeyGenerator::getAlgorithm()
 {

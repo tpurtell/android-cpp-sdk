@@ -11,6 +11,7 @@
 
 
 namespace j2cpp { namespace java { namespace io { class InputStream; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace security { class Provider; } } }
 namespace j2cpp { namespace java { namespace security { namespace cert { class CRL; } } } }
@@ -22,6 +23,7 @@ namespace j2cpp { namespace java { namespace util { class List; } } }
 
 
 #include <java/io/InputStream.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/security/Provider.hpp>
 #include <java/security/cert/CRL.hpp>
@@ -59,10 +61,13 @@ namespace java { namespace security { namespace cert {
 		J2CPP_DECLARE_METHOD(12)
 		J2CPP_DECLARE_METHOD(13)
 
-		CertificateFactory(jobject jobj)
+		explicit CertificateFactory(jobject jobj)
 		: cpp_object<CertificateFactory>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		static local_ref< java::security::cert::CertificateFactory > getInstance(local_ref< java::lang::String > const&);
 		static local_ref< java::security::cert::CertificateFactory > getInstance(local_ref< java::lang::String > const&, local_ref< java::lang::String > const&);
@@ -83,7 +88,6 @@ namespace java { namespace security { namespace cert {
 } //namespace security
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_SECURITY_CERT_CERTIFICATEFACTORY_HPP_DECL
@@ -96,17 +100,12 @@ namespace java { namespace security { namespace cert {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::security::cert::CertificateFactory > create< java::security::cert::CertificateFactory>(local_ref< java::security::cert::CertificateFactorySpi > const &a0, local_ref< java::security::Provider > const &a1, local_ref< java::lang::String > const &a2)
+
+java::security::cert::CertificateFactory::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::security::cert::CertificateFactory >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::security::cert::CertificateFactory::J2CPP_CLASS_NAME>(),
-			get_method_id<java::security::cert::CertificateFactory::J2CPP_CLASS_NAME, java::security::cert::CertificateFactory::J2CPP_METHOD_NAME(0), java::security::cert::CertificateFactory::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
 
 local_ref< java::security::cert::CertificateFactory > java::security::cert::CertificateFactory::getInstance(local_ref< java::lang::String > const &a0)
 {

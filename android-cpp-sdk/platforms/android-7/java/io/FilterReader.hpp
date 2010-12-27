@@ -10,8 +10,10 @@
 #define J2CPP_JAVA_IO_FILTERREADER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class Reader; } } }
 
 
+#include <java/io/Reader.hpp>
 
 
 namespace j2cpp {
@@ -37,10 +39,13 @@ namespace java { namespace io {
 		J2CPP_DECLARE_METHOD(8)
 		J2CPP_DECLARE_FIELD(0)
 
-		FilterReader(jobject jobj)
+		explicit FilterReader(jobject jobj)
 		: cpp_object<FilterReader>(jobj)
 		{
 		}
+
+		operator local_ref<java::io::Reader>() const;
+
 
 		void close();
 		void mark(cpp_int const&);
@@ -56,7 +61,6 @@ namespace java { namespace io {
 } //namespace io
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_IO_FILTERREADER_HPP_DECL
@@ -69,17 +73,12 @@ namespace java { namespace io {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::io::FilterReader > create< java::io::FilterReader>(local_ref< java::io::Reader > const &a0)
+
+java::io::FilterReader::operator local_ref<java::io::Reader>() const
 {
-	return local_ref< java::io::FilterReader >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::io::FilterReader::J2CPP_CLASS_NAME>(),
-			get_method_id<java::io::FilterReader::J2CPP_CLASS_NAME, java::io::FilterReader::J2CPP_METHOD_NAME(0), java::io::FilterReader::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::io::Reader>(get_jtype());
 }
+
 
 void java::io::FilterReader::close()
 {

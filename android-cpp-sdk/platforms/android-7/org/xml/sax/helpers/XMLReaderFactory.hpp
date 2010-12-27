@@ -10,10 +10,12 @@
 #define J2CPP_ORG_XML_SAX_HELPERS_XMLREADERFACTORY_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace org { namespace xml { namespace sax { class XMLReader; } } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <org/xml/sax/XMLReader.hpp>
 
@@ -34,10 +36,13 @@ namespace org { namespace xml { namespace sax { namespace helpers {
 		J2CPP_DECLARE_METHOD(1)
 		J2CPP_DECLARE_METHOD(2)
 
-		XMLReaderFactory(jobject jobj)
+		explicit XMLReaderFactory(jobject jobj)
 		: cpp_object<XMLReaderFactory>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		static local_ref< org::xml::sax::XMLReader > createXMLReader();
 		static local_ref< org::xml::sax::XMLReader > createXMLReader(local_ref< java::lang::String > const&);
@@ -47,7 +52,6 @@ namespace org { namespace xml { namespace sax { namespace helpers {
 } //namespace sax
 } //namespace xml
 } //namespace org
-
 
 } //namespace j2cpp
 
@@ -61,16 +65,12 @@ namespace org { namespace xml { namespace sax { namespace helpers {
 namespace j2cpp {
 
 
-template <>
-local_ref< org::xml::sax::helpers::XMLReaderFactory > create< org::xml::sax::helpers::XMLReaderFactory>()
+
+org::xml::sax::helpers::XMLReaderFactory::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< org::xml::sax::helpers::XMLReaderFactory >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::xml::sax::helpers::XMLReaderFactory::J2CPP_CLASS_NAME>(),
-			get_method_id<org::xml::sax::helpers::XMLReaderFactory::J2CPP_CLASS_NAME, org::xml::sax::helpers::XMLReaderFactory::J2CPP_METHOD_NAME(0), org::xml::sax::helpers::XMLReaderFactory::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
 
 local_ref< org::xml::sax::XMLReader > org::xml::sax::helpers::XMLReaderFactory::createXMLReader()
 {

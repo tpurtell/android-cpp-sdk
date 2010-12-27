@@ -10,11 +10,15 @@
 #define J2CPP_ORG_XML_SAX_EXT_ENTITYRESOLVER2_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace org { namespace xml { namespace sax { class EntityResolver; } } } }
 namespace j2cpp { namespace org { namespace xml { namespace sax { class InputSource; } } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
+#include <org/xml/sax/EntityResolver.hpp>
 #include <org/xml/sax/InputSource.hpp>
 
 
@@ -33,10 +37,14 @@ namespace org { namespace xml { namespace sax { namespace ext {
 		J2CPP_DECLARE_METHOD(0)
 		J2CPP_DECLARE_METHOD(1)
 
-		EntityResolver2(jobject jobj)
+		explicit EntityResolver2(jobject jobj)
 		: cpp_object<EntityResolver2>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<org::xml::sax::EntityResolver>() const;
+
 
 		local_ref< org::xml::sax::InputSource > getExternalSubset(local_ref< java::lang::String > const&, local_ref< java::lang::String > const&);
 		local_ref< org::xml::sax::InputSource > resolveEntity(local_ref< java::lang::String > const&, local_ref< java::lang::String > const&, local_ref< java::lang::String > const&, local_ref< java::lang::String > const&);
@@ -46,7 +54,6 @@ namespace org { namespace xml { namespace sax { namespace ext {
 } //namespace sax
 } //namespace xml
 } //namespace org
-
 
 } //namespace j2cpp
 
@@ -59,6 +66,17 @@ namespace org { namespace xml { namespace sax { namespace ext {
 
 namespace j2cpp {
 
+
+
+org::xml::sax::ext::EntityResolver2::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
+
+org::xml::sax::ext::EntityResolver2::operator local_ref<org::xml::sax::EntityResolver>() const
+{
+	return local_ref<org::xml::sax::EntityResolver>(get_jtype());
+}
 
 local_ref< org::xml::sax::InputSource > org::xml::sax::ext::EntityResolver2::getExternalSubset(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
 {

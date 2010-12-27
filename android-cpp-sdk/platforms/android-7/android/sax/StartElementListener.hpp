@@ -10,9 +10,11 @@
 #define J2CPP_ANDROID_SAX_STARTELEMENTLISTENER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace org { namespace xml { namespace sax { class Attributes; } } } }
 
 
+#include <java/lang/Object.hpp>
 #include <org/xml/sax/Attributes.hpp>
 
 
@@ -30,17 +32,19 @@ namespace android { namespace sax {
 
 		J2CPP_DECLARE_METHOD(0)
 
-		StartElementListener(jobject jobj)
+		explicit StartElementListener(jobject jobj)
 		: cpp_object<StartElementListener>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		void start(local_ref< org::xml::sax::Attributes > const&);
 	}; //class StartElementListener
 
 } //namespace sax
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -53,6 +57,12 @@ namespace android { namespace sax {
 
 namespace j2cpp {
 
+
+
+android::sax::StartElementListener::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 void android::sax::StartElementListener::start(local_ref< org::xml::sax::Attributes > const &a0)
 {

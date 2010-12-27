@@ -10,12 +10,16 @@
 #define J2CPP_JAVA_SECURITY_SPEC_ECPARAMETERSPEC_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace math { class BigInteger; } } }
 namespace j2cpp { namespace java { namespace security { namespace spec { class EllipticCurve; } } } }
 namespace j2cpp { namespace java { namespace security { namespace spec { class ECPoint; } } } }
+namespace j2cpp { namespace java { namespace security { namespace spec { class AlgorithmParameterSpec; } } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/math/BigInteger.hpp>
+#include <java/security/spec/AlgorithmParameterSpec.hpp>
 #include <java/security/spec/ECPoint.hpp>
 #include <java/security/spec/EllipticCurve.hpp>
 
@@ -38,11 +42,16 @@ namespace java { namespace security { namespace spec {
 		J2CPP_DECLARE_METHOD(3)
 		J2CPP_DECLARE_METHOD(4)
 
-		ECParameterSpec(jobject jobj)
+		explicit ECParameterSpec(jobject jobj)
 		: cpp_object<ECParameterSpec>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::security::spec::AlgorithmParameterSpec>() const;
+
+
+		ECParameterSpec(local_ref< java::security::spec::EllipticCurve > const&, local_ref< java::security::spec::ECPoint > const&, local_ref< java::math::BigInteger > const&, cpp_int const&);
 		cpp_int getCofactor();
 		local_ref< java::security::spec::EllipticCurve > getCurve();
 		local_ref< java::security::spec::ECPoint > getGenerator();
@@ -52,7 +61,6 @@ namespace java { namespace security { namespace spec {
 } //namespace spec
 } //namespace security
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -66,17 +74,29 @@ namespace java { namespace security { namespace spec {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::security::spec::ECParameterSpec > create< java::security::spec::ECParameterSpec>(local_ref< java::security::spec::EllipticCurve > const &a0, local_ref< java::security::spec::ECPoint > const &a1, local_ref< java::math::BigInteger > const &a2, cpp_int const &a3)
+
+java::security::spec::ECParameterSpec::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::security::spec::ECParameterSpec >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::security::spec::ECParameterSpec::J2CPP_CLASS_NAME>(),
-			get_method_id<java::security::spec::ECParameterSpec::J2CPP_CLASS_NAME, java::security::spec::ECParameterSpec::J2CPP_METHOD_NAME(0), java::security::spec::ECParameterSpec::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+java::security::spec::ECParameterSpec::operator local_ref<java::security::spec::AlgorithmParameterSpec>() const
+{
+	return local_ref<java::security::spec::AlgorithmParameterSpec>(get_jtype());
+}
+
+
+java::security::spec::ECParameterSpec::ECParameterSpec(local_ref< java::security::spec::EllipticCurve > const &a0, local_ref< java::security::spec::ECPoint > const &a1, local_ref< java::math::BigInteger > const &a2, cpp_int const &a3)
+: cpp_object<java::security::spec::ECParameterSpec>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::security::spec::ECParameterSpec::J2CPP_CLASS_NAME>(),
+		get_method_id<java::security::spec::ECParameterSpec::J2CPP_CLASS_NAME, java::security::spec::ECParameterSpec::J2CPP_METHOD_NAME(0), java::security::spec::ECParameterSpec::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype()
+	)
+)
+{
+}
+
 
 cpp_int java::security::spec::ECParameterSpec::getCofactor()
 {

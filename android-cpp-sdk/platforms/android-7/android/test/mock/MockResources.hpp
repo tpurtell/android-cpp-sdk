@@ -16,6 +16,7 @@ namespace j2cpp { namespace java { namespace lang { class CharSequence; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace android { namespace graphics { class Movie; } } }
 namespace j2cpp { namespace android { namespace graphics { namespace drawable { class Drawable; } } } }
+namespace j2cpp { namespace android { namespace content { namespace res { class Resources; } } } }
 namespace j2cpp { namespace android { namespace content { namespace res { class AssetFileDescriptor; } } } }
 namespace j2cpp { namespace android { namespace content { namespace res { class XmlResourceParser; } } } }
 namespace j2cpp { namespace android { namespace content { namespace res { class TypedArray; } } } }
@@ -29,6 +30,7 @@ namespace j2cpp { namespace android { namespace util { class TypedValue; } } }
 #include <android/content/res/AssetFileDescriptor.hpp>
 #include <android/content/res/ColorStateList.hpp>
 #include <android/content/res/Configuration.hpp>
+#include <android/content/res/Resources.hpp>
 #include <android/content/res/TypedArray.hpp>
 #include <android/content/res/XmlResourceParser.hpp>
 #include <android/graphics/Movie.hpp>
@@ -91,11 +93,15 @@ namespace android { namespace test { namespace mock {
 		J2CPP_DECLARE_METHOD(34)
 		J2CPP_DECLARE_METHOD(35)
 
-		MockResources(jobject jobj)
+		explicit MockResources(jobject jobj)
 		: cpp_object<MockResources>(jobj)
 		{
 		}
 
+		operator local_ref<android::content::res::Resources>() const;
+
+
+		MockResources();
 		void updateConfiguration(local_ref< android::content::res::Configuration > const&, local_ref< android::util::DisplayMetrics > const&);
 		local_ref< java::lang::CharSequence > getText(cpp_int const&);
 		local_ref< java::lang::CharSequence > getQuantityText(cpp_int const&, cpp_int const&);
@@ -137,7 +143,6 @@ namespace android { namespace test { namespace mock {
 } //namespace test
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_TEST_MOCK_MOCKRESOURCES_HPP_DECL
@@ -150,16 +155,23 @@ namespace android { namespace test { namespace mock {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::test::mock::MockResources > create< android::test::mock::MockResources>()
+
+android::test::mock::MockResources::operator local_ref<android::content::res::Resources>() const
 {
-	return local_ref< android::test::mock::MockResources >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::test::mock::MockResources::J2CPP_CLASS_NAME>(),
-			get_method_id<android::test::mock::MockResources::J2CPP_CLASS_NAME, android::test::mock::MockResources::J2CPP_METHOD_NAME(0), android::test::mock::MockResources::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<android::content::res::Resources>(get_jtype());
 }
+
+
+android::test::mock::MockResources::MockResources()
+: cpp_object<android::test::mock::MockResources>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::test::mock::MockResources::J2CPP_CLASS_NAME>(),
+		get_method_id<android::test::mock::MockResources::J2CPP_CLASS_NAME, android::test::mock::MockResources::J2CPP_METHOD_NAME(0), android::test::mock::MockResources::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 void android::test::mock::MockResources::updateConfiguration(local_ref< android::content::res::Configuration > const &a0, local_ref< android::util::DisplayMetrics > const &a1)
 {

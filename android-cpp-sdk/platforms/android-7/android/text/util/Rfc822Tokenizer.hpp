@@ -10,12 +10,16 @@
 #define J2CPP_ANDROID_TEXT_UTIL_RFC822TOKENIZER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class CharSequence; } } }
 namespace j2cpp { namespace android { namespace text { namespace util { class Rfc822Token; } } } }
+namespace j2cpp { namespace android { namespace widget { namespace MultiAutoCompleteTextView_ { class Tokenizer; } } } }
 
 
 #include <android/text/util/Rfc822Token.hpp>
+#include <android/widget/MultiAutoCompleteTextView.hpp>
 #include <java/lang/CharSequence.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -36,11 +40,16 @@ namespace android { namespace text { namespace util {
 		J2CPP_DECLARE_METHOD(3)
 		J2CPP_DECLARE_METHOD(4)
 
-		Rfc822Tokenizer(jobject jobj)
+		explicit Rfc822Tokenizer(jobject jobj)
 		: cpp_object<Rfc822Tokenizer>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<android::widget::MultiAutoCompleteTextView_::Tokenizer>() const;
+
+
+		Rfc822Tokenizer();
 		static local_ref< cpp_object_array<android::text::util::Rfc822Token, 1> > tokenize(local_ref< java::lang::CharSequence > const&);
 		cpp_int findTokenStart(local_ref< java::lang::CharSequence > const&, cpp_int const&);
 		cpp_int findTokenEnd(local_ref< java::lang::CharSequence > const&, cpp_int const&);
@@ -50,7 +59,6 @@ namespace android { namespace text { namespace util {
 } //namespace util
 } //namespace text
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -64,16 +72,28 @@ namespace android { namespace text { namespace util {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::text::util::Rfc822Tokenizer > create< android::text::util::Rfc822Tokenizer>()
+
+android::text::util::Rfc822Tokenizer::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::text::util::Rfc822Tokenizer >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::text::util::Rfc822Tokenizer::J2CPP_CLASS_NAME>(),
-			get_method_id<android::text::util::Rfc822Tokenizer::J2CPP_CLASS_NAME, android::text::util::Rfc822Tokenizer::J2CPP_METHOD_NAME(0), android::text::util::Rfc822Tokenizer::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+android::text::util::Rfc822Tokenizer::operator local_ref<android::widget::MultiAutoCompleteTextView_::Tokenizer>() const
+{
+	return local_ref<android::widget::MultiAutoCompleteTextView_::Tokenizer>(get_jtype());
+}
+
+
+android::text::util::Rfc822Tokenizer::Rfc822Tokenizer()
+: cpp_object<android::text::util::Rfc822Tokenizer>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::text::util::Rfc822Tokenizer::J2CPP_CLASS_NAME>(),
+		get_method_id<android::text::util::Rfc822Tokenizer::J2CPP_CLASS_NAME, android::text::util::Rfc822Tokenizer::J2CPP_METHOD_NAME(0), android::text::util::Rfc822Tokenizer::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 local_ref< cpp_object_array<android::text::util::Rfc822Token, 1> > android::text::util::Rfc822Tokenizer::tokenize(local_ref< java::lang::CharSequence > const &a0)
 {

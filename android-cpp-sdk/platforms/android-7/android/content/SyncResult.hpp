@@ -10,15 +10,18 @@
 #define J2CPP_ANDROID_CONTENT_SYNCRESULT_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace android { namespace content { class SyncStats; } } }
 namespace j2cpp { namespace android { namespace os { class Parcel; } } }
+namespace j2cpp { namespace android { namespace os { class Parcelable; } } }
 namespace j2cpp { namespace android { namespace os { namespace Parcelable_ { class Creator; } } } }
 
 
 #include <android/content/SyncStats.hpp>
 #include <android/os/Parcel.hpp>
 #include <android/os/Parcelable.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -56,19 +59,24 @@ namespace android { namespace content {
 		J2CPP_DECLARE_FIELD(8)
 		J2CPP_DECLARE_FIELD(9)
 
-		SyncResult(jobject jobj)
+		explicit SyncResult(jobject jobj)
 		: cpp_object<SyncResult>(jobj)
-		, syncAlreadyInProgress(jobj)
-		, tooManyDeletions(jobj)
-		, tooManyRetries(jobj)
-		, databaseError(jobj)
-		, fullSyncRequested(jobj)
-		, partialSyncUnavailable(jobj)
-		, moreRecordsToGet(jobj)
-		, stats(jobj)
+, syncAlreadyInProgress(jobj)
+, tooManyDeletions(jobj)
+, tooManyRetries(jobj)
+, databaseError(jobj)
+, fullSyncRequested(jobj)
+, partialSyncUnavailable(jobj)
+, moreRecordsToGet(jobj)
+, stats(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<android::os::Parcelable>() const;
+
+
+		SyncResult();
 		cpp_boolean hasHardError();
 		cpp_boolean hasSoftError();
 		cpp_boolean hasError();
@@ -94,7 +102,6 @@ namespace android { namespace content {
 } //namespace content
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_CONTENT_SYNCRESULT_HPP_DECL
@@ -107,16 +114,36 @@ namespace android { namespace content {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::content::SyncResult > create< android::content::SyncResult>()
+
+android::content::SyncResult::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::content::SyncResult >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::content::SyncResult::J2CPP_CLASS_NAME>(),
-			get_method_id<android::content::SyncResult::J2CPP_CLASS_NAME, android::content::SyncResult::J2CPP_METHOD_NAME(0), android::content::SyncResult::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+android::content::SyncResult::operator local_ref<android::os::Parcelable>() const
+{
+	return local_ref<android::os::Parcelable>(get_jtype());
+}
+
+
+android::content::SyncResult::SyncResult()
+: cpp_object<android::content::SyncResult>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::content::SyncResult::J2CPP_CLASS_NAME>(),
+		get_method_id<android::content::SyncResult::J2CPP_CLASS_NAME, android::content::SyncResult::J2CPP_METHOD_NAME(0), android::content::SyncResult::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+, syncAlreadyInProgress(get_jtype())
+, tooManyDeletions(get_jtype())
+, tooManyRetries(get_jtype())
+, databaseError(get_jtype())
+, fullSyncRequested(get_jtype())
+, partialSyncUnavailable(get_jtype())
+, moreRecordsToGet(get_jtype())
+, stats(get_jtype())
+{
+}
+
 
 cpp_boolean android::content::SyncResult::hasHardError()
 {
@@ -208,6 +235,7 @@ local_ref< java::lang::String > android::content::SyncResult::toDebugString()
 		)
 	);
 }
+
 
 
 static_field<

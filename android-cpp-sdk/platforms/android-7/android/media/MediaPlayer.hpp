@@ -11,6 +11,7 @@
 
 
 namespace j2cpp { namespace java { namespace io { class FileDescriptor; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace android { namespace net { class Uri; } } }
 namespace j2cpp { namespace android { namespace content { class Context; } } }
@@ -29,6 +30,7 @@ namespace j2cpp { namespace android { namespace media { namespace MediaPlayer_ {
 #include <android/net/Uri.hpp>
 #include <android/view/SurfaceHolder.hpp>
 #include <java/io/FileDescriptor.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -49,10 +51,13 @@ namespace android { namespace media {
 
 			J2CPP_DECLARE_METHOD(0)
 
-			OnErrorListener(jobject jobj)
+			explicit OnErrorListener(jobject jobj)
 			: cpp_object<OnErrorListener>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+
 
 			cpp_boolean onError(local_ref< android::media::MediaPlayer > const&, cpp_int const&, cpp_int const&);
 		}; //class OnErrorListener
@@ -67,10 +72,13 @@ namespace android { namespace media {
 
 			J2CPP_DECLARE_METHOD(0)
 
-			OnBufferingUpdateListener(jobject jobj)
+			explicit OnBufferingUpdateListener(jobject jobj)
 			: cpp_object<OnBufferingUpdateListener>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+
 
 			void onBufferingUpdate(local_ref< android::media::MediaPlayer > const&, cpp_int const&);
 		}; //class OnBufferingUpdateListener
@@ -85,10 +93,13 @@ namespace android { namespace media {
 
 			J2CPP_DECLARE_METHOD(0)
 
-			OnSeekCompleteListener(jobject jobj)
+			explicit OnSeekCompleteListener(jobject jobj)
 			: cpp_object<OnSeekCompleteListener>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+
 
 			void onSeekComplete(local_ref< android::media::MediaPlayer > const&);
 		}; //class OnSeekCompleteListener
@@ -103,10 +114,13 @@ namespace android { namespace media {
 
 			J2CPP_DECLARE_METHOD(0)
 
-			OnVideoSizeChangedListener(jobject jobj)
+			explicit OnVideoSizeChangedListener(jobject jobj)
 			: cpp_object<OnVideoSizeChangedListener>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+
 
 			void onVideoSizeChanged(local_ref< android::media::MediaPlayer > const&, cpp_int const&, cpp_int const&);
 		}; //class OnVideoSizeChangedListener
@@ -121,10 +135,13 @@ namespace android { namespace media {
 
 			J2CPP_DECLARE_METHOD(0)
 
-			OnCompletionListener(jobject jobj)
+			explicit OnCompletionListener(jobject jobj)
 			: cpp_object<OnCompletionListener>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+
 
 			void onCompletion(local_ref< android::media::MediaPlayer > const&);
 		}; //class OnCompletionListener
@@ -139,10 +156,13 @@ namespace android { namespace media {
 
 			J2CPP_DECLARE_METHOD(0)
 
-			OnInfoListener(jobject jobj)
+			explicit OnInfoListener(jobject jobj)
 			: cpp_object<OnInfoListener>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+
 
 			cpp_boolean onInfo(local_ref< android::media::MediaPlayer > const&, cpp_int const&, cpp_int const&);
 		}; //class OnInfoListener
@@ -157,10 +177,13 @@ namespace android { namespace media {
 
 			J2CPP_DECLARE_METHOD(0)
 
-			OnPreparedListener(jobject jobj)
+			explicit OnPreparedListener(jobject jobj)
 			: cpp_object<OnPreparedListener>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+
 
 			void onPrepared(local_ref< android::media::MediaPlayer > const&);
 		}; //class OnPreparedListener
@@ -227,11 +250,15 @@ namespace android { namespace media {
 		typedef MediaPlayer_::OnInfoListener OnInfoListener;
 		typedef MediaPlayer_::OnPreparedListener OnPreparedListener;
 
-		MediaPlayer(jobject jobj)
+		explicit MediaPlayer(jobject jobj)
 		: cpp_object<MediaPlayer>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		MediaPlayer();
 		void setDisplay(local_ref< android::view::SurfaceHolder > const&);
 		static local_ref< android::media::MediaPlayer > create(local_ref< android::content::Context > const&, local_ref< android::net::Uri > const&);
 		static local_ref< android::media::MediaPlayer > create(local_ref< android::content::Context > const&, local_ref< android::net::Uri > const&, local_ref< android::view::SurfaceHolder > const&);
@@ -280,7 +307,6 @@ namespace android { namespace media {
 } //namespace media
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_MEDIA_MEDIAPLAYER_HPP_DECL
@@ -293,6 +319,12 @@ namespace android { namespace media {
 namespace j2cpp {
 
 
+
+
+android::media::MediaPlayer_::OnErrorListener::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 cpp_boolean android::media::MediaPlayer_::OnErrorListener::onError(local_ref< android::media::MediaPlayer > const &a0, cpp_int const &a1, cpp_int const &a2)
 {
@@ -309,6 +341,12 @@ cpp_boolean android::media::MediaPlayer_::OnErrorListener::onError(local_ref< an
 J2CPP_DEFINE_CLASS(android::media::MediaPlayer_::OnErrorListener,"android/media/MediaPlayer$OnErrorListener")
 J2CPP_DEFINE_METHOD(android::media::MediaPlayer_::OnErrorListener,0,"onError","(Landroid/media/MediaPlayer;II)Z")
 
+
+android::media::MediaPlayer_::OnBufferingUpdateListener::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
+
 void android::media::MediaPlayer_::OnBufferingUpdateListener::onBufferingUpdate(local_ref< android::media::MediaPlayer > const &a0, cpp_int const &a1)
 {
 	return void(
@@ -323,6 +361,12 @@ void android::media::MediaPlayer_::OnBufferingUpdateListener::onBufferingUpdate(
 
 J2CPP_DEFINE_CLASS(android::media::MediaPlayer_::OnBufferingUpdateListener,"android/media/MediaPlayer$OnBufferingUpdateListener")
 J2CPP_DEFINE_METHOD(android::media::MediaPlayer_::OnBufferingUpdateListener,0,"onBufferingUpdate","(Landroid/media/MediaPlayer;I)V")
+
+
+android::media::MediaPlayer_::OnSeekCompleteListener::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 void android::media::MediaPlayer_::OnSeekCompleteListener::onSeekComplete(local_ref< android::media::MediaPlayer > const &a0)
 {
@@ -339,6 +383,12 @@ void android::media::MediaPlayer_::OnSeekCompleteListener::onSeekComplete(local_
 J2CPP_DEFINE_CLASS(android::media::MediaPlayer_::OnSeekCompleteListener,"android/media/MediaPlayer$OnSeekCompleteListener")
 J2CPP_DEFINE_METHOD(android::media::MediaPlayer_::OnSeekCompleteListener,0,"onSeekComplete","(Landroid/media/MediaPlayer;)V")
 
+
+android::media::MediaPlayer_::OnVideoSizeChangedListener::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
+
 void android::media::MediaPlayer_::OnVideoSizeChangedListener::onVideoSizeChanged(local_ref< android::media::MediaPlayer > const &a0, cpp_int const &a1, cpp_int const &a2)
 {
 	return void(
@@ -353,6 +403,12 @@ void android::media::MediaPlayer_::OnVideoSizeChangedListener::onVideoSizeChange
 
 J2CPP_DEFINE_CLASS(android::media::MediaPlayer_::OnVideoSizeChangedListener,"android/media/MediaPlayer$OnVideoSizeChangedListener")
 J2CPP_DEFINE_METHOD(android::media::MediaPlayer_::OnVideoSizeChangedListener,0,"onVideoSizeChanged","(Landroid/media/MediaPlayer;II)V")
+
+
+android::media::MediaPlayer_::OnCompletionListener::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 void android::media::MediaPlayer_::OnCompletionListener::onCompletion(local_ref< android::media::MediaPlayer > const &a0)
 {
@@ -369,6 +425,12 @@ void android::media::MediaPlayer_::OnCompletionListener::onCompletion(local_ref<
 J2CPP_DEFINE_CLASS(android::media::MediaPlayer_::OnCompletionListener,"android/media/MediaPlayer$OnCompletionListener")
 J2CPP_DEFINE_METHOD(android::media::MediaPlayer_::OnCompletionListener,0,"onCompletion","(Landroid/media/MediaPlayer;)V")
 
+
+android::media::MediaPlayer_::OnInfoListener::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
+
 cpp_boolean android::media::MediaPlayer_::OnInfoListener::onInfo(local_ref< android::media::MediaPlayer > const &a0, cpp_int const &a1, cpp_int const &a2)
 {
 	return cpp_boolean(
@@ -383,6 +445,12 @@ cpp_boolean android::media::MediaPlayer_::OnInfoListener::onInfo(local_ref< andr
 
 J2CPP_DEFINE_CLASS(android::media::MediaPlayer_::OnInfoListener,"android/media/MediaPlayer$OnInfoListener")
 J2CPP_DEFINE_METHOD(android::media::MediaPlayer_::OnInfoListener,0,"onInfo","(Landroid/media/MediaPlayer;II)Z")
+
+
+android::media::MediaPlayer_::OnPreparedListener::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 void android::media::MediaPlayer_::OnPreparedListener::onPrepared(local_ref< android::media::MediaPlayer > const &a0)
 {
@@ -400,16 +468,23 @@ J2CPP_DEFINE_CLASS(android::media::MediaPlayer_::OnPreparedListener,"android/med
 J2CPP_DEFINE_METHOD(android::media::MediaPlayer_::OnPreparedListener,0,"onPrepared","(Landroid/media/MediaPlayer;)V")
 
 
-template <>
-local_ref< android::media::MediaPlayer > create< android::media::MediaPlayer>()
+
+android::media::MediaPlayer::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::media::MediaPlayer >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::media::MediaPlayer::J2CPP_CLASS_NAME>(),
-			get_method_id<android::media::MediaPlayer::J2CPP_CLASS_NAME, android::media::MediaPlayer::J2CPP_METHOD_NAME(0), android::media::MediaPlayer::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::media::MediaPlayer::MediaPlayer()
+: cpp_object<android::media::MediaPlayer>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::media::MediaPlayer::J2CPP_CLASS_NAME>(),
+		get_method_id<android::media::MediaPlayer::J2CPP_CLASS_NAME, android::media::MediaPlayer::J2CPP_METHOD_NAME(0), android::media::MediaPlayer::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 void android::media::MediaPlayer::setDisplay(local_ref< android::view::SurfaceHolder > const &a0)
 {

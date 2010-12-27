@@ -10,10 +10,14 @@
 #define J2CPP_JAVA_SECURITY_INTERFACES_RSAPRIVATECRTKEY_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace math { class BigInteger; } } }
+namespace j2cpp { namespace java { namespace security { namespace interfaces { class RSAPrivateKey; } } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/math/BigInteger.hpp>
+#include <java/security/interfaces/RSAPrivateKey.hpp>
 
 
 namespace j2cpp {
@@ -36,10 +40,14 @@ namespace java { namespace security { namespace interfaces {
 		J2CPP_DECLARE_METHOD(5)
 		J2CPP_DECLARE_FIELD(0)
 
-		RSAPrivateCrtKey(jobject jobj)
+		explicit RSAPrivateCrtKey(jobject jobj)
 		: cpp_object<RSAPrivateCrtKey>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::security::interfaces::RSAPrivateKey>() const;
+
 
 		local_ref< java::math::BigInteger > getCrtCoefficient();
 		local_ref< java::math::BigInteger > getPrimeP();
@@ -55,7 +63,6 @@ namespace java { namespace security { namespace interfaces {
 } //namespace security
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_SECURITY_INTERFACES_RSAPRIVATECRTKEY_HPP_DECL
@@ -67,6 +74,17 @@ namespace java { namespace security { namespace interfaces {
 
 namespace j2cpp {
 
+
+
+java::security::interfaces::RSAPrivateCrtKey::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
+
+java::security::interfaces::RSAPrivateCrtKey::operator local_ref<java::security::interfaces::RSAPrivateKey>() const
+{
+	return local_ref<java::security::interfaces::RSAPrivateKey>(get_jtype());
+}
 
 local_ref< java::math::BigInteger > java::security::interfaces::RSAPrivateCrtKey::getCrtCoefficient()
 {

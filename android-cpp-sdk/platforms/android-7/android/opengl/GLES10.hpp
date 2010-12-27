@@ -10,12 +10,14 @@
 #define J2CPP_ANDROID_OPENGL_GLES10_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace nio { class FloatBuffer; } } }
 namespace j2cpp { namespace java { namespace nio { class IntBuffer; } } }
 namespace j2cpp { namespace java { namespace nio { class Buffer; } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/nio/Buffer.hpp>
 #include <java/nio/FloatBuffer.hpp>
@@ -396,11 +398,15 @@ namespace android { namespace opengl {
 		J2CPP_DECLARE_FIELD(235)
 		J2CPP_DECLARE_FIELD(236)
 
-		GLES10(jobject jobj)
+		explicit GLES10(jobject jobj)
 		: cpp_object<GLES10>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		GLES10();
 		static void glActiveTexture(cpp_int const&);
 		static void glAlphaFunc(cpp_int const&, cpp_float const&);
 		static void glAlphaFuncx(cpp_int const&, cpp_int const&);
@@ -767,7 +773,6 @@ namespace android { namespace opengl {
 } //namespace opengl
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_OPENGL_GLES10_HPP_DECL
@@ -780,16 +785,23 @@ namespace android { namespace opengl {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::opengl::GLES10 > create< android::opengl::GLES10>()
+
+android::opengl::GLES10::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::opengl::GLES10 >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::opengl::GLES10::J2CPP_CLASS_NAME>(),
-			get_method_id<android::opengl::GLES10::J2CPP_CLASS_NAME, android::opengl::GLES10::J2CPP_METHOD_NAME(0), android::opengl::GLES10::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::opengl::GLES10::GLES10()
+: cpp_object<android::opengl::GLES10>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::opengl::GLES10::J2CPP_CLASS_NAME>(),
+		get_method_id<android::opengl::GLES10::J2CPP_CLASS_NAME, android::opengl::GLES10::J2CPP_METHOD_NAME(0), android::opengl::GLES10::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 void android::opengl::GLES10::glActiveTexture(cpp_int const &a0)
 {

@@ -10,6 +10,7 @@
 #define J2CPP_ANDROID_WEBKIT_PLUGIN_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace android { namespace content { class Context; } } }
 namespace j2cpp { namespace android { namespace webkit { namespace Plugin_ { class PreferencesClickHandler; } } } }
@@ -17,6 +18,7 @@ namespace j2cpp { namespace android { namespace webkit { namespace Plugin_ { cla
 
 #include <android/content/Context.hpp>
 #include <android/webkit/Plugin.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -37,10 +39,13 @@ namespace android { namespace webkit {
 
 			J2CPP_DECLARE_METHOD(0)
 
-			PreferencesClickHandler(jobject jobj)
+			explicit PreferencesClickHandler(jobject jobj)
 			: cpp_object<PreferencesClickHandler>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+
 
 			void handleClickEvent(local_ref< android::content::Context > const&);
 		}; //class PreferencesClickHandler
@@ -69,11 +74,15 @@ namespace android { namespace webkit {
 
 		typedef Plugin_::PreferencesClickHandler PreferencesClickHandler;
 
-		Plugin(jobject jobj)
+		explicit Plugin(jobject jobj)
 		: cpp_object<Plugin>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		Plugin(local_ref< java::lang::String > const&, local_ref< java::lang::String > const&, local_ref< java::lang::String > const&, local_ref< java::lang::String > const&);
 		local_ref< java::lang::String > toString();
 		local_ref< java::lang::String > getName();
 		local_ref< java::lang::String > getPath();
@@ -90,7 +99,6 @@ namespace android { namespace webkit {
 } //namespace webkit
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_WEBKIT_PLUGIN_HPP_DECL
@@ -103,6 +111,12 @@ namespace android { namespace webkit {
 namespace j2cpp {
 
 
+
+
+android::webkit::Plugin_::PreferencesClickHandler::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 void android::webkit::Plugin_::PreferencesClickHandler::handleClickEvent(local_ref< android::content::Context > const &a0)
 {
@@ -120,17 +134,24 @@ J2CPP_DEFINE_CLASS(android::webkit::Plugin_::PreferencesClickHandler,"android/we
 J2CPP_DEFINE_METHOD(android::webkit::Plugin_::PreferencesClickHandler,0,"handleClickEvent","(Landroid/content/Context;)V")
 
 
-template <>
-local_ref< android::webkit::Plugin > create< android::webkit::Plugin>(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1, local_ref< java::lang::String > const &a2, local_ref< java::lang::String > const &a3)
+
+android::webkit::Plugin::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::webkit::Plugin >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::webkit::Plugin::J2CPP_CLASS_NAME>(),
-			get_method_id<android::webkit::Plugin::J2CPP_CLASS_NAME, android::webkit::Plugin::J2CPP_METHOD_NAME(0), android::webkit::Plugin::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::webkit::Plugin::Plugin(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1, local_ref< java::lang::String > const &a2, local_ref< java::lang::String > const &a3)
+: cpp_object<android::webkit::Plugin>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::webkit::Plugin::J2CPP_CLASS_NAME>(),
+		get_method_id<android::webkit::Plugin::J2CPP_CLASS_NAME, android::webkit::Plugin::J2CPP_METHOD_NAME(0), android::webkit::Plugin::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype()
+	)
+)
+{
+}
+
 
 local_ref< java::lang::String > android::webkit::Plugin::toString()
 {

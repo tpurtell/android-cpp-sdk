@@ -14,6 +14,7 @@ namespace j2cpp { namespace java { namespace io { class File; } } }
 namespace j2cpp { namespace java { namespace io { class InputStream; } } }
 namespace j2cpp { namespace java { namespace io { class OutputStream; } } }
 namespace j2cpp { namespace java { namespace lang { class Process; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class Thread; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 
@@ -21,6 +22,7 @@ namespace j2cpp { namespace java { namespace lang { class String; } } }
 #include <java/io/File.hpp>
 #include <java/io/InputStream.hpp>
 #include <java/io/OutputStream.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/Process.hpp>
 #include <java/lang/String.hpp>
 #include <java/lang/Thread.hpp>
@@ -64,10 +66,13 @@ namespace java { namespace lang {
 		J2CPP_DECLARE_METHOD(23)
 		J2CPP_DECLARE_METHOD(24)
 
-		Runtime(jobject jobj)
+		explicit Runtime(jobject jobj)
 		: cpp_object<Runtime>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		local_ref< java::lang::Process > exec(local_ref< cpp_object_array<java::lang::String, 1> > const&);
 		local_ref< java::lang::Process > exec(local_ref< cpp_object_array<java::lang::String, 1> > const&, local_ref< cpp_object_array<java::lang::String, 1> > const&);
@@ -98,7 +103,6 @@ namespace java { namespace lang {
 } //namespace lang
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_LANG_RUNTIME_HPP_DECL
@@ -111,16 +115,12 @@ namespace java { namespace lang {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::lang::Runtime > create< java::lang::Runtime>()
+
+java::lang::Runtime::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::lang::Runtime >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::lang::Runtime::J2CPP_CLASS_NAME>(),
-			get_method_id<java::lang::Runtime::J2CPP_CLASS_NAME, java::lang::Runtime::J2CPP_METHOD_NAME(0), java::lang::Runtime::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
 
 local_ref< java::lang::Process > java::lang::Runtime::exec(local_ref< cpp_object_array<java::lang::String, 1> > const &a0)
 {

@@ -12,10 +12,12 @@
 
 namespace j2cpp { namespace javax { namespace sql { class PooledConnection; } } }
 namespace j2cpp { namespace java { namespace io { class PrintWriter; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 
 
 #include <java/io/PrintWriter.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <javax/sql/PooledConnection.hpp>
 
@@ -39,10 +41,13 @@ namespace javax { namespace sql {
 		J2CPP_DECLARE_METHOD(4)
 		J2CPP_DECLARE_METHOD(5)
 
-		ConnectionPoolDataSource(jobject jobj)
+		explicit ConnectionPoolDataSource(jobject jobj)
 		: cpp_object<ConnectionPoolDataSource>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		cpp_int getLoginTimeout();
 		local_ref< java::io::PrintWriter > getLogWriter();
@@ -55,7 +60,6 @@ namespace javax { namespace sql {
 } //namespace sql
 } //namespace javax
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVAX_SQL_CONNECTIONPOOLDATASOURCE_HPP_DECL
@@ -67,6 +71,12 @@ namespace javax { namespace sql {
 
 namespace j2cpp {
 
+
+
+javax::sql::ConnectionPoolDataSource::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 cpp_int javax::sql::ConnectionPoolDataSource::getLoginTimeout()
 {

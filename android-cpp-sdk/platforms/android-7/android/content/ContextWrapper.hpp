@@ -155,11 +155,15 @@ namespace android { namespace content {
 		J2CPP_DECLARE_METHOD(70)
 		J2CPP_DECLARE_METHOD(71)
 
-		ContextWrapper(jobject jobj)
+		explicit ContextWrapper(jobject jobj)
 		: cpp_object<ContextWrapper>(jobj)
 		{
 		}
 
+		operator local_ref<android::content::Context>() const;
+
+
+		ContextWrapper(local_ref< android::content::Context > const&);
 		local_ref< android::content::Context > getBaseContext();
 		local_ref< android::content::res::AssetManager > getAssets();
 		local_ref< android::content::res::Resources > getResources();
@@ -235,7 +239,6 @@ namespace android { namespace content {
 } //namespace content
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_CONTENT_CONTEXTWRAPPER_HPP_DECL
@@ -248,17 +251,24 @@ namespace android { namespace content {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::content::ContextWrapper > create< android::content::ContextWrapper>(local_ref< android::content::Context > const &a0)
+
+android::content::ContextWrapper::operator local_ref<android::content::Context>() const
 {
-	return local_ref< android::content::ContextWrapper >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::content::ContextWrapper::J2CPP_CLASS_NAME>(),
-			get_method_id<android::content::ContextWrapper::J2CPP_CLASS_NAME, android::content::ContextWrapper::J2CPP_METHOD_NAME(0), android::content::ContextWrapper::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<android::content::Context>(get_jtype());
 }
+
+
+android::content::ContextWrapper::ContextWrapper(local_ref< android::content::Context > const &a0)
+: cpp_object<android::content::ContextWrapper>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::content::ContextWrapper::J2CPP_CLASS_NAME>(),
+		get_method_id<android::content::ContextWrapper::J2CPP_CLASS_NAME, android::content::ContextWrapper::J2CPP_METHOD_NAME(0), android::content::ContextWrapper::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 
 local_ref< android::content::Context > android::content::ContextWrapper::getBaseContext()

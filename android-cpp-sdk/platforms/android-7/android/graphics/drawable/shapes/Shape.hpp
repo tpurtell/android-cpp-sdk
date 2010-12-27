@@ -11,12 +11,14 @@
 
 
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace lang { class Cloneable; } } }
 namespace j2cpp { namespace android { namespace graphics { class Paint; } } }
 namespace j2cpp { namespace android { namespace graphics { class Canvas; } } }
 
 
 #include <android/graphics/Canvas.hpp>
 #include <android/graphics/Paint.hpp>
+#include <java/lang/Cloneable.hpp>
 #include <java/lang/Object.hpp>
 
 
@@ -42,11 +44,16 @@ namespace android { namespace graphics { namespace drawable { namespace shapes {
 		J2CPP_DECLARE_METHOD(7)
 		J2CPP_DECLARE_METHOD(8)
 
-		Shape(jobject jobj)
+		explicit Shape(jobject jobj)
 		: cpp_object<Shape>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::lang::Cloneable>() const;
+
+
+		Shape();
 		cpp_float getWidth();
 		cpp_float getHeight();
 		void draw(local_ref< android::graphics::Canvas > const&, local_ref< android::graphics::Paint > const&);
@@ -61,7 +68,6 @@ namespace android { namespace graphics { namespace drawable { namespace shapes {
 } //namespace graphics
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_GRAPHICS_DRAWABLE_SHAPES_SHAPE_HPP_DECL
@@ -74,16 +80,28 @@ namespace android { namespace graphics { namespace drawable { namespace shapes {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::graphics::drawable::shapes::Shape > create< android::graphics::drawable::shapes::Shape>()
+
+android::graphics::drawable::shapes::Shape::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::graphics::drawable::shapes::Shape >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::graphics::drawable::shapes::Shape::J2CPP_CLASS_NAME>(),
-			get_method_id<android::graphics::drawable::shapes::Shape::J2CPP_CLASS_NAME, android::graphics::drawable::shapes::Shape::J2CPP_METHOD_NAME(0), android::graphics::drawable::shapes::Shape::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+android::graphics::drawable::shapes::Shape::operator local_ref<java::lang::Cloneable>() const
+{
+	return local_ref<java::lang::Cloneable>(get_jtype());
+}
+
+
+android::graphics::drawable::shapes::Shape::Shape()
+: cpp_object<android::graphics::drawable::shapes::Shape>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::graphics::drawable::shapes::Shape::J2CPP_CLASS_NAME>(),
+		get_method_id<android::graphics::drawable::shapes::Shape::J2CPP_CLASS_NAME, android::graphics::drawable::shapes::Shape::J2CPP_METHOD_NAME(0), android::graphics::drawable::shapes::Shape::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 cpp_float android::graphics::drawable::shapes::Shape::getWidth()
 {

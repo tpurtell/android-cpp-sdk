@@ -11,6 +11,7 @@
 
 
 namespace j2cpp { namespace org { namespace xmlpull { namespace v1 { class XmlPullParser; } } } }
+namespace j2cpp { namespace android { namespace graphics { namespace drawable { class DrawableContainer; } } } }
 namespace j2cpp { namespace android { namespace graphics { namespace drawable { class Drawable; } } } }
 namespace j2cpp { namespace android { namespace content { namespace res { class Resources; } } } }
 namespace j2cpp { namespace android { namespace util { class AttributeSet; } } }
@@ -18,6 +19,7 @@ namespace j2cpp { namespace android { namespace util { class AttributeSet; } } }
 
 #include <android/content/res/Resources.hpp>
 #include <android/graphics/drawable/Drawable.hpp>
+#include <android/graphics/drawable/DrawableContainer.hpp>
 #include <android/util/AttributeSet.hpp>
 #include <org/xmlpull/v1/XmlPullParser.hpp>
 
@@ -41,11 +43,15 @@ namespace android { namespace graphics { namespace drawable {
 		J2CPP_DECLARE_METHOD(4)
 		J2CPP_DECLARE_METHOD(5)
 
-		StateListDrawable(jobject jobj)
+		explicit StateListDrawable(jobject jobj)
 		: cpp_object<StateListDrawable>(jobj)
 		{
 		}
 
+		operator local_ref<android::graphics::drawable::DrawableContainer>() const;
+
+
+		StateListDrawable();
 		void addState(local_ref< cpp_int_array<1> > const&, local_ref< android::graphics::drawable::Drawable > const&);
 		cpp_boolean isStateful();
 		void inflate(local_ref< android::content::res::Resources > const&, local_ref< org::xmlpull::v1::XmlPullParser > const&, local_ref< android::util::AttributeSet > const&);
@@ -55,7 +61,6 @@ namespace android { namespace graphics { namespace drawable {
 } //namespace drawable
 } //namespace graphics
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -69,16 +74,23 @@ namespace android { namespace graphics { namespace drawable {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::graphics::drawable::StateListDrawable > create< android::graphics::drawable::StateListDrawable>()
+
+android::graphics::drawable::StateListDrawable::operator local_ref<android::graphics::drawable::DrawableContainer>() const
 {
-	return local_ref< android::graphics::drawable::StateListDrawable >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::graphics::drawable::StateListDrawable::J2CPP_CLASS_NAME>(),
-			get_method_id<android::graphics::drawable::StateListDrawable::J2CPP_CLASS_NAME, android::graphics::drawable::StateListDrawable::J2CPP_METHOD_NAME(0), android::graphics::drawable::StateListDrawable::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<android::graphics::drawable::DrawableContainer>(get_jtype());
 }
+
+
+android::graphics::drawable::StateListDrawable::StateListDrawable()
+: cpp_object<android::graphics::drawable::StateListDrawable>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::graphics::drawable::StateListDrawable::J2CPP_CLASS_NAME>(),
+		get_method_id<android::graphics::drawable::StateListDrawable::J2CPP_CLASS_NAME, android::graphics::drawable::StateListDrawable::J2CPP_METHOD_NAME(0), android::graphics::drawable::StateListDrawable::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 void android::graphics::drawable::StateListDrawable::addState(local_ref< cpp_int_array<1> > const &a0, local_ref< android::graphics::drawable::Drawable > const &a1)
 {

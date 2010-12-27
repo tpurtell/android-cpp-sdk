@@ -10,9 +10,9 @@
 #define J2CPP_JAVA_NET_URLCONNECTION_HPP_DECL
 
 
-namespace j2cpp { namespace java { namespace net { class FileNameMap; } } }
-namespace j2cpp { namespace java { namespace net { class URL; } } }
 namespace j2cpp { namespace java { namespace net { class ContentHandlerFactory; } } }
+namespace j2cpp { namespace java { namespace net { class URL; } } }
+namespace j2cpp { namespace java { namespace net { class FileNameMap; } } }
 namespace j2cpp { namespace java { namespace io { class InputStream; } } }
 namespace j2cpp { namespace java { namespace io { class OutputStream; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
@@ -104,10 +104,13 @@ namespace java { namespace net {
 		J2CPP_DECLARE_FIELD(5)
 		J2CPP_DECLARE_FIELD(6)
 
-		URLConnection(jobject jobj)
+		explicit URLConnection(jobject jobj)
 		: cpp_object<URLConnection>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		void connect();
 		cpp_boolean getAllowUserInteraction();
@@ -164,7 +167,6 @@ namespace java { namespace net {
 } //namespace net
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_NET_URLCONNECTION_HPP_DECL
@@ -177,17 +179,12 @@ namespace java { namespace net {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::net::URLConnection > create< java::net::URLConnection>(local_ref< java::net::URL > const &a0)
+
+java::net::URLConnection::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::net::URLConnection >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::net::URLConnection::J2CPP_CLASS_NAME>(),
-			get_method_id<java::net::URLConnection::J2CPP_CLASS_NAME, java::net::URLConnection::J2CPP_METHOD_NAME(0), java::net::URLConnection::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
 
 void java::net::URLConnection::connect()
 {

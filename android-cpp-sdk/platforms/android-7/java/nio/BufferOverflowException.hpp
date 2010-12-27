@@ -10,8 +10,10 @@
 #define J2CPP_JAVA_NIO_BUFFEROVERFLOWEXCEPTION_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class RuntimeException; } } }
 
 
+#include <java/lang/RuntimeException.hpp>
 
 
 namespace j2cpp {
@@ -28,16 +30,19 @@ namespace java { namespace nio {
 
 		J2CPP_DECLARE_METHOD(0)
 
-		BufferOverflowException(jobject jobj)
+		explicit BufferOverflowException(jobject jobj)
 		: cpp_object<BufferOverflowException>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::RuntimeException>() const;
+
+
+		BufferOverflowException();
 	}; //class BufferOverflowException
 
 } //namespace nio
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -51,16 +56,23 @@ namespace java { namespace nio {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::nio::BufferOverflowException > create< java::nio::BufferOverflowException>()
+
+java::nio::BufferOverflowException::operator local_ref<java::lang::RuntimeException>() const
 {
-	return local_ref< java::nio::BufferOverflowException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::nio::BufferOverflowException::J2CPP_CLASS_NAME>(),
-			get_method_id<java::nio::BufferOverflowException::J2CPP_CLASS_NAME, java::nio::BufferOverflowException::J2CPP_METHOD_NAME(0), java::nio::BufferOverflowException::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::RuntimeException>(get_jtype());
 }
+
+
+java::nio::BufferOverflowException::BufferOverflowException()
+: cpp_object<java::nio::BufferOverflowException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::nio::BufferOverflowException::J2CPP_CLASS_NAME>(),
+		get_method_id<java::nio::BufferOverflowException::J2CPP_CLASS_NAME, java::nio::BufferOverflowException::J2CPP_METHOD_NAME(0), java::nio::BufferOverflowException::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 
 J2CPP_DEFINE_CLASS(java::nio::BufferOverflowException,"java/nio/BufferOverflowException")

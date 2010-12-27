@@ -11,6 +11,7 @@
 
 
 namespace j2cpp { namespace java { namespace io { class FileDescriptor; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace android { namespace hardware { class Camera; } } }
 namespace j2cpp { namespace android { namespace view { class Surface; } } }
@@ -22,6 +23,7 @@ namespace j2cpp { namespace android { namespace media { namespace MediaRecorder_
 #include <android/media/MediaRecorder.hpp>
 #include <android/view/Surface.hpp>
 #include <java/io/FileDescriptor.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -42,10 +44,13 @@ namespace android { namespace media {
 
 			J2CPP_DECLARE_METHOD(0)
 
-			OnInfoListener(jobject jobj)
+			explicit OnInfoListener(jobject jobj)
 			: cpp_object<OnInfoListener>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+
 
 			void onInfo(local_ref< android::media::MediaRecorder > const&, cpp_int const&, cpp_int const&);
 		}; //class OnInfoListener
@@ -65,10 +70,13 @@ namespace android { namespace media {
 			J2CPP_DECLARE_FIELD(3)
 			J2CPP_DECLARE_FIELD(4)
 
-			OutputFormat(jobject jobj)
+			explicit OutputFormat(jobject jobj)
 			: cpp_object<OutputFormat>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+
 
 
 			static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(0), J2CPP_FIELD_SIGNATURE(0), cpp_int > DEFAULT;
@@ -87,10 +95,13 @@ namespace android { namespace media {
 
 			J2CPP_DECLARE_METHOD(0)
 
-			OnErrorListener(jobject jobj)
+			explicit OnErrorListener(jobject jobj)
 			: cpp_object<OnErrorListener>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+
 
 			void onError(local_ref< android::media::MediaRecorder > const&, cpp_int const&, cpp_int const&);
 		}; //class OnErrorListener
@@ -110,10 +121,13 @@ namespace android { namespace media {
 			J2CPP_DECLARE_FIELD(3)
 			J2CPP_DECLARE_FIELD(4)
 
-			VideoEncoder(jobject jobj)
+			explicit VideoEncoder(jobject jobj)
 			: cpp_object<VideoEncoder>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+
 
 
 			static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(0), J2CPP_FIELD_SIGNATURE(0), cpp_int > DEFAULT;
@@ -140,10 +154,13 @@ namespace android { namespace media {
 			J2CPP_DECLARE_FIELD(6)
 			J2CPP_DECLARE_FIELD(7)
 
-			AudioSource(jobject jobj)
+			explicit AudioSource(jobject jobj)
 			: cpp_object<AudioSource>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+
 
 
 			static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(0), J2CPP_FIELD_SIGNATURE(0), cpp_int > DEFAULT;
@@ -168,10 +185,13 @@ namespace android { namespace media {
 			J2CPP_DECLARE_FIELD(1)
 			J2CPP_DECLARE_FIELD(2)
 
-			VideoSource(jobject jobj)
+			explicit VideoSource(jobject jobj)
 			: cpp_object<VideoSource>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+
 
 
 			static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(0), J2CPP_FIELD_SIGNATURE(0), cpp_int > DEFAULT;
@@ -191,10 +211,13 @@ namespace android { namespace media {
 			J2CPP_DECLARE_FIELD(1)
 			J2CPP_DECLARE_FIELD(2)
 
-			AudioEncoder(jobject jobj)
+			explicit AudioEncoder(jobject jobj)
 			: cpp_object<AudioEncoder>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+
 
 
 			static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(0), J2CPP_FIELD_SIGNATURE(0), cpp_int > DEFAULT;
@@ -247,11 +270,15 @@ namespace android { namespace media {
 		typedef MediaRecorder_::VideoSource VideoSource;
 		typedef MediaRecorder_::AudioEncoder AudioEncoder;
 
-		MediaRecorder(jobject jobj)
+		explicit MediaRecorder(jobject jobj)
 		: cpp_object<MediaRecorder>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		MediaRecorder();
 		void setCamera(local_ref< android::hardware::Camera > const&);
 		void setPreviewDisplay(local_ref< android::view::Surface > const&);
 		void setAudioSource(cpp_int const&);
@@ -284,7 +311,6 @@ namespace android { namespace media {
 } //namespace media
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_MEDIA_MEDIARECORDER_HPP_DECL
@@ -297,6 +323,12 @@ namespace android { namespace media {
 namespace j2cpp {
 
 
+
+
+android::media::MediaRecorder_::OnInfoListener::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 void android::media::MediaRecorder_::OnInfoListener::onInfo(local_ref< android::media::MediaRecorder > const &a0, cpp_int const &a1, cpp_int const &a2)
 {
@@ -313,17 +345,12 @@ void android::media::MediaRecorder_::OnInfoListener::onInfo(local_ref< android::
 J2CPP_DEFINE_CLASS(android::media::MediaRecorder_::OnInfoListener,"android/media/MediaRecorder$OnInfoListener")
 J2CPP_DEFINE_METHOD(android::media::MediaRecorder_::OnInfoListener,0,"onInfo","(Landroid/media/MediaRecorder;II)V")
 
-template <>
-local_ref< android::media::MediaRecorder_::OutputFormat > create< android::media::MediaRecorder_::OutputFormat>(local_ref< android::media::MediaRecorder > const &a0)
+
+android::media::MediaRecorder_::OutputFormat::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::media::MediaRecorder_::OutputFormat >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::media::MediaRecorder_::OutputFormat::J2CPP_CLASS_NAME>(),
-			get_method_id<android::media::MediaRecorder_::OutputFormat::J2CPP_CLASS_NAME, android::media::MediaRecorder_::OutputFormat::J2CPP_METHOD_NAME(0), android::media::MediaRecorder_::OutputFormat::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
 
 
 static_field<
@@ -363,6 +390,12 @@ J2CPP_DEFINE_FIELD(android::media::MediaRecorder_::OutputFormat,2,"MPEG_4","I")
 J2CPP_DEFINE_FIELD(android::media::MediaRecorder_::OutputFormat,3,"RAW_AMR","I")
 J2CPP_DEFINE_FIELD(android::media::MediaRecorder_::OutputFormat,4,"this$0","Landroid/media/MediaRecorder;")
 
+
+android::media::MediaRecorder_::OnErrorListener::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
+
 void android::media::MediaRecorder_::OnErrorListener::onError(local_ref< android::media::MediaRecorder > const &a0, cpp_int const &a1, cpp_int const &a2)
 {
 	return void(
@@ -378,17 +411,12 @@ void android::media::MediaRecorder_::OnErrorListener::onError(local_ref< android
 J2CPP_DEFINE_CLASS(android::media::MediaRecorder_::OnErrorListener,"android/media/MediaRecorder$OnErrorListener")
 J2CPP_DEFINE_METHOD(android::media::MediaRecorder_::OnErrorListener,0,"onError","(Landroid/media/MediaRecorder;II)V")
 
-template <>
-local_ref< android::media::MediaRecorder_::VideoEncoder > create< android::media::MediaRecorder_::VideoEncoder>(local_ref< android::media::MediaRecorder > const &a0)
+
+android::media::MediaRecorder_::VideoEncoder::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::media::MediaRecorder_::VideoEncoder >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::media::MediaRecorder_::VideoEncoder::J2CPP_CLASS_NAME>(),
-			get_method_id<android::media::MediaRecorder_::VideoEncoder::J2CPP_CLASS_NAME, android::media::MediaRecorder_::VideoEncoder::J2CPP_METHOD_NAME(0), android::media::MediaRecorder_::VideoEncoder::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
 
 
 static_field<
@@ -428,17 +456,12 @@ J2CPP_DEFINE_FIELD(android::media::MediaRecorder_::VideoEncoder,2,"H264","I")
 J2CPP_DEFINE_FIELD(android::media::MediaRecorder_::VideoEncoder,3,"MPEG_4_SP","I")
 J2CPP_DEFINE_FIELD(android::media::MediaRecorder_::VideoEncoder,4,"this$0","Landroid/media/MediaRecorder;")
 
-template <>
-local_ref< android::media::MediaRecorder_::AudioSource > create< android::media::MediaRecorder_::AudioSource>(local_ref< android::media::MediaRecorder > const &a0)
+
+android::media::MediaRecorder_::AudioSource::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::media::MediaRecorder_::AudioSource >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::media::MediaRecorder_::AudioSource::J2CPP_CLASS_NAME>(),
-			get_method_id<android::media::MediaRecorder_::AudioSource::J2CPP_CLASS_NAME, android::media::MediaRecorder_::AudioSource::J2CPP_METHOD_NAME(0), android::media::MediaRecorder_::AudioSource::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
 
 
 static_field<
@@ -502,17 +525,12 @@ J2CPP_DEFINE_FIELD(android::media::MediaRecorder_::AudioSource,5,"CAMCORDER","I"
 J2CPP_DEFINE_FIELD(android::media::MediaRecorder_::AudioSource,6,"VOICE_RECOGNITION","I")
 J2CPP_DEFINE_FIELD(android::media::MediaRecorder_::AudioSource,7,"this$0","Landroid/media/MediaRecorder;")
 
-template <>
-local_ref< android::media::MediaRecorder_::VideoSource > create< android::media::MediaRecorder_::VideoSource>(local_ref< android::media::MediaRecorder > const &a0)
+
+android::media::MediaRecorder_::VideoSource::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::media::MediaRecorder_::VideoSource >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::media::MediaRecorder_::VideoSource::J2CPP_CLASS_NAME>(),
-			get_method_id<android::media::MediaRecorder_::VideoSource::J2CPP_CLASS_NAME, android::media::MediaRecorder_::VideoSource::J2CPP_METHOD_NAME(0), android::media::MediaRecorder_::VideoSource::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
 
 
 static_field<
@@ -536,17 +554,12 @@ J2CPP_DEFINE_FIELD(android::media::MediaRecorder_::VideoSource,0,"DEFAULT","I")
 J2CPP_DEFINE_FIELD(android::media::MediaRecorder_::VideoSource,1,"CAMERA","I")
 J2CPP_DEFINE_FIELD(android::media::MediaRecorder_::VideoSource,2,"this$0","Landroid/media/MediaRecorder;")
 
-template <>
-local_ref< android::media::MediaRecorder_::AudioEncoder > create< android::media::MediaRecorder_::AudioEncoder>(local_ref< android::media::MediaRecorder > const &a0)
+
+android::media::MediaRecorder_::AudioEncoder::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::media::MediaRecorder_::AudioEncoder >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::media::MediaRecorder_::AudioEncoder::J2CPP_CLASS_NAME>(),
-			get_method_id<android::media::MediaRecorder_::AudioEncoder::J2CPP_CLASS_NAME, android::media::MediaRecorder_::AudioEncoder::J2CPP_METHOD_NAME(0), android::media::MediaRecorder_::AudioEncoder::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
 
 
 static_field<
@@ -571,16 +584,23 @@ J2CPP_DEFINE_FIELD(android::media::MediaRecorder_::AudioEncoder,1,"AMR_NB","I")
 J2CPP_DEFINE_FIELD(android::media::MediaRecorder_::AudioEncoder,2,"this$0","Landroid/media/MediaRecorder;")
 
 
-template <>
-local_ref< android::media::MediaRecorder > create< android::media::MediaRecorder>()
+
+android::media::MediaRecorder::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::media::MediaRecorder >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::media::MediaRecorder::J2CPP_CLASS_NAME>(),
-			get_method_id<android::media::MediaRecorder::J2CPP_CLASS_NAME, android::media::MediaRecorder::J2CPP_METHOD_NAME(0), android::media::MediaRecorder::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::media::MediaRecorder::MediaRecorder()
+: cpp_object<android::media::MediaRecorder>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::media::MediaRecorder::J2CPP_CLASS_NAME>(),
+		get_method_id<android::media::MediaRecorder::J2CPP_CLASS_NAME, android::media::MediaRecorder::J2CPP_METHOD_NAME(0), android::media::MediaRecorder::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 void android::media::MediaRecorder::setCamera(local_ref< android::hardware::Camera > const &a0)
 {

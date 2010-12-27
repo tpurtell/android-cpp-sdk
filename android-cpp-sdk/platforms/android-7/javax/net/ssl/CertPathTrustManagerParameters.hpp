@@ -10,10 +10,14 @@
 #define J2CPP_JAVAX_NET_SSL_CERTPATHTRUSTMANAGERPARAMETERS_HPP_DECL
 
 
+namespace j2cpp { namespace javax { namespace net { namespace ssl { class ManagerFactoryParameters; } } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace security { namespace cert { class CertPathParameters; } } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/security/cert/CertPathParameters.hpp>
+#include <javax/net/ssl/ManagerFactoryParameters.hpp>
 
 
 namespace j2cpp {
@@ -31,18 +35,22 @@ namespace javax { namespace net { namespace ssl {
 		J2CPP_DECLARE_METHOD(0)
 		J2CPP_DECLARE_METHOD(1)
 
-		CertPathTrustManagerParameters(jobject jobj)
+		explicit CertPathTrustManagerParameters(jobject jobj)
 		: cpp_object<CertPathTrustManagerParameters>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<javax::net::ssl::ManagerFactoryParameters>() const;
+
+
+		CertPathTrustManagerParameters(local_ref< java::security::cert::CertPathParameters > const&);
 		local_ref< java::security::cert::CertPathParameters > getParameters();
 	}; //class CertPathTrustManagerParameters
 
 } //namespace ssl
 } //namespace net
 } //namespace javax
-
 
 } //namespace j2cpp
 
@@ -56,17 +64,29 @@ namespace javax { namespace net { namespace ssl {
 namespace j2cpp {
 
 
-template <>
-local_ref< javax::net::ssl::CertPathTrustManagerParameters > create< javax::net::ssl::CertPathTrustManagerParameters>(local_ref< java::security::cert::CertPathParameters > const &a0)
+
+javax::net::ssl::CertPathTrustManagerParameters::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< javax::net::ssl::CertPathTrustManagerParameters >(
-		environment::get().get_jenv()->NewObject(
-			get_class<javax::net::ssl::CertPathTrustManagerParameters::J2CPP_CLASS_NAME>(),
-			get_method_id<javax::net::ssl::CertPathTrustManagerParameters::J2CPP_CLASS_NAME, javax::net::ssl::CertPathTrustManagerParameters::J2CPP_METHOD_NAME(0), javax::net::ssl::CertPathTrustManagerParameters::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+javax::net::ssl::CertPathTrustManagerParameters::operator local_ref<javax::net::ssl::ManagerFactoryParameters>() const
+{
+	return local_ref<javax::net::ssl::ManagerFactoryParameters>(get_jtype());
+}
+
+
+javax::net::ssl::CertPathTrustManagerParameters::CertPathTrustManagerParameters(local_ref< java::security::cert::CertPathParameters > const &a0)
+: cpp_object<javax::net::ssl::CertPathTrustManagerParameters>(
+	environment::get().get_jenv()->NewObject(
+		get_class<javax::net::ssl::CertPathTrustManagerParameters::J2CPP_CLASS_NAME>(),
+		get_method_id<javax::net::ssl::CertPathTrustManagerParameters::J2CPP_CLASS_NAME, javax::net::ssl::CertPathTrustManagerParameters::J2CPP_METHOD_NAME(0), javax::net::ssl::CertPathTrustManagerParameters::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 local_ref< java::security::cert::CertPathParameters > javax::net::ssl::CertPathTrustManagerParameters::getParameters()
 {

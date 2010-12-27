@@ -21,6 +21,7 @@ namespace j2cpp { namespace java { namespace lang { class Byte; } } }
 namespace j2cpp { namespace java { namespace lang { class Boolean; } } }
 namespace j2cpp { namespace java { namespace util { class Set; } } }
 namespace j2cpp { namespace android { namespace os { class Parcel; } } }
+namespace j2cpp { namespace android { namespace os { class Parcelable; } } }
 namespace j2cpp { namespace android { namespace os { namespace Parcelable_ { class Creator; } } } }
 
 
@@ -88,11 +89,18 @@ namespace android { namespace content {
 		J2CPP_DECLARE_FIELD(0)
 		J2CPP_DECLARE_FIELD(1)
 
-		ContentValues(jobject jobj)
+		explicit ContentValues(jobject jobj)
 		: cpp_object<ContentValues>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<android::os::Parcelable>() const;
+
+
+		ContentValues();
+		ContentValues(cpp_int const&);
+		ContentValues(local_ref< android::content::ContentValues > const&);
 		cpp_boolean equals(local_ref< java::lang::Object > const&);
 		cpp_int hashCode();
 		void put(local_ref< java::lang::String > const&, local_ref< java::lang::String > const&);
@@ -132,7 +140,6 @@ namespace android { namespace content {
 } //namespace content
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_CONTENT_CONTENTVALUES_HPP_DECL
@@ -145,40 +152,54 @@ namespace android { namespace content {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::content::ContentValues > create< android::content::ContentValues>()
+
+android::content::ContentValues::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::content::ContentValues >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::content::ContentValues::J2CPP_CLASS_NAME>(),
-			get_method_id<android::content::ContentValues::J2CPP_CLASS_NAME, android::content::ContentValues::J2CPP_METHOD_NAME(0), android::content::ContentValues::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
 
-template <>
-local_ref< android::content::ContentValues > create< android::content::ContentValues>(cpp_int const &a0)
+android::content::ContentValues::operator local_ref<android::os::Parcelable>() const
 {
-	return local_ref< android::content::ContentValues >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::content::ContentValues::J2CPP_CLASS_NAME>(),
-			get_method_id<android::content::ContentValues::J2CPP_CLASS_NAME, android::content::ContentValues::J2CPP_METHOD_NAME(1), android::content::ContentValues::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<android::os::Parcelable>(get_jtype());
 }
 
-template <>
-local_ref< android::content::ContentValues > create< android::content::ContentValues>(local_ref< android::content::ContentValues > const &a0)
+
+android::content::ContentValues::ContentValues()
+: cpp_object<android::content::ContentValues>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::content::ContentValues::J2CPP_CLASS_NAME>(),
+		get_method_id<android::content::ContentValues::J2CPP_CLASS_NAME, android::content::ContentValues::J2CPP_METHOD_NAME(0), android::content::ContentValues::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
 {
-	return local_ref< android::content::ContentValues >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::content::ContentValues::J2CPP_CLASS_NAME>(),
-			get_method_id<android::content::ContentValues::J2CPP_CLASS_NAME, android::content::ContentValues::J2CPP_METHOD_NAME(2), android::content::ContentValues::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype()
-		)
-	);
 }
+
+
+
+android::content::ContentValues::ContentValues(cpp_int const &a0)
+: cpp_object<android::content::ContentValues>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::content::ContentValues::J2CPP_CLASS_NAME>(),
+		get_method_id<android::content::ContentValues::J2CPP_CLASS_NAME, android::content::ContentValues::J2CPP_METHOD_NAME(1), android::content::ContentValues::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
+
+
+android::content::ContentValues::ContentValues(local_ref< android::content::ContentValues > const &a0)
+: cpp_object<android::content::ContentValues>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::content::ContentValues::J2CPP_CLASS_NAME>(),
+		get_method_id<android::content::ContentValues::J2CPP_CLASS_NAME, android::content::ContentValues::J2CPP_METHOD_NAME(2), android::content::ContentValues::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 cpp_boolean android::content::ContentValues::equals(local_ref< java::lang::Object > const &a0)
 {
@@ -514,6 +535,7 @@ local_ref< java::lang::String > android::content::ContentValues::toString()
 		)
 	);
 }
+
 
 
 static_field<

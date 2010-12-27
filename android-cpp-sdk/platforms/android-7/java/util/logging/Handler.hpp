@@ -10,6 +10,7 @@
 #define J2CPP_JAVA_UTIL_LOGGING_HANDLER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace util { namespace logging { class Level; } } } }
 namespace j2cpp { namespace java { namespace util { namespace logging { class Filter; } } } }
@@ -18,6 +19,7 @@ namespace j2cpp { namespace java { namespace util { namespace logging { class Fo
 namespace j2cpp { namespace java { namespace util { namespace logging { class LogRecord; } } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/util/logging/ErrorManager.hpp>
 #include <java/util/logging/Filter.hpp>
@@ -55,10 +57,13 @@ namespace java { namespace util { namespace logging {
 		J2CPP_DECLARE_METHOD(14)
 		J2CPP_DECLARE_METHOD(15)
 
-		Handler(jobject jobj)
+		explicit Handler(jobject jobj)
 		: cpp_object<Handler>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		void close();
 		void flush();
@@ -80,7 +85,6 @@ namespace java { namespace util { namespace logging {
 } //namespace util
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_UTIL_LOGGING_HANDLER_HPP_DECL
@@ -93,16 +97,12 @@ namespace java { namespace util { namespace logging {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::util::logging::Handler > create< java::util::logging::Handler>()
+
+java::util::logging::Handler::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::util::logging::Handler >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::logging::Handler::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::logging::Handler::J2CPP_CLASS_NAME, java::util::logging::Handler::J2CPP_METHOD_NAME(0), java::util::logging::Handler::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
 
 void java::util::logging::Handler::close()
 {

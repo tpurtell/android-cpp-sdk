@@ -66,10 +66,13 @@ namespace junit { namespace framework {
 		J2CPP_DECLARE_METHOD(33)
 		J2CPP_DECLARE_METHOD(34)
 
-		Assert(jobject jobj)
+		explicit Assert(jobject jobj)
 		: cpp_object<Assert>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		static void assertTrue(local_ref< java::lang::String > const&, cpp_boolean const&);
 		static void assertTrue(cpp_boolean const&);
@@ -110,7 +113,6 @@ namespace junit { namespace framework {
 } //namespace framework
 } //namespace junit
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JUNIT_FRAMEWORK_ASSERT_HPP_DECL
@@ -123,16 +125,12 @@ namespace junit { namespace framework {
 namespace j2cpp {
 
 
-template <>
-local_ref< junit::framework::Assert > create< junit::framework::Assert>()
+
+junit::framework::Assert::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< junit::framework::Assert >(
-		environment::get().get_jenv()->NewObject(
-			get_class<junit::framework::Assert::J2CPP_CLASS_NAME>(),
-			get_method_id<junit::framework::Assert::J2CPP_CLASS_NAME, junit::framework::Assert::J2CPP_METHOD_NAME(0), junit::framework::Assert::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
 
 void junit::framework::Assert::assertTrue(local_ref< java::lang::String > const &a0, cpp_boolean const &a1)
 {

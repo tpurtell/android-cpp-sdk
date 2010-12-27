@@ -10,8 +10,10 @@
 #define J2CPP_ANDROID_WIDGET_CHECKABLE_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -30,10 +32,13 @@ namespace android { namespace widget {
 		J2CPP_DECLARE_METHOD(1)
 		J2CPP_DECLARE_METHOD(2)
 
-		Checkable(jobject jobj)
+		explicit Checkable(jobject jobj)
 		: cpp_object<Checkable>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		void setChecked(cpp_boolean const&);
 		cpp_boolean isChecked();
@@ -42,7 +47,6 @@ namespace android { namespace widget {
 
 } //namespace widget
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -55,6 +59,12 @@ namespace android { namespace widget {
 
 namespace j2cpp {
 
+
+
+android::widget::Checkable::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 void android::widget::Checkable::setChecked(cpp_boolean const &a0)
 {

@@ -14,6 +14,7 @@ namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace util { namespace concurrent { class TimeUnit; } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace conn { namespace routing { class HttpRoute; } } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace conn { class ClientConnectionRequest; } } } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { namespace conn { class ClientConnectionManager; } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace conn { class ManagedClientConnection; } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace conn { namespace scheme { class SchemeRegistry; } } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace params { class HttpParams; } } } } }
@@ -21,6 +22,7 @@ namespace j2cpp { namespace org { namespace apache { namespace http { namespace 
 
 #include <java/lang/Object.hpp>
 #include <java/util/concurrent/TimeUnit.hpp>
+#include <org/apache/http/conn/ClientConnectionManager.hpp>
 #include <org/apache/http/conn/ClientConnectionRequest.hpp>
 #include <org/apache/http/conn/ManagedClientConnection.hpp>
 #include <org/apache/http/conn/routing/HttpRoute.hpp>
@@ -56,11 +58,16 @@ namespace org { namespace apache { namespace http { namespace impl { namespace c
 		J2CPP_DECLARE_FIELD(1)
 		J2CPP_DECLARE_FIELD(2)
 
-		ThreadSafeClientConnManager(jobject jobj)
+		explicit ThreadSafeClientConnManager(jobject jobj)
 		: cpp_object<ThreadSafeClientConnManager>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<org::apache::http::conn::ClientConnectionManager>() const;
+
+
+		ThreadSafeClientConnManager(local_ref< org::apache::http::params::HttpParams > const&, local_ref< org::apache::http::conn::scheme::SchemeRegistry > const&);
 		local_ref< org::apache::http::conn::scheme::SchemeRegistry > getSchemeRegistry();
 		local_ref< org::apache::http::conn::ClientConnectionRequest > requestConnection(local_ref< org::apache::http::conn::routing::HttpRoute > const&, local_ref< java::lang::Object > const&);
 		void releaseConnection(local_ref< org::apache::http::conn::ManagedClientConnection > const&, cpp_long const&, local_ref< java::util::concurrent::TimeUnit > const&);
@@ -79,7 +86,6 @@ namespace org { namespace apache { namespace http { namespace impl { namespace c
 } //namespace apache
 } //namespace org
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ORG_APACHE_HTTP_IMPL_CONN_TSCCM_THREADSAFECLIENTCONNMANAGER_HPP_DECL
@@ -92,17 +98,29 @@ namespace org { namespace apache { namespace http { namespace impl { namespace c
 namespace j2cpp {
 
 
-template <>
-local_ref< org::apache::http::impl::conn::tsccm::ThreadSafeClientConnManager > create< org::apache::http::impl::conn::tsccm::ThreadSafeClientConnManager>(local_ref< org::apache::http::params::HttpParams > const &a0, local_ref< org::apache::http::conn::scheme::SchemeRegistry > const &a1)
+
+org::apache::http::impl::conn::tsccm::ThreadSafeClientConnManager::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< org::apache::http::impl::conn::tsccm::ThreadSafeClientConnManager >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::apache::http::impl::conn::tsccm::ThreadSafeClientConnManager::J2CPP_CLASS_NAME>(),
-			get_method_id<org::apache::http::impl::conn::tsccm::ThreadSafeClientConnManager::J2CPP_CLASS_NAME, org::apache::http::impl::conn::tsccm::ThreadSafeClientConnManager::J2CPP_METHOD_NAME(0), org::apache::http::impl::conn::tsccm::ThreadSafeClientConnManager::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+org::apache::http::impl::conn::tsccm::ThreadSafeClientConnManager::operator local_ref<org::apache::http::conn::ClientConnectionManager>() const
+{
+	return local_ref<org::apache::http::conn::ClientConnectionManager>(get_jtype());
+}
+
+
+org::apache::http::impl::conn::tsccm::ThreadSafeClientConnManager::ThreadSafeClientConnManager(local_ref< org::apache::http::params::HttpParams > const &a0, local_ref< org::apache::http::conn::scheme::SchemeRegistry > const &a1)
+: cpp_object<org::apache::http::impl::conn::tsccm::ThreadSafeClientConnManager>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::apache::http::impl::conn::tsccm::ThreadSafeClientConnManager::J2CPP_CLASS_NAME>(),
+		get_method_id<org::apache::http::impl::conn::tsccm::ThreadSafeClientConnManager::J2CPP_CLASS_NAME, org::apache::http::impl::conn::tsccm::ThreadSafeClientConnManager::J2CPP_METHOD_NAME(0), org::apache::http::impl::conn::tsccm::ThreadSafeClientConnManager::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
 
 
 

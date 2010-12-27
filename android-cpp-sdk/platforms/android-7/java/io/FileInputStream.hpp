@@ -10,14 +10,18 @@
 #define J2CPP_JAVA_IO_FILEINPUTSTREAM_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class Closeable; } } }
 namespace j2cpp { namespace java { namespace io { class File; } } }
 namespace j2cpp { namespace java { namespace io { class FileDescriptor; } } }
+namespace j2cpp { namespace java { namespace io { class InputStream; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace nio { namespace channels { class FileChannel; } } } }
 
 
+#include <java/io/Closeable.hpp>
 #include <java/io/File.hpp>
 #include <java/io/FileDescriptor.hpp>
+#include <java/io/InputStream.hpp>
 #include <java/lang/String.hpp>
 #include <java/nio/channels/FileChannel.hpp>
 
@@ -47,11 +51,18 @@ namespace java { namespace io {
 		J2CPP_DECLARE_METHOD(10)
 		J2CPP_DECLARE_METHOD(11)
 
-		FileInputStream(jobject jobj)
+		explicit FileInputStream(jobject jobj)
 		: cpp_object<FileInputStream>(jobj)
 		{
 		}
 
+		operator local_ref<java::io::InputStream>() const;
+		operator local_ref<java::io::Closeable>() const;
+
+
+		FileInputStream(local_ref< java::io::File > const&);
+		FileInputStream(local_ref< java::io::FileDescriptor > const&);
+		FileInputStream(local_ref< java::lang::String > const&);
 		cpp_int available();
 		void close();
 		local_ref< java::nio::channels::FileChannel > getChannel();
@@ -65,7 +76,6 @@ namespace java { namespace io {
 } //namespace io
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_IO_FILEINPUTSTREAM_HPP_DECL
@@ -78,41 +88,55 @@ namespace java { namespace io {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::io::FileInputStream > create< java::io::FileInputStream>(local_ref< java::io::File > const &a0)
+
+java::io::FileInputStream::operator local_ref<java::io::InputStream>() const
 {
-	return local_ref< java::io::FileInputStream >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::io::FileInputStream::J2CPP_CLASS_NAME>(),
-			get_method_id<java::io::FileInputStream::J2CPP_CLASS_NAME, java::io::FileInputStream::J2CPP_METHOD_NAME(0), java::io::FileInputStream::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::io::InputStream>(get_jtype());
 }
 
-template <>
-local_ref< java::io::FileInputStream > create< java::io::FileInputStream>(local_ref< java::io::FileDescriptor > const &a0)
+java::io::FileInputStream::operator local_ref<java::io::Closeable>() const
 {
-	return local_ref< java::io::FileInputStream >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::io::FileInputStream::J2CPP_CLASS_NAME>(),
-			get_method_id<java::io::FileInputStream::J2CPP_CLASS_NAME, java::io::FileInputStream::J2CPP_METHOD_NAME(1), java::io::FileInputStream::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::io::Closeable>(get_jtype());
 }
 
-template <>
-local_ref< java::io::FileInputStream > create< java::io::FileInputStream>(local_ref< java::lang::String > const &a0)
+
+java::io::FileInputStream::FileInputStream(local_ref< java::io::File > const &a0)
+: cpp_object<java::io::FileInputStream>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::io::FileInputStream::J2CPP_CLASS_NAME>(),
+		get_method_id<java::io::FileInputStream::J2CPP_CLASS_NAME, java::io::FileInputStream::J2CPP_METHOD_NAME(0), java::io::FileInputStream::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< java::io::FileInputStream >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::io::FileInputStream::J2CPP_CLASS_NAME>(),
-			get_method_id<java::io::FileInputStream::J2CPP_CLASS_NAME, java::io::FileInputStream::J2CPP_METHOD_NAME(2), java::io::FileInputStream::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype()
-		)
-	);
 }
+
+
+
+java::io::FileInputStream::FileInputStream(local_ref< java::io::FileDescriptor > const &a0)
+: cpp_object<java::io::FileInputStream>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::io::FileInputStream::J2CPP_CLASS_NAME>(),
+		get_method_id<java::io::FileInputStream::J2CPP_CLASS_NAME, java::io::FileInputStream::J2CPP_METHOD_NAME(1), java::io::FileInputStream::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
+
+
+java::io::FileInputStream::FileInputStream(local_ref< java::lang::String > const &a0)
+: cpp_object<java::io::FileInputStream>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::io::FileInputStream::J2CPP_CLASS_NAME>(),
+		get_method_id<java::io::FileInputStream::J2CPP_CLASS_NAME, java::io::FileInputStream::J2CPP_METHOD_NAME(2), java::io::FileInputStream::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 cpp_int java::io::FileInputStream::available()
 {

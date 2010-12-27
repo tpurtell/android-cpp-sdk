@@ -10,10 +10,12 @@
 #define J2CPP_ORG_XML_SAX_HELPERS_ATTRIBUTESIMPL_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace org { namespace xml { namespace sax { class Attributes; } } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <org/xml/sax/Attributes.hpp>
 
@@ -55,11 +57,17 @@ namespace org { namespace xml { namespace sax { namespace helpers {
 		J2CPP_DECLARE_METHOD(22)
 		J2CPP_DECLARE_METHOD(23)
 
-		AttributesImpl(jobject jobj)
+		explicit AttributesImpl(jobject jobj)
 		: cpp_object<AttributesImpl>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<org::xml::sax::Attributes>() const;
+
+
+		AttributesImpl();
+		AttributesImpl(local_ref< org::xml::sax::Attributes > const&);
 		cpp_int getLength();
 		local_ref< java::lang::String > getURI(cpp_int const&);
 		local_ref< java::lang::String > getLocalName(cpp_int const&);
@@ -89,7 +97,6 @@ namespace org { namespace xml { namespace sax { namespace helpers {
 } //namespace xml
 } //namespace org
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ORG_XML_SAX_HELPERS_ATTRIBUTESIMPL_HPP_DECL
@@ -102,28 +109,41 @@ namespace org { namespace xml { namespace sax { namespace helpers {
 namespace j2cpp {
 
 
-template <>
-local_ref< org::xml::sax::helpers::AttributesImpl > create< org::xml::sax::helpers::AttributesImpl>()
+
+org::xml::sax::helpers::AttributesImpl::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< org::xml::sax::helpers::AttributesImpl >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::xml::sax::helpers::AttributesImpl::J2CPP_CLASS_NAME>(),
-			get_method_id<org::xml::sax::helpers::AttributesImpl::J2CPP_CLASS_NAME, org::xml::sax::helpers::AttributesImpl::J2CPP_METHOD_NAME(0), org::xml::sax::helpers::AttributesImpl::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
 
-template <>
-local_ref< org::xml::sax::helpers::AttributesImpl > create< org::xml::sax::helpers::AttributesImpl>(local_ref< org::xml::sax::Attributes > const &a0)
+org::xml::sax::helpers::AttributesImpl::operator local_ref<org::xml::sax::Attributes>() const
 {
-	return local_ref< org::xml::sax::helpers::AttributesImpl >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::xml::sax::helpers::AttributesImpl::J2CPP_CLASS_NAME>(),
-			get_method_id<org::xml::sax::helpers::AttributesImpl::J2CPP_CLASS_NAME, org::xml::sax::helpers::AttributesImpl::J2CPP_METHOD_NAME(1), org::xml::sax::helpers::AttributesImpl::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<org::xml::sax::Attributes>(get_jtype());
 }
+
+
+org::xml::sax::helpers::AttributesImpl::AttributesImpl()
+: cpp_object<org::xml::sax::helpers::AttributesImpl>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::xml::sax::helpers::AttributesImpl::J2CPP_CLASS_NAME>(),
+		get_method_id<org::xml::sax::helpers::AttributesImpl::J2CPP_CLASS_NAME, org::xml::sax::helpers::AttributesImpl::J2CPP_METHOD_NAME(0), org::xml::sax::helpers::AttributesImpl::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
+
+
+org::xml::sax::helpers::AttributesImpl::AttributesImpl(local_ref< org::xml::sax::Attributes > const &a0)
+: cpp_object<org::xml::sax::helpers::AttributesImpl>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::xml::sax::helpers::AttributesImpl::J2CPP_CLASS_NAME>(),
+		get_method_id<org::xml::sax::helpers::AttributesImpl::J2CPP_CLASS_NAME, org::xml::sax::helpers::AttributesImpl::J2CPP_METHOD_NAME(1), org::xml::sax::helpers::AttributesImpl::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 cpp_int org::xml::sax::helpers::AttributesImpl::getLength()
 {

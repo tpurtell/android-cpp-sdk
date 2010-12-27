@@ -13,6 +13,7 @@
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { class HttpRequest; } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { class Header; } } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { namespace impl { namespace auth { class RFC2617Scheme; } } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace auth { class Credentials; } } } } }
 
 
@@ -20,6 +21,7 @@ namespace j2cpp { namespace org { namespace apache { namespace http { namespace 
 #include <org/apache/http/Header.hpp>
 #include <org/apache/http/HttpRequest.hpp>
 #include <org/apache/http/auth/Credentials.hpp>
+#include <org/apache/http/impl/auth/RFC2617Scheme.hpp>
 
 
 namespace j2cpp {
@@ -42,11 +44,15 @@ namespace org { namespace apache { namespace http { namespace impl { namespace a
 		J2CPP_DECLARE_METHOD(5)
 		J2CPP_DECLARE_METHOD(6)
 
-		BasicScheme(jobject jobj)
+		explicit BasicScheme(jobject jobj)
 		: cpp_object<BasicScheme>(jobj)
 		{
 		}
 
+		operator local_ref<org::apache::http::impl::auth::RFC2617Scheme>() const;
+
+
+		BasicScheme();
 		local_ref< java::lang::String > getSchemeName();
 		void processChallenge(local_ref< org::apache::http::Header > const&);
 		cpp_boolean isComplete();
@@ -61,7 +67,6 @@ namespace org { namespace apache { namespace http { namespace impl { namespace a
 } //namespace apache
 } //namespace org
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ORG_APACHE_HTTP_IMPL_AUTH_BASICSCHEME_HPP_DECL
@@ -74,16 +79,23 @@ namespace org { namespace apache { namespace http { namespace impl { namespace a
 namespace j2cpp {
 
 
-template <>
-local_ref< org::apache::http::impl::auth::BasicScheme > create< org::apache::http::impl::auth::BasicScheme>()
+
+org::apache::http::impl::auth::BasicScheme::operator local_ref<org::apache::http::impl::auth::RFC2617Scheme>() const
 {
-	return local_ref< org::apache::http::impl::auth::BasicScheme >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::apache::http::impl::auth::BasicScheme::J2CPP_CLASS_NAME>(),
-			get_method_id<org::apache::http::impl::auth::BasicScheme::J2CPP_CLASS_NAME, org::apache::http::impl::auth::BasicScheme::J2CPP_METHOD_NAME(0), org::apache::http::impl::auth::BasicScheme::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<org::apache::http::impl::auth::RFC2617Scheme>(get_jtype());
 }
+
+
+org::apache::http::impl::auth::BasicScheme::BasicScheme()
+: cpp_object<org::apache::http::impl::auth::BasicScheme>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::apache::http::impl::auth::BasicScheme::J2CPP_CLASS_NAME>(),
+		get_method_id<org::apache::http::impl::auth::BasicScheme::J2CPP_CLASS_NAME, org::apache::http::impl::auth::BasicScheme::J2CPP_METHOD_NAME(0), org::apache::http::impl::auth::BasicScheme::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 local_ref< java::lang::String > org::apache::http::impl::auth::BasicScheme::getSchemeName()
 {

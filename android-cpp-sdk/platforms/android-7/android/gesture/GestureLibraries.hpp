@@ -11,6 +11,7 @@
 
 
 namespace j2cpp { namespace java { namespace io { class File; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace android { namespace content { class Context; } } }
 namespace j2cpp { namespace android { namespace gesture { class GestureLibrary; } } }
@@ -19,6 +20,7 @@ namespace j2cpp { namespace android { namespace gesture { class GestureLibrary; 
 #include <android/content/Context.hpp>
 #include <android/gesture/GestureLibrary.hpp>
 #include <java/io/File.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -40,10 +42,13 @@ namespace android { namespace gesture {
 		J2CPP_DECLARE_METHOD(3)
 		J2CPP_DECLARE_METHOD(4)
 
-		GestureLibraries(jobject jobj)
+		explicit GestureLibraries(jobject jobj)
 		: cpp_object<GestureLibraries>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		static local_ref< android::gesture::GestureLibrary > fromFile(local_ref< java::lang::String > const&);
 		static local_ref< android::gesture::GestureLibrary > fromFile(local_ref< java::io::File > const&);
@@ -53,7 +58,6 @@ namespace android { namespace gesture {
 
 } //namespace gesture
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -67,16 +71,12 @@ namespace android { namespace gesture {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::gesture::GestureLibraries > create< android::gesture::GestureLibraries>()
+
+android::gesture::GestureLibraries::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::gesture::GestureLibraries >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::gesture::GestureLibraries::J2CPP_CLASS_NAME>(),
-			get_method_id<android::gesture::GestureLibraries::J2CPP_CLASS_NAME, android::gesture::GestureLibraries::J2CPP_METHOD_NAME(0), android::gesture::GestureLibraries::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
 
 local_ref< android::gesture::GestureLibrary > android::gesture::GestureLibraries::fromFile(local_ref< java::lang::String > const &a0)
 {

@@ -10,12 +10,14 @@
 #define J2CPP_JAVA_LANG_REFLECT_PROXY_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 namespace j2cpp { namespace java { namespace lang { class ClassLoader; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class Class; } } }
 namespace j2cpp { namespace java { namespace lang { namespace reflect { class InvocationHandler; } } } }
 
 
+#include <java/io/Serializable.hpp>
 #include <java/lang/Class.hpp>
 #include <java/lang/ClassLoader.hpp>
 #include <java/lang/Object.hpp>
@@ -41,10 +43,14 @@ namespace java { namespace lang { namespace reflect {
 		J2CPP_DECLARE_METHOD(4)
 		J2CPP_DECLARE_FIELD(0)
 
-		Proxy(jobject jobj)
+		explicit Proxy(jobject jobj)
 		: cpp_object<Proxy>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::io::Serializable>() const;
+
 
 		static local_ref< java::lang::Class > getProxyClass(local_ref< java::lang::ClassLoader > const&, local_ref< cpp_object_array<java::lang::Class, 1> > const&);
 		static local_ref< java::lang::Object > newProxyInstance(local_ref< java::lang::ClassLoader > const&, local_ref< cpp_object_array<java::lang::Class, 1> > const&, local_ref< java::lang::reflect::InvocationHandler > const&);
@@ -56,7 +62,6 @@ namespace java { namespace lang { namespace reflect {
 } //namespace reflect
 } //namespace lang
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -70,17 +75,17 @@ namespace java { namespace lang { namespace reflect {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::lang::reflect::Proxy > create< java::lang::reflect::Proxy>(local_ref< java::lang::reflect::InvocationHandler > const &a0)
+
+java::lang::reflect::Proxy::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::lang::reflect::Proxy >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::lang::reflect::Proxy::J2CPP_CLASS_NAME>(),
-			get_method_id<java::lang::reflect::Proxy::J2CPP_CLASS_NAME, java::lang::reflect::Proxy::J2CPP_METHOD_NAME(0), java::lang::reflect::Proxy::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+java::lang::reflect::Proxy::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jtype());
+}
+
 
 local_ref< java::lang::Class > java::lang::reflect::Proxy::getProxyClass(local_ref< java::lang::ClassLoader > const &a0, local_ref< cpp_object_array<java::lang::Class, 1> > const &a1)
 {

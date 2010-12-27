@@ -11,6 +11,7 @@
 
 
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace android { namespace database { class AbstractWindowedCursor; } } }
 namespace j2cpp { namespace android { namespace database { class CursorWindow; } } }
 namespace j2cpp { namespace android { namespace database { class DataSetObserver; } } }
 namespace j2cpp { namespace android { namespace database { namespace sqlite { class SQLiteQuery; } } } }
@@ -18,6 +19,7 @@ namespace j2cpp { namespace android { namespace database { namespace sqlite { cl
 namespace j2cpp { namespace android { namespace database { namespace sqlite { class SQLiteCursorDriver; } } } }
 
 
+#include <android/database/AbstractWindowedCursor.hpp>
 #include <android/database/CursorWindow.hpp>
 #include <android/database/DataSetObserver.hpp>
 #include <android/database/sqlite/SQLiteCursorDriver.hpp>
@@ -52,11 +54,15 @@ namespace android { namespace database { namespace sqlite {
 		J2CPP_DECLARE_METHOD(11)
 		J2CPP_DECLARE_METHOD(12)
 
-		SQLiteCursor(jobject jobj)
+		explicit SQLiteCursor(jobject jobj)
 		: cpp_object<SQLiteCursor>(jobj)
 		{
 		}
 
+		operator local_ref<android::database::AbstractWindowedCursor>() const;
+
+
+		SQLiteCursor(local_ref< android::database::sqlite::SQLiteDatabase > const&, local_ref< android::database::sqlite::SQLiteCursorDriver > const&, local_ref< java::lang::String > const&, local_ref< android::database::sqlite::SQLiteQuery > const&);
 		void registerDataSetObserver(local_ref< android::database::DataSetObserver > const&);
 		local_ref< android::database::sqlite::SQLiteDatabase > getDatabase();
 		cpp_boolean onMove(cpp_int const&, cpp_int const&);
@@ -74,7 +80,6 @@ namespace android { namespace database { namespace sqlite {
 } //namespace database
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_DATABASE_SQLITE_SQLITECURSOR_HPP_DECL
@@ -87,17 +92,24 @@ namespace android { namespace database { namespace sqlite {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::database::sqlite::SQLiteCursor > create< android::database::sqlite::SQLiteCursor>(local_ref< android::database::sqlite::SQLiteDatabase > const &a0, local_ref< android::database::sqlite::SQLiteCursorDriver > const &a1, local_ref< java::lang::String > const &a2, local_ref< android::database::sqlite::SQLiteQuery > const &a3)
+
+android::database::sqlite::SQLiteCursor::operator local_ref<android::database::AbstractWindowedCursor>() const
 {
-	return local_ref< android::database::sqlite::SQLiteCursor >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::database::sqlite::SQLiteCursor::J2CPP_CLASS_NAME>(),
-			get_method_id<android::database::sqlite::SQLiteCursor::J2CPP_CLASS_NAME, android::database::sqlite::SQLiteCursor::J2CPP_METHOD_NAME(0), android::database::sqlite::SQLiteCursor::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype()
-		)
-	);
+	return local_ref<android::database::AbstractWindowedCursor>(get_jtype());
 }
+
+
+android::database::sqlite::SQLiteCursor::SQLiteCursor(local_ref< android::database::sqlite::SQLiteDatabase > const &a0, local_ref< android::database::sqlite::SQLiteCursorDriver > const &a1, local_ref< java::lang::String > const &a2, local_ref< android::database::sqlite::SQLiteQuery > const &a3)
+: cpp_object<android::database::sqlite::SQLiteCursor>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::database::sqlite::SQLiteCursor::J2CPP_CLASS_NAME>(),
+		get_method_id<android::database::sqlite::SQLiteCursor::J2CPP_CLASS_NAME, android::database::sqlite::SQLiteCursor::J2CPP_METHOD_NAME(0), android::database::sqlite::SQLiteCursor::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype()
+	)
+)
+{
+}
+
 
 void android::database::sqlite::SQLiteCursor::registerDataSetObserver(local_ref< android::database::DataSetObserver > const &a0)
 {

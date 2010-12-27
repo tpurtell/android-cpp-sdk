@@ -10,9 +10,11 @@
 #define J2CPP_ORG_APACHE_HTTP_UTIL_ENCODINGUTILS_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -36,10 +38,13 @@ namespace org { namespace apache { namespace http { namespace util {
 		J2CPP_DECLARE_METHOD(5)
 		J2CPP_DECLARE_METHOD(6)
 
-		EncodingUtils(jobject jobj)
+		explicit EncodingUtils(jobject jobj)
 		: cpp_object<EncodingUtils>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		static local_ref< java::lang::String > getString(local_ref< cpp_byte_array<1> > const&, cpp_int const&, cpp_int const&, local_ref< java::lang::String > const&);
 		static local_ref< java::lang::String > getString(local_ref< cpp_byte_array<1> > const&, local_ref< java::lang::String > const&);
@@ -54,7 +59,6 @@ namespace org { namespace apache { namespace http { namespace util {
 } //namespace apache
 } //namespace org
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ORG_APACHE_HTTP_UTIL_ENCODINGUTILS_HPP_DECL
@@ -67,16 +71,12 @@ namespace org { namespace apache { namespace http { namespace util {
 namespace j2cpp {
 
 
-template <>
-local_ref< org::apache::http::util::EncodingUtils > create< org::apache::http::util::EncodingUtils>()
+
+org::apache::http::util::EncodingUtils::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< org::apache::http::util::EncodingUtils >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::apache::http::util::EncodingUtils::J2CPP_CLASS_NAME>(),
-			get_method_id<org::apache::http::util::EncodingUtils::J2CPP_CLASS_NAME, org::apache::http::util::EncodingUtils::J2CPP_METHOD_NAME(0), org::apache::http::util::EncodingUtils::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
 
 local_ref< java::lang::String > org::apache::http::util::EncodingUtils::getString(local_ref< cpp_byte_array<1> > const &a0, cpp_int const &a1, cpp_int const &a2, local_ref< java::lang::String > const &a3)
 {

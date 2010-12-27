@@ -212,10 +212,13 @@ namespace java { namespace sql {
 		J2CPP_DECLARE_FIELD(8)
 		J2CPP_DECLARE_FIELD(9)
 
-		ResultSet(jobject jobj)
+		explicit ResultSet(jobject jobj)
 		: cpp_object<ResultSet>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		cpp_boolean absolute(cpp_int const&);
 		void afterLast();
@@ -372,7 +375,6 @@ namespace java { namespace sql {
 } //namespace sql
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_SQL_RESULTSET_HPP_DECL
@@ -384,6 +386,12 @@ namespace java { namespace sql {
 
 namespace j2cpp {
 
+
+
+java::sql::ResultSet::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 cpp_boolean java::sql::ResultSet::absolute(cpp_int const &a0)
 {

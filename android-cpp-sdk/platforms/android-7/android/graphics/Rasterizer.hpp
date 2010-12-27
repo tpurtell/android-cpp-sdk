@@ -10,8 +10,10 @@
 #define J2CPP_ANDROID_GRAPHICS_RASTERIZER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -29,16 +31,19 @@ namespace android { namespace graphics {
 		J2CPP_DECLARE_METHOD(0)
 		J2CPP_DECLARE_METHOD(1)
 
-		Rasterizer(jobject jobj)
+		explicit Rasterizer(jobject jobj)
 		: cpp_object<Rasterizer>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		Rasterizer();
 	}; //class Rasterizer
 
 } //namespace graphics
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -52,16 +57,23 @@ namespace android { namespace graphics {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::graphics::Rasterizer > create< android::graphics::Rasterizer>()
+
+android::graphics::Rasterizer::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::graphics::Rasterizer >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::graphics::Rasterizer::J2CPP_CLASS_NAME>(),
-			get_method_id<android::graphics::Rasterizer::J2CPP_CLASS_NAME, android::graphics::Rasterizer::J2CPP_METHOD_NAME(0), android::graphics::Rasterizer::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::graphics::Rasterizer::Rasterizer()
+: cpp_object<android::graphics::Rasterizer>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::graphics::Rasterizer::J2CPP_CLASS_NAME>(),
+		get_method_id<android::graphics::Rasterizer::J2CPP_CLASS_NAME, android::graphics::Rasterizer::J2CPP_METHOD_NAME(0), android::graphics::Rasterizer::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 
 

@@ -14,6 +14,7 @@ namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace util { class UUID; } } }
 namespace j2cpp { namespace android { namespace os { class Parcel; } } }
+namespace j2cpp { namespace android { namespace os { class Parcelable; } } }
 namespace j2cpp { namespace android { namespace os { namespace Parcelable_ { class Creator; } } } }
 
 
@@ -47,11 +48,16 @@ namespace android { namespace os {
 		J2CPP_DECLARE_METHOD(8)
 		J2CPP_DECLARE_FIELD(0)
 
-		ParcelUuid(jobject jobj)
+		explicit ParcelUuid(jobject jobj)
 		: cpp_object<ParcelUuid>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<android::os::Parcelable>() const;
+
+
+		ParcelUuid(local_ref< java::util::UUID > const&);
 		static local_ref< android::os::ParcelUuid > fromString(local_ref< java::lang::String > const&);
 		local_ref< java::util::UUID > getUuid();
 		local_ref< java::lang::String > toString();
@@ -66,7 +72,6 @@ namespace android { namespace os {
 } //namespace os
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_OS_PARCELUUID_HPP_DECL
@@ -79,17 +84,29 @@ namespace android { namespace os {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::os::ParcelUuid > create< android::os::ParcelUuid>(local_ref< java::util::UUID > const &a0)
+
+android::os::ParcelUuid::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::os::ParcelUuid >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::os::ParcelUuid::J2CPP_CLASS_NAME>(),
-			get_method_id<android::os::ParcelUuid::J2CPP_CLASS_NAME, android::os::ParcelUuid::J2CPP_METHOD_NAME(0), android::os::ParcelUuid::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+android::os::ParcelUuid::operator local_ref<android::os::Parcelable>() const
+{
+	return local_ref<android::os::Parcelable>(get_jtype());
+}
+
+
+android::os::ParcelUuid::ParcelUuid(local_ref< java::util::UUID > const &a0)
+: cpp_object<android::os::ParcelUuid>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::os::ParcelUuid::J2CPP_CLASS_NAME>(),
+		get_method_id<android::os::ParcelUuid::J2CPP_CLASS_NAME, android::os::ParcelUuid::J2CPP_METHOD_NAME(0), android::os::ParcelUuid::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 local_ref< android::os::ParcelUuid > android::os::ParcelUuid::fromString(local_ref< java::lang::String > const &a0)
 {
@@ -163,6 +180,7 @@ void android::os::ParcelUuid::writeToParcel(local_ref< android::os::Parcel > con
 		)
 	);
 }
+
 
 
 static_field<

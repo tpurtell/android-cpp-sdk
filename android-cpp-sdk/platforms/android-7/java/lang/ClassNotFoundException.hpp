@@ -12,8 +12,10 @@
 
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace lang { class Throwable; } } }
+namespace j2cpp { namespace java { namespace lang { class Exception; } } }
 
 
+#include <java/lang/Exception.hpp>
 #include <java/lang/String.hpp>
 #include <java/lang/Throwable.hpp>
 
@@ -36,18 +38,23 @@ namespace java { namespace lang {
 		J2CPP_DECLARE_METHOD(3)
 		J2CPP_DECLARE_METHOD(4)
 
-		ClassNotFoundException(jobject jobj)
+		explicit ClassNotFoundException(jobject jobj)
 		: cpp_object<ClassNotFoundException>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Exception>() const;
+
+
+		ClassNotFoundException();
+		ClassNotFoundException(local_ref< java::lang::String > const&);
+		ClassNotFoundException(local_ref< java::lang::String > const&, local_ref< java::lang::Throwable > const&);
 		local_ref< java::lang::Throwable > getException();
 		local_ref< java::lang::Throwable > getCause();
 	}; //class ClassNotFoundException
 
 } //namespace lang
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -61,40 +68,49 @@ namespace java { namespace lang {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::lang::ClassNotFoundException > create< java::lang::ClassNotFoundException>()
+
+java::lang::ClassNotFoundException::operator local_ref<java::lang::Exception>() const
 {
-	return local_ref< java::lang::ClassNotFoundException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::lang::ClassNotFoundException::J2CPP_CLASS_NAME>(),
-			get_method_id<java::lang::ClassNotFoundException::J2CPP_CLASS_NAME, java::lang::ClassNotFoundException::J2CPP_METHOD_NAME(0), java::lang::ClassNotFoundException::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Exception>(get_jtype());
 }
 
-template <>
-local_ref< java::lang::ClassNotFoundException > create< java::lang::ClassNotFoundException>(local_ref< java::lang::String > const &a0)
+
+java::lang::ClassNotFoundException::ClassNotFoundException()
+: cpp_object<java::lang::ClassNotFoundException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::lang::ClassNotFoundException::J2CPP_CLASS_NAME>(),
+		get_method_id<java::lang::ClassNotFoundException::J2CPP_CLASS_NAME, java::lang::ClassNotFoundException::J2CPP_METHOD_NAME(0), java::lang::ClassNotFoundException::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
 {
-	return local_ref< java::lang::ClassNotFoundException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::lang::ClassNotFoundException::J2CPP_CLASS_NAME>(),
-			get_method_id<java::lang::ClassNotFoundException::J2CPP_CLASS_NAME, java::lang::ClassNotFoundException::J2CPP_METHOD_NAME(1), java::lang::ClassNotFoundException::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< java::lang::ClassNotFoundException > create< java::lang::ClassNotFoundException>(local_ref< java::lang::String > const &a0, local_ref< java::lang::Throwable > const &a1)
+
+
+java::lang::ClassNotFoundException::ClassNotFoundException(local_ref< java::lang::String > const &a0)
+: cpp_object<java::lang::ClassNotFoundException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::lang::ClassNotFoundException::J2CPP_CLASS_NAME>(),
+		get_method_id<java::lang::ClassNotFoundException::J2CPP_CLASS_NAME, java::lang::ClassNotFoundException::J2CPP_METHOD_NAME(1), java::lang::ClassNotFoundException::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< java::lang::ClassNotFoundException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::lang::ClassNotFoundException::J2CPP_CLASS_NAME>(),
-			get_method_id<java::lang::ClassNotFoundException::J2CPP_CLASS_NAME, java::lang::ClassNotFoundException::J2CPP_METHOD_NAME(2), java::lang::ClassNotFoundException::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
 }
+
+
+
+java::lang::ClassNotFoundException::ClassNotFoundException(local_ref< java::lang::String > const &a0, local_ref< java::lang::Throwable > const &a1)
+: cpp_object<java::lang::ClassNotFoundException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::lang::ClassNotFoundException::J2CPP_CLASS_NAME>(),
+		get_method_id<java::lang::ClassNotFoundException::J2CPP_CLASS_NAME, java::lang::ClassNotFoundException::J2CPP_METHOD_NAME(2), java::lang::ClassNotFoundException::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
 
 local_ref< java::lang::Throwable > java::lang::ClassNotFoundException::getException()
 {

@@ -13,11 +13,13 @@
 namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 namespace j2cpp { namespace java { namespace io { class InputStream; } } }
 namespace j2cpp { namespace java { namespace io { class OutputStream; } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { namespace entity { class AbstractHttpEntity; } } } } }
 
 
 #include <java/io/InputStream.hpp>
 #include <java/io/OutputStream.hpp>
 #include <java/io/Serializable.hpp>
+#include <org/apache/http/entity/AbstractHttpEntity.hpp>
 
 
 namespace j2cpp {
@@ -39,11 +41,15 @@ namespace org { namespace apache { namespace http { namespace entity {
 		J2CPP_DECLARE_METHOD(4)
 		J2CPP_DECLARE_METHOD(5)
 
-		SerializableEntity(jobject jobj)
+		explicit SerializableEntity(jobject jobj)
 		: cpp_object<SerializableEntity>(jobj)
 		{
 		}
 
+		operator local_ref<org::apache::http::entity::AbstractHttpEntity>() const;
+
+
+		SerializableEntity(local_ref< java::io::Serializable > const&, cpp_boolean const&);
 		local_ref< java::io::InputStream > getContent();
 		cpp_long getContentLength();
 		cpp_boolean isRepeatable();
@@ -55,7 +61,6 @@ namespace org { namespace apache { namespace http { namespace entity {
 } //namespace http
 } //namespace apache
 } //namespace org
-
 
 } //namespace j2cpp
 
@@ -69,17 +74,24 @@ namespace org { namespace apache { namespace http { namespace entity {
 namespace j2cpp {
 
 
-template <>
-local_ref< org::apache::http::entity::SerializableEntity > create< org::apache::http::entity::SerializableEntity>(local_ref< java::io::Serializable > const &a0, cpp_boolean const &a1)
+
+org::apache::http::entity::SerializableEntity::operator local_ref<org::apache::http::entity::AbstractHttpEntity>() const
 {
-	return local_ref< org::apache::http::entity::SerializableEntity >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::apache::http::entity::SerializableEntity::J2CPP_CLASS_NAME>(),
-			get_method_id<org::apache::http::entity::SerializableEntity::J2CPP_CLASS_NAME, org::apache::http::entity::SerializableEntity::J2CPP_METHOD_NAME(0), org::apache::http::entity::SerializableEntity::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<org::apache::http::entity::AbstractHttpEntity>(get_jtype());
 }
+
+
+org::apache::http::entity::SerializableEntity::SerializableEntity(local_ref< java::io::Serializable > const &a0, cpp_boolean const &a1)
+: cpp_object<org::apache::http::entity::SerializableEntity>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::apache::http::entity::SerializableEntity::J2CPP_CLASS_NAME>(),
+		get_method_id<org::apache::http::entity::SerializableEntity::J2CPP_CLASS_NAME, org::apache::http::entity::SerializableEntity::J2CPP_METHOD_NAME(0), org::apache::http::entity::SerializableEntity::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
 
 local_ref< java::io::InputStream > org::apache::http::entity::SerializableEntity::getContent()
 {

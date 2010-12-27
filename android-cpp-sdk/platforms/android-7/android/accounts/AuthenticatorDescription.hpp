@@ -13,6 +13,7 @@
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace android { namespace os { class Parcel; } } }
+namespace j2cpp { namespace android { namespace os { class Parcelable; } } }
 namespace j2cpp { namespace android { namespace os { namespace Parcelable_ { class Creator; } } } }
 
 
@@ -50,17 +51,22 @@ namespace android { namespace accounts {
 		J2CPP_DECLARE_FIELD(5)
 		J2CPP_DECLARE_FIELD(6)
 
-		AuthenticatorDescription(jobject jobj)
+		explicit AuthenticatorDescription(jobject jobj)
 		: cpp_object<AuthenticatorDescription>(jobj)
-		, type(jobj)
-		, labelId(jobj)
-		, iconId(jobj)
-		, smallIconId(jobj)
-		, accountPreferencesId(jobj)
-		, packageName(jobj)
+, type(jobj)
+, labelId(jobj)
+, iconId(jobj)
+, smallIconId(jobj)
+, accountPreferencesId(jobj)
+, packageName(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<android::os::Parcelable>() const;
+
+
+		AuthenticatorDescription(local_ref< java::lang::String > const&, local_ref< java::lang::String > const&, cpp_int const&, cpp_int const&, cpp_int const&, cpp_int const&);
 		static local_ref< android::accounts::AuthenticatorDescription > newKey(local_ref< java::lang::String > const&);
 		cpp_int describeContents();
 		cpp_int hashCode();
@@ -80,7 +86,6 @@ namespace android { namespace accounts {
 } //namespace accounts
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_ACCOUNTS_AUTHENTICATORDESCRIPTION_HPP_DECL
@@ -93,17 +98,35 @@ namespace android { namespace accounts {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::accounts::AuthenticatorDescription > create< android::accounts::AuthenticatorDescription>(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1, cpp_int const &a2, cpp_int const &a3, cpp_int const &a4, cpp_int const &a5)
+
+android::accounts::AuthenticatorDescription::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::accounts::AuthenticatorDescription >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::accounts::AuthenticatorDescription::J2CPP_CLASS_NAME>(),
-			get_method_id<android::accounts::AuthenticatorDescription::J2CPP_CLASS_NAME, android::accounts::AuthenticatorDescription::J2CPP_METHOD_NAME(0), android::accounts::AuthenticatorDescription::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype(), a4.get_jtype(), a5.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+android::accounts::AuthenticatorDescription::operator local_ref<android::os::Parcelable>() const
+{
+	return local_ref<android::os::Parcelable>(get_jtype());
+}
+
+
+android::accounts::AuthenticatorDescription::AuthenticatorDescription(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1, cpp_int const &a2, cpp_int const &a3, cpp_int const &a4, cpp_int const &a5)
+: cpp_object<android::accounts::AuthenticatorDescription>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::accounts::AuthenticatorDescription::J2CPP_CLASS_NAME>(),
+		get_method_id<android::accounts::AuthenticatorDescription::J2CPP_CLASS_NAME, android::accounts::AuthenticatorDescription::J2CPP_METHOD_NAME(0), android::accounts::AuthenticatorDescription::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype(), a4.get_jtype(), a5.get_jtype()
+	)
+)
+, type(get_jtype())
+, labelId(get_jtype())
+, iconId(get_jtype())
+, smallIconId(get_jtype())
+, accountPreferencesId(get_jtype())
+, packageName(get_jtype())
+{
+}
+
 
 local_ref< android::accounts::AuthenticatorDescription > android::accounts::AuthenticatorDescription::newKey(local_ref< java::lang::String > const &a0)
 {
@@ -167,6 +190,7 @@ void android::accounts::AuthenticatorDescription::writeToParcel(local_ref< andro
 		)
 	);
 }
+
 
 
 static_field<

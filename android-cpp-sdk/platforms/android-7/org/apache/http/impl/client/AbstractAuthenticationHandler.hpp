@@ -10,15 +10,19 @@
 #define J2CPP_ORG_APACHE_HTTP_IMPL_CLIENT_ABSTRACTAUTHENTICATIONHANDLER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace util { class Map; } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { namespace client { class AuthenticationHandler; } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace protocol { class HttpContext; } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { class HttpResponse; } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace auth { class AuthScheme; } } } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/util/Map.hpp>
 #include <org/apache/http/HttpResponse.hpp>
 #include <org/apache/http/auth/AuthScheme.hpp>
+#include <org/apache/http/client/AuthenticationHandler.hpp>
 #include <org/apache/http/protocol/HttpContext.hpp>
 
 
@@ -39,11 +43,16 @@ namespace org { namespace apache { namespace http { namespace impl { namespace c
 		J2CPP_DECLARE_METHOD(2)
 		J2CPP_DECLARE_METHOD(3)
 
-		AbstractAuthenticationHandler(jobject jobj)
+		explicit AbstractAuthenticationHandler(jobject jobj)
 		: cpp_object<AbstractAuthenticationHandler>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<org::apache::http::client::AuthenticationHandler>() const;
+
+
+		AbstractAuthenticationHandler();
 		local_ref< org::apache::http::auth::AuthScheme > selectScheme(local_ref< java::util::Map > const&, local_ref< org::apache::http::HttpResponse > const&, local_ref< org::apache::http::protocol::HttpContext > const&);
 	}; //class AbstractAuthenticationHandler
 
@@ -52,7 +61,6 @@ namespace org { namespace apache { namespace http { namespace impl { namespace c
 } //namespace http
 } //namespace apache
 } //namespace org
-
 
 } //namespace j2cpp
 
@@ -66,16 +74,28 @@ namespace org { namespace apache { namespace http { namespace impl { namespace c
 namespace j2cpp {
 
 
-template <>
-local_ref< org::apache::http::impl::client::AbstractAuthenticationHandler > create< org::apache::http::impl::client::AbstractAuthenticationHandler>()
+
+org::apache::http::impl::client::AbstractAuthenticationHandler::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< org::apache::http::impl::client::AbstractAuthenticationHandler >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::apache::http::impl::client::AbstractAuthenticationHandler::J2CPP_CLASS_NAME>(),
-			get_method_id<org::apache::http::impl::client::AbstractAuthenticationHandler::J2CPP_CLASS_NAME, org::apache::http::impl::client::AbstractAuthenticationHandler::J2CPP_METHOD_NAME(0), org::apache::http::impl::client::AbstractAuthenticationHandler::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+org::apache::http::impl::client::AbstractAuthenticationHandler::operator local_ref<org::apache::http::client::AuthenticationHandler>() const
+{
+	return local_ref<org::apache::http::client::AuthenticationHandler>(get_jtype());
+}
+
+
+org::apache::http::impl::client::AbstractAuthenticationHandler::AbstractAuthenticationHandler()
+: cpp_object<org::apache::http::impl::client::AbstractAuthenticationHandler>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::apache::http::impl::client::AbstractAuthenticationHandler::J2CPP_CLASS_NAME>(),
+		get_method_id<org::apache::http::impl::client::AbstractAuthenticationHandler::J2CPP_CLASS_NAME, org::apache::http::impl::client::AbstractAuthenticationHandler::J2CPP_METHOD_NAME(0), org::apache::http::impl::client::AbstractAuthenticationHandler::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 
 

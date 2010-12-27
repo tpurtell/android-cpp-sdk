@@ -15,6 +15,7 @@ namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace android { namespace content { class Context; } } }
 namespace j2cpp { namespace android { namespace view { class KeyEvent; } } }
 namespace j2cpp { namespace android { namespace text { class TextWatcher; } } }
+namespace j2cpp { namespace android { namespace widget { class RelativeLayout; } } }
 namespace j2cpp { namespace android { namespace util { class AttributeSet; } } }
 
 
@@ -22,6 +23,7 @@ namespace j2cpp { namespace android { namespace util { class AttributeSet; } } }
 #include <android/text/TextWatcher.hpp>
 #include <android/util/AttributeSet.hpp>
 #include <android/view/KeyEvent.hpp>
+#include <android/widget/RelativeLayout.hpp>
 #include <java/lang/CharSequence.hpp>
 #include <java/lang/String.hpp>
 
@@ -63,11 +65,16 @@ namespace android { namespace widget {
 		J2CPP_DECLARE_FIELD(3)
 		J2CPP_DECLARE_FIELD(4)
 
-		DialerFilter(jobject jobj)
+		explicit DialerFilter(jobject jobj)
 		: cpp_object<DialerFilter>(jobj)
 		{
 		}
 
+		operator local_ref<android::widget::RelativeLayout>() const;
+
+
+		DialerFilter(local_ref< android::content::Context > const&);
+		DialerFilter(local_ref< android::content::Context > const&, local_ref< android::util::AttributeSet > const&);
 		cpp_boolean isQwertyKeyboard();
 		cpp_boolean onKeyDown(cpp_int const&, local_ref< android::view::KeyEvent > const&);
 		cpp_boolean onKeyUp(cpp_int const&, local_ref< android::view::KeyEvent > const&);
@@ -93,7 +100,6 @@ namespace android { namespace widget {
 } //namespace widget
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_WIDGET_DIALERFILTER_HPP_DECL
@@ -106,29 +112,37 @@ namespace android { namespace widget {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::widget::DialerFilter > create< android::widget::DialerFilter>(local_ref< android::content::Context > const &a0)
+
+android::widget::DialerFilter::operator local_ref<android::widget::RelativeLayout>() const
 {
-	return local_ref< android::widget::DialerFilter >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::widget::DialerFilter::J2CPP_CLASS_NAME>(),
-			get_method_id<android::widget::DialerFilter::J2CPP_CLASS_NAME, android::widget::DialerFilter::J2CPP_METHOD_NAME(0), android::widget::DialerFilter::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<android::widget::RelativeLayout>(get_jtype());
 }
 
-template <>
-local_ref< android::widget::DialerFilter > create< android::widget::DialerFilter>(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1)
+
+android::widget::DialerFilter::DialerFilter(local_ref< android::content::Context > const &a0)
+: cpp_object<android::widget::DialerFilter>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::widget::DialerFilter::J2CPP_CLASS_NAME>(),
+		get_method_id<android::widget::DialerFilter::J2CPP_CLASS_NAME, android::widget::DialerFilter::J2CPP_METHOD_NAME(0), android::widget::DialerFilter::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< android::widget::DialerFilter >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::widget::DialerFilter::J2CPP_CLASS_NAME>(),
-			get_method_id<android::widget::DialerFilter::J2CPP_CLASS_NAME, android::widget::DialerFilter::J2CPP_METHOD_NAME(1), android::widget::DialerFilter::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
 }
+
+
+
+android::widget::DialerFilter::DialerFilter(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1)
+: cpp_object<android::widget::DialerFilter>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::widget::DialerFilter::J2CPP_CLASS_NAME>(),
+		get_method_id<android::widget::DialerFilter::J2CPP_CLASS_NAME, android::widget::DialerFilter::J2CPP_METHOD_NAME(1), android::widget::DialerFilter::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
 
 
 

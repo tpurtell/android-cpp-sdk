@@ -10,9 +10,11 @@
 #define J2CPP_ANDROID_MEDIA_EXIFINTERFACE_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -60,11 +62,15 @@ namespace android { namespace media {
 		J2CPP_DECLARE_FIELD(21)
 		J2CPP_DECLARE_FIELD(22)
 
-		ExifInterface(jobject jobj)
+		explicit ExifInterface(jobject jobj)
 		: cpp_object<ExifInterface>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		ExifInterface(local_ref< java::lang::String > const&);
 		local_ref< java::lang::String > getAttribute(local_ref< java::lang::String > const&);
 		cpp_int getAttributeInt(local_ref< java::lang::String > const&, cpp_int const&);
 		void setAttribute(local_ref< java::lang::String > const&, local_ref< java::lang::String > const&);
@@ -101,7 +107,6 @@ namespace android { namespace media {
 } //namespace media
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_MEDIA_EXIFINTERFACE_HPP_DECL
@@ -114,17 +119,24 @@ namespace android { namespace media {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::media::ExifInterface > create< android::media::ExifInterface>(local_ref< java::lang::String > const &a0)
+
+android::media::ExifInterface::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::media::ExifInterface >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::media::ExifInterface::J2CPP_CLASS_NAME>(),
-			get_method_id<android::media::ExifInterface::J2CPP_CLASS_NAME, android::media::ExifInterface::J2CPP_METHOD_NAME(0), android::media::ExifInterface::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::media::ExifInterface::ExifInterface(local_ref< java::lang::String > const &a0)
+: cpp_object<android::media::ExifInterface>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::media::ExifInterface::J2CPP_CLASS_NAME>(),
+		get_method_id<android::media::ExifInterface::J2CPP_CLASS_NAME, android::media::ExifInterface::J2CPP_METHOD_NAME(0), android::media::ExifInterface::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 local_ref< java::lang::String > android::media::ExifInterface::getAttribute(local_ref< java::lang::String > const &a0)
 {

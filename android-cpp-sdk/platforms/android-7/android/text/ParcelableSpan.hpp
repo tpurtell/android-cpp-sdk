@@ -10,8 +10,12 @@
 #define J2CPP_ANDROID_TEXT_PARCELABLESPAN_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace android { namespace os { class Parcelable; } } }
 
 
+#include <android/os/Parcelable.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -28,17 +32,20 @@ namespace android { namespace text {
 
 		J2CPP_DECLARE_METHOD(0)
 
-		ParcelableSpan(jobject jobj)
+		explicit ParcelableSpan(jobject jobj)
 		: cpp_object<ParcelableSpan>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<android::os::Parcelable>() const;
+
 
 		cpp_int getSpanTypeId();
 	}; //class ParcelableSpan
 
 } //namespace text
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -51,6 +58,17 @@ namespace android { namespace text {
 
 namespace j2cpp {
 
+
+
+android::text::ParcelableSpan::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
+
+android::text::ParcelableSpan::operator local_ref<android::os::Parcelable>() const
+{
+	return local_ref<android::os::Parcelable>(get_jtype());
+}
 
 cpp_int android::text::ParcelableSpan::getSpanTypeId()
 {

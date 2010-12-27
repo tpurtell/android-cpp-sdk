@@ -10,8 +10,10 @@
 #define J2CPP_ORG_APACHE_HTTP_IO_HTTPTRANSPORTMETRICS_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -29,10 +31,13 @@ namespace org { namespace apache { namespace http { namespace io {
 		J2CPP_DECLARE_METHOD(0)
 		J2CPP_DECLARE_METHOD(1)
 
-		HttpTransportMetrics(jobject jobj)
+		explicit HttpTransportMetrics(jobject jobj)
 		: cpp_object<HttpTransportMetrics>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		cpp_long getBytesTransferred();
 		void reset();
@@ -42,7 +47,6 @@ namespace org { namespace apache { namespace http { namespace io {
 } //namespace http
 } //namespace apache
 } //namespace org
-
 
 } //namespace j2cpp
 
@@ -55,6 +59,12 @@ namespace org { namespace apache { namespace http { namespace io {
 
 namespace j2cpp {
 
+
+
+org::apache::http::io::HttpTransportMetrics::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 cpp_long org::apache::http::io::HttpTransportMetrics::getBytesTransferred()
 {

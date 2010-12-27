@@ -10,9 +10,11 @@
 #define J2CPP_JAVA_LANG_REFLECT_MODIFIER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -55,11 +57,15 @@ namespace java { namespace lang { namespace reflect {
 		J2CPP_DECLARE_FIELD(10)
 		J2CPP_DECLARE_FIELD(11)
 
-		Modifier(jobject jobj)
+		explicit Modifier(jobject jobj)
 		: cpp_object<Modifier>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		Modifier();
 		static cpp_boolean isAbstract(cpp_int const&);
 		static cpp_boolean isFinal(cpp_int const&);
 		static cpp_boolean isInterface(cpp_int const&);
@@ -92,7 +98,6 @@ namespace java { namespace lang { namespace reflect {
 } //namespace lang
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_LANG_REFLECT_MODIFIER_HPP_DECL
@@ -105,16 +110,23 @@ namespace java { namespace lang { namespace reflect {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::lang::reflect::Modifier > create< java::lang::reflect::Modifier>()
+
+java::lang::reflect::Modifier::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::lang::reflect::Modifier >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::lang::reflect::Modifier::J2CPP_CLASS_NAME>(),
-			get_method_id<java::lang::reflect::Modifier::J2CPP_CLASS_NAME, java::lang::reflect::Modifier::J2CPP_METHOD_NAME(0), java::lang::reflect::Modifier::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+java::lang::reflect::Modifier::Modifier()
+: cpp_object<java::lang::reflect::Modifier>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::lang::reflect::Modifier::J2CPP_CLASS_NAME>(),
+		get_method_id<java::lang::reflect::Modifier::J2CPP_CLASS_NAME, java::lang::reflect::Modifier::J2CPP_METHOD_NAME(0), java::lang::reflect::Modifier::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 cpp_boolean java::lang::reflect::Modifier::isAbstract(cpp_int const &a0)
 {

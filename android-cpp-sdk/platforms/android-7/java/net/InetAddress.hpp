@@ -11,10 +11,12 @@
 
 
 namespace j2cpp { namespace java { namespace net { class NetworkInterface; } } }
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 
 
+#include <java/io/Serializable.hpp>
 #include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/net/NetworkInterface.hpp>
@@ -58,10 +60,14 @@ namespace java { namespace net {
 		J2CPP_DECLARE_METHOD(23)
 		J2CPP_DECLARE_METHOD(24)
 
-		InetAddress(jobject jobj)
+		explicit InetAddress(jobject jobj)
 		: cpp_object<InetAddress>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::io::Serializable>() const;
+
 
 		cpp_boolean equals(local_ref< java::lang::Object > const&);
 		local_ref< cpp_byte_array<1> > getAddress();
@@ -92,7 +98,6 @@ namespace java { namespace net {
 } //namespace net
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_NET_INETADDRESS_HPP_DECL
@@ -105,16 +110,17 @@ namespace java { namespace net {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::net::InetAddress > create< java::net::InetAddress>()
+
+java::net::InetAddress::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::net::InetAddress >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::net::InetAddress::J2CPP_CLASS_NAME>(),
-			get_method_id<java::net::InetAddress::J2CPP_CLASS_NAME, java::net::InetAddress::J2CPP_METHOD_NAME(0), java::net::InetAddress::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+java::net::InetAddress::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jtype());
+}
+
 
 cpp_boolean java::net::InetAddress::equals(local_ref< java::lang::Object > const &a0)
 {

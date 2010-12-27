@@ -11,8 +11,10 @@
 
 
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace lang { class Exception; } } }
 
 
+#include <java/lang/Exception.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -35,11 +37,16 @@ namespace java { namespace net {
 		J2CPP_DECLARE_METHOD(4)
 		J2CPP_DECLARE_METHOD(5)
 
-		URISyntaxException(jobject jobj)
+		explicit URISyntaxException(jobject jobj)
 		: cpp_object<URISyntaxException>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Exception>() const;
+
+
+		URISyntaxException(local_ref< java::lang::String > const&, local_ref< java::lang::String > const&, cpp_int const&);
+		URISyntaxException(local_ref< java::lang::String > const&, local_ref< java::lang::String > const&);
 		cpp_int getIndex();
 		local_ref< java::lang::String > getReason();
 		local_ref< java::lang::String > getInput();
@@ -48,7 +55,6 @@ namespace java { namespace net {
 
 } //namespace net
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -62,29 +68,37 @@ namespace java { namespace net {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::net::URISyntaxException > create< java::net::URISyntaxException>(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1, cpp_int const &a2)
+
+java::net::URISyntaxException::operator local_ref<java::lang::Exception>() const
 {
-	return local_ref< java::net::URISyntaxException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::net::URISyntaxException::J2CPP_CLASS_NAME>(),
-			get_method_id<java::net::URISyntaxException::J2CPP_CLASS_NAME, java::net::URISyntaxException::J2CPP_METHOD_NAME(0), java::net::URISyntaxException::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Exception>(get_jtype());
 }
 
-template <>
-local_ref< java::net::URISyntaxException > create< java::net::URISyntaxException>(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
+
+java::net::URISyntaxException::URISyntaxException(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1, cpp_int const &a2)
+: cpp_object<java::net::URISyntaxException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::net::URISyntaxException::J2CPP_CLASS_NAME>(),
+		get_method_id<java::net::URISyntaxException::J2CPP_CLASS_NAME, java::net::URISyntaxException::J2CPP_METHOD_NAME(0), java::net::URISyntaxException::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
+	)
+)
 {
-	return local_ref< java::net::URISyntaxException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::net::URISyntaxException::J2CPP_CLASS_NAME>(),
-			get_method_id<java::net::URISyntaxException::J2CPP_CLASS_NAME, java::net::URISyntaxException::J2CPP_METHOD_NAME(1), java::net::URISyntaxException::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
 }
+
+
+
+java::net::URISyntaxException::URISyntaxException(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
+: cpp_object<java::net::URISyntaxException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::net::URISyntaxException::J2CPP_CLASS_NAME>(),
+		get_method_id<java::net::URISyntaxException::J2CPP_CLASS_NAME, java::net::URISyntaxException::J2CPP_METHOD_NAME(1), java::net::URISyntaxException::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
 
 cpp_int java::net::URISyntaxException::getIndex()
 {

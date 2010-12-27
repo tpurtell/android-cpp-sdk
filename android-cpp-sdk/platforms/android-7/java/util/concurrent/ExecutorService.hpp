@@ -12,6 +12,7 @@
 
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class Runnable; } } }
+namespace j2cpp { namespace java { namespace util { namespace concurrent { class Executor; } } } }
 namespace j2cpp { namespace java { namespace util { namespace concurrent { class Callable; } } } }
 namespace j2cpp { namespace java { namespace util { namespace concurrent { class Future; } } } }
 namespace j2cpp { namespace java { namespace util { namespace concurrent { class TimeUnit; } } } }
@@ -24,6 +25,7 @@ namespace j2cpp { namespace java { namespace util { class List; } } }
 #include <java/util/Collection.hpp>
 #include <java/util/List.hpp>
 #include <java/util/concurrent/Callable.hpp>
+#include <java/util/concurrent/Executor.hpp>
 #include <java/util/concurrent/Future.hpp>
 #include <java/util/concurrent/TimeUnit.hpp>
 
@@ -53,10 +55,14 @@ namespace java { namespace util { namespace concurrent {
 		J2CPP_DECLARE_METHOD(10)
 		J2CPP_DECLARE_METHOD(11)
 
-		ExecutorService(jobject jobj)
+		explicit ExecutorService(jobject jobj)
 		: cpp_object<ExecutorService>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::util::concurrent::Executor>() const;
+
 
 		void shutdown();
 		local_ref< java::util::List > shutdownNow();
@@ -76,7 +82,6 @@ namespace java { namespace util { namespace concurrent {
 } //namespace util
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_UTIL_CONCURRENT_EXECUTORSERVICE_HPP_DECL
@@ -88,6 +93,17 @@ namespace java { namespace util { namespace concurrent {
 
 namespace j2cpp {
 
+
+
+java::util::concurrent::ExecutorService::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
+
+java::util::concurrent::ExecutorService::operator local_ref<java::util::concurrent::Executor>() const
+{
+	return local_ref<java::util::concurrent::Executor>(get_jtype());
+}
 
 void java::util::concurrent::ExecutorService::shutdown()
 {

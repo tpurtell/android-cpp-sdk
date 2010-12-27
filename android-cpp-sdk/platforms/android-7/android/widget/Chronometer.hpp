@@ -10,8 +10,10 @@
 #define J2CPP_ANDROID_WIDGET_CHRONOMETER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace android { namespace content { class Context; } } }
+namespace j2cpp { namespace android { namespace widget { class TextView; } } }
 namespace j2cpp { namespace android { namespace widget { namespace Chronometer_ { class OnChronometerTickListener; } } } }
 namespace j2cpp { namespace android { namespace util { class AttributeSet; } } }
 
@@ -19,6 +21,8 @@ namespace j2cpp { namespace android { namespace util { class AttributeSet; } } }
 #include <android/content/Context.hpp>
 #include <android/util/AttributeSet.hpp>
 #include <android/widget/Chronometer.hpp>
+#include <android/widget/TextView.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -39,10 +43,13 @@ namespace android { namespace widget {
 
 			J2CPP_DECLARE_METHOD(0)
 
-			OnChronometerTickListener(jobject jobj)
+			explicit OnChronometerTickListener(jobject jobj)
 			: cpp_object<OnChronometerTickListener>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+
 
 			void onChronometerTick(local_ref< android::widget::Chronometer > const&);
 		}; //class OnChronometerTickListener
@@ -72,11 +79,17 @@ namespace android { namespace widget {
 
 		typedef Chronometer_::OnChronometerTickListener OnChronometerTickListener;
 
-		Chronometer(jobject jobj)
+		explicit Chronometer(jobject jobj)
 		: cpp_object<Chronometer>(jobj)
 		{
 		}
 
+		operator local_ref<android::widget::TextView>() const;
+
+
+		Chronometer(local_ref< android::content::Context > const&);
+		Chronometer(local_ref< android::content::Context > const&, local_ref< android::util::AttributeSet > const&);
+		Chronometer(local_ref< android::content::Context > const&, local_ref< android::util::AttributeSet > const&, cpp_int const&);
 		void setBase(cpp_long const&);
 		cpp_long getBase();
 		void setFormat(local_ref< java::lang::String > const&);
@@ -90,7 +103,6 @@ namespace android { namespace widget {
 } //namespace widget
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_WIDGET_CHRONOMETER_HPP_DECL
@@ -103,6 +115,12 @@ namespace android { namespace widget {
 namespace j2cpp {
 
 
+
+
+android::widget::Chronometer_::OnChronometerTickListener::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 void android::widget::Chronometer_::OnChronometerTickListener::onChronometerTick(local_ref< android::widget::Chronometer > const &a0)
 {
@@ -120,41 +138,50 @@ J2CPP_DEFINE_CLASS(android::widget::Chronometer_::OnChronometerTickListener,"and
 J2CPP_DEFINE_METHOD(android::widget::Chronometer_::OnChronometerTickListener,0,"onChronometerTick","(Landroid/widget/Chronometer;)V")
 
 
-template <>
-local_ref< android::widget::Chronometer > create< android::widget::Chronometer>(local_ref< android::content::Context > const &a0)
+
+android::widget::Chronometer::operator local_ref<android::widget::TextView>() const
 {
-	return local_ref< android::widget::Chronometer >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::widget::Chronometer::J2CPP_CLASS_NAME>(),
-			get_method_id<android::widget::Chronometer::J2CPP_CLASS_NAME, android::widget::Chronometer::J2CPP_METHOD_NAME(0), android::widget::Chronometer::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<android::widget::TextView>(get_jtype());
 }
 
-template <>
-local_ref< android::widget::Chronometer > create< android::widget::Chronometer>(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1)
+
+android::widget::Chronometer::Chronometer(local_ref< android::content::Context > const &a0)
+: cpp_object<android::widget::Chronometer>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::widget::Chronometer::J2CPP_CLASS_NAME>(),
+		get_method_id<android::widget::Chronometer::J2CPP_CLASS_NAME, android::widget::Chronometer::J2CPP_METHOD_NAME(0), android::widget::Chronometer::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< android::widget::Chronometer >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::widget::Chronometer::J2CPP_CLASS_NAME>(),
-			get_method_id<android::widget::Chronometer::J2CPP_CLASS_NAME, android::widget::Chronometer::J2CPP_METHOD_NAME(1), android::widget::Chronometer::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< android::widget::Chronometer > create< android::widget::Chronometer>(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1, cpp_int const &a2)
+
+
+android::widget::Chronometer::Chronometer(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1)
+: cpp_object<android::widget::Chronometer>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::widget::Chronometer::J2CPP_CLASS_NAME>(),
+		get_method_id<android::widget::Chronometer::J2CPP_CLASS_NAME, android::widget::Chronometer::J2CPP_METHOD_NAME(1), android::widget::Chronometer::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
 {
-	return local_ref< android::widget::Chronometer >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::widget::Chronometer::J2CPP_CLASS_NAME>(),
-			get_method_id<android::widget::Chronometer::J2CPP_CLASS_NAME, android::widget::Chronometer::J2CPP_METHOD_NAME(2), android::widget::Chronometer::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
-		)
-	);
 }
+
+
+
+android::widget::Chronometer::Chronometer(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1, cpp_int const &a2)
+: cpp_object<android::widget::Chronometer>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::widget::Chronometer::J2CPP_CLASS_NAME>(),
+		get_method_id<android::widget::Chronometer::J2CPP_CLASS_NAME, android::widget::Chronometer::J2CPP_METHOD_NAME(2), android::widget::Chronometer::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
+	)
+)
+{
+}
+
 
 void android::widget::Chronometer::setBase(cpp_long const &a0)
 {

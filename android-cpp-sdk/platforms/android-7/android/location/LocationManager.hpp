@@ -10,6 +10,7 @@
 #define J2CPP_ANDROID_LOCATION_LOCATIONMANAGER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace util { class List; } } }
 namespace j2cpp { namespace android { namespace app { class PendingIntent; } } }
@@ -32,6 +33,7 @@ namespace j2cpp { namespace android { namespace os { class Looper; } } }
 #include <android/location/LocationProvider.hpp>
 #include <android/os/Bundle.hpp>
 #include <android/os/Looper.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/util/List.hpp>
 
@@ -84,10 +86,13 @@ namespace android { namespace location {
 		J2CPP_DECLARE_FIELD(4)
 		J2CPP_DECLARE_FIELD(5)
 
-		LocationManager(jobject jobj)
+		explicit LocationManager(jobject jobj)
 		: cpp_object<LocationManager>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		local_ref< java::util::List > getAllProviders();
 		local_ref< java::util::List > getProviders(cpp_boolean const&);
@@ -129,7 +134,6 @@ namespace android { namespace location {
 } //namespace location
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_LOCATION_LOCATIONMANAGER_HPP_DECL
@@ -142,16 +146,12 @@ namespace android { namespace location {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::location::LocationManager > create< android::location::LocationManager>()
+
+android::location::LocationManager::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::location::LocationManager >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::location::LocationManager::J2CPP_CLASS_NAME>(),
-			get_method_id<android::location::LocationManager::J2CPP_CLASS_NAME, android::location::LocationManager::J2CPP_METHOD_NAME(0), android::location::LocationManager::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
 
 local_ref< java::util::List > android::location::LocationManager::getAllProviders()
 {

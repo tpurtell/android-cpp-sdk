@@ -10,6 +10,7 @@
 #define J2CPP_ANDROID_INPUTMETHODSERVICE_KEYBOARD_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class CharSequence; } } }
 namespace j2cpp { namespace java { namespace util { class List; } } }
 namespace j2cpp { namespace android { namespace inputmethodservice { namespace Keyboard_ { class Row; } } } }
@@ -25,6 +26,7 @@ namespace j2cpp { namespace android { namespace content { class Context; } } }
 #include <android/graphics/drawable/Drawable.hpp>
 #include <android/inputmethodservice/Keyboard.hpp>
 #include <java/lang/CharSequence.hpp>
+#include <java/lang/Object.hpp>
 #include <java/util/List.hpp>
 
 
@@ -69,29 +71,34 @@ namespace android { namespace inputmethodservice {
 			J2CPP_DECLARE_FIELD(16)
 			J2CPP_DECLARE_FIELD(17)
 
-			Key(jobject jobj)
+			explicit Key(jobject jobj)
 			: cpp_object<Key>(jobj)
-			, codes(jobj)
-			, label(jobj)
-			, icon(jobj)
-			, iconPreview(jobj)
-			, width(jobj)
-			, height(jobj)
-			, gap(jobj)
-			, sticky(jobj)
-			, x(jobj)
-			, y(jobj)
-			, pressed(jobj)
-			, on(jobj)
-			, text(jobj)
-			, popupCharacters(jobj)
-			, edgeFlags(jobj)
-			, modifier(jobj)
-			, popupResId(jobj)
-			, repeatable(jobj)
+, codes(jobj)
+, label(jobj)
+, icon(jobj)
+, iconPreview(jobj)
+, width(jobj)
+, height(jobj)
+, gap(jobj)
+, sticky(jobj)
+, x(jobj)
+, y(jobj)
+, pressed(jobj)
+, on(jobj)
+, text(jobj)
+, popupCharacters(jobj)
+, edgeFlags(jobj)
+, modifier(jobj)
+, popupResId(jobj)
+, repeatable(jobj)
 			{
 			}
 
+			operator local_ref<java::lang::Object>() const;
+
+
+			Key(local_ref< android::inputmethodservice::Keyboard_::Row > const&);
+			Key(local_ref< android::content::res::Resources > const&, local_ref< android::inputmethodservice::Keyboard_::Row > const&, cpp_int const&, cpp_int const&, local_ref< android::content::res::XmlResourceParser > const&);
 			void onPressed();
 			void onReleased(cpp_boolean const&);
 			cpp_boolean isInside(cpp_int const&, cpp_int const&);
@@ -135,17 +142,22 @@ namespace android { namespace inputmethodservice {
 			J2CPP_DECLARE_FIELD(4)
 			J2CPP_DECLARE_FIELD(5)
 
-			Row(jobject jobj)
+			explicit Row(jobject jobj)
 			: cpp_object<Row>(jobj)
-			, defaultWidth(jobj)
-			, defaultHeight(jobj)
-			, defaultHorizontalGap(jobj)
-			, verticalGap(jobj)
-			, rowEdgeFlags(jobj)
-			, mode(jobj)
+, defaultWidth(jobj)
+, defaultHeight(jobj)
+, defaultHorizontalGap(jobj)
+, verticalGap(jobj)
+, rowEdgeFlags(jobj)
+, mode(jobj)
 			{
 			}
 
+			operator local_ref<java::lang::Object>() const;
+
+
+			Row(local_ref< android::inputmethodservice::Keyboard > const&);
+			Row(local_ref< android::content::res::Resources > const&, local_ref< android::inputmethodservice::Keyboard > const&, local_ref< android::content::res::XmlResourceParser > const&);
 
 			field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(0), J2CPP_FIELD_SIGNATURE(0), cpp_int > defaultWidth;
 			field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(1), J2CPP_FIELD_SIGNATURE(1), cpp_int > defaultHeight;
@@ -199,11 +211,17 @@ namespace android { namespace inputmethodservice {
 		typedef Keyboard_::Key Key;
 		typedef Keyboard_::Row Row;
 
-		Keyboard(jobject jobj)
+		explicit Keyboard(jobject jobj)
 		: cpp_object<Keyboard>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		Keyboard(local_ref< android::content::Context > const&, cpp_int const&);
+		Keyboard(local_ref< android::content::Context > const&, cpp_int const&, cpp_int const&);
+		Keyboard(local_ref< android::content::Context > const&, cpp_int const&, local_ref< java::lang::CharSequence > const&, cpp_int const&, cpp_int const&);
 		local_ref< java::util::List > getKeys();
 		local_ref< java::util::List > getModifierKeys();
 		cpp_int getHeight();
@@ -228,7 +246,6 @@ namespace android { namespace inputmethodservice {
 } //namespace inputmethodservice
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_INPUTMETHODSERVICE_KEYBOARD_HPP_DECL
@@ -242,29 +259,73 @@ namespace j2cpp {
 
 
 
-template <>
-local_ref< android::inputmethodservice::Keyboard_::Key > create< android::inputmethodservice::Keyboard_::Key>(local_ref< android::inputmethodservice::Keyboard_::Row > const &a0)
+
+android::inputmethodservice::Keyboard_::Key::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::inputmethodservice::Keyboard_::Key >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::inputmethodservice::Keyboard_::Key::J2CPP_CLASS_NAME>(),
-			get_method_id<android::inputmethodservice::Keyboard_::Key::J2CPP_CLASS_NAME, android::inputmethodservice::Keyboard_::Key::J2CPP_METHOD_NAME(0), android::inputmethodservice::Keyboard_::Key::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
 
-template <>
-local_ref< android::inputmethodservice::Keyboard_::Key > create< android::inputmethodservice::Keyboard_::Key>(local_ref< android::content::res::Resources > const &a0, local_ref< android::inputmethodservice::Keyboard_::Row > const &a1, cpp_int const &a2, cpp_int const &a3, local_ref< android::content::res::XmlResourceParser > const &a4)
+
+android::inputmethodservice::Keyboard_::Key::Key(local_ref< android::inputmethodservice::Keyboard_::Row > const &a0)
+: cpp_object<android::inputmethodservice::Keyboard_::Key>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::inputmethodservice::Keyboard_::Key::J2CPP_CLASS_NAME>(),
+		get_method_id<android::inputmethodservice::Keyboard_::Key::J2CPP_CLASS_NAME, android::inputmethodservice::Keyboard_::Key::J2CPP_METHOD_NAME(0), android::inputmethodservice::Keyboard_::Key::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
+, codes(get_jtype())
+, label(get_jtype())
+, icon(get_jtype())
+, iconPreview(get_jtype())
+, width(get_jtype())
+, height(get_jtype())
+, gap(get_jtype())
+, sticky(get_jtype())
+, x(get_jtype())
+, y(get_jtype())
+, pressed(get_jtype())
+, on(get_jtype())
+, text(get_jtype())
+, popupCharacters(get_jtype())
+, edgeFlags(get_jtype())
+, modifier(get_jtype())
+, popupResId(get_jtype())
+, repeatable(get_jtype())
 {
-	return local_ref< android::inputmethodservice::Keyboard_::Key >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::inputmethodservice::Keyboard_::Key::J2CPP_CLASS_NAME>(),
-			get_method_id<android::inputmethodservice::Keyboard_::Key::J2CPP_CLASS_NAME, android::inputmethodservice::Keyboard_::Key::J2CPP_METHOD_NAME(1), android::inputmethodservice::Keyboard_::Key::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype(), a4.get_jtype()
-		)
-	);
 }
+
+
+
+android::inputmethodservice::Keyboard_::Key::Key(local_ref< android::content::res::Resources > const &a0, local_ref< android::inputmethodservice::Keyboard_::Row > const &a1, cpp_int const &a2, cpp_int const &a3, local_ref< android::content::res::XmlResourceParser > const &a4)
+: cpp_object<android::inputmethodservice::Keyboard_::Key>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::inputmethodservice::Keyboard_::Key::J2CPP_CLASS_NAME>(),
+		get_method_id<android::inputmethodservice::Keyboard_::Key::J2CPP_CLASS_NAME, android::inputmethodservice::Keyboard_::Key::J2CPP_METHOD_NAME(1), android::inputmethodservice::Keyboard_::Key::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype(), a4.get_jtype()
+	)
+)
+, codes(get_jtype())
+, label(get_jtype())
+, icon(get_jtype())
+, iconPreview(get_jtype())
+, width(get_jtype())
+, height(get_jtype())
+, gap(get_jtype())
+, sticky(get_jtype())
+, x(get_jtype())
+, y(get_jtype())
+, pressed(get_jtype())
+, on(get_jtype())
+, text(get_jtype())
+, popupCharacters(get_jtype())
+, edgeFlags(get_jtype())
+, modifier(get_jtype())
+, popupResId(get_jtype())
+, repeatable(get_jtype())
+{
+}
+
 
 void android::inputmethodservice::Keyboard_::Key::onPressed()
 {
@@ -348,29 +409,49 @@ J2CPP_DEFINE_FIELD(android::inputmethodservice::Keyboard_::Key,15,"modifier","Z"
 J2CPP_DEFINE_FIELD(android::inputmethodservice::Keyboard_::Key,16,"popupResId","I")
 J2CPP_DEFINE_FIELD(android::inputmethodservice::Keyboard_::Key,17,"repeatable","Z")
 
-template <>
-local_ref< android::inputmethodservice::Keyboard_::Row > create< android::inputmethodservice::Keyboard_::Row>(local_ref< android::inputmethodservice::Keyboard > const &a0)
+
+android::inputmethodservice::Keyboard_::Row::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::inputmethodservice::Keyboard_::Row >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::inputmethodservice::Keyboard_::Row::J2CPP_CLASS_NAME>(),
-			get_method_id<android::inputmethodservice::Keyboard_::Row::J2CPP_CLASS_NAME, android::inputmethodservice::Keyboard_::Row::J2CPP_METHOD_NAME(0), android::inputmethodservice::Keyboard_::Row::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
 
-template <>
-local_ref< android::inputmethodservice::Keyboard_::Row > create< android::inputmethodservice::Keyboard_::Row>(local_ref< android::content::res::Resources > const &a0, local_ref< android::inputmethodservice::Keyboard > const &a1, local_ref< android::content::res::XmlResourceParser > const &a2)
+
+android::inputmethodservice::Keyboard_::Row::Row(local_ref< android::inputmethodservice::Keyboard > const &a0)
+: cpp_object<android::inputmethodservice::Keyboard_::Row>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::inputmethodservice::Keyboard_::Row::J2CPP_CLASS_NAME>(),
+		get_method_id<android::inputmethodservice::Keyboard_::Row::J2CPP_CLASS_NAME, android::inputmethodservice::Keyboard_::Row::J2CPP_METHOD_NAME(0), android::inputmethodservice::Keyboard_::Row::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
+, defaultWidth(get_jtype())
+, defaultHeight(get_jtype())
+, defaultHorizontalGap(get_jtype())
+, verticalGap(get_jtype())
+, rowEdgeFlags(get_jtype())
+, mode(get_jtype())
 {
-	return local_ref< android::inputmethodservice::Keyboard_::Row >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::inputmethodservice::Keyboard_::Row::J2CPP_CLASS_NAME>(),
-			get_method_id<android::inputmethodservice::Keyboard_::Row::J2CPP_CLASS_NAME, android::inputmethodservice::Keyboard_::Row::J2CPP_METHOD_NAME(1), android::inputmethodservice::Keyboard_::Row::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
-		)
-	);
 }
+
+
+
+android::inputmethodservice::Keyboard_::Row::Row(local_ref< android::content::res::Resources > const &a0, local_ref< android::inputmethodservice::Keyboard > const &a1, local_ref< android::content::res::XmlResourceParser > const &a2)
+: cpp_object<android::inputmethodservice::Keyboard_::Row>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::inputmethodservice::Keyboard_::Row::J2CPP_CLASS_NAME>(),
+		get_method_id<android::inputmethodservice::Keyboard_::Row::J2CPP_CLASS_NAME, android::inputmethodservice::Keyboard_::Row::J2CPP_METHOD_NAME(1), android::inputmethodservice::Keyboard_::Row::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
+	)
+)
+, defaultWidth(get_jtype())
+, defaultHeight(get_jtype())
+, defaultHorizontalGap(get_jtype())
+, verticalGap(get_jtype())
+, rowEdgeFlags(get_jtype())
+, mode(get_jtype())
+{
+}
+
 
 
 
@@ -385,41 +466,50 @@ J2CPP_DEFINE_FIELD(android::inputmethodservice::Keyboard_::Row,4,"rowEdgeFlags",
 J2CPP_DEFINE_FIELD(android::inputmethodservice::Keyboard_::Row,5,"mode","I")
 
 
-template <>
-local_ref< android::inputmethodservice::Keyboard > create< android::inputmethodservice::Keyboard>(local_ref< android::content::Context > const &a0, cpp_int const &a1)
+
+android::inputmethodservice::Keyboard::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::inputmethodservice::Keyboard >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::inputmethodservice::Keyboard::J2CPP_CLASS_NAME>(),
-			get_method_id<android::inputmethodservice::Keyboard::J2CPP_CLASS_NAME, android::inputmethodservice::Keyboard::J2CPP_METHOD_NAME(0), android::inputmethodservice::Keyboard::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
 
-template <>
-local_ref< android::inputmethodservice::Keyboard > create< android::inputmethodservice::Keyboard>(local_ref< android::content::Context > const &a0, cpp_int const &a1, cpp_int const &a2)
+
+android::inputmethodservice::Keyboard::Keyboard(local_ref< android::content::Context > const &a0, cpp_int const &a1)
+: cpp_object<android::inputmethodservice::Keyboard>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::inputmethodservice::Keyboard::J2CPP_CLASS_NAME>(),
+		get_method_id<android::inputmethodservice::Keyboard::J2CPP_CLASS_NAME, android::inputmethodservice::Keyboard::J2CPP_METHOD_NAME(0), android::inputmethodservice::Keyboard::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
 {
-	return local_ref< android::inputmethodservice::Keyboard >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::inputmethodservice::Keyboard::J2CPP_CLASS_NAME>(),
-			get_method_id<android::inputmethodservice::Keyboard::J2CPP_CLASS_NAME, android::inputmethodservice::Keyboard::J2CPP_METHOD_NAME(1), android::inputmethodservice::Keyboard::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< android::inputmethodservice::Keyboard > create< android::inputmethodservice::Keyboard>(local_ref< android::content::Context > const &a0, cpp_int const &a1, local_ref< java::lang::CharSequence > const &a2, cpp_int const &a3, cpp_int const &a4)
+
+
+android::inputmethodservice::Keyboard::Keyboard(local_ref< android::content::Context > const &a0, cpp_int const &a1, cpp_int const &a2)
+: cpp_object<android::inputmethodservice::Keyboard>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::inputmethodservice::Keyboard::J2CPP_CLASS_NAME>(),
+		get_method_id<android::inputmethodservice::Keyboard::J2CPP_CLASS_NAME, android::inputmethodservice::Keyboard::J2CPP_METHOD_NAME(1), android::inputmethodservice::Keyboard::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
+	)
+)
 {
-	return local_ref< android::inputmethodservice::Keyboard >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::inputmethodservice::Keyboard::J2CPP_CLASS_NAME>(),
-			get_method_id<android::inputmethodservice::Keyboard::J2CPP_CLASS_NAME, android::inputmethodservice::Keyboard::J2CPP_METHOD_NAME(2), android::inputmethodservice::Keyboard::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype(), a4.get_jtype()
-		)
-	);
 }
+
+
+
+android::inputmethodservice::Keyboard::Keyboard(local_ref< android::content::Context > const &a0, cpp_int const &a1, local_ref< java::lang::CharSequence > const &a2, cpp_int const &a3, cpp_int const &a4)
+: cpp_object<android::inputmethodservice::Keyboard>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::inputmethodservice::Keyboard::J2CPP_CLASS_NAME>(),
+		get_method_id<android::inputmethodservice::Keyboard::J2CPP_CLASS_NAME, android::inputmethodservice::Keyboard::J2CPP_METHOD_NAME(2), android::inputmethodservice::Keyboard::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype(), a4.get_jtype()
+	)
+)
+{
+}
+
 
 local_ref< java::util::List > android::inputmethodservice::Keyboard::getKeys()
 {

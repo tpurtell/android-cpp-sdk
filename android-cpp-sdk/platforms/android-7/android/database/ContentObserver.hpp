@@ -10,10 +10,12 @@
 #define J2CPP_ANDROID_DATABASE_CONTENTOBSERVER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace android { namespace os { class Handler; } } }
 
 
 #include <android/os/Handler.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -33,11 +35,15 @@ namespace android { namespace database {
 		J2CPP_DECLARE_METHOD(2)
 		J2CPP_DECLARE_METHOD(3)
 
-		ContentObserver(jobject jobj)
+		explicit ContentObserver(jobject jobj)
 		: cpp_object<ContentObserver>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		ContentObserver(local_ref< android::os::Handler > const&);
 		cpp_boolean deliverSelfNotifications();
 		void onChange(cpp_boolean const&);
 		void dispatchChange(cpp_boolean const&);
@@ -45,7 +51,6 @@ namespace android { namespace database {
 
 } //namespace database
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -59,17 +64,24 @@ namespace android { namespace database {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::database::ContentObserver > create< android::database::ContentObserver>(local_ref< android::os::Handler > const &a0)
+
+android::database::ContentObserver::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::database::ContentObserver >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::database::ContentObserver::J2CPP_CLASS_NAME>(),
-			get_method_id<android::database::ContentObserver::J2CPP_CLASS_NAME, android::database::ContentObserver::J2CPP_METHOD_NAME(0), android::database::ContentObserver::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::database::ContentObserver::ContentObserver(local_ref< android::os::Handler > const &a0)
+: cpp_object<android::database::ContentObserver>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::database::ContentObserver::J2CPP_CLASS_NAME>(),
+		get_method_id<android::database::ContentObserver::J2CPP_CLASS_NAME, android::database::ContentObserver::J2CPP_METHOD_NAME(0), android::database::ContentObserver::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 cpp_boolean android::database::ContentObserver::deliverSelfNotifications()
 {

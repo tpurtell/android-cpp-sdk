@@ -11,8 +11,10 @@
 
 
 namespace j2cpp { namespace java { namespace net { class SocketImpl; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/net/SocketImpl.hpp>
 
 
@@ -30,17 +32,19 @@ namespace java { namespace net {
 
 		J2CPP_DECLARE_METHOD(0)
 
-		SocketImplFactory(jobject jobj)
+		explicit SocketImplFactory(jobject jobj)
 		: cpp_object<SocketImplFactory>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		local_ref< java::net::SocketImpl > createSocketImpl();
 	}; //class SocketImplFactory
 
 } //namespace net
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -53,6 +57,12 @@ namespace java { namespace net {
 
 namespace j2cpp {
 
+
+
+java::net::SocketImplFactory::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 local_ref< java::net::SocketImpl > java::net::SocketImplFactory::createSocketImpl()
 {

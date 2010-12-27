@@ -10,16 +10,19 @@
 #define J2CPP_ANDROID_LOCATION_ADDRESS_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace util { class Locale; } } }
 namespace j2cpp { namespace android { namespace os { class Parcel; } } }
 namespace j2cpp { namespace android { namespace os { class Bundle; } } }
+namespace j2cpp { namespace android { namespace os { class Parcelable; } } }
 namespace j2cpp { namespace android { namespace os { namespace Parcelable_ { class Creator; } } } }
 
 
 #include <android/os/Bundle.hpp>
 #include <android/os/Parcel.hpp>
 #include <android/os/Parcelable.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/util/Locale.hpp>
 
@@ -83,11 +86,16 @@ namespace android { namespace location {
 		J2CPP_DECLARE_METHOD(44)
 		J2CPP_DECLARE_FIELD(0)
 
-		Address(jobject jobj)
+		explicit Address(jobject jobj)
 		: cpp_object<Address>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<android::os::Parcelable>() const;
+
+
+		Address(local_ref< java::util::Locale > const&);
 		local_ref< java::util::Locale > getLocale();
 		cpp_int getMaxAddressLineIndex();
 		local_ref< java::lang::String > getAddressLine(cpp_int const&);
@@ -138,7 +146,6 @@ namespace android { namespace location {
 } //namespace location
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_LOCATION_ADDRESS_HPP_DECL
@@ -151,17 +158,29 @@ namespace android { namespace location {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::location::Address > create< android::location::Address>(local_ref< java::util::Locale > const &a0)
+
+android::location::Address::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::location::Address >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::location::Address::J2CPP_CLASS_NAME>(),
-			get_method_id<android::location::Address::J2CPP_CLASS_NAME, android::location::Address::J2CPP_METHOD_NAME(0), android::location::Address::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+android::location::Address::operator local_ref<android::os::Parcelable>() const
+{
+	return local_ref<android::os::Parcelable>(get_jtype());
+}
+
+
+android::location::Address::Address(local_ref< java::util::Locale > const &a0)
+: cpp_object<android::location::Address>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::location::Address::J2CPP_CLASS_NAME>(),
+		get_method_id<android::location::Address::J2CPP_CLASS_NAME, android::location::Address::J2CPP_METHOD_NAME(0), android::location::Address::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 local_ref< java::util::Locale > android::location::Address::getLocale()
 {
@@ -611,6 +630,7 @@ void android::location::Address::writeToParcel(local_ref< android::os::Parcel > 
 		)
 	);
 }
+
 
 
 static_field<

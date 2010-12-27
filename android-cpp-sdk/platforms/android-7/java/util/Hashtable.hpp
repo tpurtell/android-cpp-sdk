@@ -10,17 +10,23 @@
 #define J2CPP_JAVA_UTIL_HASHTABLE_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace lang { class Cloneable; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace util { class Dictionary; } } }
 namespace j2cpp { namespace java { namespace util { class Set; } } }
 namespace j2cpp { namespace java { namespace util { class Map; } } }
 namespace j2cpp { namespace java { namespace util { class Enumeration; } } }
 namespace j2cpp { namespace java { namespace util { class Collection; } } }
 
 
+#include <java/io/Serializable.hpp>
+#include <java/lang/Cloneable.hpp>
 #include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/util/Collection.hpp>
+#include <java/util/Dictionary.hpp>
 #include <java/util/Enumeration.hpp>
 #include <java/util/Map.hpp>
 #include <java/util/Set.hpp>
@@ -63,11 +69,21 @@ namespace java { namespace util {
 		J2CPP_DECLARE_METHOD(22)
 		J2CPP_DECLARE_METHOD(23)
 
-		Hashtable(jobject jobj)
+		explicit Hashtable(jobject jobj)
 		: cpp_object<Hashtable>(jobj)
 		{
 		}
 
+		operator local_ref<java::util::Dictionary>() const;
+		operator local_ref<java::util::Map>() const;
+		operator local_ref<java::lang::Cloneable>() const;
+		operator local_ref<java::io::Serializable>() const;
+
+
+		Hashtable();
+		Hashtable(cpp_int const&);
+		Hashtable(cpp_int const&, cpp_float const&);
+		Hashtable(local_ref< java::util::Map > const&);
 		local_ref< java::lang::Object > clone();
 		cpp_boolean isEmpty();
 		cpp_int size();
@@ -92,7 +108,6 @@ namespace java { namespace util {
 } //namespace util
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_UTIL_HASHTABLE_HPP_DECL
@@ -105,52 +120,77 @@ namespace java { namespace util {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::util::Hashtable > create< java::util::Hashtable>()
+
+java::util::Hashtable::operator local_ref<java::util::Dictionary>() const
 {
-	return local_ref< java::util::Hashtable >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::Hashtable::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::Hashtable::J2CPP_CLASS_NAME, java::util::Hashtable::J2CPP_METHOD_NAME(0), java::util::Hashtable::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::util::Dictionary>(get_jtype());
 }
 
-template <>
-local_ref< java::util::Hashtable > create< java::util::Hashtable>(cpp_int const &a0)
+java::util::Hashtable::operator local_ref<java::util::Map>() const
 {
-	return local_ref< java::util::Hashtable >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::Hashtable::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::Hashtable::J2CPP_CLASS_NAME, java::util::Hashtable::J2CPP_METHOD_NAME(1), java::util::Hashtable::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::util::Map>(get_jtype());
 }
 
-template <>
-local_ref< java::util::Hashtable > create< java::util::Hashtable>(cpp_int const &a0, cpp_float const &a1)
+java::util::Hashtable::operator local_ref<java::lang::Cloneable>() const
 {
-	return local_ref< java::util::Hashtable >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::Hashtable::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::Hashtable::J2CPP_CLASS_NAME, java::util::Hashtable::J2CPP_METHOD_NAME(2), java::util::Hashtable::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Cloneable>(get_jtype());
 }
 
-template <>
-local_ref< java::util::Hashtable > create< java::util::Hashtable>(local_ref< java::util::Map > const &a0)
+java::util::Hashtable::operator local_ref<java::io::Serializable>() const
 {
-	return local_ref< java::util::Hashtable >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::Hashtable::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::Hashtable::J2CPP_CLASS_NAME, java::util::Hashtable::J2CPP_METHOD_NAME(3), java::util::Hashtable::J2CPP_METHOD_SIGNATURE(3), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::io::Serializable>(get_jtype());
 }
+
+
+java::util::Hashtable::Hashtable()
+: cpp_object<java::util::Hashtable>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::util::Hashtable::J2CPP_CLASS_NAME>(),
+		get_method_id<java::util::Hashtable::J2CPP_CLASS_NAME, java::util::Hashtable::J2CPP_METHOD_NAME(0), java::util::Hashtable::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
+
+
+java::util::Hashtable::Hashtable(cpp_int const &a0)
+: cpp_object<java::util::Hashtable>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::util::Hashtable::J2CPP_CLASS_NAME>(),
+		get_method_id<java::util::Hashtable::J2CPP_CLASS_NAME, java::util::Hashtable::J2CPP_METHOD_NAME(1), java::util::Hashtable::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
+
+
+java::util::Hashtable::Hashtable(cpp_int const &a0, cpp_float const &a1)
+: cpp_object<java::util::Hashtable>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::util::Hashtable::J2CPP_CLASS_NAME>(),
+		get_method_id<java::util::Hashtable::J2CPP_CLASS_NAME, java::util::Hashtable::J2CPP_METHOD_NAME(2), java::util::Hashtable::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
+
+
+java::util::Hashtable::Hashtable(local_ref< java::util::Map > const &a0)
+: cpp_object<java::util::Hashtable>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::util::Hashtable::J2CPP_CLASS_NAME>(),
+		get_method_id<java::util::Hashtable::J2CPP_CLASS_NAME, java::util::Hashtable::J2CPP_METHOD_NAME(3), java::util::Hashtable::J2CPP_METHOD_SIGNATURE(3), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 local_ref< java::lang::Object > java::util::Hashtable::clone()
 {

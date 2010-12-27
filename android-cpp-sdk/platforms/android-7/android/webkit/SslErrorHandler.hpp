@@ -10,9 +10,11 @@
 #define J2CPP_ANDROID_WEBKIT_SSLERRORHANDLER_HPP_DECL
 
 
+namespace j2cpp { namespace android { namespace os { class Handler; } } }
 namespace j2cpp { namespace android { namespace os { class Message; } } }
 
 
+#include <android/os/Handler.hpp>
 #include <android/os/Message.hpp>
 
 
@@ -33,10 +35,13 @@ namespace android { namespace webkit {
 		J2CPP_DECLARE_METHOD(2)
 		J2CPP_DECLARE_METHOD(3)
 
-		SslErrorHandler(jobject jobj)
+		explicit SslErrorHandler(jobject jobj)
 		: cpp_object<SslErrorHandler>(jobj)
 		{
 		}
+
+		operator local_ref<android::os::Handler>() const;
+
 
 		void handleMessage(local_ref< android::os::Message > const&);
 		void proceed();
@@ -45,7 +50,6 @@ namespace android { namespace webkit {
 
 } //namespace webkit
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -59,16 +63,12 @@ namespace android { namespace webkit {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::webkit::SslErrorHandler > create< android::webkit::SslErrorHandler>()
+
+android::webkit::SslErrorHandler::operator local_ref<android::os::Handler>() const
 {
-	return local_ref< android::webkit::SslErrorHandler >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::webkit::SslErrorHandler::J2CPP_CLASS_NAME>(),
-			get_method_id<android::webkit::SslErrorHandler::J2CPP_CLASS_NAME, android::webkit::SslErrorHandler::J2CPP_METHOD_NAME(0), android::webkit::SslErrorHandler::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<android::os::Handler>(get_jtype());
 }
+
 
 void android::webkit::SslErrorHandler::handleMessage(local_ref< android::os::Message > const &a0)
 {

@@ -10,12 +10,14 @@
 #define J2CPP_ORG_APACHE_HTTP_IMPL_CONN_TSCCM_WAITINGTHREAD_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class Thread; } } }
 namespace j2cpp { namespace java { namespace util { class Date; } } }
 namespace j2cpp { namespace java { namespace util { namespace concurrent { namespace locks { class Condition; } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace impl { namespace conn { namespace tsccm { class RouteSpecificPool; } } } } } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/Thread.hpp>
 #include <java/util/Date.hpp>
 #include <java/util/concurrent/locks/Condition.hpp>
@@ -42,11 +44,15 @@ namespace org { namespace apache { namespace http { namespace impl { namespace c
 		J2CPP_DECLARE_METHOD(5)
 		J2CPP_DECLARE_METHOD(6)
 
-		WaitingThread(jobject jobj)
+		explicit WaitingThread(jobject jobj)
 		: cpp_object<WaitingThread>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		WaitingThread(local_ref< java::util::concurrent::locks::Condition > const&, local_ref< org::apache::http::impl::conn::tsccm::RouteSpecificPool > const&);
 		local_ref< java::util::concurrent::locks::Condition > getCondition();
 		local_ref< org::apache::http::impl::conn::tsccm::RouteSpecificPool > getPool();
 		local_ref< java::lang::Thread > getThread();
@@ -62,7 +68,6 @@ namespace org { namespace apache { namespace http { namespace impl { namespace c
 } //namespace apache
 } //namespace org
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ORG_APACHE_HTTP_IMPL_CONN_TSCCM_WAITINGTHREAD_HPP_DECL
@@ -75,17 +80,24 @@ namespace org { namespace apache { namespace http { namespace impl { namespace c
 namespace j2cpp {
 
 
-template <>
-local_ref< org::apache::http::impl::conn::tsccm::WaitingThread > create< org::apache::http::impl::conn::tsccm::WaitingThread>(local_ref< java::util::concurrent::locks::Condition > const &a0, local_ref< org::apache::http::impl::conn::tsccm::RouteSpecificPool > const &a1)
+
+org::apache::http::impl::conn::tsccm::WaitingThread::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< org::apache::http::impl::conn::tsccm::WaitingThread >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::apache::http::impl::conn::tsccm::WaitingThread::J2CPP_CLASS_NAME>(),
-			get_method_id<org::apache::http::impl::conn::tsccm::WaitingThread::J2CPP_CLASS_NAME, org::apache::http::impl::conn::tsccm::WaitingThread::J2CPP_METHOD_NAME(0), org::apache::http::impl::conn::tsccm::WaitingThread::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+org::apache::http::impl::conn::tsccm::WaitingThread::WaitingThread(local_ref< java::util::concurrent::locks::Condition > const &a0, local_ref< org::apache::http::impl::conn::tsccm::RouteSpecificPool > const &a1)
+: cpp_object<org::apache::http::impl::conn::tsccm::WaitingThread>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::apache::http::impl::conn::tsccm::WaitingThread::J2CPP_CLASS_NAME>(),
+		get_method_id<org::apache::http::impl::conn::tsccm::WaitingThread::J2CPP_CLASS_NAME, org::apache::http::impl::conn::tsccm::WaitingThread::J2CPP_METHOD_NAME(0), org::apache::http::impl::conn::tsccm::WaitingThread::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
 
 local_ref< java::util::concurrent::locks::Condition > org::apache::http::impl::conn::tsccm::WaitingThread::getCondition()
 {

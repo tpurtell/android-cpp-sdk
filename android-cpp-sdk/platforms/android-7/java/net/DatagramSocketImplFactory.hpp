@@ -11,8 +11,10 @@
 
 
 namespace j2cpp { namespace java { namespace net { class DatagramSocketImpl; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/net/DatagramSocketImpl.hpp>
 
 
@@ -30,17 +32,19 @@ namespace java { namespace net {
 
 		J2CPP_DECLARE_METHOD(0)
 
-		DatagramSocketImplFactory(jobject jobj)
+		explicit DatagramSocketImplFactory(jobject jobj)
 		: cpp_object<DatagramSocketImplFactory>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		local_ref< java::net::DatagramSocketImpl > createDatagramSocketImpl();
 	}; //class DatagramSocketImplFactory
 
 } //namespace net
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -53,6 +57,12 @@ namespace java { namespace net {
 
 namespace j2cpp {
 
+
+
+java::net::DatagramSocketImplFactory::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 local_ref< java::net::DatagramSocketImpl > java::net::DatagramSocketImplFactory::createDatagramSocketImpl()
 {

@@ -12,10 +12,14 @@
 
 namespace j2cpp { namespace android { namespace view { class View; } } }
 namespace j2cpp { namespace android { namespace view { class KeyEvent; } } }
+namespace j2cpp { namespace android { namespace text { namespace method { class KeyListener; } } } }
+namespace j2cpp { namespace android { namespace text { namespace method { class MetaKeyKeyListener; } } } }
 namespace j2cpp { namespace android { namespace text { class Editable; } } }
 
 
 #include <android/text/Editable.hpp>
+#include <android/text/method/KeyListener.hpp>
+#include <android/text/method/MetaKeyKeyListener.hpp>
 #include <android/view/KeyEvent.hpp>
 #include <android/view/View.hpp>
 
@@ -37,11 +41,16 @@ namespace android { namespace text { namespace method {
 		J2CPP_DECLARE_METHOD(2)
 		J2CPP_DECLARE_METHOD(3)
 
-		BaseKeyListener(jobject jobj)
+		explicit BaseKeyListener(jobject jobj)
 		: cpp_object<BaseKeyListener>(jobj)
 		{
 		}
 
+		operator local_ref<android::text::method::MetaKeyKeyListener>() const;
+		operator local_ref<android::text::method::KeyListener>() const;
+
+
+		BaseKeyListener();
 		cpp_boolean backspace(local_ref< android::view::View > const&, local_ref< android::text::Editable > const&, cpp_int const&, local_ref< android::view::KeyEvent > const&);
 		cpp_boolean onKeyDown(local_ref< android::view::View > const&, local_ref< android::text::Editable > const&, cpp_int const&, local_ref< android::view::KeyEvent > const&);
 		cpp_boolean onKeyOther(local_ref< android::view::View > const&, local_ref< android::text::Editable > const&, local_ref< android::view::KeyEvent > const&);
@@ -50,7 +59,6 @@ namespace android { namespace text { namespace method {
 } //namespace method
 } //namespace text
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -64,16 +72,28 @@ namespace android { namespace text { namespace method {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::text::method::BaseKeyListener > create< android::text::method::BaseKeyListener>()
+
+android::text::method::BaseKeyListener::operator local_ref<android::text::method::MetaKeyKeyListener>() const
 {
-	return local_ref< android::text::method::BaseKeyListener >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::text::method::BaseKeyListener::J2CPP_CLASS_NAME>(),
-			get_method_id<android::text::method::BaseKeyListener::J2CPP_CLASS_NAME, android::text::method::BaseKeyListener::J2CPP_METHOD_NAME(0), android::text::method::BaseKeyListener::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<android::text::method::MetaKeyKeyListener>(get_jtype());
 }
+
+android::text::method::BaseKeyListener::operator local_ref<android::text::method::KeyListener>() const
+{
+	return local_ref<android::text::method::KeyListener>(get_jtype());
+}
+
+
+android::text::method::BaseKeyListener::BaseKeyListener()
+: cpp_object<android::text::method::BaseKeyListener>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::text::method::BaseKeyListener::J2CPP_CLASS_NAME>(),
+		get_method_id<android::text::method::BaseKeyListener::J2CPP_CLASS_NAME, android::text::method::BaseKeyListener::J2CPP_METHOD_NAME(0), android::text::method::BaseKeyListener::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 cpp_boolean android::text::method::BaseKeyListener::backspace(local_ref< android::view::View > const &a0, local_ref< android::text::Editable > const &a1, cpp_int const &a2, local_ref< android::view::KeyEvent > const &a3)
 {

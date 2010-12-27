@@ -11,10 +11,12 @@
 
 
 namespace j2cpp { namespace java { namespace io { class IOException; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace protocol { class HttpContext; } } } } }
 
 
 #include <java/io/IOException.hpp>
+#include <java/lang/Object.hpp>
 #include <org/apache/http/protocol/HttpContext.hpp>
 
 
@@ -32,10 +34,13 @@ namespace org { namespace apache { namespace http { namespace client {
 
 		J2CPP_DECLARE_METHOD(0)
 
-		HttpRequestRetryHandler(jobject jobj)
+		explicit HttpRequestRetryHandler(jobject jobj)
 		: cpp_object<HttpRequestRetryHandler>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		cpp_boolean retryRequest(local_ref< java::io::IOException > const&, cpp_int const&, local_ref< org::apache::http::protocol::HttpContext > const&);
 	}; //class HttpRequestRetryHandler
@@ -44,7 +49,6 @@ namespace org { namespace apache { namespace http { namespace client {
 } //namespace http
 } //namespace apache
 } //namespace org
-
 
 } //namespace j2cpp
 
@@ -57,6 +61,12 @@ namespace org { namespace apache { namespace http { namespace client {
 
 namespace j2cpp {
 
+
+
+org::apache::http::client::HttpRequestRetryHandler::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 cpp_boolean org::apache::http::client::HttpRequestRetryHandler::retryRequest(local_ref< java::io::IOException > const &a0, cpp_int const &a1, local_ref< org::apache::http::protocol::HttpContext > const &a2)
 {

@@ -13,6 +13,7 @@
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace android { namespace os { class Parcel; } } }
+namespace j2cpp { namespace android { namespace os { class Parcelable; } } }
 namespace j2cpp { namespace android { namespace os { namespace Parcelable_ { class Creator; } } } }
 
 
@@ -50,14 +51,20 @@ namespace android { namespace content {
 		J2CPP_DECLARE_FIELD(2)
 		J2CPP_DECLARE_FIELD(3)
 
-		SyncAdapterType(jobject jobj)
+		explicit SyncAdapterType(jobject jobj)
 		: cpp_object<SyncAdapterType>(jobj)
-		, authority(jobj)
-		, accountType(jobj)
-		, isKey(jobj)
+, authority(jobj)
+, accountType(jobj)
+, isKey(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<android::os::Parcelable>() const;
+
+
+		SyncAdapterType(local_ref< java::lang::String > const&, local_ref< java::lang::String > const&, cpp_boolean const&, cpp_boolean const&);
+		SyncAdapterType(local_ref< android::os::Parcel > const&);
 		cpp_boolean supportsUploading();
 		cpp_boolean isUserVisible();
 		static local_ref< android::content::SyncAdapterType > newKey(local_ref< java::lang::String > const&, local_ref< java::lang::String > const&);
@@ -76,7 +83,6 @@ namespace android { namespace content {
 } //namespace content
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_CONTENT_SYNCADAPTERTYPE_HPP_DECL
@@ -89,29 +95,48 @@ namespace android { namespace content {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::content::SyncAdapterType > create< android::content::SyncAdapterType>(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1, cpp_boolean const &a2, cpp_boolean const &a3)
+
+android::content::SyncAdapterType::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::content::SyncAdapterType >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::content::SyncAdapterType::J2CPP_CLASS_NAME>(),
-			get_method_id<android::content::SyncAdapterType::J2CPP_CLASS_NAME, android::content::SyncAdapterType::J2CPP_METHOD_NAME(0), android::content::SyncAdapterType::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
 
-template <>
-local_ref< android::content::SyncAdapterType > create< android::content::SyncAdapterType>(local_ref< android::os::Parcel > const &a0)
+android::content::SyncAdapterType::operator local_ref<android::os::Parcelable>() const
 {
-	return local_ref< android::content::SyncAdapterType >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::content::SyncAdapterType::J2CPP_CLASS_NAME>(),
-			get_method_id<android::content::SyncAdapterType::J2CPP_CLASS_NAME, android::content::SyncAdapterType::J2CPP_METHOD_NAME(1), android::content::SyncAdapterType::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<android::os::Parcelable>(get_jtype());
 }
+
+
+android::content::SyncAdapterType::SyncAdapterType(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1, cpp_boolean const &a2, cpp_boolean const &a3)
+: cpp_object<android::content::SyncAdapterType>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::content::SyncAdapterType::J2CPP_CLASS_NAME>(),
+		get_method_id<android::content::SyncAdapterType::J2CPP_CLASS_NAME, android::content::SyncAdapterType::J2CPP_METHOD_NAME(0), android::content::SyncAdapterType::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype()
+	)
+)
+, authority(get_jtype())
+, accountType(get_jtype())
+, isKey(get_jtype())
+{
+}
+
+
+
+android::content::SyncAdapterType::SyncAdapterType(local_ref< android::os::Parcel > const &a0)
+: cpp_object<android::content::SyncAdapterType>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::content::SyncAdapterType::J2CPP_CLASS_NAME>(),
+		get_method_id<android::content::SyncAdapterType::J2CPP_CLASS_NAME, android::content::SyncAdapterType::J2CPP_METHOD_NAME(1), android::content::SyncAdapterType::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
+, authority(get_jtype())
+, accountType(get_jtype())
+, isKey(get_jtype())
+{
+}
+
 
 cpp_boolean android::content::SyncAdapterType::supportsUploading()
 {
@@ -195,6 +220,7 @@ void android::content::SyncAdapterType::writeToParcel(local_ref< android::os::Pa
 		)
 	);
 }
+
 
 
 static_field<

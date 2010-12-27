@@ -46,18 +46,21 @@ namespace java { namespace security {
 		J2CPP_DECLARE_METHOD(15)
 		J2CPP_DECLARE_FIELD(0)
 
-		SignatureSpi(jobject jobj)
+		explicit SignatureSpi(jobject jobj)
 		: cpp_object<SignatureSpi>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		SignatureSpi();
 		local_ref< java::lang::Object > clone();
 
 	}; //class SignatureSpi
 
 } //namespace security
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -71,16 +74,23 @@ namespace java { namespace security {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::security::SignatureSpi > create< java::security::SignatureSpi>()
+
+java::security::SignatureSpi::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::security::SignatureSpi >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::security::SignatureSpi::J2CPP_CLASS_NAME>(),
-			get_method_id<java::security::SignatureSpi::J2CPP_CLASS_NAME, java::security::SignatureSpi::J2CPP_METHOD_NAME(0), java::security::SignatureSpi::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+java::security::SignatureSpi::SignatureSpi()
+: cpp_object<java::security::SignatureSpi>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::security::SignatureSpi::J2CPP_CLASS_NAME>(),
+		get_method_id<java::security::SignatureSpi::J2CPP_CLASS_NAME, java::security::SignatureSpi::J2CPP_METHOD_NAME(0), java::security::SignatureSpi::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 
 

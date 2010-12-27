@@ -10,13 +10,16 @@
 #define J2CPP_ANDROID_CONTENT_SYNCSTATS_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace android { namespace os { class Parcel; } } }
+namespace j2cpp { namespace android { namespace os { class Parcelable; } } }
 namespace j2cpp { namespace android { namespace os { namespace Parcelable_ { class Creator; } } } }
 
 
 #include <android/os/Parcel.hpp>
 #include <android/os/Parcelable.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -50,20 +53,26 @@ namespace android { namespace content {
 		J2CPP_DECLARE_FIELD(8)
 		J2CPP_DECLARE_FIELD(9)
 
-		SyncStats(jobject jobj)
+		explicit SyncStats(jobject jobj)
 		: cpp_object<SyncStats>(jobj)
-		, numAuthExceptions(jobj)
-		, numIoExceptions(jobj)
-		, numParseExceptions(jobj)
-		, numConflictDetectedExceptions(jobj)
-		, numInserts(jobj)
-		, numUpdates(jobj)
-		, numDeletes(jobj)
-		, numEntries(jobj)
-		, numSkippedEntries(jobj)
+, numAuthExceptions(jobj)
+, numIoExceptions(jobj)
+, numParseExceptions(jobj)
+, numConflictDetectedExceptions(jobj)
+, numInserts(jobj)
+, numUpdates(jobj)
+, numDeletes(jobj)
+, numEntries(jobj)
+, numSkippedEntries(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<android::os::Parcelable>() const;
+
+
+		SyncStats();
+		SyncStats(local_ref< android::os::Parcel > const&);
 		local_ref< java::lang::String > toString();
 		void clear();
 		cpp_int describeContents();
@@ -84,7 +93,6 @@ namespace android { namespace content {
 } //namespace content
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_CONTENT_SYNCSTATS_HPP_DECL
@@ -97,28 +105,59 @@ namespace android { namespace content {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::content::SyncStats > create< android::content::SyncStats>()
+
+android::content::SyncStats::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::content::SyncStats >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::content::SyncStats::J2CPP_CLASS_NAME>(),
-			get_method_id<android::content::SyncStats::J2CPP_CLASS_NAME, android::content::SyncStats::J2CPP_METHOD_NAME(0), android::content::SyncStats::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
 
-template <>
-local_ref< android::content::SyncStats > create< android::content::SyncStats>(local_ref< android::os::Parcel > const &a0)
+android::content::SyncStats::operator local_ref<android::os::Parcelable>() const
 {
-	return local_ref< android::content::SyncStats >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::content::SyncStats::J2CPP_CLASS_NAME>(),
-			get_method_id<android::content::SyncStats::J2CPP_CLASS_NAME, android::content::SyncStats::J2CPP_METHOD_NAME(1), android::content::SyncStats::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<android::os::Parcelable>(get_jtype());
 }
+
+
+android::content::SyncStats::SyncStats()
+: cpp_object<android::content::SyncStats>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::content::SyncStats::J2CPP_CLASS_NAME>(),
+		get_method_id<android::content::SyncStats::J2CPP_CLASS_NAME, android::content::SyncStats::J2CPP_METHOD_NAME(0), android::content::SyncStats::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+, numAuthExceptions(get_jtype())
+, numIoExceptions(get_jtype())
+, numParseExceptions(get_jtype())
+, numConflictDetectedExceptions(get_jtype())
+, numInserts(get_jtype())
+, numUpdates(get_jtype())
+, numDeletes(get_jtype())
+, numEntries(get_jtype())
+, numSkippedEntries(get_jtype())
+{
+}
+
+
+
+android::content::SyncStats::SyncStats(local_ref< android::os::Parcel > const &a0)
+: cpp_object<android::content::SyncStats>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::content::SyncStats::J2CPP_CLASS_NAME>(),
+		get_method_id<android::content::SyncStats::J2CPP_CLASS_NAME, android::content::SyncStats::J2CPP_METHOD_NAME(1), android::content::SyncStats::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
+, numAuthExceptions(get_jtype())
+, numIoExceptions(get_jtype())
+, numParseExceptions(get_jtype())
+, numConflictDetectedExceptions(get_jtype())
+, numInserts(get_jtype())
+, numUpdates(get_jtype())
+, numDeletes(get_jtype())
+, numEntries(get_jtype())
+, numSkippedEntries(get_jtype())
+{
+}
+
 
 local_ref< java::lang::String > android::content::SyncStats::toString()
 {
@@ -160,6 +199,7 @@ void android::content::SyncStats::writeToParcel(local_ref< android::os::Parcel >
 		)
 	);
 }
+
 
 
 static_field<

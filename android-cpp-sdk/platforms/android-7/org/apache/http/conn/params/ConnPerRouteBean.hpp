@@ -10,11 +10,15 @@
 #define J2CPP_ORG_APACHE_HTTP_CONN_PARAMS_CONNPERROUTEBEAN_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace util { class Map; } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace conn { namespace routing { class HttpRoute; } } } } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { namespace conn { namespace params { class ConnPerRoute; } } } } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/util/Map.hpp>
+#include <org/apache/http/conn/params/ConnPerRoute.hpp>
 #include <org/apache/http/conn/routing/HttpRoute.hpp>
 
 
@@ -39,11 +43,17 @@ namespace org { namespace apache { namespace http { namespace conn { namespace p
 		J2CPP_DECLARE_METHOD(6)
 		J2CPP_DECLARE_FIELD(0)
 
-		ConnPerRouteBean(jobject jobj)
+		explicit ConnPerRouteBean(jobject jobj)
 		: cpp_object<ConnPerRouteBean>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<org::apache::http::conn::params::ConnPerRoute>() const;
+
+
+		ConnPerRouteBean(cpp_int const&);
+		ConnPerRouteBean();
 		cpp_int getDefaultMax();
 		void setDefaultMaxPerRoute(cpp_int const&);
 		void setMaxForRoute(local_ref< org::apache::http::conn::routing::HttpRoute > const&, cpp_int const&);
@@ -59,7 +69,6 @@ namespace org { namespace apache { namespace http { namespace conn { namespace p
 } //namespace apache
 } //namespace org
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ORG_APACHE_HTTP_CONN_PARAMS_CONNPERROUTEBEAN_HPP_DECL
@@ -72,28 +81,41 @@ namespace org { namespace apache { namespace http { namespace conn { namespace p
 namespace j2cpp {
 
 
-template <>
-local_ref< org::apache::http::conn::params::ConnPerRouteBean > create< org::apache::http::conn::params::ConnPerRouteBean>(cpp_int const &a0)
+
+org::apache::http::conn::params::ConnPerRouteBean::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< org::apache::http::conn::params::ConnPerRouteBean >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::apache::http::conn::params::ConnPerRouteBean::J2CPP_CLASS_NAME>(),
-			get_method_id<org::apache::http::conn::params::ConnPerRouteBean::J2CPP_CLASS_NAME, org::apache::http::conn::params::ConnPerRouteBean::J2CPP_METHOD_NAME(0), org::apache::http::conn::params::ConnPerRouteBean::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
 
-template <>
-local_ref< org::apache::http::conn::params::ConnPerRouteBean > create< org::apache::http::conn::params::ConnPerRouteBean>()
+org::apache::http::conn::params::ConnPerRouteBean::operator local_ref<org::apache::http::conn::params::ConnPerRoute>() const
 {
-	return local_ref< org::apache::http::conn::params::ConnPerRouteBean >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::apache::http::conn::params::ConnPerRouteBean::J2CPP_CLASS_NAME>(),
-			get_method_id<org::apache::http::conn::params::ConnPerRouteBean::J2CPP_CLASS_NAME, org::apache::http::conn::params::ConnPerRouteBean::J2CPP_METHOD_NAME(1), org::apache::http::conn::params::ConnPerRouteBean::J2CPP_METHOD_SIGNATURE(1), false>()
-		)
-	);
+	return local_ref<org::apache::http::conn::params::ConnPerRoute>(get_jtype());
 }
+
+
+org::apache::http::conn::params::ConnPerRouteBean::ConnPerRouteBean(cpp_int const &a0)
+: cpp_object<org::apache::http::conn::params::ConnPerRouteBean>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::apache::http::conn::params::ConnPerRouteBean::J2CPP_CLASS_NAME>(),
+		get_method_id<org::apache::http::conn::params::ConnPerRouteBean::J2CPP_CLASS_NAME, org::apache::http::conn::params::ConnPerRouteBean::J2CPP_METHOD_NAME(0), org::apache::http::conn::params::ConnPerRouteBean::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
+
+
+org::apache::http::conn::params::ConnPerRouteBean::ConnPerRouteBean()
+: cpp_object<org::apache::http::conn::params::ConnPerRouteBean>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::apache::http::conn::params::ConnPerRouteBean::J2CPP_CLASS_NAME>(),
+		get_method_id<org::apache::http::conn::params::ConnPerRouteBean::J2CPP_CLASS_NAME, org::apache::http::conn::params::ConnPerRouteBean::J2CPP_METHOD_NAME(1), org::apache::http::conn::params::ConnPerRouteBean::J2CPP_METHOD_SIGNATURE(1), false>()
+	)
+)
+{
+}
+
 
 cpp_int org::apache::http::conn::params::ConnPerRouteBean::getDefaultMax()
 {

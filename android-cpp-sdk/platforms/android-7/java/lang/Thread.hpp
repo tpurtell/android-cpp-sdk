@@ -12,6 +12,7 @@
 
 namespace j2cpp { namespace java { namespace lang { class ClassLoader; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace lang { class Enum; } } }
 namespace j2cpp { namespace java { namespace lang { class ThreadGroup; } } }
 namespace j2cpp { namespace java { namespace lang { namespace Thread_ { class UncaughtExceptionHandler; } } } }
 namespace j2cpp { namespace java { namespace lang { class StackTraceElement; } } }
@@ -23,6 +24,7 @@ namespace j2cpp { namespace java { namespace util { class Map; } } }
 
 
 #include <java/lang/ClassLoader.hpp>
+#include <java/lang/Enum.hpp>
 #include <java/lang/Object.hpp>
 #include <java/lang/Runnable.hpp>
 #include <java/lang/StackTraceElement.hpp>
@@ -50,10 +52,13 @@ namespace java { namespace lang {
 
 			J2CPP_DECLARE_METHOD(0)
 
-			UncaughtExceptionHandler(jobject jobj)
+			explicit UncaughtExceptionHandler(jobject jobj)
 			: cpp_object<UncaughtExceptionHandler>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+
 
 			void uncaughtException(local_ref< java::lang::Thread > const&, local_ref< java::lang::Throwable > const&);
 		}; //class UncaughtExceptionHandler
@@ -78,10 +83,13 @@ namespace java { namespace lang {
 			J2CPP_DECLARE_FIELD(5)
 			J2CPP_DECLARE_FIELD(6)
 
-			State(jobject jobj)
+			explicit State(jobject jobj)
 			: cpp_object<State>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Enum>() const;
+
 
 			static local_ref< cpp_object_array<java::lang::Thread_::State, 1> > values();
 			static local_ref< java::lang::Thread_::State > valueOf(local_ref< java::lang::String > const&);
@@ -160,11 +168,23 @@ namespace java { namespace lang {
 		typedef Thread_::UncaughtExceptionHandler UncaughtExceptionHandler;
 		typedef Thread_::State State;
 
-		Thread(jobject jobj)
+		explicit Thread(jobject jobj)
 		: cpp_object<Thread>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::lang::Runnable>() const;
+
+
+		Thread();
+		Thread(local_ref< java::lang::Runnable > const&);
+		Thread(local_ref< java::lang::Runnable > const&, local_ref< java::lang::String > const&);
+		Thread(local_ref< java::lang::String > const&);
+		Thread(local_ref< java::lang::ThreadGroup > const&, local_ref< java::lang::Runnable > const&);
+		Thread(local_ref< java::lang::ThreadGroup > const&, local_ref< java::lang::Runnable > const&, local_ref< java::lang::String > const&);
+		Thread(local_ref< java::lang::ThreadGroup > const&, local_ref< java::lang::String > const&);
+		Thread(local_ref< java::lang::ThreadGroup > const&, local_ref< java::lang::Runnable > const&, local_ref< java::lang::String > const&, cpp_long const&);
 		static cpp_int activeCount();
 		void checkAccess();
 		cpp_int countStackFrames();
@@ -216,7 +236,6 @@ namespace java { namespace lang {
 } //namespace lang
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_LANG_THREAD_HPP_DECL
@@ -229,6 +248,12 @@ namespace java { namespace lang {
 namespace j2cpp {
 
 
+
+
+java::lang::Thread_::UncaughtExceptionHandler::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 void java::lang::Thread_::UncaughtExceptionHandler::uncaughtException(local_ref< java::lang::Thread > const &a0, local_ref< java::lang::Throwable > const &a1)
 {
@@ -244,6 +269,12 @@ void java::lang::Thread_::UncaughtExceptionHandler::uncaughtException(local_ref<
 
 J2CPP_DEFINE_CLASS(java::lang::Thread_::UncaughtExceptionHandler,"java/lang/Thread$UncaughtExceptionHandler")
 J2CPP_DEFINE_METHOD(java::lang::Thread_::UncaughtExceptionHandler,0,"uncaughtException","(Ljava/lang/Thread;Ljava/lang/Throwable;)V")
+
+
+java::lang::Thread_::State::operator local_ref<java::lang::Enum>() const
+{
+	return local_ref<java::lang::Enum>(get_jtype());
+}
 
 local_ref< cpp_object_array<java::lang::Thread_::State, 1> > java::lang::Thread_::State::values()
 {
@@ -266,17 +297,7 @@ local_ref< java::lang::Thread_::State > java::lang::Thread_::State::valueOf(loca
 	);
 }
 
-template <>
-local_ref< java::lang::Thread_::State > create< java::lang::Thread_::State>(local_ref< java::lang::String > const &a0, cpp_int const &a1)
-{
-	return local_ref< java::lang::Thread_::State >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::lang::Thread_::State::J2CPP_CLASS_NAME>(),
-			get_method_id<java::lang::Thread_::State::J2CPP_CLASS_NAME, java::lang::Thread_::State::J2CPP_METHOD_NAME(2), java::lang::Thread_::State::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
-}
+
 
 
 static_field<
@@ -336,100 +357,119 @@ J2CPP_DEFINE_FIELD(java::lang::Thread_::State,5,"WAITING","Ljava/lang/Thread$Sta
 J2CPP_DEFINE_FIELD(java::lang::Thread_::State,6,"$VALUES","[java.lang.Thread.State")
 
 
-template <>
-local_ref< java::lang::Thread > create< java::lang::Thread>()
+
+java::lang::Thread::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::lang::Thread >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::lang::Thread::J2CPP_CLASS_NAME>(),
-			get_method_id<java::lang::Thread::J2CPP_CLASS_NAME, java::lang::Thread::J2CPP_METHOD_NAME(0), java::lang::Thread::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
 
-template <>
-local_ref< java::lang::Thread > create< java::lang::Thread>(local_ref< java::lang::Runnable > const &a0)
+java::lang::Thread::operator local_ref<java::lang::Runnable>() const
 {
-	return local_ref< java::lang::Thread >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::lang::Thread::J2CPP_CLASS_NAME>(),
-			get_method_id<java::lang::Thread::J2CPP_CLASS_NAME, java::lang::Thread::J2CPP_METHOD_NAME(1), java::lang::Thread::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Runnable>(get_jtype());
 }
 
-template <>
-local_ref< java::lang::Thread > create< java::lang::Thread>(local_ref< java::lang::Runnable > const &a0, local_ref< java::lang::String > const &a1)
+
+java::lang::Thread::Thread()
+: cpp_object<java::lang::Thread>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::lang::Thread::J2CPP_CLASS_NAME>(),
+		get_method_id<java::lang::Thread::J2CPP_CLASS_NAME, java::lang::Thread::J2CPP_METHOD_NAME(0), java::lang::Thread::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
 {
-	return local_ref< java::lang::Thread >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::lang::Thread::J2CPP_CLASS_NAME>(),
-			get_method_id<java::lang::Thread::J2CPP_CLASS_NAME, java::lang::Thread::J2CPP_METHOD_NAME(2), java::lang::Thread::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< java::lang::Thread > create< java::lang::Thread>(local_ref< java::lang::String > const &a0)
+
+
+java::lang::Thread::Thread(local_ref< java::lang::Runnable > const &a0)
+: cpp_object<java::lang::Thread>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::lang::Thread::J2CPP_CLASS_NAME>(),
+		get_method_id<java::lang::Thread::J2CPP_CLASS_NAME, java::lang::Thread::J2CPP_METHOD_NAME(1), java::lang::Thread::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< java::lang::Thread >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::lang::Thread::J2CPP_CLASS_NAME>(),
-			get_method_id<java::lang::Thread::J2CPP_CLASS_NAME, java::lang::Thread::J2CPP_METHOD_NAME(3), java::lang::Thread::J2CPP_METHOD_SIGNATURE(3), false>(),
-			a0.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< java::lang::Thread > create< java::lang::Thread>(local_ref< java::lang::ThreadGroup > const &a0, local_ref< java::lang::Runnable > const &a1)
+
+
+java::lang::Thread::Thread(local_ref< java::lang::Runnable > const &a0, local_ref< java::lang::String > const &a1)
+: cpp_object<java::lang::Thread>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::lang::Thread::J2CPP_CLASS_NAME>(),
+		get_method_id<java::lang::Thread::J2CPP_CLASS_NAME, java::lang::Thread::J2CPP_METHOD_NAME(2), java::lang::Thread::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
 {
-	return local_ref< java::lang::Thread >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::lang::Thread::J2CPP_CLASS_NAME>(),
-			get_method_id<java::lang::Thread::J2CPP_CLASS_NAME, java::lang::Thread::J2CPP_METHOD_NAME(4), java::lang::Thread::J2CPP_METHOD_SIGNATURE(4), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< java::lang::Thread > create< java::lang::Thread>(local_ref< java::lang::ThreadGroup > const &a0, local_ref< java::lang::Runnable > const &a1, local_ref< java::lang::String > const &a2)
+
+
+java::lang::Thread::Thread(local_ref< java::lang::String > const &a0)
+: cpp_object<java::lang::Thread>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::lang::Thread::J2CPP_CLASS_NAME>(),
+		get_method_id<java::lang::Thread::J2CPP_CLASS_NAME, java::lang::Thread::J2CPP_METHOD_NAME(3), java::lang::Thread::J2CPP_METHOD_SIGNATURE(3), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< java::lang::Thread >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::lang::Thread::J2CPP_CLASS_NAME>(),
-			get_method_id<java::lang::Thread::J2CPP_CLASS_NAME, java::lang::Thread::J2CPP_METHOD_NAME(5), java::lang::Thread::J2CPP_METHOD_SIGNATURE(5), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< java::lang::Thread > create< java::lang::Thread>(local_ref< java::lang::ThreadGroup > const &a0, local_ref< java::lang::String > const &a1)
+
+
+java::lang::Thread::Thread(local_ref< java::lang::ThreadGroup > const &a0, local_ref< java::lang::Runnable > const &a1)
+: cpp_object<java::lang::Thread>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::lang::Thread::J2CPP_CLASS_NAME>(),
+		get_method_id<java::lang::Thread::J2CPP_CLASS_NAME, java::lang::Thread::J2CPP_METHOD_NAME(4), java::lang::Thread::J2CPP_METHOD_SIGNATURE(4), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
 {
-	return local_ref< java::lang::Thread >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::lang::Thread::J2CPP_CLASS_NAME>(),
-			get_method_id<java::lang::Thread::J2CPP_CLASS_NAME, java::lang::Thread::J2CPP_METHOD_NAME(6), java::lang::Thread::J2CPP_METHOD_SIGNATURE(6), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< java::lang::Thread > create< java::lang::Thread>(local_ref< java::lang::ThreadGroup > const &a0, local_ref< java::lang::Runnable > const &a1, local_ref< java::lang::String > const &a2, cpp_long const &a3)
+
+
+java::lang::Thread::Thread(local_ref< java::lang::ThreadGroup > const &a0, local_ref< java::lang::Runnable > const &a1, local_ref< java::lang::String > const &a2)
+: cpp_object<java::lang::Thread>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::lang::Thread::J2CPP_CLASS_NAME>(),
+		get_method_id<java::lang::Thread::J2CPP_CLASS_NAME, java::lang::Thread::J2CPP_METHOD_NAME(5), java::lang::Thread::J2CPP_METHOD_SIGNATURE(5), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
+	)
+)
 {
-	return local_ref< java::lang::Thread >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::lang::Thread::J2CPP_CLASS_NAME>(),
-			get_method_id<java::lang::Thread::J2CPP_CLASS_NAME, java::lang::Thread::J2CPP_METHOD_NAME(7), java::lang::Thread::J2CPP_METHOD_SIGNATURE(7), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype()
-		)
-	);
 }
+
+
+
+java::lang::Thread::Thread(local_ref< java::lang::ThreadGroup > const &a0, local_ref< java::lang::String > const &a1)
+: cpp_object<java::lang::Thread>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::lang::Thread::J2CPP_CLASS_NAME>(),
+		get_method_id<java::lang::Thread::J2CPP_CLASS_NAME, java::lang::Thread::J2CPP_METHOD_NAME(6), java::lang::Thread::J2CPP_METHOD_SIGNATURE(6), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
+
+
+java::lang::Thread::Thread(local_ref< java::lang::ThreadGroup > const &a0, local_ref< java::lang::Runnable > const &a1, local_ref< java::lang::String > const &a2, cpp_long const &a3)
+: cpp_object<java::lang::Thread>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::lang::Thread::J2CPP_CLASS_NAME>(),
+		get_method_id<java::lang::Thread::J2CPP_CLASS_NAME, java::lang::Thread::J2CPP_METHOD_NAME(7), java::lang::Thread::J2CPP_METHOD_SIGNATURE(7), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype()
+	)
+)
+{
+}
+
 
 cpp_int java::lang::Thread::activeCount()
 {

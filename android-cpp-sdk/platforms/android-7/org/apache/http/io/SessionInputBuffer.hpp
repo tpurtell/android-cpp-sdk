@@ -10,11 +10,13 @@
 #define J2CPP_ORG_APACHE_HTTP_IO_SESSIONINPUTBUFFER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace io { class HttpTransportMetrics; } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace util { class CharArrayBuffer; } } } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <org/apache/http/io/HttpTransportMetrics.hpp>
 #include <org/apache/http/util/CharArrayBuffer.hpp>
@@ -40,10 +42,13 @@ namespace org { namespace apache { namespace http { namespace io {
 		J2CPP_DECLARE_METHOD(5)
 		J2CPP_DECLARE_METHOD(6)
 
-		SessionInputBuffer(jobject jobj)
+		explicit SessionInputBuffer(jobject jobj)
 		: cpp_object<SessionInputBuffer>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		cpp_int read(local_ref< cpp_byte_array<1> > const&, cpp_int const&, cpp_int const&);
 		cpp_int read(local_ref< cpp_byte_array<1> > const&);
@@ -59,7 +64,6 @@ namespace org { namespace apache { namespace http { namespace io {
 } //namespace apache
 } //namespace org
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ORG_APACHE_HTTP_IO_SESSIONINPUTBUFFER_HPP_DECL
@@ -71,6 +75,12 @@ namespace org { namespace apache { namespace http { namespace io {
 
 namespace j2cpp {
 
+
+
+org::apache::http::io::SessionInputBuffer::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 cpp_int org::apache::http::io::SessionInputBuffer::read(local_ref< cpp_byte_array<1> > const &a0, cpp_int const &a1, cpp_int const &a2)
 {

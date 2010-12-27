@@ -10,10 +10,12 @@
 #define J2CPP_JAVA_LANG_STACKTRACEELEMENT_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 
 
+#include <java/io/Serializable.hpp>
 #include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
@@ -40,11 +42,16 @@ namespace java { namespace lang {
 		J2CPP_DECLARE_METHOD(7)
 		J2CPP_DECLARE_METHOD(8)
 
-		StackTraceElement(jobject jobj)
+		explicit StackTraceElement(jobject jobj)
 		: cpp_object<StackTraceElement>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::io::Serializable>() const;
+
+
+		StackTraceElement(local_ref< java::lang::String > const&, local_ref< java::lang::String > const&, local_ref< java::lang::String > const&, cpp_int const&);
 		cpp_boolean equals(local_ref< java::lang::Object > const&);
 		local_ref< java::lang::String > getClassName();
 		local_ref< java::lang::String > getFileName();
@@ -58,7 +65,6 @@ namespace java { namespace lang {
 } //namespace lang
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_LANG_STACKTRACEELEMENT_HPP_DECL
@@ -71,17 +77,29 @@ namespace java { namespace lang {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::lang::StackTraceElement > create< java::lang::StackTraceElement>(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1, local_ref< java::lang::String > const &a2, cpp_int const &a3)
+
+java::lang::StackTraceElement::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::lang::StackTraceElement >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::lang::StackTraceElement::J2CPP_CLASS_NAME>(),
-			get_method_id<java::lang::StackTraceElement::J2CPP_CLASS_NAME, java::lang::StackTraceElement::J2CPP_METHOD_NAME(0), java::lang::StackTraceElement::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+java::lang::StackTraceElement::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jtype());
+}
+
+
+java::lang::StackTraceElement::StackTraceElement(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1, local_ref< java::lang::String > const &a2, cpp_int const &a3)
+: cpp_object<java::lang::StackTraceElement>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::lang::StackTraceElement::J2CPP_CLASS_NAME>(),
+		get_method_id<java::lang::StackTraceElement::J2CPP_CLASS_NAME, java::lang::StackTraceElement::J2CPP_METHOD_NAME(0), java::lang::StackTraceElement::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype()
+	)
+)
+{
+}
+
 
 cpp_boolean java::lang::StackTraceElement::equals(local_ref< java::lang::Object > const &a0)
 {

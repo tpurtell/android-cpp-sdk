@@ -10,6 +10,7 @@
 #define J2CPP_ANDROID_APPWIDGET_APPWIDGETHOST_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace android { namespace appwidget { class AppWidgetHostView; } } }
 namespace j2cpp { namespace android { namespace appwidget { class AppWidgetProviderInfo; } } }
 namespace j2cpp { namespace android { namespace content { class Context; } } }
@@ -18,6 +19,7 @@ namespace j2cpp { namespace android { namespace content { class Context; } } }
 #include <android/appwidget/AppWidgetHostView.hpp>
 #include <android/appwidget/AppWidgetProviderInfo.hpp>
 #include <android/content/Context.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -43,11 +45,15 @@ namespace android { namespace appwidget {
 		J2CPP_DECLARE_METHOD(8)
 		J2CPP_DECLARE_METHOD(9)
 
-		AppWidgetHost(jobject jobj)
+		explicit AppWidgetHost(jobject jobj)
 		: cpp_object<AppWidgetHost>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		AppWidgetHost(local_ref< android::content::Context > const&, cpp_int const&);
 		void startListening();
 		void stopListening();
 		cpp_int allocateAppWidgetId();
@@ -59,7 +65,6 @@ namespace android { namespace appwidget {
 
 } //namespace appwidget
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -73,17 +78,24 @@ namespace android { namespace appwidget {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::appwidget::AppWidgetHost > create< android::appwidget::AppWidgetHost>(local_ref< android::content::Context > const &a0, cpp_int const &a1)
+
+android::appwidget::AppWidgetHost::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::appwidget::AppWidgetHost >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::appwidget::AppWidgetHost::J2CPP_CLASS_NAME>(),
-			get_method_id<android::appwidget::AppWidgetHost::J2CPP_CLASS_NAME, android::appwidget::AppWidgetHost::J2CPP_METHOD_NAME(0), android::appwidget::AppWidgetHost::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::appwidget::AppWidgetHost::AppWidgetHost(local_ref< android::content::Context > const &a0, cpp_int const &a1)
+: cpp_object<android::appwidget::AppWidgetHost>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::appwidget::AppWidgetHost::J2CPP_CLASS_NAME>(),
+		get_method_id<android::appwidget::AppWidgetHost::J2CPP_CLASS_NAME, android::appwidget::AppWidgetHost::J2CPP_METHOD_NAME(0), android::appwidget::AppWidgetHost::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
 
 void android::appwidget::AppWidgetHost::startListening()
 {

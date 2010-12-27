@@ -12,11 +12,13 @@
 
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace security { namespace cert { class CertStoreParameters; } } } }
 namespace j2cpp { namespace java { namespace util { class Collection; } } }
 
 
 #include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
+#include <java/security/cert/CertStoreParameters.hpp>
 #include <java/util/Collection.hpp>
 
 
@@ -38,11 +40,17 @@ namespace java { namespace security { namespace cert {
 		J2CPP_DECLARE_METHOD(3)
 		J2CPP_DECLARE_METHOD(4)
 
-		CollectionCertStoreParameters(jobject jobj)
+		explicit CollectionCertStoreParameters(jobject jobj)
 		: cpp_object<CollectionCertStoreParameters>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::security::cert::CertStoreParameters>() const;
+
+
+		CollectionCertStoreParameters();
+		CollectionCertStoreParameters(local_ref< java::util::Collection > const&);
 		local_ref< java::lang::Object > clone();
 		local_ref< java::util::Collection > getCollection();
 		local_ref< java::lang::String > toString();
@@ -51,7 +59,6 @@ namespace java { namespace security { namespace cert {
 } //namespace cert
 } //namespace security
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -65,28 +72,41 @@ namespace java { namespace security { namespace cert {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::security::cert::CollectionCertStoreParameters > create< java::security::cert::CollectionCertStoreParameters>()
+
+java::security::cert::CollectionCertStoreParameters::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::security::cert::CollectionCertStoreParameters >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::security::cert::CollectionCertStoreParameters::J2CPP_CLASS_NAME>(),
-			get_method_id<java::security::cert::CollectionCertStoreParameters::J2CPP_CLASS_NAME, java::security::cert::CollectionCertStoreParameters::J2CPP_METHOD_NAME(0), java::security::cert::CollectionCertStoreParameters::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
 
-template <>
-local_ref< java::security::cert::CollectionCertStoreParameters > create< java::security::cert::CollectionCertStoreParameters>(local_ref< java::util::Collection > const &a0)
+java::security::cert::CollectionCertStoreParameters::operator local_ref<java::security::cert::CertStoreParameters>() const
 {
-	return local_ref< java::security::cert::CollectionCertStoreParameters >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::security::cert::CollectionCertStoreParameters::J2CPP_CLASS_NAME>(),
-			get_method_id<java::security::cert::CollectionCertStoreParameters::J2CPP_CLASS_NAME, java::security::cert::CollectionCertStoreParameters::J2CPP_METHOD_NAME(1), java::security::cert::CollectionCertStoreParameters::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::security::cert::CertStoreParameters>(get_jtype());
 }
+
+
+java::security::cert::CollectionCertStoreParameters::CollectionCertStoreParameters()
+: cpp_object<java::security::cert::CollectionCertStoreParameters>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::security::cert::CollectionCertStoreParameters::J2CPP_CLASS_NAME>(),
+		get_method_id<java::security::cert::CollectionCertStoreParameters::J2CPP_CLASS_NAME, java::security::cert::CollectionCertStoreParameters::J2CPP_METHOD_NAME(0), java::security::cert::CollectionCertStoreParameters::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
+
+
+java::security::cert::CollectionCertStoreParameters::CollectionCertStoreParameters(local_ref< java::util::Collection > const &a0)
+: cpp_object<java::security::cert::CollectionCertStoreParameters>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::security::cert::CollectionCertStoreParameters::J2CPP_CLASS_NAME>(),
+		get_method_id<java::security::cert::CollectionCertStoreParameters::J2CPP_CLASS_NAME, java::security::cert::CollectionCertStoreParameters::J2CPP_METHOD_NAME(1), java::security::cert::CollectionCertStoreParameters::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 local_ref< java::lang::Object > java::security::cert::CollectionCertStoreParameters::clone()
 {

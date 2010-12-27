@@ -13,10 +13,14 @@
 namespace j2cpp { namespace junit { namespace framework { class TestSuite; } } }
 namespace j2cpp { namespace java { namespace lang { class ClassLoader; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace android { namespace app { class Instrumentation; } } }
+namespace j2cpp { namespace android { namespace test { class TestSuiteProvider; } } }
 namespace j2cpp { namespace android { namespace os { class Bundle; } } }
 
 
+#include <android/app/Instrumentation.hpp>
 #include <android/os/Bundle.hpp>
+#include <android/test/TestSuiteProvider.hpp>
 #include <java/lang/ClassLoader.hpp>
 #include <java/lang/String.hpp>
 #include <junit/framework/TestSuite.hpp>
@@ -52,11 +56,16 @@ namespace android { namespace test {
 		J2CPP_DECLARE_FIELD(8)
 		J2CPP_DECLARE_FIELD(9)
 
-		InstrumentationTestRunner(jobject jobj)
+		explicit InstrumentationTestRunner(jobject jobj)
 		: cpp_object<InstrumentationTestRunner>(jobj)
 		{
 		}
 
+		operator local_ref<android::app::Instrumentation>() const;
+		operator local_ref<android::test::TestSuiteProvider>() const;
+
+
+		InstrumentationTestRunner();
 		void onCreate(local_ref< android::os::Bundle > const&);
 		void onStart();
 		local_ref< junit::framework::TestSuite > getTestSuite();
@@ -78,7 +87,6 @@ namespace android { namespace test {
 } //namespace test
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_TEST_INSTRUMENTATIONTESTRUNNER_HPP_DECL
@@ -91,16 +99,28 @@ namespace android { namespace test {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::test::InstrumentationTestRunner > create< android::test::InstrumentationTestRunner>()
+
+android::test::InstrumentationTestRunner::operator local_ref<android::app::Instrumentation>() const
 {
-	return local_ref< android::test::InstrumentationTestRunner >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::test::InstrumentationTestRunner::J2CPP_CLASS_NAME>(),
-			get_method_id<android::test::InstrumentationTestRunner::J2CPP_CLASS_NAME, android::test::InstrumentationTestRunner::J2CPP_METHOD_NAME(0), android::test::InstrumentationTestRunner::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<android::app::Instrumentation>(get_jtype());
 }
+
+android::test::InstrumentationTestRunner::operator local_ref<android::test::TestSuiteProvider>() const
+{
+	return local_ref<android::test::TestSuiteProvider>(get_jtype());
+}
+
+
+android::test::InstrumentationTestRunner::InstrumentationTestRunner()
+: cpp_object<android::test::InstrumentationTestRunner>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::test::InstrumentationTestRunner::J2CPP_CLASS_NAME>(),
+		get_method_id<android::test::InstrumentationTestRunner::J2CPP_CLASS_NAME, android::test::InstrumentationTestRunner::J2CPP_METHOD_NAME(0), android::test::InstrumentationTestRunner::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 void android::test::InstrumentationTestRunner::onCreate(local_ref< android::os::Bundle > const &a0)
 {

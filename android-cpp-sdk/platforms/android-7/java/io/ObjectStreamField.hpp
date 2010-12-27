@@ -12,10 +12,12 @@
 
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class Class; } } }
+namespace j2cpp { namespace java { namespace lang { class Comparable; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 
 
 #include <java/lang/Class.hpp>
+#include <java/lang/Comparable.hpp>
 #include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
@@ -45,11 +47,17 @@ namespace java { namespace io {
 		J2CPP_DECLARE_METHOD(10)
 		J2CPP_DECLARE_METHOD(11)
 
-		ObjectStreamField(jobject jobj)
+		explicit ObjectStreamField(jobject jobj)
 		: cpp_object<ObjectStreamField>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::lang::Comparable>() const;
+
+
+		ObjectStreamField(local_ref< java::lang::String > const&, local_ref< java::lang::Class > const&);
+		ObjectStreamField(local_ref< java::lang::String > const&, local_ref< java::lang::Class > const&, cpp_boolean const&);
 		cpp_int compareTo(local_ref< java::lang::Object > const&);
 		local_ref< java::lang::String > getName();
 		cpp_int getOffset();
@@ -64,7 +72,6 @@ namespace java { namespace io {
 } //namespace io
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_IO_OBJECTSTREAMFIELD_HPP_DECL
@@ -77,29 +84,42 @@ namespace java { namespace io {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::io::ObjectStreamField > create< java::io::ObjectStreamField>(local_ref< java::lang::String > const &a0, local_ref< java::lang::Class > const &a1)
+
+java::io::ObjectStreamField::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::io::ObjectStreamField >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::io::ObjectStreamField::J2CPP_CLASS_NAME>(),
-			get_method_id<java::io::ObjectStreamField::J2CPP_CLASS_NAME, java::io::ObjectStreamField::J2CPP_METHOD_NAME(0), java::io::ObjectStreamField::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
 
-template <>
-local_ref< java::io::ObjectStreamField > create< java::io::ObjectStreamField>(local_ref< java::lang::String > const &a0, local_ref< java::lang::Class > const &a1, cpp_boolean const &a2)
+java::io::ObjectStreamField::operator local_ref<java::lang::Comparable>() const
 {
-	return local_ref< java::io::ObjectStreamField >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::io::ObjectStreamField::J2CPP_CLASS_NAME>(),
-			get_method_id<java::io::ObjectStreamField::J2CPP_CLASS_NAME, java::io::ObjectStreamField::J2CPP_METHOD_NAME(1), java::io::ObjectStreamField::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Comparable>(get_jtype());
 }
+
+
+java::io::ObjectStreamField::ObjectStreamField(local_ref< java::lang::String > const &a0, local_ref< java::lang::Class > const &a1)
+: cpp_object<java::io::ObjectStreamField>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::io::ObjectStreamField::J2CPP_CLASS_NAME>(),
+		get_method_id<java::io::ObjectStreamField::J2CPP_CLASS_NAME, java::io::ObjectStreamField::J2CPP_METHOD_NAME(0), java::io::ObjectStreamField::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
+
+
+java::io::ObjectStreamField::ObjectStreamField(local_ref< java::lang::String > const &a0, local_ref< java::lang::Class > const &a1, cpp_boolean const &a2)
+: cpp_object<java::io::ObjectStreamField>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::io::ObjectStreamField::J2CPP_CLASS_NAME>(),
+		get_method_id<java::io::ObjectStreamField::J2CPP_CLASS_NAME, java::io::ObjectStreamField::J2CPP_METHOD_NAME(1), java::io::ObjectStreamField::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
+	)
+)
+{
+}
+
 
 cpp_int java::io::ObjectStreamField::compareTo(local_ref< java::lang::Object > const &a0)
 {

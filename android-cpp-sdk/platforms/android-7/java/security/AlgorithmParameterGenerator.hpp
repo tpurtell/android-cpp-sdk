@@ -10,6 +10,7 @@
 #define J2CPP_JAVA_SECURITY_ALGORITHMPARAMETERGENERATOR_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace security { class AlgorithmParameters; } } }
 namespace j2cpp { namespace java { namespace security { class Provider; } } }
@@ -17,6 +18,7 @@ namespace j2cpp { namespace java { namespace security { class SecureRandom; } } 
 namespace j2cpp { namespace java { namespace security { namespace spec { class AlgorithmParameterSpec; } } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/security/AlgorithmParameters.hpp>
 #include <java/security/Provider.hpp>
@@ -48,10 +50,13 @@ namespace java { namespace security {
 		J2CPP_DECLARE_METHOD(9)
 		J2CPP_DECLARE_METHOD(10)
 
-		AlgorithmParameterGenerator(jobject jobj)
+		explicit AlgorithmParameterGenerator(jobject jobj)
 		: cpp_object<AlgorithmParameterGenerator>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		local_ref< java::lang::String > getAlgorithm();
 		static local_ref< java::security::AlgorithmParameterGenerator > getInstance(local_ref< java::lang::String > const&);
@@ -68,7 +73,6 @@ namespace java { namespace security {
 } //namespace security
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_SECURITY_ALGORITHMPARAMETERGENERATOR_HPP_DECL
@@ -81,17 +85,12 @@ namespace java { namespace security {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::security::AlgorithmParameterGenerator > create< java::security::AlgorithmParameterGenerator>(local_ref< java::security::AlgorithmParameterGeneratorSpi > const &a0, local_ref< java::security::Provider > const &a1, local_ref< java::lang::String > const &a2)
+
+java::security::AlgorithmParameterGenerator::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::security::AlgorithmParameterGenerator >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::security::AlgorithmParameterGenerator::J2CPP_CLASS_NAME>(),
-			get_method_id<java::security::AlgorithmParameterGenerator::J2CPP_CLASS_NAME, java::security::AlgorithmParameterGenerator::J2CPP_METHOD_NAME(0), java::security::AlgorithmParameterGenerator::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
 
 local_ref< java::lang::String > java::security::AlgorithmParameterGenerator::getAlgorithm()
 {

@@ -11,10 +11,12 @@
 
 
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace util { class HashMap; } } }
 namespace j2cpp { namespace java { namespace util { class Map; } } }
 
 
 #include <java/lang/Object.hpp>
+#include <java/util/HashMap.hpp>
 #include <java/util/Map.hpp>
 
 
@@ -40,11 +42,19 @@ namespace java { namespace util {
 		J2CPP_DECLARE_METHOD(7)
 		J2CPP_DECLARE_METHOD(8)
 
-		LinkedHashMap(jobject jobj)
+		explicit LinkedHashMap(jobject jobj)
 		: cpp_object<LinkedHashMap>(jobj)
 		{
 		}
 
+		operator local_ref<java::util::HashMap>() const;
+
+
+		LinkedHashMap();
+		LinkedHashMap(cpp_int const&);
+		LinkedHashMap(cpp_int const&, cpp_float const&);
+		LinkedHashMap(cpp_int const&, cpp_float const&, cpp_boolean const&);
+		LinkedHashMap(local_ref< java::util::Map > const&);
 		local_ref< java::lang::Object > get(local_ref< java::lang::Object > const&);
 		cpp_boolean containsValue(local_ref< java::lang::Object > const&);
 		void clear();
@@ -52,7 +62,6 @@ namespace java { namespace util {
 
 } //namespace util
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -66,64 +75,75 @@ namespace java { namespace util {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::util::LinkedHashMap > create< java::util::LinkedHashMap>()
+
+java::util::LinkedHashMap::operator local_ref<java::util::HashMap>() const
 {
-	return local_ref< java::util::LinkedHashMap >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::LinkedHashMap::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::LinkedHashMap::J2CPP_CLASS_NAME, java::util::LinkedHashMap::J2CPP_METHOD_NAME(0), java::util::LinkedHashMap::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::util::HashMap>(get_jtype());
 }
 
-template <>
-local_ref< java::util::LinkedHashMap > create< java::util::LinkedHashMap>(cpp_int const &a0)
+
+java::util::LinkedHashMap::LinkedHashMap()
+: cpp_object<java::util::LinkedHashMap>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::util::LinkedHashMap::J2CPP_CLASS_NAME>(),
+		get_method_id<java::util::LinkedHashMap::J2CPP_CLASS_NAME, java::util::LinkedHashMap::J2CPP_METHOD_NAME(0), java::util::LinkedHashMap::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
 {
-	return local_ref< java::util::LinkedHashMap >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::LinkedHashMap::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::LinkedHashMap::J2CPP_CLASS_NAME, java::util::LinkedHashMap::J2CPP_METHOD_NAME(1), java::util::LinkedHashMap::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< java::util::LinkedHashMap > create< java::util::LinkedHashMap>(cpp_int const &a0, cpp_float const &a1)
+
+
+java::util::LinkedHashMap::LinkedHashMap(cpp_int const &a0)
+: cpp_object<java::util::LinkedHashMap>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::util::LinkedHashMap::J2CPP_CLASS_NAME>(),
+		get_method_id<java::util::LinkedHashMap::J2CPP_CLASS_NAME, java::util::LinkedHashMap::J2CPP_METHOD_NAME(1), java::util::LinkedHashMap::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< java::util::LinkedHashMap >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::LinkedHashMap::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::LinkedHashMap::J2CPP_CLASS_NAME, java::util::LinkedHashMap::J2CPP_METHOD_NAME(2), java::util::LinkedHashMap::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< java::util::LinkedHashMap > create< java::util::LinkedHashMap>(cpp_int const &a0, cpp_float const &a1, cpp_boolean const &a2)
+
+
+java::util::LinkedHashMap::LinkedHashMap(cpp_int const &a0, cpp_float const &a1)
+: cpp_object<java::util::LinkedHashMap>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::util::LinkedHashMap::J2CPP_CLASS_NAME>(),
+		get_method_id<java::util::LinkedHashMap::J2CPP_CLASS_NAME, java::util::LinkedHashMap::J2CPP_METHOD_NAME(2), java::util::LinkedHashMap::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
 {
-	return local_ref< java::util::LinkedHashMap >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::LinkedHashMap::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::LinkedHashMap::J2CPP_CLASS_NAME, java::util::LinkedHashMap::J2CPP_METHOD_NAME(3), java::util::LinkedHashMap::J2CPP_METHOD_SIGNATURE(3), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< java::util::LinkedHashMap > create< java::util::LinkedHashMap>(local_ref< java::util::Map > const &a0)
+
+
+java::util::LinkedHashMap::LinkedHashMap(cpp_int const &a0, cpp_float const &a1, cpp_boolean const &a2)
+: cpp_object<java::util::LinkedHashMap>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::util::LinkedHashMap::J2CPP_CLASS_NAME>(),
+		get_method_id<java::util::LinkedHashMap::J2CPP_CLASS_NAME, java::util::LinkedHashMap::J2CPP_METHOD_NAME(3), java::util::LinkedHashMap::J2CPP_METHOD_SIGNATURE(3), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
+	)
+)
 {
-	return local_ref< java::util::LinkedHashMap >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::LinkedHashMap::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::LinkedHashMap::J2CPP_CLASS_NAME, java::util::LinkedHashMap::J2CPP_METHOD_NAME(4), java::util::LinkedHashMap::J2CPP_METHOD_SIGNATURE(4), false>(),
-			a0.get_jtype()
-		)
-	);
 }
+
+
+
+java::util::LinkedHashMap::LinkedHashMap(local_ref< java::util::Map > const &a0)
+: cpp_object<java::util::LinkedHashMap>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::util::LinkedHashMap::J2CPP_CLASS_NAME>(),
+		get_method_id<java::util::LinkedHashMap::J2CPP_CLASS_NAME, java::util::LinkedHashMap::J2CPP_METHOD_NAME(4), java::util::LinkedHashMap::J2CPP_METHOD_SIGNATURE(4), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 local_ref< java::lang::Object > java::util::LinkedHashMap::get(local_ref< java::lang::Object > const &a0)
 {

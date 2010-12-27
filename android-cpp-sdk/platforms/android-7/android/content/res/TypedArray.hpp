@@ -10,6 +10,7 @@
 #define J2CPP_ANDROID_CONTENT_RES_TYPEDARRAY_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class CharSequence; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace android { namespace graphics { namespace drawable { class Drawable; } } } }
@@ -23,6 +24,7 @@ namespace j2cpp { namespace android { namespace util { class TypedValue; } } }
 #include <android/graphics/drawable/Drawable.hpp>
 #include <android/util/TypedValue.hpp>
 #include <java/lang/CharSequence.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -68,10 +70,13 @@ namespace android { namespace content { namespace res {
 		J2CPP_DECLARE_METHOD(27)
 		J2CPP_DECLARE_METHOD(28)
 
-		TypedArray(jobject jobj)
+		explicit TypedArray(jobject jobj)
 		: cpp_object<TypedArray>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		cpp_int length();
 		cpp_int getIndexCount();
@@ -107,7 +112,6 @@ namespace android { namespace content { namespace res {
 } //namespace content
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_CONTENT_RES_TYPEDARRAY_HPP_DECL
@@ -120,16 +124,12 @@ namespace android { namespace content { namespace res {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::content::res::TypedArray > create< android::content::res::TypedArray>()
+
+android::content::res::TypedArray::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::content::res::TypedArray >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::content::res::TypedArray::J2CPP_CLASS_NAME>(),
-			get_method_id<android::content::res::TypedArray::J2CPP_CLASS_NAME, android::content::res::TypedArray::J2CPP_METHOD_NAME(0), android::content::res::TypedArray::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
 
 cpp_int android::content::res::TypedArray::length()
 {

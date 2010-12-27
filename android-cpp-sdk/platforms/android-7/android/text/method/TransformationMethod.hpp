@@ -10,6 +10,7 @@
 #define J2CPP_ANDROID_TEXT_METHOD_TRANSFORMATIONMETHOD_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class CharSequence; } } }
 namespace j2cpp { namespace android { namespace graphics { class Rect; } } }
 namespace j2cpp { namespace android { namespace view { class View; } } }
@@ -18,6 +19,7 @@ namespace j2cpp { namespace android { namespace view { class View; } } }
 #include <android/graphics/Rect.hpp>
 #include <android/view/View.hpp>
 #include <java/lang/CharSequence.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -35,10 +37,13 @@ namespace android { namespace text { namespace method {
 		J2CPP_DECLARE_METHOD(0)
 		J2CPP_DECLARE_METHOD(1)
 
-		TransformationMethod(jobject jobj)
+		explicit TransformationMethod(jobject jobj)
 		: cpp_object<TransformationMethod>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		local_ref< java::lang::CharSequence > getTransformation(local_ref< java::lang::CharSequence > const&, local_ref< android::view::View > const&);
 		void onFocusChanged(local_ref< android::view::View > const&, local_ref< java::lang::CharSequence > const&, cpp_boolean const&, cpp_int const&, local_ref< android::graphics::Rect > const&);
@@ -47,7 +52,6 @@ namespace android { namespace text { namespace method {
 } //namespace method
 } //namespace text
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -60,6 +64,12 @@ namespace android { namespace text { namespace method {
 
 namespace j2cpp {
 
+
+
+android::text::method::TransformationMethod::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 local_ref< java::lang::CharSequence > android::text::method::TransformationMethod::getTransformation(local_ref< java::lang::CharSequence > const &a0, local_ref< android::view::View > const &a1)
 {

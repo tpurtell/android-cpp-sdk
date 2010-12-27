@@ -10,7 +10,9 @@
 #define J2CPP_JAVA_IO_PRINTSTREAM_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class Closeable; } } }
 namespace j2cpp { namespace java { namespace io { class File; } } }
+namespace j2cpp { namespace java { namespace io { class FilterOutputStream; } } }
 namespace j2cpp { namespace java { namespace io { class OutputStream; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class Appendable; } } }
@@ -19,7 +21,9 @@ namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace util { class Locale; } } }
 
 
+#include <java/io/Closeable.hpp>
 #include <java/io/File.hpp>
+#include <java/io/FilterOutputStream.hpp>
 #include <java/io/OutputStream.hpp>
 #include <java/lang/Appendable.hpp>
 #include <java/lang/CharSequence.hpp>
@@ -83,11 +87,23 @@ namespace java { namespace io {
 		J2CPP_DECLARE_METHOD(40)
 		J2CPP_DECLARE_METHOD(41)
 
-		PrintStream(jobject jobj)
+		explicit PrintStream(jobject jobj)
 		: cpp_object<PrintStream>(jobj)
 		{
 		}
 
+		operator local_ref<java::io::FilterOutputStream>() const;
+		operator local_ref<java::lang::Appendable>() const;
+		operator local_ref<java::io::Closeable>() const;
+
+
+		PrintStream(local_ref< java::io::OutputStream > const&);
+		PrintStream(local_ref< java::io::OutputStream > const&, cpp_boolean const&);
+		PrintStream(local_ref< java::io::OutputStream > const&, cpp_boolean const&, local_ref< java::lang::String > const&);
+		PrintStream(local_ref< java::io::File > const&);
+		PrintStream(local_ref< java::io::File > const&, local_ref< java::lang::String > const&);
+		PrintStream(local_ref< java::lang::String > const&);
+		PrintStream(local_ref< java::lang::String > const&, local_ref< java::lang::String > const&);
 		cpp_boolean checkError();
 		void close();
 		void flush();
@@ -127,7 +143,6 @@ namespace java { namespace io {
 } //namespace io
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_IO_PRINTSTREAM_HPP_DECL
@@ -140,89 +155,112 @@ namespace java { namespace io {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::io::PrintStream > create< java::io::PrintStream>(local_ref< java::io::OutputStream > const &a0)
+
+java::io::PrintStream::operator local_ref<java::io::FilterOutputStream>() const
 {
-	return local_ref< java::io::PrintStream >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::io::PrintStream::J2CPP_CLASS_NAME>(),
-			get_method_id<java::io::PrintStream::J2CPP_CLASS_NAME, java::io::PrintStream::J2CPP_METHOD_NAME(0), java::io::PrintStream::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::io::FilterOutputStream>(get_jtype());
 }
 
-template <>
-local_ref< java::io::PrintStream > create< java::io::PrintStream>(local_ref< java::io::OutputStream > const &a0, cpp_boolean const &a1)
+java::io::PrintStream::operator local_ref<java::lang::Appendable>() const
 {
-	return local_ref< java::io::PrintStream >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::io::PrintStream::J2CPP_CLASS_NAME>(),
-			get_method_id<java::io::PrintStream::J2CPP_CLASS_NAME, java::io::PrintStream::J2CPP_METHOD_NAME(1), java::io::PrintStream::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Appendable>(get_jtype());
 }
 
-template <>
-local_ref< java::io::PrintStream > create< java::io::PrintStream>(local_ref< java::io::OutputStream > const &a0, cpp_boolean const &a1, local_ref< java::lang::String > const &a2)
+java::io::PrintStream::operator local_ref<java::io::Closeable>() const
 {
-	return local_ref< java::io::PrintStream >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::io::PrintStream::J2CPP_CLASS_NAME>(),
-			get_method_id<java::io::PrintStream::J2CPP_CLASS_NAME, java::io::PrintStream::J2CPP_METHOD_NAME(2), java::io::PrintStream::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
-		)
-	);
+	return local_ref<java::io::Closeable>(get_jtype());
 }
 
-template <>
-local_ref< java::io::PrintStream > create< java::io::PrintStream>(local_ref< java::io::File > const &a0)
+
+java::io::PrintStream::PrintStream(local_ref< java::io::OutputStream > const &a0)
+: cpp_object<java::io::PrintStream>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::io::PrintStream::J2CPP_CLASS_NAME>(),
+		get_method_id<java::io::PrintStream::J2CPP_CLASS_NAME, java::io::PrintStream::J2CPP_METHOD_NAME(0), java::io::PrintStream::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< java::io::PrintStream >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::io::PrintStream::J2CPP_CLASS_NAME>(),
-			get_method_id<java::io::PrintStream::J2CPP_CLASS_NAME, java::io::PrintStream::J2CPP_METHOD_NAME(3), java::io::PrintStream::J2CPP_METHOD_SIGNATURE(3), false>(),
-			a0.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< java::io::PrintStream > create< java::io::PrintStream>(local_ref< java::io::File > const &a0, local_ref< java::lang::String > const &a1)
+
+
+java::io::PrintStream::PrintStream(local_ref< java::io::OutputStream > const &a0, cpp_boolean const &a1)
+: cpp_object<java::io::PrintStream>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::io::PrintStream::J2CPP_CLASS_NAME>(),
+		get_method_id<java::io::PrintStream::J2CPP_CLASS_NAME, java::io::PrintStream::J2CPP_METHOD_NAME(1), java::io::PrintStream::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
 {
-	return local_ref< java::io::PrintStream >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::io::PrintStream::J2CPP_CLASS_NAME>(),
-			get_method_id<java::io::PrintStream::J2CPP_CLASS_NAME, java::io::PrintStream::J2CPP_METHOD_NAME(4), java::io::PrintStream::J2CPP_METHOD_SIGNATURE(4), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< java::io::PrintStream > create< java::io::PrintStream>(local_ref< java::lang::String > const &a0)
+
+
+java::io::PrintStream::PrintStream(local_ref< java::io::OutputStream > const &a0, cpp_boolean const &a1, local_ref< java::lang::String > const &a2)
+: cpp_object<java::io::PrintStream>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::io::PrintStream::J2CPP_CLASS_NAME>(),
+		get_method_id<java::io::PrintStream::J2CPP_CLASS_NAME, java::io::PrintStream::J2CPP_METHOD_NAME(2), java::io::PrintStream::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
+	)
+)
 {
-	return local_ref< java::io::PrintStream >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::io::PrintStream::J2CPP_CLASS_NAME>(),
-			get_method_id<java::io::PrintStream::J2CPP_CLASS_NAME, java::io::PrintStream::J2CPP_METHOD_NAME(5), java::io::PrintStream::J2CPP_METHOD_SIGNATURE(5), false>(),
-			a0.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< java::io::PrintStream > create< java::io::PrintStream>(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
+
+
+java::io::PrintStream::PrintStream(local_ref< java::io::File > const &a0)
+: cpp_object<java::io::PrintStream>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::io::PrintStream::J2CPP_CLASS_NAME>(),
+		get_method_id<java::io::PrintStream::J2CPP_CLASS_NAME, java::io::PrintStream::J2CPP_METHOD_NAME(3), java::io::PrintStream::J2CPP_METHOD_SIGNATURE(3), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< java::io::PrintStream >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::io::PrintStream::J2CPP_CLASS_NAME>(),
-			get_method_id<java::io::PrintStream::J2CPP_CLASS_NAME, java::io::PrintStream::J2CPP_METHOD_NAME(6), java::io::PrintStream::J2CPP_METHOD_SIGNATURE(6), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
 }
+
+
+
+java::io::PrintStream::PrintStream(local_ref< java::io::File > const &a0, local_ref< java::lang::String > const &a1)
+: cpp_object<java::io::PrintStream>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::io::PrintStream::J2CPP_CLASS_NAME>(),
+		get_method_id<java::io::PrintStream::J2CPP_CLASS_NAME, java::io::PrintStream::J2CPP_METHOD_NAME(4), java::io::PrintStream::J2CPP_METHOD_SIGNATURE(4), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
+
+
+java::io::PrintStream::PrintStream(local_ref< java::lang::String > const &a0)
+: cpp_object<java::io::PrintStream>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::io::PrintStream::J2CPP_CLASS_NAME>(),
+		get_method_id<java::io::PrintStream::J2CPP_CLASS_NAME, java::io::PrintStream::J2CPP_METHOD_NAME(5), java::io::PrintStream::J2CPP_METHOD_SIGNATURE(5), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
+
+
+java::io::PrintStream::PrintStream(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
+: cpp_object<java::io::PrintStream>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::io::PrintStream::J2CPP_CLASS_NAME>(),
+		get_method_id<java::io::PrintStream::J2CPP_CLASS_NAME, java::io::PrintStream::J2CPP_METHOD_NAME(6), java::io::PrintStream::J2CPP_METHOD_SIGNATURE(6), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
 
 cpp_boolean java::io::PrintStream::checkError()
 {

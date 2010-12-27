@@ -10,8 +10,12 @@
 #define J2CPP_ANDROID_TEST_FLAKYTEST_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace lang { namespace annotation { class Annotation; } } } }
 
 
+#include <java/lang/Object.hpp>
+#include <java/lang/annotation/Annotation.hpp>
 
 
 namespace j2cpp {
@@ -28,17 +32,20 @@ namespace android { namespace test {
 
 		J2CPP_DECLARE_METHOD(0)
 
-		FlakyTest(jobject jobj)
+		explicit FlakyTest(jobject jobj)
 		: cpp_object<FlakyTest>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::lang::annotation::Annotation>() const;
+
 
 		cpp_int tolerance();
 	}; //class FlakyTest
 
 } //namespace test
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -51,6 +58,17 @@ namespace android { namespace test {
 
 namespace j2cpp {
 
+
+
+android::test::FlakyTest::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
+
+android::test::FlakyTest::operator local_ref<java::lang::annotation::Annotation>() const
+{
+	return local_ref<java::lang::annotation::Annotation>(get_jtype());
+}
 
 cpp_int android::test::FlakyTest::tolerance()
 {

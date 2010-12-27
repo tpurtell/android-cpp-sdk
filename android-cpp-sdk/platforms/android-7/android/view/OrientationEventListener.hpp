@@ -10,10 +10,12 @@
 #define J2CPP_ANDROID_VIEW_ORIENTATIONEVENTLISTENER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace android { namespace content { class Context; } } }
 
 
 #include <android/content/Context.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -36,11 +38,16 @@ namespace android { namespace view {
 		J2CPP_DECLARE_METHOD(5)
 		J2CPP_DECLARE_FIELD(0)
 
-		OrientationEventListener(jobject jobj)
+		explicit OrientationEventListener(jobject jobj)
 		: cpp_object<OrientationEventListener>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		OrientationEventListener(local_ref< android::content::Context > const&);
+		OrientationEventListener(local_ref< android::content::Context > const&, cpp_int const&);
 		void enable();
 		void disable();
 		cpp_boolean canDetectOrientation();
@@ -51,7 +58,6 @@ namespace android { namespace view {
 
 } //namespace view
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -65,29 +71,37 @@ namespace android { namespace view {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::view::OrientationEventListener > create< android::view::OrientationEventListener>(local_ref< android::content::Context > const &a0)
+
+android::view::OrientationEventListener::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::view::OrientationEventListener >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::view::OrientationEventListener::J2CPP_CLASS_NAME>(),
-			get_method_id<android::view::OrientationEventListener::J2CPP_CLASS_NAME, android::view::OrientationEventListener::J2CPP_METHOD_NAME(0), android::view::OrientationEventListener::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
 
-template <>
-local_ref< android::view::OrientationEventListener > create< android::view::OrientationEventListener>(local_ref< android::content::Context > const &a0, cpp_int const &a1)
+
+android::view::OrientationEventListener::OrientationEventListener(local_ref< android::content::Context > const &a0)
+: cpp_object<android::view::OrientationEventListener>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::view::OrientationEventListener::J2CPP_CLASS_NAME>(),
+		get_method_id<android::view::OrientationEventListener::J2CPP_CLASS_NAME, android::view::OrientationEventListener::J2CPP_METHOD_NAME(0), android::view::OrientationEventListener::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< android::view::OrientationEventListener >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::view::OrientationEventListener::J2CPP_CLASS_NAME>(),
-			get_method_id<android::view::OrientationEventListener::J2CPP_CLASS_NAME, android::view::OrientationEventListener::J2CPP_METHOD_NAME(1), android::view::OrientationEventListener::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
 }
+
+
+
+android::view::OrientationEventListener::OrientationEventListener(local_ref< android::content::Context > const &a0, cpp_int const &a1)
+: cpp_object<android::view::OrientationEventListener>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::view::OrientationEventListener::J2CPP_CLASS_NAME>(),
+		get_method_id<android::view::OrientationEventListener::J2CPP_CLASS_NAME, android::view::OrientationEventListener::J2CPP_METHOD_NAME(1), android::view::OrientationEventListener::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
 
 void android::view::OrientationEventListener::enable()
 {

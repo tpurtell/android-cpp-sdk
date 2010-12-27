@@ -10,6 +10,7 @@
 #define J2CPP_JAVA_SECURITY_ALGORITHMPARAMETERS_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class Class; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace security { class Provider; } } }
@@ -17,6 +18,7 @@ namespace j2cpp { namespace java { namespace security { namespace spec { class A
 
 
 #include <java/lang/Class.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/security/Provider.hpp>
 #include <java/security/spec/AlgorithmParameterSpec.hpp>
@@ -48,10 +50,13 @@ namespace java { namespace security {
 		J2CPP_DECLARE_METHOD(11)
 		J2CPP_DECLARE_METHOD(12)
 
-		AlgorithmParameters(jobject jobj)
+		explicit AlgorithmParameters(jobject jobj)
 		: cpp_object<AlgorithmParameters>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		static local_ref< java::security::AlgorithmParameters > getInstance(local_ref< java::lang::String > const&);
 		static local_ref< java::security::AlgorithmParameters > getInstance(local_ref< java::lang::String > const&, local_ref< java::lang::String > const&);
@@ -70,7 +75,6 @@ namespace java { namespace security {
 } //namespace security
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_SECURITY_ALGORITHMPARAMETERS_HPP_DECL
@@ -83,17 +87,12 @@ namespace java { namespace security {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::security::AlgorithmParameters > create< java::security::AlgorithmParameters>(local_ref< java::security::AlgorithmParametersSpi > const &a0, local_ref< java::security::Provider > const &a1, local_ref< java::lang::String > const &a2)
+
+java::security::AlgorithmParameters::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::security::AlgorithmParameters >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::security::AlgorithmParameters::J2CPP_CLASS_NAME>(),
-			get_method_id<java::security::AlgorithmParameters::J2CPP_CLASS_NAME, java::security::AlgorithmParameters::J2CPP_METHOD_NAME(0), java::security::AlgorithmParameters::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
 
 local_ref< java::security::AlgorithmParameters > java::security::AlgorithmParameters::getInstance(local_ref< java::lang::String > const &a0)
 {

@@ -35,16 +35,20 @@ namespace android { namespace graphics {
 		J2CPP_DECLARE_METHOD(0)
 		J2CPP_DECLARE_METHOD(1)
 
-		ComposeShader(jobject jobj)
+		explicit ComposeShader(jobject jobj)
 		: cpp_object<ComposeShader>(jobj)
 		{
 		}
 
+		operator local_ref<android::graphics::Shader>() const;
+
+
+		ComposeShader(local_ref< android::graphics::Shader > const&, local_ref< android::graphics::Shader > const&, local_ref< android::graphics::Xfermode > const&);
+		ComposeShader(local_ref< android::graphics::Shader > const&, local_ref< android::graphics::Shader > const&, local_ref< android::graphics::PorterDuff_::Mode > const&);
 	}; //class ComposeShader
 
 } //namespace graphics
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -58,29 +62,37 @@ namespace android { namespace graphics {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::graphics::ComposeShader > create< android::graphics::ComposeShader>(local_ref< android::graphics::Shader > const &a0, local_ref< android::graphics::Shader > const &a1, local_ref< android::graphics::Xfermode > const &a2)
+
+android::graphics::ComposeShader::operator local_ref<android::graphics::Shader>() const
 {
-	return local_ref< android::graphics::ComposeShader >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::graphics::ComposeShader::J2CPP_CLASS_NAME>(),
-			get_method_id<android::graphics::ComposeShader::J2CPP_CLASS_NAME, android::graphics::ComposeShader::J2CPP_METHOD_NAME(0), android::graphics::ComposeShader::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
-		)
-	);
+	return local_ref<android::graphics::Shader>(get_jtype());
 }
 
-template <>
-local_ref< android::graphics::ComposeShader > create< android::graphics::ComposeShader>(local_ref< android::graphics::Shader > const &a0, local_ref< android::graphics::Shader > const &a1, local_ref< android::graphics::PorterDuff_::Mode > const &a2)
+
+android::graphics::ComposeShader::ComposeShader(local_ref< android::graphics::Shader > const &a0, local_ref< android::graphics::Shader > const &a1, local_ref< android::graphics::Xfermode > const &a2)
+: cpp_object<android::graphics::ComposeShader>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::graphics::ComposeShader::J2CPP_CLASS_NAME>(),
+		get_method_id<android::graphics::ComposeShader::J2CPP_CLASS_NAME, android::graphics::ComposeShader::J2CPP_METHOD_NAME(0), android::graphics::ComposeShader::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
+	)
+)
 {
-	return local_ref< android::graphics::ComposeShader >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::graphics::ComposeShader::J2CPP_CLASS_NAME>(),
-			get_method_id<android::graphics::ComposeShader::J2CPP_CLASS_NAME, android::graphics::ComposeShader::J2CPP_METHOD_NAME(1), android::graphics::ComposeShader::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
-		)
-	);
 }
+
+
+
+android::graphics::ComposeShader::ComposeShader(local_ref< android::graphics::Shader > const &a0, local_ref< android::graphics::Shader > const &a1, local_ref< android::graphics::PorterDuff_::Mode > const &a2)
+: cpp_object<android::graphics::ComposeShader>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::graphics::ComposeShader::J2CPP_CLASS_NAME>(),
+		get_method_id<android::graphics::ComposeShader::J2CPP_CLASS_NAME, android::graphics::ComposeShader::J2CPP_METHOD_NAME(1), android::graphics::ComposeShader::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
+	)
+)
+{
+}
+
 
 
 J2CPP_DEFINE_CLASS(android::graphics::ComposeShader,"android/graphics/ComposeShader")

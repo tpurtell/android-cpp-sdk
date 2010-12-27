@@ -14,8 +14,10 @@ namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace android { namespace net { class Uri; } } }
 namespace j2cpp { namespace android { namespace database { class Cursor; } } }
 namespace j2cpp { namespace android { namespace content { class ContentValues; } } }
+namespace j2cpp { namespace android { namespace content { class ContentProvider; } } }
 
 
+#include <android/content/ContentProvider.hpp>
 #include <android/content/ContentValues.hpp>
 #include <android/database/Cursor.hpp>
 #include <android/net/Uri.hpp>
@@ -45,11 +47,15 @@ namespace android { namespace content {
 		J2CPP_DECLARE_FIELD(0)
 		J2CPP_DECLARE_FIELD(1)
 
-		SearchRecentSuggestionsProvider(jobject jobj)
+		explicit SearchRecentSuggestionsProvider(jobject jobj)
 		: cpp_object<SearchRecentSuggestionsProvider>(jobj)
 		{
 		}
 
+		operator local_ref<android::content::ContentProvider>() const;
+
+
+		SearchRecentSuggestionsProvider();
 		cpp_int deleteThe(local_ref< android::net::Uri > const&, local_ref< java::lang::String > const&, local_ref< cpp_object_array<java::lang::String, 1> > const&);
 		local_ref< java::lang::String > getType(local_ref< android::net::Uri > const&);
 		local_ref< android::net::Uri > insert(local_ref< android::net::Uri > const&, local_ref< android::content::ContentValues > const&);
@@ -64,7 +70,6 @@ namespace android { namespace content {
 } //namespace content
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_CONTENT_SEARCHRECENTSUGGESTIONSPROVIDER_HPP_DECL
@@ -77,16 +82,23 @@ namespace android { namespace content {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::content::SearchRecentSuggestionsProvider > create< android::content::SearchRecentSuggestionsProvider>()
+
+android::content::SearchRecentSuggestionsProvider::operator local_ref<android::content::ContentProvider>() const
 {
-	return local_ref< android::content::SearchRecentSuggestionsProvider >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::content::SearchRecentSuggestionsProvider::J2CPP_CLASS_NAME>(),
-			get_method_id<android::content::SearchRecentSuggestionsProvider::J2CPP_CLASS_NAME, android::content::SearchRecentSuggestionsProvider::J2CPP_METHOD_NAME(0), android::content::SearchRecentSuggestionsProvider::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<android::content::ContentProvider>(get_jtype());
 }
+
+
+android::content::SearchRecentSuggestionsProvider::SearchRecentSuggestionsProvider()
+: cpp_object<android::content::SearchRecentSuggestionsProvider>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::content::SearchRecentSuggestionsProvider::J2CPP_CLASS_NAME>(),
+		get_method_id<android::content::SearchRecentSuggestionsProvider::J2CPP_CLASS_NAME, android::content::SearchRecentSuggestionsProvider::J2CPP_METHOD_NAME(0), android::content::SearchRecentSuggestionsProvider::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 
 cpp_int android::content::SearchRecentSuggestionsProvider::deleteThe(local_ref< android::net::Uri > const &a0, local_ref< java::lang::String > const &a1, local_ref< cpp_object_array<java::lang::String, 1> > const &a2)

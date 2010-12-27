@@ -10,10 +10,12 @@
 #define J2CPP_JAVA_NIO_CHANNELS_SELECTOR_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace util { class Set; } } }
 namespace j2cpp { namespace java { namespace nio { namespace channels { namespace spi { class SelectorProvider; } } } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/nio/channels/spi/SelectorProvider.hpp>
 #include <java/util/Set.hpp>
 
@@ -42,10 +44,13 @@ namespace java { namespace nio { namespace channels {
 		J2CPP_DECLARE_METHOD(9)
 		J2CPP_DECLARE_METHOD(10)
 
-		Selector(jobject jobj)
+		explicit Selector(jobject jobj)
 		: cpp_object<Selector>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		static local_ref< java::nio::channels::Selector > open();
 		void close();
@@ -63,7 +68,6 @@ namespace java { namespace nio { namespace channels {
 } //namespace nio
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_NIO_CHANNELS_SELECTOR_HPP_DECL
@@ -76,16 +80,12 @@ namespace java { namespace nio { namespace channels {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::nio::channels::Selector > create< java::nio::channels::Selector>()
+
+java::nio::channels::Selector::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::nio::channels::Selector >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::nio::channels::Selector::J2CPP_CLASS_NAME>(),
-			get_method_id<java::nio::channels::Selector::J2CPP_CLASS_NAME, java::nio::channels::Selector::J2CPP_METHOD_NAME(0), java::nio::channels::Selector::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
 
 local_ref< java::nio::channels::Selector > java::nio::channels::Selector::open()
 {

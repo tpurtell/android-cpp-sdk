@@ -15,6 +15,7 @@ namespace j2cpp { namespace java { namespace lang { namespace ref { class Refere
 namespace j2cpp { namespace java { namespace util { namespace concurrent { class TimeUnit; } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace conn { namespace routing { class HttpRoute; } } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace impl { namespace conn { namespace tsccm { class BasicPoolEntry; } } } } } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { namespace impl { namespace conn { namespace tsccm { class RefQueueHandler; } } } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace impl { namespace conn { namespace tsccm { class PoolEntryRequest; } } } } } } }
 
 
@@ -24,6 +25,7 @@ namespace j2cpp { namespace org { namespace apache { namespace http { namespace 
 #include <org/apache/http/conn/routing/HttpRoute.hpp>
 #include <org/apache/http/impl/conn/tsccm/BasicPoolEntry.hpp>
 #include <org/apache/http/impl/conn/tsccm/PoolEntryRequest.hpp>
+#include <org/apache/http/impl/conn/tsccm/RefQueueHandler.hpp>
 
 
 namespace j2cpp {
@@ -57,10 +59,14 @@ namespace org { namespace apache { namespace http { namespace impl { namespace c
 		J2CPP_DECLARE_FIELD(4)
 		J2CPP_DECLARE_FIELD(5)
 
-		AbstractConnPool(jobject jobj)
+		explicit AbstractConnPool(jobject jobj)
 		: cpp_object<AbstractConnPool>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<org::apache::http::impl::conn::tsccm::RefQueueHandler>() const;
+
 
 		void enableConnectionGC();
 		local_ref< org::apache::http::impl::conn::tsccm::BasicPoolEntry > getEntry(local_ref< org::apache::http::conn::routing::HttpRoute > const&, local_ref< java::lang::Object > const&, cpp_long const&, local_ref< java::util::concurrent::TimeUnit > const&);
@@ -81,7 +87,6 @@ namespace org { namespace apache { namespace http { namespace impl { namespace c
 } //namespace apache
 } //namespace org
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ORG_APACHE_HTTP_IMPL_CONN_TSCCM_ABSTRACTCONNPOOL_HPP_DECL
@@ -94,16 +99,17 @@ namespace org { namespace apache { namespace http { namespace impl { namespace c
 namespace j2cpp {
 
 
-template <>
-local_ref< org::apache::http::impl::conn::tsccm::AbstractConnPool > create< org::apache::http::impl::conn::tsccm::AbstractConnPool>()
+
+org::apache::http::impl::conn::tsccm::AbstractConnPool::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< org::apache::http::impl::conn::tsccm::AbstractConnPool >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::apache::http::impl::conn::tsccm::AbstractConnPool::J2CPP_CLASS_NAME>(),
-			get_method_id<org::apache::http::impl::conn::tsccm::AbstractConnPool::J2CPP_CLASS_NAME, org::apache::http::impl::conn::tsccm::AbstractConnPool::J2CPP_METHOD_NAME(0), org::apache::http::impl::conn::tsccm::AbstractConnPool::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+org::apache::http::impl::conn::tsccm::AbstractConnPool::operator local_ref<org::apache::http::impl::conn::tsccm::RefQueueHandler>() const
+{
+	return local_ref<org::apache::http::impl::conn::tsccm::RefQueueHandler>(get_jtype());
+}
+
 
 void org::apache::http::impl::conn::tsccm::AbstractConnPool::enableConnectionGC()
 {

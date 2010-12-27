@@ -11,8 +11,10 @@
 
 
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace lang { class IllegalArgumentException; } } }
 
 
+#include <java/lang/IllegalArgumentException.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -31,16 +33,20 @@ namespace java { namespace lang {
 		J2CPP_DECLARE_METHOD(0)
 		J2CPP_DECLARE_METHOD(1)
 
-		IllegalThreadStateException(jobject jobj)
+		explicit IllegalThreadStateException(jobject jobj)
 		: cpp_object<IllegalThreadStateException>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::IllegalArgumentException>() const;
+
+
+		IllegalThreadStateException();
+		IllegalThreadStateException(local_ref< java::lang::String > const&);
 	}; //class IllegalThreadStateException
 
 } //namespace lang
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -54,28 +60,36 @@ namespace java { namespace lang {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::lang::IllegalThreadStateException > create< java::lang::IllegalThreadStateException>()
+
+java::lang::IllegalThreadStateException::operator local_ref<java::lang::IllegalArgumentException>() const
 {
-	return local_ref< java::lang::IllegalThreadStateException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::lang::IllegalThreadStateException::J2CPP_CLASS_NAME>(),
-			get_method_id<java::lang::IllegalThreadStateException::J2CPP_CLASS_NAME, java::lang::IllegalThreadStateException::J2CPP_METHOD_NAME(0), java::lang::IllegalThreadStateException::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::IllegalArgumentException>(get_jtype());
 }
 
-template <>
-local_ref< java::lang::IllegalThreadStateException > create< java::lang::IllegalThreadStateException>(local_ref< java::lang::String > const &a0)
+
+java::lang::IllegalThreadStateException::IllegalThreadStateException()
+: cpp_object<java::lang::IllegalThreadStateException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::lang::IllegalThreadStateException::J2CPP_CLASS_NAME>(),
+		get_method_id<java::lang::IllegalThreadStateException::J2CPP_CLASS_NAME, java::lang::IllegalThreadStateException::J2CPP_METHOD_NAME(0), java::lang::IllegalThreadStateException::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
 {
-	return local_ref< java::lang::IllegalThreadStateException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::lang::IllegalThreadStateException::J2CPP_CLASS_NAME>(),
-			get_method_id<java::lang::IllegalThreadStateException::J2CPP_CLASS_NAME, java::lang::IllegalThreadStateException::J2CPP_METHOD_NAME(1), java::lang::IllegalThreadStateException::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
 }
+
+
+
+java::lang::IllegalThreadStateException::IllegalThreadStateException(local_ref< java::lang::String > const &a0)
+: cpp_object<java::lang::IllegalThreadStateException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::lang::IllegalThreadStateException::J2CPP_CLASS_NAME>(),
+		get_method_id<java::lang::IllegalThreadStateException::J2CPP_CLASS_NAME, java::lang::IllegalThreadStateException::J2CPP_METHOD_NAME(1), java::lang::IllegalThreadStateException::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 
 J2CPP_DEFINE_CLASS(java::lang::IllegalThreadStateException,"java/lang/IllegalThreadStateException")

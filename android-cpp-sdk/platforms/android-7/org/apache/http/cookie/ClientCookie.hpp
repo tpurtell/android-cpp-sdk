@@ -10,10 +10,14 @@
 #define J2CPP_ORG_APACHE_HTTP_COOKIE_CLIENTCOOKIE_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { namespace cookie { class Cookie; } } } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
+#include <org/apache/http/cookie/Cookie.hpp>
 
 
 namespace j2cpp {
@@ -41,10 +45,14 @@ namespace org { namespace apache { namespace http { namespace cookie {
 		J2CPP_DECLARE_FIELD(8)
 		J2CPP_DECLARE_FIELD(9)
 
-		ClientCookie(jobject jobj)
+		explicit ClientCookie(jobject jobj)
 		: cpp_object<ClientCookie>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<org::apache::http::cookie::Cookie>() const;
+
 
 		local_ref< java::lang::String > getAttribute(local_ref< java::lang::String > const&);
 		cpp_boolean containsAttribute(local_ref< java::lang::String > const&);
@@ -66,7 +74,6 @@ namespace org { namespace apache { namespace http { namespace cookie {
 } //namespace apache
 } //namespace org
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ORG_APACHE_HTTP_COOKIE_CLIENTCOOKIE_HPP_DECL
@@ -78,6 +85,17 @@ namespace org { namespace apache { namespace http { namespace cookie {
 
 namespace j2cpp {
 
+
+
+org::apache::http::cookie::ClientCookie::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
+
+org::apache::http::cookie::ClientCookie::operator local_ref<org::apache::http::cookie::Cookie>() const
+{
+	return local_ref<org::apache::http::cookie::Cookie>(get_jtype());
+}
 
 local_ref< java::lang::String > org::apache::http::cookie::ClientCookie::getAttribute(local_ref< java::lang::String > const &a0)
 {

@@ -10,9 +10,13 @@
 #define J2CPP_JAVA_SQL_SQLEXCEPTION_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace lang { class Exception; } } }
 
 
+#include <java/io/Serializable.hpp>
+#include <java/lang/Exception.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -37,11 +41,19 @@ namespace java { namespace sql {
 		J2CPP_DECLARE_METHOD(6)
 		J2CPP_DECLARE_METHOD(7)
 
-		SQLException(jobject jobj)
+		explicit SQLException(jobject jobj)
 		: cpp_object<SQLException>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Exception>() const;
+		operator local_ref<java::io::Serializable>() const;
+
+
+		SQLException();
+		SQLException(local_ref< java::lang::String > const&);
+		SQLException(local_ref< java::lang::String > const&, local_ref< java::lang::String > const&);
+		SQLException(local_ref< java::lang::String > const&, local_ref< java::lang::String > const&, cpp_int const&);
 		cpp_int getErrorCode();
 		local_ref< java::sql::SQLException > getNextException();
 		local_ref< java::lang::String > getSQLState();
@@ -50,7 +62,6 @@ namespace java { namespace sql {
 
 } //namespace sql
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -64,52 +75,67 @@ namespace java { namespace sql {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::sql::SQLException > create< java::sql::SQLException>()
+
+java::sql::SQLException::operator local_ref<java::lang::Exception>() const
 {
-	return local_ref< java::sql::SQLException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::sql::SQLException::J2CPP_CLASS_NAME>(),
-			get_method_id<java::sql::SQLException::J2CPP_CLASS_NAME, java::sql::SQLException::J2CPP_METHOD_NAME(0), java::sql::SQLException::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Exception>(get_jtype());
 }
 
-template <>
-local_ref< java::sql::SQLException > create< java::sql::SQLException>(local_ref< java::lang::String > const &a0)
+java::sql::SQLException::operator local_ref<java::io::Serializable>() const
 {
-	return local_ref< java::sql::SQLException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::sql::SQLException::J2CPP_CLASS_NAME>(),
-			get_method_id<java::sql::SQLException::J2CPP_CLASS_NAME, java::sql::SQLException::J2CPP_METHOD_NAME(1), java::sql::SQLException::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::io::Serializable>(get_jtype());
 }
 
-template <>
-local_ref< java::sql::SQLException > create< java::sql::SQLException>(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
+
+java::sql::SQLException::SQLException()
+: cpp_object<java::sql::SQLException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::sql::SQLException::J2CPP_CLASS_NAME>(),
+		get_method_id<java::sql::SQLException::J2CPP_CLASS_NAME, java::sql::SQLException::J2CPP_METHOD_NAME(0), java::sql::SQLException::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
 {
-	return local_ref< java::sql::SQLException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::sql::SQLException::J2CPP_CLASS_NAME>(),
-			get_method_id<java::sql::SQLException::J2CPP_CLASS_NAME, java::sql::SQLException::J2CPP_METHOD_NAME(2), java::sql::SQLException::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< java::sql::SQLException > create< java::sql::SQLException>(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1, cpp_int const &a2)
+
+
+java::sql::SQLException::SQLException(local_ref< java::lang::String > const &a0)
+: cpp_object<java::sql::SQLException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::sql::SQLException::J2CPP_CLASS_NAME>(),
+		get_method_id<java::sql::SQLException::J2CPP_CLASS_NAME, java::sql::SQLException::J2CPP_METHOD_NAME(1), java::sql::SQLException::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< java::sql::SQLException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::sql::SQLException::J2CPP_CLASS_NAME>(),
-			get_method_id<java::sql::SQLException::J2CPP_CLASS_NAME, java::sql::SQLException::J2CPP_METHOD_NAME(3), java::sql::SQLException::J2CPP_METHOD_SIGNATURE(3), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
-		)
-	);
 }
+
+
+
+java::sql::SQLException::SQLException(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
+: cpp_object<java::sql::SQLException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::sql::SQLException::J2CPP_CLASS_NAME>(),
+		get_method_id<java::sql::SQLException::J2CPP_CLASS_NAME, java::sql::SQLException::J2CPP_METHOD_NAME(2), java::sql::SQLException::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
+
+
+java::sql::SQLException::SQLException(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1, cpp_int const &a2)
+: cpp_object<java::sql::SQLException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::sql::SQLException::J2CPP_CLASS_NAME>(),
+		get_method_id<java::sql::SQLException::J2CPP_CLASS_NAME, java::sql::SQLException::J2CPP_METHOD_NAME(3), java::sql::SQLException::J2CPP_METHOD_SIGNATURE(3), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
+	)
+)
+{
+}
+
 
 cpp_int java::sql::SQLException::getErrorCode()
 {

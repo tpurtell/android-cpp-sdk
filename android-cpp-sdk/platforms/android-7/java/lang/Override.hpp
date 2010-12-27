@@ -10,8 +10,12 @@
 #define J2CPP_JAVA_LANG_OVERRIDE_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace lang { namespace annotation { class Annotation; } } } }
 
 
+#include <java/lang/Object.hpp>
+#include <java/lang/annotation/Annotation.hpp>
 
 
 namespace j2cpp {
@@ -27,15 +31,18 @@ namespace java { namespace lang {
 		J2CPP_DECLARE_CLASS
 
 
-		Override(jobject jobj)
+		explicit Override(jobject jobj)
 		: cpp_object<Override>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::lang::annotation::Annotation>() const;
+
 	}; //class Override
 
 } //namespace lang
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -48,6 +55,17 @@ namespace java { namespace lang {
 
 namespace j2cpp {
 
+
+
+java::lang::Override::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
+
+java::lang::Override::operator local_ref<java::lang::annotation::Annotation>() const
+{
+	return local_ref<java::lang::annotation::Annotation>(get_jtype());
+}
 
 J2CPP_DEFINE_CLASS(java::lang::Override,"java/lang/Override")
 

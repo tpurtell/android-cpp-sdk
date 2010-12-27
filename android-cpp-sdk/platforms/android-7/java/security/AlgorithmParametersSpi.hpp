@@ -10,8 +10,10 @@
 #define J2CPP_JAVA_SECURITY_ALGORITHMPARAMETERSSPI_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -35,16 +37,19 @@ namespace java { namespace security {
 		J2CPP_DECLARE_METHOD(6)
 		J2CPP_DECLARE_METHOD(7)
 
-		AlgorithmParametersSpi(jobject jobj)
+		explicit AlgorithmParametersSpi(jobject jobj)
 		: cpp_object<AlgorithmParametersSpi>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		AlgorithmParametersSpi();
 	}; //class AlgorithmParametersSpi
 
 } //namespace security
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -58,16 +63,23 @@ namespace java { namespace security {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::security::AlgorithmParametersSpi > create< java::security::AlgorithmParametersSpi>()
+
+java::security::AlgorithmParametersSpi::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::security::AlgorithmParametersSpi >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::security::AlgorithmParametersSpi::J2CPP_CLASS_NAME>(),
-			get_method_id<java::security::AlgorithmParametersSpi::J2CPP_CLASS_NAME, java::security::AlgorithmParametersSpi::J2CPP_METHOD_NAME(0), java::security::AlgorithmParametersSpi::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+java::security::AlgorithmParametersSpi::AlgorithmParametersSpi()
+: cpp_object<java::security::AlgorithmParametersSpi>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::security::AlgorithmParametersSpi::J2CPP_CLASS_NAME>(),
+		get_method_id<java::security::AlgorithmParametersSpi::J2CPP_CLASS_NAME, java::security::AlgorithmParametersSpi::J2CPP_METHOD_NAME(0), java::security::AlgorithmParametersSpi::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 
 

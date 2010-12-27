@@ -10,10 +10,14 @@
 #define J2CPP_JAVA_SECURITY_SPEC_RSAKEYGENPARAMETERSPEC_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace math { class BigInteger; } } }
+namespace j2cpp { namespace java { namespace security { namespace spec { class AlgorithmParameterSpec; } } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/math/BigInteger.hpp>
+#include <java/security/spec/AlgorithmParameterSpec.hpp>
 
 
 namespace j2cpp {
@@ -35,11 +39,16 @@ namespace java { namespace security { namespace spec {
 		J2CPP_DECLARE_FIELD(0)
 		J2CPP_DECLARE_FIELD(1)
 
-		RSAKeyGenParameterSpec(jobject jobj)
+		explicit RSAKeyGenParameterSpec(jobject jobj)
 		: cpp_object<RSAKeyGenParameterSpec>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::security::spec::AlgorithmParameterSpec>() const;
+
+
+		RSAKeyGenParameterSpec(cpp_int const&, local_ref< java::math::BigInteger > const&);
 		cpp_int getKeysize();
 		local_ref< java::math::BigInteger > getPublicExponent();
 
@@ -50,7 +59,6 @@ namespace java { namespace security { namespace spec {
 } //namespace spec
 } //namespace security
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -64,17 +72,29 @@ namespace java { namespace security { namespace spec {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::security::spec::RSAKeyGenParameterSpec > create< java::security::spec::RSAKeyGenParameterSpec>(cpp_int const &a0, local_ref< java::math::BigInteger > const &a1)
+
+java::security::spec::RSAKeyGenParameterSpec::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::security::spec::RSAKeyGenParameterSpec >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::security::spec::RSAKeyGenParameterSpec::J2CPP_CLASS_NAME>(),
-			get_method_id<java::security::spec::RSAKeyGenParameterSpec::J2CPP_CLASS_NAME, java::security::spec::RSAKeyGenParameterSpec::J2CPP_METHOD_NAME(0), java::security::spec::RSAKeyGenParameterSpec::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+java::security::spec::RSAKeyGenParameterSpec::operator local_ref<java::security::spec::AlgorithmParameterSpec>() const
+{
+	return local_ref<java::security::spec::AlgorithmParameterSpec>(get_jtype());
+}
+
+
+java::security::spec::RSAKeyGenParameterSpec::RSAKeyGenParameterSpec(cpp_int const &a0, local_ref< java::math::BigInteger > const &a1)
+: cpp_object<java::security::spec::RSAKeyGenParameterSpec>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::security::spec::RSAKeyGenParameterSpec::J2CPP_CLASS_NAME>(),
+		get_method_id<java::security::spec::RSAKeyGenParameterSpec::J2CPP_CLASS_NAME, java::security::spec::RSAKeyGenParameterSpec::J2CPP_METHOD_NAME(0), java::security::spec::RSAKeyGenParameterSpec::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
 
 cpp_int java::security::spec::RSAKeyGenParameterSpec::getKeysize()
 {
@@ -95,6 +115,7 @@ local_ref< java::math::BigInteger > java::security::spec::RSAKeyGenParameterSpec
 		)
 	);
 }
+
 
 
 static_field<

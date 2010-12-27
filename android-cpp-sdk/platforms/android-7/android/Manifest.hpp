@@ -10,9 +10,11 @@
 #define J2CPP_ANDROID_MANIFEST_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -44,11 +46,15 @@ namespace android {
 			J2CPP_DECLARE_FIELD(9)
 			J2CPP_DECLARE_FIELD(10)
 
-			permission_group(jobject jobj)
+			explicit permission_group(jobject jobj)
 			: cpp_object<permission_group>(jobj)
 			{
 			}
 
+			operator local_ref<java::lang::Object>() const;
+
+
+			permission_group();
 
 			static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(0), J2CPP_FIELD_SIGNATURE(0), local_ref< java::lang::String > > ACCOUNTS;
 			static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(1), J2CPP_FIELD_SIGNATURE(1), local_ref< java::lang::String > > COST_MONEY;
@@ -183,11 +189,15 @@ namespace android {
 			J2CPP_DECLARE_FIELD(108)
 			J2CPP_DECLARE_FIELD(109)
 
-			permission(jobject jobj)
+			explicit permission(jobject jobj)
 			: cpp_object<permission>(jobj)
 			{
 			}
 
+			operator local_ref<java::lang::Object>() const;
+
+
+			permission();
 
 			static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(0), J2CPP_FIELD_SIGNATURE(0), local_ref< java::lang::String > > ACCESS_CHECKIN_PROPERTIES;
 			static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(1), J2CPP_FIELD_SIGNATURE(1), local_ref< java::lang::String > > ACCESS_COARSE_LOCATION;
@@ -315,15 +325,18 @@ namespace android {
 		typedef Manifest_::permission_group permission_group;
 		typedef Manifest_::permission permission;
 
-		Manifest(jobject jobj)
+		explicit Manifest(jobject jobj)
 		: cpp_object<Manifest>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		Manifest();
 	}; //class Manifest
 
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -338,16 +351,23 @@ namespace j2cpp {
 
 
 
-template <>
-local_ref< android::Manifest_::permission_group > create< android::Manifest_::permission_group>()
+
+android::Manifest_::permission_group::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::Manifest_::permission_group >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::Manifest_::permission_group::J2CPP_CLASS_NAME>(),
-			get_method_id<android::Manifest_::permission_group::J2CPP_CLASS_NAME, android::Manifest_::permission_group::J2CPP_METHOD_NAME(0), android::Manifest_::permission_group::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::Manifest_::permission_group::permission_group()
+: cpp_object<android::Manifest_::permission_group>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::Manifest_::permission_group::J2CPP_CLASS_NAME>(),
+		get_method_id<android::Manifest_::permission_group::J2CPP_CLASS_NAME, android::Manifest_::permission_group::J2CPP_METHOD_NAME(0), android::Manifest_::permission_group::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 
 static_field<
@@ -442,16 +462,23 @@ J2CPP_DEFINE_FIELD(android::Manifest_::permission_group,8,"PHONE_CALLS","Ljava/l
 J2CPP_DEFINE_FIELD(android::Manifest_::permission_group,9,"STORAGE","Ljava/lang/String;")
 J2CPP_DEFINE_FIELD(android::Manifest_::permission_group,10,"SYSTEM_TOOLS","Ljava/lang/String;")
 
-template <>
-local_ref< android::Manifest_::permission > create< android::Manifest_::permission>()
+
+android::Manifest_::permission::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::Manifest_::permission >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::Manifest_::permission::J2CPP_CLASS_NAME>(),
-			get_method_id<android::Manifest_::permission::J2CPP_CLASS_NAME, android::Manifest_::permission::J2CPP_METHOD_NAME(0), android::Manifest_::permission::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::Manifest_::permission::permission()
+: cpp_object<android::Manifest_::permission>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::Manifest_::permission::J2CPP_CLASS_NAME>(),
+		get_method_id<android::Manifest_::permission::J2CPP_CLASS_NAME, android::Manifest_::permission::J2CPP_METHOD_NAME(0), android::Manifest_::permission::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 
 static_field<
@@ -1339,16 +1366,23 @@ J2CPP_DEFINE_FIELD(android::Manifest_::permission,108,"WRITE_SMS","Ljava/lang/St
 J2CPP_DEFINE_FIELD(android::Manifest_::permission,109,"WRITE_SYNC_SETTINGS","Ljava/lang/String;")
 
 
-template <>
-local_ref< android::Manifest > create< android::Manifest>()
+
+android::Manifest::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::Manifest >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::Manifest::J2CPP_CLASS_NAME>(),
-			get_method_id<android::Manifest::J2CPP_CLASS_NAME, android::Manifest::J2CPP_METHOD_NAME(0), android::Manifest::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::Manifest::Manifest()
+: cpp_object<android::Manifest>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::Manifest::J2CPP_CLASS_NAME>(),
+		get_method_id<android::Manifest::J2CPP_CLASS_NAME, android::Manifest::J2CPP_METHOD_NAME(0), android::Manifest::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 
 J2CPP_DEFINE_CLASS(android::Manifest,"android/Manifest")

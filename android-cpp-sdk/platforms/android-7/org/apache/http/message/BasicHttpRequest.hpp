@@ -12,12 +12,16 @@
 
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { class RequestLine; } } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { class HttpRequest; } } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { namespace message { class AbstractHttpMessage; } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { class ProtocolVersion; } } } }
 
 
 #include <java/lang/String.hpp>
+#include <org/apache/http/HttpRequest.hpp>
 #include <org/apache/http/ProtocolVersion.hpp>
 #include <org/apache/http/RequestLine.hpp>
+#include <org/apache/http/message/AbstractHttpMessage.hpp>
 
 
 namespace j2cpp {
@@ -38,11 +42,18 @@ namespace org { namespace apache { namespace http { namespace message {
 		J2CPP_DECLARE_METHOD(3)
 		J2CPP_DECLARE_METHOD(4)
 
-		BasicHttpRequest(jobject jobj)
+		explicit BasicHttpRequest(jobject jobj)
 		: cpp_object<BasicHttpRequest>(jobj)
 		{
 		}
 
+		operator local_ref<org::apache::http::message::AbstractHttpMessage>() const;
+		operator local_ref<org::apache::http::HttpRequest>() const;
+
+
+		BasicHttpRequest(local_ref< java::lang::String > const&, local_ref< java::lang::String > const&);
+		BasicHttpRequest(local_ref< java::lang::String > const&, local_ref< java::lang::String > const&, local_ref< org::apache::http::ProtocolVersion > const&);
+		BasicHttpRequest(local_ref< org::apache::http::RequestLine > const&);
 		local_ref< org::apache::http::ProtocolVersion > getProtocolVersion();
 		local_ref< org::apache::http::RequestLine > getRequestLine();
 	}; //class BasicHttpRequest
@@ -51,7 +62,6 @@ namespace org { namespace apache { namespace http { namespace message {
 } //namespace http
 } //namespace apache
 } //namespace org
-
 
 } //namespace j2cpp
 
@@ -65,41 +75,55 @@ namespace org { namespace apache { namespace http { namespace message {
 namespace j2cpp {
 
 
-template <>
-local_ref< org::apache::http::message::BasicHttpRequest > create< org::apache::http::message::BasicHttpRequest>(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
+
+org::apache::http::message::BasicHttpRequest::operator local_ref<org::apache::http::message::AbstractHttpMessage>() const
 {
-	return local_ref< org::apache::http::message::BasicHttpRequest >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::apache::http::message::BasicHttpRequest::J2CPP_CLASS_NAME>(),
-			get_method_id<org::apache::http::message::BasicHttpRequest::J2CPP_CLASS_NAME, org::apache::http::message::BasicHttpRequest::J2CPP_METHOD_NAME(0), org::apache::http::message::BasicHttpRequest::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<org::apache::http::message::AbstractHttpMessage>(get_jtype());
 }
 
-template <>
-local_ref< org::apache::http::message::BasicHttpRequest > create< org::apache::http::message::BasicHttpRequest>(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1, local_ref< org::apache::http::ProtocolVersion > const &a2)
+org::apache::http::message::BasicHttpRequest::operator local_ref<org::apache::http::HttpRequest>() const
 {
-	return local_ref< org::apache::http::message::BasicHttpRequest >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::apache::http::message::BasicHttpRequest::J2CPP_CLASS_NAME>(),
-			get_method_id<org::apache::http::message::BasicHttpRequest::J2CPP_CLASS_NAME, org::apache::http::message::BasicHttpRequest::J2CPP_METHOD_NAME(1), org::apache::http::message::BasicHttpRequest::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
-		)
-	);
+	return local_ref<org::apache::http::HttpRequest>(get_jtype());
 }
 
-template <>
-local_ref< org::apache::http::message::BasicHttpRequest > create< org::apache::http::message::BasicHttpRequest>(local_ref< org::apache::http::RequestLine > const &a0)
+
+org::apache::http::message::BasicHttpRequest::BasicHttpRequest(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
+: cpp_object<org::apache::http::message::BasicHttpRequest>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::apache::http::message::BasicHttpRequest::J2CPP_CLASS_NAME>(),
+		get_method_id<org::apache::http::message::BasicHttpRequest::J2CPP_CLASS_NAME, org::apache::http::message::BasicHttpRequest::J2CPP_METHOD_NAME(0), org::apache::http::message::BasicHttpRequest::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
 {
-	return local_ref< org::apache::http::message::BasicHttpRequest >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::apache::http::message::BasicHttpRequest::J2CPP_CLASS_NAME>(),
-			get_method_id<org::apache::http::message::BasicHttpRequest::J2CPP_CLASS_NAME, org::apache::http::message::BasicHttpRequest::J2CPP_METHOD_NAME(2), org::apache::http::message::BasicHttpRequest::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype()
-		)
-	);
 }
+
+
+
+org::apache::http::message::BasicHttpRequest::BasicHttpRequest(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1, local_ref< org::apache::http::ProtocolVersion > const &a2)
+: cpp_object<org::apache::http::message::BasicHttpRequest>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::apache::http::message::BasicHttpRequest::J2CPP_CLASS_NAME>(),
+		get_method_id<org::apache::http::message::BasicHttpRequest::J2CPP_CLASS_NAME, org::apache::http::message::BasicHttpRequest::J2CPP_METHOD_NAME(1), org::apache::http::message::BasicHttpRequest::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
+	)
+)
+{
+}
+
+
+
+org::apache::http::message::BasicHttpRequest::BasicHttpRequest(local_ref< org::apache::http::RequestLine > const &a0)
+: cpp_object<org::apache::http::message::BasicHttpRequest>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::apache::http::message::BasicHttpRequest::J2CPP_CLASS_NAME>(),
+		get_method_id<org::apache::http::message::BasicHttpRequest::J2CPP_CLASS_NAME, org::apache::http::message::BasicHttpRequest::J2CPP_METHOD_NAME(2), org::apache::http::message::BasicHttpRequest::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 local_ref< org::apache::http::ProtocolVersion > org::apache::http::message::BasicHttpRequest::getProtocolVersion()
 {

@@ -10,6 +10,7 @@
 #define J2CPP_ANDROID_VIEW_VIEWSTUB_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace android { namespace graphics { class Canvas; } } }
 namespace j2cpp { namespace android { namespace content { class Context; } } }
 namespace j2cpp { namespace android { namespace view { class View; } } }
@@ -22,6 +23,7 @@ namespace j2cpp { namespace android { namespace util { class AttributeSet; } } }
 #include <android/util/AttributeSet.hpp>
 #include <android/view/View.hpp>
 #include <android/view/ViewStub.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -41,10 +43,13 @@ namespace android { namespace view {
 
 			J2CPP_DECLARE_METHOD(0)
 
-			OnInflateListener(jobject jobj)
+			explicit OnInflateListener(jobject jobj)
 			: cpp_object<OnInflateListener>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+
 
 			void onInflate(local_ref< android::view::ViewStub > const&, local_ref< android::view::View > const&);
 		}; //class OnInflateListener
@@ -75,11 +80,18 @@ namespace android { namespace view {
 
 		typedef ViewStub_::OnInflateListener OnInflateListener;
 
-		ViewStub(jobject jobj)
+		explicit ViewStub(jobject jobj)
 		: cpp_object<ViewStub>(jobj)
 		{
 		}
 
+		operator local_ref<android::view::View>() const;
+
+
+		ViewStub(local_ref< android::content::Context > const&);
+		ViewStub(local_ref< android::content::Context > const&, cpp_int const&);
+		ViewStub(local_ref< android::content::Context > const&, local_ref< android::util::AttributeSet > const&);
+		ViewStub(local_ref< android::content::Context > const&, local_ref< android::util::AttributeSet > const&, cpp_int const&);
 		cpp_int getInflatedId();
 		void setInflatedId(cpp_int const&);
 		cpp_int getLayoutResource();
@@ -93,7 +105,6 @@ namespace android { namespace view {
 } //namespace view
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_VIEW_VIEWSTUB_HPP_DECL
@@ -106,6 +117,12 @@ namespace android { namespace view {
 namespace j2cpp {
 
 
+
+
+android::view::ViewStub_::OnInflateListener::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 void android::view::ViewStub_::OnInflateListener::onInflate(local_ref< android::view::ViewStub > const &a0, local_ref< android::view::View > const &a1)
 {
@@ -123,53 +140,63 @@ J2CPP_DEFINE_CLASS(android::view::ViewStub_::OnInflateListener,"android/view/Vie
 J2CPP_DEFINE_METHOD(android::view::ViewStub_::OnInflateListener,0,"onInflate","(Landroid/view/ViewStub;Landroid/view/View;)V")
 
 
-template <>
-local_ref< android::view::ViewStub > create< android::view::ViewStub>(local_ref< android::content::Context > const &a0)
+
+android::view::ViewStub::operator local_ref<android::view::View>() const
 {
-	return local_ref< android::view::ViewStub >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::view::ViewStub::J2CPP_CLASS_NAME>(),
-			get_method_id<android::view::ViewStub::J2CPP_CLASS_NAME, android::view::ViewStub::J2CPP_METHOD_NAME(0), android::view::ViewStub::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<android::view::View>(get_jtype());
 }
 
-template <>
-local_ref< android::view::ViewStub > create< android::view::ViewStub>(local_ref< android::content::Context > const &a0, cpp_int const &a1)
+
+android::view::ViewStub::ViewStub(local_ref< android::content::Context > const &a0)
+: cpp_object<android::view::ViewStub>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::view::ViewStub::J2CPP_CLASS_NAME>(),
+		get_method_id<android::view::ViewStub::J2CPP_CLASS_NAME, android::view::ViewStub::J2CPP_METHOD_NAME(0), android::view::ViewStub::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< android::view::ViewStub >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::view::ViewStub::J2CPP_CLASS_NAME>(),
-			get_method_id<android::view::ViewStub::J2CPP_CLASS_NAME, android::view::ViewStub::J2CPP_METHOD_NAME(1), android::view::ViewStub::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< android::view::ViewStub > create< android::view::ViewStub>(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1)
+
+
+android::view::ViewStub::ViewStub(local_ref< android::content::Context > const &a0, cpp_int const &a1)
+: cpp_object<android::view::ViewStub>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::view::ViewStub::J2CPP_CLASS_NAME>(),
+		get_method_id<android::view::ViewStub::J2CPP_CLASS_NAME, android::view::ViewStub::J2CPP_METHOD_NAME(1), android::view::ViewStub::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
 {
-	return local_ref< android::view::ViewStub >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::view::ViewStub::J2CPP_CLASS_NAME>(),
-			get_method_id<android::view::ViewStub::J2CPP_CLASS_NAME, android::view::ViewStub::J2CPP_METHOD_NAME(2), android::view::ViewStub::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< android::view::ViewStub > create< android::view::ViewStub>(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1, cpp_int const &a2)
+
+
+android::view::ViewStub::ViewStub(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1)
+: cpp_object<android::view::ViewStub>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::view::ViewStub::J2CPP_CLASS_NAME>(),
+		get_method_id<android::view::ViewStub::J2CPP_CLASS_NAME, android::view::ViewStub::J2CPP_METHOD_NAME(2), android::view::ViewStub::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
 {
-	return local_ref< android::view::ViewStub >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::view::ViewStub::J2CPP_CLASS_NAME>(),
-			get_method_id<android::view::ViewStub::J2CPP_CLASS_NAME, android::view::ViewStub::J2CPP_METHOD_NAME(3), android::view::ViewStub::J2CPP_METHOD_SIGNATURE(3), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
-		)
-	);
 }
+
+
+
+android::view::ViewStub::ViewStub(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1, cpp_int const &a2)
+: cpp_object<android::view::ViewStub>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::view::ViewStub::J2CPP_CLASS_NAME>(),
+		get_method_id<android::view::ViewStub::J2CPP_CLASS_NAME, android::view::ViewStub::J2CPP_METHOD_NAME(3), android::view::ViewStub::J2CPP_METHOD_SIGNATURE(3), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
+	)
+)
+{
+}
+
 
 cpp_int android::view::ViewStub::getInflatedId()
 {

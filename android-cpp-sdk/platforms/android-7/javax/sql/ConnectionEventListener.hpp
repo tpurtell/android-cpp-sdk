@@ -11,8 +11,12 @@
 
 
 namespace j2cpp { namespace javax { namespace sql { class ConnectionEvent; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace util { class EventListener; } } }
 
 
+#include <java/lang/Object.hpp>
+#include <java/util/EventListener.hpp>
 #include <javax/sql/ConnectionEvent.hpp>
 
 
@@ -31,10 +35,14 @@ namespace javax { namespace sql {
 		J2CPP_DECLARE_METHOD(0)
 		J2CPP_DECLARE_METHOD(1)
 
-		ConnectionEventListener(jobject jobj)
+		explicit ConnectionEventListener(jobject jobj)
 		: cpp_object<ConnectionEventListener>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::util::EventListener>() const;
+
 
 		void connectionClosed(local_ref< javax::sql::ConnectionEvent > const&);
 		void connectionErrorOccurred(local_ref< javax::sql::ConnectionEvent > const&);
@@ -42,7 +50,6 @@ namespace javax { namespace sql {
 
 } //namespace sql
 } //namespace javax
-
 
 } //namespace j2cpp
 
@@ -55,6 +62,17 @@ namespace javax { namespace sql {
 
 namespace j2cpp {
 
+
+
+javax::sql::ConnectionEventListener::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
+
+javax::sql::ConnectionEventListener::operator local_ref<java::util::EventListener>() const
+{
+	return local_ref<java::util::EventListener>(get_jtype());
+}
 
 void javax::sql::ConnectionEventListener::connectionClosed(local_ref< javax::sql::ConnectionEvent > const &a0)
 {

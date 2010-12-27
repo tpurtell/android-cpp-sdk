@@ -39,11 +39,15 @@ namespace java { namespace text {
 		J2CPP_DECLARE_METHOD(6)
 		J2CPP_DECLARE_METHOD(7)
 
-		ParsePosition(jobject jobj)
+		explicit ParsePosition(jobject jobj)
 		: cpp_object<ParsePosition>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		ParsePosition(cpp_int const&);
 		cpp_boolean equals(local_ref< java::lang::Object > const&);
 		cpp_int getErrorIndex();
 		cpp_int getIndex();
@@ -55,7 +59,6 @@ namespace java { namespace text {
 
 } //namespace text
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -69,17 +72,24 @@ namespace java { namespace text {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::text::ParsePosition > create< java::text::ParsePosition>(cpp_int const &a0)
+
+java::text::ParsePosition::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::text::ParsePosition >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::text::ParsePosition::J2CPP_CLASS_NAME>(),
-			get_method_id<java::text::ParsePosition::J2CPP_CLASS_NAME, java::text::ParsePosition::J2CPP_METHOD_NAME(0), java::text::ParsePosition::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+java::text::ParsePosition::ParsePosition(cpp_int const &a0)
+: cpp_object<java::text::ParsePosition>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::text::ParsePosition::J2CPP_CLASS_NAME>(),
+		get_method_id<java::text::ParsePosition::J2CPP_CLASS_NAME, java::text::ParsePosition::J2CPP_METHOD_NAME(0), java::text::ParsePosition::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 cpp_boolean java::text::ParsePosition::equals(local_ref< java::lang::Object > const &a0)
 {

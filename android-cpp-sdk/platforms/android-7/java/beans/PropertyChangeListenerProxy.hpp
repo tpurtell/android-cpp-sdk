@@ -13,11 +13,13 @@
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace beans { class PropertyChangeEvent; } } }
 namespace j2cpp { namespace java { namespace beans { class PropertyChangeListener; } } }
+namespace j2cpp { namespace java { namespace util { class EventListenerProxy; } } }
 
 
 #include <java/beans/PropertyChangeEvent.hpp>
 #include <java/beans/PropertyChangeListener.hpp>
 #include <java/lang/String.hpp>
+#include <java/util/EventListenerProxy.hpp>
 
 
 namespace j2cpp {
@@ -36,18 +38,22 @@ namespace java { namespace beans {
 		J2CPP_DECLARE_METHOD(1)
 		J2CPP_DECLARE_METHOD(2)
 
-		PropertyChangeListenerProxy(jobject jobj)
+		explicit PropertyChangeListenerProxy(jobject jobj)
 		: cpp_object<PropertyChangeListenerProxy>(jobj)
 		{
 		}
 
+		operator local_ref<java::util::EventListenerProxy>() const;
+		operator local_ref<java::beans::PropertyChangeListener>() const;
+
+
+		PropertyChangeListenerProxy(local_ref< java::lang::String > const&, local_ref< java::beans::PropertyChangeListener > const&);
 		local_ref< java::lang::String > getPropertyName();
 		void propertyChange(local_ref< java::beans::PropertyChangeEvent > const&);
 	}; //class PropertyChangeListenerProxy
 
 } //namespace beans
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -61,17 +67,29 @@ namespace java { namespace beans {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::beans::PropertyChangeListenerProxy > create< java::beans::PropertyChangeListenerProxy>(local_ref< java::lang::String > const &a0, local_ref< java::beans::PropertyChangeListener > const &a1)
+
+java::beans::PropertyChangeListenerProxy::operator local_ref<java::util::EventListenerProxy>() const
 {
-	return local_ref< java::beans::PropertyChangeListenerProxy >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::beans::PropertyChangeListenerProxy::J2CPP_CLASS_NAME>(),
-			get_method_id<java::beans::PropertyChangeListenerProxy::J2CPP_CLASS_NAME, java::beans::PropertyChangeListenerProxy::J2CPP_METHOD_NAME(0), java::beans::PropertyChangeListenerProxy::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<java::util::EventListenerProxy>(get_jtype());
 }
+
+java::beans::PropertyChangeListenerProxy::operator local_ref<java::beans::PropertyChangeListener>() const
+{
+	return local_ref<java::beans::PropertyChangeListener>(get_jtype());
+}
+
+
+java::beans::PropertyChangeListenerProxy::PropertyChangeListenerProxy(local_ref< java::lang::String > const &a0, local_ref< java::beans::PropertyChangeListener > const &a1)
+: cpp_object<java::beans::PropertyChangeListenerProxy>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::beans::PropertyChangeListenerProxy::J2CPP_CLASS_NAME>(),
+		get_method_id<java::beans::PropertyChangeListenerProxy::J2CPP_CLASS_NAME, java::beans::PropertyChangeListenerProxy::J2CPP_METHOD_NAME(0), java::beans::PropertyChangeListenerProxy::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
 
 local_ref< java::lang::String > java::beans::PropertyChangeListenerProxy::getPropertyName()
 {

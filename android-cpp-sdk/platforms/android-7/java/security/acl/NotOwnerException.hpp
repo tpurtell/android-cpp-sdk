@@ -10,8 +10,10 @@
 #define J2CPP_JAVA_SECURITY_ACL_NOTOWNEREXCEPTION_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Exception; } } }
 
 
+#include <java/lang/Exception.hpp>
 
 
 namespace j2cpp {
@@ -28,17 +30,20 @@ namespace java { namespace security { namespace acl {
 
 		J2CPP_DECLARE_METHOD(0)
 
-		NotOwnerException(jobject jobj)
+		explicit NotOwnerException(jobject jobj)
 		: cpp_object<NotOwnerException>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Exception>() const;
+
+
+		NotOwnerException();
 	}; //class NotOwnerException
 
 } //namespace acl
 } //namespace security
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -52,16 +57,23 @@ namespace java { namespace security { namespace acl {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::security::acl::NotOwnerException > create< java::security::acl::NotOwnerException>()
+
+java::security::acl::NotOwnerException::operator local_ref<java::lang::Exception>() const
 {
-	return local_ref< java::security::acl::NotOwnerException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::security::acl::NotOwnerException::J2CPP_CLASS_NAME>(),
-			get_method_id<java::security::acl::NotOwnerException::J2CPP_CLASS_NAME, java::security::acl::NotOwnerException::J2CPP_METHOD_NAME(0), java::security::acl::NotOwnerException::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Exception>(get_jtype());
 }
+
+
+java::security::acl::NotOwnerException::NotOwnerException()
+: cpp_object<java::security::acl::NotOwnerException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::security::acl::NotOwnerException::J2CPP_CLASS_NAME>(),
+		get_method_id<java::security::acl::NotOwnerException::J2CPP_CLASS_NAME, java::security::acl::NotOwnerException::J2CPP_METHOD_NAME(0), java::security::acl::NotOwnerException::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 
 J2CPP_DEFINE_CLASS(java::security::acl::NotOwnerException,"java/security/acl/NotOwnerException")

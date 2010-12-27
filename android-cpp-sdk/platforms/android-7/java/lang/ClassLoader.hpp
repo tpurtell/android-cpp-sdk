@@ -12,6 +12,7 @@
 
 namespace j2cpp { namespace java { namespace net { class URL; } } }
 namespace j2cpp { namespace java { namespace io { class InputStream; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class Class; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace util { class Enumeration; } } }
@@ -19,6 +20,7 @@ namespace j2cpp { namespace java { namespace util { class Enumeration; } } }
 
 #include <java/io/InputStream.hpp>
 #include <java/lang/Class.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/net/URL.hpp>
 #include <java/util/Enumeration.hpp>
@@ -68,10 +70,13 @@ namespace java { namespace lang {
 		J2CPP_DECLARE_METHOD(29)
 		J2CPP_DECLARE_METHOD(30)
 
-		ClassLoader(jobject jobj)
+		explicit ClassLoader(jobject jobj)
 		: cpp_object<ClassLoader>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		static local_ref< java::lang::ClassLoader > getSystemClassLoader();
 		static local_ref< java::net::URL > getSystemResource(local_ref< java::lang::String > const&);
@@ -91,7 +96,6 @@ namespace java { namespace lang {
 } //namespace lang
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_LANG_CLASSLOADER_HPP_DECL
@@ -104,28 +108,13 @@ namespace java { namespace lang {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::lang::ClassLoader > create< java::lang::ClassLoader>()
+
+java::lang::ClassLoader::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::lang::ClassLoader >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::lang::ClassLoader::J2CPP_CLASS_NAME>(),
-			get_method_id<java::lang::ClassLoader::J2CPP_CLASS_NAME, java::lang::ClassLoader::J2CPP_METHOD_NAME(0), java::lang::ClassLoader::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
 
-template <>
-local_ref< java::lang::ClassLoader > create< java::lang::ClassLoader>(local_ref< java::lang::ClassLoader > const &a0)
-{
-	return local_ref< java::lang::ClassLoader >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::lang::ClassLoader::J2CPP_CLASS_NAME>(),
-			get_method_id<java::lang::ClassLoader::J2CPP_CLASS_NAME, java::lang::ClassLoader::J2CPP_METHOD_NAME(1), java::lang::ClassLoader::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
-}
+
 
 local_ref< java::lang::ClassLoader > java::lang::ClassLoader::getSystemClassLoader()
 {

@@ -10,8 +10,10 @@
 #define J2CPP_ANDROID_UTIL_SPARSEBOOLEANARRAY_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -40,11 +42,16 @@ namespace android { namespace util {
 		J2CPP_DECLARE_METHOD(11)
 		J2CPP_DECLARE_METHOD(12)
 
-		SparseBooleanArray(jobject jobj)
+		explicit SparseBooleanArray(jobject jobj)
 		: cpp_object<SparseBooleanArray>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		SparseBooleanArray();
+		SparseBooleanArray(cpp_int const&);
 		cpp_boolean get(cpp_int const&);
 		cpp_boolean get(cpp_int const&, cpp_boolean const&);
 		void deleteThe(cpp_int const&);
@@ -61,7 +68,6 @@ namespace android { namespace util {
 } //namespace util
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_UTIL_SPARSEBOOLEANARRAY_HPP_DECL
@@ -74,28 +80,36 @@ namespace android { namespace util {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::util::SparseBooleanArray > create< android::util::SparseBooleanArray>()
+
+android::util::SparseBooleanArray::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::util::SparseBooleanArray >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::util::SparseBooleanArray::J2CPP_CLASS_NAME>(),
-			get_method_id<android::util::SparseBooleanArray::J2CPP_CLASS_NAME, android::util::SparseBooleanArray::J2CPP_METHOD_NAME(0), android::util::SparseBooleanArray::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
 
-template <>
-local_ref< android::util::SparseBooleanArray > create< android::util::SparseBooleanArray>(cpp_int const &a0)
+
+android::util::SparseBooleanArray::SparseBooleanArray()
+: cpp_object<android::util::SparseBooleanArray>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::util::SparseBooleanArray::J2CPP_CLASS_NAME>(),
+		get_method_id<android::util::SparseBooleanArray::J2CPP_CLASS_NAME, android::util::SparseBooleanArray::J2CPP_METHOD_NAME(0), android::util::SparseBooleanArray::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
 {
-	return local_ref< android::util::SparseBooleanArray >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::util::SparseBooleanArray::J2CPP_CLASS_NAME>(),
-			get_method_id<android::util::SparseBooleanArray::J2CPP_CLASS_NAME, android::util::SparseBooleanArray::J2CPP_METHOD_NAME(1), android::util::SparseBooleanArray::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
 }
+
+
+
+android::util::SparseBooleanArray::SparseBooleanArray(cpp_int const &a0)
+: cpp_object<android::util::SparseBooleanArray>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::util::SparseBooleanArray::J2CPP_CLASS_NAME>(),
+		get_method_id<android::util::SparseBooleanArray::J2CPP_CLASS_NAME, android::util::SparseBooleanArray::J2CPP_METHOD_NAME(1), android::util::SparseBooleanArray::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 cpp_boolean android::util::SparseBooleanArray::get(cpp_int const &a0)
 {

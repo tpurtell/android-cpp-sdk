@@ -11,6 +11,8 @@
 
 
 namespace j2cpp { namespace android { namespace content { class Context; } } }
+namespace j2cpp { namespace android { namespace view { namespace animation { class LayoutAnimationController; } } } }
+namespace j2cpp { namespace android { namespace view { namespace animation { namespace LayoutAnimationController_ { class AnimationParameters; } } } } }
 namespace j2cpp { namespace android { namespace view { namespace animation { class Animation; } } } }
 namespace j2cpp { namespace android { namespace util { class AttributeSet; } } }
 
@@ -18,6 +20,7 @@ namespace j2cpp { namespace android { namespace util { class AttributeSet; } } }
 #include <android/content/Context.hpp>
 #include <android/util/AttributeSet.hpp>
 #include <android/view/animation/Animation.hpp>
+#include <android/view/animation/LayoutAnimationController.hpp>
 
 
 namespace j2cpp {
@@ -41,15 +44,19 @@ namespace android { namespace view { namespace animation {
 			J2CPP_DECLARE_FIELD(2)
 			J2CPP_DECLARE_FIELD(3)
 
-			AnimationParameters(jobject jobj)
+			explicit AnimationParameters(jobject jobj)
 			: cpp_object<AnimationParameters>(jobj)
-			, column(jobj)
-			, row(jobj)
-			, columnsCount(jobj)
-			, rowsCount(jobj)
+, column(jobj)
+, row(jobj)
+, columnsCount(jobj)
+, rowsCount(jobj)
 			{
 			}
 
+			operator local_ref<android::view::animation::LayoutAnimationController_::AnimationParameters>() const;
+
+
+			AnimationParameters();
 
 			field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(0), J2CPP_FIELD_SIGNATURE(0), cpp_int > column;
 			field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(1), J2CPP_FIELD_SIGNATURE(1), cpp_int > row;
@@ -91,11 +98,17 @@ namespace android { namespace view { namespace animation {
 
 		typedef GridLayoutAnimationController_::AnimationParameters AnimationParameters;
 
-		GridLayoutAnimationController(jobject jobj)
+		explicit GridLayoutAnimationController(jobject jobj)
 		: cpp_object<GridLayoutAnimationController>(jobj)
 		{
 		}
 
+		operator local_ref<android::view::animation::LayoutAnimationController>() const;
+
+
+		GridLayoutAnimationController(local_ref< android::content::Context > const&, local_ref< android::util::AttributeSet > const&);
+		GridLayoutAnimationController(local_ref< android::view::animation::Animation > const&);
+		GridLayoutAnimationController(local_ref< android::view::animation::Animation > const&, cpp_float const&, cpp_float const&);
 		cpp_float getColumnDelay();
 		void setColumnDelay(cpp_float const&);
 		cpp_float getRowDelay();
@@ -121,7 +134,6 @@ namespace android { namespace view { namespace animation {
 } //namespace view
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_VIEW_ANIMATION_GRIDLAYOUTANIMATIONCONTROLLER_HPP_DECL
@@ -135,16 +147,27 @@ namespace j2cpp {
 
 
 
-template <>
-local_ref< android::view::animation::GridLayoutAnimationController_::AnimationParameters > create< android::view::animation::GridLayoutAnimationController_::AnimationParameters>()
+
+android::view::animation::GridLayoutAnimationController_::AnimationParameters::operator local_ref<android::view::animation::LayoutAnimationController_::AnimationParameters>() const
 {
-	return local_ref< android::view::animation::GridLayoutAnimationController_::AnimationParameters >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::view::animation::GridLayoutAnimationController_::AnimationParameters::J2CPP_CLASS_NAME>(),
-			get_method_id<android::view::animation::GridLayoutAnimationController_::AnimationParameters::J2CPP_CLASS_NAME, android::view::animation::GridLayoutAnimationController_::AnimationParameters::J2CPP_METHOD_NAME(0), android::view::animation::GridLayoutAnimationController_::AnimationParameters::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<android::view::animation::LayoutAnimationController_::AnimationParameters>(get_jtype());
 }
+
+
+android::view::animation::GridLayoutAnimationController_::AnimationParameters::AnimationParameters()
+: cpp_object<android::view::animation::GridLayoutAnimationController_::AnimationParameters>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::view::animation::GridLayoutAnimationController_::AnimationParameters::J2CPP_CLASS_NAME>(),
+		get_method_id<android::view::animation::GridLayoutAnimationController_::AnimationParameters::J2CPP_CLASS_NAME, android::view::animation::GridLayoutAnimationController_::AnimationParameters::J2CPP_METHOD_NAME(0), android::view::animation::GridLayoutAnimationController_::AnimationParameters::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+, column(get_jtype())
+, row(get_jtype())
+, columnsCount(get_jtype())
+, rowsCount(get_jtype())
+{
+}
+
 
 
 
@@ -156,41 +179,50 @@ J2CPP_DEFINE_FIELD(android::view::animation::GridLayoutAnimationController_::Ani
 J2CPP_DEFINE_FIELD(android::view::animation::GridLayoutAnimationController_::AnimationParameters,3,"rowsCount","I")
 
 
-template <>
-local_ref< android::view::animation::GridLayoutAnimationController > create< android::view::animation::GridLayoutAnimationController>(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1)
+
+android::view::animation::GridLayoutAnimationController::operator local_ref<android::view::animation::LayoutAnimationController>() const
 {
-	return local_ref< android::view::animation::GridLayoutAnimationController >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::view::animation::GridLayoutAnimationController::J2CPP_CLASS_NAME>(),
-			get_method_id<android::view::animation::GridLayoutAnimationController::J2CPP_CLASS_NAME, android::view::animation::GridLayoutAnimationController::J2CPP_METHOD_NAME(0), android::view::animation::GridLayoutAnimationController::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<android::view::animation::LayoutAnimationController>(get_jtype());
 }
 
-template <>
-local_ref< android::view::animation::GridLayoutAnimationController > create< android::view::animation::GridLayoutAnimationController>(local_ref< android::view::animation::Animation > const &a0)
+
+android::view::animation::GridLayoutAnimationController::GridLayoutAnimationController(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1)
+: cpp_object<android::view::animation::GridLayoutAnimationController>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::view::animation::GridLayoutAnimationController::J2CPP_CLASS_NAME>(),
+		get_method_id<android::view::animation::GridLayoutAnimationController::J2CPP_CLASS_NAME, android::view::animation::GridLayoutAnimationController::J2CPP_METHOD_NAME(0), android::view::animation::GridLayoutAnimationController::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
 {
-	return local_ref< android::view::animation::GridLayoutAnimationController >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::view::animation::GridLayoutAnimationController::J2CPP_CLASS_NAME>(),
-			get_method_id<android::view::animation::GridLayoutAnimationController::J2CPP_CLASS_NAME, android::view::animation::GridLayoutAnimationController::J2CPP_METHOD_NAME(1), android::view::animation::GridLayoutAnimationController::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< android::view::animation::GridLayoutAnimationController > create< android::view::animation::GridLayoutAnimationController>(local_ref< android::view::animation::Animation > const &a0, cpp_float const &a1, cpp_float const &a2)
+
+
+android::view::animation::GridLayoutAnimationController::GridLayoutAnimationController(local_ref< android::view::animation::Animation > const &a0)
+: cpp_object<android::view::animation::GridLayoutAnimationController>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::view::animation::GridLayoutAnimationController::J2CPP_CLASS_NAME>(),
+		get_method_id<android::view::animation::GridLayoutAnimationController::J2CPP_CLASS_NAME, android::view::animation::GridLayoutAnimationController::J2CPP_METHOD_NAME(1), android::view::animation::GridLayoutAnimationController::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< android::view::animation::GridLayoutAnimationController >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::view::animation::GridLayoutAnimationController::J2CPP_CLASS_NAME>(),
-			get_method_id<android::view::animation::GridLayoutAnimationController::J2CPP_CLASS_NAME, android::view::animation::GridLayoutAnimationController::J2CPP_METHOD_NAME(2), android::view::animation::GridLayoutAnimationController::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
-		)
-	);
 }
+
+
+
+android::view::animation::GridLayoutAnimationController::GridLayoutAnimationController(local_ref< android::view::animation::Animation > const &a0, cpp_float const &a1, cpp_float const &a2)
+: cpp_object<android::view::animation::GridLayoutAnimationController>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::view::animation::GridLayoutAnimationController::J2CPP_CLASS_NAME>(),
+		get_method_id<android::view::animation::GridLayoutAnimationController::J2CPP_CLASS_NAME, android::view::animation::GridLayoutAnimationController::J2CPP_METHOD_NAME(2), android::view::animation::GridLayoutAnimationController::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
+	)
+)
+{
+}
+
 
 cpp_float android::view::animation::GridLayoutAnimationController::getColumnDelay()
 {

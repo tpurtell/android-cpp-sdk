@@ -42,11 +42,16 @@ namespace java { namespace security {
 		J2CPP_DECLARE_METHOD(5)
 		J2CPP_DECLARE_METHOD(6)
 
-		AllPermission(jobject jobj)
+		explicit AllPermission(jobject jobj)
 		: cpp_object<AllPermission>(jobj)
 		{
 		}
 
+		operator local_ref<java::security::Permission>() const;
+
+
+		AllPermission(local_ref< java::lang::String > const&, local_ref< java::lang::String > const&);
+		AllPermission();
 		cpp_boolean equals(local_ref< java::lang::Object > const&);
 		cpp_int hashCode();
 		local_ref< java::lang::String > getActions();
@@ -56,7 +61,6 @@ namespace java { namespace security {
 
 } //namespace security
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -70,28 +74,36 @@ namespace java { namespace security {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::security::AllPermission > create< java::security::AllPermission>(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
+
+java::security::AllPermission::operator local_ref<java::security::Permission>() const
 {
-	return local_ref< java::security::AllPermission >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::security::AllPermission::J2CPP_CLASS_NAME>(),
-			get_method_id<java::security::AllPermission::J2CPP_CLASS_NAME, java::security::AllPermission::J2CPP_METHOD_NAME(0), java::security::AllPermission::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<java::security::Permission>(get_jtype());
 }
 
-template <>
-local_ref< java::security::AllPermission > create< java::security::AllPermission>()
+
+java::security::AllPermission::AllPermission(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
+: cpp_object<java::security::AllPermission>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::security::AllPermission::J2CPP_CLASS_NAME>(),
+		get_method_id<java::security::AllPermission::J2CPP_CLASS_NAME, java::security::AllPermission::J2CPP_METHOD_NAME(0), java::security::AllPermission::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
 {
-	return local_ref< java::security::AllPermission >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::security::AllPermission::J2CPP_CLASS_NAME>(),
-			get_method_id<java::security::AllPermission::J2CPP_CLASS_NAME, java::security::AllPermission::J2CPP_METHOD_NAME(1), java::security::AllPermission::J2CPP_METHOD_SIGNATURE(1), false>()
-		)
-	);
 }
+
+
+
+java::security::AllPermission::AllPermission()
+: cpp_object<java::security::AllPermission>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::security::AllPermission::J2CPP_CLASS_NAME>(),
+		get_method_id<java::security::AllPermission::J2CPP_CLASS_NAME, java::security::AllPermission::J2CPP_METHOD_NAME(1), java::security::AllPermission::J2CPP_METHOD_SIGNATURE(1), false>()
+	)
+)
+{
+}
+
 
 cpp_boolean java::security::AllPermission::equals(local_ref< java::lang::Object > const &a0)
 {

@@ -87,11 +87,19 @@ namespace org { namespace json {
 		J2CPP_DECLARE_METHOD(44)
 		J2CPP_DECLARE_FIELD(0)
 
-		JSONObject(jobject jobj)
+		explicit JSONObject(jobject jobj)
 		: cpp_object<JSONObject>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		JSONObject();
+		JSONObject(local_ref< org::json::JSONObject > const&, local_ref< cpp_object_array<java::lang::String, 1> > const&);
+		JSONObject(local_ref< org::json::JSONTokener > const&);
+		JSONObject(local_ref< java::util::Map > const&);
+		JSONObject(local_ref< java::lang::String > const&);
 		local_ref< org::json::JSONObject > accumulate(local_ref< java::lang::String > const&, local_ref< java::lang::Object > const&);
 		local_ref< java::lang::Object > get(local_ref< java::lang::String > const&);
 		cpp_boolean getBoolean(local_ref< java::lang::String > const&);
@@ -138,7 +146,6 @@ namespace org { namespace json {
 } //namespace json
 } //namespace org
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ORG_JSON_JSONOBJECT_HPP_DECL
@@ -151,64 +158,75 @@ namespace org { namespace json {
 namespace j2cpp {
 
 
-template <>
-local_ref< org::json::JSONObject > create< org::json::JSONObject>()
+
+org::json::JSONObject::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< org::json::JSONObject >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::json::JSONObject::J2CPP_CLASS_NAME>(),
-			get_method_id<org::json::JSONObject::J2CPP_CLASS_NAME, org::json::JSONObject::J2CPP_METHOD_NAME(0), org::json::JSONObject::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
 
-template <>
-local_ref< org::json::JSONObject > create< org::json::JSONObject>(local_ref< org::json::JSONObject > const &a0, local_ref< cpp_object_array<java::lang::String, 1> > const &a1)
+
+org::json::JSONObject::JSONObject()
+: cpp_object<org::json::JSONObject>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::json::JSONObject::J2CPP_CLASS_NAME>(),
+		get_method_id<org::json::JSONObject::J2CPP_CLASS_NAME, org::json::JSONObject::J2CPP_METHOD_NAME(0), org::json::JSONObject::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
 {
-	return local_ref< org::json::JSONObject >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::json::JSONObject::J2CPP_CLASS_NAME>(),
-			get_method_id<org::json::JSONObject::J2CPP_CLASS_NAME, org::json::JSONObject::J2CPP_METHOD_NAME(1), org::json::JSONObject::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< org::json::JSONObject > create< org::json::JSONObject>(local_ref< org::json::JSONTokener > const &a0)
+
+
+org::json::JSONObject::JSONObject(local_ref< org::json::JSONObject > const &a0, local_ref< cpp_object_array<java::lang::String, 1> > const &a1)
+: cpp_object<org::json::JSONObject>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::json::JSONObject::J2CPP_CLASS_NAME>(),
+		get_method_id<org::json::JSONObject::J2CPP_CLASS_NAME, org::json::JSONObject::J2CPP_METHOD_NAME(1), org::json::JSONObject::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
 {
-	return local_ref< org::json::JSONObject >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::json::JSONObject::J2CPP_CLASS_NAME>(),
-			get_method_id<org::json::JSONObject::J2CPP_CLASS_NAME, org::json::JSONObject::J2CPP_METHOD_NAME(2), org::json::JSONObject::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< org::json::JSONObject > create< org::json::JSONObject>(local_ref< java::util::Map > const &a0)
+
+
+org::json::JSONObject::JSONObject(local_ref< org::json::JSONTokener > const &a0)
+: cpp_object<org::json::JSONObject>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::json::JSONObject::J2CPP_CLASS_NAME>(),
+		get_method_id<org::json::JSONObject::J2CPP_CLASS_NAME, org::json::JSONObject::J2CPP_METHOD_NAME(2), org::json::JSONObject::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< org::json::JSONObject >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::json::JSONObject::J2CPP_CLASS_NAME>(),
-			get_method_id<org::json::JSONObject::J2CPP_CLASS_NAME, org::json::JSONObject::J2CPP_METHOD_NAME(3), org::json::JSONObject::J2CPP_METHOD_SIGNATURE(3), false>(),
-			a0.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< org::json::JSONObject > create< org::json::JSONObject>(local_ref< java::lang::String > const &a0)
+
+
+org::json::JSONObject::JSONObject(local_ref< java::util::Map > const &a0)
+: cpp_object<org::json::JSONObject>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::json::JSONObject::J2CPP_CLASS_NAME>(),
+		get_method_id<org::json::JSONObject::J2CPP_CLASS_NAME, org::json::JSONObject::J2CPP_METHOD_NAME(3), org::json::JSONObject::J2CPP_METHOD_SIGNATURE(3), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< org::json::JSONObject >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::json::JSONObject::J2CPP_CLASS_NAME>(),
-			get_method_id<org::json::JSONObject::J2CPP_CLASS_NAME, org::json::JSONObject::J2CPP_METHOD_NAME(4), org::json::JSONObject::J2CPP_METHOD_SIGNATURE(4), false>(),
-			a0.get_jtype()
-		)
-	);
 }
+
+
+
+org::json::JSONObject::JSONObject(local_ref< java::lang::String > const &a0)
+: cpp_object<org::json::JSONObject>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::json::JSONObject::J2CPP_CLASS_NAME>(),
+		get_method_id<org::json::JSONObject::J2CPP_CLASS_NAME, org::json::JSONObject::J2CPP_METHOD_NAME(4), org::json::JSONObject::J2CPP_METHOD_SIGNATURE(4), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 local_ref< org::json::JSONObject > org::json::JSONObject::accumulate(local_ref< java::lang::String > const &a0, local_ref< java::lang::Object > const &a1)
 {
@@ -634,6 +652,7 @@ local_ref< java::lang::String > org::json::JSONObject::toString(cpp_int const &a
 		)
 	);
 }
+
 
 
 static_field<

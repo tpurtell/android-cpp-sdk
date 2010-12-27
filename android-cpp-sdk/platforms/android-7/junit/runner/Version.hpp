@@ -10,9 +10,11 @@
 #define J2CPP_JUNIT_RUNNER_VERSION_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -31,17 +33,19 @@ namespace junit { namespace runner {
 		J2CPP_DECLARE_METHOD(0)
 		J2CPP_DECLARE_METHOD(1)
 
-		Version(jobject jobj)
+		explicit Version(jobject jobj)
 		: cpp_object<Version>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		static local_ref< java::lang::String > id();
 	}; //class Version
 
 } //namespace runner
 } //namespace junit
-
 
 } //namespace j2cpp
 
@@ -55,16 +59,12 @@ namespace junit { namespace runner {
 namespace j2cpp {
 
 
-template <>
-local_ref< junit::runner::Version > create< junit::runner::Version>()
+
+junit::runner::Version::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< junit::runner::Version >(
-		environment::get().get_jenv()->NewObject(
-			get_class<junit::runner::Version::J2CPP_CLASS_NAME>(),
-			get_method_id<junit::runner::Version::J2CPP_CLASS_NAME, junit::runner::Version::J2CPP_METHOD_NAME(0), junit::runner::Version::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
 
 local_ref< java::lang::String > junit::runner::Version::id()
 {

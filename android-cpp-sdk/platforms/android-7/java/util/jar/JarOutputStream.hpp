@@ -12,12 +12,14 @@
 
 namespace j2cpp { namespace java { namespace io { class OutputStream; } } }
 namespace j2cpp { namespace java { namespace util { namespace zip { class ZipEntry; } } } }
+namespace j2cpp { namespace java { namespace util { namespace zip { class ZipOutputStream; } } } }
 namespace j2cpp { namespace java { namespace util { namespace jar { class Manifest; } } } }
 
 
 #include <java/io/OutputStream.hpp>
 #include <java/util/jar/Manifest.hpp>
 #include <java/util/zip/ZipEntry.hpp>
+#include <java/util/zip/ZipOutputStream.hpp>
 
 
 namespace j2cpp {
@@ -36,18 +38,22 @@ namespace java { namespace util { namespace jar {
 		J2CPP_DECLARE_METHOD(1)
 		J2CPP_DECLARE_METHOD(2)
 
-		JarOutputStream(jobject jobj)
+		explicit JarOutputStream(jobject jobj)
 		: cpp_object<JarOutputStream>(jobj)
 		{
 		}
 
+		operator local_ref<java::util::zip::ZipOutputStream>() const;
+
+
+		JarOutputStream(local_ref< java::io::OutputStream > const&, local_ref< java::util::jar::Manifest > const&);
+		JarOutputStream(local_ref< java::io::OutputStream > const&);
 		void putNextEntry(local_ref< java::util::zip::ZipEntry > const&);
 	}; //class JarOutputStream
 
 } //namespace jar
 } //namespace util
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -61,29 +67,37 @@ namespace java { namespace util { namespace jar {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::util::jar::JarOutputStream > create< java::util::jar::JarOutputStream>(local_ref< java::io::OutputStream > const &a0, local_ref< java::util::jar::Manifest > const &a1)
+
+java::util::jar::JarOutputStream::operator local_ref<java::util::zip::ZipOutputStream>() const
 {
-	return local_ref< java::util::jar::JarOutputStream >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::jar::JarOutputStream::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::jar::JarOutputStream::J2CPP_CLASS_NAME, java::util::jar::JarOutputStream::J2CPP_METHOD_NAME(0), java::util::jar::JarOutputStream::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<java::util::zip::ZipOutputStream>(get_jtype());
 }
 
-template <>
-local_ref< java::util::jar::JarOutputStream > create< java::util::jar::JarOutputStream>(local_ref< java::io::OutputStream > const &a0)
+
+java::util::jar::JarOutputStream::JarOutputStream(local_ref< java::io::OutputStream > const &a0, local_ref< java::util::jar::Manifest > const &a1)
+: cpp_object<java::util::jar::JarOutputStream>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::util::jar::JarOutputStream::J2CPP_CLASS_NAME>(),
+		get_method_id<java::util::jar::JarOutputStream::J2CPP_CLASS_NAME, java::util::jar::JarOutputStream::J2CPP_METHOD_NAME(0), java::util::jar::JarOutputStream::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
 {
-	return local_ref< java::util::jar::JarOutputStream >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::jar::JarOutputStream::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::jar::JarOutputStream::J2CPP_CLASS_NAME, java::util::jar::JarOutputStream::J2CPP_METHOD_NAME(1), java::util::jar::JarOutputStream::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
 }
+
+
+
+java::util::jar::JarOutputStream::JarOutputStream(local_ref< java::io::OutputStream > const &a0)
+: cpp_object<java::util::jar::JarOutputStream>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::util::jar::JarOutputStream::J2CPP_CLASS_NAME>(),
+		get_method_id<java::util::jar::JarOutputStream::J2CPP_CLASS_NAME, java::util::jar::JarOutputStream::J2CPP_METHOD_NAME(1), java::util::jar::JarOutputStream::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 void java::util::jar::JarOutputStream::putNextEntry(local_ref< java::util::zip::ZipEntry > const &a0)
 {

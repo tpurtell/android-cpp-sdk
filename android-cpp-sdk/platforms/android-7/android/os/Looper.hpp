@@ -10,6 +10,7 @@
 #define J2CPP_ANDROID_OS_LOOPER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class Thread; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace android { namespace util { class Printer; } } }
@@ -18,6 +19,7 @@ namespace j2cpp { namespace android { namespace os { class MessageQueue; } } }
 
 #include <android/os/MessageQueue.hpp>
 #include <android/util/Printer.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/lang/Thread.hpp>
 
@@ -47,10 +49,13 @@ namespace android { namespace os {
 		J2CPP_DECLARE_METHOD(10)
 		J2CPP_DECLARE_METHOD(11)
 
-		Looper(jobject jobj)
+		explicit Looper(jobject jobj)
 		: cpp_object<Looper>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		static void prepare();
 		static void prepareMainLooper();
@@ -68,7 +73,6 @@ namespace android { namespace os {
 } //namespace os
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_OS_LOOPER_HPP_DECL
@@ -81,16 +85,12 @@ namespace android { namespace os {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::os::Looper > create< android::os::Looper>()
+
+android::os::Looper::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::os::Looper >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::os::Looper::J2CPP_CLASS_NAME>(),
-			get_method_id<android::os::Looper::J2CPP_CLASS_NAME, android::os::Looper::J2CPP_METHOD_NAME(0), android::os::Looper::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
 
 void android::os::Looper::prepare()
 {

@@ -10,8 +10,10 @@
 #define J2CPP_JAVA_UTIL_EMPTYSTACKEXCEPTION_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class RuntimeException; } } }
 
 
+#include <java/lang/RuntimeException.hpp>
 
 
 namespace j2cpp {
@@ -28,16 +30,19 @@ namespace java { namespace util {
 
 		J2CPP_DECLARE_METHOD(0)
 
-		EmptyStackException(jobject jobj)
+		explicit EmptyStackException(jobject jobj)
 		: cpp_object<EmptyStackException>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::RuntimeException>() const;
+
+
+		EmptyStackException();
 	}; //class EmptyStackException
 
 } //namespace util
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -51,16 +56,23 @@ namespace java { namespace util {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::util::EmptyStackException > create< java::util::EmptyStackException>()
+
+java::util::EmptyStackException::operator local_ref<java::lang::RuntimeException>() const
 {
-	return local_ref< java::util::EmptyStackException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::EmptyStackException::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::EmptyStackException::J2CPP_CLASS_NAME, java::util::EmptyStackException::J2CPP_METHOD_NAME(0), java::util::EmptyStackException::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::RuntimeException>(get_jtype());
 }
+
+
+java::util::EmptyStackException::EmptyStackException()
+: cpp_object<java::util::EmptyStackException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::util::EmptyStackException::J2CPP_CLASS_NAME>(),
+		get_method_id<java::util::EmptyStackException::J2CPP_CLASS_NAME, java::util::EmptyStackException::J2CPP_METHOD_NAME(0), java::util::EmptyStackException::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 
 J2CPP_DEFINE_CLASS(java::util::EmptyStackException,"java/util/EmptyStackException")

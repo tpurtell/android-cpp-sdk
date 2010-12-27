@@ -10,8 +10,12 @@
 #define J2CPP_ANDROID_TEST_MOCK_MOCKDIALOGINTERFACE_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace android { namespace content { class DialogInterface; } } }
 
 
+#include <android/content/DialogInterface.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -30,11 +34,16 @@ namespace android { namespace test { namespace mock {
 		J2CPP_DECLARE_METHOD(1)
 		J2CPP_DECLARE_METHOD(2)
 
-		MockDialogInterface(jobject jobj)
+		explicit MockDialogInterface(jobject jobj)
 		: cpp_object<MockDialogInterface>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<android::content::DialogInterface>() const;
+
+
+		MockDialogInterface();
 		void cancel();
 		void dismiss();
 	}; //class MockDialogInterface
@@ -42,7 +51,6 @@ namespace android { namespace test { namespace mock {
 } //namespace mock
 } //namespace test
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -56,16 +64,28 @@ namespace android { namespace test { namespace mock {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::test::mock::MockDialogInterface > create< android::test::mock::MockDialogInterface>()
+
+android::test::mock::MockDialogInterface::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::test::mock::MockDialogInterface >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::test::mock::MockDialogInterface::J2CPP_CLASS_NAME>(),
-			get_method_id<android::test::mock::MockDialogInterface::J2CPP_CLASS_NAME, android::test::mock::MockDialogInterface::J2CPP_METHOD_NAME(0), android::test::mock::MockDialogInterface::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+android::test::mock::MockDialogInterface::operator local_ref<android::content::DialogInterface>() const
+{
+	return local_ref<android::content::DialogInterface>(get_jtype());
+}
+
+
+android::test::mock::MockDialogInterface::MockDialogInterface()
+: cpp_object<android::test::mock::MockDialogInterface>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::test::mock::MockDialogInterface::J2CPP_CLASS_NAME>(),
+		get_method_id<android::test::mock::MockDialogInterface::J2CPP_CLASS_NAME, android::test::mock::MockDialogInterface::J2CPP_METHOD_NAME(0), android::test::mock::MockDialogInterface::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 void android::test::mock::MockDialogInterface::cancel()
 {

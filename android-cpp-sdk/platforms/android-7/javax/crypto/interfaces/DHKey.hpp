@@ -11,8 +11,10 @@
 
 
 namespace j2cpp { namespace javax { namespace crypto { namespace spec { class DHParameterSpec; } } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
+#include <java/lang/Object.hpp>
 #include <javax/crypto/spec/DHParameterSpec.hpp>
 
 
@@ -30,10 +32,13 @@ namespace javax { namespace crypto { namespace interfaces {
 
 		J2CPP_DECLARE_METHOD(0)
 
-		DHKey(jobject jobj)
+		explicit DHKey(jobject jobj)
 		: cpp_object<DHKey>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		local_ref< javax::crypto::spec::DHParameterSpec > getParams();
 	}; //class DHKey
@@ -41,7 +46,6 @@ namespace javax { namespace crypto { namespace interfaces {
 } //namespace interfaces
 } //namespace crypto
 } //namespace javax
-
 
 } //namespace j2cpp
 
@@ -54,6 +58,12 @@ namespace javax { namespace crypto { namespace interfaces {
 
 namespace j2cpp {
 
+
+
+javax::crypto::interfaces::DHKey::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 local_ref< javax::crypto::spec::DHParameterSpec > javax::crypto::interfaces::DHKey::getParams()
 {

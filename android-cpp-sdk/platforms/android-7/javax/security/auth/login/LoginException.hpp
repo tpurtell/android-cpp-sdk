@@ -11,9 +11,11 @@
 
 
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace security { class GeneralSecurityException; } } }
 
 
 #include <java/lang/String.hpp>
+#include <java/security/GeneralSecurityException.hpp>
 
 
 namespace j2cpp {
@@ -31,18 +33,22 @@ namespace javax { namespace security { namespace auth { namespace login {
 		J2CPP_DECLARE_METHOD(0)
 		J2CPP_DECLARE_METHOD(1)
 
-		LoginException(jobject jobj)
+		explicit LoginException(jobject jobj)
 		: cpp_object<LoginException>(jobj)
 		{
 		}
 
+		operator local_ref<java::security::GeneralSecurityException>() const;
+
+
+		LoginException();
+		LoginException(local_ref< java::lang::String > const&);
 	}; //class LoginException
 
 } //namespace login
 } //namespace auth
 } //namespace security
 } //namespace javax
-
 
 } //namespace j2cpp
 
@@ -56,28 +62,36 @@ namespace javax { namespace security { namespace auth { namespace login {
 namespace j2cpp {
 
 
-template <>
-local_ref< javax::security::auth::login::LoginException > create< javax::security::auth::login::LoginException>()
+
+javax::security::auth::login::LoginException::operator local_ref<java::security::GeneralSecurityException>() const
 {
-	return local_ref< javax::security::auth::login::LoginException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<javax::security::auth::login::LoginException::J2CPP_CLASS_NAME>(),
-			get_method_id<javax::security::auth::login::LoginException::J2CPP_CLASS_NAME, javax::security::auth::login::LoginException::J2CPP_METHOD_NAME(0), javax::security::auth::login::LoginException::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::security::GeneralSecurityException>(get_jtype());
 }
 
-template <>
-local_ref< javax::security::auth::login::LoginException > create< javax::security::auth::login::LoginException>(local_ref< java::lang::String > const &a0)
+
+javax::security::auth::login::LoginException::LoginException()
+: cpp_object<javax::security::auth::login::LoginException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<javax::security::auth::login::LoginException::J2CPP_CLASS_NAME>(),
+		get_method_id<javax::security::auth::login::LoginException::J2CPP_CLASS_NAME, javax::security::auth::login::LoginException::J2CPP_METHOD_NAME(0), javax::security::auth::login::LoginException::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
 {
-	return local_ref< javax::security::auth::login::LoginException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<javax::security::auth::login::LoginException::J2CPP_CLASS_NAME>(),
-			get_method_id<javax::security::auth::login::LoginException::J2CPP_CLASS_NAME, javax::security::auth::login::LoginException::J2CPP_METHOD_NAME(1), javax::security::auth::login::LoginException::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
 }
+
+
+
+javax::security::auth::login::LoginException::LoginException(local_ref< java::lang::String > const &a0)
+: cpp_object<javax::security::auth::login::LoginException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<javax::security::auth::login::LoginException::J2CPP_CLASS_NAME>(),
+		get_method_id<javax::security::auth::login::LoginException::J2CPP_CLASS_NAME, javax::security::auth::login::LoginException::J2CPP_METHOD_NAME(1), javax::security::auth::login::LoginException::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 
 J2CPP_DEFINE_CLASS(javax::security::auth::login::LoginException,"javax/security/auth/login/LoginException")

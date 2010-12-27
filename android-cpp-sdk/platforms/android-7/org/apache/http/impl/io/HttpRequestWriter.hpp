@@ -12,9 +12,11 @@
 
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace io { class SessionOutputBuffer; } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace message { class LineFormatter; } } } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { namespace impl { namespace io { class AbstractMessageWriter; } } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace params { class HttpParams; } } } } }
 
 
+#include <org/apache/http/impl/io/AbstractMessageWriter.hpp>
 #include <org/apache/http/io/SessionOutputBuffer.hpp>
 #include <org/apache/http/message/LineFormatter.hpp>
 #include <org/apache/http/params/HttpParams.hpp>
@@ -35,11 +37,15 @@ namespace org { namespace apache { namespace http { namespace impl { namespace i
 		J2CPP_DECLARE_METHOD(0)
 		J2CPP_DECLARE_METHOD(1)
 
-		HttpRequestWriter(jobject jobj)
+		explicit HttpRequestWriter(jobject jobj)
 		: cpp_object<HttpRequestWriter>(jobj)
 		{
 		}
 
+		operator local_ref<org::apache::http::impl::io::AbstractMessageWriter>() const;
+
+
+		HttpRequestWriter(local_ref< org::apache::http::io::SessionOutputBuffer > const&, local_ref< org::apache::http::message::LineFormatter > const&, local_ref< org::apache::http::params::HttpParams > const&);
 	}; //class HttpRequestWriter
 
 } //namespace io
@@ -47,7 +53,6 @@ namespace org { namespace apache { namespace http { namespace impl { namespace i
 } //namespace http
 } //namespace apache
 } //namespace org
-
 
 } //namespace j2cpp
 
@@ -61,17 +66,24 @@ namespace org { namespace apache { namespace http { namespace impl { namespace i
 namespace j2cpp {
 
 
-template <>
-local_ref< org::apache::http::impl::io::HttpRequestWriter > create< org::apache::http::impl::io::HttpRequestWriter>(local_ref< org::apache::http::io::SessionOutputBuffer > const &a0, local_ref< org::apache::http::message::LineFormatter > const &a1, local_ref< org::apache::http::params::HttpParams > const &a2)
+
+org::apache::http::impl::io::HttpRequestWriter::operator local_ref<org::apache::http::impl::io::AbstractMessageWriter>() const
 {
-	return local_ref< org::apache::http::impl::io::HttpRequestWriter >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::apache::http::impl::io::HttpRequestWriter::J2CPP_CLASS_NAME>(),
-			get_method_id<org::apache::http::impl::io::HttpRequestWriter::J2CPP_CLASS_NAME, org::apache::http::impl::io::HttpRequestWriter::J2CPP_METHOD_NAME(0), org::apache::http::impl::io::HttpRequestWriter::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
-		)
-	);
+	return local_ref<org::apache::http::impl::io::AbstractMessageWriter>(get_jtype());
 }
+
+
+org::apache::http::impl::io::HttpRequestWriter::HttpRequestWriter(local_ref< org::apache::http::io::SessionOutputBuffer > const &a0, local_ref< org::apache::http::message::LineFormatter > const &a1, local_ref< org::apache::http::params::HttpParams > const &a2)
+: cpp_object<org::apache::http::impl::io::HttpRequestWriter>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::apache::http::impl::io::HttpRequestWriter::J2CPP_CLASS_NAME>(),
+		get_method_id<org::apache::http::impl::io::HttpRequestWriter::J2CPP_CLASS_NAME, org::apache::http::impl::io::HttpRequestWriter::J2CPP_METHOD_NAME(0), org::apache::http::impl::io::HttpRequestWriter::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
+	)
+)
+{
+}
+
 
 
 

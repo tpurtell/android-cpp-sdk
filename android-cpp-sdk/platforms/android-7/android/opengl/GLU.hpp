@@ -11,9 +11,11 @@
 
 
 namespace j2cpp { namespace javax { namespace microedition { namespace khronos { namespace opengles { class GL10; } } } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <javax/microedition/khronos/opengles/GL10.hpp>
 
@@ -38,11 +40,15 @@ namespace android { namespace opengl {
 		J2CPP_DECLARE_METHOD(5)
 		J2CPP_DECLARE_METHOD(6)
 
-		GLU(jobject jobj)
+		explicit GLU(jobject jobj)
 		: cpp_object<GLU>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		GLU();
 		static local_ref< java::lang::String > gluErrorString(cpp_int const&);
 		static void gluLookAt(local_ref< javax::microedition::khronos::opengles::GL10 > const&, cpp_float const&, cpp_float const&, cpp_float const&, cpp_float const&, cpp_float const&, cpp_float const&, cpp_float const&, cpp_float const&, cpp_float const&);
 		static void gluOrtho2D(local_ref< javax::microedition::khronos::opengles::GL10 > const&, cpp_float const&, cpp_float const&, cpp_float const&, cpp_float const&);
@@ -53,7 +59,6 @@ namespace android { namespace opengl {
 
 } //namespace opengl
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -67,16 +72,23 @@ namespace android { namespace opengl {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::opengl::GLU > create< android::opengl::GLU>()
+
+android::opengl::GLU::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::opengl::GLU >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::opengl::GLU::J2CPP_CLASS_NAME>(),
-			get_method_id<android::opengl::GLU::J2CPP_CLASS_NAME, android::opengl::GLU::J2CPP_METHOD_NAME(0), android::opengl::GLU::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::opengl::GLU::GLU()
+: cpp_object<android::opengl::GLU>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::opengl::GLU::J2CPP_CLASS_NAME>(),
+		get_method_id<android::opengl::GLU::J2CPP_CLASS_NAME, android::opengl::GLU::J2CPP_METHOD_NAME(0), android::opengl::GLU::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 local_ref< java::lang::String > android::opengl::GLU::gluErrorString(cpp_int const &a0)
 {

@@ -12,6 +12,7 @@
 
 namespace j2cpp { namespace java { namespace io { class InputStream; } } }
 namespace j2cpp { namespace java { namespace io { class OutputStream; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class Class; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace util { namespace prefs { class PreferenceChangeListener; } } } }
@@ -21,6 +22,7 @@ namespace j2cpp { namespace java { namespace util { namespace prefs { class Node
 #include <java/io/InputStream.hpp>
 #include <java/io/OutputStream.hpp>
 #include <java/lang/Class.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/util/prefs/NodeChangeListener.hpp>
 #include <java/util/prefs/PreferenceChangeListener.hpp>
@@ -82,10 +84,13 @@ namespace java { namespace util { namespace prefs {
 		J2CPP_DECLARE_FIELD(1)
 		J2CPP_DECLARE_FIELD(2)
 
-		Preferences(jobject jobj)
+		explicit Preferences(jobject jobj)
 		: cpp_object<Preferences>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		local_ref< java::lang::String > absolutePath();
 		local_ref< cpp_object_array<java::lang::String, 1> > childrenNames();
@@ -136,7 +141,6 @@ namespace java { namespace util { namespace prefs {
 } //namespace util
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_UTIL_PREFS_PREFERENCES_HPP_DECL
@@ -149,16 +153,12 @@ namespace java { namespace util { namespace prefs {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::util::prefs::Preferences > create< java::util::prefs::Preferences>()
+
+java::util::prefs::Preferences::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::util::prefs::Preferences >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::prefs::Preferences::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::prefs::Preferences::J2CPP_CLASS_NAME, java::util::prefs::Preferences::J2CPP_METHOD_NAME(0), java::util::prefs::Preferences::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
 
 local_ref< java::lang::String > java::util::prefs::Preferences::absolutePath()
 {

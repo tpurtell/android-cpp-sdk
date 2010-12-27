@@ -10,8 +10,10 @@
 #define J2CPP_ANDROID_OS_SYSTEMCLOCK_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -33,10 +35,13 @@ namespace android { namespace os {
 		J2CPP_DECLARE_METHOD(4)
 		J2CPP_DECLARE_METHOD(5)
 
-		SystemClock(jobject jobj)
+		explicit SystemClock(jobject jobj)
 		: cpp_object<SystemClock>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		static void sleep(cpp_long const&);
 		static cpp_boolean setCurrentTimeMillis(cpp_long const&);
@@ -47,7 +52,6 @@ namespace android { namespace os {
 
 } //namespace os
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -61,16 +65,12 @@ namespace android { namespace os {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::os::SystemClock > create< android::os::SystemClock>()
+
+android::os::SystemClock::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::os::SystemClock >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::os::SystemClock::J2CPP_CLASS_NAME>(),
-			get_method_id<android::os::SystemClock::J2CPP_CLASS_NAME, android::os::SystemClock::J2CPP_METHOD_NAME(0), android::os::SystemClock::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
 
 void android::os::SystemClock::sleep(cpp_long const &a0)
 {

@@ -10,9 +10,11 @@
 #define J2CPP_JAVA_UTIL_CONCURRENT_EXECUTOR_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class Runnable; } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/Runnable.hpp>
 
 
@@ -30,10 +32,13 @@ namespace java { namespace util { namespace concurrent {
 
 		J2CPP_DECLARE_METHOD(0)
 
-		Executor(jobject jobj)
+		explicit Executor(jobject jobj)
 		: cpp_object<Executor>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		void execute(local_ref< java::lang::Runnable > const&);
 	}; //class Executor
@@ -41,7 +46,6 @@ namespace java { namespace util { namespace concurrent {
 } //namespace concurrent
 } //namespace util
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -54,6 +58,12 @@ namespace java { namespace util { namespace concurrent {
 
 namespace j2cpp {
 
+
+
+java::util::concurrent::Executor::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 void java::util::concurrent::Executor::execute(local_ref< java::lang::Runnable > const &a0)
 {

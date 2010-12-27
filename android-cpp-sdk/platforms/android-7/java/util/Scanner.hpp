@@ -21,6 +21,7 @@ namespace j2cpp { namespace java { namespace math { class BigDecimal; } } }
 namespace j2cpp { namespace java { namespace util { class Locale; } } }
 namespace j2cpp { namespace java { namespace util { namespace regex { class MatchResult; } } } }
 namespace j2cpp { namespace java { namespace util { namespace regex { class Pattern; } } } }
+namespace j2cpp { namespace java { namespace util { class Iterator; } } }
 namespace j2cpp { namespace java { namespace nio { namespace channels { class ReadableByteChannel; } } } }
 
 
@@ -33,6 +34,7 @@ namespace j2cpp { namespace java { namespace nio { namespace channels { class Re
 #include <java/math/BigDecimal.hpp>
 #include <java/math/BigInteger.hpp>
 #include <java/nio/channels/ReadableByteChannel.hpp>
+#include <java/util/Iterator.hpp>
 #include <java/util/Locale.hpp>
 #include <java/util/regex/MatchResult.hpp>
 #include <java/util/regex/Pattern.hpp>
@@ -114,11 +116,23 @@ namespace java { namespace util {
 		J2CPP_DECLARE_METHOD(61)
 		J2CPP_DECLARE_METHOD(62)
 
-		Scanner(jobject jobj)
+		explicit Scanner(jobject jobj)
 		: cpp_object<Scanner>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::util::Iterator>() const;
+
+
+		Scanner(local_ref< java::io::File > const&);
+		Scanner(local_ref< java::io::File > const&, local_ref< java::lang::String > const&);
+		Scanner(local_ref< java::lang::String > const&);
+		Scanner(local_ref< java::io::InputStream > const&);
+		Scanner(local_ref< java::io::InputStream > const&, local_ref< java::lang::String > const&);
+		Scanner(local_ref< java::lang::Readable > const&);
+		Scanner(local_ref< java::nio::channels::ReadableByteChannel > const&);
+		Scanner(local_ref< java::nio::channels::ReadableByteChannel > const&, local_ref< java::lang::String > const&);
 		void close();
 		local_ref< java::util::regex::Pattern > delimiter();
 		local_ref< java::lang::String > findInLine(local_ref< java::util::regex::Pattern > const&);
@@ -179,7 +193,6 @@ namespace java { namespace util {
 } //namespace util
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_UTIL_SCANNER_HPP_DECL
@@ -192,101 +205,120 @@ namespace java { namespace util {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::util::Scanner > create< java::util::Scanner>(local_ref< java::io::File > const &a0)
+
+java::util::Scanner::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::util::Scanner >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::Scanner::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::Scanner::J2CPP_CLASS_NAME, java::util::Scanner::J2CPP_METHOD_NAME(0), java::util::Scanner::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
 
-template <>
-local_ref< java::util::Scanner > create< java::util::Scanner>(local_ref< java::io::File > const &a0, local_ref< java::lang::String > const &a1)
+java::util::Scanner::operator local_ref<java::util::Iterator>() const
 {
-	return local_ref< java::util::Scanner >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::Scanner::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::Scanner::J2CPP_CLASS_NAME, java::util::Scanner::J2CPP_METHOD_NAME(1), java::util::Scanner::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<java::util::Iterator>(get_jtype());
 }
 
-template <>
-local_ref< java::util::Scanner > create< java::util::Scanner>(local_ref< java::lang::String > const &a0)
+
+java::util::Scanner::Scanner(local_ref< java::io::File > const &a0)
+: cpp_object<java::util::Scanner>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::util::Scanner::J2CPP_CLASS_NAME>(),
+		get_method_id<java::util::Scanner::J2CPP_CLASS_NAME, java::util::Scanner::J2CPP_METHOD_NAME(0), java::util::Scanner::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< java::util::Scanner >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::Scanner::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::Scanner::J2CPP_CLASS_NAME, java::util::Scanner::J2CPP_METHOD_NAME(2), java::util::Scanner::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< java::util::Scanner > create< java::util::Scanner>(local_ref< java::io::InputStream > const &a0)
+
+
+java::util::Scanner::Scanner(local_ref< java::io::File > const &a0, local_ref< java::lang::String > const &a1)
+: cpp_object<java::util::Scanner>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::util::Scanner::J2CPP_CLASS_NAME>(),
+		get_method_id<java::util::Scanner::J2CPP_CLASS_NAME, java::util::Scanner::J2CPP_METHOD_NAME(1), java::util::Scanner::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
 {
-	return local_ref< java::util::Scanner >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::Scanner::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::Scanner::J2CPP_CLASS_NAME, java::util::Scanner::J2CPP_METHOD_NAME(3), java::util::Scanner::J2CPP_METHOD_SIGNATURE(3), false>(),
-			a0.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< java::util::Scanner > create< java::util::Scanner>(local_ref< java::io::InputStream > const &a0, local_ref< java::lang::String > const &a1)
+
+
+java::util::Scanner::Scanner(local_ref< java::lang::String > const &a0)
+: cpp_object<java::util::Scanner>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::util::Scanner::J2CPP_CLASS_NAME>(),
+		get_method_id<java::util::Scanner::J2CPP_CLASS_NAME, java::util::Scanner::J2CPP_METHOD_NAME(2), java::util::Scanner::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< java::util::Scanner >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::Scanner::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::Scanner::J2CPP_CLASS_NAME, java::util::Scanner::J2CPP_METHOD_NAME(4), java::util::Scanner::J2CPP_METHOD_SIGNATURE(4), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< java::util::Scanner > create< java::util::Scanner>(local_ref< java::lang::Readable > const &a0)
+
+
+java::util::Scanner::Scanner(local_ref< java::io::InputStream > const &a0)
+: cpp_object<java::util::Scanner>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::util::Scanner::J2CPP_CLASS_NAME>(),
+		get_method_id<java::util::Scanner::J2CPP_CLASS_NAME, java::util::Scanner::J2CPP_METHOD_NAME(3), java::util::Scanner::J2CPP_METHOD_SIGNATURE(3), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< java::util::Scanner >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::Scanner::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::Scanner::J2CPP_CLASS_NAME, java::util::Scanner::J2CPP_METHOD_NAME(5), java::util::Scanner::J2CPP_METHOD_SIGNATURE(5), false>(),
-			a0.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< java::util::Scanner > create< java::util::Scanner>(local_ref< java::nio::channels::ReadableByteChannel > const &a0)
+
+
+java::util::Scanner::Scanner(local_ref< java::io::InputStream > const &a0, local_ref< java::lang::String > const &a1)
+: cpp_object<java::util::Scanner>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::util::Scanner::J2CPP_CLASS_NAME>(),
+		get_method_id<java::util::Scanner::J2CPP_CLASS_NAME, java::util::Scanner::J2CPP_METHOD_NAME(4), java::util::Scanner::J2CPP_METHOD_SIGNATURE(4), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
 {
-	return local_ref< java::util::Scanner >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::Scanner::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::Scanner::J2CPP_CLASS_NAME, java::util::Scanner::J2CPP_METHOD_NAME(6), java::util::Scanner::J2CPP_METHOD_SIGNATURE(6), false>(),
-			a0.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< java::util::Scanner > create< java::util::Scanner>(local_ref< java::nio::channels::ReadableByteChannel > const &a0, local_ref< java::lang::String > const &a1)
+
+
+java::util::Scanner::Scanner(local_ref< java::lang::Readable > const &a0)
+: cpp_object<java::util::Scanner>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::util::Scanner::J2CPP_CLASS_NAME>(),
+		get_method_id<java::util::Scanner::J2CPP_CLASS_NAME, java::util::Scanner::J2CPP_METHOD_NAME(5), java::util::Scanner::J2CPP_METHOD_SIGNATURE(5), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< java::util::Scanner >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::Scanner::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::Scanner::J2CPP_CLASS_NAME, java::util::Scanner::J2CPP_METHOD_NAME(7), java::util::Scanner::J2CPP_METHOD_SIGNATURE(7), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
 }
+
+
+
+java::util::Scanner::Scanner(local_ref< java::nio::channels::ReadableByteChannel > const &a0)
+: cpp_object<java::util::Scanner>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::util::Scanner::J2CPP_CLASS_NAME>(),
+		get_method_id<java::util::Scanner::J2CPP_CLASS_NAME, java::util::Scanner::J2CPP_METHOD_NAME(6), java::util::Scanner::J2CPP_METHOD_SIGNATURE(6), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
+
+
+java::util::Scanner::Scanner(local_ref< java::nio::channels::ReadableByteChannel > const &a0, local_ref< java::lang::String > const &a1)
+: cpp_object<java::util::Scanner>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::util::Scanner::J2CPP_CLASS_NAME>(),
+		get_method_id<java::util::Scanner::J2CPP_CLASS_NAME, java::util::Scanner::J2CPP_METHOD_NAME(7), java::util::Scanner::J2CPP_METHOD_SIGNATURE(7), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
 
 void java::util::Scanner::close()
 {

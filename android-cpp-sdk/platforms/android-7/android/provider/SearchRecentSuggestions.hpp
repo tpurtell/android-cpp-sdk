@@ -10,11 +10,13 @@
 #define J2CPP_ANDROID_PROVIDER_SEARCHRECENTSUGGESTIONS_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace android { namespace content { class Context; } } }
 
 
 #include <android/content/Context.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -42,11 +44,15 @@ namespace android { namespace provider {
 		J2CPP_DECLARE_FIELD(4)
 		J2CPP_DECLARE_FIELD(5)
 
-		SearchRecentSuggestions(jobject jobj)
+		explicit SearchRecentSuggestions(jobject jobj)
 		: cpp_object<SearchRecentSuggestions>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		SearchRecentSuggestions(local_ref< android::content::Context > const&, local_ref< java::lang::String > const&, cpp_int const&);
 		void saveRecentQuery(local_ref< java::lang::String > const&, local_ref< java::lang::String > const&);
 		void clearHistory();
 
@@ -61,7 +67,6 @@ namespace android { namespace provider {
 } //namespace provider
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_PROVIDER_SEARCHRECENTSUGGESTIONS_HPP_DECL
@@ -74,17 +79,24 @@ namespace android { namespace provider {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::provider::SearchRecentSuggestions > create< android::provider::SearchRecentSuggestions>(local_ref< android::content::Context > const &a0, local_ref< java::lang::String > const &a1, cpp_int const &a2)
+
+android::provider::SearchRecentSuggestions::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::provider::SearchRecentSuggestions >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::provider::SearchRecentSuggestions::J2CPP_CLASS_NAME>(),
-			get_method_id<android::provider::SearchRecentSuggestions::J2CPP_CLASS_NAME, android::provider::SearchRecentSuggestions::J2CPP_METHOD_NAME(0), android::provider::SearchRecentSuggestions::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::provider::SearchRecentSuggestions::SearchRecentSuggestions(local_ref< android::content::Context > const &a0, local_ref< java::lang::String > const &a1, cpp_int const &a2)
+: cpp_object<android::provider::SearchRecentSuggestions>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::provider::SearchRecentSuggestions::J2CPP_CLASS_NAME>(),
+		get_method_id<android::provider::SearchRecentSuggestions::J2CPP_CLASS_NAME, android::provider::SearchRecentSuggestions::J2CPP_METHOD_NAME(0), android::provider::SearchRecentSuggestions::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
+	)
+)
+{
+}
+
 
 void android::provider::SearchRecentSuggestions::saveRecentQuery(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
 {
@@ -106,6 +118,7 @@ void android::provider::SearchRecentSuggestions::clearHistory()
 		)
 	);
 }
+
 
 
 

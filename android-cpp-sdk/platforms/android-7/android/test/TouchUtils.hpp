@@ -10,6 +10,7 @@
 #define J2CPP_ANDROID_TEST_TOUCHUTILS_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace android { namespace app { class Activity; } } }
 namespace j2cpp { namespace android { namespace view { class View; } } }
 namespace j2cpp { namespace android { namespace view { class ViewGroup; } } }
@@ -22,6 +23,7 @@ namespace j2cpp { namespace android { namespace test { class ActivityInstrumenta
 #include <android/test/InstrumentationTestCase.hpp>
 #include <android/view/View.hpp>
 #include <android/view/ViewGroup.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -69,11 +71,15 @@ namespace android { namespace test {
 		J2CPP_DECLARE_METHOD(30)
 		J2CPP_DECLARE_METHOD(31)
 
-		TouchUtils(jobject jobj)
+		explicit TouchUtils(jobject jobj)
 		: cpp_object<TouchUtils>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		TouchUtils();
 		static void dragQuarterScreenDown(local_ref< android::test::ActivityInstrumentationTestCase > const&);
 		static void dragQuarterScreenDown(local_ref< android::test::InstrumentationTestCase > const&, local_ref< android::app::Activity > const&);
 		static void dragQuarterScreenUp(local_ref< android::test::ActivityInstrumentationTestCase > const&);
@@ -110,7 +116,6 @@ namespace android { namespace test {
 } //namespace test
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_TEST_TOUCHUTILS_HPP_DECL
@@ -123,16 +128,23 @@ namespace android { namespace test {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::test::TouchUtils > create< android::test::TouchUtils>()
+
+android::test::TouchUtils::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::test::TouchUtils >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::test::TouchUtils::J2CPP_CLASS_NAME>(),
-			get_method_id<android::test::TouchUtils::J2CPP_CLASS_NAME, android::test::TouchUtils::J2CPP_METHOD_NAME(0), android::test::TouchUtils::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::test::TouchUtils::TouchUtils()
+: cpp_object<android::test::TouchUtils>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::test::TouchUtils::J2CPP_CLASS_NAME>(),
+		get_method_id<android::test::TouchUtils::J2CPP_CLASS_NAME, android::test::TouchUtils::J2CPP_METHOD_NAME(0), android::test::TouchUtils::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 void android::test::TouchUtils::dragQuarterScreenDown(local_ref< android::test::ActivityInstrumentationTestCase > const &a0)
 {

@@ -11,9 +11,11 @@
 
 
 namespace j2cpp { namespace javax { namespace xml { namespace parsers { class SAXParser; } } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <javax/xml/parsers/SAXParser.hpp>
 
@@ -42,10 +44,13 @@ namespace javax { namespace xml { namespace parsers {
 		J2CPP_DECLARE_METHOD(9)
 		J2CPP_DECLARE_METHOD(10)
 
-		SAXParserFactory(jobject jobj)
+		explicit SAXParserFactory(jobject jobj)
 		: cpp_object<SAXParserFactory>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		cpp_boolean getFeature(local_ref< java::lang::String > const&);
 		cpp_boolean isNamespaceAware();
@@ -63,7 +68,6 @@ namespace javax { namespace xml { namespace parsers {
 } //namespace xml
 } //namespace javax
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVAX_XML_PARSERS_SAXPARSERFACTORY_HPP_DECL
@@ -76,16 +80,12 @@ namespace javax { namespace xml { namespace parsers {
 namespace j2cpp {
 
 
-template <>
-local_ref< javax::xml::parsers::SAXParserFactory > create< javax::xml::parsers::SAXParserFactory>()
+
+javax::xml::parsers::SAXParserFactory::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< javax::xml::parsers::SAXParserFactory >(
-		environment::get().get_jenv()->NewObject(
-			get_class<javax::xml::parsers::SAXParserFactory::J2CPP_CLASS_NAME>(),
-			get_method_id<javax::xml::parsers::SAXParserFactory::J2CPP_CLASS_NAME, javax::xml::parsers::SAXParserFactory::J2CPP_METHOD_NAME(0), javax::xml::parsers::SAXParserFactory::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
 
 cpp_boolean javax::xml::parsers::SAXParserFactory::getFeature(local_ref< java::lang::String > const &a0)
 {

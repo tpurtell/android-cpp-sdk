@@ -10,16 +10,20 @@
 #define J2CPP_ORG_APACHE_HTTP_HTTPRESPONSE_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace util { class Locale; } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { class ProtocolVersion; } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { class HttpEntity; } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { class StatusLine; } } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { class HttpMessage; } } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/util/Locale.hpp>
 #include <org/apache/http/HttpEntity.hpp>
+#include <org/apache/http/HttpMessage.hpp>
 #include <org/apache/http/ProtocolVersion.hpp>
 #include <org/apache/http/StatusLine.hpp>
 
@@ -47,10 +51,14 @@ namespace org { namespace apache { namespace http {
 		J2CPP_DECLARE_METHOD(8)
 		J2CPP_DECLARE_METHOD(9)
 
-		HttpResponse(jobject jobj)
+		explicit HttpResponse(jobject jobj)
 		: cpp_object<HttpResponse>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<org::apache::http::HttpMessage>() const;
+
 
 		local_ref< org::apache::http::StatusLine > getStatusLine();
 		void setStatusLine(local_ref< org::apache::http::StatusLine > const&);
@@ -68,7 +76,6 @@ namespace org { namespace apache { namespace http {
 } //namespace apache
 } //namespace org
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ORG_APACHE_HTTP_HTTPRESPONSE_HPP_DECL
@@ -80,6 +87,17 @@ namespace org { namespace apache { namespace http {
 
 namespace j2cpp {
 
+
+
+org::apache::http::HttpResponse::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
+
+org::apache::http::HttpResponse::operator local_ref<org::apache::http::HttpMessage>() const
+{
+	return local_ref<org::apache::http::HttpMessage>(get_jtype());
+}
 
 local_ref< org::apache::http::StatusLine > org::apache::http::HttpResponse::getStatusLine()
 {

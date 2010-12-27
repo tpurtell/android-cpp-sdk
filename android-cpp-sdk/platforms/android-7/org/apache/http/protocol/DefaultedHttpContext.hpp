@@ -38,11 +38,16 @@ namespace org { namespace apache { namespace http { namespace protocol {
 		J2CPP_DECLARE_METHOD(3)
 		J2CPP_DECLARE_METHOD(4)
 
-		DefaultedHttpContext(jobject jobj)
+		explicit DefaultedHttpContext(jobject jobj)
 		: cpp_object<DefaultedHttpContext>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<org::apache::http::protocol::HttpContext>() const;
+
+
+		DefaultedHttpContext(local_ref< org::apache::http::protocol::HttpContext > const&, local_ref< org::apache::http::protocol::HttpContext > const&);
 		local_ref< java::lang::Object > getAttribute(local_ref< java::lang::String > const&);
 		local_ref< java::lang::Object > removeAttribute(local_ref< java::lang::String > const&);
 		void setAttribute(local_ref< java::lang::String > const&, local_ref< java::lang::Object > const&);
@@ -53,7 +58,6 @@ namespace org { namespace apache { namespace http { namespace protocol {
 } //namespace http
 } //namespace apache
 } //namespace org
-
 
 } //namespace j2cpp
 
@@ -67,17 +71,29 @@ namespace org { namespace apache { namespace http { namespace protocol {
 namespace j2cpp {
 
 
-template <>
-local_ref< org::apache::http::protocol::DefaultedHttpContext > create< org::apache::http::protocol::DefaultedHttpContext>(local_ref< org::apache::http::protocol::HttpContext > const &a0, local_ref< org::apache::http::protocol::HttpContext > const &a1)
+
+org::apache::http::protocol::DefaultedHttpContext::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< org::apache::http::protocol::DefaultedHttpContext >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::apache::http::protocol::DefaultedHttpContext::J2CPP_CLASS_NAME>(),
-			get_method_id<org::apache::http::protocol::DefaultedHttpContext::J2CPP_CLASS_NAME, org::apache::http::protocol::DefaultedHttpContext::J2CPP_METHOD_NAME(0), org::apache::http::protocol::DefaultedHttpContext::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+org::apache::http::protocol::DefaultedHttpContext::operator local_ref<org::apache::http::protocol::HttpContext>() const
+{
+	return local_ref<org::apache::http::protocol::HttpContext>(get_jtype());
+}
+
+
+org::apache::http::protocol::DefaultedHttpContext::DefaultedHttpContext(local_ref< org::apache::http::protocol::HttpContext > const &a0, local_ref< org::apache::http::protocol::HttpContext > const &a1)
+: cpp_object<org::apache::http::protocol::DefaultedHttpContext>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::apache::http::protocol::DefaultedHttpContext::J2CPP_CLASS_NAME>(),
+		get_method_id<org::apache::http::protocol::DefaultedHttpContext::J2CPP_CLASS_NAME, org::apache::http::protocol::DefaultedHttpContext::J2CPP_METHOD_NAME(0), org::apache::http::protocol::DefaultedHttpContext::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
 
 local_ref< java::lang::Object > org::apache::http::protocol::DefaultedHttpContext::getAttribute(local_ref< java::lang::String > const &a0)
 {

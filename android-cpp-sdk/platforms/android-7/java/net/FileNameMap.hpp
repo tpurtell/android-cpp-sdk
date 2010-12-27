@@ -10,9 +10,11 @@
 #define J2CPP_JAVA_NET_FILENAMEMAP_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -30,17 +32,19 @@ namespace java { namespace net {
 
 		J2CPP_DECLARE_METHOD(0)
 
-		FileNameMap(jobject jobj)
+		explicit FileNameMap(jobject jobj)
 		: cpp_object<FileNameMap>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		local_ref< java::lang::String > getContentTypeFor(local_ref< java::lang::String > const&);
 	}; //class FileNameMap
 
 } //namespace net
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -53,6 +57,12 @@ namespace java { namespace net {
 
 namespace j2cpp {
 
+
+
+java::net::FileNameMap::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 local_ref< java::lang::String > java::net::FileNameMap::getContentTypeFor(local_ref< java::lang::String > const &a0)
 {

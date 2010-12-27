@@ -10,9 +10,11 @@
 #define J2CPP_ORG_APACHE_HTTP_ENTITY_CONTENTLENGTHSTRATEGY_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { class HttpMessage; } } } }
 
 
+#include <java/lang/Object.hpp>
 #include <org/apache/http/HttpMessage.hpp>
 
 
@@ -32,10 +34,13 @@ namespace org { namespace apache { namespace http { namespace entity {
 		J2CPP_DECLARE_FIELD(0)
 		J2CPP_DECLARE_FIELD(1)
 
-		ContentLengthStrategy(jobject jobj)
+		explicit ContentLengthStrategy(jobject jobj)
 		: cpp_object<ContentLengthStrategy>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		cpp_long determineLength(local_ref< org::apache::http::HttpMessage > const&);
 
@@ -48,7 +53,6 @@ namespace org { namespace apache { namespace http { namespace entity {
 } //namespace apache
 } //namespace org
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ORG_APACHE_HTTP_ENTITY_CONTENTLENGTHSTRATEGY_HPP_DECL
@@ -60,6 +64,12 @@ namespace org { namespace apache { namespace http { namespace entity {
 
 namespace j2cpp {
 
+
+
+org::apache::http::entity::ContentLengthStrategy::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 cpp_long org::apache::http::entity::ContentLengthStrategy::determineLength(local_ref< org::apache::http::HttpMessage > const &a0)
 {

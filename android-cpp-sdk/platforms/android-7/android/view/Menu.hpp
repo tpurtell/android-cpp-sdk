@@ -10,6 +10,7 @@
 #define J2CPP_ANDROID_VIEW_MENU_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class CharSequence; } } }
 namespace j2cpp { namespace android { namespace content { class ComponentName; } } }
 namespace j2cpp { namespace android { namespace content { class Intent; } } }
@@ -24,6 +25,7 @@ namespace j2cpp { namespace android { namespace view { class SubMenu; } } }
 #include <android/view/MenuItem.hpp>
 #include <android/view/SubMenu.hpp>
 #include <java/lang/CharSequence.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -72,10 +74,13 @@ namespace android { namespace view {
 		J2CPP_DECLARE_FIELD(7)
 		J2CPP_DECLARE_FIELD(8)
 
-		Menu(jobject jobj)
+		explicit Menu(jobject jobj)
 		: cpp_object<Menu>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		local_ref< android::view::MenuItem > add(local_ref< java::lang::CharSequence > const&);
 		local_ref< android::view::MenuItem > add(cpp_int const&);
@@ -116,7 +121,6 @@ namespace android { namespace view {
 } //namespace view
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_VIEW_MENU_HPP_DECL
@@ -128,6 +132,12 @@ namespace android { namespace view {
 
 namespace j2cpp {
 
+
+
+android::view::Menu::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 local_ref< android::view::MenuItem > android::view::Menu::add(local_ref< java::lang::CharSequence > const &a0)
 {

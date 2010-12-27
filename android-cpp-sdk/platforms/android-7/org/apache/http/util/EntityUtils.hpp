@@ -10,10 +10,12 @@
 #define J2CPP_ORG_APACHE_HTTP_UTIL_ENTITYUTILS_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { class HttpEntity; } } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <org/apache/http/HttpEntity.hpp>
 
@@ -36,10 +38,13 @@ namespace org { namespace apache { namespace http { namespace util {
 		J2CPP_DECLARE_METHOD(3)
 		J2CPP_DECLARE_METHOD(4)
 
-		EntityUtils(jobject jobj)
+		explicit EntityUtils(jobject jobj)
 		: cpp_object<EntityUtils>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		static local_ref< cpp_byte_array<1> > toByteArray(local_ref< org::apache::http::HttpEntity > const&);
 		static local_ref< java::lang::String > getContentCharSet(local_ref< org::apache::http::HttpEntity > const&);
@@ -51,7 +56,6 @@ namespace org { namespace apache { namespace http { namespace util {
 } //namespace http
 } //namespace apache
 } //namespace org
-
 
 } //namespace j2cpp
 
@@ -65,16 +69,12 @@ namespace org { namespace apache { namespace http { namespace util {
 namespace j2cpp {
 
 
-template <>
-local_ref< org::apache::http::util::EntityUtils > create< org::apache::http::util::EntityUtils>()
+
+org::apache::http::util::EntityUtils::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< org::apache::http::util::EntityUtils >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::apache::http::util::EntityUtils::J2CPP_CLASS_NAME>(),
-			get_method_id<org::apache::http::util::EntityUtils::J2CPP_CLASS_NAME, org::apache::http::util::EntityUtils::J2CPP_METHOD_NAME(0), org::apache::http::util::EntityUtils::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
 
 local_ref< cpp_byte_array<1> > org::apache::http::util::EntityUtils::toByteArray(local_ref< org::apache::http::HttpEntity > const &a0)
 {

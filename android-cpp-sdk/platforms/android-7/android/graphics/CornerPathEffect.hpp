@@ -10,8 +10,10 @@
 #define J2CPP_ANDROID_GRAPHICS_CORNERPATHEFFECT_HPP_DECL
 
 
+namespace j2cpp { namespace android { namespace graphics { class PathEffect; } } }
 
 
+#include <android/graphics/PathEffect.hpp>
 
 
 namespace j2cpp {
@@ -28,16 +30,19 @@ namespace android { namespace graphics {
 
 		J2CPP_DECLARE_METHOD(0)
 
-		CornerPathEffect(jobject jobj)
+		explicit CornerPathEffect(jobject jobj)
 		: cpp_object<CornerPathEffect>(jobj)
 		{
 		}
 
+		operator local_ref<android::graphics::PathEffect>() const;
+
+
+		CornerPathEffect(cpp_float const&);
 	}; //class CornerPathEffect
 
 } //namespace graphics
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -51,17 +56,24 @@ namespace android { namespace graphics {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::graphics::CornerPathEffect > create< android::graphics::CornerPathEffect>(cpp_float const &a0)
+
+android::graphics::CornerPathEffect::operator local_ref<android::graphics::PathEffect>() const
 {
-	return local_ref< android::graphics::CornerPathEffect >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::graphics::CornerPathEffect::J2CPP_CLASS_NAME>(),
-			get_method_id<android::graphics::CornerPathEffect::J2CPP_CLASS_NAME, android::graphics::CornerPathEffect::J2CPP_METHOD_NAME(0), android::graphics::CornerPathEffect::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<android::graphics::PathEffect>(get_jtype());
 }
+
+
+android::graphics::CornerPathEffect::CornerPathEffect(cpp_float const &a0)
+: cpp_object<android::graphics::CornerPathEffect>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::graphics::CornerPathEffect::J2CPP_CLASS_NAME>(),
+		get_method_id<android::graphics::CornerPathEffect::J2CPP_CLASS_NAME, android::graphics::CornerPathEffect::J2CPP_METHOD_NAME(0), android::graphics::CornerPathEffect::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 
 J2CPP_DEFINE_CLASS(android::graphics::CornerPathEffect,"android/graphics/CornerPathEffect")

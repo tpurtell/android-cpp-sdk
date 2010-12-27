@@ -17,13 +17,17 @@ namespace j2cpp { namespace android { namespace view { class View; } } }
 namespace j2cpp { namespace android { namespace view { class ViewGroup; } } }
 namespace j2cpp { namespace android { namespace widget { class ListAdapter; } } }
 namespace j2cpp { namespace android { namespace widget { class Filter; } } }
+namespace j2cpp { namespace android { namespace widget { class WrapperListAdapter; } } }
+namespace j2cpp { namespace android { namespace widget { class Filterable; } } }
 
 
 #include <android/database/DataSetObserver.hpp>
 #include <android/view/View.hpp>
 #include <android/view/ViewGroup.hpp>
 #include <android/widget/Filter.hpp>
+#include <android/widget/Filterable.hpp>
 #include <android/widget/ListAdapter.hpp>
+#include <android/widget/WrapperListAdapter.hpp>
 #include <java/lang/Object.hpp>
 #include <java/util/ArrayList.hpp>
 
@@ -60,11 +64,17 @@ namespace android { namespace widget {
 		J2CPP_DECLARE_METHOD(17)
 		J2CPP_DECLARE_METHOD(18)
 
-		HeaderViewListAdapter(jobject jobj)
+		explicit HeaderViewListAdapter(jobject jobj)
 		: cpp_object<HeaderViewListAdapter>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<android::widget::WrapperListAdapter>() const;
+		operator local_ref<android::widget::Filterable>() const;
+
+
+		HeaderViewListAdapter(local_ref< java::util::ArrayList > const&, local_ref< java::util::ArrayList > const&, local_ref< android::widget::ListAdapter > const&);
 		cpp_int getHeadersCount();
 		cpp_int getFootersCount();
 		cpp_boolean isEmpty();
@@ -88,7 +98,6 @@ namespace android { namespace widget {
 } //namespace widget
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_WIDGET_HEADERVIEWLISTADAPTER_HPP_DECL
@@ -101,17 +110,34 @@ namespace android { namespace widget {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::widget::HeaderViewListAdapter > create< android::widget::HeaderViewListAdapter>(local_ref< java::util::ArrayList > const &a0, local_ref< java::util::ArrayList > const &a1, local_ref< android::widget::ListAdapter > const &a2)
+
+android::widget::HeaderViewListAdapter::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::widget::HeaderViewListAdapter >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::widget::HeaderViewListAdapter::J2CPP_CLASS_NAME>(),
-			get_method_id<android::widget::HeaderViewListAdapter::J2CPP_CLASS_NAME, android::widget::HeaderViewListAdapter::J2CPP_METHOD_NAME(0), android::widget::HeaderViewListAdapter::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+android::widget::HeaderViewListAdapter::operator local_ref<android::widget::WrapperListAdapter>() const
+{
+	return local_ref<android::widget::WrapperListAdapter>(get_jtype());
+}
+
+android::widget::HeaderViewListAdapter::operator local_ref<android::widget::Filterable>() const
+{
+	return local_ref<android::widget::Filterable>(get_jtype());
+}
+
+
+android::widget::HeaderViewListAdapter::HeaderViewListAdapter(local_ref< java::util::ArrayList > const &a0, local_ref< java::util::ArrayList > const &a1, local_ref< android::widget::ListAdapter > const &a2)
+: cpp_object<android::widget::HeaderViewListAdapter>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::widget::HeaderViewListAdapter::J2CPP_CLASS_NAME>(),
+		get_method_id<android::widget::HeaderViewListAdapter::J2CPP_CLASS_NAME, android::widget::HeaderViewListAdapter::J2CPP_METHOD_NAME(0), android::widget::HeaderViewListAdapter::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
+	)
+)
+{
+}
+
 
 cpp_int android::widget::HeaderViewListAdapter::getHeadersCount()
 {

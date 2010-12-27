@@ -26,6 +26,5 @@
 #include <j2cpp/get_class.hpp>
 #include <j2cpp/get_method_id.hpp>
 #include <j2cpp/field.hpp>
-#include <j2cpp/create.hpp>
 
 #endif //J2CPP_J2CPP_HPP

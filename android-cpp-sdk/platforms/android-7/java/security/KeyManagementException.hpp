@@ -12,10 +12,12 @@
 
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace lang { class Throwable; } } }
+namespace j2cpp { namespace java { namespace security { class KeyException; } } }
 
 
 #include <java/lang/String.hpp>
 #include <java/lang/Throwable.hpp>
+#include <java/security/KeyException.hpp>
 
 
 namespace j2cpp {
@@ -35,16 +37,22 @@ namespace java { namespace security {
 		J2CPP_DECLARE_METHOD(2)
 		J2CPP_DECLARE_METHOD(3)
 
-		KeyManagementException(jobject jobj)
+		explicit KeyManagementException(jobject jobj)
 		: cpp_object<KeyManagementException>(jobj)
 		{
 		}
 
+		operator local_ref<java::security::KeyException>() const;
+
+
+		KeyManagementException(local_ref< java::lang::String > const&);
+		KeyManagementException();
+		KeyManagementException(local_ref< java::lang::String > const&, local_ref< java::lang::Throwable > const&);
+		KeyManagementException(local_ref< java::lang::Throwable > const&);
 	}; //class KeyManagementException
 
 } //namespace security
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -58,52 +66,62 @@ namespace java { namespace security {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::security::KeyManagementException > create< java::security::KeyManagementException>(local_ref< java::lang::String > const &a0)
+
+java::security::KeyManagementException::operator local_ref<java::security::KeyException>() const
 {
-	return local_ref< java::security::KeyManagementException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::security::KeyManagementException::J2CPP_CLASS_NAME>(),
-			get_method_id<java::security::KeyManagementException::J2CPP_CLASS_NAME, java::security::KeyManagementException::J2CPP_METHOD_NAME(0), java::security::KeyManagementException::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::security::KeyException>(get_jtype());
 }
 
-template <>
-local_ref< java::security::KeyManagementException > create< java::security::KeyManagementException>()
+
+java::security::KeyManagementException::KeyManagementException(local_ref< java::lang::String > const &a0)
+: cpp_object<java::security::KeyManagementException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::security::KeyManagementException::J2CPP_CLASS_NAME>(),
+		get_method_id<java::security::KeyManagementException::J2CPP_CLASS_NAME, java::security::KeyManagementException::J2CPP_METHOD_NAME(0), java::security::KeyManagementException::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< java::security::KeyManagementException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::security::KeyManagementException::J2CPP_CLASS_NAME>(),
-			get_method_id<java::security::KeyManagementException::J2CPP_CLASS_NAME, java::security::KeyManagementException::J2CPP_METHOD_NAME(1), java::security::KeyManagementException::J2CPP_METHOD_SIGNATURE(1), false>()
-		)
-	);
 }
 
-template <>
-local_ref< java::security::KeyManagementException > create< java::security::KeyManagementException>(local_ref< java::lang::String > const &a0, local_ref< java::lang::Throwable > const &a1)
+
+
+java::security::KeyManagementException::KeyManagementException()
+: cpp_object<java::security::KeyManagementException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::security::KeyManagementException::J2CPP_CLASS_NAME>(),
+		get_method_id<java::security::KeyManagementException::J2CPP_CLASS_NAME, java::security::KeyManagementException::J2CPP_METHOD_NAME(1), java::security::KeyManagementException::J2CPP_METHOD_SIGNATURE(1), false>()
+	)
+)
 {
-	return local_ref< java::security::KeyManagementException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::security::KeyManagementException::J2CPP_CLASS_NAME>(),
-			get_method_id<java::security::KeyManagementException::J2CPP_CLASS_NAME, java::security::KeyManagementException::J2CPP_METHOD_NAME(2), java::security::KeyManagementException::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< java::security::KeyManagementException > create< java::security::KeyManagementException>(local_ref< java::lang::Throwable > const &a0)
+
+
+java::security::KeyManagementException::KeyManagementException(local_ref< java::lang::String > const &a0, local_ref< java::lang::Throwable > const &a1)
+: cpp_object<java::security::KeyManagementException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::security::KeyManagementException::J2CPP_CLASS_NAME>(),
+		get_method_id<java::security::KeyManagementException::J2CPP_CLASS_NAME, java::security::KeyManagementException::J2CPP_METHOD_NAME(2), java::security::KeyManagementException::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
 {
-	return local_ref< java::security::KeyManagementException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::security::KeyManagementException::J2CPP_CLASS_NAME>(),
-			get_method_id<java::security::KeyManagementException::J2CPP_CLASS_NAME, java::security::KeyManagementException::J2CPP_METHOD_NAME(3), java::security::KeyManagementException::J2CPP_METHOD_SIGNATURE(3), false>(),
-			a0.get_jtype()
-		)
-	);
 }
+
+
+
+java::security::KeyManagementException::KeyManagementException(local_ref< java::lang::Throwable > const &a0)
+: cpp_object<java::security::KeyManagementException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::security::KeyManagementException::J2CPP_CLASS_NAME>(),
+		get_method_id<java::security::KeyManagementException::J2CPP_CLASS_NAME, java::security::KeyManagementException::J2CPP_METHOD_NAME(3), java::security::KeyManagementException::J2CPP_METHOD_SIGNATURE(3), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 
 J2CPP_DEFINE_CLASS(java::security::KeyManagementException,"java/security/KeyManagementException")

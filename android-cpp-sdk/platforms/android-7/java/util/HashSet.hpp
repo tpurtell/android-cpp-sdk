@@ -10,14 +10,22 @@
 #define J2CPP_JAVA_UTIL_HASHSET_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace lang { class Cloneable; } } }
+namespace j2cpp { namespace java { namespace util { class Set; } } }
 namespace j2cpp { namespace java { namespace util { class Iterator; } } }
+namespace j2cpp { namespace java { namespace util { class AbstractSet; } } }
 namespace j2cpp { namespace java { namespace util { class Collection; } } }
 
 
+#include <java/io/Serializable.hpp>
+#include <java/lang/Cloneable.hpp>
 #include <java/lang/Object.hpp>
+#include <java/util/AbstractSet.hpp>
 #include <java/util/Collection.hpp>
 #include <java/util/Iterator.hpp>
+#include <java/util/Set.hpp>
 
 
 namespace j2cpp {
@@ -45,11 +53,21 @@ namespace java { namespace util {
 		J2CPP_DECLARE_METHOD(10)
 		J2CPP_DECLARE_METHOD(11)
 
-		HashSet(jobject jobj)
+		explicit HashSet(jobject jobj)
 		: cpp_object<HashSet>(jobj)
 		{
 		}
 
+		operator local_ref<java::util::AbstractSet>() const;
+		operator local_ref<java::util::Set>() const;
+		operator local_ref<java::lang::Cloneable>() const;
+		operator local_ref<java::io::Serializable>() const;
+
+
+		HashSet();
+		HashSet(cpp_int const&);
+		HashSet(cpp_int const&, cpp_float const&);
+		HashSet(local_ref< java::util::Collection > const&);
 		cpp_boolean add(local_ref< java::lang::Object > const&);
 		void clear();
 		local_ref< java::lang::Object > clone();
@@ -63,7 +81,6 @@ namespace java { namespace util {
 } //namespace util
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_UTIL_HASHSET_HPP_DECL
@@ -76,52 +93,77 @@ namespace java { namespace util {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::util::HashSet > create< java::util::HashSet>()
+
+java::util::HashSet::operator local_ref<java::util::AbstractSet>() const
 {
-	return local_ref< java::util::HashSet >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::HashSet::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::HashSet::J2CPP_CLASS_NAME, java::util::HashSet::J2CPP_METHOD_NAME(0), java::util::HashSet::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::util::AbstractSet>(get_jtype());
 }
 
-template <>
-local_ref< java::util::HashSet > create< java::util::HashSet>(cpp_int const &a0)
+java::util::HashSet::operator local_ref<java::util::Set>() const
 {
-	return local_ref< java::util::HashSet >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::HashSet::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::HashSet::J2CPP_CLASS_NAME, java::util::HashSet::J2CPP_METHOD_NAME(1), java::util::HashSet::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::util::Set>(get_jtype());
 }
 
-template <>
-local_ref< java::util::HashSet > create< java::util::HashSet>(cpp_int const &a0, cpp_float const &a1)
+java::util::HashSet::operator local_ref<java::lang::Cloneable>() const
 {
-	return local_ref< java::util::HashSet >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::HashSet::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::HashSet::J2CPP_CLASS_NAME, java::util::HashSet::J2CPP_METHOD_NAME(2), java::util::HashSet::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Cloneable>(get_jtype());
 }
 
-template <>
-local_ref< java::util::HashSet > create< java::util::HashSet>(local_ref< java::util::Collection > const &a0)
+java::util::HashSet::operator local_ref<java::io::Serializable>() const
 {
-	return local_ref< java::util::HashSet >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::HashSet::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::HashSet::J2CPP_CLASS_NAME, java::util::HashSet::J2CPP_METHOD_NAME(3), java::util::HashSet::J2CPP_METHOD_SIGNATURE(3), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::io::Serializable>(get_jtype());
 }
+
+
+java::util::HashSet::HashSet()
+: cpp_object<java::util::HashSet>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::util::HashSet::J2CPP_CLASS_NAME>(),
+		get_method_id<java::util::HashSet::J2CPP_CLASS_NAME, java::util::HashSet::J2CPP_METHOD_NAME(0), java::util::HashSet::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
+
+
+java::util::HashSet::HashSet(cpp_int const &a0)
+: cpp_object<java::util::HashSet>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::util::HashSet::J2CPP_CLASS_NAME>(),
+		get_method_id<java::util::HashSet::J2CPP_CLASS_NAME, java::util::HashSet::J2CPP_METHOD_NAME(1), java::util::HashSet::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
+
+
+java::util::HashSet::HashSet(cpp_int const &a0, cpp_float const &a1)
+: cpp_object<java::util::HashSet>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::util::HashSet::J2CPP_CLASS_NAME>(),
+		get_method_id<java::util::HashSet::J2CPP_CLASS_NAME, java::util::HashSet::J2CPP_METHOD_NAME(2), java::util::HashSet::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
+
+
+java::util::HashSet::HashSet(local_ref< java::util::Collection > const &a0)
+: cpp_object<java::util::HashSet>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::util::HashSet::J2CPP_CLASS_NAME>(),
+		get_method_id<java::util::HashSet::J2CPP_CLASS_NAME, java::util::HashSet::J2CPP_METHOD_NAME(3), java::util::HashSet::J2CPP_METHOD_SIGNATURE(3), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 cpp_boolean java::util::HashSet::add(local_ref< java::lang::Object > const &a0)
 {

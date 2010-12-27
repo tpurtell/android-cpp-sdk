@@ -10,6 +10,7 @@
 #define J2CPP_ORG_APACHE_HTTP_PROTOCOL_HTTPREQUESTEXECUTOR_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { class HttpRequest; } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { class HttpClientConnection; } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace protocol { class HttpProcessor; } } } } }
@@ -17,6 +18,7 @@ namespace j2cpp { namespace org { namespace apache { namespace http { namespace 
 namespace j2cpp { namespace org { namespace apache { namespace http { class HttpResponse; } } } }
 
 
+#include <java/lang/Object.hpp>
 #include <org/apache/http/HttpClientConnection.hpp>
 #include <org/apache/http/HttpRequest.hpp>
 #include <org/apache/http/HttpResponse.hpp>
@@ -44,11 +46,15 @@ namespace org { namespace apache { namespace http { namespace protocol {
 		J2CPP_DECLARE_METHOD(5)
 		J2CPP_DECLARE_METHOD(6)
 
-		HttpRequestExecutor(jobject jobj)
+		explicit HttpRequestExecutor(jobject jobj)
 		: cpp_object<HttpRequestExecutor>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		HttpRequestExecutor();
 		local_ref< org::apache::http::HttpResponse > execute(local_ref< org::apache::http::HttpRequest > const&, local_ref< org::apache::http::HttpClientConnection > const&, local_ref< org::apache::http::protocol::HttpContext > const&);
 		void preProcess(local_ref< org::apache::http::HttpRequest > const&, local_ref< org::apache::http::protocol::HttpProcessor > const&, local_ref< org::apache::http::protocol::HttpContext > const&);
 		void postProcess(local_ref< org::apache::http::HttpResponse > const&, local_ref< org::apache::http::protocol::HttpProcessor > const&, local_ref< org::apache::http::protocol::HttpContext > const&);
@@ -58,7 +64,6 @@ namespace org { namespace apache { namespace http { namespace protocol {
 } //namespace http
 } //namespace apache
 } //namespace org
-
 
 } //namespace j2cpp
 
@@ -72,16 +77,23 @@ namespace org { namespace apache { namespace http { namespace protocol {
 namespace j2cpp {
 
 
-template <>
-local_ref< org::apache::http::protocol::HttpRequestExecutor > create< org::apache::http::protocol::HttpRequestExecutor>()
+
+org::apache::http::protocol::HttpRequestExecutor::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< org::apache::http::protocol::HttpRequestExecutor >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::apache::http::protocol::HttpRequestExecutor::J2CPP_CLASS_NAME>(),
-			get_method_id<org::apache::http::protocol::HttpRequestExecutor::J2CPP_CLASS_NAME, org::apache::http::protocol::HttpRequestExecutor::J2CPP_METHOD_NAME(0), org::apache::http::protocol::HttpRequestExecutor::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+org::apache::http::protocol::HttpRequestExecutor::HttpRequestExecutor()
+: cpp_object<org::apache::http::protocol::HttpRequestExecutor>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::apache::http::protocol::HttpRequestExecutor::J2CPP_CLASS_NAME>(),
+		get_method_id<org::apache::http::protocol::HttpRequestExecutor::J2CPP_CLASS_NAME, org::apache::http::protocol::HttpRequestExecutor::J2CPP_METHOD_NAME(0), org::apache::http::protocol::HttpRequestExecutor::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 
 local_ref< org::apache::http::HttpResponse > org::apache::http::protocol::HttpRequestExecutor::execute(local_ref< org::apache::http::HttpRequest > const &a0, local_ref< org::apache::http::HttpClientConnection > const &a1, local_ref< org::apache::http::protocol::HttpContext > const &a2)

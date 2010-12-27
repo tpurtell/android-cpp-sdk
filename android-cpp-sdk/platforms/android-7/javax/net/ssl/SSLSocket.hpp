@@ -12,10 +12,12 @@
 
 namespace j2cpp { namespace javax { namespace net { namespace ssl { class SSLSession; } } } }
 namespace j2cpp { namespace javax { namespace net { namespace ssl { class HandshakeCompletedListener; } } } }
+namespace j2cpp { namespace java { namespace net { class Socket; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 
 
 #include <java/lang/String.hpp>
+#include <java/net/Socket.hpp>
 #include <javax/net/ssl/HandshakeCompletedListener.hpp>
 #include <javax/net/ssl/SSLSession.hpp>
 
@@ -56,10 +58,13 @@ namespace javax { namespace net { namespace ssl {
 		J2CPP_DECLARE_METHOD(21)
 		J2CPP_DECLARE_METHOD(22)
 
-		SSLSocket(jobject jobj)
+		explicit SSLSocket(jobject jobj)
 		: cpp_object<SSLSocket>(jobj)
 		{
 		}
+
+		operator local_ref<java::net::Socket>() const;
+
 
 		local_ref< cpp_object_array<java::lang::String, 1> > getSupportedCipherSuites();
 		local_ref< cpp_object_array<java::lang::String, 1> > getEnabledCipherSuites();
@@ -85,7 +90,6 @@ namespace javax { namespace net { namespace ssl {
 } //namespace net
 } //namespace javax
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVAX_NET_SSL_SSLSOCKET_HPP_DECL
@@ -98,64 +102,16 @@ namespace javax { namespace net { namespace ssl {
 namespace j2cpp {
 
 
-template <>
-local_ref< javax::net::ssl::SSLSocket > create< javax::net::ssl::SSLSocket>()
+
+javax::net::ssl::SSLSocket::operator local_ref<java::net::Socket>() const
 {
-	return local_ref< javax::net::ssl::SSLSocket >(
-		environment::get().get_jenv()->NewObject(
-			get_class<javax::net::ssl::SSLSocket::J2CPP_CLASS_NAME>(),
-			get_method_id<javax::net::ssl::SSLSocket::J2CPP_CLASS_NAME, javax::net::ssl::SSLSocket::J2CPP_METHOD_NAME(0), javax::net::ssl::SSLSocket::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::net::Socket>(get_jtype());
 }
 
-template <>
-local_ref< javax::net::ssl::SSLSocket > create< javax::net::ssl::SSLSocket>(local_ref< java::lang::String > const &a0, cpp_int const &a1)
-{
-	return local_ref< javax::net::ssl::SSLSocket >(
-		environment::get().get_jenv()->NewObject(
-			get_class<javax::net::ssl::SSLSocket::J2CPP_CLASS_NAME>(),
-			get_method_id<javax::net::ssl::SSLSocket::J2CPP_CLASS_NAME, javax::net::ssl::SSLSocket::J2CPP_METHOD_NAME(1), javax::net::ssl::SSLSocket::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
-}
 
-template <>
-local_ref< javax::net::ssl::SSLSocket > create< javax::net::ssl::SSLSocket>(local_ref< java::net::InetAddress > const &a0, cpp_int const &a1)
-{
-	return local_ref< javax::net::ssl::SSLSocket >(
-		environment::get().get_jenv()->NewObject(
-			get_class<javax::net::ssl::SSLSocket::J2CPP_CLASS_NAME>(),
-			get_method_id<javax::net::ssl::SSLSocket::J2CPP_CLASS_NAME, javax::net::ssl::SSLSocket::J2CPP_METHOD_NAME(2), javax::net::ssl::SSLSocket::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
-}
 
-template <>
-local_ref< javax::net::ssl::SSLSocket > create< javax::net::ssl::SSLSocket>(local_ref< java::lang::String > const &a0, cpp_int const &a1, local_ref< java::net::InetAddress > const &a2, cpp_int const &a3)
-{
-	return local_ref< javax::net::ssl::SSLSocket >(
-		environment::get().get_jenv()->NewObject(
-			get_class<javax::net::ssl::SSLSocket::J2CPP_CLASS_NAME>(),
-			get_method_id<javax::net::ssl::SSLSocket::J2CPP_CLASS_NAME, javax::net::ssl::SSLSocket::J2CPP_METHOD_NAME(3), javax::net::ssl::SSLSocket::J2CPP_METHOD_SIGNATURE(3), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype()
-		)
-	);
-}
 
-template <>
-local_ref< javax::net::ssl::SSLSocket > create< javax::net::ssl::SSLSocket>(local_ref< java::net::InetAddress > const &a0, cpp_int const &a1, local_ref< java::net::InetAddress > const &a2, cpp_int const &a3)
-{
-	return local_ref< javax::net::ssl::SSLSocket >(
-		environment::get().get_jenv()->NewObject(
-			get_class<javax::net::ssl::SSLSocket::J2CPP_CLASS_NAME>(),
-			get_method_id<javax::net::ssl::SSLSocket::J2CPP_CLASS_NAME, javax::net::ssl::SSLSocket::J2CPP_METHOD_NAME(4), javax::net::ssl::SSLSocket::J2CPP_METHOD_SIGNATURE(4), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype()
-		)
-	);
-}
+
 
 local_ref< cpp_object_array<java::lang::String, 1> > javax::net::ssl::SSLSocket::getSupportedCipherSuites()
 {

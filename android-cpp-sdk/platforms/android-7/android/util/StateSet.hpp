@@ -10,9 +10,11 @@
 #define J2CPP_ANDROID_UTIL_STATESET_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -37,11 +39,15 @@ namespace android { namespace util {
 		J2CPP_DECLARE_METHOD(6)
 		J2CPP_DECLARE_FIELD(0)
 
-		StateSet(jobject jobj)
+		explicit StateSet(jobject jobj)
 		: cpp_object<StateSet>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		StateSet();
 		static cpp_boolean isWildCard(local_ref< cpp_int_array<1> > const&);
 		static cpp_boolean stateSetMatches(local_ref< cpp_int_array<1> > const&, local_ref< cpp_int_array<1> > const&);
 		static cpp_boolean stateSetMatches(local_ref< cpp_int_array<1> > const&, cpp_int const&);
@@ -53,7 +59,6 @@ namespace android { namespace util {
 
 } //namespace util
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -67,16 +72,23 @@ namespace android { namespace util {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::util::StateSet > create< android::util::StateSet>()
+
+android::util::StateSet::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::util::StateSet >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::util::StateSet::J2CPP_CLASS_NAME>(),
-			get_method_id<android::util::StateSet::J2CPP_CLASS_NAME, android::util::StateSet::J2CPP_METHOD_NAME(0), android::util::StateSet::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::util::StateSet::StateSet()
+: cpp_object<android::util::StateSet>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::util::StateSet::J2CPP_CLASS_NAME>(),
+		get_method_id<android::util::StateSet::J2CPP_CLASS_NAME, android::util::StateSet::J2CPP_METHOD_NAME(0), android::util::StateSet::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 cpp_boolean android::util::StateSet::isWildCard(local_ref< cpp_int_array<1> > const &a0)
 {
@@ -132,6 +144,7 @@ local_ref< java::lang::String > android::util::StateSet::dump(local_ref< cpp_int
 		)
 	);
 }
+
 
 
 static_field<

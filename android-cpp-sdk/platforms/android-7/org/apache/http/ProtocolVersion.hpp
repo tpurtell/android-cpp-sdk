@@ -10,10 +10,14 @@
 #define J2CPP_ORG_APACHE_HTTP_PROTOCOLVERSION_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace lang { class Cloneable; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 
 
+#include <java/io/Serializable.hpp>
+#include <java/lang/Cloneable.hpp>
 #include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
@@ -47,11 +51,17 @@ namespace org { namespace apache { namespace http {
 		J2CPP_DECLARE_FIELD(1)
 		J2CPP_DECLARE_FIELD(2)
 
-		ProtocolVersion(jobject jobj)
+		explicit ProtocolVersion(jobject jobj)
 		: cpp_object<ProtocolVersion>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::io::Serializable>() const;
+		operator local_ref<java::lang::Cloneable>() const;
+
+
+		ProtocolVersion(local_ref< java::lang::String > const&, cpp_int const&, cpp_int const&);
 		local_ref< java::lang::String > getProtocol();
 		cpp_int getMajor();
 		cpp_int getMinor();
@@ -71,7 +81,6 @@ namespace org { namespace apache { namespace http {
 } //namespace apache
 } //namespace org
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ORG_APACHE_HTTP_PROTOCOLVERSION_HPP_DECL
@@ -84,17 +93,34 @@ namespace org { namespace apache { namespace http {
 namespace j2cpp {
 
 
-template <>
-local_ref< org::apache::http::ProtocolVersion > create< org::apache::http::ProtocolVersion>(local_ref< java::lang::String > const &a0, cpp_int const &a1, cpp_int const &a2)
+
+org::apache::http::ProtocolVersion::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< org::apache::http::ProtocolVersion >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::apache::http::ProtocolVersion::J2CPP_CLASS_NAME>(),
-			get_method_id<org::apache::http::ProtocolVersion::J2CPP_CLASS_NAME, org::apache::http::ProtocolVersion::J2CPP_METHOD_NAME(0), org::apache::http::ProtocolVersion::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+org::apache::http::ProtocolVersion::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jtype());
+}
+
+org::apache::http::ProtocolVersion::operator local_ref<java::lang::Cloneable>() const
+{
+	return local_ref<java::lang::Cloneable>(get_jtype());
+}
+
+
+org::apache::http::ProtocolVersion::ProtocolVersion(local_ref< java::lang::String > const &a0, cpp_int const &a1, cpp_int const &a2)
+: cpp_object<org::apache::http::ProtocolVersion>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::apache::http::ProtocolVersion::J2CPP_CLASS_NAME>(),
+		get_method_id<org::apache::http::ProtocolVersion::J2CPP_CLASS_NAME, org::apache::http::ProtocolVersion::J2CPP_METHOD_NAME(0), org::apache::http::ProtocolVersion::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
+	)
+)
+{
+}
+
 
 local_ref< java::lang::String > org::apache::http::ProtocolVersion::getProtocol()
 {

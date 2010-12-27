@@ -10,9 +10,11 @@
 #define J2CPP_ORG_APACHE_HTTP_CONN_PARAMS_CONNCONNECTIONPNAMES_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -30,10 +32,13 @@ namespace org { namespace apache { namespace http { namespace conn { namespace p
 
 		J2CPP_DECLARE_FIELD(0)
 
-		ConnConnectionPNames(jobject jobj)
+		explicit ConnConnectionPNames(jobject jobj)
 		: cpp_object<ConnConnectionPNames>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(0), J2CPP_FIELD_SIGNATURE(0), local_ref< java::lang::String > > MAX_STATUS_LINE_GARBAGE;
 	}; //class ConnConnectionPNames
@@ -43,7 +48,6 @@ namespace org { namespace apache { namespace http { namespace conn { namespace p
 } //namespace http
 } //namespace apache
 } //namespace org
-
 
 } //namespace j2cpp
 
@@ -56,6 +60,12 @@ namespace org { namespace apache { namespace http { namespace conn { namespace p
 
 namespace j2cpp {
 
+
+
+org::apache::http::conn::params::ConnConnectionPNames::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 static_field<
 	org::apache::http::conn::params::ConnConnectionPNames::J2CPP_CLASS_NAME,

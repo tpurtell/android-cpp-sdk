@@ -13,9 +13,11 @@
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace android { namespace content { class Context; } } }
 namespace j2cpp { namespace android { namespace view { class View; } } }
+namespace j2cpp { namespace android { namespace view { class ViewGroup; } } }
 namespace j2cpp { namespace android { namespace view { namespace accessibility { class AccessibilityEvent; } } } }
 namespace j2cpp { namespace android { namespace view { namespace View_ { class OnClickListener; } } } }
 namespace j2cpp { namespace android { namespace view { namespace ViewGroup_ { class LayoutParams; } } } }
+namespace j2cpp { namespace android { namespace view { namespace ContextMenu_ { class ContextMenuInfo; } } } }
 namespace j2cpp { namespace android { namespace widget { namespace AdapterView_ { class OnItemLongClickListener; } } } }
 namespace j2cpp { namespace android { namespace widget { namespace AdapterView_ { class OnItemSelectedListener; } } } }
 namespace j2cpp { namespace android { namespace widget { namespace AdapterView_ { class OnItemClickListener; } } } }
@@ -25,6 +27,7 @@ namespace j2cpp { namespace android { namespace util { class AttributeSet; } } }
 
 #include <android/content/Context.hpp>
 #include <android/util/AttributeSet.hpp>
+#include <android/view/ContextMenu.hpp>
 #include <android/view/View.hpp>
 #include <android/view/ViewGroup.hpp>
 #include <android/view/accessibility/AccessibilityEvent.hpp>
@@ -50,10 +53,13 @@ namespace android { namespace widget {
 
 			J2CPP_DECLARE_METHOD(0)
 
-			OnItemLongClickListener(jobject jobj)
+			explicit OnItemLongClickListener(jobject jobj)
 			: cpp_object<OnItemLongClickListener>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+
 
 			cpp_boolean onItemLongClick(local_ref< android::widget::AdapterView > const&, local_ref< android::view::View > const&, cpp_int const&, cpp_long const&);
 		}; //class OnItemLongClickListener
@@ -69,10 +75,13 @@ namespace android { namespace widget {
 			J2CPP_DECLARE_METHOD(0)
 			J2CPP_DECLARE_METHOD(1)
 
-			OnItemSelectedListener(jobject jobj)
+			explicit OnItemSelectedListener(jobject jobj)
 			: cpp_object<OnItemSelectedListener>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+
 
 			void onItemSelected(local_ref< android::widget::AdapterView > const&, local_ref< android::view::View > const&, cpp_int const&, cpp_long const&);
 			void onNothingSelected(local_ref< android::widget::AdapterView > const&);
@@ -88,10 +97,13 @@ namespace android { namespace widget {
 
 			J2CPP_DECLARE_METHOD(0)
 
-			OnItemClickListener(jobject jobj)
+			explicit OnItemClickListener(jobject jobj)
 			: cpp_object<OnItemClickListener>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+
 
 			void onItemClick(local_ref< android::widget::AdapterView > const&, local_ref< android::view::View > const&, cpp_int const&, cpp_long const&);
 		}; //class OnItemClickListener
@@ -109,14 +121,19 @@ namespace android { namespace widget {
 			J2CPP_DECLARE_FIELD(1)
 			J2CPP_DECLARE_FIELD(2)
 
-			AdapterContextMenuInfo(jobject jobj)
+			explicit AdapterContextMenuInfo(jobject jobj)
 			: cpp_object<AdapterContextMenuInfo>(jobj)
-			, targetView(jobj)
-			, position(jobj)
-			, id(jobj)
+, targetView(jobj)
+, position(jobj)
+, id(jobj)
 			{
 			}
 
+			operator local_ref<java::lang::Object>() const;
+			operator local_ref<android::view::ContextMenu_::ContextMenuInfo>() const;
+
+
+			AdapterContextMenuInfo(local_ref< android::view::View > const&, cpp_int const&, cpp_long const&);
 
 			field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(0), J2CPP_FIELD_SIGNATURE(0), local_ref< android::view::View > > targetView;
 			field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(1), J2CPP_FIELD_SIGNATURE(1), cpp_int > position;
@@ -182,11 +199,17 @@ namespace android { namespace widget {
 		typedef AdapterView_::OnItemClickListener OnItemClickListener;
 		typedef AdapterView_::AdapterContextMenuInfo AdapterContextMenuInfo;
 
-		AdapterView(jobject jobj)
+		explicit AdapterView(jobject jobj)
 		: cpp_object<AdapterView>(jobj)
 		{
 		}
 
+		operator local_ref<android::view::ViewGroup>() const;
+
+
+		AdapterView(local_ref< android::content::Context > const&);
+		AdapterView(local_ref< android::content::Context > const&, local_ref< android::util::AttributeSet > const&);
+		AdapterView(local_ref< android::content::Context > const&, local_ref< android::util::AttributeSet > const&, cpp_int const&);
 		void setOnItemClickListener(local_ref< android::widget::AdapterView_::OnItemClickListener > const&);
 		local_ref< android::widget::AdapterView_::OnItemClickListener > getOnItemClickListener();
 		cpp_boolean performItemClick(local_ref< android::view::View > const&, cpp_int const&, cpp_long const&);
@@ -230,7 +253,6 @@ namespace android { namespace widget {
 } //namespace widget
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_WIDGET_ADAPTERVIEW_HPP_DECL
@@ -243,6 +265,12 @@ namespace android { namespace widget {
 namespace j2cpp {
 
 
+
+
+android::widget::AdapterView_::OnItemLongClickListener::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 cpp_boolean android::widget::AdapterView_::OnItemLongClickListener::onItemLongClick(local_ref< android::widget::AdapterView > const &a0, local_ref< android::view::View > const &a1, cpp_int const &a2, cpp_long const &a3)
 {
@@ -258,6 +286,12 @@ cpp_boolean android::widget::AdapterView_::OnItemLongClickListener::onItemLongCl
 
 J2CPP_DEFINE_CLASS(android::widget::AdapterView_::OnItemLongClickListener,"android/widget/AdapterView$OnItemLongClickListener")
 J2CPP_DEFINE_METHOD(android::widget::AdapterView_::OnItemLongClickListener,0,"onItemLongClick","(Landroid/widget/AdapterView;Landroid/view/View;IJ)Z")
+
+
+android::widget::AdapterView_::OnItemSelectedListener::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 void android::widget::AdapterView_::OnItemSelectedListener::onItemSelected(local_ref< android::widget::AdapterView > const &a0, local_ref< android::view::View > const &a1, cpp_int const &a2, cpp_long const &a3)
 {
@@ -286,6 +320,12 @@ J2CPP_DEFINE_CLASS(android::widget::AdapterView_::OnItemSelectedListener,"androi
 J2CPP_DEFINE_METHOD(android::widget::AdapterView_::OnItemSelectedListener,0,"onItemSelected","(Landroid/widget/AdapterView;Landroid/view/View;IJ)V")
 J2CPP_DEFINE_METHOD(android::widget::AdapterView_::OnItemSelectedListener,1,"onNothingSelected","(Landroid/widget/AdapterView;)V")
 
+
+android::widget::AdapterView_::OnItemClickListener::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
+
 void android::widget::AdapterView_::OnItemClickListener::onItemClick(local_ref< android::widget::AdapterView > const &a0, local_ref< android::view::View > const &a1, cpp_int const &a2, cpp_long const &a3)
 {
 	return void(
@@ -301,17 +341,32 @@ void android::widget::AdapterView_::OnItemClickListener::onItemClick(local_ref< 
 J2CPP_DEFINE_CLASS(android::widget::AdapterView_::OnItemClickListener,"android/widget/AdapterView$OnItemClickListener")
 J2CPP_DEFINE_METHOD(android::widget::AdapterView_::OnItemClickListener,0,"onItemClick","(Landroid/widget/AdapterView;Landroid/view/View;IJ)V")
 
-template <>
-local_ref< android::widget::AdapterView_::AdapterContextMenuInfo > create< android::widget::AdapterView_::AdapterContextMenuInfo>(local_ref< android::view::View > const &a0, cpp_int const &a1, cpp_long const &a2)
+
+android::widget::AdapterView_::AdapterContextMenuInfo::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::widget::AdapterView_::AdapterContextMenuInfo >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::widget::AdapterView_::AdapterContextMenuInfo::J2CPP_CLASS_NAME>(),
-			get_method_id<android::widget::AdapterView_::AdapterContextMenuInfo::J2CPP_CLASS_NAME, android::widget::AdapterView_::AdapterContextMenuInfo::J2CPP_METHOD_NAME(0), android::widget::AdapterView_::AdapterContextMenuInfo::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+android::widget::AdapterView_::AdapterContextMenuInfo::operator local_ref<android::view::ContextMenu_::ContextMenuInfo>() const
+{
+	return local_ref<android::view::ContextMenu_::ContextMenuInfo>(get_jtype());
+}
+
+
+android::widget::AdapterView_::AdapterContextMenuInfo::AdapterContextMenuInfo(local_ref< android::view::View > const &a0, cpp_int const &a1, cpp_long const &a2)
+: cpp_object<android::widget::AdapterView_::AdapterContextMenuInfo>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::widget::AdapterView_::AdapterContextMenuInfo::J2CPP_CLASS_NAME>(),
+		get_method_id<android::widget::AdapterView_::AdapterContextMenuInfo::J2CPP_CLASS_NAME, android::widget::AdapterView_::AdapterContextMenuInfo::J2CPP_METHOD_NAME(0), android::widget::AdapterView_::AdapterContextMenuInfo::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
+	)
+)
+, targetView(get_jtype())
+, position(get_jtype())
+, id(get_jtype())
+{
+}
+
 
 
 
@@ -322,41 +377,50 @@ J2CPP_DEFINE_FIELD(android::widget::AdapterView_::AdapterContextMenuInfo,1,"posi
 J2CPP_DEFINE_FIELD(android::widget::AdapterView_::AdapterContextMenuInfo,2,"id","J")
 
 
-template <>
-local_ref< android::widget::AdapterView > create< android::widget::AdapterView>(local_ref< android::content::Context > const &a0)
+
+android::widget::AdapterView::operator local_ref<android::view::ViewGroup>() const
 {
-	return local_ref< android::widget::AdapterView >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::widget::AdapterView::J2CPP_CLASS_NAME>(),
-			get_method_id<android::widget::AdapterView::J2CPP_CLASS_NAME, android::widget::AdapterView::J2CPP_METHOD_NAME(0), android::widget::AdapterView::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<android::view::ViewGroup>(get_jtype());
 }
 
-template <>
-local_ref< android::widget::AdapterView > create< android::widget::AdapterView>(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1)
+
+android::widget::AdapterView::AdapterView(local_ref< android::content::Context > const &a0)
+: cpp_object<android::widget::AdapterView>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::widget::AdapterView::J2CPP_CLASS_NAME>(),
+		get_method_id<android::widget::AdapterView::J2CPP_CLASS_NAME, android::widget::AdapterView::J2CPP_METHOD_NAME(0), android::widget::AdapterView::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< android::widget::AdapterView >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::widget::AdapterView::J2CPP_CLASS_NAME>(),
-			get_method_id<android::widget::AdapterView::J2CPP_CLASS_NAME, android::widget::AdapterView::J2CPP_METHOD_NAME(1), android::widget::AdapterView::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< android::widget::AdapterView > create< android::widget::AdapterView>(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1, cpp_int const &a2)
+
+
+android::widget::AdapterView::AdapterView(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1)
+: cpp_object<android::widget::AdapterView>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::widget::AdapterView::J2CPP_CLASS_NAME>(),
+		get_method_id<android::widget::AdapterView::J2CPP_CLASS_NAME, android::widget::AdapterView::J2CPP_METHOD_NAME(1), android::widget::AdapterView::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
 {
-	return local_ref< android::widget::AdapterView >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::widget::AdapterView::J2CPP_CLASS_NAME>(),
-			get_method_id<android::widget::AdapterView::J2CPP_CLASS_NAME, android::widget::AdapterView::J2CPP_METHOD_NAME(2), android::widget::AdapterView::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
-		)
-	);
 }
+
+
+
+android::widget::AdapterView::AdapterView(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1, cpp_int const &a2)
+: cpp_object<android::widget::AdapterView>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::widget::AdapterView::J2CPP_CLASS_NAME>(),
+		get_method_id<android::widget::AdapterView::J2CPP_CLASS_NAME, android::widget::AdapterView::J2CPP_METHOD_NAME(2), android::widget::AdapterView::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
+	)
+)
+{
+}
+
 
 void android::widget::AdapterView::setOnItemClickListener(local_ref< android::widget::AdapterView_::OnItemClickListener > const &a0)
 {

@@ -10,6 +10,7 @@
 #define J2CPP_ORG_APACHE_HTTP_PROTOCOL_HTTPSERVICE_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { class ConnectionReuseStrategy; } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { class HttpServerConnection; } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace protocol { class HttpProcessor; } } } } }
@@ -20,6 +21,7 @@ namespace j2cpp { namespace org { namespace apache { namespace http { class Http
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace params { class HttpParams; } } } } }
 
 
+#include <java/lang/Object.hpp>
 #include <org/apache/http/ConnectionReuseStrategy.hpp>
 #include <org/apache/http/HttpResponseFactory.hpp>
 #include <org/apache/http/HttpServerConnection.hpp>
@@ -54,11 +56,15 @@ namespace org { namespace apache { namespace http { namespace protocol {
 		J2CPP_DECLARE_METHOD(9)
 		J2CPP_DECLARE_METHOD(10)
 
-		HttpService(jobject jobj)
+		explicit HttpService(jobject jobj)
 		: cpp_object<HttpService>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		HttpService(local_ref< org::apache::http::protocol::HttpProcessor > const&, local_ref< org::apache::http::ConnectionReuseStrategy > const&, local_ref< org::apache::http::HttpResponseFactory > const&);
 		void setHttpProcessor(local_ref< org::apache::http::protocol::HttpProcessor > const&);
 		void setConnReuseStrategy(local_ref< org::apache::http::ConnectionReuseStrategy > const&);
 		void setResponseFactory(local_ref< org::apache::http::HttpResponseFactory > const&);
@@ -74,7 +80,6 @@ namespace org { namespace apache { namespace http { namespace protocol {
 } //namespace apache
 } //namespace org
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ORG_APACHE_HTTP_PROTOCOL_HTTPSERVICE_HPP_DECL
@@ -87,17 +92,24 @@ namespace org { namespace apache { namespace http { namespace protocol {
 namespace j2cpp {
 
 
-template <>
-local_ref< org::apache::http::protocol::HttpService > create< org::apache::http::protocol::HttpService>(local_ref< org::apache::http::protocol::HttpProcessor > const &a0, local_ref< org::apache::http::ConnectionReuseStrategy > const &a1, local_ref< org::apache::http::HttpResponseFactory > const &a2)
+
+org::apache::http::protocol::HttpService::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< org::apache::http::protocol::HttpService >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::apache::http::protocol::HttpService::J2CPP_CLASS_NAME>(),
-			get_method_id<org::apache::http::protocol::HttpService::J2CPP_CLASS_NAME, org::apache::http::protocol::HttpService::J2CPP_METHOD_NAME(0), org::apache::http::protocol::HttpService::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+org::apache::http::protocol::HttpService::HttpService(local_ref< org::apache::http::protocol::HttpProcessor > const &a0, local_ref< org::apache::http::ConnectionReuseStrategy > const &a1, local_ref< org::apache::http::HttpResponseFactory > const &a2)
+: cpp_object<org::apache::http::protocol::HttpService>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::apache::http::protocol::HttpService::J2CPP_CLASS_NAME>(),
+		get_method_id<org::apache::http::protocol::HttpService::J2CPP_CLASS_NAME, org::apache::http::protocol::HttpService::J2CPP_METHOD_NAME(0), org::apache::http::protocol::HttpService::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
+	)
+)
+{
+}
+
 
 void org::apache::http::protocol::HttpService::setHttpProcessor(local_ref< org::apache::http::protocol::HttpProcessor > const &a0)
 {

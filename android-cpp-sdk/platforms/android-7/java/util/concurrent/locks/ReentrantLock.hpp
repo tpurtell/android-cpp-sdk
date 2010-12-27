@@ -10,16 +10,22 @@
 #define J2CPP_JAVA_UTIL_CONCURRENT_LOCKS_REENTRANTLOCK_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class Thread; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace util { namespace concurrent { namespace locks { class Lock; } } } } }
 namespace j2cpp { namespace java { namespace util { namespace concurrent { namespace locks { class Condition; } } } } }
 namespace j2cpp { namespace java { namespace util { namespace concurrent { class TimeUnit; } } } }
 
 
+#include <java/io/Serializable.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/lang/Thread.hpp>
 #include <java/util/concurrent/TimeUnit.hpp>
 #include <java/util/concurrent/locks/Condition.hpp>
+#include <java/util/concurrent/locks/Lock.hpp>
 
 
 namespace j2cpp {
@@ -56,11 +62,18 @@ namespace java { namespace util { namespace concurrent { namespace locks {
 		J2CPP_DECLARE_METHOD(19)
 		J2CPP_DECLARE_METHOD(20)
 
-		ReentrantLock(jobject jobj)
+		explicit ReentrantLock(jobject jobj)
 		: cpp_object<ReentrantLock>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::util::concurrent::locks::Lock>() const;
+		operator local_ref<java::io::Serializable>() const;
+
+
+		ReentrantLock();
+		ReentrantLock(cpp_boolean const&);
 		void lock();
 		void lockInterruptibly();
 		cpp_boolean tryLock();
@@ -84,7 +97,6 @@ namespace java { namespace util { namespace concurrent { namespace locks {
 } //namespace util
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_UTIL_CONCURRENT_LOCKS_REENTRANTLOCK_HPP_DECL
@@ -97,28 +109,46 @@ namespace java { namespace util { namespace concurrent { namespace locks {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::util::concurrent::locks::ReentrantLock > create< java::util::concurrent::locks::ReentrantLock>()
+
+java::util::concurrent::locks::ReentrantLock::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::util::concurrent::locks::ReentrantLock >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::concurrent::locks::ReentrantLock::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::concurrent::locks::ReentrantLock::J2CPP_CLASS_NAME, java::util::concurrent::locks::ReentrantLock::J2CPP_METHOD_NAME(0), java::util::concurrent::locks::ReentrantLock::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
 
-template <>
-local_ref< java::util::concurrent::locks::ReentrantLock > create< java::util::concurrent::locks::ReentrantLock>(cpp_boolean const &a0)
+java::util::concurrent::locks::ReentrantLock::operator local_ref<java::util::concurrent::locks::Lock>() const
 {
-	return local_ref< java::util::concurrent::locks::ReentrantLock >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::concurrent::locks::ReentrantLock::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::concurrent::locks::ReentrantLock::J2CPP_CLASS_NAME, java::util::concurrent::locks::ReentrantLock::J2CPP_METHOD_NAME(1), java::util::concurrent::locks::ReentrantLock::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::util::concurrent::locks::Lock>(get_jtype());
 }
+
+java::util::concurrent::locks::ReentrantLock::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jtype());
+}
+
+
+java::util::concurrent::locks::ReentrantLock::ReentrantLock()
+: cpp_object<java::util::concurrent::locks::ReentrantLock>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::util::concurrent::locks::ReentrantLock::J2CPP_CLASS_NAME>(),
+		get_method_id<java::util::concurrent::locks::ReentrantLock::J2CPP_CLASS_NAME, java::util::concurrent::locks::ReentrantLock::J2CPP_METHOD_NAME(0), java::util::concurrent::locks::ReentrantLock::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
+
+
+java::util::concurrent::locks::ReentrantLock::ReentrantLock(cpp_boolean const &a0)
+: cpp_object<java::util::concurrent::locks::ReentrantLock>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::util::concurrent::locks::ReentrantLock::J2CPP_CLASS_NAME>(),
+		get_method_id<java::util::concurrent::locks::ReentrantLock::J2CPP_CLASS_NAME, java::util::concurrent::locks::ReentrantLock::J2CPP_METHOD_NAME(1), java::util::concurrent::locks::ReentrantLock::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 void java::util::concurrent::locks::ReentrantLock::lock()
 {

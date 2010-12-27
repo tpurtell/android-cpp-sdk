@@ -11,12 +11,14 @@
 
 
 namespace j2cpp { namespace java { namespace io { class File; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace android { namespace content { namespace res { class AssetManager; } } } }
 
 
 #include <android/content/res/AssetManager.hpp>
 #include <java/io/File.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -54,10 +56,13 @@ namespace android { namespace graphics {
 		J2CPP_DECLARE_FIELD(7)
 		J2CPP_DECLARE_FIELD(8)
 
-		Typeface(jobject jobj)
+		explicit Typeface(jobject jobj)
 		: cpp_object<Typeface>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		cpp_int getStyle();
 		cpp_boolean isBold();
@@ -83,7 +88,6 @@ namespace android { namespace graphics {
 } //namespace graphics
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_GRAPHICS_TYPEFACE_HPP_DECL
@@ -96,16 +100,12 @@ namespace android { namespace graphics {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::graphics::Typeface > create< android::graphics::Typeface>()
+
+android::graphics::Typeface::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::graphics::Typeface >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::graphics::Typeface::J2CPP_CLASS_NAME>(),
-			get_method_id<android::graphics::Typeface::J2CPP_CLASS_NAME, android::graphics::Typeface::J2CPP_METHOD_NAME(0), android::graphics::Typeface::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
 
 cpp_int android::graphics::Typeface::getStyle()
 {
@@ -202,6 +202,7 @@ local_ref< android::graphics::Typeface > android::graphics::Typeface::createFrom
 		)
 	);
 }
+
 
 
 

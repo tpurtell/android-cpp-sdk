@@ -12,11 +12,13 @@
 
 namespace j2cpp { namespace java { namespace io { class OutputStream; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
+namespace j2cpp { namespace java { namespace util { namespace zip { class DeflaterOutputStream; } } } }
 namespace j2cpp { namespace java { namespace util { namespace zip { class ZipEntry; } } } }
 
 
 #include <java/io/OutputStream.hpp>
 #include <java/lang/String.hpp>
+#include <java/util/zip/DeflaterOutputStream.hpp>
 #include <java/util/zip/ZipEntry.hpp>
 
 
@@ -44,11 +46,15 @@ namespace java { namespace util { namespace zip {
 		J2CPP_DECLARE_FIELD(0)
 		J2CPP_DECLARE_FIELD(1)
 
-		ZipOutputStream(jobject jobj)
+		explicit ZipOutputStream(jobject jobj)
 		: cpp_object<ZipOutputStream>(jobj)
 		{
 		}
 
+		operator local_ref<java::util::zip::DeflaterOutputStream>() const;
+
+
+		ZipOutputStream(local_ref< java::io::OutputStream > const&);
 		void close();
 		void closeEntry();
 		void finish();
@@ -66,7 +72,6 @@ namespace java { namespace util { namespace zip {
 } //namespace util
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_UTIL_ZIP_ZIPOUTPUTSTREAM_HPP_DECL
@@ -79,17 +84,24 @@ namespace java { namespace util { namespace zip {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::util::zip::ZipOutputStream > create< java::util::zip::ZipOutputStream>(local_ref< java::io::OutputStream > const &a0)
+
+java::util::zip::ZipOutputStream::operator local_ref<java::util::zip::DeflaterOutputStream>() const
 {
-	return local_ref< java::util::zip::ZipOutputStream >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::zip::ZipOutputStream::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::zip::ZipOutputStream::J2CPP_CLASS_NAME, java::util::zip::ZipOutputStream::J2CPP_METHOD_NAME(0), java::util::zip::ZipOutputStream::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::util::zip::DeflaterOutputStream>(get_jtype());
 }
+
+
+java::util::zip::ZipOutputStream::ZipOutputStream(local_ref< java::io::OutputStream > const &a0)
+: cpp_object<java::util::zip::ZipOutputStream>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::util::zip::ZipOutputStream::J2CPP_CLASS_NAME>(),
+		get_method_id<java::util::zip::ZipOutputStream::J2CPP_CLASS_NAME, java::util::zip::ZipOutputStream::J2CPP_METHOD_NAME(0), java::util::zip::ZipOutputStream::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 void java::util::zip::ZipOutputStream::close()
 {

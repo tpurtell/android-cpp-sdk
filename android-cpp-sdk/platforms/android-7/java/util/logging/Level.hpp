@@ -10,10 +10,12 @@
 #define J2CPP_JAVA_UTIL_LOGGING_LEVEL_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 
 
+#include <java/io/Serializable.hpp>
 #include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
@@ -51,10 +53,14 @@ namespace java { namespace util { namespace logging {
 		J2CPP_DECLARE_FIELD(7)
 		J2CPP_DECLARE_FIELD(8)
 
-		Level(jobject jobj)
+		explicit Level(jobject jobj)
 		: cpp_object<Level>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::io::Serializable>() const;
+
 
 		static local_ref< java::util::logging::Level > parse(local_ref< java::lang::String > const&);
 		local_ref< java::lang::String > getName();
@@ -80,7 +86,6 @@ namespace java { namespace util { namespace logging {
 } //namespace util
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_UTIL_LOGGING_LEVEL_HPP_DECL
@@ -93,29 +98,18 @@ namespace java { namespace util { namespace logging {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::util::logging::Level > create< java::util::logging::Level>(local_ref< java::lang::String > const &a0, cpp_int const &a1)
+
+java::util::logging::Level::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::util::logging::Level >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::logging::Level::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::logging::Level::J2CPP_CLASS_NAME, java::util::logging::Level::J2CPP_METHOD_NAME(0), java::util::logging::Level::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
 
-template <>
-local_ref< java::util::logging::Level > create< java::util::logging::Level>(local_ref< java::lang::String > const &a0, cpp_int const &a1, local_ref< java::lang::String > const &a2)
+java::util::logging::Level::operator local_ref<java::io::Serializable>() const
 {
-	return local_ref< java::util::logging::Level >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::logging::Level::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::logging::Level::J2CPP_CLASS_NAME, java::util::logging::Level::J2CPP_METHOD_NAME(1), java::util::logging::Level::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
-		)
-	);
+	return local_ref<java::io::Serializable>(get_jtype());
 }
+
+
 
 local_ref< java::util::logging::Level > java::util::logging::Level::parse(local_ref< java::lang::String > const &a0)
 {
@@ -198,6 +192,7 @@ local_ref< java::lang::String > java::util::logging::Level::toString()
 		)
 	);
 }
+
 
 
 static_field<

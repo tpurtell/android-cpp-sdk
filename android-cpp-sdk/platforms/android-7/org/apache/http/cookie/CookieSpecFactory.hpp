@@ -10,10 +10,12 @@
 #define J2CPP_ORG_APACHE_HTTP_COOKIE_COOKIESPECFACTORY_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace cookie { class CookieSpec; } } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { namespace params { class HttpParams; } } } } }
 
 
+#include <java/lang/Object.hpp>
 #include <org/apache/http/cookie/CookieSpec.hpp>
 #include <org/apache/http/params/HttpParams.hpp>
 
@@ -32,10 +34,13 @@ namespace org { namespace apache { namespace http { namespace cookie {
 
 		J2CPP_DECLARE_METHOD(0)
 
-		CookieSpecFactory(jobject jobj)
+		explicit CookieSpecFactory(jobject jobj)
 		: cpp_object<CookieSpecFactory>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		local_ref< org::apache::http::cookie::CookieSpec > newInstance(local_ref< org::apache::http::params::HttpParams > const&);
 	}; //class CookieSpecFactory
@@ -44,7 +49,6 @@ namespace org { namespace apache { namespace http { namespace cookie {
 } //namespace http
 } //namespace apache
 } //namespace org
-
 
 } //namespace j2cpp
 
@@ -57,6 +61,12 @@ namespace org { namespace apache { namespace http { namespace cookie {
 
 namespace j2cpp {
 
+
+
+org::apache::http::cookie::CookieSpecFactory::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 local_ref< org::apache::http::cookie::CookieSpec > org::apache::http::cookie::CookieSpecFactory::newInstance(local_ref< org::apache::http::params::HttpParams > const &a0)
 {

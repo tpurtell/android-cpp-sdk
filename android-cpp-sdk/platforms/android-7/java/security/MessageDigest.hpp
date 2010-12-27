@@ -13,12 +13,14 @@
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace security { class Provider; } } }
+namespace j2cpp { namespace java { namespace security { class MessageDigestSpi; } } }
 namespace j2cpp { namespace java { namespace nio { class ByteBuffer; } } }
 
 
 #include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/nio/ByteBuffer.hpp>
+#include <java/security/MessageDigestSpi.hpp>
 #include <java/security/Provider.hpp>
 
 
@@ -53,10 +55,13 @@ namespace java { namespace security {
 		J2CPP_DECLARE_METHOD(16)
 		J2CPP_DECLARE_METHOD(17)
 
-		MessageDigest(jobject jobj)
+		explicit MessageDigest(jobject jobj)
 		: cpp_object<MessageDigest>(jobj)
 		{
 		}
+
+		operator local_ref<java::security::MessageDigestSpi>() const;
+
 
 		static local_ref< java::security::MessageDigest > getInstance(local_ref< java::lang::String > const&);
 		static local_ref< java::security::MessageDigest > getInstance(local_ref< java::lang::String > const&, local_ref< java::lang::String > const&);
@@ -80,7 +85,6 @@ namespace java { namespace security {
 } //namespace security
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_SECURITY_MESSAGEDIGEST_HPP_DECL
@@ -93,17 +97,12 @@ namespace java { namespace security {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::security::MessageDigest > create< java::security::MessageDigest>(local_ref< java::lang::String > const &a0)
+
+java::security::MessageDigest::operator local_ref<java::security::MessageDigestSpi>() const
 {
-	return local_ref< java::security::MessageDigest >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::security::MessageDigest::J2CPP_CLASS_NAME>(),
-			get_method_id<java::security::MessageDigest::J2CPP_CLASS_NAME, java::security::MessageDigest::J2CPP_METHOD_NAME(0), java::security::MessageDigest::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::security::MessageDigestSpi>(get_jtype());
 }
+
 
 local_ref< java::security::MessageDigest > java::security::MessageDigest::getInstance(local_ref< java::lang::String > const &a0)
 {

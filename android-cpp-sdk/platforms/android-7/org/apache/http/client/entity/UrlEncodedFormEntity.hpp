@@ -12,10 +12,12 @@
 
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace util { class List; } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { namespace entity { class StringEntity; } } } } }
 
 
 #include <java/lang/String.hpp>
 #include <java/util/List.hpp>
+#include <org/apache/http/entity/StringEntity.hpp>
 
 
 namespace j2cpp {
@@ -33,11 +35,16 @@ namespace org { namespace apache { namespace http { namespace client { namespace
 		J2CPP_DECLARE_METHOD(0)
 		J2CPP_DECLARE_METHOD(1)
 
-		UrlEncodedFormEntity(jobject jobj)
+		explicit UrlEncodedFormEntity(jobject jobj)
 		: cpp_object<UrlEncodedFormEntity>(jobj)
 		{
 		}
 
+		operator local_ref<org::apache::http::entity::StringEntity>() const;
+
+
+		UrlEncodedFormEntity(local_ref< java::util::List > const&, local_ref< java::lang::String > const&);
+		UrlEncodedFormEntity(local_ref< java::util::List > const&);
 	}; //class UrlEncodedFormEntity
 
 } //namespace entity
@@ -45,7 +52,6 @@ namespace org { namespace apache { namespace http { namespace client { namespace
 } //namespace http
 } //namespace apache
 } //namespace org
-
 
 } //namespace j2cpp
 
@@ -59,29 +65,37 @@ namespace org { namespace apache { namespace http { namespace client { namespace
 namespace j2cpp {
 
 
-template <>
-local_ref< org::apache::http::client::entity::UrlEncodedFormEntity > create< org::apache::http::client::entity::UrlEncodedFormEntity>(local_ref< java::util::List > const &a0, local_ref< java::lang::String > const &a1)
+
+org::apache::http::client::entity::UrlEncodedFormEntity::operator local_ref<org::apache::http::entity::StringEntity>() const
 {
-	return local_ref< org::apache::http::client::entity::UrlEncodedFormEntity >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::apache::http::client::entity::UrlEncodedFormEntity::J2CPP_CLASS_NAME>(),
-			get_method_id<org::apache::http::client::entity::UrlEncodedFormEntity::J2CPP_CLASS_NAME, org::apache::http::client::entity::UrlEncodedFormEntity::J2CPP_METHOD_NAME(0), org::apache::http::client::entity::UrlEncodedFormEntity::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<org::apache::http::entity::StringEntity>(get_jtype());
 }
 
-template <>
-local_ref< org::apache::http::client::entity::UrlEncodedFormEntity > create< org::apache::http::client::entity::UrlEncodedFormEntity>(local_ref< java::util::List > const &a0)
+
+org::apache::http::client::entity::UrlEncodedFormEntity::UrlEncodedFormEntity(local_ref< java::util::List > const &a0, local_ref< java::lang::String > const &a1)
+: cpp_object<org::apache::http::client::entity::UrlEncodedFormEntity>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::apache::http::client::entity::UrlEncodedFormEntity::J2CPP_CLASS_NAME>(),
+		get_method_id<org::apache::http::client::entity::UrlEncodedFormEntity::J2CPP_CLASS_NAME, org::apache::http::client::entity::UrlEncodedFormEntity::J2CPP_METHOD_NAME(0), org::apache::http::client::entity::UrlEncodedFormEntity::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
 {
-	return local_ref< org::apache::http::client::entity::UrlEncodedFormEntity >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::apache::http::client::entity::UrlEncodedFormEntity::J2CPP_CLASS_NAME>(),
-			get_method_id<org::apache::http::client::entity::UrlEncodedFormEntity::J2CPP_CLASS_NAME, org::apache::http::client::entity::UrlEncodedFormEntity::J2CPP_METHOD_NAME(1), org::apache::http::client::entity::UrlEncodedFormEntity::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
 }
+
+
+
+org::apache::http::client::entity::UrlEncodedFormEntity::UrlEncodedFormEntity(local_ref< java::util::List > const &a0)
+: cpp_object<org::apache::http::client::entity::UrlEncodedFormEntity>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::apache::http::client::entity::UrlEncodedFormEntity::J2CPP_CLASS_NAME>(),
+		get_method_id<org::apache::http::client::entity::UrlEncodedFormEntity::J2CPP_CLASS_NAME, org::apache::http::client::entity::UrlEncodedFormEntity::J2CPP_METHOD_NAME(1), org::apache::http::client::entity::UrlEncodedFormEntity::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 
 J2CPP_DEFINE_CLASS(org::apache::http::client::entity::UrlEncodedFormEntity,"org/apache/http/client/entity/UrlEncodedFormEntity")

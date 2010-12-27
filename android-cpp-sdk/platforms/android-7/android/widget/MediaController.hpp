@@ -10,12 +10,14 @@
 #define J2CPP_ANDROID_WIDGET_MEDIACONTROLLER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace android { namespace content { class Context; } } }
 namespace j2cpp { namespace android { namespace view { class View; } } }
 namespace j2cpp { namespace android { namespace view { class KeyEvent; } } }
 namespace j2cpp { namespace android { namespace view { class MotionEvent; } } }
 namespace j2cpp { namespace android { namespace view { namespace View_ { class OnClickListener; } } } }
 namespace j2cpp { namespace android { namespace widget { namespace MediaController_ { class MediaPlayerControl; } } } }
+namespace j2cpp { namespace android { namespace widget { class FrameLayout; } } }
 namespace j2cpp { namespace android { namespace util { class AttributeSet; } } }
 
 
@@ -24,7 +26,9 @@ namespace j2cpp { namespace android { namespace util { class AttributeSet; } } }
 #include <android/view/KeyEvent.hpp>
 #include <android/view/MotionEvent.hpp>
 #include <android/view/View.hpp>
+#include <android/widget/FrameLayout.hpp>
 #include <android/widget/MediaController.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -53,10 +57,13 @@ namespace android { namespace widget {
 			J2CPP_DECLARE_METHOD(8)
 			J2CPP_DECLARE_METHOD(9)
 
-			MediaPlayerControl(jobject jobj)
+			explicit MediaPlayerControl(jobject jobj)
 			: cpp_object<MediaPlayerControl>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+
 
 			void start();
 			void pause();
@@ -97,11 +104,17 @@ namespace android { namespace widget {
 
 		typedef MediaController_::MediaPlayerControl MediaPlayerControl;
 
-		MediaController(jobject jobj)
+		explicit MediaController(jobject jobj)
 		: cpp_object<MediaController>(jobj)
 		{
 		}
 
+		operator local_ref<android::widget::FrameLayout>() const;
+
+
+		MediaController(local_ref< android::content::Context > const&, local_ref< android::util::AttributeSet > const&);
+		MediaController(local_ref< android::content::Context > const&, cpp_boolean const&);
+		MediaController(local_ref< android::content::Context > const&);
 		void onFinishInflate();
 		void setMediaPlayer(local_ref< android::widget::MediaController_::MediaPlayerControl > const&);
 		void setAnchorView(local_ref< android::view::View > const&);
@@ -119,7 +132,6 @@ namespace android { namespace widget {
 } //namespace widget
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_WIDGET_MEDIACONTROLLER_HPP_DECL
@@ -132,6 +144,12 @@ namespace android { namespace widget {
 namespace j2cpp {
 
 
+
+
+android::widget::MediaController_::MediaPlayerControl::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 void android::widget::MediaController_::MediaPlayerControl::start()
 {
@@ -248,41 +266,50 @@ J2CPP_DEFINE_METHOD(android::widget::MediaController_::MediaPlayerControl,8,"can
 J2CPP_DEFINE_METHOD(android::widget::MediaController_::MediaPlayerControl,9,"canSeekForward","()Z")
 
 
-template <>
-local_ref< android::widget::MediaController > create< android::widget::MediaController>(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1)
+
+android::widget::MediaController::operator local_ref<android::widget::FrameLayout>() const
 {
-	return local_ref< android::widget::MediaController >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::widget::MediaController::J2CPP_CLASS_NAME>(),
-			get_method_id<android::widget::MediaController::J2CPP_CLASS_NAME, android::widget::MediaController::J2CPP_METHOD_NAME(0), android::widget::MediaController::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<android::widget::FrameLayout>(get_jtype());
 }
 
-template <>
-local_ref< android::widget::MediaController > create< android::widget::MediaController>(local_ref< android::content::Context > const &a0, cpp_boolean const &a1)
+
+android::widget::MediaController::MediaController(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1)
+: cpp_object<android::widget::MediaController>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::widget::MediaController::J2CPP_CLASS_NAME>(),
+		get_method_id<android::widget::MediaController::J2CPP_CLASS_NAME, android::widget::MediaController::J2CPP_METHOD_NAME(0), android::widget::MediaController::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
 {
-	return local_ref< android::widget::MediaController >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::widget::MediaController::J2CPP_CLASS_NAME>(),
-			get_method_id<android::widget::MediaController::J2CPP_CLASS_NAME, android::widget::MediaController::J2CPP_METHOD_NAME(1), android::widget::MediaController::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< android::widget::MediaController > create< android::widget::MediaController>(local_ref< android::content::Context > const &a0)
+
+
+android::widget::MediaController::MediaController(local_ref< android::content::Context > const &a0, cpp_boolean const &a1)
+: cpp_object<android::widget::MediaController>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::widget::MediaController::J2CPP_CLASS_NAME>(),
+		get_method_id<android::widget::MediaController::J2CPP_CLASS_NAME, android::widget::MediaController::J2CPP_METHOD_NAME(1), android::widget::MediaController::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
 {
-	return local_ref< android::widget::MediaController >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::widget::MediaController::J2CPP_CLASS_NAME>(),
-			get_method_id<android::widget::MediaController::J2CPP_CLASS_NAME, android::widget::MediaController::J2CPP_METHOD_NAME(2), android::widget::MediaController::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype()
-		)
-	);
 }
+
+
+
+android::widget::MediaController::MediaController(local_ref< android::content::Context > const &a0)
+: cpp_object<android::widget::MediaController>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::widget::MediaController::J2CPP_CLASS_NAME>(),
+		get_method_id<android::widget::MediaController::J2CPP_CLASS_NAME, android::widget::MediaController::J2CPP_METHOD_NAME(2), android::widget::MediaController::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 void android::widget::MediaController::onFinishInflate()
 {

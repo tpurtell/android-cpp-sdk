@@ -10,10 +10,14 @@
 #define J2CPP_JAVA_BEANS_PROPERTYCHANGELISTENER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace beans { class PropertyChangeEvent; } } }
+namespace j2cpp { namespace java { namespace util { class EventListener; } } }
 
 
 #include <java/beans/PropertyChangeEvent.hpp>
+#include <java/lang/Object.hpp>
+#include <java/util/EventListener.hpp>
 
 
 namespace j2cpp {
@@ -30,17 +34,20 @@ namespace java { namespace beans {
 
 		J2CPP_DECLARE_METHOD(0)
 
-		PropertyChangeListener(jobject jobj)
+		explicit PropertyChangeListener(jobject jobj)
 		: cpp_object<PropertyChangeListener>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::util::EventListener>() const;
+
 
 		void propertyChange(local_ref< java::beans::PropertyChangeEvent > const&);
 	}; //class PropertyChangeListener
 
 } //namespace beans
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -53,6 +60,17 @@ namespace java { namespace beans {
 
 namespace j2cpp {
 
+
+
+java::beans::PropertyChangeListener::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
+
+java::beans::PropertyChangeListener::operator local_ref<java::util::EventListener>() const
+{
+	return local_ref<java::util::EventListener>(get_jtype());
+}
 
 void java::beans::PropertyChangeListener::propertyChange(local_ref< java::beans::PropertyChangeEvent > const &a0)
 {

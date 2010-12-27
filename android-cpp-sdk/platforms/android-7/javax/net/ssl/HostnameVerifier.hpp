@@ -11,9 +11,11 @@
 
 
 namespace j2cpp { namespace javax { namespace net { namespace ssl { class SSLSession; } } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <javax/net/ssl/SSLSession.hpp>
 
@@ -32,10 +34,13 @@ namespace javax { namespace net { namespace ssl {
 
 		J2CPP_DECLARE_METHOD(0)
 
-		HostnameVerifier(jobject jobj)
+		explicit HostnameVerifier(jobject jobj)
 		: cpp_object<HostnameVerifier>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		cpp_boolean verify(local_ref< java::lang::String > const&, local_ref< javax::net::ssl::SSLSession > const&);
 	}; //class HostnameVerifier
@@ -43,7 +48,6 @@ namespace javax { namespace net { namespace ssl {
 } //namespace ssl
 } //namespace net
 } //namespace javax
-
 
 } //namespace j2cpp
 
@@ -56,6 +60,12 @@ namespace javax { namespace net { namespace ssl {
 
 namespace j2cpp {
 
+
+
+javax::net::ssl::HostnameVerifier::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 cpp_boolean javax::net::ssl::HostnameVerifier::verify(local_ref< java::lang::String > const &a0, local_ref< javax::net::ssl::SSLSession > const &a1)
 {

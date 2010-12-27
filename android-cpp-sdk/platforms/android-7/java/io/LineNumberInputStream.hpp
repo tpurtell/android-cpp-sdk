@@ -10,9 +10,11 @@
 #define J2CPP_JAVA_IO_LINENUMBERINPUTSTREAM_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class FilterInputStream; } } }
 namespace j2cpp { namespace java { namespace io { class InputStream; } } }
 
 
+#include <java/io/FilterInputStream.hpp>
 #include <java/io/InputStream.hpp>
 
 
@@ -38,11 +40,15 @@ namespace java { namespace io {
 		J2CPP_DECLARE_METHOD(7)
 		J2CPP_DECLARE_METHOD(8)
 
-		LineNumberInputStream(jobject jobj)
+		explicit LineNumberInputStream(jobject jobj)
 		: cpp_object<LineNumberInputStream>(jobj)
 		{
 		}
 
+		operator local_ref<java::io::FilterInputStream>() const;
+
+
+		LineNumberInputStream(local_ref< java::io::InputStream > const&);
 		cpp_int available();
 		cpp_int getLineNumber();
 		void mark(cpp_int const&);
@@ -56,7 +62,6 @@ namespace java { namespace io {
 } //namespace io
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_IO_LINENUMBERINPUTSTREAM_HPP_DECL
@@ -69,17 +74,24 @@ namespace java { namespace io {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::io::LineNumberInputStream > create< java::io::LineNumberInputStream>(local_ref< java::io::InputStream > const &a0)
+
+java::io::LineNumberInputStream::operator local_ref<java::io::FilterInputStream>() const
 {
-	return local_ref< java::io::LineNumberInputStream >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::io::LineNumberInputStream::J2CPP_CLASS_NAME>(),
-			get_method_id<java::io::LineNumberInputStream::J2CPP_CLASS_NAME, java::io::LineNumberInputStream::J2CPP_METHOD_NAME(0), java::io::LineNumberInputStream::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::io::FilterInputStream>(get_jtype());
 }
+
+
+java::io::LineNumberInputStream::LineNumberInputStream(local_ref< java::io::InputStream > const &a0)
+: cpp_object<java::io::LineNumberInputStream>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::io::LineNumberInputStream::J2CPP_CLASS_NAME>(),
+		get_method_id<java::io::LineNumberInputStream::J2CPP_CLASS_NAME, java::io::LineNumberInputStream::J2CPP_METHOD_NAME(0), java::io::LineNumberInputStream::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 cpp_int java::io::LineNumberInputStream::available()
 {

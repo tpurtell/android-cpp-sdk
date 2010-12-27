@@ -13,6 +13,7 @@
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace android { namespace os { class Parcel; } } }
+namespace j2cpp { namespace android { namespace os { class Parcelable; } } }
 namespace j2cpp { namespace android { namespace os { namespace Parcelable_ { class Creator; } } } }
 
 
@@ -53,11 +54,15 @@ namespace android { namespace bluetooth {
 				J2CPP_DECLARE_FIELD(9)
 				J2CPP_DECLARE_FIELD(10)
 
-				Major(jobject jobj)
+				explicit Major(jobject jobj)
 				: cpp_object<Major>(jobj)
 				{
 				}
 
+				operator local_ref<java::lang::Object>() const;
+
+
+				Major();
 
 				static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(0), J2CPP_FIELD_SIGNATURE(0), cpp_int > MISC;
 				static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(1), J2CPP_FIELD_SIGNATURE(1), cpp_int > COMPUTER;
@@ -135,11 +140,15 @@ namespace android { namespace bluetooth {
 
 			typedef Device_::Major Major;
 
-			Device(jobject jobj)
+			explicit Device(jobject jobj)
 			: cpp_object<Device>(jobj)
 			{
 			}
 
+			operator local_ref<java::lang::Object>() const;
+
+
+			Device();
 
 			static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(0), J2CPP_FIELD_SIGNATURE(0), cpp_int > COMPUTER_UNCATEGORIZED;
 			static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(1), J2CPP_FIELD_SIGNATURE(1), cpp_int > COMPUTER_DESKTOP;
@@ -212,11 +221,15 @@ namespace android { namespace bluetooth {
 			J2CPP_DECLARE_FIELD(7)
 			J2CPP_DECLARE_FIELD(8)
 
-			Service(jobject jobj)
+			explicit Service(jobject jobj)
 			: cpp_object<Service>(jobj)
 			{
 			}
 
+			operator local_ref<java::lang::Object>() const;
+
+
+			Service();
 
 			static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(0), J2CPP_FIELD_SIGNATURE(0), cpp_int > LIMITED_DISCOVERABILITY;
 			static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(1), J2CPP_FIELD_SIGNATURE(1), cpp_int > POSITIONING;
@@ -253,10 +266,14 @@ namespace android { namespace bluetooth {
 		typedef BluetoothClass_::Device Device;
 		typedef BluetoothClass_::Service Service;
 
-		BluetoothClass(jobject jobj)
+		explicit BluetoothClass(jobject jobj)
 		: cpp_object<BluetoothClass>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<android::os::Parcelable>() const;
+
 
 		cpp_boolean equals(local_ref< java::lang::Object > const&);
 		cpp_int hashCode();
@@ -273,7 +290,6 @@ namespace android { namespace bluetooth {
 } //namespace bluetooth
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_BLUETOOTH_BLUETOOTHCLASS_HPP_DECL
@@ -288,16 +304,23 @@ namespace j2cpp {
 
 
 
-template <>
-local_ref< android::bluetooth::BluetoothClass_::Device_::Major > create< android::bluetooth::BluetoothClass_::Device_::Major>()
+
+android::bluetooth::BluetoothClass_::Device_::Major::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::bluetooth::BluetoothClass_::Device_::Major >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::bluetooth::BluetoothClass_::Device_::Major::J2CPP_CLASS_NAME>(),
-			get_method_id<android::bluetooth::BluetoothClass_::Device_::Major::J2CPP_CLASS_NAME, android::bluetooth::BluetoothClass_::Device_::Major::J2CPP_METHOD_NAME(0), android::bluetooth::BluetoothClass_::Device_::Major::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::bluetooth::BluetoothClass_::Device_::Major::Major()
+: cpp_object<android::bluetooth::BluetoothClass_::Device_::Major>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::bluetooth::BluetoothClass_::Device_::Major::J2CPP_CLASS_NAME>(),
+		get_method_id<android::bluetooth::BluetoothClass_::Device_::Major::J2CPP_CLASS_NAME, android::bluetooth::BluetoothClass_::Device_::Major::J2CPP_METHOD_NAME(0), android::bluetooth::BluetoothClass_::Device_::Major::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 
 static_field<
@@ -393,16 +416,23 @@ J2CPP_DEFINE_FIELD(android::bluetooth::BluetoothClass_::Device_::Major,9,"HEALTH
 J2CPP_DEFINE_FIELD(android::bluetooth::BluetoothClass_::Device_::Major,10,"UNCATEGORIZED","I")
 
 
-template <>
-local_ref< android::bluetooth::BluetoothClass_::Device > create< android::bluetooth::BluetoothClass_::Device>()
+
+android::bluetooth::BluetoothClass_::Device::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::bluetooth::BluetoothClass_::Device >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::bluetooth::BluetoothClass_::Device::J2CPP_CLASS_NAME>(),
-			get_method_id<android::bluetooth::BluetoothClass_::Device::J2CPP_CLASS_NAME, android::bluetooth::BluetoothClass_::Device::J2CPP_METHOD_NAME(0), android::bluetooth::BluetoothClass_::Device::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::bluetooth::BluetoothClass_::Device::Device()
+: cpp_object<android::bluetooth::BluetoothClass_::Device>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::bluetooth::BluetoothClass_::Device::J2CPP_CLASS_NAME>(),
+		get_method_id<android::bluetooth::BluetoothClass_::Device::J2CPP_CLASS_NAME, android::bluetooth::BluetoothClass_::Device::J2CPP_METHOD_NAME(0), android::bluetooth::BluetoothClass_::Device::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 
 static_field<
@@ -809,16 +839,23 @@ J2CPP_DEFINE_FIELD(android::bluetooth::BluetoothClass_::Device,47,"HEALTH_PULSE_
 J2CPP_DEFINE_FIELD(android::bluetooth::BluetoothClass_::Device,48,"HEALTH_PULSE_RATE","I")
 J2CPP_DEFINE_FIELD(android::bluetooth::BluetoothClass_::Device,49,"HEALTH_DATA_DISPLAY","I")
 
-template <>
-local_ref< android::bluetooth::BluetoothClass_::Service > create< android::bluetooth::BluetoothClass_::Service>()
+
+android::bluetooth::BluetoothClass_::Service::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::bluetooth::BluetoothClass_::Service >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::bluetooth::BluetoothClass_::Service::J2CPP_CLASS_NAME>(),
-			get_method_id<android::bluetooth::BluetoothClass_::Service::J2CPP_CLASS_NAME, android::bluetooth::BluetoothClass_::Service::J2CPP_METHOD_NAME(0), android::bluetooth::BluetoothClass_::Service::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::bluetooth::BluetoothClass_::Service::Service()
+: cpp_object<android::bluetooth::BluetoothClass_::Service>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::bluetooth::BluetoothClass_::Service::J2CPP_CLASS_NAME>(),
+		get_method_id<android::bluetooth::BluetoothClass_::Service::J2CPP_CLASS_NAME, android::bluetooth::BluetoothClass_::Service::J2CPP_METHOD_NAME(0), android::bluetooth::BluetoothClass_::Service::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 
 static_field<
@@ -898,16 +935,17 @@ J2CPP_DEFINE_FIELD(android::bluetooth::BluetoothClass_::Service,7,"TELEPHONY","I
 J2CPP_DEFINE_FIELD(android::bluetooth::BluetoothClass_::Service,8,"INFORMATION","I")
 
 
-template <>
-local_ref< android::bluetooth::BluetoothClass > create< android::bluetooth::BluetoothClass>()
+
+android::bluetooth::BluetoothClass::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::bluetooth::BluetoothClass >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::bluetooth::BluetoothClass::J2CPP_CLASS_NAME>(),
-			get_method_id<android::bluetooth::BluetoothClass::J2CPP_CLASS_NAME, android::bluetooth::BluetoothClass::J2CPP_METHOD_NAME(0), android::bluetooth::BluetoothClass::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+android::bluetooth::BluetoothClass::operator local_ref<android::os::Parcelable>() const
+{
+	return local_ref<android::os::Parcelable>(get_jtype());
+}
+
 
 cpp_boolean android::bluetooth::BluetoothClass::equals(local_ref< java::lang::Object > const &a0)
 {
@@ -991,6 +1029,7 @@ cpp_int android::bluetooth::BluetoothClass::getDeviceClass()
 		)
 	);
 }
+
 
 
 static_field<

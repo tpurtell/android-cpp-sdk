@@ -10,9 +10,11 @@
 #define J2CPP_ORG_APACHE_HTTP_IO_HTTPMESSAGEWRITER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { class HttpMessage; } } } }
 
 
+#include <java/lang/Object.hpp>
 #include <org/apache/http/HttpMessage.hpp>
 
 
@@ -30,10 +32,13 @@ namespace org { namespace apache { namespace http { namespace io {
 
 		J2CPP_DECLARE_METHOD(0)
 
-		HttpMessageWriter(jobject jobj)
+		explicit HttpMessageWriter(jobject jobj)
 		: cpp_object<HttpMessageWriter>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		void write(local_ref< org::apache::http::HttpMessage > const&);
 	}; //class HttpMessageWriter
@@ -42,7 +47,6 @@ namespace org { namespace apache { namespace http { namespace io {
 } //namespace http
 } //namespace apache
 } //namespace org
-
 
 } //namespace j2cpp
 
@@ -55,6 +59,12 @@ namespace org { namespace apache { namespace http { namespace io {
 
 namespace j2cpp {
 
+
+
+org::apache::http::io::HttpMessageWriter::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 void org::apache::http::io::HttpMessageWriter::write(local_ref< org::apache::http::HttpMessage > const &a0)
 {

@@ -11,12 +11,14 @@
 
 
 namespace j2cpp { namespace java { namespace net { class URL; } } }
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace security { class CodeSigner; } } }
 namespace j2cpp { namespace java { namespace security { namespace cert { class Certificate; } } } }
 
 
+#include <java/io/Serializable.hpp>
 #include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/net/URL.hpp>
@@ -46,11 +48,17 @@ namespace java { namespace security {
 		J2CPP_DECLARE_METHOD(7)
 		J2CPP_DECLARE_METHOD(8)
 
-		CodeSource(jobject jobj)
+		explicit CodeSource(jobject jobj)
 		: cpp_object<CodeSource>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::io::Serializable>() const;
+
+
+		CodeSource(local_ref< java::net::URL > const&, local_ref< cpp_object_array<java::security::cert::Certificate, 1> > const&);
+		CodeSource(local_ref< java::net::URL > const&, local_ref< cpp_object_array<java::security::CodeSigner, 1> > const&);
 		cpp_boolean equals(local_ref< java::lang::Object > const&);
 		local_ref< cpp_object_array<java::security::cert::Certificate, 1> > getCertificates();
 		local_ref< cpp_object_array<java::security::CodeSigner, 1> > getCodeSigners();
@@ -62,7 +70,6 @@ namespace java { namespace security {
 
 } //namespace security
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -76,29 +83,42 @@ namespace java { namespace security {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::security::CodeSource > create< java::security::CodeSource>(local_ref< java::net::URL > const &a0, local_ref< cpp_object_array<java::security::cert::Certificate, 1> > const &a1)
+
+java::security::CodeSource::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::security::CodeSource >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::security::CodeSource::J2CPP_CLASS_NAME>(),
-			get_method_id<java::security::CodeSource::J2CPP_CLASS_NAME, java::security::CodeSource::J2CPP_METHOD_NAME(0), java::security::CodeSource::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
 
-template <>
-local_ref< java::security::CodeSource > create< java::security::CodeSource>(local_ref< java::net::URL > const &a0, local_ref< cpp_object_array<java::security::CodeSigner, 1> > const &a1)
+java::security::CodeSource::operator local_ref<java::io::Serializable>() const
 {
-	return local_ref< java::security::CodeSource >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::security::CodeSource::J2CPP_CLASS_NAME>(),
-			get_method_id<java::security::CodeSource::J2CPP_CLASS_NAME, java::security::CodeSource::J2CPP_METHOD_NAME(1), java::security::CodeSource::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<java::io::Serializable>(get_jtype());
 }
+
+
+java::security::CodeSource::CodeSource(local_ref< java::net::URL > const &a0, local_ref< cpp_object_array<java::security::cert::Certificate, 1> > const &a1)
+: cpp_object<java::security::CodeSource>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::security::CodeSource::J2CPP_CLASS_NAME>(),
+		get_method_id<java::security::CodeSource::J2CPP_CLASS_NAME, java::security::CodeSource::J2CPP_METHOD_NAME(0), java::security::CodeSource::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
+
+
+java::security::CodeSource::CodeSource(local_ref< java::net::URL > const &a0, local_ref< cpp_object_array<java::security::CodeSigner, 1> > const &a1)
+: cpp_object<java::security::CodeSource>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::security::CodeSource::J2CPP_CLASS_NAME>(),
+		get_method_id<java::security::CodeSource::J2CPP_CLASS_NAME, java::security::CodeSource::J2CPP_METHOD_NAME(1), java::security::CodeSource::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
 
 cpp_boolean java::security::CodeSource::equals(local_ref< java::lang::Object > const &a0)
 {

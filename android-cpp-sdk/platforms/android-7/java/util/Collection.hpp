@@ -11,9 +11,11 @@
 
 
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace lang { class Iterable; } } }
 namespace j2cpp { namespace java { namespace util { class Iterator; } } }
 
 
+#include <java/lang/Iterable.hpp>
 #include <java/lang/Object.hpp>
 #include <java/util/Iterator.hpp>
 
@@ -46,10 +48,14 @@ namespace java { namespace util {
 		J2CPP_DECLARE_METHOD(13)
 		J2CPP_DECLARE_METHOD(14)
 
-		Collection(jobject jobj)
+		explicit Collection(jobject jobj)
 		: cpp_object<Collection>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::lang::Iterable>() const;
+
 
 		cpp_boolean add(local_ref< java::lang::Object > const&);
 		cpp_boolean addAll(local_ref< java::util::Collection > const&);
@@ -71,7 +77,6 @@ namespace java { namespace util {
 } //namespace util
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_UTIL_COLLECTION_HPP_DECL
@@ -83,6 +88,17 @@ namespace java { namespace util {
 
 namespace j2cpp {
 
+
+
+java::util::Collection::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
+
+java::util::Collection::operator local_ref<java::lang::Iterable>() const
+{
+	return local_ref<java::lang::Iterable>(get_jtype());
+}
 
 cpp_boolean java::util::Collection::add(local_ref< java::lang::Object > const &a0)
 {

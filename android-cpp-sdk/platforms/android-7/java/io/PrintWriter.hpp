@@ -93,11 +93,22 @@ namespace java { namespace io {
 		J2CPP_DECLARE_METHOD(48)
 		J2CPP_DECLARE_FIELD(0)
 
-		PrintWriter(jobject jobj)
+		explicit PrintWriter(jobject jobj)
 		: cpp_object<PrintWriter>(jobj)
 		{
 		}
 
+		operator local_ref<java::io::Writer>() const;
+
+
+		PrintWriter(local_ref< java::io::OutputStream > const&);
+		PrintWriter(local_ref< java::io::OutputStream > const&, cpp_boolean const&);
+		PrintWriter(local_ref< java::io::Writer > const&);
+		PrintWriter(local_ref< java::io::Writer > const&, cpp_boolean const&);
+		PrintWriter(local_ref< java::io::File > const&);
+		PrintWriter(local_ref< java::io::File > const&, local_ref< java::lang::String > const&);
+		PrintWriter(local_ref< java::lang::String > const&);
+		PrintWriter(local_ref< java::lang::String > const&, local_ref< java::lang::String > const&);
 		cpp_boolean checkError();
 		void close();
 		void flush();
@@ -144,7 +155,6 @@ namespace java { namespace io {
 } //namespace io
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_IO_PRINTWRITER_HPP_DECL
@@ -157,101 +167,115 @@ namespace java { namespace io {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::io::PrintWriter > create< java::io::PrintWriter>(local_ref< java::io::OutputStream > const &a0)
+
+java::io::PrintWriter::operator local_ref<java::io::Writer>() const
 {
-	return local_ref< java::io::PrintWriter >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::io::PrintWriter::J2CPP_CLASS_NAME>(),
-			get_method_id<java::io::PrintWriter::J2CPP_CLASS_NAME, java::io::PrintWriter::J2CPP_METHOD_NAME(0), java::io::PrintWriter::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::io::Writer>(get_jtype());
 }
 
-template <>
-local_ref< java::io::PrintWriter > create< java::io::PrintWriter>(local_ref< java::io::OutputStream > const &a0, cpp_boolean const &a1)
+
+java::io::PrintWriter::PrintWriter(local_ref< java::io::OutputStream > const &a0)
+: cpp_object<java::io::PrintWriter>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::io::PrintWriter::J2CPP_CLASS_NAME>(),
+		get_method_id<java::io::PrintWriter::J2CPP_CLASS_NAME, java::io::PrintWriter::J2CPP_METHOD_NAME(0), java::io::PrintWriter::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< java::io::PrintWriter >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::io::PrintWriter::J2CPP_CLASS_NAME>(),
-			get_method_id<java::io::PrintWriter::J2CPP_CLASS_NAME, java::io::PrintWriter::J2CPP_METHOD_NAME(1), java::io::PrintWriter::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< java::io::PrintWriter > create< java::io::PrintWriter>(local_ref< java::io::Writer > const &a0)
+
+
+java::io::PrintWriter::PrintWriter(local_ref< java::io::OutputStream > const &a0, cpp_boolean const &a1)
+: cpp_object<java::io::PrintWriter>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::io::PrintWriter::J2CPP_CLASS_NAME>(),
+		get_method_id<java::io::PrintWriter::J2CPP_CLASS_NAME, java::io::PrintWriter::J2CPP_METHOD_NAME(1), java::io::PrintWriter::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
 {
-	return local_ref< java::io::PrintWriter >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::io::PrintWriter::J2CPP_CLASS_NAME>(),
-			get_method_id<java::io::PrintWriter::J2CPP_CLASS_NAME, java::io::PrintWriter::J2CPP_METHOD_NAME(2), java::io::PrintWriter::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< java::io::PrintWriter > create< java::io::PrintWriter>(local_ref< java::io::Writer > const &a0, cpp_boolean const &a1)
+
+
+java::io::PrintWriter::PrintWriter(local_ref< java::io::Writer > const &a0)
+: cpp_object<java::io::PrintWriter>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::io::PrintWriter::J2CPP_CLASS_NAME>(),
+		get_method_id<java::io::PrintWriter::J2CPP_CLASS_NAME, java::io::PrintWriter::J2CPP_METHOD_NAME(2), java::io::PrintWriter::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< java::io::PrintWriter >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::io::PrintWriter::J2CPP_CLASS_NAME>(),
-			get_method_id<java::io::PrintWriter::J2CPP_CLASS_NAME, java::io::PrintWriter::J2CPP_METHOD_NAME(3), java::io::PrintWriter::J2CPP_METHOD_SIGNATURE(3), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< java::io::PrintWriter > create< java::io::PrintWriter>(local_ref< java::io::File > const &a0)
+
+
+java::io::PrintWriter::PrintWriter(local_ref< java::io::Writer > const &a0, cpp_boolean const &a1)
+: cpp_object<java::io::PrintWriter>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::io::PrintWriter::J2CPP_CLASS_NAME>(),
+		get_method_id<java::io::PrintWriter::J2CPP_CLASS_NAME, java::io::PrintWriter::J2CPP_METHOD_NAME(3), java::io::PrintWriter::J2CPP_METHOD_SIGNATURE(3), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
 {
-	return local_ref< java::io::PrintWriter >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::io::PrintWriter::J2CPP_CLASS_NAME>(),
-			get_method_id<java::io::PrintWriter::J2CPP_CLASS_NAME, java::io::PrintWriter::J2CPP_METHOD_NAME(4), java::io::PrintWriter::J2CPP_METHOD_SIGNATURE(4), false>(),
-			a0.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< java::io::PrintWriter > create< java::io::PrintWriter>(local_ref< java::io::File > const &a0, local_ref< java::lang::String > const &a1)
+
+
+java::io::PrintWriter::PrintWriter(local_ref< java::io::File > const &a0)
+: cpp_object<java::io::PrintWriter>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::io::PrintWriter::J2CPP_CLASS_NAME>(),
+		get_method_id<java::io::PrintWriter::J2CPP_CLASS_NAME, java::io::PrintWriter::J2CPP_METHOD_NAME(4), java::io::PrintWriter::J2CPP_METHOD_SIGNATURE(4), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< java::io::PrintWriter >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::io::PrintWriter::J2CPP_CLASS_NAME>(),
-			get_method_id<java::io::PrintWriter::J2CPP_CLASS_NAME, java::io::PrintWriter::J2CPP_METHOD_NAME(5), java::io::PrintWriter::J2CPP_METHOD_SIGNATURE(5), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< java::io::PrintWriter > create< java::io::PrintWriter>(local_ref< java::lang::String > const &a0)
+
+
+java::io::PrintWriter::PrintWriter(local_ref< java::io::File > const &a0, local_ref< java::lang::String > const &a1)
+: cpp_object<java::io::PrintWriter>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::io::PrintWriter::J2CPP_CLASS_NAME>(),
+		get_method_id<java::io::PrintWriter::J2CPP_CLASS_NAME, java::io::PrintWriter::J2CPP_METHOD_NAME(5), java::io::PrintWriter::J2CPP_METHOD_SIGNATURE(5), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
 {
-	return local_ref< java::io::PrintWriter >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::io::PrintWriter::J2CPP_CLASS_NAME>(),
-			get_method_id<java::io::PrintWriter::J2CPP_CLASS_NAME, java::io::PrintWriter::J2CPP_METHOD_NAME(6), java::io::PrintWriter::J2CPP_METHOD_SIGNATURE(6), false>(),
-			a0.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< java::io::PrintWriter > create< java::io::PrintWriter>(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
+
+
+java::io::PrintWriter::PrintWriter(local_ref< java::lang::String > const &a0)
+: cpp_object<java::io::PrintWriter>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::io::PrintWriter::J2CPP_CLASS_NAME>(),
+		get_method_id<java::io::PrintWriter::J2CPP_CLASS_NAME, java::io::PrintWriter::J2CPP_METHOD_NAME(6), java::io::PrintWriter::J2CPP_METHOD_SIGNATURE(6), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< java::io::PrintWriter >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::io::PrintWriter::J2CPP_CLASS_NAME>(),
-			get_method_id<java::io::PrintWriter::J2CPP_CLASS_NAME, java::io::PrintWriter::J2CPP_METHOD_NAME(7), java::io::PrintWriter::J2CPP_METHOD_SIGNATURE(7), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
 }
+
+
+
+java::io::PrintWriter::PrintWriter(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
+: cpp_object<java::io::PrintWriter>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::io::PrintWriter::J2CPP_CLASS_NAME>(),
+		get_method_id<java::io::PrintWriter::J2CPP_CLASS_NAME, java::io::PrintWriter::J2CPP_METHOD_NAME(7), java::io::PrintWriter::J2CPP_METHOD_SIGNATURE(7), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
 
 cpp_boolean java::io::PrintWriter::checkError()
 {

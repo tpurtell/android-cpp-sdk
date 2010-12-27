@@ -10,11 +10,15 @@
 #define J2CPP_ORG_APACHE_HTTP_HTTPCLIENTCONNECTION_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { class HttpRequest; } } } }
+namespace j2cpp { namespace org { namespace apache { namespace http { class HttpConnection; } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { class HttpEntityEnclosingRequest; } } } }
 namespace j2cpp { namespace org { namespace apache { namespace http { class HttpResponse; } } } }
 
 
+#include <java/lang/Object.hpp>
+#include <org/apache/http/HttpConnection.hpp>
 #include <org/apache/http/HttpEntityEnclosingRequest.hpp>
 #include <org/apache/http/HttpRequest.hpp>
 #include <org/apache/http/HttpResponse.hpp>
@@ -39,10 +43,14 @@ namespace org { namespace apache { namespace http {
 		J2CPP_DECLARE_METHOD(4)
 		J2CPP_DECLARE_METHOD(5)
 
-		HttpClientConnection(jobject jobj)
+		explicit HttpClientConnection(jobject jobj)
 		: cpp_object<HttpClientConnection>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<org::apache::http::HttpConnection>() const;
+
 
 		cpp_boolean isResponseAvailable(cpp_int const&);
 		void sendRequestHeader(local_ref< org::apache::http::HttpRequest > const&);
@@ -56,7 +64,6 @@ namespace org { namespace apache { namespace http {
 } //namespace apache
 } //namespace org
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ORG_APACHE_HTTP_HTTPCLIENTCONNECTION_HPP_DECL
@@ -68,6 +75,17 @@ namespace org { namespace apache { namespace http {
 
 namespace j2cpp {
 
+
+
+org::apache::http::HttpClientConnection::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
+
+org::apache::http::HttpClientConnection::operator local_ref<org::apache::http::HttpConnection>() const
+{
+	return local_ref<org::apache::http::HttpConnection>(get_jtype());
+}
 
 cpp_boolean org::apache::http::HttpClientConnection::isResponseAvailable(cpp_int const &a0)
 {

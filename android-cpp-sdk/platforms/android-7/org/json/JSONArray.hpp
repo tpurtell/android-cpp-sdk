@@ -79,11 +79,18 @@ namespace org { namespace json {
 		J2CPP_DECLARE_METHOD(40)
 		J2CPP_DECLARE_METHOD(41)
 
-		JSONArray(jobject jobj)
+		explicit JSONArray(jobject jobj)
 		: cpp_object<JSONArray>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		JSONArray();
+		JSONArray(local_ref< org::json::JSONTokener > const&);
+		JSONArray(local_ref< java::lang::String > const&);
+		JSONArray(local_ref< java::util::Collection > const&);
 		cpp_boolean equals(local_ref< java::lang::Object > const&);
 		local_ref< java::lang::Object > get(cpp_int const&);
 		cpp_boolean getBoolean(cpp_int const&);
@@ -127,7 +134,6 @@ namespace org { namespace json {
 } //namespace json
 } //namespace org
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ORG_JSON_JSONARRAY_HPP_DECL
@@ -140,52 +146,62 @@ namespace org { namespace json {
 namespace j2cpp {
 
 
-template <>
-local_ref< org::json::JSONArray > create< org::json::JSONArray>()
+
+org::json::JSONArray::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< org::json::JSONArray >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::json::JSONArray::J2CPP_CLASS_NAME>(),
-			get_method_id<org::json::JSONArray::J2CPP_CLASS_NAME, org::json::JSONArray::J2CPP_METHOD_NAME(0), org::json::JSONArray::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
 
-template <>
-local_ref< org::json::JSONArray > create< org::json::JSONArray>(local_ref< org::json::JSONTokener > const &a0)
+
+org::json::JSONArray::JSONArray()
+: cpp_object<org::json::JSONArray>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::json::JSONArray::J2CPP_CLASS_NAME>(),
+		get_method_id<org::json::JSONArray::J2CPP_CLASS_NAME, org::json::JSONArray::J2CPP_METHOD_NAME(0), org::json::JSONArray::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
 {
-	return local_ref< org::json::JSONArray >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::json::JSONArray::J2CPP_CLASS_NAME>(),
-			get_method_id<org::json::JSONArray::J2CPP_CLASS_NAME, org::json::JSONArray::J2CPP_METHOD_NAME(1), org::json::JSONArray::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< org::json::JSONArray > create< org::json::JSONArray>(local_ref< java::lang::String > const &a0)
+
+
+org::json::JSONArray::JSONArray(local_ref< org::json::JSONTokener > const &a0)
+: cpp_object<org::json::JSONArray>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::json::JSONArray::J2CPP_CLASS_NAME>(),
+		get_method_id<org::json::JSONArray::J2CPP_CLASS_NAME, org::json::JSONArray::J2CPP_METHOD_NAME(1), org::json::JSONArray::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< org::json::JSONArray >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::json::JSONArray::J2CPP_CLASS_NAME>(),
-			get_method_id<org::json::JSONArray::J2CPP_CLASS_NAME, org::json::JSONArray::J2CPP_METHOD_NAME(2), org::json::JSONArray::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< org::json::JSONArray > create< org::json::JSONArray>(local_ref< java::util::Collection > const &a0)
+
+
+org::json::JSONArray::JSONArray(local_ref< java::lang::String > const &a0)
+: cpp_object<org::json::JSONArray>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::json::JSONArray::J2CPP_CLASS_NAME>(),
+		get_method_id<org::json::JSONArray::J2CPP_CLASS_NAME, org::json::JSONArray::J2CPP_METHOD_NAME(2), org::json::JSONArray::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< org::json::JSONArray >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::json::JSONArray::J2CPP_CLASS_NAME>(),
-			get_method_id<org::json::JSONArray::J2CPP_CLASS_NAME, org::json::JSONArray::J2CPP_METHOD_NAME(3), org::json::JSONArray::J2CPP_METHOD_SIGNATURE(3), false>(),
-			a0.get_jtype()
-		)
-	);
 }
+
+
+
+org::json::JSONArray::JSONArray(local_ref< java::util::Collection > const &a0)
+: cpp_object<org::json::JSONArray>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::json::JSONArray::J2CPP_CLASS_NAME>(),
+		get_method_id<org::json::JSONArray::J2CPP_CLASS_NAME, org::json::JSONArray::J2CPP_METHOD_NAME(3), org::json::JSONArray::J2CPP_METHOD_SIGNATURE(3), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 cpp_boolean org::json::JSONArray::equals(local_ref< java::lang::Object > const &a0)
 {

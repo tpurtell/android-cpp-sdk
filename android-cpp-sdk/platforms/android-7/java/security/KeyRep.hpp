@@ -10,10 +10,16 @@
 #define J2CPP_JAVA_SECURITY_KEYREP_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace lang { class Enum; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace security { namespace KeyRep_ { class Type; } } } }
 
 
+#include <java/io/Serializable.hpp>
+#include <java/lang/Enum.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/security/KeyRep.hpp>
 
@@ -42,10 +48,13 @@ namespace java { namespace security {
 			J2CPP_DECLARE_FIELD(2)
 			J2CPP_DECLARE_FIELD(3)
 
-			Type(jobject jobj)
+			explicit Type(jobject jobj)
 			: cpp_object<Type>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Enum>() const;
+
 
 			static local_ref< cpp_object_array<java::security::KeyRep_::Type, 1> > values();
 			static local_ref< java::security::KeyRep_::Type > valueOf(local_ref< java::lang::String > const&);
@@ -69,16 +78,20 @@ namespace java { namespace security {
 
 		typedef KeyRep_::Type Type;
 
-		KeyRep(jobject jobj)
+		explicit KeyRep(jobject jobj)
 		: cpp_object<KeyRep>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::io::Serializable>() const;
+
+
+		KeyRep(local_ref< java::security::KeyRep_::Type > const&, local_ref< java::lang::String > const&, local_ref< java::lang::String > const&, local_ref< cpp_byte_array<1> > const&);
 	}; //class KeyRep
 
 } //namespace security
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -92,6 +105,12 @@ namespace java { namespace security {
 namespace j2cpp {
 
 
+
+
+java::security::KeyRep_::Type::operator local_ref<java::lang::Enum>() const
+{
+	return local_ref<java::lang::Enum>(get_jtype());
+}
 
 local_ref< cpp_object_array<java::security::KeyRep_::Type, 1> > java::security::KeyRep_::Type::values()
 {
@@ -114,17 +133,7 @@ local_ref< java::security::KeyRep_::Type > java::security::KeyRep_::Type::valueO
 	);
 }
 
-template <>
-local_ref< java::security::KeyRep_::Type > create< java::security::KeyRep_::Type>(local_ref< java::lang::String > const &a0, cpp_int const &a1)
-{
-	return local_ref< java::security::KeyRep_::Type >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::security::KeyRep_::Type::J2CPP_CLASS_NAME>(),
-			get_method_id<java::security::KeyRep_::Type::J2CPP_CLASS_NAME, java::security::KeyRep_::Type::J2CPP_METHOD_NAME(2), java::security::KeyRep_::Type::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
-}
+
 
 
 static_field<
@@ -160,17 +169,29 @@ J2CPP_DEFINE_FIELD(java::security::KeyRep_::Type,2,"SECRET","Ljava/security/KeyR
 J2CPP_DEFINE_FIELD(java::security::KeyRep_::Type,3,"$VALUES","[java.security.KeyRep.Type")
 
 
-template <>
-local_ref< java::security::KeyRep > create< java::security::KeyRep>(local_ref< java::security::KeyRep_::Type > const &a0, local_ref< java::lang::String > const &a1, local_ref< java::lang::String > const &a2, local_ref< cpp_byte_array<1> > const &a3)
+
+java::security::KeyRep::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::security::KeyRep >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::security::KeyRep::J2CPP_CLASS_NAME>(),
-			get_method_id<java::security::KeyRep::J2CPP_CLASS_NAME, java::security::KeyRep::J2CPP_METHOD_NAME(0), java::security::KeyRep::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+java::security::KeyRep::operator local_ref<java::io::Serializable>() const
+{
+	return local_ref<java::io::Serializable>(get_jtype());
+}
+
+
+java::security::KeyRep::KeyRep(local_ref< java::security::KeyRep_::Type > const &a0, local_ref< java::lang::String > const &a1, local_ref< java::lang::String > const &a2, local_ref< cpp_byte_array<1> > const &a3)
+: cpp_object<java::security::KeyRep>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::security::KeyRep::J2CPP_CLASS_NAME>(),
+		get_method_id<java::security::KeyRep::J2CPP_CLASS_NAME, java::security::KeyRep::J2CPP_METHOD_NAME(0), java::security::KeyRep::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype()
+	)
+)
+{
+}
+
 
 
 

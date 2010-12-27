@@ -10,10 +10,12 @@
 #define J2CPP_JAVA_NET_BINDEXCEPTION_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace net { class SocketException; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 
 
 #include <java/lang/String.hpp>
+#include <java/net/SocketException.hpp>
 
 
 namespace j2cpp {
@@ -31,16 +33,20 @@ namespace java { namespace net {
 		J2CPP_DECLARE_METHOD(0)
 		J2CPP_DECLARE_METHOD(1)
 
-		BindException(jobject jobj)
+		explicit BindException(jobject jobj)
 		: cpp_object<BindException>(jobj)
 		{
 		}
 
+		operator local_ref<java::net::SocketException>() const;
+
+
+		BindException();
+		BindException(local_ref< java::lang::String > const&);
 	}; //class BindException
 
 } //namespace net
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -54,28 +60,36 @@ namespace java { namespace net {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::net::BindException > create< java::net::BindException>()
+
+java::net::BindException::operator local_ref<java::net::SocketException>() const
 {
-	return local_ref< java::net::BindException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::net::BindException::J2CPP_CLASS_NAME>(),
-			get_method_id<java::net::BindException::J2CPP_CLASS_NAME, java::net::BindException::J2CPP_METHOD_NAME(0), java::net::BindException::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::net::SocketException>(get_jtype());
 }
 
-template <>
-local_ref< java::net::BindException > create< java::net::BindException>(local_ref< java::lang::String > const &a0)
+
+java::net::BindException::BindException()
+: cpp_object<java::net::BindException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::net::BindException::J2CPP_CLASS_NAME>(),
+		get_method_id<java::net::BindException::J2CPP_CLASS_NAME, java::net::BindException::J2CPP_METHOD_NAME(0), java::net::BindException::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
 {
-	return local_ref< java::net::BindException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::net::BindException::J2CPP_CLASS_NAME>(),
-			get_method_id<java::net::BindException::J2CPP_CLASS_NAME, java::net::BindException::J2CPP_METHOD_NAME(1), java::net::BindException::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
 }
+
+
+
+java::net::BindException::BindException(local_ref< java::lang::String > const &a0)
+: cpp_object<java::net::BindException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::net::BindException::J2CPP_CLASS_NAME>(),
+		get_method_id<java::net::BindException::J2CPP_CLASS_NAME, java::net::BindException::J2CPP_METHOD_NAME(1), java::net::BindException::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 
 J2CPP_DEFINE_CLASS(java::net::BindException,"java/net/BindException")

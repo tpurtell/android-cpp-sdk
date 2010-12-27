@@ -10,18 +10,20 @@
 #define J2CPP_JAVA_NET_SOCKET_HPP_DECL
 
 
-namespace j2cpp { namespace java { namespace net { class SocketAddress; } } }
-namespace j2cpp { namespace java { namespace net { class Proxy; } } }
 namespace j2cpp { namespace java { namespace net { class SocketImplFactory; } } }
+namespace j2cpp { namespace java { namespace net { class Proxy; } } }
+namespace j2cpp { namespace java { namespace net { class SocketAddress; } } }
 namespace j2cpp { namespace java { namespace net { class InetAddress; } } }
 namespace j2cpp { namespace java { namespace io { class InputStream; } } }
 namespace j2cpp { namespace java { namespace io { class OutputStream; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace nio { namespace channels { class SocketChannel; } } } }
 
 
 #include <java/io/InputStream.hpp>
 #include <java/io/OutputStream.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/net/InetAddress.hpp>
 #include <java/net/Proxy.hpp>
@@ -94,11 +96,22 @@ namespace java { namespace net {
 		J2CPP_DECLARE_METHOD(49)
 		J2CPP_DECLARE_METHOD(50)
 
-		Socket(jobject jobj)
+		explicit Socket(jobject jobj)
 		: cpp_object<Socket>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		Socket();
+		Socket(local_ref< java::net::Proxy > const&);
+		Socket(local_ref< java::lang::String > const&, cpp_int const&);
+		Socket(local_ref< java::lang::String > const&, cpp_int const&, local_ref< java::net::InetAddress > const&, cpp_int const&);
+		Socket(local_ref< java::lang::String > const&, cpp_int const&, cpp_boolean const&);
+		Socket(local_ref< java::net::InetAddress > const&, cpp_int const&);
+		Socket(local_ref< java::net::InetAddress > const&, cpp_int const&, local_ref< java::net::InetAddress > const&, cpp_int const&);
+		Socket(local_ref< java::net::InetAddress > const&, cpp_int const&, cpp_boolean const&);
 		void close();
 		local_ref< java::net::InetAddress > getInetAddress();
 		local_ref< java::io::InputStream > getInputStream();
@@ -146,7 +159,6 @@ namespace java { namespace net {
 } //namespace net
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_NET_SOCKET_HPP_DECL
@@ -159,112 +171,115 @@ namespace java { namespace net {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::net::Socket > create< java::net::Socket>()
+
+java::net::Socket::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::net::Socket >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::net::Socket::J2CPP_CLASS_NAME>(),
-			get_method_id<java::net::Socket::J2CPP_CLASS_NAME, java::net::Socket::J2CPP_METHOD_NAME(0), java::net::Socket::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
 
-template <>
-local_ref< java::net::Socket > create< java::net::Socket>(local_ref< java::net::Proxy > const &a0)
+
+java::net::Socket::Socket()
+: cpp_object<java::net::Socket>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::net::Socket::J2CPP_CLASS_NAME>(),
+		get_method_id<java::net::Socket::J2CPP_CLASS_NAME, java::net::Socket::J2CPP_METHOD_NAME(0), java::net::Socket::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
 {
-	return local_ref< java::net::Socket >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::net::Socket::J2CPP_CLASS_NAME>(),
-			get_method_id<java::net::Socket::J2CPP_CLASS_NAME, java::net::Socket::J2CPP_METHOD_NAME(1), java::net::Socket::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< java::net::Socket > create< java::net::Socket>(local_ref< java::lang::String > const &a0, cpp_int const &a1)
+
+
+java::net::Socket::Socket(local_ref< java::net::Proxy > const &a0)
+: cpp_object<java::net::Socket>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::net::Socket::J2CPP_CLASS_NAME>(),
+		get_method_id<java::net::Socket::J2CPP_CLASS_NAME, java::net::Socket::J2CPP_METHOD_NAME(1), java::net::Socket::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< java::net::Socket >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::net::Socket::J2CPP_CLASS_NAME>(),
-			get_method_id<java::net::Socket::J2CPP_CLASS_NAME, java::net::Socket::J2CPP_METHOD_NAME(2), java::net::Socket::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< java::net::Socket > create< java::net::Socket>(local_ref< java::lang::String > const &a0, cpp_int const &a1, local_ref< java::net::InetAddress > const &a2, cpp_int const &a3)
+
+
+java::net::Socket::Socket(local_ref< java::lang::String > const &a0, cpp_int const &a1)
+: cpp_object<java::net::Socket>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::net::Socket::J2CPP_CLASS_NAME>(),
+		get_method_id<java::net::Socket::J2CPP_CLASS_NAME, java::net::Socket::J2CPP_METHOD_NAME(2), java::net::Socket::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
 {
-	return local_ref< java::net::Socket >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::net::Socket::J2CPP_CLASS_NAME>(),
-			get_method_id<java::net::Socket::J2CPP_CLASS_NAME, java::net::Socket::J2CPP_METHOD_NAME(3), java::net::Socket::J2CPP_METHOD_SIGNATURE(3), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< java::net::Socket > create< java::net::Socket>(local_ref< java::lang::String > const &a0, cpp_int const &a1, cpp_boolean const &a2)
+
+
+java::net::Socket::Socket(local_ref< java::lang::String > const &a0, cpp_int const &a1, local_ref< java::net::InetAddress > const &a2, cpp_int const &a3)
+: cpp_object<java::net::Socket>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::net::Socket::J2CPP_CLASS_NAME>(),
+		get_method_id<java::net::Socket::J2CPP_CLASS_NAME, java::net::Socket::J2CPP_METHOD_NAME(3), java::net::Socket::J2CPP_METHOD_SIGNATURE(3), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype()
+	)
+)
 {
-	return local_ref< java::net::Socket >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::net::Socket::J2CPP_CLASS_NAME>(),
-			get_method_id<java::net::Socket::J2CPP_CLASS_NAME, java::net::Socket::J2CPP_METHOD_NAME(4), java::net::Socket::J2CPP_METHOD_SIGNATURE(4), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< java::net::Socket > create< java::net::Socket>(local_ref< java::net::InetAddress > const &a0, cpp_int const &a1)
+
+
+java::net::Socket::Socket(local_ref< java::lang::String > const &a0, cpp_int const &a1, cpp_boolean const &a2)
+: cpp_object<java::net::Socket>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::net::Socket::J2CPP_CLASS_NAME>(),
+		get_method_id<java::net::Socket::J2CPP_CLASS_NAME, java::net::Socket::J2CPP_METHOD_NAME(4), java::net::Socket::J2CPP_METHOD_SIGNATURE(4), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
+	)
+)
 {
-	return local_ref< java::net::Socket >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::net::Socket::J2CPP_CLASS_NAME>(),
-			get_method_id<java::net::Socket::J2CPP_CLASS_NAME, java::net::Socket::J2CPP_METHOD_NAME(5), java::net::Socket::J2CPP_METHOD_SIGNATURE(5), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< java::net::Socket > create< java::net::Socket>(local_ref< java::net::InetAddress > const &a0, cpp_int const &a1, local_ref< java::net::InetAddress > const &a2, cpp_int const &a3)
+
+
+java::net::Socket::Socket(local_ref< java::net::InetAddress > const &a0, cpp_int const &a1)
+: cpp_object<java::net::Socket>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::net::Socket::J2CPP_CLASS_NAME>(),
+		get_method_id<java::net::Socket::J2CPP_CLASS_NAME, java::net::Socket::J2CPP_METHOD_NAME(5), java::net::Socket::J2CPP_METHOD_SIGNATURE(5), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
 {
-	return local_ref< java::net::Socket >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::net::Socket::J2CPP_CLASS_NAME>(),
-			get_method_id<java::net::Socket::J2CPP_CLASS_NAME, java::net::Socket::J2CPP_METHOD_NAME(6), java::net::Socket::J2CPP_METHOD_SIGNATURE(6), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< java::net::Socket > create< java::net::Socket>(local_ref< java::net::InetAddress > const &a0, cpp_int const &a1, cpp_boolean const &a2)
+
+
+java::net::Socket::Socket(local_ref< java::net::InetAddress > const &a0, cpp_int const &a1, local_ref< java::net::InetAddress > const &a2, cpp_int const &a3)
+: cpp_object<java::net::Socket>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::net::Socket::J2CPP_CLASS_NAME>(),
+		get_method_id<java::net::Socket::J2CPP_CLASS_NAME, java::net::Socket::J2CPP_METHOD_NAME(6), java::net::Socket::J2CPP_METHOD_SIGNATURE(6), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype()
+	)
+)
 {
-	return local_ref< java::net::Socket >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::net::Socket::J2CPP_CLASS_NAME>(),
-			get_method_id<java::net::Socket::J2CPP_CLASS_NAME, java::net::Socket::J2CPP_METHOD_NAME(7), java::net::Socket::J2CPP_METHOD_SIGNATURE(7), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< java::net::Socket > create< java::net::Socket>(local_ref< java::net::SocketImpl > const &a0)
+
+
+java::net::Socket::Socket(local_ref< java::net::InetAddress > const &a0, cpp_int const &a1, cpp_boolean const &a2)
+: cpp_object<java::net::Socket>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::net::Socket::J2CPP_CLASS_NAME>(),
+		get_method_id<java::net::Socket::J2CPP_CLASS_NAME, java::net::Socket::J2CPP_METHOD_NAME(7), java::net::Socket::J2CPP_METHOD_SIGNATURE(7), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
+	)
+)
 {
-	return local_ref< java::net::Socket >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::net::Socket::J2CPP_CLASS_NAME>(),
-			get_method_id<java::net::Socket::J2CPP_CLASS_NAME, java::net::Socket::J2CPP_METHOD_NAME(8), java::net::Socket::J2CPP_METHOD_SIGNATURE(8), false>(),
-			a0.get_jtype()
-		)
-	);
 }
+
+
 
 void java::net::Socket::close()
 {

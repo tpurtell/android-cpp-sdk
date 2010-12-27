@@ -19,7 +19,12 @@ namespace j2cpp {
 	{
 	public:
 		typedef cpp_object< cpp_byte_array<1> > base_type;
-		cpp_byte_array(jobject obj): base_type(obj) {}
+		explicit cpp_byte_array(jobject obj): base_type(obj) {}
+
+		cpp_byte_array(jsize s)
+		: base_type(environment::get().get_jenv()->NewByteArray(s))
+		{
+		}
 
 		jbyteArray get_jbyte_array() const
 		{
@@ -55,17 +60,6 @@ namespace j2cpp {
 		}
 
 	};
-
-	template < int Dim >
-	static local_ref< cpp_byte_array<Dim> > create(jsize s);
-
-	template <>
-	local_ref< cpp_byte_array<1> > create<1>(jsize s)
-	{
-		return local_ref< cpp_byte_array<1> >(
-			environment::get().get_jenv()->NewByteArray(s)
-		);
-	}
 
 } //namespace j2cpp
 

@@ -10,9 +10,11 @@
 #define J2CPP_ANDROID_WEBKIT_MIMETYPEMAP_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -36,10 +38,13 @@ namespace android { namespace webkit {
 		J2CPP_DECLARE_METHOD(5)
 		J2CPP_DECLARE_METHOD(6)
 
-		MimeTypeMap(jobject jobj)
+		explicit MimeTypeMap(jobject jobj)
 		: cpp_object<MimeTypeMap>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		static local_ref< java::lang::String > getFileExtensionFromUrl(local_ref< java::lang::String > const&);
 		cpp_boolean hasMimeType(local_ref< java::lang::String > const&);
@@ -51,7 +56,6 @@ namespace android { namespace webkit {
 
 } //namespace webkit
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -65,16 +69,12 @@ namespace android { namespace webkit {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::webkit::MimeTypeMap > create< android::webkit::MimeTypeMap>()
+
+android::webkit::MimeTypeMap::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::webkit::MimeTypeMap >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::webkit::MimeTypeMap::J2CPP_CLASS_NAME>(),
-			get_method_id<android::webkit::MimeTypeMap::J2CPP_CLASS_NAME, android::webkit::MimeTypeMap::J2CPP_METHOD_NAME(0), android::webkit::MimeTypeMap::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
 
 local_ref< java::lang::String > android::webkit::MimeTypeMap::getFileExtensionFromUrl(local_ref< java::lang::String > const &a0)
 {

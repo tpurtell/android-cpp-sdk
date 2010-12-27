@@ -10,8 +10,10 @@
 #define J2CPP_JAVA_IO_OPTIONALDATAEXCEPTION_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class ObjectStreamException; } } }
 
 
+#include <java/io/ObjectStreamException.hpp>
 
 
 namespace j2cpp {
@@ -30,12 +32,15 @@ namespace java { namespace io {
 		J2CPP_DECLARE_FIELD(0)
 		J2CPP_DECLARE_FIELD(1)
 
-		OptionalDataException(jobject jobj)
+		explicit OptionalDataException(jobject jobj)
 		: cpp_object<OptionalDataException>(jobj)
-		, eof(jobj)
-		, length(jobj)
+, eof(jobj)
+, length(jobj)
 		{
 		}
+
+		operator local_ref<java::io::ObjectStreamException>() const;
+
 
 
 		field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(0), J2CPP_FIELD_SIGNATURE(0), cpp_boolean > eof;
@@ -44,7 +49,6 @@ namespace java { namespace io {
 
 } //namespace io
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -58,16 +62,12 @@ namespace java { namespace io {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::io::OptionalDataException > create< java::io::OptionalDataException>()
+
+java::io::OptionalDataException::operator local_ref<java::io::ObjectStreamException>() const
 {
-	return local_ref< java::io::OptionalDataException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::io::OptionalDataException::J2CPP_CLASS_NAME>(),
-			get_method_id<java::io::OptionalDataException::J2CPP_CLASS_NAME, java::io::OptionalDataException::J2CPP_METHOD_NAME(0), java::io::OptionalDataException::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::io::ObjectStreamException>(get_jtype());
 }
+
 
 
 

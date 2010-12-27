@@ -10,6 +10,7 @@
 #define J2CPP_JAVAX_SECURITY_AUTH_SUBJECT_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class Class; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
@@ -19,6 +20,7 @@ namespace j2cpp { namespace java { namespace security { class PrivilegedExceptio
 namespace j2cpp { namespace java { namespace util { class Set; } } }
 
 
+#include <java/io/Serializable.hpp>
 #include <java/lang/Class.hpp>
 #include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
@@ -59,11 +61,17 @@ namespace javax { namespace security { namespace auth {
 		J2CPP_DECLARE_METHOD(16)
 		J2CPP_DECLARE_METHOD(17)
 
-		Subject(jobject jobj)
+		explicit Subject(jobject jobj)
 		: cpp_object<Subject>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::io::Serializable>() const;
+
+
+		Subject();
+		Subject(cpp_boolean const&, local_ref< java::util::Set > const&, local_ref< java::util::Set > const&, local_ref< java::util::Set > const&);
 		static local_ref< java::lang::Object > doAs(local_ref< javax::security::auth::Subject > const&, local_ref< java::security::PrivilegedAction > const&);
 		static local_ref< java::lang::Object > doAsPrivileged(local_ref< javax::security::auth::Subject > const&, local_ref< java::security::PrivilegedAction > const&, local_ref< java::security::AccessControlContext > const&);
 		static local_ref< java::lang::Object > doAs(local_ref< javax::security::auth::Subject > const&, local_ref< java::security::PrivilegedExceptionAction > const&);
@@ -86,7 +94,6 @@ namespace javax { namespace security { namespace auth {
 } //namespace security
 } //namespace javax
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVAX_SECURITY_AUTH_SUBJECT_HPP_DECL
@@ -99,28 +106,41 @@ namespace javax { namespace security { namespace auth {
 namespace j2cpp {
 
 
-template <>
-local_ref< javax::security::auth::Subject > create< javax::security::auth::Subject>()
+
+javax::security::auth::Subject::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< javax::security::auth::Subject >(
-		environment::get().get_jenv()->NewObject(
-			get_class<javax::security::auth::Subject::J2CPP_CLASS_NAME>(),
-			get_method_id<javax::security::auth::Subject::J2CPP_CLASS_NAME, javax::security::auth::Subject::J2CPP_METHOD_NAME(0), javax::security::auth::Subject::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
 
-template <>
-local_ref< javax::security::auth::Subject > create< javax::security::auth::Subject>(cpp_boolean const &a0, local_ref< java::util::Set > const &a1, local_ref< java::util::Set > const &a2, local_ref< java::util::Set > const &a3)
+javax::security::auth::Subject::operator local_ref<java::io::Serializable>() const
 {
-	return local_ref< javax::security::auth::Subject >(
-		environment::get().get_jenv()->NewObject(
-			get_class<javax::security::auth::Subject::J2CPP_CLASS_NAME>(),
-			get_method_id<javax::security::auth::Subject::J2CPP_CLASS_NAME, javax::security::auth::Subject::J2CPP_METHOD_NAME(1), javax::security::auth::Subject::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype()
-		)
-	);
+	return local_ref<java::io::Serializable>(get_jtype());
 }
+
+
+javax::security::auth::Subject::Subject()
+: cpp_object<javax::security::auth::Subject>(
+	environment::get().get_jenv()->NewObject(
+		get_class<javax::security::auth::Subject::J2CPP_CLASS_NAME>(),
+		get_method_id<javax::security::auth::Subject::J2CPP_CLASS_NAME, javax::security::auth::Subject::J2CPP_METHOD_NAME(0), javax::security::auth::Subject::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
+
+
+javax::security::auth::Subject::Subject(cpp_boolean const &a0, local_ref< java::util::Set > const &a1, local_ref< java::util::Set > const &a2, local_ref< java::util::Set > const &a3)
+: cpp_object<javax::security::auth::Subject>(
+	environment::get().get_jenv()->NewObject(
+		get_class<javax::security::auth::Subject::J2CPP_CLASS_NAME>(),
+		get_method_id<javax::security::auth::Subject::J2CPP_CLASS_NAME, javax::security::auth::Subject::J2CPP_METHOD_NAME(1), javax::security::auth::Subject::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype()
+	)
+)
+{
+}
+
 
 local_ref< java::lang::Object > javax::security::auth::Subject::doAs(local_ref< javax::security::auth::Subject > const &a0, local_ref< java::security::PrivilegedAction > const &a1)
 {

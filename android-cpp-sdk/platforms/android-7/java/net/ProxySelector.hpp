@@ -13,10 +13,12 @@
 namespace j2cpp { namespace java { namespace net { class SocketAddress; } } }
 namespace j2cpp { namespace java { namespace net { class URI; } } }
 namespace j2cpp { namespace java { namespace io { class IOException; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace util { class List; } } }
 
 
 #include <java/io/IOException.hpp>
+#include <java/lang/Object.hpp>
 #include <java/net/SocketAddress.hpp>
 #include <java/net/URI.hpp>
 #include <java/util/List.hpp>
@@ -40,11 +42,15 @@ namespace java { namespace net {
 		J2CPP_DECLARE_METHOD(3)
 		J2CPP_DECLARE_METHOD(4)
 
-		ProxySelector(jobject jobj)
+		explicit ProxySelector(jobject jobj)
 		: cpp_object<ProxySelector>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		ProxySelector();
 		static local_ref< java::net::ProxySelector > getDefault();
 		static void setDefault(local_ref< java::net::ProxySelector > const&);
 		local_ref< java::util::List > select(local_ref< java::net::URI > const&);
@@ -53,7 +59,6 @@ namespace java { namespace net {
 
 } //namespace net
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -67,16 +72,23 @@ namespace java { namespace net {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::net::ProxySelector > create< java::net::ProxySelector>()
+
+java::net::ProxySelector::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::net::ProxySelector >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::net::ProxySelector::J2CPP_CLASS_NAME>(),
-			get_method_id<java::net::ProxySelector::J2CPP_CLASS_NAME, java::net::ProxySelector::J2CPP_METHOD_NAME(0), java::net::ProxySelector::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+java::net::ProxySelector::ProxySelector()
+: cpp_object<java::net::ProxySelector>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::net::ProxySelector::J2CPP_CLASS_NAME>(),
+		get_method_id<java::net::ProxySelector::J2CPP_CLASS_NAME, java::net::ProxySelector::J2CPP_METHOD_NAME(0), java::net::ProxySelector::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 local_ref< java::net::ProxySelector > java::net::ProxySelector::getDefault()
 {

@@ -14,6 +14,7 @@ namespace j2cpp { namespace java { namespace lang { class CharSequence; } } }
 namespace j2cpp { namespace android { namespace content { class Context; } } }
 namespace j2cpp { namespace android { namespace text { namespace TextUtils_ { class TruncateAt; } } } }
 namespace j2cpp { namespace android { namespace text { class Editable; } } }
+namespace j2cpp { namespace android { namespace widget { class TextView; } } }
 namespace j2cpp { namespace android { namespace widget { namespace TextView_ { class BufferType; } } } }
 namespace j2cpp { namespace android { namespace util { class AttributeSet; } } }
 
@@ -52,11 +53,17 @@ namespace android { namespace widget {
 		J2CPP_DECLARE_METHOD(11)
 		J2CPP_DECLARE_METHOD(12)
 
-		EditText(jobject jobj)
+		explicit EditText(jobject jobj)
 		: cpp_object<EditText>(jobj)
 		{
 		}
 
+		operator local_ref<android::widget::TextView>() const;
+
+
+		EditText(local_ref< android::content::Context > const&);
+		EditText(local_ref< android::content::Context > const&, local_ref< android::util::AttributeSet > const&);
+		EditText(local_ref< android::content::Context > const&, local_ref< android::util::AttributeSet > const&, cpp_int const&);
 		local_ref< android::text::Editable > getText();
 		void setText(local_ref< java::lang::CharSequence > const&, local_ref< android::widget::TextView_::BufferType > const&);
 		void setSelection(cpp_int const&, cpp_int const&);
@@ -70,7 +77,6 @@ namespace android { namespace widget {
 } //namespace widget
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_WIDGET_EDITTEXT_HPP_DECL
@@ -83,41 +89,50 @@ namespace android { namespace widget {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::widget::EditText > create< android::widget::EditText>(local_ref< android::content::Context > const &a0)
+
+android::widget::EditText::operator local_ref<android::widget::TextView>() const
 {
-	return local_ref< android::widget::EditText >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::widget::EditText::J2CPP_CLASS_NAME>(),
-			get_method_id<android::widget::EditText::J2CPP_CLASS_NAME, android::widget::EditText::J2CPP_METHOD_NAME(0), android::widget::EditText::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<android::widget::TextView>(get_jtype());
 }
 
-template <>
-local_ref< android::widget::EditText > create< android::widget::EditText>(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1)
+
+android::widget::EditText::EditText(local_ref< android::content::Context > const &a0)
+: cpp_object<android::widget::EditText>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::widget::EditText::J2CPP_CLASS_NAME>(),
+		get_method_id<android::widget::EditText::J2CPP_CLASS_NAME, android::widget::EditText::J2CPP_METHOD_NAME(0), android::widget::EditText::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< android::widget::EditText >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::widget::EditText::J2CPP_CLASS_NAME>(),
-			get_method_id<android::widget::EditText::J2CPP_CLASS_NAME, android::widget::EditText::J2CPP_METHOD_NAME(1), android::widget::EditText::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< android::widget::EditText > create< android::widget::EditText>(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1, cpp_int const &a2)
+
+
+android::widget::EditText::EditText(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1)
+: cpp_object<android::widget::EditText>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::widget::EditText::J2CPP_CLASS_NAME>(),
+		get_method_id<android::widget::EditText::J2CPP_CLASS_NAME, android::widget::EditText::J2CPP_METHOD_NAME(1), android::widget::EditText::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
 {
-	return local_ref< android::widget::EditText >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::widget::EditText::J2CPP_CLASS_NAME>(),
-			get_method_id<android::widget::EditText::J2CPP_CLASS_NAME, android::widget::EditText::J2CPP_METHOD_NAME(2), android::widget::EditText::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
-		)
-	);
 }
+
+
+
+android::widget::EditText::EditText(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1, cpp_int const &a2)
+: cpp_object<android::widget::EditText>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::widget::EditText::J2CPP_CLASS_NAME>(),
+		get_method_id<android::widget::EditText::J2CPP_CLASS_NAME, android::widget::EditText::J2CPP_METHOD_NAME(2), android::widget::EditText::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
+	)
+)
+{
+}
+
 
 
 

@@ -10,10 +10,12 @@
 #define J2CPP_ORG_APACHE_HTTP_IMPL_AUTH_UNSUPPORTEDDIGESTALGORITHMEXCEPTION_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class RuntimeException; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace lang { class Throwable; } } }
 
 
+#include <java/lang/RuntimeException.hpp>
 #include <java/lang/String.hpp>
 #include <java/lang/Throwable.hpp>
 
@@ -34,11 +36,17 @@ namespace org { namespace apache { namespace http { namespace impl { namespace a
 		J2CPP_DECLARE_METHOD(1)
 		J2CPP_DECLARE_METHOD(2)
 
-		UnsupportedDigestAlgorithmException(jobject jobj)
+		explicit UnsupportedDigestAlgorithmException(jobject jobj)
 		: cpp_object<UnsupportedDigestAlgorithmException>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::RuntimeException>() const;
+
+
+		UnsupportedDigestAlgorithmException();
+		UnsupportedDigestAlgorithmException(local_ref< java::lang::String > const&);
+		UnsupportedDigestAlgorithmException(local_ref< java::lang::String > const&, local_ref< java::lang::Throwable > const&);
 	}; //class UnsupportedDigestAlgorithmException
 
 } //namespace auth
@@ -46,7 +54,6 @@ namespace org { namespace apache { namespace http { namespace impl { namespace a
 } //namespace http
 } //namespace apache
 } //namespace org
-
 
 } //namespace j2cpp
 
@@ -60,40 +67,49 @@ namespace org { namespace apache { namespace http { namespace impl { namespace a
 namespace j2cpp {
 
 
-template <>
-local_ref< org::apache::http::impl::auth::UnsupportedDigestAlgorithmException > create< org::apache::http::impl::auth::UnsupportedDigestAlgorithmException>()
+
+org::apache::http::impl::auth::UnsupportedDigestAlgorithmException::operator local_ref<java::lang::RuntimeException>() const
 {
-	return local_ref< org::apache::http::impl::auth::UnsupportedDigestAlgorithmException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::apache::http::impl::auth::UnsupportedDigestAlgorithmException::J2CPP_CLASS_NAME>(),
-			get_method_id<org::apache::http::impl::auth::UnsupportedDigestAlgorithmException::J2CPP_CLASS_NAME, org::apache::http::impl::auth::UnsupportedDigestAlgorithmException::J2CPP_METHOD_NAME(0), org::apache::http::impl::auth::UnsupportedDigestAlgorithmException::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::RuntimeException>(get_jtype());
 }
 
-template <>
-local_ref< org::apache::http::impl::auth::UnsupportedDigestAlgorithmException > create< org::apache::http::impl::auth::UnsupportedDigestAlgorithmException>(local_ref< java::lang::String > const &a0)
+
+org::apache::http::impl::auth::UnsupportedDigestAlgorithmException::UnsupportedDigestAlgorithmException()
+: cpp_object<org::apache::http::impl::auth::UnsupportedDigestAlgorithmException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::apache::http::impl::auth::UnsupportedDigestAlgorithmException::J2CPP_CLASS_NAME>(),
+		get_method_id<org::apache::http::impl::auth::UnsupportedDigestAlgorithmException::J2CPP_CLASS_NAME, org::apache::http::impl::auth::UnsupportedDigestAlgorithmException::J2CPP_METHOD_NAME(0), org::apache::http::impl::auth::UnsupportedDigestAlgorithmException::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
 {
-	return local_ref< org::apache::http::impl::auth::UnsupportedDigestAlgorithmException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::apache::http::impl::auth::UnsupportedDigestAlgorithmException::J2CPP_CLASS_NAME>(),
-			get_method_id<org::apache::http::impl::auth::UnsupportedDigestAlgorithmException::J2CPP_CLASS_NAME, org::apache::http::impl::auth::UnsupportedDigestAlgorithmException::J2CPP_METHOD_NAME(1), org::apache::http::impl::auth::UnsupportedDigestAlgorithmException::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
 }
 
-template <>
-local_ref< org::apache::http::impl::auth::UnsupportedDigestAlgorithmException > create< org::apache::http::impl::auth::UnsupportedDigestAlgorithmException>(local_ref< java::lang::String > const &a0, local_ref< java::lang::Throwable > const &a1)
+
+
+org::apache::http::impl::auth::UnsupportedDigestAlgorithmException::UnsupportedDigestAlgorithmException(local_ref< java::lang::String > const &a0)
+: cpp_object<org::apache::http::impl::auth::UnsupportedDigestAlgorithmException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::apache::http::impl::auth::UnsupportedDigestAlgorithmException::J2CPP_CLASS_NAME>(),
+		get_method_id<org::apache::http::impl::auth::UnsupportedDigestAlgorithmException::J2CPP_CLASS_NAME, org::apache::http::impl::auth::UnsupportedDigestAlgorithmException::J2CPP_METHOD_NAME(1), org::apache::http::impl::auth::UnsupportedDigestAlgorithmException::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< org::apache::http::impl::auth::UnsupportedDigestAlgorithmException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<org::apache::http::impl::auth::UnsupportedDigestAlgorithmException::J2CPP_CLASS_NAME>(),
-			get_method_id<org::apache::http::impl::auth::UnsupportedDigestAlgorithmException::J2CPP_CLASS_NAME, org::apache::http::impl::auth::UnsupportedDigestAlgorithmException::J2CPP_METHOD_NAME(2), org::apache::http::impl::auth::UnsupportedDigestAlgorithmException::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
 }
+
+
+
+org::apache::http::impl::auth::UnsupportedDigestAlgorithmException::UnsupportedDigestAlgorithmException(local_ref< java::lang::String > const &a0, local_ref< java::lang::Throwable > const &a1)
+: cpp_object<org::apache::http::impl::auth::UnsupportedDigestAlgorithmException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<org::apache::http::impl::auth::UnsupportedDigestAlgorithmException::J2CPP_CLASS_NAME>(),
+		get_method_id<org::apache::http::impl::auth::UnsupportedDigestAlgorithmException::J2CPP_CLASS_NAME, org::apache::http::impl::auth::UnsupportedDigestAlgorithmException::J2CPP_METHOD_NAME(2), org::apache::http::impl::auth::UnsupportedDigestAlgorithmException::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
 
 
 J2CPP_DEFINE_CLASS(org::apache::http::impl::auth::UnsupportedDigestAlgorithmException,"org/apache/http/impl/auth/UnsupportedDigestAlgorithmException")

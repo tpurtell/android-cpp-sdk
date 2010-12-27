@@ -10,10 +10,12 @@
 #define J2CPP_JAVA_UTIL_CONCURRENT_COUNTDOWNLATCH_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace util { namespace concurrent { class TimeUnit; } } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/util/concurrent/TimeUnit.hpp>
 
@@ -37,11 +39,15 @@ namespace java { namespace util { namespace concurrent {
 		J2CPP_DECLARE_METHOD(4)
 		J2CPP_DECLARE_METHOD(5)
 
-		CountDownLatch(jobject jobj)
+		explicit CountDownLatch(jobject jobj)
 		: cpp_object<CountDownLatch>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		CountDownLatch(cpp_int const&);
 		void await();
 		cpp_boolean await(cpp_long const&, local_ref< java::util::concurrent::TimeUnit > const&);
 		void countDown();
@@ -52,7 +58,6 @@ namespace java { namespace util { namespace concurrent {
 } //namespace concurrent
 } //namespace util
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -66,17 +71,24 @@ namespace java { namespace util { namespace concurrent {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::util::concurrent::CountDownLatch > create< java::util::concurrent::CountDownLatch>(cpp_int const &a0)
+
+java::util::concurrent::CountDownLatch::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::util::concurrent::CountDownLatch >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::concurrent::CountDownLatch::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::concurrent::CountDownLatch::J2CPP_CLASS_NAME, java::util::concurrent::CountDownLatch::J2CPP_METHOD_NAME(0), java::util::concurrent::CountDownLatch::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+java::util::concurrent::CountDownLatch::CountDownLatch(cpp_int const &a0)
+: cpp_object<java::util::concurrent::CountDownLatch>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::util::concurrent::CountDownLatch::J2CPP_CLASS_NAME>(),
+		get_method_id<java::util::concurrent::CountDownLatch::J2CPP_CLASS_NAME, java::util::concurrent::CountDownLatch::J2CPP_METHOD_NAME(0), java::util::concurrent::CountDownLatch::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 void java::util::concurrent::CountDownLatch::await()
 {

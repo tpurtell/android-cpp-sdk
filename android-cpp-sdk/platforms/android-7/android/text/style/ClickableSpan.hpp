@@ -12,9 +12,13 @@
 
 namespace j2cpp { namespace android { namespace view { class View; } } }
 namespace j2cpp { namespace android { namespace text { class TextPaint; } } }
+namespace j2cpp { namespace android { namespace text { namespace style { class CharacterStyle; } } } }
+namespace j2cpp { namespace android { namespace text { namespace style { class UpdateAppearance; } } } }
 
 
 #include <android/text/TextPaint.hpp>
+#include <android/text/style/CharacterStyle.hpp>
+#include <android/text/style/UpdateAppearance.hpp>
 #include <android/view/View.hpp>
 
 
@@ -34,11 +38,16 @@ namespace android { namespace text { namespace style {
 		J2CPP_DECLARE_METHOD(1)
 		J2CPP_DECLARE_METHOD(2)
 
-		ClickableSpan(jobject jobj)
+		explicit ClickableSpan(jobject jobj)
 		: cpp_object<ClickableSpan>(jobj)
 		{
 		}
 
+		operator local_ref<android::text::style::CharacterStyle>() const;
+		operator local_ref<android::text::style::UpdateAppearance>() const;
+
+
+		ClickableSpan();
 		void onClick(local_ref< android::view::View > const&);
 		void updateDrawState(local_ref< android::text::TextPaint > const&);
 	}; //class ClickableSpan
@@ -46,7 +55,6 @@ namespace android { namespace text { namespace style {
 } //namespace style
 } //namespace text
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -60,16 +68,28 @@ namespace android { namespace text { namespace style {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::text::style::ClickableSpan > create< android::text::style::ClickableSpan>()
+
+android::text::style::ClickableSpan::operator local_ref<android::text::style::CharacterStyle>() const
 {
-	return local_ref< android::text::style::ClickableSpan >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::text::style::ClickableSpan::J2CPP_CLASS_NAME>(),
-			get_method_id<android::text::style::ClickableSpan::J2CPP_CLASS_NAME, android::text::style::ClickableSpan::J2CPP_METHOD_NAME(0), android::text::style::ClickableSpan::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<android::text::style::CharacterStyle>(get_jtype());
 }
+
+android::text::style::ClickableSpan::operator local_ref<android::text::style::UpdateAppearance>() const
+{
+	return local_ref<android::text::style::UpdateAppearance>(get_jtype());
+}
+
+
+android::text::style::ClickableSpan::ClickableSpan()
+: cpp_object<android::text::style::ClickableSpan>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::text::style::ClickableSpan::J2CPP_CLASS_NAME>(),
+		get_method_id<android::text::style::ClickableSpan::J2CPP_CLASS_NAME, android::text::style::ClickableSpan::J2CPP_METHOD_NAME(0), android::text::style::ClickableSpan::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 void android::text::style::ClickableSpan::onClick(local_ref< android::view::View > const &a0)
 {

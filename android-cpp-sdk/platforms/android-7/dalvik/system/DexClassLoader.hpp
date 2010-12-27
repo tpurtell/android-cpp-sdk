@@ -36,16 +36,19 @@ namespace dalvik { namespace system {
 		J2CPP_DECLARE_METHOD(3)
 		J2CPP_DECLARE_METHOD(4)
 
-		DexClassLoader(jobject jobj)
+		explicit DexClassLoader(jobject jobj)
 		: cpp_object<DexClassLoader>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::ClassLoader>() const;
+
+
+		DexClassLoader(local_ref< java::lang::String > const&, local_ref< java::lang::String > const&, local_ref< java::lang::String > const&, local_ref< java::lang::ClassLoader > const&);
 	}; //class DexClassLoader
 
 } //namespace system
 } //namespace dalvik
-
 
 } //namespace j2cpp
 
@@ -59,17 +62,24 @@ namespace dalvik { namespace system {
 namespace j2cpp {
 
 
-template <>
-local_ref< dalvik::system::DexClassLoader > create< dalvik::system::DexClassLoader>(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1, local_ref< java::lang::String > const &a2, local_ref< java::lang::ClassLoader > const &a3)
+
+dalvik::system::DexClassLoader::operator local_ref<java::lang::ClassLoader>() const
 {
-	return local_ref< dalvik::system::DexClassLoader >(
-		environment::get().get_jenv()->NewObject(
-			get_class<dalvik::system::DexClassLoader::J2CPP_CLASS_NAME>(),
-			get_method_id<dalvik::system::DexClassLoader::J2CPP_CLASS_NAME, dalvik::system::DexClassLoader::J2CPP_METHOD_NAME(0), dalvik::system::DexClassLoader::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype()
-		)
-	);
+	return local_ref<java::lang::ClassLoader>(get_jtype());
 }
+
+
+dalvik::system::DexClassLoader::DexClassLoader(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1, local_ref< java::lang::String > const &a2, local_ref< java::lang::ClassLoader > const &a3)
+: cpp_object<dalvik::system::DexClassLoader>(
+	environment::get().get_jenv()->NewObject(
+		get_class<dalvik::system::DexClassLoader::J2CPP_CLASS_NAME>(),
+		get_method_id<dalvik::system::DexClassLoader::J2CPP_CLASS_NAME, dalvik::system::DexClassLoader::J2CPP_METHOD_NAME(0), dalvik::system::DexClassLoader::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype()
+	)
+)
+{
+}
+
 
 
 

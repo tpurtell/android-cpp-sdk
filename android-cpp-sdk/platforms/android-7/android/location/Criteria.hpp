@@ -10,12 +10,15 @@
 #define J2CPP_ANDROID_LOCATION_CRITERIA_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace android { namespace os { class Parcel; } } }
+namespace j2cpp { namespace android { namespace os { class Parcelable; } } }
 namespace j2cpp { namespace android { namespace os { namespace Parcelable_ { class Creator; } } } }
 
 
 #include <android/os/Parcel.hpp>
 #include <android/os/Parcelable.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -55,11 +58,17 @@ namespace android { namespace location {
 		J2CPP_DECLARE_FIELD(5)
 		J2CPP_DECLARE_FIELD(6)
 
-		Criteria(jobject jobj)
+		explicit Criteria(jobject jobj)
 		: cpp_object<Criteria>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<android::os::Parcelable>() const;
+
+
+		Criteria();
+		Criteria(local_ref< android::location::Criteria > const&);
 		void setAccuracy(cpp_int const&);
 		cpp_int getAccuracy();
 		void setPowerRequirement(cpp_int const&);
@@ -87,7 +96,6 @@ namespace android { namespace location {
 } //namespace location
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_LOCATION_CRITERIA_HPP_DECL
@@ -100,28 +108,41 @@ namespace android { namespace location {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::location::Criteria > create< android::location::Criteria>()
+
+android::location::Criteria::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::location::Criteria >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::location::Criteria::J2CPP_CLASS_NAME>(),
-			get_method_id<android::location::Criteria::J2CPP_CLASS_NAME, android::location::Criteria::J2CPP_METHOD_NAME(0), android::location::Criteria::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
 
-template <>
-local_ref< android::location::Criteria > create< android::location::Criteria>(local_ref< android::location::Criteria > const &a0)
+android::location::Criteria::operator local_ref<android::os::Parcelable>() const
 {
-	return local_ref< android::location::Criteria >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::location::Criteria::J2CPP_CLASS_NAME>(),
-			get_method_id<android::location::Criteria::J2CPP_CLASS_NAME, android::location::Criteria::J2CPP_METHOD_NAME(1), android::location::Criteria::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<android::os::Parcelable>(get_jtype());
 }
+
+
+android::location::Criteria::Criteria()
+: cpp_object<android::location::Criteria>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::location::Criteria::J2CPP_CLASS_NAME>(),
+		get_method_id<android::location::Criteria::J2CPP_CLASS_NAME, android::location::Criteria::J2CPP_METHOD_NAME(0), android::location::Criteria::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
+
+
+android::location::Criteria::Criteria(local_ref< android::location::Criteria > const &a0)
+: cpp_object<android::location::Criteria>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::location::Criteria::J2CPP_CLASS_NAME>(),
+		get_method_id<android::location::Criteria::J2CPP_CLASS_NAME, android::location::Criteria::J2CPP_METHOD_NAME(1), android::location::Criteria::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 void android::location::Criteria::setAccuracy(cpp_int const &a0)
 {
@@ -269,6 +290,7 @@ void android::location::Criteria::writeToParcel(local_ref< android::os::Parcel >
 		)
 	);
 }
+
 
 
 static_field<

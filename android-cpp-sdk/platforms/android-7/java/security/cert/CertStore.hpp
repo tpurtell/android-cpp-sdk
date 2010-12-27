@@ -10,6 +10,7 @@
 #define J2CPP_JAVA_SECURITY_CERT_CERTSTORE_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace security { class Provider; } } }
 namespace j2cpp { namespace java { namespace security { namespace cert { class CertStoreParameters; } } } }
@@ -18,6 +19,7 @@ namespace j2cpp { namespace java { namespace security { namespace cert { class C
 namespace j2cpp { namespace java { namespace util { class Collection; } } }
 
 
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/security/Provider.hpp>
 #include <java/security/cert/CRLSelector.hpp>
@@ -49,10 +51,13 @@ namespace java { namespace security { namespace cert {
 		J2CPP_DECLARE_METHOD(8)
 		J2CPP_DECLARE_METHOD(9)
 
-		CertStore(jobject jobj)
+		explicit CertStore(jobject jobj)
 		: cpp_object<CertStore>(jobj)
 		{
 		}
+
+		operator local_ref<java::lang::Object>() const;
+
 
 		static local_ref< java::security::cert::CertStore > getInstance(local_ref< java::lang::String > const&, local_ref< java::security::cert::CertStoreParameters > const&);
 		static local_ref< java::security::cert::CertStore > getInstance(local_ref< java::lang::String > const&, local_ref< java::security::cert::CertStoreParameters > const&, local_ref< java::lang::String > const&);
@@ -69,7 +74,6 @@ namespace java { namespace security { namespace cert {
 } //namespace security
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_SECURITY_CERT_CERTSTORE_HPP_DECL
@@ -82,17 +86,12 @@ namespace java { namespace security { namespace cert {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::security::cert::CertStore > create< java::security::cert::CertStore>(local_ref< java::security::cert::CertStoreSpi > const &a0, local_ref< java::security::Provider > const &a1, local_ref< java::lang::String > const &a2, local_ref< java::security::cert::CertStoreParameters > const &a3)
+
+java::security::cert::CertStore::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::security::cert::CertStore >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::security::cert::CertStore::J2CPP_CLASS_NAME>(),
-			get_method_id<java::security::cert::CertStore::J2CPP_CLASS_NAME, java::security::cert::CertStore::J2CPP_METHOD_NAME(0), java::security::cert::CertStore::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype(), a3.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
 
 local_ref< java::security::cert::CertStore > java::security::cert::CertStore::getInstance(local_ref< java::lang::String > const &a0, local_ref< java::security::cert::CertStoreParameters > const &a1)
 {

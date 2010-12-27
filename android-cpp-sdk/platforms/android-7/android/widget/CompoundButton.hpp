@@ -10,10 +10,13 @@
 #define J2CPP_ANDROID_WIDGET_COMPOUNDBUTTON_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace android { namespace graphics { namespace drawable { class Drawable; } } } }
 namespace j2cpp { namespace android { namespace content { class Context; } } }
 namespace j2cpp { namespace android { namespace view { namespace accessibility { class AccessibilityEvent; } } } }
+namespace j2cpp { namespace android { namespace widget { class Button; } } }
 namespace j2cpp { namespace android { namespace widget { namespace CompoundButton_ { class OnCheckedChangeListener; } } } }
+namespace j2cpp { namespace android { namespace widget { class Checkable; } } }
 namespace j2cpp { namespace android { namespace util { class AttributeSet; } } }
 namespace j2cpp { namespace android { namespace os { class Parcelable; } } }
 
@@ -23,7 +26,10 @@ namespace j2cpp { namespace android { namespace os { class Parcelable; } } }
 #include <android/os/Parcelable.hpp>
 #include <android/util/AttributeSet.hpp>
 #include <android/view/accessibility/AccessibilityEvent.hpp>
+#include <android/widget/Button.hpp>
+#include <android/widget/Checkable.hpp>
 #include <android/widget/CompoundButton.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -43,10 +49,13 @@ namespace android { namespace widget {
 
 			J2CPP_DECLARE_METHOD(0)
 
-			OnCheckedChangeListener(jobject jobj)
+			explicit OnCheckedChangeListener(jobject jobj)
 			: cpp_object<OnCheckedChangeListener>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Object>() const;
+
 
 			void onCheckedChanged(local_ref< android::widget::CompoundButton > const&, cpp_boolean const&);
 		}; //class OnCheckedChangeListener
@@ -80,11 +89,18 @@ namespace android { namespace widget {
 
 		typedef CompoundButton_::OnCheckedChangeListener OnCheckedChangeListener;
 
-		CompoundButton(jobject jobj)
+		explicit CompoundButton(jobject jobj)
 		: cpp_object<CompoundButton>(jobj)
 		{
 		}
 
+		operator local_ref<android::widget::Button>() const;
+		operator local_ref<android::widget::Checkable>() const;
+
+
+		CompoundButton(local_ref< android::content::Context > const&);
+		CompoundButton(local_ref< android::content::Context > const&, local_ref< android::util::AttributeSet > const&);
+		CompoundButton(local_ref< android::content::Context > const&, local_ref< android::util::AttributeSet > const&, cpp_int const&);
 		void toggle();
 		cpp_boolean performClick();
 		cpp_boolean isChecked();
@@ -100,7 +116,6 @@ namespace android { namespace widget {
 } //namespace widget
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_WIDGET_COMPOUNDBUTTON_HPP_DECL
@@ -113,6 +128,12 @@ namespace android { namespace widget {
 namespace j2cpp {
 
 
+
+
+android::widget::CompoundButton_::OnCheckedChangeListener::operator local_ref<java::lang::Object>() const
+{
+	return local_ref<java::lang::Object>(get_jtype());
+}
 
 void android::widget::CompoundButton_::OnCheckedChangeListener::onCheckedChanged(local_ref< android::widget::CompoundButton > const &a0, cpp_boolean const &a1)
 {
@@ -130,41 +151,55 @@ J2CPP_DEFINE_CLASS(android::widget::CompoundButton_::OnCheckedChangeListener,"an
 J2CPP_DEFINE_METHOD(android::widget::CompoundButton_::OnCheckedChangeListener,0,"onCheckedChanged","(Landroid/widget/CompoundButton;Z)V")
 
 
-template <>
-local_ref< android::widget::CompoundButton > create< android::widget::CompoundButton>(local_ref< android::content::Context > const &a0)
+
+android::widget::CompoundButton::operator local_ref<android::widget::Button>() const
 {
-	return local_ref< android::widget::CompoundButton >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::widget::CompoundButton::J2CPP_CLASS_NAME>(),
-			get_method_id<android::widget::CompoundButton::J2CPP_CLASS_NAME, android::widget::CompoundButton::J2CPP_METHOD_NAME(0), android::widget::CompoundButton::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<android::widget::Button>(get_jtype());
 }
 
-template <>
-local_ref< android::widget::CompoundButton > create< android::widget::CompoundButton>(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1)
+android::widget::CompoundButton::operator local_ref<android::widget::Checkable>() const
 {
-	return local_ref< android::widget::CompoundButton >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::widget::CompoundButton::J2CPP_CLASS_NAME>(),
-			get_method_id<android::widget::CompoundButton::J2CPP_CLASS_NAME, android::widget::CompoundButton::J2CPP_METHOD_NAME(1), android::widget::CompoundButton::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<android::widget::Checkable>(get_jtype());
 }
 
-template <>
-local_ref< android::widget::CompoundButton > create< android::widget::CompoundButton>(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1, cpp_int const &a2)
+
+android::widget::CompoundButton::CompoundButton(local_ref< android::content::Context > const &a0)
+: cpp_object<android::widget::CompoundButton>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::widget::CompoundButton::J2CPP_CLASS_NAME>(),
+		get_method_id<android::widget::CompoundButton::J2CPP_CLASS_NAME, android::widget::CompoundButton::J2CPP_METHOD_NAME(0), android::widget::CompoundButton::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
 {
-	return local_ref< android::widget::CompoundButton >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::widget::CompoundButton::J2CPP_CLASS_NAME>(),
-			get_method_id<android::widget::CompoundButton::J2CPP_CLASS_NAME, android::widget::CompoundButton::J2CPP_METHOD_NAME(2), android::widget::CompoundButton::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
-		)
-	);
 }
+
+
+
+android::widget::CompoundButton::CompoundButton(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1)
+: cpp_object<android::widget::CompoundButton>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::widget::CompoundButton::J2CPP_CLASS_NAME>(),
+		get_method_id<android::widget::CompoundButton::J2CPP_CLASS_NAME, android::widget::CompoundButton::J2CPP_METHOD_NAME(1), android::widget::CompoundButton::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
+
+
+android::widget::CompoundButton::CompoundButton(local_ref< android::content::Context > const &a0, local_ref< android::util::AttributeSet > const &a1, cpp_int const &a2)
+: cpp_object<android::widget::CompoundButton>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::widget::CompoundButton::J2CPP_CLASS_NAME>(),
+		get_method_id<android::widget::CompoundButton::J2CPP_CLASS_NAME, android::widget::CompoundButton::J2CPP_METHOD_NAME(2), android::widget::CompoundButton::J2CPP_METHOD_SIGNATURE(2), false>(),
+		a0.get_jtype(), a1.get_jtype(), a2.get_jtype()
+	)
+)
+{
+}
+
 
 void android::widget::CompoundButton::toggle()
 {

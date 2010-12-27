@@ -12,9 +12,11 @@
 
 namespace j2cpp { namespace java { namespace io { class InputStream; } } }
 namespace j2cpp { namespace java { namespace util { namespace zip { class ZipEntry; } } } }
+namespace j2cpp { namespace java { namespace util { namespace zip { class InflaterInputStream; } } } }
 
 
 #include <java/io/InputStream.hpp>
+#include <java/util/zip/InflaterInputStream.hpp>
 #include <java/util/zip/ZipEntry.hpp>
 
 
@@ -39,11 +41,15 @@ namespace java { namespace util { namespace zip {
 		J2CPP_DECLARE_METHOD(6)
 		J2CPP_DECLARE_METHOD(7)
 
-		ZipInputStream(jobject jobj)
+		explicit ZipInputStream(jobject jobj)
 		: cpp_object<ZipInputStream>(jobj)
 		{
 		}
 
+		operator local_ref<java::util::zip::InflaterInputStream>() const;
+
+
+		ZipInputStream(local_ref< java::io::InputStream > const&);
 		void close();
 		void closeEntry();
 		local_ref< java::util::zip::ZipEntry > getNextEntry();
@@ -55,7 +61,6 @@ namespace java { namespace util { namespace zip {
 } //namespace zip
 } //namespace util
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -69,17 +74,24 @@ namespace java { namespace util { namespace zip {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::util::zip::ZipInputStream > create< java::util::zip::ZipInputStream>(local_ref< java::io::InputStream > const &a0)
+
+java::util::zip::ZipInputStream::operator local_ref<java::util::zip::InflaterInputStream>() const
 {
-	return local_ref< java::util::zip::ZipInputStream >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::util::zip::ZipInputStream::J2CPP_CLASS_NAME>(),
-			get_method_id<java::util::zip::ZipInputStream::J2CPP_CLASS_NAME, java::util::zip::ZipInputStream::J2CPP_METHOD_NAME(0), java::util::zip::ZipInputStream::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<java::util::zip::InflaterInputStream>(get_jtype());
 }
+
+
+java::util::zip::ZipInputStream::ZipInputStream(local_ref< java::io::InputStream > const &a0)
+: cpp_object<java::util::zip::ZipInputStream>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::util::zip::ZipInputStream::J2CPP_CLASS_NAME>(),
+		get_method_id<java::util::zip::ZipInputStream::J2CPP_CLASS_NAME, java::util::zip::ZipInputStream::J2CPP_METHOD_NAME(0), java::util::zip::ZipInputStream::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 void java::util::zip::ZipInputStream::close()
 {

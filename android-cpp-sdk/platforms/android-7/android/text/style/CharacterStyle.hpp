@@ -10,10 +10,12 @@
 #define J2CPP_ANDROID_TEXT_STYLE_CHARACTERSTYLE_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace android { namespace text { class TextPaint; } } }
 
 
 #include <android/text/TextPaint.hpp>
+#include <java/lang/Object.hpp>
 
 
 namespace j2cpp {
@@ -33,11 +35,15 @@ namespace android { namespace text { namespace style {
 		J2CPP_DECLARE_METHOD(2)
 		J2CPP_DECLARE_METHOD(3)
 
-		CharacterStyle(jobject jobj)
+		explicit CharacterStyle(jobject jobj)
 		: cpp_object<CharacterStyle>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		CharacterStyle();
 		void updateDrawState(local_ref< android::text::TextPaint > const&);
 		static local_ref< android::text::style::CharacterStyle > wrap(local_ref< android::text::style::CharacterStyle > const&);
 		local_ref< android::text::style::CharacterStyle > getUnderlying();
@@ -46,7 +52,6 @@ namespace android { namespace text { namespace style {
 } //namespace style
 } //namespace text
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -60,16 +65,23 @@ namespace android { namespace text { namespace style {
 namespace j2cpp {
 
 
-template <>
-local_ref< android::text::style::CharacterStyle > create< android::text::style::CharacterStyle>()
+
+android::text::style::CharacterStyle::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::text::style::CharacterStyle >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::text::style::CharacterStyle::J2CPP_CLASS_NAME>(),
-			get_method_id<android::text::style::CharacterStyle::J2CPP_CLASS_NAME, android::text::style::CharacterStyle::J2CPP_METHOD_NAME(0), android::text::style::CharacterStyle::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::text::style::CharacterStyle::CharacterStyle()
+: cpp_object<android::text::style::CharacterStyle>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::text::style::CharacterStyle::J2CPP_CLASS_NAME>(),
+		get_method_id<android::text::style::CharacterStyle::J2CPP_CLASS_NAME, android::text::style::CharacterStyle::J2CPP_METHOD_NAME(0), android::text::style::CharacterStyle::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 void android::text::style::CharacterStyle::updateDrawState(local_ref< android::text::TextPaint > const &a0)
 {

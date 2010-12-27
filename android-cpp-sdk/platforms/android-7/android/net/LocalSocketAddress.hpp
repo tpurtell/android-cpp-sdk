@@ -10,11 +10,15 @@
 #define J2CPP_ANDROID_NET_LOCALSOCKETADDRESS_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
+namespace j2cpp { namespace java { namespace lang { class Enum; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace android { namespace net { namespace LocalSocketAddress_ { class Namespace; } } } }
 
 
 #include <android/net/LocalSocketAddress.hpp>
+#include <java/lang/Enum.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -42,10 +46,13 @@ namespace android { namespace net {
 			J2CPP_DECLARE_FIELD(2)
 			J2CPP_DECLARE_FIELD(3)
 
-			Namespace(jobject jobj)
+			explicit Namespace(jobject jobj)
 			: cpp_object<Namespace>(jobj)
 			{
 			}
+
+			operator local_ref<java::lang::Enum>() const;
+
 
 			static local_ref< cpp_object_array<android::net::LocalSocketAddress_::Namespace, 1> > values();
 			static local_ref< android::net::LocalSocketAddress_::Namespace > valueOf(local_ref< java::lang::String > const&);
@@ -71,18 +78,22 @@ namespace android { namespace net {
 
 		typedef LocalSocketAddress_::Namespace Namespace;
 
-		LocalSocketAddress(jobject jobj)
+		explicit LocalSocketAddress(jobject jobj)
 		: cpp_object<LocalSocketAddress>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		LocalSocketAddress(local_ref< java::lang::String > const&, local_ref< android::net::LocalSocketAddress_::Namespace > const&);
+		LocalSocketAddress(local_ref< java::lang::String > const&);
 		local_ref< java::lang::String > getName();
 		local_ref< android::net::LocalSocketAddress_::Namespace > getNamespace();
 	}; //class LocalSocketAddress
 
 } //namespace net
 } //namespace android
-
 
 } //namespace j2cpp
 
@@ -96,6 +107,12 @@ namespace android { namespace net {
 namespace j2cpp {
 
 
+
+
+android::net::LocalSocketAddress_::Namespace::operator local_ref<java::lang::Enum>() const
+{
+	return local_ref<java::lang::Enum>(get_jtype());
+}
 
 local_ref< cpp_object_array<android::net::LocalSocketAddress_::Namespace, 1> > android::net::LocalSocketAddress_::Namespace::values()
 {
@@ -118,17 +135,7 @@ local_ref< android::net::LocalSocketAddress_::Namespace > android::net::LocalSoc
 	);
 }
 
-template <>
-local_ref< android::net::LocalSocketAddress_::Namespace > create< android::net::LocalSocketAddress_::Namespace>(local_ref< java::lang::String > const &a0, cpp_int const &a1)
-{
-	return local_ref< android::net::LocalSocketAddress_::Namespace >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::net::LocalSocketAddress_::Namespace::J2CPP_CLASS_NAME>(),
-			get_method_id<android::net::LocalSocketAddress_::Namespace::J2CPP_CLASS_NAME, android::net::LocalSocketAddress_::Namespace::J2CPP_METHOD_NAME(2), android::net::LocalSocketAddress_::Namespace::J2CPP_METHOD_SIGNATURE(2), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
-}
+
 
 
 static_field<
@@ -164,29 +171,37 @@ J2CPP_DEFINE_FIELD(android::net::LocalSocketAddress_::Namespace,2,"RESERVED","La
 J2CPP_DEFINE_FIELD(android::net::LocalSocketAddress_::Namespace,3,"$VALUES","[android.net.LocalSocketAddress.Namespace")
 
 
-template <>
-local_ref< android::net::LocalSocketAddress > create< android::net::LocalSocketAddress>(local_ref< java::lang::String > const &a0, local_ref< android::net::LocalSocketAddress_::Namespace > const &a1)
+
+android::net::LocalSocketAddress::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::net::LocalSocketAddress >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::net::LocalSocketAddress::J2CPP_CLASS_NAME>(),
-			get_method_id<android::net::LocalSocketAddress::J2CPP_CLASS_NAME, android::net::LocalSocketAddress::J2CPP_METHOD_NAME(0), android::net::LocalSocketAddress::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
 
-template <>
-local_ref< android::net::LocalSocketAddress > create< android::net::LocalSocketAddress>(local_ref< java::lang::String > const &a0)
+
+android::net::LocalSocketAddress::LocalSocketAddress(local_ref< java::lang::String > const &a0, local_ref< android::net::LocalSocketAddress_::Namespace > const &a1)
+: cpp_object<android::net::LocalSocketAddress>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::net::LocalSocketAddress::J2CPP_CLASS_NAME>(),
+		get_method_id<android::net::LocalSocketAddress::J2CPP_CLASS_NAME, android::net::LocalSocketAddress::J2CPP_METHOD_NAME(0), android::net::LocalSocketAddress::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
 {
-	return local_ref< android::net::LocalSocketAddress >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::net::LocalSocketAddress::J2CPP_CLASS_NAME>(),
-			get_method_id<android::net::LocalSocketAddress::J2CPP_CLASS_NAME, android::net::LocalSocketAddress::J2CPP_METHOD_NAME(1), android::net::LocalSocketAddress::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
 }
+
+
+
+android::net::LocalSocketAddress::LocalSocketAddress(local_ref< java::lang::String > const &a0)
+: cpp_object<android::net::LocalSocketAddress>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::net::LocalSocketAddress::J2CPP_CLASS_NAME>(),
+		get_method_id<android::net::LocalSocketAddress::J2CPP_CLASS_NAME, android::net::LocalSocketAddress::J2CPP_METHOD_NAME(1), android::net::LocalSocketAddress::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 local_ref< java::lang::String > android::net::LocalSocketAddress::getName()
 {

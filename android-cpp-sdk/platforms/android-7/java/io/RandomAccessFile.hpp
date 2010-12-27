@@ -10,14 +10,22 @@
 #define J2CPP_JAVA_IO_RANDOMACCESSFILE_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class DataOutput; } } }
+namespace j2cpp { namespace java { namespace io { class Closeable; } } }
 namespace j2cpp { namespace java { namespace io { class File; } } }
 namespace j2cpp { namespace java { namespace io { class FileDescriptor; } } }
+namespace j2cpp { namespace java { namespace io { class DataInput; } } }
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace nio { namespace channels { class FileChannel; } } } }
 
 
+#include <java/io/Closeable.hpp>
+#include <java/io/DataInput.hpp>
+#include <java/io/DataOutput.hpp>
 #include <java/io/File.hpp>
 #include <java/io/FileDescriptor.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 #include <java/nio/channels/FileChannel.hpp>
 
@@ -76,11 +84,19 @@ namespace java { namespace io {
 		J2CPP_DECLARE_METHOD(39)
 		J2CPP_DECLARE_METHOD(40)
 
-		RandomAccessFile(jobject jobj)
+		explicit RandomAccessFile(jobject jobj)
 		: cpp_object<RandomAccessFile>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+		operator local_ref<java::io::DataInput>() const;
+		operator local_ref<java::io::DataOutput>() const;
+		operator local_ref<java::io::Closeable>() const;
+
+
+		RandomAccessFile(local_ref< java::io::File > const&, local_ref< java::lang::String > const&);
+		RandomAccessFile(local_ref< java::lang::String > const&, local_ref< java::lang::String > const&);
 		void close();
 		local_ref< java::nio::channels::FileChannel > getChannel();
 		local_ref< java::io::FileDescriptor > getFD();
@@ -125,7 +141,6 @@ namespace java { namespace io {
 } //namespace io
 } //namespace java
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_JAVA_IO_RANDOMACCESSFILE_HPP_DECL
@@ -138,29 +153,52 @@ namespace java { namespace io {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::io::RandomAccessFile > create< java::io::RandomAccessFile>(local_ref< java::io::File > const &a0, local_ref< java::lang::String > const &a1)
+
+java::io::RandomAccessFile::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< java::io::RandomAccessFile >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::io::RandomAccessFile::J2CPP_CLASS_NAME>(),
-			get_method_id<java::io::RandomAccessFile::J2CPP_CLASS_NAME, java::io::RandomAccessFile::J2CPP_METHOD_NAME(0), java::io::RandomAccessFile::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
 
-template <>
-local_ref< java::io::RandomAccessFile > create< java::io::RandomAccessFile>(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
+java::io::RandomAccessFile::operator local_ref<java::io::DataInput>() const
 {
-	return local_ref< java::io::RandomAccessFile >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::io::RandomAccessFile::J2CPP_CLASS_NAME>(),
-			get_method_id<java::io::RandomAccessFile::J2CPP_CLASS_NAME, java::io::RandomAccessFile::J2CPP_METHOD_NAME(1), java::io::RandomAccessFile::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype(), a1.get_jtype()
-		)
-	);
+	return local_ref<java::io::DataInput>(get_jtype());
 }
+
+java::io::RandomAccessFile::operator local_ref<java::io::DataOutput>() const
+{
+	return local_ref<java::io::DataOutput>(get_jtype());
+}
+
+java::io::RandomAccessFile::operator local_ref<java::io::Closeable>() const
+{
+	return local_ref<java::io::Closeable>(get_jtype());
+}
+
+
+java::io::RandomAccessFile::RandomAccessFile(local_ref< java::io::File > const &a0, local_ref< java::lang::String > const &a1)
+: cpp_object<java::io::RandomAccessFile>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::io::RandomAccessFile::J2CPP_CLASS_NAME>(),
+		get_method_id<java::io::RandomAccessFile::J2CPP_CLASS_NAME, java::io::RandomAccessFile::J2CPP_METHOD_NAME(0), java::io::RandomAccessFile::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
+
+
+java::io::RandomAccessFile::RandomAccessFile(local_ref< java::lang::String > const &a0, local_ref< java::lang::String > const &a1)
+: cpp_object<java::io::RandomAccessFile>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::io::RandomAccessFile::J2CPP_CLASS_NAME>(),
+		get_method_id<java::io::RandomAccessFile::J2CPP_CLASS_NAME, java::io::RandomAccessFile::J2CPP_METHOD_NAME(1), java::io::RandomAccessFile::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype(), a1.get_jtype()
+	)
+)
+{
+}
+
 
 void java::io::RandomAccessFile::close()
 {

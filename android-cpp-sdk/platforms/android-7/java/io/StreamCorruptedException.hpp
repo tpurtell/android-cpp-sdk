@@ -10,9 +10,11 @@
 #define J2CPP_JAVA_IO_STREAMCORRUPTEDEXCEPTION_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class ObjectStreamException; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 
 
+#include <java/io/ObjectStreamException.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -31,16 +33,20 @@ namespace java { namespace io {
 		J2CPP_DECLARE_METHOD(0)
 		J2CPP_DECLARE_METHOD(1)
 
-		StreamCorruptedException(jobject jobj)
+		explicit StreamCorruptedException(jobject jobj)
 		: cpp_object<StreamCorruptedException>(jobj)
 		{
 		}
 
+		operator local_ref<java::io::ObjectStreamException>() const;
+
+
+		StreamCorruptedException();
+		StreamCorruptedException(local_ref< java::lang::String > const&);
 	}; //class StreamCorruptedException
 
 } //namespace io
 } //namespace java
-
 
 } //namespace j2cpp
 
@@ -54,28 +60,36 @@ namespace java { namespace io {
 namespace j2cpp {
 
 
-template <>
-local_ref< java::io::StreamCorruptedException > create< java::io::StreamCorruptedException>()
+
+java::io::StreamCorruptedException::operator local_ref<java::io::ObjectStreamException>() const
 {
-	return local_ref< java::io::StreamCorruptedException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::io::StreamCorruptedException::J2CPP_CLASS_NAME>(),
-			get_method_id<java::io::StreamCorruptedException::J2CPP_CLASS_NAME, java::io::StreamCorruptedException::J2CPP_METHOD_NAME(0), java::io::StreamCorruptedException::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::io::ObjectStreamException>(get_jtype());
 }
 
-template <>
-local_ref< java::io::StreamCorruptedException > create< java::io::StreamCorruptedException>(local_ref< java::lang::String > const &a0)
+
+java::io::StreamCorruptedException::StreamCorruptedException()
+: cpp_object<java::io::StreamCorruptedException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::io::StreamCorruptedException::J2CPP_CLASS_NAME>(),
+		get_method_id<java::io::StreamCorruptedException::J2CPP_CLASS_NAME, java::io::StreamCorruptedException::J2CPP_METHOD_NAME(0), java::io::StreamCorruptedException::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
 {
-	return local_ref< java::io::StreamCorruptedException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<java::io::StreamCorruptedException::J2CPP_CLASS_NAME>(),
-			get_method_id<java::io::StreamCorruptedException::J2CPP_CLASS_NAME, java::io::StreamCorruptedException::J2CPP_METHOD_NAME(1), java::io::StreamCorruptedException::J2CPP_METHOD_SIGNATURE(1), false>(),
-			a0.get_jtype()
-		)
-	);
 }
+
+
+
+java::io::StreamCorruptedException::StreamCorruptedException(local_ref< java::lang::String > const &a0)
+: cpp_object<java::io::StreamCorruptedException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<java::io::StreamCorruptedException::J2CPP_CLASS_NAME>(),
+		get_method_id<java::io::StreamCorruptedException::J2CPP_CLASS_NAME, java::io::StreamCorruptedException::J2CPP_METHOD_NAME(1), java::io::StreamCorruptedException::J2CPP_METHOD_SIGNATURE(1), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 
 J2CPP_DEFINE_CLASS(java::io::StreamCorruptedException,"java/io/StreamCorruptedException")

@@ -10,15 +10,23 @@
 #define J2CPP_ANDROID_PROVIDER_SETTINGS_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace android { namespace net { class Uri; } } }
+namespace j2cpp { namespace android { namespace provider { namespace Settings_ { class NameValueTable; } } } }
+namespace j2cpp { namespace android { namespace provider { class BaseColumns; } } }
 namespace j2cpp { namespace android { namespace content { class ContentResolver; } } }
 namespace j2cpp { namespace android { namespace content { namespace res { class Configuration; } } } }
+namespace j2cpp { namespace android { namespace util { class AndroidException; } } }
 
 
 #include <android/content/ContentResolver.hpp>
 #include <android/content/res/Configuration.hpp>
 #include <android/net/Uri.hpp>
+#include <android/provider/BaseColumns.hpp>
+#include <android/provider/Settings.hpp>
+#include <android/util/AndroidException.hpp>
+#include <java/lang/Object.hpp>
 #include <java/lang/String.hpp>
 
 
@@ -43,11 +51,16 @@ namespace android { namespace provider {
 			J2CPP_DECLARE_FIELD(0)
 			J2CPP_DECLARE_FIELD(1)
 
-			NameValueTable(jobject jobj)
+			explicit NameValueTable(jobject jobj)
 			: cpp_object<NameValueTable>(jobj)
 			{
 			}
 
+			operator local_ref<java::lang::Object>() const;
+			operator local_ref<android::provider::BaseColumns>() const;
+
+
+			NameValueTable();
 			static local_ref< android::net::Uri > getUriFor(local_ref< android::net::Uri > const&, local_ref< java::lang::String > const&);
 
 			static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(0), J2CPP_FIELD_SIGNATURE(0), local_ref< java::lang::String > > NAME;
@@ -64,11 +77,15 @@ namespace android { namespace provider {
 
 			J2CPP_DECLARE_METHOD(0)
 
-			SettingNotFoundException(jobject jobj)
+			explicit SettingNotFoundException(jobject jobj)
 			: cpp_object<SettingNotFoundException>(jobj)
 			{
 			}
 
+			operator local_ref<android::util::AndroidException>() const;
+
+
+			SettingNotFoundException(local_ref< java::lang::String > const&);
 		}; //class SettingNotFoundException
 
 		class Secure;
@@ -143,11 +160,15 @@ namespace android { namespace provider {
 			J2CPP_DECLARE_FIELD(47)
 			J2CPP_DECLARE_FIELD(48)
 
-			Secure(jobject jobj)
+			explicit Secure(jobject jobj)
 			: cpp_object<Secure>(jobj)
 			{
 			}
 
+			operator local_ref<android::provider::Settings_::NameValueTable>() const;
+
+
+			Secure();
 			static local_ref< java::lang::String > getString(local_ref< android::content::ContentResolver > const&, local_ref< java::lang::String > const&);
 			static cpp_boolean putString(local_ref< android::content::ContentResolver > const&, local_ref< java::lang::String > const&, local_ref< java::lang::String > const&);
 			static local_ref< android::net::Uri > getUriFor(local_ref< java::lang::String > const&);
@@ -340,11 +361,15 @@ namespace android { namespace provider {
 			J2CPP_DECLARE_FIELD(99)
 			J2CPP_DECLARE_FIELD(100)
 
-			System(jobject jobj)
+			explicit System(jobject jobj)
 			: cpp_object<System>(jobj)
 			{
 			}
 
+			operator local_ref<android::provider::Settings_::NameValueTable>() const;
+
+
+			System();
 			static local_ref< java::lang::String > getString(local_ref< android::content::ContentResolver > const&, local_ref< java::lang::String > const&);
 			static cpp_boolean putString(local_ref< android::content::ContentResolver > const&, local_ref< java::lang::String > const&, local_ref< java::lang::String > const&);
 			static local_ref< android::net::Uri > getUriFor(local_ref< java::lang::String > const&);
@@ -508,11 +533,15 @@ namespace android { namespace provider {
 		typedef Settings_::Secure Secure;
 		typedef Settings_::System System;
 
-		Settings(jobject jobj)
+		explicit Settings(jobject jobj)
 		: cpp_object<Settings>(jobj)
 		{
 		}
 
+		operator local_ref<java::lang::Object>() const;
+
+
+		Settings();
 
 		static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(0), J2CPP_FIELD_SIGNATURE(0), local_ref< java::lang::String > > ACTION_SETTINGS;
 		static static_field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(1), J2CPP_FIELD_SIGNATURE(1), local_ref< java::lang::String > > ACTION_APN_SETTINGS;
@@ -546,7 +575,6 @@ namespace android { namespace provider {
 } //namespace provider
 } //namespace android
 
-
 } //namespace j2cpp
 
 #endif //J2CPP_ANDROID_PROVIDER_SETTINGS_HPP_DECL
@@ -560,16 +588,28 @@ namespace j2cpp {
 
 
 
-template <>
-local_ref< android::provider::Settings_::NameValueTable > create< android::provider::Settings_::NameValueTable>()
+
+android::provider::Settings_::NameValueTable::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::provider::Settings_::NameValueTable >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::provider::Settings_::NameValueTable::J2CPP_CLASS_NAME>(),
-			get_method_id<android::provider::Settings_::NameValueTable::J2CPP_CLASS_NAME, android::provider::Settings_::NameValueTable::J2CPP_METHOD_NAME(0), android::provider::Settings_::NameValueTable::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+android::provider::Settings_::NameValueTable::operator local_ref<android::provider::BaseColumns>() const
+{
+	return local_ref<android::provider::BaseColumns>(get_jtype());
+}
+
+
+android::provider::Settings_::NameValueTable::NameValueTable()
+: cpp_object<android::provider::Settings_::NameValueTable>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::provider::Settings_::NameValueTable::J2CPP_CLASS_NAME>(),
+		get_method_id<android::provider::Settings_::NameValueTable::J2CPP_CLASS_NAME, android::provider::Settings_::NameValueTable::J2CPP_METHOD_NAME(0), android::provider::Settings_::NameValueTable::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 
 local_ref< android::net::Uri > android::provider::Settings_::NameValueTable::getUriFor(local_ref< android::net::Uri > const &a0, local_ref< java::lang::String > const &a1)
@@ -606,32 +646,46 @@ J2CPP_DEFINE_METHOD(android::provider::Settings_::NameValueTable,2,"getUriFor","
 J2CPP_DEFINE_FIELD(android::provider::Settings_::NameValueTable,0,"NAME","Ljava/lang/String;")
 J2CPP_DEFINE_FIELD(android::provider::Settings_::NameValueTable,1,"VALUE","Ljava/lang/String;")
 
-template <>
-local_ref< android::provider::Settings_::SettingNotFoundException > create< android::provider::Settings_::SettingNotFoundException>(local_ref< java::lang::String > const &a0)
+
+android::provider::Settings_::SettingNotFoundException::operator local_ref<android::util::AndroidException>() const
 {
-	return local_ref< android::provider::Settings_::SettingNotFoundException >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::provider::Settings_::SettingNotFoundException::J2CPP_CLASS_NAME>(),
-			get_method_id<android::provider::Settings_::SettingNotFoundException::J2CPP_CLASS_NAME, android::provider::Settings_::SettingNotFoundException::J2CPP_METHOD_NAME(0), android::provider::Settings_::SettingNotFoundException::J2CPP_METHOD_SIGNATURE(0), false>(),
-			a0.get_jtype()
-		)
-	);
+	return local_ref<android::util::AndroidException>(get_jtype());
 }
+
+
+android::provider::Settings_::SettingNotFoundException::SettingNotFoundException(local_ref< java::lang::String > const &a0)
+: cpp_object<android::provider::Settings_::SettingNotFoundException>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::provider::Settings_::SettingNotFoundException::J2CPP_CLASS_NAME>(),
+		get_method_id<android::provider::Settings_::SettingNotFoundException::J2CPP_CLASS_NAME, android::provider::Settings_::SettingNotFoundException::J2CPP_METHOD_NAME(0), android::provider::Settings_::SettingNotFoundException::J2CPP_METHOD_SIGNATURE(0), false>(),
+		a0.get_jtype()
+	)
+)
+{
+}
+
 
 
 J2CPP_DEFINE_CLASS(android::provider::Settings_::SettingNotFoundException,"android/provider/Settings$SettingNotFoundException")
 J2CPP_DEFINE_METHOD(android::provider::Settings_::SettingNotFoundException,0,"<init>","(Ljava/lang/String;)V")
 
-template <>
-local_ref< android::provider::Settings_::Secure > create< android::provider::Settings_::Secure>()
+
+android::provider::Settings_::Secure::operator local_ref<android::provider::Settings_::NameValueTable>() const
 {
-	return local_ref< android::provider::Settings_::Secure >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::provider::Settings_::Secure::J2CPP_CLASS_NAME>(),
-			get_method_id<android::provider::Settings_::Secure::J2CPP_CLASS_NAME, android::provider::Settings_::Secure::J2CPP_METHOD_NAME(0), android::provider::Settings_::Secure::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<android::provider::Settings_::NameValueTable>(get_jtype());
 }
+
+
+android::provider::Settings_::Secure::Secure()
+: cpp_object<android::provider::Settings_::Secure>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::provider::Settings_::Secure::J2CPP_CLASS_NAME>(),
+		get_method_id<android::provider::Settings_::Secure::J2CPP_CLASS_NAME, android::provider::Settings_::Secure::J2CPP_METHOD_NAME(0), android::provider::Settings_::Secure::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 local_ref< java::lang::String > android::provider::Settings_::Secure::getString(local_ref< android::content::ContentResolver > const &a0, local_ref< java::lang::String > const &a1)
 {
@@ -764,6 +818,7 @@ cpp_boolean android::provider::Settings_::Secure::putFloat(local_ref< android::c
 		)
 	);
 }
+
 
 
 static_field<
@@ -1175,16 +1230,23 @@ J2CPP_DEFINE_FIELD(android::provider::Settings_::Secure,46,"WIFI_MAX_DHCP_RETRY_
 J2CPP_DEFINE_FIELD(android::provider::Settings_::Secure,47,"WIFI_MOBILE_DATA_TRANSITION_WAKELOCK_TIMEOUT_MS","Ljava/lang/String;")
 J2CPP_DEFINE_FIELD(android::provider::Settings_::Secure,48,"BACKGROUND_DATA","Ljava/lang/String;")
 
-template <>
-local_ref< android::provider::Settings_::System > create< android::provider::Settings_::System>()
+
+android::provider::Settings_::System::operator local_ref<android::provider::Settings_::NameValueTable>() const
 {
-	return local_ref< android::provider::Settings_::System >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::provider::Settings_::System::J2CPP_CLASS_NAME>(),
-			get_method_id<android::provider::Settings_::System::J2CPP_CLASS_NAME, android::provider::Settings_::System::J2CPP_METHOD_NAME(0), android::provider::Settings_::System::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<android::provider::Settings_::NameValueTable>(get_jtype());
 }
+
+
+android::provider::Settings_::System::System()
+: cpp_object<android::provider::Settings_::System>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::provider::Settings_::System::J2CPP_CLASS_NAME>(),
+		get_method_id<android::provider::Settings_::System::J2CPP_CLASS_NAME, android::provider::Settings_::System::J2CPP_METHOD_NAME(0), android::provider::Settings_::System::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 local_ref< java::lang::String > android::provider::Settings_::System::getString(local_ref< android::content::ContentResolver > const &a0, local_ref< java::lang::String > const &a1)
 {
@@ -1361,6 +1423,7 @@ void android::provider::Settings_::System::setShowGTalkServiceStatus(local_ref< 
 		)
 	);
 }
+
 
 
 static_field<
@@ -2193,16 +2256,23 @@ J2CPP_DEFINE_FIELD(android::provider::Settings_::System,99,"WIFI_WATCHDOG_PING_D
 J2CPP_DEFINE_FIELD(android::provider::Settings_::System,100,"WIFI_WATCHDOG_PING_TIMEOUT_MS","Ljava/lang/String;")
 
 
-template <>
-local_ref< android::provider::Settings > create< android::provider::Settings>()
+
+android::provider::Settings::operator local_ref<java::lang::Object>() const
 {
-	return local_ref< android::provider::Settings >(
-		environment::get().get_jenv()->NewObject(
-			get_class<android::provider::Settings::J2CPP_CLASS_NAME>(),
-			get_method_id<android::provider::Settings::J2CPP_CLASS_NAME, android::provider::Settings::J2CPP_METHOD_NAME(0), android::provider::Settings::J2CPP_METHOD_SIGNATURE(0), false>()
-		)
-	);
+	return local_ref<java::lang::Object>(get_jtype());
 }
+
+
+android::provider::Settings::Settings()
+: cpp_object<android::provider::Settings>(
+	environment::get().get_jenv()->NewObject(
+		get_class<android::provider::Settings::J2CPP_CLASS_NAME>(),
+		get_method_id<android::provider::Settings::J2CPP_CLASS_NAME, android::provider::Settings::J2CPP_METHOD_NAME(0), android::provider::Settings::J2CPP_METHOD_SIGNATURE(0), false>()
+	)
+)
+{
+}
+
 
 
 static_field<
