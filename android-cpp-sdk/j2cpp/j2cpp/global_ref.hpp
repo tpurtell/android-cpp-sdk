@@ -2,7 +2,8 @@
 #define J2CPP_GLOBAL_REF_HPP
 
 #include <j2cpp/config.hpp>
-#include <j2cpp/jobject_global_ref.hpp>
+#include <j2cpp/detail/atomic_count.hpp>
+#include <j2cpp/detail/swap.hpp>
 
 namespace j2cpp {
 
@@ -12,47 +13,84 @@ namespace j2cpp {
 	class global_ref
 	{
 	public:
-		typedef ObjType object_type;
-		typedef jobject_global_ref<jobject> ref_type;
+		template < typename T > friend class local_ref;
 
-		template <typename T> friend class local_ref;
+		typedef ObjType					object_type;
+		typedef detail::atomic_count	count_type;
 
-		global_ref(jobject obj)
-		: m_ref(obj)
-		, m_obj(m_ref.get_jtype())
+		explicit global_ref(jobject jobj)
+		: m_px(0)
+		, m_pn(0)
 		{
+			if(jobject gref=(jobj?
+				environment::get().get_jenv()->NewGlobalRef(jobj):0)
+			)
+			{
+				m_px=new object_type(gref);
+				m_pn=new count_type(1);
+			}
 		}
 
-		global_ref(object_type const &o)
-		: m_ref(o.get_jtype())
-		, m_obj(m_ref.get_jtype())
+		~global_ref()
 		{
+			if(--*m_pn==0)
+			{
+				if(m_px && m_px->get_jtype())
+					environment::get().get_jenv()->DeleteGlobalRef(m_px->get_jtype());
+
+				delete m_px;
+				delete m_pn;
+			}
+		}
+
+		global_ref(object_type const &obj)
+		: m_px(0)
+		, m_pn(0)
+		{
+			if(jobject gref=(obj.get_jtype()?
+				environment::get().get_jenv()->NewGlobalRef(obj.get_jtype()):0)
+			)
+			{
+				m_px=new object_type(gref);
+				m_pn=new count_type(1);
+			}
 		}
 
 		global_ref(global_ref const &that)
-		: m_ref(that.m_ref)
-		, m_obj(m_ref.get_jtype())
+		: m_px(that.m_px)
+		, m_pn(that.m_pn)
 		{
+			++*m_pn;
 		}
 
-		global_ref(local_ref<object_type> const &that)
-		: m_ref(that.m_ref)
-		, m_obj(m_ref.get_jtype())
+		global_ref(local_ref<object_type> const &lref)
+		: m_px(0)
+		, m_pn(0)
 		{
+			if(jobject gref=(lref.get_jtype()?
+				environment::get().get_jenv()->NewGlobalRef(lref.get_jtype()):0)
+			)
+			{
+				m_px=new object_type(gref);
+				m_pn=new count_type(1);
+			}
 		}
 
 		object_type* operator->() const
 		{
-			return &m_obj;
+			return m_px;
 		}
 
-		jobject get_jtype() const { return m_obj.get_jtype(); }
+		jobject get_jtype() const
+		{
+			return (m_px?m_px->get_jtype():0);
+		}
 
 	private:
-		ref_type			m_ref;
-		mutable object_type	m_obj;
-
+		object_type	*m_px;
+		count_type	*m_pn;
 	};
+
 } //namespace j2cpp
 
 #endif //J2CPP_GLOBAL_REF_HPP
