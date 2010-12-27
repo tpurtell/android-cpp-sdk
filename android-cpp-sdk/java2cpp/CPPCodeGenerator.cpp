@@ -270,7 +270,7 @@ std::ostream& CPPCodeGenerator::write_class(std::ostream &os, std::size_t indent
 			{
 				if(!pField->test_access_flag(model::ClassMember::kStatic))
 				{
-					indent(os,0);
+					indent(os,indent_pos+1);
 					os << ", " << pField->get_name() << "(jobj)" << std::endl;
 				}
 			}
