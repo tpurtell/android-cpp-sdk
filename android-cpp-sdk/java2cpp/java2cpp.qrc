@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/">
+        <file>icons/class.ico</file>
+        <file>icons/method.ico</file>
+        <file>icons/namespace.ico</file>
+        <file>icons/field.ico</file>
+    </qresource>
+</RCC>

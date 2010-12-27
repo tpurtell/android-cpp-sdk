@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Java2Cpp</class>
+ <widget class="QDialog" name="Java2Cpp">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>698</width>
+    <height>542</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>java2cpp</string>
+  </property>
+  <layout class="QVBoxLayout" name="m_Layout">
+   <property name="margin">
+    <number>0</number>
+   </property>
+   <item>
+    <layout class="QVBoxLayout" name="m_MainLayout">
+     <property name="margin">
+      <number>9</number>
+     </property>
+     <item>
+      <widget class="QDialogButtonBox" name="m_AcceptReject">
+       <property name="standardButtons">
+        <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources>
+  <include location="java2cpp.qrc"/>
+ </resources>
+ <connections/>
+</ui>
