@@ -1,0 +1,3 @@
+set solib-search-path /cygdrive/d/Projects/android/android-cpp-sdk/samples/j2cppTest/obj/local/armeabi
+directory /cygdrive/d/Software/SDK/android/android-ndk-r4-crystax/build/platforms/android-5/arch-arm/usr/include
+directory /cygdrive/d/Projects/android/android-cpp-sdk/samples/j2cppTest/jni
