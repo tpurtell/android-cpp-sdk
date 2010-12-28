@@ -54,7 +54,7 @@ namespace j2cpp {
 			field_access<Type>::set(
 				m_jobject,
 				get_field_id<Class,Name,Signature,false>(),
-				v.get_jtype()
+				v
 			);
 			return *this;
 		}
@@ -63,7 +63,7 @@ namespace j2cpp {
 		{
 			return field_access<Type>::get(
 				m_jobject,
-				get_field_id<Class,Name,Signature,true>()
+				get_field_id<Class,Name,Signature,false>()
 			);
 		}
 

@@ -19,11 +19,36 @@ namespace j2cpp {
 	{
 	public:
 		typedef cpp_object< cpp_byte_array<1> > base_type;
-		explicit cpp_byte_array(jobject obj): base_type(obj) {}
+		explicit cpp_byte_array(jobject obj)
+		: base_type(obj)
+		, m_is_copy(JNI_FALSE)
+		, m_data(0)
+		{
+			m_data=environment::get().get_jenv()->GetByteArrayElements(
+				get_jbyte_array(),&m_is_copy
+			);
+		}
 
 		cpp_byte_array(jsize s)
 		: base_type(environment::get().get_jenv()->NewByteArray(s))
+		, m_is_copy(JNI_FALSE)
+		, m_data(0)
 		{
+			m_data=environment::get().get_jenv()->GetByteArrayElements(
+				get_jbyte_array(),&m_is_copy
+			);
+		}
+
+		~cpp_byte_array()
+		{
+			environment::get().get_jenv()->ReleaseByteArrayElements(
+				get_jbyte_array(), m_data, 0
+			);
+		}
+
+		jbyte* data()
+		{
+			return m_data;
 		}
 
 		jbyteArray get_jbyte_array() const
@@ -52,13 +77,9 @@ namespace j2cpp {
 			);
 		}
 
-		void release()
-		{
-			return environment::get().get_jenv()->ReleaseByteArrayElements(
-				get_jbyte_array(),0,0
-			);
-		}
-
+	private:
+		jboolean	m_is_copy;
+		jbyte		*m_data;
 	};
 
 } //namespace j2cpp

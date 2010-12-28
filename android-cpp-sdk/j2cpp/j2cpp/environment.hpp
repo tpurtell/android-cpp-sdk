@@ -8,7 +8,7 @@ namespace j2cpp {
 	class environment
 	{
 		environment()
-		: m_jenv(0)
+		: m_jvm(0)
 		{
 		}
 
@@ -20,20 +20,25 @@ namespace j2cpp {
 			return _instance;
 		}
 
-		bool init(JNIEnv *jenv)
+		bool init(JavaVM *jvm)
 		{
-			if(m_jenv) return true;
-			m_jenv=jenv;
-			return m_jenv?true:false;
+			if(m_jvm) return true;
+			m_jvm=jvm;
+			return m_jvm?true:false;
 		}
 
 		JNIEnv*	get_jenv()
 		{
-			return m_jenv;
+			if(!m_jvm)
+				return 0;
+			JNIEnv *jenv(0);
+			if(JNI_OK!=m_jvm->GetEnv((void **)&jenv, JNI_VERSION_1_6))
+				return 0;
+			return jenv;
 		}
 
 	private:
-		JNIEnv	*m_jenv;
+		JavaVM	*m_jvm;
 	};
 
 } //namespace j2cpp

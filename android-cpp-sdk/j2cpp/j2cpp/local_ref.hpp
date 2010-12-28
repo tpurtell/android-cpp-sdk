@@ -27,8 +27,8 @@ namespace j2cpp {
 			)
 			{
 				m_px=new object_type(lref);
-				m_pn=new count_type(1);
 			}
+			m_pn=new count_type(1);
 		}
 
 		~local_ref()
@@ -51,8 +51,8 @@ namespace j2cpp {
 			)
 			{
 				m_px=new object_type(lref);
-				m_pn=new count_type(1);
 			}
+			m_pn=new count_type(1);
 		}
 
 		local_ref(local_ref const &that)
@@ -71,8 +71,14 @@ namespace j2cpp {
 			)
 			{
 				m_px=new object_type(lref);
-				m_pn=new count_type(1);
 			}
+			m_pn=new count_type(1);
+		}
+
+		local_ref& operator=(local_ref const &rhs)
+		{
+			local_ref(rhs).swap(*this);
+			return *this;
 		}
 
 		object_type* operator->() const
@@ -83,6 +89,22 @@ namespace j2cpp {
 		jobject get_jtype() const
 		{
 			return (m_px?m_px->get_jtype():0);
+		}
+
+		bool operator !() const
+		{
+			return m_px==0;
+		}
+
+		operator bool() const
+		{
+			return m_px!=0;
+		}
+
+		void swap(local_ref &rhs)
+		{
+			detail::swap(m_px, rhs.m_px);
+			detail::swap(m_pn, rhs.m_pn);
 		}
 
 	private:
