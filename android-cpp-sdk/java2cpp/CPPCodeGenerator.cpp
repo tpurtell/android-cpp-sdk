@@ -266,7 +266,7 @@ std::ostream& CPPCodeGenerator::write_class(std::ostream &os, std::size_t indent
 		{
 			shared_ptr<model::Field> pField=clazz->get_field(f);
 			BOOST_ASSERT(pField);
-			if(pField->test_access_flag(model::ClassMember::kPublic))
+			if(!pField->test_access_flag(model::ClassMember::kPrivate))
 			{
 				if(!pField->test_access_flag(model::ClassMember::kStatic))
 				{
