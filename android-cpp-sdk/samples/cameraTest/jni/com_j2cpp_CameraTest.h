@@ -81,6 +81,14 @@ JNIEXPORT void JNICALL Java_com_j2cpp_CameraTest_handleOnSurfaceChanged
 JNIEXPORT void JNICALL Java_com_j2cpp_CameraTest_handleOnSurfaceCreated
   (JNIEnv *, jobject, jobject, jobject);
 
+/*
+ * Class:     com_j2cpp_CameraTest
+ * Method:    handleOnPreviewFrame
+ * Signature: ([BLandroid/hardware/Camera;)V
+ */
+JNIEXPORT void JNICALL Java_com_j2cpp_CameraTest_handleOnPreviewFrame
+  (JNIEnv *, jobject, jbyteArray, jobject);
+
 #ifdef __cplusplus
 }
 #endif

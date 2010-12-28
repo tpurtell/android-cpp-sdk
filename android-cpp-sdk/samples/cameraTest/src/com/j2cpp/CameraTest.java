@@ -6,7 +6,11 @@ import android.opengl.GLSurfaceView;
 import javax.microedition.khronos.egl.EGLConfig;
 import javax.microedition.khronos.opengles.GL10;
 
-public class CameraTest extends Activity implements GLSurfaceView.Renderer {
+import android.graphics.PixelFormat;
+import android.hardware.Camera;
+
+
+public class CameraTest extends Activity implements GLSurfaceView.Renderer, Camera.PreviewCallback {
 	
 	static {
 		System.loadLibrary("j2cppCameraTest");
@@ -14,26 +18,34 @@ public class CameraTest extends Activity implements GLSurfaceView.Renderer {
     
 	@Override
     public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        mGLSurfaceView = new GLSurfaceView(this);
-        mGLSurfaceView.setRenderer(this);
-        
-        setContentView(mGLSurfaceView);
-    }
+		super.onCreate(savedInstanceState);
+		m_TexId=-1;
+		m_GLSurfaceView = new GLSurfaceView(this);
+		m_GLSurfaceView.setRenderer(this);
+		setContentView(m_GLSurfaceView);
+		
+	}
     
     @Override
     protected void onResume()
     {
     	super.onResume();
-        mGLSurfaceView.onResume();
-        handleOnResume();
+    	m_GLSurfaceView.onResume();
+    	try
+    	{
+    		handleOnResume();
+    	}
+    	catch(java.lang.Exception e)
+    	{
+    		java.lang.String strReason=e.getMessage();
+    	}
     }
     
     @Override
     protected void onPause()
     {
     	super.onPause();
-        mGLSurfaceView.onPause();
+    	m_GLSurfaceView.onPause();
         handleOnPause();
     }
     
@@ -52,8 +64,17 @@ public class CameraTest extends Activity implements GLSurfaceView.Renderer {
     	handleOnSurfaceCreated(gl,config);
     }
     
-    private GLSurfaceView	mGLSurfaceView;
-    private long			mNative;
+    public void onPreviewFrame(byte[] data, Camera camera)
+    {
+    	handleOnPreviewFrame(data,camera);
+    }
+    
+    
+    protected GLSurfaceView	m_GLSurfaceView;
+    public Camera			m_Camera;
+    public Camera.Size		m_PreviewSize;
+    public byte[]			m_Buffer;
+    public int				m_TexId;
     
     
     private native void handleOnResume();
@@ -61,4 +82,5 @@ public class CameraTest extends Activity implements GLSurfaceView.Renderer {
     private native void handleOnDrawFrame(GL10 gl);
 	private native void handleOnSurfaceChanged(GL10 gl, int width, int height);
 	private native void handleOnSurfaceCreated(GL10 gl, EGLConfig config);
+	private native void handleOnPreviewFrame(byte[] data, Camera camera);
 }
