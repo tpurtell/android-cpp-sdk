@@ -11,6 +11,7 @@
 #include <android/hardware/Camera.hpp>
 #include <android/graphics/PixelFormat.hpp>
 
+
 JNIEXPORT jint JNI_OnLoad(JavaVM* vm, void* reserved)
 {
 	if(!j2cpp::environment::get().init(vm))

@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.opengl.GLSurfaceView;
 import javax.microedition.khronos.egl.EGLConfig;
 import javax.microedition.khronos.opengles.GL10;
+import java.nio.ByteBuffer;
 
 import android.graphics.PixelFormat;
 import android.hardware.Camera;
@@ -51,7 +52,14 @@ public class CameraTest extends Activity implements GLSurfaceView.Renderer, Came
     
     public void onDrawFrame(GL10 gl)
     {
-    	handleOnDrawFrame(gl);
+    	try
+    	{
+    		handleOnDrawFrame(gl);
+    	}
+    	catch(java.lang.Exception e)
+    	{
+    		java.lang.String strReason=e.getMessage();
+    	}
     }
     
     public void onSurfaceChanged(GL10 gl, int width, int height)
@@ -72,8 +80,9 @@ public class CameraTest extends Activity implements GLSurfaceView.Renderer, Came
     
     protected GLSurfaceView	m_GLSurfaceView;
     public Camera			m_Camera;
-    public Camera.Size		m_PreviewSize;
-    public byte[]			m_Buffer;
+    public int				m_TextureWidth;
+    public int				m_TextureHeight;
+    public byte[]			m_TextureBuffer;
     public int				m_TexId;
     
     
