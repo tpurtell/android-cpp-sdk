@@ -8,6 +8,7 @@ namespace j2cpp {
 	template <int Dim>
 	class cpp_int_array
 	{
+
 	};
 
 	template <>
@@ -16,6 +17,7 @@ namespace j2cpp {
 	{
 	public:
 		typedef cpp_object< cpp_int_array<1> > base_type;
+
 		explicit cpp_int_array(jobject obj)
 		: base_type(obj)
 		, m_is_copy(JNI_FALSE)
@@ -24,11 +26,6 @@ namespace j2cpp {
 			m_data=environment::get().get_jenv()->GetIntArrayElements(
 				get_jint_array(),&m_is_copy
 			);
-			//__android_log_print(ANDROID_LOG_FATAL, J2CPP_NAME, "cpp_byte_array(%08X), m_data=%08X, m_is_copy=%s",
-			//	obj,
-			//	m_data,
-			//	(m_is_copy==JNI_FALSE?"false":"true")
-			//);
 		}
 
 		cpp_int_array(jsize s)
@@ -37,13 +34,8 @@ namespace j2cpp {
 		, m_data(0)
 		{
 			m_data=environment::get().get_jenv()->GetIntArrayElements(
-				get_jint_array(),&m_is_copy
+					get_jint_array(),&m_is_copy
 			);
-			//__android_log_print(ANDROID_LOG_FATAL, J2CPP_NAME, "cpp_byte_array(%d), m_data=%08X, m_is_copy=%s",
-			//	s,
-			//	m_data,
-			//	(m_is_copy==JNI_FALSE?"false":"true")
-			//);
 		}
 
 		~cpp_int_array()
@@ -82,6 +74,11 @@ namespace j2cpp {
 			environment::get().get_jenv()->GetIntArrayRegion(
 				get_jint_array(), start, len, data
 			);
+		}
+
+		jint& operator [](jsize idx)
+		{
+			return m_data[idx];
 		}
 
 	private:

@@ -18,6 +18,13 @@ namespace j2cpp {
 		typedef ObjType					object_type;
 		typedef detail::atomic_count	count_type;
 
+		local_ref()
+		: m_px(0)
+		{
+			m_pn=new count_type(1);
+		}
+
+
 		explicit local_ref(jobject jobj)
 		: m_px(0)
 		, m_pn(0)
@@ -85,6 +92,12 @@ namespace j2cpp {
 		{
 			return m_px;
 		}
+
+		object_type& operator *() const
+		{
+			return *m_px;
+		}
+
 
 		jobject get_jtype() const
 		{

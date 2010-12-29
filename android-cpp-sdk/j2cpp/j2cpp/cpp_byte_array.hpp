@@ -77,6 +77,11 @@ namespace j2cpp {
 			);
 		}
 
+		jbyte& operator [](jsize idx)
+		{
+			return m_data[idx];
+		}
+
 	private:
 		jboolean	m_is_copy;
 		jbyte		*m_data;
