@@ -20,6 +20,7 @@ public:
 	J2CPP_DECLARE_FIELD(3)
 	J2CPP_DECLARE_FIELD(4)
 	J2CPP_DECLARE_FIELD(5)
+	J2CPP_DECLARE_FIELD(6)
 
 	explicit CameraTest(jobject jobj);
 
@@ -33,6 +34,7 @@ public:
 	field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(3), J2CPP_FIELD_SIGNATURE(3), cpp_int >										m_TextureHeight;
 	field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(4), J2CPP_FIELD_SIGNATURE(4), local_ref< cpp_byte_array<1> > >				m_TextureBuffer;
 	field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(5), J2CPP_FIELD_SIGNATURE(5), cpp_int >										m_TexId;
+	field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(6), J2CPP_FIELD_SIGNATURE(6), cpp_boolean >									m_TexIsDirty;
 };
 
 #endif //CAMERA_TEST_H

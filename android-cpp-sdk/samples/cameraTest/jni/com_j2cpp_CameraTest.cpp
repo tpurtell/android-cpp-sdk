@@ -1,6 +1,9 @@
 #include <j2cpp/j2cpp.hpp>
 #include "com_j2cpp_CameraTest.h"
 #include <android/graphics/PixelFormat.hpp>
+#include <java/util/List.hpp>
+#include <java/util/ListIterator.hpp>
+#include <java/lang/Integer.hpp>
 #include "CameraTest.h"
 
 #include <GLES/gl.h>
@@ -30,13 +33,15 @@ void Java_com_j2cpp_CameraTest_handleOnResume(JNIEnv *env, jobject cameraTest)
 		{
 			cameraTestActivity.m_Camera=pCamera;
 			local_ref<Camera::Parameters> pCameraParameters=pCamera->getParameters();
+
+
 			cpp_int previewFormat=pCameraParameters->getPreviewFormat();
 			local_ref<PixelFormat> previewPixelFormat=PixelFormat();
 			PixelFormat::getPixelFormatInfo(previewFormat, previewPixelFormat);
-			cpp_int previewBytesPerPixel=previewPixelFormat->bytesPerPixel;
+			int previewBytesPerPixel=previewPixelFormat->bytesPerPixel;
 			local_ref<Camera::Size> previewSize=pCameraParameters->getPreviewSize();
-			int textureWidth=power_of_two(cpp_int(previewSize->width));
-			int textureHeight=power_of_two(cpp_int(previewSize->height));
+			int textureWidth=power_of_two(previewSize->width);
+			int textureHeight=power_of_two(previewSize->height);
 			cameraTestActivity.m_TextureWidth=textureWidth;
 			cameraTestActivity.m_TextureHeight=textureHeight;
 			local_ref< cpp_byte_array<1> > textureBuffer=cpp_byte_array<1>(3*textureWidth*textureHeight);
@@ -57,8 +62,6 @@ void Java_com_j2cpp_CameraTest_handleOnDrawFrame(JNIEnv *env, jobject cameraTest
 	static const int one=0x10000;
 
 	CameraTest cameraTestActivity(cameraTest);
-
-	local_ref< cpp_byte_array<1> > textureBuffer=cameraTestActivity.m_TextureBuffer;
 
 	int verticesBuffer[]=
 	{
@@ -92,15 +95,19 @@ void Java_com_j2cpp_CameraTest_handleOnDrawFrame(JNIEnv *env, jobject cameraTest
 	glDisableClientState(GL_COLOR_ARRAY);
 	glDisableClientState(GL_NORMAL_ARRAY);
 	glEnableClientState(GL_TEXTURE_COORD_ARRAY);
-	//glDisableClientState(GL_TEXTURE_COORD_ARRAY);
 
 
 	glEnable(GL_TEXTURE_2D);
-	//glDisable(GL_TEXTURE_2D);
-	glBindTexture(GL_TEXTURE_2D, cpp_int(cameraTestActivity.m_TexId).get_jtype());
+	glBindTexture(GL_TEXTURE_2D, cameraTestActivity.m_TexId);
 	glPixelStorei(GL_UNPACK_ALIGNMENT, 1);
 
-	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, cpp_int(cameraTestActivity.m_TextureWidth), cpp_int(cameraTestActivity.m_TextureHeight), 0, GL_RGB, GL_UNSIGNED_BYTE, textureBuffer->data());
+	if(cameraTestActivity.m_TexIsDirty)
+	{
+		local_ref< cpp_byte_array<1> > textureBuffer=cameraTestActivity.m_TextureBuffer;
+		glTexSubImage2D(GL_TEXTURE_2D, 0, 0, 0, cameraTestActivity.m_TextureWidth, cameraTestActivity.m_TextureHeight, GL_RGB, GL_UNSIGNED_BYTE, textureBuffer->data());
+		cameraTestActivity.m_TexIsDirty=cpp_boolean(JNI_FALSE);
+	}
+
 	glTexParameterx(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
 	glTexParameterx(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
 	glTexParameterx(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
@@ -120,9 +127,7 @@ void Java_com_j2cpp_CameraTest_handleOnDrawFrame(JNIEnv *env, jobject cameraTest
 void Java_com_j2cpp_CameraTest_handleOnSurfaceChanged(JNIEnv *env, jobject cameraTest, jobject gl, jint width, jint height)
 {
 	static const jint one=0x10000;
-
 	glViewport(0, 0, width, height);
-
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
 	glOrthox(-one,one,-one,one,one,one*10);
@@ -137,7 +142,13 @@ void Java_com_j2cpp_CameraTest_handleOnSurfaceCreated(JNIEnv *env, jobject camer
 
 	GLuint genTex;
 	glGenTextures(1, &genTex);
-	cameraTestActivity.m_TexId=cpp_int(genTex);
+	cameraTestActivity.m_TexId=genTex;
+
+	glEnable(GL_TEXTURE_2D);
+	glBindTexture(GL_TEXTURE_2D, genTex);
+	glPixelStorei(GL_UNPACK_ALIGNMENT, 1);
+	local_ref< cpp_byte_array<1> > textureBuffer=cameraTestActivity.m_TextureBuffer;
+	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, cameraTestActivity.m_TextureWidth, cameraTestActivity.m_TextureHeight, 0, GL_RGB, GL_UNSIGNED_BYTE, textureBuffer->data());
 }
 
 void Java_com_j2cpp_CameraTest_handleOnPreviewFrame(JNIEnv *env, jobject cameraTest, jbyteArray data, jobject camera)
@@ -157,16 +168,18 @@ void Java_com_j2cpp_CameraTest_handleOnPreviewFrame(JNIEnv *env, jobject cameraT
 	cpp_int previewFormat=pCameraParameters->getPreviewFormat();
 	local_ref<PixelFormat> previewPixelFormat=PixelFormat();
 	PixelFormat::getPixelFormatInfo(previewFormat, previewPixelFormat);
-	cpp_int previewBytesPerPixel=previewPixelFormat->bytesPerPixel;
+	int previewBytesPerPixel=previewPixelFormat->bytesPerPixel;
 	local_ref<Camera::Size> previewFrameSize=pCameraParameters->getPreviewSize();
 
-	int previewWidth=cpp_int(previewFrameSize->width).get_jtype();
-	int previewHeight=cpp_int(previewFrameSize->height).get_jtype();
+	int previewWidth=previewFrameSize->width;
+	int previewHeight=previewFrameSize->height;
 
-	int textureWidth=cpp_int(cameraTestActivity.m_TextureWidth);
-	int textureHeight=cpp_int(cameraTestActivity.m_TextureHeight);
+	int textureWidth=cameraTestActivity.m_TextureWidth;
+	int textureHeight=cameraTestActivity.m_TextureHeight;
 
 	convertNV16ToRGB(previewData.data(), previewData.data()+previewWidth*previewHeight, previewWidth, previewHeight, textureBuffer->data(), textureWidth, textureHeight);
+
+	cameraTestActivity.m_TexIsDirty=JNI_TRUE;
 }
 
 #define min_(a,b) (a<b?a:b)

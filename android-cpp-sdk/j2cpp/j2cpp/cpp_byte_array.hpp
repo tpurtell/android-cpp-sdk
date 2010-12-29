@@ -25,7 +25,7 @@ namespace j2cpp {
 		, m_data(0)
 		{
 			m_data=environment::get().get_jenv()->GetByteArrayElements(
-				get_jbyte_array(),&m_is_copy
+				get_jbyte_array(), &m_is_copy
 			);
 		}
 
@@ -35,9 +35,22 @@ namespace j2cpp {
 		, m_data(0)
 		{
 			m_data=environment::get().get_jenv()->GetByteArrayElements(
-				get_jbyte_array(),&m_is_copy
+				get_jbyte_array(), &m_is_copy
 			);
 		}
+
+		template < typename Element , unsigned S>
+		cpp_byte_array(Element(&arr)[S])
+		: base_type(environment::get().get_jenv()->NewByteArray(S*sizeof(Element)))
+		, m_is_copy(JNI_FALSE)
+		, m_data(0)
+		{
+			m_data=environment::get().get_jenv()->GetByteArrayElements(
+				get_jbyte_array(), &m_is_copy
+			);
+			memcpy(m_data,arr,S*sizeof(Element));
+		}
+
 
 		~cpp_byte_array()
 		{

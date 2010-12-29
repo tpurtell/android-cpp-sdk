@@ -21,6 +21,7 @@ public class CameraTest extends Activity implements GLSurfaceView.Renderer, Came
     public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		m_TexId=-1;
+		m_TexIsDirty=true;
 		m_GLSurfaceView = new GLSurfaceView(this);
 		m_GLSurfaceView.setRenderer(this);
 		setContentView(m_GLSurfaceView);
@@ -84,6 +85,7 @@ public class CameraTest extends Activity implements GLSurfaceView.Renderer, Came
     public int				m_TextureHeight;
     public byte[]			m_TextureBuffer;
     public int				m_TexId;
+    public boolean			m_TexIsDirty;
     
     
     private native void handleOnResume();

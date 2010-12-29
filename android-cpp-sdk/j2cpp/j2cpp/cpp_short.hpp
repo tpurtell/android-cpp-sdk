@@ -8,6 +8,8 @@ namespace j2cpp {
 	class cpp_short
 	{
 	public:
+		typedef jshort value_type;
+
 		cpp_short(): m_value(0) {}
 		cpp_short(jshort v): m_value(v) {}
 		operator jshort () const { return m_value; }

@@ -49,7 +49,8 @@ namespace j2cpp {
 	public:
 		field(jobject jobj): m_jobject(jobj) {}
 
-		inline field& operator =(Type const &v)
+		template < typename AssignType >
+		inline field& operator =(AssignType const &v)
 		{
 			field_access<Type>::set(
 				m_jobject,
@@ -59,7 +60,8 @@ namespace j2cpp {
 			return *this;
 		}
 
-		inline operator Type ()
+		template < typename CastType >
+		inline operator CastType ()
 		{
 			return field_access<Type>::get(
 				m_jobject,
@@ -70,6 +72,7 @@ namespace j2cpp {
 	private:
 		jobject m_jobject;
 	};
+
 
 	template < typename Type >
 	struct static_field_access< local_ref<Type> >

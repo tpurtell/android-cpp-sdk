@@ -18,6 +18,8 @@ namespace j2cpp {
 		typedef ObjType					object_type;
 		typedef detail::atomic_count	count_type;
 
+		typedef local_ref<ObjType>		value_type;
+
 		local_ref()
 		: m_px(0)
 		{
@@ -82,11 +84,19 @@ namespace j2cpp {
 			m_pn=new count_type(1);
 		}
 
+		template < typename OtherObject >
+		operator local_ref<OtherObject> () const
+		{
+			return local_ref<OtherObject>(*m_px);
+		}
+
 		local_ref& operator=(local_ref const &rhs)
 		{
 			local_ref(rhs).swap(*this);
 			return *this;
 		}
+
+
 
 		object_type* operator->() const
 		{

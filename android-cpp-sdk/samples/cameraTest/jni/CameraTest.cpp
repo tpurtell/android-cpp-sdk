@@ -7,6 +7,7 @@ J2CPP_DEFINE_FIELD(CameraTest,2,"m_TextureWidth","I")
 J2CPP_DEFINE_FIELD(CameraTest,3,"m_TextureHeight","I")
 J2CPP_DEFINE_FIELD(CameraTest,4,"m_TextureBuffer","[B")
 J2CPP_DEFINE_FIELD(CameraTest,5,"m_TexId","I")
+J2CPP_DEFINE_FIELD(CameraTest,6,"m_TexIsDirty","Z")
 
 
 CameraTest::CameraTest(jobject jobj)
@@ -17,6 +18,7 @@ CameraTest::CameraTest(jobject jobj)
 , m_TextureHeight(jobj)
 , m_TextureBuffer(jobj)
 , m_TexId(jobj)
+, m_TexIsDirty(jobj)
 {
 }
 
