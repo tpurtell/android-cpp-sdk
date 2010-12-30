@@ -15,6 +15,6 @@ void Java_com_j2cpp_Test_doTests(JNIEnv *env, jclass Test, jobject tv)
 
 
 
-	theTextView.append(java::lang::String(cpp_byte_array<1>("Android C++ SDK Example")));
+	theTextView.append(java::lang::String(array<jbyte,1>("Android C++ SDK Example")));
 }
 

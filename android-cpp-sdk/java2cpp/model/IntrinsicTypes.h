@@ -243,8 +243,8 @@ namespace model {
 		
 		std::string	get_cxx_type() const
 		{
-			format fmtArray("cpp_%1%_array<%2%>");
-			fmtArray % m_intrinsic_type->get_java_type();
+			format fmtArray("array<%1%,%2%>");
+			fmtArray % m_intrinsic_type->get_cxx_type();
 			fmtArray % m_num_dimensions;
 			return fmtArray.str();
 		}
@@ -258,7 +258,7 @@ namespace model {
 			return java_signature;
 		}
 
-		std::string		get_jni_call_type() const
+		std::string get_jni_call_type() const
 		{
 			return std::string("Object");
 		}

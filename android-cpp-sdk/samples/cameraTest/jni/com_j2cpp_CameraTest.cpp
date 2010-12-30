@@ -24,6 +24,10 @@ void Java_com_j2cpp_CameraTest_handleOnResume(JNIEnv *env, jobject cameraTest)
 	using namespace android::graphics;
 	using namespace android::hardware;
 
+
+	array<jbyte, 1> my_array("boooooo");
+
+
 	CameraTest cameraTestActivity(cameraTest);
 	local_ref<Camera> pCamera=cameraTestActivity.m_Camera;
 	if(!pCamera)

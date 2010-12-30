@@ -38,7 +38,7 @@ namespace model {
 
 	std::string	Byte::get_cxx_type() const
 	{
-		return std::string("cpp_byte");
+		return std::string("jbyte");
 	}
 	
 	std::string	Byte::get_java_signature() const
@@ -67,7 +67,7 @@ namespace model {
 
 	std::string	Char::get_cxx_type() const
 	{
-		return std::string("cpp_char");
+		return std::string("jchar");
 	}
 
 	std::string	Char::get_java_signature() const
@@ -96,7 +96,7 @@ namespace model {
 
 	std::string	Double::get_cxx_type() const
 	{
-		return std::string("cpp_double");
+		return std::string("jdouble");
 	}
 
 	std::string	Double::get_java_signature() const
@@ -125,7 +125,7 @@ namespace model {
 
 	std::string	Float::get_cxx_type() const
 	{
-		return std::string("cpp_float");
+		return std::string("jfloat");
 	}
 
 	std::string	Float::get_java_signature() const
@@ -154,7 +154,7 @@ namespace model {
 
 	std::string	Int::get_cxx_type() const
 	{
-		return std::string("cpp_int");
+		return std::string("jint");
 	}
 
 	std::string	Int::get_java_signature() const
@@ -183,7 +183,7 @@ namespace model {
 
 	std::string	Long::get_cxx_type() const
 	{
-		return std::string("cpp_long");
+		return std::string("jlong");
 	}
 
 	std::string	Long::get_java_signature() const
@@ -212,7 +212,7 @@ namespace model {
 
 	std::string	Short::get_cxx_type() const
 	{
-		return std::string("cpp_short");
+		return std::string("jshort");
 	}
 
 	std::string	Short::get_java_signature() const
@@ -275,7 +275,7 @@ namespace model {
 
 	std::string	Boolean::get_cxx_type() const
 	{
-		return std::string("cpp_boolean");
+		return std::string("jboolean");
 	}
 
 	std::string	Boolean::get_java_signature() const

@@ -94,7 +94,7 @@ namespace model {
 
 	std::string FQClassNDimArrayType::get_cxx_type() const
 	{
-		format fmtArray("cpp_object_array<%1%, %2%>");
+		format fmtArray("array< local_ref< %1% >, %2%>");
 		fmtArray % m_fqclass_element_type->get_cxx_type();
 		fmtArray % m_num_dimensions;
 		return fmtArray.str();
