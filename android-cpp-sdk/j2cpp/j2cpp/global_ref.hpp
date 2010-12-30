@@ -35,8 +35,8 @@ namespace j2cpp {
 		{
 			if(--*m_pn==0)
 			{
-				if(m_px && m_px->get_jtype())
-					environment::get().get_jenv()->DeleteGlobalRef(m_px->get_jtype());
+				if(m_px && m_px->get_jobject())
+					environment::get().get_jenv()->DeleteGlobalRef(m_px->get_jobject());
 
 				delete m_px;
 				delete m_pn;
@@ -47,8 +47,8 @@ namespace j2cpp {
 		: m_px(0)
 		, m_pn(0)
 		{
-			if(jobject gref=(obj.get_jtype()?
-				environment::get().get_jenv()->NewGlobalRef(obj.get_jtype()):0)
+			if(jobject gref=(obj.get_jobject()?
+				environment::get().get_jenv()->NewGlobalRef(obj.get_jobject()):0)
 			)
 			{
 				m_px=new object_type(gref);
@@ -67,8 +67,8 @@ namespace j2cpp {
 		: m_px(0)
 		, m_pn(0)
 		{
-			if(jobject gref=(lref.get_jtype()?
-				environment::get().get_jenv()->NewGlobalRef(lref.get_jtype()):0)
+			if(jobject gref=(lref.get_jobject()?
+				environment::get().get_jenv()->NewGlobalRef(lref.get_jobject()):0)
 			)
 			{
 				m_px=new object_type(gref);
@@ -81,9 +81,9 @@ namespace j2cpp {
 			return m_px;
 		}
 
-		jobject get_jtype() const
+		jobject get_jobject() const
 		{
-			return (m_px?m_px->get_jtype():0);
+			return (m_px?m_px->get_jobject():0);
 		}
 
 	private:

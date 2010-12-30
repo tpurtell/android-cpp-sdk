@@ -50,7 +50,18 @@ namespace j2cpp {
 		field(jobject jobj): m_jobject(jobj) {}
 
 		template < typename AssignType >
-		inline field& operator =(AssignType const &v)
+		inline field& operator =(AssignType v)
+		{
+			field_access<Type>::set(
+				m_jobject,
+				get_field_id<Class,Name,Signature,false>(),
+				v
+			);
+			return *this;
+		}
+
+		template < typename AssignType >
+		inline field& operator =(local_ref<AssignType> const &v)
 		{
 			field_access<Type>::set(
 				m_jobject,
@@ -79,7 +90,7 @@ namespace j2cpp {
 	{
 		static void set(jclass c, jfieldID f, local_ref<Type> const &v)
 		{
-			environment::get().get_jenv()->SetStaticObjectField(c, f, v.get_jtype());
+			environment::get().get_jenv()->SetStaticObjectField(c, f, v.get_jobject());
 		}
 
 		static local_ref<Type> get(jclass c, jfieldID f)
@@ -95,7 +106,7 @@ namespace j2cpp {
 	{
 		static void set(jobject o, jfieldID f, local_ref<Type> const &v)
 		{
-			environment::get().get_jenv()->SetObjectField(o, f, v.get_jtype());
+			environment::get().get_jenv()->SetObjectField(o, f, v.get_jobject());
 		}
 
 		static local_ref<Type> get(jobject o, jfieldID f)
@@ -107,261 +118,229 @@ namespace j2cpp {
 	};
 
 	template <>
-	struct static_field_access<cpp_boolean>
+	struct static_field_access<jboolean>
 	{
-		static void set(jclass c, jfieldID f, cpp_boolean const &v)
+		static void set(jclass c, jfieldID f, jboolean v)
 		{
-			environment::get().get_jenv()->SetStaticBooleanField(c,f,v.get_jtype());
+			environment::get().get_jenv()->SetStaticBooleanField(c,f,v);
 		}
 
-		static cpp_boolean get(jclass c, jfieldID f)
+		static jboolean get(jclass c, jfieldID f)
 		{
-			return cpp_boolean(
-				environment::get().get_jenv()->GetStaticBooleanField(c,f)
-			);
+			return environment::get().get_jenv()->GetStaticBooleanField(c,f);
 		}
 	};
 
 	template <>
-	struct static_field_access<cpp_byte>
+	struct static_field_access<jbyte>
 	{
-		static void set(jclass c, jfieldID f, cpp_byte const &v)
+		static void set(jclass c, jfieldID f, jbyte v)
 		{
-			environment::get().get_jenv()->SetStaticByteField(c,f,v.get_jtype());
+			environment::get().get_jenv()->SetStaticByteField(c,f,v);
 		}
 
-		static cpp_byte get(jclass c, jfieldID f)
+		static jbyte get(jclass c, jfieldID f)
 		{
-			return cpp_byte(
-					environment::get().get_jenv()->GetStaticByteField(c,f)
-			);
+			return environment::get().get_jenv()->GetStaticByteField(c,f);
 		}
 	};
 
 	template <>
-	struct static_field_access<cpp_char>
+	struct static_field_access<jchar>
 	{
-		static void set(jclass c, jfieldID f, cpp_char const &v)
+		static void set(jclass c, jfieldID f, jchar v)
 		{
-			environment::get().get_jenv()->SetStaticCharField(c,f,v.get_jtype());
+			environment::get().get_jenv()->SetStaticCharField(c,f,v);
 		}
 
-		static cpp_char get(jclass c, jfieldID f)
+		static jchar get(jclass c, jfieldID f)
 		{
-			return cpp_char(
-				environment::get().get_jenv()->GetStaticCharField(c,f)
-			);
+			return environment::get().get_jenv()->GetStaticCharField(c,f);
 		}
 	};
 
 	template <>
-	struct static_field_access<cpp_double>
+	struct static_field_access<jdouble>
 	{
-		static void set(jclass c, jfieldID f, cpp_double const &v)
+		static void set(jclass c, jfieldID f, jdouble v)
 		{
-			environment::get().get_jenv()->SetStaticDoubleField(c,f,v.get_jtype());
+			environment::get().get_jenv()->SetStaticDoubleField(c,f,v);
 		}
 
-		static cpp_double get(jclass c, jfieldID f)
+		static jdouble get(jclass c, jfieldID f)
 		{
-			return cpp_double(
-				environment::get().get_jenv()->GetStaticDoubleField(c,f)
-			);
+			return environment::get().get_jenv()->GetStaticDoubleField(c,f);
 		}
 	};
 
 
 	template <>
-	struct static_field_access<cpp_float>
+	struct static_field_access<jfloat>
 	{
-		static void set(jclass c, jfieldID f, cpp_float const &v)
+		static void set(jclass c, jfieldID f, jfloat v)
 		{
-			environment::get().get_jenv()->SetStaticFloatField(c,f,v.get_jtype());
+			environment::get().get_jenv()->SetStaticFloatField(c,f,v);
 		}
 
-		static cpp_float get(jclass c, jfieldID f)
+		static jfloat get(jclass c, jfieldID f)
 		{
-			return cpp_float(
-				environment::get().get_jenv()->GetStaticFloatField(c,f)
-			);
+			return environment::get().get_jenv()->GetStaticFloatField(c,f);
 		}
 	};
 
 	template <>
-	struct static_field_access<cpp_int>
+	struct static_field_access<jint>
 	{
-		static void set(jclass c, jfieldID f, cpp_int const &v)
+		static void set(jclass c, jfieldID f, jint v)
 		{
-			environment::get().get_jenv()->SetStaticIntField(c,f,v.get_jtype());
+			environment::get().get_jenv()->SetStaticIntField(c,f,v);
 		}
 
-		static cpp_int get(jclass c, jfieldID f)
+		static jint get(jclass c, jfieldID f)
 		{
-			return cpp_int(
-				environment::get().get_jenv()->GetStaticIntField(c,f)
-			);
+			return environment::get().get_jenv()->GetStaticIntField(c,f);
 		}
 	};
 
 	template <>
-	struct static_field_access<cpp_long>
+	struct static_field_access<jlong>
 	{
-		static void set(jclass c, jfieldID f, cpp_long const &v)
+		static void set(jclass c, jfieldID f, jlong v)
 		{
-			environment::get().get_jenv()->SetStaticLongField(c,f,v.get_jtype());
+			environment::get().get_jenv()->SetStaticLongField(c,f,v);
 		}
 
-		static cpp_long get(jclass c, jfieldID f)
+		static jlong get(jclass c, jfieldID f)
 		{
-			return cpp_long(
-				environment::get().get_jenv()->GetStaticLongField(c,f)
-			);
+			return environment::get().get_jenv()->GetStaticLongField(c,f);
 		}
 	};
 
 	template <>
-	struct static_field_access<cpp_short>
+	struct static_field_access<jshort>
 	{
-		static void set(jclass c, jfieldID f, cpp_short const &v)
+		static void set(jclass c, jfieldID f, jshort v)
 		{
-			environment::get().get_jenv()->SetStaticShortField(c,f,v.get_jtype());
+			environment::get().get_jenv()->SetStaticShortField(c,f,v);
 		}
 
-		cpp_short get(jclass c, jfieldID f)
+		jshort get(jclass c, jfieldID f)
 		{
-			return cpp_short(
-				environment::get().get_jenv()->GetStaticShortField(c,f)
-			);
+			return environment::get().get_jenv()->GetStaticShortField(c,f);
 		}
 	};
 
 	//fields
 	template <>
-	struct field_access<cpp_boolean>
+	struct field_access<jboolean>
 	{
-		static void set(jobject o, jfieldID f, cpp_boolean const &v)
+		static void set(jobject o, jfieldID f, jboolean v)
 		{
-			environment::get().get_jenv()->SetBooleanField(o,f,v.get_jtype());
+			environment::get().get_jenv()->SetBooleanField(o,f,v);
 		}
 
-		static cpp_boolean get(jobject o, jfieldID f)
+		static jboolean get(jobject o, jfieldID f)
 		{
-			return cpp_boolean(
-				environment::get().get_jenv()->GetBooleanField(o,f)
-			);
+			return environment::get().get_jenv()->GetBooleanField(o,f);
 		}
 	};
 
 	template <>
-	struct field_access<cpp_byte>
+	struct field_access<jbyte>
 	{
-		static void set(jobject o, jfieldID f, cpp_byte const &v)
+		static void set(jobject o, jfieldID f, jbyte v)
 		{
-			environment::get().get_jenv()->SetByteField(o,f,v.get_jtype());
+			environment::get().get_jenv()->SetByteField(o,f,v);
 		}
 
-		static cpp_byte get(jobject o, jfieldID f)
+		static jbyte get(jobject o, jfieldID f)
 		{
-			return cpp_byte(
-					environment::get().get_jenv()->GetByteField(o,f)
-			);
+			return environment::get().get_jenv()->GetByteField(o,f);
 		}
 	};
 
 	template <>
-	struct field_access<cpp_char>
+	struct field_access<jchar>
 	{
-		static void set(jobject o, jfieldID f, cpp_char const &v)
+		static void set(jobject o, jfieldID f, jchar v)
 		{
-			environment::get().get_jenv()->SetCharField(o,f,v.get_jtype());
+			environment::get().get_jenv()->SetCharField(o,f,v);
 		}
 
-		static cpp_char get(jobject o, jfieldID f)
+		static jchar get(jobject o, jfieldID f)
 		{
-			return cpp_char(
-				environment::get().get_jenv()->GetCharField(o,f)
-			);
+			return environment::get().get_jenv()->GetCharField(o,f);
 		}
 	};
 
 	template <>
-	struct field_access<cpp_double>
+	struct field_access<jdouble>
 	{
-		static void set(jobject o, jfieldID f, cpp_double const &v)
+		static void set(jobject o, jfieldID f, jdouble v)
 		{
-			environment::get().get_jenv()->SetDoubleField(o,f,v.get_jtype());
+			environment::get().get_jenv()->SetDoubleField(o,f,v);
 		}
 
-		static cpp_double get(jobject o, jfieldID f)
+		static jdouble get(jobject o, jfieldID f)
 		{
-			return cpp_double(
-				environment::get().get_jenv()->GetDoubleField(o,f)
-			);
+			return environment::get().get_jenv()->GetDoubleField(o,f);
 		}
 	};
 
 
 	template <>
-	struct field_access<cpp_float>
+	struct field_access<jfloat>
 	{
-		static void set(jobject o, jfieldID f, cpp_float const &v)
+		static void set(jobject o, jfieldID f, jfloat v)
 		{
-			environment::get().get_jenv()->SetFloatField(o,f,v.get_jtype());
+			environment::get().get_jenv()->SetFloatField(o,f,v);
 		}
 
-		static cpp_float get(jobject o, jfieldID f)
+		static jfloat get(jobject o, jfieldID f)
 		{
-			return cpp_float(
-				environment::get().get_jenv()->GetFloatField(o,f)
-			);
+			return environment::get().get_jenv()->GetFloatField(o,f);
 		}
 	};
 
 	template <>
-	struct field_access<cpp_int>
+	struct field_access<jint>
 	{
-		static void set(jobject o, jfieldID f, cpp_int const &v)
+		static void set(jobject o, jfieldID f, jint const &v)
 		{
-			environment::get().get_jenv()->SetIntField(o,f,v.get_jtype());
+			environment::get().get_jenv()->SetIntField(o,f,v);
 		}
 
-		static cpp_int get(jobject o, jfieldID f)
+		static jint get(jobject o, jfieldID f)
 		{
-			return cpp_int(
-				environment::get().get_jenv()->GetIntField(o,f)
-			);
+			return environment::get().get_jenv()->GetIntField(o,f);
 		}
 	};
 
 	template <>
-	struct field_access<cpp_long>
+	struct field_access<jlong>
 	{
-		static void set(jobject o, jfieldID f, cpp_long const &v)
+		static void set(jobject o, jfieldID f, jlong const &v)
 		{
-			environment::get().get_jenv()->SetLongField(o,f,v.get_jtype());
+			environment::get().get_jenv()->SetLongField(o,f,v);
 		}
 
-		static cpp_long get(jobject o, jfieldID f)
+		static jlong get(jobject o, jfieldID f)
 		{
-			return cpp_long(
-				environment::get().get_jenv()->GetLongField(o,f)
-			);
+			return environment::get().get_jenv()->GetLongField(o,f);
 		}
 	};
 
 	template <>
-	struct field_access<cpp_short>
+	struct field_access<jshort>
 	{
-		static void set(jobject o, jfieldID f, cpp_short const &v)
+		static void set(jobject o, jfieldID f, jshort v)
 		{
-			environment::get().get_jenv()->SetShortField(o,f,v.get_jtype());
+			environment::get().get_jenv()->SetShortField(o,f,v);
 		}
 
-		cpp_short get(jobject o, jfieldID f)
+		jshort get(jobject o, jfieldID f)
 		{
-			return cpp_short(
-				environment::get().get_jenv()->GetShortField(o,f)
-			);
+			return environment::get().get_jenv()->GetShortField(o,f);
 		}
 	};
 
