@@ -19,11 +19,16 @@ Java2Cpp::Java2Cpp(QWidget *parent, Qt::WFlags flags)
 	m_MenuBar=new QMenuBar(this);
 	m_FileMenu=new QMenu(tr("File"));
 	m_FileNew=m_FileMenu->addAction(tr("New"));
+	m_FileNew->setEnabled(false);
 	m_FileOpen=m_FileMenu->addAction(tr("Open"));
+	m_FileOpen->setEnabled(false);
 	m_FileSave=m_FileMenu->addAction(tr("Save"));
+	m_FileSave->setEnabled(false);
 	m_FileClose=m_FileMenu->addAction(tr("Close"));
+	m_FileClose->setEnabled(false);
 	m_FileImportJar=m_FileMenu->addAction(tr("Import JAR"));
 	m_GenerateCPP=m_FileMenu->addAction(tr("Generate C++"));
+	m_GenerateCPP->setEnabled(false);
 
 	m_Layout->insertWidget(0,m_MenuBar);
 	m_MenuBar->addMenu(m_FileMenu);
@@ -66,6 +71,7 @@ void Java2Cpp::onImportJarPackage()
 	{
 		m_RootNS=chooseJarClassesPage->getImportedJar();
 		m_ClassView->setRootNamespace(m_RootNS);
+		m_GenerateCPP->setEnabled(m_RootNS?true:false);
 	}
 }
 

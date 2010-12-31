@@ -9,6 +9,7 @@ CXXGeneratePage::CXXGeneratePage(shared_ptr<model::Namespace> const &rns, QWidge
 {
 	setupUi(this);
 	connect(m_DirChoose, SIGNAL(clicked()), SLOT(onBrowseDir()));
+	connect(m_Generate, SIGNAL(clicked()), SLOT(onGenerate()));
 }
 
 CXXGeneratePage::~CXXGeneratePage()
@@ -39,7 +40,13 @@ void CXXGeneratePage::onBrowseDir()
 	);
 	
 	m_DirPath->setText(m_FSDirPath.native_file_string().c_str());
-		
+	m_Generate->setEnabled(
+		filesystem::exists(m_FSDirPath) && filesystem::is_directory(m_FSDirPath)
+	);
+}
+
+void CXXGeneratePage::onGenerate()
+{
 	CPPCodeWriter cppCodeWriter(m_RootNS,m_FSDirPath);
 	cppCodeWriter.workAmmount().connect(bind(&CXXGeneratePage::setWorkAmmount, this, _1));
 	cppCodeWriter.workProgress().connect(bind(&CXXGeneratePage::setWorkComplete, this, _1));
@@ -47,5 +54,5 @@ void CXXGeneratePage::onBrowseDir()
 	cppCodeWriter();
 
 	m_Done=true;
-	emit completeChanged();
+	emit completeChanged();	
 }

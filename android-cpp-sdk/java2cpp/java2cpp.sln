@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 10.00
 # Visual Studio 2008
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "java2cpp", "java2cpp.vcproj", "{53A5C308-0E5F-47A4-9CE3-A338E3E23632}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "java2cpp_setup", "..\java2cpp_setup\java2cpp_setup.vdproj", "{15E13AAE-31B4-4635-BFBE-109C76EF395B}"
+EndProject
 Global
 	GlobalSection(SubversionScc) = preSolution
 		Svn-Managed = True
@@ -17,6 +19,8 @@ Global
 		{53A5C308-0E5F-47A4-9CE3-A338E3E23632}.Debug|Win32.Build.0 = Debug|Win32
 		{53A5C308-0E5F-47A4-9CE3-A338E3E23632}.Release|Win32.ActiveCfg = Release|Win32
 		{53A5C308-0E5F-47A4-9CE3-A338E3E23632}.Release|Win32.Build.0 = Release|Win32
+		{15E13AAE-31B4-4635-BFBE-109C76EF395B}.Debug|Win32.ActiveCfg = Debug
+		{15E13AAE-31B4-4635-BFBE-109C76EF395B}.Release|Win32.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

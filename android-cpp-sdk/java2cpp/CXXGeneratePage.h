@@ -23,6 +23,7 @@ protected:
 
 protected slots:
 	void					onBrowseDir();
+	void					onGenerate();
 
 
 

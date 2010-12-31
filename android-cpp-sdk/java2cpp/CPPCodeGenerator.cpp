@@ -493,8 +493,8 @@ std::ostream& CPPCodeGenerator::write_class_definitions(std::ostream &os, shared
 					indent(os,1) << "call_new_object<" << std::endl;
 					indent(os,2) << clazz->get_cxx_class_name() << "::J2CPP_CLASS_NAME," << std::endl;
 					indent(os,2) << clazz->get_cxx_class_name() << "::J2CPP_METHOD_NAME(" << m << ")," << std::endl;
-					indent(os,2) << clazz->get_cxx_class_name() << "::J2CPP_METHOD_SIGNATURE(" << m << ")>" << std::endl;
-					indent(os,1) << "(";
+					indent(os,2) << clazz->get_cxx_class_name() << "::J2CPP_METHOD_SIGNATURE(" << m << ")" << std::endl;
+					indent(os,1) << ">(";
 					if(!pMethod->get_argument_types().empty())
 					{
 						//method arguments
@@ -579,9 +579,9 @@ std::ostream& CPPCodeGenerator::write_class_definitions(std::ostream &os, shared
 					else
 						os << "local_ref< " << pMethod->get_return_type()->get_cxx_type() << " >";
 
-					os << " >" << std::endl;
-
-					indent(os,1) << "(";
+					os << std::endl;
+					
+					indent(os,1) << ">(";
 					
 					
 					if(!pMethod->test_access_flag(model::ClassMember::kStatic))

@@ -78,6 +78,9 @@
      </item>
      <item>
       <widget class="QPushButton" name="m_Generate">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
        <property name="text">
         <string>Generate</string>
        </property>
