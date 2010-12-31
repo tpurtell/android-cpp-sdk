@@ -34,15 +34,19 @@ void ChooseJarPage::setWorkComplete(std::size_t wa)
 void ChooseJarPage::onBrowseJar()
 {
 	m_JarPath=QFileInfo(QFileDialog::getOpenFileName(this, tr("Open jar file"), ".", tr("java package files(*.jar)")));
-	m_jarPath->setText(m_JarPath.absoluteFilePath());
-
-	JarScanner jarScanner(m_JarPath);
-	jarScanner.workAmmount().connect(bind(&ChooseJarPage::setWorkAmmount, this, _1));
-	jarScanner.workProgress().connect(bind(&ChooseJarPage::setWorkComplete, this, _1));
 	
-	m_ImportedJar=jarScanner();
-	
-	emit jarImported(m_ImportedJar);
+	if(m_JarPath.exists())
+	{
+		m_jarPath->setText(m_JarPath.absoluteFilePath());
 
-	emit completeChanged();
+		JarScanner jarScanner(m_JarPath);
+		jarScanner.workAmmount().connect(bind(&ChooseJarPage::setWorkAmmount, this, _1));
+		jarScanner.workProgress().connect(bind(&ChooseJarPage::setWorkComplete, this, _1));
+
+		m_ImportedJar=jarScanner();
+
+		emit jarImported(m_ImportedJar);
+
+		emit completeChanged();
+	}
 }
