@@ -11,8 +11,8 @@
 #define J2CPP_JAVA_NET_URLCLASSLOADER_HPP_DECL
 
 
-namespace j2cpp { namespace java { namespace net { class URL; } } }
 namespace j2cpp { namespace java { namespace net { class URLStreamHandlerFactory; } } }
+namespace j2cpp { namespace java { namespace net { class URL; } } }
 namespace j2cpp { namespace java { namespace lang { class ClassLoader; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace security { class SecureClassLoader; } } }

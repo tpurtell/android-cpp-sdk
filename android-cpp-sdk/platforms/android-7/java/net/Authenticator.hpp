@@ -11,10 +11,10 @@
 #define J2CPP_JAVA_NET_AUTHENTICATOR_HPP_DECL
 
 
-namespace j2cpp { namespace java { namespace net { class InetAddress; } } }
-namespace j2cpp { namespace java { namespace net { class URL; } } }
-namespace j2cpp { namespace java { namespace net { namespace Authenticator_ { class RequestorType; } } } }
 namespace j2cpp { namespace java { namespace net { class PasswordAuthentication; } } }
+namespace j2cpp { namespace java { namespace net { class InetAddress; } } }
+namespace j2cpp { namespace java { namespace net { namespace Authenticator_ { class RequestorType; } } } }
+namespace j2cpp { namespace java { namespace net { class URL; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class Enum; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }

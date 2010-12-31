@@ -11,8 +11,8 @@
 #define J2CPP_JAVA_LANG_CLASS_HPP_DECL
 
 
-namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 namespace j2cpp { namespace java { namespace net { class URL; } } }
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 namespace j2cpp { namespace java { namespace io { class InputStream; } } }
 namespace j2cpp { namespace java { namespace lang { class ClassLoader; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }

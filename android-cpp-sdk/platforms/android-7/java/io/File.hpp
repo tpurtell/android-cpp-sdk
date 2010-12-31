@@ -11,9 +11,9 @@
 #define J2CPP_JAVA_IO_FILE_HPP_DECL
 
 
-namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 namespace j2cpp { namespace java { namespace net { class URI; } } }
 namespace j2cpp { namespace java { namespace net { class URL; } } }
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 namespace j2cpp { namespace java { namespace io { class FileFilter; } } }
 namespace j2cpp { namespace java { namespace io { class FilenameFilter; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }

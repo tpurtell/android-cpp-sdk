@@ -11,11 +11,11 @@
 #define J2CPP_JAVA_NET_MULTICASTSOCKET_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace net { class DatagramSocket; } } }
+namespace j2cpp { namespace java { namespace net { class SocketAddress; } } }
 namespace j2cpp { namespace java { namespace net { class InetAddress; } } }
 namespace j2cpp { namespace java { namespace net { class DatagramPacket; } } }
-namespace j2cpp { namespace java { namespace net { class SocketAddress; } } }
 namespace j2cpp { namespace java { namespace net { class NetworkInterface; } } }
-namespace j2cpp { namespace java { namespace net { class DatagramSocket; } } }
 
 
 #include <java/net/DatagramPacket.hpp>

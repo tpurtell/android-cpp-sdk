@@ -12,8 +12,8 @@
 
 
 namespace j2cpp { namespace java { namespace net { class FileNameMap; } } }
-namespace j2cpp { namespace java { namespace net { class URL; } } }
 namespace j2cpp { namespace java { namespace net { class ContentHandlerFactory; } } }
+namespace j2cpp { namespace java { namespace net { class URL; } } }
 namespace j2cpp { namespace java { namespace io { class InputStream; } } }
 namespace j2cpp { namespace java { namespace io { class OutputStream; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }

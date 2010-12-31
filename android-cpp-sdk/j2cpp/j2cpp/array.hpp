@@ -17,17 +17,6 @@ namespace j2cpp {
 	template < typename Type >
 	struct array_access
 	{
-		static inline jsize get_array_length(jobject jobj)
-		{
-			return environment::get().get_jenv()->GetArrayLength(
-				reinterpret_cast<jarray>(jobj)
-			);
-		}
-		
-		static inline jsize get_array_size(jobject jobj)
-		{
-			return get_array_length(jobj)*sizeof(Type);
-		}
 	};
 	
 	template < typename ValueType > 
@@ -116,6 +105,18 @@ namespace j2cpp {
 	template <>
 	struct array_access<jboolean>
 	{
+		static inline jsize get_array_length(jobject jobj)
+		{
+			return environment::get().get_jenv()->GetArrayLength(
+				reinterpret_cast<jarray>(jobj)
+			);
+		}
+
+		static inline jsize get_array_size(jobject jobj)
+		{
+			return get_array_length(jobj)*sizeof(jboolean);
+		}
+
 		static inline jboolean* get_array_elements(jobject jobj, jboolean &is_copy)
 		{
 			return environment::get().get_jenv()->GetBooleanArrayElements(
@@ -140,6 +141,18 @@ namespace j2cpp {
 	template <>
 	struct array_access<jbyte>
 	{
+		static inline jsize get_array_length(jobject jobj)
+		{
+			return environment::get().get_jenv()->GetArrayLength(
+				reinterpret_cast<jarray>(jobj)
+			);
+		}
+
+		static inline jsize get_array_size(jobject jobj)
+		{
+			return get_array_length(jobj)*sizeof(jbyte);
+		}
+
 		static inline jbyte* get_array_elements(jobject jobj, jboolean &is_copy)
 		{
 			return environment::get().get_jenv()->GetByteArrayElements(
@@ -163,6 +176,18 @@ namespace j2cpp {
 	template <>
 	struct array_access<jchar>
 	{
+		static inline jsize get_array_length(jobject jobj)
+		{
+			return environment::get().get_jenv()->GetArrayLength(
+				reinterpret_cast<jarray>(jobj)
+			);
+		}
+
+		static inline jsize get_array_size(jobject jobj)
+		{
+			return get_array_length(jobj)*sizeof(jchar);
+		}
+
 		static inline jchar* get_array_elements(jobject jobj, jboolean &is_copy)
 		{
 			return environment::get().get_jenv()->GetCharArrayElements(
@@ -186,6 +211,18 @@ namespace j2cpp {
 	template <>
 	struct array_access<jshort>
 	{
+		static inline jsize get_array_length(jobject jobj)
+		{
+			return environment::get().get_jenv()->GetArrayLength(
+				reinterpret_cast<jarray>(jobj)
+			);
+		}
+
+		static inline jsize get_array_size(jobject jobj)
+		{
+			return get_array_length(jobj)*sizeof(jshort);
+		}
+
 		static inline jshort* get_array_elements(jobject jobj, jboolean &is_copy)
 		{
 			return environment::get().get_jenv()->GetShortArrayElements(
@@ -210,6 +247,18 @@ namespace j2cpp {
 	template <>
 	struct array_access<jint>
 	{
+		static inline jsize get_array_length(jobject jobj)
+		{
+			return environment::get().get_jenv()->GetArrayLength(
+				reinterpret_cast<jarray>(jobj)
+			);
+		}
+
+		static inline jsize get_array_size(jobject jobj)
+		{
+			return get_array_length(jobj)*sizeof(jshort);
+		}
+
 		static inline jint* get_array_elements(jobject jobj, jboolean &is_copy)
 		{
 			return environment::get().get_jenv()->GetIntArrayElements(
@@ -234,6 +283,18 @@ namespace j2cpp {
 	template <>
 	struct array_access<jlong>
 	{
+		static inline jsize get_array_length(jobject jobj)
+		{
+			return environment::get().get_jenv()->GetArrayLength(
+				reinterpret_cast<jarray>(jobj)
+			);
+		}
+
+		static inline jsize get_array_size(jobject jobj)
+		{
+			return get_array_length(jobj)*sizeof(jlong);
+		}
+
 		static inline jlong* get_array_elements(jobject jobj, jboolean &is_copy)
 		{
 			return environment::get().get_jenv()->GetLongArrayElements(
@@ -257,6 +318,18 @@ namespace j2cpp {
 	template <>
 	struct array_access<jfloat>
 	{
+		static inline jsize get_array_length(jobject jobj)
+		{
+			return environment::get().get_jenv()->GetArrayLength(
+				reinterpret_cast<jarray>(jobj)
+			);
+		}
+
+		static inline jsize get_array_size(jobject jobj)
+		{
+			return get_array_length(jobj)*sizeof(jfloat);
+		}
+
 		static inline jfloat* get_array_elements(jobject jobj, jboolean &is_copy)
 		{
 			return environment::get().get_jenv()->GetFloatArrayElements(
@@ -280,6 +353,18 @@ namespace j2cpp {
 	template <>
 	struct array_access<jdouble>
 	{
+		static inline jsize get_array_length(jobject jobj)
+		{
+			return environment::get().get_jenv()->GetArrayLength(
+				reinterpret_cast<jarray>(jobj)
+			);
+		}
+
+		static inline jsize get_array_size(jobject jobj)
+		{
+			return get_array_length(jobj)*sizeof(jdouble);
+		}
+
 		static inline jdouble* get_array_elements(jobject jobj, jboolean &is_copy)
 		{
 			return environment::get().get_jenv()->GetDoubleArrayElements(

@@ -11,8 +11,8 @@
 #define J2CPP_JAVA_IO_OBJECTSTREAMCLASS_HPP_DECL
 
 
-namespace j2cpp { namespace java { namespace io { class ObjectStreamField; } } }
 namespace j2cpp { namespace java { namespace io { class Serializable; } } }
+namespace j2cpp { namespace java { namespace io { class ObjectStreamField; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class Class; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }

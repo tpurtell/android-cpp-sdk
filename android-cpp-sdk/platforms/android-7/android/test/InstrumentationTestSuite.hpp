@@ -11,9 +11,9 @@
 #define J2CPP_ANDROID_TEST_INSTRUMENTATIONTESTSUITE_HPP_DECL
 
 
+namespace j2cpp { namespace junit { namespace framework { class TestSuite; } } }
 namespace j2cpp { namespace junit { namespace framework { class Test; } } }
 namespace j2cpp { namespace junit { namespace framework { class TestResult; } } }
-namespace j2cpp { namespace junit { namespace framework { class TestSuite; } } }
 namespace j2cpp { namespace java { namespace lang { class Class; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace android { namespace app { class Instrumentation; } } }

@@ -11,8 +11,8 @@
 #define J2CPP_JAVA_NIO_CHANNELS_SOCKETCHANNEL_HPP_DECL
 
 
-namespace j2cpp { namespace java { namespace net { class SocketAddress; } } }
 namespace j2cpp { namespace java { namespace net { class Socket; } } }
+namespace j2cpp { namespace java { namespace net { class SocketAddress; } } }
 namespace j2cpp { namespace java { namespace nio { namespace channels { class GatheringByteChannel; } } } }
 namespace j2cpp { namespace java { namespace nio { namespace channels { namespace spi { class AbstractSelectableChannel; } } } } }
 namespace j2cpp { namespace java { namespace nio { namespace channels { class ByteChannel; } } } }

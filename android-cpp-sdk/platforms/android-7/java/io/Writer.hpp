@@ -11,8 +11,8 @@
 #define J2CPP_JAVA_IO_WRITER_HPP_DECL
 
 
-namespace j2cpp { namespace java { namespace io { class Flushable; } } }
 namespace j2cpp { namespace java { namespace io { class Closeable; } } }
+namespace j2cpp { namespace java { namespace io { class Flushable; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class Appendable; } } }
 namespace j2cpp { namespace java { namespace lang { class CharSequence; } } }

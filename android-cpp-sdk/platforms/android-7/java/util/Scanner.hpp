@@ -11,8 +11,8 @@
 #define J2CPP_JAVA_UTIL_SCANNER_HPP_DECL
 
 
-namespace j2cpp { namespace java { namespace io { class File; } } }
 namespace j2cpp { namespace java { namespace io { class IOException; } } }
+namespace j2cpp { namespace java { namespace io { class File; } } }
 namespace j2cpp { namespace java { namespace io { class InputStream; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class Readable; } } }

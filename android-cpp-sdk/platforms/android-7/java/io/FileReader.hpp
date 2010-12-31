@@ -11,9 +11,9 @@
 #define J2CPP_JAVA_IO_FILEREADER_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class FileDescriptor; } } }
 namespace j2cpp { namespace java { namespace io { class File; } } }
 namespace j2cpp { namespace java { namespace io { class InputStreamReader; } } }
-namespace j2cpp { namespace java { namespace io { class FileDescriptor; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 
 

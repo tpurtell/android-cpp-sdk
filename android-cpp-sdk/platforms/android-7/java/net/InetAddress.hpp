@@ -11,8 +11,8 @@
 #define J2CPP_JAVA_NET_INETADDRESS_HPP_DECL
 
 
-namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 namespace j2cpp { namespace java { namespace net { class NetworkInterface; } } }
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 

@@ -11,10 +11,10 @@
 #define J2CPP_JUNIT_RUNNER_BASETESTRUNNER_HPP_DECL
 
 
+namespace j2cpp { namespace junit { namespace framework { class TestListener; } } }
 namespace j2cpp { namespace junit { namespace runner { class TestSuiteLoader; } } }
 namespace j2cpp { namespace junit { namespace framework { class Test; } } }
 namespace j2cpp { namespace junit { namespace framework { class AssertionFailedError; } } }
-namespace j2cpp { namespace junit { namespace framework { class TestListener; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace lang { class Throwable; } } }

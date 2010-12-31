@@ -11,10 +11,10 @@
 #define J2CPP_JAVA_NET_RESPONSECACHE_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace net { class URLConnection; } } }
+namespace j2cpp { namespace java { namespace net { class CacheResponse; } } }
 namespace j2cpp { namespace java { namespace net { class URI; } } }
 namespace j2cpp { namespace java { namespace net { class CacheRequest; } } }
-namespace j2cpp { namespace java { namespace net { class CacheResponse; } } }
-namespace j2cpp { namespace java { namespace net { class URLConnection; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace util { class Map; } } }

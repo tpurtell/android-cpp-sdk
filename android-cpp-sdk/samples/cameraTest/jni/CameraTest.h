@@ -10,7 +10,7 @@
 using namespace j2cpp;
 
 class CameraTest
-: public j2cpp::cpp_object<CameraTest>
+: public j2cpp::object<CameraTest>
 {
 public:
 	J2CPP_DECLARE_CLASS
@@ -30,11 +30,11 @@ public:
 
 	field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(0), J2CPP_FIELD_SIGNATURE(0), local_ref<android::opengl::GLSurfaceView> >		m_GLSurfaceView;
 	field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(1), J2CPP_FIELD_SIGNATURE(1), local_ref<android::hardware::Camera> >			m_Camera;
-	field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(2), J2CPP_FIELD_SIGNATURE(2), cpp_int >										m_TextureWidth;
-	field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(3), J2CPP_FIELD_SIGNATURE(3), cpp_int >										m_TextureHeight;
-	field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(4), J2CPP_FIELD_SIGNATURE(4), local_ref< cpp_byte_array<1> > >				m_TextureBuffer;
-	field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(5), J2CPP_FIELD_SIGNATURE(5), cpp_int >										m_TexId;
-	field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(6), J2CPP_FIELD_SIGNATURE(6), cpp_boolean >									m_TexIsDirty;
+	field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(2), J2CPP_FIELD_SIGNATURE(2), jint >											m_TextureWidth;
+	field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(3), J2CPP_FIELD_SIGNATURE(3), jint >											m_TextureHeight;
+	field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(4), J2CPP_FIELD_SIGNATURE(4), local_ref< array<jbyte, 1> > >					m_TextureBuffer;
+	field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(5), J2CPP_FIELD_SIGNATURE(5), jint >											m_TexId;
+	field< J2CPP_CLASS_NAME, J2CPP_FIELD_NAME(6), J2CPP_FIELD_SIGNATURE(6), jboolean >										m_TexIsDirty;
 };
 
 #endif //CAMERA_TEST_H

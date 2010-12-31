@@ -119,6 +119,167 @@ namespace j2cpp {
 		return method<Type>::call(jobj, get_method_id<Class,Name,Signature, false>(), args);
 	}
 
+	template
+	<
+		const char *Class, const char *Name, const char *Signature, typename Type,
+		typename A0, typename A1, typename A2, typename A3, typename A4, typename A5, typename A6
+	>
+	typename jni_call_traits<Type>::return_type call_method(jobject jobj, A0 a0, A1 a1, A2 a2, A3 a3, A4 a4, A5 a5, A6 a6)
+	{
+		jvalue args[]=
+		{
+			jni_value(jni_argument_cast(a0)),
+			jni_value(jni_argument_cast(a1)),
+			jni_value(jni_argument_cast(a2)),
+			jni_value(jni_argument_cast(a3)),
+			jni_value(jni_argument_cast(a4)),
+			jni_value(jni_argument_cast(a5)),
+			jni_value(jni_argument_cast(a6))
+		};
+		return method<Type>::call(jobj, get_method_id<Class,Name,Signature, false>(), args);
+	}
+
+	template
+	<
+		const char *Class, const char *Name, const char *Signature, typename Type,
+		typename A0, typename A1, typename A2, typename A3, typename A4, typename A5, typename A6, typename A7
+	>
+	typename jni_call_traits<Type>::return_type call_method(jobject jobj, A0 a0, A1 a1, A2 a2, A3 a3, A4 a4, A5 a5, A6 a6, A7 a7)
+	{
+		jvalue args[]=
+		{
+			jni_value(jni_argument_cast(a0)),
+			jni_value(jni_argument_cast(a1)),
+			jni_value(jni_argument_cast(a2)),
+			jni_value(jni_argument_cast(a3)),
+			jni_value(jni_argument_cast(a4)),
+			jni_value(jni_argument_cast(a5)),
+			jni_value(jni_argument_cast(a6)),
+			jni_value(jni_argument_cast(a7))
+		};
+		return method<Type>::call(jobj, get_method_id<Class,Name,Signature, false>(), args);
+	}
+
+	template
+	<
+		const char *Class, const char *Name, const char *Signature, typename Type,
+		typename A0, typename A1, typename A2, typename A3, typename A4, typename A5, typename A6, typename A7, typename A8
+	>
+	typename jni_call_traits<Type>::return_type call_method(jobject jobj, A0 a0, A1 a1, A2 a2, A3 a3, A4 a4, A5 a5, A6 a6, A7 a7, A8 a8)
+	{
+		jvalue args[]=
+		{
+			jni_value(jni_argument_cast(a0)),
+			jni_value(jni_argument_cast(a1)),
+			jni_value(jni_argument_cast(a2)),
+			jni_value(jni_argument_cast(a3)),
+			jni_value(jni_argument_cast(a4)),
+			jni_value(jni_argument_cast(a5)),
+			jni_value(jni_argument_cast(a6)),
+			jni_value(jni_argument_cast(a7)),
+			jni_value(jni_argument_cast(a8))
+		};
+		return method<Type>::call(jobj, get_method_id<Class,Name,Signature, false>(), args);
+	}
+
+	template
+	<
+		const char *Class, const char *Name, const char *Signature, typename Type,
+		typename A0, typename A1, typename A2, typename A3, typename A4, typename A5, typename A6, typename A7, typename A8, typename A9
+	>
+	typename jni_call_traits<Type>::return_type call_method(jobject jobj, A0 a0, A1 a1, A2 a2, A3 a3, A4 a4, A5 a5, A6 a6, A7 a7, A8 a8, A9 a9)
+	{
+		jvalue args[]=
+		{
+			jni_value(jni_argument_cast(a0)),
+			jni_value(jni_argument_cast(a1)),
+			jni_value(jni_argument_cast(a2)),
+			jni_value(jni_argument_cast(a3)),
+			jni_value(jni_argument_cast(a4)),
+			jni_value(jni_argument_cast(a5)),
+			jni_value(jni_argument_cast(a6)),
+			jni_value(jni_argument_cast(a7)),
+			jni_value(jni_argument_cast(a8)),
+			jni_value(jni_argument_cast(a9))
+		};
+		return method<Type>::call(jobj, get_method_id<Class,Name,Signature, false>(), args);
+	}
+
+	template
+	<
+		const char *Class, const char *Name, const char *Signature, typename Type,
+		typename A0, typename A1, typename A2, typename A3, typename A4, typename A5, typename A6, typename A7, typename A8, typename A9, typename A10
+	>
+	typename jni_call_traits<Type>::return_type call_method(jobject jobj, A0 a0, A1 a1, A2 a2, A3 a3, A4 a4, A5 a5, A6 a6, A7 a7, A8 a8, A9 a9, A10 a10)
+	{
+		jvalue args[]=
+		{
+			jni_value(jni_argument_cast(a0)),
+			jni_value(jni_argument_cast(a1)),
+			jni_value(jni_argument_cast(a2)),
+			jni_value(jni_argument_cast(a3)),
+			jni_value(jni_argument_cast(a4)),
+			jni_value(jni_argument_cast(a5)),
+			jni_value(jni_argument_cast(a6)),
+			jni_value(jni_argument_cast(a7)),
+			jni_value(jni_argument_cast(a8)),
+			jni_value(jni_argument_cast(a9)),
+			jni_value(jni_argument_cast(a10))
+		};
+		return method<Type>::call(jobj, get_method_id<Class,Name,Signature, false>(), args);
+	}
+
+	template
+	<
+		const char *Class, const char *Name, const char *Signature, typename Type,
+		typename A0, typename A1, typename A2, typename A3, typename A4, typename A5, typename A6, typename A7, typename A8, typename A9, typename A10, typename A11
+	>
+	typename jni_call_traits<Type>::return_type call_method(jobject jobj, A0 a0, A1 a1, A2 a2, A3 a3, A4 a4, A5 a5, A6 a6, A7 a7, A8 a8, A9 a9, A10 a10, A11 a11)
+	{
+		jvalue args[]=
+		{
+			jni_value(jni_argument_cast(a0)),
+			jni_value(jni_argument_cast(a1)),
+			jni_value(jni_argument_cast(a2)),
+			jni_value(jni_argument_cast(a3)),
+			jni_value(jni_argument_cast(a4)),
+			jni_value(jni_argument_cast(a5)),
+			jni_value(jni_argument_cast(a6)),
+			jni_value(jni_argument_cast(a7)),
+			jni_value(jni_argument_cast(a8)),
+			jni_value(jni_argument_cast(a9)),
+			jni_value(jni_argument_cast(a10)),
+			jni_value(jni_argument_cast(a11))
+		};
+		return method<Type>::call(jobj, get_method_id<Class,Name,Signature, false>(), args);
+	}
+
+	template
+	<
+		const char *Class, const char *Name, const char *Signature, typename Type,
+		typename A0, typename A1, typename A2, typename A3, typename A4, typename A5, typename A6, typename A7, typename A8, typename A9, typename A10, typename A11, typename A12
+	>
+	typename jni_call_traits<Type>::return_type call_method(jobject jobj, A0 a0, A1 a1, A2 a2, A3 a3, A4 a4, A5 a5, A6 a6, A7 a7, A8 a8, A9 a9, A10 a10, A11 a11, A12 a12)
+	{
+		jvalue args[]=
+		{
+			jni_value(jni_argument_cast(a0)),
+			jni_value(jni_argument_cast(a1)),
+			jni_value(jni_argument_cast(a2)),
+			jni_value(jni_argument_cast(a3)),
+			jni_value(jni_argument_cast(a4)),
+			jni_value(jni_argument_cast(a5)),
+			jni_value(jni_argument_cast(a6)),
+			jni_value(jni_argument_cast(a7)),
+			jni_value(jni_argument_cast(a8)),
+			jni_value(jni_argument_cast(a9)),
+			jni_value(jni_argument_cast(a10)),
+			jni_value(jni_argument_cast(a11)),
+			jni_value(jni_argument_cast(a12))
+		};
+		return method<Type>::call(jobj, get_method_id<Class,Name,Signature, false>(), args);
+	}
+
 	template < typename ObjectType >
 	struct method< local_ref<ObjectType> >
 	{
@@ -139,6 +300,16 @@ namespace j2cpp {
 		jboolean call(jobject jobj, jmethodID m, jvalue *args)
 		{
 			return environment::get().get_jenv()->CallBooleanMethodA(jobj,m,args);
+		}
+	};
+
+	template < >
+	struct method< jbyte >
+	{
+		static inline
+		jbyte call(jobject jobj, jmethodID m, jvalue *args)
+		{
+			return environment::get().get_jenv()->CallByteMethodA(jobj,m,args);
 		}
 	};
 

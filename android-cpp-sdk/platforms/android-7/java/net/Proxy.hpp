@@ -11,8 +11,8 @@
 #define J2CPP_JAVA_NET_PROXY_HPP_DECL
 
 
-namespace j2cpp { namespace java { namespace net { namespace Proxy_ { class Type; } } } }
 namespace j2cpp { namespace java { namespace net { class SocketAddress; } } }
+namespace j2cpp { namespace java { namespace net { namespace Proxy_ { class Type; } } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class Enum; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }

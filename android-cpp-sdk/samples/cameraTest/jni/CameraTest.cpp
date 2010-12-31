@@ -11,7 +11,7 @@ J2CPP_DEFINE_FIELD(CameraTest,6,"m_TexIsDirty","Z")
 
 
 CameraTest::CameraTest(jobject jobj)
-: cpp_object<CameraTest>(jobj)
+: object<CameraTest>(jobj)
 , m_GLSurfaceView(jobj)
 , m_Camera(jobj)
 , m_TextureWidth(jobj)
@@ -24,10 +24,10 @@ CameraTest::CameraTest(jobject jobj)
 
 CameraTest::operator local_ref<android::app::Activity> () const
 {
-	return local_ref<android::app::Activity>(get_jtype());
+	return local_ref<android::app::Activity>(get_jobject());
 }
 
 CameraTest::operator local_ref<android::hardware::Camera::PreviewCallback> () const
 {
-	return local_ref<android::hardware::Camera::PreviewCallback>(get_jtype());
+	return local_ref<android::hardware::Camera::PreviewCallback>(get_jobject());
 }

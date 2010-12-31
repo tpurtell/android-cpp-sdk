@@ -11,12 +11,12 @@
 #define J2CPP_JAVA_NET_URL_HPP_DECL
 
 
-namespace j2cpp { namespace java { namespace io { class Serializable; } } }
+namespace j2cpp { namespace java { namespace net { class URLConnection; } } }
+namespace j2cpp { namespace java { namespace net { class URLStreamHandlerFactory; } } }
 namespace j2cpp { namespace java { namespace net { class URLStreamHandler; } } }
 namespace j2cpp { namespace java { namespace net { class URI; } } }
 namespace j2cpp { namespace java { namespace net { class Proxy; } } }
-namespace j2cpp { namespace java { namespace net { class URLStreamHandlerFactory; } } }
-namespace j2cpp { namespace java { namespace net { class URLConnection; } } }
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 namespace j2cpp { namespace java { namespace io { class InputStream; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class Class; } } }

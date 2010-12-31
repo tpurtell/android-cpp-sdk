@@ -11,8 +11,8 @@
 #define J2CPP_JAVAX_CRYPTO_SPEC_SECRETKEYSPEC_HPP_DECL
 
 
-namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 namespace j2cpp { namespace javax { namespace crypto { class SecretKey; } } }
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace security { namespace spec { class KeySpec; } } } }

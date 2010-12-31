@@ -11,8 +11,8 @@
 #define J2CPP_JAVA_IO_DATAINPUTSTREAM_HPP_DECL
 
 
-namespace j2cpp { namespace java { namespace io { class DataInput; } } }
 namespace j2cpp { namespace java { namespace io { class FilterInputStream; } } }
+namespace j2cpp { namespace java { namespace io { class DataInput; } } }
 namespace j2cpp { namespace java { namespace io { class InputStream; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 

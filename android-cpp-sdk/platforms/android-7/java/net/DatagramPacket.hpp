@@ -11,8 +11,8 @@
 #define J2CPP_JAVA_NET_DATAGRAMPACKET_HPP_DECL
 
 
-namespace j2cpp { namespace java { namespace net { class InetAddress; } } }
 namespace j2cpp { namespace java { namespace net { class SocketAddress; } } }
+namespace j2cpp { namespace java { namespace net { class InetAddress; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 
 

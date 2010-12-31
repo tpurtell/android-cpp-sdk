@@ -11,8 +11,8 @@
 #define J2CPP_JAVA_LANG_SECURITYMANAGER_HPP_DECL
 
 
-namespace j2cpp { namespace java { namespace net { class InetAddress; } } }
 namespace j2cpp { namespace java { namespace io { class FileDescriptor; } } }
+namespace j2cpp { namespace java { namespace net { class InetAddress; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class Class; } } }
 namespace j2cpp { namespace java { namespace lang { class ThreadGroup; } } }

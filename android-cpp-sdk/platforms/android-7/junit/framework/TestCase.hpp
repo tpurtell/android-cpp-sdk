@@ -11,9 +11,9 @@
 #define J2CPP_JUNIT_FRAMEWORK_TESTCASE_HPP_DECL
 
 
+namespace j2cpp { namespace junit { namespace framework { class Assert; } } }
 namespace j2cpp { namespace junit { namespace framework { class Test; } } }
 namespace j2cpp { namespace junit { namespace framework { class TestResult; } } }
-namespace j2cpp { namespace junit { namespace framework { class Assert; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 
 

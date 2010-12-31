@@ -11,8 +11,8 @@
 #define J2CPP_JAVA_LANG_THROWABLE_HPP_DECL
 
 
-namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 namespace j2cpp { namespace java { namespace io { class PrintStream; } } }
+namespace j2cpp { namespace java { namespace io { class Serializable; } } }
 namespace j2cpp { namespace java { namespace io { class PrintWriter; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class StackTraceElement; } } }

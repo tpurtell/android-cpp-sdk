@@ -11,9 +11,9 @@
 #define J2CPP_ANDROID_CONTENT_RES_ASSETFILEDESCRIPTOR_HPP_DECL
 
 
+namespace j2cpp { namespace java { namespace io { class FileDescriptor; } } }
 namespace j2cpp { namespace java { namespace io { class FileOutputStream; } } }
 namespace j2cpp { namespace java { namespace io { class FileInputStream; } } }
-namespace j2cpp { namespace java { namespace io { class FileDescriptor; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace android { namespace os { class Parcel; } } }

@@ -11,10 +11,10 @@
 #define J2CPP_ANDROID_TEST_ANDROIDTESTRUNNER_HPP_DECL
 
 
+namespace j2cpp { namespace junit { namespace framework { class TestListener; } } }
 namespace j2cpp { namespace junit { namespace runner { class BaseTestRunner; } } }
 namespace j2cpp { namespace junit { namespace framework { class Test; } } }
 namespace j2cpp { namespace junit { namespace framework { class TestResult; } } }
-namespace j2cpp { namespace junit { namespace framework { class TestListener; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace lang { class Throwable; } } }
 namespace j2cpp { namespace java { namespace util { class List; } } }

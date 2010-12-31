@@ -11,8 +11,8 @@
 #define J2CPP_JAVA_NET_JARURLCONNECTION_HPP_DECL
 
 
-namespace j2cpp { namespace java { namespace net { class URL; } } }
 namespace j2cpp { namespace java { namespace net { class URLConnection; } } }
+namespace j2cpp { namespace java { namespace net { class URL; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace security { namespace cert { class Certificate; } } } }
 namespace j2cpp { namespace java { namespace util { namespace jar { class Manifest; } } } }

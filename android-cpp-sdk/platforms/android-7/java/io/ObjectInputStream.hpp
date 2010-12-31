@@ -11,8 +11,8 @@
 #define J2CPP_JAVA_IO_OBJECTINPUTSTREAM_HPP_DECL
 
 
-namespace j2cpp { namespace java { namespace io { namespace ObjectInputStream_ { class GetField; } } } }
 namespace j2cpp { namespace java { namespace io { class ObjectStreamClass; } } }
+namespace j2cpp { namespace java { namespace io { namespace ObjectInputStream_ { class GetField; } } } }
 namespace j2cpp { namespace java { namespace io { class ObjectInput; } } }
 namespace j2cpp { namespace java { namespace io { class InputStream; } } }
 namespace j2cpp { namespace java { namespace io { class ObjectInputValidation; } } }

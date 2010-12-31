@@ -11,10 +11,10 @@
 #define J2CPP_JAVA_SECURITY_KEYSTORE_HPP_DECL
 
 
+namespace j2cpp { namespace javax { namespace crypto { class SecretKey; } } }
 namespace j2cpp { namespace java { namespace io { class File; } } }
 namespace j2cpp { namespace javax { namespace security { namespace auth { namespace callback { class CallbackHandler; } } } } }
 namespace j2cpp { namespace javax { namespace security { namespace auth { class Destroyable; } } } }
-namespace j2cpp { namespace javax { namespace crypto { class SecretKey; } } }
 namespace j2cpp { namespace java { namespace io { class InputStream; } } }
 namespace j2cpp { namespace java { namespace io { class OutputStream; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }

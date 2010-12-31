@@ -11,11 +11,11 @@
 #define J2CPP_JAVA_UTIL_FORMATTER_HPP_DECL
 
 
-namespace j2cpp { namespace java { namespace io { class Flushable; } } }
-namespace j2cpp { namespace java { namespace io { class File; } } }
-namespace j2cpp { namespace java { namespace io { class IOException; } } }
 namespace j2cpp { namespace java { namespace io { class Closeable; } } }
+namespace j2cpp { namespace java { namespace io { class IOException; } } }
 namespace j2cpp { namespace java { namespace io { class PrintStream; } } }
+namespace j2cpp { namespace java { namespace io { class File; } } }
+namespace j2cpp { namespace java { namespace io { class Flushable; } } }
 namespace j2cpp { namespace java { namespace io { class OutputStream; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class Enum; } } }

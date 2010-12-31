@@ -11,10 +11,10 @@
 #define J2CPP_JAVA_NET_SOCKET_HPP_DECL
 
 
-namespace j2cpp { namespace java { namespace net { class InetAddress; } } }
 namespace j2cpp { namespace java { namespace net { class SocketAddress; } } }
-namespace j2cpp { namespace java { namespace net { class Proxy; } } }
+namespace j2cpp { namespace java { namespace net { class InetAddress; } } }
 namespace j2cpp { namespace java { namespace net { class SocketImplFactory; } } }
+namespace j2cpp { namespace java { namespace net { class Proxy; } } }
 namespace j2cpp { namespace java { namespace io { class InputStream; } } }
 namespace j2cpp { namespace java { namespace io { class OutputStream; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }

@@ -11,9 +11,9 @@
 #define J2CPP_JAVA_NET_PROXYSELECTOR_HPP_DECL
 
 
-namespace j2cpp { namespace java { namespace io { class IOException; } } }
 namespace j2cpp { namespace java { namespace net { class SocketAddress; } } }
 namespace j2cpp { namespace java { namespace net { class URI; } } }
+namespace j2cpp { namespace java { namespace io { class IOException; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace util { class List; } } }
 

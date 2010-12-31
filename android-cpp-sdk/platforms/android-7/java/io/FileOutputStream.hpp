@@ -11,9 +11,9 @@
 #define J2CPP_JAVA_IO_FILEOUTPUTSTREAM_HPP_DECL
 
 
-namespace j2cpp { namespace java { namespace io { class File; } } }
-namespace j2cpp { namespace java { namespace io { class Closeable; } } }
 namespace j2cpp { namespace java { namespace io { class FileDescriptor; } } }
+namespace j2cpp { namespace java { namespace io { class Closeable; } } }
+namespace j2cpp { namespace java { namespace io { class File; } } }
 namespace j2cpp { namespace java { namespace io { class OutputStream; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
 namespace j2cpp { namespace java { namespace nio { namespace channels { class FileChannel; } } } }

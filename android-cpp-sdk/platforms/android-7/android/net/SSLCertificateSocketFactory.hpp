@@ -11,8 +11,8 @@
 #define J2CPP_ANDROID_NET_SSLCERTIFICATESOCKETFACTORY_HPP_DECL
 
 
-namespace j2cpp { namespace java { namespace net { class InetAddress; } } }
 namespace j2cpp { namespace java { namespace net { class Socket; } } }
+namespace j2cpp { namespace java { namespace net { class InetAddress; } } }
 namespace j2cpp { namespace javax { namespace net { namespace ssl { class SSLSocketFactory; } } } }
 namespace j2cpp { namespace javax { namespace net { class SocketFactory; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }

@@ -11,9 +11,9 @@
 #define J2CPP_JAVA_NET_SERVERSOCKET_HPP_DECL
 
 
-namespace j2cpp { namespace java { namespace net { class InetAddress; } } }
-namespace j2cpp { namespace java { namespace net { class SocketAddress; } } }
 namespace j2cpp { namespace java { namespace net { class Socket; } } }
+namespace j2cpp { namespace java { namespace net { class SocketAddress; } } }
+namespace j2cpp { namespace java { namespace net { class InetAddress; } } }
 namespace j2cpp { namespace java { namespace net { class SocketImplFactory; } } }
 namespace j2cpp { namespace java { namespace lang { class Object; } } }
 namespace j2cpp { namespace java { namespace lang { class String; } } }
