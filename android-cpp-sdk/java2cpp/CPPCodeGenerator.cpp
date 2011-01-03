@@ -284,18 +284,13 @@ std::ostream& CPPCodeGenerator::write_class(std::ostream &os, std::size_t indent
 
 	os << std::endl;
 
-	if(shared_ptr<model::Class> pSuper=clazz->get_super())
+	std::set< shared_ptr<model::Class> > baseClasses;
+	collect_class_bases(clazz, baseClasses);
+	BOOST_FOREACH(shared_ptr<model::Class> baseClass, baseClasses)
 	{
-		indent(os,indent_pos+1) << "operator local_ref<" << pSuper->get_cxx_class_name() << ">() const;" << std::endl;
+		indent(os,indent_pos+1) << "operator local_ref<" << baseClass->get_cxx_class_name() << ">() const;" << std::endl;
 	}
-
-	for(std::size_t iface=0;iface<clazz->get_interfaces_count();++iface)
-	{
-		shared_ptr<model::Class> pInterface=clazz->get_interface(iface);
-		BOOST_ASSERT(pInterface);
-		indent(os,indent_pos+1) << "operator local_ref<" << pInterface->get_cxx_class_name() << ">() const;" << std::endl;
-	}
-
+	
 	os << std::endl;
 
 	
@@ -426,26 +421,18 @@ std::ostream& CPPCodeGenerator::write_class_definitions(std::ostream &os, shared
 
 	os << std::endl;
 
-	if(shared_ptr<model::Class> pSuper=clazz->get_super())
+	std::set< shared_ptr<model::Class> > baseClasses;
+	collect_class_bases(clazz, baseClasses);
+
+	BOOST_FOREACH(shared_ptr<model::Class> baseClass, baseClasses)
 	{
 		os << std::endl;
-		indent(os,0) << clazz->get_cxx_class_name() << "::operator local_ref<" << pSuper->get_cxx_class_name() << ">() const" << std::endl;
+		indent(os,0) << clazz->get_cxx_class_name() << "::operator local_ref<" << baseClass->get_cxx_class_name() << ">() const" << std::endl;
 		indent(os,0) << "{" << std::endl;
-		indent(os,1) << "return local_ref<" << pSuper->get_cxx_class_name() << ">(get_jobject());" << std::endl;
+		indent(os,1) << "return local_ref<" << baseClass->get_cxx_class_name() << ">(get_jobject());" << std::endl;
 		indent(os,0) << "}" << std::endl;
 	}
 
-	for(std::size_t iface=0;iface<clazz->get_interfaces_count();++iface)
-	{
-		os << std::endl;
-		shared_ptr<model::Class> pInterface=clazz->get_interface(iface);
-		BOOST_ASSERT(pInterface);
-		indent(os,0) << clazz->get_cxx_class_name() << "::operator local_ref<" << pInterface->get_cxx_class_name() << ">() const" << std::endl;
-		indent(os,0) << "{" << std::endl;
-		indent(os,1) << "return local_ref<" << pInterface->get_cxx_class_name() << ">(get_jobject());" << std::endl;
-		indent(os,0) << "}" << std::endl;
-	}
-	
 	model::ProperClassMethods properMethods(clazz);
 	
 	if(properMethods.get_methods_count())
@@ -672,16 +659,7 @@ void CPPCodeGenerator::collect_class_dependencies(shared_ptr<model::Entity> enti
 {
 	if(shared_ptr<model::Class> clazz=shared_ptr<model::Class>(entity,detail::dynamic_cast_tag()))
 	{
-		if(shared_ptr<model::Class> pSuper=clazz->get_super())
-			dependencies.insert(pSuper);
-
-		for(std::size_t ifs=0;ifs<clazz->get_interfaces_count();++ifs)
-		{
-			if(shared_ptr<model::Class> pInterface=clazz->get_interface(ifs))
-				dependencies.insert(pInterface);
-
-		}
-
+		collect_class_bases(clazz,dependencies);
 		for(std::size_t m=0;m<clazz->get_methods_count();++m)
 		{
 			if(shared_ptr<model::Method> classMethod=clazz->get_method(m))
@@ -796,6 +774,24 @@ void CPPCodeGenerator::collect_class_dependencies(shared_ptr<model::Entity> enti
 					}
 				}
 			}
+		}
+	}
+}
+
+void CPPCodeGenerator::collect_class_bases(shared_ptr<model::Class> const &clazz, std::set< shared_ptr<model::Class> > &dependencies) const
+{
+	if(shared_ptr<model::Class> pSuper=clazz->get_super())
+	{
+		dependencies.insert(pSuper);
+		collect_class_bases(pSuper,dependencies);
+	}
+
+	for(std::size_t ifs=0;ifs<clazz->get_interfaces_count();++ifs)
+	{
+		if(shared_ptr<model::Class> pInterface=clazz->get_interface(ifs))
+		{
+			dependencies.insert(pInterface);
+			collect_class_bases(pInterface,dependencies);
 		}
 	}
 }

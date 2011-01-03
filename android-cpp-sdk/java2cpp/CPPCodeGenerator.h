@@ -38,6 +38,7 @@ public:
 
 protected:
 	void							collect_class_dependencies(shared_ptr<model::Entity> entity, std::set< shared_ptr<model::Class> > &dependencies) const;
+	void							collect_class_bases(shared_ptr<model::Class> const &clazz, std::set< shared_ptr<model::Class> > &dependencies) const;
 	std::string						transform_method_name(std::string const &original) const;
 
 
