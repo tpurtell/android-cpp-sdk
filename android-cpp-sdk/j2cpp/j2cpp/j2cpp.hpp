@@ -13,5 +13,6 @@
 #include <j2cpp/method.hpp>
 #include <j2cpp/static_method.hpp>
 #include <j2cpp/new_object.hpp>
+#include <j2cpp/detail/spin_lock.hpp>
 
 #endif //J2CPP_J2CPP_HPP

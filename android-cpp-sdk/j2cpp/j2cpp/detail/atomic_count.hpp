@@ -44,9 +44,6 @@ namespace j2cpp { namespace detail {
 		mutable _Atomic_word m_value;
 	};
 
-
-
-
 } //namespace detail
 } //namespace j2cpp
 

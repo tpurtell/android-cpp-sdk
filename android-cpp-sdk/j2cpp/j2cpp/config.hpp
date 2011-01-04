@@ -3,6 +3,8 @@
 
 #include <jni.h>
 #include <android/log.h>
+#include <sched.h>
+#include <time.h>
 
 #define J2CPP_NAME	"j2cpp"
 

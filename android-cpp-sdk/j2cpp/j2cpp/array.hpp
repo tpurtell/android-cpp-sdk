@@ -80,8 +80,11 @@ namespace j2cpp {
 		
 		jsize size() const
 		{
+			return array_access<value_type>::get_array_size(
+				base_type::get_jobject()
+			);
 		}
-		
+
 	private:
 		jboolean	m_is_copy;
 		value_type	*m_data;
